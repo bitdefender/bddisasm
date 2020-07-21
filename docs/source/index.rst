@@ -111,7 +111,7 @@ simple as calling one of the decoding API:
         unsigned char ins[2] = { 0x33, 0xC0 };
         NDSTATUS status;
         
-        status = NdDecode(&ix, ins, ND_CODE_64, ND_DATA_64);
+        status = NdDecodeEx(&ix, ins, sizeof(ins), ND_CODE_64, ND_DATA_64);
         if (!ND_SUCCESS(status))
         {
             printf("Decoding failed with error 0x%08x!\n", status);
@@ -139,7 +139,7 @@ has to be obtained by calling the **NdToText** API:
         NDSTATUS status;
         char txt[ND_MIN_BUF_SIZE];
         
-        status = NdDecode(&ix, ins, ND_CODE_64, ND_DATA_64);
+        status = NdDecodeEx(&ix, ins, sizeof(ins), ND_CODE_64, ND_DATA_64);
         if (!ND_SUCCESS(status))
         {
             printf("Decoding failed with error 0x%08x!\n", status);
@@ -210,7 +210,7 @@ Assuming we have already decoded an instruction as follows:
         NDSTATUS status;
         char txt[ND_MIN_BUF_SIZE];
         
-        status = NdDecode(&ix, ins, ND_CODE_64, ND_DATA_64);
+        status = NdDecodeEx(&ix, ins, sizeof(ins), ND_CODE_64, ND_DATA_64);
         if (!ND_SUCCESS(status))
         {
             printf("Decoding failed with error 0x%08x!\n", status);
