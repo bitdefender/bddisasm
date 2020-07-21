@@ -1360,7 +1360,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_J, ND_OPS_z, ND_OPF_R, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:100 Instruction:"CALL Ev" Encoding:"0xFF /2"/"M"
@@ -1375,7 +1375,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_E, ND_OPS_v, ND_OPF_R, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:101 Instruction:"CALLF Ap" Encoding:"0x9A cp"/"D"
@@ -1391,7 +1391,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:102 Instruction:"CALLF Mp" Encoding:"0xFF /3:mem"/"M"
@@ -1407,7 +1407,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:103 Instruction:"CBW" Encoding:"ds16 0x98"/""
@@ -5772,7 +5772,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:425 Instruction:"INT1" Encoding:"0xF1"/""
@@ -5803,7 +5803,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:427 Instruction:"INTO" Encoding:"0xCE"/""
@@ -5819,7 +5819,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:428 Instruction:"INVD" Encoding:"0x0F 0x08"/""
@@ -5926,7 +5926,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:436 Instruction:"IRETQ" Encoding:"ds64 0xCF"/""
@@ -5942,7 +5942,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:437 Instruction:"IRETW" Encoding:"ds16 0xCF"/""
@@ -5958,7 +5958,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v3, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:438 Instruction:"JBE Jz" Encoding:"0x0F 0x86 cz"/"D"
@@ -15186,7 +15186,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1131 Instruction:"RETF" Encoding:"0xCB"/""
@@ -15201,7 +15201,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1132 Instruction:"RETN Iw" Encoding:"0xC2 iw"/"I"
@@ -15217,7 +15217,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_GPR_rSP, ND_OPS_ssz, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1133 Instruction:"RETN" Encoding:"0xC3"/""
@@ -15231,7 +15231,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_K, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_MEM_SHSP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1134 Instruction:"RMPADJUST" Encoding:"0xF3 0x0F 0x01 /0xFE"/""
@@ -15808,8 +15808,8 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_MEM_SHS, ND_OPS_q, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHS, ND_OPS_12, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1176 Instruction:"SBB Eb,Gb" Encoding:"0x18 /r"/"MR"
@@ -16291,7 +16291,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_MEM_SHS, ND_OPS_q, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHS0, ND_OPS_q, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
         OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
@@ -17353,7 +17353,7 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_SYSCALL, ND_CAT_SYSCALL, ND_SET_AMD, 760, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
-        0, 0, ND_OPS_CNT(0, 9), 0, 0, 0, 0, 0, 0, ND_FLAG_O64, ND_CFF_FSC, 
+        0, 0, ND_OPS_CNT(0, 10), 0, 0, 0, 0, 0, 0, ND_FLAG_F64|ND_FLAG_O64, ND_CFF_FSC, 
         0,
         0,
         0,
@@ -17367,6 +17367,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:1290 Instruction:"SYSENTER" Encoding:"0x0F 0x34"/""
@@ -17392,7 +17393,7 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_SYSEXIT, ND_CAT_SYSRET, ND_SET_PPRO, 762, 
         ND_MOD_R0|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
-        0, 0, ND_OPS_CNT(0, 4), 0, 0, 0, 0, 0, 0, 0, ND_CFF_SEP, 
+        0, 0, ND_OPS_CNT(0, 5), 0, 0, 0, 0, 0, 0, ND_FLAG_F64, ND_CFF_SEP, 
         0,
         0,
         0,
@@ -17401,6 +17402,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_GPR_rSP, ND_OPS_ssz, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:1292 Instruction:"SYSRET" Encoding:"o64 0x0F 0x07"/""

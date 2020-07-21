@@ -13,7 +13,7 @@
         Operand: 1, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000003 ffd0                            CALL      ax
@@ -31,7 +31,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000005 66ffd0                          CALL      eax
@@ -49,7 +49,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000008 ff17                            CALL      word ptr [bx]
@@ -68,7 +68,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000000A 67ff13                          CALL      word ptr [ebx]
@@ -87,7 +87,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000000D 67ff13                          CALL      word ptr [ebx]
@@ -106,7 +106,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000010 6667ff13                        CALL      dword ptr [ebx]
@@ -125,7 +125,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000014 ebfe                            JMP       0x14
@@ -246,7 +246,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000002C 669a000000102000                CALLF     0x0020:0x10000000
@@ -265,7 +265,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000034 ea00102000                      JMPF      0x0020:0x1000
@@ -299,7 +299,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000041 67ff1b                          CALLF     dword ptr [ebx]
@@ -319,7 +319,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000044 ff1f                            CALLF     dword ptr [bx]
@@ -339,7 +339,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000046 6667ff1b                        CALLF     fword ptr [ebx]
@@ -359,7 +359,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000004A 66ff1f                          CALLF     fword ptr [bx]
@@ -379,7 +379,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000004D 67ff2b                          JMPF      dword ptr [ebx]
@@ -565,7 +565,7 @@
         Operand: 3, Acc:  RW,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 4, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:            Flags, RegSize:  2, RegId: 0, RegCount: 1
-        Operand: 5, Acc:  -W,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Shadow Stack: yes, 
+        Operand: 5, Acc:  -W,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000068 cc                              INT3
@@ -586,7 +586,7 @@
         Operand: 2, Acc:  RW,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:            Flags, RegSize:  2, RegId: 0, RegCount: 1
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000069 f1                              INT1
@@ -641,7 +641,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 2, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000006C c22000                          RETN      0x0020
@@ -660,7 +660,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:  General Purpose, RegSize:  2, RegId: 4, RegCount: 1
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000006F cb                              RETF
@@ -678,7 +678,7 @@
         Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000070 ca2000                          RETF      0x0020
@@ -697,7 +697,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:               IP, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000073 cf                              IRETW
@@ -718,7 +718,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:            Flags, RegSize:  2, RegId: 0, RegCount: 1
-        Operand: 4, Acc:  RW,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  RW,  Type:     Memory, Size:  6, RawSize:  6, Encoding: S, Shadow stack: 3, 
                 
 
 0000000000000074 66cf                            IRETD
@@ -739,6 +739,6 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 12, RawSize: 12, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 4, Acc:  RW,  Type:     Memory, Size: 12, RawSize: 12, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  RW,  Type:     Memory, Size: 12, RawSize: 12, Encoding: S, Shadow stack: 3, 
                 
 

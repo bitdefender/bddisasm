@@ -914,7 +914,7 @@ print_instruction(
 
                 if (Instrux->Operands[i].Info.Memory.IsShadowStack)
                 {
-                    printf("Shadow Stack: yes, ");
+                    printf("Shadow stack: %d, ", Instrux->Operands[i].Info.Memory.ShStkType);
                 }
 
                 if (Instrux->Operands[i].Info.Memory.HasCompDisp)

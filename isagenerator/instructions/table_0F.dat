@@ -39,7 +39,7 @@ ENCLU          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0
 SERIALIZE      nil           nil                       [         NP 0x0F 0x01 /0xE8]           s:SERIALIZE, t:MISC
 XSUSLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE8]           s:TSXLDTRK, t:MISC
 XRESLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE9]           s:TSXLDTRK, t:MISC
-SAVEPREVSSP    nil           SHS,SSP                   [       0xF3 0x0F 0x01 /0xEA]           s:CET, t:CET, w:W|RW, f:CF=t
+SAVEPREVSSP    nil           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET, t:CET, w:RW|R, f:CF=t
 RDPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEE]           s:PKU, t:MISC, w:W|W|R|R
 WRPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEF]           s:PKU, t:MISC, w:R|R|R|W
 SWAPGS         nil           GSBASE,KGSBASE            [            0x0F 0x01 /0xF8]           s:LONGMODE, t:SYSTEM, w:RW|RW, m:KERNEL|O64
@@ -59,7 +59,7 @@ STGI           nil           nil                       [            0x0F 0x01 /0
 CLGI           nil           nil                       [            0x0F 0x01 /0xDD]           s:SVM, t:SYSTEM, m:VMXROOT
 SKINIT         nil           EAX                       [            0x0F 0x01 /0xDE]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
 INVLPGA        nil           rAX,ECX                   [            0x0F 0x01 /0xDF]           s:SVM, t:SYSTEM, w:R|R, m:VMXROOT
-SETSSBSY       nil           SHS,SSP                   [       0xF3 0x0F 0x01 /0xE8]           s:CET, t:CET, a:SHS, w:RW|RW
+SETSSBSY       nil           SHS0,SSP                  [       0xF3 0x0F 0x01 /0xE8]           s:CET, t:CET, a:SHS, w:RW|RW
 INVLPGB        nil           rAX,ECX,EDX               [            0x0F 0x01 /0xFE]           s:INVLPGB, t:SYSTEM, w:R|R|R, m:NOREAL|KERNEL
 RMPADJUST      nil           RAX,RCX,RDX,Fv            [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
 RMPUPDATE      nil           RAX,RCX,Fv                [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
@@ -71,7 +71,7 @@ LAR            Gv,Rz         Fv                        [            0x0F 0x02 /r
 LSL            Gv,Mw         Fv                        [            0x0F 0x03 /r:mem]          s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 LSL            Gv,Rz         Fv                        [            0x0F 0x03 /r:reg]          s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 LOADALL        nil           BANK                      [            0x0F 0x05]                 s:I486REAL, t:UNDOC, w:R
-SYSCALL        nil           STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv [        o64 0x0F 0x05]     s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW, i:FSC, m:O64|NOSGX
+SYSCALL        nil           STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP [        o64 0x0F 0x05] s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW|RW, a:F64, i:FSC, m:O64|NOSGX
 CLTS           nil           CR0                       [            0x0F 0x06]                 s:I286REAL, t:SYSTEM, w:W, m:KERNEL|NOV86
 LOADALLD       nil           BANK                      [            0x0F 0x07]                 s:I486REAL, t:UNDOC, w:R
 SYSRET         nil           STAR,SS,rCX,R11,CS,rIP,Fv [        o64 0x0F 0x07]                 s:AMD, t:SYSRET, w:R|W|R|R|W|W|W, i:FSC, m:KERNEL|O64
@@ -230,7 +230,7 @@ RDTSC          nil           EAX,EDX,TSC               [            0x0F 0x31]  
 RDMSR          nil           EAX,EDX,ECX,MSR           [            0x0F 0x32]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R|R, m:KERNEL|NOV86, i:MSR
 RDPMC          nil           EAX,EDX,ECX,MSR           [            0x0F 0x33]                 s:RDPMC, t:SYSTEM, w:W|W|R|R, m:NOSGX
 SYSENTER       nil           SCS,SESP,SEIP,SS,sSP,CS,rIP,Fv [       0x0F 0x34]                 s:PPRO, t:SYSCALL, w:R|R|R|W|W|W|W|W, i:SEP, f:IF=0, m:NOREAL|NOSGX
-SYSEXIT        nil           SS,sSP,CS,rIP             [            0x0F 0x35]                 s:PPRO, t:SYSRET, w:W|W|W|W, i:SEP, m:KERNEL|NOREAL
+SYSEXIT        nil           SS,sSP,CS,rIP,SSP         [            0x0F 0x35]                 s:PPRO, t:SYSRET, w:W|W|W|W|W, a:F64, i:SEP, m:KERNEL|NOREAL
 RDSHR          Ed            nil                       [      cyrix 0x0F 0x36 /r]              s:CYRIX, t:SYSTEM, w:R
 GETSEC         nil           EAX,EBX                   [         NP 0x0F 0x37]                 s:SMX, t:SYSTEM, w:RCW|R, m:KERNEL|NOREAL|NOSGX
 WRSHR          Ed            nil                       [      cyrix 0x0F 0x37 /r]              s:CYRIX, t:SYSTEM, w:W
@@ -485,8 +485,8 @@ RDFSBASE       Ry            FSBASE                    [   o64 0xF3 0x0F 0xAE /0
 RDGSBASE       Ry            GSBASE                    [   o64 0xF3 0x0F 0xAE /1:reg]          s:RDWRFSGS, t:RDWRFSGS, w:W|R, m:O64
 WRFSBASE       Ry            FSBASE                    [   o64 0xF3 0x0F 0xAE /2:reg]          s:RDWRFSGS, t:RDWRFSGS, w:R|W, m:O64
 WRGSBASE       Ry            GSBASE                    [   o64 0xF3 0x0F 0xAE /3:reg]          s:RDWRFSGS, t:RDWRFSGS, w:R|W, m:O64
-INCSSPD        Rd            SHS2,SSP                  [       0xF3 0x0F 0xAE /5:reg]          s:CET, t:CET, c:INCSSP, w:R|R|RW
-INCSSPQ        Rq            SHS2,SSP                  [  0xF3 rexw 0x0F 0xAE /5:reg]          s:CET, t:CET, c:INCSSP, w:R|R|RW
+INCSSPD        Rd            SHSI,SSP                  [       0xF3 0x0F 0xAE /5:reg]          s:CET, t:CET, c:INCSSP, w:R|R|RW
+INCSSPQ        Rq            SHSI,SSP                  [  0xF3 rexw 0x0F 0xAE /5:reg]          s:CET, t:CET, c:INCSSP, w:R|R|RW
 LFENCE         nil           nil                       [         NP 0x0F 0xAE /5:reg]          s:SSE2, t:MISC
 UMONITOR       mMb           Fv                        [       0xF3 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|W, f:WAITPKG, m:NOTSX
 UMWAIT         Ry            EDX,EAX                   [       0xF2 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|R|R, m:NOTSX

@@ -300,6 +300,8 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_v3,
     ND_OPS_v4,
     ND_OPS_v8,
+    // 4 + 8 bytes accessed on the shadow stack by the SAVPREVSSP instruction.
+    ND_OPS_12,
     // MIB
     ND_OPS_mib,
     // VSIB sizes (for both the index and the accessed data).
@@ -408,6 +410,8 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_MEM_rBX_AL,
     ND_OPT_MEM_rDI,
     ND_OPT_MEM_SHS,
+    ND_OPT_MEM_SHSP,
+    ND_OPT_MEM_SHS0,
 
     // Misc CR/XCR/MSR/SYS registers.
     ND_OPT_CR_0,

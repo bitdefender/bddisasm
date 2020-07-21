@@ -137,6 +137,8 @@ optype = {
     'pBXAL'    : 'ND_OPT_MEM_rBX_AL',
     'pDI'      : 'ND_OPT_MEM_rDI',
     'SHS'      : 'ND_OPT_MEM_SHS',
+    'SHS0'     : 'ND_OPT_MEM_SHS0',
+    'SHSP'     : 'ND_OPT_MEM_SHSP',
     
     # System registers, MSRs, XCRs, etc.
     'GDTR'     : 'ND_OPT_SYS_GDTR',
@@ -222,6 +224,7 @@ opsize = {
     'l'        : 'ND_OPS_l',
     'rx'       : 'ND_OPS_rx',
     'cl'       : 'ND_OPS_cl',
+    '12'       : 'ND_OPS_12',
     't'        : 'ND_OPS_t',
 }
 

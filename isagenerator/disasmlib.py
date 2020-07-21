@@ -197,6 +197,7 @@ valid_opsize = [
     'l',            # Either a 64 bit or a 128 bit operand size (used by BNDMOV).
     'rx',           # 512 bytes extended state.
     'cl',           # 32/64/128 bytes - the size of one cache line.
+    '12',           # 4 bytes (0) + 8 bytes (old SSP), used by SAVEPREVSSP.
     't',            # A tile register. The size varies dependning on execution environment, but can be as high as 1K.
 ]
 
@@ -270,17 +271,21 @@ valid_impops = {# register      size
     'X87STATUS': ('X87STATUS',  'w'),   # X87 status register.
     'MXCSR'    : ('MXCSR',      'd'),   # MXCSR register.
     'PKRU'     : ('PKRU',       'd'),   # PKRU register.
-    'SSP'      : ('SSP',        'yf'),  # Shadow stack pointer.
+    'SSP'      : ('SSP',        'yf'),  # Shadow stack pointer. 32 bit in protected/compat mode, 64 in long mode.
 
     # Implicit memory operands.
     'pBXALb'   : ('pBXAL',      'b'),   # Implicit [RBX + AL], as used by XLAT.
     'pDIq'     : ('pDI',        'q'),   # Implicit qword [RDI].
     'pDIdq'    : ('pDI',        'dq'),  # Implicit xmmword [RDI].
-    'SHS'      : ('SHS',        'q'),   # Shadow stack access, 1 qword (use by CET instructions).
-    'SHS1'     : ('SHS',        'v'),   # Shadow stack access, 1 word.
-    'SHS2'     : ('SHS',        'v2'),  # Shadow stack, 2 words.
-    'SHS3'     : ('SHS',        'v3'),  # Shadow stack, 3 words.
-    'SHS4'     : ('SHS',        'v4'),  # Shadow stack, 4 words.
+    # Implicit shadow stack accesses.
+    'SHS'      : ('SHS',        'q'),   # Shadow stack (SSP) implicit access, 1 qword (use by CET instructions).
+    'SHS0'     : ('SHS0',       'q'),   # Shadow stack (IA32_PL0_SSP) implicit access, 1 qword (use by CET instructions).
+    'SHSI'     : ('SHS',        'v2'),  # Shadow stack load & discard, 2 elements (INCCSPD/INCSSPQ).
+    'SHSS'     : ('SHS',        '12'),  # Shadow stack read & store 4 + 8 bytes (SAVEPREVSSP).
+    'SHS1'     : ('SHSP',       'v'),   # Shadow stack push/pop, 1 word.
+    'SHS2'     : ('SHSP',       'v2'),  # Shadow stack push/pop, 2 words.
+    'SHS3'     : ('SHSP',       'v3'),  # Shadow stack push/pop, 3 words.
+    'SHS4'     : ('SHSP',       'v4'),  # Shadow stack push/pop, 4 words.
 }
 
 # If an operand type is not present here, than that operand is implicit & it's not encoded inside the instruction.

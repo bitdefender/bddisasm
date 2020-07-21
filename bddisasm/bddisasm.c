@@ -200,6 +200,8 @@ static const uint16_t gOperandMap[] =
     ND_OPE_S,       // ND_OPT_MEM_rBX_AL (as used by XLAT)
     ND_OPE_S,       // ND_OPT_MEM_rDI (as used by masked moves)
     ND_OPE_S,       // ND_OPT_MEM_SHS
+    ND_OPE_S,       // ND_OPT_MEM_SHSP
+    ND_OPE_S,       // ND_OPT_MEM_SHS0
 
     ND_OPE_S,       // ND_OPT_CR_0
     ND_OPE_S,       // ND_OPT_IDTR
@@ -1665,6 +1667,11 @@ NdParseOperand(
         }
         break;
 
+    case ND_OPS_12:
+        // SAVPREVSSP instruction reads/writes 4 + 8 bytes from the shadow stack.
+        size = 12;
+        break;
+
     case ND_OPS_t:
         // Tile register. The actual size depends on how the TILECFG register has been programmed, but it can be 
         // up to 1K in size.
@@ -1940,7 +1947,7 @@ NdParseOperand(
         // The operand is the SSP register.
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SSP;
-        operand->Info.Register.Size = (Instrux->OpMode == ND_OPSZ_64) ? ND_SIZE_64BIT : ND_SIZE_32BIT;
+        operand->Info.Register.Size = operand->Size;
         operand->Info.Register.Reg = 0;
         break;
 
@@ -2686,7 +2693,11 @@ memory:
         }
 
         // Shadow Stack Access, if this is the case.
-        operand->Info.Memory.IsShadowStack = ND_HAS_SHS(Instrux);
+        if (ND_HAS_SHS(Instrux))
+        {
+            operand->Info.Memory.IsShadowStack = true;
+            operand->Info.Memory.ShStkType = ND_SHSTK_EXPLICIT;
+        }
 
         break;
 
@@ -2808,10 +2819,27 @@ memory:
         break;
 
     case ND_OPT_MEM_SHS:
-        // Shadow stack.
+        // Shadow stack access using the current SSP.
         Instrux->MemoryAccess |= operand->Access.Access;
         operand->Type = ND_OP_MEM;
         operand->Info.Memory.IsShadowStack = true;
+        operand->Info.Memory.ShStkType = ND_SHSTK_SSP_LD_ST;
+        break;
+
+    case ND_OPT_MEM_SHS0:
+        // Shadow stack access using the IA32_PL0_SSP.
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.IsShadowStack = true;
+        operand->Info.Memory.ShStkType = ND_SHSTK_PL0_SSP;
+        break;
+
+    case ND_OPT_MEM_SHSP:
+        // Shadow stack push/pop access.
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.IsShadowStack = true;
+        operand->Info.Memory.ShStkType = ND_SHSTK_SSP_PUSH_POP;
         break;
 
     case ND_OPT_Z:

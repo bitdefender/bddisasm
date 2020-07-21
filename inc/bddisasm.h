@@ -759,6 +759,19 @@ typedef struct _ND_OPDESC_ADDRESS
 
 
 //
+// Shadow stack access types.
+//
+typedef enum _ND_SHSTK_ACCESS
+{
+    ND_SHSTK_NONE = 0,
+    ND_SHSTK_EXPLICIT,      // Explicit memory operand accessed as shadow stack.
+    ND_SHSTK_SSP_LD_ST,     // Shadow Stack Pointer (SSP) used as base for addressing using conventional load/store.
+    ND_SHSTK_SSP_PUSH_POP,  // Shadow Stack Pointer (SSP) used as base for addressing using push/pop.
+    ND_SHSTK_PL0_SSP,       // Privilege 0 SSP (IA32_PL0_SSP) used (SETSSBSY).
+} ND_SHSTK_ACCESS;
+
+
+//
 // Describes a memory operand.
 //
 typedef struct _ND_OPDESC_MEMORY
@@ -775,7 +788,7 @@ typedef struct _ND_OPDESC_MEMORY
     bool            IsStack:1;          // TRUE if this is a stack op. Note that explicit stack accesses are not
                                         // included (eg: mov eax, [rsp] will NOT set IsStack).
     bool            IsString:1;         // TRUE for [RSI] and [RDI] operands inside string operations.
-    bool            IsShadowStack:1;    // TRUE if this is a shadow stack access.
+    bool            IsShadowStack:1;    // TRUE if this is a shadow stack access. Check out ShStkType for more info.
     bool            IsDirect:1;         // TRUE if direct addressing (MOV [...], EAX, 0xA3).
     bool            IsBitbase:1;        // TRUE if this is a bit base. Used for BT* instructions. The bitbase
                                         // stored in the second operand must be added to the linear address.
@@ -790,6 +803,8 @@ typedef struct _ND_OPDESC_MEMORY
     ND_REG_SIZE     IndexSize;          // Ditto for index size. Max 8 bytes.
     uint8_t         DispSize;           // Displacement size. Max 4 bytes.
     uint8_t         CompDispSize;       // Compressed displacement size - 1, 2, 4, 8, 16, 32, 64.
+
+    uint8_t         ShStkType;          // Shadow stack access type. Check out ND_SHSTK_ACCESS.
 
     struct
     {

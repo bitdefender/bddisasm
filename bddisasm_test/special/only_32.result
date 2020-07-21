@@ -285,7 +285,7 @@
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
-        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow Stack: yes, 
+        Operand: 4, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow stack: 3, 
                 
 
 000000000000001D 90                              NOP
