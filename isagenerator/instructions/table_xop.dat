@@ -1,0 +1,193 @@
+# Mnemonic          Explicit Operands     Implicit Operands         Encoding        Fags, Prefixes, Set, Category, Class, RW map, Additional ops
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# XOP.mmmmm = 8
+
+# 0x00 - 0x0F
+
+# 0x10 - 0x1F
+
+# 0x20 - 0x2F
+
+# 0x30 - 0x3F
+
+# 0x40 - 0x4F
+
+# 0x50 - 0x5F
+
+# 0x60 - 0x6F
+
+# 0x70 - 0x7F
+
+# 0x80 - 0x8F
+VPMACSSWW           Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x85 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSSWD           Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x86 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSSDQL          Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x87 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSSDD           Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x8E /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSSDQH          Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x8F /r is4]       s:XOP, t:XOP, w:W|R|R|R
+
+# 0x90 - 0x9F
+VPMACSWW            Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x95 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSWD            Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x96 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSDQL           Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x97 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSDD            Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x9E /r is4]       s:XOP, t:XOP, w:W|R|R|R
+VPMACSDQH           Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0x9F /r is4]       s:XOP, t:XOP, w:W|R|R|R
+
+# 0xA0 - 0xAF
+VPCMOV              Vx,Hx,Wx,Lx           nil           [xop m:8 w:0 0xA2 /r is4]   s:XOP, t:XOP, w:W|R|R|R
+VPCMOV              Vx,Hx,Lx,Wx           nil           [xop m:8 w:1 0xA2 /r is4]   s:XOP, t:XOP, w:W|R|R|R
+VPPERM              Vx,Hx,Wx,Lx           nil           [xop m:8 w:0 0xA3 /r is4]   s:XOP, t:XOP, w:W|R|R|R
+VPPERM              Vx,Hx,Lx,Wx           nil           [xop m:8 w:1 0xA3 /r is4]   s:XOP, t:XOP, w:W|R|R|R
+VPMADCSSWD          Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0xA6 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+
+# 0xB0 - 0xBF
+VPMADCSWD           Vdq,Hdq,Wdq,Ldq       nil           [xop m:8 0xB6 /r is4]       s:XOP, t:XOP, w:W|R|R|R
+
+# 0xC0 - 0xCF
+VPROTB              Vdq,Wdq,Ib            nil           [xop m:8 0xC0 /r ib]        s:XOP, t:XOP, w:W|R|R
+VPROTW              Vdq,Wdq,Ib            nil           [xop m:8 0xC1 /r ib]        s:XOP, t:XOP, w:W|R|R
+VPROTD              Vdq,Wdq,Ib            nil           [xop m:8 0xC2 /r ib]        s:XOP, t:XOP, w:W|R|R
+VPROTQ              Vdq,Wdq,Ib            nil           [xop m:8 0xC3 /r ib]        s:XOP, t:XOP, w:W|R|R
+VPCOMB              Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xCC /r ib]        s:XOP, t:XOP, w:W|R|R|R
+VPCOMW              Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xCD /r ib]        s:XOP, t:XOP, w:W|R|R|R
+VPCOMD              Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xCE /r ib]        s:XOP, t:XOP, w:W|R|R|R
+VPCOMQ              Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xCF /r ib]        s:XOP, t:XOP, w:W|R|R|R
+
+# 0xD0 - 0xDF
+
+# 0xE0 - 0xEF
+VPCOMUB             Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xEC /r ib]        s:XOP, t:XOP, w:W|R|R|R
+VPCOMUW             Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xED /r ib]        s:XOP, t:XOP, w:W|R|R|R
+VPCOMUD             Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xEE /r ib]        s:XOP, t:XOP, w:W|R|R|R
+VPCOMUQ             Vdq,Hdq,Wdq,Ib        nil           [xop m:8 0xEF /r ib]        s:XOP, t:XOP, w:W|R|R|R
+
+# 0xF0 - 0xFF
+
+
+
+# XOP.mmmmm = 9
+
+# 0x00 - 0x0F
+BLCFILL             By,Ey                 nil           [xop m:9 0x01 /1]           s:TBM, t:BITBYTE, w:RW|R
+BLSFILL             By,Ey                 nil           [xop m:9 0x01 /2]           s:TBM, t:BITBYTE, w:RW|R
+BLCS                By,Ey                 nil           [xop m:9 0x01 /3]           s:TBM, t:BITBYTE, w:RW|R
+TZMSK               By,Ey                 nil           [xop m:9 0x01 /4]           s:TBM, t:BITBYTE, w:RW|R
+BLCIC               By,Ey                 nil           [xop m:9 0x01 /5]           s:TBM, t:BITBYTE, w:RW|R
+BLSIC               By,Ey                 nil           [xop m:9 0x01 /6]           s:TBM, t:BITBYTE, w:RW|R
+T1MSKC              By,Ey                 nil           [xop m:9 0x01 /7]           s:TBM, t:BITBYTE, w:RW|R
+BLCMSK              By,Ey                 nil           [xop m:9 0x02 /1]           s:TBM, t:BITBYTE, w:RW|R
+BLCI                By,Ey                 nil           [xop m:9 0x02 /6]           s:TBM, t:BITBYTE, w:RW|R
+
+# 0x10 - 0x1F
+LLWPCB              Ry                    nil           [xop m:9 0x12 /0:reg]       s:LWP, t:LWP, w:R
+SLWPCB              Ry                    nil           [xop m:9 0x12 /1:reg]       s:LWP, t:LWP, w:R
+
+# 0x20 - 0x2F
+
+# 0x30 - 0x3F
+
+# 0x40 - 0x4F
+
+# 0x50 - 0x5F
+
+# 0x60 - 0x6F
+
+# 0x70 - 0x7F
+
+# 0x80 - 0x8F
+VFRCZPS             Vx,Wx                 nil           [xop m:9 0x80 /r]           s:XOP, t:XOP, w:W|R
+VFRCZPD             Vx,Wx                 nil           [xop m:9 0x81 /r]           s:XOP, t:XOP, w:W|R
+VFRCZSS             Vdq,Wss               nil           [xop m:9 0x82 /r]           s:XOP, t:XOP, w:W|R
+VFRCZSD             Vdq,Wsd               nil           [xop m:9 0x83 /r]           s:XOP, t:XOP, w:W|R
+VPSHAB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x98 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x98 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAW              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x99 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAW              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x99 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAD              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x9A /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAD              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x9A /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAQ              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x9B /r]       s:XOP, t:XOP, w:W|R|R
+VPSHAQ              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x9B /r]       s:XOP, t:XOP, w:W|R|R
+
+# 0x90 - 0x9F
+VPROTB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x90 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x90 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTW              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x91 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTW              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x91 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTD              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x92 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTD              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x92 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTQ              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x93 /r]       s:XOP, t:XOP, w:W|R|R
+VPROTQ              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x93 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x94 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x94 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x95 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x95 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x96 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x96 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLQ              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x97 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLQ              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x97 /r]       s:XOP, t:XOP, w:W|R|R
+
+# 0xA0 - 0xAF
+
+# 0xB0 - 0xBF
+
+# 0xC0 - 0xCF
+VPHADDBW            Vdq,Wdq               nil           [xop m:9 0xC1 /r]           s:XOP, t:XOP, w:W|R
+VPHADDBD            Vdq,Wdq               nil           [xop m:9 0xC2 /r]           s:XOP, t:XOP, w:W|R
+VPHADDBQ            Vdq,Wdq               nil           [xop m:9 0xC3 /r]           s:XOP, t:XOP, w:W|R
+VPHADDWD            Vdq,Wdq               nil           [xop m:9 0xC6 /r]           s:XOP, t:XOP, w:W|R
+VPHADDWQ            Vdq,Wdq               nil           [xop m:9 0xC7 /r]           s:XOP, t:XOP, w:W|R
+VPHADDDQ            Vdq,Wdq               nil           [xop m:9 0xCB /r]           s:XOP, t:XOP, w:W|R
+
+# 0xD0 - 0xDF
+VPHADDUBW           Vdq,Wdq               nil           [xop m:9 0xD1 /r]           s:XOP, t:XOP, w:W|R
+VPHADDUBD           Vdq,Wdq               nil           [xop m:9 0xD2 /r]           s:XOP, t:XOP, w:W|R
+VPHADDUBQ           Vdq,Wdq               nil           [xop m:9 0xD3 /r]           s:XOP, t:XOP, w:W|R
+VPHADDUWD           Vdq,Wdq               nil           [xop m:9 0xD6 /r]           s:XOP, t:XOP, w:W|R
+VPHADDUWQ           Vdq,Wdq               nil           [xop m:9 0xD7 /r]           s:XOP, t:XOP, w:W|R
+VPHADDUDQ           Vdq,Wdq               nil           [xop m:9 0xDB /r]           s:XOP, t:XOP, w:W|R
+
+# 0xE0 - 0xEF
+VPHSUBBW            Vdq,Wdq               nil           [xop m:9 0xE1 /r]           s:XOP, t:XOP, w:W|R
+VPHSUBWD            Vdq,Wdq               nil           [xop m:9 0xE2 /r]           s:XOP, t:XOP, w:W|R
+VPHSUBDQ            Vdq,Wdq               nil           [xop m:9 0xE3 /r]           s:XOP, t:XOP, w:W|R
+
+# 0xF0 - 0xFF
+
+
+# XOP.mmmmm = 0xA
+
+# 0x00 - 0x0F
+
+# 0x10 - 0x1F
+BEXTR               Gy,Ey,Id              nil           [xop m:A 0x10 /r id]        s:TBM, t:BITBYTE, w:RW|R|R
+LWPINS              By,Ed,Id              nil           [xop m:A 0x12 /0 id]        s:LWP, t:LWP, w:RW|R|R
+LWPVAL              By,Ed,Id              nil           [xop m:A 0x12 /1 id]        s:LWP, t:LWP, w:RW|R|R
+
+# 0x20 - 0x2F
+
+# 0x30 - 0x3F
+
+# 0x40 - 0x4F
+
+# 0x50 - 0x5F
+
+# 0x60 - 0x6F
+
+# 0x70 - 0x7F
+
+# 0x80 - 0x8F
+
+# 0x90 - 0x9F
+
+# 0xA0 - 0xAF
+
+# 0xB0 - 0xBF
+
+# 0xC0 - 0xCF
+
+# 0xD0 - 0xDF
+
+# 0xE0 - 0xEF
+
+# 0xF0 - 0xFF
+
+

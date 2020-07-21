@@ -1,30 +1,30 @@
 # The Bitdefender disassembler
 
-The Bitdefender disassembler is a lightweight, x86/x64 only instruction decoder. It is easy to integrate, easy to work with, it has no external dependencies, it is thread-safe, it allocates no memory at all, it works in virtually any environment (we use it inside user, kernel, hypervisor, on both Windows and Linux environments), and it provides lots of info regarding the decoded instructions, such as: operands (both explicit and implicit), access mode for each operand, CPUID feature flag, flags access, etc.
+The Bitdefender disassembler (bddisasm) is a lightweight, x86/x64 only instruction decoder. It is easy to integrate, easy to work with, it has no external dependencies, it is thread-safe, it allocates no memory at all, it works in virtually any environment (we use it inside user, kernel, hypervisor, on both Windows and Linux environments), and it provides lots of info regarding the decoded instructions, such as: operands (both explicit and implicit), access mode for each operand, CPUID feature flag, flags access, etc. More examples and info about the project can be found on the official documentation: [Bitdefender disassembler](http://bddisasm.readthedocs.io)
 
 ## Projects
 
-1. disasm - this is the main disassembler project. In order to use the Bitdefender disassembler, all you have to do is build this project, and link with the output library. The only headers you need are located inside the inc folder.
+1. bddisasm - this is the main disassembler project. In order to use the Bitdefender disassembler, all you have to do is build this project, and link with the output library. The only headers you need are located inside the `inc` folder.
 
-2. shemu - this project makes use of the main disasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can
-emulate raw binary files, and see their output. Note that this simple emulator supports basic x86/x64 instructions, and does not support emulating any kind of API call.
+2. bdshemu - this project makes use of the main bddisasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can
+emulate raw binary files, and see their output. Note that this simple emulator supports basic x86/x64 instructions, and does not support emulating any kind of API call. In addition, the only supported memory accesses are inside the shellcode itself, and on the emulated stack.
 
-3. isagenerator - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files.
+3. isagenerator - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files. You will need Python 3 to run the generation scripts.
 
-4. disasmtool - this project is a command line disassembler tool, used mainly as an example of how to integrate the disasm lib.
+4. disasmtool - this project is a command line disassembler tool, used mainly as an example of how to integrate the bddisasm and bdshemu libraries.
 
 5. disasmtool_lix - like disasmtool, but for Linux.
 
-6. pydis - this is the Python binding for the disasm project.
+6. pydis - this is the Python binding for the bddisasm project. You will need Python 3 for this.
 
 ## Objectives
 
 The main objectives of this disassembler are:
 
 1. Lighetweight - it's written in C, with no external dependencies, no memory allocated, and thread safe by design.
-2. Fast - less than 300 CPU clocks on a Intel Core i7-8650U per decoded instruction.
-3. Resilient - tested against internal fuzzers and the famous [mishegos](https://github.com/trailofbits/mishegos) tool
-4. Easy to work with - just include the main header file, disasm.h, link with the disasmlib library, and call the NdDecode API!
+2. Fast - less than 300 CPU clocks on an Intel Core i7-8650U per decoded instruction (more than 7M instructions per second).
+3. Resilient - tested against internal fuzzers and the famous [mishegos](https://github.com/trailofbits/mishegos) tool.
+4. Easy to work with - just include the main header file, bddisasm.h, link with the bddisasm library, and call the NdDecode API!
 5. Complete - support every x86 instruction to date, and provide as much information as possible.
 
 ## Build
@@ -35,13 +35,14 @@ In order to build the projects on Windows you need:
 
 * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) with the Desktop development with C++ workload.
 * [Windows SDK 10.0.18362.0](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/).
+* [Python 3.7 or newer](https://www.python.org/downloads/release/python-373/)
 
 When you first open the solution Visual Studio should prompt you to install any missing components.
-This should be enough to build disasm, disasmtool and shemu for the Debug and Release configurations.
+This should be enough to build bddisasm, disasmtool and bdshemu for the Debug and Release configurations.
 
 For the DebugKernel and ReleaseKernel configurations, [WDK 1903](https://go.microsoft.com/fwlink/?linkid=2085767) is needed, alongside the Windows Driver Kit Visual Studio extension (the WDK installer should take care of this).
 
-For isagenerator, python is needed.
+For isagenerator, Python 3 is needed.
 
 Building any of the projects is done directly from Visual Studio.
 
@@ -60,16 +61,35 @@ For disasmtool_lix you also need:
 * cmake 3.12 or newer
 * [RapidJSON](https://github.com/Tencent/rapidjson/)
 
-In order to build disasm and shemu run `make` in the root of the repository. The results will be placed in the bin directory.
+In order to build bddisasm and bdshemu run `make` in the root of the repository. The results will be placed in the bin directory.
 
 In order to build disasmtool_lix go to the disasmtool_lix directory and run `make`. The results will be in the bin directory in the disasmtool_lix/build directory.
 
 ## Example
 
-Working with disasm is very easy. Decoding and printing the disassembly of an instruction is quick & simple:
+Working with bddisasm is very easy. Decoding and printing the disassembly of an instruction is quick & simple:
 
 ```c
-#include "disasm.h"
+#include <stdio.h>
+#include "bddisasm/disasmtypes.h"
+#include "bddisasm/bddisasm.h"
+
+int nd_vsnprintf_s(
+    char *buffer,
+    size_t sizeOfBuffer,
+    size_t count,
+    const char *format,
+    va_list argptr
+    )
+{
+    return vsnprintf(buffer, sizeOfBuffer, format, argptr);
+}
+
+void* nd_memset(void *s, int c, size_t n)
+{
+    return memset(s, c, n);
+}
+
 
 int main()
 {

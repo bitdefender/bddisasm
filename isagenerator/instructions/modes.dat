@@ -1,0 +1,78 @@
+# Valid operating modes for instructions. Please use these templates and not inline definitions. If a template does
+# not exist already, create a new one.
+# Synthax: NAME : group1:mode11[+mode12[|group2:!mode21+!mode22]] etc.
+#
+# NAME cam be anything and can be used as a placeholder when defining the instruction.
+# group - can be one of the 4 operating groups: 
+#         ring - specify the needed privilege level for the instruction
+#         mode - specify the needed operating mode 
+#         vmx  - specify the VMX operation mode
+#         other- specify other misc operating modes/special cases
+#
+# ring  - can be any of:
+#         r0 - instruction is valid in ring 0
+#         r1 - instruction is valid in ring 1
+#         r2 - instruction is valid in ring 2
+#         r3 - instruction is valid in ring 3
+#
+# mode  - can be any of: 
+#         real  - instruction valid in real mode (16 bit)
+#         v8086 - instruction valid in virtual 8086 mode (16 bit inside 32 bit mode)
+#         prot  - instruction valid in protected mode (32 bit)
+#         compat- instruction valid in compatibility mode (32 inside 64 bit mode)
+#         long  - instruction valid in long mode (64 bit) 
+#         smm   - instruction valid in System Management Mode
+#
+# other - can be any of:
+#         sgx - instruction is valid inside a Software Guard Extensions enclave
+#         tsx - instruction is valid inside a Transactional Syncronization Extensions region
+#
+# vmx  - can be any of:
+#         vmxr - instruction valid in VMX root mode
+#         vmxn - instruction valid in VMX non-root mode
+#         vmxo - instruction valid outside VMX operation
+#
+# If a group is not specified, all modes for that group will be considered valid.
+# If only some modes are specified for a group, only they will be considered valid, and all the others invalid.
+# If only some modes are specified negated (!), the instruction will be considered valid in all but the specified modes.
+#
+# For SGX and TSX, the most restrictive rule is applied: an instruction is listed as valid in any of these modes if
+# it will always execute successfully; instructions that may be valid or invalid depending on microarchitectural
+# design/conditions are listed as invalid in these modes.
+#
+
+# Instruction that are valid ONLY in VMX root operation; this also implies ring0, and only protected or long mode.
+VMXROOT : ring=r0|vmx=vmxr|mode=prot+long|other=!sgx+!tsx
+
+# Instructions valid only in VMX operation, be it VMX root or VMX non-root.
+VMX     : vmx=!vmxo
+
+# Instructions valid only in r0. SGX enclaves exist only in r3, so a 0 instruction will not be valid in SGX mode.
+KERNEL  : ring=r0|other=!sgx
+
+# Instructions valid only in r3.
+USER    : ring=r3
+
+# Instructions invalid in real mode. If an instruction is invalid in real mode, it will be invalid in v8086 as well.
+NOREAL  : mode=!real+!v8086
+
+# Instructions invalid in v8086 mode. They may be, however, valid in real mode.
+NOV86   : mode=!v8086
+
+# Instructions valid only in long mode (64 bit).
+O64     : mode=long
+
+# Instructions invalid in long mode.
+NO64    : mode=!long
+
+# Instructions invalid in transactional regions.
+NOTSX   : other=!tsx
+
+# Instructions invalid in SGX mode.
+NOSGX   : other=!sgx
+
+# Instructions valid only in SMM. Note that while in SMM, one can transition in protected/long mode.
+SMM     : mode=prot+compat+long+smm
+
+# Instructions invalid inside SMM, real-mode or V8086.
+NOSMM   : mode=!real+!v8086+!smm

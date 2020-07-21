@@ -1,0 +1,57 @@
+    bits 64
+    
+    andn                ecx,edi,r14d
+    blsr                edi,r14d   
+    blsmsk              edi,r14d   
+    blsi                edi,r14d   
+    bzhi                ecx,r14d,edi
+    pext                ecx,edi,r14d
+    pdep                ecx,edi,r14d
+    mulx                ecx,edi,r14d
+    bextr               ecx,r14d,edi
+    shlx                ecx,r14d,edi
+    sarx                ecx,r14d,edi
+    shrx                ecx,r14d,edi
+    rorx                ecx,r14d,10
+    
+    andn                ecx,edi,[rbx]
+    blsr                edi,[rbx]   
+    blsmsk              edi,[rbx]   
+    blsi                edi,[rbx]   
+    bzhi                ecx,[rbx],edi
+    pext                ecx,edi,[rbx]
+    pdep                ecx,edi,[rbx]
+    mulx                ecx,edi,[rbx]
+    bextr               ecx,[rbx],edi
+    shlx                ecx,[rbx],edi
+    sarx                ecx,[rbx],edi
+    shrx                ecx,[rbx],edi
+    rorx                ecx,[rbx],10
+    
+    andn                rcx,rdi,r14
+    blsr                rdi,r14   
+    blsmsk              rdi,r14   
+    blsi                rdi,r14   
+    bzhi                rcx,r14,rdi
+    pext                rcx,rdi,r14
+    pdep                rcx,rdi,r14
+    mulx                rcx,rdi,r14
+    bextr               rcx,r14,rdi
+    shlx                rcx,r14,rdi
+    sarx                rcx,r14,rdi
+    shrx                rcx,r14,rdi
+    rorx                rcx,r14,10
+    
+    andn                rcx,rdi,[rbx]
+    blsr                rdi,[rbx]   
+    blsmsk              rdi,[rbx]   
+    blsi                rdi,[rbx]   
+    bzhi                rcx,[rbx],rdi
+    pext                rcx,rdi,[rbx]
+    pdep                rcx,rdi,[rbx]
+    mulx                rcx,rdi,[rbx]
+    bextr               rcx,[rbx],rdi
+    shlx                rcx,[rbx],rdi
+    sarx                rcx,[rbx],rdi
+    shrx                rcx,[rbx],rdi
+    rorx                rcx,[rbx],10

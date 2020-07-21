@@ -1,0 +1,112 @@
+# CPUID feature flags.
+# Synthax: NAME : leaf, subleaf, register, bit
+# NAME can be anything, but it should match an ISA extension type.
+# leaf - CPUID leaf value (eax input value)
+# subleaf - CPUID subleaf (ecx input value). Use 0xFFFFFFFF if not used.
+# register - CPUID output register containing the bit
+# bit - the bit inside the register which indicates if the instruction is present or not
+
+FPU                     : 0x00000001, 0xFFFFFFFF, EDX, 0
+MSR                     : 0x00000001, 0xFFFFFFFF, EDX, 5
+CX8                     : 0x00000001, 0xFFFFFFFF, EDX, 8
+SEP                     : 0x00000001, 0xFFFFFFFF, EDX, 11
+CMOV                    : 0x00000001, 0xFFFFFFFF, EDX, 15
+CLFSH                   : 0x00000001, 0xFFFFFFFF, EDX, 19
+MMX                     : 0x00000001, 0xFFFFFFFF, EDX, 23
+FXSAVE                  : 0x00000001, 0xFFFFFFFF, EDX, 24
+SSE                     : 0x00000001, 0xFFFFFFFF, EDX, 25
+SSE2                    : 0x00000001, 0xFFFFFFFF, EDX, 26
+SSE3                    : 0x00000001, 0xFFFFFFFF, ECX, 0
+PCLMULQDQ               : 0x00000001, 0xFFFFFFFF, ECX, 1
+MONITOR                 : 0x00000001, 0xFFFFFFFF, ECX, 3
+VTX                     : 0x00000001, 0xFFFFFFFF, ECX, 5
+SMX                     : 0x00000001, 0xFFFFFFFF, ECX, 6
+SSSE3                   : 0x00000001, 0xFFFFFFFF, ECX, 9
+FMA                     : 0x00000001, 0xFFFFFFFF, ECX, 12
+SSE4                    : 0x00000001, 0xFFFFFFFF, ECX, 19
+SSE42                   : 0x00000001, 0xFFFFFFFF, ECX, 20
+MOVBE                   : 0x00000001, 0xFFFFFFFF, ECX, 22
+POPCNT                  : 0x00000001, 0xFFFFFFFF, ECX, 23
+AES                     : 0x00000001, 0xFFFFFFFF, ECX, 25
+XSAVE                   : 0x00000001, 0xFFFFFFFF, ECX, 26
+AVX                     : 0x00000001, 0xFFFFFFFF, ECX, 28
+F16C                    : 0x00000001, 0xFFFFFFFF, ECX, 29
+RDRAND                  : 0x00000001, 0xFFFFFFFF, ECX, 30
+
+RDWRFSGS                : 0x00000007, 0x00000000, EBX, 0
+SGX                     : 0x00000007, 0x00000000, EBX, 2
+BMI1                    : 0x00000007, 0x00000000, EBX, 3
+HLE                     : 0x00000007, 0x00000000, EBX, 4
+AVX2                    : 0x00000007, 0x00000000, EBX, 5
+BMI2                    : 0x00000007, 0x00000000, EBX, 8
+INVPCID                 : 0x00000007, 0x00000000, EBX, 10
+RTM                     : 0x00000007, 0x00000000, EBX, 11
+MPX                     : 0x00000007, 0x00000000, EBX, 14
+AVX512F                 : 0x00000007, 0x00000000, EBX, 16
+AVX512DQ                : 0x00000007, 0x00000000, EBX, 17
+RDSEED                  : 0x00000007, 0x00000000, EBX, 18
+ADX                     : 0x00000007, 0x00000000, EBX, 19
+SMAP                    : 0x00000007, 0x00000000, EBX, 20
+AVX512IFMA              : 0x00000007, 0x00000000, EBX, 21
+PCOMMIT                 : 0x00000007, 0x00000000, EBX, 22
+CLFSHOPT                : 0x00000007, 0x00000000, EBX, 23
+CLWB                    : 0x00000007, 0x00000000, EBX, 24
+AVX512PF                : 0x00000007, 0x00000000, EBX, 26
+AVX512ER                : 0x00000007, 0x00000000, EBX, 27
+AVX512CD                : 0x00000007, 0x00000000, EBX, 28
+SHA                     : 0x00000007, 0x00000000, EBX, 29
+AVX512BW                : 0x00000007, 0x00000000, EBX, 30
+PREFETCHWT1             : 0x00000007, 0x00000000, ECX, 0
+AVX512VBMI              : 0x00000007, 0x00000000, ECX, 1
+PKU                     : 0x00000007, 0x00000000, ECX, 3
+WAITPKG                 : 0x00000007, 0x00000000, ECX, 5
+AVX512VBMI2             : 0x00000007, 0x00000000, ECX, 6
+CET                     : 0x00000007, 0x00000000, ECX, 7
+GFNI                    : 0x00000007, 0x00000000, ECX, 8
+VAES                    : 0x00000007, 0x00000000, ECX, 9
+VPCLMULQDQ              : 0x00000007, 0x00000000, ECX, 10
+AVX512VNNI              : 0x00000007, 0x00000000, ECX, 11
+AVX512BITALG            : 0x00000007, 0x00000000, ECX, 12
+AVX512VPOPCNTDQ         : 0x00000007, 0x00000000, ECX, 14
+RDPID                   : 0x00000007, 0x00000000, ECX, 22
+CLDEMOTE                : 0x00000007, 0x00000000, ECX, 25
+MOVDIRI                 : 0x00000007, 0x00000000, ECX, 27
+MOVDIR64B               : 0x00000007, 0x00000000, ECX, 28
+ENQCMD                  : 0x00000007, 0x00000000, ECX, 29
+AVX5124VNNIW            : 0x00000007, 0x00000000, EDX, 2
+AVX5124FMAPS            : 0x00000007, 0x00000000, EDX, 3
+AVX512VP2INTERSECT      : 0x00000007, 0x00000000, EDX, 8
+SERIALIZE               : 0x00000007, 0x00000000, EDX, 14
+TSXLDTRK                : 0x00000007, 0x00000000, EDX, 16
+PCONFIG                 : 0x00000007, 0x00000000, EDX, 18
+AMXBF16                 : 0x00000007, 0x00000000, EDX, 22
+AMXTILE                 : 0x00000007, 0x00000000, EDX, 24
+AMXINT8                 : 0x00000007, 0x00000000, EDX, 25
+
+
+AVX512BF16              : 0x00000007, 0x00000001, EAX, 5
+
+XSAVEOPT                : 0x0000000D, 0x00000001, EAX, 0
+XSAVEC                  : 0x0000000D, 0x00000001, EAX, 1
+XSAVES                  : 0x0000000D, 0x00000001, EAX, 3
+
+PTWRITE                 : 0x00000014, 0x00000000, EBX, 4
+
+SVM                     : 0x80000001, 0xFFFFFFFF, ECX, 2
+LZCNT                   : 0x80000001, 0xFFFFFFFF, ECX, 5
+SSE4A                   : 0x80000001, 0xFFFFFFFF, ECX, 6
+PREFETCHW               : 0x80000001, 0xFFFFFFFF, ECX, 8
+FSC                     : 0x80000001, 0xFFFFFFFF, ECX, 11
+XOP                     : 0x80000001, 0xFFFFFFFF, ECX, 11
+LWP                     : 0x80000001, 0xFFFFFFFF, ECX, 15
+FMA4                    : 0x80000001, 0xFFFFFFFF, ECX, 16
+TBM                     : 0x80000001, 0xFFFFFFFF, ECX, 21
+INVLPGB                 : 0x80000001, 0xFFFFFFFF, EDX, 24 
+RDTSCP                  : 0x80000001, 0xFFFFFFFF, ECX, 27
+3DNOW                   : 0x80000001, 0xFFFFFFFF, EDX, 31
+
+WBNOINVD                : 0x80000008, 0xFFFFFFFF, EBX, 9
+RDPRU                   : 0x80000008, 0xFFFFFFFF, EBX, 4
+MCOMMIT                 : 0x80000008, 0xFFFFFFFF, EBX, 8
+
+SNP                     : 0x8000001F, 0xFFFFFFFF, EAX, 4

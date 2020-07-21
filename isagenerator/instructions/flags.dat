@@ -1,0 +1,95 @@
+# Flags access templates; many instructions have the same flag usage, so define them here.
+# Synthax: NAME: FLAG=modifier|FLAG=modifier|.... See the definitions for some examples.
+# Accepted flags: CF, PF, AF, ZF, TF, IF, OF, DF, AC, IOPL, RF, NT, VIF, VIP, VM
+# Accepted modifiers: t (tested), m (modified according to the result), 0 (cleared), 1 (set), u (undefined)
+
+# All airthmetic instructions: ADD, SUB, CMP, XADD
+ARITH       : CF=m|PF=m|AF=m|ZF=m|SF=m|OF=m
+
+# Airthmetic with carry instructions: ADC, SBB
+ARITHC      : CF=t|CF=m|PF=m|AF=m|ZF=m|SF=m|OF=m
+
+# Logic instructions: OR, AND, XOR, TEST
+LOGIC       : CF=0|PF=m|AF=u|ZF=m|SF=m|OF=0
+
+# Rotate instructions.
+ROT         : CF=m|OF=m
+
+# Rotate carry instructions.
+ROTC        : CF=t|CF=m|OF=m
+
+# Shift instructions.
+SHIFT       : CF=m|PF=m|AF=u|ZF=m|SF=m|OF=m
+
+# Shidft double instructions.
+SHIFTD      : CF=u|PF=m|AF=u|ZF=m|SF=m|OF=u
+
+# Multiply instructions.
+MUL         : CF=m|PF=u|AF=u|ZF=u|SF=u|OF=m
+
+# Division instructions.
+DIV         : CF=u|PF=u|AF=u|ZF=u|SF=u|OF=u
+
+# AAD/AAM
+AADM        : CF=u|PF=m|AF=u|ZF=m|SF=m|OF=u
+
+# AAA/AAS
+AAAS        : CF=m|PF=u|AF=t|AF=m|ZF=u|SF=u|OF=u
+
+# DAA/DAS
+DAAS        : CF=t|CF=m|PF=m|AF=t|AF=m|ZF=m|OF=u
+
+# I/O instructions.
+IO          : IOPL=t|VM=t
+
+# I/O string operations
+IOS         : DF=t|IOPL=t|VM=t
+
+# INT instructions.
+INT         : VM=t|VM=m|IF=m|NT=m|AC=m|RF=m|TF=m
+
+# Used by CMPS/SCAS and REP CMPS/REP SCAS
+CMPS        : CF=m|PF=m|AF=m|ZF=m|SF=m|OF=m|DF=t
+REPCMPS     : CF=m|PF=m|AF=m|ZF=t|ZF=m|SF=m|OF=m|DF=t
+
+# Used by PCMPESTRM, PCMPESTRI, PCMPISTRM, PCMPISTRI
+PCMPSTR     : CF=m|PF=0|AF=0|ZF=m|SF=m|OF=m
+
+# Used by VMX instructions.
+VMX         : CF=m|PF=0|AF=0|ZF=m|SF=0|OF=0
+
+# Used by BT, BTS, BTR, BTC instructions.
+BT          : CF=m|PF=u|AF=u|SF=u|OF=u
+
+# COMIS instructions.
+COMIS       : CF=m|PF=m|ZF=m
+
+# VPTEST instructions.
+VPTEST      : CF=m|PF=0|AF=0|ZF=m|SF=0|OF=0
+
+# UMWAIT, TPAUSE instructions.
+WAITPKG     : CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
+
+# ENQCMD instructions.
+ENQCMD      : CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
+
+# KORTEST instructions.
+KORTEST     : CF=m|PF=0|AF=0|ZF=m|SF=0|OF=0
+
+# Conditional codes.
+CO          : OF=t          
+CNO         : OF=t          
+CC          : CF=t          
+CNC         : CF=t          
+CZ          : ZF=t          
+CNZ         : ZF=t          
+CBE         : CF=t|ZF=t     
+CNBE        : CF=t|ZF=t     
+CS          : SF=t          
+CNS         : SF=t          
+CP          : PF=t          
+CNP         : PF=t          
+CL          : SF=t|OF=t     
+CNL         : SF=t|OF=t     
+CLE         : SF=t|ZF=t|OF=t
+CNLE        : SF=t|ZF=t|OF=t

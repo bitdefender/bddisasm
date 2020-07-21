@@ -1,0 +1,35 @@
+# Segment overrides
+es                   [0x26]
+cs                   [0x2E]  
+ss                   [0x36]
+ds                   [0x3E]
+fs                   [0x64]
+gs                   [0x65]
+
+# Operand size overrides
+size                 [0x66]
+
+# Address size override
+addr                 [0x67]
+
+# LOCK prefix
+LOCK                 [0xF0]
+
+# REP prefixes
+REPNZ                [0xF2]
+REPZ                 [0xF3]
+
+# Branch hints
+BHNT                 [0x2E]
+BHT                  [0x3E]
+BHALT                [0x64]
+
+# HLE prefixes
+XACQUIRE             [0xF2]
+XRELEASE             [0xF3]
+
+# BND prefix
+BND                  [0xF2]
+
+# CET prefix; improvised name until a better one is published.
+DNT                  [0x3E]

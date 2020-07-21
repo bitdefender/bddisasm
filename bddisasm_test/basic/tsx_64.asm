@@ -1,0 +1,8 @@
+    bits 64
+    
+    xbegin near $
+    xtest
+    xabort  0
+    xend
+    db 0xF2, 0x0F, 0x01, 0xE8   ; XSUSLDTRK
+    db 0xF2, 0x0F, 0x01, 0xE9   ; XRESLDTRK

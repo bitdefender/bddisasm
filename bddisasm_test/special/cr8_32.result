@@ -1,0 +1,28 @@
+0000000000000000 f00f20c0                        MOV       eax, cr8
+        DSIZE: 32, ASIZE: 32, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:          Control, RegSize:  4, RegId: 8, RegCount: 1
+
+0000000000000004 f00f22c0                        MOV       cr8, eax
+        DSIZE: 32, ASIZE: 32, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:          Control, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+

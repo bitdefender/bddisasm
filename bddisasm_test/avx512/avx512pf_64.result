@@ -1,0 +1,320 @@
+0000000000000000 62f2fd45c68ccb00100000          VGATHERPF0DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+000000000000000B 62b27d45c68cdb00100000          VGATHERPF0DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000016 62b2fd45c78cdb00100000          VGATHERPF0QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000021 62b27d45c78cdb00100000          VGATHERPF0QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+000000000000002C 62f2fd45c694cb00100000          VGATHERPF1DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000037 62b27d45c694db00100000          VGATHERPF1DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000042 62b2fd45c794db00100000          VGATHERPF1QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+000000000000004D 62b27d45c794db00100000          VGATHERPF1QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000058 62f2fd45c6accb00100000          VSCATTERPF0DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000063 62b27d45c6acdb00100000          VSCATTERPF0DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+000000000000006E 62b2fd45c7acdb00100000          VSCATTERPF0QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000079 62b27d45c7acdb00100000          VSCATTERPF0QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+0000000000000084 62f2fd45c6b4cb00100000          VSCATTERPF1DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+000000000000008F 62b27d45c6b4db00100000          VSCATTERPF1DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+000000000000009A 62b2fd45c7b4db00100000          VSCATTERPF1QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+
+00000000000000A5 62b27d45c7b4db00100000          VSCATTERPF1QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12NP
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
+                VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
+                Decorator: Mask k5
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
+

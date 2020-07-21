@@ -1,0 +1,229 @@
+0000000000000000 f2f0654b8184f7ffffff7fbdbdbdbd  XACQUIRE LOCK ADD qword ptr gs:[r15+r14*8+0x7fffffff], 0xbdbdbdbd
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: ARITH, CET tracked: no
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: yes
+                HLE: yes, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 5, Base: 15, Index: 14 * 8, Displacement: 0x000000007fffffff, 
+        Operand: 1, Acc:  R-,  Type:  Immediate, Size:  8, RawSize:  4, Encoding: I
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000000F 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000010 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000011 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000012 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000013 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000014 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000015 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000016 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000017 66                              db 0x66 (0x80000003)
+0000000000000018 f2f0654b8184f7ffffff7fbdbdbdbd  XACQUIRE LOCK ADD qword ptr gs:[r15+r14*8+0x7fffffff], 0xbdbdbdbd
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: ARITH, CET tracked: no
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: yes
+                HLE: yes, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 5, Base: 15, Index: 14 * 8, Displacement: 0x000000007fffffff, 
+        Operand: 1, Acc:  R-,  Type:  Immediate, Size:  8, RawSize:  4, Encoding: I
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000027 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000028 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000029 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000002A 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000002B 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000002C 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000002D 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000002E 90                              NOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: NOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+

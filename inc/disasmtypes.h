@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2020 Bitdefender
+ * SPDX-License-Identifier: Apache-2.0
+ */
+#ifndef _DISASM_TYPES_H_
+#define _DISASM_TYPES_H_
+
+#if defined(KERNEL_MODE) && defined(_MSC_VER)
+# include <ntddk.h>
+# include <Ntstrsafe.h>
+
+#else
+
+# include <stddef.h>
+# include <stdint.h>
+# include <stdbool.h>
+
+#endif
+
+#endif

@@ -1,0 +1,73 @@
+0000000000000000 660f38f807                      MOVDIR64B zmmword ptr [rax], zmmword ptr [rdi]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: MOVDIR64B, Ins cat: MOVDIR64B, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 28
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 64, RawSize: 64, Encoding: R, 
+                Segment: 0, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
+                Segment: 3, Base: 7, 
+
+0000000000000005 0f38f900                        MOVDIRI   dword ptr [rax], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: MOVDIRI, Ins cat: MOVDIRI, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 27
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000009 f20f38f800                      ENQCMD    [rax], zmmword ptr [rax]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: ENQCMD, Ins cat: ENQCMD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 29
+        FLAGS access
+                CF: 0, PF: 0, AF: 0, ZF: m, SF: 0, OF: 0, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: -1, RawSize: -1, Encoding: R, 
+                Segment: 0, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000000E f30f38f800                      ENQCMDS   [rax], zmmword ptr [rax]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: ENQCMD, Ins cat: ENQCMD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 29
+        FLAGS access
+                CF: 0, PF: 0, AF: 0, ZF: m, SF: 0, OF: 0, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: -1, RawSize: -1, Encoding: R, 
+                Segment: 0, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+

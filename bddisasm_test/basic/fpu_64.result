@@ -1,0 +1,2449 @@
+0000000000000000 dc03                            FADD      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000002 dc0b                            FMUL      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000004 dc13                            FCOM      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000006 dc1b                            FCOMP     st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000008 dc23                            FSUB      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000000A dc2b                            FSUBR     st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000000C dc33                            FDIV      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000000E dc3b                            FDIVR     st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000010 d8c7                            FADD      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000012 d8cf                            FMUL      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000014 d8d7                            FCOM      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000016 d8df                            FCOMP     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000018 d8e7                            FSUB      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000001A d8ef                            FSUBR     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000001C d8f7                            FDIV      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000001E d8ff                            FDIVR     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000020 dd03                            FLD       st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000022 dd13                            FST       qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000024 dd1b                            FSTP      qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000026 d923                            FLDENV    [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 28, RawSize: 28, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000028 d92b                            FLDCW     word ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000002A d933                            FNSTENV   [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 28, RawSize: 28, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000002C d93b                            FNSTCW    word ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000002E d9d0                            FNOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000030 d9e0                            FCHS
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000032 d9e1                            FABS
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000034 d9e4                            FTST
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000036 d9e5                            FXAM
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000038 d9e8                            FLD1
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000003A d9e9                            FLDL2T
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000003C d9ea                            FLDL2E
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000003E d9eb                            FLDPI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000040 d9ec                            FLDLG2
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000042 d9ed                            FLDLN2
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000044 d9ee                            FLDZ
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000046 d9f0                            F2XM1
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000048 d9f1                            FYL2X
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000004A d9f2                            FPTAN
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: m, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000004C d9f3                            FPATAN
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000004E d9f4                            FXTRACT
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000050 d9f5                            FPREM1
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000052 d9f6                            FDECSTP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000054 d9f7                            FINCSTP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000056 d9f8                            FPREM
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000058 d9f9                            FYL2XP1
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000005A d9fa                            FSQRT
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000005C d9fb                            FSINCOS
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: m, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000005E d9fc                            FRNDINT
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000060 d9fd                            FSCALE
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000062 d9fe                            FSIN
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: m, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000064 d9ff                            FCOS
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: m, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000066 d9c7                            FLD       st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000068 d9cf                            FXCH      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000006A da03                            FIADD     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000006C da0b                            FIMUL     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000006E da13                            FICOM     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000070 da1b                            FICOMP    st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000072 da23                            FISUB     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000074 da2b                            FISUBR    st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000076 da33                            FIDIV     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000078 da3b                            FIDIVR    st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000007A dae9                            FUCOMPP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000007C dac7                            FCMOVB    st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000007E dacf                            FCMOVE    st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                ZF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000080 dad7                            FCMOVBE   st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: t, ZF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000082 dadf                            FCMOVU    st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                PF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000084 df2b                            FILD      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000086 dd0b                            FISTTP    qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000088 db13                            FIST      dword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000008A df3b                            FISTP     qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000008C dd03                            FLD       st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000008E dd1b                            FSTP      qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000090 d9d0                            FNOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000092 dbe1                            FNDISI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000094 dbe2                            FNCLEX
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000096 dbe3                            FNINIT
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: 0, C1: 0, C2: 0, C3: 0, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 1, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000098 d9d0                            FNOP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000009A dbc7                            FCMOVNB   st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000009C dbcf                            FCMOVNE   st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                ZF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000009E dbd7                            FCMOVNBE  st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: t, ZF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+00000000000000A0 dbdf                            FCMOVNU   st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                PF: t, 
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+00000000000000A2 dbef                            FUCOMI    st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: m, PF: m, ZF: m, OF: 0, 
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+00000000000000A4 dbf7                            FCOMI     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: m, PF: m, ZF: m, OF: 0, 
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+00000000000000A6 dc03                            FADD      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000A8 dc0b                            FMUL      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000AA dc13                            FCOM      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000AC dc1b                            FCOMP     st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000AE dc23                            FSUB      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000B0 dc2b                            FSUBR     st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000B2 dc33                            FDIV      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000B4 dc3b                            FDIVR     st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000B6 d8c7                            FADD      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000B8 d8cf                            FMUL      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000BA d8d7                            FCOM      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000BC d8df                            FCOMP     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000BE d8ef                            FSUBR     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000C0 d8e7                            FSUB      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000C2 d8ff                            FDIVR     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000C4 d8f7                            FDIV      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000C6 dd03                            FLD       st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000C8 dd0b                            FISTTP    qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000CA dd13                            FST       qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000CC dd1b                            FSTP      qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000CE dd23                            FRSTOR    [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 108, RawSize: 108, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 0, RegCount: 1
+
+00000000000000D0 dd33                            FNSAVE    [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: 0, C1: 0, C2: 0, C3: 0, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 108, RawSize: 108, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000D2 dd3b                            FNSTSW    word ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000D4 ddc7                            FFREE     st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 1, RegCount: 1
+
+00000000000000D6 d9cf                            FXCH      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000D8 ddd7                            FST       st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000DA dddf                            FSTP      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000DC dde7                            FUCOM     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000DE ddef                            FUCOMP    st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000E0 da03                            FIADD     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000E2 da0b                            FIMUL     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000E4 da13                            FICOM     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000E6 da1b                            FICOMP    st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: m, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000E8 da23                            FISUB     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000EA da2b                            FISUBR    st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000EC da33                            FIDIV     st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000EE da3b                            FIDIVR    st0, dword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000F0 ded9                            FCOMPP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000F2 dec7                            FADDP     st7, st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000F4 decf                            FMULP     st7, st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000F6 d8df                            FCOMP     st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000F8 dee7                            FSUBRP    st7, st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000FA deef                            FSUBP     st7, st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000FC def7                            FDIVRP    st7, st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+00000000000000FE deff                            FDIVP     st7, st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000100 df2b                            FILD      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000102 dd0b                            FISTTP    qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000104 db13                            FIST      dword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000106 df3b                            FISTP     qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000108 df23                            FBLD      st0, tbyte ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 10, RawSize: 10, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000010A df2b                            FILD      st0, qword ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000010C df33                            FBSTP     tbyte ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 10, RawSize: 10, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000010E df3b                            FISTP     qword ptr [rbx], st0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000110 dfc7                            FFREEP    st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 1, RegCount: 1
+
+0000000000000112 d9cf                            FXCH      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: 0, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000114 dddf                            FSTP      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000116 dddf                            FSTP      st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: m, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000118 dfe0                            FNSTSW    ax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FPU flags access
+                C0: u, C1: u, C2: u, C3: u, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:  General Purpose, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000011A dfef                            FUCOMIP   st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: m, PF: m, ZF: m, OF: 0, 
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000011C dff7                            FCOMIP    st0, st7
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
+        FLAGS access
+                CF: m, PF: m, ZF: m, OF: 0, 
+        FPU flags access
+                C0: m, C1: 0, C2: m, C3: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+

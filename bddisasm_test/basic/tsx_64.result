@@ -1,0 +1,86 @@
+0000000000000000 c7f8faffffff                    XBEGIN    0x0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSX, Ins cat: COND_BR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  4, Encoding: D
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  --,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000006 0f01d6                          XTEST
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSX, Ins cat: LOGIC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 11
+        FLAGS access
+                CF: 0, PF: 0, AF: 0, ZF: m, SF: 0, OF: 0, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000009 c6f800                          XABORT    0x00
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSX, Ins cat: UNCOND_BR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: no, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000000C 0f01d5                          XEND
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSX, Ins cat: COND_BR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000000F f20f01e8                        XSUSLDTRK
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSXLDTRK, Ins cat: MISC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 16
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000013 f20f01e9                        XRESLDTRK
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSXLDTRK, Ins cat: MISC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 16
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+

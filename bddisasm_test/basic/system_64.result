@@ -1,0 +1,621 @@
+0000000000000000 0f22c0                          MOV       cr0, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000003 0f20c0                          MOV       rax, cr0
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000006 0f20d1                          MOV       rcx, cr2
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 2, RegCount: 1
+
+0000000000000009 0f22d1                          MOV       cr2, rcx
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 2, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+
+000000000000000C 410f22e7                        MOV       cr4, r15
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 4, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 15, RegCount: 1
+
+0000000000000010 410f20e7                        MOV       r15, cr4
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 15, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 4, RegCount: 1
+
+0000000000000014 450f22c0                        MOV       cr8, r8
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+
+0000000000000018 450f20c0                        MOV       r8, cr8
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:          Control, RegSize:  8, RegId: 8, RegCount: 1
+
+000000000000001C 0f23c0                          MOV       dr0, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:            Debug, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000001F 0f21c0                          MOV       rax, dr0
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:            Debug, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000022 410f23cf                        MOV       dr1, r15
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:            Debug, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 15, RegCount: 1
+
+0000000000000026 410f21cf                        MOV       r15, dr1
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 15, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:            Debug, RegSize:  8, RegId: 1, RegCount: 1
+
+000000000000002A 0f23f9                          MOV       dr7, rcx
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:            Debug, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+
+000000000000002D 0f21f9                          MOV       rcx, dr7
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:            Debug, RegSize:  8, RegId: 7, RegCount: 1
+
+0000000000000030 0f011b                          LIDT      tbyte ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 10, RawSize: 10, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:           System, RegSize: 10, RegId: 1, RegCount: 1
+
+0000000000000033 0f0113                          LGDT      tbyte ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 10, RawSize: 10, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:           System, RegSize: 10, RegId: 0, RegCount: 1
+
+0000000000000036 0f010b                          SIDT      tbyte ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 10, RawSize: 10, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:           System, RegSize: 10, RegId: 1, RegCount: 1
+
+0000000000000039 0f0103                          SGDT      tbyte ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 10, RawSize: 10, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:           System, RegSize: 10, RegId: 0, RegCount: 1
+
+000000000000003C 0f00d8                          LTR       ax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 3, RegCount: 1
+
+000000000000003F 66410f00cf                      STR       r15w
+        DSIZE: 16, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 15, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 3, RegCount: 1
+
+0000000000000044 0f0013                          LLDT      word ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+0000000000000047 0f0003                          SLDT      word ptr [rbx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 3, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
+
+000000000000004A 0f32                            RDMSR
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PENTIUMREAL, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x00000001, reg: edx, bit: 5
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: -1, RegCount: 1
+
+000000000000004C 0f30                            WRMSR
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PENTIUMREAL, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x00000001, reg: edx, bit: 5
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: -1, RegCount: 1
+
+000000000000004E 0f31                            RDTSC
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PENTIUMREAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 16, RegCount: 1
+
+0000000000000050 0f01f9                          RDTSCP
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RDTSCP, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 27
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 16, RegCount: 1
+        Operand: 4, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: -1073741565, RegCount: 1
+
+0000000000000053 0f00e8                          VERW      ax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        FLAGS access
+                ZF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000056 410f00e3                        VERR      r11w
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        FLAGS access
+                ZF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 11, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000005A 0f03c0                          LSL       eax, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        FLAGS access
+                ZF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000005D 450f02f5                        LAR       r14d, r13d
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        FLAGS access
+                ZF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 14, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 13, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000061 0f01f1                          LMSW      cx
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:          Control, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000064 660f01e4                        SMSW      sp
+        DSIZE: 16, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 4, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:          Control, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000068 0f0138                          INVLPG    byte ptr [rax]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I486REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, Address Generator: yes, 
+                Base: 0, 
+
+000000000000006B 66480f38824500                  INVPCID   rax, xmmword ptr [rbp+0x0]
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: INVPCID, Ins cat: MISC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 10
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, 
+                Segment: 2, Base: 5, Displacement: 0x0000000000000000, 
+
+0000000000000072 0f01ee                          RDPKRU
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PKU, Ins cat: MISC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:             PKRU, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000075 0f01ef                          WRPKRU
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PKU, Ins cat: MISC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:             PKRU, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000078 0f01ca                          CLAC
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SMAP, Ins cat: SMAP, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 20
+        FLAGS access
+                AC: 0, 
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000007B 0f01cb                          STAC
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SMAP, Ins cat: SMAP, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 20
+        FLAGS access
+                AC: 1, 
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000007E 0f06                            CLTS
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:          Control, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000080 0f08                            INVD
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I486REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000082 0f09                            WBINVD
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I486REAL, Ins cat: SYSTEM, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000084 0f01e8                          SERIALIZE
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SERIALIZE, Ins cat: MISC, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 14
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+

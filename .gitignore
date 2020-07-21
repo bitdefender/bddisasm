@@ -1,0 +1,65 @@
+syntax: glob
+# Object files
+*.o
+*.obj
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.sys
+
+#VS/WDK project files
+*.ilk
+*.pdb
+*.user
+*.mac
+*.res
+*.log
+build*_*_*.xml
+*.suo
+*.sdf
+*.opensdf
+*.tlog
+*.ipch
+vc*.idb
+/bin/
+/_intdir/
+*.aps
+*.vcxprojResolveAssemblyReference.cache
+*.manifest
+*.unsuccessfulbuild
+UpgradeLog*.XML
+_UpgradeReport_Files/*
+*.sbr
+
+#other files
+*.pyc
+.*.swp
+*.pyd
+pydis/pydis.egg-info/
+pydis/build/
+pydis/dist/
+.vs/
+
+disasmtool_lix/build
+.dir-locals.el
+.ccls-cache/
+compile_commands.json
+.gdb_history
+pydis/.eggs
+bdshemu_fuzz/out
+bdshemu_fuzz/shfuzz
+bdshemu_fuzz/out-32
+bdshemu_fuzz/out-64
+docs/build

@@ -1,0 +1,120 @@
+# Mnemonic           Explicit Operands            Implicit  Encoding                                        Fags, Prefixes, Set, Category, Class, RW map, Additional ops
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 0x00 - 0x0F
+VPERMQ               Vu{K}{z},Wu|B64,Ib           nil       [evex m:3 p:1 l:x w:1 0x00 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R
+VPERMPD              Vu{K}{z},Wu|B64,Ib           nil       [evex m:3 p:1 l:x w:1 0x01 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R
+VALIGND              Vn{K}{z},Hn,Wn|B32,Ib        nil       [evex m:3 p:1 l:x w:0 0x03 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R|R
+VALIGNQ              Vn{K}{z},Hn,Wn|B64,Ib        nil       [evex m:3 p:1 l:x w:1 0x03 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R|R
+VPERMILPS            Vn{K}{z},Wn|B32,Ib           nil       [evex m:3 p:1 l:x w:0 0x04 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
+VPERMILPD            Vn{K}{z},Wn|B64,Ib           nil       [evex m:3 p:1 l:x w:1 0x05 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
+VRNDSCALEPS          Vn{K}{z},Wn|B32{sae},Ib      nil       [evex m:3 p:1 l:x w:0 0x08 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VRNDSCALEPD          Vn{K}{z},Wn|B64{sae},Ib      nil       [evex m:3 p:1 l:x w:1 0x09 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VRNDSCALESS          Vdq{K}{z},Hdq,Wss{sae},Ib    nil       [evex m:3 p:1 l:i w:0 0x0A /r ib]          s:AVX512F, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VRNDSCALESD          Vdq{K}{z},Hdq,Wsd{sae},Ib    nil       [evex m:3 p:1 l:i w:1 0x0B /r ib]          s:AVX512F, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VPALIGNR             Vn{K}{z},Hn,Wn,Ib            nil       [evex m:3 p:1 l:x w:i 0x0F /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R|R|R
+
+# 0x10 - 0x1F
+VPEXTRB              Mb,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x14 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VPEXTRB              Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x14 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VPEXTRW              Mw,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x15 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VPEXTRW              Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x15 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VPEXTRD              Ed,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:0 0x16 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VPEXTRQ              Eq,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:1 0x16 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VEXTRACTPS           Md,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x17 /r:mem ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VEXTRACTPS           Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x17 /r:reg ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VINSERTF32X4         Vu{K}{z},Hu,Wdq,Ib           nil       [evex m:3 p:1 l:x w:0 0x18 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
+VINSERTF64X2         Vu{K}{z},Hu,Wdq,Ib           nil       [evex m:3 p:1 l:x w:1 0x18 /r ib]          s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R|R
+VEXTRACTF32X4        Wdq{K}{z},Vu,Ib              nil       [evex m:3 p:1 l:x w:0 0x19 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R
+VEXTRACTF64X2        Wdq{K}{z},Vu,Ib              nil       [evex m:3 p:1 l:x w:1 0x19 /r ib]          s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R
+VINSERTF32X8         Voq{K}{z},Hoq,Wqq,Ib         nil       [evex m:3 p:1 l:2 w:0 0x1A /r ib]          s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R|R
+VINSERTF64X4         Voq{K}{z},Hoq,Wqq,Ib         nil       [evex m:3 p:1 l:2 w:1 0x1A /r ib]          s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R|R
+VEXTRACTF32X8        Wqq{K}{z},Voq,Ib             nil       [evex m:3 p:1 l:2 w:0 0x1B /r ib]          s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R
+VEXTRACTF64X4        Wqq{K}{z},Voq,Ib             nil       [evex m:3 p:1 l:2 w:1 0x1B /r ib]          s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R
+VCVTPS2PH            Wh{K}{z},Vn{sae},Ib          nil       [evex m:3 p:1 l:x w:0 0x1D /r ib]          s:AVX512F, t:CONVERT, l:hvm, e:E11, w:W|R|R|R
+VPCMPUD              rKq{K},Hn,Wn|B32,Ib          nil       [evex m:3 p:1 l:x w:0 0x1E /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
+VPCMPUQ              rKq{K},Hn,Wn|B64,Ib          nil       [evex m:3 p:1 l:x w:1 0x1E /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
+VPCMPD               rKq{K},Hn,Wn|B32,Ib          nil       [evex m:3 p:1 l:x w:0 0x1F /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
+VPCMPQ               rKq{K},Hn,Wn|B64,Ib          nil       [evex m:3 p:1 l:x w:1 0x1F /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
+
+# 0x20 - 0x2F
+VPINSRB              Vdq,Hdq,Mb,Ib                nil       [evex m:3 p:1 l:0 w:i 0x20 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VPINSRB              Vdq,Hdq,Rd,Ib                nil       [evex m:3 p:1 l:0 w:i 0x20 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VINSERTPS            Vdq,Hdq,Md,Ib                nil       [evex m:3 p:1 l:0 w:i 0x21 /r:mem ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VINSERTPS            Vdq,Hdq,Udq,Ib               nil       [evex m:3 p:1 l:0 w:i 0x21 /r:reg ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VPINSRD              Vdq,Hdq,Ed,Ib                nil       [evex m:3 p:1 l:0 w:0 0x22 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VPINSRQ              Vdq,Hdq,Eq,Ib                nil       [evex m:3 p:1 l:0 w:1 0x22 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VSHUFF32X4           Vu{K}{z},Hu,Wu|B32,Ib        nil       [evex m:3 p:1 l:x w:0 0x23 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VSHUFF64X2           Vu{K}{z},Hu,Wu|B64,Ib        nil       [evex m:3 p:1 l:x w:1 0x23 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VPTERNLOGD           Vn{K}{z},Hn,Wn|B32,Ib        nil       [evex m:3 p:1 l:x w:0 0x25 /r ib]          s:AVX512F, t:LOGICAL, l:fv, e:E4, w:RW|R|R|R|R
+VPTERNLOGQ           Vn{K}{z},Hn,Wn|B64,Ib        nil       [evex m:3 p:1 l:x w:1 0x25 /r ib]          s:AVX512F, t:LOGICAL, l:fv, e:E4, w:RW|R|R|R|R
+VGETMANTPS           Vn{K}{z},Wn|B32{sae},Ib      nil       [evex m:3 p:1 l:x w:0 0x26 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VGETMANTPD           Vn{K}{z},Wn|B64{sae},Ib      nil       [evex m:3 p:1 l:x w:1 0x26 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VGETMANTSS           Vdq{K}{z},Hdq,Wss{sae},Ib    nil       [evex m:3 p:1 l:i w:0 0x27 /r ib]          s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R
+VGETMANTSD           Vdq{K}{z},Hdq,Wsd{sae},Ib    nil       [evex m:3 p:1 l:i w:1 0x27 /r ib]          s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R
+
+# 0x30 - 0x3F
+VINSERTI32X4         Vu{K}{z},Hu,Wdq,Ib           nil       [evex m:3 p:1 l:x w:0 0x38 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
+VINSERTI64X2         Vu{K}{z},Hu,Wdq,Ib           nil       [evex m:3 p:1 l:x w:1 0x38 /r ib]          s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R|R
+VEXTRACTI32X4        Wdq{K}{z},Vu,Ib              nil       [evex m:3 p:1 l:x w:0 0x39 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R
+VEXTRACTI64X2        Wdq{K}{z},Vu,Ib              nil       [evex m:3 p:1 l:x w:1 0x39 /r ib]          s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R
+VINSERTI32X8         Voq{K}{z},Hoq,Wqq,Ib         nil       [evex m:3 p:1 l:2 w:0 0x3A /r ib]          s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R|R
+VINSERTI64X4         Voq{K}{z},Hoq,Wqq,Ib         nil       [evex m:3 p:1 l:2 w:1 0x3A /r ib]          s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R|R
+VEXTRACTI32X8        Wqq{K}{z},Voq,Ib             nil       [evex m:3 p:1 l:2 w:0 0x3B /r ib]          s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R
+VEXTRACTI64X4        Wqq{K}{z},Voq,Ib             nil       [evex m:3 p:1 l:2 w:1 0x3B /r ib]          s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R
+VPCMPUB              rKq{K},Hn,Wn,Ib              nil       [evex m:3 p:1 l:x w:0 0x3E /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4nb, w:W|R|R|R|R
+VPCMPUW              rKq{K},Hn,Wn,Ib              nil       [evex m:3 p:1 l:x w:1 0x3E /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4nb, w:W|R|R|R|R
+VPCMPB               rKq{K},Hn,Wn,Ib              nil       [evex m:3 p:1 l:x w:0 0x3F /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4nb, w:W|R|R|R|R
+VPCMPW               rKq{K},Hn,Wn,Ib              nil       [evex m:3 p:1 l:x w:1 0x3F /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4nb, w:W|R|R|R|R
+
+# 0x40 - 0x4F
+VDBPSADBW            Vn{K}{z},Hn,Wn,Ib            nil       [evex m:3 p:1 l:x w:0 0x42 /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R|R|R
+VSHUFI32X4           Vu{K}{z},Hu,Wu|B32,Ib        nil       [evex m:3 p:1 l:x w:0 0x43 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VSHUFI64X2           Vu{K}{z},Hu,Wu|B64,Ib        nil       [evex m:3 p:1 l:x w:1 0x43 /r ib]          s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VPCLMULQDQ           Vn,Hn,Wn,Ib                  nil       [evex m:3 p:1 l:x w:i 0x44 /r ib]          s:VPCLMULQDQ, t:VPCLMULQDQ, l:fvm, e:E4NF, w:W|R|R|R
+
+# 0x50 - 0x5F
+VRANGEPS             Vn{K}{z},Hn,Wn|B32{sae},Ib   nil       [evex m:3 p:1 l:x w:0 0x50 /r ib]          s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R|R
+VRANGEPD             Vn{K}{z},Hn,Wn|B64{sae},Ib   nil       [evex m:3 p:1 l:x w:1 0x50 /r ib]          s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R|R
+VRANGESS             Vdq{K}{z},Hdq,Wss{sae},Ib    nil       [evex m:3 p:1 l:i w:0 0x51 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VRANGESD             Vdq{K}{z},Hdq,Wsd{sae},Ib    nil       [evex m:3 p:1 l:i w:1 0x51 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VFIXUPIMMPS          Vn{K}{z},Hn,Wn|B32{sae},Ib   nil       [evex m:3 p:1 l:x w:0 0x54 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E2, w:RW|R|R|R|R
+VFIXUPIMMPD          Vn{K}{z},Hn,Wn|B64{sae},Ib   nil       [evex m:3 p:1 l:x w:1 0x54 /r ib]          s:AVX512F, t:AVX512, l:fv, e:E2, w:RW|R|R|R|R
+VFIXUPIMMSS          Vdq{K}{z},Hdq,Wss{sae},Ib    nil       [evex m:3 p:1 l:i w:0 0x55 /r ib]          s:AVX512F, t:AVX512, l:t1s, e:E3, w:RW|R|R|R|R
+VFIXUPIMMSD          Vdq{K}{z},Hdq,Wsd{sae},Ib    nil       [evex m:3 p:1 l:i w:1 0x55 /r ib]          s:AVX512F, t:AVX512, l:t1s, e:E3, w:RW|R|R|R|R
+VREDUCEPS            Vn{K}{z},Wn|B32{sae},Ib      nil       [evex m:3 p:1 l:x w:0 0x56 /r ib]          s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VREDUCEPD            Vn{K}{z},Wn|B64{sae},Ib      nil       [evex m:3 p:1 l:x w:1 0x56 /r ib]          s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VREDUCESS            Vdq{K}{z},Hdq,Wss{sae},Ib    nil       [evex m:3 p:1 l:i w:0 0x57 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VREDUCESD            Vdq{K}{z},Hdq,Wsd{sae},Ib    nil       [evex m:3 p:1 l:i w:1 0x57 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+
+# 0x60 - 0x6F
+VFPCLASSPS           rKq{K},Wn|B32,Ib             nil       [evex m:3 p:1 l:x w:0 0x66 /r ib]          s:AVX512DQ, t:AVX512, l:fv, e:E4, w:W|R|R|R
+VFPCLASSPD           rKq{K},Wn|B64,Ib             nil       [evex m:3 p:1 l:x w:1 0x66 /r ib]          s:AVX512DQ, t:AVX512, l:fv, e:E4, w:W|R|R|R
+VFPCLASSSS           rKq{K},Wss,Ib                nil       [evex m:3 p:1 l:i w:0 0x67 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E6, w:W|R|R|R
+VFPCLASSSD           rKq{K},Wsd,Ib                nil       [evex m:3 p:1 l:i w:1 0x67 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E6, w:W|R|R|R
+
+# 0x70 - 0x7F
+VPSHLDW              Vn{K}{z},Hn,Wn,Ib            nil       [evex m:3 p:1 l:x w:1 0x70 /r ib]          s:AVX512VBMI2, t:AVX512VBMI, l:fvm, e:E4, w:RW|R|R|R|R
+VPSHLDD              Vn{K}{z},Hn,Wn|B32,Ib        nil       [evex m:3 p:1 l:x w:0 0x71 /r ib]          s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
+VPSHLDQ              Vn{K}{z},Hn,Wn|B64,Ib        nil       [evex m:3 p:1 l:x w:1 0x71 /r ib]          s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
+VPSHRDW              Vn{K}{z},Hn,Wn,Ib            nil       [evex m:3 p:1 l:x w:1 0x72 /r ib]          s:AVX512VBMI2, t:AVX512VBMI, l:fvm, e:E4, w:RW|R|R|R|R
+VPSHRDD              Vn{K}{z},Hn,Wn|B32,Ib        nil       [evex m:3 p:1 l:x w:0 0x73 /r ib]          s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
+VPSHRDQ              Vn{K}{z},Hn,Wn|B64,Ib        nil       [evex m:3 p:1 l:x w:1 0x73 /r ib]          s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
+
+
+# 0x80 - 0x8F
+
+# 0x90 - 0x9F
+
+# 0xA0 - 0xAF
+
+# 0xB0 - 0xBF
+
+# 0xC0 - 0xCF
+VGF2P8AFFINEQB      Vn{K}{z},Hn,Wn|B64,Ib         nil       [evex m:3 p:1 l:x w:1 0xCE /r ib]          s:GFNI, t:GFNI, l:fv, e:E4NF, w:W|R|R|R|R
+VGF2P8AFFINEINVQB   Vn{K}{z},Hn,Wn|B64,Ib         nil       [evex m:3 p:1 l:x w:1 0xCF /r ib]          s:GFNI, t:GFNI, l:fv, e:E4NF, w:W|R|R|R|R
+
+# 0xD0 - 0xDF
+
+# 0xE0 - 0xEF
+
+# 0xF0 - 0xFF

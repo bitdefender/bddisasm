@@ -1,0 +1,122 @@
+0000000000000000 0f01d8                          VMRUN
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000003 0f01d9                          VMMCALL
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000006 f30f01d9                        VMGEXIT
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+000000000000000A 0f01da                          VMLOAD
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000000D 0f01db                          VMSAVE
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000010 0f01dc                          STGI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000013 0f01dd                          CLGI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000016 0f01de                          SKINIT
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000019 0f01df                          INVLPGA
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: yes, Compat: no, Long: yes
+                SMM: no, SGX: no, TSX: no, VMXRoot: yes, VMXNonRoot: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+
