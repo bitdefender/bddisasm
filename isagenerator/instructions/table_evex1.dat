@@ -1,4 +1,4 @@
-# Mnemonic          Explicit Operands             Implicit  Encoding                                        Flags, Prefixes, Set, Category, Class, RW map, Additional ops
+# Mnemonic          Explicit Operands             Implicit  Encoding                                   Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x10 - 0x1F
 VMOVUPS              Vn{K}{z},Wn                  nil       [evex m:1 p:0 l:x w:0 0x10 /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E4nb, w:W|R|R

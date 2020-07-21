@@ -1,4 +1,4 @@
-# Mnemonic          Explicit Operands             Implicit  Encoding                                        Fags, Prefixes, Set, Category, Class, RW map, Additional ops
+# Mnemonic          Explicit Operands             Implicit  Encoding                                   Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x00 - 0x0F
 VPSHUFB              Vn{K}{z},Hn,Wn               nil       [evex m:2 p:1 l:x w:i 0x00 /r]             s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R|R

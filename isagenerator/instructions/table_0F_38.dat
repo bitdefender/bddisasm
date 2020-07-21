@@ -1,4 +1,4 @@
-# Mnemonic          Explicit Operands     Implicit          Encoding                                Fags, Prefixes, Set, Category, Class, RW map, Additional ops
+# Mnemonic          Explicit Operands     Implicit          Encoding                                Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x00 - 0x0F
 PSHUFB              Pq,Qq                 nil               [         NP 0x0F 0x38 0x00 /r]         s:SSSE3, t:MMX, w:RW|R

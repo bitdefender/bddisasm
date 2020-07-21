@@ -13,7 +13,7 @@ Welcome to bddisasm's documentation!
 About
 =====
 
-The Bitdefender x86 disassembler is a complete x86/x64 instruction decoder, 
+The Bitdefender x86 disassembler (https://github.com/bitdefender/bddisasm) is a complete x86/x64 instruction decoder, 
 capable of providing full information about each decoded instruction. The
 library is written entirely in C, with some Python 3 code for the instruction
 tables generation. It has no external dependencies, and it is thread safe

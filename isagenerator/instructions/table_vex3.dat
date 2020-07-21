@@ -1,4 +1,4 @@
-# Mnemonic          Explicit Operands     Implicit Operands Encoding                                Fags, Prefixes, Set, Category, Class, RW map, Additional ops
+# Mnemonic          Explicit Operands     Implicit Operands Encoding                                Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x00 - 0x0F
 VPERMQ              Vqq,Wqq,Ib            nil               [vex m:3 p:1 l:1 w:1 0x00 /r ib]        s:AVX2, t:AVX2, w:W|R|R, e:4

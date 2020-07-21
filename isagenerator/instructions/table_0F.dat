@@ -1,4 +1,4 @@
-# Mnemonic     Explicit      Implicit                  Encoding                                Fags, Prefixes, Set, Category, Class, RW map, Additional ops
+# Mnemonic     Explicit      Implicit                  Encoding                                Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x00 - 0x0F
 SLDT           Mw            LDTR                      [            0x0F 0x00 /0:mem]          s:I286PROT, t:SYSTEM, w:W|R, m:NOREAL|NOSGX
