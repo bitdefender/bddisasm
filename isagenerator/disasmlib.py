@@ -270,13 +270,14 @@ valid_impops = {# register      size
     'X87STATUS': ('X87STATUS',  'w'),   # X87 status register.
     'MXCSR'    : ('MXCSR',      'd'),   # MXCSR register.
     'PKRU'     : ('PKRU',       'd'),   # PKRU register.
-    'SSP'      : ('SSP',        'y'),   # Shadow stack pointer.
+    'SSP'      : ('SSP',        'yf'),  # Shadow stack pointer.
 
     # Implicit memory operands.
     'pBXALb'   : ('pBXAL',      'b'),   # Implicit [RBX + AL], as used by XLAT.
     'pDIq'     : ('pDI',        'q'),   # Implicit qword [RDI].
     'pDIdq'    : ('pDI',        'dq'),  # Implicit xmmword [RDI].
-    'SHS'      : ('SHS',        'v'),   # Shadow stack access, 1 word.
+    'SHS'      : ('SHS',        'q'),   # Shadow stack access, 1 qword (use by CET instructions).
+    'SHS1'     : ('SHS',        'v'),   # Shadow stack access, 1 word.
     'SHS2'     : ('SHS',        'v2'),  # Shadow stack, 2 words.
     'SHS3'     : ('SHS',        'v3'),  # Shadow stack, 3 words.
     'SHS4'     : ('SHS',        'v4'),  # Shadow stack, 4 words.

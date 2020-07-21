@@ -1583,12 +1583,13 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_CLRSSBSY, ND_CAT_CET, ND_SET_CET, 75, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
         0,
+        0|REG_RFLAG_CF,
         0,
-        0,
-        0,
+        0|REG_RFLAG_ZF|REG_RFLAG_PF|REG_RFLAG_AF|REG_RFLAG_OF|REG_RFLAG_SF,
         OP(ND_OPT_M, ND_OPS_q, ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:118 Instruction:"CLTS" Encoding:"0x0F 0x06"/""
@@ -5590,8 +5591,8 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         OP(ND_OPT_R, ND_OPS_d, ND_OPF_R, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
-        OP(ND_OPT_SSP, ND_OPS_y, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHS, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:413 Instruction:"INCSSPQ Rq" Encoding:"0xF3 rexw 0x0F 0xAE /5:reg"/"M"
@@ -5604,8 +5605,8 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         OP(ND_OPT_R, ND_OPS_q, ND_OPF_R, 0, 0), 
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
-        OP(ND_OPT_SSP, ND_OPS_y, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHS, ND_OPS_v2, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:414 Instruction:"INSB Yb,DX" Encoding:"0x6C"/""
@@ -15126,7 +15127,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         OP(ND_OPT_R, ND_OPS_d, ND_OPF_W, 0, 0), 
-        OP(ND_OPT_SSP, ND_OPS_y, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1127 Instruction:"RDSSPQ Rq" Encoding:"a0xF3 rexw 0x0F 0x1E /1:reg"/"M"
@@ -15139,7 +15140,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         OP(ND_OPT_R, ND_OPS_q, ND_OPF_W, 0, 0), 
-        OP(ND_OPT_SSP, ND_OPS_y, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:1128 Instruction:"RDTSC" Encoding:"0x0F 0x31"/""
@@ -15569,12 +15570,13 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_RSTORSSP, ND_CAT_CET, ND_SET_CET, 680, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
         0,
+        0|REG_RFLAG_CF,
         0,
-        0,
-        0,
+        0|REG_RFLAG_ZF|REG_RFLAG_PF|REG_RFLAG_AF|REG_RFLAG_OF|REG_RFLAG_SF,
         OP(ND_OPT_M, ND_OPS_q, ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:1159 Instruction:"RSTS Ms" Encoding:"cyrix 0x0F 0x7D /r:mem"/"M"
@@ -15802,12 +15804,12 @@ const ND_INSTRUCTION gInstructions[2554] =
         ND_INS_SAVEPREVSSP, ND_CAT_CET, ND_SET_CET, 687, 
         ND_MOD_ANY, 
         0, 0, ND_OPS_CNT(0, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0|REG_RFLAG_CF,
         0,
         0,
         0,
-        0,
-        OP(ND_OPT_MEM_SHS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
-        OP(ND_OPT_SSP, ND_OPS_y, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_MEM_SHS, ND_OPS_q, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:1176 Instruction:"SBB Eb,Gb" Encoding:"0x18 /r"/"MR"
@@ -16284,11 +16286,13 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_SETSSBSY, ND_CAT_CET, ND_SET_CET, 709, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(0, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
         0,
         0,
         0,
         0,
+        OP(ND_OPT_MEM_SHS, ND_OPS_q, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:1211 Instruction:"SETZ Eb" Encoding:"0x0F 0x94 /r"/"M"
