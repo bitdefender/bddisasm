@@ -116,7 +116,8 @@ const char* set_to_string(
     case ND_SET_AVX512VPOPCNTDQ:       return "AVX512VPOPCNTDQ";
     case ND_SET_BMI1:                  return "BMI1";
     case ND_SET_BMI2:                  return "BMI2";
-    case ND_SET_CET:                   return "CET";
+    case ND_SET_CET_SS:                return "CET_SS";
+    case ND_SET_CET_IBT:               return "CET_IBT";
     case ND_SET_CLDEMOTE:              return "CLDEMOTE";
     case ND_SET_CLFSH:                 return "CLFSH";
     case ND_SET_CLFSHOPT:              return "CLFSHOPT";

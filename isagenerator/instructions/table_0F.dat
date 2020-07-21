@@ -18,7 +18,7 @@ SMSW           Mw            CR0                       [            0x0F 0x01 /4
 SMSW           Rv            CR0                       [            0x0F 0x01 /4:reg]          s:I286REAL, t:SYSTEM, w:W|R, m:NOSGX
 LMSW           Ew            CR0                       [            0x0F 0x01 /6]              s:I286REAL, t:SYSTEM, w:R|W, a:SERIAL, m:KERNEL
 INVLPG         Mb            nil                       [            0x0F 0x01 /7:mem]          s:I486REAL, t:SYSTEM, w:R, a:AG, m:KERNEL|NOV86
-RSTORSSP       Mq            SSP                       [       0xF3 0x0F 0x01 /5:mem]          s:CET, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
+RSTORSSP       Mq            SSP                       [       0xF3 0x0F 0x01 /5:mem]          s:CET_SS, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
 ENCLV          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC0]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:KERNEL|NOSMM|NOTSX|VMX
 VMCALL         nil           nil                       [            0x0F 0x01 /0xC1]           s:VTX, t:VTX, m:VMX|NOSGX
 VMLAUNCH       nil           Fv                        [            0x0F 0x01 /0xC2]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
@@ -39,7 +39,7 @@ ENCLU          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0
 SERIALIZE      nil           nil                       [         NP 0x0F 0x01 /0xE8]           s:SERIALIZE, t:MISC
 XSUSLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE8]           s:TSXLDTRK, t:MISC
 XRESLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE9]           s:TSXLDTRK, t:MISC
-SAVEPREVSSP    nil           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET, t:CET, w:RW|R, f:CF=t
+SAVEPREVSSP    nil           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET_SS, t:CET, w:RW|R, f:CF=t
 RDPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEE]           s:PKU, t:MISC, w:W|W|R|R
 WRPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEF]           s:PKU, t:MISC, w:R|R|R|W
 SWAPGS         nil           GSBASE,KGSBASE            [            0x0F 0x01 /0xF8]           s:LONGMODE, t:SYSTEM, w:RW|RW, m:KERNEL|O64
@@ -59,7 +59,7 @@ STGI           nil           nil                       [            0x0F 0x01 /0
 CLGI           nil           nil                       [            0x0F 0x01 /0xDD]           s:SVM, t:SYSTEM, m:VMXROOT
 SKINIT         nil           EAX                       [            0x0F 0x01 /0xDE]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
 INVLPGA        nil           rAX,ECX                   [            0x0F 0x01 /0xDF]           s:SVM, t:SYSTEM, w:R|R, m:VMXROOT
-SETSSBSY       nil           SHS0,SSP                  [       0xF3 0x0F 0x01 /0xE8]           s:CET, t:CET, a:SHS, w:RW|RW
+SETSSBSY       nil           SHS0,SSP                  [       0xF3 0x0F 0x01 /0xE8]           s:CET_SS, t:CET, a:SHS, w:RW|RW
 INVLPGB        nil           rAX,ECX,EDX               [            0x0F 0x01 /0xFE]           s:INVLPGB, t:SYSTEM, w:R|R|R, m:NOREAL|KERNEL
 RMPADJUST      nil           RAX,RCX,RDX,Fv            [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
 RMPUPDATE      nil           RAX,RCX,Fv                [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
@@ -80,21 +80,21 @@ WBINVD         nil           nil                       [         NP 0x0F 0x09]  
 WBNOINVD       nil           nil                       [       0xF3 0x0F 0x09]                 s:WBNOINVD, t:WBNOINVD, m:KERNEL|NOV86
 CL1INVMB       nil           nil                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM
 UD2            nil           nil                       [            0x0F 0x0B]                 s:PPRO, t:MISC
-PREFETCHE      Mcl           nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHE      Mb            nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCHW      Mcl           nil                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHW      Mb            nil                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /1:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCHWT1    Mcl           nil                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHWT1    Mb            nil                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /2:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCHM      Mcl           nil                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHM      Mb            nil                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /3:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mcl           nil                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /4:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mcl           nil                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /5:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mcl           nil                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /6:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mcl           nil                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /7:reg]          s:PPRO, t:NOP, w:R|R
 
 FEMMS          nil           nil                       [            0x0F 0x0E]                 s:3DNOW, t:MMX, c:FEMMS
@@ -124,13 +124,13 @@ MOVHPD         Vq,Mq         nil                       [       0x66 0x0F 0x16 /r
 MOVSHDUP       Vx,Wx         nil                       [       0xF3 0x0F 0x16 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
 MOVHPS         Mq,Vq         nil                       [         NP 0x0F 0x17 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
 MOVHPD         Mq,Vq         nil                       [       0x66 0x0F 0x17 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
-PREFETCHNTA    Mcl           nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHNTA    Mb            nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:R
-PREFETCHT0     Mcl           nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHT0     Mb            nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:R
-PREFETCHT1     Mcl           nil                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHT1     Mb            nil                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:R
-PREFETCHT2     Mcl           nil                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHT2     Mb            nil                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:R
@@ -154,7 +154,7 @@ BNDMK          rBl,My        nil                       [       0xF3 0x0F 0x1B /r
 NOP            Gv,Ev         nil                       [       0xF3 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:R|R
 BNDCN          rBl,Ey        nil                       [       0xF2 0x0F 0x1B /r]              s:MPX, t:MPX, w:R|R, a:AG|F64
 
-CLDEMOTE       Mcl           nil                       [         NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:W
+CLDEMOTE       Mb            nil                       [         NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:W
 NOP            Ev,Gv         nil                       [       0x66 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Ev,Gv         nil                       [       0xF3 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Ev,Gv         nil                       [       0xF2 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
@@ -172,8 +172,8 @@ NOP            Mv,Gv         nil                       [            0x0F 0x1E /r
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /0:reg]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Rv,Gv         nil                       [       rexw 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:R|R
-RDSSPD         Rd            SSP                       [      a0xF3 0x0F 0x1E /1:reg]          s:CET, t:CET, c:RSSSP, w:W|R
-RDSSPQ         Rq            SSP                       [ a0xF3 rexw 0x0F 0x1E /1:reg]          s:CET, t:CET, c:RSSSP, w:W|R
+RDSSPD         Rd            SSP                       [      a0xF3 0x0F 0x1E /1:reg]          s:CET_SS, t:CET, c:RSSSP, w:W|R
+RDSSPQ         Rq            SSP                       [ a0xF3 rexw 0x0F 0x1E /1:reg]          s:CET_SS, t:CET, c:RSSSP, w:W|R
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /2:reg]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /3:reg]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /4:reg]          s:PPRO, t:WIDENOP, w:R|R
@@ -187,8 +187,8 @@ NOP            Rv,Gv         nil                       [            0x0F 0x1E /0
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFD]           s:PPRO, t:WIDENOP, w:R|R
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFE]           s:PPRO, t:WIDENOP, w:R|R
 NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFF]           s:PPRO, t:WIDENOP, w:R|R
-ENDBR64        nil           nil                       [      a0xF3 0x0F 0x1E /0xFA]           s:CET, t:CET, c:ENDBR
-ENDBR32        nil           nil                       [      a0xF3 0x0F 0x1E /0xFB]           s:CET, t:CET, c:ENDBR
+ENDBR64        nil           nil                       [      a0xF3 0x0F 0x1E /0xFA]           s:CET_IBT, t:CET, c:ENDBR
+ENDBR32        nil           nil                       [      a0xF3 0x0F 0x1E /0xFB]           s:CET_IBT, t:CET, c:ENDBR
 
 NOP            Ev,Gv         nil                       [            0x0F 0x1F /r]              s:PPRO, t:WIDENOP, w:R|R
 
@@ -474,10 +474,10 @@ XRSTOR         M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xAE /5
 XRSTOR64       M?            EDX,EAX,XCR0,BANK         [    rexw NP 0x0F 0xAE /5:mem]          s:XSAVE, t:XSAVE, c:XRSTOR, w:R|R|R|R|W
 XSAVEOPT       M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xAE /6:mem]          s:XSAVE, t:XSAVE, c:XSAVEOPT, w:W|R|R|R|R
 XSAVEOPT64     M?            EDX,EAX,XCR0,BANK         [    rexw NP 0x0F 0xAE /6:mem]          s:XSAVE, t:XSAVE, c:XSAVEOPT, w:W|R|R|R|R
-CLWB           Mcl           nil                       [       0x66 0x0F 0xAE /6:mem]          s:CLWB, t:MISC, w:W
-CLRSSBSY       Mq            SSP                       [       0xF3 0x0F 0xAE /6:mem]          s:CET, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
-CLFLUSH        Mcl           nil                       [         NP 0x0F 0xAE /7:mem]          s:CLFSH, t:MISC, w:R
-CLFLUSHOPT     Mcl           nil                       [       0x66 0x0F 0xAE /7:mem]          s:CLFSHOPT, t:MISC, w:R
+CLWB           Mb            nil                       [       0x66 0x0F 0xAE /6:mem]          s:CLWB, t:MISC, w:W
+CLRSSBSY       Mq            SSP                       [       0xF3 0x0F 0xAE /6:mem]          s:CET_SS, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
+CLFLUSH        Mb            nil                       [         NP 0x0F 0xAE /7:mem]          s:CLFSH, t:MISC, w:R
+CLFLUSHOPT     Mb            nil                       [       0x66 0x0F 0xAE /7:mem]          s:CLFSHOPT, t:MISC, w:R
 
 PTWRITE        Ey            nil                       [       0xF3 0x0F 0xAE /4]              s:PTWRITE, t:PTWRITE, w:R, a:NO66
 
@@ -485,8 +485,8 @@ RDFSBASE       Ry            FSBASE                    [   o64 0xF3 0x0F 0xAE /0
 RDGSBASE       Ry            GSBASE                    [   o64 0xF3 0x0F 0xAE /1:reg]          s:RDWRFSGS, t:RDWRFSGS, w:W|R, m:O64
 WRFSBASE       Ry            FSBASE                    [   o64 0xF3 0x0F 0xAE /2:reg]          s:RDWRFSGS, t:RDWRFSGS, w:R|W, m:O64
 WRGSBASE       Ry            GSBASE                    [   o64 0xF3 0x0F 0xAE /3:reg]          s:RDWRFSGS, t:RDWRFSGS, w:R|W, m:O64
-INCSSPD        Rd            SHSI,SSP                  [       0xF3 0x0F 0xAE /5:reg]          s:CET, t:CET, c:INCSSP, w:R|R|RW
-INCSSPQ        Rq            SHSI,SSP                  [  0xF3 rexw 0x0F 0xAE /5:reg]          s:CET, t:CET, c:INCSSP, w:R|R|RW
+INCSSPD        Rd            SHSI,SSP                  [       0xF3 0x0F 0xAE /5:reg]          s:CET_SS, t:CET, c:INCSSP, w:R|R|RW
+INCSSPQ        Rq            SHSI,SSP                  [  0xF3 rexw 0x0F 0xAE /5:reg]          s:CET_SS, t:CET, c:INCSSP, w:R|R|RW
 LFENCE         nil           nil                       [         NP 0x0F 0xAE /5:reg]          s:SSE2, t:MISC
 UMONITOR       mMb           Fv                        [       0xF3 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|W, f:WAITPKG, m:NOTSX
 UMWAIT         Ry            EDX,EAX                   [       0xF2 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|R|R, m:NOTSX

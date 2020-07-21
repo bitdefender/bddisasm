@@ -1496,7 +1496,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
-    // Pos:110 Instruction:"CLDEMOTE Mcl" Encoding:"NP 0x0F 0x1C /0:mem"/"M"
+    // Pos:110 Instruction:"CLDEMOTE Mb" Encoding:"NP 0x0F 0x1C /0:mem"/"M"
     {
         ND_INS_CLDEMOTE, ND_CAT_CLDEMOTE, ND_SET_CLDEMOTE, 68, 
         ND_MOD_ANY, 
@@ -1505,7 +1505,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_W, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:111 Instruction:"CLEVICT0 M?" Encoding:"vex m:1 p:3 0xAE /7:mem"/"M"
@@ -1532,7 +1532,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_M, ND_OPS_unknown, ND_OPF_N, 0, 0), 
     }, 
 
-    // Pos:113 Instruction:"CLFLUSH Mcl" Encoding:"NP 0x0F 0xAE /7:mem"/"M"
+    // Pos:113 Instruction:"CLFLUSH Mb" Encoding:"NP 0x0F 0xAE /7:mem"/"M"
     {
         ND_INS_CLFLUSH, ND_CAT_MISC, ND_SET_CLFSH, 71, 
         ND_MOD_ANY, 
@@ -1541,10 +1541,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:114 Instruction:"CLFLUSHOPT Mcl" Encoding:"0x66 0x0F 0xAE /7:mem"/"M"
+    // Pos:114 Instruction:"CLFLUSHOPT Mb" Encoding:"0x66 0x0F 0xAE /7:mem"/"M"
     {
         ND_INS_CLFLUSHOPT, ND_CAT_MISC, ND_SET_CLFSHOPT, 72, 
         ND_MOD_ANY, 
@@ -1553,7 +1553,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:115 Instruction:"CLGI" Encoding:"0x0F 0x01 /0xDD"/""
@@ -1581,9 +1581,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:117 Instruction:"CLRSSBSY Mq" Encoding:"0xF3 0x0F 0xAE /6:mem"/"M"
     {
-        ND_INS_CLRSSBSY, ND_CAT_CET, ND_SET_CET, 75, 
+        ND_INS_CLRSSBSY, ND_CAT_CET, ND_SET_CET_SS, 75, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0|REG_RFLAG_CF,
         0,
@@ -1604,7 +1604,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_CR_0, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
-    // Pos:119 Instruction:"CLWB Mcl" Encoding:"0x66 0x0F 0xAE /6:mem"/"M"
+    // Pos:119 Instruction:"CLWB Mb" Encoding:"0x66 0x0F 0xAE /6:mem"/"M"
     {
         ND_INS_CLWB, ND_CAT_MISC, ND_SET_CLWB, 77, 
         ND_MOD_ANY, 
@@ -1613,7 +1613,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_W, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:120 Instruction:"CLZERO" Encoding:"0x0F 0x01 /0xFC"/""
@@ -3046,9 +3046,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:224 Instruction:"ENDBR32" Encoding:"a0xF3 0x0F 0x1E /0xFB"/""
     {
-        ND_INS_ENDBR, ND_CAT_CET, ND_SET_CET, 154, 
+        ND_INS_ENDBR, ND_CAT_CET, ND_SET_CET_IBT, 154, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_IBT, 
         0,
         0,
         0,
@@ -3057,9 +3057,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:225 Instruction:"ENDBR64" Encoding:"a0xF3 0x0F 0x1E /0xFA"/""
     {
-        ND_INS_ENDBR, ND_CAT_CET, ND_SET_CET, 155, 
+        ND_INS_ENDBR, ND_CAT_CET, ND_SET_CET_IBT, 155, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_IBT, 
         0,
         0,
         0,
@@ -5583,9 +5583,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:412 Instruction:"INCSSPD Rd" Encoding:"0xF3 0x0F 0xAE /5:reg"/"M"
     {
-        ND_INS_INCSSP, ND_CAT_CET, ND_SET_CET, 269, 
+        ND_INS_INCSSP, ND_CAT_CET, ND_SET_CET_SS, 269, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -5597,9 +5597,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:413 Instruction:"INCSSPQ Rq" Encoding:"0xF3 rexw 0x0F 0xAE /5:reg"/"M"
     {
-        ND_INS_INCSSP, ND_CAT_CET, ND_SET_CET, 270, 
+        ND_INS_INCSSP, ND_CAT_CET, ND_SET_CET_SS, 270, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -13232,7 +13232,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_W, ND_OPS_x, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:982 Instruction:"PREFETCH Mcl" Encoding:"0x0F 0x0D /4:mem"/"M"
+    // Pos:982 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /4:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 591, 
         ND_MOD_ANY, 
@@ -13241,10 +13241,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:983 Instruction:"PREFETCH Mcl" Encoding:"0x0F 0x0D /5:mem"/"M"
+    // Pos:983 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /5:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 591, 
         ND_MOD_ANY, 
@@ -13253,10 +13253,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:984 Instruction:"PREFETCH Mcl" Encoding:"0x0F 0x0D /6:mem"/"M"
+    // Pos:984 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /6:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 591, 
         ND_MOD_ANY, 
@@ -13265,10 +13265,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:985 Instruction:"PREFETCH Mcl" Encoding:"0x0F 0x0D /7:mem"/"M"
+    // Pos:985 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /7:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 591, 
         ND_MOD_ANY, 
@@ -13277,10 +13277,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:986 Instruction:"PREFETCHE Mcl" Encoding:"0x0F 0x0D /0:mem"/"M"
+    // Pos:986 Instruction:"PREFETCHE Mb" Encoding:"0x0F 0x0D /0:mem"/"M"
     {
         ND_INS_PREFETCHE, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 592, 
         ND_MOD_ANY, 
@@ -13289,10 +13289,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:987 Instruction:"PREFETCHM Mcl" Encoding:"0x0F 0x0D /3:mem"/"M"
+    // Pos:987 Instruction:"PREFETCHM Mb" Encoding:"0x0F 0x0D /3:mem"/"M"
     {
         ND_INS_PREFETCHM, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 593, 
         ND_MOD_ANY, 
@@ -13301,10 +13301,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:988 Instruction:"PREFETCHNTA Mcl" Encoding:"0x0F 0x18 /0:mem"/"M"
+    // Pos:988 Instruction:"PREFETCHNTA Mb" Encoding:"0x0F 0x18 /0:mem"/"M"
     {
         ND_INS_PREFETCHNTA, ND_CAT_PREFETCH, ND_SET_SSE, 594, 
         ND_MOD_ANY, 
@@ -13313,10 +13313,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:989 Instruction:"PREFETCHT0 Mcl" Encoding:"0x0F 0x18 /1:mem"/"M"
+    // Pos:989 Instruction:"PREFETCHT0 Mb" Encoding:"0x0F 0x18 /1:mem"/"M"
     {
         ND_INS_PREFETCHT0, ND_CAT_PREFETCH, ND_SET_SSE, 595, 
         ND_MOD_ANY, 
@@ -13325,10 +13325,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:990 Instruction:"PREFETCHT1 Mcl" Encoding:"0x0F 0x18 /2:mem"/"M"
+    // Pos:990 Instruction:"PREFETCHT1 Mb" Encoding:"0x0F 0x18 /2:mem"/"M"
     {
         ND_INS_PREFETCHT1, ND_CAT_PREFETCH, ND_SET_SSE, 596, 
         ND_MOD_ANY, 
@@ -13337,10 +13337,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:991 Instruction:"PREFETCHT2 Mcl" Encoding:"0x0F 0x18 /3:mem"/"M"
+    // Pos:991 Instruction:"PREFETCHT2 Mb" Encoding:"0x0F 0x18 /3:mem"/"M"
     {
         ND_INS_PREFETCHT2, ND_CAT_PREFETCH, ND_SET_SSE, 597, 
         ND_MOD_ANY, 
@@ -13349,10 +13349,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:992 Instruction:"PREFETCHW Mcl" Encoding:"0x0F 0x0D /1:mem"/"M"
+    // Pos:992 Instruction:"PREFETCHW Mb" Encoding:"0x0F 0x0D /1:mem"/"M"
     {
         ND_INS_PREFETCHW, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 598, 
         ND_MOD_ANY, 
@@ -13361,10 +13361,10 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
-    // Pos:993 Instruction:"PREFETCHWT1 Mcl" Encoding:"0x0F 0x0D /2:mem"/"M"
+    // Pos:993 Instruction:"PREFETCHWT1 Mb" Encoding:"0x0F 0x0D /2:mem"/"M"
     {
         ND_INS_PREFETCHWT1, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 599, 
         ND_MOD_ANY, 
@@ -13373,7 +13373,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_cl, ND_OPF_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, ND_OPF_R, 0, 0), 
     }, 
 
     // Pos:994 Instruction:"PSADBW Pq,Qq" Encoding:"NP 0x0F 0xF6 /r"/"RM"
@@ -15119,9 +15119,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:1126 Instruction:"RDSSPD Rd" Encoding:"a0xF3 0x0F 0x1E /1:reg"/"M"
     {
-        ND_INS_RSSSP, ND_CAT_CET, ND_SET_CET, 660, 
+        ND_INS_RSSSP, ND_CAT_CET, ND_SET_CET_SS, 660, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -15132,9 +15132,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:1127 Instruction:"RDSSPQ Rq" Encoding:"a0xF3 rexw 0x0F 0x1E /1:reg"/"M"
     {
-        ND_INS_RSSSP, ND_CAT_CET, ND_SET_CET, 661, 
+        ND_INS_RSSSP, ND_CAT_CET, ND_SET_CET_SS, 661, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -15568,9 +15568,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:1158 Instruction:"RSTORSSP Mq" Encoding:"0xF3 0x0F 0x01 /5:mem"/"M"
     {
-        ND_INS_RSTORSSP, ND_CAT_CET, ND_SET_CET, 680, 
+        ND_INS_RSTORSSP, ND_CAT_CET, ND_SET_CET_SS, 680, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(1, 1), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0|REG_RFLAG_CF,
         0,
@@ -15801,9 +15801,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:1175 Instruction:"SAVEPREVSSP" Encoding:"0xF3 0x0F 0x01 /0xEA"/""
     {
-        ND_INS_SAVEPREVSSP, ND_CAT_CET, ND_SET_CET, 687, 
+        ND_INS_SAVEPREVSSP, ND_CAT_CET, ND_SET_CET_SS, 687, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(0, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(0, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0|REG_RFLAG_CF,
         0,
         0,
@@ -16284,9 +16284,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:1210 Instruction:"SETSSBSY" Encoding:"0xF3 0x0F 0x01 /0xE8"/""
     {
-        ND_INS_SETSSBSY, ND_CAT_CET, ND_SET_CET, 709, 
+        ND_INS_SETSSBSY, ND_CAT_CET, ND_SET_CET_SS, 709, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(0, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(0, 2), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -34591,9 +34591,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:2497 Instruction:"WRSSD My,Gy" Encoding:"NP 0x0F 0x38 0xF6 /r:mem"/"MR"
     {
-        ND_INS_WRSS, ND_CAT_CET, ND_SET_CET, 1523, 
+        ND_INS_WRSS, ND_CAT_CET, ND_SET_CET_SS, 1523, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -34604,9 +34604,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:2498 Instruction:"WRSSQ My,Gy" Encoding:"rexw NP 0x0F 0x38 0xF6 /r:mem"/"MR"
     {
-        ND_INS_WRSS, ND_CAT_CET, ND_SET_CET, 1524, 
+        ND_INS_WRSS, ND_CAT_CET, ND_SET_CET_SS, 1524, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -34617,9 +34617,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:2499 Instruction:"WRUSSD My,Gy" Encoding:"0x66 0x0F 0x38 0xF5 /r:mem"/"MR"
     {
-        ND_INS_WRUSS, ND_CAT_CET, ND_SET_CET, 1525, 
+        ND_INS_WRUSS, ND_CAT_CET, ND_SET_CET_SS, 1525, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
@@ -34630,9 +34630,9 @@ const ND_INSTRUCTION gInstructions[2554] =
 
     // Pos:2500 Instruction:"WRUSSQ My,Gy" Encoding:"rexw 0x66 0x0F 0x38 0xF5 /r:mem"/"MR"
     {
-        ND_INS_WRUSS, ND_CAT_CET, ND_SET_CET, 1526, 
+        ND_INS_WRUSS, ND_CAT_CET, ND_SET_CET_SS, 1526, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SHS|ND_FLAG_MODRM, ND_CFF_CET_SS, 
         0,
         0,
         0,
