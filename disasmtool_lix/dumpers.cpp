@@ -1616,7 +1616,8 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_AVX512VPOPCNTDQ: return "avx512vpopcntdq";
     case ND_SET_BMI1: return "bmi1";
     case ND_SET_BMI2: return "bmi2";
-    case ND_SET_CET: return "cet";
+    case ND_SET_CET_SS: return "cet_ss";
+    case ND_SET_CET_IBT: return "cet_ibt";
     case ND_SET_CLDEMOTE: return "cldemote";
     case ND_SET_CLFSH: return "clfsh";
     case ND_SET_CLFSHOPT: return "clfshopt";
