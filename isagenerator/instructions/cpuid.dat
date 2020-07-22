@@ -1,5 +1,5 @@
 # CPUID feature flags.
-# Synthax: NAME : leaf, subleaf, register, bit
+# Syntax: NAME : leaf, subleaf, register, bit
 # NAME can be anything, but it should match an ISA extension type.
 # leaf - CPUID leaf value (eax input value)
 # subleaf - CPUID subleaf (ecx input value). Use 0xFFFFFFFF if not used.

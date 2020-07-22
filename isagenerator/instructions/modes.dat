@@ -1,6 +1,6 @@
 # Valid operating modes for instructions. Please use these templates and not inline definitions. If a template does
 # not exist already, create a new one.
-# Synthax: NAME : group1:mode11[+mode12[|group2:!mode21+!mode22]] etc.
+# Syntax: NAME : group1:mode11[+mode12[|group2:!mode21+!mode22]] etc.
 #
 # NAME cam be anything and can be used as a placeholder when defining the instruction.
 # group - can be one of the 4 operating groups: 
