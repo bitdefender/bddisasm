@@ -267,9 +267,9 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
                 printf("%02x", instrux->InstructionBytes[k]);
             }
         }
-    }
 
-    _set_text_color(Reset);
+        _set_text_color(Reset);
+    }
 
     for (; k < instrux->Length; k++)
     {
