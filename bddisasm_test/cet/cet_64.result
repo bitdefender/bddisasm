@@ -1,6 +1,6 @@
 0000000000000000 f30f0128                        RSTORSSP  qword ptr [rax]
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -16,7 +16,7 @@
 
 0000000000000004 f30f01ea                        SAVEPREVSSP
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -32,7 +32,7 @@
 
 0000000000000008 f30f01e8                        SETSSBSY
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -48,7 +48,7 @@
 
 000000000000000C f30f1ec8                        RDSSPD    eax
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -63,7 +63,7 @@
 
 0000000000000010 f3480f1ec8                      RDSSPQ    rax
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -78,8 +78,8 @@
 
 0000000000000015 f30f1efa                        ENDBR64
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
+        ISA Set: CET_IBT, Ins cat: CET, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 20
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -91,8 +91,8 @@
 
 0000000000000019 f30f1efb                        ENDBR32
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
+        ISA Set: CET_IBT, Ins cat: CET, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 20
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -104,7 +104,7 @@
 
 000000000000001D f30fae30                        CLRSSBSY  qword ptr [rax]
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -120,7 +120,7 @@
 
 0000000000000021 f30faee8                        INCSSPD   eax
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -137,7 +137,7 @@
 
 0000000000000025 f3480faee8                      INCSSPQ   rax
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -154,7 +154,7 @@
 
 000000000000002A 660f38f500                      WRUSSD    dword ptr [rax], eax
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -170,7 +170,7 @@
 
 000000000000002F 66480f38f500                    WRUSSQ    qword ptr [rax], rax
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -186,7 +186,7 @@
 
 0000000000000035 0f38f600                        WRSSD     dword ptr [rax], eax
         DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -202,7 +202,7 @@
 
 0000000000000039 480f38f600                      WRSSQ     qword ptr [rax], rax
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: CET, Ins cat: CET, CET tracked: no
+        ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes

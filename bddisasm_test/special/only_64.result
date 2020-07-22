@@ -100,6 +100,7 @@
         Operand: 4, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:          Segment, RegSize:  4, RegId: 1, RegCount: 1
         Operand: 5, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 6, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 7, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:              SSP, RegSize:  8, RegId: 0, RegCount: 1
 
 000000000000000F f30faec0                        RDFSBASE  eax
         DSIZE: 32, ASIZE: 64, VLEN: -

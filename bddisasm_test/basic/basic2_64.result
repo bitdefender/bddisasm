@@ -80,7 +80,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
 
-0000000000000011 0f180b                          PREFETCHT0 [rbx]
+0000000000000011 0f180b                          PREFETCHT0 byte ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: SSE, Ins cat: PREFETCH, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
@@ -92,10 +92,10 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: -2, RawSize: -2, Encoding: M, 
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000014 0f1813                          PREFETCHT1 [rbx]
+0000000000000014 0f1813                          PREFETCHT1 byte ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: SSE, Ins cat: PREFETCH, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
@@ -107,10 +107,10 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: -2, RawSize: -2, Encoding: M, 
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000017 0f181b                          PREFETCHT2 [rbx]
+0000000000000017 0f181b                          PREFETCHT2 byte ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: SSE, Ins cat: PREFETCH, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
@@ -122,10 +122,10 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: -2, RawSize: -2, Encoding: M, 
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000001A 0f1803                          PREFETCHNTA [rbx]
+000000000000001A 0f1803                          PREFETCHNTA byte ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: SSE, Ins cat: PREFETCH, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
@@ -137,7 +137,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: -2, RawSize: -2, Encoding: M, 
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, 
                 Segment: 3, Base: 3, 
 
 000000000000001D 660f42c1                        CMOVC     ax, cx

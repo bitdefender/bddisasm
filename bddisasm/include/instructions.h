@@ -17374,7 +17374,7 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_SYSENTER, ND_CAT_SYSCALL, ND_SET_PPRO, 761, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
-        0, 0, ND_OPS_CNT(0, 8), 0, 0, 0, 0, 0, 0, 0, ND_CFF_SEP, 
+        0, 0, ND_OPS_CNT(0, 9), 0, 0, 0, 0, 0, 0, 0, ND_CFF_SEP, 
         0,
         0,
         0,
@@ -17387,6 +17387,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_RW, 0, 0), 
     }, 
 
     // Pos:1291 Instruction:"SYSEXIT" Encoding:"0x0F 0x35"/""
@@ -17409,7 +17410,7 @@ const ND_INSTRUCTION gInstructions[2554] =
     {
         ND_INS_SYSRET, ND_CAT_SYSRET, ND_SET_AMD, 763, 
         ND_MOD_R0|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
-        0, 0, ND_OPS_CNT(0, 7), 0, 0, 0, 0, 0, 0, ND_FLAG_O64, ND_CFF_FSC, 
+        0, 0, ND_OPS_CNT(0, 8), 0, 0, 0, 0, 0, 0, ND_FLAG_O64, ND_CFF_FSC, 
         0,
         0,
         0,
@@ -17421,6 +17422,7 @@ const ND_INSTRUCTION gInstructions[2554] =
         OP(ND_OPT_SEG_CS, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
         OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
+        OP(ND_OPT_SSP, ND_OPS_yf, ND_OPF_DEFAULT|ND_OPF_W, 0, 0), 
     }, 
 
     // Pos:1293 Instruction:"T1MSKC By,Ey" Encoding:"xop m:9 0x01 /7"/"VM"
