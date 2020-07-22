@@ -21,7 +21,7 @@ emulate raw binary files, and see their output. Note that this simple emulator s
 
 The main objectives of this disassembler are:
 
-1. Lighetweight - it's written in C, with no external dependencies, no memory allocated, and thread safe by design.
+1. Lightweight - it's written in C, with no external dependencies, no memory allocated, and thread safe by design.
 2. Fast - less than 300 CPU clocks on an Intel Core i7-8650U per decoded instruction (more than 7M instructions per second).
 3. Resilient - tested against internal fuzzers and the famous [mishegos](https://github.com/trailofbits/mishegos) tool.
 4. Easy to work with - just include the main header file, bddisasm.h, link with the bddisasm library, and call the NdDecode API!
