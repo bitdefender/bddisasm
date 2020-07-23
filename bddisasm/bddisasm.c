@@ -3546,7 +3546,7 @@ NdGetVectorLength(
     )
 {
     if (Instrux->HasEvex && Instrux->Exs.bm && (Instrux->ModRm.mod == 3) &&
-        (ND_ER_SUPPORT(Instrux) || ND_SAE_SUPPORT(Instrux)))
+        (ND_ER_SUPPORT(Instrux) || ND_SAE_SUPPORT(Instrux) || !!(Instrux->Attributes & ND_FLAG_IER)))
     {
         // Embedded rounding present, force the vector length to 512.
         if ((Instrux->TupleType == ND_TUPLE_T1S) || (Instrux->TupleType == ND_TUPLE_T1F))
