@@ -4790,7 +4790,14 @@ NdToText(
 
                     if (pOp->Info.Memory.IsRipRel)
                     {
-                        status = NdSprintf(temp, sizeof(temp), "rel 0x%llx", disp + Rip + Instrux->Length);
+                        uint64_t target = disp + Rip + Instrux->Length;
+
+                        if (Instrux->AddrMode == ND_ADDR_32)
+                        {
+                            target &= 0xFFFFFFFF;
+                        }
+
+                        status = NdSprintf(temp, sizeof(temp), "rel 0x%llx", target);
                     }
                     else
                     {
