@@ -850,6 +850,18 @@ ShemuComputeLinearAddress(
         }
     }
 
+    // Make sure we truncate the linear address to the address size.
+    switch (Context->Instruction.AddrMode)
+    {
+    case ND_ADDR_32:
+        gla &= 0xFFFFFFFF;
+        break;
+    case ND_ADDR_16:
+        gla &= 0xFFFFF;
+    default:
+        break;
+    }
+
     return gla;
 }
 
