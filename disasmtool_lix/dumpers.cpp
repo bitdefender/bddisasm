@@ -258,7 +258,9 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_FXAM: return "fxam";
     case ND_INS_FXCH: return "fxch";
     case ND_INS_FXRSTOR: return "fxrstor";
+    case ND_INS_FXRSTOR64: return "fxrstor64";
     case ND_INS_FXSAVE: return "fxsave";
+    case ND_INS_FXSAVE64: return "fxsave64";
     case ND_INS_FXTRACT: return "fxtract";
     case ND_INS_FYL2X: return "fyl2x";
     case ND_INS_FYL2XP1: return "fyl2xp1";
@@ -368,6 +370,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_MOVDQ2Q: return "movdq2q";
     case ND_INS_MOVDQA: return "movdqa";
     case ND_INS_MOVDQU: return "movdqu";
+    case ND_INS_MOVHLPS: return "movhlps";
     case ND_INS_MOVHPD: return "movhpd";
     case ND_INS_MOVHPS: return "movhps";
     case ND_INS_MOVLHPS: return "movlhps";
@@ -472,6 +475,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_PFMUL: return "pfmul";
     case ND_INS_PFNACC: return "pfnacc";
     case ND_INS_PFPNACC: return "pfpnacc";
+    case ND_INS_PFRCP: return "pfrcp";
     case ND_INS_PFRCPIT1: return "pfrcpit1";
     case ND_INS_PFRCPIT2: return "pfrcpit2";
     case ND_INS_PFRCPV: return "pfrcpv";
@@ -530,6 +534,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_PMULUDQ: return "pmuludq";
     case ND_INS_POP: return "pop";
     case ND_INS_POPA: return "popa";
+    case ND_INS_POPAD: return "popad";
     case ND_INS_POPCNT: return "popcnt";
     case ND_INS_POPF: return "popf";
     case ND_INS_POR: return "por";
@@ -583,6 +588,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_PUNPCKLWD: return "punpcklwd";
     case ND_INS_PUSH: return "push";
     case ND_INS_PUSHA: return "pusha";
+    case ND_INS_PUSHAD: return "pushad";
     case ND_INS_PUSHF: return "pushf";
     case ND_INS_PVALIDATE: return "pvalidate";
     case ND_INS_PXOR: return "pxor";
@@ -1117,6 +1123,8 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_VPERMI2PS: return "vpermi2ps";
     case ND_INS_VPERMI2Q: return "vpermi2q";
     case ND_INS_VPERMI2W: return "vpermi2w";
+    case ND_INS_VPERMIL2PD: return "vpermil2pd";
+    case ND_INS_VPERMIL2PS: return "vpermil2ps";
     case ND_INS_VPERMILPD: return "vpermilpd";
     case ND_INS_VPERMILPS: return "vpermilps";
     case ND_INS_VPERMPD: return "vpermpd";
@@ -1281,6 +1289,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_VPSHAQ: return "vpshaq";
     case ND_INS_VPSHAW: return "vpshaw";
     case ND_INS_VPSHLB: return "vpshlb";
+    case ND_INS_VPSHLD: return "vpshld";
     case ND_INS_VPSHLDD: return "vpshldd";
     case ND_INS_VPSHLDQ: return "vpshldq";
     case ND_INS_VPSHLDVD: return "vpshldvd";
@@ -1288,6 +1297,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_VPSHLDVW: return "vpshldvw";
     case ND_INS_VPSHLDW: return "vpshldw";
     case ND_INS_VPSHLQ: return "vpshlq";
+    case ND_INS_VPSHLW: return "vpshlw";
     case ND_INS_VPSHRDD: return "vpshrdd";
     case ND_INS_VPSHRDQ: return "vpshrdq";
     case ND_INS_VPSHRDVD: return "vpshrdvd";
