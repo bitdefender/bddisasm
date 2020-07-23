@@ -1,4 +1,4 @@
-0000000000000000 62f2fd45c68ccb00100000          VGATHERPF0DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+0000000000000000 62f2fd45c68ccb00100000          VGATHERPF0DPD qword ptr [rbx+ymm17*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -18,7 +18,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-000000000000000B 62b27d45c68cdb00100000          VGATHERPF0DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+000000000000000B 62b27d45c68cdb00100000          VGATHERPF0DPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -38,7 +38,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000016 62b2fd45c78cdb00100000          VGATHERPF0QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+0000000000000016 62b2fd45c78cdb00100000          VGATHERPF0QPD qword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -58,7 +58,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000021 62b27d45c78cdb00100000          VGATHERPF0QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+0000000000000021 62b27d45c78cdb00100000          VGATHERPF0QPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -78,7 +78,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-000000000000002C 62f2fd45c694cb00100000          VGATHERPF1DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+000000000000002C 62f2fd45c694cb00100000          VGATHERPF1DPD qword ptr [rbx+ymm17*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -98,7 +98,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000037 62b27d45c694db00100000          VGATHERPF1DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+0000000000000037 62b27d45c694db00100000          VGATHERPF1DPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -118,7 +118,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000042 62b2fd45c794db00100000          VGATHERPF1QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+0000000000000042 62b2fd45c794db00100000          VGATHERPF1QPD qword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -138,7 +138,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-000000000000004D 62b27d45c794db00100000          VGATHERPF1QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+000000000000004D 62b27d45c794db00100000          VGATHERPF1QPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: GATHER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -158,7 +158,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000058 62f2fd45c6accb00100000          VSCATTERPF0DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+0000000000000058 62f2fd45c6accb00100000          VSCATTERPF0DPD qword ptr [rbx+ymm17*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -178,7 +178,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000063 62b27d45c6acdb00100000          VSCATTERPF0DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+0000000000000063 62b27d45c6acdb00100000          VSCATTERPF0DPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -198,7 +198,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-000000000000006E 62b2fd45c7acdb00100000          VSCATTERPF0QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+000000000000006E 62b2fd45c7acdb00100000          VSCATTERPF0QPD qword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -218,7 +218,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000079 62b27d45c7acdb00100000          VSCATTERPF0QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+0000000000000079 62b27d45c7acdb00100000          VSCATTERPF0QPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -238,7 +238,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-0000000000000084 62f2fd45c6b4cb00100000          VSCATTERPF1DPD zmmword ptr [rbx+ymm17*8+0x1000]{k5}
+0000000000000084 62f2fd45c6b4cb00100000          VSCATTERPF1DPD qword ptr [rbx+ymm17*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -258,7 +258,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-000000000000008F 62b27d45c6b4db00100000          VSCATTERPF1DPS zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+000000000000008F 62b27d45c6b4db00100000          VSCATTERPF1DPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -278,7 +278,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-000000000000009A 62b2fd45c7b4db00100000          VSCATTERPF1QPD zmmword ptr [rbx+zmm27*8+0x1000]{k5}
+000000000000009A 62b2fd45c7b4db00100000          VSCATTERPF1QPD qword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26
@@ -298,7 +298,7 @@
                 Decorator: Mask k5
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
 
-00000000000000A5 62b27d45c7b4db00100000          VSCATTERPF1QPS ymmword ptr [rbx+zmm27*8+0x1000]{k5}
+00000000000000A5 62b27d45c7b4db00100000          VSCATTERPF1QPS dword ptr [rbx+zmm27*8+0x1000]{k5}
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: AVX512PF, Ins cat: SCATTER, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 26

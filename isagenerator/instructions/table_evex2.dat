@@ -152,10 +152,10 @@ VBROADCASTI32X8      Voq{K}{z},Mqq                nil       [evex m:2 p:1 l:2 w:
 VBROADCASTI64X4      Voq{K}{z},Mqq                nil       [evex m:2 p:1 l:2 w:1 0x5B /r:mem]         s:AVX512F, t:BROADCAST, l:t4, e:E6, w:W|R|R
 
 # 0x60 - 0x6F
-VPEXPANDB            Vn{K}{z},Wn                  nil       [evex m:2 p:1 l:x w:0 0x62 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s, e:E4, w:W|R|R
-VPEXPANDW            Vn{K}{z},Wn                  nil       [evex m:2 p:1 l:x w:1 0x62 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s, e:E4, w:W|R|R
-VPCOMPRESSB          Wn{K}{z},Vn                  nil       [evex m:2 p:1 l:x w:0 0x63 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s, a:NOMZ, e:E4, w:W|R|R
-VPCOMPRESSW          Wn{K}{z},Vn                  nil       [evex m:2 p:1 l:x w:1 0x63 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s, a:NOMZ, e:E4, w:W|R|R
+VPEXPANDB            Vn{K}{z},Wn                  nil       [evex m:2 p:1 l:x w:0 0x62 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s8, e:E4, w:W|R|R
+VPEXPANDW            Vn{K}{z},Wn                  nil       [evex m:2 p:1 l:x w:1 0x62 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s16, e:E4, w:W|R|R
+VPCOMPRESSB          Wn{K}{z},Vn                  nil       [evex m:2 p:1 l:x w:0 0x63 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s8, a:NOMZ, e:E4, w:W|R|R
+VPCOMPRESSW          Wn{K}{z},Vn                  nil       [evex m:2 p:1 l:x w:1 0x63 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:t1s16, a:NOMZ, e:E4, w:W|R|R
 VPBLENDMD            Vn{K}{z},Hn,Wn|B32           nil       [evex m:2 p:1 l:x w:0 0x64 /r]             s:AVX512F, t:BLEND, l:fv, e:E4, w:W|R|R|R
 VPBLENDMQ            Vn{K}{z},Hn,Wn|B64           nil       [evex m:2 p:1 l:x w:1 0x64 /r]             s:AVX512F, t:BLEND, l:fv, e:E4, w:W|R|R|R
 VBLENDMPS            Vn{K}{z},Hn,Wn|B32           nil       [evex m:2 p:1 l:x w:0 0x65 /r]             s:AVX512F, t:BLEND, l:fv, e:E4, w:W|R|R|R
@@ -171,7 +171,7 @@ VPSHLDVW             Vn{K}{z},Hn,Wn               nil       [evex m:2 p:1 l:x w:
 VPSHLDVD             Vn{K}{z},Hn,Wn|B32           nil       [evex m:2 p:1 l:x w:0 0x71 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R
 VPSHLDVQ             Vn{K}{z},Hn,Wn|B64           nil       [evex m:2 p:1 l:x w:1 0x71 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R
 VPSHRDVW             Vn{K}{z},Hn,Wn               nil       [evex m:2 p:1 l:x w:1 0x72 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:fvm, e:E4, w:RW|R|R|R
-VCVTNEPS2BF16        Vh{K}{z},Wn                  nil       [evex m:2 p:2 l:x w:0 0x72 /r]             s:AVX512BF16, t:AVX512BF16, l:fv, e:E4, w:W|R|R
+VCVTNEPS2BF16        Vh{K}{z},Wn|B32              nil       [evex m:2 p:2 l:x w:0 0x72 /r]             s:AVX512BF16, t:AVX512BF16, l:fv, e:E4, w:W|R|R
 VCVTNE2PS2BF16       Vn{K}{z},Hn,Wn|B32           nil       [evex m:2 p:3 l:x w:0 0x72 /r]             s:AVX512BF16, t:AVX512BF16, l:fv, e:E4NF, w:W|R|R|R
 VPSHRDVD             Vn{K}{z},Hn,Wn|B32           nil       [evex m:2 p:1 l:x w:0 0x73 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R
 VPSHRDVQ             Vn{K}{z},Hn,Wn|B64           nil       [evex m:2 p:1 l:x w:1 0x73 /r]             s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R

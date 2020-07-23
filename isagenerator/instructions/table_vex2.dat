@@ -132,20 +132,20 @@ VFMSUBADD132PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0
 VFMSUBADD132PD      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0x97 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADD132PS         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x98 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADD132PD         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0x98 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:x w:0 0x99 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD132SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:x w:1 0x99 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD132SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0x99 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD132SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0x99 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFMSUB132PS         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x9A /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMSUB132PD         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0x9A /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB132SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:x w:0 0x9B /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB132SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:x w:1 0x9B /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB132SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0x9B /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB132SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0x9B /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMADD132PS        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x9C /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMADD132PD        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0x9C /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMADD132SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0x9D /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMADD132SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0x9D /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMSUB132PS        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x9E /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMSUB132PD        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0x9E /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB132SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0x9F /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB132SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0x9F /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB132SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0x9F /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB132SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0x9F /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 
 # 0xA0 - 0xAF
 VFMADDSUB213PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xA6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
@@ -154,20 +154,20 @@ VFMSUBADD213PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0
 VFMSUBADD213PD      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xA7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADD213PS         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xA8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADD213PD         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xA8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xA9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD213SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xA9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD213SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xA9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD213SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xA9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFMSUB213PS         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xAA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMSUB213PD         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xAA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB213SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xAB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB213SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xAB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB213SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xAB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB213SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xAB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMADD213PS        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xAC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMADD213PD        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xAC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD213SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xAD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD213SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xAD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD213SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xAD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD213SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xAD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMSUB213PS        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xAE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMSUB213PD        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xAE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB213SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB213SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB213SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB213SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 
 # 0xB0 - 0xBF
 VFMADDSUB231PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xB6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
@@ -176,20 +176,20 @@ VFMSUBADD231PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0
 VFMSUBADD231PD      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xB7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADD231PS         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xB8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADD231PD         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xB8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xB9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD231SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xB9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD231SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xB9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD231SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xB9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFMSUB231PS         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xBA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMSUB231PD         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xBA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB231SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xBB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB231SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xBB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB231SS         Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xBB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB231SD         Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xBB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMADD231PS        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xBC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMADD231PD        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xBC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD231SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xBD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD231SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xBD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD231SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xBD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD231SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xBD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMSUB231PS        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xBE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMSUB231PD        Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xBE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB231SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:0 w:0 0xBF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB231SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:0 w:1 0xBF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB231SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0 0xBF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB231SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xBF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 VGF2P8MULB          Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xCF /r]           s:GFNI, t:GFNI, w:W|R|R
 VAESIMC             Vdq,Wdq               nil               [vex m:2 p:1 l:0 w:i 0xDB /r]           s:AES, t:AES, w:W|R, e:4
 VAESENC             Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:i 0xDC /r]           s:AES, t:AES, w:W|R|R, e:4

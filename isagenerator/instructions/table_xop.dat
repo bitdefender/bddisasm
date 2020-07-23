@@ -118,9 +118,9 @@ VPROTQ              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x93 /r]   
 VPROTQ              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x93 /r]       s:XOP, t:XOP, w:W|R|R
 VPSHLB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x94 /r]       s:XOP, t:XOP, w:W|R|R
 VPSHLB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x94 /r]       s:XOP, t:XOP, w:W|R|R
-VPSHLB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x95 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLW              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x95 /r]       s:XOP, t:XOP, w:W|R|R
 VPSHLB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x95 /r]       s:XOP, t:XOP, w:W|R|R
-VPSHLB              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x96 /r]       s:XOP, t:XOP, w:W|R|R
+VPSHLD              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x96 /r]       s:XOP, t:XOP, w:W|R|R
 VPSHLB              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x96 /r]       s:XOP, t:XOP, w:W|R|R
 VPSHLQ              Vdq,Wdq,Hdq           nil           [xop m:9 w:0 0x97 /r]       s:XOP, t:XOP, w:W|R|R
 VPSHLQ              Vdq,Hdq,Wdq           nil           [xop m:9 w:1 0x97 /r]       s:XOP, t:XOP, w:W|R|R

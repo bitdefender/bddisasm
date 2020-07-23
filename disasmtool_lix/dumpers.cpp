@@ -332,8 +332,6 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_LLDT: return "lldt";
     case ND_INS_LLWPCB: return "llwpcb";
     case ND_INS_LMSW: return "lmsw";
-    case ND_INS_LOADALL: return "loadall";
-    case ND_INS_LOADALLD: return "loadalld";
     case ND_INS_LODS: return "lods";
     case ND_INS_LOOP: return "loop";
     case ND_INS_LOOPNZ: return "loopnz";
@@ -1121,8 +1119,6 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_VPERMI2W: return "vpermi2w";
     case ND_INS_VPERMILPD: return "vpermilpd";
     case ND_INS_VPERMILPS: return "vpermilps";
-    case ND_INS_VPERMILzz2PD: return "vpermilzz2pd";
-    case ND_INS_VPERMILzz2PS: return "vpermilzz2ps";
     case ND_INS_VPERMPD: return "vpermpd";
     case ND_INS_VPERMPS: return "vpermps";
     case ND_INS_VPERMQ: return "vpermq";
@@ -1562,7 +1558,6 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_SYSTEM: return "system";
     case ND_CAT_UD: return "ud";
     case ND_CAT_UNCOND_BR: return "uncond_br";
-    case ND_CAT_UNDOC: return "undoc";
     case ND_CAT_UNKNOWN: return "unknown";
     case ND_CAT_VAES: return "vaes";
     case ND_CAT_VFMA: return "vfma";

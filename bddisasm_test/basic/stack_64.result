@@ -58,7 +58,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 
-0000000000000006 666a7f                          PUSH      0x7f
+0000000000000006 666a7f                          PUSH      0x007f
         DSIZE: 16, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: PUSH, CET tracked: no
         Valid modes
@@ -73,7 +73,7 @@
         Operand: 1, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 
-0000000000000009 68ff7f0000                      PUSH      0x00007fff
+0000000000000009 68ff7f0000                      PUSH      0x0000000000007fff
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: PUSH, CET tracked: no
         Valid modes
@@ -88,7 +88,7 @@
         Operand: 1, Acc:  -W,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 
-000000000000000E 68ffffff7f                      PUSH      0x7fffffff
+000000000000000E 68ffffff7f                      PUSH      0x000000007fffffff
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: PUSH, CET tracked: no
         Valid modes

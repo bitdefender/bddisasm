@@ -473,7 +473,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000054 480500000010                    ADD       rax, 0x10000000
+0000000000000054 480500000010                    ADD       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -965,7 +965,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000000AE 482d00000010                    SUB       rax, 0x10000000
+00000000000000AE 482d00000010                    SUB       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -1457,7 +1457,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000108 481500000010                    ADC       rax, 0x10000000
+0000000000000108 481500000010                    ADC       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -1949,7 +1949,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000162 481d00000010                    SBB       rax, 0x10000000
+0000000000000162 481d00000010                    SBB       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -2441,7 +2441,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000001BC 482500000010                    AND       rax, 0x10000000
+00000000000001BC 482500000010                    AND       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: LOGIC, CET tracked: no
         FLAGS access
@@ -2933,7 +2933,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000216 480d00000010                    OR        rax, 0x10000000
+0000000000000216 480d00000010                    OR        rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: LOGIC, CET tracked: no
         FLAGS access
@@ -3425,7 +3425,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000270 483500000010                    XOR       rax, 0x10000000
+0000000000000270 483500000010                    XOR       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: LOGIC, CET tracked: no
         FLAGS access
@@ -3917,7 +3917,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000002CA 483d00000010                    CMP       rax, 0x10000000
+00000000000002CA 483d00000010                    CMP       rax, 0x0000000010000000
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -3951,7 +3951,7 @@
         Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000002D5 48a901000000                    TEST      rax, 0x00000001
+00000000000002D5 48a901000000                    TEST      rax, 0x0000000000000001
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: LOGIC, CET tracked: no
         FLAGS access
@@ -4056,7 +4056,7 @@
         Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000002EF 48f70301000000                  TEST      qword ptr [rbx], 0x00000001
+00000000000002EF 48f70301000000                  TEST      qword ptr [rbx], 0x0000000000000001
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: LOGIC, CET tracked: no
         FLAGS access
@@ -8157,7 +8157,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 1, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000005C8 666bc164                        IMUL      ax, cx, 0x64
+00000000000005C8 666bc164                        IMUL      ax, cx, 0x0064
         DSIZE: 16, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8175,7 +8175,7 @@
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  2, RawSize:  1, Encoding: I
         Operand: 3, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:            Flags, RegSize:  2, RegId: 0, RegCount: 1
 
-00000000000005CC 666b0364                        IMUL      ax, word ptr [rbx], 0x64
+00000000000005CC 666b0364                        IMUL      ax, word ptr [rbx], 0x0064
         DSIZE: 16, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8194,7 +8194,7 @@
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  2, RawSize:  1, Encoding: I
         Operand: 3, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:            Flags, RegSize:  2, RegId: 0, RegCount: 1
 
-00000000000005D0 6bc164                          IMUL      eax, ecx, 0x64
+00000000000005D0 6bc164                          IMUL      eax, ecx, 0x00000064
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8212,7 +8212,7 @@
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  1, Encoding: I
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000005D3 6b0364                          IMUL      eax, dword ptr [rbx], 0x64
+00000000000005D3 6b0364                          IMUL      eax, dword ptr [rbx], 0x00000064
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8231,7 +8231,7 @@
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  1, Encoding: I
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000005D6 486bc164                        IMUL      rax, rcx, 0x64
+00000000000005D6 486bc164                        IMUL      rax, rcx, 0x0000000000000064
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8249,7 +8249,7 @@
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  8, RawSize:  1, Encoding: I
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000005DA 486b0364                        IMUL      rax, qword ptr [rbx], 0x64
+00000000000005DA 486b0364                        IMUL      rax, qword ptr [rbx], 0x0000000000000064
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8935,7 +8935,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:  General Purpose, RegSize:  2, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:            Flags, RegSize:  2, RegId: 0, RegCount: 1
 
-0000000000000615 f04883870010000001              LOCK ADD  qword ptr [rdi+0x1000], 0x01
+0000000000000615 f04883870010000001              LOCK ADD  qword ptr [rdi+0x1000], 0x0000000000000001
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8953,7 +8953,7 @@
         Operand: 1, Acc:  R-,  Type:  Immediate, Size:  8, RawSize:  1, Encoding: I
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000061E f2f0830001                      XACQUIRE LOCK ADD dword ptr [rax], 0x01
+000000000000061E f2f0830001                      XACQUIRE LOCK ADD dword ptr [rax], 0x00000001
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -8971,7 +8971,7 @@
         Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  1, Encoding: I
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000623 f3f04883acfe00f0ffff02          XRELEASE LOCK SUB qword ptr [rsi+rdi*8-0x1000], 0x02
+0000000000000623 f3f04883acfe00f0ffff02          XRELEASE LOCK SUB qword ptr [rsi+rdi*8-0x1000], 0x0000000000000002
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access

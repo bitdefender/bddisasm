@@ -20609,7 +20609,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E9NF
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -20627,7 +20627,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E9NF
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -20802,7 +20802,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E9NF
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -20908,7 +20908,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E9NF
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -31299,7 +31299,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Mem 128
+        EVEX Tuple Type: Full Mem
         Exception class: EVEX, exception type: E4.nb
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -31863,7 +31863,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Mem 128
+        EVEX Tuple Type: Full Mem
         Exception class: EVEX, exception type: E4.nb
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -32761,7 +32761,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512BW, Ins cat: AVX512, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 30
-        EVEX Tuple Type: Mem 128
+        EVEX Tuple Type: Full Mem
         Exception class: EVEX, exception type: E4.nb
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes

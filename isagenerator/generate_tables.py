@@ -40,6 +40,8 @@ flags = {
     'CETT'     : 'ND_FLAG_CETT',
     'SERIAL'   : 'ND_FLAG_SERIAL',
     'SIBMEM'   : 'ND_FLAG_SIBMEM',
+    'I67'      : 'ND_FLAG_I67',
+    'IER'      : 'ND_FLAG_IER',
 }
 
 prefixes_map = {
@@ -139,6 +141,9 @@ optype = {
     'SHS'      : 'ND_OPT_MEM_SHS',
     'SHS0'     : 'ND_OPT_MEM_SHS0',
     'SHSP'     : 'ND_OPT_MEM_SHSP',
+
+    # Special immediates.
+    'm2zI'     : 'ND_OPT_Im2z',
     
     # System registers, MSRs, XCRs, etc.
     'GDTR'     : 'ND_OPT_SYS_GDTR',

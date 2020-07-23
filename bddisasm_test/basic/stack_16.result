@@ -58,7 +58,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 
-0000000000000006 6a7f                            PUSH      0x7f
+0000000000000006 6a7f                            PUSH      0x007f
         DSIZE: 16, ASIZE: 16, VLEN: -
         ISA Set: I86, Ins cat: PUSH, CET tracked: no
         Valid modes

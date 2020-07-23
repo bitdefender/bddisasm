@@ -1834,7 +1834,7 @@
         Operand: 1, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
 
-00000000000000D8 ddd7                            FST       st0, st7
+00000000000000D8 ddd7                            FST       st7, st0
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
         FPU flags access
@@ -1847,11 +1847,11 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
 
-00000000000000DA dddf                            FSTP      st0, st7
+00000000000000DA dddf                            FSTP      st7, st0
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
         FPU flags access
@@ -1864,8 +1864,8 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
 
 00000000000000DC dde7                            FUCOM     st0, st7
@@ -2357,7 +2357,7 @@
         Operand: 1, Acc:  RW,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
 
-0000000000000114 dddf                            FSTP      st0, st7
+0000000000000114 dddf                            FSTP      st7, st0
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
         FPU flags access
@@ -2370,11 +2370,11 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
 
-0000000000000116 dddf                            FSTP      st0, st7
+0000000000000116 dddf                            FSTP      st7, st0
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: X87, Ins cat: X87_ALU, CET tracked: no
         FPU flags access
@@ -2387,8 +2387,8 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
 
 0000000000000118 dfe0                            FNSTSW    ax

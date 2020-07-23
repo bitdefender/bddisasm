@@ -2,7 +2,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -20,7 +20,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -38,7 +38,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -56,7 +56,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -75,7 +75,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -94,7 +94,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -109,11 +109,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
 
-0000000000000024 62b27d086354db40                VPCOMPRESSB xmmword ptr [rbx+r11*8+0x100], xmm2
+0000000000000024 62b27d086354db40                VPCOMPRESSB xmmword ptr [rbx+r11*8+0x40], xmm2
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -128,11 +128,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
 
-000000000000002C 62a27d286344db40                VPCOMPRESSB ymmword ptr [rbx+r11*8+0x100], ymm16
+000000000000002C 62a27d286344db40                VPCOMPRESSB ymmword ptr [rbx+r11*8+0x40], ymm16
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -147,11 +147,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: R, RegType:           Vector, RegSize: 32, RegId: 16, RegCount: 1
 
-0000000000000034 62227d486344db40                VPCOMPRESSB zmmword ptr [rbx+r11*8+0x100], zmm24
+0000000000000034 62227d486344db40                VPCOMPRESSB zmmword ptr [rbx+r11*8+0x40], zmm24
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -166,11 +166,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
 
-000000000000003C 62b27d086354dbc0                VPCOMPRESSB xmmword ptr [rbx+r11*8-0x100], xmm2
+000000000000003C 62b27d086354dbc0                VPCOMPRESSB xmmword ptr [rbx+r11*8-0x40], xmm2
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -185,11 +185,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
 
-0000000000000044 62a27d286344dbc0                VPCOMPRESSB ymmword ptr [rbx+r11*8-0x100], ymm16
+0000000000000044 62a27d286344dbc0                VPCOMPRESSB ymmword ptr [rbx+r11*8-0x40], ymm16
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -204,11 +204,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: R, RegType:           Vector, RegSize: 32, RegId: 16, RegCount: 1
 
-000000000000004C 62227d486344dbc0                VPCOMPRESSB zmmword ptr [rbx+r11*8-0x100], zmm24
+000000000000004C 62227d486344dbc0                VPCOMPRESSB zmmword ptr [rbx+r11*8-0x40], zmm24
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -227,7 +227,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -245,7 +245,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -263,7 +263,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -281,7 +281,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -300,7 +300,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -319,7 +319,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -334,11 +334,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
 
-0000000000000078 62b2fd086354db20                VPCOMPRESSW xmmword ptr [rbx+r11*8+0x100], xmm2
+0000000000000078 62b2fd086354db20                VPCOMPRESSW xmmword ptr [rbx+r11*8+0x40], xmm2
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -353,11 +353,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
 
-0000000000000080 62a2fd286344db20                VPCOMPRESSW ymmword ptr [rbx+r11*8+0x100], ymm16
+0000000000000080 62a2fd286344db20                VPCOMPRESSW ymmword ptr [rbx+r11*8+0x40], ymm16
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -372,11 +372,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: R, RegType:           Vector, RegSize: 32, RegId: 16, RegCount: 1
 
-0000000000000088 6222fd486344db20                VPCOMPRESSW zmmword ptr [rbx+r11*8+0x100], zmm24
+0000000000000088 6222fd486344db20                VPCOMPRESSW zmmword ptr [rbx+r11*8+0x40], zmm24
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -391,11 +391,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
 
-0000000000000090 62b2fd086354dbe0                VPCOMPRESSW xmmword ptr [rbx+r11*8-0x100], xmm2
+0000000000000090 62b2fd086354dbe0                VPCOMPRESSW xmmword ptr [rbx+r11*8-0x40], xmm2
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -410,11 +410,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
 
-0000000000000098 62a2fd286344dbe0                VPCOMPRESSW ymmword ptr [rbx+r11*8-0x100], ymm16
+0000000000000098 62a2fd286344dbe0                VPCOMPRESSW ymmword ptr [rbx+r11*8-0x40], ymm16
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -429,11 +429,11 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: R, RegType:           Vector, RegSize: 32, RegId: 16, RegCount: 1
 
-00000000000000A0 6222fd486344dbe0                VPCOMPRESSW zmmword ptr [rbx+r11*8-0x100], zmm24
+00000000000000A0 6222fd486344dbe0                VPCOMPRESSW zmmword ptr [rbx+r11*8-0x40], zmm24
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3440,7 +3440,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3458,7 +3458,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3477,7 +3477,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3496,7 +3496,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3516,7 +3516,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3534,7 +3534,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3553,7 +3553,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3572,7 +3572,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3592,7 +3592,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3610,7 +3610,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3629,7 +3629,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3648,7 +3648,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 8 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3668,7 +3668,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3686,7 +3686,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3705,7 +3705,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3724,7 +3724,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3744,7 +3744,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3762,7 +3762,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3781,7 +3781,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3800,7 +3800,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3820,7 +3820,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3838,7 +3838,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3857,7 +3857,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
@@ -3876,7 +3876,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512VBMI2, Ins cat: AVX512VBMI, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 6
-        EVEX Tuple Type: Tuple 1 Scalar
+        EVEX Tuple Type: Tuple 1 scalar, 16 bit
         Exception class: EVEX, exception type: E4
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes

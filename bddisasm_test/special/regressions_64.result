@@ -1,0 +1,187 @@
+0000000000000000 6626c7f8ff7f                    XBEGIN    0x8005
+        DSIZE: 16, ASIZE: 64, VLEN: -
+        ISA Set: TSX, Ins cat: COND_BR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Offset, Size:  2, RawSize:  2, Encoding: D
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  --,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000006 26c7f800000000                  XBEGIN    0xd
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TSX, Ins cat: COND_BR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  4, Encoding: D
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  --,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000000D 660f01d9                        VMMCALL
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SVM, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 2
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000011 67480f1a44257f                  BNDLDX    bnd0, [rbp+0x7f]
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: MPX, Ins cat: MPX, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 14
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:            Bound, RegSize: 16, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  0, RawSize:  0, Encoding: M, Address Generator: yes, MIB Addressing: yes, 
+                Base: 5, Displacement: 0x000000000000007f, 
+
+0000000000000018 26480fae0448                    FXSAVE64  [rax+rcx*2]
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: FXSAVE, Ins cat: SSE, CET tracked: no
+        CPUID leaf: 0x00000001, reg: edx, bit: 24
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 512, RawSize: 512, Encoding: M, 
+                Segment: 3, Base: 0, Index: 1 * 2, 
+        Operand: 1, Acc:  R-,  Type:       Bank, Size: -1, RawSize: -1, Encoding: S
+
+000000000000001E 26480fae0c48                    FXRSTOR64 [rax+rcx*2]
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: FXSAVE, Ins cat: SSE, CET tracked: no
+        CPUID leaf: 0x00000001, reg: edx, bit: 24
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size: 512, RawSize: 512, Encoding: M, 
+                Segment: 3, Base: 0, Index: 1 * 2, 
+        Operand: 1, Acc:  -W,  Type:       Bank, Size: -1, RawSize: -1, Encoding: S
+
+0000000000000024 26c4e37148c230                  VPERMIL2PS xmm0, xmm1, xmm2, xmm3, 0x00
+        DSIZE: 32, ASIZE: 64, VLEN: 128
+        ISA Set: XOP, Ins cat: XOP, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 11
+        Exception class: SSE/VEX, exception type: 4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 1, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: L, RegType:           Vector, RegSize: 16, RegId: 3, RegCount: 1
+        Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: L
+
+000000000000002B 26c4e37149c230                  VPERMIL2PD xmm0, xmm1, xmm2, xmm3, 0x00
+        DSIZE: 32, ASIZE: 64, VLEN: 128
+        ISA Set: XOP, Ins cat: XOP, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 11
+        Exception class: SSE/VEX, exception type: 4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 1, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: L, RegType:           Vector, RegSize: 16, RegId: 3, RegCount: 1
+        Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: L
+
+0000000000000032 c4e3694acb08                    VBLENDVPS xmm1, xmm2, xmm3, xmm0
+        DSIZE: 32, ASIZE: 64, VLEN: 128
+        ISA Set: AVX, Ins cat: AVX, CET tracked: no
+        CPUID leaf: 0x00000001, reg: ecx, bit: 28
+        Exception class: SSE/VEX, exception type: 4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 3, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: L, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
+
+0000000000000038 c4e36968cb08                    VFMADDPS  xmm1, xmm2, xmm3, xmm0
+        DSIZE: 32, ASIZE: 64, VLEN: 128
+        ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
+        CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 3, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: L, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
+
+000000000000003E 62f27d09a00440                  VPSCATTERDD dword ptr [rax+xmm0*2]{k1}, xmm0
+        DSIZE: 32, ASIZE: 64, VLEN: 128
+        ISA Set: AVX512F, Ins cat: SCATTER, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 16
+        EVEX Tuple Type: Tuple 1 Scalar
+        Exception class: EVEX, exception type: E12
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
+                Segment: 3, Base: 0, Index: 0 * 2, 
+                VSIB index size: 4, VSIB element size: 4, VSIB element count: 4
+                Decorator: Mask k1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
+

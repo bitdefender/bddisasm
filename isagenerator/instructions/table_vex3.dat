@@ -17,10 +17,10 @@ VPBLENDW            Vx,Hx,Wx,Ib           nil               [vex m:3 p:1 l:x w:i
 VPALIGNR            Vx,Hx,Wx,Ib           nil               [vex m:3 p:1 l:x w:i 0x0F /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:4
 
 # 0x10 - 0x1F
-VPEXTRB             Mb,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x14 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
-VPEXTRB             Ry,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x14 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
-VPEXTRW             Mw,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x15 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
-VPEXTRW             Ry,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x15 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
+VPEXTRB             Mb,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x14 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
+VPEXTRB             Rd,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x14 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
+VPEXTRW             Mw,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x15 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
+VPEXTRW             Rd,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x15 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
 VPEXTRD             Ey,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x16 /r ib]        s:AVX, t:AVX, w:W|R|R, e:5
 VPEXTRQ             Ey,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:1 0x16 /r ib]        s:AVX, t:AVX, w:W|R|R, e:5
 VEXTRACTPS          Md,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x17 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
@@ -54,12 +54,12 @@ VEXTRACTI128        Wdq,Vqq,Ib            nil               [vex m:3 p:1 l:1 w:0
 VDPPS               Vx,Hx,Wx,Ib           nil               [vex m:3 p:1 l:x w:i 0x40 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:2
 VDPPD               Vdq,Hdq,Wdq,Ib        nil               [vex m:3 p:1 l:0 w:i 0x41 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:2
 VMPSADBW            Vx,Hx,Wx,Ib           nil               [vex m:3 p:1 l:x w:i 0x42 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:4
-VPCLMULQDQ          Vdq,Hdq,Wdq,Ib        nil               [vex m:3 p:1 l:0 w:i 0x44 /r ib]        s:VPCLMULQDQ, t:VPCLMULQDQ, w:W|R|R|R, e:4
+VPCLMULQDQ          Vx,Hx,Wx,Ib           nil               [vex m:3 p:1 l:x w:i 0x44 /r ib]        s:VPCLMULQDQ, t:VPCLMULQDQ, w:W|R|R|R, e:4
 VPERM2I128          Vqq,Hqq,Wqq,Ib        nil               [vex m:3 p:1 l:1 w:0 0x46 /r ib]        s:AVX2, t:AVX2, w:W|R|R|R, e:6
-VPERMILzz2PS        Vx,Hx,Wx,Lx,Ib        nil               [vex m:3 p:1 l:x w:0 0x48 /r ib]        s:XOP, t:XOP, w:W|R|R|R|R, e:4
-VPERMILzz2PS        Vx,Hx,Lx,Wx,Ib        nil               [vex m:3 p:1 l:x w:1 0x48 /r ib]        s:XOP, t:XOP, w:W|R|R|R|R, e:4
-VPERMILzz2PD        Vx,Hx,Wx,Lx,Ib        nil               [vex m:3 p:1 l:x w:0 0x49 /r ib]        s:XOP, t:XOP, w:W|R|R|R|R, e:4
-VPERMILzz2PD        Vx,Hx,Lx,Wx,Ib        nil               [vex m:3 p:1 l:x w:1 0x49 /r ib]        s:XOP, t:XOP, w:W|R|R|R|R, e:4
+VPERMIL2PS          Vx,Hx,Wx,Lx,m2zIb     nil               [vex m:3 p:1 l:x w:0 0x48 /r is4]       s:XOP, t:XOP, w:W|R|R|R|R, e:4
+VPERMIL2PS          Vx,Hx,Lx,Wx,m2zIb     nil               [vex m:3 p:1 l:x w:1 0x48 /r is4]       s:XOP, t:XOP, w:W|R|R|R|R, e:4
+VPERMIL2PD          Vx,Hx,Wx,Lx,m2zIb     nil               [vex m:3 p:1 l:x w:0 0x49 /r is4]       s:XOP, t:XOP, w:W|R|R|R|R, e:4
+VPERMIL2PD          Vx,Hx,Lx,Wx,m2zIb     nil               [vex m:3 p:1 l:x w:1 0x49 /r is4]       s:XOP, t:XOP, w:W|R|R|R|R, e:4
 VBLENDVPS           Vx,Hx,Wx,Lx           nil               [vex m:3 p:1 l:x w:0 0x4A /r is4]       s:AVX, t:AVX, w:W|R|R|R, e:4
 VBLENDVPD           Vx,Hx,Wx,Lx           nil               [vex m:3 p:1 l:x w:0 0x4B /r is4]       s:AVX, t:AVX, w:W|R|R|R, e:4
 VPBLENDVB           Vx,Hx,Wx,Lx           nil               [vex m:3 p:1 l:x w:0 0x4C /r is4]       s:AVX, t:AVX, w:W|R|R|R, e:4

@@ -47,6 +47,24 @@ def test_dir(dir):
         os.remove(f)
     for f in glob.glob('%s\\*.temp' % dir):
         os.remove(f)
+        
+def regenerate(dir): 
+    for f in glob.glob('%s\\*' % dir):
+        if -1 == f.find('.'):
+            if 0 < f.find('_16'):
+                mod = '-b16'
+            elif 0 < f.find('_32'):
+                mod = '-b32'
+            else:
+                mod = '-b64'
+            if 0 < f.find('_r0'):
+                mod += ' -k'
+                
+            print('    * Regenerating test case %s...' % f)
+            os.system('disasm -exi -shemu %s -f %s >%s.result' % (mod, f, f))
+                            
+    for f in glob.glob('%s\\*_decoded.bin' % dir):
+        os.remove(f)        
 
 for dn in glob.glob("*"):
     if not os.path.isdir(dn):

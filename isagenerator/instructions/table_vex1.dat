@@ -238,13 +238,13 @@ CLEVICT1            M?                    nil               [vex m:1 p:2 0xAE /7
 # 0xB0 - 0xBF
 
 # 0xC0 - 0xCF
-VCMPSS              Vss,Hss,Wss,Ib        nil               [vex m:1 p:0 l:i w:i 0xC2 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:3
+VCMPPS              Vss,Hss,Wss,Ib        nil               [vex m:1 p:0 l:i w:i 0xC2 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:3
 VCMPPD              Vpd,Hpd,Wpd,Ib        nil               [vex m:1 p:1 l:x w:i 0xC2 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:3
 VCMPSS              Vss,Hss,Wss,Ib        nil               [vex m:1 p:2 l:i w:i 0xC2 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:3
 VCMPSD              Vsd,Hsd,Wsd,Ib        nil               [vex m:1 p:3 l:i w:i 0xC2 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:3
-VPINSRW             Vdq,Hdq,Mw,Ib         nil               [vex m:1 p:1 l:0 w:0 0xC4 /r:mem ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
-VPINSRW             Vdq,Hdq,Ry,Ib         nil               [vex m:1 p:1 l:0 w:0 0xC4 /r:reg ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
-VPEXTRW             Gy,Udq,Ib             nil               [vex m:1 p:1 l:0 w:0 0xC5 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
+VPINSRW             Vdq,Hdq,Mw,Ib         nil               [vex m:1 p:1 l:0 w:i 0xC4 /r:mem ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
+VPINSRW             Vdq,Hdq,Rd,Ib         nil               [vex m:1 p:1 l:0 w:i 0xC4 /r:reg ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
+VPEXTRW             Gy,Udq,Ib             nil               [vex m:1 p:1 l:0 w:i 0xC5 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
 VSHUFPS             Vps,Hps,Wps,Ib        nil               [vex m:1 p:0 l:x w:i 0xC6 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:4
 VSHUFPD             Vpd,Hpd,Wpd,Ib        nil               [vex m:1 p:1 l:x w:i 0xC6 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:4
 

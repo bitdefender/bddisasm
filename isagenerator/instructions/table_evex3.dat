@@ -14,10 +14,10 @@ VRNDSCALESD          Vdq{K}{z},Hdq,Wsd{sae},Ib    nil       [evex m:3 p:1 l:i w:
 VPALIGNR             Vn{K}{z},Hn,Wn,Ib            nil       [evex m:3 p:1 l:x w:i 0x0F /r ib]          s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R|R|R
 
 # 0x10 - 0x1F
-VPEXTRB              Mb,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x14 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
-VPEXTRB              Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x14 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
-VPEXTRW              Mw,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x15 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
-VPEXTRW              Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x15 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R
+VPEXTRB              Mb,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x14 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s8, e:E9NF, w:W|R|R
+VPEXTRB              Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x14 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s8, e:E9NF, w:W|R|R
+VPEXTRW              Mw,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x15 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s16, e:E9NF, w:W|R|R
+VPEXTRW              Ry,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x15 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s16, e:E9NF, w:W|R|R
 VPEXTRD              Ed,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:0 0x16 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R
 VPEXTRQ              Eq,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:1 0x16 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R
 VEXTRACTPS           Md,Vdq,Ib                    nil       [evex m:3 p:1 l:0 w:i 0x17 /r:mem ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R
@@ -37,8 +37,8 @@ VPCMPD               rKq{K},Hn,Wn|B32,Ib          nil       [evex m:3 p:1 l:x w:
 VPCMPQ               rKq{K},Hn,Wn|B64,Ib          nil       [evex m:3 p:1 l:x w:1 0x1F /r ib]          s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
 
 # 0x20 - 0x2F
-VPINSRB              Vdq,Hdq,Mb,Ib                nil       [evex m:3 p:1 l:0 w:i 0x20 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
-VPINSRB              Vdq,Hdq,Rd,Ib                nil       [evex m:3 p:1 l:0 w:i 0x20 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
+VPINSRB              Vdq,Hdq,Mb,Ib                nil       [evex m:3 p:1 l:0 w:i 0x20 /r:mem ib]      s:AVX512BW, t:AVX512, l:t1s8, e:E9NF, w:W|R|R|R
+VPINSRB              Vdq,Hdq,Rd,Ib                nil       [evex m:3 p:1 l:0 w:i 0x20 /r:reg ib]      s:AVX512BW, t:AVX512, l:t1s8, e:E9NF, w:W|R|R|R
 VINSERTPS            Vdq,Hdq,Md,Ib                nil       [evex m:3 p:1 l:0 w:i 0x21 /r:mem ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
 VINSERTPS            Vdq,Hdq,Udq,Ib               nil       [evex m:3 p:1 l:0 w:i 0x21 /r:reg ib]      s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
 VPINSRD              Vdq,Hdq,Ed,Ib                nil       [evex m:3 p:1 l:0 w:0 0x22 /r ib]          s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R

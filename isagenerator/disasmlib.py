@@ -43,6 +43,8 @@ valid_attributes = {
     'PREFIX',       # Prefix.
     'SERIAL',       # Instruction is serializing.
     'SIBMEM',       # Instruction uses sibmem addressing (AMX instructions).
+    'I67',          # Ignore the address size override (0x67) prefix in 64 bit mode.
+    'IER',          # Ignore embedded rounding for the instruction.
 }
 
 #
@@ -126,6 +128,7 @@ valid_optype = [
     'rT',           # The reg field inside modrm encodes a TMM register (AMX extension).
     'mT',           # The rm field inside modrm encodes a TMM register (AMX extension).
     'vT',           # The v field inside vex encodes a TMM register (AMX extension).
+    'm2zI',         # Bits [1,0] of the immediate byte which selects the fourth register.
 ]
 
 # Operand sizes.
@@ -236,6 +239,7 @@ valid_impops = {# register      size
     'aDI'      : ('rDI',        'asz'), # DI, EDI, or RDI register, depending on address size.
     'R11'      : ('rR11',       'q'),   # R11 register.
     'rIP'      : ('rIP',        'v'),   # IP, EIP or RIP, depending on op size.
+    'yIP'      : ('rIP',        'yf'),  # EIP in 16/32 bit mode, or RIP in 64 bit mode.
     '1'        : ('1',          'b'),   # Constant 1.
     'XMM0'     : ('XMM0',       'dq'),  # XMM0 register.
     'ST(0)'    : ('ST(0)',      'ft'),  # ST(0) register.

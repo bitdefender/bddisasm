@@ -176,6 +176,8 @@ typedef uint32_t ND_REG_SIZE;
 #define ND_FLAG_NO_RIP_REL          0x02000000  // The instruction doesn't work with RIP relative addressing.
 #define ND_FLAG_NO66                0x04000000  // The 0x66 prefix is not accepted by the instruction.
 #define ND_FLAG_SIBMEM              0x08000000  // sibmem addressing is used (Intel AMX instructions).
+#define ND_FLAG_I67                 0x10000000  // Ignore the 0x67 prefix in 64 bit mode (Intel MPX instructions).
+#define ND_FLAG_IER                 0x20000000  // Ignore EVEX embedded rounding.
 
 
 //

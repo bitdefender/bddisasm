@@ -413,6 +413,9 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_MEM_SHSP,
     ND_OPT_MEM_SHS0,
 
+    // Special immediates.
+    ND_OPT_Im2z,
+
     // Misc CR/XCR/MSR/SYS registers.
     ND_OPT_CR_0,
     ND_OPT_SYS_IDTR,

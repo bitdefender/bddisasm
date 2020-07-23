@@ -292,7 +292,6 @@ const char* category_to_string(
     case ND_CAT_SYSTEM:               return "SYSTEM";
     case ND_CAT_UD:                   return "UD";
     case ND_CAT_UNCOND_BR:            return "UNCOND_BR";
-    case ND_CAT_UNDOC:                return "UNDOC";
     case ND_CAT_UNKNOWN:              return "UNKNOWN";
     case ND_CAT_VAES:                 return "VAES";
     case ND_CAT_VFMA:                 return "VFMA";

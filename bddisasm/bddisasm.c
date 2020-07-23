@@ -203,6 +203,8 @@ static const uint16_t gOperandMap[] =
     ND_OPE_S,       // ND_OPT_MEM_SHSP
     ND_OPE_S,       // ND_OPT_MEM_SHS0
 
+    ND_OPE_L,       // ND_OPT_Im2z
+
     ND_OPE_S,       // ND_OPT_CR_0
     ND_OPE_S,       // ND_OPT_IDTR
     ND_OPE_S,       // ND_OPT_GDTR
@@ -529,10 +531,7 @@ NdFetchVex3(
             // Vex.R and Vex.X have been tested by the initial if.
 
             // Vex.vvvv must be less than 8.
-            if ((Instrux->Exs.v & 0x8) == 0x8)
-            {
-                return ND_STATUS_INVALID_ENCODING_IN_MODE;
-            }
+            Instrux->Exs.v &= 7;
 
             // Vex.B is ignored, so we force it to 0.
             Instrux->Exs.b = 0;
@@ -1243,7 +1242,7 @@ NdGetCompDispSize(
     case ND_TUPLE_T1S16:
         return 2;
     case ND_TUPLE_T1S:
-        return Instrux->Exs.w ? 8 : 4;
+        return !!(Instrux->Attributes & ND_FLAG_WIG) ? 4 : Instrux->Exs.w ? 8 : 4;
     case ND_TUPLE_T1F:
         return (uint8_t)MemSize;
     case ND_TUPLE_T2:
@@ -2330,6 +2329,13 @@ NdParseOperand(
         }
         break;
 
+    case ND_OPT_Im2z:
+        {
+            operand->Type = ND_OP_IMM;
+            operand->Info.Immediate.Imm = Instrux->SseImmediate & 3;
+        }
+        break;
+
     case ND_OPT_J:
         // Fetch the relative offset. NOTE: The size of the relative can't exceed 4 bytes.
         status = NdFetchRelativeOffset(Instrux, Code, Offset, Size, (uint8_t)size);
@@ -2571,12 +2577,6 @@ memory:
             {
                 if ((Instrux->ModRm.mod == 0) && (Instrux->ModRm.rm == REG_RBP))
                 {
-                    // Some instructions (example: MPX) don't support RIP relative addressing.
-                    if (!!(Instrux->Attributes & ND_FLAG_NO_RIP_REL))
-                    {
-                        return ND_STATUS_RIP_REL_ADDRESSING_NOT_SUPPORTED;
-                    }
-
                     //
                     // RIP relative addressing addresses a memory region relative to the current RIP; However,
                     // the current RIP, when executing the current instruction, is already updated and points
@@ -2585,6 +2585,12 @@ memory:
                     // addressing, as long as we're in long mode.
                     //
                     operand->Info.Memory.IsRipRel = Instrux->IsRipRelative = (Instrux->DefCode == ND_CODE_64);
+
+                    // Some instructions (example: MPX) don't support RIP relative addressing.
+                    if (operand->Info.Memory.IsRipRel && !!(Instrux->Attributes & ND_FLAG_NO_RIP_REL))
+                    {
+                        return ND_STATUS_RIP_REL_ADDRESSING_NOT_SUPPORTED;
+                    }
                 }
                 else
                 {
@@ -2728,7 +2734,12 @@ memory:
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SSE;
         operand->Info.Register.Size = (ND_REG_SIZE)(size < ND_SIZE_128BIT ? ND_SIZE_128BIT : size);
-        operand->Info.Register.Reg = ((Instrux->SseImmediate >> 4) & 0xF) | ((Instrux->SseImmediate & 8) << 1);
+        operand->Info.Register.Reg = (Instrux->SseImmediate >> 4) & 0xF;
+
+        if (Instrux->DefCode != ND_CODE_64)
+        {
+            operand->Info.Register.Reg &= 0x7;
+        }
 
         Offset = Instrux->Length;
         break;
@@ -3637,6 +3648,7 @@ NdGetEffectiveOpMode(
         break;
     case ND_CODE_64:
         Instrux->EfOpMode = (width || f64 || (d64 && !has66)) ? ND_OPSZ_64 : (has66 ? ND_OPSZ_16 : ND_OPSZ_32);
+        Instrux->AddrMode = !!(Instrux->Attributes & ND_FLAG_I67) ? ND_ADDR_64 : Instrux->AddrMode;
         break;
     default:
         return ND_STATUS_INVALID_INSTRUX;
@@ -3692,7 +3704,8 @@ NdValidateInstruction(
         }
 
         // VSIB instructions have a restriction: the same vector register can't be used by more than one operand.
-        if (ND_HAS_VSIB(Instrux))
+        // The exception is SCATTER*, which can use the VSIB reg as two sources.
+        if (ND_HAS_VSIB(Instrux) && Instrux->Category != ND_CAT_SCATTER)
         {
             uint8_t usedVects[32] = { 0 };
 
@@ -3769,8 +3782,10 @@ NdValidateInstruction(
                 }
             }
 
-            // EVEX.b must be 0 if SAE/ER is not used.
-            if (Instrux->Exs.bm && (Instrux->ModRm.mod == 3) && !ND_SAE_SUPPORT(Instrux) && !ND_ER_SUPPORT(Instrux))
+            // EVEX.b must be 0 if SAE/ER is not used, but can be ignored if the ignore embedded rounding flag is set.
+            if (Instrux->Exs.bm && (Instrux->ModRm.mod == 3) && 
+                !ND_SAE_SUPPORT(Instrux) && !ND_ER_SUPPORT(Instrux) &&
+                !(Instrux->Attributes & ND_FLAG_IER))
             {
                 return ND_STATUS_ER_SAE_NOT_SUPPORTED;
             }
@@ -4483,7 +4498,7 @@ NdToText(
 
         case ND_OP_IMM:
             {
-                switch (pOp->RawSize)
+                switch (pOp->Size)
                 {
                 case 1:
                     status = NdSprintf(temp, sizeof(temp), "0x%02x", (uint8_t)pOp->Info.Immediate.Imm);
@@ -4563,8 +4578,10 @@ NdToText(
 
         case ND_OP_MEM:
             {
-                // Prepend the size.
-                switch (pOp->Size)
+                // Prepend the size. For VSIB addressing, store the VSIB element size, not the total accessed size.
+                ND_OPERAND_SIZE size = pOp->Info.Memory.IsVsib ? pOp->Info.Memory.Vsib.ElemSize : pOp->Size;
+
+                switch (size)
                 {
                 case 1:
                     res = nd_strcat_s(Buffer, BufferSize, "byte ptr ");

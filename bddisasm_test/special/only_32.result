@@ -239,7 +239,7 @@
         Operand: 2, Acc:  RW,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 4, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000014 60                              PUSHA
+0000000000000014 60                              PUSHAD
         DSIZE: 32, ASIZE: 32, VLEN: -
         ISA Set: I386, Ins cat: PUSH, CET tracked: no
         Valid modes
@@ -250,11 +250,11 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  R-,  Type:       Bank, Size: -1, RawSize: -1, Encoding: S
         Operand: 1, Acc:  -W,  Type:     Memory, Size: 32, RawSize: 32, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 
-0000000000000015 61                              POPA
+0000000000000015 61                              POPAD
         DSIZE: 32, ASIZE: 32, VLEN: -
         ISA Set: I386, Ins cat: POP, CET tracked: no
         Valid modes
@@ -265,7 +265,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:       Bank, Size: -1, RawSize: -1, Encoding: S
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 

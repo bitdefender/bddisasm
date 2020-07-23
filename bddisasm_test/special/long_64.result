@@ -1,4 +1,4 @@
-0000000000000000 f2f0654b8184f7ffffff7fbdbdbdbd  XACQUIRE LOCK ADD qword ptr gs:[r15+r14*8+0x7fffffff], 0xbdbdbdbd
+0000000000000000 f2f0654b8184f7ffffff7fbdbdbdbd  XACQUIRE LOCK ADD qword ptr gs:[r15+r14*8+0x7fffffff], 0xffffffffbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access
@@ -113,7 +113,7 @@
                 BND: no, BHINT: no, DNT: no
 
 0000000000000017 66                              db 0x66 (0x80000003)
-0000000000000018 f2f0654b8184f7ffffff7fbdbdbdbd  XACQUIRE LOCK ADD qword ptr gs:[r15+r14*8+0x7fffffff], 0xbdbdbdbd
+0000000000000018 f2f0654b8184f7ffffff7fbdbdbdbd  XACQUIRE LOCK ADD qword ptr gs:[r15+r14*8+0x7fffffff], 0xffffffffbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: I86, Ins cat: ARITH, CET tracked: no
         FLAGS access

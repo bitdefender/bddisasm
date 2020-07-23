@@ -447,7 +447,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  8, RawSize:  2, Encoding: I
+        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  2, RawSize:  2, Encoding: I
         Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 4, RegCount: 1
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
@@ -484,7 +484,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  2, Encoding: I
+        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  2, RawSize:  2, Encoding: I
         Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:          Segment, RegSize:  4, RegId: 1, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Stack: yes, 
@@ -542,8 +542,8 @@
                 Entire register
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
-                SMM: no, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no

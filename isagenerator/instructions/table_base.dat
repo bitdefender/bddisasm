@@ -110,8 +110,10 @@ POP            Zv            Kv                [            0x5E]          s:I86
 POP            Zv            Kv                [            0x5F]          s:I86, t:POP,  w:W|R, a:D64 
 
 # 0x60 - 0x6F
-PUSHA          nil           BANK,Kv8          [            0x60]          s:I386, t:PUSH, w:R|W, m:NO64
-POPA           nil           BANK,Kv8          [            0x61]          s:I386, t:POP, w:W|R, m:NO64
+PUSHA          nil           BANK,Kv8          [       ds16 0x60]          s:I386, t:PUSH, w:R|W, m:NO64
+PUSHAD         nil           BANK,Kv8          [       ds32 0x60]          s:I386, t:PUSH, w:R|W, m:NO64
+POPA           nil           BANK,Kv8          [       ds16 0x61]          s:I386, t:POP, w:W|R, m:NO64
+POPAD          nil           BANK,Kv8          [       ds32 0x61]          s:I386, t:POP, w:W|R, m:NO64
 BOUND          Gv,Ma         nil               [            0x62 /r:mem]   s:I186, t:INTERRUPT, w:R|R, m:NO64
 ARPL           Ew,Gw         Fv                [            0x63 /r]       s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL|NO64
 MOVSXD         Gv,Ez         nil               [        o64 0x63 /r]       s:LONGMODE, t:DATAXFER, w:W|R, m:O64
@@ -174,14 +176,14 @@ SUB            Ev,Iz         Fv                [            0x81 /5 iz]    s:I86
 XOR            Ev,Iz         Fv                [            0x81 /6 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, p:HLE|LOCK
 CMP            Ev,Iz         Fv                [            0x81 /7 iz]    s:I86, t:ARITH, w:R|R|W,   f:ARITH,  a:OP2SEXO1
 
-ADD            Ev,Iz         Fv                [            0x82 /0 iz]    s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
-OR             Ev,Iz         Fv                [            0x82 /1 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
-ADC            Ev,Iz         Fv                [            0x82 /2 iz]    s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, a:OP2SEXO1, m:NO64, p:HLE|LOCK
-SBB            Ev,Iz         Fv                [            0x82 /3 iz]    s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, a:OP2SEXO1, m:NO64, p:HLE|LOCK
-AND            Ev,Iz         Fv                [            0x82 /4 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
-SUB            Ev,Iz         Fv                [            0x82 /5 iz]    s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
-XOR            Ev,Iz         Fv                [            0x82 /6 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
-CMP            Ev,Iz         Fv                [            0x82 /7 iz]    s:I86, t:ARITH, w:R|R|W,   f:ARITH,  a:OP2SEXO1, m:NO64
+ADD            Eb,Ib         Fv                [            0x82 /0 iz]    s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
+OR             Eb,Ib         Fv                [            0x82 /1 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
+ADC            Eb,Ib         Fv                [            0x82 /2 iz]    s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, a:OP2SEXO1, m:NO64, p:HLE|LOCK
+SBB            Eb,Ib         Fv                [            0x82 /3 iz]    s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, a:OP2SEXO1, m:NO64, p:HLE|LOCK
+AND            Eb,Ib         Fv                [            0x82 /4 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
+SUB            Eb,Ib         Fv                [            0x82 /5 iz]    s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
+XOR            Eb,Ib         Fv                [            0x82 /6 iz]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, m:NO64, p:HLE|LOCK
+CMP            Eb,Ib         Fv                [            0x82 /7 iz]    s:I86, t:ARITH, w:R|R|W,   f:ARITH,  a:OP2SEXO1, m:NO64
 
 ADD            Ev,Ib         Fv                [            0x83 /0 ib]    s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SEXO1, p:HLE|LOCK
 OR             Ev,Ib         Fv                [            0x83 /1 ib]    s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SEXO1, p:HLE|LOCK
@@ -324,17 +326,17 @@ SHL            Ev,Ib         Fv                [            0xC1 /4 ib]    s:I86
 SHR            Ev,Ib         Fv                [            0xC1 /5 ib]    s:I86, t:SHIFT, w:RW|R|W, f:SHIFT
 SAL            Ev,Ib         Fv                [            0xC1 /6 ib]    s:I86, t:SHIFT, w:RW|R|W, f:SHIFT
 SAR            Ev,Ib         Fv                [            0xC1 /7 ib]    s:I86, t:SHIFT, w:RW|R|W, f:SHIFT
-RETN           Iw            rIP,sSP,Kv,SHS1   [            0xC2 iw]       s:I86, t:RET, w:R|W|W|R|R, a:F64|OP1SEXDW, p:BND
+RETN           Iw            rIP,sSP,Kv,SHS1   [            0xC2 iw]       s:I86, t:RET, w:R|W|W|R|R, a:F64, p:BND
 RETN           nil           rIP,Kv,SHS1       [            0xC3]          s:I86, t:RET, w:W|R|R, a:F64, p:BND
 LES            Gz,Mp         ES                [            0xC4 /r:mem]   s:I86, t:SEGOP, w:W|R|W, m:NO64|NOSGX
 LDS            Gz,Mp         DS                [            0xC5 /r:mem]   s:I86, t:SEGOP, w:W|R|W, m:NO64|NOSGX
 MOV            Eb,Ib         nil               [            0xC6 /0 ib]    s:I86, t:DATAXFER, w:W|R, p:XRELEASE|HLEWOL
 XABORT         Ib            EAX               [            0xC6 /0xF8 ib] s:TSX, t:UNCOND_BR, w:R|RCW, i:RTM, m:NOTSX
 MOV            Ev,Iz         nil               [            0xC7 /0 iz]    s:I86, t:DATAXFER, w:W|R, a:OP2SEXO1, p:XRELEASE|HLEWOL
-XBEGIN         Jz            rIP,EAX           [            0xC7 /0xF8 cz] s:TSX, t:COND_BR, w:R|RW|CW, i:RTM
+XBEGIN         Jz            yIP,EAX           [            0xC7 /0xF8 cz] s:TSX, t:COND_BR, w:R|RW|CW, i:RTM
 ENTER          Iw,Ib         rBP,sSP,Kv        [            0xC8 iw ib]    s:I186, t:MISC, w:R|R|RW|RW|W
 LEAVE          nil           sBP,rBP,rSP,Kv    [            0xC9]          s:I186, t:MISC, w:R|RW|RW|R, a:D64
-RETF           Iw            CS,rIP,Kv2,SHS2   [            0xCA iw]       s:I86, t:RET, a:OP1SEXDW, w:R|W|W|R|R
+RETF           Iw            CS,rIP,Kv2,SHS2   [            0xCA iw]       s:I86, t:RET, w:R|W|W|R|R
 RETF           nil           CS,rIP,Kv2,SHS2   [            0xCB]          s:I86, t:RET, w:W|W|R|R
 INT3           nil           CS,rIP,Kv3,Fv,SHS3 [           0xCC]          s:I86, t:INTERRUPT, w:RW|RW|RW|W|W, f:INT, m:NOSGX
 INT            Ib            CS,rIP,Kv3,Fv,SHS3 [           0xCD ib]       s:I86, t:INTERRUPT, w:R|RW|RW|RW|W|W, f:INT, m:NOSGX

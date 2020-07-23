@@ -1,4 +1,4 @@
-0000000000000000 c4e2919294fb00100000            VGATHERDPD xmm2, xmmword ptr [rbx+xmm7*8+0x1000], xmm13
+0000000000000000 c4e2919294fb00100000            VGATHERDPD xmm2, qword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -16,7 +16,7 @@
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 2
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-000000000000000A c4e2119294fb00100000            VGATHERDPS xmm2, xmmword ptr [rbx+xmm7*8+0x1000], xmm13
+000000000000000A c4e2119294fb00100000            VGATHERDPS xmm2, dword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -34,7 +34,7 @@
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 4
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-0000000000000014 c4e2919394fb00100000            VGATHERQPD xmm2, xmmword ptr [rbx+xmm7*8+0x1000], xmm13
+0000000000000014 c4e2919394fb00100000            VGATHERQPD xmm2, qword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -52,7 +52,7 @@
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 2
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-000000000000001E c4e2119394fb00100000            VGATHERQPS xmm2, qword ptr [rbx+xmm7*8+0x1000], xmm13
+000000000000001E c4e2119394fb00100000            VGATHERQPS xmm2, dword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -70,7 +70,7 @@
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 2
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-0000000000000028 c4e2159394cb00100000            VGATHERQPS xmm2, xmmword ptr [rbx+ymm1*8+0x1000], xmm13
+0000000000000028 c4e2159394cb00100000            VGATHERQPS xmm2, dword ptr [rbx+ymm1*8+0x1000], xmm13
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -88,7 +88,7 @@
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 4
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-0000000000000032 c4e2119094fb00100000            VPGATHERDD xmm2, xmmword ptr [rbx+xmm7*8+0x1000], xmm13
+0000000000000032 c4e2119094fb00100000            VPGATHERDD xmm2, dword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -106,7 +106,7 @@
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 4
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-000000000000003C c4e2919094fb00100000            VPGATHERDQ xmm2, xmmword ptr [rbx+xmm7*8+0x1000], xmm13
+000000000000003C c4e2919094fb00100000            VPGATHERDQ xmm2, qword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -124,7 +124,7 @@
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 2
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-0000000000000046 c4e2119194fb00100000            VPGATHERQD xmm2, qword ptr [rbx+xmm7*8+0x1000], xmm13
+0000000000000046 c4e2119194fb00100000            VPGATHERQD xmm2, dword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -142,7 +142,7 @@
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 2
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-0000000000000050 c4e2159194cb00100000            VPGATHERQD xmm2, xmmword ptr [rbx+ymm1*8+0x1000], xmm13
+0000000000000050 c4e2159194cb00100000            VPGATHERQD xmm2, dword ptr [rbx+ymm1*8+0x1000], xmm13
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12
@@ -160,7 +160,7 @@
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 4
         Operand: 2, Acc:  RW,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 13, RegCount: 1
 
-000000000000005A c4e2919194fb00100000            VPGATHERQQ xmm2, xmmword ptr [rbx+xmm7*8+0x1000], xmm13
+000000000000005A c4e2919194fb00100000            VPGATHERQQ xmm2, qword ptr [rbx+xmm7*8+0x1000], xmm13
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX2GATHER, Ins cat: AVX2GATHER, CET tracked: no
         Exception class: SSE/VEX, exception type: 12

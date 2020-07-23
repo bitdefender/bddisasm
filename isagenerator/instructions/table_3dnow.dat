@@ -10,7 +10,7 @@ PFNACC         Pq,Qq         nil           [0x0F 0x0F /r 0x8A]         s:3DNOW, 
 PFPNACC        Pq,Qq         nil           [0x0F 0x0F /r 0x8E]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFCMPGE        Pq,Qq         nil           [0x0F 0x0F /r 0x90]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFMIN          Pq,Qq         nil           [0x0F 0x0F /r 0x94]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFMIN          Pq,Qq         nil           [0x0F 0x0F /r 0x96]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRCP          Pq,Qq         nil           [0x0F 0x0F /r 0x96]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFRSQRT        Pq,Qq         nil           [0x0F 0x0F /r 0x97]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFSUB          Pq,Qq         nil           [0x0F 0x0F /r 0x9A]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFADD          Pq,Qq         nil           [0x0F 0x0F /r 0x9E]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW

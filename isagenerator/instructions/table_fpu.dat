@@ -108,8 +108,8 @@ FDIV           ST(0),Mfq     X87STATUS                   [0xDC /6:mem]         s
 FDIVR          ST(0),Mfq     X87STATUS                   [0xDC /7:mem]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FADD           ST(i),ST(0)   X87STATUS                   [0xDC /0:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FMUL           ST(i),ST(0)   X87STATUS                   [0xDC /1:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
-FCOM           ST(i),ST(0)   X87STATUS                   [0xDC /2:reg]         s:X87, t:X87_ALU, w:R|R|W, u:C0=m|C1=0|C2=m|C3=m
-FCOMP          ST(i),ST(0)   X87STATUS                   [0xDC /3:reg]         s:X87, t:X87_ALU, w:R|R|W, u:C0=m|C1=0|C2=m|C3=m
+FCOM           ST(0),ST(i)   X87STATUS                   [0xDC /2:reg]         s:X87, t:X87_ALU, w:R|R|W, u:C0=m|C1=0|C2=m|C3=m
+FCOMP          ST(0),ST(i)   X87STATUS                   [0xDC /3:reg]         s:X87, t:X87_ALU, w:R|R|W, u:C0=m|C1=0|C2=m|C3=m
 FSUBR          ST(i),ST(0)   X87STATUS                   [0xDC /4:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FSUB           ST(i),ST(0)   X87STATUS                   [0xDC /5:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FDIVR          ST(i),ST(0)   X87STATUS                   [0xDC /6:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
@@ -126,8 +126,8 @@ FNSAVE         Mfs           X87CONTROL,X87TAG,X87STATUS [0xDD /6:mem]         s
 FNSTSW         Mw            X87STATUS                   [0xDD /7:mem]         s:X87, t:X87_ALU, w:W|W, u:C0=u|C1=u|C2=u|C3=u
 FFREE          ST(i)         X87TAG                      [0xDD /0:reg]         s:X87, t:X87_ALU, w:R|W, u:C0=u|C1=u|C2=u|C3=u
 FXCH           ST(0),ST(i)   X87STATUS                   [0xDD /1:reg]         s:X87, t:X87_ALU, w:W|R|W, u:C1=0
-FST            ST(0),ST(i)   X87STATUS                   [0xDD /2:reg]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
-FSTP           ST(0),ST(i)   X87STATUS                   [0xDD /3:reg]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
+FST            ST(i),ST(0)   X87STATUS                   [0xDD /2:reg]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
+FSTP           ST(i),ST(0)   X87STATUS                   [0xDD /3:reg]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
 FUCOM          ST(0),ST(i)   X87STATUS                   [0xDD /4:reg]         s:X87, t:X87_ALU, w:R|R|W, u:C0=m|C1=m|C2=m|C3=m
 FUCOMP         ST(0),ST(i)   X87STATUS                   [0xDD /5:reg]         s:X87, t:X87_ALU, w:R|R|W, u:C0=m|C1=m|C2=m|C3=m
 
