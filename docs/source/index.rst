@@ -376,7 +376,7 @@ Determining if the instruction is a branch of any kind
    
    if (ix.RipAccess & ND_ACCESS_ANY_WRITE) // Instruction writes RIP.
    
-Computing the linear address of a memory operand
+Computing the virtual address of a memory operand
 ------------------------------------------------
 
 .. code-block:: c
