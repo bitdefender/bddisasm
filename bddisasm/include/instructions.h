@@ -1505,7 +1505,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_b, 0, ND_OPA_W, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
     }, 
 
     // Pos:111 Instruction:"CLEVICT0 M?" Encoding:"vex m:1 p:3 0xAE /7:mem"/"M"
@@ -1613,7 +1613,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_b, 0, ND_OPA_W, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
     }, 
 
     // Pos:120 Instruction:"CLZERO" Encoding:"0x0F 0x01 /0xFC"/""
@@ -16108,7 +16108,7 @@ const ND_INSTRUCTION gInstructions[2557] =
     {
         ND_INS_SERIALIZE, ND_CAT_MISC, ND_SET_SERIALIZE, 697, 
         ND_MOD_ANY, 
-        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, ND_CFF_SERIALIZE, 
+        0, 0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_SERIAL|ND_FLAG_MODRM, ND_CFF_SERIALIZE, 
         0,
         0,
         0,

@@ -36,7 +36,7 @@ VMFUNC         nil           nil                       [         NP 0x0F 0x01 /0
 XEND           nil           nil                       [         NP 0x0F 0x01 /0xD5]           s:TSX, t:COND_BR, i:RTM
 XTEST          nil           Fv                        [         NP 0x0F 0x01 /0xD6]           s:TSX, t:LOGIC, w:W, i:RTM, f:CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
 ENCLU          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xD7]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:USER|NOSMM|NOTSX
-SERIALIZE      nil           nil                       [         NP 0x0F 0x01 /0xE8]           s:SERIALIZE, t:MISC
+SERIALIZE      nil           nil                       [         NP 0x0F 0x01 /0xE8]           s:SERIALIZE, t:MISC, a:SERIAL
 XSUSLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE8]           s:TSXLDTRK, t:MISC
 XRESLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE9]           s:TSXLDTRK, t:MISC
 SAVEPREVSSP    nil           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET_SS, t:CET, w:RW|R, f:CF=t
@@ -155,7 +155,7 @@ BNDMK          rBl,My        nil                       [       0xF3 0x0F 0x1B /r
 NOP            Gv,Ev         nil                       [       0xF3 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:R|R
 BNDCN          rBl,Ey        nil                       [       0xF2 0x0F 0x1B /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
 
-CLDEMOTE       Mb            nil                       [         NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:W
+CLDEMOTE       Mb            nil                       [         NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:P
 NOP            Ev,Gv         nil                       [       0x66 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Ev,Gv         nil                       [       0xF3 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
 NOP            Ev,Gv         nil                       [       0xF2 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
@@ -477,7 +477,7 @@ XRSTOR         M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xAE /5
 XRSTOR64       M?            EDX,EAX,XCR0,BANK         [    rexw NP 0x0F 0xAE /5:mem]          s:XSAVE, t:XSAVE, c:XRSTOR, w:R|R|R|R|W
 XSAVEOPT       M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xAE /6:mem]          s:XSAVE, t:XSAVE, c:XSAVEOPT, w:W|R|R|R|R
 XSAVEOPT64     M?            EDX,EAX,XCR0,BANK         [    rexw NP 0x0F 0xAE /6:mem]          s:XSAVE, t:XSAVE, c:XSAVEOPT, w:W|R|R|R|R
-CLWB           Mb            nil                       [       0x66 0x0F 0xAE /6:mem]          s:CLWB, t:MISC, w:W
+CLWB           Mb            nil                       [       0x66 0x0F 0xAE /6:mem]          s:CLWB, t:MISC, w:R
 CLRSSBSY       Mq            SSP                       [       0xF3 0x0F 0xAE /6:mem]          s:CET_SS, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
 CLFLUSH        Mb            nil                       [         NP 0x0F 0xAE /7:mem]          s:CLFSH, t:MISC, w:R
 CLFLUSHOPT     Mb            nil                       [       0x66 0x0F 0xAE /7:mem]          s:CLFSHOPT, t:MISC, w:R
