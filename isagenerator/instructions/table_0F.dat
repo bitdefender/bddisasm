@@ -81,21 +81,21 @@ WBINVD         nil           nil                       [            0x0F 0x09]  
 WBNOINVD       nil           nil                       [      a0xF3 0x0F 0x09]                 s:WBNOINVD, t:WBNOINVD, m:KERNEL|NOV86
 CL1INVMB       nil           nil                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM
 UD2            nil           nil                       [            0x0F 0x0B]                 s:PPRO, t:MISC
-PREFETCHE      Mb            nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHE      Mb            nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCHW      Mb            nil                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHW      Mb            nil                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /1:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCHWT1    Mb            nil                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHWT1    Mb            nil                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /2:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCHM      Mb            nil                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCHM      Mb            nil                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /3:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mb            nil                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /4:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mb            nil                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /5:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mb            nil                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /6:reg]          s:PPRO, t:NOP, w:R|R
-PREFETCH       Mb            nil                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:R
+PREFETCH       Mb            nil                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /7:reg]          s:PPRO, t:NOP, w:R|R
 
 FEMMS          nil           nil                       [            0x0F 0x0E]                 s:3DNOW, t:MMX, c:FEMMS
@@ -125,13 +125,13 @@ MOVHPD         Vq,Mq         nil                       [       0x66 0x0F 0x16 /r
 MOVSHDUP       Vx,Wx         nil                       [       0xF3 0x0F 0x16 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
 MOVHPS         Mq,Vq         nil                       [         NP 0x0F 0x17 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
 MOVHPD         Mq,Vq         nil                       [       0x66 0x0F 0x17 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
-PREFETCHNTA    Mb            nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHNTA    Mb            nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
 NOP            Ev            nil                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:R
-PREFETCHT0     Mb            nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHT0     Mb            nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
 NOP            Ev            nil                       [            0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:R
-PREFETCHT1     Mb            nil                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHT1     Mb            nil                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
 NOP            Ev            nil                       [            0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:R
-PREFETCHT2     Mb            nil                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:R
+PREFETCHT2     Mb            nil                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
 NOP            Ev            nil                       [            0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:R
 NOP            Ev            nil                       [            0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:R

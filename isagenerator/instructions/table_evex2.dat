@@ -303,22 +303,22 @@ VFNMSUB231SD         Vdq{K}{z},Hdq,Wsd{er}        nil       [evex m:2 p:1 l:i w:
 # 0xC0 - 0xCF
 VPCONFLICTD          Vn{K}{z},Wn|B32              nil       [evex m:2 p:1 l:x w:0 0xC4 /r]             s:AVX512CD, t:CONFLICT, l:fv, e:E4NF, w:W|R|R
 VPCONFLICTQ          Vn{K}{z},Wn|B64              nil       [evex m:2 p:1 l:x w:1 0xC4 /r]             s:AVX512CD, t:CONFLICT, l:fv, e:E4NF, w:W|R|R
-VGATHERPF0DPS        Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF0DPD        Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF1DPS        Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF1DPD        Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF0DPS       Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF0DPD       Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF1DPS       Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF1DPD       Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF0QPS        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF0QPD        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF1QPS        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VGATHERPF1QPD        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF0QPS       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF0QPD       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF1QPS       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
-VSCATTERPF1QPD       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:R|R
+VGATHERPF0DPS        Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF0DPD        Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF1DPS        Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF1DPD        Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF0DPS       Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF0DPD       Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF1DPS       Mvm32n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC6 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF1DPD       Mvm32h{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC6 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF0QPS        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF0QPD        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /1:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF1QPS        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VGATHERPF1QPD        Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /2:mem vsib]    s:AVX512PF, t:GATHER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF0QPS       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF0QPD       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /5:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF1QPS       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:0 0xC7 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
+VSCATTERPF1QPD       Mvm64n{K}                    nil       [evex m:2 p:1 l:2 w:1 0xC7 /6:mem vsib]    s:AVX512PF, t:SCATTER, a:MMASK, l:t1s, e:E12NP, w:P|R
 
 VEXP2PS              Voq{K}{z},Woq|B32{sae}       nil       [evex m:2 p:1 l:2 w:0 0xC8 /r]             s:AVX512ER, t:KNL, l:fv, e:E2, w:W|R|R
 VEXP2PD              Voq{K}{z},Woq|B64{sae}       nil       [evex m:2 p:1 l:2 w:1 0xC8 /r]             s:AVX512ER, t:KNL, l:fv, e:E2, w:W|R|R

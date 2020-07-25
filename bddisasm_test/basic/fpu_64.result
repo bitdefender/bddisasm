@@ -1029,7 +1029,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1049,7 +1049,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1069,7 +1069,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1089,7 +1089,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1291,7 +1291,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1311,7 +1311,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1331,7 +1331,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
@@ -1351,7 +1351,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
+        Operand: 0, Acc:  CW,  Type:   Register, Size: 10, RawSize: 10, Encoding: S, RegType:               FP, RegSize: 10, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 10, RawSize: 10, Encoding: M, RegType:               FP, RegSize: 10, RegId: 7, RegCount: 1
         Operand: 2, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:           System, RegSize:  2, RegId: 2, RegCount: 1
         Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1

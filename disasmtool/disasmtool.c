@@ -862,8 +862,15 @@ print_instruction(
         for (i = 0; i < Instrux->OperandsCount; i++)
         {
             printf("        Operand: %d, Acc:  %s,  Type: %10s, Size: %2d, RawSize: %2d, Encoding: %s", i,
-                Instrux->Operands[i].Access.Read && Instrux->Operands[i].Access.Write ? "RW" :
-                Instrux->Operands[i].Access.Write ? "-W" : Instrux->Operands[i].Access.Read ? "R-" : "--",
+                Instrux->Operands[i].Access.Access == ND_ACCESS_READ ? "R-" :
+                Instrux->Operands[i].Access.Access == ND_ACCESS_WRITE ? "-W" :
+                Instrux->Operands[i].Access.Access == (ND_ACCESS_READ|ND_ACCESS_WRITE) ? "RW" :
+                Instrux->Operands[i].Access.Access == ND_ACCESS_COND_READ ? "CR" :
+                Instrux->Operands[i].Access.Access == ND_ACCESS_COND_WRITE ? "CW" :
+                Instrux->Operands[i].Access.Access == (ND_ACCESS_COND_READ|ND_ACCESS_COND_WRITE) ? "CRCW" :
+                Instrux->Operands[i].Access.Access == (ND_ACCESS_READ | ND_ACCESS_COND_WRITE) ? "RCW" :
+                Instrux->Operands[i].Access.Access == (ND_ACCESS_COND_READ|ND_ACCESS_WRITE) ? "CRW" :
+                Instrux->Operands[i].Access.Access == ND_ACCESS_PREFETCH ? "P" : "--",
                 optype_to_string(Instrux->Operands[i].Type), Instrux->Operands[i].Size,
                 Instrux->Operands[i].RawSize, encoding_to_string(Instrux->Operands[i].Encoding)
             );

@@ -344,6 +344,7 @@ valid_prefixes = [
 
 valid_access = [
     'N',            # No access.
+    'P',            # Prefetch access.
     'R',            # Read.
     'W',            # Write.
     'CR',           # Conditional read.

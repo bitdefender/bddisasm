@@ -12,7 +12,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -32,7 +32,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
                 Decorator: Mask k5
@@ -52,7 +52,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -72,7 +72,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
                 Decorator: Mask k5
@@ -92,7 +92,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -112,7 +112,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
                 Decorator: Mask k5
@@ -132,7 +132,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -152,7 +152,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
                 Decorator: Mask k5
@@ -172,7 +172,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -192,7 +192,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
                 Decorator: Mask k5
@@ -212,7 +212,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -232,7 +232,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
                 Decorator: Mask k5
@@ -252,7 +252,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 17 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -272,7 +272,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 16
                 Decorator: Mask k5
@@ -292,7 +292,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 8
                 Decorator: Mask k5
@@ -312,7 +312,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
+        Operand: 0, Acc:  P,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 27 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 8
                 Decorator: Mask k5

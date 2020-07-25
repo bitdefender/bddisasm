@@ -209,13 +209,14 @@ typedef uint32_t ND_REG_SIZE;
 //
 // Operand access flags.
 //
-#define ND_ACCESS_NONE              0           // The operand is not accessed.
-#define ND_ACCESS_READ              1           // The operand is read.
-#define ND_ACCESS_WRITE             2           // The operand is written.
-#define ND_ACCESS_COND_READ         4           // The operand is read only if some conditions are met.
-#define ND_ACCESS_COND_WRITE        8           // The operand is written only if some conditions are met (ie: CMOVcc).
+#define ND_ACCESS_NONE              0x00        // The operand is not accessed.
+#define ND_ACCESS_READ              0x01        // The operand is read.
+#define ND_ACCESS_WRITE             0x02        // The operand is written.
+#define ND_ACCESS_COND_READ         0x04        // The operand is read only if some conditions are met.
+#define ND_ACCESS_COND_WRITE        0x08        // The operand is written only if some conditions are met (ie: CMOVcc).
 #define ND_ACCESS_ANY_READ          (ND_ACCESS_READ | ND_ACCESS_COND_READ)      // Any read mask.
 #define ND_ACCESS_ANY_WRITE         (ND_ACCESS_WRITE | ND_ACCESS_COND_WRITE)    // Any write mask.
+#define ND_ACCESS_PREFETCH          0x10        // The operand is prefetched.
 
 
 //
@@ -685,6 +686,7 @@ typedef union _ND_OPERAND_ACCESS
         uint8_t         Write : 1;      // The operand is written.
         uint8_t         CondRead : 1;   // The operand is read only under some conditions.
         uint8_t         CondWrite : 1;  // The operand is written only under some conditions.
+        uint8_t         Prefetch : 1;   // The operand is prefetched.
     };
 } ND_OPERAND_ACCESS;
 

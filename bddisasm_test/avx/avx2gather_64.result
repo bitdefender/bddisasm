@@ -10,7 +10,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 2
@@ -28,7 +28,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 4
@@ -46,7 +46,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 2
@@ -64,7 +64,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 2
@@ -82,7 +82,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 1 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 4
@@ -100,7 +100,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 4, VSIB element count: 4
@@ -118,7 +118,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 4, VSIB element size: 8, VSIB element count: 2
@@ -136,7 +136,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 2
@@ -154,7 +154,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 1 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 4, VSIB element count: 4
@@ -172,7 +172,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  CRW,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:     Memory, Size: 16, RawSize: 16, Encoding: M, VSIB Addressing: yes, 
                 Segment: 3, Base: 3, Index: 7 * 8, Displacement: 0x0000000000001000, 
                 VSIB index size: 8, VSIB element size: 8, VSIB element count: 2

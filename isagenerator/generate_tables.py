@@ -243,15 +243,16 @@ opdecorators = {
 }
 
 accessmap = {
-    'R'        : 'ND_OPF_R',
-    'W'        : 'ND_OPF_W',
-    'CR'       : 'ND_OPF_CR',
-    'CW'       : 'ND_OPF_CW',
-    'RW'       : 'ND_OPF_RW',
-    'RCW'      : 'ND_OPF_RCW',
-    'CRW'      : 'ND_OPF_CRW',
-    'CRCW'     : 'ND_OPF_CRCW',
-    'N'        : 'ND_OPF_N',
+    'R'        : 'ND_OPA_R',
+    'W'        : 'ND_OPA_W',
+    'CR'       : 'ND_OPA_CR',
+    'CW'       : 'ND_OPA_CW',
+    'RW'       : 'ND_OPA_RW',
+    'RCW'      : 'ND_OPA_RCW',
+    'CRW'      : 'ND_OPA_CRW',
+    'CRCW'     : 'ND_OPA_CRCW',
+    'P'        : 'ND_OPA_P',
+    'N'        : 'ND_OPA_N',
 }
 
 tuples = {
@@ -427,8 +428,8 @@ features = []
 # Convert one operand into it's C/C++ representation.
 #
 def cdef_operand(self):
-    return "OP(%s, %s, %s, %s, %d)" % (optype[self.Type], opsize[self.Size], \
-           '|'.join([opflags[x] for x in self.Flags] + [accessmap[self.Access]]) or '0', \
+    return "OP(%s, %s, %s, %s, %s, %d)" % (optype[self.Type], opsize[self.Size], \
+           '|'.join([opflags[x] for x in self.Flags]) or '0', accessmap[self.Access],   \
            '|'.join([opdecorators[x] for x in self.Decorators]) or 0, self.Block)
 
 disasmlib.Operand.cdef = cdef_operand

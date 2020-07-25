@@ -1275,7 +1275,7 @@ NdParseOperand(
 {
     NDSTATUS status;
     PND_OPERAND operand;
-    uint8_t opt, ops, opf, opd, opb;
+    uint8_t opt, ops, opf, opa, opd, opb;
     ND_REG_SIZE vsibRegSize;
     uint8_t vsibIndexSize, vsibIndexCount;
     ND_OPERAND_SIZE size, bcstSize;
@@ -1294,6 +1294,7 @@ NdParseOperand(
     opt = ND_OP_TYPE(Specifier);
     ops = ND_OP_SIZE(Specifier);
     opf = ND_OP_FLAGS(Specifier);
+    opa = ND_OP_ACCESS(Specifier);
     opd = ND_OP_DECORATORS(Specifier);
     opb = ND_OP_BLOCK(Specifier);
 
@@ -1301,10 +1302,10 @@ NdParseOperand(
     operand = &Instrux->Operands[Index];
 
     // Fill in the flags.
-    operand->Flags.Flags = opf & 0xF;
+    operand->Flags.Flags = opf;
 
     // Store operand access modes.
-    operand->Access.Access = opf >> 4;
+    operand->Access.Access = opa;
 
 
     //

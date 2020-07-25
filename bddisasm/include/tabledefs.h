@@ -222,14 +222,16 @@ typedef struct _ND_INSTRUCTION
 // Byte 0: operand type
 // Byte 1: operand size
 // Byte 2: operand flags
-// Byte 3: operand decorators
-// Byte 4: operand block addressing mode - 0 if not block addressing
+// Byte 3: operand access
+// Byte 4: operand decorators
+// Byte 5: operand block addressing mode - 0 if not block addressing
 //
-#define ND_OP(type, size, flags, dec, block)    (((uint64_t)((type) & 0xFF) << 0)   |    \
-                                                 ((uint64_t)((size) & 0xFF) << 8)   |    \
-                                                 ((uint64_t)((flags) & 0xFF) << 16) |    \
-                                                 ((uint64_t)((dec) & 0xFF) << 24)   |    \
-                                                 ((uint64_t)((block) & 0xFF) << 32))
+#define ND_OP(type, size, flags, acc, dec, block)       (((uint64_t)((type) & 0xFF) << 0)   |    \
+                                                         ((uint64_t)((size) & 0xFF) << 8)   |    \
+                                                         ((uint64_t)((flags) & 0xFF) << 16) |    \
+                                                         ((uint64_t)((acc) & 0xFF) << 24)   |    \
+                                                         ((uint64_t)((dec) & 0xFF) << 32)   |    \
+                                                         ((uint64_t)((block) & 0xFF) << 40))
 
 #define OP ND_OP
 
@@ -240,8 +242,10 @@ typedef struct _ND_INSTRUCTION
 #define ND_OP_TYPE(op)                      ((op) & 0xFF)
 #define ND_OP_SIZE(op)                      (((op) >> 8) & 0xFF)
 #define ND_OP_FLAGS(op)                     (((op) >> 16) & 0xFF)
-#define ND_OP_DECORATORS(op)                (((op) >> 24) & 0xFF)
-#define ND_OP_BLOCK(op)                     (((op) >> 32) & 0xFF)
+#define ND_OP_ACCESS(op)                    (((op) >> 24) & 0xFF)
+#define ND_OP_DECORATORS(op)                (((op) >> 32) & 0xFF)
+#define ND_OP_BLOCK(op)                     (((op) >> 40) & 0xFF)
+
 
 
 
@@ -450,15 +454,21 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 #define ND_OPF_DEFAULT              0x01    // The operand is default, no need to show it in disassembly.
 #define ND_OPF_SEX_OP1              0x02    // The operand is sign-extended to the first operands' size.
 #define ND_OPF_SEX_DWS              0x04    // The operand is sign-extended to the default word size.
-#define ND_OPF_N                    0x00    // The operand is not accessed.
-#define ND_OPF_R                    0x10    // The operand is read.
-#define ND_OPF_W                    0x20    // The operand is written.
-#define ND_OPF_CR                   0x40    // The operand is read conditionally.
-#define ND_OPF_CW                   0x80    // The operand is written conditionally.
-#define ND_OPF_RW                   0x30    // Read-Write access.
-#define ND_OPF_RCW                  0x90    // Read-Conditional Write access.
-#define ND_OPF_CRW                  0X60    // Conditional Read-Write access.
-#define ND_OPF_CRCW                 0xC0    // Conditional Read-Conditional Write access.
+
+
+//
+// Operand access.
+//
+#define ND_OPA_N                    0x00    // The operand is not accessed.
+#define ND_OPA_R                    0x01    // The operand is read.
+#define ND_OPA_W                    0x02    // The operand is written.
+#define ND_OPA_CR                   0x04    // The operand is read conditionally.
+#define ND_OPA_CW                   0x08    // The operand is written conditionally.
+#define ND_OPA_RW                   0x03    // Read-Write access.
+#define ND_OPA_RCW                  0x09    // Read-Conditional Write access.
+#define ND_OPA_CRW                  0X06    // Conditional Read-Write access.
+#define ND_OPA_CRCW                 0x0C    // Conditional Read-Conditional Write access.
+#define ND_OPA_P                    0x10    // The operand is memory, and it is prefetched.
 
 
 //

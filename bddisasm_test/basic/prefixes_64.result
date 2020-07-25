@@ -571,11 +571,11 @@
                 REP: yes, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
+        Operand: 0, Acc:  CW,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
                 Segment: 0, Base: 7, 
         Operand: 1, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
         Operand: 4, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000085 f2aa                            REPNZ STOSB
@@ -591,11 +591,11 @@
                 REP: yes, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
+        Operand: 0, Acc:  CW,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
                 Segment: 0, Base: 7, 
         Operand: 1, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
         Operand: 4, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000087 f3ae                            REPZ SCASB
@@ -612,10 +612,10 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
+        Operand: 1, Acc:  CR,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
                 Segment: 0, Base: 7, 
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
         Operand: 4, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000089 f2ae                            REPNZ SCASB
@@ -632,10 +632,10 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
+        Operand: 1, Acc:  CR,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
                 Segment: 0, Base: 7, 
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
         Operand: 4, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 000000000000008B f3f2ae                          REPNZ SCASB
@@ -652,10 +652,10 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
+        Operand: 1, Acc:  CR,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
                 Segment: 0, Base: 7, 
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
         Operand: 4, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 000000000000008E f2f3ae                          REPZ SCASB
@@ -672,10 +672,10 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:  General Purpose, RegSize:  1, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
+        Operand: 1, Acc:  CR,  Type:     Memory, Size:  1, RawSize:  1, Encoding: S, String: yes, 
                 Segment: 0, Base: 7, 
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 3, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 7, RegCount: 1
         Operand: 4, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000091 0f10c0                          MOVUPS    xmm0, xmm0
