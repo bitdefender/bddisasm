@@ -4,7 +4,7 @@ SRC_FILES := crt.c bddisasm.c
 
 OBJECTS := $(SRC_FILES:.c=.o)
 
-INCLUDES := -Iinclude -I../inc
+INCLUDES := -Iinclude -I../inc -I../../inc
 
 ifeq ($(PLATFORM),)
 	PLATFORM := x64
