@@ -1505,7 +1505,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         0,
-        OP(ND_OPT_M, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
+        OP(ND_OPT_M, ND_OPS_b, 0, ND_OPA_P, 0, 0), 
     }, 
 
     // Pos:111 Instruction:"CLEVICT0 M?" Encoding:"vex m:1 p:3 0xAE /7:mem"/"M"
