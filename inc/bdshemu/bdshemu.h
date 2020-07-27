@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _BDSHEMU_H_
-#define _BDSHEMU_H_
+#ifndef BDSHEMU_H
+#define BDSHEMU_H
 
 
 #include "bddisasm.h"
@@ -276,4 +276,4 @@ ShemuEmulate(
     );
 
 
-#endif // !_BDSHEMU_H_
+#endif // BDSHEMU_H

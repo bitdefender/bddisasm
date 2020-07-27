@@ -1,5 +1,5 @@
-#ifndef _TABLE_VEX_H_
-#define _TABLE_VEX_H_
+#ifndef TABLE_VEX_H
+#define TABLE_VEX_H
 
 const ND_TABLE_INSTRUCTION gVexTable_root_02_f2_00_00_leaf = 
 {

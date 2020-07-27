@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _DISASMSTATUS_H_
-#define _DISASMSTATUS_H_
+#ifndef DISASMSTATUS_H
+#define DISASMSTATUS_H
 
 //
 // Return statuses.

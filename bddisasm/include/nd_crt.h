@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _ND_CRT_H_
-#define _ND_CRT_H_
+#ifndef ND_CRT_H
+#define ND_CRT_H
 
 #include "../../inc/disasmtypes.h"
 
@@ -87,4 +87,4 @@ nd_strcat_s(
     const char *src
     );
 
-#endif // _ND_CRT_H_
+#endif // ND_CRT_H

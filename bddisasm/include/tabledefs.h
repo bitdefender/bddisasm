@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _TABLEDEFS_H_
-#define _TABLEDEFS_H_
+#ifndef TABLEDEFS_H
+#define TABLEDEFS_H
 
 //
 // Types of tables.
@@ -494,4 +494,4 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 #include "table_vex.h"
 #include "table_evex.h"
 
-#endif // _TABLEDEFS_H_
+#endif // TABLEDEFS_H

@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _PREFIXES_H_
-#define _PREFIXES_H_
+#ifndef PREFIXES_H
+#define PREFIXES_H
 
 #define ND_PREF_CODE_NONE           0
 #define ND_PREF_CODE_STANDARD       1
@@ -31,4 +31,4 @@ static const uint8_t gPrefixesMap[256] =
     1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // F
 };
 
-#endif // _PREFIXES_H_
+#endif // PREFIXES_H

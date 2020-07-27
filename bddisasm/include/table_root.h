@@ -1,5 +1,5 @@
-#ifndef _TABLE_ROOT_H_
-#define _TABLE_ROOT_H_
+#ifndef TABLE_ROOT_H
+#define TABLE_ROOT_H
 
 const ND_TABLE_INSTRUCTION gRootTable_root_37_leaf = 
 {

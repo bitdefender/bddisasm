@@ -1,5 +1,5 @@
-#ifndef _CPUID_FLAGS_H_
-#define _CPUID_FLAGS_H_
+#ifndef CPUID_FLAGS_H
+#define CPUID_FLAGS_H
 
 #define ND_CFF_NO_LEAF    0xFFFFFFFF
 #define ND_CFF_NO_SUBLEAF 0x00FFFFFF
@@ -105,4 +105,4 @@
 #define ND_CFF_MCOMMIT                  ND_CFF(0x80000008, 0xFFFFFFFF, REG_EBX, 8)
 #define ND_CFF_SNP                      ND_CFF(0x8000001F, 0xFFFFFFFF, REG_EAX, 4)
 
-#endif // _CPUID_FLAGS_H_
+#endif // CPUID_FLAGS_H

@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _BDDISASM_H_
-#define _BDDISASM_H_
+#ifndef BDDISASM_H
+#define BDDISASM_H
 
 #include "disasmstatus.h"
 #include "registers.h"
@@ -1470,4 +1470,4 @@ NdGetFullAccessMap(
 #pragma warning(pop)
 #endif
 
-#endif // _BDDISASM_H_
+#endif // BDDISASM_H

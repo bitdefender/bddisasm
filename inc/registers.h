@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _REGISTERS_H_
-#define _REGISTERS_H_
+#ifndef REGISTERS_H
+#define REGISTERS_H
 
 //
 // Registers enumerations

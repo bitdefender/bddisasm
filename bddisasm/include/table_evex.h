@@ -1,5 +1,5 @@
-#ifndef _TABLE_EVEX_H_
-#define _TABLE_EVEX_H_
+#ifndef TABLE_EVEX_H
+#define TABLE_EVEX_H
 
 const ND_TABLE_INSTRUCTION gEvexTable_root_02_9a_03_mem_02_00_leaf = 
 {

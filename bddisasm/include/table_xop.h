@@ -1,5 +1,5 @@
-#ifndef _TABLE_XOP_H_
-#define _TABLE_XOP_H_
+#ifndef TABLE_XOP_H
+#define TABLE_XOP_H
 
 const ND_TABLE_INSTRUCTION gXopTable_root_0a_10_leaf = 
 {

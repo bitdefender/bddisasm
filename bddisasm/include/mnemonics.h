@@ -1,5 +1,5 @@
-#ifndef _MNEMONICS_H_
-#define _MNEMONICS_H_
+#ifndef MNEMONICS_H
+#define MNEMONICS_H
 
 const char *gMnemonics[1567] = 
 {
