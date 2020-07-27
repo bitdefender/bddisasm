@@ -486,7 +486,7 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 // Include auto-generated stuff.
 //
 #include "mnemonics.h"
-#include "../inc/constants.h"
+#include "../../inc/constants.h"
 #include "instructions.h"
 #include "prefixes.h"
 #include "table_root.h"
