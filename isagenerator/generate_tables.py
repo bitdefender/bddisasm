@@ -544,8 +544,14 @@ def cdef_instruction(self):
         c += "\n        %s," % flg
         
     # Add the instruction operands
-    for op in self.ExpOps + self.ImpOps:
-        c += "\n        " + op.cdef() + ", "
+    allOps = self.ExpOps + self.ImpOps
+    c += "\n        {"
+    if allOps:
+        for op in self.ExpOps + self.ImpOps:
+            c += "\n            " + op.cdef() + ", "
+    else:
+        c += "\n            0 "
+    c += "\n        },"
 
     c += '\n    }'
 
