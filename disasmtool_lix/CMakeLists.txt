@@ -79,8 +79,8 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} \
 
 set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} -Wl,-O1")
 
-if (CMAKE_COMPILER_IS_GNUCC)
-  if (NOT (CMAKE_C_COMPILER_VERSION LESS 6.0))
+if (CMAKE_COMPILER_IS_GNUCXX)
+  if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 6.0))
     add_compile_options(
       -Wshift-overflow=2
       -Wnull-dereference
@@ -90,7 +90,7 @@ if (CMAKE_COMPILER_IS_GNUCC)
       )
   endif()
 
-  if (NOT (CMAKE_C_COMPILER_VERSION LESS 7.0))
+  if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 7.0))
     add_compile_options(
       -Wdangling-else
       -Wshadow=global
@@ -98,7 +98,7 @@ if (CMAKE_COMPILER_IS_GNUCC)
       )
   endif()
 
-  if (NOT (CMAKE_C_COMPILER_VERSION LESS 8.0))
+  if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 8.0))
     add_compile_options(
       -Wmultistatement-macros
       -Warray-bounds=2
@@ -116,33 +116,139 @@ if (CMAKE_COMPILER_IS_GNUCC)
       -Wcast-qual
       -Wcast-align
       -Wparentheses
-      -Wjump-misses-init
       -Wfloat-conversion
-      -Wmissing-prototypes
       -Wredundant-decls
       -Wdisabled-optimization
       -Woverlength-strings
+      -Wswitch-enum
       -fstack-clash-protection
       -static
       )
   endif()
-else()
+
+  if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 9.0))
+    add_compile_options(
+      -Wcatch-value=2
+      -Wduplicated-branches
+      -Wextra-semi
+      -Wif-not-aligned
+      -Wplacement-new=2
+      -Wsuggest-override
+      -Wunused-but-set-parameter
+      -Wswitch-enum
+      -Wuseless-cast
+      )
+    endif()
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
   add_compile_options(
     -Wno-missing-braces
     )
 
-  if (NOT (CMAKE_C_COMPILER_VERSION LESS 6.0))
+  if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 6.0))
     add_compile_options(
       -Wshift-overflow
       -Wnull-dereference
       -Wvla
       -Wdangling-else
-      -Wshadow
       -Wpragmas
       -Wtautological-compare
       -Wzero-as-null-pointer-constant
       )
   endif()
+
+  if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 10.0))
+    add_compile_options(
+      -Warray-bounds-pointer-arithmetic
+      -Wassign-enum
+      -Watomic-implicit-seq-cst
+      -Watomic-properties
+      -Wauto-import
+      -Wbad-function-cast
+      -Wbind-to-temporary-copy
+      -Wbitfield-enum-conversion
+      -Wbitwise-op-parentheses
+      -Wcomma
+      -Wconditional-uninitialized
+      -Wconsumed
+      -Wcstring-format-directive
+      -Wctad-maybe-unsupported
+      -Wcustom-atomic-properties
+      -Wdelete-non-abstract-non-virtual-dtor
+      -Wdeprecated-copy
+      -Wdeprecated-copy-dtor
+      -Wdeprecated-dynamic-exception-spec
+      -Wdeprecated-implementations
+      -Wdouble-promotion
+      -Wduplicate-enum
+      -Wduplicate-method-arg
+      -Wduplicate-method-match
+      -Wembedded-directive
+      -Wempty-init-stmt
+      -Wexit-time-destructors
+      -Wexplicit-ownership-type
+      -Wextra-semi
+      -Wfloat-conversion
+      -Wfor-loop-analysis
+      -Wformat-non-iso
+      -Wformat-type-confusion
+      -Wheader-hygiene
+      -Widiomatic-parentheses
+      -Winfinite-recursion
+      -Wlogical-op-parentheses
+      -Wmethod-signatures
+      -Wmissing-noreturn
+      -Wmissing-variable-declarations
+      -Wmove
+      -Wnon-gcc
+      -Wnon-virtual-dtor
+      -Wnull-pointer-arithmetic
+      -Wnullable-to-nonnull-conversion
+      -Wover-aligned
+      -Woverlength-strings
+      -Woverloaded-virtual
+      -Woverriding-method-mismatch
+      -Wpragma-pack
+      -Wpragma-pack-suspicious-include
+      -Wquoted-include-in-framework-header
+      -Wrange-loop-analysis
+      -Wredundant-move
+      -Wredundant-parens
+      -Wreserved-id-macro
+      -Wreturn-std-move
+      -Wself-assign
+      -Wself-move
+      -Wsemicolon-before-method-body
+      -Wshadow-all
+      -Wshift-sign-overflow
+      -Wsometimes-uninitialized
+      -Wstatic-in-inline
+      -Wstrict-prototypes
+      -Wstrict-selector-match
+      -Wstring-conversion
+      -Wsuper-class-method-mismatch
+      -Wswitch-enum
+      -Wtautological-bitwise-compare
+      -Wtautological-constant-in-range-compare
+      -Wtautological-overlap-compare
+      -Wtautological-type-limit-compare
+      -Wtautological-unsigned-enum-zero-compare
+      -Wtautological-unsigned-zero-compare
+      -Wunneeded-internal-declaration
+      -Wunneeded-member-function
+      -Wunreachable-code-aggressive
+      -Wunused-label
+      -Wunused-lambda-capture
+      -Wunused-local-typedef
+      -Wunused-variable
+      -Wvla-extension
+      -Wzero-length-array
+
+      -Wno-sign-conversion
+      -Wno-shorten-64-to-32
+      )
+  endif()
+else()
+  message(FATAL_ERROR "Unsupported compiler!")
 endif()
 
 include_directories(

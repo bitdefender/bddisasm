@@ -13,7 +13,7 @@
 
 static const long NSEC_PER_SEC = (1000ULL * 1000ULL * 1000ULL);
 
-const char *gSpaces[16] =
+static const char *gSpaces[16] =
 {
     "",
     "  ",
@@ -40,7 +40,7 @@ struct options {
     size_t size;
     size_t count;
 
-    int bits;
+    uint8_t bits;
 
     uint8_t vendor;
     bool no_color;
@@ -68,7 +68,7 @@ extern "C"
     {
         return vsnprintf(buffer, sizeOfBuffer, format, argptr);
     }
-    
+
     void *
     nd_memset(void *s, int c, size_t n)
     {
@@ -113,7 +113,7 @@ static bool _hexstring_to_bytes(options &opts)
         if (pair == "0x" || pair == "0X" || pair == "\\x")
             continue;
 
-        auto b = std::strtoul(pair.c_str(), &end_ptr, 16);
+        auto b = static_cast<uint8_t>(std::strtoul(pair.c_str(), &end_ptr, 16));
 
         size_t conv_size = static_cast<size_t>(end_ptr - pair.c_str());
 
@@ -486,7 +486,7 @@ size_t disassemble(options &opts)
     size_t icount = 0, miss_count = 0, ibytes = 0;
     size_t rel_rip = opts.offset;
     size_t total_disasm = 0;
-    auto bytes = reinterpret_cast<uint8_t *>(opts.bytes.get());
+    auto bytes = opts.bytes.get();
     auto disasm_size = std::min(opts.actual_size - opts.offset, opts.size);
 
     while ((total_disasm < disasm_size) && (icount < opts.count)) {
@@ -657,7 +657,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    opts.bits = parser.get<int>("bits");
+    opts.bits = parser.get<uint8_t>("bits");
     opts.interactive = parser.get<bool>("interactive");
     opts.comm = parser.get<bool>("comm");
     opts.offset = _get_hex_opt(parser, "offset");
