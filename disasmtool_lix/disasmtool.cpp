@@ -6,6 +6,7 @@
 #include <fstream>
 #include <memory>
 #include <limits>
+#include <cmath>
 
 #include "external/argparse.h"
 
@@ -49,6 +50,7 @@ struct options {
     bool interactive;
     bool comm;
     bool json_output;
+    bool extended;
 
     std::string in_file;
     std::string hex_string;
@@ -57,6 +59,7 @@ struct options {
     // From here on, these are set internally
     std::unique_ptr<uint8_t[]> bytes;
     size_t actual_size;
+    int address_size;
 
     bool output_redirected;
 };
@@ -223,11 +226,11 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
     char instruxText[ND_MIN_BUF_SIZE];
     uint32_t k = 0;
 
-    printf("%zx ", rip);
+    printf("%*zx ", opts.address_size, rip);
 
     if (!opts.no_color)
     {
-        _set_text_color(White);
+        _set_text_color(Magenta);
         for (uint32_t idx = 0; idx < instrux->PrefLength; idx++, k++)
         {
             printf("%02x", instrux->InstructionBytes[k]);
@@ -282,187 +285,155 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
 
     std::cout << instruxText << std::endl;
 
-    // if (Options->ExtendedInfo)
-    // {
-    //     const BYTE opsize[3] = { 2, 4, 8 };
-    //     const BYTE adsize[3] = { 2, 4, 8 };
-    //     const BYTE veclen[3] = { 16, 32, 64 };
+    if (opts.extended) {
+        const uint8_t opsize[3] = { 2, 4, 8 };
+        const uint8_t adsize[3] = { 2, 4, 8 };
+        const uint8_t veclen[3] = { 16, 32, 64 };
 
-    //     printf("         DSIZE: %2d, ASIZE: %2d, VLEN: ",
-    //         opsize[instrux->EfOpMode] * 8, adsize[instrux->AddrMode] * 8);
+        printf("         DSIZE: %2d, ASIZE: %2d, VLEN: ",
+            opsize[instrux->EfOpMode] * 8, adsize[instrux->AddrMode] * 8);
 
-    //     if (ND_HAS_VECTOR(instrux))
-    //     {
-    //         printf("%2d\n", veclen[instrux->VecMode] * 8);
-    //     }
-    //     else
-    //     {
-    //         printf("-\n");
-    //     }
+        if (ND_HAS_VECTOR(instrux)) {
+            printf("%2d\n", veclen[instrux->VecMode] * 8);
+        } else {
+            printf("-\n");
+        }
 
-    //     printf("         ISA Set: %s, Ins cat: %s, Ins class: %d, CET tracked: %s\n",
-    //         set_to_string(instrux->IsaSet), category_to_string(instrux->Category), instrux->Instruction,
-    //         instrux->IsCetTracked ? "yes" : "no");
+        printf("         ISA Set: %s, Ins cat: %s, Ins class: %d, CET tracked: %s\n",
+               ins_set_to_str(instrux->IsaSet).c_str(), ins_cat_to_str(instrux->Category).c_str(), instrux->Instruction,
+               instrux->IsCetTracked ? "yes" : "no");
 
-    //     if (0 != instrux->CpuidFlag.Flag)
-    //     {
-    //         char *regs[4] = { "eax", "ecx", "edx", "ebx" };
+        if (0 != instrux->CpuidFlag.Flag) {
+            const char *regs[4] = { "eax", "ecx", "edx", "ebx" };
 
-    //         printf("         CPUID leaf: 0x%08x", instrux->CpuidFlag.Leaf);
+            printf("         CPUID leaf: 0x%08x", instrux->CpuidFlag.Leaf);
 
-    //         if (instrux->CpuidFlag.SubLeaf != ND_CFF_NO_SUBLEAF)
-    //         {
-    //             printf(", sub-leaf: 0x%08x", instrux->CpuidFlag.SubLeaf);
-    //         }
+            if (instrux->CpuidFlag.SubLeaf != ND_CFF_NO_SUBLEAF)
+            {
+                printf(", sub-leaf: 0x%08x", instrux->CpuidFlag.SubLeaf);
+            }
 
-    //         printf(", reg: %s, bit %d\n", regs[instrux->CpuidFlag.Reg], instrux->CpuidFlag.Bit);
-    //     }
+            printf(", reg: %s, bit %d\n", regs[instrux->CpuidFlag.Reg], instrux->CpuidFlag.Bit);
+        }
 
-    //     {
-    //         DWORD fidx, all;
-    //         char *flags[22] = { "CF", NULL, "PF", NULL, "AF", NULL, "ZF", "SF", "TF", "IF", "DF", "OF", "IOPL", NULL, "NT", NULL, "RF", "VM", "AC", "VIF", "VIP", "ID" };
+        printf("         FLAGS access: ");
 
-    //         all = instrux->FlagsAccess.Tested.Raw | instrux->FlagsAccess.Modified.Raw | instrux->FlagsAccess.Set.Raw | 
-    //               instrux->FlagsAccess.Cleared.Raw | instrux->FlagsAccess.Undefined.Raw;
-    //         printf("         FLAGS access: ");
+        uint32_t all = instrux->FlagsAccess.Tested.Raw | instrux->FlagsAccess.Modified.Raw | instrux->FlagsAccess.Set.Raw
+                       | instrux->FlagsAccess.Cleared.Raw | instrux->FlagsAccess.Undefined.Raw;
+        const char *flags[22] = { "CF", nullptr, "PF", nullptr, "AF", nullptr, "ZF", "SF", "TF", "IF", "DF", "OF", "IOPL", nullptr, "NT", nullptr, "RF", "VM", "AC", "VIF", "VIP", "ID" };
 
-    //         for (fidx = 0; fidx < 21; fidx++)
-    //         {
-    //             if (flags[fidx] != NULL)
-    //             {
-    //                 if (0 == (all & (1ULL << fidx)))
-    //                 {
-    //                     continue;
-    //                 }
+        for (uint32_t fidx = 0; fidx < 21; fidx++) {
+            if (flags[fidx] != nullptr) {
+                if (0 == (all & (1ULL << fidx))) {
+                    continue;
+                }
 
-    //                 printf("%s: ", flags[fidx]);
+                printf("%s: ", flags[fidx]);
 
-    //                 if (instrux->FlagsAccess.Tested.Raw & (1ULL << fidx))
-    //                 {
-    //                     printf("t");
-    //                 }
+                if (instrux->FlagsAccess.Tested.Raw & (1ULL << fidx)) {
+                    printf("t");
+                }
 
-    //                 if (instrux->FlagsAccess.Modified.Raw & (1ULL << fidx))
-    //                 {
-    //                     printf("m");
-    //                 }
+                if (instrux->FlagsAccess.Modified.Raw & (1ULL << fidx)) {
+                    printf("m");
+                }
 
-    //                 if (instrux->FlagsAccess.Set.Raw & (1ULL << fidx))
-    //                 {
-    //                     printf("1");
-    //                 }
+                if (instrux->FlagsAccess.Set.Raw & (1ULL << fidx)) {
+                    printf("1");
+                }
 
-    //                 if (instrux->FlagsAccess.Cleared.Raw & (1ULL << fidx))
-    //                 {
-    //                     printf("0");
-    //                 }
+                if (instrux->FlagsAccess.Cleared.Raw & (1ULL << fidx)) {
+                    printf("0");
+                }
 
-    //                 if (instrux->FlagsAccess.Undefined.Raw & (1ULL << fidx))
-    //                 {
-    //                     printf("u");
-    //                 }
+                if (instrux->FlagsAccess.Undefined.Raw & (1ULL << fidx)) {
+                    printf("u");
+                }
 
-    //                 printf("; ");
-    //             }
-    //         }
+                printf("; ");
+            }
+        }
 
-    //         printf("\n");
-    //     }
+        printf("\n");
 
-    //     printf("         Valid modes: R0: %s, R1: %s, R2: %s, R3: %s, Real: %s, V8086: %s, Prot: %s, Compat: %s, Long: %s, SMM: %s, SGX: %s, TSX: %s, VMXRoot: %s, VMXNonRoot: %s\n",
-    //         instrux->ValidModes.Ring0 ? "yes" : "no",
-    //         instrux->ValidModes.Ring1 ? "yes" : "no",
-    //         instrux->ValidModes.Ring2 ? "yes" : "no",
-    //         instrux->ValidModes.Ring3 ? "yes" : "no",
-    //         instrux->ValidModes.Real ? "yes" : "no",
-    //         instrux->ValidModes.V8086 ? "yes" : "no",
-    //         instrux->ValidModes.Protected ? "yes" : "no",
-    //         instrux->ValidModes.Compatibility ? "yes" : "no",
-    //         instrux->ValidModes.Long ? "yes" : "no",
-    //         instrux->ValidModes.Smm ? "yes" : "no",
-    //         instrux->ValidModes.Sgx ? "yes" : "no",
-    //         instrux->ValidModes.Tsx ? "yes" : "no",
-    //         instrux->ValidModes.VmxRoot ? "yes" : "no",
-    //         instrux->ValidModes.VmxNonRoot ? "yes" : "no"
-    //         );
+        printf("         Valid modes: R0: %s, R1: %s, R2: %s, R3: %s, Real: %s, V8086: %s, Prot: %s, Compat: %s, Long: %s, SMM: %s, SGX: %s, TSX: %s, VMXRoot: %s, VMXNonRoot: %s\n",
+            instrux->ValidModes.Ring0 ? "yes" : "no",
+            instrux->ValidModes.Ring1 ? "yes" : "no",
+            instrux->ValidModes.Ring2 ? "yes" : "no",
+            instrux->ValidModes.Ring3 ? "yes" : "no",
+            instrux->ValidModes.Real ? "yes" : "no",
+            instrux->ValidModes.V8086 ? "yes" : "no",
+            instrux->ValidModes.Protected ? "yes" : "no",
+            instrux->ValidModes.Compat ? "yes" : "no",
+            instrux->ValidModes.Long ? "yes" : "no",
+            instrux->ValidModes.Smm ? "yes" : "no",
+            instrux->ValidModes.Sgx ? "yes" : "no",
+            instrux->ValidModes.Tsx ? "yes" : "no",
+            instrux->ValidModes.VmxRoot ? "yes" : "no",
+            instrux->ValidModes.VmxNonRoot ? "yes" : "no");
 
-    //     for (i = 0; i < instrux->OperandsCount; i++)
-    //     {
-    //         printf("         Operand %d  %s  Type: %10s, Size: %2d, RawSize: %2d, Encoding: %s", i,
-    //             instrux->Operands[i].Access.Read && instrux->Operands[i].Access.Write ? "RW" :
-    //             instrux->Operands[i].Access.Write ? "-W" : instrux->Operands[i].Access.Read ? "R-" : "--",
-    //             optype_to_string(instrux->Operands[i].Type), instrux->Operands[i].Size,
-    //             instrux->Operands[i].RawSize, encoding_to_string(instrux->Operands[i].Encoding)
-    //         );
+        for (uint8_t i = 0; i < instrux->OperandsCount; i++) {
+            printf("         Operand %d  %s  Type: %10s, Size: %2d, RawSize: %2d, Encoding: %s", i,
+                   instrux->Operands[i].Access.Read && instrux->Operands[i].Access.Write ? "RW" :
+                   instrux->Operands[i].Access.Write ? "-W" : instrux->Operands[i].Access.Read ? "R-" : "--",
+                   op_type_to_str(instrux->Operands[i].Type).c_str(), instrux->Operands[i].Size,
+                   instrux->Operands[i].RawSize, op_enc_to_str(instrux->Operands[i].Encoding).c_str());
 
-    //         if (ND_OP_MEM == instrux->Operands[i].Type)
-    //         {
-    //             printf(", ");
+            if (ND_OP_MEM == instrux->Operands[i].Type) {
+                printf(", ");
 
-    //             if (instrux->Operands[i].Info.Memory.IsAG)
-    //             {
-    //                 printf("Address Generator, ");
-    //             }
+                if (instrux->Operands[i].Info.Memory.IsAG) {
+                    printf("Address Generator, ");
+                }
 
-    //             if (instrux->Operands[i].Info.Memory.IsBitbase)
-    //             {
-    //                 printf("Bitbase Addressing, ");
-    //             }
+                if (instrux->Operands[i].Info.Memory.IsBitbase) {
+                    printf("Bitbase Addressing, ");
+                }
 
-    //             if (instrux->Operands[i].Info.Memory.IsMib)
-    //             {
-    //                 printf("MIB Addressing, ");
-    //             }
+                if (instrux->Operands[i].Info.Memory.IsMib) {
+                    printf("MIB Addressing, ");
+                }
 
-    //             if (instrux->Operands[i].Info.Memory.IsVsib)
-    //             {
-    //                 printf("VSIB Addressing, ");
-    //             }
+                if (instrux->Operands[i].Info.Memory.IsVsib) {
+                    printf("VSIB Addressing, ");
+                }
 
-    //             if (instrux->Operands[i].Info.Memory.IsStack)
-    //             {
-    //                 printf("Stack, ");
-    //             }
+                if (instrux->Operands[i].Info.Memory.IsStack) {
+                    printf("Stack, ");
+                }
 
-    //             if (instrux->Operands[i].Info.Memory.IsShadowStack)
-    //             {
-    //                 printf("Shadow Stack, ");
-    //             }
-    //         }
+                if (instrux->Operands[i].Info.Memory.IsShadowStack) {
+                    printf("Shadow Stack, ");
+                }
+            }
 
-    //         if (ND_OP_REG == instrux->Operands[i].Type)
-    //         {
-    //             printf(", Type: %16s, Size: %2d, Reg: %d, Count: %d\n",
-    //                 regtype_to_string(instrux->Operands[i].Info.Register.Type),
-    //                 instrux->Operands[i].Info.Register.Size,
-    //                 instrux->Operands[i].Info.Register.Reg,
-    //                 instrux->Operands[i].Info.Register.Count);
-    //         }
-    //         else
-    //         {
-    //             printf("\n");
-    //         }
+            if (ND_OP_REG == instrux->Operands[i].Type) {
+                printf(", Type: %16s, Size: %2d, Reg: %d, Count: %d",
+                    reg_type_to_str(instrux->Operands[i].Info.Register.Type).c_str(),
+                    instrux->Operands[i].Info.Register.Size,
+                    instrux->Operands[i].Info.Register.Reg,
+                    instrux->Operands[i].Info.Register.Count);
+            }
 
-    //         if (instrux->Operands[i].Decorator.HasBroadcast)
-    //         {
-    //             printf("                Decorator: Broadcast %d bytes element %d times\n",
-    //                 instrux->Operands[i].Decorator.Broadcast.Size,
-    //                 instrux->Operands[i].Decorator.Broadcast.Count);
-    //         }
+            printf("\n");
 
-    //         if (instrux->Operands[i].Decorator.HasMask)
-    //         {
-    //             printf("                Decorator: Mask k%d\n", instrux->Operands[i].Decorator.Mask.Msk);
-    //         }
+            if (instrux->Operands[i].Decorator.HasBroadcast) {
+                printf("                Decorator: Broadcast %d bytes element %d times\n",
+                    instrux->Operands[i].Decorator.Broadcast.Size,
+                    instrux->Operands[i].Decorator.Broadcast.Count);
+            }
 
-    //         if (instrux->Operands[i].Decorator.HasZero)
-    //         {
-    //             printf("                Decorator: Zero (no merging)\n");
-    //         }
-    //     }
+            if (instrux->Operands[i].Decorator.HasMask) {
+                printf("                Decorator: Mask k%d\n", instrux->Operands[i].Decorator.Mask.Msk);
+            }
 
-    //     printf("\n");
-    // }
+            if (instrux->Operands[i].Decorator.HasZero) {
+                printf("                Decorator: Zero (no merging)\n");
+            }
+        }
+
+        printf("\n");
+    }
 }
 
 
@@ -489,6 +460,8 @@ size_t disassemble(options &opts)
     auto bytes = opts.bytes.get();
     auto disasm_size = std::min(opts.actual_size - opts.offset, opts.size);
 
+    opts.address_size = int(std::ceil(((8 * sizeof(opts.actual_size)) - __builtin_clzll(opts.actual_size)) / 4.0));
+
     while ((total_disasm < disasm_size) && (icount < opts.count)) {
         INSTRUX instrux;
 
@@ -507,9 +480,9 @@ size_t disassemble(options &opts)
                     auto j = byte_to_json(bytes[rel_rip], rel_rip + opts.rip);
                     std::cout << j.GetString() << std::endl;
                 } else {
-                    printf("%zx ", rel_rip + opts.rip);
+                    printf("%*zx ", opts.address_size, rel_rip + opts.rip);
                     printf("%02x", bytes[rel_rip]);
-                    printf("%s", gSpaces[16 - 1]);
+                    printf("%s", gSpaces[16 - opts.address_size]);
                     printf("db 0x%02x\n", bytes[rel_rip]);
                 }
             }
@@ -649,6 +622,7 @@ int main(int argc, char **argv)
     parser.add_argument("-b", "--bits", "Use the arch [16, 32, 64]", false);
     parser.add_argument("--verbose", "Verbose mode", false);
     parser.add_argument("--json", "Output to json", false);
+    parser.add_argument("--extended", "Extended instruction info", false);
 
     try {
         parser.parse(argc, argv);
@@ -657,7 +631,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    opts.bits = parser.get<uint8_t>("bits");
+    opts.bits = parser.get<uint64_t>("bits");
     opts.interactive = parser.get<bool>("interactive");
     opts.comm = parser.get<bool>("comm");
     opts.offset = _get_hex_opt(parser, "offset");
@@ -671,6 +645,7 @@ int main(int argc, char **argv)
     opts.dump_stats = parser.get<bool>("stats");
     opts.verbose = parser.get<bool>("verbose");
     opts.json_output = parser.get<bool>("json");
+    opts.extended = parser.get<bool>("extended");
 
     if (opts.verbose) {
         std::cout << "interactive: " << opts.interactive << std::endl;
@@ -685,6 +660,7 @@ int main(int argc, char **argv)
         std::cout << "stats: " << opts.dump_stats << std::endl;
         std::cout << "hex: " << opts.hex_string << std::endl;
         std::cout << "json: " << opts.json_output << std::endl;
+	std::cout << "extended: " << opts.extended << std::endl;
     }
 
     if (!_validate_and_fix_args(opts)) {
