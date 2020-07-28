@@ -6,6 +6,7 @@
 #include <fstream>
 #include <memory>
 #include <limits>
+#include <cmath>
 
 #include "external/argparse.h"
 
@@ -57,6 +58,7 @@ struct options {
     // From here on, these are set internally
     std::unique_ptr<uint8_t[]> bytes;
     size_t actual_size;
+    int address_size;
 
     bool output_redirected;
 };
@@ -223,11 +225,11 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
     char instruxText[ND_MIN_BUF_SIZE];
     uint32_t k = 0;
 
-    printf("%zx ", rip);
+    printf("%*zx ", opts.address_size, rip);
 
     if (!opts.no_color)
     {
-        _set_text_color(White);
+        _set_text_color(Magenta);
         for (uint32_t idx = 0; idx < instrux->PrefLength; idx++, k++)
         {
             printf("%02x", instrux->InstructionBytes[k]);
@@ -489,6 +491,8 @@ size_t disassemble(options &opts)
     auto bytes = opts.bytes.get();
     auto disasm_size = std::min(opts.actual_size - opts.offset, opts.size);
 
+    opts.address_size = int(std::ceil(((8 * sizeof(opts.actual_size)) - __builtin_clzll(opts.actual_size)) / 4.0));
+
     while ((total_disasm < disasm_size) && (icount < opts.count)) {
         INSTRUX instrux;
 
@@ -507,9 +511,9 @@ size_t disassemble(options &opts)
                     auto j = byte_to_json(bytes[rel_rip], rel_rip + opts.rip);
                     std::cout << j.GetString() << std::endl;
                 } else {
-                    printf("%zx ", rel_rip + opts.rip);
+                    printf("%*zx ", opts.address_size, rel_rip + opts.rip);
                     printf("%02x", bytes[rel_rip]);
-                    printf("%s", gSpaces[16 - 1]);
+                    printf("%s", gSpaces[16 - opts.address_size]);
                     printf("db 0x%02x\n", bytes[rel_rip]);
                 }
             }
