@@ -43,25 +43,9 @@ typedef size_t SIZE_T;
 #define MAX_PATH  255
 #endif
 
-#ifndef __in
-#define __in
-#endif
-
-#ifndef __out
-#define __out
-#endif
-
-#ifndef __inout
-#define __inout
-#endif
-
 // Main disasm header file.
 // #include "bdshemu.h"
 #include "bddisasm.h"
-
-#undef __in
-#undef __out
-#undef __inout
 
 #include <unistd.h>
 #include <time.h>
