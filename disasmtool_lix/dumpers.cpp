@@ -18,6 +18,52 @@ std::string enc_mode_to_str(const uint8_t enc_mode)
 }
 
 
+std::string op_enc_to_str(const ND_OPERAND_ENCODING Encoding)
+{
+    switch (Encoding) {
+    case ND_OPE_NP: return "NP";
+    case ND_OPE_R: return "R";
+    case ND_OPE_M: return "M";
+    case ND_OPE_V: return "V";
+    case ND_OPE_O: return "O";
+    case ND_OPE_I: return "I";
+    case ND_OPE_D: return "D";
+    case ND_OPE_C: return "C";
+    case ND_OPE_1: return "1";
+    case ND_OPE_A: return "A";
+    case ND_OPE_L: return "L";
+    case ND_OPE_E: return "E";
+    case ND_OPE_S: return "S";
+    default: return "";
+    }
+}
+
+
+std::string op_type_to_str(const ND_OPERAND_TYPE type)
+{
+    switch(type) {
+    case ND_OP_NOT_PRESENT:
+        return "not_present";
+    case ND_OP_REG:
+        return "register";
+    case ND_OP_MEM:
+        return "memory";
+    case ND_OP_IMM:
+        return "immediate";
+    case ND_OP_OFFS:
+        return "offset";
+    case ND_OP_ADDR:
+        return "address";
+    case ND_OP_CONST:
+        return "const";
+    case ND_OP_BANK:
+        return "bank";
+    }
+
+    return "<unknown>";
+}
+
+
 std::string ins_class_to_str(const ND_INS_CLASS cls)
 {
     switch (cls) {
