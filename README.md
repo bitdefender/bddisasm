@@ -118,7 +118,7 @@ int main()
     }
 
     // Checking if the destination is the RCX register.
-    if (ND_IS_OP_REG(&ix.Operands[0], ND_REG_GPR, 8, REG_RCX))
+    if (ND_IS_OP_REG(&ix.Operands[0], ND_REG_GPR, 8, NDR_RCX))
     {
         printf("The first op is RCX!\n");
     }

@@ -267,7 +267,7 @@ Determining if the first operand is register EAX
 .. code-block:: c
    :linenos:
    
-   if (ND_IS_OP_REG(&ix.Operands[0], ND_REG_GPR, 4, REG_EAX))
+   if (ND_IS_OP_REG(&ix.Operands[0], ND_REG_GPR, 4, NDR_EAX))
    
 Determining if the second operand is the stack
 ----------------------------------------------   
