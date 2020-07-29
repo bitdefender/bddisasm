@@ -912,7 +912,7 @@ NdFetchModrmAndSib(
     }
 
     // If needed, fetch the SIB.
-    if ((Instrux->ModRm.rm == REG_RSP) && (Instrux->ModRm.mod != 3) && (Instrux->AddrMode != ND_ADDR_16))
+    if ((Instrux->ModRm.rm == NDR_RSP) && (Instrux->ModRm.mod != 3) && (Instrux->AddrMode != ND_ADDR_16))
     {
         // At least one more byte must be available, for the sib.
         RET_GT((size_t)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
@@ -1180,17 +1180,17 @@ NdGetSegOverride(
     switch (Instrux->Seg)
     {
     case ND_PREFIX_G2_SEG_CS:
-        return REG_CS;
+        return NDR_CS;
     case ND_PREFIX_G2_SEG_DS:
-        return REG_DS;
+        return NDR_DS;
     case ND_PREFIX_G2_SEG_ES:
-        return REG_ES;
+        return NDR_ES;
     case ND_PREFIX_G2_SEG_SS:
-        return REG_SS;
+        return NDR_SS;
     case ND_PREFIX_G2_SEG_FS:
-        return REG_FS;
+        return NDR_FS;
     case ND_PREFIX_G2_SEG_GS:
-        return REG_GS;
+        return NDR_GS;
     default:
         return DefaultSeg;
     }
@@ -1714,7 +1714,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RAX;
+        operand->Info.Register.Reg = NDR_RAX;
         break;
 
     case ND_OPT_GPR_AH:
@@ -1722,7 +1722,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = ND_SIZE_8BIT;
-        operand->Info.Register.Reg = REG_AH;
+        operand->Info.Register.Reg = NDR_AH;
         operand->Info.Register.IsHigh8 = true;
         break;
 
@@ -1731,7 +1731,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RCX;
+        operand->Info.Register.Reg = NDR_RCX;
         break;
 
     case ND_OPT_GPR_rDX:
@@ -1739,7 +1739,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RDX;
+        operand->Info.Register.Reg = NDR_RDX;
         break;
 
     case ND_OPT_GPR_rBX:
@@ -1747,7 +1747,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RBX;
+        operand->Info.Register.Reg = NDR_RBX;
         break;
 
     case ND_OPT_GPR_rBP:
@@ -1755,7 +1755,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RBP;
+        operand->Info.Register.Reg = NDR_RBP;
         break;
 
     case ND_OPT_GPR_rSP:
@@ -1763,7 +1763,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RSP;
+        operand->Info.Register.Reg = NDR_RSP;
         break;
 
     case ND_OPT_GPR_rSI:
@@ -1771,7 +1771,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RSI;
+        operand->Info.Register.Reg = NDR_RSI;
         break;
 
     case ND_OPT_GPR_rDI:
@@ -1779,7 +1779,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_RDI;
+        operand->Info.Register.Reg = NDR_RDI;
         break;
 
     case ND_OPT_GPR_rR11:
@@ -1787,7 +1787,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_R11;
+        operand->Info.Register.Reg = NDR_R11;
         break;
 
     case ND_OPT_SEG_CS:
@@ -1795,7 +1795,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_CS;
+        operand->Info.Register.Reg = NDR_CS;
         break;
 
     case ND_OPT_SEG_SS:
@@ -1803,7 +1803,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_SS;
+        operand->Info.Register.Reg = NDR_SS;
         break;
 
     case ND_OPT_SEG_DS:
@@ -1811,7 +1811,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_DS;
+        operand->Info.Register.Reg = NDR_DS;
         break;
 
     case ND_OPT_SEG_ES:
@@ -1819,7 +1819,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_ES;
+        operand->Info.Register.Reg = NDR_ES;
         break;
 
     case ND_OPT_SEG_FS:
@@ -1827,7 +1827,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_FS;
+        operand->Info.Register.Reg = NDR_FS;
         break;
 
     case ND_OPT_SEG_GS:
@@ -1835,7 +1835,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_GS;
+        operand->Info.Register.Reg = NDR_GS;
         break;
 
     case ND_OPT_FPU_ST0:
@@ -1868,7 +1868,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_CR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_CR0;
+        operand->Info.Register.Reg = NDR_CR0;
         break;
 
     case ND_OPT_SYS_GDTR:
@@ -1876,7 +1876,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_GDTR;
+        operand->Info.Register.Reg = NDR_GDTR;
         break;
 
     case ND_OPT_SYS_IDTR:
@@ -1884,7 +1884,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_IDTR;
+        operand->Info.Register.Reg = NDR_IDTR;
         break;
 
     case ND_OPT_SYS_LDTR:
@@ -1892,7 +1892,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_LDTR;
+        operand->Info.Register.Reg = NDR_LDTR;
         break;
 
     case ND_OPT_SYS_TR:
@@ -1900,7 +1900,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = REG_TR;
+        operand->Info.Register.Reg = NDR_TR;
         break;
 
     case ND_OPT_X87_CONTROL:
@@ -1908,7 +1908,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = REG_X87_CONTROL;
+        operand->Info.Register.Reg = NDR_X87_CONTROL;
         break;
 
     case ND_OPT_X87_TAG:
@@ -1916,7 +1916,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = REG_X87_TAG;
+        operand->Info.Register.Reg = NDR_X87_TAG;
         break;
 
     case ND_OPT_X87_STATUS:
@@ -1924,7 +1924,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SYS;
         operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = REG_X87_STATUS;
+        operand->Info.Register.Reg = NDR_X87_STATUS;
         break;
 
     case ND_OPT_MXCSR:
@@ -1964,7 +1964,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_TSC;
+        operand->Info.Register.Reg = NDR_IA32_TSC;
         break;
 
     case ND_OPT_MSR_TSCAUX:
@@ -1972,7 +1972,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_TSC_AUX;
+        operand->Info.Register.Reg = NDR_IA32_TSC_AUX;
         break;
 
     case ND_OPT_MSR_SCS:
@@ -1980,7 +1980,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_SYSENTER_CS;
+        operand->Info.Register.Reg = NDR_IA32_SYSENTER_CS;
         break;
 
     case ND_OPT_MSR_SESP:
@@ -1988,7 +1988,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_SYSENTER_ESP;
+        operand->Info.Register.Reg = NDR_IA32_SYSENTER_ESP;
         break;
 
     case ND_OPT_MSR_SEIP:
@@ -1996,7 +1996,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_SYSENTER_EIP;
+        operand->Info.Register.Reg = NDR_IA32_SYSENTER_EIP;
         break;
 
     case ND_OPT_MSR_STAR:
@@ -2004,7 +2004,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_STAR;
+        operand->Info.Register.Reg = NDR_IA32_STAR;
         break;
 
     case ND_OPT_MSR_LSTAR:
@@ -2012,7 +2012,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_LSTAR;
+        operand->Info.Register.Reg = NDR_IA32_LSTAR;
         break;
 
     case ND_OPT_MSR_FMASK:
@@ -2020,7 +2020,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_FMASK;
+        operand->Info.Register.Reg = NDR_IA32_FMASK;
         break;
 
     case ND_OPT_MSR_FSBASE:
@@ -2028,7 +2028,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_FS_BASE;
+        operand->Info.Register.Reg = NDR_IA32_FS_BASE;
         break;
 
     case ND_OPT_MSR_GSBASE:
@@ -2036,7 +2036,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_GS_BASE;
+        operand->Info.Register.Reg = NDR_IA32_GS_BASE;
         break;
 
     case ND_OPT_MSR_KGSBASE:
@@ -2044,7 +2044,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = REG_IA32_GS_BASE;
+        operand->Info.Register.Reg = NDR_IA32_GS_BASE;
         break;
 
     case ND_OPT_XCR:
@@ -2071,7 +2071,7 @@ NdParseOperand(
             operand->Size = operand->RawSize = Instrux->WordLength;
             operand->Info.Register.Type = ND_REG_GPR;
             operand->Info.Register.Size = Instrux->WordLength;
-            operand->Info.Register.Reg = REG_EAX;
+            operand->Info.Register.Reg = NDR_EAX;
             operand->Info.Register.Count = 8;
             operand->Info.Register.IsBlock = true;
         }
@@ -2181,7 +2181,7 @@ NdParseOperand(
         }
 
         // If CS is loaded - #UD.
-        if ((operand->Info.Register.Reg == REG_CS) && operand->Access.Write)
+        if ((operand->Info.Register.Reg == NDR_CS) && operand->Access.Write)
         {
             return ND_STATUS_CS_LOAD;
         }
@@ -2225,10 +2225,10 @@ NdParseOperand(
             operand->Type = ND_OP_MEM;
             operand->Info.Memory.IsStack = true;
             operand->Info.Memory.HasBase = true;
-            operand->Info.Memory.Base = REG_RSP;
+            operand->Info.Memory.Base = NDR_RSP;
             operand->Info.Memory.BaseSize = szLut[Instrux->DefStack];
             operand->Info.Memory.HasSeg = true;
-            operand->Info.Memory.Seg = REG_SS;
+            operand->Info.Memory.Seg = NDR_SS;
             Instrux->StackWords = (uint8_t)(operand->Size / Instrux->WordLength);
             Instrux->StackAccess |= operand->Access.Access;
         }
@@ -2414,7 +2414,7 @@ NdParseOperand(
             operand->Info.Memory.DispSize = Instrux->MoffsetLength;
             operand->Info.Memory.Disp = Instrux->Moffset;
             operand->Info.Memory.HasSeg = true;
-            operand->Info.Memory.Seg = NdGetSegOverride(Instrux, REG_DS);
+            operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
 
             Offset = Instrux->Length;
         }
@@ -2447,58 +2447,58 @@ memory:
                 operand->Info.Memory.HasBase = true;
                 operand->Info.Memory.HasIndex = true;
                 operand->Info.Memory.Scale = 1;
-                operand->Info.Memory.Base = REG_BX;
-                operand->Info.Memory.Index = REG_SI;
+                operand->Info.Memory.Base = NDR_BX;
+                operand->Info.Memory.Index = NDR_SI;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
                 operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_DS;
+                operand->Info.Memory.Seg = NDR_DS;
                 break;
             case 1:
                 // [bx + di]
                 operand->Info.Memory.HasBase = true;
                 operand->Info.Memory.HasIndex = true;
                 operand->Info.Memory.Scale = 1;
-                operand->Info.Memory.Base = REG_BX;
-                operand->Info.Memory.Index = REG_DI;
+                operand->Info.Memory.Base = NDR_BX;
+                operand->Info.Memory.Index = NDR_DI;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
                 operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_DS;
+                operand->Info.Memory.Seg = NDR_DS;
                 break;
             case 2:
                 // [bp + si]
                 operand->Info.Memory.HasBase = true;
                 operand->Info.Memory.HasIndex = true;
                 operand->Info.Memory.Scale = 1;
-                operand->Info.Memory.Base = REG_BP;
-                operand->Info.Memory.Index = REG_SI;
+                operand->Info.Memory.Base = NDR_BP;
+                operand->Info.Memory.Index = NDR_SI;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
                 operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_SS;
+                operand->Info.Memory.Seg = NDR_SS;
                 break;
             case 3:
                 // [bp + di]
                 operand->Info.Memory.HasBase = true;
                 operand->Info.Memory.HasIndex = true;
                 operand->Info.Memory.Scale = 1;
-                operand->Info.Memory.Base = REG_BP;
-                operand->Info.Memory.Index = REG_DI;
+                operand->Info.Memory.Base = NDR_BP;
+                operand->Info.Memory.Index = NDR_DI;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
                 operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_SS;
+                operand->Info.Memory.Seg = NDR_SS;
                 break;
             case 4:
                 // [si]
                 operand->Info.Memory.HasBase = true;
-                operand->Info.Memory.Base = REG_SI;
+                operand->Info.Memory.Base = NDR_SI;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_DS;
+                operand->Info.Memory.Seg = NDR_DS;
                 break;
             case 5:
                 // [di]
                 operand->Info.Memory.HasBase = true;
-                operand->Info.Memory.Base = REG_DI;
+                operand->Info.Memory.Base = NDR_DI;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_DS;
+                operand->Info.Memory.Seg = NDR_DS;
                 break;
             case 6:
                 // [bp]
@@ -2506,22 +2506,22 @@ memory:
                 {
                     // If mod is not zero, than we have "[bp + displacement]".
                     operand->Info.Memory.HasBase = true;
-                    operand->Info.Memory.Base = REG_BP;
+                    operand->Info.Memory.Base = NDR_BP;
                     operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-                    operand->Info.Memory.Seg = REG_SS;
+                    operand->Info.Memory.Seg = NDR_SS;
                 }
                 else
                 {
                     // If mod is zero, than we only have a displacement that is used to directly address mem.
-                    operand->Info.Memory.Seg = REG_DS;
+                    operand->Info.Memory.Seg = NDR_DS;
                 }
                 break;
             case 7:
                 // [bx]
                 operand->Info.Memory.HasBase = true;
-                operand->Info.Memory.Base = REG_BX;
+                operand->Info.Memory.Base = NDR_BX;
                 operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-                operand->Info.Memory.Seg = REG_DS;
+                operand->Info.Memory.Seg = NDR_DS;
                 break;
             }
 
@@ -2535,12 +2535,12 @@ memory:
             uint8_t defsize = (Instrux->AddrMode == ND_ADDR_32 ? ND_SIZE_32BIT : ND_SIZE_64BIT);
 
             // Implicit segment is DS.
-            operand->Info.Memory.Seg = REG_DS;
+            operand->Info.Memory.Seg = NDR_DS;
 
             if (Instrux->HasSib)
             {
                 // Check for base.
-                if ((Instrux->ModRm.mod == 0) && (Instrux->Sib.base == REG_RBP))
+                if ((Instrux->ModRm.mod == 0) && (Instrux->Sib.base == NDR_RBP))
                 {
                     // Mod is mem without displacement and base reg is RBP -> no base reg used.
                     // Note that this addressing mode is not RIP relative.
@@ -2551,14 +2551,14 @@ memory:
                     operand->Info.Memory.BaseSize = defsize;
                     operand->Info.Memory.Base = (uint8_t)((Instrux->Exs.b << 3) | Instrux->Sib.base);
 
-                    if ((operand->Info.Memory.Base == REG_RSP) || (operand->Info.Memory.Base == REG_RBP))
+                    if ((operand->Info.Memory.Base == NDR_RSP) || (operand->Info.Memory.Base == NDR_RBP))
                     {
-                        operand->Info.Memory.Seg = REG_SS;
+                        operand->Info.Memory.Seg = NDR_SS;
                     }
                 }
 
                 // Check for index.
-                if ((((Instrux->Exs.x << 3) | Instrux->Sib.index) != REG_RSP) || ND_HAS_VSIB(Instrux))
+                if ((((Instrux->Exs.x << 3) | Instrux->Sib.index) != NDR_RSP) || ND_HAS_VSIB(Instrux))
                 {
                     // Index * Scale is present.
                     operand->Info.Memory.HasIndex = true;
@@ -2576,7 +2576,7 @@ memory:
             }
             else
             {
-                if ((Instrux->ModRm.mod == 0) && (Instrux->ModRm.rm == REG_RBP))
+                if ((Instrux->ModRm.mod == 0) && (Instrux->ModRm.rm == NDR_RBP))
                 {
                     //
                     // RIP relative addressing addresses a memory region relative to the current RIP; However,
@@ -2599,9 +2599,9 @@ memory:
                     operand->Info.Memory.BaseSize = defsize;
                     operand->Info.Memory.Base = (uint8_t)((Instrux->Exs.b << 3) | Instrux->ModRm.rm);
 
-                    if ((operand->Info.Memory.Base == REG_RSP) || (operand->Info.Memory.Base == REG_RBP))
+                    if ((operand->Info.Memory.Base == NDR_RSP) || (operand->Info.Memory.Base == NDR_RBP))
                     {
-                        operand->Info.Memory.Seg = REG_SS;
+                        operand->Info.Memory.Seg = NDR_SS;
                     }
                 }
             }
@@ -2802,16 +2802,16 @@ memory:
         operand->Info.Memory.HasBase = true;
         operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
         operand->Info.Memory.HasSeg = true;
-        operand->Info.Memory.Base = (uint8_t)(((opt == ND_OPT_X) ? REG_RSI : REG_RDI));
+        operand->Info.Memory.Base = (uint8_t)(((opt == ND_OPT_X) ? NDR_RSI : NDR_RDI));
         operand->Info.Memory.IsString = (ND_OPT_X == opt || ND_OPT_Y == opt);
         // DS:rSI supports segment overriding. ES:rDI does not.
         if (opt == ND_OPT_Y)
         {
-            operand->Info.Memory.Seg = REG_ES;
+            operand->Info.Memory.Seg = NDR_ES;
         }
         else
         {
-            operand->Info.Memory.Seg = NdGetSegOverride(Instrux, REG_DS);
+            operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
         }
         break;
 
@@ -2823,11 +2823,11 @@ memory:
         operand->Info.Memory.HasIndex = true;
         operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
         operand->Info.Memory.IndexSize = ND_SIZE_8BIT;  // Always 1 Byte.
-        operand->Info.Memory.Base = REG_RBX;            // Always rBX.
-        operand->Info.Memory.Index = REG_AL;            // Always AL.
+        operand->Info.Memory.Base = NDR_RBX;            // Always rBX.
+        operand->Info.Memory.Index = NDR_AL;            // Always AL.
         operand->Info.Memory.Scale = 1;                 // Always 1.
         operand->Info.Memory.HasSeg = true;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, REG_DS);
+        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
         break;
 
     case ND_OPT_MEM_SHS:
@@ -2960,7 +2960,7 @@ memory:
         operand->Info.Memory.Base = (uint8_t)((Instrux->Exs.r << 3) | Instrux->ModRm.reg);
         operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
         operand->Info.Memory.HasSeg = true;
-        operand->Info.Memory.Seg = REG_ES;
+        operand->Info.Memory.Seg = NDR_ES;
         break;
 
     case ND_OPT_mM:
@@ -2970,7 +2970,7 @@ memory:
         operand->Info.Memory.Base = (uint8_t)((Instrux->Exs.m << 3) | Instrux->ModRm.rm);
         operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
         operand->Info.Memory.HasSeg = true;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, REG_DS);
+        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
         break;
 
     case ND_OPT_rT:
@@ -4632,8 +4632,8 @@ NdToText(
                         return ND_STATUS_INVALID_INSTRUX;
                     }
 
-                    if ((ND_CODE_64 != Instrux->DefCode) || (REG_FS == pOp->Info.Memory.Seg) ||
-                        (REG_GS == pOp->Info.Memory.Seg))
+                    if ((ND_CODE_64 != Instrux->DefCode) || (NDR_FS == pOp->Info.Memory.Seg) ||
+                        (NDR_GS == pOp->Info.Memory.Seg))
                     {
                         res = nd_strcat_s(Buffer, BufferSize, gRegSeg[pOp->Info.Memory.Seg]);
                         RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
@@ -4957,8 +4957,8 @@ NdGetFullAccessMap(
             if (pOp->Info.Memory.IsStack)
             {
                 AccessMap->StackAccess |= pOp->Access.Access;
-                AccessMap->GprAccess[REG_RSP] |= ND_ACCESS_READ|ND_ACCESS_WRITE;
-                AccessMap->SegAccess[REG_SS] |= ND_ACCESS_READ;
+                AccessMap->GprAccess[NDR_RSP] |= ND_ACCESS_READ|ND_ACCESS_WRITE;
+                AccessMap->SegAccess[NDR_SS] |= ND_ACCESS_READ;
             }
             else
             {

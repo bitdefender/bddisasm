@@ -1764,36 +1764,36 @@ std::string reg_to_str(const int reg, const ND_REG_TYPE type)
 
     case ND_REG_GPR:
         switch (reg) {
-        case REG_RAX: return "rax";
-        case REG_RCX: return "rcx";
-        case REG_RDX: return "rdx";
-        case REG_RBX: return "rbx";
-        case REG_RSP: return "rsp";
-        case REG_RBP: return "rbp";
-        case REG_RSI: return "rsi";
-        case REG_RDI: return "rdi";
-        case REG_R8: return "r8";
-        case REG_R9: return "r9";
-        case REG_R10: return "r10";
-        case REG_R11: return "r11";
-        case REG_R12: return "r12";
-        case REG_R13: return "r13";
-        case REG_R14: return "r14";
-        case REG_R15: return "r15";
+        case NDR_RAX: return "rax";
+        case NDR_RCX: return "rcx";
+        case NDR_RDX: return "rdx";
+        case NDR_RBX: return "rbx";
+        case NDR_RSP: return "rsp";
+        case NDR_RBP: return "rbp";
+        case NDR_RSI: return "rsi";
+        case NDR_RDI: return "rdi";
+        case NDR_R8: return "r8";
+        case NDR_R9: return "r9";
+        case NDR_R10: return "r10";
+        case NDR_R11: return "r11";
+        case NDR_R12: return "r12";
+        case NDR_R13: return "r13";
+        case NDR_R14: return "r14";
+        case NDR_R15: return "r15";
         }
 
         return "<u>";
 
     case ND_REG_SEG:
         switch (reg) {
-        case REG_ES: return "es";
-        case REG_CS: return "cs";
-        case REG_SS: return "ss";
-        case REG_DS: return "ds";
-        case REG_FS: return "fs";
-        case REG_GS: return "gs";
-        case REG_INV6: return "inv6";
-        case REG_INV7: return "inv7";
+        case NDR_ES: return "es";
+        case NDR_CS: return "cs";
+        case NDR_SS: return "ss";
+        case NDR_DS: return "ds";
+        case NDR_FS: return "fs";
+        case NDR_GS: return "gs";
+        case NDR_INV6: return "inv6";
+        case NDR_INV7: return "inv7";
         }
 
         return "<u>";

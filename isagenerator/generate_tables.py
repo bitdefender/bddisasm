@@ -540,7 +540,7 @@ def cdef_instruction(self):
         if m == '1' or m == '0':
             dst = dst + self.RevFlagsAccess['u']
         for f in dst:
-            flg += '|REG_RFLAG_%s' % f.upper()
+            flg += '|NDR_RFLAG_%s' % f.upper()
         c += "\n        %s," % flg
         
     # Add the instruction operands
@@ -1202,7 +1202,7 @@ def generate_features(features, fname):
     f.write('\n')
 
     for c in features:
-        f.write('#define ND_CFF_%s%sND_CFF(%s, %s, %s, %s)\n' % (c.Name, ' ' * (25 - len(c.Name)), c.Leaf, c.SubLeaf, 'REG_' + c.Reg, c.Bit))
+        f.write('#define ND_CFF_%s%sND_CFF(%s, %s, %s, %s)\n' % (c.Name, ' ' * (25 - len(c.Name)), c.Leaf, c.SubLeaf, 'NDR_' + c.Reg, c.Bit))
 
     f.write('\n')
 

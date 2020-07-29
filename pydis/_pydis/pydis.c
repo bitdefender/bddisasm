@@ -33,7 +33,7 @@ nd_vsnprintf_s(char *str, size_t sizeOfBuffer, size_t count, const char *format,
     return vsnprintf(str, count, format, args);
 }
 
-int nd_memset(void *s, int c, size_t n)
+void *nd_memset(void *s, int c, size_t n)
 {
-    memset(s, c, n);
+    return memset(s, c, n);
 }

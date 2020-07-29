@@ -34,7 +34,7 @@ typedef struct _DISASM_OPTIONS
     uint8_t     Ring;           // Ring - 0, 1, 2 or 3.
     uint8_t     Vendor;         // Proffered vendor.
     char        *FileName;      // Input file, if any.
-    size_t      ShemuRegs[REG_R15 + 1];
+    size_t      ShemuRegs[NDR_R15 + 1];
     BOOLEAN     UseShemuRegs;
 } DISASM_OPTIONS, *PDISASM_OPTIONS;
 
@@ -1439,7 +1439,7 @@ handle_shemu(
     ctx.Registers.RegRsp = 0x101000;
     ctx.IntbufSize = (DWORD)shellSize + STACK_SIZE;
 
-    ctx.Registers.RegFlags = REG_RFLAG_IF | 2;
+    ctx.Registers.RegFlags = NDR_RFLAG_IF | 2;
     ctx.Registers.RegRip = ctx.ShellcodeBase + offset;
 
     ctx.Segments.Cs.Selector = 0x10;

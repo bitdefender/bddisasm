@@ -321,60 +321,60 @@ ShemuSetFlags(
     // PF set if the first bytes has an even number of 1 bits.
     if ((pfArr[Dst & 0xF] + pfArr[(Dst >> 4) & 0xF]) % 2 == 0)
     {
-        Context->Registers.RegFlags |= REG_RFLAG_PF;
+        Context->Registers.RegFlags |= NDR_RFLAG_PF;
     }
     else
     {
-        Context->Registers.RegFlags &= ~REG_RFLAG_PF;
+        Context->Registers.RegFlags &= ~NDR_RFLAG_PF;
     }
 
     // ZF set if the result is zero.
     if (Dst == 0)
     {
-        Context->Registers.RegFlags |= REG_RFLAG_ZF;
+        Context->Registers.RegFlags |= NDR_RFLAG_ZF;
     }
     else
     {
-        Context->Registers.RegFlags &= ~REG_RFLAG_ZF;
+        Context->Registers.RegFlags &= ~NDR_RFLAG_ZF;
     }
 
     // SF is set if the sign flag is set.
     if (ND_GET_SIGN(Size, Dst) != 0)
     {
-        Context->Registers.RegFlags |= REG_RFLAG_SF;
+        Context->Registers.RegFlags |= NDR_RFLAG_SF;
     }
     else
     {
-        Context->Registers.RegFlags &= ~REG_RFLAG_SF;
+        Context->Registers.RegFlags &= ~NDR_RFLAG_SF;
     }
 
     // OF and CF are handled differently for some instructions.
     if (FM_LOGIC == FlagsMode)
     {
         // OF and CF are cleared on logic instructions.
-        Context->Registers.RegFlags &= ~(REG_RFLAG_OF | REG_RFLAG_CF);
+        Context->Registers.RegFlags &= ~(NDR_RFLAG_OF | NDR_RFLAG_CF);
     }
     else if (FM_SHL == FlagsMode)
     {
         // CF is the last bit shifted out of the destination.
         if (ND_GET_BIT(Src1, (Size * 8) - Src2))
         {
-            Context->Registers.RegFlags |= REG_RFLAG_CF;
+            Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
         else
         {
-            Context->Registers.RegFlags &= ~REG_RFLAG_CF;
+            Context->Registers.RegFlags &= ~NDR_RFLAG_CF;
         }
 
         if (Src2 == 1)
         {
             if (ND_GET_BIT(Size * 8 - 1, Dst) ^ ND_GET_BIT(Src1, (Size * 8) - Src2))
             {
-                Context->Registers.RegFlags |= REG_RFLAG_OF;
+                Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
             else
             {
-                Context->Registers.RegFlags &= ~REG_RFLAG_OF;
+                Context->Registers.RegFlags &= ~NDR_RFLAG_OF;
             }
         }
     }
@@ -383,22 +383,22 @@ ShemuSetFlags(
         // CF is the last bit shifted out of the destination.
         if (ND_GET_BIT(Src1, Src2 - 1))
         {
-            Context->Registers.RegFlags |= REG_RFLAG_CF;
+            Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
         else
         {
-            Context->Registers.RegFlags &= ~REG_RFLAG_CF;
+            Context->Registers.RegFlags &= ~NDR_RFLAG_CF;
         }
 
         if (Src2 == 1)
         {
             if (ND_GET_BIT(Size * 8 - 1, Dst))
             {
-                Context->Registers.RegFlags |= REG_RFLAG_OF;
+                Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
             else
             {
-                Context->Registers.RegFlags &= ~REG_RFLAG_OF;
+                Context->Registers.RegFlags &= ~NDR_RFLAG_OF;
             }
         }
     }
@@ -407,29 +407,29 @@ ShemuSetFlags(
         // CF is the last bit shifted out of the destination.
         if (ND_GET_BIT(Src1, Src2 - 1))
         {
-            Context->Registers.RegFlags |= REG_RFLAG_CF;
+            Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
         else
         {
-            Context->Registers.RegFlags &= ~REG_RFLAG_CF;
+            Context->Registers.RegFlags &= ~NDR_RFLAG_CF;
         }
 
-        Context->Registers.RegFlags &= ~REG_RFLAG_OF;
+        Context->Registers.RegFlags &= ~NDR_RFLAG_OF;
     }
     else
     {
         // Set CF.
         if ((FM_SUB == FlagsMode) && (Src1 < Src2))
         {
-            Context->Registers.RegFlags |= REG_RFLAG_CF;
+            Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
         else if ((FM_ADD == FlagsMode) && (Dst < Src1))
         {
-            Context->Registers.RegFlags |= REG_RFLAG_CF;
+            Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
         else
         {
-            Context->Registers.RegFlags &= ~REG_RFLAG_CF;
+            Context->Registers.RegFlags &= ~NDR_RFLAG_CF;
         }
 
         // Set OF.
@@ -438,11 +438,11 @@ ShemuSetFlags(
             if ((ND_GET_SIGN(Size, Src1) && !ND_GET_SIGN(Size, Src2) && !ND_GET_SIGN(Size, Dst)) ||
                 (!ND_GET_SIGN(Size, Src1) && ND_GET_SIGN(Size, Src2) && ND_GET_SIGN(Size, Dst)))
             {
-                Context->Registers.RegFlags |= REG_RFLAG_OF;
+                Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
             else
             {
-                Context->Registers.RegFlags &= ~REG_RFLAG_OF;
+                Context->Registers.RegFlags &= ~NDR_RFLAG_OF;
             }
         }
         else if (FM_ADD == FlagsMode)
@@ -450,11 +450,11 @@ ShemuSetFlags(
             if (ND_GET_SIGN(Size, Src1) == ND_GET_SIGN(Size, Src2) && 
                 ND_GET_SIGN(Size, Src1) != ND_GET_SIGN(Size, Dst))
             {
-                Context->Registers.RegFlags |= REG_RFLAG_OF;
+                Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
             else
             {
-                Context->Registers.RegFlags &= ~REG_RFLAG_OF;
+                Context->Registers.RegFlags &= ~NDR_RFLAG_OF;
             }
         }
     }
@@ -473,99 +473,99 @@ ShemuEvalCondition(
     switch (ConditionCode)
     {
     case ND_COND_OVERFLOW: // O
-        if (GET_FLAG(Context, REG_RFLAG_OF) == 1)
+        if (GET_FLAG(Context, NDR_RFLAG_OF) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_OVERFLOW): // NO
-        if (GET_FLAG(Context, REG_RFLAG_OF) == 0)
+        if (GET_FLAG(Context, NDR_RFLAG_OF) == 0)
         {
             return true;
         }
         break;
     case ND_COND_CARRY: // C/B/NAE
-        if (GET_FLAG(Context, REG_RFLAG_CF) == 1)
+        if (GET_FLAG(Context, NDR_RFLAG_CF) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_CARRY): // NC/NB/AE
-        if (GET_FLAG(Context, REG_RFLAG_CF) == 0)
+        if (GET_FLAG(Context, NDR_RFLAG_CF) == 0)
         {
             return true;
         }
         break;
     case ND_COND_ZERO: // E/Z
-        if (GET_FLAG(Context, REG_RFLAG_ZF) == 1)
+        if (GET_FLAG(Context, NDR_RFLAG_ZF) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_ZERO): // NE/NZ
-        if (GET_FLAG(Context, REG_RFLAG_ZF) == 0)
+        if (GET_FLAG(Context, NDR_RFLAG_ZF) == 0)
         {
             return true;
         }
         break;
     case ND_COND_BELOW_OR_EQUAL: // BE/NA
-        if ((GET_FLAG(Context, REG_RFLAG_CF) | (GET_FLAG(Context, REG_RFLAG_ZF))) == 1)
+        if ((GET_FLAG(Context, NDR_RFLAG_CF) | (GET_FLAG(Context, NDR_RFLAG_ZF))) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_BELOW_OR_EQUAL): // A/NBE
-        if ((GET_FLAG(Context, REG_RFLAG_CF) | (GET_FLAG(Context, REG_RFLAG_ZF))) == 0)
+        if ((GET_FLAG(Context, NDR_RFLAG_CF) | (GET_FLAG(Context, NDR_RFLAG_ZF))) == 0)
         {
             return true;
         }
         break;
     case ND_COND_SIGN: // S
-        if (GET_FLAG(Context, REG_RFLAG_SF) == 1)
+        if (GET_FLAG(Context, NDR_RFLAG_SF) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_SIGN): // NS
-        if (GET_FLAG(Context, REG_RFLAG_SF) == 0)
+        if (GET_FLAG(Context, NDR_RFLAG_SF) == 0)
         {
             return true;
         }
         break;
     case ND_COND_PARITY: // P
-        if (GET_FLAG(Context, REG_RFLAG_PF) == 1)
+        if (GET_FLAG(Context, NDR_RFLAG_PF) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_PARITY): // NP
-        if (GET_FLAG(Context, REG_RFLAG_PF) == 0)
+        if (GET_FLAG(Context, NDR_RFLAG_PF) == 0)
         {
             return true;
         }
         break;
     case ND_COND_LESS: // L/NGE
-        if ((GET_FLAG(Context, REG_RFLAG_SF) ^ GET_FLAG(Context, REG_RFLAG_OF)) == 1)
+        if ((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_LESS): // NL/GE
-        if ((GET_FLAG(Context, REG_RFLAG_SF) ^ GET_FLAG(Context, REG_RFLAG_OF)) == 0)
+        if ((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) == 0)
         {
             return true;
         }
         break;
     case ND_COND_LESS_OR_EQUAL: // LE/NG
-        if (((GET_FLAG(Context, REG_RFLAG_SF) ^ GET_FLAG(Context, REG_RFLAG_OF)) |
-            (GET_FLAG(Context, REG_RFLAG_ZF))) == 1)
+        if (((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) |
+            (GET_FLAG(Context, NDR_RFLAG_ZF))) == 1)
         {
             return true;
         }
         break;
     case ND_COND_NOT(ND_COND_LESS_OR_EQUAL): // NLE/G
-        if (((GET_FLAG(Context, REG_RFLAG_SF) ^ GET_FLAG(Context, REG_RFLAG_OF)) |
-            (GET_FLAG(Context, REG_RFLAG_ZF))) == 0)
+        if (((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) |
+            (GET_FLAG(Context, NDR_RFLAG_ZF))) == 0)
         {
             return true;
         }
@@ -696,17 +696,17 @@ ShemuGetSegValue(
 {
     switch (Reg)
     {
-    case REG_ES:
+    case NDR_ES:
         return Context->Segments.Es.Selector;
-    case REG_CS:
+    case NDR_CS:
         return Context->Segments.Cs.Selector;
-    case REG_SS:
+    case NDR_SS:
         return Context->Segments.Ss.Selector;
-    case REG_DS:
+    case NDR_DS:
         return Context->Segments.Ds.Selector;
-    case REG_FS:
+    case NDR_FS:
         return Context->Segments.Fs.Selector;
-    case REG_GS:
+    case NDR_GS:
         return Context->Segments.Gs.Selector;
     }
 
@@ -726,22 +726,22 @@ ShemuSetSegValue(
 {
     switch (Reg)
     {
-    case REG_ES:
+    case NDR_ES:
         Context->Segments.Es.Selector = Value;
         break;
-    case REG_CS:
+    case NDR_CS:
         Context->Segments.Cs.Selector = Value;
         break;
-    case REG_SS:
+    case NDR_SS:
         Context->Segments.Ss.Selector = Value;
         break;
-    case REG_DS:
+    case NDR_DS:
         Context->Segments.Ds.Selector = Value;
         break;
-    case REG_FS:
+    case NDR_FS:
         Context->Segments.Fs.Selector = Value;
         break;
-    case REG_GS:
+    case NDR_GS:
         Context->Segments.Gs.Selector = Value;
         break;
     }
@@ -759,17 +759,17 @@ ShemuGetSegBase(
 {
     switch (Reg)
     {
-    case REG_ES:
+    case NDR_ES:
         return Context->Segments.Es.Base;
-    case REG_CS:
+    case NDR_CS:
         return Context->Segments.Cs.Base;
-    case REG_SS:
+    case NDR_SS:
         return Context->Segments.Ss.Base;
-    case REG_DS:
+    case NDR_DS:
         return Context->Segments.Ds.Base;
-    case REG_FS:
+    case NDR_FS:
         return Context->Segments.Fs.Base;
-    case REG_GS:
+    case NDR_GS:
         return Context->Segments.Gs.Base;
     }
 
@@ -1084,19 +1084,19 @@ ShemuGetOperandValue(
         case ND_REG_CR:
             switch (op->Info.Register.Reg)
             {
-            case REG_CR0:
+            case NDR_CR0:
                 Value->Value.Qwords[0] = Context->Registers.RegCr0;
                 break;
-            case REG_CR2:
+            case NDR_CR2:
                 Value->Value.Qwords[0] = Context->Registers.RegCr2;
                 break;
-            case REG_CR3:
+            case NDR_CR3:
                 Value->Value.Qwords[0] = Context->Registers.RegCr3;
                 break;
-            case REG_CR4:
+            case NDR_CR4:
                 Value->Value.Qwords[0] = Context->Registers.RegCr4;
                 break;
-            case REG_CR8:
+            case NDR_CR8:
                 Value->Value.Qwords[0] = Context->Registers.RegCr8;
                 break;
             default:
@@ -1163,11 +1163,11 @@ ShemuGetOperandValue(
             // If this is a stack access, we need to update the stack pointer.
             if (op->Info.Memory.IsStack)
             {
-                uint64_t regval = ShemuGetGprValue(Context, REG_RSP, (2 << Context->Instruction.DefStack), false);
+                uint64_t regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), false);
 
                 regval += op->Size;
 
-                ShemuSetGprValue(Context, REG_RSP, (2 << Context->Instruction.DefStack), regval, false);
+                ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, false);
             }
 
             // If this is a string operation, make sure we update RSI/RDI.
@@ -1175,7 +1175,7 @@ ShemuGetOperandValue(
             {
                 uint64_t regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, false);
 
-                regval = GET_FLAG(Context, REG_RFLAG_DF) ? regval - op->Size : regval + op->Size;
+                regval = GET_FLAG(Context, NDR_RFLAG_DF) ? regval - op->Size : regval + op->Size;
 
                 ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, false);
             }
@@ -1260,19 +1260,19 @@ ShemuSetOperandValue(
         case ND_REG_CR:
             switch (op->Info.Register.Reg)
             {
-            case REG_CR0:
+            case NDR_CR0:
                 Context->Registers.RegCr0 = Value->Value.Qwords[0];
                 break;
-            case REG_CR2:
+            case NDR_CR2:
                 Context->Registers.RegCr2 = Value->Value.Qwords[0];
                 break;
-            case REG_CR3:
+            case NDR_CR3:
                 Context->Registers.RegCr3 = Value->Value.Qwords[0];
                 break;
-            case REG_CR4:
+            case NDR_CR4:
                 Context->Registers.RegCr4 = Value->Value.Qwords[0];
                 break;
-            case REG_CR8:
+            case NDR_CR8:
                 Context->Registers.RegCr8 = Value->Value.Qwords[0];
                 break;
             default:
@@ -1359,11 +1359,11 @@ ShemuSetOperandValue(
         // If this is a stack access, we need to update the stack pointer.
         if (op->Info.Memory.IsStack)
         {
-            uint64_t regval = ShemuGetGprValue(Context, REG_RSP, (2 << Context->Instruction.DefStack), false);
+            uint64_t regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), false);
 
             regval -= op->Size;
 
-            ShemuSetGprValue(Context, REG_RSP, (2 << Context->Instruction.DefStack), regval, false);
+            ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, false);
         }
 
         // If this is a string operation, make sure we update RSI/RDI.
@@ -1371,7 +1371,7 @@ ShemuSetOperandValue(
         {
             uint64_t regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, false);
 
-            regval = GET_FLAG(Context, REG_RFLAG_DF) ? regval - op->Size : regval + op->Size;
+            regval = GET_FLAG(Context, NDR_RFLAG_DF) ? regval - op->Size : regval + op->Size;
 
             ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, false);
         }
@@ -1660,12 +1660,12 @@ ShemuEmulate(
             {
                 GET_OP(Context, 1, &src);
                 SET_OP(Context, 0, &src);
-                SET_FLAG(Context, REG_RFLAG_ZF, 1);
+                SET_FLAG(Context, NDR_RFLAG_ZF, 1);
             }
             else
             {
                 SET_OP(Context, 2, &dst);
-                SET_FLAG(Context, REG_RFLAG_ZF, 0);
+                SET_FLAG(Context, NDR_RFLAG_ZF, 0);
             }
             break;
 
@@ -1676,7 +1676,7 @@ ShemuEmulate(
 
             if (ND_INS_ADC == Context->Instruction.Instruction)
             {
-                src.Value.Qwords[0] += GET_FLAG(Context, REG_RFLAG_CF);
+                src.Value.Qwords[0] += GET_FLAG(Context, NDR_RFLAG_CF);
             }
 
             res.Size = src.Size;
@@ -1695,7 +1695,7 @@ ShemuEmulate(
 
             if (ND_INS_SBB == Context->Instruction.Instruction)
             {
-                src.Value.Qwords[0] += GET_FLAG(Context, REG_RFLAG_CF);
+                src.Value.Qwords[0] += GET_FLAG(Context, NDR_RFLAG_CF);
             }
 
             res.Size = src.Size;
@@ -1864,31 +1864,31 @@ ShemuEmulate(
                     while (tempcnt != 0)
                     {
                         tempCF = ND_MSB(dst.Size, dst.Value.Qwords[0]);
-                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] << 1) + GET_FLAG(Context, REG_RFLAG_CF);
-                        SET_FLAG(Context, REG_RFLAG_CF, tempCF);
+                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] << 1) + GET_FLAG(Context, NDR_RFLAG_CF);
+                        SET_FLAG(Context, NDR_RFLAG_CF, tempCF);
                         tempcnt--;
                     }
 
                     if ((cnt & cntmask) == 1)
                     {
-                        SET_FLAG(Context, REG_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
-                                                            GET_FLAG(Context, REG_RFLAG_CF));
+                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
+                                                            GET_FLAG(Context, NDR_RFLAG_CF));
                     }
                 }
                 else if (ND_INS_RCR == Context->Instruction.Instruction)
                 {
                     if ((cnt & cntmask) == 1)
                     {
-                        SET_FLAG(Context, REG_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
-                                                            GET_FLAG(Context, REG_RFLAG_CF));
+                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
+                                                            GET_FLAG(Context, NDR_RFLAG_CF));
                     }
 
                     while (tempcnt != 0)
                     {
                         tempCF = ND_LSB(dst.Size, dst.Value.Qwords[0]);
                         dst.Value.Qwords[0] = (dst.Value.Qwords[0] >> 1) + 
-                                              ((uint64_t)GET_FLAG(Context, REG_RFLAG_CF) << (dst.Size * 8 - 1));
-                        SET_FLAG(Context, REG_RFLAG_CF, tempCF);
+                                              ((uint64_t)GET_FLAG(Context, NDR_RFLAG_CF) << (dst.Size * 8 - 1));
+                        SET_FLAG(Context, NDR_RFLAG_CF, tempCF);
                         tempcnt--;
                     }
                 }
@@ -1903,13 +1903,13 @@ ShemuEmulate(
 
                     if ((cnt & cntmask) != 0)
                     {
-                        SET_FLAG(Context, REG_RFLAG_CF, dst.Value.Qwords[0] & 1);
+                        SET_FLAG(Context, NDR_RFLAG_CF, dst.Value.Qwords[0] & 1);
                     }
 
                     if ((cnt & cntmask) == 1)
                     {
-                        SET_FLAG(Context, REG_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
-                                                            GET_FLAG(Context, REG_RFLAG_CF));
+                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
+                                                            GET_FLAG(Context, NDR_RFLAG_CF));
                     }
                 }
                 else // ND_INS_ROR
@@ -1923,12 +1923,12 @@ ShemuEmulate(
 
                     if ((cnt & cntmask) != 0)
                     {
-                        SET_FLAG(Context, REG_RFLAG_CF, ND_MSB(dst.Size, dst.Value.Qwords[0]));
+                        SET_FLAG(Context, NDR_RFLAG_CF, ND_MSB(dst.Size, dst.Value.Qwords[0]));
                     }
 
                     if ((cnt & cntmask) == 1)
                     {
-                        SET_FLAG(Context, REG_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^ tempCF);
+                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^ tempCF);
                     }
                 }
 
@@ -1988,7 +1988,7 @@ ShemuEmulate(
             src.Value.Qwords[0] %= dst.Size * 8;
 
             // Store the bit inside CF.
-            SET_FLAG(Context, REG_RFLAG_CF, (dst.Value.Qwords[0] >> src.Value.Qwords[0]) & 1);
+            SET_FLAG(Context, NDR_RFLAG_CF, (dst.Value.Qwords[0] >> src.Value.Qwords[0]) & 1);
 
             if (ND_INS_BTS == Context->Instruction.Instruction)
             {
@@ -2041,8 +2041,8 @@ ShemuEmulate(
             SET_OP(Context, 1, &rcx);
             if (rcx.Value.Qwords[0] > 0)
             {
-                if (((ND_INS_LOOPNZ == Context->Instruction.Instruction) && (0 == GET_FLAG(Context, REG_RFLAG_ZF))) ||
-                    ((ND_INS_LOOPZ  == Context->Instruction.Instruction) && (0 != GET_FLAG(Context, REG_RFLAG_ZF))) ||
+                if (((ND_INS_LOOPNZ == Context->Instruction.Instruction) && (0 == GET_FLAG(Context, NDR_RFLAG_ZF))) ||
+                    ((ND_INS_LOOPZ  == Context->Instruction.Instruction) && (0 != GET_FLAG(Context, NDR_RFLAG_ZF))) ||
                      (ND_INS_LOOP   == Context->Instruction.Instruction))
                 {
                     // Modify the RIP if the branch is taken.
@@ -2156,12 +2156,12 @@ ShemuEmulate(
                     rcx.Value.Qwords[0]--;
                     SET_OP(Context, 2, &rcx);
 
-                    if (Context->Instruction.HasRepRepzXrelease && !GET_FLAG(Context, REG_RFLAG_ZF))
+                    if (Context->Instruction.HasRepRepzXrelease && !GET_FLAG(Context, NDR_RFLAG_ZF))
                     {
                         break;
                     }
 
-                    if (Context->Instruction.HasRepnzXacquireBnd && GET_FLAG(Context, REG_RFLAG_ZF))
+                    if (Context->Instruction.HasRepnzXacquireBnd && GET_FLAG(Context, NDR_RFLAG_ZF))
                     {
                         break;
                     }
@@ -2287,8 +2287,8 @@ ShemuEmulate(
                     break;
                 }
 
-                SET_FLAG(Context, REG_RFLAG_CF, cfof);
-                SET_FLAG(Context, REG_RFLAG_OF, cfof);
+                SET_FLAG(Context, NDR_RFLAG_CF, cfof);
+                SET_FLAG(Context, NDR_RFLAG_OF, cfof);
             }
             else
             {
@@ -2318,8 +2318,8 @@ ShemuEmulate(
                     break;
                 }
 
-                SET_FLAG(Context, REG_RFLAG_CF, cfof);
-                SET_FLAG(Context, REG_RFLAG_OF, cfof);
+                SET_FLAG(Context, NDR_RFLAG_CF, cfof);
+                SET_FLAG(Context, NDR_RFLAG_OF, cfof);
             }
 
             break;
@@ -2416,23 +2416,23 @@ ShemuEmulate(
             break;
 
         case ND_INS_CLD:
-            SET_FLAG(Context, REG_RFLAG_DF, 0);
+            SET_FLAG(Context, NDR_RFLAG_DF, 0);
             break;
 
         case ND_INS_STD:
-            SET_FLAG(Context, REG_RFLAG_DF, 1);
+            SET_FLAG(Context, NDR_RFLAG_DF, 1);
             break;
 
         case ND_INS_CLC:
-            SET_FLAG(Context, REG_RFLAG_CF, 0);
+            SET_FLAG(Context, NDR_RFLAG_CF, 0);
             break;
 
         case ND_INS_STC:
-            SET_FLAG(Context, REG_RFLAG_CF, 1);
+            SET_FLAG(Context, NDR_RFLAG_CF, 1);
             break;
 
         case ND_INS_CMC:
-            Context->Registers.RegFlags ^= REG_RFLAG_CF;
+            Context->Registers.RegFlags ^= NDR_RFLAG_CF;
             break;
 
         case ND_INS_STI:
@@ -2441,7 +2441,7 @@ ShemuEmulate(
                 return SHEMU_ABORT_NO_PRIVILEGE;
             }
 
-            SET_FLAG(Context, REG_RFLAG_IF, 1);
+            SET_FLAG(Context, NDR_RFLAG_IF, 1);
             break;
 
         case ND_INS_CLI:
@@ -2450,7 +2450,7 @@ ShemuEmulate(
                 return SHEMU_ABORT_NO_PRIVILEGE;
             }
 
-            SET_FLAG(Context, REG_RFLAG_IF, 0);
+            SET_FLAG(Context, NDR_RFLAG_IF, 0);
             break;
 
         case ND_INS_SAHF:
@@ -2471,7 +2471,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_SALC:
-            if (GET_FLAG(Context, REG_RFLAG_CF))
+            if (GET_FLAG(Context, NDR_RFLAG_CF))
             {
                 *((uint8_t *)&Context->Registers.RegRax) = 0xFF;
             }
