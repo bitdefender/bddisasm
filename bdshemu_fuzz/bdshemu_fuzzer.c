@@ -107,7 +107,7 @@ void run_shemu(uint8_t *Data, size_t Size, uint8_t Def)
     ctx.Registers.RegRsp = 0x101000;
     ctx.IntbufSize = (uint32_t)Size + 0x2000;
 
-    ctx.Registers.RegFlags = REG_RFLAG_IF | 2;
+    ctx.Registers.RegFlags = NDR_RFLAG_IF | 2;
     ctx.Registers.RegRip = ctx.ShellcodeBase;
 
     ctx.Segments.Cs.Selector = 0x10;
