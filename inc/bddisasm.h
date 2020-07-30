@@ -29,6 +29,18 @@
 #define ND_VEND_CYRIX               4   // Prefer Cyrix.
 
 //
+// These control what instructions should be decoded if they map onto the wide NOP space (0F 1A and 0F 1B). Those are
+// tricky, because they might be NOP if the feature is disabled, but might be something else (even #UD) if the feature
+// is enabled. Ergo, we allow the user to select whether said feature is on or off, so that he controls whether he
+// sees the NOPs or the MPX/CET/CLDEMOTE/etc. instructions instead.
+//
+#define ND_FEAT_NONE                0x00    // No feature/mode enabled.
+#define ND_FEAT_MPX                 0x01    // MPX support enabled.
+#define ND_FEAT_CET                 0x02    // CET support enabled.
+#define ND_FEAT_CLDEMOTE            0x04    // CLDEMOTE support enabled.
+#define ND_FEAT_ALL                 0xFF    // Decode as if all features are enabled. This is default.
+
+//
 // Code type
 //
 #define ND_CODE_16                  0   // 16 bit decode mode.
@@ -1208,6 +1220,8 @@ typedef struct _INSTRUX
     uint8_t             DefCode:4;                  // ND_CODE_*. Indicates disassembly mode.
     uint8_t             DefData:4;                  // ND_DATA_*. Indicates default data size.
     uint8_t             DefStack:4;                 // ND_STACK_*. Indicates default stack pointer width.
+    uint8_t             VendMode:4;                 // ND_VEND_*. Indicates vendor mode.
+    uint8_t             FeatMode;                   // ND_FEAT_*. Indicates which features are enabled.
     uint8_t             EncMode:4;                  // ND_ENCM_*. Indicates encoding mode.
     uint8_t             VexMode:4;                  // ND_VEX_*.  Indicates the VEX mode, if any.
     uint8_t             AddrMode:4;                 // ND_ADDR_*. Indicates addressing mode.
@@ -1215,7 +1229,7 @@ typedef struct _INSTRUX
     uint8_t             EfOpMode:4;                 // ND_OPSZ_*. Indicates effective operand mode/size.
     uint8_t             VecMode:4;                  // ND_VECM_*. Indicates vector length.
     uint8_t             EfVecMode:4;                // ND_VECM_*. Indicates effective vector length.
-
+    
     // Prefixes.
     bool                HasRex:1;                   // TRUE - REX is present.
     bool                HasVex:1;                   // TRUE - VEX is present.
@@ -1394,7 +1408,7 @@ typedef struct _INSTRUX
     ND_VALID_MODES      ValidModes;                 // Valid CPU modes for the instruction.
     ND_VALID_PREFIXES   ValidPrefixes;              // Indicates which prefixes are valid for this instruction.
     ND_VALID_DECORATORS ValidDecorators;            // What decorators are accepted by the instruction.
-    uint64_t            Reserved1;                  // Padding purpose. Aligns the mnemonic to 8 bytes.
+    uint8_t             Reserved1[3];               // Padding purpose. Aligns the mnemonic to 8 bytes.
     char                Mnemonic[ND_MAX_MNEMONIC_LENGTH];   // Instruction mnemonic.
     uint8_t             OpCodeBytes[3];             // Opcode bytes - escape codes and main op code
     uint8_t             PrimaryOpCode;              // Main/nominal opcode
@@ -1405,7 +1419,22 @@ typedef struct _INSTRUX
 
 
 //
-// API
+// Decoder context. Such a structure must be passed to the NdDecodeWithContext API. This structure must be initialized
+// only once, and then it can be re-used across NdDecodeWithContext calls.
+//
+typedef struct _ND_CONTEXT
+{
+    uint64_t DefCode : 4;
+    uint64_t DefData : 4;
+    uint64_t DefStack : 4;
+    uint64_t VendMode : 4;
+    uint64_t FeatMode : 8;
+    uint64_t Reserved : 40;
+} ND_CONTEXT;
+
+
+//
+// Returns the bddisasm version.
 //
 void
 NdGetVersion(
@@ -1416,6 +1445,12 @@ NdGetVersion(
     char **BuildTime
     );
 
+//
+// Decode one instruction. Note that this is equivalent to: 
+// NdDecodeEx(Instrux, Code, ND_MAX_INSTRUCTION_LEN, DefCode, DefData).
+// This version should be used if the caller doesn't care about the length of the buffer. Otherwise, use the other
+// decode API.
+// 
 NDSTATUS
 NdDecode(
     INSTRUX *Instrux,
@@ -1424,6 +1459,13 @@ NdDecode(
     uint8_t DefData
     );
 
+//
+// Decode one instruction. Note that this is equivalent to: 
+// NdDecodeEx2(Instrux, Code, Size, DefCode, DefData, DefCode, ND_VEND_ANY).
+// By default, the used vendor will be ND_VEND_ANY, so all instructions will be decoded.
+// By default, the feature mode will be ND_FEAT_ALL, so all instructions will be decoded (but may yield error where
+// otherwise a NOP would be encoded - use ND_FEAT_NONE in that case).
+// 
 NDSTATUS
 NdDecodeEx(
     INSTRUX *Instrux,
@@ -1433,6 +1475,9 @@ NdDecodeEx(
     uint8_t DefData
     );
 
+//
+// Fills a ND_CONTEXT structure, and calls NdDecodeWithContext. The feature mode will be ND_FEAT_ALL by default.
+//
 NDSTATUS
 NdDecodeEx2(
     INSTRUX *Instrux,
@@ -1444,6 +1489,26 @@ NdDecodeEx2(
     uint8_t PreferedVendor
     );
 
+//
+// This API received a decode context, where it expects DefCode, DefData, DefStack, VendMode and FeatMode to be 
+// already initialized. The Context will not be modified by the decoder, so it can be reused across decode calls.
+// The Context should initially be initialized using NdInitContext. This will ensure backwards compatibility
+// by setting new fields to default values.
+// Note that this is the base decoding API, and this ends up being called by all the other decoding APIs, after 
+// providing default arguments and filling them in the Context structure. For maximum speed, use this instead of
+// the others.
+//
+NDSTATUS
+NdDecodeWithContext(
+    INSTRUX *Instrux,
+    const uint8_t *Code,
+    size_t Size,
+    ND_CONTEXT *Context
+    );
+
+//
+// Convert the given instruction into textual representation (Intel syntax).
+//
 NDSTATUS
 NdToText(
     const INSTRUX *Instrux,
@@ -1452,17 +1517,31 @@ NdToText(
     char *Buffer
     );
 
+//
+// Returns true if the instruction is RIP relative. Note that this function is kept for backwards compatibility, since
+// there already is a IsRipRelative field inside INSTRUX.
+//
 bool
 NdIsInstruxRipRelative(
     const INSTRUX *Instrux
     );
 
+//
+// Returns an access map that contains the access for each register.
+//
 NDSTATUS
 NdGetFullAccessMap(
     const INSTRUX *Instrux,
     ND_ACCESS_MAP *AccessMap
     );
 
+//
+// Initialize the decoder context.
+//
+void
+NdInitContext(
+    ND_CONTEXT *Context
+    );
 
 // #pragma warning(default: 4214) // Bitfield in type other than int.
 // #pragma warning(default: 4201) // Nonstandard extension used: nameless struct/union.

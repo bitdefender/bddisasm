@@ -635,6 +635,8 @@ class Instruction():
         self.RedRex = self.RedRexW = self.RedRep = self.Red64 = self.RedF3 = False
         # Misc - vendor
         self.Vendor = None
+        # Misc - feature.
+        self.Feature = None
 
         # XOP, VEX and EVEX classes.
         self.Vex = self.Xop = self.Evex = self.Mvex = False
@@ -770,6 +772,8 @@ class Instruction():
                 self.Opcodes.append(int(t, 16))
             elif t in ['intel', 'amd', 'via', 'cyrix']:
                 self.Vendor = t
+            elif t in ['mpx', 'cet', 'cldm']:
+                self.Feature = t
             elif 'vsib' == t:
                 self.HasVsib = True
                 if 'VSIB' not in self.Flags:
@@ -874,7 +878,7 @@ class Instruction():
             self.Spec = { "mmmmm" : e[0], "opcodes" : e[1], "modrm" : e[2], "pp" : e[3], "l" : e[4], "w" : e[5] }
         else:
             self.Spec = { "opcodes" : e[0], "modrm" : e[1], "mpre" : e[2], "mode" : e[3], "dsize" : e[4], \
-                          "asize" : e[5], "opre" : e[6], "vendor" : e[7] }
+                          "asize" : e[5], "opre" : e[6], "vendor" : e[7], "feature": e[8] }
 
     def process_operands(self, ops, imp = False):
         p = 1
@@ -979,7 +983,7 @@ class Instruction():
         if self.RedRep: 
             oprefixes.append('rep')
         # Vendor redirection, if any.
-        return (opcodes, modrm, mprefixes, mode, dsize, asize, oprefixes, self.Vendor)
+        return (opcodes, modrm, mprefixes, mode, dsize, asize, oprefixes, self.Vendor, self.Feature)
 
 
     def __str__(self):

@@ -26,6 +26,8 @@ typedef enum _ND_ILUT_TYPE
                             // 4 (default op size 16), 5 (default op size 32), 6 (default op size 64),
     ND_ILUT_VENDOR,         // Preferred vendor is used to transition. Default is entry 0. Otherwise, preferred
                             // vendor selects an alternate entry.
+    ND_ILUT_FEATURE,        // Some instructions are mapped onto wide NOP space. They will be decoded only if the
+                            // associated feature is set during decoding.
     ND_ILUT_VEX_MMMMM,      // Table contains 32 entries. Next entry is vex/xop/evex.mmmmm
     ND_ILUT_VEX_PP,         // Table contains 4 entries. Next entry is vex/xop/evex.pp
     ND_ILUT_VEX_L,          // Table contains 4 entries. Next entry is vex/xop.l or evex.l'l
@@ -65,6 +67,12 @@ typedef enum _ND_ILUT_TYPE
 #define ND_ILUT_INDEX_AUX_O64           3
 #define ND_ILUT_INDEX_AUX_F3            4
 #define ND_ILUT_INDEX_AUX_REP           5
+
+#define ND_ILUT_FEATURE_NONE            0
+#define ND_ILUT_FEATURE_MPX             1
+#define ND_ILUT_FEATURE_CET             2
+#define ND_ILUT_FEATURE_CLDEMOTE        3
+
 
 
 
@@ -123,6 +131,12 @@ typedef struct _ND_TABLE_VENDOR
     uint32_t        Type;
     const void      *Table[6];
 } ND_TABLE_VENDOR;
+
+typedef struct _ND_TABLE_FEATURE
+{
+    uint32_t        Type;
+    const void      *Table[4];
+} ND_TABLE_FEATURE;
 
 typedef struct _ND_TABLE_DSIZE
 {

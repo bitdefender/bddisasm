@@ -65,7 +65,22 @@ In order to build bddisasm and bdshemu run `make` in the root of the repository.
 
 In order to build disasmtool_lix go to the disasmtool_lix directory and run `make`. The results will be in the bin directory in the disasmtool_lix/build directory.
 
-## Example
+## Decoding instructions
+
+### Decoding API
+
+There are 4 decoding functions, but internally, they all do the same, albeit some of them with implicit arguments:
+* `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer; 
+* `NDSTATUS NdDecodeEx(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData);` - decode instruction from a buffer with maximum length `Size`;
+* `NDSTATUS NdDecodeEx2(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData, uint8_t DefStack, uint8_t PreferedVendor);` - decode instructions with a preferred vendor;
+* `NDSTATUS NdDecodeWithContext(INSTRUX *Instrux, const uint8_t *Code, size_t Size, ND_CONTEXT *Context);` - base decode API; the input parameters - `DefCode`, `DefData`, `DefStack`, `VendMode` and `FeatMode` must all be filled in the `Context` structure before calling this function. The Context structure should also be initialized using `NdInitContext` before the first decode call.
+
+Note that by default, the default vendor `ND_VEND_ANY` is used for decoding (which means that bddisasm will try to decode as much as possible). Also, the default features mask is `ND_FEAT_ALL`, meaning that bddisasm will optimistically try to decode instructions which are mapped onto the wide NOP space as well (for example, MPX or CET). If these parameters must be changed, it is advised to use the `NdDecodeWithContext` API.
+
+Converting decoded instructions to textual disassembly must be done using the `NdToText` API. bddisasm only supports Intel, masm-style syntax.
+
+
+### Example
 
 Working with bddisasm is very easy. Decoding and printing the disassembly of an instruction is quick & simple:
 
@@ -158,6 +173,26 @@ int main()
 
     return 0;
 }
+```
+
+Working with the extended API is also trivial:
+```c
+    INSTRUX ix;
+    ND_CONTEXT ctx;
+    uint8_t code[] = { 0x48, 0x8B, 0x48, 0x28 };
+    
+    // This has to be done only once.
+    NdInitContext(&ctx);
+    
+    ctx.DefCode = ND_CODE_64;
+    ctx.DefData = ND_DATA_64;
+    ctx.DefStack = ND_STACK_64;
+    ctx.VendMode = ND_VEND_ANY;
+    ctx.FeatMode = ND_FEAT_ALL; // Use ND_FEAT_NONE, if you wish to see NOPs instead of MPX/CET/CLDEMOTE instructions.
+
+    // From here one, the ctx can be reused for any number of NdDecodeWithContext calls.
+    NDSTATUS status = NdDecodeWithContext(&ix, code, sizeof(code), &ctx);
+    ...
 ```
 
 ## Credits

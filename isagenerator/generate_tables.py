@@ -393,6 +393,11 @@ indexes = {
     "amd"   : 2,
     "geode" : 3,
     "cyrix" : 4,
+
+    # Feature redirection.
+    "mpx"   : 1,
+    "cet"   : 2,
+    "cldm"  : 3,
 }
 
 ilut = {
@@ -409,6 +414,7 @@ ilut = {
     "asize" :           ("ND_ILUT_ASIZE",           4,      "ND_TABLE_ASIZE"),
     "auxiliary" :       ("ND_ILUT_AUXILIARY",       6,      "ND_TABLE_AUXILIARY"),
     "vendor" :          ("ND_ILUT_VENDOR",          6,      "ND_TABLE_VENDOR"),
+    "feature" :         ("ND_ILUT_FEATURE",         4,      "ND_TABLE_FEATURE"),
     "mmmmm" :           ("ND_ILUT_VEX_MMMMM",       32,     "ND_TABLE_VEX_MMMMM"),
     "pp" :              ("ND_ILUT_VEX_PP",          4,      "ND_TABLE_VEX_PP"),
     "l" :               ("ND_ILUT_VEX_L",           4,      "ND_TABLE_VEX_L"),
@@ -566,8 +572,8 @@ disasmlib.Instruction.cdef = cdef_instruction
 def group_instructions(ilist):
     d = { }
     is3dnow = False
-    priorities = ["opcode", "vendor", "modrmmod", "modrmreg", "modrmmodpost", "modrmrm", "mprefix", "mode", "dsize", \
-                  "asize", "auxiliary", "_"]
+    priorities = ["opcode", "vendor", "feature", "modrmmod", "modrmreg", "modrmmodpost", "modrmrm", "mprefix", "mode", \
+                  "dsize", "asize", "auxiliary", "_"]
 
     for i in ilist:
         if '3DNOW' in i.Flags:
@@ -584,8 +590,11 @@ def group_instructions(ilist):
             if "__TYPE__" not in d or d["__TYPE__"] in priorities[-1:]:
                 d["__TYPE__"] = "mprefix" 
         elif i.Spec["vendor"]:
-            if "__TYPE__" not in d or d["__TYPE__"] in priorities[-10:]:
+            if "__TYPE__" not in d or d["__TYPE__"] in priorities[-11:]:
                 d["__TYPE__"] = "vendor"
+        elif i.Spec["feature"]:
+            if "__TYPE__" not in d or d["__TYPE__"] in priorities[-10:]:
+                d["__TYPE__"] = "feature"
         elif i.Spec["modrm"]["mod"]:
             if "__TYPE__" not in d or d["__TYPE__"] in priorities[-9:]:
                 d["__TYPE__"] = "modrmmod"
@@ -749,9 +758,21 @@ def group_instructions(ilist):
             # Remove the vendor redirector
             if p != "None":
                 i.Spec["vendor"] = None
+        elif d["__TYPE__"] == "feature":
+            if not i.Spec["feature"]:
+                p = "None"
+            else:
+                p = i.Spec["feature"]
+            if p not in d:
+                d[p] = [i]
+            else:
+                d[p].append(i)
+            # Remove the vendor redirector
+            if p != "None":
+                i.Spec["feature"] = None
         else:
             print("Don't know what to do!")
-            raise Exception("WTF???")
+            raise Exception("Unknwon redirection type.")
 
     return d
 
@@ -884,7 +905,7 @@ def group_instructions_vex_xop_evex(ilist):
             i.Spec["w"] = None
         else:
             print("Don't know what to do!")
-            raise Exception("WTF???")
+            raise Exception("Unknown redirection type.")
 
     return d
 

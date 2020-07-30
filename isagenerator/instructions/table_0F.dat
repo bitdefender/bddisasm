@@ -82,21 +82,21 @@ WBNOINVD       nil           nil                       [      a0xF3 0x0F 0x09]  
 CL1INVMB       nil           nil                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM
 UD2            nil           nil                       [            0x0F 0x0B]                 s:PPRO, t:MISC
 PREFETCHE      Mb            nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCHW      Mb            nil                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /1:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /1:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCHWT1    Mb            nil                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /2:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /2:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCHM      Mb            nil                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /3:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /3:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCH       Mb            nil                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /4:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /4:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCH       Mb            nil                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /5:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /5:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCH       Mb            nil                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /6:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /6:reg]          s:PPRO, t:NOP, w:N|N
 PREFETCH       Mb            nil                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /7:reg]          s:PPRO, t:NOP, w:R|R
+NOP            Ev,Gv         nil                       [            0x0F 0x0D /7:reg]          s:PPRO, t:NOP, w:N|N
 
 FEMMS          nil           nil                       [            0x0F 0x0E]                 s:3DNOW, t:MMX, c:FEMMS
 
@@ -126,72 +126,83 @@ MOVSHDUP       Vx,Wx         nil                       [       0xF3 0x0F 0x16 /r
 MOVHPS         Mq,Vq         nil                       [         NP 0x0F 0x17 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
 MOVHPD         Mq,Vq         nil                       [       0x66 0x0F 0x17 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
 PREFETCHNTA    Mb            nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:R
+NOP            Ev            nil                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
 PREFETCHT0     Mb            nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:R
+NOP            Ev            nil                       [            0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:N
 PREFETCHT1     Mb            nil                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:R
+NOP            Ev            nil                       [            0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:N
 PREFETCHT2     Mb            nil                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:R
-NOP            Ev            nil                       [            0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:R
-NOP            Ev            nil                       [            0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:R
-NOP            Ev            nil                       [            0x0F 0x18 /6]              s:PPRO, t:WIDENOP, w:R
-NOP            Ev            nil                       [            0x0F 0x18 /7]              s:PPRO, t:WIDENOP, w:R
-NOP            Ev            nil                       [            0x0F 0x19 /r]              s:PPRO, t:WIDENOP, w:R
+NOP            Ev            nil                       [            0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [            0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [            0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [            0x0F 0x18 /6]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [            0x0F 0x18 /7]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [            0x0F 0x19 /r]              s:PPRO, t:WIDENOP, w:N
 
 # MPX instructions. According to the SDM, MPX instructions have 64 bit op & address size in 64 bit mode, no matter 
 # if 0x66 or 0x67 prefixes are used. 16 bit addressing cause #UD. However, these checks are not handled here (note
 # that Xed doesn't do those checks either).
-BNDLDX         rBl,Mmib      nil                       [            0x0F 0x1A /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
-NOP            Gv,Ev         nil                       [            0x0F 0x1A /r:reg]          s:PPRO, t:WIDENOP, w:R|R
-BNDMOV         rBl,mBl       nil                       [       0x66 0x0F 0x1A /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
-BNDCL          rBl,Ey        nil                       [       0xF3 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
-BNDCU          rBl,Ey        nil                       [       0xF2 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
 
-BNDSTX         Mmib,rBl      nil                       [            0x0F 0x1B /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
-NOP            Gv,Ev         nil                       [            0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:R|R
-BNDMOV         mBl,rBl       nil                       [       0x66 0x0F 0x1B /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
-BNDMK          rBl,My        nil                       [       0xF3 0x0F 0x1B /r:mem]          s:MPX, t:MPX, w:W|R, a:F64|NOA16|NORIPREL|I67
-NOP            Gv,Ev         nil                       [       0xF3 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:R|R
-BNDCN          rBl,Ey        nil                       [       0xF2 0x0F 0x1B /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
+# MPX not used, these guys are wide NOPs.
+NOP            Gv,Ev         nil                       [            0x0F 0x1A /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Gv,Ev         nil                       [            0x0F 0x1B /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [            0x0F 0x1C /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [            0x0F 0x1D /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [            0x0F 0x1E /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [            0x0F 0x1F /r]              s:PPRO, t:WIDENOP, w:N|N
 
-CLDEMOTE       Mb            nil                       [         NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:P
-NOP            Ev,Gv         nil                       [       0x66 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [       0xF3 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [       0xF2 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /0:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /1]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /2]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /3]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /4]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /5]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /6]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /7]              s:PPRO, t:WIDENOP, w:R|R
-NOP            Ev,Gv         nil                       [            0x0F 0x1D /r]              s:PPRO, t:WIDENOP, w:R|R
+# Features that are mapped onto wide NOPs.
 
-NOP            Mv,Gv         nil                       [            0x0F 0x1E /r:mem]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [       rexw 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:R|R
-RDSSPD         Rd            SSP                       [      a0xF3 0x0F 0x1E /1:reg]          s:CET_SS, t:CET, c:RSSSP, w:W|R
-RDSSPQ         Rq            SSP                       [ a0xF3 rexw 0x0F 0x1E /1:reg]          s:CET_SS, t:CET, c:RSSSP, w:W|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /2:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /3:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /4:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /5:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /6:reg]          s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xF8]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xF9]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFA]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFB]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFC]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFD]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFE]           s:PPRO, t:WIDENOP, w:R|R
-NOP            Rv,Gv         nil                       [            0x0F 0x1E /0xFF]           s:PPRO, t:WIDENOP, w:R|R
-ENDBR64        nil           nil                       [      a0xF3 0x0F 0x1E /0xFA]           s:CET_IBT, t:CET, c:ENDBR
-ENDBR32        nil           nil                       [      a0xF3 0x0F 0x1E /0xFB]           s:CET_IBT, t:CET, c:ENDBR
+# MPX
+BNDLDX         rBl,Mmib      nil                       [        mpx 0x0F 0x1A /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
+NOP            Gv,Ev         nil                       [        mpx 0x0F 0x1A /r:reg]          s:PPRO, t:WIDENOP, w:N|N
+BNDMOV         rBl,mBl       nil                       [   mpx 0x66 0x0F 0x1A /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
+BNDCL          rBl,Ey        nil                       [   mpx 0xF3 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
+BNDCU          rBl,Ey        nil                       [   mpx 0xF2 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
+BNDSTX         Mmib,rBl      nil                       [        mpx 0x0F 0x1B /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
+NOP            Gv,Ev         nil                       [        mpx 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:N|N
+BNDMOV         mBl,rBl       nil                       [   mpx 0x66 0x0F 0x1B /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
+BNDMK          rBl,My        nil                       [   mpx 0xF3 0x0F 0x1B /r:mem]          s:MPX, t:MPX, w:W|R, a:F64|NOA16|NORIPREL|I67
+NOP            Gv,Ev         nil                       [   mpx 0xF3 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:N|N
+BNDCN          rBl,Ey        nil                       [   mpx 0xF2 0x0F 0x1B /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
 
-NOP            Ev,Gv         nil                       [            0x0F 0x1F /r]              s:PPRO, t:WIDENOP, w:R|R
+# CLDEMOTE
+CLDEMOTE       Mb            nil                       [    cldm NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:P
+NOP            Ev,Gv         nil                       [  cldm 0x66 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [  cldm 0xF3 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [  cldm 0xF2 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /0:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /1]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /2]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /3]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /4]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /5]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /6]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /7]              s:PPRO, t:WIDENOP, w:N|N
+
+# CET
+NOP            Mv,Gv         nil                       [        cet 0x0F 0x1E /r:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [   cet rexw 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:N|N
+RDSSPD         Rd            SSP                       [  cet a0xF3 0x0F 0x1E /1:reg]          s:CET_SS, t:CET, c:RSSSP, w:W|R
+RDSSPQ         Rq            SSP                       [ cet a0xF3 rexw 0x0F 0x1E /1:reg]      s:CET_SS, t:CET, c:RSSSP, w:W|R
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /2:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /3:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /4:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /5:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /6:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xF8]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xF9]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFA]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFB]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFC]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFD]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFE]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFF]           s:PPRO, t:WIDENOP, w:N|N
+ENDBR64        nil           nil                       [  cet a0xF3 0x0F 0x1E /0xFA]           s:CET_IBT, t:CET, c:ENDBR
+ENDBR32        nil           nil                       [  cet a0xF3 0x0F 0x1E /0xFB]           s:CET_IBT, t:CET, c:ENDBR
+
 
 # 0x20 - 0x2F
 MOV            Ry,Cy         nil                       [            0x0F 0x20 /r]              s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64, m:KERNEL|NOV86

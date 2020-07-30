@@ -3097,7 +3097,6 @@ NdFindInstruction(
     const uint8_t *Code,
     uint8_t Offset,
     size_t Size,
-    uint8_t Vendor,
     ND_INSTRUCTION **InsDef
     )
 {
@@ -3386,13 +3385,33 @@ NdFindInstruction(
 
         case ND_ILUT_VENDOR:
             // Vendor redirection. Go to the vendor specific entry.
-            if (NULL != pTable->Table[Vendor])
+            if (NULL != pTable->Table[Instrux->VendMode])
             {
-                pTable = (const ND_TABLE *)pTable->Table[Vendor];
+                pTable = (const ND_TABLE *)pTable->Table[Instrux->VendMode];
             }
             else
             {
                 pTable = (const ND_TABLE *)pTable->Table[ND_VEND_ANY];
+            }
+            break;
+
+        case ND_ILUT_FEATURE:
+            // Feature redirection. Normally NOP if feature is not set, but may be something else if feature is set.
+            if ((NULL != pTable->Table[ND_ILUT_FEATURE_MPX]) && !!(Instrux->FeatMode & ND_FEAT_MPX))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_MPX];
+            }
+            else if ((NULL != pTable->Table[ND_ILUT_FEATURE_CET]) && !!(Instrux->FeatMode & ND_FEAT_CET))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_CET];
+            }
+            else if ((NULL != pTable->Table[ND_ILUT_FEATURE_CLDEMOTE]) && !!(Instrux->FeatMode & ND_FEAT_CLDEMOTE))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_CLDEMOTE];
+            }
+            else
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_NONE];
             }
             break;
 
@@ -3817,6 +3836,28 @@ NdDecodeEx2(
     uint8_t Vendor
     )
 {
+    ND_CONTEXT opt;
+
+    NdInitContext(&opt);
+
+    opt.DefCode = DefCode;
+    opt.DefData = DefData;
+    opt.DefStack = DefStack;
+    opt.VendMode = Vendor;
+    opt.FeatMode = ND_FEAT_ALL; // Optimistically decode everything, as if all features are enabled.
+
+    return NdDecodeWithContext(Instrux, Code, Size, &opt);
+}
+
+
+NDSTATUS
+NdDecodeWithContext(
+    INSTRUX *Instrux,
+    const uint8_t *Code,
+    size_t Size,
+    ND_CONTEXT *Context
+    )
+{
     NDSTATUS status;
     PND_INSTRUCTION pIns;
     uint32_t opIndex;
@@ -3842,17 +3883,22 @@ NdDecodeEx2(
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (ND_CODE_64 < DefCode)
+    if (NULL == Context)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (ND_DATA_64 < DefData)
+    if (ND_CODE_64 < Context->DefCode)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (ND_VEND_CYRIX < Vendor)
+    if (ND_DATA_64 < Context->DefData)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (ND_VEND_CYRIX < Context->VendMode)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
@@ -3860,9 +3906,11 @@ NdDecodeEx2(
     // Initialize with zero.
     nd_memzero(Instrux, sizeof(INSTRUX));
 
-    Instrux->DefCode = DefCode;
-    Instrux->DefData = DefData;
-    Instrux->DefStack = DefStack;
+    Instrux->DefCode = (uint8_t)Context->DefCode;
+    Instrux->DefData = (uint8_t)Context->DefData;
+    Instrux->DefStack = (uint8_t)Context->DefStack;
+    Instrux->VendMode = (uint8_t)Context->VendMode;
+    Instrux->FeatMode = (uint8_t)Context->FeatMode;
 
     // Fetch prefixes. We peek at the first byte, if that's not a prefix, there's no need to call the main decoder.
     if (ND_PREF_CODE_NONE != gPrefixesMap[Code[0]])
@@ -3882,7 +3930,7 @@ NdDecodeEx2(
     }
 
     // Start iterating the tables, in order to extract the instruction entry.
-    status = NdFindInstruction(Instrux, Code, Instrux->Length, Size, Vendor, &pIns);
+    status = NdFindInstruction(Instrux, Code, Instrux->Length, Size, &pIns);
     if (!ND_SUCCESS(status))
     {
         return status;
@@ -5100,4 +5148,13 @@ NdGetFullAccessMap(
     }
 
     return ND_STATUS_SUCCESS;
+}
+
+
+void
+NdInitContext(
+    ND_CONTEXT *Context
+    )
+{
+    nd_memzero(Context, sizeof(*Context));
 }

@@ -32,7 +32,8 @@ typedef struct _DISASM_OPTIONS
     BOOLEAN     Print;          // Print instruction disassembly, if true.
     uint8_t     Mode;           // Mode - 16, 32 or 64 bit mode.
     uint8_t     Ring;           // Ring - 0, 1, 2 or 3.
-    uint8_t     Vendor;         // Proffered vendor.
+    uint8_t     Vendor;         // Preffered vendor.
+    uint8_t     Feature;        // Used features.
     char        *FileName;      // Input file, if any.
     size_t      ShemuRegs[NDR_R15 + 1];
     BOOLEAN     UseShemuRegs;
@@ -1013,17 +1014,25 @@ handle_search(
 {
     NDSTATUS status;
     INSTRUX instrux;
+    ND_CONTEXT ctx;
     SIZE_T rip = 0, i;
     char text[ND_MIN_BUF_SIZE], target[ND_MIN_BUF_SIZE];
     char *token1, *token2, *ctx1, *ctx2;
     BOOLEAN match;
 
+    NdInitContext(&ctx);
+
+    ctx.DefCode = Options->Mode;
+    ctx.DefData = Options->Mode;
+    ctx.DefStack = Options->Mode;
+    ctx.VendMode = Options->Vendor;
+    ctx.FeatMode = Options->Feature;
+
     // Disassemble
     rip = 0;
     while (rip < Options->Size)
     {
-        status = NdDecodeEx2(&instrux, Options->Buffer + rip, Options->Size - rip, Options->Mode, 
-                             Options->Mode, Options->Mode, ND_VEND_ANY);
+        status = NdDecodeWithContext(&instrux, Options->Buffer + rip, Options->Size - rip, &ctx);
         if (!ND_SUCCESS(status))
         {
             goto _continue;
@@ -1100,10 +1109,15 @@ _continue_match:
             print_instruction(rip, &instrux, Options);
             rip2 += instrux.Length;
 
+            instrux.DefCode = Options->Mode;
+            instrux.DefData = Options->Mode;
+            instrux.DefStack = Options->Mode;
+            instrux.VendMode = Options->Vendor;
+            instrux.FeatMode = Options->Feature;
+
             while (rip2 < Options->Size && count++ < 8)
             {
-                status = NdDecodeEx2(&instrux, Options->Buffer + rip2, Options->Size - rip2, Options->Mode,
-                    Options->Mode, Options->Mode, ND_VEND_ANY);
+                status = NdDecodeWithContext(&instrux, Options->Buffer + rip2, Options->Size - rip2, &ctx);
                 if (!ND_SUCCESS(status))
                 {
                     printf("%p ERROR\n", (void*)rip2);
@@ -1136,12 +1150,20 @@ handle_disasm(
 {
     NDSTATUS status;
     INSTRUX instrux;
+    ND_CONTEXT ctx = { 0 };
     QWORD icount = 0, istart = 0, iend = 0, start = 0, end = 0, itotal = 0;
     SIZE_T rip = 0, fsize = Options->Size;
     PBYTE buffer = Options->Buffer;
-    BYTE mode = Options->Mode, vend = Options->Vendor;
 
     start = clock();
+
+    NdInitContext(&ctx);
+
+    ctx.DefCode = Options->Mode;
+    ctx.DefData = Options->Mode;
+    ctx.DefStack = Options->Mode;
+    ctx.VendMode = Options->Vendor;
+    ctx.FeatMode = Options->Feature;
 
     // Disassemble
     rip = Options->Offset;
@@ -1150,7 +1172,7 @@ handle_disasm(
         icount++;
 
         istart = __rdtsc();
-        status = NdDecodeEx2(&instrux, buffer + rip, fsize - rip, mode, mode, mode, vend);
+        status = NdDecodeWithContext(&instrux, buffer + rip, fsize - rip, &ctx);
         iend = __rdtsc();
 
         itotal += iend - istart;
@@ -1565,7 +1587,7 @@ int main(
     DWORD fsize, offset;
     SIZE_T rip;
     char text[ND_MIN_BUF_SIZE], *fname, *target, *shemuCtxFname;
-    BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, search, isShemu, isShemuCtxf, isKernel;
+    BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, feat, search, isShemu, isShemuCtxf, isKernel;
     INT ret, i;
     BYTE hexbuf[256], *buffer;
     DISASM_OPTIONS options;
@@ -1582,6 +1604,7 @@ int main(
     exi = 0;
     offset = 0;
     search = 0;
+    feat = ND_FEAT_ALL;
     vend = ND_VEND_ANY;
     fname = NULL;
     mode = ND_CODE_16;
@@ -1614,7 +1637,8 @@ int main(
         printf("        -o offset        start disasm at specified offset\n");
         printf("        -r rip           use the provided RIP\n");
         printf("        -b[16|32|64]     set decoding mode; default is 16\n");
-        printf("        -v[intel|amd|cyrix|any] set preferred vendor\n");
+        printf("        -v[intel|amd|cyrix|mpx|any] set preferred vendor\n");
+        printf("        -t[none|all|mpx|cet|cldm] set preferred feature mode; default is all\n");
         printf("        -s \"ins\"       search for the given instructions\n");
         printf("        -nv              don't print disassembly\n");
         printf("        -iv              display statistics\n");
@@ -1747,6 +1771,41 @@ int main(
         {
             vend = ND_VEND_ANY;
         }
+        else if (0 == strcmp(argv[i], "-tall"))
+        {
+            feat = ND_FEAT_ALL;
+        }
+        else if (0 == strcmp(argv[i], "-tmpx"))
+        {
+            if (feat == ND_FEAT_ALL)
+            {
+                feat = 0;
+            }
+
+            feat |= ND_FEAT_MPX;
+        }
+        else if (0 == strcmp(argv[i], "-tcet"))
+        {
+            if (feat == ND_FEAT_ALL)
+            {
+                feat = 0;
+            }
+
+            feat |= ND_FEAT_CET;
+        }
+        else if (0 == strcmp(argv[i], "-tcldm"))
+        {
+            if (feat == ND_FEAT_ALL)
+            {
+                feat = 0;
+            }
+
+            feat |= ND_FEAT_CLDEMOTE;
+        }
+        else if (0 == strcmp(argv[i], "-tnone"))
+        {
+            feat = ND_FEAT_NONE;
+        }
         else if (0 == strcmp(argv[i], "-nv"))
         {
             print = 0;
@@ -1877,6 +1936,7 @@ int main(
     options.Target = target;
     options.Print = print;
     options.Vendor = vend;
+    options.Feature = feat;
     options.Rip = rip;
 
     if (isShemu)

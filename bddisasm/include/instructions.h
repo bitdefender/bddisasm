@@ -5,7 +5,7 @@
 #ifndef INSTRUCTIONS_H
 #define INSTRUCTIONS_H
 
-const ND_INSTRUCTION gInstructions[2557] = 
+const ND_INSTRUCTION gInstructions[2561] = 
 {
     // Pos:0 Instruction:"AAA" Encoding:"0x37"/""
     {
@@ -1123,7 +1123,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:71 Instruction:"BNDCL rBl,Ey" Encoding:"0xF3 0x0F 0x1A /r"/"RM"
+    // Pos:71 Instruction:"BNDCL rBl,Ey" Encoding:"mpx 0xF3 0x0F 0x1A /r"/"RM"
     {
         ND_INS_BNDCL, ND_CAT_MPX, ND_SET_MPX, 43, 
         ND_MOD_ANY, 
@@ -1138,7 +1138,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:72 Instruction:"BNDCN rBl,Ey" Encoding:"0xF2 0x0F 0x1B /r"/"RM"
+    // Pos:72 Instruction:"BNDCN rBl,Ey" Encoding:"mpx 0xF2 0x0F 0x1B /r"/"RM"
     {
         ND_INS_BNDCN, ND_CAT_MPX, ND_SET_MPX, 44, 
         ND_MOD_ANY, 
@@ -1153,7 +1153,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:73 Instruction:"BNDCU rBl,Ey" Encoding:"0xF2 0x0F 0x1A /r"/"RM"
+    // Pos:73 Instruction:"BNDCU rBl,Ey" Encoding:"mpx 0xF2 0x0F 0x1A /r"/"RM"
     {
         ND_INS_BNDCU, ND_CAT_MPX, ND_SET_MPX, 45, 
         ND_MOD_ANY, 
@@ -1168,7 +1168,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:74 Instruction:"BNDLDX rBl,Mmib" Encoding:"0x0F 0x1A /r:mem mib"/"RM"
+    // Pos:74 Instruction:"BNDLDX rBl,Mmib" Encoding:"mpx 0x0F 0x1A /r:mem mib"/"RM"
     {
         ND_INS_BNDLDX, ND_CAT_MPX, ND_SET_MPX, 46, 
         ND_MOD_ANY, 
@@ -1183,7 +1183,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:75 Instruction:"BNDMK rBl,My" Encoding:"0xF3 0x0F 0x1B /r:mem"/"RM"
+    // Pos:75 Instruction:"BNDMK rBl,My" Encoding:"mpx 0xF3 0x0F 0x1B /r:mem"/"RM"
     {
         ND_INS_BNDMK, ND_CAT_MPX, ND_SET_MPX, 47, 
         ND_MOD_ANY, 
@@ -1198,7 +1198,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:76 Instruction:"BNDMOV rBl,mBl" Encoding:"0x66 0x0F 0x1A /r"/"RM"
+    // Pos:76 Instruction:"BNDMOV rBl,mBl" Encoding:"mpx 0x66 0x0F 0x1A /r"/"RM"
     {
         ND_INS_BNDMOV, ND_CAT_MPX, ND_SET_MPX, 48, 
         ND_MOD_ANY, 
@@ -1213,7 +1213,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:77 Instruction:"BNDMOV mBl,rBl" Encoding:"0x66 0x0F 0x1B /r"/"MR"
+    // Pos:77 Instruction:"BNDMOV mBl,rBl" Encoding:"mpx 0x66 0x0F 0x1B /r"/"MR"
     {
         ND_INS_BNDMOV, ND_CAT_MPX, ND_SET_MPX, 48, 
         ND_MOD_ANY, 
@@ -1228,7 +1228,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:78 Instruction:"BNDSTX Mmib,rBl" Encoding:"0x0F 0x1B /r:mem mib"/"MR"
+    // Pos:78 Instruction:"BNDSTX Mmib,rBl" Encoding:"mpx 0x0F 0x1B /r:mem mib"/"MR"
     {
         ND_INS_BNDSTX, ND_CAT_MPX, ND_SET_MPX, 49, 
         ND_MOD_ANY, 
@@ -1718,7 +1718,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:110 Instruction:"CLDEMOTE Mb" Encoding:"NP 0x0F 0x1C /0:mem"/"M"
+    // Pos:110 Instruction:"CLDEMOTE Mb" Encoding:"cldm NP 0x0F 0x1C /0:mem"/"M"
     {
         ND_INS_CLDEMOTE, ND_CAT_CLDEMOTE, ND_SET_CLDEMOTE, 68, 
         ND_MOD_ANY, 
@@ -3499,7 +3499,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:224 Instruction:"ENDBR32" Encoding:"a0xF3 0x0F 0x1E /0xFB"/""
+    // Pos:224 Instruction:"ENDBR32" Encoding:"cet a0xF3 0x0F 0x1E /0xFB"/""
     {
         ND_INS_ENDBR, ND_CAT_CET, ND_SET_CET_IBT, 154, 
         ND_MOD_ANY, 
@@ -3513,7 +3513,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:225 Instruction:"ENDBR64" Encoding:"a0xF3 0x0F 0x1E /0xFA"/""
+    // Pos:225 Instruction:"ENDBR64" Encoding:"cet a0xF3 0x0F 0x1E /0xFA"/""
     {
         ND_INS_ENDBR, ND_CAT_CET, ND_SET_CET_IBT, 155, 
         ND_MOD_ANY, 
@@ -11259,8 +11259,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11274,8 +11274,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11289,8 +11289,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11304,8 +11304,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11319,8 +11319,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11334,8 +11334,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11349,8 +11349,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11364,8 +11364,8 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11379,7 +11379,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11393,7 +11393,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11407,7 +11407,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11421,7 +11421,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11435,7 +11435,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11449,7 +11449,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11463,7 +11463,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11477,7 +11477,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -11491,11 +11491,11 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:738 Instruction:"NOP Gv,Ev" Encoding:"0x0F 0x1A /r:reg"/"RM"
+    // Pos:738 Instruction:"NOP Gv,Ev" Encoding:"0x0F 0x1A /r"/"RM"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11505,12 +11505,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:739 Instruction:"NOP Gv,Ev" Encoding:"0x0F 0x1B /r:reg"/"RM"
+    // Pos:739 Instruction:"NOP Gv,Ev" Encoding:"0x0F 0x1B /r"/"RM"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11520,12 +11520,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:740 Instruction:"NOP Gv,Ev" Encoding:"0xF3 0x0F 0x1B /r:reg"/"RM"
+    // Pos:740 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /r"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11535,12 +11535,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:741 Instruction:"NOP Ev,Gv" Encoding:"0x66 0x0F 0x1C /0:mem"/"MR"
+    // Pos:741 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1D /r"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11550,12 +11550,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:742 Instruction:"NOP Ev,Gv" Encoding:"0xF3 0x0F 0x1C /0:mem"/"MR"
+    // Pos:742 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1E /r"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11565,12 +11565,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:743 Instruction:"NOP Ev,Gv" Encoding:"0xF2 0x0F 0x1C /0:mem"/"MR"
+    // Pos:743 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1F /r"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11580,12 +11580,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:744 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /0:reg"/"MR"
+    // Pos:744 Instruction:"NOP Gv,Ev" Encoding:"mpx 0x0F 0x1A /r:reg"/"RM"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11595,12 +11595,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:745 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /1"/"MR"
+    // Pos:745 Instruction:"NOP Gv,Ev" Encoding:"mpx 0x0F 0x1B /r:reg"/"RM"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11610,12 +11610,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:746 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /2"/"MR"
+    // Pos:746 Instruction:"NOP Gv,Ev" Encoding:"mpx 0xF3 0x0F 0x1B /r:reg"/"RM"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11625,12 +11625,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:747 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /3"/"MR"
+    // Pos:747 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x66 0x0F 0x1C /0:mem"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11640,12 +11640,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:748 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /4"/"MR"
+    // Pos:748 Instruction:"NOP Ev,Gv" Encoding:"cldm 0xF3 0x0F 0x1C /0:mem"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11655,12 +11655,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:749 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /5"/"MR"
+    // Pos:749 Instruction:"NOP Ev,Gv" Encoding:"cldm 0xF2 0x0F 0x1C /0:mem"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11670,12 +11670,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:750 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /6"/"MR"
+    // Pos:750 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /0:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11685,12 +11685,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:751 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1C /7"/"MR"
+    // Pos:751 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /1"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11700,12 +11700,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:752 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1D /r"/"MR"
+    // Pos:752 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /2"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11715,12 +11715,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:753 Instruction:"NOP Mv,Gv" Encoding:"0x0F 0x1E /r:mem"/"MR"
+    // Pos:753 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /3"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11730,12 +11730,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_M, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:754 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0:reg"/"MR"
+    // Pos:754 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /4"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11745,12 +11745,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:755 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /1:reg"/"MR"
+    // Pos:755 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /5"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11760,12 +11760,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:756 Instruction:"NOP Rv,Gv" Encoding:"rexw 0x0F 0x1E /1:reg"/"MR"
+    // Pos:756 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /6"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11775,12 +11775,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:757 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /2:reg"/"MR"
+    // Pos:757 Instruction:"NOP Ev,Gv" Encoding:"cldm 0x0F 0x1C /7"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11790,12 +11790,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:758 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /3:reg"/"MR"
+    // Pos:758 Instruction:"NOP Mv,Gv" Encoding:"cet 0x0F 0x1E /r:mem"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11805,12 +11805,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_M, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:759 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /4:reg"/"MR"
+    // Pos:759 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11820,12 +11820,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:760 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /5:reg"/"MR"
+    // Pos:760 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /1:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11835,12 +11835,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:761 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /6:reg"/"MR"
+    // Pos:761 Instruction:"NOP Rv,Gv" Encoding:"cet rexw 0x0F 0x1E /1:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11850,12 +11850,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:762 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xF8"/"MR"
+    // Pos:762 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /2:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11865,12 +11865,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:763 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xF9"/"MR"
+    // Pos:763 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /3:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11880,12 +11880,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:764 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xFA"/"MR"
+    // Pos:764 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /4:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11895,12 +11895,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:765 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xFB"/"MR"
+    // Pos:765 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /5:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11910,12 +11910,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:766 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xFC"/"MR"
+    // Pos:766 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /6:reg"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11925,12 +11925,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:767 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xFD"/"MR"
+    // Pos:767 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xF8"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11940,12 +11940,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:768 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xFE"/"MR"
+    // Pos:768 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xF9"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11955,12 +11955,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:769 Instruction:"NOP Rv,Gv" Encoding:"0x0F 0x1E /0xFF"/"MR"
+    // Pos:769 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xFA"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11970,12 +11970,12 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:770 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1F /r"/"MR"
+    // Pos:770 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xFB"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
         ND_MOD_ANY, 
@@ -11985,12 +11985,72 @@ const ND_INSTRUCTION gInstructions[2557] =
         0,
         0,
         {
-            OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
-    // Pos:771 Instruction:"NOP" Encoding:"0x90"/""
+    // Pos:771 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xFC"/"MR"
+    {
+        ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
+        ND_MOD_ANY, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, 0, 
+        0,
+        0,
+        0,
+        0,
+        {
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+        },
+    }, 
+
+    // Pos:772 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xFD"/"MR"
+    {
+        ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
+        ND_MOD_ANY, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, 0, 
+        0,
+        0,
+        0,
+        0,
+        {
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+        },
+    }, 
+
+    // Pos:773 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xFE"/"MR"
+    {
+        ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
+        ND_MOD_ANY, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, 0, 
+        0,
+        0,
+        0,
+        0,
+        {
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+        },
+    }, 
+
+    // Pos:774 Instruction:"NOP Rv,Gv" Encoding:"cet 0x0F 0x1E /0xFF"/"MR"
+    {
+        ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 463, 
+        ND_MOD_ANY, 
+        0, 0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, 0, 
+        0,
+        0,
+        0,
+        0,
+        {
+            OP(ND_OPT_R, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+        },
+    }, 
+
+    // Pos:775 Instruction:"NOP" Encoding:"0x90"/""
     {
         ND_INS_NOP, ND_CAT_NOP, ND_SET_I86, 463, 
         ND_MOD_ANY, 
@@ -12004,7 +12064,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:772 Instruction:"NOT Eb" Encoding:"0xF6 /2"/"M"
+    // Pos:776 Instruction:"NOT Eb" Encoding:"0xF6 /2"/"M"
     {
         ND_INS_NOT, ND_CAT_LOGIC, ND_SET_I86, 464, 
         ND_MOD_ANY, 
@@ -12018,7 +12078,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:773 Instruction:"NOT Ev" Encoding:"0xF7 /2"/"M"
+    // Pos:777 Instruction:"NOT Ev" Encoding:"0xF7 /2"/"M"
     {
         ND_INS_NOT, ND_CAT_LOGIC, ND_SET_I86, 464, 
         ND_MOD_ANY, 
@@ -12032,7 +12092,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:774 Instruction:"OR Eb,Gb" Encoding:"0x08 /r"/"MR"
+    // Pos:778 Instruction:"OR Eb,Gb" Encoding:"0x08 /r"/"MR"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12048,7 +12108,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:775 Instruction:"OR Ev,Gv" Encoding:"0x09 /r"/"MR"
+    // Pos:779 Instruction:"OR Ev,Gv" Encoding:"0x09 /r"/"MR"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12064,7 +12124,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:776 Instruction:"OR Gb,Eb" Encoding:"0x0A /r"/"RM"
+    // Pos:780 Instruction:"OR Gb,Eb" Encoding:"0x0A /r"/"RM"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12080,7 +12140,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:777 Instruction:"OR Gv,Ev" Encoding:"0x0B /r"/"RM"
+    // Pos:781 Instruction:"OR Gv,Ev" Encoding:"0x0B /r"/"RM"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12096,7 +12156,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:778 Instruction:"OR AL,Ib" Encoding:"0x0C ib"/"I"
+    // Pos:782 Instruction:"OR AL,Ib" Encoding:"0x0C ib"/"I"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12112,7 +12172,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:779 Instruction:"OR rAX,Iz" Encoding:"0x0D iz"/"I"
+    // Pos:783 Instruction:"OR rAX,Iz" Encoding:"0x0D iz"/"I"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12128,7 +12188,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:780 Instruction:"OR Eb,Ib" Encoding:"0x80 /1 ib"/"MI"
+    // Pos:784 Instruction:"OR Eb,Ib" Encoding:"0x80 /1 ib"/"MI"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12144,7 +12204,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:781 Instruction:"OR Ev,Iz" Encoding:"0x81 /1 iz"/"MI"
+    // Pos:785 Instruction:"OR Ev,Iz" Encoding:"0x81 /1 iz"/"MI"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12160,7 +12220,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:782 Instruction:"OR Eb,Ib" Encoding:"0x82 /1 iz"/"MI"
+    // Pos:786 Instruction:"OR Eb,Ib" Encoding:"0x82 /1 iz"/"MI"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -12176,7 +12236,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:783 Instruction:"OR Ev,Ib" Encoding:"0x83 /1 ib"/"MI"
+    // Pos:787 Instruction:"OR Ev,Ib" Encoding:"0x83 /1 ib"/"MI"
     {
         ND_INS_OR, ND_CAT_LOGIC, ND_SET_I86, 465, 
         ND_MOD_ANY, 
@@ -12192,7 +12252,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:784 Instruction:"ORPD Vpd,Wpd" Encoding:"0x66 0x0F 0x56 /r"/"RM"
+    // Pos:788 Instruction:"ORPD Vpd,Wpd" Encoding:"0x66 0x0F 0x56 /r"/"RM"
     {
         ND_INS_ORPD, ND_CAT_LOGICAL_FP, ND_SET_SSE2, 466, 
         ND_MOD_ANY, 
@@ -12207,7 +12267,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:785 Instruction:"ORPS Vps,Wps" Encoding:"NP 0x0F 0x56 /r"/"RM"
+    // Pos:789 Instruction:"ORPS Vps,Wps" Encoding:"NP 0x0F 0x56 /r"/"RM"
     {
         ND_INS_ORPS, ND_CAT_LOGICAL_FP, ND_SET_SSE, 467, 
         ND_MOD_ANY, 
@@ -12222,7 +12282,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:786 Instruction:"OUT Ib,AL" Encoding:"0xE6 ib"/"I"
+    // Pos:790 Instruction:"OUT Ib,AL" Encoding:"0xE6 ib"/"I"
     {
         ND_INS_OUT, ND_CAT_IO, ND_SET_I86, 468, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12238,7 +12298,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:787 Instruction:"OUT Ib,eAX" Encoding:"0xE7 ib"/"I"
+    // Pos:791 Instruction:"OUT Ib,eAX" Encoding:"0xE7 ib"/"I"
     {
         ND_INS_OUT, ND_CAT_IO, ND_SET_I86, 468, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12254,7 +12314,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:788 Instruction:"OUT DX,AL" Encoding:"0xEE"/""
+    // Pos:792 Instruction:"OUT DX,AL" Encoding:"0xEE"/""
     {
         ND_INS_OUT, ND_CAT_IO, ND_SET_I86, 468, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12270,7 +12330,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:789 Instruction:"OUT DX,eAX" Encoding:"0xEF"/""
+    // Pos:793 Instruction:"OUT DX,eAX" Encoding:"0xEF"/""
     {
         ND_INS_OUT, ND_CAT_IO, ND_SET_I86, 468, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12286,7 +12346,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:790 Instruction:"OUTSB DX,Xb" Encoding:"0x6E"/""
+    // Pos:794 Instruction:"OUTSB DX,Xb" Encoding:"0x6E"/""
     {
         ND_INS_OUTS, ND_CAT_IOSTRINGOP, ND_SET_I86, 469, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12303,7 +12363,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:791 Instruction:"OUTSB DX,Xb" Encoding:"rep 0x6E"/""
+    // Pos:795 Instruction:"OUTSB DX,Xb" Encoding:"rep 0x6E"/""
     {
         ND_INS_OUTS, ND_CAT_IOSTRINGOP, ND_SET_I86, 469, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12321,7 +12381,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:792 Instruction:"OUTSD DX,Xz" Encoding:"0x6F"/""
+    // Pos:796 Instruction:"OUTSD DX,Xz" Encoding:"0x6F"/""
     {
         ND_INS_OUTS, ND_CAT_IOSTRINGOP, ND_SET_I86, 470, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12338,7 +12398,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:793 Instruction:"OUTSD DX,Xz" Encoding:"rep 0x6F"/""
+    // Pos:797 Instruction:"OUTSD DX,Xz" Encoding:"rep 0x6F"/""
     {
         ND_INS_OUTS, ND_CAT_IOSTRINGOP, ND_SET_I86, 470, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12356,7 +12416,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:794 Instruction:"OUTSW DX,Xz" Encoding:"ds16 0x6F"/""
+    // Pos:798 Instruction:"OUTSW DX,Xz" Encoding:"ds16 0x6F"/""
     {
         ND_INS_OUTS, ND_CAT_IOSTRINGOP, ND_SET_I86, 471, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12373,7 +12433,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:795 Instruction:"OUTSW DX,Xz" Encoding:"rep ds16 0x6F"/""
+    // Pos:799 Instruction:"OUTSW DX,Xz" Encoding:"rep ds16 0x6F"/""
     {
         ND_INS_OUTS, ND_CAT_IOSTRINGOP, ND_SET_I86, 471, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -12391,7 +12451,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:796 Instruction:"PABSB Pq,Qq" Encoding:"NP 0x0F 0x38 0x1C /r"/"RM"
+    // Pos:800 Instruction:"PABSB Pq,Qq" Encoding:"NP 0x0F 0x38 0x1C /r"/"RM"
     {
         ND_INS_PABSB, ND_CAT_MMX, ND_SET_SSSE3, 472, 
         ND_MOD_ANY, 
@@ -12406,7 +12466,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:797 Instruction:"PABSB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x1C /r"/"RM"
+    // Pos:801 Instruction:"PABSB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x1C /r"/"RM"
     {
         ND_INS_PABSB, ND_CAT_SSE, ND_SET_SSSE3, 472, 
         ND_MOD_ANY, 
@@ -12421,7 +12481,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:798 Instruction:"PABSD Pq,Qq" Encoding:"NP 0x0F 0x38 0x1E /r"/"RM"
+    // Pos:802 Instruction:"PABSD Pq,Qq" Encoding:"NP 0x0F 0x38 0x1E /r"/"RM"
     {
         ND_INS_PABSD, ND_CAT_MMX, ND_SET_SSSE3, 473, 
         ND_MOD_ANY, 
@@ -12436,7 +12496,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:799 Instruction:"PABSD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x1E /r"/"RM"
+    // Pos:803 Instruction:"PABSD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x1E /r"/"RM"
     {
         ND_INS_PABSD, ND_CAT_SSE, ND_SET_SSSE3, 473, 
         ND_MOD_ANY, 
@@ -12451,7 +12511,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:800 Instruction:"PABSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x1D /r"/"RM"
+    // Pos:804 Instruction:"PABSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x1D /r"/"RM"
     {
         ND_INS_PABSW, ND_CAT_MMX, ND_SET_SSSE3, 474, 
         ND_MOD_ANY, 
@@ -12466,7 +12526,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:801 Instruction:"PABSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x1D /r"/"RM"
+    // Pos:805 Instruction:"PABSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x1D /r"/"RM"
     {
         ND_INS_PABSW, ND_CAT_SSE, ND_SET_SSSE3, 474, 
         ND_MOD_ANY, 
@@ -12481,7 +12541,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:802 Instruction:"PACKSSDW Pq,Qq" Encoding:"NP 0x0F 0x6B /r"/"RM"
+    // Pos:806 Instruction:"PACKSSDW Pq,Qq" Encoding:"NP 0x0F 0x6B /r"/"RM"
     {
         ND_INS_PACKSSDW, ND_CAT_MMX, ND_SET_MMX, 475, 
         ND_MOD_ANY, 
@@ -12496,7 +12556,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:803 Instruction:"PACKSSDW Vx,Wx" Encoding:"0x66 0x0F 0x6B /r"/"RM"
+    // Pos:807 Instruction:"PACKSSDW Vx,Wx" Encoding:"0x66 0x0F 0x6B /r"/"RM"
     {
         ND_INS_PACKSSDW, ND_CAT_SSE, ND_SET_SSE2, 475, 
         ND_MOD_ANY, 
@@ -12511,7 +12571,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:804 Instruction:"PACKSSWB Pq,Qq" Encoding:"NP 0x0F 0x63 /r"/"RM"
+    // Pos:808 Instruction:"PACKSSWB Pq,Qq" Encoding:"NP 0x0F 0x63 /r"/"RM"
     {
         ND_INS_PACKSSWB, ND_CAT_MMX, ND_SET_MMX, 476, 
         ND_MOD_ANY, 
@@ -12526,7 +12586,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:805 Instruction:"PACKSSWB Vx,Wx" Encoding:"0x66 0x0F 0x63 /r"/"RM"
+    // Pos:809 Instruction:"PACKSSWB Vx,Wx" Encoding:"0x66 0x0F 0x63 /r"/"RM"
     {
         ND_INS_PACKSSWB, ND_CAT_SSE, ND_SET_SSE2, 476, 
         ND_MOD_ANY, 
@@ -12541,7 +12601,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:806 Instruction:"PACKUSDW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x2B /r"/"RM"
+    // Pos:810 Instruction:"PACKUSDW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x2B /r"/"RM"
     {
         ND_INS_PACKUSDW, ND_CAT_SSE, ND_SET_SSE4, 477, 
         ND_MOD_ANY, 
@@ -12556,7 +12616,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:807 Instruction:"PACKUSWB Pq,Qq" Encoding:"NP 0x0F 0x67 /r"/"RM"
+    // Pos:811 Instruction:"PACKUSWB Pq,Qq" Encoding:"NP 0x0F 0x67 /r"/"RM"
     {
         ND_INS_PACKUSWB, ND_CAT_MMX, ND_SET_MMX, 478, 
         ND_MOD_ANY, 
@@ -12571,7 +12631,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:808 Instruction:"PACKUSWB Vx,Wx" Encoding:"0x66 0x0F 0x67 /r"/"RM"
+    // Pos:812 Instruction:"PACKUSWB Vx,Wx" Encoding:"0x66 0x0F 0x67 /r"/"RM"
     {
         ND_INS_PACKUSWB, ND_CAT_SSE, ND_SET_SSE2, 478, 
         ND_MOD_ANY, 
@@ -12586,7 +12646,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:809 Instruction:"PADDB Pq,Qq" Encoding:"NP 0x0F 0xFC /r"/"RM"
+    // Pos:813 Instruction:"PADDB Pq,Qq" Encoding:"NP 0x0F 0xFC /r"/"RM"
     {
         ND_INS_PADDB, ND_CAT_MMX, ND_SET_MMX, 479, 
         ND_MOD_ANY, 
@@ -12601,7 +12661,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:810 Instruction:"PADDB Vx,Wx" Encoding:"0x66 0x0F 0xFC /r"/"RM"
+    // Pos:814 Instruction:"PADDB Vx,Wx" Encoding:"0x66 0x0F 0xFC /r"/"RM"
     {
         ND_INS_PADDB, ND_CAT_SSE, ND_SET_SSE2, 479, 
         ND_MOD_ANY, 
@@ -12616,7 +12676,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:811 Instruction:"PADDD Pq,Qq" Encoding:"NP 0x0F 0xFE /r"/"RM"
+    // Pos:815 Instruction:"PADDD Pq,Qq" Encoding:"NP 0x0F 0xFE /r"/"RM"
     {
         ND_INS_PADDD, ND_CAT_MMX, ND_SET_MMX, 480, 
         ND_MOD_ANY, 
@@ -12631,7 +12691,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:812 Instruction:"PADDD Vx,Wx" Encoding:"0x66 0x0F 0xFE /r"/"RM"
+    // Pos:816 Instruction:"PADDD Vx,Wx" Encoding:"0x66 0x0F 0xFE /r"/"RM"
     {
         ND_INS_PADDD, ND_CAT_SSE, ND_SET_SSE2, 480, 
         ND_MOD_ANY, 
@@ -12646,7 +12706,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:813 Instruction:"PADDQ Pq,Qq" Encoding:"NP 0x0F 0xD4 /r"/"RM"
+    // Pos:817 Instruction:"PADDQ Pq,Qq" Encoding:"NP 0x0F 0xD4 /r"/"RM"
     {
         ND_INS_PADDQ, ND_CAT_MMX, ND_SET_SSE2, 481, 
         ND_MOD_ANY, 
@@ -12661,7 +12721,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:814 Instruction:"PADDQ Vx,Wx" Encoding:"0x66 0x0F 0xD4 /r"/"RM"
+    // Pos:818 Instruction:"PADDQ Vx,Wx" Encoding:"0x66 0x0F 0xD4 /r"/"RM"
     {
         ND_INS_PADDQ, ND_CAT_SSE, ND_SET_SSE2, 481, 
         ND_MOD_ANY, 
@@ -12676,7 +12736,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:815 Instruction:"PADDSB Pq,Qq" Encoding:"NP 0x0F 0xEC /r"/"RM"
+    // Pos:819 Instruction:"PADDSB Pq,Qq" Encoding:"NP 0x0F 0xEC /r"/"RM"
     {
         ND_INS_PADDSB, ND_CAT_MMX, ND_SET_MMX, 482, 
         ND_MOD_ANY, 
@@ -12691,7 +12751,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:816 Instruction:"PADDSB Vx,Wx" Encoding:"0x66 0x0F 0xEC /r"/"RM"
+    // Pos:820 Instruction:"PADDSB Vx,Wx" Encoding:"0x66 0x0F 0xEC /r"/"RM"
     {
         ND_INS_PADDSB, ND_CAT_SSE, ND_SET_SSE2, 482, 
         ND_MOD_ANY, 
@@ -12706,7 +12766,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:817 Instruction:"PADDSW Pq,Qq" Encoding:"NP 0x0F 0xED /r"/"RM"
+    // Pos:821 Instruction:"PADDSW Pq,Qq" Encoding:"NP 0x0F 0xED /r"/"RM"
     {
         ND_INS_PADDSW, ND_CAT_MMX, ND_SET_MMX, 483, 
         ND_MOD_ANY, 
@@ -12721,7 +12781,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:818 Instruction:"PADDSW Vx,Wx" Encoding:"0x66 0x0F 0xED /r"/"RM"
+    // Pos:822 Instruction:"PADDSW Vx,Wx" Encoding:"0x66 0x0F 0xED /r"/"RM"
     {
         ND_INS_PADDSW, ND_CAT_SSE, ND_SET_SSE2, 483, 
         ND_MOD_ANY, 
@@ -12736,7 +12796,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:819 Instruction:"PADDUSB Pq,Qq" Encoding:"NP 0x0F 0xDC /r"/"RM"
+    // Pos:823 Instruction:"PADDUSB Pq,Qq" Encoding:"NP 0x0F 0xDC /r"/"RM"
     {
         ND_INS_PADDUSB, ND_CAT_MMX, ND_SET_MMX, 484, 
         ND_MOD_ANY, 
@@ -12751,7 +12811,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:820 Instruction:"PADDUSB Vx,Wx" Encoding:"0x66 0x0F 0xDC /r"/"RM"
+    // Pos:824 Instruction:"PADDUSB Vx,Wx" Encoding:"0x66 0x0F 0xDC /r"/"RM"
     {
         ND_INS_PADDUSB, ND_CAT_SSE, ND_SET_SSE2, 484, 
         ND_MOD_ANY, 
@@ -12766,7 +12826,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:821 Instruction:"PADDUSW Pq,Qq" Encoding:"NP 0x0F 0xDD /r"/"RM"
+    // Pos:825 Instruction:"PADDUSW Pq,Qq" Encoding:"NP 0x0F 0xDD /r"/"RM"
     {
         ND_INS_PADDUSW, ND_CAT_MMX, ND_SET_MMX, 485, 
         ND_MOD_ANY, 
@@ -12781,7 +12841,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:822 Instruction:"PADDUSW Vx,Wx" Encoding:"0x66 0x0F 0xDD /r"/"RM"
+    // Pos:826 Instruction:"PADDUSW Vx,Wx" Encoding:"0x66 0x0F 0xDD /r"/"RM"
     {
         ND_INS_PADDUSW, ND_CAT_SSE, ND_SET_SSE2, 485, 
         ND_MOD_ANY, 
@@ -12796,7 +12856,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:823 Instruction:"PADDW Pq,Qq" Encoding:"NP 0x0F 0xFD /r"/"RM"
+    // Pos:827 Instruction:"PADDW Pq,Qq" Encoding:"NP 0x0F 0xFD /r"/"RM"
     {
         ND_INS_PADDW, ND_CAT_MMX, ND_SET_MMX, 486, 
         ND_MOD_ANY, 
@@ -12811,7 +12871,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:824 Instruction:"PADDW Vx,Wx" Encoding:"0x66 0x0F 0xFD /r"/"RM"
+    // Pos:828 Instruction:"PADDW Vx,Wx" Encoding:"0x66 0x0F 0xFD /r"/"RM"
     {
         ND_INS_PADDW, ND_CAT_SSE, ND_SET_SSE2, 486, 
         ND_MOD_ANY, 
@@ -12826,7 +12886,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:825 Instruction:"PALIGNR Pq,Qq,Ib" Encoding:"NP 0x0F 0x3A 0x0F /r ib"/"RMI"
+    // Pos:829 Instruction:"PALIGNR Pq,Qq,Ib" Encoding:"NP 0x0F 0x3A 0x0F /r ib"/"RMI"
     {
         ND_INS_PALIGNR, ND_CAT_MMX, ND_SET_SSSE3, 487, 
         ND_MOD_ANY, 
@@ -12842,7 +12902,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:826 Instruction:"PALIGNR Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x0F /r ib"/"RMI"
+    // Pos:830 Instruction:"PALIGNR Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x0F /r ib"/"RMI"
     {
         ND_INS_PALIGNR, ND_CAT_SSE, ND_SET_SSSE3, 487, 
         ND_MOD_ANY, 
@@ -12858,7 +12918,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:827 Instruction:"PAND Pq,Qq" Encoding:"NP 0x0F 0xDB /r"/"RM"
+    // Pos:831 Instruction:"PAND Pq,Qq" Encoding:"NP 0x0F 0xDB /r"/"RM"
     {
         ND_INS_PAND, ND_CAT_LOGICAL, ND_SET_MMX, 488, 
         ND_MOD_ANY, 
@@ -12873,7 +12933,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:828 Instruction:"PAND Vx,Wx" Encoding:"0x66 0x0F 0xDB /r"/"RM"
+    // Pos:832 Instruction:"PAND Vx,Wx" Encoding:"0x66 0x0F 0xDB /r"/"RM"
     {
         ND_INS_PAND, ND_CAT_LOGICAL, ND_SET_SSE2, 488, 
         ND_MOD_ANY, 
@@ -12888,7 +12948,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:829 Instruction:"PANDN Pq,Qq" Encoding:"NP 0x0F 0xDF /r"/"RM"
+    // Pos:833 Instruction:"PANDN Pq,Qq" Encoding:"NP 0x0F 0xDF /r"/"RM"
     {
         ND_INS_PANDN, ND_CAT_LOGICAL, ND_SET_MMX, 489, 
         ND_MOD_ANY, 
@@ -12903,7 +12963,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:830 Instruction:"PANDN Vx,Wx" Encoding:"0x66 0x0F 0xDF /r"/"RM"
+    // Pos:834 Instruction:"PANDN Vx,Wx" Encoding:"0x66 0x0F 0xDF /r"/"RM"
     {
         ND_INS_PANDN, ND_CAT_LOGICAL, ND_SET_SSE2, 489, 
         ND_MOD_ANY, 
@@ -12918,7 +12978,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:831 Instruction:"PAUSE" Encoding:"a0xF3 0x90"/""
+    // Pos:835 Instruction:"PAUSE" Encoding:"a0xF3 0x90"/""
     {
         ND_INS_PAUSE, ND_CAT_MISC, ND_SET_PAUSE, 490, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -12932,7 +12992,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:832 Instruction:"PAVGB Pq,Qq" Encoding:"NP 0x0F 0xE0 /r"/"RM"
+    // Pos:836 Instruction:"PAVGB Pq,Qq" Encoding:"NP 0x0F 0xE0 /r"/"RM"
     {
         ND_INS_PAVGB, ND_CAT_MMX, ND_SET_MMX, 491, 
         ND_MOD_ANY, 
@@ -12947,7 +13007,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:833 Instruction:"PAVGB Vx,Wx" Encoding:"0x66 0x0F 0xE0 /r"/"RM"
+    // Pos:837 Instruction:"PAVGB Vx,Wx" Encoding:"0x66 0x0F 0xE0 /r"/"RM"
     {
         ND_INS_PAVGB, ND_CAT_SSE, ND_SET_SSE2, 491, 
         ND_MOD_ANY, 
@@ -12962,7 +13022,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:834 Instruction:"PAVGUSB Pq,Qq" Encoding:"0x0F 0x0F /r 0xBF"/"RM"
+    // Pos:838 Instruction:"PAVGUSB Pq,Qq" Encoding:"0x0F 0x0F /r 0xBF"/"RM"
     {
         ND_INS_PAVGUSB, ND_CAT_3DNOW, ND_SET_3DNOW, 492, 
         ND_MOD_ANY, 
@@ -12977,7 +13037,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:835 Instruction:"PAVGW Pq,Qq" Encoding:"NP 0x0F 0xE3 /r"/"RM"
+    // Pos:839 Instruction:"PAVGW Pq,Qq" Encoding:"NP 0x0F 0xE3 /r"/"RM"
     {
         ND_INS_PAVGW, ND_CAT_MMX, ND_SET_MMX, 493, 
         ND_MOD_ANY, 
@@ -12992,7 +13052,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:836 Instruction:"PAVGW Vx,Wx" Encoding:"0x66 0x0F 0xE3 /r"/"RM"
+    // Pos:840 Instruction:"PAVGW Vx,Wx" Encoding:"0x66 0x0F 0xE3 /r"/"RM"
     {
         ND_INS_PAVGW, ND_CAT_SSE, ND_SET_SSE2, 493, 
         ND_MOD_ANY, 
@@ -13007,7 +13067,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:837 Instruction:"PBLENDVB Vdq,Wdq" Encoding:"0x66 0x0F 0x38 0x10 /r"/"RM"
+    // Pos:841 Instruction:"PBLENDVB Vdq,Wdq" Encoding:"0x66 0x0F 0x38 0x10 /r"/"RM"
     {
         ND_INS_PBLENDVB, ND_CAT_SSE, ND_SET_SSE4, 494, 
         ND_MOD_ANY, 
@@ -13023,7 +13083,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:838 Instruction:"PBLENDW Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x0E /r ib"/"RMI"
+    // Pos:842 Instruction:"PBLENDW Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x0E /r ib"/"RMI"
     {
         ND_INS_PBLENDW, ND_CAT_SSE, ND_SET_SSE4, 495, 
         ND_MOD_ANY, 
@@ -13039,7 +13099,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:839 Instruction:"PCLMULQDQ Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x44 /r ib"/"RMI"
+    // Pos:843 Instruction:"PCLMULQDQ Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x44 /r ib"/"RMI"
     {
         ND_INS_PCLMULQDQ, ND_CAT_PCLMULQDQ, ND_SET_PCLMULQDQ, 496, 
         ND_MOD_ANY, 
@@ -13055,7 +13115,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:840 Instruction:"PCMPEQB Pq,Qq" Encoding:"NP 0x0F 0x74 /r"/"RM"
+    // Pos:844 Instruction:"PCMPEQB Pq,Qq" Encoding:"NP 0x0F 0x74 /r"/"RM"
     {
         ND_INS_PCMPEQB, ND_CAT_MMX, ND_SET_MMX, 497, 
         ND_MOD_ANY, 
@@ -13070,7 +13130,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:841 Instruction:"PCMPEQB Vx,Wx" Encoding:"0x66 0x0F 0x74 /r"/"RM"
+    // Pos:845 Instruction:"PCMPEQB Vx,Wx" Encoding:"0x66 0x0F 0x74 /r"/"RM"
     {
         ND_INS_PCMPEQB, ND_CAT_SSE, ND_SET_SSE2, 497, 
         ND_MOD_ANY, 
@@ -13085,7 +13145,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:842 Instruction:"PCMPEQD Pq,Qq" Encoding:"NP 0x0F 0x76 /r"/"RM"
+    // Pos:846 Instruction:"PCMPEQD Pq,Qq" Encoding:"NP 0x0F 0x76 /r"/"RM"
     {
         ND_INS_PCMPEQD, ND_CAT_MMX, ND_SET_MMX, 498, 
         ND_MOD_ANY, 
@@ -13100,7 +13160,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:843 Instruction:"PCMPEQD Vx,Wx" Encoding:"0x66 0x0F 0x76 /r"/"RM"
+    // Pos:847 Instruction:"PCMPEQD Vx,Wx" Encoding:"0x66 0x0F 0x76 /r"/"RM"
     {
         ND_INS_PCMPEQD, ND_CAT_SSE, ND_SET_SSE2, 498, 
         ND_MOD_ANY, 
@@ -13115,7 +13175,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:844 Instruction:"PCMPEQQ Vx,Wx" Encoding:"0x66 0x0F 0x38 0x29 /r"/"RM"
+    // Pos:848 Instruction:"PCMPEQQ Vx,Wx" Encoding:"0x66 0x0F 0x38 0x29 /r"/"RM"
     {
         ND_INS_PCMPEQQ, ND_CAT_SSE, ND_SET_SSE4, 499, 
         ND_MOD_ANY, 
@@ -13130,7 +13190,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:845 Instruction:"PCMPEQW Pq,Qq" Encoding:"NP 0x0F 0x75 /r"/"RM"
+    // Pos:849 Instruction:"PCMPEQW Pq,Qq" Encoding:"NP 0x0F 0x75 /r"/"RM"
     {
         ND_INS_PCMPEQW, ND_CAT_MMX, ND_SET_MMX, 500, 
         ND_MOD_ANY, 
@@ -13145,7 +13205,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:846 Instruction:"PCMPEQW Vx,Wx" Encoding:"0x66 0x0F 0x75 /r"/"RM"
+    // Pos:850 Instruction:"PCMPEQW Vx,Wx" Encoding:"0x66 0x0F 0x75 /r"/"RM"
     {
         ND_INS_PCMPEQW, ND_CAT_SSE, ND_SET_SSE2, 500, 
         ND_MOD_ANY, 
@@ -13160,7 +13220,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:847 Instruction:"PCMPESTRI Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x61 /r ib"/"RMI"
+    // Pos:851 Instruction:"PCMPESTRI Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x61 /r ib"/"RMI"
     {
         ND_INS_PCMPESTRI, ND_CAT_SSE, ND_SET_SSE42, 501, 
         ND_MOD_ANY, 
@@ -13180,7 +13240,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:848 Instruction:"PCMPESTRM Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x60 /r ib"/"RMI"
+    // Pos:852 Instruction:"PCMPESTRM Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x60 /r ib"/"RMI"
     {
         ND_INS_PCMPESTRM, ND_CAT_SSE, ND_SET_SSE42, 502, 
         ND_MOD_ANY, 
@@ -13200,7 +13260,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:849 Instruction:"PCMPGTB Pq,Qq" Encoding:"NP 0x0F 0x64 /r"/"RM"
+    // Pos:853 Instruction:"PCMPGTB Pq,Qq" Encoding:"NP 0x0F 0x64 /r"/"RM"
     {
         ND_INS_PCMPGTB, ND_CAT_MMX, ND_SET_MMX, 503, 
         ND_MOD_ANY, 
@@ -13215,7 +13275,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:850 Instruction:"PCMPGTB Vx,Wx" Encoding:"0x66 0x0F 0x64 /r"/"RM"
+    // Pos:854 Instruction:"PCMPGTB Vx,Wx" Encoding:"0x66 0x0F 0x64 /r"/"RM"
     {
         ND_INS_PCMPGTB, ND_CAT_SSE, ND_SET_SSE2, 503, 
         ND_MOD_ANY, 
@@ -13230,7 +13290,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:851 Instruction:"PCMPGTD Pq,Qq" Encoding:"NP 0x0F 0x66 /r"/"RM"
+    // Pos:855 Instruction:"PCMPGTD Pq,Qq" Encoding:"NP 0x0F 0x66 /r"/"RM"
     {
         ND_INS_PCMPGTD, ND_CAT_MMX, ND_SET_MMX, 504, 
         ND_MOD_ANY, 
@@ -13245,7 +13305,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:852 Instruction:"PCMPGTD Vx,Wx" Encoding:"0x66 0x0F 0x66 /r"/"RM"
+    // Pos:856 Instruction:"PCMPGTD Vx,Wx" Encoding:"0x66 0x0F 0x66 /r"/"RM"
     {
         ND_INS_PCMPGTD, ND_CAT_SSE, ND_SET_SSE2, 504, 
         ND_MOD_ANY, 
@@ -13260,7 +13320,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:853 Instruction:"PCMPGTQ Vx,Wx" Encoding:"0x66 0x0F 0x38 0x37 /r"/"RM"
+    // Pos:857 Instruction:"PCMPGTQ Vx,Wx" Encoding:"0x66 0x0F 0x38 0x37 /r"/"RM"
     {
         ND_INS_PCMPGTQ, ND_CAT_SSE, ND_SET_SSE42, 505, 
         ND_MOD_ANY, 
@@ -13275,7 +13335,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:854 Instruction:"PCMPGTW Pq,Qq" Encoding:"NP 0x0F 0x65 /r"/"RM"
+    // Pos:858 Instruction:"PCMPGTW Pq,Qq" Encoding:"NP 0x0F 0x65 /r"/"RM"
     {
         ND_INS_PCMPGTW, ND_CAT_MMX, ND_SET_MMX, 506, 
         ND_MOD_ANY, 
@@ -13290,7 +13350,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:855 Instruction:"PCMPGTW Vx,Wx" Encoding:"0x66 0x0F 0x65 /r"/"RM"
+    // Pos:859 Instruction:"PCMPGTW Vx,Wx" Encoding:"0x66 0x0F 0x65 /r"/"RM"
     {
         ND_INS_PCMPGTW, ND_CAT_SSE, ND_SET_SSE2, 506, 
         ND_MOD_ANY, 
@@ -13305,7 +13365,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:856 Instruction:"PCMPISTRI Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x63 /r ib"/"RMI"
+    // Pos:860 Instruction:"PCMPISTRI Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x63 /r ib"/"RMI"
     {
         ND_INS_PCMPISTRI, ND_CAT_SSE, ND_SET_SSE42, 507, 
         ND_MOD_ANY, 
@@ -13323,7 +13383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:857 Instruction:"PCMPISTRM Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x62 /r ib"/"RMI"
+    // Pos:861 Instruction:"PCMPISTRM Vdq,Wdq,Ib" Encoding:"0x66 0x0F 0x3A 0x62 /r ib"/"RMI"
     {
         ND_INS_PCMPISTRM, ND_CAT_SSE, ND_SET_SSE42, 508, 
         ND_MOD_ANY, 
@@ -13341,7 +13401,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:858 Instruction:"PCOMMIT" Encoding:"0x66 0x0F 0xAE /7:reg"/""
+    // Pos:862 Instruction:"PCOMMIT" Encoding:"0x66 0x0F 0xAE /7:reg"/""
     {
         ND_INS_PCOMMIT, ND_CAT_MISC, ND_SET_PCOMMIT, 509, 
         ND_MOD_ANY, 
@@ -13355,7 +13415,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:859 Instruction:"PCONFIG" Encoding:"NP 0x0F 0x01 /0xC5"/""
+    // Pos:863 Instruction:"PCONFIG" Encoding:"NP 0x0F 0x01 /0xC5"/""
     {
         ND_INS_PCONFIG, ND_CAT_PCONFIG, ND_SET_PCONFIG, 510, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -13372,7 +13432,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:860 Instruction:"PDEP Gy,By,Ey" Encoding:"vex m:2 p:3 l:0 w:x 0xF5 /r"/"RVM"
+    // Pos:864 Instruction:"PDEP Gy,By,Ey" Encoding:"vex m:2 p:3 l:0 w:x 0xF5 /r"/"RVM"
     {
         ND_INS_PDEP, ND_CAT_BMI2, ND_SET_BMI2, 511, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -13388,7 +13448,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:861 Instruction:"PEXT Gy,By,Ey" Encoding:"vex m:2 p:2 l:0 w:x 0xF5 /r"/"RVM"
+    // Pos:865 Instruction:"PEXT Gy,By,Ey" Encoding:"vex m:2 p:2 l:0 w:x 0xF5 /r"/"RVM"
     {
         ND_INS_PEXT, ND_CAT_BMI2, ND_SET_BMI2, 512, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -13404,7 +13464,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:862 Instruction:"PEXTRB Mb,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x14 /r:mem ib"/"MRI"
+    // Pos:866 Instruction:"PEXTRB Mb,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x14 /r:mem ib"/"MRI"
     {
         ND_INS_PEXTRB, ND_CAT_SSE, ND_SET_SSE4, 513, 
         ND_MOD_ANY, 
@@ -13420,7 +13480,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:863 Instruction:"PEXTRB Rd,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x14 /r:reg ib"/"MRI"
+    // Pos:867 Instruction:"PEXTRB Rd,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x14 /r:reg ib"/"MRI"
     {
         ND_INS_PEXTRB, ND_CAT_SSE, ND_SET_SSE4, 513, 
         ND_MOD_ANY, 
@@ -13436,7 +13496,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:864 Instruction:"PEXTRD Ey,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x16 /r ib"/"MRI"
+    // Pos:868 Instruction:"PEXTRD Ey,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x16 /r ib"/"MRI"
     {
         ND_INS_PEXTRD, ND_CAT_SSE, ND_SET_SSE4, 514, 
         ND_MOD_ANY, 
@@ -13452,7 +13512,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:865 Instruction:"PEXTRQ Ey,Vdq,Ib" Encoding:"rexw 0x66 0x0F 0x3A 0x16 /r ib"/"MRI"
+    // Pos:869 Instruction:"PEXTRQ Ey,Vdq,Ib" Encoding:"rexw 0x66 0x0F 0x3A 0x16 /r ib"/"MRI"
     {
         ND_INS_PEXTRQ, ND_CAT_SSE, ND_SET_SSE4, 515, 
         ND_MOD_ANY, 
@@ -13468,7 +13528,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:866 Instruction:"PEXTRW Gy,Nq,Ib" Encoding:"NP 0x0F 0xC5 /r:reg ib"/"RMI"
+    // Pos:870 Instruction:"PEXTRW Gy,Nq,Ib" Encoding:"NP 0x0F 0xC5 /r:reg ib"/"RMI"
     {
         ND_INS_PEXTRW, ND_CAT_MMX, ND_SET_MMX, 516, 
         ND_MOD_ANY, 
@@ -13484,7 +13544,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:867 Instruction:"PEXTRW Gy,Udq,Ib" Encoding:"0x66 0x0F 0xC5 /r:reg ib"/"RMI"
+    // Pos:871 Instruction:"PEXTRW Gy,Udq,Ib" Encoding:"0x66 0x0F 0xC5 /r:reg ib"/"RMI"
     {
         ND_INS_PEXTRW, ND_CAT_SSE, ND_SET_SSE2, 516, 
         ND_MOD_ANY, 
@@ -13500,7 +13560,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:868 Instruction:"PEXTRW Mw,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x15 /r:mem ib"/"MRI"
+    // Pos:872 Instruction:"PEXTRW Mw,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x15 /r:mem ib"/"MRI"
     {
         ND_INS_PEXTRW, ND_CAT_SSE, ND_SET_SSE4, 516, 
         ND_MOD_ANY, 
@@ -13516,7 +13576,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:869 Instruction:"PEXTRW Rd,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x15 /r:reg ib"/"MRI"
+    // Pos:873 Instruction:"PEXTRW Rd,Vdq,Ib" Encoding:"0x66 0x0F 0x3A 0x15 /r:reg ib"/"MRI"
     {
         ND_INS_PEXTRW, ND_CAT_SSE, ND_SET_SSE4, 516, 
         ND_MOD_ANY, 
@@ -13532,7 +13592,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:870 Instruction:"PF2ID Pq,Qq" Encoding:"0x0F 0x0F /r 0x1D"/"RM"
+    // Pos:874 Instruction:"PF2ID Pq,Qq" Encoding:"0x0F 0x0F /r 0x1D"/"RM"
     {
         ND_INS_PF2ID, ND_CAT_3DNOW, ND_SET_3DNOW, 517, 
         ND_MOD_ANY, 
@@ -13547,7 +13607,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:871 Instruction:"PF2IW Pq,Qq" Encoding:"0x0F 0x0F /r 0x1C"/"RM"
+    // Pos:875 Instruction:"PF2IW Pq,Qq" Encoding:"0x0F 0x0F /r 0x1C"/"RM"
     {
         ND_INS_PF2IW, ND_CAT_3DNOW, ND_SET_3DNOW, 518, 
         ND_MOD_ANY, 
@@ -13562,7 +13622,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:872 Instruction:"PFACC Pq,Qq" Encoding:"0x0F 0x0F /r 0xAE"/"RM"
+    // Pos:876 Instruction:"PFACC Pq,Qq" Encoding:"0x0F 0x0F /r 0xAE"/"RM"
     {
         ND_INS_PFACC, ND_CAT_3DNOW, ND_SET_3DNOW, 519, 
         ND_MOD_ANY, 
@@ -13577,7 +13637,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:873 Instruction:"PFADD Pq,Qq" Encoding:"0x0F 0x0F /r 0x9E"/"RM"
+    // Pos:877 Instruction:"PFADD Pq,Qq" Encoding:"0x0F 0x0F /r 0x9E"/"RM"
     {
         ND_INS_PFADD, ND_CAT_3DNOW, ND_SET_3DNOW, 520, 
         ND_MOD_ANY, 
@@ -13592,7 +13652,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:874 Instruction:"PFCMPEQ Pq,Qq" Encoding:"0x0F 0x0F /r 0xB0"/"RM"
+    // Pos:878 Instruction:"PFCMPEQ Pq,Qq" Encoding:"0x0F 0x0F /r 0xB0"/"RM"
     {
         ND_INS_PFCMPEQ, ND_CAT_3DNOW, ND_SET_3DNOW, 521, 
         ND_MOD_ANY, 
@@ -13607,7 +13667,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:875 Instruction:"PFCMPGE Pq,Qq" Encoding:"0x0F 0x0F /r 0x90"/"RM"
+    // Pos:879 Instruction:"PFCMPGE Pq,Qq" Encoding:"0x0F 0x0F /r 0x90"/"RM"
     {
         ND_INS_PFCMPGE, ND_CAT_3DNOW, ND_SET_3DNOW, 522, 
         ND_MOD_ANY, 
@@ -13622,7 +13682,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:876 Instruction:"PFCMPGT Pq,Qq" Encoding:"0x0F 0x0F /r 0xA0"/"RM"
+    // Pos:880 Instruction:"PFCMPGT Pq,Qq" Encoding:"0x0F 0x0F /r 0xA0"/"RM"
     {
         ND_INS_PFCMPGT, ND_CAT_3DNOW, ND_SET_3DNOW, 523, 
         ND_MOD_ANY, 
@@ -13637,7 +13697,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:877 Instruction:"PFMAX Pq,Qq" Encoding:"0x0F 0x0F /r 0xA4"/"RM"
+    // Pos:881 Instruction:"PFMAX Pq,Qq" Encoding:"0x0F 0x0F /r 0xA4"/"RM"
     {
         ND_INS_PFMAX, ND_CAT_3DNOW, ND_SET_3DNOW, 524, 
         ND_MOD_ANY, 
@@ -13652,7 +13712,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:878 Instruction:"PFMIN Pq,Qq" Encoding:"0x0F 0x0F /r 0x94"/"RM"
+    // Pos:882 Instruction:"PFMIN Pq,Qq" Encoding:"0x0F 0x0F /r 0x94"/"RM"
     {
         ND_INS_PFMIN, ND_CAT_3DNOW, ND_SET_3DNOW, 525, 
         ND_MOD_ANY, 
@@ -13667,7 +13727,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:879 Instruction:"PFMUL Pq,Qq" Encoding:"0x0F 0x0F /r 0xB4"/"RM"
+    // Pos:883 Instruction:"PFMUL Pq,Qq" Encoding:"0x0F 0x0F /r 0xB4"/"RM"
     {
         ND_INS_PFMUL, ND_CAT_3DNOW, ND_SET_3DNOW, 526, 
         ND_MOD_ANY, 
@@ -13682,7 +13742,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:880 Instruction:"PFNACC Pq,Qq" Encoding:"0x0F 0x0F /r 0x8A"/"RM"
+    // Pos:884 Instruction:"PFNACC Pq,Qq" Encoding:"0x0F 0x0F /r 0x8A"/"RM"
     {
         ND_INS_PFNACC, ND_CAT_3DNOW, ND_SET_3DNOW, 527, 
         ND_MOD_ANY, 
@@ -13697,7 +13757,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:881 Instruction:"PFPNACC Pq,Qq" Encoding:"0x0F 0x0F /r 0x8E"/"RM"
+    // Pos:885 Instruction:"PFPNACC Pq,Qq" Encoding:"0x0F 0x0F /r 0x8E"/"RM"
     {
         ND_INS_PFPNACC, ND_CAT_3DNOW, ND_SET_3DNOW, 528, 
         ND_MOD_ANY, 
@@ -13712,7 +13772,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:882 Instruction:"PFRCP Pq,Qq" Encoding:"0x0F 0x0F /r 0x96"/"RM"
+    // Pos:886 Instruction:"PFRCP Pq,Qq" Encoding:"0x0F 0x0F /r 0x96"/"RM"
     {
         ND_INS_PFRCP, ND_CAT_3DNOW, ND_SET_3DNOW, 529, 
         ND_MOD_ANY, 
@@ -13727,7 +13787,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:883 Instruction:"PFRCPIT1 Pq,Qq" Encoding:"0x0F 0x0F /r 0xA6"/"RM"
+    // Pos:887 Instruction:"PFRCPIT1 Pq,Qq" Encoding:"0x0F 0x0F /r 0xA6"/"RM"
     {
         ND_INS_PFRCPIT1, ND_CAT_3DNOW, ND_SET_3DNOW, 530, 
         ND_MOD_ANY, 
@@ -13742,7 +13802,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:884 Instruction:"PFRCPIT2 Pq,Qq" Encoding:"0x0F 0x0F /r 0xB6"/"RM"
+    // Pos:888 Instruction:"PFRCPIT2 Pq,Qq" Encoding:"0x0F 0x0F /r 0xB6"/"RM"
     {
         ND_INS_PFRCPIT2, ND_CAT_3DNOW, ND_SET_3DNOW, 531, 
         ND_MOD_ANY, 
@@ -13757,7 +13817,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:885 Instruction:"PFRCPV Pq,Qq" Encoding:"0x0F 0x0F /r 0x86"/"RM"
+    // Pos:889 Instruction:"PFRCPV Pq,Qq" Encoding:"0x0F 0x0F /r 0x86"/"RM"
     {
         ND_INS_PFRCPV, ND_CAT_3DNOW, ND_SET_3DNOW, 532, 
         ND_MOD_ANY, 
@@ -13772,7 +13832,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:886 Instruction:"PFRSQIT1 Pq,Qq" Encoding:"0x0F 0x0F /r 0xA7"/"RM"
+    // Pos:890 Instruction:"PFRSQIT1 Pq,Qq" Encoding:"0x0F 0x0F /r 0xA7"/"RM"
     {
         ND_INS_PFRSQIT1, ND_CAT_3DNOW, ND_SET_3DNOW, 533, 
         ND_MOD_ANY, 
@@ -13787,7 +13847,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:887 Instruction:"PFRSQRT Pq,Qq" Encoding:"0x0F 0x0F /r 0x97"/"RM"
+    // Pos:891 Instruction:"PFRSQRT Pq,Qq" Encoding:"0x0F 0x0F /r 0x97"/"RM"
     {
         ND_INS_PFRSQRT, ND_CAT_3DNOW, ND_SET_3DNOW, 534, 
         ND_MOD_ANY, 
@@ -13802,7 +13862,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:888 Instruction:"PFRSQRTV Pq,Qq" Encoding:"0x0F 0x0F /r 0x87"/"RM"
+    // Pos:892 Instruction:"PFRSQRTV Pq,Qq" Encoding:"0x0F 0x0F /r 0x87"/"RM"
     {
         ND_INS_PFRSQRTV, ND_CAT_3DNOW, ND_SET_3DNOW, 535, 
         ND_MOD_ANY, 
@@ -13817,7 +13877,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:889 Instruction:"PFSUB Pq,Qq" Encoding:"0x0F 0x0F /r 0x9A"/"RM"
+    // Pos:893 Instruction:"PFSUB Pq,Qq" Encoding:"0x0F 0x0F /r 0x9A"/"RM"
     {
         ND_INS_PFSUB, ND_CAT_3DNOW, ND_SET_3DNOW, 536, 
         ND_MOD_ANY, 
@@ -13832,7 +13892,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:890 Instruction:"PFSUBR Pq,Qq" Encoding:"0x0F 0x0F /r 0xAA"/"RM"
+    // Pos:894 Instruction:"PFSUBR Pq,Qq" Encoding:"0x0F 0x0F /r 0xAA"/"RM"
     {
         ND_INS_PFSUBR, ND_CAT_3DNOW, ND_SET_3DNOW, 537, 
         ND_MOD_ANY, 
@@ -13847,7 +13907,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:891 Instruction:"PHADDD Pq,Qq" Encoding:"NP 0x0F 0x38 0x02 /r"/"RM"
+    // Pos:895 Instruction:"PHADDD Pq,Qq" Encoding:"NP 0x0F 0x38 0x02 /r"/"RM"
     {
         ND_INS_PHADDD, ND_CAT_MMX, ND_SET_SSSE3, 538, 
         ND_MOD_ANY, 
@@ -13862,7 +13922,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:892 Instruction:"PHADDD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x02 /r"/"RM"
+    // Pos:896 Instruction:"PHADDD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x02 /r"/"RM"
     {
         ND_INS_PHADDD, ND_CAT_SSE, ND_SET_SSSE3, 538, 
         ND_MOD_ANY, 
@@ -13877,7 +13937,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:893 Instruction:"PHADDSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x03 /r"/"RM"
+    // Pos:897 Instruction:"PHADDSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x03 /r"/"RM"
     {
         ND_INS_PHADDSW, ND_CAT_MMX, ND_SET_SSSE3, 539, 
         ND_MOD_ANY, 
@@ -13892,7 +13952,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:894 Instruction:"PHADDSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x03 /r"/"RM"
+    // Pos:898 Instruction:"PHADDSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x03 /r"/"RM"
     {
         ND_INS_PHADDSW, ND_CAT_SSE, ND_SET_SSSE3, 539, 
         ND_MOD_ANY, 
@@ -13907,7 +13967,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:895 Instruction:"PHADDW Pq,Qq" Encoding:"NP 0x0F 0x38 0x01 /r"/"RM"
+    // Pos:899 Instruction:"PHADDW Pq,Qq" Encoding:"NP 0x0F 0x38 0x01 /r"/"RM"
     {
         ND_INS_PHADDW, ND_CAT_MMX, ND_SET_SSSE3, 540, 
         ND_MOD_ANY, 
@@ -13922,7 +13982,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:896 Instruction:"PHADDW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x01 /r"/"RM"
+    // Pos:900 Instruction:"PHADDW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x01 /r"/"RM"
     {
         ND_INS_PHADDW, ND_CAT_SSE, ND_SET_SSSE3, 540, 
         ND_MOD_ANY, 
@@ -13937,7 +13997,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:897 Instruction:"PHMINPOSUW Vdq,Wdq" Encoding:"0x66 0x0F 0x38 0x41 /r"/"RM"
+    // Pos:901 Instruction:"PHMINPOSUW Vdq,Wdq" Encoding:"0x66 0x0F 0x38 0x41 /r"/"RM"
     {
         ND_INS_PHMINPOSUW, ND_CAT_SSE, ND_SET_SSE4, 541, 
         ND_MOD_ANY, 
@@ -13952,7 +14012,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:898 Instruction:"PHSUBD Pq,Qq" Encoding:"NP 0x0F 0x38 0x06 /r"/"RM"
+    // Pos:902 Instruction:"PHSUBD Pq,Qq" Encoding:"NP 0x0F 0x38 0x06 /r"/"RM"
     {
         ND_INS_PHSUBD, ND_CAT_MMX, ND_SET_SSSE3, 542, 
         ND_MOD_ANY, 
@@ -13967,7 +14027,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:899 Instruction:"PHSUBD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x06 /r"/"RM"
+    // Pos:903 Instruction:"PHSUBD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x06 /r"/"RM"
     {
         ND_INS_PHSUBD, ND_CAT_SSE, ND_SET_SSSE3, 542, 
         ND_MOD_ANY, 
@@ -13982,7 +14042,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:900 Instruction:"PHSUBSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x07 /r"/"RM"
+    // Pos:904 Instruction:"PHSUBSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x07 /r"/"RM"
     {
         ND_INS_PHSUBSW, ND_CAT_MMX, ND_SET_SSSE3, 543, 
         ND_MOD_ANY, 
@@ -13997,7 +14057,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:901 Instruction:"PHSUBSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x07 /r"/"RM"
+    // Pos:905 Instruction:"PHSUBSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x07 /r"/"RM"
     {
         ND_INS_PHSUBSW, ND_CAT_SSE, ND_SET_SSSE3, 543, 
         ND_MOD_ANY, 
@@ -14012,7 +14072,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:902 Instruction:"PHSUBW Pq,Qq" Encoding:"NP 0x0F 0x38 0x05 /r"/"RM"
+    // Pos:906 Instruction:"PHSUBW Pq,Qq" Encoding:"NP 0x0F 0x38 0x05 /r"/"RM"
     {
         ND_INS_PHSUBW, ND_CAT_MMX, ND_SET_SSSE3, 544, 
         ND_MOD_ANY, 
@@ -14027,7 +14087,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:903 Instruction:"PHSUBW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x05 /r"/"RM"
+    // Pos:907 Instruction:"PHSUBW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x05 /r"/"RM"
     {
         ND_INS_PHSUBW, ND_CAT_SSE, ND_SET_SSSE3, 544, 
         ND_MOD_ANY, 
@@ -14042,7 +14102,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:904 Instruction:"PI2FD Pq,Qq" Encoding:"0x0F 0x0F /r 0x0D"/"RM"
+    // Pos:908 Instruction:"PI2FD Pq,Qq" Encoding:"0x0F 0x0F /r 0x0D"/"RM"
     {
         ND_INS_PI2FD, ND_CAT_3DNOW, ND_SET_3DNOW, 545, 
         ND_MOD_ANY, 
@@ -14057,7 +14117,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:905 Instruction:"PI2FW Pq,Qq" Encoding:"0x0F 0x0F /r 0x0C"/"RM"
+    // Pos:909 Instruction:"PI2FW Pq,Qq" Encoding:"0x0F 0x0F /r 0x0C"/"RM"
     {
         ND_INS_PI2FW, ND_CAT_3DNOW, ND_SET_3DNOW, 546, 
         ND_MOD_ANY, 
@@ -14072,7 +14132,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:906 Instruction:"PINSRB Vdq,Mb,Ib" Encoding:"0x66 0x0F 0x3A 0x20 /r:mem ib"/"RMI"
+    // Pos:910 Instruction:"PINSRB Vdq,Mb,Ib" Encoding:"0x66 0x0F 0x3A 0x20 /r:mem ib"/"RMI"
     {
         ND_INS_PINSRB, ND_CAT_SSE, ND_SET_SSE4, 547, 
         ND_MOD_ANY, 
@@ -14088,7 +14148,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:907 Instruction:"PINSRB Vdq,Ry,Ib" Encoding:"0x66 0x0F 0x3A 0x20 /r:reg ib"/"RMI"
+    // Pos:911 Instruction:"PINSRB Vdq,Ry,Ib" Encoding:"0x66 0x0F 0x3A 0x20 /r:reg ib"/"RMI"
     {
         ND_INS_PINSRB, ND_CAT_SSE, ND_SET_SSE4, 547, 
         ND_MOD_ANY, 
@@ -14104,7 +14164,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:908 Instruction:"PINSRD Vdq,Ed,Ib" Encoding:"0x66 0x0F 0x3A 0x22 /r ib"/"RMI"
+    // Pos:912 Instruction:"PINSRD Vdq,Ed,Ib" Encoding:"0x66 0x0F 0x3A 0x22 /r ib"/"RMI"
     {
         ND_INS_PINSRD, ND_CAT_SSE, ND_SET_SSE4, 548, 
         ND_MOD_ANY, 
@@ -14120,7 +14180,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:909 Instruction:"PINSRQ Vdq,Eq,Ib" Encoding:"rexw 0x66 0x0F 0x3A 0x22 /r ib"/"RMI"
+    // Pos:913 Instruction:"PINSRQ Vdq,Eq,Ib" Encoding:"rexw 0x66 0x0F 0x3A 0x22 /r ib"/"RMI"
     {
         ND_INS_PINSRQ, ND_CAT_SSE, ND_SET_SSE4, 549, 
         ND_MOD_ANY, 
@@ -14136,7 +14196,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:910 Instruction:"PINSRW Pq,Rd,Ib" Encoding:"NP 0x0F 0xC4 /r:reg ib"/"RMI"
+    // Pos:914 Instruction:"PINSRW Pq,Rd,Ib" Encoding:"NP 0x0F 0xC4 /r:reg ib"/"RMI"
     {
         ND_INS_PINSRW, ND_CAT_MMX, ND_SET_MMX, 550, 
         ND_MOD_ANY, 
@@ -14152,7 +14212,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:911 Instruction:"PINSRW Pq,Mw,Ib" Encoding:"NP 0x0F 0xC4 /r:mem ib"/"RMI"
+    // Pos:915 Instruction:"PINSRW Pq,Mw,Ib" Encoding:"NP 0x0F 0xC4 /r:mem ib"/"RMI"
     {
         ND_INS_PINSRW, ND_CAT_MMX, ND_SET_MMX, 550, 
         ND_MOD_ANY, 
@@ -14168,7 +14228,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:912 Instruction:"PINSRW Vdq,Rd,Ib" Encoding:"0x66 0x0F 0xC4 /r:reg ib"/"RMI"
+    // Pos:916 Instruction:"PINSRW Vdq,Rd,Ib" Encoding:"0x66 0x0F 0xC4 /r:reg ib"/"RMI"
     {
         ND_INS_PINSRW, ND_CAT_SSE, ND_SET_SSE2, 550, 
         ND_MOD_ANY, 
@@ -14184,7 +14244,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:913 Instruction:"PINSRW Vdq,Mw,Ib" Encoding:"0x66 0x0F 0xC4 /r:mem ib"/"RMI"
+    // Pos:917 Instruction:"PINSRW Vdq,Mw,Ib" Encoding:"0x66 0x0F 0xC4 /r:mem ib"/"RMI"
     {
         ND_INS_PINSRW, ND_CAT_SSE, ND_SET_SSE2, 550, 
         ND_MOD_ANY, 
@@ -14200,7 +14260,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:914 Instruction:"PMADDUBSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x04 /r"/"RM"
+    // Pos:918 Instruction:"PMADDUBSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x04 /r"/"RM"
     {
         ND_INS_PMADDUBSW, ND_CAT_MMX, ND_SET_SSSE3, 551, 
         ND_MOD_ANY, 
@@ -14215,7 +14275,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:915 Instruction:"PMADDUBSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x04 /r"/"RM"
+    // Pos:919 Instruction:"PMADDUBSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x04 /r"/"RM"
     {
         ND_INS_PMADDUBSW, ND_CAT_SSE, ND_SET_SSSE3, 551, 
         ND_MOD_ANY, 
@@ -14230,7 +14290,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:916 Instruction:"PMADDWD Pq,Qq" Encoding:"NP 0x0F 0xF5 /r"/"RM"
+    // Pos:920 Instruction:"PMADDWD Pq,Qq" Encoding:"NP 0x0F 0xF5 /r"/"RM"
     {
         ND_INS_PMADDWD, ND_CAT_MMX, ND_SET_MMX, 552, 
         ND_MOD_ANY, 
@@ -14245,7 +14305,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:917 Instruction:"PMADDWD Vx,Wx" Encoding:"0x66 0x0F 0xF5 /r"/"RM"
+    // Pos:921 Instruction:"PMADDWD Vx,Wx" Encoding:"0x66 0x0F 0xF5 /r"/"RM"
     {
         ND_INS_PMADDWD, ND_CAT_SSE, ND_SET_SSE2, 552, 
         ND_MOD_ANY, 
@@ -14260,7 +14320,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:918 Instruction:"PMAXSB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3C /r"/"RM"
+    // Pos:922 Instruction:"PMAXSB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3C /r"/"RM"
     {
         ND_INS_PMAXSB, ND_CAT_SSE, ND_SET_SSE4, 553, 
         ND_MOD_ANY, 
@@ -14275,7 +14335,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:919 Instruction:"PMAXSD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3D /r"/"RM"
+    // Pos:923 Instruction:"PMAXSD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3D /r"/"RM"
     {
         ND_INS_PMAXSD, ND_CAT_SSE, ND_SET_SSE4, 554, 
         ND_MOD_ANY, 
@@ -14290,7 +14350,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:920 Instruction:"PMAXSW Pq,Qq" Encoding:"NP 0x0F 0xEE /r"/"RM"
+    // Pos:924 Instruction:"PMAXSW Pq,Qq" Encoding:"NP 0x0F 0xEE /r"/"RM"
     {
         ND_INS_PMAXSW, ND_CAT_MMX, ND_SET_MMX, 555, 
         ND_MOD_ANY, 
@@ -14305,7 +14365,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:921 Instruction:"PMAXSW Vx,Wx" Encoding:"0x66 0x0F 0xEE /r"/"RM"
+    // Pos:925 Instruction:"PMAXSW Vx,Wx" Encoding:"0x66 0x0F 0xEE /r"/"RM"
     {
         ND_INS_PMAXSW, ND_CAT_SSE, ND_SET_SSE2, 555, 
         ND_MOD_ANY, 
@@ -14320,7 +14380,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:922 Instruction:"PMAXUB Pq,Qq" Encoding:"NP 0x0F 0xDE /r"/"RM"
+    // Pos:926 Instruction:"PMAXUB Pq,Qq" Encoding:"NP 0x0F 0xDE /r"/"RM"
     {
         ND_INS_PMAXUB, ND_CAT_MMX, ND_SET_MMX, 556, 
         ND_MOD_ANY, 
@@ -14335,7 +14395,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:923 Instruction:"PMAXUB Vx,Wx" Encoding:"0x66 0x0F 0xDE /r"/"RM"
+    // Pos:927 Instruction:"PMAXUB Vx,Wx" Encoding:"0x66 0x0F 0xDE /r"/"RM"
     {
         ND_INS_PMAXUB, ND_CAT_SSE, ND_SET_SSE2, 556, 
         ND_MOD_ANY, 
@@ -14350,7 +14410,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:924 Instruction:"PMAXUD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3F /r"/"RM"
+    // Pos:928 Instruction:"PMAXUD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3F /r"/"RM"
     {
         ND_INS_PMAXUD, ND_CAT_SSE, ND_SET_SSE4, 557, 
         ND_MOD_ANY, 
@@ -14365,7 +14425,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:925 Instruction:"PMAXUW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3E /r"/"RM"
+    // Pos:929 Instruction:"PMAXUW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3E /r"/"RM"
     {
         ND_INS_PMAXUW, ND_CAT_SSE, ND_SET_SSE4, 558, 
         ND_MOD_ANY, 
@@ -14380,7 +14440,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:926 Instruction:"PMINSB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x38 /r"/"RM"
+    // Pos:930 Instruction:"PMINSB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x38 /r"/"RM"
     {
         ND_INS_PMINSB, ND_CAT_SSE, ND_SET_SSE4, 559, 
         ND_MOD_ANY, 
@@ -14395,7 +14455,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:927 Instruction:"PMINSD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x39 /r"/"RM"
+    // Pos:931 Instruction:"PMINSD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x39 /r"/"RM"
     {
         ND_INS_PMINSD, ND_CAT_SSE, ND_SET_SSE4, 560, 
         ND_MOD_ANY, 
@@ -14410,7 +14470,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:928 Instruction:"PMINSW Pq,Qq" Encoding:"NP 0x0F 0xEA /r"/"RM"
+    // Pos:932 Instruction:"PMINSW Pq,Qq" Encoding:"NP 0x0F 0xEA /r"/"RM"
     {
         ND_INS_PMINSW, ND_CAT_MMX, ND_SET_MMX, 561, 
         ND_MOD_ANY, 
@@ -14425,7 +14485,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:929 Instruction:"PMINSW Vx,Wx" Encoding:"0x66 0x0F 0xEA /r"/"RM"
+    // Pos:933 Instruction:"PMINSW Vx,Wx" Encoding:"0x66 0x0F 0xEA /r"/"RM"
     {
         ND_INS_PMINSW, ND_CAT_SSE, ND_SET_SSE2, 561, 
         ND_MOD_ANY, 
@@ -14440,7 +14500,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:930 Instruction:"PMINUB Pq,Qq" Encoding:"NP 0x0F 0xDA /r"/"RM"
+    // Pos:934 Instruction:"PMINUB Pq,Qq" Encoding:"NP 0x0F 0xDA /r"/"RM"
     {
         ND_INS_PMINUB, ND_CAT_MMX, ND_SET_MMX, 562, 
         ND_MOD_ANY, 
@@ -14455,7 +14515,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:931 Instruction:"PMINUB Vx,Wx" Encoding:"0x66 0x0F 0xDA /r"/"RM"
+    // Pos:935 Instruction:"PMINUB Vx,Wx" Encoding:"0x66 0x0F 0xDA /r"/"RM"
     {
         ND_INS_PMINUB, ND_CAT_SSE, ND_SET_SSE2, 562, 
         ND_MOD_ANY, 
@@ -14470,7 +14530,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:932 Instruction:"PMINUD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3B /r"/"RM"
+    // Pos:936 Instruction:"PMINUD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3B /r"/"RM"
     {
         ND_INS_PMINUD, ND_CAT_SSE, ND_SET_SSE4, 563, 
         ND_MOD_ANY, 
@@ -14485,7 +14545,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:933 Instruction:"PMINUW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3A /r"/"RM"
+    // Pos:937 Instruction:"PMINUW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x3A /r"/"RM"
     {
         ND_INS_PMINUW, ND_CAT_SSE, ND_SET_SSE4, 564, 
         ND_MOD_ANY, 
@@ -14500,7 +14560,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:934 Instruction:"PMOVMSKB Gd,Nq" Encoding:"NP 0x0F 0xD7 /r:reg"/"RM"
+    // Pos:938 Instruction:"PMOVMSKB Gd,Nq" Encoding:"NP 0x0F 0xD7 /r:reg"/"RM"
     {
         ND_INS_PMOVMSKB, ND_CAT_MMX, ND_SET_SSE, 565, 
         ND_MOD_ANY, 
@@ -14515,7 +14575,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:935 Instruction:"PMOVMSKB Gd,Ux" Encoding:"0x66 0x0F 0xD7 /r:reg"/"RM"
+    // Pos:939 Instruction:"PMOVMSKB Gd,Ux" Encoding:"0x66 0x0F 0xD7 /r:reg"/"RM"
     {
         ND_INS_PMOVMSKB, ND_CAT_SSE, ND_SET_SSE2, 565, 
         ND_MOD_ANY, 
@@ -14530,7 +14590,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:936 Instruction:"PMOVSXBD Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x21 /r"/"RM"
+    // Pos:940 Instruction:"PMOVSXBD Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x21 /r"/"RM"
     {
         ND_INS_PMOVSXBD, ND_CAT_SSE, ND_SET_SSE4, 566, 
         ND_MOD_ANY, 
@@ -14545,7 +14605,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:937 Instruction:"PMOVSXBQ Vdq,Ww" Encoding:"0x66 0x0F 0x38 0x22 /r"/"RM"
+    // Pos:941 Instruction:"PMOVSXBQ Vdq,Ww" Encoding:"0x66 0x0F 0x38 0x22 /r"/"RM"
     {
         ND_INS_PMOVSXBQ, ND_CAT_SSE, ND_SET_SSE4, 567, 
         ND_MOD_ANY, 
@@ -14560,7 +14620,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:938 Instruction:"PMOVSXBW Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x20 /r"/"RM"
+    // Pos:942 Instruction:"PMOVSXBW Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x20 /r"/"RM"
     {
         ND_INS_PMOVSXBW, ND_CAT_SSE, ND_SET_SSE4, 568, 
         ND_MOD_ANY, 
@@ -14575,7 +14635,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:939 Instruction:"PMOVSXDQ Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x25 /r"/"RM"
+    // Pos:943 Instruction:"PMOVSXDQ Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x25 /r"/"RM"
     {
         ND_INS_PMOVSXDQ, ND_CAT_SSE, ND_SET_SSE4, 569, 
         ND_MOD_ANY, 
@@ -14590,7 +14650,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:940 Instruction:"PMOVSXWD Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x23 /r"/"RM"
+    // Pos:944 Instruction:"PMOVSXWD Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x23 /r"/"RM"
     {
         ND_INS_PMOVSXWD, ND_CAT_SSE, ND_SET_SSE4, 570, 
         ND_MOD_ANY, 
@@ -14605,7 +14665,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:941 Instruction:"PMOVSXWQ Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x24 /r"/"RM"
+    // Pos:945 Instruction:"PMOVSXWQ Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x24 /r"/"RM"
     {
         ND_INS_PMOVSXWQ, ND_CAT_SSE, ND_SET_SSE4, 571, 
         ND_MOD_ANY, 
@@ -14620,7 +14680,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:942 Instruction:"PMOVZXBD Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x31 /r"/"RM"
+    // Pos:946 Instruction:"PMOVZXBD Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x31 /r"/"RM"
     {
         ND_INS_PMOVZXBD, ND_CAT_SSE, ND_SET_SSE4, 572, 
         ND_MOD_ANY, 
@@ -14635,7 +14695,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:943 Instruction:"PMOVZXBQ Vdq,Ww" Encoding:"0x66 0x0F 0x38 0x32 /r"/"RM"
+    // Pos:947 Instruction:"PMOVZXBQ Vdq,Ww" Encoding:"0x66 0x0F 0x38 0x32 /r"/"RM"
     {
         ND_INS_PMOVZXBQ, ND_CAT_SSE, ND_SET_SSE4, 573, 
         ND_MOD_ANY, 
@@ -14650,7 +14710,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:944 Instruction:"PMOVZXBW Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x30 /r"/"RM"
+    // Pos:948 Instruction:"PMOVZXBW Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x30 /r"/"RM"
     {
         ND_INS_PMOVZXBW, ND_CAT_SSE, ND_SET_SSE4, 574, 
         ND_MOD_ANY, 
@@ -14665,7 +14725,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:945 Instruction:"PMOVZXDQ Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x35 /r"/"RM"
+    // Pos:949 Instruction:"PMOVZXDQ Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x35 /r"/"RM"
     {
         ND_INS_PMOVZXDQ, ND_CAT_SSE, ND_SET_SSE4, 575, 
         ND_MOD_ANY, 
@@ -14680,7 +14740,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:946 Instruction:"PMOVZXWD Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x33 /r"/"RM"
+    // Pos:950 Instruction:"PMOVZXWD Vdq,Wq" Encoding:"0x66 0x0F 0x38 0x33 /r"/"RM"
     {
         ND_INS_PMOVZXWD, ND_CAT_SSE, ND_SET_SSE4, 576, 
         ND_MOD_ANY, 
@@ -14695,7 +14755,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:947 Instruction:"PMOVZXWQ Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x34 /r"/"RM"
+    // Pos:951 Instruction:"PMOVZXWQ Vdq,Wd" Encoding:"0x66 0x0F 0x38 0x34 /r"/"RM"
     {
         ND_INS_PMOVZXWQ, ND_CAT_SSE, ND_SET_SSE4, 577, 
         ND_MOD_ANY, 
@@ -14710,7 +14770,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:948 Instruction:"PMULDQ Vx,Wx" Encoding:"0x66 0x0F 0x38 0x28 /r"/"RM"
+    // Pos:952 Instruction:"PMULDQ Vx,Wx" Encoding:"0x66 0x0F 0x38 0x28 /r"/"RM"
     {
         ND_INS_PMULDQ, ND_CAT_SSE, ND_SET_SSE4, 578, 
         ND_MOD_ANY, 
@@ -14725,7 +14785,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:949 Instruction:"PMULHRSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x0B /r"/"RM"
+    // Pos:953 Instruction:"PMULHRSW Pq,Qq" Encoding:"NP 0x0F 0x38 0x0B /r"/"RM"
     {
         ND_INS_PMULHRSW, ND_CAT_MMX, ND_SET_SSSE3, 579, 
         ND_MOD_ANY, 
@@ -14740,7 +14800,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:950 Instruction:"PMULHRSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x0B /r"/"RM"
+    // Pos:954 Instruction:"PMULHRSW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x0B /r"/"RM"
     {
         ND_INS_PMULHRSW, ND_CAT_SSE, ND_SET_SSSE3, 579, 
         ND_MOD_ANY, 
@@ -14755,7 +14815,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:951 Instruction:"PMULHRW Pq,Qq" Encoding:"0x0F 0x0F /r 0xB7"/"RM"
+    // Pos:955 Instruction:"PMULHRW Pq,Qq" Encoding:"0x0F 0x0F /r 0xB7"/"RM"
     {
         ND_INS_PMULHRW, ND_CAT_3DNOW, ND_SET_3DNOW, 580, 
         ND_MOD_ANY, 
@@ -14770,7 +14830,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:952 Instruction:"PMULHUW Pq,Qq" Encoding:"NP 0x0F 0xE4 /r"/"RM"
+    // Pos:956 Instruction:"PMULHUW Pq,Qq" Encoding:"NP 0x0F 0xE4 /r"/"RM"
     {
         ND_INS_PMULHUW, ND_CAT_MMX, ND_SET_MMX, 581, 
         ND_MOD_ANY, 
@@ -14785,7 +14845,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:953 Instruction:"PMULHUW Vx,Wx" Encoding:"0x66 0x0F 0xE4 /r"/"RM"
+    // Pos:957 Instruction:"PMULHUW Vx,Wx" Encoding:"0x66 0x0F 0xE4 /r"/"RM"
     {
         ND_INS_PMULHUW, ND_CAT_SSE, ND_SET_SSE2, 581, 
         ND_MOD_ANY, 
@@ -14800,7 +14860,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:954 Instruction:"PMULHW Pq,Qq" Encoding:"NP 0x0F 0xE5 /r"/"RM"
+    // Pos:958 Instruction:"PMULHW Pq,Qq" Encoding:"NP 0x0F 0xE5 /r"/"RM"
     {
         ND_INS_PMULHW, ND_CAT_MMX, ND_SET_MMX, 582, 
         ND_MOD_ANY, 
@@ -14815,7 +14875,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:955 Instruction:"PMULHW Vx,Wx" Encoding:"0x66 0x0F 0xE5 /r"/"RM"
+    // Pos:959 Instruction:"PMULHW Vx,Wx" Encoding:"0x66 0x0F 0xE5 /r"/"RM"
     {
         ND_INS_PMULHW, ND_CAT_SSE, ND_SET_SSE2, 582, 
         ND_MOD_ANY, 
@@ -14830,7 +14890,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:956 Instruction:"PMULLD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x40 /r"/"RM"
+    // Pos:960 Instruction:"PMULLD Vx,Wx" Encoding:"0x66 0x0F 0x38 0x40 /r"/"RM"
     {
         ND_INS_PMULLD, ND_CAT_SSE, ND_SET_SSE4, 583, 
         ND_MOD_ANY, 
@@ -14845,7 +14905,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:957 Instruction:"PMULLW Pq,Qq" Encoding:"NP 0x0F 0xD5 /r"/"RM"
+    // Pos:961 Instruction:"PMULLW Pq,Qq" Encoding:"NP 0x0F 0xD5 /r"/"RM"
     {
         ND_INS_PMULLW, ND_CAT_MMX, ND_SET_MMX, 584, 
         ND_MOD_ANY, 
@@ -14860,7 +14920,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:958 Instruction:"PMULLW Vx,Wx" Encoding:"0x66 0x0F 0xD5 /r"/"RM"
+    // Pos:962 Instruction:"PMULLW Vx,Wx" Encoding:"0x66 0x0F 0xD5 /r"/"RM"
     {
         ND_INS_PMULLW, ND_CAT_SSE, ND_SET_SSE2, 584, 
         ND_MOD_ANY, 
@@ -14875,7 +14935,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:959 Instruction:"PMULUDQ Pq,Qq" Encoding:"NP 0x0F 0xF4 /r"/"RM"
+    // Pos:963 Instruction:"PMULUDQ Pq,Qq" Encoding:"NP 0x0F 0xF4 /r"/"RM"
     {
         ND_INS_PMULUDQ, ND_CAT_MMX, ND_SET_SSE2, 585, 
         ND_MOD_ANY, 
@@ -14890,7 +14950,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:960 Instruction:"PMULUDQ Vx,Wx" Encoding:"0x66 0x0F 0xF4 /r"/"RM"
+    // Pos:964 Instruction:"PMULUDQ Vx,Wx" Encoding:"0x66 0x0F 0xF4 /r"/"RM"
     {
         ND_INS_PMULUDQ, ND_CAT_SSE, ND_SET_SSE2, 585, 
         ND_MOD_ANY, 
@@ -14905,7 +14965,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:961 Instruction:"POP FS" Encoding:"0x0F 0xA1"/""
+    // Pos:965 Instruction:"POP FS" Encoding:"0x0F 0xA1"/""
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -14920,7 +14980,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:962 Instruction:"POP GS" Encoding:"0x0F 0xA9"/""
+    // Pos:966 Instruction:"POP GS" Encoding:"0x0F 0xA9"/""
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -14935,7 +14995,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:963 Instruction:"POP ES" Encoding:"0x07"/""
+    // Pos:967 Instruction:"POP ES" Encoding:"0x07"/""
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -14950,7 +15010,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:964 Instruction:"POP SS" Encoding:"0x17"/""
+    // Pos:968 Instruction:"POP SS" Encoding:"0x17"/""
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -14965,7 +15025,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:965 Instruction:"POP DS" Encoding:"0x1F"/""
+    // Pos:969 Instruction:"POP DS" Encoding:"0x1F"/""
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -14980,7 +15040,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:966 Instruction:"POP Zv" Encoding:"0x58"/"O"
+    // Pos:970 Instruction:"POP Zv" Encoding:"0x58"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -14995,7 +15055,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:967 Instruction:"POP Zv" Encoding:"0x59"/"O"
+    // Pos:971 Instruction:"POP Zv" Encoding:"0x59"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15010,7 +15070,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:968 Instruction:"POP Zv" Encoding:"0x5A"/"O"
+    // Pos:972 Instruction:"POP Zv" Encoding:"0x5A"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15025,7 +15085,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:969 Instruction:"POP Zv" Encoding:"0x5B"/"O"
+    // Pos:973 Instruction:"POP Zv" Encoding:"0x5B"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15040,7 +15100,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:970 Instruction:"POP Zv" Encoding:"0x5C"/"O"
+    // Pos:974 Instruction:"POP Zv" Encoding:"0x5C"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15055,7 +15115,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:971 Instruction:"POP Zv" Encoding:"0x5D"/"O"
+    // Pos:975 Instruction:"POP Zv" Encoding:"0x5D"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15070,7 +15130,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:972 Instruction:"POP Zv" Encoding:"0x5E"/"O"
+    // Pos:976 Instruction:"POP Zv" Encoding:"0x5E"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15085,7 +15145,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:973 Instruction:"POP Zv" Encoding:"0x5F"/"O"
+    // Pos:977 Instruction:"POP Zv" Encoding:"0x5F"/"O"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15100,7 +15160,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:974 Instruction:"POP Ev" Encoding:"0x8F /0"/"M"
+    // Pos:978 Instruction:"POP Ev" Encoding:"0x8F /0"/"M"
     {
         ND_INS_POP, ND_CAT_POP, ND_SET_I86, 586, 
         ND_MOD_ANY, 
@@ -15115,7 +15175,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:975 Instruction:"POPA" Encoding:"ds16 0x61"/""
+    // Pos:979 Instruction:"POPA" Encoding:"ds16 0x61"/""
     {
         ND_INS_POPA, ND_CAT_POP, ND_SET_I386, 587, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -15130,7 +15190,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:976 Instruction:"POPAD" Encoding:"ds32 0x61"/""
+    // Pos:980 Instruction:"POPAD" Encoding:"ds32 0x61"/""
     {
         ND_INS_POPAD, ND_CAT_POP, ND_SET_I386, 588, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -15145,7 +15205,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:977 Instruction:"POPCNT Gv,Ev" Encoding:"a0xF3 0x0F 0xB8 /r"/"RM"
+    // Pos:981 Instruction:"POPCNT Gv,Ev" Encoding:"a0xF3 0x0F 0xB8 /r"/"RM"
     {
         ND_INS_POPCNT, ND_CAT_SSE, ND_SET_POPCNT, 589, 
         ND_MOD_ANY, 
@@ -15161,7 +15221,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:978 Instruction:"POPFD Fv" Encoding:"ds32 0x9D"/""
+    // Pos:982 Instruction:"POPFD Fv" Encoding:"ds32 0x9D"/""
     {
         ND_INS_POPF, ND_CAT_POP, ND_SET_I86, 590, 
         ND_MOD_ANY, 
@@ -15176,7 +15236,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:979 Instruction:"POPFQ Fv" Encoding:"dds64 0x9D"/""
+    // Pos:983 Instruction:"POPFQ Fv" Encoding:"dds64 0x9D"/""
     {
         ND_INS_POPF, ND_CAT_POP, ND_SET_I86, 591, 
         ND_MOD_ANY, 
@@ -15191,7 +15251,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:980 Instruction:"POPFW Fv" Encoding:"ds16 0x9D"/""
+    // Pos:984 Instruction:"POPFW Fv" Encoding:"ds16 0x9D"/""
     {
         ND_INS_POPF, ND_CAT_POP, ND_SET_I86, 592, 
         ND_MOD_ANY, 
@@ -15206,7 +15266,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:981 Instruction:"POR Pq,Qq" Encoding:"NP 0x0F 0xEB /r"/"RM"
+    // Pos:985 Instruction:"POR Pq,Qq" Encoding:"NP 0x0F 0xEB /r"/"RM"
     {
         ND_INS_POR, ND_CAT_LOGICAL, ND_SET_MMX, 593, 
         ND_MOD_ANY, 
@@ -15221,7 +15281,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:982 Instruction:"POR Vx,Wx" Encoding:"0x66 0x0F 0xEB /r"/"RM"
+    // Pos:986 Instruction:"POR Vx,Wx" Encoding:"0x66 0x0F 0xEB /r"/"RM"
     {
         ND_INS_POR, ND_CAT_LOGICAL, ND_SET_SSE2, 593, 
         ND_MOD_ANY, 
@@ -15236,7 +15296,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:983 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /4:mem"/"M"
+    // Pos:987 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /4:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 594, 
         ND_MOD_ANY, 
@@ -15250,7 +15310,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:984 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /5:mem"/"M"
+    // Pos:988 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /5:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 594, 
         ND_MOD_ANY, 
@@ -15264,7 +15324,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:985 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /6:mem"/"M"
+    // Pos:989 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /6:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 594, 
         ND_MOD_ANY, 
@@ -15278,7 +15338,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:986 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /7:mem"/"M"
+    // Pos:990 Instruction:"PREFETCH Mb" Encoding:"0x0F 0x0D /7:mem"/"M"
     {
         ND_INS_PREFETCH, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 594, 
         ND_MOD_ANY, 
@@ -15292,7 +15352,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:987 Instruction:"PREFETCHE Mb" Encoding:"0x0F 0x0D /0:mem"/"M"
+    // Pos:991 Instruction:"PREFETCHE Mb" Encoding:"0x0F 0x0D /0:mem"/"M"
     {
         ND_INS_PREFETCHE, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 595, 
         ND_MOD_ANY, 
@@ -15306,7 +15366,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:988 Instruction:"PREFETCHM Mb" Encoding:"0x0F 0x0D /3:mem"/"M"
+    // Pos:992 Instruction:"PREFETCHM Mb" Encoding:"0x0F 0x0D /3:mem"/"M"
     {
         ND_INS_PREFETCHM, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 596, 
         ND_MOD_ANY, 
@@ -15320,7 +15380,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:989 Instruction:"PREFETCHNTA Mb" Encoding:"0x0F 0x18 /0:mem"/"M"
+    // Pos:993 Instruction:"PREFETCHNTA Mb" Encoding:"0x0F 0x18 /0:mem"/"M"
     {
         ND_INS_PREFETCHNTA, ND_CAT_PREFETCH, ND_SET_SSE, 597, 
         ND_MOD_ANY, 
@@ -15334,7 +15394,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:990 Instruction:"PREFETCHT0 Mb" Encoding:"0x0F 0x18 /1:mem"/"M"
+    // Pos:994 Instruction:"PREFETCHT0 Mb" Encoding:"0x0F 0x18 /1:mem"/"M"
     {
         ND_INS_PREFETCHT0, ND_CAT_PREFETCH, ND_SET_SSE, 598, 
         ND_MOD_ANY, 
@@ -15348,7 +15408,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:991 Instruction:"PREFETCHT1 Mb" Encoding:"0x0F 0x18 /2:mem"/"M"
+    // Pos:995 Instruction:"PREFETCHT1 Mb" Encoding:"0x0F 0x18 /2:mem"/"M"
     {
         ND_INS_PREFETCHT1, ND_CAT_PREFETCH, ND_SET_SSE, 599, 
         ND_MOD_ANY, 
@@ -15362,7 +15422,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:992 Instruction:"PREFETCHT2 Mb" Encoding:"0x0F 0x18 /3:mem"/"M"
+    // Pos:996 Instruction:"PREFETCHT2 Mb" Encoding:"0x0F 0x18 /3:mem"/"M"
     {
         ND_INS_PREFETCHT2, ND_CAT_PREFETCH, ND_SET_SSE, 600, 
         ND_MOD_ANY, 
@@ -15376,7 +15436,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:993 Instruction:"PREFETCHW Mb" Encoding:"0x0F 0x0D /1:mem"/"M"
+    // Pos:997 Instruction:"PREFETCHW Mb" Encoding:"0x0F 0x0D /1:mem"/"M"
     {
         ND_INS_PREFETCHW, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 601, 
         ND_MOD_ANY, 
@@ -15390,7 +15450,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:994 Instruction:"PREFETCHWT1 Mb" Encoding:"0x0F 0x0D /2:mem"/"M"
+    // Pos:998 Instruction:"PREFETCHWT1 Mb" Encoding:"0x0F 0x0D /2:mem"/"M"
     {
         ND_INS_PREFETCHWT1, ND_CAT_PREFETCH, ND_SET_PREFETCH_NOP, 602, 
         ND_MOD_ANY, 
@@ -15404,7 +15464,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:995 Instruction:"PSADBW Pq,Qq" Encoding:"NP 0x0F 0xF6 /r"/"RM"
+    // Pos:999 Instruction:"PSADBW Pq,Qq" Encoding:"NP 0x0F 0xF6 /r"/"RM"
     {
         ND_INS_PSADBW, ND_CAT_MMX, ND_SET_MMX, 603, 
         ND_MOD_ANY, 
@@ -15419,7 +15479,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:996 Instruction:"PSADBW Vx,Wx" Encoding:"0x66 0x0F 0xF6 /r"/"RM"
+    // Pos:1000 Instruction:"PSADBW Vx,Wx" Encoding:"0x66 0x0F 0xF6 /r"/"RM"
     {
         ND_INS_PSADBW, ND_CAT_SSE, ND_SET_SSE2, 603, 
         ND_MOD_ANY, 
@@ -15434,7 +15494,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:997 Instruction:"PSHUFB Pq,Qq" Encoding:"NP 0x0F 0x38 0x00 /r"/"RM"
+    // Pos:1001 Instruction:"PSHUFB Pq,Qq" Encoding:"NP 0x0F 0x38 0x00 /r"/"RM"
     {
         ND_INS_PSHUFB, ND_CAT_MMX, ND_SET_SSSE3, 604, 
         ND_MOD_ANY, 
@@ -15449,7 +15509,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:998 Instruction:"PSHUFB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x00 /r"/"RM"
+    // Pos:1002 Instruction:"PSHUFB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x00 /r"/"RM"
     {
         ND_INS_PSHUFB, ND_CAT_SSE, ND_SET_SSSE3, 604, 
         ND_MOD_ANY, 
@@ -15464,7 +15524,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:999 Instruction:"PSHUFD Vx,Wx,Ib" Encoding:"0x66 0x0F 0x70 /r ib"/"RMI"
+    // Pos:1003 Instruction:"PSHUFD Vx,Wx,Ib" Encoding:"0x66 0x0F 0x70 /r ib"/"RMI"
     {
         ND_INS_PSHUFD, ND_CAT_SSE, ND_SET_SSE2, 605, 
         ND_MOD_ANY, 
@@ -15480,7 +15540,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1000 Instruction:"PSHUFHW Vx,Wx,Ib" Encoding:"0xF3 0x0F 0x70 /r ib"/"RMI"
+    // Pos:1004 Instruction:"PSHUFHW Vx,Wx,Ib" Encoding:"0xF3 0x0F 0x70 /r ib"/"RMI"
     {
         ND_INS_PSHUFHW, ND_CAT_SSE, ND_SET_SSE2, 606, 
         ND_MOD_ANY, 
@@ -15496,7 +15556,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1001 Instruction:"PSHUFLW Vx,Wx,Ib" Encoding:"0xF2 0x0F 0x70 /r ib"/"RMI"
+    // Pos:1005 Instruction:"PSHUFLW Vx,Wx,Ib" Encoding:"0xF2 0x0F 0x70 /r ib"/"RMI"
     {
         ND_INS_PSHUFLW, ND_CAT_SSE, ND_SET_SSE2, 607, 
         ND_MOD_ANY, 
@@ -15512,7 +15572,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1002 Instruction:"PSHUFW Pq,Qq,Ib" Encoding:"NP 0x0F 0x70 /r ib"/"RMI"
+    // Pos:1006 Instruction:"PSHUFW Pq,Qq,Ib" Encoding:"NP 0x0F 0x70 /r ib"/"RMI"
     {
         ND_INS_PSHUFW, ND_CAT_MMX, ND_SET_MMX, 608, 
         ND_MOD_ANY, 
@@ -15528,7 +15588,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1003 Instruction:"PSIGNB Pq,Qq" Encoding:"NP 0x0F 0x38 0x08 /r"/"RM"
+    // Pos:1007 Instruction:"PSIGNB Pq,Qq" Encoding:"NP 0x0F 0x38 0x08 /r"/"RM"
     {
         ND_INS_PSIGNB, ND_CAT_MMX, ND_SET_SSSE3, 609, 
         ND_MOD_ANY, 
@@ -15543,7 +15603,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1004 Instruction:"PSIGNB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x08 /r"/"RM"
+    // Pos:1008 Instruction:"PSIGNB Vx,Wx" Encoding:"0x66 0x0F 0x38 0x08 /r"/"RM"
     {
         ND_INS_PSIGNB, ND_CAT_SSE, ND_SET_SSSE3, 609, 
         ND_MOD_ANY, 
@@ -15558,7 +15618,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1005 Instruction:"PSIGND Pq,Qq" Encoding:"NP 0x0F 0x38 0x0A /r"/"RM"
+    // Pos:1009 Instruction:"PSIGND Pq,Qq" Encoding:"NP 0x0F 0x38 0x0A /r"/"RM"
     {
         ND_INS_PSIGND, ND_CAT_MMX, ND_SET_SSSE3, 610, 
         ND_MOD_ANY, 
@@ -15573,7 +15633,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1006 Instruction:"PSIGND Vx,Wx" Encoding:"0x66 0x0F 0x38 0x0A /r"/"RM"
+    // Pos:1010 Instruction:"PSIGND Vx,Wx" Encoding:"0x66 0x0F 0x38 0x0A /r"/"RM"
     {
         ND_INS_PSIGND, ND_CAT_SSE, ND_SET_SSSE3, 610, 
         ND_MOD_ANY, 
@@ -15588,7 +15648,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1007 Instruction:"PSIGNW Pq,Qq" Encoding:"NP 0x0F 0x38 0x09 /r"/"RM"
+    // Pos:1011 Instruction:"PSIGNW Pq,Qq" Encoding:"NP 0x0F 0x38 0x09 /r"/"RM"
     {
         ND_INS_PSIGNW, ND_CAT_MMX, ND_SET_SSSE3, 611, 
         ND_MOD_ANY, 
@@ -15603,7 +15663,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1008 Instruction:"PSIGNW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x09 /r"/"RM"
+    // Pos:1012 Instruction:"PSIGNW Vx,Wx" Encoding:"0x66 0x0F 0x38 0x09 /r"/"RM"
     {
         ND_INS_PSIGNW, ND_CAT_SSE, ND_SET_SSSE3, 611, 
         ND_MOD_ANY, 
@@ -15618,7 +15678,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1009 Instruction:"PSLLD Nq,Ib" Encoding:"NP 0x0F 0x72 /6:reg ib"/"MI"
+    // Pos:1013 Instruction:"PSLLD Nq,Ib" Encoding:"NP 0x0F 0x72 /6:reg ib"/"MI"
     {
         ND_INS_PSLLD, ND_CAT_MMX, ND_SET_MMX, 612, 
         ND_MOD_ANY, 
@@ -15633,7 +15693,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1010 Instruction:"PSLLD Ux,Ib" Encoding:"0x66 0x0F 0x72 /6:reg ib"/"MI"
+    // Pos:1014 Instruction:"PSLLD Ux,Ib" Encoding:"0x66 0x0F 0x72 /6:reg ib"/"MI"
     {
         ND_INS_PSLLD, ND_CAT_SSE, ND_SET_SSE2, 612, 
         ND_MOD_ANY, 
@@ -15648,7 +15708,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1011 Instruction:"PSLLD Pq,Qq" Encoding:"NP 0x0F 0xF2 /r"/"RM"
+    // Pos:1015 Instruction:"PSLLD Pq,Qq" Encoding:"NP 0x0F 0xF2 /r"/"RM"
     {
         ND_INS_PSLLD, ND_CAT_MMX, ND_SET_MMX, 612, 
         ND_MOD_ANY, 
@@ -15663,7 +15723,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1012 Instruction:"PSLLD Vx,Wx" Encoding:"0x66 0x0F 0xF2 /r"/"RM"
+    // Pos:1016 Instruction:"PSLLD Vx,Wx" Encoding:"0x66 0x0F 0xF2 /r"/"RM"
     {
         ND_INS_PSLLD, ND_CAT_SSE, ND_SET_SSE2, 612, 
         ND_MOD_ANY, 
@@ -15678,7 +15738,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1013 Instruction:"PSLLDQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /7:reg ib"/"MI"
+    // Pos:1017 Instruction:"PSLLDQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /7:reg ib"/"MI"
     {
         ND_INS_PSLLDQ, ND_CAT_SSE, ND_SET_SSE2, 613, 
         ND_MOD_ANY, 
@@ -15693,7 +15753,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1014 Instruction:"PSLLQ Nq,Ib" Encoding:"NP 0x0F 0x73 /6:reg ib"/"MI"
+    // Pos:1018 Instruction:"PSLLQ Nq,Ib" Encoding:"NP 0x0F 0x73 /6:reg ib"/"MI"
     {
         ND_INS_PSLLQ, ND_CAT_MMX, ND_SET_MMX, 614, 
         ND_MOD_ANY, 
@@ -15708,7 +15768,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1015 Instruction:"PSLLQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /6:reg ib"/"MI"
+    // Pos:1019 Instruction:"PSLLQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /6:reg ib"/"MI"
     {
         ND_INS_PSLLQ, ND_CAT_SSE, ND_SET_SSE2, 614, 
         ND_MOD_ANY, 
@@ -15723,7 +15783,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1016 Instruction:"PSLLQ Pq,Qq" Encoding:"NP 0x0F 0xF3 /r"/"RM"
+    // Pos:1020 Instruction:"PSLLQ Pq,Qq" Encoding:"NP 0x0F 0xF3 /r"/"RM"
     {
         ND_INS_PSLLQ, ND_CAT_MMX, ND_SET_MMX, 614, 
         ND_MOD_ANY, 
@@ -15738,7 +15798,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1017 Instruction:"PSLLQ Vx,Wx" Encoding:"0x66 0x0F 0xF3 /r"/"RM"
+    // Pos:1021 Instruction:"PSLLQ Vx,Wx" Encoding:"0x66 0x0F 0xF3 /r"/"RM"
     {
         ND_INS_PSLLQ, ND_CAT_SSE, ND_SET_SSE2, 614, 
         ND_MOD_ANY, 
@@ -15753,7 +15813,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1018 Instruction:"PSLLW Nq,Ib" Encoding:"NP 0x0F 0x71 /6:reg ib"/"MI"
+    // Pos:1022 Instruction:"PSLLW Nq,Ib" Encoding:"NP 0x0F 0x71 /6:reg ib"/"MI"
     {
         ND_INS_PSLLW, ND_CAT_MMX, ND_SET_MMX, 615, 
         ND_MOD_ANY, 
@@ -15768,7 +15828,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1019 Instruction:"PSLLW Ux,Ib" Encoding:"0x66 0x0F 0x71 /6:reg ib"/"MI"
+    // Pos:1023 Instruction:"PSLLW Ux,Ib" Encoding:"0x66 0x0F 0x71 /6:reg ib"/"MI"
     {
         ND_INS_PSLLW, ND_CAT_SSE, ND_SET_SSE2, 615, 
         ND_MOD_ANY, 
@@ -15783,7 +15843,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1020 Instruction:"PSLLW Pq,Qq" Encoding:"NP 0x0F 0xF1 /r"/"RM"
+    // Pos:1024 Instruction:"PSLLW Pq,Qq" Encoding:"NP 0x0F 0xF1 /r"/"RM"
     {
         ND_INS_PSLLW, ND_CAT_MMX, ND_SET_MMX, 615, 
         ND_MOD_ANY, 
@@ -15798,7 +15858,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1021 Instruction:"PSLLW Vx,Wx" Encoding:"0x66 0x0F 0xF1 /r"/"RM"
+    // Pos:1025 Instruction:"PSLLW Vx,Wx" Encoding:"0x66 0x0F 0xF1 /r"/"RM"
     {
         ND_INS_PSLLW, ND_CAT_SSE, ND_SET_SSE2, 615, 
         ND_MOD_ANY, 
@@ -15813,7 +15873,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1022 Instruction:"PSMASH" Encoding:"0xF3 0x0F 0x01 /0xFF"/""
+    // Pos:1026 Instruction:"PSMASH" Encoding:"0xF3 0x0F 0x01 /0xFF"/""
     {
         ND_INS_PSMASH, ND_CAT_SYSTEM, ND_SET_SNP, 616, 
         ND_MOD_R0|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -15828,7 +15888,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1023 Instruction:"PSRAD Nq,Ib" Encoding:"NP 0x0F 0x72 /4:reg ib"/"MI"
+    // Pos:1027 Instruction:"PSRAD Nq,Ib" Encoding:"NP 0x0F 0x72 /4:reg ib"/"MI"
     {
         ND_INS_PSRAD, ND_CAT_MMX, ND_SET_MMX, 617, 
         ND_MOD_ANY, 
@@ -15843,7 +15903,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1024 Instruction:"PSRAD Ux,Ib" Encoding:"0x66 0x0F 0x72 /4:reg ib"/"MI"
+    // Pos:1028 Instruction:"PSRAD Ux,Ib" Encoding:"0x66 0x0F 0x72 /4:reg ib"/"MI"
     {
         ND_INS_PSRAD, ND_CAT_SSE, ND_SET_SSE2, 617, 
         ND_MOD_ANY, 
@@ -15858,7 +15918,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1025 Instruction:"PSRAD Pq,Qq" Encoding:"NP 0x0F 0xE2 /r"/"RM"
+    // Pos:1029 Instruction:"PSRAD Pq,Qq" Encoding:"NP 0x0F 0xE2 /r"/"RM"
     {
         ND_INS_PSRAD, ND_CAT_MMX, ND_SET_MMX, 617, 
         ND_MOD_ANY, 
@@ -15873,7 +15933,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1026 Instruction:"PSRAD Vx,Wx" Encoding:"0x66 0x0F 0xE2 /r"/"RM"
+    // Pos:1030 Instruction:"PSRAD Vx,Wx" Encoding:"0x66 0x0F 0xE2 /r"/"RM"
     {
         ND_INS_PSRAD, ND_CAT_SSE, ND_SET_SSE2, 617, 
         ND_MOD_ANY, 
@@ -15888,7 +15948,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1027 Instruction:"PSRAW Nq,Ib" Encoding:"NP 0x0F 0x71 /4:reg ib"/"MI"
+    // Pos:1031 Instruction:"PSRAW Nq,Ib" Encoding:"NP 0x0F 0x71 /4:reg ib"/"MI"
     {
         ND_INS_PSRAW, ND_CAT_MMX, ND_SET_MMX, 618, 
         ND_MOD_ANY, 
@@ -15903,7 +15963,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1028 Instruction:"PSRAW Ux,Ib" Encoding:"0x66 0x0F 0x71 /4:reg ib"/"MI"
+    // Pos:1032 Instruction:"PSRAW Ux,Ib" Encoding:"0x66 0x0F 0x71 /4:reg ib"/"MI"
     {
         ND_INS_PSRAW, ND_CAT_SSE, ND_SET_SSE2, 618, 
         ND_MOD_ANY, 
@@ -15918,7 +15978,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1029 Instruction:"PSRAW Pq,Qq" Encoding:"NP 0x0F 0xE1 /r"/"RM"
+    // Pos:1033 Instruction:"PSRAW Pq,Qq" Encoding:"NP 0x0F 0xE1 /r"/"RM"
     {
         ND_INS_PSRAW, ND_CAT_MMX, ND_SET_MMX, 618, 
         ND_MOD_ANY, 
@@ -15933,7 +15993,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1030 Instruction:"PSRAW Vx,Wx" Encoding:"0x66 0x0F 0xE1 /r"/"RM"
+    // Pos:1034 Instruction:"PSRAW Vx,Wx" Encoding:"0x66 0x0F 0xE1 /r"/"RM"
     {
         ND_INS_PSRAW, ND_CAT_SSE, ND_SET_SSE2, 618, 
         ND_MOD_ANY, 
@@ -15948,7 +16008,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1031 Instruction:"PSRLD Nq,Ib" Encoding:"NP 0x0F 0x72 /2:reg ib"/"MI"
+    // Pos:1035 Instruction:"PSRLD Nq,Ib" Encoding:"NP 0x0F 0x72 /2:reg ib"/"MI"
     {
         ND_INS_PSRLD, ND_CAT_MMX, ND_SET_MMX, 619, 
         ND_MOD_ANY, 
@@ -15963,7 +16023,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1032 Instruction:"PSRLD Ux,Ib" Encoding:"0x66 0x0F 0x72 /2:reg ib"/"MI"
+    // Pos:1036 Instruction:"PSRLD Ux,Ib" Encoding:"0x66 0x0F 0x72 /2:reg ib"/"MI"
     {
         ND_INS_PSRLD, ND_CAT_SSE, ND_SET_SSE2, 619, 
         ND_MOD_ANY, 
@@ -15978,7 +16038,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1033 Instruction:"PSRLD Pq,Qq" Encoding:"NP 0x0F 0xD2 /r"/"RM"
+    // Pos:1037 Instruction:"PSRLD Pq,Qq" Encoding:"NP 0x0F 0xD2 /r"/"RM"
     {
         ND_INS_PSRLD, ND_CAT_MMX, ND_SET_MMX, 619, 
         ND_MOD_ANY, 
@@ -15993,7 +16053,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1034 Instruction:"PSRLD Vx,Wx" Encoding:"0x66 0x0F 0xD2 /r"/"RM"
+    // Pos:1038 Instruction:"PSRLD Vx,Wx" Encoding:"0x66 0x0F 0xD2 /r"/"RM"
     {
         ND_INS_PSRLD, ND_CAT_SSE, ND_SET_SSE2, 619, 
         ND_MOD_ANY, 
@@ -16008,7 +16068,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1035 Instruction:"PSRLDQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /3:reg ib"/"MI"
+    // Pos:1039 Instruction:"PSRLDQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /3:reg ib"/"MI"
     {
         ND_INS_PSRLDQ, ND_CAT_SSE, ND_SET_SSE2, 620, 
         ND_MOD_ANY, 
@@ -16023,7 +16083,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1036 Instruction:"PSRLQ Nq,Ib" Encoding:"NP 0x0F 0x73 /2:reg ib"/"MI"
+    // Pos:1040 Instruction:"PSRLQ Nq,Ib" Encoding:"NP 0x0F 0x73 /2:reg ib"/"MI"
     {
         ND_INS_PSRLQ, ND_CAT_MMX, ND_SET_MMX, 621, 
         ND_MOD_ANY, 
@@ -16038,7 +16098,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1037 Instruction:"PSRLQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /2:reg ib"/"MI"
+    // Pos:1041 Instruction:"PSRLQ Ux,Ib" Encoding:"0x66 0x0F 0x73 /2:reg ib"/"MI"
     {
         ND_INS_PSRLQ, ND_CAT_SSE, ND_SET_SSE2, 621, 
         ND_MOD_ANY, 
@@ -16053,7 +16113,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1038 Instruction:"PSRLQ Pq,Qq" Encoding:"NP 0x0F 0xD3 /r"/"RM"
+    // Pos:1042 Instruction:"PSRLQ Pq,Qq" Encoding:"NP 0x0F 0xD3 /r"/"RM"
     {
         ND_INS_PSRLQ, ND_CAT_MMX, ND_SET_MMX, 621, 
         ND_MOD_ANY, 
@@ -16068,7 +16128,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1039 Instruction:"PSRLQ Vx,Wx" Encoding:"0x66 0x0F 0xD3 /r"/"RM"
+    // Pos:1043 Instruction:"PSRLQ Vx,Wx" Encoding:"0x66 0x0F 0xD3 /r"/"RM"
     {
         ND_INS_PSRLQ, ND_CAT_SSE, ND_SET_SSE2, 621, 
         ND_MOD_ANY, 
@@ -16083,7 +16143,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1040 Instruction:"PSRLW Nq,Ib" Encoding:"NP 0x0F 0x71 /2:reg ib"/"MI"
+    // Pos:1044 Instruction:"PSRLW Nq,Ib" Encoding:"NP 0x0F 0x71 /2:reg ib"/"MI"
     {
         ND_INS_PSRLW, ND_CAT_MMX, ND_SET_MMX, 622, 
         ND_MOD_ANY, 
@@ -16098,7 +16158,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1041 Instruction:"PSRLW Ux,Ib" Encoding:"0x66 0x0F 0x71 /2:reg ib"/"MI"
+    // Pos:1045 Instruction:"PSRLW Ux,Ib" Encoding:"0x66 0x0F 0x71 /2:reg ib"/"MI"
     {
         ND_INS_PSRLW, ND_CAT_SSE, ND_SET_SSE2, 622, 
         ND_MOD_ANY, 
@@ -16113,7 +16173,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1042 Instruction:"PSRLW Pq,Qq" Encoding:"NP 0x0F 0xD1 /r"/"RM"
+    // Pos:1046 Instruction:"PSRLW Pq,Qq" Encoding:"NP 0x0F 0xD1 /r"/"RM"
     {
         ND_INS_PSRLW, ND_CAT_MMX, ND_SET_MMX, 622, 
         ND_MOD_ANY, 
@@ -16128,7 +16188,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1043 Instruction:"PSRLW Vx,Wx" Encoding:"0x66 0x0F 0xD1 /r"/"RM"
+    // Pos:1047 Instruction:"PSRLW Vx,Wx" Encoding:"0x66 0x0F 0xD1 /r"/"RM"
     {
         ND_INS_PSRLW, ND_CAT_SSE, ND_SET_SSE2, 622, 
         ND_MOD_ANY, 
@@ -16143,7 +16203,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1044 Instruction:"PSUBB Pq,Qq" Encoding:"NP 0x0F 0xF8 /r"/"RM"
+    // Pos:1048 Instruction:"PSUBB Pq,Qq" Encoding:"NP 0x0F 0xF8 /r"/"RM"
     {
         ND_INS_PSUBB, ND_CAT_MMX, ND_SET_MMX, 623, 
         ND_MOD_ANY, 
@@ -16158,7 +16218,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1045 Instruction:"PSUBB Vx,Wx" Encoding:"0x66 0x0F 0xF8 /r"/"RM"
+    // Pos:1049 Instruction:"PSUBB Vx,Wx" Encoding:"0x66 0x0F 0xF8 /r"/"RM"
     {
         ND_INS_PSUBB, ND_CAT_SSE, ND_SET_SSE2, 623, 
         ND_MOD_ANY, 
@@ -16173,7 +16233,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1046 Instruction:"PSUBD Pq,Qq" Encoding:"NP 0x0F 0xFA /r"/"RM"
+    // Pos:1050 Instruction:"PSUBD Pq,Qq" Encoding:"NP 0x0F 0xFA /r"/"RM"
     {
         ND_INS_PSUBD, ND_CAT_MMX, ND_SET_MMX, 624, 
         ND_MOD_ANY, 
@@ -16188,7 +16248,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1047 Instruction:"PSUBD Vx,Wx" Encoding:"0x66 0x0F 0xFA /r"/"RM"
+    // Pos:1051 Instruction:"PSUBD Vx,Wx" Encoding:"0x66 0x0F 0xFA /r"/"RM"
     {
         ND_INS_PSUBD, ND_CAT_SSE, ND_SET_SSE2, 624, 
         ND_MOD_ANY, 
@@ -16203,7 +16263,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1048 Instruction:"PSUBQ Pq,Qq" Encoding:"NP 0x0F 0xFB /r"/"RM"
+    // Pos:1052 Instruction:"PSUBQ Pq,Qq" Encoding:"NP 0x0F 0xFB /r"/"RM"
     {
         ND_INS_PSUBQ, ND_CAT_MMX, ND_SET_MMX, 625, 
         ND_MOD_ANY, 
@@ -16218,7 +16278,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1049 Instruction:"PSUBQ Vx,Wx" Encoding:"0x66 0x0F 0xFB /r"/"RM"
+    // Pos:1053 Instruction:"PSUBQ Vx,Wx" Encoding:"0x66 0x0F 0xFB /r"/"RM"
     {
         ND_INS_PSUBQ, ND_CAT_SSE, ND_SET_SSE2, 625, 
         ND_MOD_ANY, 
@@ -16233,7 +16293,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1050 Instruction:"PSUBSB Pq,Qq" Encoding:"NP 0x0F 0xE8 /r"/"RM"
+    // Pos:1054 Instruction:"PSUBSB Pq,Qq" Encoding:"NP 0x0F 0xE8 /r"/"RM"
     {
         ND_INS_PSUBSB, ND_CAT_MMX, ND_SET_MMX, 626, 
         ND_MOD_ANY, 
@@ -16248,7 +16308,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1051 Instruction:"PSUBSB Vx,Wx" Encoding:"0x66 0x0F 0xE8 /r"/"RM"
+    // Pos:1055 Instruction:"PSUBSB Vx,Wx" Encoding:"0x66 0x0F 0xE8 /r"/"RM"
     {
         ND_INS_PSUBSB, ND_CAT_SSE, ND_SET_SSE2, 626, 
         ND_MOD_ANY, 
@@ -16263,7 +16323,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1052 Instruction:"PSUBSW Pq,Qq" Encoding:"NP 0x0F 0xE9 /r"/"RM"
+    // Pos:1056 Instruction:"PSUBSW Pq,Qq" Encoding:"NP 0x0F 0xE9 /r"/"RM"
     {
         ND_INS_PSUBSW, ND_CAT_MMX, ND_SET_MMX, 627, 
         ND_MOD_ANY, 
@@ -16278,7 +16338,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1053 Instruction:"PSUBSW Vx,Wx" Encoding:"0x66 0x0F 0xE9 /r"/"RM"
+    // Pos:1057 Instruction:"PSUBSW Vx,Wx" Encoding:"0x66 0x0F 0xE9 /r"/"RM"
     {
         ND_INS_PSUBSW, ND_CAT_SSE, ND_SET_SSE2, 627, 
         ND_MOD_ANY, 
@@ -16293,7 +16353,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1054 Instruction:"PSUBUSB Pq,Qq" Encoding:"NP 0x0F 0xD8 /r"/"RM"
+    // Pos:1058 Instruction:"PSUBUSB Pq,Qq" Encoding:"NP 0x0F 0xD8 /r"/"RM"
     {
         ND_INS_PSUBUSB, ND_CAT_MMX, ND_SET_MMX, 628, 
         ND_MOD_ANY, 
@@ -16308,7 +16368,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1055 Instruction:"PSUBUSB Vx,Wx" Encoding:"0x66 0x0F 0xD8 /r"/"RM"
+    // Pos:1059 Instruction:"PSUBUSB Vx,Wx" Encoding:"0x66 0x0F 0xD8 /r"/"RM"
     {
         ND_INS_PSUBUSB, ND_CAT_SSE, ND_SET_SSE2, 628, 
         ND_MOD_ANY, 
@@ -16323,7 +16383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1056 Instruction:"PSUBUSW Pq,Qq" Encoding:"NP 0x0F 0xD9 /r"/"RM"
+    // Pos:1060 Instruction:"PSUBUSW Pq,Qq" Encoding:"NP 0x0F 0xD9 /r"/"RM"
     {
         ND_INS_PSUBUSW, ND_CAT_MMX, ND_SET_MMX, 629, 
         ND_MOD_ANY, 
@@ -16338,7 +16398,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1057 Instruction:"PSUBUSW Vx,Wx" Encoding:"0x66 0x0F 0xD9 /r"/"RM"
+    // Pos:1061 Instruction:"PSUBUSW Vx,Wx" Encoding:"0x66 0x0F 0xD9 /r"/"RM"
     {
         ND_INS_PSUBUSW, ND_CAT_SSE, ND_SET_SSE2, 629, 
         ND_MOD_ANY, 
@@ -16353,7 +16413,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1058 Instruction:"PSUBW Pq,Qq" Encoding:"NP 0x0F 0xF9 /r"/"RM"
+    // Pos:1062 Instruction:"PSUBW Pq,Qq" Encoding:"NP 0x0F 0xF9 /r"/"RM"
     {
         ND_INS_PSUBW, ND_CAT_MMX, ND_SET_MMX, 630, 
         ND_MOD_ANY, 
@@ -16368,7 +16428,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1059 Instruction:"PSUBW Vx,Wx" Encoding:"0x66 0x0F 0xF9 /r"/"RM"
+    // Pos:1063 Instruction:"PSUBW Vx,Wx" Encoding:"0x66 0x0F 0xF9 /r"/"RM"
     {
         ND_INS_PSUBW, ND_CAT_SSE, ND_SET_SSE2, 630, 
         ND_MOD_ANY, 
@@ -16383,7 +16443,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1060 Instruction:"PSWAPD Pq,Qq" Encoding:"0x0F 0x0F /r 0xBB"/"RM"
+    // Pos:1064 Instruction:"PSWAPD Pq,Qq" Encoding:"0x0F 0x0F /r 0xBB"/"RM"
     {
         ND_INS_PSWAPD, ND_CAT_3DNOW, ND_SET_3DNOW, 631, 
         ND_MOD_ANY, 
@@ -16398,7 +16458,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1061 Instruction:"PTEST Vdq,Wdq" Encoding:"0x66 0x0F 0x38 0x17 /r"/"RM"
+    // Pos:1065 Instruction:"PTEST Vdq,Wdq" Encoding:"0x66 0x0F 0x38 0x17 /r"/"RM"
     {
         ND_INS_PTEST, ND_CAT_SSE, ND_SET_SSE4, 632, 
         ND_MOD_ANY, 
@@ -16414,7 +16474,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1062 Instruction:"PTWRITE Ey" Encoding:"0xF3 0x0F 0xAE /4"/"M"
+    // Pos:1066 Instruction:"PTWRITE Ey" Encoding:"0xF3 0x0F 0xAE /4"/"M"
     {
         ND_INS_PTWRITE, ND_CAT_PTWRITE, ND_SET_PTWRITE, 633, 
         ND_MOD_ANY, 
@@ -16428,7 +16488,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1063 Instruction:"PUNPCKHBW Pq,Qq" Encoding:"NP 0x0F 0x68 /r"/"RM"
+    // Pos:1067 Instruction:"PUNPCKHBW Pq,Qq" Encoding:"NP 0x0F 0x68 /r"/"RM"
     {
         ND_INS_PUNPCKHBW, ND_CAT_MMX, ND_SET_MMX, 634, 
         ND_MOD_ANY, 
@@ -16443,7 +16503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1064 Instruction:"PUNPCKHBW Vx,Wx" Encoding:"0x66 0x0F 0x68 /r"/"RM"
+    // Pos:1068 Instruction:"PUNPCKHBW Vx,Wx" Encoding:"0x66 0x0F 0x68 /r"/"RM"
     {
         ND_INS_PUNPCKHBW, ND_CAT_SSE, ND_SET_SSE2, 634, 
         ND_MOD_ANY, 
@@ -16458,7 +16518,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1065 Instruction:"PUNPCKHDQ Pq,Qq" Encoding:"NP 0x0F 0x6A /r"/"RM"
+    // Pos:1069 Instruction:"PUNPCKHDQ Pq,Qq" Encoding:"NP 0x0F 0x6A /r"/"RM"
     {
         ND_INS_PUNPCKHDQ, ND_CAT_MMX, ND_SET_MMX, 635, 
         ND_MOD_ANY, 
@@ -16473,7 +16533,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1066 Instruction:"PUNPCKHDQ Vx,Wx" Encoding:"0x66 0x0F 0x6A /r"/"RM"
+    // Pos:1070 Instruction:"PUNPCKHDQ Vx,Wx" Encoding:"0x66 0x0F 0x6A /r"/"RM"
     {
         ND_INS_PUNPCKHDQ, ND_CAT_SSE, ND_SET_SSE2, 635, 
         ND_MOD_ANY, 
@@ -16488,7 +16548,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1067 Instruction:"PUNPCKHQDQ Vx,Wx" Encoding:"0x66 0x0F 0x6D /r"/"RM"
+    // Pos:1071 Instruction:"PUNPCKHQDQ Vx,Wx" Encoding:"0x66 0x0F 0x6D /r"/"RM"
     {
         ND_INS_PUNPCKHQDQ, ND_CAT_SSE, ND_SET_SSE2, 636, 
         ND_MOD_ANY, 
@@ -16503,7 +16563,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1068 Instruction:"PUNPCKHWD Pq,Qq" Encoding:"NP 0x0F 0x69 /r"/"RM"
+    // Pos:1072 Instruction:"PUNPCKHWD Pq,Qq" Encoding:"NP 0x0F 0x69 /r"/"RM"
     {
         ND_INS_PUNPCKHWD, ND_CAT_MMX, ND_SET_MMX, 637, 
         ND_MOD_ANY, 
@@ -16518,7 +16578,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1069 Instruction:"PUNPCKHWD Vx,Wx" Encoding:"0x66 0x0F 0x69 /r"/"RM"
+    // Pos:1073 Instruction:"PUNPCKHWD Vx,Wx" Encoding:"0x66 0x0F 0x69 /r"/"RM"
     {
         ND_INS_PUNPCKHWD, ND_CAT_SSE, ND_SET_SSE2, 637, 
         ND_MOD_ANY, 
@@ -16533,7 +16593,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1070 Instruction:"PUNPCKLBW Pq,Qd" Encoding:"NP 0x0F 0x60 /r"/"RM"
+    // Pos:1074 Instruction:"PUNPCKLBW Pq,Qd" Encoding:"NP 0x0F 0x60 /r"/"RM"
     {
         ND_INS_PUNPCKLBW, ND_CAT_MMX, ND_SET_MMX, 638, 
         ND_MOD_ANY, 
@@ -16548,7 +16608,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1071 Instruction:"PUNPCKLBW Vx,Wx" Encoding:"0x66 0x0F 0x60 /r"/"RM"
+    // Pos:1075 Instruction:"PUNPCKLBW Vx,Wx" Encoding:"0x66 0x0F 0x60 /r"/"RM"
     {
         ND_INS_PUNPCKLBW, ND_CAT_SSE, ND_SET_SSE2, 638, 
         ND_MOD_ANY, 
@@ -16563,7 +16623,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1072 Instruction:"PUNPCKLDQ Pq,Qd" Encoding:"NP 0x0F 0x62 /r"/"RM"
+    // Pos:1076 Instruction:"PUNPCKLDQ Pq,Qd" Encoding:"NP 0x0F 0x62 /r"/"RM"
     {
         ND_INS_PUNPCKLDQ, ND_CAT_MMX, ND_SET_MMX, 639, 
         ND_MOD_ANY, 
@@ -16578,7 +16638,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1073 Instruction:"PUNPCKLDQ Vx,Wx" Encoding:"0x66 0x0F 0x62 /r"/"RM"
+    // Pos:1077 Instruction:"PUNPCKLDQ Vx,Wx" Encoding:"0x66 0x0F 0x62 /r"/"RM"
     {
         ND_INS_PUNPCKLDQ, ND_CAT_SSE, ND_SET_SSE2, 639, 
         ND_MOD_ANY, 
@@ -16593,7 +16653,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1074 Instruction:"PUNPCKLQDQ Vx,Wx" Encoding:"0x66 0x0F 0x6C /r"/"RM"
+    // Pos:1078 Instruction:"PUNPCKLQDQ Vx,Wx" Encoding:"0x66 0x0F 0x6C /r"/"RM"
     {
         ND_INS_PUNPCKLQDQ, ND_CAT_SSE, ND_SET_SSE2, 640, 
         ND_MOD_ANY, 
@@ -16608,7 +16668,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1075 Instruction:"PUNPCKLWD Pq,Qd" Encoding:"NP 0x0F 0x61 /r"/"RM"
+    // Pos:1079 Instruction:"PUNPCKLWD Pq,Qd" Encoding:"NP 0x0F 0x61 /r"/"RM"
     {
         ND_INS_PUNPCKLWD, ND_CAT_MMX, ND_SET_MMX, 641, 
         ND_MOD_ANY, 
@@ -16623,7 +16683,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1076 Instruction:"PUNPCKLWD Vx,Wx" Encoding:"0x66 0x0F 0x61 /r"/"RM"
+    // Pos:1080 Instruction:"PUNPCKLWD Vx,Wx" Encoding:"0x66 0x0F 0x61 /r"/"RM"
     {
         ND_INS_PUNPCKLWD, ND_CAT_SSE, ND_SET_SSE2, 641, 
         ND_MOD_ANY, 
@@ -16638,7 +16698,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1077 Instruction:"PUSH FS" Encoding:"0x0F 0xA0"/""
+    // Pos:1081 Instruction:"PUSH FS" Encoding:"0x0F 0xA0"/""
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16653,7 +16713,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1078 Instruction:"PUSH GS" Encoding:"0x0F 0xA8"/""
+    // Pos:1082 Instruction:"PUSH GS" Encoding:"0x0F 0xA8"/""
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16668,7 +16728,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1079 Instruction:"PUSH ES" Encoding:"0x06"/""
+    // Pos:1083 Instruction:"PUSH ES" Encoding:"0x06"/""
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16683,7 +16743,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1080 Instruction:"PUSH CS" Encoding:"0x0E"/""
+    // Pos:1084 Instruction:"PUSH CS" Encoding:"0x0E"/""
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16698,7 +16758,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1081 Instruction:"PUSH SS" Encoding:"0x16"/""
+    // Pos:1085 Instruction:"PUSH SS" Encoding:"0x16"/""
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16713,7 +16773,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1082 Instruction:"PUSH DS" Encoding:"0x1E"/""
+    // Pos:1086 Instruction:"PUSH DS" Encoding:"0x1E"/""
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16728,7 +16788,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1083 Instruction:"PUSH Zv" Encoding:"0x50"/"O"
+    // Pos:1087 Instruction:"PUSH Zv" Encoding:"0x50"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16743,7 +16803,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1084 Instruction:"PUSH Zv" Encoding:"0x51"/"O"
+    // Pos:1088 Instruction:"PUSH Zv" Encoding:"0x51"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16758,7 +16818,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1085 Instruction:"PUSH Zv" Encoding:"0x52"/"O"
+    // Pos:1089 Instruction:"PUSH Zv" Encoding:"0x52"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16773,7 +16833,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1086 Instruction:"PUSH Zv" Encoding:"0x53"/"O"
+    // Pos:1090 Instruction:"PUSH Zv" Encoding:"0x53"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16788,7 +16848,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1087 Instruction:"PUSH Zv" Encoding:"0x54"/"O"
+    // Pos:1091 Instruction:"PUSH Zv" Encoding:"0x54"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16803,7 +16863,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1088 Instruction:"PUSH Zv" Encoding:"0x55"/"O"
+    // Pos:1092 Instruction:"PUSH Zv" Encoding:"0x55"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16818,7 +16878,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1089 Instruction:"PUSH Zv" Encoding:"0x56"/"O"
+    // Pos:1093 Instruction:"PUSH Zv" Encoding:"0x56"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16833,7 +16893,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1090 Instruction:"PUSH Zv" Encoding:"0x57"/"O"
+    // Pos:1094 Instruction:"PUSH Zv" Encoding:"0x57"/"O"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16848,7 +16908,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1091 Instruction:"PUSH Iz" Encoding:"0x68 iz"/"I"
+    // Pos:1095 Instruction:"PUSH Iz" Encoding:"0x68 iz"/"I"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16863,7 +16923,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1092 Instruction:"PUSH Ib" Encoding:"0x6A ib"/"I"
+    // Pos:1096 Instruction:"PUSH Ib" Encoding:"0x6A ib"/"I"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16878,7 +16938,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1093 Instruction:"PUSH Ev" Encoding:"0xFF /6"/"M"
+    // Pos:1097 Instruction:"PUSH Ev" Encoding:"0xFF /6"/"M"
     {
         ND_INS_PUSH, ND_CAT_PUSH, ND_SET_I86, 642, 
         ND_MOD_ANY, 
@@ -16893,7 +16953,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1094 Instruction:"PUSHA" Encoding:"ds16 0x60"/""
+    // Pos:1098 Instruction:"PUSHA" Encoding:"ds16 0x60"/""
     {
         ND_INS_PUSHA, ND_CAT_PUSH, ND_SET_I386, 643, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -16908,7 +16968,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1095 Instruction:"PUSHAD" Encoding:"ds32 0x60"/""
+    // Pos:1099 Instruction:"PUSHAD" Encoding:"ds32 0x60"/""
     {
         ND_INS_PUSHAD, ND_CAT_PUSH, ND_SET_I386, 644, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -16923,7 +16983,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1096 Instruction:"PUSHFD Fv" Encoding:"ds32 0x9C"/""
+    // Pos:1100 Instruction:"PUSHFD Fv" Encoding:"ds32 0x9C"/""
     {
         ND_INS_PUSHF, ND_CAT_PUSH, ND_SET_I86, 645, 
         ND_MOD_ANY, 
@@ -16938,7 +16998,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1097 Instruction:"PUSHFQ Fv" Encoding:"dds64 0x9C"/""
+    // Pos:1101 Instruction:"PUSHFQ Fv" Encoding:"dds64 0x9C"/""
     {
         ND_INS_PUSHF, ND_CAT_PUSH, ND_SET_I86, 646, 
         ND_MOD_ANY, 
@@ -16953,7 +17013,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1098 Instruction:"PUSHFW Fv" Encoding:"ds16 0x9C"/""
+    // Pos:1102 Instruction:"PUSHFW Fv" Encoding:"ds16 0x9C"/""
     {
         ND_INS_PUSHF, ND_CAT_PUSH, ND_SET_I86, 647, 
         ND_MOD_ANY, 
@@ -16968,7 +17028,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1099 Instruction:"PVALIDATE" Encoding:"0xF2 0x0F 0x01 /0xFF"/""
+    // Pos:1103 Instruction:"PVALIDATE" Encoding:"0xF2 0x0F 0x01 /0xFF"/""
     {
         ND_INS_PVALIDATE, ND_CAT_SYSTEM, ND_SET_SNP, 648, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -16985,7 +17045,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1100 Instruction:"PXOR Pq,Qq" Encoding:"NP 0x0F 0xEF /r"/"RM"
+    // Pos:1104 Instruction:"PXOR Pq,Qq" Encoding:"NP 0x0F 0xEF /r"/"RM"
     {
         ND_INS_PXOR, ND_CAT_LOGICAL, ND_SET_MMX, 649, 
         ND_MOD_ANY, 
@@ -17000,7 +17060,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1101 Instruction:"PXOR Vx,Wx" Encoding:"0x66 0x0F 0xEF /r"/"RM"
+    // Pos:1105 Instruction:"PXOR Vx,Wx" Encoding:"0x66 0x0F 0xEF /r"/"RM"
     {
         ND_INS_PXOR, ND_CAT_LOGICAL, ND_SET_SSE2, 649, 
         ND_MOD_ANY, 
@@ -17015,7 +17075,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1102 Instruction:"RCL Eb,Ib" Encoding:"0xC0 /2 ib"/"MI"
+    // Pos:1106 Instruction:"RCL Eb,Ib" Encoding:"0xC0 /2 ib"/"MI"
     {
         ND_INS_RCL, ND_CAT_ROTATE, ND_SET_I86, 650, 
         ND_MOD_ANY, 
@@ -17031,7 +17091,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1103 Instruction:"RCL Ev,Ib" Encoding:"0xC1 /2 ib"/"MI"
+    // Pos:1107 Instruction:"RCL Ev,Ib" Encoding:"0xC1 /2 ib"/"MI"
     {
         ND_INS_RCL, ND_CAT_ROTATE, ND_SET_I86, 650, 
         ND_MOD_ANY, 
@@ -17047,7 +17107,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1104 Instruction:"RCL Eb,1" Encoding:"0xD0 /2"/"M1"
+    // Pos:1108 Instruction:"RCL Eb,1" Encoding:"0xD0 /2"/"M1"
     {
         ND_INS_RCL, ND_CAT_ROTATE, ND_SET_I86, 650, 
         ND_MOD_ANY, 
@@ -17063,7 +17123,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1105 Instruction:"RCL Ev,1" Encoding:"0xD1 /2"/"M1"
+    // Pos:1109 Instruction:"RCL Ev,1" Encoding:"0xD1 /2"/"M1"
     {
         ND_INS_RCL, ND_CAT_ROTATE, ND_SET_I86, 650, 
         ND_MOD_ANY, 
@@ -17079,7 +17139,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1106 Instruction:"RCL Eb,CL" Encoding:"0xD2 /2"/"MC"
+    // Pos:1110 Instruction:"RCL Eb,CL" Encoding:"0xD2 /2"/"MC"
     {
         ND_INS_RCL, ND_CAT_ROTATE, ND_SET_I86, 650, 
         ND_MOD_ANY, 
@@ -17095,7 +17155,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1107 Instruction:"RCL Ev,CL" Encoding:"0xD3 /2"/"MC"
+    // Pos:1111 Instruction:"RCL Ev,CL" Encoding:"0xD3 /2"/"MC"
     {
         ND_INS_RCL, ND_CAT_ROTATE, ND_SET_I86, 650, 
         ND_MOD_ANY, 
@@ -17111,7 +17171,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1108 Instruction:"RCPPS Vps,Wps" Encoding:"NP 0x0F 0x53 /r"/"RM"
+    // Pos:1112 Instruction:"RCPPS Vps,Wps" Encoding:"NP 0x0F 0x53 /r"/"RM"
     {
         ND_INS_RCPPS, ND_CAT_SSE, ND_SET_SSE, 651, 
         ND_MOD_ANY, 
@@ -17126,7 +17186,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1109 Instruction:"RCPSS Vss,Wss" Encoding:"0xF3 0x0F 0x53 /r"/"RM"
+    // Pos:1113 Instruction:"RCPSS Vss,Wss" Encoding:"0xF3 0x0F 0x53 /r"/"RM"
     {
         ND_INS_RCPSS, ND_CAT_SSE, ND_SET_SSE, 652, 
         ND_MOD_ANY, 
@@ -17141,7 +17201,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1110 Instruction:"RCR Eb,Ib" Encoding:"0xC0 /3 ib"/"MI"
+    // Pos:1114 Instruction:"RCR Eb,Ib" Encoding:"0xC0 /3 ib"/"MI"
     {
         ND_INS_RCR, ND_CAT_ROTATE, ND_SET_I86, 653, 
         ND_MOD_ANY, 
@@ -17157,7 +17217,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1111 Instruction:"RCR Ev,Ib" Encoding:"0xC1 /3 ib"/"MI"
+    // Pos:1115 Instruction:"RCR Ev,Ib" Encoding:"0xC1 /3 ib"/"MI"
     {
         ND_INS_RCR, ND_CAT_ROTATE, ND_SET_I86, 653, 
         ND_MOD_ANY, 
@@ -17173,7 +17233,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1112 Instruction:"RCR Eb,1" Encoding:"0xD0 /3"/"M1"
+    // Pos:1116 Instruction:"RCR Eb,1" Encoding:"0xD0 /3"/"M1"
     {
         ND_INS_RCR, ND_CAT_ROTATE, ND_SET_I86, 653, 
         ND_MOD_ANY, 
@@ -17189,7 +17249,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1113 Instruction:"RCR Ev,1" Encoding:"0xD1 /3"/"M1"
+    // Pos:1117 Instruction:"RCR Ev,1" Encoding:"0xD1 /3"/"M1"
     {
         ND_INS_RCR, ND_CAT_ROTATE, ND_SET_I86, 653, 
         ND_MOD_ANY, 
@@ -17205,7 +17265,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1114 Instruction:"RCR Eb,CL" Encoding:"0xD2 /3"/"MC"
+    // Pos:1118 Instruction:"RCR Eb,CL" Encoding:"0xD2 /3"/"MC"
     {
         ND_INS_RCR, ND_CAT_ROTATE, ND_SET_I86, 653, 
         ND_MOD_ANY, 
@@ -17221,7 +17281,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1115 Instruction:"RCR Ev,CL" Encoding:"0xD3 /3"/"MC"
+    // Pos:1119 Instruction:"RCR Ev,CL" Encoding:"0xD3 /3"/"MC"
     {
         ND_INS_RCR, ND_CAT_ROTATE, ND_SET_I86, 653, 
         ND_MOD_ANY, 
@@ -17237,7 +17297,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1116 Instruction:"RDFSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /0:reg"/"M"
+    // Pos:1120 Instruction:"RDFSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /0:reg"/"M"
     {
         ND_INS_RDFSBASE, ND_CAT_RDWRFSGS, ND_SET_RDWRFSGS, 654, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -17252,7 +17312,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1117 Instruction:"RDGSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /1:reg"/"M"
+    // Pos:1121 Instruction:"RDGSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /1:reg"/"M"
     {
         ND_INS_RDGSBASE, ND_CAT_RDWRFSGS, ND_SET_RDWRFSGS, 655, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -17267,7 +17327,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1118 Instruction:"RDMSR" Encoding:"0x0F 0x32"/""
+    // Pos:1122 Instruction:"RDMSR" Encoding:"0x0F 0x32"/""
     {
         ND_INS_RDMSR, ND_CAT_SYSTEM, ND_SET_PENTIUMREAL, 656, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -17284,7 +17344,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1119 Instruction:"RDPID Ryf" Encoding:"0xF3 0x0F 0xC7 /7:reg"/"M"
+    // Pos:1123 Instruction:"RDPID Ryf" Encoding:"0xF3 0x0F 0xC7 /7:reg"/"M"
     {
         ND_INS_RDPID, ND_CAT_RDPID, ND_SET_RDPID, 657, 
         ND_MOD_ANY, 
@@ -17299,7 +17359,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1120 Instruction:"RDPKRU" Encoding:"NP 0x0F 0x01 /0xEE"/""
+    // Pos:1124 Instruction:"RDPKRU" Encoding:"NP 0x0F 0x01 /0xEE"/""
     {
         ND_INS_RDPKRU, ND_CAT_MISC, ND_SET_PKU, 658, 
         ND_MOD_ANY, 
@@ -17316,7 +17376,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1121 Instruction:"RDPMC" Encoding:"0x0F 0x33"/""
+    // Pos:1125 Instruction:"RDPMC" Encoding:"0x0F 0x33"/""
     {
         ND_INS_RDPMC, ND_CAT_SYSTEM, ND_SET_RDPMC, 659, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -17333,7 +17393,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1122 Instruction:"RDPRU" Encoding:"0x0F 0x01 /0xFD"/""
+    // Pos:1126 Instruction:"RDPRU" Encoding:"0x0F 0x01 /0xFD"/""
     {
         ND_INS_RDPRU, ND_CAT_MISC, ND_SET_RDPRU, 660, 
         ND_MOD_ANY, 
@@ -17350,7 +17410,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1123 Instruction:"RDRAND Rv" Encoding:"0x0F 0xC7 /6:reg"/"M"
+    // Pos:1127 Instruction:"RDRAND Rv" Encoding:"0x0F 0xC7 /6:reg"/"M"
     {
         ND_INS_RDRAND, ND_CAT_RDRAND, ND_SET_RDRAND, 661, 
         ND_MOD_ANY, 
@@ -17365,7 +17425,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1124 Instruction:"RDRAND Rv" Encoding:"0x66 0x0F 0xC7 /6:reg"/"M"
+    // Pos:1128 Instruction:"RDRAND Rv" Encoding:"0x66 0x0F 0xC7 /6:reg"/"M"
     {
         ND_INS_RDRAND, ND_CAT_RDRAND, ND_SET_RDRAND, 661, 
         ND_MOD_ANY, 
@@ -17380,7 +17440,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1125 Instruction:"RDSEED Rv" Encoding:"0x0F 0xC7 /7:reg"/"M"
+    // Pos:1129 Instruction:"RDSEED Rv" Encoding:"0x0F 0xC7 /7:reg"/"M"
     {
         ND_INS_RDSEED, ND_CAT_RDSEED, ND_SET_RDSEED, 662, 
         ND_MOD_ANY, 
@@ -17395,7 +17455,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1126 Instruction:"RDSEED Rv" Encoding:"0x66 0x0F 0xC7 /7:reg"/"M"
+    // Pos:1130 Instruction:"RDSEED Rv" Encoding:"0x66 0x0F 0xC7 /7:reg"/"M"
     {
         ND_INS_RDSEED, ND_CAT_RDSEED, ND_SET_RDSEED, 662, 
         ND_MOD_ANY, 
@@ -17410,7 +17470,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1127 Instruction:"RDSHR Ed" Encoding:"cyrix 0x0F 0x36 /r"/"M"
+    // Pos:1131 Instruction:"RDSHR Ed" Encoding:"cyrix 0x0F 0x36 /r"/"M"
     {
         ND_INS_RDSHR, ND_CAT_SYSTEM, ND_SET_CYRIX, 663, 
         ND_MOD_ANY, 
@@ -17424,7 +17484,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1128 Instruction:"RDSSPD Rd" Encoding:"a0xF3 0x0F 0x1E /1:reg"/"M"
+    // Pos:1132 Instruction:"RDSSPD Rd" Encoding:"cet a0xF3 0x0F 0x1E /1:reg"/"M"
     {
         ND_INS_RSSSP, ND_CAT_CET, ND_SET_CET_SS, 664, 
         ND_MOD_ANY, 
@@ -17439,7 +17499,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1129 Instruction:"RDSSPQ Rq" Encoding:"a0xF3 rexw 0x0F 0x1E /1:reg"/"M"
+    // Pos:1133 Instruction:"RDSSPQ Rq" Encoding:"cet a0xF3 rexw 0x0F 0x1E /1:reg"/"M"
     {
         ND_INS_RSSSP, ND_CAT_CET, ND_SET_CET_SS, 665, 
         ND_MOD_ANY, 
@@ -17454,7 +17514,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1130 Instruction:"RDTSC" Encoding:"0x0F 0x31"/""
+    // Pos:1134 Instruction:"RDTSC" Encoding:"0x0F 0x31"/""
     {
         ND_INS_RDTSC, ND_CAT_SYSTEM, ND_SET_PENTIUMREAL, 666, 
         ND_MOD_ANY, 
@@ -17470,7 +17530,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1131 Instruction:"RDTSCP" Encoding:"0x0F 0x01 /0xF9"/""
+    // Pos:1135 Instruction:"RDTSCP" Encoding:"0x0F 0x01 /0xF9"/""
     {
         ND_INS_RDTSCP, ND_CAT_SYSTEM, ND_SET_RDTSCP, 667, 
         ND_MOD_ANY, 
@@ -17488,7 +17548,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1132 Instruction:"RETF Iw" Encoding:"0xCA iw"/"I"
+    // Pos:1136 Instruction:"RETF Iw" Encoding:"0xCA iw"/"I"
     {
         ND_INS_RETF, ND_CAT_RET, ND_SET_I86, 668, 
         ND_MOD_ANY, 
@@ -17506,7 +17566,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1133 Instruction:"RETF" Encoding:"0xCB"/""
+    // Pos:1137 Instruction:"RETF" Encoding:"0xCB"/""
     {
         ND_INS_RETF, ND_CAT_RET, ND_SET_I86, 668, 
         ND_MOD_ANY, 
@@ -17523,7 +17583,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1134 Instruction:"RETN Iw" Encoding:"0xC2 iw"/"I"
+    // Pos:1138 Instruction:"RETN Iw" Encoding:"0xC2 iw"/"I"
     {
         ND_INS_RETN, ND_CAT_RET, ND_SET_I86, 669, 
         ND_MOD_ANY, 
@@ -17541,7 +17601,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1135 Instruction:"RETN" Encoding:"0xC3"/""
+    // Pos:1139 Instruction:"RETN" Encoding:"0xC3"/""
     {
         ND_INS_RETN, ND_CAT_RET, ND_SET_I86, 669, 
         ND_MOD_ANY, 
@@ -17557,7 +17617,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1136 Instruction:"RMPADJUST" Encoding:"0xF3 0x0F 0x01 /0xFE"/""
+    // Pos:1140 Instruction:"RMPADJUST" Encoding:"0xF3 0x0F 0x01 /0xFE"/""
     {
         ND_INS_RMPADJUST, ND_CAT_SYSTEM, ND_SET_SNP, 670, 
         ND_MOD_R0|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -17574,7 +17634,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1137 Instruction:"RMPUPDATE" Encoding:"0xF2 0x0F 0x01 /0xFE"/""
+    // Pos:1141 Instruction:"RMPUPDATE" Encoding:"0xF2 0x0F 0x01 /0xFE"/""
     {
         ND_INS_RMPUPDATE, ND_CAT_SYSTEM, ND_SET_SNP, 671, 
         ND_MOD_R0|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -17590,7 +17650,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1138 Instruction:"ROL Eb,Ib" Encoding:"0xC0 /0 ib"/"MI"
+    // Pos:1142 Instruction:"ROL Eb,Ib" Encoding:"0xC0 /0 ib"/"MI"
     {
         ND_INS_ROL, ND_CAT_ROTATE, ND_SET_I86, 672, 
         ND_MOD_ANY, 
@@ -17606,7 +17666,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1139 Instruction:"ROL Ev,Ib" Encoding:"0xC1 /0 ib"/"MI"
+    // Pos:1143 Instruction:"ROL Ev,Ib" Encoding:"0xC1 /0 ib"/"MI"
     {
         ND_INS_ROL, ND_CAT_ROTATE, ND_SET_I86, 672, 
         ND_MOD_ANY, 
@@ -17622,7 +17682,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1140 Instruction:"ROL Eb,1" Encoding:"0xD0 /0"/"M1"
+    // Pos:1144 Instruction:"ROL Eb,1" Encoding:"0xD0 /0"/"M1"
     {
         ND_INS_ROL, ND_CAT_ROTATE, ND_SET_I86, 672, 
         ND_MOD_ANY, 
@@ -17638,7 +17698,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1141 Instruction:"ROL Ev,1" Encoding:"0xD1 /0"/"M1"
+    // Pos:1145 Instruction:"ROL Ev,1" Encoding:"0xD1 /0"/"M1"
     {
         ND_INS_ROL, ND_CAT_ROTATE, ND_SET_I86, 672, 
         ND_MOD_ANY, 
@@ -17654,7 +17714,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1142 Instruction:"ROL Eb,CL" Encoding:"0xD2 /0"/"MC"
+    // Pos:1146 Instruction:"ROL Eb,CL" Encoding:"0xD2 /0"/"MC"
     {
         ND_INS_ROL, ND_CAT_ROTATE, ND_SET_I86, 672, 
         ND_MOD_ANY, 
@@ -17670,7 +17730,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1143 Instruction:"ROL Ev,CL" Encoding:"0xD3 /0"/"MC"
+    // Pos:1147 Instruction:"ROL Ev,CL" Encoding:"0xD3 /0"/"MC"
     {
         ND_INS_ROL, ND_CAT_ROTATE, ND_SET_I86, 672, 
         ND_MOD_ANY, 
@@ -17686,7 +17746,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1144 Instruction:"ROR Eb,Ib" Encoding:"0xC0 /1 ib"/"MI"
+    // Pos:1148 Instruction:"ROR Eb,Ib" Encoding:"0xC0 /1 ib"/"MI"
     {
         ND_INS_ROR, ND_CAT_ROTATE, ND_SET_I86, 673, 
         ND_MOD_ANY, 
@@ -17702,7 +17762,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1145 Instruction:"ROR Ev,Ib" Encoding:"0xC1 /1 ib"/"MI"
+    // Pos:1149 Instruction:"ROR Ev,Ib" Encoding:"0xC1 /1 ib"/"MI"
     {
         ND_INS_ROR, ND_CAT_ROTATE, ND_SET_I86, 673, 
         ND_MOD_ANY, 
@@ -17718,7 +17778,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1146 Instruction:"ROR Eb,1" Encoding:"0xD0 /1"/"M1"
+    // Pos:1150 Instruction:"ROR Eb,1" Encoding:"0xD0 /1"/"M1"
     {
         ND_INS_ROR, ND_CAT_ROTATE, ND_SET_I86, 673, 
         ND_MOD_ANY, 
@@ -17734,7 +17794,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1147 Instruction:"ROR Ev,1" Encoding:"0xD1 /1"/"M1"
+    // Pos:1151 Instruction:"ROR Ev,1" Encoding:"0xD1 /1"/"M1"
     {
         ND_INS_ROR, ND_CAT_ROTATE, ND_SET_I86, 673, 
         ND_MOD_ANY, 
@@ -17750,7 +17810,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1148 Instruction:"ROR Eb,CL" Encoding:"0xD2 /1"/"MC"
+    // Pos:1152 Instruction:"ROR Eb,CL" Encoding:"0xD2 /1"/"MC"
     {
         ND_INS_ROR, ND_CAT_ROTATE, ND_SET_I86, 673, 
         ND_MOD_ANY, 
@@ -17766,7 +17826,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1149 Instruction:"ROR Ev,CL" Encoding:"0xD3 /1"/"MC"
+    // Pos:1153 Instruction:"ROR Ev,CL" Encoding:"0xD3 /1"/"MC"
     {
         ND_INS_ROR, ND_CAT_ROTATE, ND_SET_I86, 673, 
         ND_MOD_ANY, 
@@ -17782,7 +17842,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1150 Instruction:"RORX Gy,Ey,Ib" Encoding:"vex m:3 p:3 l:0 w:x 0xF0 /r ib"/"RMI"
+    // Pos:1154 Instruction:"RORX Gy,Ey,Ib" Encoding:"vex m:3 p:3 l:0 w:x 0xF0 /r ib"/"RMI"
     {
         ND_INS_RORX, ND_CAT_BMI2, ND_SET_BMI2, 674, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -17798,7 +17858,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1151 Instruction:"ROUNDPD Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x09 /r ib"/"RMI"
+    // Pos:1155 Instruction:"ROUNDPD Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x09 /r ib"/"RMI"
     {
         ND_INS_ROUNDPD, ND_CAT_SSE, ND_SET_SSE4, 675, 
         ND_MOD_ANY, 
@@ -17814,7 +17874,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1152 Instruction:"ROUNDPS Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x08 /r ib"/"RMI"
+    // Pos:1156 Instruction:"ROUNDPS Vx,Wx,Ib" Encoding:"0x66 0x0F 0x3A 0x08 /r ib"/"RMI"
     {
         ND_INS_ROUNDPS, ND_CAT_SSE, ND_SET_SSE4, 676, 
         ND_MOD_ANY, 
@@ -17830,7 +17890,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1153 Instruction:"ROUNDSD Vsd,Wsd,Ib" Encoding:"0x66 0x0F 0x3A 0x0B /r ib"/"RMI"
+    // Pos:1157 Instruction:"ROUNDSD Vsd,Wsd,Ib" Encoding:"0x66 0x0F 0x3A 0x0B /r ib"/"RMI"
     {
         ND_INS_ROUNDSD, ND_CAT_SSE, ND_SET_SSE4, 677, 
         ND_MOD_ANY, 
@@ -17846,7 +17906,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1154 Instruction:"ROUNDSS Vss,Wss,Ib" Encoding:"0x66 0x0F 0x3A 0x0A /r ib"/"RMI"
+    // Pos:1158 Instruction:"ROUNDSS Vss,Wss,Ib" Encoding:"0x66 0x0F 0x3A 0x0A /r ib"/"RMI"
     {
         ND_INS_ROUNDSS, ND_CAT_SSE, ND_SET_SSE4, 678, 
         ND_MOD_ANY, 
@@ -17862,7 +17922,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1155 Instruction:"RSDC Sw,Ms" Encoding:"cyrix 0x0F 0x79 /r:mem"/"RM"
+    // Pos:1159 Instruction:"RSDC Sw,Ms" Encoding:"cyrix 0x0F 0x79 /r:mem"/"RM"
     {
         ND_INS_RSDC, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 679, 
         ND_MOD_ANY, 
@@ -17877,7 +17937,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1156 Instruction:"RSLDT Ms" Encoding:"cyrix 0x0F 0x7B /r:mem"/"M"
+    // Pos:1160 Instruction:"RSLDT Ms" Encoding:"cyrix 0x0F 0x7B /r:mem"/"M"
     {
         ND_INS_RSLDT, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 680, 
         ND_MOD_ANY, 
@@ -17891,7 +17951,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1157 Instruction:"RSM" Encoding:"0x0F 0xAA"/""
+    // Pos:1161 Instruction:"RSM" Encoding:"0x0F 0xAA"/""
     {
         ND_INS_RSM, ND_CAT_SYSRET, ND_SET_I486, 681, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -17907,7 +17967,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1158 Instruction:"RSQRTPS Vps,Wps" Encoding:"NP 0x0F 0x52 /r"/"RM"
+    // Pos:1162 Instruction:"RSQRTPS Vps,Wps" Encoding:"NP 0x0F 0x52 /r"/"RM"
     {
         ND_INS_RSQRTPS, ND_CAT_SSE, ND_SET_SSE, 682, 
         ND_MOD_ANY, 
@@ -17922,7 +17982,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1159 Instruction:"RSQRTSS Vss,Wss" Encoding:"0xF3 0x0F 0x52 /r"/"RM"
+    // Pos:1163 Instruction:"RSQRTSS Vss,Wss" Encoding:"0xF3 0x0F 0x52 /r"/"RM"
     {
         ND_INS_RSQRTSS, ND_CAT_SSE, ND_SET_SSE, 683, 
         ND_MOD_ANY, 
@@ -17937,7 +17997,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1160 Instruction:"RSTORSSP Mq" Encoding:"0xF3 0x0F 0x01 /5:mem"/"M"
+    // Pos:1164 Instruction:"RSTORSSP Mq" Encoding:"0xF3 0x0F 0x01 /5:mem"/"M"
     {
         ND_INS_RSTORSSP, ND_CAT_CET, ND_SET_CET_SS, 684, 
         ND_MOD_ANY, 
@@ -17952,7 +18012,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1161 Instruction:"RSTS Ms" Encoding:"cyrix 0x0F 0x7D /r:mem"/"M"
+    // Pos:1165 Instruction:"RSTS Ms" Encoding:"cyrix 0x0F 0x7D /r:mem"/"M"
     {
         ND_INS_RSTS, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 685, 
         ND_MOD_ANY, 
@@ -17966,7 +18026,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1162 Instruction:"SAHF" Encoding:"0x9E"/""
+    // Pos:1166 Instruction:"SAHF" Encoding:"0x9E"/""
     {
         ND_INS_SAHF, ND_CAT_FLAGOP, ND_SET_I86, 686, 
         ND_MOD_ANY, 
@@ -17981,7 +18041,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1163 Instruction:"SAL Eb,Ib" Encoding:"0xC0 /6 ib"/"MI"
+    // Pos:1167 Instruction:"SAL Eb,Ib" Encoding:"0xC0 /6 ib"/"MI"
     {
         ND_INS_SAL, ND_CAT_SHIFT, ND_SET_I86, 687, 
         ND_MOD_ANY, 
@@ -17997,7 +18057,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1164 Instruction:"SAL Ev,Ib" Encoding:"0xC1 /6 ib"/"MI"
+    // Pos:1168 Instruction:"SAL Ev,Ib" Encoding:"0xC1 /6 ib"/"MI"
     {
         ND_INS_SAL, ND_CAT_SHIFT, ND_SET_I86, 687, 
         ND_MOD_ANY, 
@@ -18013,7 +18073,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1165 Instruction:"SAL Eb,1" Encoding:"0xD0 /6"/"M1"
+    // Pos:1169 Instruction:"SAL Eb,1" Encoding:"0xD0 /6"/"M1"
     {
         ND_INS_SAL, ND_CAT_SHIFT, ND_SET_I86, 687, 
         ND_MOD_ANY, 
@@ -18029,7 +18089,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1166 Instruction:"SAL Ev,1" Encoding:"0xD1 /6"/"M1"
+    // Pos:1170 Instruction:"SAL Ev,1" Encoding:"0xD1 /6"/"M1"
     {
         ND_INS_SAL, ND_CAT_SHIFT, ND_SET_I86, 687, 
         ND_MOD_ANY, 
@@ -18045,7 +18105,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1167 Instruction:"SAL Eb,CL" Encoding:"0xD2 /6"/"MC"
+    // Pos:1171 Instruction:"SAL Eb,CL" Encoding:"0xD2 /6"/"MC"
     {
         ND_INS_SAL, ND_CAT_SHIFT, ND_SET_I86, 687, 
         ND_MOD_ANY, 
@@ -18061,7 +18121,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1168 Instruction:"SAL Ev,CL" Encoding:"0xD3 /6"/"MC"
+    // Pos:1172 Instruction:"SAL Ev,CL" Encoding:"0xD3 /6"/"MC"
     {
         ND_INS_SAL, ND_CAT_SHIFT, ND_SET_I86, 687, 
         ND_MOD_ANY, 
@@ -18077,7 +18137,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1169 Instruction:"SALC" Encoding:"0xD6"/""
+    // Pos:1173 Instruction:"SALC" Encoding:"0xD6"/""
     {
         ND_INS_SALC, ND_CAT_FLAGOP, ND_SET_I86, 688, 
         ND_MOD_ANY, 
@@ -18092,7 +18152,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1170 Instruction:"SAR Eb,Ib" Encoding:"0xC0 /7 ib"/"MI"
+    // Pos:1174 Instruction:"SAR Eb,Ib" Encoding:"0xC0 /7 ib"/"MI"
     {
         ND_INS_SAR, ND_CAT_SHIFT, ND_SET_I86, 689, 
         ND_MOD_ANY, 
@@ -18108,7 +18168,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1171 Instruction:"SAR Ev,Ib" Encoding:"0xC1 /7 ib"/"MI"
+    // Pos:1175 Instruction:"SAR Ev,Ib" Encoding:"0xC1 /7 ib"/"MI"
     {
         ND_INS_SAR, ND_CAT_SHIFT, ND_SET_I86, 689, 
         ND_MOD_ANY, 
@@ -18124,7 +18184,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1172 Instruction:"SAR Eb,1" Encoding:"0xD0 /7"/"M1"
+    // Pos:1176 Instruction:"SAR Eb,1" Encoding:"0xD0 /7"/"M1"
     {
         ND_INS_SAR, ND_CAT_SHIFT, ND_SET_I86, 689, 
         ND_MOD_ANY, 
@@ -18140,7 +18200,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1173 Instruction:"SAR Ev,1" Encoding:"0xD1 /7"/"M1"
+    // Pos:1177 Instruction:"SAR Ev,1" Encoding:"0xD1 /7"/"M1"
     {
         ND_INS_SAR, ND_CAT_SHIFT, ND_SET_I86, 689, 
         ND_MOD_ANY, 
@@ -18156,7 +18216,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1174 Instruction:"SAR Eb,CL" Encoding:"0xD2 /7"/"MC"
+    // Pos:1178 Instruction:"SAR Eb,CL" Encoding:"0xD2 /7"/"MC"
     {
         ND_INS_SAR, ND_CAT_SHIFT, ND_SET_I86, 689, 
         ND_MOD_ANY, 
@@ -18172,7 +18232,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1175 Instruction:"SAR Ev,CL" Encoding:"0xD3 /7"/"MC"
+    // Pos:1179 Instruction:"SAR Ev,CL" Encoding:"0xD3 /7"/"MC"
     {
         ND_INS_SAR, ND_CAT_SHIFT, ND_SET_I86, 689, 
         ND_MOD_ANY, 
@@ -18188,7 +18248,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1176 Instruction:"SARX Gy,Ey,By" Encoding:"vex m:2 p:2 l:0 w:x 0xF7 /r"/"RMV"
+    // Pos:1180 Instruction:"SARX Gy,Ey,By" Encoding:"vex m:2 p:2 l:0 w:x 0xF7 /r"/"RMV"
     {
         ND_INS_SARX, ND_CAT_BMI2, ND_SET_BMI2, 690, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -18204,7 +18264,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1177 Instruction:"SAVEPREVSSP" Encoding:"0xF3 0x0F 0x01 /0xEA"/""
+    // Pos:1181 Instruction:"SAVEPREVSSP" Encoding:"0xF3 0x0F 0x01 /0xEA"/""
     {
         ND_INS_SAVEPREVSSP, ND_CAT_CET, ND_SET_CET_SS, 691, 
         ND_MOD_ANY, 
@@ -18219,7 +18279,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1178 Instruction:"SBB Eb,Gb" Encoding:"0x18 /r"/"MR"
+    // Pos:1182 Instruction:"SBB Eb,Gb" Encoding:"0x18 /r"/"MR"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18235,7 +18295,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1179 Instruction:"SBB Ev,Gv" Encoding:"0x19 /r"/"MR"
+    // Pos:1183 Instruction:"SBB Ev,Gv" Encoding:"0x19 /r"/"MR"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18251,7 +18311,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1180 Instruction:"SBB Gb,Eb" Encoding:"0x1A /r"/"RM"
+    // Pos:1184 Instruction:"SBB Gb,Eb" Encoding:"0x1A /r"/"RM"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18267,7 +18327,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1181 Instruction:"SBB Gv,Ev" Encoding:"0x1B /r"/"RM"
+    // Pos:1185 Instruction:"SBB Gv,Ev" Encoding:"0x1B /r"/"RM"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18283,7 +18343,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1182 Instruction:"SBB AL,Ib" Encoding:"0x1C ib"/"I"
+    // Pos:1186 Instruction:"SBB AL,Ib" Encoding:"0x1C ib"/"I"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18299,7 +18359,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1183 Instruction:"SBB rAX,Iz" Encoding:"0x1D iz"/"I"
+    // Pos:1187 Instruction:"SBB rAX,Iz" Encoding:"0x1D iz"/"I"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18315,7 +18375,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1184 Instruction:"SBB Eb,Ib" Encoding:"0x80 /3 ib"/"MI"
+    // Pos:1188 Instruction:"SBB Eb,Ib" Encoding:"0x80 /3 ib"/"MI"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18331,7 +18391,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1185 Instruction:"SBB Ev,Iz" Encoding:"0x81 /3 iz"/"MI"
+    // Pos:1189 Instruction:"SBB Ev,Iz" Encoding:"0x81 /3 iz"/"MI"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18347,7 +18407,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1186 Instruction:"SBB Eb,Ib" Encoding:"0x82 /3 iz"/"MI"
+    // Pos:1190 Instruction:"SBB Eb,Ib" Encoding:"0x82 /3 iz"/"MI"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -18363,7 +18423,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1187 Instruction:"SBB Ev,Ib" Encoding:"0x83 /3 ib"/"MI"
+    // Pos:1191 Instruction:"SBB Ev,Ib" Encoding:"0x83 /3 ib"/"MI"
     {
         ND_INS_SBB, ND_CAT_ARITH, ND_SET_I86, 692, 
         ND_MOD_ANY, 
@@ -18379,7 +18439,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1188 Instruction:"SCASB AL,Yb" Encoding:"0xAE"/""
+    // Pos:1192 Instruction:"SCASB AL,Yb" Encoding:"0xAE"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 693, 
         ND_MOD_ANY, 
@@ -18396,7 +18456,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1189 Instruction:"SCASB AL,Yb" Encoding:"rep 0xAE"/""
+    // Pos:1193 Instruction:"SCASB AL,Yb" Encoding:"rep 0xAE"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 693, 
         ND_MOD_ANY, 
@@ -18414,7 +18474,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1190 Instruction:"SCASD EAX,Yv" Encoding:"ds32 0xAF"/""
+    // Pos:1194 Instruction:"SCASD EAX,Yv" Encoding:"ds32 0xAF"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 694, 
         ND_MOD_ANY, 
@@ -18431,7 +18491,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1191 Instruction:"SCASD EAX,Yv" Encoding:"rep ds32 0xAF"/""
+    // Pos:1195 Instruction:"SCASD EAX,Yv" Encoding:"rep ds32 0xAF"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 694, 
         ND_MOD_ANY, 
@@ -18449,7 +18509,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1192 Instruction:"SCASQ RAX,Yv" Encoding:"ds64 0xAF"/""
+    // Pos:1196 Instruction:"SCASQ RAX,Yv" Encoding:"ds64 0xAF"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 695, 
         ND_MOD_ANY, 
@@ -18466,7 +18526,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1193 Instruction:"SCASQ RAX,Yv" Encoding:"rep ds64 0xAF"/""
+    // Pos:1197 Instruction:"SCASQ RAX,Yv" Encoding:"rep ds64 0xAF"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 695, 
         ND_MOD_ANY, 
@@ -18484,7 +18544,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1194 Instruction:"SCASW AX,Yv" Encoding:"ds16 0xAF"/""
+    // Pos:1198 Instruction:"SCASW AX,Yv" Encoding:"ds16 0xAF"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 696, 
         ND_MOD_ANY, 
@@ -18501,7 +18561,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1195 Instruction:"SCASW AX,Yv" Encoding:"rep ds16 0xAF"/""
+    // Pos:1199 Instruction:"SCASW AX,Yv" Encoding:"rep ds16 0xAF"/""
     {
         ND_INS_SCAS, ND_CAT_STRINGOP, ND_SET_I86, 696, 
         ND_MOD_ANY, 
@@ -18519,7 +18579,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1196 Instruction:"SERIALIZE" Encoding:"NP 0x0F 0x01 /0xE8"/""
+    // Pos:1200 Instruction:"SERIALIZE" Encoding:"NP 0x0F 0x01 /0xE8"/""
     {
         ND_INS_SERIALIZE, ND_CAT_MISC, ND_SET_SERIALIZE, 697, 
         ND_MOD_ANY, 
@@ -18533,7 +18593,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1197 Instruction:"SETBE Eb" Encoding:"0x0F 0x96 /r"/"M"
+    // Pos:1201 Instruction:"SETBE Eb" Encoding:"0x0F 0x96 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 698, 
         ND_MOD_ANY, 
@@ -18548,7 +18608,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1198 Instruction:"SETC Eb" Encoding:"0x0F 0x92 /r"/"M"
+    // Pos:1202 Instruction:"SETC Eb" Encoding:"0x0F 0x92 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 699, 
         ND_MOD_ANY, 
@@ -18563,7 +18623,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1199 Instruction:"SETL Eb" Encoding:"0x0F 0x9C /r"/"M"
+    // Pos:1203 Instruction:"SETL Eb" Encoding:"0x0F 0x9C /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 700, 
         ND_MOD_ANY, 
@@ -18578,7 +18638,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1200 Instruction:"SETLE Eb" Encoding:"0x0F 0x9E /r"/"M"
+    // Pos:1204 Instruction:"SETLE Eb" Encoding:"0x0F 0x9E /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 701, 
         ND_MOD_ANY, 
@@ -18593,7 +18653,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1201 Instruction:"SETNBE Eb" Encoding:"0x0F 0x97 /r"/"M"
+    // Pos:1205 Instruction:"SETNBE Eb" Encoding:"0x0F 0x97 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 702, 
         ND_MOD_ANY, 
@@ -18608,7 +18668,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1202 Instruction:"SETNC Eb" Encoding:"0x0F 0x93 /r"/"M"
+    // Pos:1206 Instruction:"SETNC Eb" Encoding:"0x0F 0x93 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 703, 
         ND_MOD_ANY, 
@@ -18623,7 +18683,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1203 Instruction:"SETNL Eb" Encoding:"0x0F 0x9D /r"/"M"
+    // Pos:1207 Instruction:"SETNL Eb" Encoding:"0x0F 0x9D /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 704, 
         ND_MOD_ANY, 
@@ -18638,7 +18698,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1204 Instruction:"SETNLE Eb" Encoding:"0x0F 0x9F /r"/"M"
+    // Pos:1208 Instruction:"SETNLE Eb" Encoding:"0x0F 0x9F /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 705, 
         ND_MOD_ANY, 
@@ -18653,7 +18713,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1205 Instruction:"SETNO Eb" Encoding:"0x0F 0x91 /r"/"M"
+    // Pos:1209 Instruction:"SETNO Eb" Encoding:"0x0F 0x91 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 706, 
         ND_MOD_ANY, 
@@ -18668,7 +18728,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1206 Instruction:"SETNP Eb" Encoding:"0x0F 0x9B /r"/"M"
+    // Pos:1210 Instruction:"SETNP Eb" Encoding:"0x0F 0x9B /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 707, 
         ND_MOD_ANY, 
@@ -18683,7 +18743,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1207 Instruction:"SETNS Eb" Encoding:"0x0F 0x99 /r"/"M"
+    // Pos:1211 Instruction:"SETNS Eb" Encoding:"0x0F 0x99 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 708, 
         ND_MOD_ANY, 
@@ -18698,7 +18758,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1208 Instruction:"SETNZ Eb" Encoding:"0x0F 0x95 /r"/"M"
+    // Pos:1212 Instruction:"SETNZ Eb" Encoding:"0x0F 0x95 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 709, 
         ND_MOD_ANY, 
@@ -18713,7 +18773,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1209 Instruction:"SETO Eb" Encoding:"0x0F 0x90 /r"/"M"
+    // Pos:1213 Instruction:"SETO Eb" Encoding:"0x0F 0x90 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 710, 
         ND_MOD_ANY, 
@@ -18728,7 +18788,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1210 Instruction:"SETP Eb" Encoding:"0x0F 0x9A /r"/"M"
+    // Pos:1214 Instruction:"SETP Eb" Encoding:"0x0F 0x9A /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 711, 
         ND_MOD_ANY, 
@@ -18743,7 +18803,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1211 Instruction:"SETS Eb" Encoding:"0x0F 0x98 /r"/"M"
+    // Pos:1215 Instruction:"SETS Eb" Encoding:"0x0F 0x98 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 712, 
         ND_MOD_ANY, 
@@ -18758,7 +18818,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1212 Instruction:"SETSSBSY" Encoding:"0xF3 0x0F 0x01 /0xE8"/""
+    // Pos:1216 Instruction:"SETSSBSY" Encoding:"0xF3 0x0F 0x01 /0xE8"/""
     {
         ND_INS_SETSSBSY, ND_CAT_CET, ND_SET_CET_SS, 713, 
         ND_MOD_ANY, 
@@ -18773,7 +18833,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1213 Instruction:"SETZ Eb" Encoding:"0x0F 0x94 /r"/"M"
+    // Pos:1217 Instruction:"SETZ Eb" Encoding:"0x0F 0x94 /r"/"M"
     {
         ND_INS_SETcc, ND_CAT_BITBYTE, ND_SET_I386, 714, 
         ND_MOD_ANY, 
@@ -18788,7 +18848,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1214 Instruction:"SFENCE" Encoding:"NP 0x0F 0xAE /7:reg"/""
+    // Pos:1218 Instruction:"SFENCE" Encoding:"NP 0x0F 0xAE /7:reg"/""
     {
         ND_INS_SFENCE, ND_CAT_MISC, ND_SET_SSE2, 715, 
         ND_MOD_ANY, 
@@ -18802,7 +18862,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1215 Instruction:"SGDT Ms" Encoding:"0x0F 0x01 /0:mem"/"M"
+    // Pos:1219 Instruction:"SGDT Ms" Encoding:"0x0F 0x01 /0:mem"/"M"
     {
         ND_INS_SGDT, ND_CAT_SYSTEM, ND_SET_I286REAL, 716, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -18817,7 +18877,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1216 Instruction:"SHA1MSG1 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xC9 /r"/"RM"
+    // Pos:1220 Instruction:"SHA1MSG1 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xC9 /r"/"RM"
     {
         ND_INS_SHA1MSG1, ND_CAT_SHA, ND_SET_SHA, 717, 
         ND_MOD_ANY, 
@@ -18832,7 +18892,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1217 Instruction:"SHA1MSG2 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCA /r"/"RM"
+    // Pos:1221 Instruction:"SHA1MSG2 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCA /r"/"RM"
     {
         ND_INS_SHA1MSG2, ND_CAT_SHA, ND_SET_SHA, 718, 
         ND_MOD_ANY, 
@@ -18847,7 +18907,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1218 Instruction:"SHA1NEXTE Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xC8 /r"/"RM"
+    // Pos:1222 Instruction:"SHA1NEXTE Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xC8 /r"/"RM"
     {
         ND_INS_SHA1NEXTE, ND_CAT_SHA, ND_SET_SHA, 719, 
         ND_MOD_ANY, 
@@ -18862,7 +18922,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1219 Instruction:"SHA1RNDS4 Vdq,Wdq,Ib" Encoding:"NP 0x0F 0x3A 0xCC /r ib"/"RMI"
+    // Pos:1223 Instruction:"SHA1RNDS4 Vdq,Wdq,Ib" Encoding:"NP 0x0F 0x3A 0xCC /r ib"/"RMI"
     {
         ND_INS_SHA1RNDS4, ND_CAT_SHA, ND_SET_SHA, 720, 
         ND_MOD_ANY, 
@@ -18878,7 +18938,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1220 Instruction:"SHA256MSG1 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCC /r"/"RM"
+    // Pos:1224 Instruction:"SHA256MSG1 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCC /r"/"RM"
     {
         ND_INS_SHA256MSG1, ND_CAT_SHA, ND_SET_SHA, 721, 
         ND_MOD_ANY, 
@@ -18893,7 +18953,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1221 Instruction:"SHA256MSG2 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCD /r"/"RM"
+    // Pos:1225 Instruction:"SHA256MSG2 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCD /r"/"RM"
     {
         ND_INS_SHA256MSG2, ND_CAT_SHA, ND_SET_SHA, 722, 
         ND_MOD_ANY, 
@@ -18908,7 +18968,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1222 Instruction:"SHA256RNDS2 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCB /r"/"RM"
+    // Pos:1226 Instruction:"SHA256RNDS2 Vdq,Wdq" Encoding:"NP 0x0F 0x38 0xCB /r"/"RM"
     {
         ND_INS_SHA256RNDS2, ND_CAT_SHA, ND_SET_SHA, 723, 
         ND_MOD_ANY, 
@@ -18924,7 +18984,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1223 Instruction:"SHL Eb,Ib" Encoding:"0xC0 /4 ib"/"MI"
+    // Pos:1227 Instruction:"SHL Eb,Ib" Encoding:"0xC0 /4 ib"/"MI"
     {
         ND_INS_SHL, ND_CAT_SHIFT, ND_SET_I86, 724, 
         ND_MOD_ANY, 
@@ -18940,7 +19000,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1224 Instruction:"SHL Ev,Ib" Encoding:"0xC1 /4 ib"/"MI"
+    // Pos:1228 Instruction:"SHL Ev,Ib" Encoding:"0xC1 /4 ib"/"MI"
     {
         ND_INS_SHL, ND_CAT_SHIFT, ND_SET_I86, 724, 
         ND_MOD_ANY, 
@@ -18956,7 +19016,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1225 Instruction:"SHL Eb,1" Encoding:"0xD0 /4"/"M1"
+    // Pos:1229 Instruction:"SHL Eb,1" Encoding:"0xD0 /4"/"M1"
     {
         ND_INS_SHL, ND_CAT_SHIFT, ND_SET_I86, 724, 
         ND_MOD_ANY, 
@@ -18972,7 +19032,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1226 Instruction:"SHL Ev,1" Encoding:"0xD1 /4"/"M1"
+    // Pos:1230 Instruction:"SHL Ev,1" Encoding:"0xD1 /4"/"M1"
     {
         ND_INS_SHL, ND_CAT_SHIFT, ND_SET_I86, 724, 
         ND_MOD_ANY, 
@@ -18988,7 +19048,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1227 Instruction:"SHL Eb,CL" Encoding:"0xD2 /4"/"MC"
+    // Pos:1231 Instruction:"SHL Eb,CL" Encoding:"0xD2 /4"/"MC"
     {
         ND_INS_SHL, ND_CAT_SHIFT, ND_SET_I86, 724, 
         ND_MOD_ANY, 
@@ -19004,7 +19064,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1228 Instruction:"SHL Ev,CL" Encoding:"0xD3 /4"/"MC"
+    // Pos:1232 Instruction:"SHL Ev,CL" Encoding:"0xD3 /4"/"MC"
     {
         ND_INS_SHL, ND_CAT_SHIFT, ND_SET_I86, 724, 
         ND_MOD_ANY, 
@@ -19020,7 +19080,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1229 Instruction:"SHLD Ev,Gv,Ib" Encoding:"0x0F 0xA4 /r ib"/"MRI"
+    // Pos:1233 Instruction:"SHLD Ev,Gv,Ib" Encoding:"0x0F 0xA4 /r ib"/"MRI"
     {
         ND_INS_SHLD, ND_CAT_SHIFT, ND_SET_I386, 725, 
         ND_MOD_ANY, 
@@ -19037,7 +19097,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1230 Instruction:"SHLD Ev,Gv,CL" Encoding:"0x0F 0xA5 /r"/"MRC"
+    // Pos:1234 Instruction:"SHLD Ev,Gv,CL" Encoding:"0x0F 0xA5 /r"/"MRC"
     {
         ND_INS_SHLD, ND_CAT_SHIFT, ND_SET_I386, 725, 
         ND_MOD_ANY, 
@@ -19054,7 +19114,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1231 Instruction:"SHLX Gy,Ey,By" Encoding:"vex m:2 p:1 l:0 w:x 0xF7 /r"/"RMV"
+    // Pos:1235 Instruction:"SHLX Gy,Ey,By" Encoding:"vex m:2 p:1 l:0 w:x 0xF7 /r"/"RMV"
     {
         ND_INS_SHLX, ND_CAT_BMI2, ND_SET_BMI2, 726, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -19070,7 +19130,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1232 Instruction:"SHR Eb,Ib" Encoding:"0xC0 /5 ib"/"MI"
+    // Pos:1236 Instruction:"SHR Eb,Ib" Encoding:"0xC0 /5 ib"/"MI"
     {
         ND_INS_SHR, ND_CAT_SHIFT, ND_SET_I86, 727, 
         ND_MOD_ANY, 
@@ -19086,7 +19146,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1233 Instruction:"SHR Ev,Ib" Encoding:"0xC1 /5 ib"/"MI"
+    // Pos:1237 Instruction:"SHR Ev,Ib" Encoding:"0xC1 /5 ib"/"MI"
     {
         ND_INS_SHR, ND_CAT_SHIFT, ND_SET_I86, 727, 
         ND_MOD_ANY, 
@@ -19102,7 +19162,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1234 Instruction:"SHR Eb,1" Encoding:"0xD0 /5"/"M1"
+    // Pos:1238 Instruction:"SHR Eb,1" Encoding:"0xD0 /5"/"M1"
     {
         ND_INS_SHR, ND_CAT_SHIFT, ND_SET_I86, 727, 
         ND_MOD_ANY, 
@@ -19118,7 +19178,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1235 Instruction:"SHR Ev,1" Encoding:"0xD1 /5"/"M1"
+    // Pos:1239 Instruction:"SHR Ev,1" Encoding:"0xD1 /5"/"M1"
     {
         ND_INS_SHR, ND_CAT_SHIFT, ND_SET_I86, 727, 
         ND_MOD_ANY, 
@@ -19134,7 +19194,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1236 Instruction:"SHR Eb,CL" Encoding:"0xD2 /5"/"MC"
+    // Pos:1240 Instruction:"SHR Eb,CL" Encoding:"0xD2 /5"/"MC"
     {
         ND_INS_SHR, ND_CAT_SHIFT, ND_SET_I86, 727, 
         ND_MOD_ANY, 
@@ -19150,7 +19210,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1237 Instruction:"SHR Ev,CL" Encoding:"0xD3 /5"/"MC"
+    // Pos:1241 Instruction:"SHR Ev,CL" Encoding:"0xD3 /5"/"MC"
     {
         ND_INS_SHR, ND_CAT_SHIFT, ND_SET_I86, 727, 
         ND_MOD_ANY, 
@@ -19166,7 +19226,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1238 Instruction:"SHRD Ev,Gv,Ib" Encoding:"0x0F 0xAC /r ib"/"MRI"
+    // Pos:1242 Instruction:"SHRD Ev,Gv,Ib" Encoding:"0x0F 0xAC /r ib"/"MRI"
     {
         ND_INS_SHRD, ND_CAT_SHIFT, ND_SET_I386, 728, 
         ND_MOD_ANY, 
@@ -19183,7 +19243,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1239 Instruction:"SHRD Ev,Gv,CL" Encoding:"0x0F 0xAD /r"/"MRC"
+    // Pos:1243 Instruction:"SHRD Ev,Gv,CL" Encoding:"0x0F 0xAD /r"/"MRC"
     {
         ND_INS_SHRD, ND_CAT_SHIFT, ND_SET_I386, 728, 
         ND_MOD_ANY, 
@@ -19200,7 +19260,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1240 Instruction:"SHRX Gy,Ey,By" Encoding:"vex m:2 p:3 l:0 w:x 0xF7 /r"/"RMV"
+    // Pos:1244 Instruction:"SHRX Gy,Ey,By" Encoding:"vex m:2 p:3 l:0 w:x 0xF7 /r"/"RMV"
     {
         ND_INS_SHRX, ND_CAT_BMI2, ND_SET_BMI2, 729, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -19216,7 +19276,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1241 Instruction:"SHUFPD Vpd,Wpd,Ib" Encoding:"0x66 0x0F 0xC6 /r ib"/"RMI"
+    // Pos:1245 Instruction:"SHUFPD Vpd,Wpd,Ib" Encoding:"0x66 0x0F 0xC6 /r ib"/"RMI"
     {
         ND_INS_SHUFPD, ND_CAT_SSE, ND_SET_SSE2, 730, 
         ND_MOD_ANY, 
@@ -19232,7 +19292,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1242 Instruction:"SHUFPS Vps,Wps,Ib" Encoding:"NP 0x0F 0xC6 /r ib"/"RMI"
+    // Pos:1246 Instruction:"SHUFPS Vps,Wps,Ib" Encoding:"NP 0x0F 0xC6 /r ib"/"RMI"
     {
         ND_INS_SHUFPS, ND_CAT_SSE, ND_SET_SSE, 731, 
         ND_MOD_ANY, 
@@ -19248,7 +19308,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1243 Instruction:"SIDT Ms" Encoding:"0x0F 0x01 /1:mem"/"M"
+    // Pos:1247 Instruction:"SIDT Ms" Encoding:"0x0F 0x01 /1:mem"/"M"
     {
         ND_INS_SIDT, ND_CAT_SYSTEM, ND_SET_I286REAL, 732, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19263,7 +19323,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1244 Instruction:"SKINIT" Encoding:"0x0F 0x01 /0xDE"/""
+    // Pos:1248 Instruction:"SKINIT" Encoding:"0x0F 0x01 /0xDE"/""
     {
         ND_INS_SKINIT, ND_CAT_SYSTEM, ND_SET_SVM, 733, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -19277,7 +19337,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1245 Instruction:"SLDT Mw" Encoding:"0x0F 0x00 /0:mem"/"M"
+    // Pos:1249 Instruction:"SLDT Mw" Encoding:"0x0F 0x00 /0:mem"/"M"
     {
         ND_INS_SLDT, ND_CAT_SYSTEM, ND_SET_I286PROT, 734, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19292,7 +19352,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1246 Instruction:"SLDT Rv" Encoding:"0x0F 0x00 /0:reg"/"M"
+    // Pos:1250 Instruction:"SLDT Rv" Encoding:"0x0F 0x00 /0:reg"/"M"
     {
         ND_INS_SLDT, ND_CAT_SYSTEM, ND_SET_I286PROT, 734, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19307,7 +19367,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1247 Instruction:"SLWPCB Ry" Encoding:"xop m:9 0x12 /1:reg"/"M"
+    // Pos:1251 Instruction:"SLWPCB Ry" Encoding:"xop m:9 0x12 /1:reg"/"M"
     {
         ND_INS_SLWPCB, ND_CAT_LWP, ND_SET_LWP, 735, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -19321,7 +19381,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1248 Instruction:"SMINT" Encoding:"cyrix 0x0F 0x7E"/""
+    // Pos:1252 Instruction:"SMINT" Encoding:"cyrix 0x0F 0x7E"/""
     {
         ND_INS_SMINT, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 736, 
         ND_MOD_ANY, 
@@ -19335,7 +19395,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1249 Instruction:"SMSW Mw" Encoding:"0x0F 0x01 /4:mem"/"M"
+    // Pos:1253 Instruction:"SMSW Mw" Encoding:"0x0F 0x01 /4:mem"/"M"
     {
         ND_INS_SMSW, ND_CAT_SYSTEM, ND_SET_I286REAL, 737, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19350,7 +19410,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1250 Instruction:"SMSW Rv" Encoding:"0x0F 0x01 /4:reg"/"M"
+    // Pos:1254 Instruction:"SMSW Rv" Encoding:"0x0F 0x01 /4:reg"/"M"
     {
         ND_INS_SMSW, ND_CAT_SYSTEM, ND_SET_I286REAL, 737, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19365,7 +19425,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1251 Instruction:"SPFLT Ry" Encoding:"vex m:1 p:3 0xAE /6:reg"/"M"
+    // Pos:1255 Instruction:"SPFLT Ry" Encoding:"vex m:1 p:3 0xAE /6:reg"/"M"
     {
         ND_INS_SPFLT, ND_CAT_UNKNOWN, ND_SET_UNKNOWN, 738, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -19379,7 +19439,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1252 Instruction:"SQRTPD Vpd,Wpd" Encoding:"0x66 0x0F 0x51 /r"/"RM"
+    // Pos:1256 Instruction:"SQRTPD Vpd,Wpd" Encoding:"0x66 0x0F 0x51 /r"/"RM"
     {
         ND_INS_SQRTPD, ND_CAT_SSE, ND_SET_SSE2, 739, 
         ND_MOD_ANY, 
@@ -19394,7 +19454,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1253 Instruction:"SQRTPS Vps,Wps" Encoding:"NP 0x0F 0x51 /r"/"RM"
+    // Pos:1257 Instruction:"SQRTPS Vps,Wps" Encoding:"NP 0x0F 0x51 /r"/"RM"
     {
         ND_INS_SQRTPS, ND_CAT_SSE, ND_SET_SSE, 740, 
         ND_MOD_ANY, 
@@ -19409,7 +19469,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1254 Instruction:"SQRTSD Vsd,Wsd" Encoding:"0xF2 0x0F 0x51 /r"/"RM"
+    // Pos:1258 Instruction:"SQRTSD Vsd,Wsd" Encoding:"0xF2 0x0F 0x51 /r"/"RM"
     {
         ND_INS_SQRTSD, ND_CAT_SSE, ND_SET_SSE2, 741, 
         ND_MOD_ANY, 
@@ -19424,7 +19484,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1255 Instruction:"SQRTSS Vss,Wss" Encoding:"0xF3 0x0F 0x51 /r"/"RM"
+    // Pos:1259 Instruction:"SQRTSS Vss,Wss" Encoding:"0xF3 0x0F 0x51 /r"/"RM"
     {
         ND_INS_SQRTSS, ND_CAT_SSE, ND_SET_SSE, 742, 
         ND_MOD_ANY, 
@@ -19439,7 +19499,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1256 Instruction:"STAC" Encoding:"NP 0x0F 0x01 /0xCB"/""
+    // Pos:1260 Instruction:"STAC" Encoding:"NP 0x0F 0x01 /0xCB"/""
     {
         ND_INS_STAC, ND_CAT_SMAP, ND_SET_SMAP, 743, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19453,7 +19513,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1257 Instruction:"STC" Encoding:"0xF9"/""
+    // Pos:1261 Instruction:"STC" Encoding:"0xF9"/""
     {
         ND_INS_STC, ND_CAT_FLAGOP, ND_SET_I86, 744, 
         ND_MOD_ANY, 
@@ -19467,7 +19527,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1258 Instruction:"STD" Encoding:"0xFD"/""
+    // Pos:1262 Instruction:"STD" Encoding:"0xFD"/""
     {
         ND_INS_STD, ND_CAT_FLAGOP, ND_SET_I86, 745, 
         ND_MOD_ANY, 
@@ -19481,7 +19541,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1259 Instruction:"STGI" Encoding:"0x0F 0x01 /0xDC"/""
+    // Pos:1263 Instruction:"STGI" Encoding:"0x0F 0x01 /0xDC"/""
     {
         ND_INS_STGI, ND_CAT_SYSTEM, ND_SET_SVM, 746, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -19495,7 +19555,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1260 Instruction:"STI" Encoding:"0xFB"/""
+    // Pos:1264 Instruction:"STI" Encoding:"0xFB"/""
     {
         ND_INS_STI, ND_CAT_FLAGOP, ND_SET_I86, 747, 
         ND_MOD_ANY, 
@@ -19509,7 +19569,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1261 Instruction:"STMXCSR Md" Encoding:"NP 0x0F 0xAE /3:mem"/"M"
+    // Pos:1265 Instruction:"STMXCSR Md" Encoding:"NP 0x0F 0xAE /3:mem"/"M"
     {
         ND_INS_STMXCSR, ND_CAT_SSE, ND_SET_SSE, 748, 
         ND_MOD_ANY, 
@@ -19524,7 +19584,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1262 Instruction:"STOSB Yb,AL" Encoding:"0xAA"/""
+    // Pos:1266 Instruction:"STOSB Yb,AL" Encoding:"0xAA"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 749, 
         ND_MOD_ANY, 
@@ -19541,7 +19601,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1263 Instruction:"STOSB Yb,AL" Encoding:"rep 0xAA"/""
+    // Pos:1267 Instruction:"STOSB Yb,AL" Encoding:"rep 0xAA"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 749, 
         ND_MOD_ANY, 
@@ -19559,7 +19619,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1264 Instruction:"STOSD Yv,EAX" Encoding:"ds32 0xAB"/""
+    // Pos:1268 Instruction:"STOSD Yv,EAX" Encoding:"ds32 0xAB"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 750, 
         ND_MOD_ANY, 
@@ -19576,7 +19636,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1265 Instruction:"STOSD Yv,EAX" Encoding:"rep ds32 0xAB"/""
+    // Pos:1269 Instruction:"STOSD Yv,EAX" Encoding:"rep ds32 0xAB"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 750, 
         ND_MOD_ANY, 
@@ -19594,7 +19654,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1266 Instruction:"STOSQ Yv,RAX" Encoding:"ds64 0xAB"/""
+    // Pos:1270 Instruction:"STOSQ Yv,RAX" Encoding:"ds64 0xAB"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 751, 
         ND_MOD_ANY, 
@@ -19611,7 +19671,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1267 Instruction:"STOSQ Yv,RAX" Encoding:"rep ds64 0xAB"/""
+    // Pos:1271 Instruction:"STOSQ Yv,RAX" Encoding:"rep ds64 0xAB"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 751, 
         ND_MOD_ANY, 
@@ -19629,7 +19689,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1268 Instruction:"STOSW Yv,AX" Encoding:"ds16 0xAB"/""
+    // Pos:1272 Instruction:"STOSW Yv,AX" Encoding:"ds16 0xAB"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 752, 
         ND_MOD_ANY, 
@@ -19646,7 +19706,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1269 Instruction:"STOSW Yv,AX" Encoding:"rep ds16 0xAB"/""
+    // Pos:1273 Instruction:"STOSW Yv,AX" Encoding:"rep ds16 0xAB"/""
     {
         ND_INS_STOS, ND_CAT_STRINGOP, ND_SET_I86, 752, 
         ND_MOD_ANY, 
@@ -19664,7 +19724,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1270 Instruction:"STR Mw" Encoding:"0x0F 0x00 /1:mem"/"M"
+    // Pos:1274 Instruction:"STR Mw" Encoding:"0x0F 0x00 /1:mem"/"M"
     {
         ND_INS_STR, ND_CAT_SYSTEM, ND_SET_I286PROT, 753, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19679,7 +19739,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1271 Instruction:"STR Rv" Encoding:"0x0F 0x00 /1:reg"/"M"
+    // Pos:1275 Instruction:"STR Rv" Encoding:"0x0F 0x00 /1:reg"/"M"
     {
         ND_INS_STR, ND_CAT_SYSTEM, ND_SET_I286PROT, 753, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19694,7 +19754,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1272 Instruction:"STTILECFG Moq" Encoding:"vex m:2 p:1 l:0 w:0 0x49 /0:mem"/"M"
+    // Pos:1276 Instruction:"STTILECFG Moq" Encoding:"vex m:2 p:1 l:0 w:0 0x49 /0:mem"/"M"
     {
         ND_INS_STTILECFG, ND_CAT_AMX, ND_SET_AMXTILE, 754, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -19708,7 +19768,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1273 Instruction:"SUB Eb,Gb" Encoding:"0x28 /r"/"MR"
+    // Pos:1277 Instruction:"SUB Eb,Gb" Encoding:"0x28 /r"/"MR"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19724,7 +19784,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1274 Instruction:"SUB Ev,Gv" Encoding:"0x29 /r"/"MR"
+    // Pos:1278 Instruction:"SUB Ev,Gv" Encoding:"0x29 /r"/"MR"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19740,7 +19800,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1275 Instruction:"SUB Gb,Eb" Encoding:"0x2A /r"/"RM"
+    // Pos:1279 Instruction:"SUB Gb,Eb" Encoding:"0x2A /r"/"RM"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19756,7 +19816,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1276 Instruction:"SUB Gv,Ev" Encoding:"0x2B /r"/"RM"
+    // Pos:1280 Instruction:"SUB Gv,Ev" Encoding:"0x2B /r"/"RM"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19772,7 +19832,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1277 Instruction:"SUB AL,Ib" Encoding:"0x2C ib"/"I"
+    // Pos:1281 Instruction:"SUB AL,Ib" Encoding:"0x2C ib"/"I"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19788,7 +19848,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1278 Instruction:"SUB rAX,Iz" Encoding:"0x2D iz"/"I"
+    // Pos:1282 Instruction:"SUB rAX,Iz" Encoding:"0x2D iz"/"I"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19804,7 +19864,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1279 Instruction:"SUB Eb,Ib" Encoding:"0x80 /5 ib"/"MI"
+    // Pos:1283 Instruction:"SUB Eb,Ib" Encoding:"0x80 /5 ib"/"MI"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19820,7 +19880,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1280 Instruction:"SUB Ev,Iz" Encoding:"0x81 /5 iz"/"MI"
+    // Pos:1284 Instruction:"SUB Ev,Iz" Encoding:"0x81 /5 iz"/"MI"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19836,7 +19896,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1281 Instruction:"SUB Eb,Ib" Encoding:"0x82 /5 iz"/"MI"
+    // Pos:1285 Instruction:"SUB Eb,Ib" Encoding:"0x82 /5 iz"/"MI"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -19852,7 +19912,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1282 Instruction:"SUB Ev,Ib" Encoding:"0x83 /5 ib"/"MI"
+    // Pos:1286 Instruction:"SUB Ev,Ib" Encoding:"0x83 /5 ib"/"MI"
     {
         ND_INS_SUB, ND_CAT_ARITH, ND_SET_I86, 755, 
         ND_MOD_ANY, 
@@ -19868,7 +19928,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1283 Instruction:"SUBPD Vpd,Wpd" Encoding:"0x66 0x0F 0x5C /r"/"RM"
+    // Pos:1287 Instruction:"SUBPD Vpd,Wpd" Encoding:"0x66 0x0F 0x5C /r"/"RM"
     {
         ND_INS_SUBPD, ND_CAT_SSE, ND_SET_SSE2, 756, 
         ND_MOD_ANY, 
@@ -19883,7 +19943,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1284 Instruction:"SUBPS Vps,Wps" Encoding:"NP 0x0F 0x5C /r"/"RM"
+    // Pos:1288 Instruction:"SUBPS Vps,Wps" Encoding:"NP 0x0F 0x5C /r"/"RM"
     {
         ND_INS_SUBPS, ND_CAT_SSE, ND_SET_SSE, 757, 
         ND_MOD_ANY, 
@@ -19898,7 +19958,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1285 Instruction:"SUBSD Vsd,Wsd" Encoding:"0xF2 0x0F 0x5C /r"/"RM"
+    // Pos:1289 Instruction:"SUBSD Vsd,Wsd" Encoding:"0xF2 0x0F 0x5C /r"/"RM"
     {
         ND_INS_SUBSD, ND_CAT_SSE, ND_SET_SSE2, 758, 
         ND_MOD_ANY, 
@@ -19913,7 +19973,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1286 Instruction:"SUBSS Vss,Wss" Encoding:"0xF3 0x0F 0x5C /r"/"RM"
+    // Pos:1290 Instruction:"SUBSS Vss,Wss" Encoding:"0xF3 0x0F 0x5C /r"/"RM"
     {
         ND_INS_SUBSS, ND_CAT_SSE, ND_SET_SSE, 759, 
         ND_MOD_ANY, 
@@ -19928,7 +19988,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1287 Instruction:"SVDC Ms,Sw" Encoding:"cyrix 0x0F 0x78 /r:mem"/"MR"
+    // Pos:1291 Instruction:"SVDC Ms,Sw" Encoding:"cyrix 0x0F 0x78 /r:mem"/"MR"
     {
         ND_INS_SVDC, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 760, 
         ND_MOD_ANY, 
@@ -19943,7 +20003,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1288 Instruction:"SVLDT Ms" Encoding:"cyrix 0x0F 0x7A /r:mem"/"M"
+    // Pos:1292 Instruction:"SVLDT Ms" Encoding:"cyrix 0x0F 0x7A /r:mem"/"M"
     {
         ND_INS_SVLDT, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 761, 
         ND_MOD_ANY, 
@@ -19957,7 +20017,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1289 Instruction:"SVTS Ms" Encoding:"cyrix 0x0F 0x7C /r:mem"/"M"
+    // Pos:1293 Instruction:"SVTS Ms" Encoding:"cyrix 0x0F 0x7C /r:mem"/"M"
     {
         ND_INS_SVTS, ND_CAT_SEGOP, ND_SET_CYRIX_SMM, 762, 
         ND_MOD_ANY, 
@@ -19971,7 +20031,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1290 Instruction:"SWAPGS" Encoding:"0x0F 0x01 /0xF8"/""
+    // Pos:1294 Instruction:"SWAPGS" Encoding:"0x0F 0x01 /0xF8"/""
     {
         ND_INS_SWAPGS, ND_CAT_SYSTEM, ND_SET_LONGMODE, 763, 
         ND_MOD_R0|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -19986,7 +20046,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1291 Instruction:"SYSCALL" Encoding:"0x0F 0x05"/""
+    // Pos:1295 Instruction:"SYSCALL" Encoding:"0x0F 0x05"/""
     {
         ND_INS_SYSCALL, ND_CAT_SYSCALL, ND_SET_AMD, 764, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -20009,7 +20069,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1292 Instruction:"SYSENTER" Encoding:"0x0F 0x34"/""
+    // Pos:1296 Instruction:"SYSENTER" Encoding:"0x0F 0x34"/""
     {
         ND_INS_SYSENTER, ND_CAT_SYSCALL, ND_SET_PPRO, 765, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -20031,7 +20091,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1293 Instruction:"SYSEXIT" Encoding:"0x0F 0x35"/""
+    // Pos:1297 Instruction:"SYSEXIT" Encoding:"0x0F 0x35"/""
     {
         ND_INS_SYSEXIT, ND_CAT_SYSRET, ND_SET_PPRO, 766, 
         ND_MOD_R0|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -20049,7 +20109,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1294 Instruction:"SYSRET" Encoding:"0x0F 0x07"/""
+    // Pos:1298 Instruction:"SYSRET" Encoding:"0x0F 0x07"/""
     {
         ND_INS_SYSRET, ND_CAT_SYSRET, ND_SET_AMD, 767, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -20070,7 +20130,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1295 Instruction:"T1MSKC By,Ey" Encoding:"xop m:9 0x01 /7"/"VM"
+    // Pos:1299 Instruction:"T1MSKC By,Ey" Encoding:"xop m:9 0x01 /7"/"VM"
     {
         ND_INS_T1MSKC, ND_CAT_BITBYTE, ND_SET_TBM, 768, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20085,7 +20145,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1296 Instruction:"TDPBF16PS rTt,mTt,vTt" Encoding:"vex m:2 p:2 l:0 w:0 0x5C /r:reg"/""
+    // Pos:1300 Instruction:"TDPBF16PS rTt,mTt,vTt" Encoding:"vex m:2 p:2 l:0 w:0 0x5C /r:reg"/""
     {
         ND_INS_TDPBF16PS, ND_CAT_AMX, ND_SET_AMXBF16, 769, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20101,7 +20161,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1297 Instruction:"TDPBSSD rTt,mTt,vTt" Encoding:"vex m:2 p:3 l:0 w:0 0x5E /r:reg"/""
+    // Pos:1301 Instruction:"TDPBSSD rTt,mTt,vTt" Encoding:"vex m:2 p:3 l:0 w:0 0x5E /r:reg"/""
     {
         ND_INS_TDPBSSD, ND_CAT_AMX, ND_SET_AMXINT8, 770, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20117,7 +20177,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1298 Instruction:"TDPBSUD rTt,mTt,vTt" Encoding:"vex m:2 p:2 l:0 w:0 0x5E /r:reg"/""
+    // Pos:1302 Instruction:"TDPBSUD rTt,mTt,vTt" Encoding:"vex m:2 p:2 l:0 w:0 0x5E /r:reg"/""
     {
         ND_INS_TDPBSUD, ND_CAT_AMX, ND_SET_AMXINT8, 771, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20133,7 +20193,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1299 Instruction:"TDPBUSD rTt,mTt,vTt" Encoding:"vex m:2 p:1 l:0 w:0 0x5E /r:reg"/""
+    // Pos:1303 Instruction:"TDPBUSD rTt,mTt,vTt" Encoding:"vex m:2 p:1 l:0 w:0 0x5E /r:reg"/""
     {
         ND_INS_TDPBUSD, ND_CAT_AMX, ND_SET_AMXINT8, 772, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20149,7 +20209,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1300 Instruction:"TDPBUUD rTt,mTt,vTt" Encoding:"vex m:2 p:0 l:0 w:0 0x5E /r:reg"/""
+    // Pos:1304 Instruction:"TDPBUUD rTt,mTt,vTt" Encoding:"vex m:2 p:0 l:0 w:0 0x5E /r:reg"/""
     {
         ND_INS_TDPBUUD, ND_CAT_AMX, ND_SET_AMXINT8, 773, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20165,7 +20225,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1301 Instruction:"TEST Eb,Gb" Encoding:"0x84 /r"/"MR"
+    // Pos:1305 Instruction:"TEST Eb,Gb" Encoding:"0x84 /r"/"MR"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20181,7 +20241,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1302 Instruction:"TEST Ev,Gv" Encoding:"0x85 /r"/"MR"
+    // Pos:1306 Instruction:"TEST Ev,Gv" Encoding:"0x85 /r"/"MR"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20197,7 +20257,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1303 Instruction:"TEST AL,Ib" Encoding:"0xA8 ib"/"I"
+    // Pos:1307 Instruction:"TEST AL,Ib" Encoding:"0xA8 ib"/"I"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20213,7 +20273,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1304 Instruction:"TEST rAX,Iz" Encoding:"0xA9 iz"/"I"
+    // Pos:1308 Instruction:"TEST rAX,Iz" Encoding:"0xA9 iz"/"I"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20229,7 +20289,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1305 Instruction:"TEST Eb,Ib" Encoding:"0xF6 /0 ib"/"MI"
+    // Pos:1309 Instruction:"TEST Eb,Ib" Encoding:"0xF6 /0 ib"/"MI"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20245,7 +20305,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1306 Instruction:"TEST Eb,Ib" Encoding:"0xF6 /1 ib"/"MI"
+    // Pos:1310 Instruction:"TEST Eb,Ib" Encoding:"0xF6 /1 ib"/"MI"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20261,7 +20321,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1307 Instruction:"TEST Ev,Iz" Encoding:"0xF7 /0 iz"/"MI"
+    // Pos:1311 Instruction:"TEST Ev,Iz" Encoding:"0xF7 /0 iz"/"MI"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20277,7 +20337,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1308 Instruction:"TEST Ev,Iz" Encoding:"0xF7 /1 iz"/"MI"
+    // Pos:1312 Instruction:"TEST Ev,Iz" Encoding:"0xF7 /1 iz"/"MI"
     {
         ND_INS_TEST, ND_CAT_LOGIC, ND_SET_I86, 774, 
         ND_MOD_ANY, 
@@ -20293,7 +20353,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1309 Instruction:"TILELOADD rTt,Mt" Encoding:"vex m:2 p:3 l:0 w:0 0x4B /r:mem sibmem"/"M"
+    // Pos:1313 Instruction:"TILELOADD rTt,Mt" Encoding:"vex m:2 p:3 l:0 w:0 0x4B /r:mem sibmem"/"M"
     {
         ND_INS_TILELOADD, ND_CAT_AMX, ND_SET_AMXTILE, 775, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20308,7 +20368,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1310 Instruction:"TILELOADDT1 rTt,Mt" Encoding:"vex m:2 p:1 l:0 w:0 0x4B /r:mem sibmem"/"M"
+    // Pos:1314 Instruction:"TILELOADDT1 rTt,Mt" Encoding:"vex m:2 p:1 l:0 w:0 0x4B /r:mem sibmem"/"M"
     {
         ND_INS_TILELOADDT1, ND_CAT_AMX, ND_SET_AMXTILE, 776, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20323,7 +20383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1311 Instruction:"TILERELEASE" Encoding:"vex m:2 p:0 l:0 w:0 0x49 /0xC0"/""
+    // Pos:1315 Instruction:"TILERELEASE" Encoding:"vex m:2 p:0 l:0 w:0 0x49 /0xC0"/""
     {
         ND_INS_TILERELEASE, ND_CAT_AMX, ND_SET_AMXTILE, 777, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20337,7 +20397,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1312 Instruction:"TILESTORED Mt,rTt" Encoding:"vex m:2 p:2 l:0 w:0 0x4B /r:mem sibmem"/"M"
+    // Pos:1316 Instruction:"TILESTORED Mt,rTt" Encoding:"vex m:2 p:2 l:0 w:0 0x4B /r:mem sibmem"/"M"
     {
         ND_INS_TILESTORED, ND_CAT_AMX, ND_SET_AMXTILE, 778, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20352,7 +20412,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1313 Instruction:"TILEZERO rTt" Encoding:"vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0"/""
+    // Pos:1317 Instruction:"TILEZERO rTt" Encoding:"vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0"/""
     {
         ND_INS_TILEZERO, ND_CAT_AMX, ND_SET_AMXTILE, 779, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20366,7 +20426,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1314 Instruction:"TLBSYNC" Encoding:"0x0F 0x01 /0xFF"/""
+    // Pos:1318 Instruction:"TLBSYNC" Encoding:"0x0F 0x01 /0xFF"/""
     {
         ND_INS_TLBSYNC, ND_CAT_SYSTEM, ND_SET_INVLPGB, 780, 
         ND_MOD_R0|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -20380,7 +20440,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1315 Instruction:"TPAUSE Ry" Encoding:"0x66 0x0F 0xAE /6:reg"/"M"
+    // Pos:1319 Instruction:"TPAUSE Ry" Encoding:"0x66 0x0F 0xAE /6:reg"/"M"
     {
         ND_INS_TPAUSE, ND_CAT_WAITPKG, ND_SET_WAITPKG, 781, 
         ND_MOD_ANY, 
@@ -20397,7 +20457,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1316 Instruction:"TZCNT Gv,Ev" Encoding:"a0xF3 0x0F 0xBC /r"/"RM"
+    // Pos:1320 Instruction:"TZCNT Gv,Ev" Encoding:"a0xF3 0x0F 0xBC /r"/"RM"
     {
         ND_INS_TZCNT, ND_CAT_BMI1, ND_SET_BMI1, 782, 
         ND_MOD_ANY, 
@@ -20413,7 +20473,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1317 Instruction:"TZMSK By,Ey" Encoding:"xop m:9 0x01 /4"/"VM"
+    // Pos:1321 Instruction:"TZMSK By,Ey" Encoding:"xop m:9 0x01 /4"/"VM"
     {
         ND_INS_TZMSK, ND_CAT_BITBYTE, ND_SET_TBM, 783, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20428,7 +20488,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1318 Instruction:"UCOMISD Vsd,Wsd" Encoding:"0x66 0x0F 0x2E /r"/"RM"
+    // Pos:1322 Instruction:"UCOMISD Vsd,Wsd" Encoding:"0x66 0x0F 0x2E /r"/"RM"
     {
         ND_INS_UCOMISD, ND_CAT_SSE2, ND_SET_SSE2, 784, 
         ND_MOD_ANY, 
@@ -20444,7 +20504,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1319 Instruction:"UCOMISS Vss,Wss" Encoding:"NP 0x0F 0x2E /r"/"RM"
+    // Pos:1323 Instruction:"UCOMISS Vss,Wss" Encoding:"NP 0x0F 0x2E /r"/"RM"
     {
         ND_INS_UCOMISS, ND_CAT_SSE, ND_SET_SSE, 785, 
         ND_MOD_ANY, 
@@ -20460,7 +20520,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1320 Instruction:"UD0 Gd,Ed" Encoding:"0x0F 0xFF /r"/"RM"
+    // Pos:1324 Instruction:"UD0 Gd,Ed" Encoding:"0x0F 0xFF /r"/"RM"
     {
         ND_INS_UD0, ND_CAT_UD, ND_SET_UD, 786, 
         ND_MOD_ANY, 
@@ -20475,7 +20535,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1321 Instruction:"UD1 Gd,Ed" Encoding:"0x0F 0xB9 /r"/"RM"
+    // Pos:1325 Instruction:"UD1 Gd,Ed" Encoding:"0x0F 0xB9 /r"/"RM"
     {
         ND_INS_UD1, ND_CAT_UD, ND_SET_UD, 787, 
         ND_MOD_ANY, 
@@ -20490,7 +20550,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1322 Instruction:"UD2" Encoding:"0x0F 0x0B"/""
+    // Pos:1326 Instruction:"UD2" Encoding:"0x0F 0x0B"/""
     {
         ND_INS_UD2, ND_CAT_MISC, ND_SET_PPRO, 788, 
         ND_MOD_ANY, 
@@ -20504,7 +20564,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1323 Instruction:"UMONITOR mMb" Encoding:"0xF3 0x0F 0xAE /6:reg"/"M"
+    // Pos:1327 Instruction:"UMONITOR mMb" Encoding:"0xF3 0x0F 0xAE /6:reg"/"M"
     {
         ND_INS_UMONITOR, ND_CAT_WAITPKG, ND_SET_WAITPKG, 789, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20519,7 +20579,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1324 Instruction:"UMWAIT Ry" Encoding:"0xF2 0x0F 0xAE /6:reg"/"M"
+    // Pos:1328 Instruction:"UMWAIT Ry" Encoding:"0xF2 0x0F 0xAE /6:reg"/"M"
     {
         ND_INS_UMWAIT, ND_CAT_WAITPKG, ND_SET_WAITPKG, 790, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -20535,7 +20595,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1325 Instruction:"UNPCKHPD Vx,Wx" Encoding:"0x66 0x0F 0x15 /r"/"RM"
+    // Pos:1329 Instruction:"UNPCKHPD Vx,Wx" Encoding:"0x66 0x0F 0x15 /r"/"RM"
     {
         ND_INS_UNPCKHPD, ND_CAT_SSE, ND_SET_SSE2, 791, 
         ND_MOD_ANY, 
@@ -20550,7 +20610,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1326 Instruction:"UNPCKHPS Vx,Wx" Encoding:"NP 0x0F 0x15 /r"/"RM"
+    // Pos:1330 Instruction:"UNPCKHPS Vx,Wx" Encoding:"NP 0x0F 0x15 /r"/"RM"
     {
         ND_INS_UNPCKHPS, ND_CAT_SSE, ND_SET_SSE, 792, 
         ND_MOD_ANY, 
@@ -20565,7 +20625,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1327 Instruction:"UNPCKLPD Vx,Wx" Encoding:"0x66 0x0F 0x14 /r"/"RM"
+    // Pos:1331 Instruction:"UNPCKLPD Vx,Wx" Encoding:"0x66 0x0F 0x14 /r"/"RM"
     {
         ND_INS_UNPCKLPD, ND_CAT_SSE, ND_SET_SSE2, 793, 
         ND_MOD_ANY, 
@@ -20580,7 +20640,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1328 Instruction:"UNPCKLPS Vx,Wx" Encoding:"NP 0x0F 0x14 /r"/"RM"
+    // Pos:1332 Instruction:"UNPCKLPS Vx,Wx" Encoding:"NP 0x0F 0x14 /r"/"RM"
     {
         ND_INS_UNPCKLPS, ND_CAT_SSE, ND_SET_SSE, 794, 
         ND_MOD_ANY, 
@@ -20595,7 +20655,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1329 Instruction:"V4FMADDPS Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0x9A /r:mem"/"RAVM"
+    // Pos:1333 Instruction:"V4FMADDPS Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0x9A /r:mem"/"RAVM"
     {
         ND_INS_V4FMADDPS, ND_CAT_VFMAPS, ND_SET_AVX5124FMAPS, 795, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20612,7 +20672,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1330 Instruction:"V4FMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq" Encoding:"evex m:2 p:3 l:i w:0 0x9B /r:mem"/"RAVM"
+    // Pos:1334 Instruction:"V4FMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq" Encoding:"evex m:2 p:3 l:i w:0 0x9B /r:mem"/"RAVM"
     {
         ND_INS_V4FMADDSS, ND_CAT_VFMAPS, ND_SET_AVX5124FMAPS, 796, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20629,7 +20689,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1331 Instruction:"V4FNMADDPS Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0xAA /r:mem"/"RAVM"
+    // Pos:1335 Instruction:"V4FNMADDPS Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0xAA /r:mem"/"RAVM"
     {
         ND_INS_V4FNMADDPS, ND_CAT_VFMAPS, ND_SET_AVX5124FMAPS, 797, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20646,7 +20706,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1332 Instruction:"V4FNMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq" Encoding:"evex m:2 p:3 l:i w:0 0xAB /r:mem"/"RAVM"
+    // Pos:1336 Instruction:"V4FNMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq" Encoding:"evex m:2 p:3 l:i w:0 0xAB /r:mem"/"RAVM"
     {
         ND_INS_V4FNMADDSS, ND_CAT_VFMAPS, ND_SET_AVX5124FMAPS, 798, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20663,7 +20723,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1333 Instruction:"VADDPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x58 /r"/"RAVM"
+    // Pos:1337 Instruction:"VADDPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x58 /r"/"RAVM"
     {
         ND_INS_VADDPD, ND_CAT_AVX512, ND_SET_AVX512F, 799, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20680,7 +20740,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1334 Instruction:"VADDPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x58 /r"/"RVM"
+    // Pos:1338 Instruction:"VADDPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x58 /r"/"RVM"
     {
         ND_INS_VADDPD, ND_CAT_AVX, ND_SET_AVX, 799, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20696,7 +20756,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1335 Instruction:"VADDPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x58 /r"/"RAVM"
+    // Pos:1339 Instruction:"VADDPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x58 /r"/"RAVM"
     {
         ND_INS_VADDPS, ND_CAT_AVX512, ND_SET_AVX512F, 800, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20713,7 +20773,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1336 Instruction:"VADDPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x58 /r"/"RVM"
+    // Pos:1340 Instruction:"VADDPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x58 /r"/"RVM"
     {
         ND_INS_VADDPS, ND_CAT_AVX, ND_SET_AVX, 800, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20729,7 +20789,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1337 Instruction:"VADDSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x58 /r"/"RAVM"
+    // Pos:1341 Instruction:"VADDSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x58 /r"/"RAVM"
     {
         ND_INS_VADDSD, ND_CAT_AVX512, ND_SET_AVX512F, 801, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20746,7 +20806,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1338 Instruction:"VADDSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x58 /r"/"RVM"
+    // Pos:1342 Instruction:"VADDSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x58 /r"/"RVM"
     {
         ND_INS_VADDSD, ND_CAT_AVX, ND_SET_AVX, 801, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20762,7 +20822,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1339 Instruction:"VADDSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x58 /r"/"RAVM"
+    // Pos:1343 Instruction:"VADDSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x58 /r"/"RAVM"
     {
         ND_INS_VADDSS, ND_CAT_AVX512, ND_SET_AVX512F, 802, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20779,7 +20839,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1340 Instruction:"VADDSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x58 /r"/"RVM"
+    // Pos:1344 Instruction:"VADDSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x58 /r"/"RVM"
     {
         ND_INS_VADDSS, ND_CAT_AVX, ND_SET_AVX, 802, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20795,7 +20855,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1341 Instruction:"VADDSUBPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0xD0 /r"/"RVM"
+    // Pos:1345 Instruction:"VADDSUBPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0xD0 /r"/"RVM"
     {
         ND_INS_VADDSUBPD, ND_CAT_AVX, ND_SET_AVX, 803, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20811,7 +20871,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1342 Instruction:"VADDSUBPS Vps,Hps,Wps" Encoding:"vex m:1 p:3 l:x w:i 0xD0 /r"/"RVM"
+    // Pos:1346 Instruction:"VADDSUBPS Vps,Hps,Wps" Encoding:"vex m:1 p:3 l:x w:i 0xD0 /r"/"RVM"
     {
         ND_INS_VADDSUBPS, ND_CAT_AVX, ND_SET_AVX, 804, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20827,7 +20887,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1343 Instruction:"VAESDEC Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDE /r"/"RVM"
+    // Pos:1347 Instruction:"VAESDEC Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDE /r"/"RVM"
     {
         ND_INS_VAESDEC, ND_CAT_VAES, ND_SET_VAES, 805, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20843,7 +20903,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1344 Instruction:"VAESDEC Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDE /r"/"RVM"
+    // Pos:1348 Instruction:"VAESDEC Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDE /r"/"RVM"
     {
         ND_INS_VAESDEC, ND_CAT_AES, ND_SET_AES, 805, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20859,7 +20919,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1345 Instruction:"VAESDECLAST Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDF /r"/"RVM"
+    // Pos:1349 Instruction:"VAESDECLAST Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDF /r"/"RVM"
     {
         ND_INS_VAESDECLAST, ND_CAT_VAES, ND_SET_VAES, 806, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20875,7 +20935,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1346 Instruction:"VAESDECLAST Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDF /r"/"RVM"
+    // Pos:1350 Instruction:"VAESDECLAST Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDF /r"/"RVM"
     {
         ND_INS_VAESDECLAST, ND_CAT_AES, ND_SET_AES, 806, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20891,7 +20951,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1347 Instruction:"VAESENC Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDC /r"/"RVM"
+    // Pos:1351 Instruction:"VAESENC Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDC /r"/"RVM"
     {
         ND_INS_VAESENC, ND_CAT_VAES, ND_SET_VAES, 807, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20907,7 +20967,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1348 Instruction:"VAESENC Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDC /r"/"RVM"
+    // Pos:1352 Instruction:"VAESENC Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDC /r"/"RVM"
     {
         ND_INS_VAESENC, ND_CAT_AES, ND_SET_AES, 807, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20923,7 +20983,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1349 Instruction:"VAESENCLAST Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDD /r"/"RVM"
+    // Pos:1353 Instruction:"VAESENCLAST Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDD /r"/"RVM"
     {
         ND_INS_VAESENCLAST, ND_CAT_VAES, ND_SET_VAES, 808, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20939,7 +20999,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1350 Instruction:"VAESENCLAST Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDD /r"/"RVM"
+    // Pos:1354 Instruction:"VAESENCLAST Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0xDD /r"/"RVM"
     {
         ND_INS_VAESENCLAST, ND_CAT_AES, ND_SET_AES, 808, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20955,7 +21015,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1351 Instruction:"VAESIMC Vdq,Wdq" Encoding:"vex m:2 p:1 l:0 w:i 0xDB /r"/"RM"
+    // Pos:1355 Instruction:"VAESIMC Vdq,Wdq" Encoding:"vex m:2 p:1 l:0 w:i 0xDB /r"/"RM"
     {
         ND_INS_VAESIMC, ND_CAT_AES, ND_SET_AES, 809, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20970,7 +21030,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1352 Instruction:"VAESKEYGENASSIST Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0xDF /r ib"/"RMI"
+    // Pos:1356 Instruction:"VAESKEYGENASSIST Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0xDF /r ib"/"RMI"
     {
         ND_INS_VAESKEYGENASSIST, ND_CAT_AES, ND_SET_AES, 810, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -20986,7 +21046,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1353 Instruction:"VALIGND Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x03 /r ib"/"RAVMI"
+    // Pos:1357 Instruction:"VALIGND Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x03 /r ib"/"RAVMI"
     {
         ND_INS_VALIGND, ND_CAT_AVX512, ND_SET_AVX512F, 811, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21004,7 +21064,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1354 Instruction:"VALIGNQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x03 /r ib"/"RAVMI"
+    // Pos:1358 Instruction:"VALIGNQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x03 /r ib"/"RAVMI"
     {
         ND_INS_VALIGNQ, ND_CAT_AVX512, ND_SET_AVX512F, 812, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21022,7 +21082,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1355 Instruction:"VANDNPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x55 /r"/"RAVM"
+    // Pos:1359 Instruction:"VANDNPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x55 /r"/"RAVM"
     {
         ND_INS_VANDNPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 813, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21039,7 +21099,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1356 Instruction:"VANDNPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x55 /r"/"RVM"
+    // Pos:1360 Instruction:"VANDNPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x55 /r"/"RVM"
     {
         ND_INS_VANDNPD, ND_CAT_LOGICAL_FP, ND_SET_AVX, 813, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21055,7 +21115,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1357 Instruction:"VANDNPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x55 /r"/"RAVM"
+    // Pos:1361 Instruction:"VANDNPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x55 /r"/"RAVM"
     {
         ND_INS_VANDNPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 814, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21072,7 +21132,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1358 Instruction:"VANDNPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x55 /r"/"RVM"
+    // Pos:1362 Instruction:"VANDNPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x55 /r"/"RVM"
     {
         ND_INS_VANDNPS, ND_CAT_LOGICAL_FP, ND_SET_AVX, 814, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21088,7 +21148,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1359 Instruction:"VANDPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x54 /r"/"RAVM"
+    // Pos:1363 Instruction:"VANDPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x54 /r"/"RAVM"
     {
         ND_INS_VANDPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 815, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21105,7 +21165,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1360 Instruction:"VANDPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x54 /r"/"RVM"
+    // Pos:1364 Instruction:"VANDPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x54 /r"/"RVM"
     {
         ND_INS_VANDPD, ND_CAT_LOGICAL_FP, ND_SET_AVX, 815, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21121,7 +21181,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1361 Instruction:"VANDPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x54 /r"/"RAVM"
+    // Pos:1365 Instruction:"VANDPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x54 /r"/"RAVM"
     {
         ND_INS_VANDPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 816, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21138,7 +21198,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1362 Instruction:"VANDPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x54 /r"/"RVM"
+    // Pos:1366 Instruction:"VANDPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x54 /r"/"RVM"
     {
         ND_INS_VANDPS, ND_CAT_LOGICAL_FP, ND_SET_AVX, 816, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21154,7 +21214,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1363 Instruction:"VBLENDMPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x65 /r"/"RAVM"
+    // Pos:1367 Instruction:"VBLENDMPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x65 /r"/"RAVM"
     {
         ND_INS_VBLENDMPD, ND_CAT_BLEND, ND_SET_AVX512F, 817, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21171,7 +21231,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1364 Instruction:"VBLENDMPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x65 /r"/"RAVM"
+    // Pos:1368 Instruction:"VBLENDMPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x65 /r"/"RAVM"
     {
         ND_INS_VBLENDMPS, ND_CAT_BLEND, ND_SET_AVX512F, 818, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21188,7 +21248,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1365 Instruction:"VBLENDPD Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0D /r ib"/"RVMI"
+    // Pos:1369 Instruction:"VBLENDPD Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0D /r ib"/"RVMI"
     {
         ND_INS_VBLENDPD, ND_CAT_AVX, ND_SET_AVX, 819, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21205,7 +21265,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1366 Instruction:"VBLENDPS Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0C /r ib"/"RVMI"
+    // Pos:1370 Instruction:"VBLENDPS Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0C /r ib"/"RVMI"
     {
         ND_INS_VBLENDPS, ND_CAT_AVX, ND_SET_AVX, 820, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21222,7 +21282,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1367 Instruction:"VBLENDVPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x4B /r is4"/"RVML"
+    // Pos:1371 Instruction:"VBLENDVPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x4B /r is4"/"RVML"
     {
         ND_INS_VBLENDVPD, ND_CAT_AVX, ND_SET_AVX, 821, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21239,7 +21299,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1368 Instruction:"VBLENDVPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x4A /r is4"/"RVML"
+    // Pos:1372 Instruction:"VBLENDVPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x4A /r is4"/"RVML"
     {
         ND_INS_VBLENDVPS, ND_CAT_AVX, ND_SET_AVX, 822, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21256,7 +21316,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1369 Instruction:"VBROADCASTF128 Vqq,Mdq" Encoding:"vex m:2 p:1 l:1 w:0 0x1A /r:mem"/"RM"
+    // Pos:1373 Instruction:"VBROADCASTF128 Vqq,Mdq" Encoding:"vex m:2 p:1 l:1 w:0 0x1A /r:mem"/"RM"
     {
         ND_INS_VBROADCASTF128, ND_CAT_BROADCAST, ND_SET_AVX, 823, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21271,7 +21331,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1370 Instruction:"VBROADCASTF32X2 Vu{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x19 /r"/"RAM"
+    // Pos:1374 Instruction:"VBROADCASTF32X2 Vu{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x19 /r"/"RAM"
     {
         ND_INS_VBROADCASTF32X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 824, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21287,7 +21347,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1371 Instruction:"VBROADCASTF32X4 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x1A /r:mem"/"RAM"
+    // Pos:1375 Instruction:"VBROADCASTF32X4 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x1A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTF32X4, ND_CAT_BROADCAST, ND_SET_AVX512F, 825, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21303,7 +21363,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1372 Instruction:"VBROADCASTF32X8 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:0 0x1B /r:mem"/"RAM"
+    // Pos:1376 Instruction:"VBROADCASTF32X8 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:0 0x1B /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTF32X8, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 826, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21319,7 +21379,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1373 Instruction:"VBROADCASTF64X2 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x1A /r:mem"/"RAM"
+    // Pos:1377 Instruction:"VBROADCASTF64X2 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x1A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTF64X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 827, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21335,7 +21395,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1374 Instruction:"VBROADCASTF64X4 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:1 0x1B /r:mem"/"RAM"
+    // Pos:1378 Instruction:"VBROADCASTF64X4 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:1 0x1B /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTF64X4, ND_CAT_BROADCAST, ND_SET_AVX512F, 828, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21351,7 +21411,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1375 Instruction:"VBROADCASTI128 Vqq,Mdq" Encoding:"vex m:2 p:1 l:1 w:0 0x5A /r:mem"/"RM"
+    // Pos:1379 Instruction:"VBROADCASTI128 Vqq,Mdq" Encoding:"vex m:2 p:1 l:1 w:0 0x5A /r:mem"/"RM"
     {
         ND_INS_VBROADCASTI128, ND_CAT_BROADCAST, ND_SET_AVX2, 829, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21366,7 +21426,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1376 Instruction:"VBROADCASTI32X2 Vn{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x59 /r"/"RAM"
+    // Pos:1380 Instruction:"VBROADCASTI32X2 Vn{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x59 /r"/"RAM"
     {
         ND_INS_VBROADCASTI32X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 830, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21382,7 +21442,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1377 Instruction:"VBROADCASTI32X4 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x5A /r:mem"/"RAM"
+    // Pos:1381 Instruction:"VBROADCASTI32X4 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x5A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTI32X4, ND_CAT_BROADCAST, ND_SET_AVX512F, 831, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21398,7 +21458,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1378 Instruction:"VBROADCASTI32X8 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:0 0x5B /r:mem"/"RAM"
+    // Pos:1382 Instruction:"VBROADCASTI32X8 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:0 0x5B /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTI32X8, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 832, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21414,7 +21474,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1379 Instruction:"VBROADCASTI64X2 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x5A /r:mem"/"RAM"
+    // Pos:1383 Instruction:"VBROADCASTI64X2 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x5A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTI64X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 833, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21430,7 +21490,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1380 Instruction:"VBROADCASTI64X4 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:1 0x5B /r:mem"/"RAM"
+    // Pos:1384 Instruction:"VBROADCASTI64X4 Voq{K}{z},aKq,Mqq" Encoding:"evex m:2 p:1 l:2 w:1 0x5B /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTI64X4, ND_CAT_BROADCAST, ND_SET_AVX512F, 834, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21446,7 +21506,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1381 Instruction:"VBROADCASTSD Vu{K}{z},aKq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x19 /r"/"RAM"
+    // Pos:1385 Instruction:"VBROADCASTSD Vu{K}{z},aKq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x19 /r"/"RAM"
     {
         ND_INS_VBROADCASTSD, ND_CAT_BROADCAST, ND_SET_AVX512F, 835, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21462,7 +21522,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1382 Instruction:"VBROADCASTSD Vqq,Wsd" Encoding:"vex m:2 p:1 l:x w:0 0x19 /r"/"RM"
+    // Pos:1386 Instruction:"VBROADCASTSD Vqq,Wsd" Encoding:"vex m:2 p:1 l:x w:0 0x19 /r"/"RM"
     {
         ND_INS_VBROADCASTSD, ND_CAT_BROADCAST, ND_SET_AVX, 835, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21477,7 +21537,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1383 Instruction:"VBROADCASTSS Vn{K}{z},aKq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x18 /r"/"RAM"
+    // Pos:1387 Instruction:"VBROADCASTSS Vn{K}{z},aKq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x18 /r"/"RAM"
     {
         ND_INS_VBROADCASTSS, ND_CAT_BROADCAST, ND_SET_AVX512F, 836, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21493,7 +21553,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1384 Instruction:"VBROADCASTSS Vx,Wss" Encoding:"vex m:2 p:1 l:x w:0 0x18 /r"/"RM"
+    // Pos:1388 Instruction:"VBROADCASTSS Vx,Wss" Encoding:"vex m:2 p:1 l:x w:0 0x18 /r"/"RM"
     {
         ND_INS_VBROADCASTSS, ND_CAT_BROADCAST, ND_SET_AVX, 836, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21508,7 +21568,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1385 Instruction:"VCMPPD rKq{K},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC2 /r ib"/"RAVMI"
+    // Pos:1389 Instruction:"VCMPPD rKq{K},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPPD, ND_CAT_AVX512, ND_SET_AVX512F, 837, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21526,7 +21586,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1386 Instruction:"VCMPPD Vpd,Hpd,Wpd,Ib" Encoding:"vex m:1 p:1 l:x w:i 0xC2 /r ib"/"RVMI"
+    // Pos:1390 Instruction:"VCMPPD Vpd,Hpd,Wpd,Ib" Encoding:"vex m:1 p:1 l:x w:i 0xC2 /r ib"/"RVMI"
     {
         ND_INS_VCMPPD, ND_CAT_AVX, ND_SET_AVX, 837, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21543,7 +21603,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1387 Instruction:"VCMPPS rKq{K},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC2 /r ib"/"RAVMI"
+    // Pos:1391 Instruction:"VCMPPS rKq{K},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPPS, ND_CAT_AVX512, ND_SET_AVX512F, 838, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21561,7 +21621,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1388 Instruction:"VCMPPS Vss,Hss,Wss,Ib" Encoding:"vex m:1 p:0 l:i w:i 0xC2 /r ib"/"RVMI"
+    // Pos:1392 Instruction:"VCMPPS Vss,Hss,Wss,Ib" Encoding:"vex m:1 p:0 l:i w:i 0xC2 /r ib"/"RVMI"
     {
         ND_INS_VCMPPS, ND_CAT_AVX, ND_SET_AVX, 838, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21578,7 +21638,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1389 Instruction:"VCMPSD rKq{K},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:1 p:3 l:x w:1 0xC2 /r ib"/"RAVMI"
+    // Pos:1393 Instruction:"VCMPSD rKq{K},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:1 p:3 l:x w:1 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPSD, ND_CAT_AVX512, ND_SET_AVX512F, 839, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21596,7 +21656,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1390 Instruction:"VCMPSD Vsd,Hsd,Wsd,Ib" Encoding:"vex m:1 p:3 l:i w:i 0xC2 /r ib"/"RVMI"
+    // Pos:1394 Instruction:"VCMPSD Vsd,Hsd,Wsd,Ib" Encoding:"vex m:1 p:3 l:i w:i 0xC2 /r ib"/"RVMI"
     {
         ND_INS_VCMPSD, ND_CAT_AVX, ND_SET_AVX, 839, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21613,7 +21673,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1391 Instruction:"VCMPSS rKq{K},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:1 p:2 l:x w:0 0xC2 /r ib"/"RAVMI"
+    // Pos:1395 Instruction:"VCMPSS rKq{K},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:1 p:2 l:x w:0 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPSS, ND_CAT_AVX512, ND_SET_AVX512F, 840, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21631,7 +21691,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1392 Instruction:"VCMPSS Vss,Hss,Wss,Ib" Encoding:"vex m:1 p:2 l:i w:i 0xC2 /r ib"/"RVMI"
+    // Pos:1396 Instruction:"VCMPSS Vss,Hss,Wss,Ib" Encoding:"vex m:1 p:2 l:i w:i 0xC2 /r ib"/"RVMI"
     {
         ND_INS_VCMPSS, ND_CAT_AVX, ND_SET_AVX, 840, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21648,7 +21708,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1393 Instruction:"VCOMISD Vdq,Wsd{sae}" Encoding:"evex m:1 p:1 l:i w:1 0x2F /r"/"RM"
+    // Pos:1397 Instruction:"VCOMISD Vdq,Wsd{sae}" Encoding:"evex m:1 p:1 l:i w:1 0x2F /r"/"RM"
     {
         ND_INS_VCOMISD, ND_CAT_AVX512, ND_SET_AVX512F, 841, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21664,7 +21724,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1394 Instruction:"VCOMISD Vsd,Wsd" Encoding:"vex m:1 p:1 l:i w:i 0x2F /r"/"RM"
+    // Pos:1398 Instruction:"VCOMISD Vsd,Wsd" Encoding:"vex m:1 p:1 l:i w:i 0x2F /r"/"RM"
     {
         ND_INS_VCOMISD, ND_CAT_AVX, ND_SET_AVX, 841, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21680,7 +21740,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1395 Instruction:"VCOMISS Vdq,Wss{sae}" Encoding:"evex m:1 p:0 l:i w:0 0x2F /r"/"RM"
+    // Pos:1399 Instruction:"VCOMISS Vdq,Wss{sae}" Encoding:"evex m:1 p:0 l:i w:0 0x2F /r"/"RM"
     {
         ND_INS_VCOMISS, ND_CAT_AVX512, ND_SET_AVX512F, 842, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21696,7 +21756,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1396 Instruction:"VCOMISS Vss,Wss" Encoding:"vex m:1 p:0 l:i w:i 0x2F /r"/"RM"
+    // Pos:1400 Instruction:"VCOMISS Vss,Wss" Encoding:"vex m:1 p:0 l:i w:i 0x2F /r"/"RM"
     {
         ND_INS_VCOMISS, ND_CAT_AVX, ND_SET_AVX, 842, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21712,7 +21772,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1397 Instruction:"VCOMPRESSPD Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x8A /r"/"MAR"
+    // Pos:1401 Instruction:"VCOMPRESSPD Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x8A /r"/"MAR"
     {
         ND_INS_VCOMPRESSPD, ND_CAT_COMPRESS, ND_SET_AVX512F, 843, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21728,7 +21788,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1398 Instruction:"VCOMPRESSPS Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x8A /r"/"MAR"
+    // Pos:1402 Instruction:"VCOMPRESSPS Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x8A /r"/"MAR"
     {
         ND_INS_VCOMPRESSPS, ND_CAT_COMPRESS, ND_SET_AVX512F, 844, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21744,7 +21804,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1399 Instruction:"VCVTDQ2PD Vn{K}{z},aKq,Wh|B32" Encoding:"evex m:1 p:2 l:x w:0 0xE6 /r"/"RAM"
+    // Pos:1403 Instruction:"VCVTDQ2PD Vn{K}{z},aKq,Wh|B32" Encoding:"evex m:1 p:2 l:x w:0 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTDQ2PD, ND_CAT_CONVERT, ND_SET_AVX512F, 845, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21760,7 +21820,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1400 Instruction:"VCVTDQ2PD Vdq,Wq" Encoding:"vex m:1 p:2 l:0 w:i 0xE6 /r"/"RM"
+    // Pos:1404 Instruction:"VCVTDQ2PD Vdq,Wq" Encoding:"vex m:1 p:2 l:0 w:i 0xE6 /r"/"RM"
     {
         ND_INS_VCVTDQ2PD, ND_CAT_CONVERT, ND_SET_AVX, 845, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21775,7 +21835,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1401 Instruction:"VCVTDQ2PD Vqq,Wdq" Encoding:"vex m:1 p:2 l:1 w:i 0xE6 /r"/"RM"
+    // Pos:1405 Instruction:"VCVTDQ2PD Vqq,Wdq" Encoding:"vex m:1 p:2 l:1 w:i 0xE6 /r"/"RM"
     {
         ND_INS_VCVTDQ2PD, ND_CAT_CONVERT, ND_SET_AVX, 845, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21790,7 +21850,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1402 Instruction:"VCVTDQ2PS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1406 Instruction:"VCVTDQ2PS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTDQ2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 846, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21806,7 +21866,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1403 Instruction:"VCVTDQ2PS Vps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5B /r"/"RM"
+    // Pos:1407 Instruction:"VCVTDQ2PS Vps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5B /r"/"RM"
     {
         ND_INS_VCVTDQ2PS, ND_CAT_CONVERT, ND_SET_AVX, 846, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21821,7 +21881,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1404 Instruction:"VCVTNE2PS2BF16 Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:3 l:x w:0 0x72 /r"/"RAVM"
+    // Pos:1408 Instruction:"VCVTNE2PS2BF16 Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:3 l:x w:0 0x72 /r"/"RAVM"
     {
         ND_INS_VCVTNE2PS2BF16, ND_CAT_AVX512BF16, ND_SET_AVX512BF16, 847, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21838,7 +21898,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1405 Instruction:"VCVTNEPS2BF16 Vh{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x72 /r"/"RAM"
+    // Pos:1409 Instruction:"VCVTNEPS2BF16 Vh{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x72 /r"/"RAM"
     {
         ND_INS_VCVTNEPS2BF16, ND_CAT_AVX512BF16, ND_SET_AVX512BF16, 848, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21854,7 +21914,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1406 Instruction:"VCVTPD2DQ Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0xE6 /r"/"RAM"
+    // Pos:1410 Instruction:"VCVTPD2DQ Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTPD2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 849, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21870,7 +21930,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1407 Instruction:"VCVTPD2DQ Vdq,Wx" Encoding:"vex m:1 p:3 l:x w:i 0xE6 /r"/"RM"
+    // Pos:1411 Instruction:"VCVTPD2DQ Vdq,Wx" Encoding:"vex m:1 p:3 l:x w:i 0xE6 /r"/"RM"
     {
         ND_INS_VCVTPD2DQ, ND_CAT_CONVERT, ND_SET_AVX, 849, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21885,7 +21945,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1408 Instruction:"VCVTPD2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5A /r"/"RAM"
+    // Pos:1412 Instruction:"VCVTPD2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5A /r"/"RAM"
     {
         ND_INS_VCVTPD2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 850, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21901,7 +21961,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1409 Instruction:"VCVTPD2PS Vdq,Wdq" Encoding:"vex m:1 p:1 l:0 w:i 0x5A /r"/"RM"
+    // Pos:1413 Instruction:"VCVTPD2PS Vdq,Wdq" Encoding:"vex m:1 p:1 l:0 w:i 0x5A /r"/"RM"
     {
         ND_INS_VCVTPD2PS, ND_CAT_CONVERT, ND_SET_AVX, 850, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21916,7 +21976,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1410 Instruction:"VCVTPD2PS Vdq,Wqq" Encoding:"vex m:1 p:1 l:1 w:i 0x5A /r"/"RM"
+    // Pos:1414 Instruction:"VCVTPD2PS Vdq,Wqq" Encoding:"vex m:1 p:1 l:1 w:i 0x5A /r"/"RM"
     {
         ND_INS_VCVTPD2PS, ND_CAT_CONVERT, ND_SET_AVX, 850, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21931,7 +21991,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1411 Instruction:"VCVTPD2QQ Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x7B /r"/"RAM"
+    // Pos:1415 Instruction:"VCVTPD2QQ Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x7B /r"/"RAM"
     {
         ND_INS_VCVTPD2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 851, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21947,7 +22007,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1412 Instruction:"VCVTPD2UDQ Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x79 /r"/"RAM"
+    // Pos:1416 Instruction:"VCVTPD2UDQ Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPD2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 852, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21963,7 +22023,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1413 Instruction:"VCVTPD2UQQ Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x79 /r"/"RAM"
+    // Pos:1417 Instruction:"VCVTPD2UQQ Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPD2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 853, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21979,7 +22039,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1414 Instruction:"VCVTPH2PS Vn{K}{z},aKq,Wh{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x13 /r"/"RAM"
+    // Pos:1418 Instruction:"VCVTPH2PS Vn{K}{z},aKq,Wh{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x13 /r"/"RAM"
     {
         ND_INS_VCVTPH2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 854, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -21995,7 +22055,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1415 Instruction:"VCVTPH2PS Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:0 0x13 /r"/"RM"
+    // Pos:1419 Instruction:"VCVTPH2PS Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:0 0x13 /r"/"RM"
     {
         ND_INS_VCVTPH2PS, ND_CAT_CONVERT, ND_SET_F16C, 854, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22010,7 +22070,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1416 Instruction:"VCVTPH2PS Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:0 0x13 /r"/"RM"
+    // Pos:1420 Instruction:"VCVTPH2PS Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:0 0x13 /r"/"RM"
     {
         ND_INS_VCVTPH2PS, ND_CAT_CONVERT, ND_SET_F16C, 854, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22025,7 +22085,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1417 Instruction:"VCVTPS2DQ Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1421 Instruction:"VCVTPS2DQ Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTPS2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 855, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22041,7 +22101,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1418 Instruction:"VCVTPS2DQ Vps,Wps" Encoding:"vex m:1 p:1 l:x w:i 0x5B /r"/"RM"
+    // Pos:1422 Instruction:"VCVTPS2DQ Vps,Wps" Encoding:"vex m:1 p:1 l:x w:i 0x5B /r"/"RM"
     {
         ND_INS_VCVTPS2DQ, ND_CAT_CONVERT, ND_SET_AVX, 855, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22056,7 +22116,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1419 Instruction:"VCVTPS2PD Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5A /r"/"RAM"
+    // Pos:1423 Instruction:"VCVTPS2PD Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5A /r"/"RAM"
     {
         ND_INS_VCVTPS2PD, ND_CAT_CONVERT, ND_SET_AVX512F, 856, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22072,7 +22132,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1420 Instruction:"VCVTPS2PD Vpd,Wq" Encoding:"vex m:1 p:0 l:0 w:i 0x5A /r"/"RM"
+    // Pos:1424 Instruction:"VCVTPS2PD Vpd,Wq" Encoding:"vex m:1 p:0 l:0 w:i 0x5A /r"/"RM"
     {
         ND_INS_VCVTPS2PD, ND_CAT_CONVERT, ND_SET_AVX, 856, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22087,7 +22147,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1421 Instruction:"VCVTPS2PD Vqq,Wdq" Encoding:"vex m:1 p:0 l:1 w:i 0x5A /r"/"RM"
+    // Pos:1425 Instruction:"VCVTPS2PD Vqq,Wdq" Encoding:"vex m:1 p:0 l:1 w:i 0x5A /r"/"RM"
     {
         ND_INS_VCVTPS2PD, ND_CAT_CONVERT, ND_SET_AVX, 856, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22102,7 +22162,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1422 Instruction:"VCVTPS2PH Wh{K}{z},aKq,Vn{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1D /r ib"/"MARI"
+    // Pos:1426 Instruction:"VCVTPS2PH Wh{K}{z},aKq,Vn{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1D /r ib"/"MARI"
     {
         ND_INS_VCVTPS2PH, ND_CAT_CONVERT, ND_SET_AVX512F, 857, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22119,7 +22179,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1423 Instruction:"VCVTPS2PH Wq,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:0 0x1D /r ib"/"MRI"
+    // Pos:1427 Instruction:"VCVTPS2PH Wq,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:0 0x1D /r ib"/"MRI"
     {
         ND_INS_VCVTPS2PH, ND_CAT_CONVERT, ND_SET_F16C, 857, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22135,7 +22195,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1424 Instruction:"VCVTPS2PH Wdq,Vqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x1D /r ib"/"MRI"
+    // Pos:1428 Instruction:"VCVTPS2PH Wdq,Vqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x1D /r ib"/"MRI"
     {
         ND_INS_VCVTPS2PH, ND_CAT_CONVERT, ND_SET_F16C, 857, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22151,7 +22211,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1425 Instruction:"VCVTPS2QQ Vn{K}{z},aKq,Wh|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x7B /r"/"RAM"
+    // Pos:1429 Instruction:"VCVTPS2QQ Vn{K}{z},aKq,Wh|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x7B /r"/"RAM"
     {
         ND_INS_VCVTPS2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 858, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22167,7 +22227,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1426 Instruction:"VCVTPS2UDQ Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1430 Instruction:"VCVTPS2UDQ Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPS2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 859, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22183,7 +22243,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1427 Instruction:"VCVTPS2UQQ Vn{K}{z},aKq,Wh|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1431 Instruction:"VCVTPS2UQQ Vn{K}{z},aKq,Wh|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPS2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 860, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22199,7 +22259,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1428 Instruction:"VCVTQQ2PD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0xE6 /r"/"RAM"
+    // Pos:1432 Instruction:"VCVTQQ2PD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTQQ2PD, ND_CAT_CONVERT, ND_SET_AVX512DQ, 861, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22215,7 +22275,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1429 Instruction:"VCVTQQ2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x5B /r"/"RAM"
+    // Pos:1433 Instruction:"VCVTQQ2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x5B /r"/"RAM"
     {
         ND_INS_VCVTQQ2PS, ND_CAT_CONVERT, ND_SET_AVX512DQ, 862, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22231,7 +22291,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1430 Instruction:"VCVTSD2SI Gy,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:x 0x2D /r"/"RM"
+    // Pos:1434 Instruction:"VCVTSD2SI Gy,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:x 0x2D /r"/"RM"
     {
         ND_INS_VCVTSD2SI, ND_CAT_CONVERT, ND_SET_AVX512F, 863, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22246,7 +22306,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1431 Instruction:"VCVTSD2SI Gy,Wsd" Encoding:"vex m:1 p:3 l:i w:x 0x2D /r"/"RM"
+    // Pos:1435 Instruction:"VCVTSD2SI Gy,Wsd" Encoding:"vex m:1 p:3 l:i w:x 0x2D /r"/"RM"
     {
         ND_INS_VCVTSD2SI, ND_CAT_CONVERT, ND_SET_AVX, 863, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22261,7 +22321,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1432 Instruction:"VCVTSD2SS Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x5A /r"/"RAVM"
+    // Pos:1436 Instruction:"VCVTSD2SS Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x5A /r"/"RAVM"
     {
         ND_INS_VCVTSD2SS, ND_CAT_CONVERT, ND_SET_AVX512F, 864, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22278,7 +22338,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1433 Instruction:"VCVTSD2SS Vss,Hx,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5A /r"/"RVM"
+    // Pos:1437 Instruction:"VCVTSD2SS Vss,Hx,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5A /r"/"RVM"
     {
         ND_INS_VCVTSD2SS, ND_CAT_CONVERT, ND_SET_AVX, 864, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22294,7 +22354,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1434 Instruction:"VCVTSD2USI Gy,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:x 0x79 /r"/"RM"
+    // Pos:1438 Instruction:"VCVTSD2USI Gy,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:x 0x79 /r"/"RM"
     {
         ND_INS_VCVTSD2USI, ND_CAT_CONVERT, ND_SET_AVX512F, 865, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22309,7 +22369,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1435 Instruction:"VCVTSI2SD Vdq,Hdq,Ey" Encoding:"evex m:1 p:3 l:i w:0 0x2A /r"/"RVM"
+    // Pos:1439 Instruction:"VCVTSI2SD Vdq,Hdq,Ey" Encoding:"evex m:1 p:3 l:i w:0 0x2A /r"/"RVM"
     {
         ND_INS_VCVTSI2SD, ND_CAT_CONVERT, ND_SET_AVX512F, 866, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22325,7 +22385,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1436 Instruction:"VCVTSI2SD Vdq,Hdq{er},Ey" Encoding:"evex m:1 p:3 l:i w:1 0x2A /r"/"RVM"
+    // Pos:1440 Instruction:"VCVTSI2SD Vdq,Hdq{er},Ey" Encoding:"evex m:1 p:3 l:i w:1 0x2A /r"/"RVM"
     {
         ND_INS_VCVTSI2SD, ND_CAT_CONVERT, ND_SET_AVX512F, 866, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22341,7 +22401,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1437 Instruction:"VCVTSI2SD Vsd,Hsd,Ey" Encoding:"vex m:1 p:3 l:i w:x 0x2A /r"/"RVM"
+    // Pos:1441 Instruction:"VCVTSI2SD Vsd,Hsd,Ey" Encoding:"vex m:1 p:3 l:i w:x 0x2A /r"/"RVM"
     {
         ND_INS_VCVTSI2SD, ND_CAT_CONVERT, ND_SET_AVX, 866, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22357,7 +22417,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1438 Instruction:"VCVTSI2SS Vdq,Hdq{er},Ey" Encoding:"evex m:1 p:2 l:i w:x 0x2A /r"/"RVM"
+    // Pos:1442 Instruction:"VCVTSI2SS Vdq,Hdq{er},Ey" Encoding:"evex m:1 p:2 l:i w:x 0x2A /r"/"RVM"
     {
         ND_INS_VCVTSI2SS, ND_CAT_CONVERT, ND_SET_AVX512F, 867, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22373,7 +22433,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1439 Instruction:"VCVTSI2SS Vss,Hss,Ey" Encoding:"vex m:1 p:2 l:i w:x 0x2A /r"/"RVM"
+    // Pos:1443 Instruction:"VCVTSI2SS Vss,Hss,Ey" Encoding:"vex m:1 p:2 l:i w:x 0x2A /r"/"RVM"
     {
         ND_INS_VCVTSI2SS, ND_CAT_CONVERT, ND_SET_AVX, 867, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22389,7 +22449,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1440 Instruction:"VCVTSS2SD Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:0 0x5A /r"/"RAVM"
+    // Pos:1444 Instruction:"VCVTSS2SD Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:0 0x5A /r"/"RAVM"
     {
         ND_INS_VCVTSS2SD, ND_CAT_CONVERT, ND_SET_AVX512F, 868, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22406,7 +22466,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1441 Instruction:"VCVTSS2SD Vsd,Hx,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5A /r"/"RVM"
+    // Pos:1445 Instruction:"VCVTSS2SD Vsd,Hx,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5A /r"/"RVM"
     {
         ND_INS_VCVTSS2SD, ND_CAT_CONVERT, ND_SET_AVX, 868, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22422,7 +22482,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1442 Instruction:"VCVTSS2SI Gy,Wss{er}" Encoding:"evex m:1 p:2 l:i w:x 0x2D /r"/"RM"
+    // Pos:1446 Instruction:"VCVTSS2SI Gy,Wss{er}" Encoding:"evex m:1 p:2 l:i w:x 0x2D /r"/"RM"
     {
         ND_INS_VCVTSS2SI, ND_CAT_CONVERT, ND_SET_AVX512F, 869, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22437,7 +22497,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1443 Instruction:"VCVTSS2SI Gy,Wss" Encoding:"vex m:1 p:2 l:i w:x 0x2D /r"/"RM"
+    // Pos:1447 Instruction:"VCVTSS2SI Gy,Wss" Encoding:"vex m:1 p:2 l:i w:x 0x2D /r"/"RM"
     {
         ND_INS_VCVTSS2SI, ND_CAT_CONVERT, ND_SET_AVX, 869, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22452,7 +22512,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1444 Instruction:"VCVTSS2USI Gy,Wss{er}" Encoding:"evex m:1 p:2 l:i w:x 0x79 /r"/"RM"
+    // Pos:1448 Instruction:"VCVTSS2USI Gy,Wss{er}" Encoding:"evex m:1 p:2 l:i w:x 0x79 /r"/"RM"
     {
         ND_INS_VCVTSS2USI, ND_CAT_CONVERT, ND_SET_AVX512F, 870, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22467,7 +22527,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1445 Instruction:"VCVTTPD2DQ Vh{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0xE6 /r"/"RAM"
+    // Pos:1449 Instruction:"VCVTTPD2DQ Vh{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTTPD2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 871, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22483,7 +22543,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1446 Instruction:"VCVTTPD2DQ Vdq,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE6 /r"/"RM"
+    // Pos:1450 Instruction:"VCVTTPD2DQ Vdq,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE6 /r"/"RM"
     {
         ND_INS_VCVTTPD2DQ, ND_CAT_CONVERT, ND_SET_AVX, 871, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22498,7 +22558,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1447 Instruction:"VCVTTPD2QQ Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1451 Instruction:"VCVTTPD2QQ Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTTPD2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 872, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22514,7 +22574,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1448 Instruction:"VCVTTPD2UDQ Vh{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:0 l:x w:1 0x78 /r"/"RAM"
+    // Pos:1452 Instruction:"VCVTTPD2UDQ Vh{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:0 l:x w:1 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPD2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 873, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22530,7 +22590,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1449 Instruction:"VCVTTPD2UQQ Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x78 /r"/"RAM"
+    // Pos:1453 Instruction:"VCVTTPD2UQQ Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPD2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 874, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22546,7 +22606,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1450 Instruction:"VCVTTPS2DQ Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:1 p:2 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1454 Instruction:"VCVTTPS2DQ Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:1 p:2 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTTPS2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 875, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22562,7 +22622,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1451 Instruction:"VCVTTPS2DQ Vps,Wps" Encoding:"vex m:1 p:2 l:x w:i 0x5B /r"/"RM"
+    // Pos:1455 Instruction:"VCVTTPS2DQ Vps,Wps" Encoding:"vex m:1 p:2 l:x w:i 0x5B /r"/"RM"
     {
         ND_INS_VCVTTPS2DQ, ND_CAT_CONVERT, ND_SET_AVX, 875, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22577,7 +22637,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1452 Instruction:"VCVTTPS2QQ Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1456 Instruction:"VCVTTPS2QQ Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTTPS2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 876, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22593,7 +22653,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1453 Instruction:"VCVTTPS2UDQ Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1457 Instruction:"VCVTTPS2UDQ Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPS2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 877, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22609,7 +22669,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1454 Instruction:"VCVTTPS2UQQ Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1458 Instruction:"VCVTTPS2UQQ Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPS2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 878, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22625,7 +22685,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1455 Instruction:"VCVTTSD2SI Gy,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:x 0x2C /r"/"RM"
+    // Pos:1459 Instruction:"VCVTTSD2SI Gy,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:x 0x2C /r"/"RM"
     {
         ND_INS_VCVTTSD2SI, ND_CAT_CONVERT, ND_SET_AVX512F, 879, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22640,7 +22700,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1456 Instruction:"VCVTTSD2SI Gy,Wsd" Encoding:"vex m:1 p:3 l:i w:x 0x2C /r"/"RM"
+    // Pos:1460 Instruction:"VCVTTSD2SI Gy,Wsd" Encoding:"vex m:1 p:3 l:i w:x 0x2C /r"/"RM"
     {
         ND_INS_VCVTTSD2SI, ND_CAT_CONVERT, ND_SET_AVX, 879, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22655,7 +22715,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1457 Instruction:"VCVTTSD2USI Gy,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:x 0x78 /r"/"RM"
+    // Pos:1461 Instruction:"VCVTTSD2USI Gy,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:x 0x78 /r"/"RM"
     {
         ND_INS_VCVTTSD2USI, ND_CAT_CONVERT, ND_SET_AVX512F, 880, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22670,7 +22730,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1458 Instruction:"VCVTTSS2SI Gy,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:x 0x2C /r"/"RM"
+    // Pos:1462 Instruction:"VCVTTSS2SI Gy,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:x 0x2C /r"/"RM"
     {
         ND_INS_VCVTTSS2SI, ND_CAT_CONVERT, ND_SET_AVX512F, 881, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22685,7 +22745,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1459 Instruction:"VCVTTSS2SI Gy,Wss" Encoding:"vex m:1 p:2 l:i w:x 0x2C /r"/"RM"
+    // Pos:1463 Instruction:"VCVTTSS2SI Gy,Wss" Encoding:"vex m:1 p:2 l:i w:x 0x2C /r"/"RM"
     {
         ND_INS_VCVTTSS2SI, ND_CAT_CONVERT, ND_SET_AVX, 881, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22700,7 +22760,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1460 Instruction:"VCVTTSS2USI Gy,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:x 0x78 /r"/"RM"
+    // Pos:1464 Instruction:"VCVTTSS2USI Gy,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:x 0x78 /r"/"RM"
     {
         ND_INS_VCVTTSS2USI, ND_CAT_CONVERT, ND_SET_AVX512F, 882, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22715,7 +22775,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1461 Instruction:"VCVTUDQ2PD Vn{K}{z},aKq,Wh|B32" Encoding:"evex m:1 p:2 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1465 Instruction:"VCVTUDQ2PD Vn{K}{z},aKq,Wh|B32" Encoding:"evex m:1 p:2 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUDQ2PD, ND_CAT_CONVERT, ND_SET_AVX512F, 883, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22731,7 +22791,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1462 Instruction:"VCVTUDQ2PS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:3 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1466 Instruction:"VCVTUDQ2PS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:3 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUDQ2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 884, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22747,7 +22807,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1463 Instruction:"VCVTUQQ2PD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1467 Instruction:"VCVTUQQ2PD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUQQ2PD, ND_CAT_CONVERT, ND_SET_AVX512DQ, 885, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22763,7 +22823,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1464 Instruction:"VCVTUQQ2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1468 Instruction:"VCVTUQQ2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUQQ2PS, ND_CAT_CONVERT, ND_SET_AVX512DQ, 886, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22779,7 +22839,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1465 Instruction:"VCVTUSI2SD Vdq,Hdq,Ey" Encoding:"evex m:1 p:3 l:i w:0 0x7B /r"/"RVM"
+    // Pos:1469 Instruction:"VCVTUSI2SD Vdq,Hdq,Ey" Encoding:"evex m:1 p:3 l:i w:0 0x7B /r"/"RVM"
     {
         ND_INS_VCVTUSI2SD, ND_CAT_CONVERT, ND_SET_AVX512F, 887, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22795,7 +22855,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1466 Instruction:"VCVTUSI2SD Vdq,Hdq{er},Ey" Encoding:"evex m:1 p:3 l:i w:1 0x7B /r"/"RVM"
+    // Pos:1470 Instruction:"VCVTUSI2SD Vdq,Hdq{er},Ey" Encoding:"evex m:1 p:3 l:i w:1 0x7B /r"/"RVM"
     {
         ND_INS_VCVTUSI2SD, ND_CAT_CONVERT, ND_SET_AVX512F, 887, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22811,7 +22871,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1467 Instruction:"VCVTUSI2SS Vss,Hss{er},Ey" Encoding:"evex m:1 p:2 l:i w:x 0x7B /r"/"RVM"
+    // Pos:1471 Instruction:"VCVTUSI2SS Vss,Hss{er},Ey" Encoding:"evex m:1 p:2 l:i w:x 0x7B /r"/"RVM"
     {
         ND_INS_VCVTUSI2SS, ND_CAT_CONVERT, ND_SET_AVX512F, 888, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22827,7 +22887,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1468 Instruction:"VDBPSADBW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x42 /r ib"/"RAVMI"
+    // Pos:1472 Instruction:"VDBPSADBW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x42 /r ib"/"RAVMI"
     {
         ND_INS_VDBPSADBW, ND_CAT_AVX512, ND_SET_AVX512BW, 889, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22845,7 +22905,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1469 Instruction:"VDIVPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5E /r"/"RAVM"
+    // Pos:1473 Instruction:"VDIVPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVPD, ND_CAT_AVX512, ND_SET_AVX512F, 890, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22862,7 +22922,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1470 Instruction:"VDIVPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5E /r"/"RVM"
+    // Pos:1474 Instruction:"VDIVPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5E /r"/"RVM"
     {
         ND_INS_VDIVPD, ND_CAT_AVX, ND_SET_AVX, 890, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22878,7 +22938,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1471 Instruction:"VDIVPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5E /r"/"RAVM"
+    // Pos:1475 Instruction:"VDIVPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVPS, ND_CAT_AVX512, ND_SET_AVX512F, 891, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22895,7 +22955,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1472 Instruction:"VDIVPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5E /r"/"RVM"
+    // Pos:1476 Instruction:"VDIVPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5E /r"/"RVM"
     {
         ND_INS_VDIVPS, ND_CAT_AVX, ND_SET_AVX, 891, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22911,7 +22971,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1473 Instruction:"VDIVSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x5E /r"/"RAVM"
+    // Pos:1477 Instruction:"VDIVSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVSD, ND_CAT_AVX512, ND_SET_AVX512F, 892, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22928,7 +22988,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1474 Instruction:"VDIVSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5E /r"/"RVM"
+    // Pos:1478 Instruction:"VDIVSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5E /r"/"RVM"
     {
         ND_INS_VDIVSD, ND_CAT_AVX, ND_SET_AVX, 892, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22944,7 +23004,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1475 Instruction:"VDIVSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x5E /r"/"RAVM"
+    // Pos:1479 Instruction:"VDIVSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVSS, ND_CAT_AVX512, ND_SET_AVX512F, 893, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22961,7 +23021,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1476 Instruction:"VDIVSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5E /r"/"RVM"
+    // Pos:1480 Instruction:"VDIVSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5E /r"/"RVM"
     {
         ND_INS_VDIVSS, ND_CAT_AVX, ND_SET_AVX, 893, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22977,7 +23037,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1477 Instruction:"VDPBF16PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x52 /r"/"RAVM"
+    // Pos:1481 Instruction:"VDPBF16PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x52 /r"/"RAVM"
     {
         ND_INS_VDPBF16PS, ND_CAT_AVX512BF16, ND_SET_AVX512BF16, 894, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -22994,7 +23054,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1478 Instruction:"VDPPD Vdq,Hdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x41 /r ib"/"RVMI"
+    // Pos:1482 Instruction:"VDPPD Vdq,Hdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x41 /r ib"/"RVMI"
     {
         ND_INS_VDPPD, ND_CAT_AVX, ND_SET_AVX, 895, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23011,7 +23071,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1479 Instruction:"VDPPS Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x40 /r ib"/"RVMI"
+    // Pos:1483 Instruction:"VDPPS Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x40 /r ib"/"RVMI"
     {
         ND_INS_VDPPS, ND_CAT_AVX, ND_SET_AVX, 896, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23028,7 +23088,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1480 Instruction:"VERR Ew" Encoding:"0x0F 0x00 /4"/"M"
+    // Pos:1484 Instruction:"VERR Ew" Encoding:"0x0F 0x00 /4"/"M"
     {
         ND_INS_VERR, ND_CAT_SYSTEM, ND_SET_I286PROT, 897, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -23043,7 +23103,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1481 Instruction:"VERW Ew" Encoding:"0x0F 0x00 /5"/"M"
+    // Pos:1485 Instruction:"VERW Ew" Encoding:"0x0F 0x00 /5"/"M"
     {
         ND_INS_VERW, ND_CAT_SYSTEM, ND_SET_I286PROT, 898, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -23058,7 +23118,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1482 Instruction:"VEXP2PD Voq{K}{z},aKq,Woq|B64{sae}" Encoding:"evex m:2 p:1 l:2 w:1 0xC8 /r"/"RAM"
+    // Pos:1486 Instruction:"VEXP2PD Voq{K}{z},aKq,Woq|B64{sae}" Encoding:"evex m:2 p:1 l:2 w:1 0xC8 /r"/"RAM"
     {
         ND_INS_VEXP2PD, ND_CAT_KNL, ND_SET_AVX512ER, 899, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23074,7 +23134,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1483 Instruction:"VEXP2PS Voq{K}{z},aKq,Woq|B32{sae}" Encoding:"evex m:2 p:1 l:2 w:0 0xC8 /r"/"RAM"
+    // Pos:1487 Instruction:"VEXP2PS Voq{K}{z},aKq,Woq|B32{sae}" Encoding:"evex m:2 p:1 l:2 w:0 0xC8 /r"/"RAM"
     {
         ND_INS_VEXP2PS, ND_CAT_KNL, ND_SET_AVX512ER, 900, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23090,7 +23150,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1484 Instruction:"VEXPANDPD Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x88 /r"/"RAM"
+    // Pos:1488 Instruction:"VEXPANDPD Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x88 /r"/"RAM"
     {
         ND_INS_VEXPANDPD, ND_CAT_EXPAND, ND_SET_AVX512F, 901, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23106,7 +23166,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1485 Instruction:"VEXPANDPS Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x88 /r"/"RAM"
+    // Pos:1489 Instruction:"VEXPANDPS Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x88 /r"/"RAM"
     {
         ND_INS_VEXPANDPS, ND_CAT_EXPAND, ND_SET_AVX512F, 902, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23122,7 +23182,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1486 Instruction:"VEXTRACTF128 Wdq,Vqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x19 /r ib"/"MRI"
+    // Pos:1490 Instruction:"VEXTRACTF128 Wdq,Vqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x19 /r ib"/"MRI"
     {
         ND_INS_VEXTRACTF128, ND_CAT_AVX, ND_SET_AVX, 903, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23138,7 +23198,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1487 Instruction:"VEXTRACTF32X4 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x19 /r ib"/"MARI"
+    // Pos:1491 Instruction:"VEXTRACTF32X4 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x19 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTF32X4, ND_CAT_AVX512, ND_SET_AVX512F, 904, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23155,7 +23215,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1488 Instruction:"VEXTRACTF32X8 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x1B /r ib"/"MARI"
+    // Pos:1492 Instruction:"VEXTRACTF32X8 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x1B /r ib"/"MARI"
     {
         ND_INS_VEXTRACTF32X8, ND_CAT_AVX512, ND_SET_AVX512DQ, 905, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23172,7 +23232,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1489 Instruction:"VEXTRACTF64X2 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x19 /r ib"/"MARI"
+    // Pos:1493 Instruction:"VEXTRACTF64X2 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x19 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTF64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 906, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23189,7 +23249,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1490 Instruction:"VEXTRACTF64X4 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x1B /r ib"/"MARI"
+    // Pos:1494 Instruction:"VEXTRACTF64X4 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x1B /r ib"/"MARI"
     {
         ND_INS_VEXTRACTF64X4, ND_CAT_AVX512, ND_SET_AVX512F, 907, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23206,7 +23266,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1491 Instruction:"VEXTRACTI128 Wdq,Vqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x39 /r ib"/"MRI"
+    // Pos:1495 Instruction:"VEXTRACTI128 Wdq,Vqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x39 /r ib"/"MRI"
     {
         ND_INS_VEXTRACTI128, ND_CAT_AVX2, ND_SET_AVX2, 908, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23222,7 +23282,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1492 Instruction:"VEXTRACTI32X4 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x39 /r ib"/"MARI"
+    // Pos:1496 Instruction:"VEXTRACTI32X4 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x39 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTI32X4, ND_CAT_AVX512, ND_SET_AVX512F, 909, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23239,7 +23299,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1493 Instruction:"VEXTRACTI32X8 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x3B /r ib"/"MARI"
+    // Pos:1497 Instruction:"VEXTRACTI32X8 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x3B /r ib"/"MARI"
     {
         ND_INS_VEXTRACTI32X8, ND_CAT_AVX512, ND_SET_AVX512DQ, 910, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23256,7 +23316,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1494 Instruction:"VEXTRACTI64X2 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x39 /r ib"/"MARI"
+    // Pos:1498 Instruction:"VEXTRACTI64X2 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x39 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTI64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 911, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23273,7 +23333,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1495 Instruction:"VEXTRACTI64X4 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x3B /r ib"/"MARI"
+    // Pos:1499 Instruction:"VEXTRACTI64X4 Wqq{K}{z},aKq,Voq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x3B /r ib"/"MARI"
     {
         ND_INS_VEXTRACTI64X4, ND_CAT_AVX512, ND_SET_AVX512F, 912, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23290,7 +23350,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1496 Instruction:"VEXTRACTPS Md,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x17 /r:mem ib"/"MRI"
+    // Pos:1500 Instruction:"VEXTRACTPS Md,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x17 /r:mem ib"/"MRI"
     {
         ND_INS_VEXTRACTPS, ND_CAT_AVX512, ND_SET_AVX512F, 913, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23306,7 +23366,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1497 Instruction:"VEXTRACTPS Ry,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x17 /r:reg ib"/"MRI"
+    // Pos:1501 Instruction:"VEXTRACTPS Ry,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x17 /r:reg ib"/"MRI"
     {
         ND_INS_VEXTRACTPS, ND_CAT_AVX512, ND_SET_AVX512F, 913, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23322,7 +23382,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1498 Instruction:"VEXTRACTPS Md,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x17 /r:mem ib"/"MRI"
+    // Pos:1502 Instruction:"VEXTRACTPS Md,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x17 /r:mem ib"/"MRI"
     {
         ND_INS_VEXTRACTPS, ND_CAT_AVX, ND_SET_AVX, 913, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23338,7 +23398,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1499 Instruction:"VEXTRACTPS Ry,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x17 /r:reg ib"/"MRI"
+    // Pos:1503 Instruction:"VEXTRACTPS Ry,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x17 /r:reg ib"/"MRI"
     {
         ND_INS_VEXTRACTPS, ND_CAT_AVX, ND_SET_AVX, 913, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23354,7 +23414,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1500 Instruction:"VFIXUPIMMPD Vn{K}{z},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x54 /r ib"/"RAVMI"
+    // Pos:1504 Instruction:"VFIXUPIMMPD Vn{K}{z},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x54 /r ib"/"RAVMI"
     {
         ND_INS_VFIXUPIMMPD, ND_CAT_AVX512, ND_SET_AVX512F, 914, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23372,7 +23432,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1501 Instruction:"VFIXUPIMMPS Vn{K}{z},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x54 /r ib"/"RAVMI"
+    // Pos:1505 Instruction:"VFIXUPIMMPS Vn{K}{z},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x54 /r ib"/"RAVMI"
     {
         ND_INS_VFIXUPIMMPS, ND_CAT_AVX512, ND_SET_AVX512F, 915, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23390,7 +23450,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1502 Instruction:"VFIXUPIMMSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x55 /r ib"/"RAVMI"
+    // Pos:1506 Instruction:"VFIXUPIMMSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x55 /r ib"/"RAVMI"
     {
         ND_INS_VFIXUPIMMSD, ND_CAT_AVX512, ND_SET_AVX512F, 916, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23408,7 +23468,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1503 Instruction:"VFIXUPIMMSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x55 /r ib"/"RAVMI"
+    // Pos:1507 Instruction:"VFIXUPIMMSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x55 /r ib"/"RAVMI"
     {
         ND_INS_VFIXUPIMMSS, ND_CAT_AVX512, ND_SET_AVX512F, 917, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23426,7 +23486,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1504 Instruction:"VFMADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x98 /r"/"RAVM"
+    // Pos:1508 Instruction:"VFMADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x98 /r"/"RAVM"
     {
         ND_INS_VFMADD132PD, ND_CAT_VFMA, ND_SET_AVX512F, 918, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23443,7 +23503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1505 Instruction:"VFMADD132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x98 /r"/"RVM"
+    // Pos:1509 Instruction:"VFMADD132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x98 /r"/"RVM"
     {
         ND_INS_VFMADD132PD, ND_CAT_VFMA, ND_SET_FMA, 918, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23459,7 +23519,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1506 Instruction:"VFMADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x98 /r"/"RAVM"
+    // Pos:1510 Instruction:"VFMADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x98 /r"/"RAVM"
     {
         ND_INS_VFMADD132PS, ND_CAT_VFMA, ND_SET_AVX512F, 919, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23476,7 +23536,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1507 Instruction:"VFMADD132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x98 /r"/"RVM"
+    // Pos:1511 Instruction:"VFMADD132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x98 /r"/"RVM"
     {
         ND_INS_VFMADD132PS, ND_CAT_VFMA, ND_SET_FMA, 919, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23492,7 +23552,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1508 Instruction:"VFMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x99 /r"/"RAVM"
+    // Pos:1512 Instruction:"VFMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x99 /r"/"RAVM"
     {
         ND_INS_VFMADD132SD, ND_CAT_VFMA, ND_SET_AVX512F, 920, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23509,7 +23569,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1509 Instruction:"VFMADD132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x99 /r"/"RVM"
+    // Pos:1513 Instruction:"VFMADD132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x99 /r"/"RVM"
     {
         ND_INS_VFMADD132SD, ND_CAT_VFMA, ND_SET_FMA, 920, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23525,7 +23585,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1510 Instruction:"VFMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x99 /r"/"RAVM"
+    // Pos:1514 Instruction:"VFMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x99 /r"/"RAVM"
     {
         ND_INS_VFMADD132SS, ND_CAT_VFMA, ND_SET_AVX512F, 921, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23542,7 +23602,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1511 Instruction:"VFMADD132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x99 /r"/"RVM"
+    // Pos:1515 Instruction:"VFMADD132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x99 /r"/"RVM"
     {
         ND_INS_VFMADD132SS, ND_CAT_VFMA, ND_SET_FMA, 921, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23558,7 +23618,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1512 Instruction:"VFMADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA8 /r"/"RAVM"
+    // Pos:1516 Instruction:"VFMADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA8 /r"/"RAVM"
     {
         ND_INS_VFMADD213PD, ND_CAT_VFMA, ND_SET_AVX512F, 922, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23575,7 +23635,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1513 Instruction:"VFMADD213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xA8 /r"/"RVM"
+    // Pos:1517 Instruction:"VFMADD213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xA8 /r"/"RVM"
     {
         ND_INS_VFMADD213PD, ND_CAT_VFMA, ND_SET_FMA, 922, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23591,7 +23651,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1514 Instruction:"VFMADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA8 /r"/"RAVM"
+    // Pos:1518 Instruction:"VFMADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA8 /r"/"RAVM"
     {
         ND_INS_VFMADD213PS, ND_CAT_VFMA, ND_SET_AVX512F, 923, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23608,7 +23668,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1515 Instruction:"VFMADD213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xA8 /r"/"RVM"
+    // Pos:1519 Instruction:"VFMADD213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xA8 /r"/"RVM"
     {
         ND_INS_VFMADD213PS, ND_CAT_VFMA, ND_SET_FMA, 923, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23624,7 +23684,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1516 Instruction:"VFMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xA9 /r"/"RAVM"
+    // Pos:1520 Instruction:"VFMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xA9 /r"/"RAVM"
     {
         ND_INS_VFMADD213SD, ND_CAT_VFMA, ND_SET_AVX512F, 924, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23641,7 +23701,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1517 Instruction:"VFMADD213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xA9 /r"/"RVM"
+    // Pos:1521 Instruction:"VFMADD213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xA9 /r"/"RVM"
     {
         ND_INS_VFMADD213SD, ND_CAT_VFMA, ND_SET_FMA, 924, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23657,7 +23717,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1518 Instruction:"VFMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xA9 /r"/"RAVM"
+    // Pos:1522 Instruction:"VFMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xA9 /r"/"RAVM"
     {
         ND_INS_VFMADD213SS, ND_CAT_VFMA, ND_SET_AVX512F, 925, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23674,7 +23734,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1519 Instruction:"VFMADD213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xA9 /r"/"RVM"
+    // Pos:1523 Instruction:"VFMADD213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xA9 /r"/"RVM"
     {
         ND_INS_VFMADD213SS, ND_CAT_VFMA, ND_SET_FMA, 925, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23690,7 +23750,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1520 Instruction:"VFMADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB8 /r"/"RAVM"
+    // Pos:1524 Instruction:"VFMADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB8 /r"/"RAVM"
     {
         ND_INS_VFMADD231PD, ND_CAT_VFMA, ND_SET_AVX512F, 926, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23707,7 +23767,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1521 Instruction:"VFMADD231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xB8 /r"/"RVM"
+    // Pos:1525 Instruction:"VFMADD231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xB8 /r"/"RVM"
     {
         ND_INS_VFMADD231PD, ND_CAT_VFMA, ND_SET_FMA, 926, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23723,7 +23783,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1522 Instruction:"VFMADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB8 /r"/"RAVM"
+    // Pos:1526 Instruction:"VFMADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB8 /r"/"RAVM"
     {
         ND_INS_VFMADD231PS, ND_CAT_VFMA, ND_SET_AVX512F, 927, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23740,7 +23800,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1523 Instruction:"VFMADD231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xB8 /r"/"RVM"
+    // Pos:1527 Instruction:"VFMADD231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xB8 /r"/"RVM"
     {
         ND_INS_VFMADD231PS, ND_CAT_VFMA, ND_SET_FMA, 927, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23756,7 +23816,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1524 Instruction:"VFMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xB9 /r"/"RAVM"
+    // Pos:1528 Instruction:"VFMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xB9 /r"/"RAVM"
     {
         ND_INS_VFMADD231SD, ND_CAT_VFMA, ND_SET_AVX512F, 928, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23773,7 +23833,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1525 Instruction:"VFMADD231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xB9 /r"/"RVM"
+    // Pos:1529 Instruction:"VFMADD231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xB9 /r"/"RVM"
     {
         ND_INS_VFMADD231SD, ND_CAT_VFMA, ND_SET_FMA, 928, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23789,7 +23849,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1526 Instruction:"VFMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xB9 /r"/"RAVM"
+    // Pos:1530 Instruction:"VFMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xB9 /r"/"RAVM"
     {
         ND_INS_VFMADD231SS, ND_CAT_VFMA, ND_SET_AVX512F, 929, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23806,7 +23866,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1527 Instruction:"VFMADD231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xB9 /r"/"RVM"
+    // Pos:1531 Instruction:"VFMADD231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xB9 /r"/"RVM"
     {
         ND_INS_VFMADD231SS, ND_CAT_VFMA, ND_SET_FMA, 929, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23822,7 +23882,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1528 Instruction:"VFMADDPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x69 /r is4"/"RVML"
+    // Pos:1532 Instruction:"VFMADDPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x69 /r is4"/"RVML"
     {
         ND_INS_VFMADDPD, ND_CAT_FMA4, ND_SET_FMA4, 930, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23839,7 +23899,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1529 Instruction:"VFMADDPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x69 /r is4"/"RVLM"
+    // Pos:1533 Instruction:"VFMADDPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x69 /r is4"/"RVLM"
     {
         ND_INS_VFMADDPD, ND_CAT_FMA4, ND_SET_FMA4, 930, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23856,7 +23916,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1530 Instruction:"VFMADDPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x68 /r is4"/"RVML"
+    // Pos:1534 Instruction:"VFMADDPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x68 /r is4"/"RVML"
     {
         ND_INS_VFMADDPS, ND_CAT_FMA4, ND_SET_FMA4, 931, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23873,7 +23933,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1531 Instruction:"VFMADDPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x68 /r is4"/"RVLM"
+    // Pos:1535 Instruction:"VFMADDPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x68 /r is4"/"RVLM"
     {
         ND_INS_VFMADDPS, ND_CAT_FMA4, ND_SET_FMA4, 931, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23890,7 +23950,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1532 Instruction:"VFMADDSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6B /r is4"/"RVML"
+    // Pos:1536 Instruction:"VFMADDSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6B /r is4"/"RVML"
     {
         ND_INS_VFMADDSD, ND_CAT_FMA4, ND_SET_FMA4, 932, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23907,7 +23967,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1533 Instruction:"VFMADDSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x6B /r is4"/"RVLM"
+    // Pos:1537 Instruction:"VFMADDSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x6B /r is4"/"RVLM"
     {
         ND_INS_VFMADDSD, ND_CAT_FMA4, ND_SET_FMA4, 932, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23924,7 +23984,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1534 Instruction:"VFMADDSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6A /r is4"/"RVML"
+    // Pos:1538 Instruction:"VFMADDSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6A /r is4"/"RVML"
     {
         ND_INS_VFMADDSS, ND_CAT_FMA4, ND_SET_FMA4, 933, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23941,7 +24001,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1535 Instruction:"VFMADDSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x6A /r is4"/"RVLM"
+    // Pos:1539 Instruction:"VFMADDSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x6A /r is4"/"RVLM"
     {
         ND_INS_VFMADDSS, ND_CAT_FMA4, ND_SET_FMA4, 933, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23958,7 +24018,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1536 Instruction:"VFMADDSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x96 /r"/"RAVM"
+    // Pos:1540 Instruction:"VFMADDSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x96 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB132PD, ND_CAT_VFMA, ND_SET_AVX512F, 934, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23975,7 +24035,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1537 Instruction:"VFMADDSUB132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x96 /r"/"RVM"
+    // Pos:1541 Instruction:"VFMADDSUB132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x96 /r"/"RVM"
     {
         ND_INS_VFMADDSUB132PD, ND_CAT_VFMA, ND_SET_FMA, 934, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -23991,7 +24051,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1538 Instruction:"VFMADDSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x96 /r"/"RAVM"
+    // Pos:1542 Instruction:"VFMADDSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x96 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB132PS, ND_CAT_VFMA, ND_SET_AVX512F, 935, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24008,7 +24068,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1539 Instruction:"VFMADDSUB132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x96 /r"/"RVM"
+    // Pos:1543 Instruction:"VFMADDSUB132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x96 /r"/"RVM"
     {
         ND_INS_VFMADDSUB132PS, ND_CAT_VFMA, ND_SET_FMA, 935, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24024,7 +24084,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1540 Instruction:"VFMADDSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA6 /r"/"RAVM"
+    // Pos:1544 Instruction:"VFMADDSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB213PD, ND_CAT_VFMA, ND_SET_AVX512F, 936, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24041,7 +24101,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1541 Instruction:"VFMADDSUB213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xA6 /r"/"RVM"
+    // Pos:1545 Instruction:"VFMADDSUB213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xA6 /r"/"RVM"
     {
         ND_INS_VFMADDSUB213PD, ND_CAT_VFMA, ND_SET_FMA, 936, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24057,7 +24117,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1542 Instruction:"VFMADDSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA6 /r"/"RAVM"
+    // Pos:1546 Instruction:"VFMADDSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB213PS, ND_CAT_VFMA, ND_SET_AVX512F, 937, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24074,7 +24134,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1543 Instruction:"VFMADDSUB213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xA6 /r"/"RVM"
+    // Pos:1547 Instruction:"VFMADDSUB213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xA6 /r"/"RVM"
     {
         ND_INS_VFMADDSUB213PS, ND_CAT_VFMA, ND_SET_FMA, 937, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24090,7 +24150,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1544 Instruction:"VFMADDSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB6 /r"/"RAVM"
+    // Pos:1548 Instruction:"VFMADDSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB231PD, ND_CAT_VFMA, ND_SET_AVX512F, 938, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24107,7 +24167,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1545 Instruction:"VFMADDSUB231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xB6 /r"/"RVM"
+    // Pos:1549 Instruction:"VFMADDSUB231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xB6 /r"/"RVM"
     {
         ND_INS_VFMADDSUB231PD, ND_CAT_VFMA, ND_SET_FMA, 938, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24123,7 +24183,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1546 Instruction:"VFMADDSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB6 /r"/"RAVM"
+    // Pos:1550 Instruction:"VFMADDSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB231PS, ND_CAT_VFMA, ND_SET_AVX512F, 939, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24140,7 +24200,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1547 Instruction:"VFMADDSUB231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xB6 /r"/"RVM"
+    // Pos:1551 Instruction:"VFMADDSUB231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xB6 /r"/"RVM"
     {
         ND_INS_VFMADDSUB231PS, ND_CAT_VFMA, ND_SET_FMA, 939, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24156,7 +24216,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1548 Instruction:"VFMADDSUBPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5D /r is4"/"RVML"
+    // Pos:1552 Instruction:"VFMADDSUBPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5D /r is4"/"RVML"
     {
         ND_INS_VFMADDSUBPD, ND_CAT_FMA4, ND_SET_FMA4, 940, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24173,7 +24233,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1549 Instruction:"VFMADDSUBPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5D /r is4"/"RVLM"
+    // Pos:1553 Instruction:"VFMADDSUBPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5D /r is4"/"RVLM"
     {
         ND_INS_VFMADDSUBPD, ND_CAT_FMA4, ND_SET_FMA4, 940, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24190,7 +24250,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1550 Instruction:"VFMADDSUBPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5C /r is4"/"RVML"
+    // Pos:1554 Instruction:"VFMADDSUBPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5C /r is4"/"RVML"
     {
         ND_INS_VFMADDSUBPS, ND_CAT_FMA4, ND_SET_FMA4, 941, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24207,7 +24267,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1551 Instruction:"VFMADDSUBPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5C /r is4"/"RVLM"
+    // Pos:1555 Instruction:"VFMADDSUBPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5C /r is4"/"RVLM"
     {
         ND_INS_VFMADDSUBPS, ND_CAT_FMA4, ND_SET_FMA4, 941, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24224,7 +24284,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1552 Instruction:"VFMSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9A /r"/"RAVM"
+    // Pos:1556 Instruction:"VFMSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9A /r"/"RAVM"
     {
         ND_INS_VFMSUB132PD, ND_CAT_VFMA, ND_SET_AVX512F, 942, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24241,7 +24301,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1553 Instruction:"VFMSUB132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x9A /r"/"RVM"
+    // Pos:1557 Instruction:"VFMSUB132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x9A /r"/"RVM"
     {
         ND_INS_VFMSUB132PD, ND_CAT_VFMA, ND_SET_FMA, 942, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24257,7 +24317,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1554 Instruction:"VFMSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9A /r"/"RAVM"
+    // Pos:1558 Instruction:"VFMSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9A /r"/"RAVM"
     {
         ND_INS_VFMSUB132PS, ND_CAT_VFMA, ND_SET_AVX512F, 943, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24274,7 +24334,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1555 Instruction:"VFMSUB132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x9A /r"/"RVM"
+    // Pos:1559 Instruction:"VFMSUB132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x9A /r"/"RVM"
     {
         ND_INS_VFMSUB132PS, ND_CAT_VFMA, ND_SET_FMA, 943, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24290,7 +24350,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1556 Instruction:"VFMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x9B /r"/"RAVM"
+    // Pos:1560 Instruction:"VFMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x9B /r"/"RAVM"
     {
         ND_INS_VFMSUB132SD, ND_CAT_VFMA, ND_SET_AVX512F, 944, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24307,7 +24367,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1557 Instruction:"VFMSUB132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x9B /r"/"RVM"
+    // Pos:1561 Instruction:"VFMSUB132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x9B /r"/"RVM"
     {
         ND_INS_VFMSUB132SD, ND_CAT_VFMA, ND_SET_FMA, 944, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24323,7 +24383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1558 Instruction:"VFMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x9B /r"/"RAVM"
+    // Pos:1562 Instruction:"VFMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x9B /r"/"RAVM"
     {
         ND_INS_VFMSUB132SS, ND_CAT_VFMA, ND_SET_AVX512F, 945, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24340,7 +24400,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1559 Instruction:"VFMSUB132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x9B /r"/"RVM"
+    // Pos:1563 Instruction:"VFMSUB132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x9B /r"/"RVM"
     {
         ND_INS_VFMSUB132SS, ND_CAT_VFMA, ND_SET_FMA, 945, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24356,7 +24416,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1560 Instruction:"VFMSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAA /r"/"RAVM"
+    // Pos:1564 Instruction:"VFMSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAA /r"/"RAVM"
     {
         ND_INS_VFMSUB213PD, ND_CAT_VFMA, ND_SET_AVX512F, 946, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24373,7 +24433,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1561 Instruction:"VFMSUB213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xAA /r"/"RVM"
+    // Pos:1565 Instruction:"VFMSUB213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xAA /r"/"RVM"
     {
         ND_INS_VFMSUB213PD, ND_CAT_VFMA, ND_SET_FMA, 946, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24389,7 +24449,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1562 Instruction:"VFMSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAA /r"/"RAVM"
+    // Pos:1566 Instruction:"VFMSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAA /r"/"RAVM"
     {
         ND_INS_VFMSUB213PS, ND_CAT_VFMA, ND_SET_AVX512F, 947, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24406,7 +24466,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1563 Instruction:"VFMSUB213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xAA /r"/"RVM"
+    // Pos:1567 Instruction:"VFMSUB213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xAA /r"/"RVM"
     {
         ND_INS_VFMSUB213PS, ND_CAT_VFMA, ND_SET_FMA, 947, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24422,7 +24482,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1564 Instruction:"VFMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xAB /r"/"RAVM"
+    // Pos:1568 Instruction:"VFMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xAB /r"/"RAVM"
     {
         ND_INS_VFMSUB213SD, ND_CAT_VFMA, ND_SET_AVX512F, 948, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24439,7 +24499,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1565 Instruction:"VFMSUB213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xAB /r"/"RVM"
+    // Pos:1569 Instruction:"VFMSUB213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xAB /r"/"RVM"
     {
         ND_INS_VFMSUB213SD, ND_CAT_VFMA, ND_SET_FMA, 948, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24455,7 +24515,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1566 Instruction:"VFMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xAB /r"/"RAVM"
+    // Pos:1570 Instruction:"VFMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xAB /r"/"RAVM"
     {
         ND_INS_VFMSUB213SS, ND_CAT_VFMA, ND_SET_AVX512F, 949, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24472,7 +24532,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1567 Instruction:"VFMSUB213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xAB /r"/"RVM"
+    // Pos:1571 Instruction:"VFMSUB213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xAB /r"/"RVM"
     {
         ND_INS_VFMSUB213SS, ND_CAT_VFMA, ND_SET_FMA, 949, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24488,7 +24548,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1568 Instruction:"VFMSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBA /r"/"RAVM"
+    // Pos:1572 Instruction:"VFMSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBA /r"/"RAVM"
     {
         ND_INS_VFMSUB231PD, ND_CAT_VFMA, ND_SET_AVX512F, 950, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24505,7 +24565,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1569 Instruction:"VFMSUB231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xBA /r"/"RVM"
+    // Pos:1573 Instruction:"VFMSUB231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xBA /r"/"RVM"
     {
         ND_INS_VFMSUB231PD, ND_CAT_VFMA, ND_SET_FMA, 950, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24521,7 +24581,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1570 Instruction:"VFMSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBA /r"/"RAVM"
+    // Pos:1574 Instruction:"VFMSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBA /r"/"RAVM"
     {
         ND_INS_VFMSUB231PS, ND_CAT_VFMA, ND_SET_AVX512F, 951, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24538,7 +24598,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1571 Instruction:"VFMSUB231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xBA /r"/"RVM"
+    // Pos:1575 Instruction:"VFMSUB231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xBA /r"/"RVM"
     {
         ND_INS_VFMSUB231PS, ND_CAT_VFMA, ND_SET_FMA, 951, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24554,7 +24614,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1572 Instruction:"VFMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xBB /r"/"RAVM"
+    // Pos:1576 Instruction:"VFMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xBB /r"/"RAVM"
     {
         ND_INS_VFMSUB231SD, ND_CAT_VFMA, ND_SET_AVX512F, 952, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24571,7 +24631,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1573 Instruction:"VFMSUB231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xBB /r"/"RVM"
+    // Pos:1577 Instruction:"VFMSUB231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xBB /r"/"RVM"
     {
         ND_INS_VFMSUB231SD, ND_CAT_VFMA, ND_SET_FMA, 952, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24587,7 +24647,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1574 Instruction:"VFMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xBB /r"/"RAVM"
+    // Pos:1578 Instruction:"VFMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xBB /r"/"RAVM"
     {
         ND_INS_VFMSUB231SS, ND_CAT_VFMA, ND_SET_AVX512F, 953, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24604,7 +24664,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1575 Instruction:"VFMSUB231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xBB /r"/"RVM"
+    // Pos:1579 Instruction:"VFMSUB231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xBB /r"/"RVM"
     {
         ND_INS_VFMSUB231SS, ND_CAT_VFMA, ND_SET_FMA, 953, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24620,7 +24680,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1576 Instruction:"VFMSUBADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x97 /r"/"RAVM"
+    // Pos:1580 Instruction:"VFMSUBADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x97 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD132PD, ND_CAT_VFMA, ND_SET_AVX512F, 954, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24637,7 +24697,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1577 Instruction:"VFMSUBADD132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x97 /r"/"RVM"
+    // Pos:1581 Instruction:"VFMSUBADD132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x97 /r"/"RVM"
     {
         ND_INS_VFMSUBADD132PD, ND_CAT_VFMA, ND_SET_FMA, 954, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24653,7 +24713,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1578 Instruction:"VFMSUBADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x97 /r"/"RAVM"
+    // Pos:1582 Instruction:"VFMSUBADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x97 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD132PS, ND_CAT_VFMA, ND_SET_AVX512F, 955, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24670,7 +24730,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1579 Instruction:"VFMSUBADD132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x97 /r"/"RVM"
+    // Pos:1583 Instruction:"VFMSUBADD132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x97 /r"/"RVM"
     {
         ND_INS_VFMSUBADD132PS, ND_CAT_VFMA, ND_SET_FMA, 955, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24686,7 +24746,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1580 Instruction:"VFMSUBADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA7 /r"/"RAVM"
+    // Pos:1584 Instruction:"VFMSUBADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD213PD, ND_CAT_VFMA, ND_SET_AVX512F, 956, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24703,7 +24763,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1581 Instruction:"VFMSUBADD213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xA7 /r"/"RVM"
+    // Pos:1585 Instruction:"VFMSUBADD213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xA7 /r"/"RVM"
     {
         ND_INS_VFMSUBADD213PD, ND_CAT_VFMA, ND_SET_FMA, 956, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24719,7 +24779,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1582 Instruction:"VFMSUBADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA7 /r"/"RAVM"
+    // Pos:1586 Instruction:"VFMSUBADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD213PS, ND_CAT_VFMA, ND_SET_AVX512F, 957, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24736,7 +24796,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1583 Instruction:"VFMSUBADD213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xA7 /r"/"RVM"
+    // Pos:1587 Instruction:"VFMSUBADD213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xA7 /r"/"RVM"
     {
         ND_INS_VFMSUBADD213PS, ND_CAT_VFMA, ND_SET_FMA, 957, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24752,7 +24812,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1584 Instruction:"VFMSUBADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB7 /r"/"RAVM"
+    // Pos:1588 Instruction:"VFMSUBADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD231PD, ND_CAT_VFMA, ND_SET_AVX512F, 958, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24769,7 +24829,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1585 Instruction:"VFMSUBADD231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xB7 /r"/"RVM"
+    // Pos:1589 Instruction:"VFMSUBADD231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xB7 /r"/"RVM"
     {
         ND_INS_VFMSUBADD231PD, ND_CAT_VFMA, ND_SET_FMA, 958, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24785,7 +24845,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1586 Instruction:"VFMSUBADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB7 /r"/"RAVM"
+    // Pos:1590 Instruction:"VFMSUBADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD231PS, ND_CAT_VFMA, ND_SET_AVX512F, 959, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24802,7 +24862,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1587 Instruction:"VFMSUBADD231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xB7 /r"/"RVM"
+    // Pos:1591 Instruction:"VFMSUBADD231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xB7 /r"/"RVM"
     {
         ND_INS_VFMSUBADD231PS, ND_CAT_VFMA, ND_SET_FMA, 959, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24818,7 +24878,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1588 Instruction:"VFMSUBADDPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5F /r is4"/"RVML"
+    // Pos:1592 Instruction:"VFMSUBADDPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5F /r is4"/"RVML"
     {
         ND_INS_VFMSUBADDPD, ND_CAT_FMA4, ND_SET_FMA4, 960, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24835,7 +24895,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1589 Instruction:"VFMSUBADDPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5F /r is4"/"RVLM"
+    // Pos:1593 Instruction:"VFMSUBADDPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5F /r is4"/"RVLM"
     {
         ND_INS_VFMSUBADDPD, ND_CAT_FMA4, ND_SET_FMA4, 960, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24852,7 +24912,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1590 Instruction:"VFMSUBADDPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5E /r is4"/"RVML"
+    // Pos:1594 Instruction:"VFMSUBADDPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x5E /r is4"/"RVML"
     {
         ND_INS_VFMSUBADDPS, ND_CAT_FMA4, ND_SET_FMA4, 961, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24869,7 +24929,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1591 Instruction:"VFMSUBADDPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5E /r is4"/"RVLM"
+    // Pos:1595 Instruction:"VFMSUBADDPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x5E /r is4"/"RVLM"
     {
         ND_INS_VFMSUBADDPS, ND_CAT_FMA4, ND_SET_FMA4, 961, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24886,7 +24946,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1592 Instruction:"VFMSUBPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x6D /r is4"/"RVML"
+    // Pos:1596 Instruction:"VFMSUBPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x6D /r is4"/"RVML"
     {
         ND_INS_VFMSUBPD, ND_CAT_FMA4, ND_SET_FMA4, 962, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24903,7 +24963,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1593 Instruction:"VFMSUBPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x6D /r is4"/"RVLM"
+    // Pos:1597 Instruction:"VFMSUBPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x6D /r is4"/"RVLM"
     {
         ND_INS_VFMSUBPD, ND_CAT_FMA4, ND_SET_FMA4, 962, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24920,7 +24980,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1594 Instruction:"VFMSUBPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x6C /r is4"/"RVML"
+    // Pos:1598 Instruction:"VFMSUBPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x6C /r is4"/"RVML"
     {
         ND_INS_VFMSUBPS, ND_CAT_FMA4, ND_SET_FMA4, 963, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24937,7 +24997,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1595 Instruction:"VFMSUBPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x6C /r is4"/"RVLM"
+    // Pos:1599 Instruction:"VFMSUBPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x6C /r is4"/"RVLM"
     {
         ND_INS_VFMSUBPS, ND_CAT_FMA4, ND_SET_FMA4, 963, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24954,7 +25014,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1596 Instruction:"VFMSUBSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6F /r is4"/"RVML"
+    // Pos:1600 Instruction:"VFMSUBSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6F /r is4"/"RVML"
     {
         ND_INS_VFMSUBSD, ND_CAT_FMA4, ND_SET_FMA4, 964, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24971,7 +25031,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1597 Instruction:"VFMSUBSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x6F /r is4"/"RVLM"
+    // Pos:1601 Instruction:"VFMSUBSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x6F /r is4"/"RVLM"
     {
         ND_INS_VFMSUBSD, ND_CAT_FMA4, ND_SET_FMA4, 964, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -24988,7 +25048,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1598 Instruction:"VFMSUBSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6E /r is4"/"RVML"
+    // Pos:1602 Instruction:"VFMSUBSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x6E /r is4"/"RVML"
     {
         ND_INS_VFMSUBSS, ND_CAT_FMA4, ND_SET_FMA4, 965, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25005,7 +25065,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1599 Instruction:"VFMSUBSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x6E /r is4"/"RVLM"
+    // Pos:1603 Instruction:"VFMSUBSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x6E /r is4"/"RVLM"
     {
         ND_INS_VFMSUBSS, ND_CAT_FMA4, ND_SET_FMA4, 965, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25022,7 +25082,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1600 Instruction:"VFNMADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9C /r"/"RAVM"
+    // Pos:1604 Instruction:"VFNMADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9C /r"/"RAVM"
     {
         ND_INS_VFNMADD132PD, ND_CAT_VFMA, ND_SET_AVX512F, 966, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25039,7 +25099,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1601 Instruction:"VFNMADD132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x9C /r"/"RVM"
+    // Pos:1605 Instruction:"VFNMADD132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x9C /r"/"RVM"
     {
         ND_INS_VFNMADD132PD, ND_CAT_VFMA, ND_SET_FMA, 966, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25055,7 +25115,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1602 Instruction:"VFNMADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9C /r"/"RAVM"
+    // Pos:1606 Instruction:"VFNMADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9C /r"/"RAVM"
     {
         ND_INS_VFNMADD132PS, ND_CAT_VFMA, ND_SET_AVX512F, 967, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25072,7 +25132,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1603 Instruction:"VFNMADD132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x9C /r"/"RVM"
+    // Pos:1607 Instruction:"VFNMADD132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x9C /r"/"RVM"
     {
         ND_INS_VFNMADD132PS, ND_CAT_VFMA, ND_SET_FMA, 967, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25088,7 +25148,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1604 Instruction:"VFNMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x9D /r"/"RAVM"
+    // Pos:1608 Instruction:"VFNMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x9D /r"/"RAVM"
     {
         ND_INS_VFNMADD132SD, ND_CAT_VFMA, ND_SET_AVX512F, 968, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25105,7 +25165,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1605 Instruction:"VFNMADD132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x9D /r"/"RVM"
+    // Pos:1609 Instruction:"VFNMADD132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x9D /r"/"RVM"
     {
         ND_INS_VFNMADD132SD, ND_CAT_VFMA, ND_SET_FMA, 968, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25121,7 +25181,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1606 Instruction:"VFNMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x9D /r"/"RAVM"
+    // Pos:1610 Instruction:"VFNMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x9D /r"/"RAVM"
     {
         ND_INS_VFNMADD132SS, ND_CAT_VFMA, ND_SET_AVX512F, 969, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25138,7 +25198,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1607 Instruction:"VFNMADD132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x9D /r"/"RVM"
+    // Pos:1611 Instruction:"VFNMADD132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x9D /r"/"RVM"
     {
         ND_INS_VFNMADD132SS, ND_CAT_VFMA, ND_SET_FMA, 969, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25154,7 +25214,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1608 Instruction:"VFNMADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAC /r"/"RAVM"
+    // Pos:1612 Instruction:"VFNMADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAC /r"/"RAVM"
     {
         ND_INS_VFNMADD213PD, ND_CAT_VFMA, ND_SET_AVX512F, 970, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25171,7 +25231,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1609 Instruction:"VFNMADD213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xAC /r"/"RVM"
+    // Pos:1613 Instruction:"VFNMADD213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xAC /r"/"RVM"
     {
         ND_INS_VFNMADD213PD, ND_CAT_VFMA, ND_SET_FMA, 970, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25187,7 +25247,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1610 Instruction:"VFNMADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAC /r"/"RAVM"
+    // Pos:1614 Instruction:"VFNMADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAC /r"/"RAVM"
     {
         ND_INS_VFNMADD213PS, ND_CAT_VFMA, ND_SET_AVX512F, 971, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25204,7 +25264,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1611 Instruction:"VFNMADD213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xAC /r"/"RVM"
+    // Pos:1615 Instruction:"VFNMADD213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xAC /r"/"RVM"
     {
         ND_INS_VFNMADD213PS, ND_CAT_VFMA, ND_SET_FMA, 971, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25220,7 +25280,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1612 Instruction:"VFNMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xAD /r"/"RAVM"
+    // Pos:1616 Instruction:"VFNMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xAD /r"/"RAVM"
     {
         ND_INS_VFNMADD213SD, ND_CAT_VFMA, ND_SET_AVX512F, 972, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25237,7 +25297,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1613 Instruction:"VFNMADD213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xAD /r"/"RVM"
+    // Pos:1617 Instruction:"VFNMADD213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xAD /r"/"RVM"
     {
         ND_INS_VFNMADD213SD, ND_CAT_VFMA, ND_SET_FMA, 972, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25253,7 +25313,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1614 Instruction:"VFNMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xAD /r"/"RAVM"
+    // Pos:1618 Instruction:"VFNMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xAD /r"/"RAVM"
     {
         ND_INS_VFNMADD213SS, ND_CAT_VFMA, ND_SET_AVX512F, 973, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25270,7 +25330,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1615 Instruction:"VFNMADD213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xAD /r"/"RVM"
+    // Pos:1619 Instruction:"VFNMADD213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xAD /r"/"RVM"
     {
         ND_INS_VFNMADD213SS, ND_CAT_VFMA, ND_SET_FMA, 973, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25286,7 +25346,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1616 Instruction:"VFNMADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBC /r"/"RAVM"
+    // Pos:1620 Instruction:"VFNMADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBC /r"/"RAVM"
     {
         ND_INS_VFNMADD231PD, ND_CAT_VFMA, ND_SET_AVX512F, 974, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25303,7 +25363,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1617 Instruction:"VFNMADD231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xBC /r"/"RVM"
+    // Pos:1621 Instruction:"VFNMADD231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xBC /r"/"RVM"
     {
         ND_INS_VFNMADD231PD, ND_CAT_VFMA, ND_SET_FMA, 974, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25319,7 +25379,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1618 Instruction:"VFNMADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBC /r"/"RAVM"
+    // Pos:1622 Instruction:"VFNMADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBC /r"/"RAVM"
     {
         ND_INS_VFNMADD231PS, ND_CAT_VFMA, ND_SET_AVX512F, 975, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25336,7 +25396,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1619 Instruction:"VFNMADD231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xBC /r"/"RVM"
+    // Pos:1623 Instruction:"VFNMADD231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xBC /r"/"RVM"
     {
         ND_INS_VFNMADD231PS, ND_CAT_VFMA, ND_SET_FMA, 975, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25352,7 +25412,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1620 Instruction:"VFNMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xBD /r"/"RAVM"
+    // Pos:1624 Instruction:"VFNMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xBD /r"/"RAVM"
     {
         ND_INS_VFNMADD231SD, ND_CAT_VFMA, ND_SET_AVX512F, 976, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25369,7 +25429,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1621 Instruction:"VFNMADD231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xBD /r"/"RVM"
+    // Pos:1625 Instruction:"VFNMADD231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xBD /r"/"RVM"
     {
         ND_INS_VFNMADD231SD, ND_CAT_VFMA, ND_SET_FMA, 976, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25385,7 +25445,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1622 Instruction:"VFNMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xBD /r"/"RAVM"
+    // Pos:1626 Instruction:"VFNMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xBD /r"/"RAVM"
     {
         ND_INS_VFNMADD231SS, ND_CAT_VFMA, ND_SET_AVX512F, 977, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25402,7 +25462,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1623 Instruction:"VFNMADD231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xBD /r"/"RVM"
+    // Pos:1627 Instruction:"VFNMADD231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xBD /r"/"RVM"
     {
         ND_INS_VFNMADD231SS, ND_CAT_VFMA, ND_SET_FMA, 977, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25418,7 +25478,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1624 Instruction:"VFNMADDPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x79 /r is4"/"RVML"
+    // Pos:1628 Instruction:"VFNMADDPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x79 /r is4"/"RVML"
     {
         ND_INS_VFNMADDPD, ND_CAT_FMA4, ND_SET_FMA4, 978, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25435,7 +25495,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1625 Instruction:"VFNMADDPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x79 /r is4"/"RVLM"
+    // Pos:1629 Instruction:"VFNMADDPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x79 /r is4"/"RVLM"
     {
         ND_INS_VFNMADDPD, ND_CAT_FMA4, ND_SET_FMA4, 978, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25452,7 +25512,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1626 Instruction:"VFNMADDPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x78 /r is4"/"RVML"
+    // Pos:1630 Instruction:"VFNMADDPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x78 /r is4"/"RVML"
     {
         ND_INS_VFNMADDPS, ND_CAT_FMA4, ND_SET_FMA4, 979, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25469,7 +25529,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1627 Instruction:"VFNMADDPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x78 /r is4"/"RVLM"
+    // Pos:1631 Instruction:"VFNMADDPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x78 /r is4"/"RVLM"
     {
         ND_INS_VFNMADDPS, ND_CAT_FMA4, ND_SET_FMA4, 979, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25486,7 +25546,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1628 Instruction:"VFNMADDSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7B /r is4"/"RVML"
+    // Pos:1632 Instruction:"VFNMADDSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7B /r is4"/"RVML"
     {
         ND_INS_VFNMADDSD, ND_CAT_FMA4, ND_SET_FMA4, 980, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25503,7 +25563,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1629 Instruction:"VFNMADDSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x7B /r is4"/"RVLM"
+    // Pos:1633 Instruction:"VFNMADDSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x7B /r is4"/"RVLM"
     {
         ND_INS_VFNMADDSD, ND_CAT_FMA4, ND_SET_FMA4, 980, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25520,7 +25580,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1630 Instruction:"VFNMADDSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7A /r is4"/"RVML"
+    // Pos:1634 Instruction:"VFNMADDSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7A /r is4"/"RVML"
     {
         ND_INS_VFNMADDSS, ND_CAT_FMA4, ND_SET_FMA4, 981, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25537,7 +25597,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1631 Instruction:"VFNMADDSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x7A /r is4"/"RVLM"
+    // Pos:1635 Instruction:"VFNMADDSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x7A /r is4"/"RVLM"
     {
         ND_INS_VFNMADDSS, ND_CAT_FMA4, ND_SET_FMA4, 981, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25554,7 +25614,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1632 Instruction:"VFNMSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9E /r"/"RAVM"
+    // Pos:1636 Instruction:"VFNMSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9E /r"/"RAVM"
     {
         ND_INS_VFNMSUB132PD, ND_CAT_VFMA, ND_SET_AVX512F, 982, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25571,7 +25631,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1633 Instruction:"VFNMSUB132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x9E /r"/"RVM"
+    // Pos:1637 Instruction:"VFNMSUB132PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x9E /r"/"RVM"
     {
         ND_INS_VFNMSUB132PD, ND_CAT_VFMA, ND_SET_FMA, 982, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25587,7 +25647,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1634 Instruction:"VFNMSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9E /r"/"RAVM"
+    // Pos:1638 Instruction:"VFNMSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9E /r"/"RAVM"
     {
         ND_INS_VFNMSUB132PS, ND_CAT_VFMA, ND_SET_AVX512F, 983, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25604,7 +25664,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1635 Instruction:"VFNMSUB132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x9E /r"/"RVM"
+    // Pos:1639 Instruction:"VFNMSUB132PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x9E /r"/"RVM"
     {
         ND_INS_VFNMSUB132PS, ND_CAT_VFMA, ND_SET_FMA, 983, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25620,7 +25680,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1636 Instruction:"VFNMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x9F /r"/"RAVM"
+    // Pos:1640 Instruction:"VFNMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x9F /r"/"RAVM"
     {
         ND_INS_VFNMSUB132SD, ND_CAT_VFMA, ND_SET_AVX512F, 984, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25637,7 +25697,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1637 Instruction:"VFNMSUB132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x9F /r"/"RVM"
+    // Pos:1641 Instruction:"VFNMSUB132SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0x9F /r"/"RVM"
     {
         ND_INS_VFNMSUB132SD, ND_CAT_VFMA, ND_SET_FMA, 984, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25653,7 +25713,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1638 Instruction:"VFNMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x9F /r"/"RAVM"
+    // Pos:1642 Instruction:"VFNMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x9F /r"/"RAVM"
     {
         ND_INS_VFNMSUB132SS, ND_CAT_VFMA, ND_SET_AVX512F, 985, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25670,7 +25730,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1639 Instruction:"VFNMSUB132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x9F /r"/"RVM"
+    // Pos:1643 Instruction:"VFNMSUB132SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0x9F /r"/"RVM"
     {
         ND_INS_VFNMSUB132SS, ND_CAT_VFMA, ND_SET_FMA, 985, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25686,7 +25746,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1640 Instruction:"VFNMSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAE /r"/"RAVM"
+    // Pos:1644 Instruction:"VFNMSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAE /r"/"RAVM"
     {
         ND_INS_VFNMSUB213PD, ND_CAT_VFMA, ND_SET_AVX512F, 986, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25703,7 +25763,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1641 Instruction:"VFNMSUB213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xAE /r"/"RVM"
+    // Pos:1645 Instruction:"VFNMSUB213PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xAE /r"/"RVM"
     {
         ND_INS_VFNMSUB213PD, ND_CAT_VFMA, ND_SET_FMA, 986, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25719,7 +25779,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1642 Instruction:"VFNMSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAE /r"/"RAVM"
+    // Pos:1646 Instruction:"VFNMSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAE /r"/"RAVM"
     {
         ND_INS_VFNMSUB213PS, ND_CAT_VFMA, ND_SET_AVX512F, 987, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25736,7 +25796,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1643 Instruction:"VFNMSUB213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xAE /r"/"RVM"
+    // Pos:1647 Instruction:"VFNMSUB213PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xAE /r"/"RVM"
     {
         ND_INS_VFNMSUB213PS, ND_CAT_VFMA, ND_SET_FMA, 987, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25752,7 +25812,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1644 Instruction:"VFNMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xAF /r"/"RAVM"
+    // Pos:1648 Instruction:"VFNMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xAF /r"/"RAVM"
     {
         ND_INS_VFNMSUB213SD, ND_CAT_VFMA, ND_SET_AVX512F, 988, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25769,7 +25829,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1645 Instruction:"VFNMSUB213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xAF /r"/"RVM"
+    // Pos:1649 Instruction:"VFNMSUB213SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xAF /r"/"RVM"
     {
         ND_INS_VFNMSUB213SD, ND_CAT_VFMA, ND_SET_FMA, 988, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25785,7 +25845,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1646 Instruction:"VFNMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xAF /r"/"RAVM"
+    // Pos:1650 Instruction:"VFNMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xAF /r"/"RAVM"
     {
         ND_INS_VFNMSUB213SS, ND_CAT_VFMA, ND_SET_AVX512F, 989, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25802,7 +25862,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1647 Instruction:"VFNMSUB213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xAF /r"/"RVM"
+    // Pos:1651 Instruction:"VFNMSUB213SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xAF /r"/"RVM"
     {
         ND_INS_VFNMSUB213SS, ND_CAT_VFMA, ND_SET_FMA, 989, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25818,7 +25878,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1648 Instruction:"VFNMSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBE /r"/"RAVM"
+    // Pos:1652 Instruction:"VFNMSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBE /r"/"RAVM"
     {
         ND_INS_VFNMSUB231PD, ND_CAT_VFMA, ND_SET_AVX512F, 990, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25835,7 +25895,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1649 Instruction:"VFNMSUB231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xBE /r"/"RVM"
+    // Pos:1653 Instruction:"VFNMSUB231PD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0xBE /r"/"RVM"
     {
         ND_INS_VFNMSUB231PD, ND_CAT_VFMA, ND_SET_FMA, 990, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25851,7 +25911,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1650 Instruction:"VFNMSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBE /r"/"RAVM"
+    // Pos:1654 Instruction:"VFNMSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBE /r"/"RAVM"
     {
         ND_INS_VFNMSUB231PS, ND_CAT_VFMA, ND_SET_AVX512F, 991, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25868,7 +25928,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1651 Instruction:"VFNMSUB231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xBE /r"/"RVM"
+    // Pos:1655 Instruction:"VFNMSUB231PS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xBE /r"/"RVM"
     {
         ND_INS_VFNMSUB231PS, ND_CAT_VFMA, ND_SET_FMA, 991, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25884,7 +25944,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1652 Instruction:"VFNMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xBF /r"/"RAVM"
+    // Pos:1656 Instruction:"VFNMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0xBF /r"/"RAVM"
     {
         ND_INS_VFNMSUB231SD, ND_CAT_VFMA, ND_SET_AVX512F, 992, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25901,7 +25961,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1653 Instruction:"VFNMSUB231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xBF /r"/"RVM"
+    // Pos:1657 Instruction:"VFNMSUB231SD Vdq,Hdq,Wsd" Encoding:"vex m:2 p:1 l:i w:1 0xBF /r"/"RVM"
     {
         ND_INS_VFNMSUB231SD, ND_CAT_VFMA, ND_SET_FMA, 992, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25917,7 +25977,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1654 Instruction:"VFNMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xBF /r"/"RAVM"
+    // Pos:1658 Instruction:"VFNMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0xBF /r"/"RAVM"
     {
         ND_INS_VFNMSUB231SS, ND_CAT_VFMA, ND_SET_AVX512F, 993, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25934,7 +25994,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1655 Instruction:"VFNMSUB231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xBF /r"/"RVM"
+    // Pos:1659 Instruction:"VFNMSUB231SS Vdq,Hdq,Wss" Encoding:"vex m:2 p:1 l:i w:0 0xBF /r"/"RVM"
     {
         ND_INS_VFNMSUB231SS, ND_CAT_VFMA, ND_SET_FMA, 993, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25950,7 +26010,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1656 Instruction:"VFNMSUBPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x7D /r is4"/"RVML"
+    // Pos:1660 Instruction:"VFNMSUBPD Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x7D /r is4"/"RVML"
     {
         ND_INS_VFNMSUBPD, ND_CAT_FMA4, ND_SET_FMA4, 994, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25967,7 +26027,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1657 Instruction:"VFNMSUBPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x7D /r is4"/"RVLM"
+    // Pos:1661 Instruction:"VFNMSUBPD Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x7D /r is4"/"RVLM"
     {
         ND_INS_VFNMSUBPD, ND_CAT_FMA4, ND_SET_FMA4, 994, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -25984,7 +26044,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1658 Instruction:"VFNMSUBPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x7C /r is4"/"RVML"
+    // Pos:1662 Instruction:"VFNMSUBPS Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x7C /r is4"/"RVML"
     {
         ND_INS_VFNMSUBPS, ND_CAT_FMA4, ND_SET_FMA4, 995, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26001,7 +26061,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1659 Instruction:"VFNMSUBPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x7C /r is4"/"RVLM"
+    // Pos:1663 Instruction:"VFNMSUBPS Vx,Hx,Lx,Wx" Encoding:"vex m:3 p:1 l:x w:1 0x7C /r is4"/"RVLM"
     {
         ND_INS_VFNMSUBPS, ND_CAT_FMA4, ND_SET_FMA4, 995, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26018,7 +26078,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1660 Instruction:"VFNMSUBSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7F /r is4"/"RVML"
+    // Pos:1664 Instruction:"VFNMSUBSD Vdq,Hdq,Wsd,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7F /r is4"/"RVML"
     {
         ND_INS_VFNMSUBSD, ND_CAT_FMA4, ND_SET_FMA4, 996, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26035,7 +26095,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1661 Instruction:"VFNMSUBSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x7F /r is4"/"RVLM"
+    // Pos:1665 Instruction:"VFNMSUBSD Vdq,Hdq,Ldq,Wsd" Encoding:"vex m:3 p:1 l:x w:1 0x7F /r is4"/"RVLM"
     {
         ND_INS_VFNMSUBSD, ND_CAT_FMA4, ND_SET_FMA4, 996, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26052,7 +26112,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1662 Instruction:"VFNMSUBSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7E /r is4"/"RVML"
+    // Pos:1666 Instruction:"VFNMSUBSS Vdq,Hdq,Wss,Ldq" Encoding:"vex m:3 p:1 l:x w:0 0x7E /r is4"/"RVML"
     {
         ND_INS_VFNMSUBSS, ND_CAT_FMA4, ND_SET_FMA4, 997, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26069,7 +26129,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1663 Instruction:"VFNMSUBSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x7E /r is4"/"RVLM"
+    // Pos:1667 Instruction:"VFNMSUBSS Vdq,Hdq,Ldq,Wss" Encoding:"vex m:3 p:1 l:x w:1 0x7E /r is4"/"RVLM"
     {
         ND_INS_VFNMSUBSS, ND_CAT_FMA4, ND_SET_FMA4, 997, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26086,7 +26146,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1664 Instruction:"VFPCLASSPD rKq{K},aKq,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x66 /r ib"/"RAMI"
+    // Pos:1668 Instruction:"VFPCLASSPD rKq{K},aKq,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x66 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSPD, ND_CAT_AVX512, ND_SET_AVX512DQ, 998, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26103,7 +26163,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1665 Instruction:"VFPCLASSPS rKq{K},aKq,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x66 /r ib"/"RAMI"
+    // Pos:1669 Instruction:"VFPCLASSPS rKq{K},aKq,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x66 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSPS, ND_CAT_AVX512, ND_SET_AVX512DQ, 999, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26120,7 +26180,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1666 Instruction:"VFPCLASSSD rKq{K},aKq,Wsd,Ib" Encoding:"evex m:3 p:1 l:i w:1 0x67 /r ib"/"RAMI"
+    // Pos:1670 Instruction:"VFPCLASSSD rKq{K},aKq,Wsd,Ib" Encoding:"evex m:3 p:1 l:i w:1 0x67 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSSD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1000, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26137,7 +26197,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1667 Instruction:"VFPCLASSSS rKq{K},aKq,Wss,Ib" Encoding:"evex m:3 p:1 l:i w:0 0x67 /r ib"/"RAMI"
+    // Pos:1671 Instruction:"VFPCLASSSS rKq{K},aKq,Wss,Ib" Encoding:"evex m:3 p:1 l:i w:0 0x67 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSSS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1001, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26154,7 +26214,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1668 Instruction:"VFRCZPD Vx,Wx" Encoding:"xop m:9 0x81 /r"/"RM"
+    // Pos:1672 Instruction:"VFRCZPD Vx,Wx" Encoding:"xop m:9 0x81 /r"/"RM"
     {
         ND_INS_VFRCZPD, ND_CAT_XOP, ND_SET_XOP, 1002, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26169,7 +26229,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1669 Instruction:"VFRCZPS Vx,Wx" Encoding:"xop m:9 0x80 /r"/"RM"
+    // Pos:1673 Instruction:"VFRCZPS Vx,Wx" Encoding:"xop m:9 0x80 /r"/"RM"
     {
         ND_INS_VFRCZPS, ND_CAT_XOP, ND_SET_XOP, 1003, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26184,7 +26244,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1670 Instruction:"VFRCZSD Vdq,Wsd" Encoding:"xop m:9 0x83 /r"/"RM"
+    // Pos:1674 Instruction:"VFRCZSD Vdq,Wsd" Encoding:"xop m:9 0x83 /r"/"RM"
     {
         ND_INS_VFRCZSD, ND_CAT_XOP, ND_SET_XOP, 1004, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26199,7 +26259,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1671 Instruction:"VFRCZSS Vdq,Wss" Encoding:"xop m:9 0x82 /r"/"RM"
+    // Pos:1675 Instruction:"VFRCZSS Vdq,Wss" Encoding:"xop m:9 0x82 /r"/"RM"
     {
         ND_INS_VFRCZSS, ND_CAT_XOP, ND_SET_XOP, 1005, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26214,7 +26274,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1672 Instruction:"VGATHERDPD Vn{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x92 /r:mem vsib"/"RAM"
+    // Pos:1676 Instruction:"VGATHERDPD Vn{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x92 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERDPD, ND_CAT_GATHER, ND_SET_AVX512F, 1006, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26230,7 +26290,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1673 Instruction:"VGATHERDPD Vx,Mvm32h,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x92 /r:mem vsib"/"RMV"
+    // Pos:1677 Instruction:"VGATHERDPD Vx,Mvm32h,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x92 /r:mem vsib"/"RMV"
     {
         ND_INS_VGATHERDPD, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1006, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26246,7 +26306,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1674 Instruction:"VGATHERDPS Vn{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x92 /r:mem vsib"/"RAM"
+    // Pos:1678 Instruction:"VGATHERDPS Vn{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x92 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERDPS, ND_CAT_GATHER, ND_SET_AVX512F, 1007, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26262,7 +26322,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1675 Instruction:"VGATHERDPS Vx,Mvm32n,Hx" Encoding:"vex m:2 p:1 l:x w:0 0x92 /r:mem vsib"/"RMV"
+    // Pos:1679 Instruction:"VGATHERDPS Vx,Mvm32n,Hx" Encoding:"vex m:2 p:1 l:x w:0 0x92 /r:mem vsib"/"RMV"
     {
         ND_INS_VGATHERDPS, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1007, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26278,7 +26338,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1676 Instruction:"VGATHERPF0DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /1:mem vsib"/"MA"
+    // Pos:1680 Instruction:"VGATHERPF0DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /1:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF0DPD, ND_CAT_GATHER, ND_SET_AVX512PF, 1008, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26293,7 +26353,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1677 Instruction:"VGATHERPF0DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /1:mem vsib"/"MA"
+    // Pos:1681 Instruction:"VGATHERPF0DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /1:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF0DPS, ND_CAT_GATHER, ND_SET_AVX512PF, 1009, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26308,7 +26368,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1678 Instruction:"VGATHERPF0QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /1:mem vsib"/"MA"
+    // Pos:1682 Instruction:"VGATHERPF0QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /1:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF0QPD, ND_CAT_GATHER, ND_SET_AVX512PF, 1010, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26323,7 +26383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1679 Instruction:"VGATHERPF0QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /1:mem vsib"/"MA"
+    // Pos:1683 Instruction:"VGATHERPF0QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /1:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF0QPS, ND_CAT_GATHER, ND_SET_AVX512PF, 1011, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26338,7 +26398,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1680 Instruction:"VGATHERPF1DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /2:mem vsib"/"MA"
+    // Pos:1684 Instruction:"VGATHERPF1DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /2:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF1DPD, ND_CAT_GATHER, ND_SET_AVX512PF, 1012, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26353,7 +26413,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1681 Instruction:"VGATHERPF1DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /2:mem vsib"/"MA"
+    // Pos:1685 Instruction:"VGATHERPF1DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /2:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF1DPS, ND_CAT_GATHER, ND_SET_AVX512PF, 1013, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26368,7 +26428,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1682 Instruction:"VGATHERPF1QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /2:mem vsib"/"MA"
+    // Pos:1686 Instruction:"VGATHERPF1QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /2:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF1QPD, ND_CAT_GATHER, ND_SET_AVX512PF, 1014, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26383,7 +26443,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1683 Instruction:"VGATHERPF1QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /2:mem vsib"/"MA"
+    // Pos:1687 Instruction:"VGATHERPF1QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /2:mem vsib"/"MA"
     {
         ND_INS_VGATHERPF1QPS, ND_CAT_GATHER, ND_SET_AVX512PF, 1015, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26398,7 +26458,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1684 Instruction:"VGATHERQPD Vn{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x93 /r:mem vsib"/"RAM"
+    // Pos:1688 Instruction:"VGATHERQPD Vn{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x93 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERQPD, ND_CAT_GATHER, ND_SET_AVX512F, 1016, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26414,7 +26474,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1685 Instruction:"VGATHERQPD Vx,Mvm64n,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x93 /r:mem vsib"/"RMV"
+    // Pos:1689 Instruction:"VGATHERQPD Vx,Mvm64n,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x93 /r:mem vsib"/"RMV"
     {
         ND_INS_VGATHERQPD, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1016, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26430,7 +26490,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1686 Instruction:"VGATHERQPS Vh{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x93 /r:mem vsib"/"RAM"
+    // Pos:1690 Instruction:"VGATHERQPS Vh{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x93 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERQPS, ND_CAT_GATHER, ND_SET_AVX512F, 1017, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26446,7 +26506,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1687 Instruction:"VGATHERQPS Vdq,Mvm64n,Hdq" Encoding:"vex m:2 p:1 l:x w:0 0x93 /r:mem vsib"/"RMV"
+    // Pos:1691 Instruction:"VGATHERQPS Vdq,Mvm64n,Hdq" Encoding:"vex m:2 p:1 l:x w:0 0x93 /r:mem vsib"/"RMV"
     {
         ND_INS_VGATHERQPS, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1017, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26462,7 +26522,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1688 Instruction:"VGETEXPPD Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:2 p:1 l:x w:1 0x42 /r"/"RAM"
+    // Pos:1692 Instruction:"VGETEXPPD Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:2 p:1 l:x w:1 0x42 /r"/"RAM"
     {
         ND_INS_VGETEXPPD, ND_CAT_AVX512, ND_SET_AVX512F, 1018, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26478,7 +26538,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1689 Instruction:"VGETEXPPS Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x42 /r"/"RAM"
+    // Pos:1693 Instruction:"VGETEXPPS Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x42 /r"/"RAM"
     {
         ND_INS_VGETEXPPS, ND_CAT_AVX512, ND_SET_AVX512F, 1019, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26494,7 +26554,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1690 Instruction:"VGETEXPSD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:2 p:1 l:x w:1 0x43 /r"/"RAVM"
+    // Pos:1694 Instruction:"VGETEXPSD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:2 p:1 l:x w:1 0x43 /r"/"RAVM"
     {
         ND_INS_VGETEXPSD, ND_CAT_AVX512, ND_SET_AVX512F, 1020, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26511,7 +26571,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1691 Instruction:"VGETEXPSS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x43 /r"/"RAVM"
+    // Pos:1695 Instruction:"VGETEXPSS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x43 /r"/"RAVM"
     {
         ND_INS_VGETEXPSS, ND_CAT_AVX512, ND_SET_AVX512F, 1021, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26528,7 +26588,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1692 Instruction:"VGETMANTPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x26 /r ib"/"RAMI"
+    // Pos:1696 Instruction:"VGETMANTPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x26 /r ib"/"RAMI"
     {
         ND_INS_VGETMANTPD, ND_CAT_AVX512, ND_SET_AVX512F, 1022, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26545,7 +26605,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1693 Instruction:"VGETMANTPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x26 /r ib"/"RAMI"
+    // Pos:1697 Instruction:"VGETMANTPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x26 /r ib"/"RAMI"
     {
         ND_INS_VGETMANTPS, ND_CAT_AVX512, ND_SET_AVX512F, 1023, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26562,7 +26622,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1694 Instruction:"VGETMANTSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x27 /r ib"/"RAVMI"
+    // Pos:1698 Instruction:"VGETMANTSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x27 /r ib"/"RAVMI"
     {
         ND_INS_VGETMANTSD, ND_CAT_AVX512, ND_SET_AVX512F, 1024, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26580,7 +26640,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1695 Instruction:"VGETMANTSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x27 /r ib"/"RAVMI"
+    // Pos:1699 Instruction:"VGETMANTSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x27 /r ib"/"RAVMI"
     {
         ND_INS_VGETMANTSS, ND_CAT_AVX512, ND_SET_AVX512F, 1025, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26598,7 +26658,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1696 Instruction:"VGF2P8AFFINEINVQB Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCF /r ib"/"RAVMI"
+    // Pos:1700 Instruction:"VGF2P8AFFINEINVQB Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCF /r ib"/"RAVMI"
     {
         ND_INS_VGF2P8AFFINEINVQB, ND_CAT_GFNI, ND_SET_GFNI, 1026, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26616,7 +26676,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1697 Instruction:"VGF2P8AFFINEINVQB Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:1 0xCF /r ib"/"RVMI"
+    // Pos:1701 Instruction:"VGF2P8AFFINEINVQB Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:1 0xCF /r ib"/"RVMI"
     {
         ND_INS_VGF2P8AFFINEINVQB, ND_CAT_GFNI, ND_SET_GFNI, 1026, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26633,7 +26693,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1698 Instruction:"VGF2P8AFFINEQB Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCE /r ib"/"RAVMI"
+    // Pos:1702 Instruction:"VGF2P8AFFINEQB Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCE /r ib"/"RAVMI"
     {
         ND_INS_VGF2P8AFFINEQB, ND_CAT_GFNI, ND_SET_GFNI, 1027, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26651,7 +26711,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1699 Instruction:"VGF2P8AFFINEQB Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:1 0xCE /r ib"/"RVMI"
+    // Pos:1703 Instruction:"VGF2P8AFFINEQB Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:1 0xCE /r ib"/"RVMI"
     {
         ND_INS_VGF2P8AFFINEQB, ND_CAT_GFNI, ND_SET_GFNI, 1027, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26668,7 +26728,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1700 Instruction:"VGF2P8MULB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0xCF /r"/"RAVM"
+    // Pos:1704 Instruction:"VGF2P8MULB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0xCF /r"/"RAVM"
     {
         ND_INS_VGF2P8MULB, ND_CAT_GFNI, ND_SET_GFNI, 1028, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26685,7 +26745,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1701 Instruction:"VGF2P8MULB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xCF /r"/"RVM"
+    // Pos:1705 Instruction:"VGF2P8MULB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0xCF /r"/"RVM"
     {
         ND_INS_VGF2P8MULB, ND_CAT_GFNI, ND_SET_GFNI, 1028, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26701,7 +26761,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1702 Instruction:"VHADDPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x7C /r"/"RVM"
+    // Pos:1706 Instruction:"VHADDPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x7C /r"/"RVM"
     {
         ND_INS_VHADDPD, ND_CAT_AVX, ND_SET_AVX, 1029, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26717,7 +26777,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1703 Instruction:"VHADDPS Vps,Hps,Wps" Encoding:"vex m:1 p:3 l:x w:i 0x7C /r"/"RVM"
+    // Pos:1707 Instruction:"VHADDPS Vps,Hps,Wps" Encoding:"vex m:1 p:3 l:x w:i 0x7C /r"/"RVM"
     {
         ND_INS_VHADDPS, ND_CAT_AVX, ND_SET_AVX, 1030, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26733,7 +26793,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1704 Instruction:"VHSUBPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x7D /r"/"RVM"
+    // Pos:1708 Instruction:"VHSUBPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x7D /r"/"RVM"
     {
         ND_INS_VHSUBPD, ND_CAT_AVX, ND_SET_AVX, 1031, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26749,7 +26809,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1705 Instruction:"VHSUBPS Vps,Hps,Wps" Encoding:"vex m:1 p:3 l:x w:i 0x7D /r"/"RVM"
+    // Pos:1709 Instruction:"VHSUBPS Vps,Hps,Wps" Encoding:"vex m:1 p:3 l:x w:i 0x7D /r"/"RVM"
     {
         ND_INS_VHSUBPS, ND_CAT_AVX, ND_SET_AVX, 1032, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26765,7 +26825,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1706 Instruction:"VINSERTF128 Vqq,Hqq,Wdq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x18 /r ib"/"RVMI"
+    // Pos:1710 Instruction:"VINSERTF128 Vqq,Hqq,Wdq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x18 /r ib"/"RVMI"
     {
         ND_INS_VINSERTF128, ND_CAT_AVX, ND_SET_AVX, 1033, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26782,7 +26842,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1707 Instruction:"VINSERTF32X4 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x18 /r ib"/"RAVMI"
+    // Pos:1711 Instruction:"VINSERTF32X4 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x18 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTF32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1034, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26800,7 +26860,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1708 Instruction:"VINSERTF32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x1A /r ib"/"RAVMI"
+    // Pos:1712 Instruction:"VINSERTF32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x1A /r ib"/"RAVMI"
     {
         ND_INS_VINSERTF32X8, ND_CAT_AVX512, ND_SET_AVX512DQ, 1035, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26818,7 +26878,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1709 Instruction:"VINSERTF64X2 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x18 /r ib"/"RAVMI"
+    // Pos:1713 Instruction:"VINSERTF64X2 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x18 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTF64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 1036, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26836,7 +26896,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1710 Instruction:"VINSERTF64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x1A /r ib"/"RAVMI"
+    // Pos:1714 Instruction:"VINSERTF64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x1A /r ib"/"RAVMI"
     {
         ND_INS_VINSERTF64X4, ND_CAT_AVX512, ND_SET_AVX512F, 1037, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26854,7 +26914,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1711 Instruction:"VINSERTI128 Vqq,Hqq,Wdq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x38 /r ib"/"RVMI"
+    // Pos:1715 Instruction:"VINSERTI128 Vqq,Hqq,Wdq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x38 /r ib"/"RVMI"
     {
         ND_INS_VINSERTI128, ND_CAT_AVX2, ND_SET_AVX2, 1038, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26871,7 +26931,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1712 Instruction:"VINSERTI32X4 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x38 /r ib"/"RAVMI"
+    // Pos:1716 Instruction:"VINSERTI32X4 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x38 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTI32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1039, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26889,7 +26949,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1713 Instruction:"VINSERTI32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x3A /r ib"/"RAVMI"
+    // Pos:1717 Instruction:"VINSERTI32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:0 0x3A /r ib"/"RAVMI"
     {
         ND_INS_VINSERTI32X8, ND_CAT_AVX512, ND_SET_AVX512DQ, 1040, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26907,7 +26967,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1714 Instruction:"VINSERTI64X2 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x38 /r ib"/"RAVMI"
+    // Pos:1718 Instruction:"VINSERTI64X2 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x38 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTI64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 1041, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26925,7 +26985,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1715 Instruction:"VINSERTI64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x3A /r ib"/"RAVMI"
+    // Pos:1719 Instruction:"VINSERTI64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib" Encoding:"evex m:3 p:1 l:2 w:1 0x3A /r ib"/"RAVMI"
     {
         ND_INS_VINSERTI64X4, ND_CAT_AVX512, ND_SET_AVX512F, 1042, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26943,7 +27003,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1716 Instruction:"VINSERTPS Vdq,Hdq,Md,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x21 /r:mem ib"/"RVMI"
+    // Pos:1720 Instruction:"VINSERTPS Vdq,Hdq,Md,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x21 /r:mem ib"/"RVMI"
     {
         ND_INS_VINSERTPS, ND_CAT_AVX512, ND_SET_AVX512F, 1043, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26960,7 +27020,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1717 Instruction:"VINSERTPS Vdq,Hdq,Udq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x21 /r:reg ib"/"RVMI"
+    // Pos:1721 Instruction:"VINSERTPS Vdq,Hdq,Udq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x21 /r:reg ib"/"RVMI"
     {
         ND_INS_VINSERTPS, ND_CAT_AVX512, ND_SET_AVX512F, 1043, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26977,7 +27037,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1718 Instruction:"VINSERTPS Vdq,Hdq,Md,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x21 /r:mem ib"/"RVMI"
+    // Pos:1722 Instruction:"VINSERTPS Vdq,Hdq,Md,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x21 /r:mem ib"/"RVMI"
     {
         ND_INS_VINSERTPS, ND_CAT_AVX, ND_SET_AVX, 1043, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -26994,7 +27054,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1719 Instruction:"VINSERTPS Vdq,Hdq,Udq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x21 /r:reg ib"/"RVMI"
+    // Pos:1723 Instruction:"VINSERTPS Vdq,Hdq,Udq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x21 /r:reg ib"/"RVMI"
     {
         ND_INS_VINSERTPS, ND_CAT_AVX, ND_SET_AVX, 1043, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27011,7 +27071,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1720 Instruction:"VLDDQU Vx,Mx" Encoding:"vex m:1 p:3 l:x w:i 0xF0 /r:mem"/"RM"
+    // Pos:1724 Instruction:"VLDDQU Vx,Mx" Encoding:"vex m:1 p:3 l:x w:i 0xF0 /r:mem"/"RM"
     {
         ND_INS_VLDDQU, ND_CAT_AVX, ND_SET_AVX, 1044, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27026,7 +27086,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1721 Instruction:"VLDMXCSR Md" Encoding:"vex m:1 p:0 0xAE /2:mem"/"M"
+    // Pos:1725 Instruction:"VLDMXCSR Md" Encoding:"vex m:1 p:0 0xAE /2:mem"/"M"
     {
         ND_INS_VLDMXCSR, ND_CAT_AVX, ND_SET_AVX, 1045, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27041,7 +27101,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1722 Instruction:"VMASKMOVDQU Vdq,Udq" Encoding:"vex m:1 p:1 l:0 w:i 0xF7 /r:reg"/"RM"
+    // Pos:1726 Instruction:"VMASKMOVDQU Vdq,Udq" Encoding:"vex m:1 p:1 l:0 w:i 0xF7 /r:reg"/"RM"
     {
         ND_INS_VMASKMOVDQU, ND_CAT_AVX, ND_SET_AVX, 1046, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27057,7 +27117,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1723 Instruction:"VMASKMOVPD Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:0 0x2D /r:mem"/"RVM"
+    // Pos:1727 Instruction:"VMASKMOVPD Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:0 0x2D /r:mem"/"RVM"
     {
         ND_INS_VMASKMOVPD, ND_CAT_AVX, ND_SET_AVX, 1047, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27073,7 +27133,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1724 Instruction:"VMASKMOVPD Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:0 0x2F /r:mem"/"MVR"
+    // Pos:1728 Instruction:"VMASKMOVPD Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:0 0x2F /r:mem"/"MVR"
     {
         ND_INS_VMASKMOVPD, ND_CAT_AVX, ND_SET_AVX, 1047, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27089,7 +27149,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1725 Instruction:"VMASKMOVPS Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:0 0x2C /r:mem"/"RVM"
+    // Pos:1729 Instruction:"VMASKMOVPS Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:0 0x2C /r:mem"/"RVM"
     {
         ND_INS_VMASKMOVPS, ND_CAT_AVX, ND_SET_AVX, 1048, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27105,7 +27165,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1726 Instruction:"VMASKMOVPS Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:0 0x2E /r:mem"/"MVR"
+    // Pos:1730 Instruction:"VMASKMOVPS Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:0 0x2E /r:mem"/"MVR"
     {
         ND_INS_VMASKMOVPS, ND_CAT_AVX, ND_SET_AVX, 1048, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27121,7 +27181,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1727 Instruction:"VMAXPD Vn{K}{z},aKq,Hn,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5F /r"/"RAVM"
+    // Pos:1731 Instruction:"VMAXPD Vn{K}{z},aKq,Hn,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXPD, ND_CAT_AVX512, ND_SET_AVX512F, 1049, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27138,7 +27198,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1728 Instruction:"VMAXPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5F /r"/"RVM"
+    // Pos:1732 Instruction:"VMAXPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5F /r"/"RVM"
     {
         ND_INS_VMAXPD, ND_CAT_AVX, ND_SET_AVX, 1049, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27154,7 +27214,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1729 Instruction:"VMAXPS Vn{K}{z},aKq,Hn,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5F /r"/"RAVM"
+    // Pos:1733 Instruction:"VMAXPS Vn{K}{z},aKq,Hn,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXPS, ND_CAT_AVX512, ND_SET_AVX512F, 1050, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27171,7 +27231,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1730 Instruction:"VMAXPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5F /r"/"RVM"
+    // Pos:1734 Instruction:"VMAXPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5F /r"/"RVM"
     {
         ND_INS_VMAXPS, ND_CAT_AVX, ND_SET_AVX, 1050, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27187,7 +27247,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1731 Instruction:"VMAXSD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:1 0x5F /r"/"RAVM"
+    // Pos:1735 Instruction:"VMAXSD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:1 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXSD, ND_CAT_AVX512, ND_SET_AVX512F, 1051, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27204,7 +27264,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1732 Instruction:"VMAXSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5F /r"/"RVM"
+    // Pos:1736 Instruction:"VMAXSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5F /r"/"RVM"
     {
         ND_INS_VMAXSD, ND_CAT_AVX, ND_SET_AVX, 1051, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27220,7 +27280,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1733 Instruction:"VMAXSS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:0 0x5F /r"/"RAVM"
+    // Pos:1737 Instruction:"VMAXSS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:0 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXSS, ND_CAT_AVX512, ND_SET_AVX512F, 1052, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27237,7 +27297,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1734 Instruction:"VMAXSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5F /r"/"RVM"
+    // Pos:1738 Instruction:"VMAXSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5F /r"/"RVM"
     {
         ND_INS_VMAXSS, ND_CAT_AVX, ND_SET_AVX, 1052, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27253,7 +27313,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1735 Instruction:"VMCALL" Encoding:"0x0F 0x01 /0xC1"/""
+    // Pos:1739 Instruction:"VMCALL" Encoding:"0x0F 0x01 /0xC1"/""
     {
         ND_INS_VMCALL, ND_CAT_VTX, ND_SET_VTX, 1053, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_TSX, 
@@ -27267,7 +27327,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1736 Instruction:"VMCLEAR Mq" Encoding:"0x66 0x0F 0xC7 /6:mem"/"M"
+    // Pos:1740 Instruction:"VMCLEAR Mq" Encoding:"0x66 0x0F 0xC7 /6:mem"/"M"
     {
         ND_INS_VMCLEAR, ND_CAT_VTX, ND_SET_VTX, 1054, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -27282,7 +27342,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1737 Instruction:"VMFUNC" Encoding:"NP 0x0F 0x01 /0xD4"/""
+    // Pos:1741 Instruction:"VMFUNC" Encoding:"NP 0x0F 0x01 /0xD4"/""
     {
         ND_INS_VMFUNC, ND_CAT_VTX, ND_SET_VTX, 1055, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_TSX, 
@@ -27296,7 +27356,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1738 Instruction:"VMGEXIT" Encoding:"0xF3 0x0F 0x01 /0xD9"/""
+    // Pos:1742 Instruction:"VMGEXIT" Encoding:"0xF3 0x0F 0x01 /0xD9"/""
     {
         ND_INS_VMGEXIT, ND_CAT_SYSTEM, ND_SET_SVM, 1056, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_SGX|ND_MOD_TSX, 
@@ -27310,7 +27370,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1739 Instruction:"VMGEXIT" Encoding:"0xF2 0x0F 0x01 /0xD9"/""
+    // Pos:1743 Instruction:"VMGEXIT" Encoding:"0xF2 0x0F 0x01 /0xD9"/""
     {
         ND_INS_VMGEXIT, ND_CAT_SYSTEM, ND_SET_SVM, 1056, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_SGX|ND_MOD_TSX, 
@@ -27324,7 +27384,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1740 Instruction:"VMINPD Vn{K}{z},aKq,Hn,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5D /r"/"RAVM"
+    // Pos:1744 Instruction:"VMINPD Vn{K}{z},aKq,Hn,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5D /r"/"RAVM"
     {
         ND_INS_VMINPD, ND_CAT_AVX512, ND_SET_AVX512F, 1057, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27341,7 +27401,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1741 Instruction:"VMINPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5D /r"/"RVM"
+    // Pos:1745 Instruction:"VMINPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5D /r"/"RVM"
     {
         ND_INS_VMINPD, ND_CAT_AVX, ND_SET_AVX, 1057, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27357,7 +27417,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1742 Instruction:"VMINPS Vn{K}{z},aKq,Hn,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5D /r"/"RAVM"
+    // Pos:1746 Instruction:"VMINPS Vn{K}{z},aKq,Hn,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5D /r"/"RAVM"
     {
         ND_INS_VMINPS, ND_CAT_AVX512, ND_SET_AVX512F, 1058, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27374,7 +27434,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1743 Instruction:"VMINPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5D /r"/"RVM"
+    // Pos:1747 Instruction:"VMINPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5D /r"/"RVM"
     {
         ND_INS_VMINPS, ND_CAT_AVX, ND_SET_AVX, 1058, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27390,7 +27450,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1744 Instruction:"VMINSD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:1 0x5D /r"/"RAVM"
+    // Pos:1748 Instruction:"VMINSD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:1 p:3 l:i w:1 0x5D /r"/"RAVM"
     {
         ND_INS_VMINSD, ND_CAT_AVX512, ND_SET_AVX512F, 1059, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27407,7 +27467,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1745 Instruction:"VMINSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5D /r"/"RVM"
+    // Pos:1749 Instruction:"VMINSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5D /r"/"RVM"
     {
         ND_INS_VMINSD, ND_CAT_AVX, ND_SET_AVX, 1059, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27423,7 +27483,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1746 Instruction:"VMINSS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:0 0x5D /r"/"RAVM"
+    // Pos:1750 Instruction:"VMINSS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:1 p:2 l:i w:0 0x5D /r"/"RAVM"
     {
         ND_INS_VMINSS, ND_CAT_AVX512, ND_SET_AVX512F, 1060, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27440,7 +27500,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1747 Instruction:"VMINSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5D /r"/"RVM"
+    // Pos:1751 Instruction:"VMINSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5D /r"/"RVM"
     {
         ND_INS_VMINSS, ND_CAT_AVX, ND_SET_AVX, 1060, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27456,7 +27516,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1748 Instruction:"VMLAUNCH" Encoding:"0x0F 0x01 /0xC2"/""
+    // Pos:1752 Instruction:"VMLAUNCH" Encoding:"0x0F 0x01 /0xC2"/""
     {
         ND_INS_VMLAUNCH, ND_CAT_VTX, ND_SET_VTX, 1061, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -27470,7 +27530,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1749 Instruction:"VMLOAD" Encoding:"0x0F 0x01 /0xDA"/""
+    // Pos:1753 Instruction:"VMLOAD" Encoding:"0x0F 0x01 /0xDA"/""
     {
         ND_INS_VMLOAD, ND_CAT_SYSTEM, ND_SET_SVM, 1062, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -27484,7 +27544,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1750 Instruction:"VMMCALL" Encoding:"0x0F 0x01 /0xD9"/""
+    // Pos:1754 Instruction:"VMMCALL" Encoding:"0x0F 0x01 /0xD9"/""
     {
         ND_INS_VMMCALL, ND_CAT_SYSTEM, ND_SET_SVM, 1063, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_SGX|ND_MOD_TSX, 
@@ -27498,7 +27558,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1751 Instruction:"VMMCALL" Encoding:"0x66 0x0F 0x01 /0xD9"/""
+    // Pos:1755 Instruction:"VMMCALL" Encoding:"0x66 0x0F 0x01 /0xD9"/""
     {
         ND_INS_VMMCALL, ND_CAT_SYSTEM, ND_SET_SVM, 1063, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_SGX|ND_MOD_TSX, 
@@ -27512,7 +27572,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1752 Instruction:"VMOVAPD Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x28 /r"/"RAM"
+    // Pos:1756 Instruction:"VMOVAPD Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x28 /r"/"RAM"
     {
         ND_INS_VMOVAPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1064, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27528,7 +27588,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1753 Instruction:"VMOVAPD Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x29 /r"/"MAR"
+    // Pos:1757 Instruction:"VMOVAPD Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x29 /r"/"MAR"
     {
         ND_INS_VMOVAPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1064, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27544,7 +27604,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1754 Instruction:"VMOVAPD Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x28 /r"/"RM"
+    // Pos:1758 Instruction:"VMOVAPD Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x28 /r"/"RM"
     {
         ND_INS_VMOVAPD, ND_CAT_DATAXFER, ND_SET_AVX, 1064, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27559,7 +27619,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1755 Instruction:"VMOVAPD Wx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x29 /r"/"MR"
+    // Pos:1759 Instruction:"VMOVAPD Wx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x29 /r"/"MR"
     {
         ND_INS_VMOVAPD, ND_CAT_DATAXFER, ND_SET_AVX, 1064, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27574,7 +27634,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1756 Instruction:"VMOVAPS Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:0 l:x w:0 0x28 /r"/"RAM"
+    // Pos:1760 Instruction:"VMOVAPS Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:0 l:x w:0 0x28 /r"/"RAM"
     {
         ND_INS_VMOVAPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1065, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27590,7 +27650,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1757 Instruction:"VMOVAPS Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x29 /r"/"MAR"
+    // Pos:1761 Instruction:"VMOVAPS Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x29 /r"/"MAR"
     {
         ND_INS_VMOVAPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1065, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27606,7 +27666,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1758 Instruction:"VMOVAPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x28 /r"/"RM"
+    // Pos:1762 Instruction:"VMOVAPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x28 /r"/"RM"
     {
         ND_INS_VMOVAPS, ND_CAT_DATAXFER, ND_SET_AVX, 1065, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27621,7 +27681,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1759 Instruction:"VMOVAPS Wx,Vx" Encoding:"vex m:1 p:0 l:x w:i 0x29 /r"/"MR"
+    // Pos:1763 Instruction:"VMOVAPS Wx,Vx" Encoding:"vex m:1 p:0 l:x w:i 0x29 /r"/"MR"
     {
         ND_INS_VMOVAPS, ND_CAT_DATAXFER, ND_SET_AVX, 1065, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27636,7 +27696,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1760 Instruction:"VMOVD Vdq,Ed" Encoding:"evex m:1 p:1 l:0 w:0 0x6E /r"/"RM"
+    // Pos:1764 Instruction:"VMOVD Vdq,Ed" Encoding:"evex m:1 p:1 l:0 w:0 0x6E /r"/"RM"
     {
         ND_INS_VMOVD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1066, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27651,7 +27711,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1761 Instruction:"VMOVD Ey,Vdq" Encoding:"evex m:1 p:1 l:0 w:0 0x7E /r"/"MR"
+    // Pos:1765 Instruction:"VMOVD Ey,Vdq" Encoding:"evex m:1 p:1 l:0 w:0 0x7E /r"/"MR"
     {
         ND_INS_VMOVD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1066, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27666,7 +27726,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1762 Instruction:"VMOVD Vdq,Ey" Encoding:"vex m:1 p:1 l:0 w:0 0x6E /r"/"RM"
+    // Pos:1766 Instruction:"VMOVD Vdq,Ey" Encoding:"vex m:1 p:1 l:0 w:0 0x6E /r"/"RM"
     {
         ND_INS_VMOVD, ND_CAT_DATAXFER, ND_SET_AVX, 1066, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27681,7 +27741,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1763 Instruction:"VMOVD Ey,Vd" Encoding:"vex m:1 p:1 l:0 w:0 0x7E /r"/"MR"
+    // Pos:1767 Instruction:"VMOVD Ey,Vd" Encoding:"vex m:1 p:1 l:0 w:0 0x7E /r"/"MR"
     {
         ND_INS_VMOVD, ND_CAT_DATAXFER, ND_SET_AVX, 1066, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27696,7 +27756,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1764 Instruction:"VMOVDDUP Vdq{K}{z},aKq,Wq" Encoding:"evex m:1 p:3 l:0 w:1 0x12 /r"/"RAM"
+    // Pos:1768 Instruction:"VMOVDDUP Vdq{K}{z},aKq,Wq" Encoding:"evex m:1 p:3 l:0 w:1 0x12 /r"/"RAM"
     {
         ND_INS_VMOVDDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1067, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27712,7 +27772,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1765 Instruction:"VMOVDDUP Vqq{K}{z},aKq,Wqq" Encoding:"evex m:1 p:3 l:1 w:1 0x12 /r"/"RAM"
+    // Pos:1769 Instruction:"VMOVDDUP Vqq{K}{z},aKq,Wqq" Encoding:"evex m:1 p:3 l:1 w:1 0x12 /r"/"RAM"
     {
         ND_INS_VMOVDDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1067, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27728,7 +27788,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1766 Instruction:"VMOVDDUP Voq{K}{z},aKq,Woq" Encoding:"evex m:1 p:3 l:2 w:1 0x12 /r"/"RAM"
+    // Pos:1770 Instruction:"VMOVDDUP Voq{K}{z},aKq,Woq" Encoding:"evex m:1 p:3 l:2 w:1 0x12 /r"/"RAM"
     {
         ND_INS_VMOVDDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1067, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27744,7 +27804,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1767 Instruction:"VMOVDDUP Vdq,Wq" Encoding:"vex m:1 p:3 l:0 w:i 0x12 /r"/"RM"
+    // Pos:1771 Instruction:"VMOVDDUP Vdq,Wq" Encoding:"vex m:1 p:3 l:0 w:i 0x12 /r"/"RM"
     {
         ND_INS_VMOVDDUP, ND_CAT_DATAXFER, ND_SET_AVX, 1067, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27759,7 +27819,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1768 Instruction:"VMOVDDUP Vqq,Wqq" Encoding:"vex m:1 p:3 l:1 w:i 0x12 /r"/"RM"
+    // Pos:1772 Instruction:"VMOVDDUP Vqq,Wqq" Encoding:"vex m:1 p:3 l:1 w:i 0x12 /r"/"RM"
     {
         ND_INS_VMOVDDUP, ND_CAT_DATAXFER, ND_SET_AVX, 1067, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27774,7 +27834,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1769 Instruction:"VMOVDQA Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6F /r"/"RM"
+    // Pos:1773 Instruction:"VMOVDQA Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6F /r"/"RM"
     {
         ND_INS_VMOVDQA, ND_CAT_DATAXFER, ND_SET_AVX, 1068, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27789,7 +27849,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1770 Instruction:"VMOVDQA Wx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x7F /r"/"MR"
+    // Pos:1774 Instruction:"VMOVDQA Wx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x7F /r"/"MR"
     {
         ND_INS_VMOVDQA, ND_CAT_DATAXFER, ND_SET_AVX, 1068, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27804,7 +27864,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1771 Instruction:"VMOVDQA32 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:0 0x6F /r"/"RAM"
+    // Pos:1775 Instruction:"VMOVDQA32 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:0 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQA32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1069, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27820,7 +27880,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1772 Instruction:"VMOVDQA32 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:0 0x7F /r"/"MAR"
+    // Pos:1776 Instruction:"VMOVDQA32 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:0 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQA32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1069, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27836,7 +27896,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1773 Instruction:"VMOVDQA64 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x6F /r"/"RAM"
+    // Pos:1777 Instruction:"VMOVDQA64 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQA64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1070, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27852,7 +27912,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1774 Instruction:"VMOVDQA64 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x7F /r"/"MAR"
+    // Pos:1778 Instruction:"VMOVDQA64 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQA64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1070, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27868,7 +27928,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1775 Instruction:"VMOVDQU Vx,Wx" Encoding:"vex m:1 p:2 l:x w:i 0x6F /r"/"RM"
+    // Pos:1779 Instruction:"VMOVDQU Vx,Wx" Encoding:"vex m:1 p:2 l:x w:i 0x6F /r"/"RM"
     {
         ND_INS_VMOVDQU, ND_CAT_DATAXFER, ND_SET_AVX, 1071, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27883,7 +27943,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1776 Instruction:"VMOVDQU Wx,Vx" Encoding:"vex m:1 p:2 l:x w:i 0x7F /r"/"MR"
+    // Pos:1780 Instruction:"VMOVDQU Wx,Vx" Encoding:"vex m:1 p:2 l:x w:i 0x7F /r"/"MR"
     {
         ND_INS_VMOVDQU, ND_CAT_DATAXFER, ND_SET_AVX, 1071, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27898,7 +27958,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1777 Instruction:"VMOVDQU16 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:3 l:x w:1 0x6F /r"/"RAM"
+    // Pos:1781 Instruction:"VMOVDQU16 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:3 l:x w:1 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU16, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1072, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27914,7 +27974,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1778 Instruction:"VMOVDQU16 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:3 l:x w:1 0x7F /r"/"MAR"
+    // Pos:1782 Instruction:"VMOVDQU16 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:3 l:x w:1 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU16, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1072, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27930,7 +27990,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1779 Instruction:"VMOVDQU32 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x6F /r"/"RAM"
+    // Pos:1783 Instruction:"VMOVDQU32 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1073, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27946,7 +28006,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1780 Instruction:"VMOVDQU32 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:2 l:x w:0 0x7F /r"/"MAR"
+    // Pos:1784 Instruction:"VMOVDQU32 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:2 l:x w:0 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1073, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27962,7 +28022,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1781 Instruction:"VMOVDQU64 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:1 0x6F /r"/"RAM"
+    // Pos:1785 Instruction:"VMOVDQU64 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:1 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1074, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27978,7 +28038,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1782 Instruction:"VMOVDQU64 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:2 l:x w:1 0x7F /r"/"MAR"
+    // Pos:1786 Instruction:"VMOVDQU64 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:2 l:x w:1 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1074, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -27994,7 +28054,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1783 Instruction:"VMOVDQU8 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:3 l:x w:0 0x6F /r"/"RAM"
+    // Pos:1787 Instruction:"VMOVDQU8 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:3 l:x w:0 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU8, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1075, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28010,7 +28070,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1784 Instruction:"VMOVDQU8 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:3 l:x w:0 0x7F /r"/"MAR"
+    // Pos:1788 Instruction:"VMOVDQU8 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:3 l:x w:0 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU8, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1075, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28026,7 +28086,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1785 Instruction:"VMOVHLPS Vdq,Hdq,Udq" Encoding:"evex m:1 p:0 l:0 w:0 0x12 /r:reg"/"RVM"
+    // Pos:1789 Instruction:"VMOVHLPS Vdq,Hdq,Udq" Encoding:"evex m:1 p:0 l:0 w:0 0x12 /r:reg"/"RVM"
     {
         ND_INS_VMOVHLPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1076, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28042,7 +28102,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1786 Instruction:"VMOVHLPS Vdq,Hdq,Udq" Encoding:"vex m:1 p:0 l:0 w:i 0x12 /r:reg"/"RVM"
+    // Pos:1790 Instruction:"VMOVHLPS Vdq,Hdq,Udq" Encoding:"vex m:1 p:0 l:0 w:i 0x12 /r:reg"/"RVM"
     {
         ND_INS_VMOVHLPS, ND_CAT_AVX, ND_SET_AVX, 1076, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28058,7 +28118,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1787 Instruction:"VMOVHPD Vdq,Hdq,Mq" Encoding:"evex m:1 p:1 l:0 w:1 0x16 /r:mem"/"RVM"
+    // Pos:1791 Instruction:"VMOVHPD Vdq,Hdq,Mq" Encoding:"evex m:1 p:1 l:0 w:1 0x16 /r:mem"/"RVM"
     {
         ND_INS_VMOVHPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1077, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28074,7 +28134,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1788 Instruction:"VMOVHPD Mq,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0x17 /r:mem"/"MR"
+    // Pos:1792 Instruction:"VMOVHPD Mq,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0x17 /r:mem"/"MR"
     {
         ND_INS_VMOVHPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1077, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28089,7 +28149,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1789 Instruction:"VMOVHPD Vdq,Hdq,Mq" Encoding:"vex m:1 p:1 l:0 w:i 0x16 /r:mem"/"RVM"
+    // Pos:1793 Instruction:"VMOVHPD Vdq,Hdq,Mq" Encoding:"vex m:1 p:1 l:0 w:i 0x16 /r:mem"/"RVM"
     {
         ND_INS_VMOVHPD, ND_CAT_DATAXFER, ND_SET_AVX, 1077, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28105,7 +28165,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1790 Instruction:"VMOVHPD Mq,Vdq" Encoding:"vex m:1 p:1 l:0 w:i 0x17 /r:mem"/"MR"
+    // Pos:1794 Instruction:"VMOVHPD Mq,Vdq" Encoding:"vex m:1 p:1 l:0 w:i 0x17 /r:mem"/"MR"
     {
         ND_INS_VMOVHPD, ND_CAT_DATAXFER, ND_SET_AVX, 1077, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28120,7 +28180,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1791 Instruction:"VMOVHPS Vdq,Hdq,Mq" Encoding:"evex m:1 p:0 l:0 w:0 0x16 /r:mem"/"RVM"
+    // Pos:1795 Instruction:"VMOVHPS Vdq,Hdq,Mq" Encoding:"evex m:1 p:0 l:0 w:0 0x16 /r:mem"/"RVM"
     {
         ND_INS_VMOVHPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1078, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28136,7 +28196,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1792 Instruction:"VMOVHPS Mq,Vdq" Encoding:"evex m:1 p:0 l:0 w:0 0x17 /r:mem"/"MR"
+    // Pos:1796 Instruction:"VMOVHPS Mq,Vdq" Encoding:"evex m:1 p:0 l:0 w:0 0x17 /r:mem"/"MR"
     {
         ND_INS_VMOVHPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1078, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28151,7 +28211,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1793 Instruction:"VMOVHPS Vdq,Hdq,Mq" Encoding:"vex m:1 p:0 l:0 w:i 0x16 /r:mem"/"RVM"
+    // Pos:1797 Instruction:"VMOVHPS Vdq,Hdq,Mq" Encoding:"vex m:1 p:0 l:0 w:i 0x16 /r:mem"/"RVM"
     {
         ND_INS_VMOVHPS, ND_CAT_DATAXFER, ND_SET_AVX, 1078, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28167,7 +28227,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1794 Instruction:"VMOVHPS Mq,Vdq" Encoding:"vex m:1 p:0 l:0 w:i 0x17 /r:mem"/"MR"
+    // Pos:1798 Instruction:"VMOVHPS Mq,Vdq" Encoding:"vex m:1 p:0 l:0 w:i 0x17 /r:mem"/"MR"
     {
         ND_INS_VMOVHPS, ND_CAT_DATAXFER, ND_SET_AVX, 1078, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28182,7 +28242,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1795 Instruction:"VMOVLHPS Vdq,Hdq,Udq" Encoding:"evex m:1 p:0 l:0 w:0 0x16 /r:reg"/"RVM"
+    // Pos:1799 Instruction:"VMOVLHPS Vdq,Hdq,Udq" Encoding:"evex m:1 p:0 l:0 w:0 0x16 /r:reg"/"RVM"
     {
         ND_INS_VMOVLHPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1079, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28198,7 +28258,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1796 Instruction:"VMOVLHPS Vdq,Hdq,Udq" Encoding:"vex m:1 p:0 l:0 w:i 0x16 /r:reg"/"RVM"
+    // Pos:1800 Instruction:"VMOVLHPS Vdq,Hdq,Udq" Encoding:"vex m:1 p:0 l:0 w:i 0x16 /r:reg"/"RVM"
     {
         ND_INS_VMOVLHPS, ND_CAT_AVX, ND_SET_AVX, 1079, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28214,7 +28274,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1797 Instruction:"VMOVLPD Vdq,Hdq,Mq" Encoding:"evex m:1 p:1 l:0 w:1 0x12 /r:mem"/"RVM"
+    // Pos:1801 Instruction:"VMOVLPD Vdq,Hdq,Mq" Encoding:"evex m:1 p:1 l:0 w:1 0x12 /r:mem"/"RVM"
     {
         ND_INS_VMOVLPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1080, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28230,7 +28290,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1798 Instruction:"VMOVLPD Mq,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0x13 /r:mem"/"MR"
+    // Pos:1802 Instruction:"VMOVLPD Mq,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0x13 /r:mem"/"MR"
     {
         ND_INS_VMOVLPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1080, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28245,7 +28305,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1799 Instruction:"VMOVLPD Vdq,Hdq,Mq" Encoding:"vex m:1 p:1 l:0 w:i 0x12 /r:mem"/"RVM"
+    // Pos:1803 Instruction:"VMOVLPD Vdq,Hdq,Mq" Encoding:"vex m:1 p:1 l:0 w:i 0x12 /r:mem"/"RVM"
     {
         ND_INS_VMOVLPD, ND_CAT_DATAXFER, ND_SET_AVX, 1080, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28261,7 +28321,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1800 Instruction:"VMOVLPD Mq,Vdq" Encoding:"vex m:1 p:1 l:0 w:i 0x13 /r:mem"/"MR"
+    // Pos:1804 Instruction:"VMOVLPD Mq,Vdq" Encoding:"vex m:1 p:1 l:0 w:i 0x13 /r:mem"/"MR"
     {
         ND_INS_VMOVLPD, ND_CAT_DATAXFER, ND_SET_AVX, 1080, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28276,7 +28336,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1801 Instruction:"VMOVLPS Vdq,Hdq,Mq" Encoding:"evex m:1 p:0 l:0 w:0 0x12 /r:mem"/"RVM"
+    // Pos:1805 Instruction:"VMOVLPS Vdq,Hdq,Mq" Encoding:"evex m:1 p:0 l:0 w:0 0x12 /r:mem"/"RVM"
     {
         ND_INS_VMOVLPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1081, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28292,7 +28352,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1802 Instruction:"VMOVLPS Mq,Vdq" Encoding:"evex m:1 p:0 l:0 w:0 0x13 /r:mem"/"MR"
+    // Pos:1806 Instruction:"VMOVLPS Mq,Vdq" Encoding:"evex m:1 p:0 l:0 w:0 0x13 /r:mem"/"MR"
     {
         ND_INS_VMOVLPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1081, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28307,7 +28367,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1803 Instruction:"VMOVLPS Vdq,Hdq,Mq" Encoding:"vex m:1 p:0 l:0 w:i 0x12 /r:mem"/"RVM"
+    // Pos:1807 Instruction:"VMOVLPS Vdq,Hdq,Mq" Encoding:"vex m:1 p:0 l:0 w:i 0x12 /r:mem"/"RVM"
     {
         ND_INS_VMOVLPS, ND_CAT_DATAXFER, ND_SET_AVX, 1081, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28323,7 +28383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1804 Instruction:"VMOVLPS Mq,Vdq" Encoding:"vex m:1 p:0 l:0 w:i 0x13 /r:mem"/"MR"
+    // Pos:1808 Instruction:"VMOVLPS Mq,Vdq" Encoding:"vex m:1 p:0 l:0 w:i 0x13 /r:mem"/"MR"
     {
         ND_INS_VMOVLPS, ND_CAT_DATAXFER, ND_SET_AVX, 1081, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28338,7 +28398,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1805 Instruction:"VMOVMSKPD Gy,Ux" Encoding:"vex m:1 p:1 l:x w:i 0x50 /r:reg"/"RM"
+    // Pos:1809 Instruction:"VMOVMSKPD Gy,Ux" Encoding:"vex m:1 p:1 l:x w:i 0x50 /r:reg"/"RM"
     {
         ND_INS_VMOVMSKPD, ND_CAT_DATAXFER, ND_SET_AVX, 1082, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28353,7 +28413,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1806 Instruction:"VMOVMSKPS Gy,Ux" Encoding:"vex m:1 p:0 l:x w:i 0x50 /r:reg"/"RM"
+    // Pos:1810 Instruction:"VMOVMSKPS Gy,Ux" Encoding:"vex m:1 p:0 l:x w:i 0x50 /r:reg"/"RM"
     {
         ND_INS_VMOVMSKPS, ND_CAT_DATAXFER, ND_SET_AVX, 1083, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28368,7 +28428,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1807 Instruction:"VMOVNTDQ Mn,Vn" Encoding:"evex m:1 p:1 l:x w:0 0xE7 /r:mem"/"MR"
+    // Pos:1811 Instruction:"VMOVNTDQ Mn,Vn" Encoding:"evex m:1 p:1 l:x w:0 0xE7 /r:mem"/"MR"
     {
         ND_INS_VMOVNTDQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1084, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28383,7 +28443,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1808 Instruction:"VMOVNTDQ Mx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0xE7 /r:mem"/"MR"
+    // Pos:1812 Instruction:"VMOVNTDQ Mx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0xE7 /r:mem"/"MR"
     {
         ND_INS_VMOVNTDQ, ND_CAT_AVX, ND_SET_AVX, 1084, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28398,7 +28458,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1809 Instruction:"VMOVNTDQA Vn,Mn" Encoding:"evex m:2 p:1 l:x w:0 0x2A /r:mem"/"RM"
+    // Pos:1813 Instruction:"VMOVNTDQA Vn,Mn" Encoding:"evex m:2 p:1 l:x w:0 0x2A /r:mem"/"RM"
     {
         ND_INS_VMOVNTDQA, ND_CAT_DATAXFER, ND_SET_AVX512F, 1085, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28413,7 +28473,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1810 Instruction:"VMOVNTDQA Vx,Mx" Encoding:"vex m:2 p:1 l:x w:i 0x2A /r:mem"/"RM"
+    // Pos:1814 Instruction:"VMOVNTDQA Vx,Mx" Encoding:"vex m:2 p:1 l:x w:i 0x2A /r:mem"/"RM"
     {
         ND_INS_VMOVNTDQA, ND_CAT_AVX, ND_SET_AVX, 1085, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28428,7 +28488,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1811 Instruction:"VMOVNTPD Mn,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x2B /r:mem"/"MR"
+    // Pos:1815 Instruction:"VMOVNTPD Mn,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x2B /r:mem"/"MR"
     {
         ND_INS_VMOVNTPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1086, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28443,7 +28503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1812 Instruction:"VMOVNTPD Mx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x2B /r:mem"/"MR"
+    // Pos:1816 Instruction:"VMOVNTPD Mx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x2B /r:mem"/"MR"
     {
         ND_INS_VMOVNTPD, ND_CAT_AVX, ND_SET_AVX, 1086, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28458,7 +28518,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1813 Instruction:"VMOVNTPS Mn,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x2B /r:mem"/"MR"
+    // Pos:1817 Instruction:"VMOVNTPS Mn,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x2B /r:mem"/"MR"
     {
         ND_INS_VMOVNTPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1087, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28473,7 +28533,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1814 Instruction:"VMOVNTPS Mx,Vx" Encoding:"vex m:1 p:0 l:x w:i 0x2B /r:mem"/"MR"
+    // Pos:1818 Instruction:"VMOVNTPS Mx,Vx" Encoding:"vex m:1 p:0 l:x w:i 0x2B /r:mem"/"MR"
     {
         ND_INS_VMOVNTPS, ND_CAT_AVX, ND_SET_AVX, 1087, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28488,7 +28548,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1815 Instruction:"VMOVQ Vdq,Eq" Encoding:"evex m:1 p:1 l:0 w:1 0x6E /r"/"RM"
+    // Pos:1819 Instruction:"VMOVQ Vdq,Eq" Encoding:"evex m:1 p:1 l:0 w:1 0x6E /r"/"RM"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28503,7 +28563,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1816 Instruction:"VMOVQ Ey,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0x7E /r"/"MR"
+    // Pos:1820 Instruction:"VMOVQ Ey,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0x7E /r"/"MR"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28518,7 +28578,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1817 Instruction:"VMOVQ Vdq,Wq" Encoding:"evex m:1 p:2 l:0 w:1 0x7E /r"/"RM"
+    // Pos:1821 Instruction:"VMOVQ Vdq,Wq" Encoding:"evex m:1 p:2 l:0 w:1 0x7E /r"/"RM"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28533,7 +28593,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1818 Instruction:"VMOVQ Wq,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0xD6 /r"/"MR"
+    // Pos:1822 Instruction:"VMOVQ Wq,Vdq" Encoding:"evex m:1 p:1 l:0 w:1 0xD6 /r"/"MR"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28548,7 +28608,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1819 Instruction:"VMOVQ Vdq,Ey" Encoding:"vex m:1 p:1 l:0 w:1 0x6E /r"/"RM"
+    // Pos:1823 Instruction:"VMOVQ Vdq,Ey" Encoding:"vex m:1 p:1 l:0 w:1 0x6E /r"/"RM"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28563,7 +28623,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1820 Instruction:"VMOVQ Ey,Vq" Encoding:"vex m:1 p:1 l:0 w:1 0x7E /r"/"MR"
+    // Pos:1824 Instruction:"VMOVQ Ey,Vq" Encoding:"vex m:1 p:1 l:0 w:1 0x7E /r"/"MR"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28578,7 +28638,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1821 Instruction:"VMOVQ Vdq,Wq" Encoding:"vex m:1 p:2 l:0 w:i 0x7E /r"/"RM"
+    // Pos:1825 Instruction:"VMOVQ Vdq,Wq" Encoding:"vex m:1 p:2 l:0 w:i 0x7E /r"/"RM"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28593,7 +28653,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1822 Instruction:"VMOVQ Wq,Vdq" Encoding:"vex m:1 p:1 l:0 w:i 0xD6 /r"/"MR"
+    // Pos:1826 Instruction:"VMOVQ Wq,Vdq" Encoding:"vex m:1 p:1 l:0 w:i 0xD6 /r"/"MR"
     {
         ND_INS_VMOVQ, ND_CAT_DATAXFER, ND_SET_AVX, 1088, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28608,7 +28668,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1823 Instruction:"VMOVSD Vdq{K}{z},aKq,Msd" Encoding:"evex m:1 p:3 l:i w:1 0x10 /r:mem"/"RAM"
+    // Pos:1827 Instruction:"VMOVSD Vdq{K}{z},aKq,Msd" Encoding:"evex m:1 p:3 l:i w:1 0x10 /r:mem"/"RAM"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28624,7 +28684,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1824 Instruction:"VMOVSD Vdq{K}{z},aKq,Hdq,Udq" Encoding:"evex m:1 p:3 l:i w:1 0x10 /r:reg"/"RAVM"
+    // Pos:1828 Instruction:"VMOVSD Vdq{K}{z},aKq,Hdq,Udq" Encoding:"evex m:1 p:3 l:i w:1 0x10 /r:reg"/"RAVM"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28641,7 +28701,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1825 Instruction:"VMOVSD Msd{K},aKq,Vdq" Encoding:"evex m:1 p:3 l:i w:1 0x11 /r:mem"/"MAR"
+    // Pos:1829 Instruction:"VMOVSD Msd{K},aKq,Vdq" Encoding:"evex m:1 p:3 l:i w:1 0x11 /r:mem"/"MAR"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28657,7 +28717,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1826 Instruction:"VMOVSD Udq{K}{z},aKq,Hdq,Vdq" Encoding:"evex m:1 p:3 l:i w:1 0x11 /r:reg"/"MAVR"
+    // Pos:1830 Instruction:"VMOVSD Udq{K}{z},aKq,Hdq,Vdq" Encoding:"evex m:1 p:3 l:i w:1 0x11 /r:reg"/"MAVR"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28674,7 +28734,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1827 Instruction:"VMOVSD Vdq,Hdq,Usd" Encoding:"vex m:1 p:3 l:i w:i 0x10 /r:reg"/"RVM"
+    // Pos:1831 Instruction:"VMOVSD Vdq,Hdq,Usd" Encoding:"vex m:1 p:3 l:i w:i 0x10 /r:reg"/"RVM"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28690,7 +28750,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1828 Instruction:"VMOVSD Vdq,Mq" Encoding:"vex m:1 p:3 l:i w:i 0x10 /r:mem"/"RM"
+    // Pos:1832 Instruction:"VMOVSD Vdq,Mq" Encoding:"vex m:1 p:3 l:i w:i 0x10 /r:mem"/"RM"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28705,7 +28765,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1829 Instruction:"VMOVSD Usd,Hsd,Vsd" Encoding:"vex m:1 p:3 l:i w:i 0x11 /r:reg"/"MVR"
+    // Pos:1833 Instruction:"VMOVSD Usd,Hsd,Vsd" Encoding:"vex m:1 p:3 l:i w:i 0x11 /r:reg"/"MVR"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28721,7 +28781,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1830 Instruction:"VMOVSD Mq,Vsd" Encoding:"vex m:1 p:3 l:i w:i 0x11 /r:mem"/"MR"
+    // Pos:1834 Instruction:"VMOVSD Mq,Vsd" Encoding:"vex m:1 p:3 l:i w:i 0x11 /r:mem"/"MR"
     {
         ND_INS_VMOVSD, ND_CAT_DATAXFER, ND_SET_AVX, 1089, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28736,7 +28796,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1831 Instruction:"VMOVSHDUP Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x16 /r"/"RAM"
+    // Pos:1835 Instruction:"VMOVSHDUP Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x16 /r"/"RAM"
     {
         ND_INS_VMOVSHDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1090, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28752,7 +28812,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1832 Instruction:"VMOVSHDUP Vx,Wx" Encoding:"vex m:1 p:2 l:x w:i 0x16 /r"/"RM"
+    // Pos:1836 Instruction:"VMOVSHDUP Vx,Wx" Encoding:"vex m:1 p:2 l:x w:i 0x16 /r"/"RM"
     {
         ND_INS_VMOVSHDUP, ND_CAT_AVX, ND_SET_AVX, 1090, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28767,7 +28827,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1833 Instruction:"VMOVSLDUP Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x12 /r"/"RAM"
+    // Pos:1837 Instruction:"VMOVSLDUP Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x12 /r"/"RAM"
     {
         ND_INS_VMOVSLDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1091, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28783,7 +28843,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1834 Instruction:"VMOVSLDUP Vx,Wx" Encoding:"vex m:1 p:2 l:x w:i 0x12 /r"/"RM"
+    // Pos:1838 Instruction:"VMOVSLDUP Vx,Wx" Encoding:"vex m:1 p:2 l:x w:i 0x12 /r"/"RM"
     {
         ND_INS_VMOVSLDUP, ND_CAT_AVX, ND_SET_AVX, 1091, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28798,7 +28858,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1835 Instruction:"VMOVSS Vdq{K}{z},aKq,Mss" Encoding:"evex m:1 p:2 l:i w:0 0x10 /r:mem"/"RAM"
+    // Pos:1839 Instruction:"VMOVSS Vdq{K}{z},aKq,Mss" Encoding:"evex m:1 p:2 l:i w:0 0x10 /r:mem"/"RAM"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28814,7 +28874,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1836 Instruction:"VMOVSS Vdq{K}{z},aKq,Hdq,Udq" Encoding:"evex m:1 p:2 l:i w:0 0x10 /r:reg"/"RAVM"
+    // Pos:1840 Instruction:"VMOVSS Vdq{K}{z},aKq,Hdq,Udq" Encoding:"evex m:1 p:2 l:i w:0 0x10 /r:reg"/"RAVM"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28831,7 +28891,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1837 Instruction:"VMOVSS Mss{K},aKq,Vdq" Encoding:"evex m:1 p:2 l:i w:0 0x11 /r:mem"/"MAR"
+    // Pos:1841 Instruction:"VMOVSS Mss{K},aKq,Vdq" Encoding:"evex m:1 p:2 l:i w:0 0x11 /r:mem"/"MAR"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28847,7 +28907,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1838 Instruction:"VMOVSS Udq{K}{z},aKq,Hdq,Vdq" Encoding:"evex m:1 p:2 l:i w:0 0x11 /r:reg"/"MAVR"
+    // Pos:1842 Instruction:"VMOVSS Udq{K}{z},aKq,Hdq,Vdq" Encoding:"evex m:1 p:2 l:i w:0 0x11 /r:reg"/"MAVR"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28864,7 +28924,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1839 Instruction:"VMOVSS Vdq,Hdq,Uss" Encoding:"vex m:1 p:2 l:i w:i 0x10 /r:reg"/"RVM"
+    // Pos:1843 Instruction:"VMOVSS Vdq,Hdq,Uss" Encoding:"vex m:1 p:2 l:i w:i 0x10 /r:reg"/"RVM"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28880,7 +28940,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1840 Instruction:"VMOVSS Vdq,Md" Encoding:"vex m:1 p:2 l:i w:i 0x10 /r:mem"/"RM"
+    // Pos:1844 Instruction:"VMOVSS Vdq,Md" Encoding:"vex m:1 p:2 l:i w:i 0x10 /r:mem"/"RM"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28895,7 +28955,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1841 Instruction:"VMOVSS Uss,Hss,Vss" Encoding:"vex m:1 p:2 l:i w:i 0x11 /r:reg"/"MVR"
+    // Pos:1845 Instruction:"VMOVSS Uss,Hss,Vss" Encoding:"vex m:1 p:2 l:i w:i 0x11 /r:reg"/"MVR"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28911,7 +28971,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1842 Instruction:"VMOVSS Md,Vss" Encoding:"vex m:1 p:2 l:i w:i 0x11 /r:mem"/"MR"
+    // Pos:1846 Instruction:"VMOVSS Md,Vss" Encoding:"vex m:1 p:2 l:i w:i 0x11 /r:mem"/"MR"
     {
         ND_INS_VMOVSS, ND_CAT_DATAXFER, ND_SET_AVX, 1092, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28926,7 +28986,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1843 Instruction:"VMOVUPD Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x10 /r"/"RAM"
+    // Pos:1847 Instruction:"VMOVUPD Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x10 /r"/"RAM"
     {
         ND_INS_VMOVUPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1093, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28942,7 +29002,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1844 Instruction:"VMOVUPD Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x11 /r"/"MAR"
+    // Pos:1848 Instruction:"VMOVUPD Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x11 /r"/"MAR"
     {
         ND_INS_VMOVUPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1093, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28958,7 +29018,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1845 Instruction:"VMOVUPD Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x10 /r"/"RM"
+    // Pos:1849 Instruction:"VMOVUPD Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x10 /r"/"RM"
     {
         ND_INS_VMOVUPD, ND_CAT_DATAXFER, ND_SET_AVX, 1093, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28973,7 +29033,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1846 Instruction:"VMOVUPD Wx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x11 /r"/"MR"
+    // Pos:1850 Instruction:"VMOVUPD Wx,Vx" Encoding:"vex m:1 p:1 l:x w:i 0x11 /r"/"MR"
     {
         ND_INS_VMOVUPD, ND_CAT_DATAXFER, ND_SET_AVX, 1093, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -28988,7 +29048,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1847 Instruction:"VMOVUPS Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:0 l:x w:0 0x10 /r"/"RAM"
+    // Pos:1851 Instruction:"VMOVUPS Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:0 l:x w:0 0x10 /r"/"RAM"
     {
         ND_INS_VMOVUPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1094, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29004,7 +29064,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1848 Instruction:"VMOVUPS Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x11 /r"/"MAR"
+    // Pos:1852 Instruction:"VMOVUPS Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x11 /r"/"MAR"
     {
         ND_INS_VMOVUPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1094, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29020,7 +29080,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1849 Instruction:"VMOVUPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x10 /r"/"RM"
+    // Pos:1853 Instruction:"VMOVUPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x10 /r"/"RM"
     {
         ND_INS_VMOVUPS, ND_CAT_DATAXFER, ND_SET_AVX, 1094, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29035,7 +29095,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1850 Instruction:"VMOVUPS Wx,Vx" Encoding:"vex m:1 p:0 l:x w:i 0x11 /r"/"MR"
+    // Pos:1854 Instruction:"VMOVUPS Wx,Vx" Encoding:"vex m:1 p:0 l:x w:i 0x11 /r"/"MR"
     {
         ND_INS_VMOVUPS, ND_CAT_DATAXFER, ND_SET_AVX, 1094, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29050,7 +29110,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1851 Instruction:"VMPSADBW Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x42 /r ib"/"RVMI"
+    // Pos:1855 Instruction:"VMPSADBW Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x42 /r ib"/"RVMI"
     {
         ND_INS_VMPSADBW, ND_CAT_AVX, ND_SET_AVX, 1095, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29067,7 +29127,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1852 Instruction:"VMPTRLD Mq" Encoding:"NP 0x0F 0xC7 /6:mem"/"M"
+    // Pos:1856 Instruction:"VMPTRLD Mq" Encoding:"NP 0x0F 0xC7 /6:mem"/"M"
     {
         ND_INS_VMPTRLD, ND_CAT_VTX, ND_SET_VTX, 1096, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29082,7 +29142,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1853 Instruction:"VMPTRST Mq" Encoding:"NP 0x0F 0xC7 /7:mem"/"M"
+    // Pos:1857 Instruction:"VMPTRST Mq" Encoding:"NP 0x0F 0xC7 /7:mem"/"M"
     {
         ND_INS_VMPTRST, ND_CAT_VTX, ND_SET_VTX, 1097, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29097,7 +29157,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1854 Instruction:"VMREAD Ey,Gy" Encoding:"NP 0x0F 0x78 /r"/"MR"
+    // Pos:1858 Instruction:"VMREAD Ey,Gy" Encoding:"NP 0x0F 0x78 /r"/"MR"
     {
         ND_INS_VMREAD, ND_CAT_VTX, ND_SET_VTX, 1098, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29113,7 +29173,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1855 Instruction:"VMRESUME" Encoding:"0x0F 0x01 /0xC3"/""
+    // Pos:1859 Instruction:"VMRESUME" Encoding:"0x0F 0x01 /0xC3"/""
     {
         ND_INS_VMRESUME, ND_CAT_VTX, ND_SET_VTX, 1099, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29127,7 +29187,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1856 Instruction:"VMRUN" Encoding:"0x0F 0x01 /0xD8"/""
+    // Pos:1860 Instruction:"VMRUN" Encoding:"0x0F 0x01 /0xD8"/""
     {
         ND_INS_VMRUN, ND_CAT_SYSTEM, ND_SET_SVM, 1100, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29141,7 +29201,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1857 Instruction:"VMSAVE" Encoding:"0x0F 0x01 /0xDB"/""
+    // Pos:1861 Instruction:"VMSAVE" Encoding:"0x0F 0x01 /0xDB"/""
     {
         ND_INS_VMSAVE, ND_CAT_SYSTEM, ND_SET_SVM, 1101, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29155,7 +29215,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1858 Instruction:"VMULPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x59 /r"/"RAVM"
+    // Pos:1862 Instruction:"VMULPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x59 /r"/"RAVM"
     {
         ND_INS_VMULPD, ND_CAT_AVX512, ND_SET_AVX512F, 1102, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29172,7 +29232,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1859 Instruction:"VMULPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x59 /r"/"RVM"
+    // Pos:1863 Instruction:"VMULPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x59 /r"/"RVM"
     {
         ND_INS_VMULPD, ND_CAT_AVX, ND_SET_AVX, 1102, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29188,7 +29248,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1860 Instruction:"VMULPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x59 /r"/"RAVM"
+    // Pos:1864 Instruction:"VMULPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x59 /r"/"RAVM"
     {
         ND_INS_VMULPS, ND_CAT_AVX512, ND_SET_AVX512F, 1103, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29205,7 +29265,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1861 Instruction:"VMULPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x59 /r"/"RVM"
+    // Pos:1865 Instruction:"VMULPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x59 /r"/"RVM"
     {
         ND_INS_VMULPS, ND_CAT_AVX, ND_SET_AVX, 1103, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29221,7 +29281,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1862 Instruction:"VMULSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x59 /r"/"RAVM"
+    // Pos:1866 Instruction:"VMULSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x59 /r"/"RAVM"
     {
         ND_INS_VMULSD, ND_CAT_AVX512, ND_SET_AVX512F, 1104, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29238,7 +29298,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1863 Instruction:"VMULSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x59 /r"/"RVM"
+    // Pos:1867 Instruction:"VMULSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x59 /r"/"RVM"
     {
         ND_INS_VMULSD, ND_CAT_AVX, ND_SET_AVX, 1104, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29254,7 +29314,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1864 Instruction:"VMULSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x59 /r"/"RAVM"
+    // Pos:1868 Instruction:"VMULSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x59 /r"/"RAVM"
     {
         ND_INS_VMULSS, ND_CAT_AVX512, ND_SET_AVX512F, 1105, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29271,7 +29331,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1865 Instruction:"VMULSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x59 /r"/"RVM"
+    // Pos:1869 Instruction:"VMULSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x59 /r"/"RVM"
     {
         ND_INS_VMULSS, ND_CAT_AVX, ND_SET_AVX, 1105, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29287,7 +29347,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1866 Instruction:"VMWRITE Gy,Ey" Encoding:"NP 0x0F 0x79 /r"/"RM"
+    // Pos:1870 Instruction:"VMWRITE Gy,Ey" Encoding:"NP 0x0F 0x79 /r"/"RM"
     {
         ND_INS_VMWRITE, ND_CAT_VTX, ND_SET_VTX, 1106, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29303,7 +29363,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1867 Instruction:"VMXOFF" Encoding:"0x0F 0x01 /0xC4"/""
+    // Pos:1871 Instruction:"VMXOFF" Encoding:"0x0F 0x01 /0xC4"/""
     {
         ND_INS_VMXOFF, ND_CAT_VTX, ND_SET_VTX, 1107, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29317,7 +29377,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1868 Instruction:"VMXON Mq" Encoding:"0xF3 0x0F 0xC7 /6:mem"/"M"
+    // Pos:1872 Instruction:"VMXON Mq" Encoding:"0xF3 0x0F 0xC7 /6:mem"/"M"
     {
         ND_INS_VMXON, ND_CAT_VTX, ND_SET_VTX, 1108, 
         ND_MOD_R0|ND_MOD_PROT|ND_MOD_LONG|ND_MOD_VMXR, 
@@ -29332,7 +29392,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1869 Instruction:"VORPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x56 /r"/"RAVM"
+    // Pos:1873 Instruction:"VORPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x56 /r"/"RAVM"
     {
         ND_INS_VORPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1109, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29349,7 +29409,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1870 Instruction:"VORPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x56 /r"/"RVM"
+    // Pos:1874 Instruction:"VORPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x56 /r"/"RVM"
     {
         ND_INS_VORPD, ND_CAT_LOGICAL_FP, ND_SET_AVX, 1109, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29365,7 +29425,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1871 Instruction:"VORPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x56 /r"/"RAVM"
+    // Pos:1875 Instruction:"VORPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x56 /r"/"RAVM"
     {
         ND_INS_VORPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1110, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29382,7 +29442,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1872 Instruction:"VORPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x56 /r"/"RVM"
+    // Pos:1876 Instruction:"VORPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x56 /r"/"RVM"
     {
         ND_INS_VORPS, ND_CAT_LOGICAL_FP, ND_SET_AVX, 1110, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29398,7 +29458,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1873 Instruction:"VP2INTERSECTD rKq+1,Hn,Wn|B32" Encoding:"evex m:2 p:3 l:x w:0 0x68 /r"/"RVM"
+    // Pos:1877 Instruction:"VP2INTERSECTD rKq+1,Hn,Wn|B32" Encoding:"evex m:2 p:3 l:x w:0 0x68 /r"/"RVM"
     {
         ND_INS_VP2INTERSECTD, ND_CAT_AVX512VP2INTERSECT, ND_SET_AVX512VP2INTERSECT, 1111, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29414,7 +29474,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1874 Instruction:"VP2INTERSECTQ rKq+1,Hn,Wn|B64" Encoding:"evex m:2 p:3 l:x w:1 0x68 /r"/"RVM"
+    // Pos:1878 Instruction:"VP2INTERSECTQ rKq+1,Hn,Wn|B64" Encoding:"evex m:2 p:3 l:x w:1 0x68 /r"/"RVM"
     {
         ND_INS_VP2INTERSECTQ, ND_CAT_AVX512VP2INTERSECT, ND_SET_AVX512VP2INTERSECT, 1112, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29430,7 +29490,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1875 Instruction:"VP4DPWSSD Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0x52 /r:mem"/"RAVM"
+    // Pos:1879 Instruction:"VP4DPWSSD Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0x52 /r:mem"/"RAVM"
     {
         ND_INS_VP4DPWSSD, ND_CAT_VNNIW, ND_SET_AVX5124VNNIW, 1113, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29447,7 +29507,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1876 Instruction:"VP4DPWSSDS Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0x53 /r:mem"/"RAVM"
+    // Pos:1880 Instruction:"VP4DPWSSDS Voq{K}{z},aKq,Hoq+3,Mdq" Encoding:"evex m:2 p:3 l:2 w:0 0x53 /r:mem"/"RAVM"
     {
         ND_INS_VP4DPWSSDS, ND_CAT_VNNIW, ND_SET_AVX5124VNNIW, 1114, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29464,7 +29524,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1877 Instruction:"VPABSB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:x 0x1C /r"/"RAM"
+    // Pos:1881 Instruction:"VPABSB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:x 0x1C /r"/"RAM"
     {
         ND_INS_VPABSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1115, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29480,7 +29540,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1878 Instruction:"VPABSB Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x1C /r"/"RM"
+    // Pos:1882 Instruction:"VPABSB Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x1C /r"/"RM"
     {
         ND_INS_VPABSB, ND_CAT_AVX, ND_SET_AVX, 1115, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29495,7 +29555,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1879 Instruction:"VPABSD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x1E /r"/"RAM"
+    // Pos:1883 Instruction:"VPABSD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x1E /r"/"RAM"
     {
         ND_INS_VPABSD, ND_CAT_AVX512, ND_SET_AVX512F, 1116, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29511,7 +29571,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1880 Instruction:"VPABSD Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x1E /r"/"RM"
+    // Pos:1884 Instruction:"VPABSD Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x1E /r"/"RM"
     {
         ND_INS_VPABSD, ND_CAT_AVX, ND_SET_AVX, 1116, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29526,7 +29586,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1881 Instruction:"VPABSQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x1F /r"/"RAM"
+    // Pos:1885 Instruction:"VPABSQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x1F /r"/"RAM"
     {
         ND_INS_VPABSQ, ND_CAT_AVX512, ND_SET_AVX512F, 1117, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29542,7 +29602,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1882 Instruction:"VPABSW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:x 0x1D /r"/"RAM"
+    // Pos:1886 Instruction:"VPABSW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:x 0x1D /r"/"RAM"
     {
         ND_INS_VPABSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1118, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29558,7 +29618,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1883 Instruction:"VPABSW Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x1D /r"/"RM"
+    // Pos:1887 Instruction:"VPABSW Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x1D /r"/"RM"
     {
         ND_INS_VPABSW, ND_CAT_AVX, ND_SET_AVX, 1118, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29573,7 +29633,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1884 Instruction:"VPACKSSDW Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6B /r"/"RAVM"
+    // Pos:1888 Instruction:"VPACKSSDW Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6B /r"/"RAVM"
     {
         ND_INS_VPACKSSDW, ND_CAT_AVX512, ND_SET_AVX512BW, 1119, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29590,7 +29650,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1885 Instruction:"VPACKSSDW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6B /r"/"RVM"
+    // Pos:1889 Instruction:"VPACKSSDW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6B /r"/"RVM"
     {
         ND_INS_VPACKSSDW, ND_CAT_AVX, ND_SET_AVX, 1119, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29606,7 +29666,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1886 Instruction:"VPACKSSWB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x63 /r"/"RAVM"
+    // Pos:1890 Instruction:"VPACKSSWB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x63 /r"/"RAVM"
     {
         ND_INS_VPACKSSWB, ND_CAT_AVX512, ND_SET_AVX512BW, 1120, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29623,7 +29683,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1887 Instruction:"VPACKSSWB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x63 /r"/"RVM"
+    // Pos:1891 Instruction:"VPACKSSWB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x63 /r"/"RVM"
     {
         ND_INS_VPACKSSWB, ND_CAT_AVX, ND_SET_AVX, 1120, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29639,7 +29699,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1888 Instruction:"VPACKUSDW Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x2B /r"/"RAVM"
+    // Pos:1892 Instruction:"VPACKUSDW Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x2B /r"/"RAVM"
     {
         ND_INS_VPACKUSDW, ND_CAT_AVX512, ND_SET_AVX512BW, 1121, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29656,7 +29716,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1889 Instruction:"VPACKUSDW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x2B /r"/"RVM"
+    // Pos:1893 Instruction:"VPACKUSDW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x2B /r"/"RVM"
     {
         ND_INS_VPACKUSDW, ND_CAT_AVX, ND_SET_AVX, 1121, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29672,7 +29732,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1890 Instruction:"VPACKUSWB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x67 /r"/"RAVM"
+    // Pos:1894 Instruction:"VPACKUSWB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x67 /r"/"RAVM"
     {
         ND_INS_VPACKUSWB, ND_CAT_AVX512, ND_SET_AVX512BW, 1122, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29689,7 +29749,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1891 Instruction:"VPACKUSWB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x67 /r"/"RVM"
+    // Pos:1895 Instruction:"VPACKUSWB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x67 /r"/"RVM"
     {
         ND_INS_VPACKUSWB, ND_CAT_AVX, ND_SET_AVX, 1122, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29705,7 +29765,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1892 Instruction:"VPADDB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xFC /r"/"RAVM"
+    // Pos:1896 Instruction:"VPADDB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xFC /r"/"RAVM"
     {
         ND_INS_VPADDB, ND_CAT_AVX512, ND_SET_AVX512BW, 1123, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29722,7 +29782,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1893 Instruction:"VPADDB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFC /r"/"RVM"
+    // Pos:1897 Instruction:"VPADDB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFC /r"/"RVM"
     {
         ND_INS_VPADDB, ND_CAT_AVX, ND_SET_AVX, 1123, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29738,7 +29798,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1894 Instruction:"VPADDD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFE /r"/"RAVM"
+    // Pos:1898 Instruction:"VPADDD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFE /r"/"RAVM"
     {
         ND_INS_VPADDD, ND_CAT_AVX512, ND_SET_AVX512F, 1124, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29755,7 +29815,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1895 Instruction:"VPADDD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFE /r"/"RVM"
+    // Pos:1899 Instruction:"VPADDD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFE /r"/"RVM"
     {
         ND_INS_VPADDD, ND_CAT_AVX, ND_SET_AVX, 1124, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29771,7 +29831,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1896 Instruction:"VPADDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xD4 /r"/"RAVM"
+    // Pos:1900 Instruction:"VPADDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xD4 /r"/"RAVM"
     {
         ND_INS_VPADDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1125, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29788,7 +29848,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1897 Instruction:"VPADDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD4 /r"/"RVM"
+    // Pos:1901 Instruction:"VPADDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD4 /r"/"RVM"
     {
         ND_INS_VPADDQ, ND_CAT_AVX, ND_SET_AVX, 1125, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29804,7 +29864,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1898 Instruction:"VPADDSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEC /r"/"RAVM"
+    // Pos:1902 Instruction:"VPADDSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEC /r"/"RAVM"
     {
         ND_INS_VPADDSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1126, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29821,7 +29881,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1899 Instruction:"VPADDSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEC /r"/"RVM"
+    // Pos:1903 Instruction:"VPADDSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEC /r"/"RVM"
     {
         ND_INS_VPADDSB, ND_CAT_AVX, ND_SET_AVX, 1126, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29837,7 +29897,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1900 Instruction:"VPADDSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xED /r"/"RAVM"
+    // Pos:1904 Instruction:"VPADDSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xED /r"/"RAVM"
     {
         ND_INS_VPADDSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1127, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29854,7 +29914,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1901 Instruction:"VPADDSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xED /r"/"RVM"
+    // Pos:1905 Instruction:"VPADDSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xED /r"/"RVM"
     {
         ND_INS_VPADDSW, ND_CAT_AVX, ND_SET_AVX, 1127, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29870,7 +29930,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1902 Instruction:"VPADDUSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDC /r"/"RAVM"
+    // Pos:1906 Instruction:"VPADDUSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDC /r"/"RAVM"
     {
         ND_INS_VPADDUSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1128, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29887,7 +29947,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1903 Instruction:"VPADDUSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDC /r"/"RVM"
+    // Pos:1907 Instruction:"VPADDUSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDC /r"/"RVM"
     {
         ND_INS_VPADDUSB, ND_CAT_AVX, ND_SET_AVX, 1128, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29903,7 +29963,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1904 Instruction:"VPADDUSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDD /r"/"RAVM"
+    // Pos:1908 Instruction:"VPADDUSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDD /r"/"RAVM"
     {
         ND_INS_VPADDUSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1129, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29920,7 +29980,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1905 Instruction:"VPADDUSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDD /r"/"RVM"
+    // Pos:1909 Instruction:"VPADDUSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDD /r"/"RVM"
     {
         ND_INS_VPADDUSW, ND_CAT_AVX, ND_SET_AVX, 1129, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29936,7 +29996,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1906 Instruction:"VPADDW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xFD /r"/"RAVM"
+    // Pos:1910 Instruction:"VPADDW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xFD /r"/"RAVM"
     {
         ND_INS_VPADDW, ND_CAT_AVX512, ND_SET_AVX512BW, 1130, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29953,7 +30013,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1907 Instruction:"VPADDW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFD /r"/"RVM"
+    // Pos:1911 Instruction:"VPADDW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFD /r"/"RVM"
     {
         ND_INS_VPADDW, ND_CAT_AVX, ND_SET_AVX, 1130, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29969,7 +30029,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1908 Instruction:"VPALIGNR Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x0F /r ib"/"RAVMI"
+    // Pos:1912 Instruction:"VPALIGNR Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x0F /r ib"/"RAVMI"
     {
         ND_INS_VPALIGNR, ND_CAT_AVX512, ND_SET_AVX512BW, 1131, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -29987,7 +30047,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1909 Instruction:"VPALIGNR Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0F /r ib"/"RVMI"
+    // Pos:1913 Instruction:"VPALIGNR Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0F /r ib"/"RVMI"
     {
         ND_INS_VPALIGNR, ND_CAT_AVX, ND_SET_AVX, 1131, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30004,7 +30064,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1910 Instruction:"VPAND Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDB /r"/"RVM"
+    // Pos:1914 Instruction:"VPAND Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDB /r"/"RVM"
     {
         ND_INS_VPAND, ND_CAT_LOGICAL, ND_SET_AVX, 1132, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30020,7 +30080,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1911 Instruction:"VPANDD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDB /r"/"RAVM"
+    // Pos:1915 Instruction:"VPANDD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDB /r"/"RAVM"
     {
         ND_INS_VPANDD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1133, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30037,7 +30097,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1912 Instruction:"VPANDN Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDF /r"/"RVM"
+    // Pos:1916 Instruction:"VPANDN Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDF /r"/"RVM"
     {
         ND_INS_VPANDN, ND_CAT_LOGICAL, ND_SET_AVX, 1134, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30053,7 +30113,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1913 Instruction:"VPANDND Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDF /r"/"RAVM"
+    // Pos:1917 Instruction:"VPANDND Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDF /r"/"RAVM"
     {
         ND_INS_VPANDND, ND_CAT_LOGICAL, ND_SET_AVX512F, 1135, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30070,7 +30130,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1914 Instruction:"VPANDNQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDF /r"/"RAVM"
+    // Pos:1918 Instruction:"VPANDNQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDF /r"/"RAVM"
     {
         ND_INS_VPANDNQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1136, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30087,7 +30147,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1915 Instruction:"VPANDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDB /r"/"RAVM"
+    // Pos:1919 Instruction:"VPANDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDB /r"/"RAVM"
     {
         ND_INS_VPANDQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1137, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30104,7 +30164,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1916 Instruction:"VPAVGB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE0 /r"/"RAVM"
+    // Pos:1920 Instruction:"VPAVGB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE0 /r"/"RAVM"
     {
         ND_INS_VPAVGB, ND_CAT_AVX512, ND_SET_AVX512BW, 1138, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30121,7 +30181,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1917 Instruction:"VPAVGB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE0 /r"/"RVM"
+    // Pos:1921 Instruction:"VPAVGB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE0 /r"/"RVM"
     {
         ND_INS_VPAVGB, ND_CAT_AVX, ND_SET_AVX, 1138, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30137,7 +30197,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1918 Instruction:"VPAVGW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE3 /r"/"RAVM"
+    // Pos:1922 Instruction:"VPAVGW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE3 /r"/"RAVM"
     {
         ND_INS_VPAVGW, ND_CAT_AVX512, ND_SET_AVX512BW, 1139, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30154,7 +30214,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1919 Instruction:"VPAVGW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE3 /r"/"RVM"
+    // Pos:1923 Instruction:"VPAVGW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE3 /r"/"RVM"
     {
         ND_INS_VPAVGW, ND_CAT_AVX, ND_SET_AVX, 1139, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30170,7 +30230,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1920 Instruction:"VPBLENDD Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:0 0x02 /r ib"/"RVMI"
+    // Pos:1924 Instruction:"VPBLENDD Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:0 0x02 /r ib"/"RVMI"
     {
         ND_INS_VPBLENDD, ND_CAT_AVX2, ND_SET_AVX2, 1140, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30187,7 +30247,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1921 Instruction:"VPBLENDMB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x66 /r"/"RAVM"
+    // Pos:1925 Instruction:"VPBLENDMB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x66 /r"/"RAVM"
     {
         ND_INS_VPBLENDMB, ND_CAT_BLEND, ND_SET_AVX512BW, 1141, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30204,7 +30264,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1922 Instruction:"VPBLENDMD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x64 /r"/"RAVM"
+    // Pos:1926 Instruction:"VPBLENDMD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x64 /r"/"RAVM"
     {
         ND_INS_VPBLENDMD, ND_CAT_BLEND, ND_SET_AVX512F, 1142, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30221,7 +30281,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1923 Instruction:"VPBLENDMQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x64 /r"/"RAVM"
+    // Pos:1927 Instruction:"VPBLENDMQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x64 /r"/"RAVM"
     {
         ND_INS_VPBLENDMQ, ND_CAT_BLEND, ND_SET_AVX512F, 1143, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30238,7 +30298,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1924 Instruction:"VPBLENDMW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x66 /r"/"RAVM"
+    // Pos:1928 Instruction:"VPBLENDMW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x66 /r"/"RAVM"
     {
         ND_INS_VPBLENDMW, ND_CAT_BLEND, ND_SET_AVX512BW, 1144, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30255,7 +30315,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1925 Instruction:"VPBLENDVB Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x4C /r is4"/"RVML"
+    // Pos:1929 Instruction:"VPBLENDVB Vx,Hx,Wx,Lx" Encoding:"vex m:3 p:1 l:x w:0 0x4C /r is4"/"RVML"
     {
         ND_INS_VPBLENDVB, ND_CAT_AVX, ND_SET_AVX, 1145, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30272,7 +30332,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1926 Instruction:"VPBLENDW Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0E /r ib"/"RVMI"
+    // Pos:1930 Instruction:"VPBLENDW Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x0E /r ib"/"RVMI"
     {
         ND_INS_VPBLENDW, ND_CAT_AVX, ND_SET_AVX, 1146, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30289,7 +30349,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1927 Instruction:"VPBROADCASTB Vn{K}{z},aKq,Wb" Encoding:"evex m:2 p:1 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1931 Instruction:"VPBROADCASTB Vn{K}{z},aKq,Wb" Encoding:"evex m:2 p:1 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VPBROADCASTB, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1147, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30305,7 +30365,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1928 Instruction:"VPBROADCASTB Vn{K}{z},aKq,Rb" Encoding:"evex m:2 p:1 l:x w:0 0x7A /r:reg"/"RAM"
+    // Pos:1932 Instruction:"VPBROADCASTB Vn{K}{z},aKq,Rb" Encoding:"evex m:2 p:1 l:x w:0 0x7A /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTB, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1147, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30321,7 +30381,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1929 Instruction:"VPBROADCASTB Vx,Wb" Encoding:"vex m:2 p:1 l:x w:0 0x78 /r"/"RM"
+    // Pos:1933 Instruction:"VPBROADCASTB Vx,Wb" Encoding:"vex m:2 p:1 l:x w:0 0x78 /r"/"RM"
     {
         ND_INS_VPBROADCASTB, ND_CAT_BROADCAST, ND_SET_AVX2, 1147, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30336,7 +30396,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1930 Instruction:"VPBROADCASTD Vn{K}{z},aKq,Wd" Encoding:"evex m:2 p:1 l:x w:0 0x58 /r"/"RAM"
+    // Pos:1934 Instruction:"VPBROADCASTD Vn{K}{z},aKq,Wd" Encoding:"evex m:2 p:1 l:x w:0 0x58 /r"/"RAM"
     {
         ND_INS_VPBROADCASTD, ND_CAT_BROADCAST, ND_SET_AVX512F, 1148, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30352,7 +30412,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1931 Instruction:"VPBROADCASTD Vn{K}{z},aKq,Rd" Encoding:"evex m:2 p:1 l:x w:0 0x7C /r:reg"/"RAM"
+    // Pos:1935 Instruction:"VPBROADCASTD Vn{K}{z},aKq,Rd" Encoding:"evex m:2 p:1 l:x w:0 0x7C /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTD, ND_CAT_BROADCAST, ND_SET_AVX512F, 1148, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30368,7 +30428,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1932 Instruction:"VPBROADCASTD Vx,Wd" Encoding:"vex m:2 p:1 l:x w:0 0x58 /r"/"RM"
+    // Pos:1936 Instruction:"VPBROADCASTD Vx,Wd" Encoding:"vex m:2 p:1 l:x w:0 0x58 /r"/"RM"
     {
         ND_INS_VPBROADCASTD, ND_CAT_BROADCAST, ND_SET_AVX2, 1148, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30383,7 +30443,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1933 Instruction:"VPBROADCASTMB2Q Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x2A /r:reg"/"RM"
+    // Pos:1937 Instruction:"VPBROADCASTMB2Q Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x2A /r:reg"/"RM"
     {
         ND_INS_VPBROADCASTMB2Q, ND_CAT_BROADCAST, ND_SET_AVX512CD, 1149, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30398,7 +30458,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1934 Instruction:"VPBROADCASTMW2D Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x3A /r:reg"/"RM"
+    // Pos:1938 Instruction:"VPBROADCASTMW2D Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x3A /r:reg"/"RM"
     {
         ND_INS_VPBROADCASTMW2D, ND_CAT_BROADCAST, ND_SET_AVX512CD, 1150, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30413,7 +30473,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1935 Instruction:"VPBROADCASTQ Vn{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:1 0x59 /r"/"RAM"
+    // Pos:1939 Instruction:"VPBROADCASTQ Vn{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:1 0x59 /r"/"RAM"
     {
         ND_INS_VPBROADCASTQ, ND_CAT_BROADCAST, ND_SET_AVX512F, 1151, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30429,7 +30489,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1936 Instruction:"VPBROADCASTQ Vn{K}{z},aKq,Rq" Encoding:"evex m:2 p:1 l:x w:1 0x7C /r:reg"/"RAM"
+    // Pos:1940 Instruction:"VPBROADCASTQ Vn{K}{z},aKq,Rq" Encoding:"evex m:2 p:1 l:x w:1 0x7C /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTQ, ND_CAT_BROADCAST, ND_SET_AVX512F, 1151, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30445,7 +30505,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1937 Instruction:"VPBROADCASTQ Vx,Wq" Encoding:"vex m:2 p:1 l:x w:0 0x59 /r"/"RM"
+    // Pos:1941 Instruction:"VPBROADCASTQ Vx,Wq" Encoding:"vex m:2 p:1 l:x w:0 0x59 /r"/"RM"
     {
         ND_INS_VPBROADCASTQ, ND_CAT_BROADCAST, ND_SET_AVX2, 1151, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30460,7 +30520,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1938 Instruction:"VPBROADCASTW Vn{K}{z},aKq,Ww" Encoding:"evex m:2 p:1 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1942 Instruction:"VPBROADCASTW Vn{K}{z},aKq,Ww" Encoding:"evex m:2 p:1 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VPBROADCASTW, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1152, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30476,7 +30536,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1939 Instruction:"VPBROADCASTW Vn{K}{z},aKq,Rw" Encoding:"evex m:2 p:1 l:x w:0 0x7B /r:reg"/"RAM"
+    // Pos:1943 Instruction:"VPBROADCASTW Vn{K}{z},aKq,Rw" Encoding:"evex m:2 p:1 l:x w:0 0x7B /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTW, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1152, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30492,7 +30552,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1940 Instruction:"VPBROADCASTW Vx,Ww" Encoding:"vex m:2 p:1 l:x w:0 0x79 /r"/"RM"
+    // Pos:1944 Instruction:"VPBROADCASTW Vx,Ww" Encoding:"vex m:2 p:1 l:x w:0 0x79 /r"/"RM"
     {
         ND_INS_VPBROADCASTW, ND_CAT_BROADCAST, ND_SET_AVX2, 1152, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30507,7 +30567,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1941 Instruction:"VPCLMULQDQ Vn,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x44 /r ib"/"RVMI"
+    // Pos:1945 Instruction:"VPCLMULQDQ Vn,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x44 /r ib"/"RVMI"
     {
         ND_INS_VPCLMULQDQ, ND_CAT_VPCLMULQDQ, ND_SET_VPCLMULQDQ, 1153, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30524,7 +30584,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1942 Instruction:"VPCLMULQDQ Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x44 /r ib"/"RVMI"
+    // Pos:1946 Instruction:"VPCLMULQDQ Vx,Hx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x44 /r ib"/"RVMI"
     {
         ND_INS_VPCLMULQDQ, ND_CAT_VPCLMULQDQ, ND_SET_VPCLMULQDQ, 1153, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30541,7 +30601,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1943 Instruction:"VPCMOV Vx,Hx,Wx,Lx" Encoding:"xop m:8 w:0 0xA2 /r is4"/"RVML"
+    // Pos:1947 Instruction:"VPCMOV Vx,Hx,Wx,Lx" Encoding:"xop m:8 w:0 0xA2 /r is4"/"RVML"
     {
         ND_INS_VPCMOV, ND_CAT_XOP, ND_SET_XOP, 1154, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30558,7 +30618,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1944 Instruction:"VPCMOV Vx,Hx,Lx,Wx" Encoding:"xop m:8 w:1 0xA2 /r is4"/"RVLM"
+    // Pos:1948 Instruction:"VPCMOV Vx,Hx,Lx,Wx" Encoding:"xop m:8 w:1 0xA2 /r is4"/"RVLM"
     {
         ND_INS_VPCMOV, ND_CAT_XOP, ND_SET_XOP, 1154, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30575,7 +30635,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1945 Instruction:"VPCMPB rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3F /r ib"/"RAVMI"
+    // Pos:1949 Instruction:"VPCMPB rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPB, ND_CAT_AVX512, ND_SET_AVX512BW, 1155, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30593,7 +30653,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1946 Instruction:"VPCMPD rKq{K},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1F /r ib"/"RAVMI"
+    // Pos:1950 Instruction:"VPCMPD rKq{K},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1156, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30611,7 +30671,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1947 Instruction:"VPCMPEQB rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x74 /r"/"RAVM"
+    // Pos:1951 Instruction:"VPCMPEQB rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x74 /r"/"RAVM"
     {
         ND_INS_VPCMPEQB, ND_CAT_AVX512, ND_SET_AVX512BW, 1157, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30628,7 +30688,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1948 Instruction:"VPCMPEQB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x74 /r"/"RVM"
+    // Pos:1952 Instruction:"VPCMPEQB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x74 /r"/"RVM"
     {
         ND_INS_VPCMPEQB, ND_CAT_AVX, ND_SET_AVX, 1157, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30644,7 +30704,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1949 Instruction:"VPCMPEQD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:i 0x76 /r"/"RAVM"
+    // Pos:1953 Instruction:"VPCMPEQD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:i 0x76 /r"/"RAVM"
     {
         ND_INS_VPCMPEQD, ND_CAT_AVX512, ND_SET_AVX512F, 1158, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30661,7 +30721,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1950 Instruction:"VPCMPEQD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x76 /r"/"RVM"
+    // Pos:1954 Instruction:"VPCMPEQD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x76 /r"/"RVM"
     {
         ND_INS_VPCMPEQD, ND_CAT_AVX, ND_SET_AVX, 1158, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30677,7 +30737,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1951 Instruction:"VPCMPEQQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x29 /r"/"RAVM"
+    // Pos:1955 Instruction:"VPCMPEQQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x29 /r"/"RAVM"
     {
         ND_INS_VPCMPEQQ, ND_CAT_AVX512, ND_SET_AVX512F, 1159, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30694,7 +30754,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1952 Instruction:"VPCMPEQQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x29 /r"/"RVM"
+    // Pos:1956 Instruction:"VPCMPEQQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x29 /r"/"RVM"
     {
         ND_INS_VPCMPEQQ, ND_CAT_AVX, ND_SET_AVX, 1159, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30710,7 +30770,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1953 Instruction:"VPCMPEQW rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x75 /r"/"RAVM"
+    // Pos:1957 Instruction:"VPCMPEQW rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x75 /r"/"RAVM"
     {
         ND_INS_VPCMPEQW, ND_CAT_AVX512, ND_SET_AVX512BW, 1160, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30727,7 +30787,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1954 Instruction:"VPCMPEQW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x75 /r"/"RVM"
+    // Pos:1958 Instruction:"VPCMPEQW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x75 /r"/"RVM"
     {
         ND_INS_VPCMPEQW, ND_CAT_AVX, ND_SET_AVX, 1160, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30743,7 +30803,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1955 Instruction:"VPCMPESTRI Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x61 /r ib"/"RMI"
+    // Pos:1959 Instruction:"VPCMPESTRI Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x61 /r ib"/"RMI"
     {
         ND_INS_VPCMPESTRI, ND_CAT_STTNI, ND_SET_AVX, 1161, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30763,7 +30823,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1956 Instruction:"VPCMPESTRM Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x60 /r ib"/"RMI"
+    // Pos:1960 Instruction:"VPCMPESTRM Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x60 /r ib"/"RMI"
     {
         ND_INS_VPCMPESTRM, ND_CAT_STTNI, ND_SET_AVX, 1162, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30783,7 +30843,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1957 Instruction:"VPCMPGTB rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x64 /r"/"RAVM"
+    // Pos:1961 Instruction:"VPCMPGTB rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x64 /r"/"RAVM"
     {
         ND_INS_VPCMPGTB, ND_CAT_AVX512, ND_SET_AVX512BW, 1163, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30800,7 +30860,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1958 Instruction:"VPCMPGTB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x64 /r"/"RVM"
+    // Pos:1962 Instruction:"VPCMPGTB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x64 /r"/"RVM"
     {
         ND_INS_VPCMPGTB, ND_CAT_AVX, ND_SET_AVX, 1163, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30816,7 +30876,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1959 Instruction:"VPCMPGTD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x66 /r"/"RAVM"
+    // Pos:1963 Instruction:"VPCMPGTD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x66 /r"/"RAVM"
     {
         ND_INS_VPCMPGTD, ND_CAT_AVX512, ND_SET_AVX512F, 1164, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30833,7 +30893,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1960 Instruction:"VPCMPGTD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x66 /r"/"RVM"
+    // Pos:1964 Instruction:"VPCMPGTD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x66 /r"/"RVM"
     {
         ND_INS_VPCMPGTD, ND_CAT_AVX, ND_SET_AVX, 1164, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30849,7 +30909,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1961 Instruction:"VPCMPGTQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x37 /r"/"RAVM"
+    // Pos:1965 Instruction:"VPCMPGTQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x37 /r"/"RAVM"
     {
         ND_INS_VPCMPGTQ, ND_CAT_AVX512, ND_SET_AVX512F, 1165, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30866,7 +30926,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1962 Instruction:"VPCMPGTQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x37 /r"/"RVM"
+    // Pos:1966 Instruction:"VPCMPGTQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x37 /r"/"RVM"
     {
         ND_INS_VPCMPGTQ, ND_CAT_AVX, ND_SET_AVX, 1165, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30882,7 +30942,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1963 Instruction:"VPCMPGTW rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x65 /r"/"RAVM"
+    // Pos:1967 Instruction:"VPCMPGTW rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x65 /r"/"RAVM"
     {
         ND_INS_VPCMPGTW, ND_CAT_AVX512, ND_SET_AVX512BW, 1166, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30899,7 +30959,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1964 Instruction:"VPCMPGTW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x65 /r"/"RVM"
+    // Pos:1968 Instruction:"VPCMPGTW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x65 /r"/"RVM"
     {
         ND_INS_VPCMPGTW, ND_CAT_AVX, ND_SET_AVX, 1166, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30915,7 +30975,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1965 Instruction:"VPCMPISTRI Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x63 /r ib"/"RMI"
+    // Pos:1969 Instruction:"VPCMPISTRI Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x63 /r ib"/"RMI"
     {
         ND_INS_VPCMPISTRI, ND_CAT_STTNI, ND_SET_AVX, 1167, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30933,7 +30993,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1966 Instruction:"VPCMPISTRM Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x62 /r ib"/"RMI"
+    // Pos:1970 Instruction:"VPCMPISTRM Vdq,Wdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x62 /r ib"/"RMI"
     {
         ND_INS_VPCMPISTRM, ND_CAT_STTNI, ND_SET_AVX, 1168, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30951,7 +31011,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1967 Instruction:"VPCMPQ rKq{K},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1F /r ib"/"RAVMI"
+    // Pos:1971 Instruction:"VPCMPQ rKq{K},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPQ, ND_CAT_AVX512, ND_SET_AVX512F, 1169, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30969,7 +31029,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1968 Instruction:"VPCMPUB rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3E /r ib"/"RAVMI"
+    // Pos:1972 Instruction:"VPCMPUB rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUB, ND_CAT_AVX512, ND_SET_AVX512BW, 1170, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -30987,7 +31047,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1969 Instruction:"VPCMPUD rKq{K},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1E /r ib"/"RAVMI"
+    // Pos:1973 Instruction:"VPCMPUD rKq{K},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUD, ND_CAT_AVX512, ND_SET_AVX512F, 1171, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31005,7 +31065,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1970 Instruction:"VPCMPUQ rKq{K},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1E /r ib"/"RAVMI"
+    // Pos:1974 Instruction:"VPCMPUQ rKq{K},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUQ, ND_CAT_AVX512, ND_SET_AVX512F, 1172, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31023,7 +31083,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1971 Instruction:"VPCMPUW rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3E /r ib"/"RAVMI"
+    // Pos:1975 Instruction:"VPCMPUW rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1173, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31041,7 +31101,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1972 Instruction:"VPCMPW rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3F /r ib"/"RAVMI"
+    // Pos:1976 Instruction:"VPCMPW rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPW, ND_CAT_AVX512, ND_SET_AVX512BW, 1174, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31059,7 +31119,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1973 Instruction:"VPCOMB Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCC /r ib"/"RVMI"
+    // Pos:1977 Instruction:"VPCOMB Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCC /r ib"/"RVMI"
     {
         ND_INS_VPCOMB, ND_CAT_XOP, ND_SET_XOP, 1175, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31076,7 +31136,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1974 Instruction:"VPCOMD Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCE /r ib"/"RVMI"
+    // Pos:1978 Instruction:"VPCOMD Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCE /r ib"/"RVMI"
     {
         ND_INS_VPCOMD, ND_CAT_XOP, ND_SET_XOP, 1176, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31093,7 +31153,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1975 Instruction:"VPCOMPRESSB Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x63 /r"/"MAR"
+    // Pos:1979 Instruction:"VPCOMPRESSB Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x63 /r"/"MAR"
     {
         ND_INS_VPCOMPRESSB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1177, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31109,7 +31169,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1976 Instruction:"VPCOMPRESSD Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x8B /r"/"MAR"
+    // Pos:1980 Instruction:"VPCOMPRESSD Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x8B /r"/"MAR"
     {
         ND_INS_VPCOMPRESSD, ND_CAT_COMPRESS, ND_SET_AVX512F, 1178, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31125,7 +31185,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1977 Instruction:"VPCOMPRESSQ Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x8B /r"/"MAR"
+    // Pos:1981 Instruction:"VPCOMPRESSQ Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x8B /r"/"MAR"
     {
         ND_INS_VPCOMPRESSQ, ND_CAT_COMPRESS, ND_SET_AVX512F, 1179, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31141,7 +31201,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1978 Instruction:"VPCOMPRESSW Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x63 /r"/"MAR"
+    // Pos:1982 Instruction:"VPCOMPRESSW Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x63 /r"/"MAR"
     {
         ND_INS_VPCOMPRESSW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1180, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31157,7 +31217,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1979 Instruction:"VPCOMQ Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCF /r ib"/"RVMI"
+    // Pos:1983 Instruction:"VPCOMQ Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCF /r ib"/"RVMI"
     {
         ND_INS_VPCOMQ, ND_CAT_XOP, ND_SET_XOP, 1181, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31174,7 +31234,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1980 Instruction:"VPCOMUB Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xEC /r ib"/"RVMI"
+    // Pos:1984 Instruction:"VPCOMUB Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xEC /r ib"/"RVMI"
     {
         ND_INS_VPCOMUB, ND_CAT_XOP, ND_SET_XOP, 1182, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31191,7 +31251,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1981 Instruction:"VPCOMUD Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xEE /r ib"/"RVMI"
+    // Pos:1985 Instruction:"VPCOMUD Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xEE /r ib"/"RVMI"
     {
         ND_INS_VPCOMUD, ND_CAT_XOP, ND_SET_XOP, 1183, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31208,7 +31268,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1982 Instruction:"VPCOMUQ Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xEF /r ib"/"RVMI"
+    // Pos:1986 Instruction:"VPCOMUQ Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xEF /r ib"/"RVMI"
     {
         ND_INS_VPCOMUQ, ND_CAT_XOP, ND_SET_XOP, 1184, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31225,7 +31285,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1983 Instruction:"VPCOMUW Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xED /r ib"/"RVMI"
+    // Pos:1987 Instruction:"VPCOMUW Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xED /r ib"/"RVMI"
     {
         ND_INS_VPCOMUW, ND_CAT_XOP, ND_SET_XOP, 1185, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31242,7 +31302,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1984 Instruction:"VPCOMW Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCD /r ib"/"RVMI"
+    // Pos:1988 Instruction:"VPCOMW Vdq,Hdq,Wdq,Ib" Encoding:"xop m:8 0xCD /r ib"/"RVMI"
     {
         ND_INS_VPCOMW, ND_CAT_XOP, ND_SET_XOP, 1186, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31259,7 +31319,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1985 Instruction:"VPCONFLICTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0xC4 /r"/"RAM"
+    // Pos:1989 Instruction:"VPCONFLICTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0xC4 /r"/"RAM"
     {
         ND_INS_VPCONFLICTD, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1187, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31275,7 +31335,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1986 Instruction:"VPCONFLICTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xC4 /r"/"RAM"
+    // Pos:1990 Instruction:"VPCONFLICTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xC4 /r"/"RAM"
     {
         ND_INS_VPCONFLICTQ, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1188, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31291,7 +31351,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1987 Instruction:"VPDPBUSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x50 /r"/"RAVM"
+    // Pos:1991 Instruction:"VPDPBUSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x50 /r"/"RAVM"
     {
         ND_INS_VPDPBUSD, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1189, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31308,7 +31368,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1988 Instruction:"VPDPBUSDS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x51 /r"/"RAVM"
+    // Pos:1992 Instruction:"VPDPBUSDS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x51 /r"/"RAVM"
     {
         ND_INS_VPDPBUSDS, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1190, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31325,7 +31385,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1989 Instruction:"VPDPWSSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x52 /r"/"RAVM"
+    // Pos:1993 Instruction:"VPDPWSSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x52 /r"/"RAVM"
     {
         ND_INS_VPDPWSSD, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1191, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31342,7 +31402,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1990 Instruction:"VPDPWSSDS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x53 /r"/"RAVM"
+    // Pos:1994 Instruction:"VPDPWSSDS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x53 /r"/"RAVM"
     {
         ND_INS_VPDPWSSDS, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1192, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31359,7 +31419,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1991 Instruction:"VPERM2F128 Vqq,Hqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x06 /r ib"/"RVMI"
+    // Pos:1995 Instruction:"VPERM2F128 Vqq,Hqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x06 /r ib"/"RVMI"
     {
         ND_INS_VPERM2F128, ND_CAT_AVX, ND_SET_AVX, 1193, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31376,7 +31436,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1992 Instruction:"VPERM2I128 Vqq,Hqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x46 /r ib"/"RVMI"
+    // Pos:1996 Instruction:"VPERM2I128 Vqq,Hqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:0 0x46 /r ib"/"RVMI"
     {
         ND_INS_VPERM2I128, ND_CAT_AVX2, ND_SET_AVX2, 1194, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31393,7 +31453,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1993 Instruction:"VPERMB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x8D /r"/"RAVM"
+    // Pos:1997 Instruction:"VPERMB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x8D /r"/"RAVM"
     {
         ND_INS_VPERMB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1195, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31410,7 +31470,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1994 Instruction:"VPERMD Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:x w:0 0x36 /r"/"RAVM"
+    // Pos:1998 Instruction:"VPERMD Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:x w:0 0x36 /r"/"RAVM"
     {
         ND_INS_VPERMD, ND_CAT_AVX512, ND_SET_AVX512F, 1196, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31427,7 +31487,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1995 Instruction:"VPERMD Vqq,Hqq,Wqq" Encoding:"vex m:2 p:1 l:1 w:0 0x36 /r"/"RVM"
+    // Pos:1999 Instruction:"VPERMD Vqq,Hqq,Wqq" Encoding:"vex m:2 p:1 l:1 w:0 0x36 /r"/"RVM"
     {
         ND_INS_VPERMD, ND_CAT_AVX2, ND_SET_AVX2, 1196, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31443,7 +31503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1996 Instruction:"VPERMI2B Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x75 /r"/"RAVM"
+    // Pos:2000 Instruction:"VPERMI2B Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x75 /r"/"RAVM"
     {
         ND_INS_VPERMI2B, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1197, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31460,7 +31520,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1997 Instruction:"VPERMI2D Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x76 /r"/"RAVM"
+    // Pos:2001 Instruction:"VPERMI2D Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x76 /r"/"RAVM"
     {
         ND_INS_VPERMI2D, ND_CAT_AVX512, ND_SET_AVX512F, 1198, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31477,7 +31537,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1998 Instruction:"VPERMI2PD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x77 /r"/"RAVM"
+    // Pos:2002 Instruction:"VPERMI2PD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x77 /r"/"RAVM"
     {
         ND_INS_VPERMI2PD, ND_CAT_AVX512, ND_SET_AVX512F, 1199, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31494,7 +31554,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:1999 Instruction:"VPERMI2PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x77 /r"/"RAVM"
+    // Pos:2003 Instruction:"VPERMI2PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x77 /r"/"RAVM"
     {
         ND_INS_VPERMI2PS, ND_CAT_AVX512, ND_SET_AVX512F, 1200, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31511,7 +31571,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2000 Instruction:"VPERMI2Q Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x76 /r"/"RAVM"
+    // Pos:2004 Instruction:"VPERMI2Q Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x76 /r"/"RAVM"
     {
         ND_INS_VPERMI2Q, ND_CAT_AVX512, ND_SET_AVX512F, 1201, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31528,7 +31588,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2001 Instruction:"VPERMI2W Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x75 /r"/"RAVM"
+    // Pos:2005 Instruction:"VPERMI2W Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x75 /r"/"RAVM"
     {
         ND_INS_VPERMI2W, ND_CAT_AVX512, ND_SET_AVX512BW, 1202, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31545,7 +31605,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2002 Instruction:"VPERMIL2PD Vx,Hx,Wx,Lx,m2zIb" Encoding:"vex m:3 p:1 l:x w:0 0x49 /r is4"/"RVML"
+    // Pos:2006 Instruction:"VPERMIL2PD Vx,Hx,Wx,Lx,m2zIb" Encoding:"vex m:3 p:1 l:x w:0 0x49 /r is4"/"RVML"
     {
         ND_INS_VPERMIL2PD, ND_CAT_XOP, ND_SET_XOP, 1203, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31563,7 +31623,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2003 Instruction:"VPERMIL2PD Vx,Hx,Lx,Wx,m2zIb" Encoding:"vex m:3 p:1 l:x w:1 0x49 /r is4"/"RVLM"
+    // Pos:2007 Instruction:"VPERMIL2PD Vx,Hx,Lx,Wx,m2zIb" Encoding:"vex m:3 p:1 l:x w:1 0x49 /r is4"/"RVLM"
     {
         ND_INS_VPERMIL2PD, ND_CAT_XOP, ND_SET_XOP, 1203, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31581,7 +31641,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2004 Instruction:"VPERMIL2PS Vx,Hx,Wx,Lx,m2zIb" Encoding:"vex m:3 p:1 l:x w:0 0x48 /r is4"/"RVML"
+    // Pos:2008 Instruction:"VPERMIL2PS Vx,Hx,Wx,Lx,m2zIb" Encoding:"vex m:3 p:1 l:x w:0 0x48 /r is4"/"RVML"
     {
         ND_INS_VPERMIL2PS, ND_CAT_XOP, ND_SET_XOP, 1204, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31599,7 +31659,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2005 Instruction:"VPERMIL2PS Vx,Hx,Lx,Wx,m2zIb" Encoding:"vex m:3 p:1 l:x w:1 0x48 /r is4"/"RVLM"
+    // Pos:2009 Instruction:"VPERMIL2PS Vx,Hx,Lx,Wx,m2zIb" Encoding:"vex m:3 p:1 l:x w:1 0x48 /r is4"/"RVLM"
     {
         ND_INS_VPERMIL2PS, ND_CAT_XOP, ND_SET_XOP, 1204, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31617,7 +31677,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2006 Instruction:"VPERMILPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x0D /r"/"RAVM"
+    // Pos:2010 Instruction:"VPERMILPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x0D /r"/"RAVM"
     {
         ND_INS_VPERMILPD, ND_CAT_AVX512, ND_SET_AVX512F, 1205, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31634,7 +31694,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2007 Instruction:"VPERMILPD Vn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x05 /r ib"/"RAMI"
+    // Pos:2011 Instruction:"VPERMILPD Vn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x05 /r ib"/"RAMI"
     {
         ND_INS_VPERMILPD, ND_CAT_AVX512, ND_SET_AVX512F, 1205, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31651,7 +31711,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2008 Instruction:"VPERMILPD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0D /r"/"RVM"
+    // Pos:2012 Instruction:"VPERMILPD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0D /r"/"RVM"
     {
         ND_INS_VPERMILPD, ND_CAT_AVX, ND_SET_AVX, 1205, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31667,7 +31727,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2009 Instruction:"VPERMILPD Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:0 0x05 /r ib"/"RMI"
+    // Pos:2013 Instruction:"VPERMILPD Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:0 0x05 /r ib"/"RMI"
     {
         ND_INS_VPERMILPD, ND_CAT_AVX, ND_SET_AVX, 1205, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31683,7 +31743,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2010 Instruction:"VPERMILPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x0C /r"/"RAVM"
+    // Pos:2014 Instruction:"VPERMILPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x0C /r"/"RAVM"
     {
         ND_INS_VPERMILPS, ND_CAT_AVX512, ND_SET_AVX512F, 1206, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31700,7 +31760,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2011 Instruction:"VPERMILPS Vn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x04 /r ib"/"RAMI"
+    // Pos:2015 Instruction:"VPERMILPS Vn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x04 /r ib"/"RAMI"
     {
         ND_INS_VPERMILPS, ND_CAT_AVX512, ND_SET_AVX512F, 1206, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31717,7 +31777,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2012 Instruction:"VPERMILPS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0C /r"/"RVM"
+    // Pos:2016 Instruction:"VPERMILPS Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0C /r"/"RVM"
     {
         ND_INS_VPERMILPS, ND_CAT_AVX, ND_SET_AVX, 1206, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31733,7 +31793,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2013 Instruction:"VPERMILPS Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:0 0x04 /r ib"/"RMI"
+    // Pos:2017 Instruction:"VPERMILPS Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:0 0x04 /r ib"/"RMI"
     {
         ND_INS_VPERMILPS, ND_CAT_AVX, ND_SET_AVX, 1206, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31749,7 +31809,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2014 Instruction:"VPERMPD Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:1 w:1 0x16 /r"/"RAVM"
+    // Pos:2018 Instruction:"VPERMPD Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:1 w:1 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1207, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31766,7 +31826,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2015 Instruction:"VPERMPD Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:2 w:1 0x16 /r"/"RAVM"
+    // Pos:2019 Instruction:"VPERMPD Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:2 w:1 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1207, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31783,7 +31843,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2016 Instruction:"VPERMPD Vu{K}{z},aKq,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x01 /r ib"/"RAMI"
+    // Pos:2020 Instruction:"VPERMPD Vu{K}{z},aKq,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x01 /r ib"/"RAMI"
     {
         ND_INS_VPERMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1207, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31800,7 +31860,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2017 Instruction:"VPERMPD Vqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:1 0x01 /r ib"/"RMI"
+    // Pos:2021 Instruction:"VPERMPD Vqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:1 0x01 /r ib"/"RMI"
     {
         ND_INS_VPERMPD, ND_CAT_AVX2, ND_SET_AVX2, 1207, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31816,7 +31876,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2018 Instruction:"VPERMPS Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:1 w:0 0x16 /r"/"RAVM"
+    // Pos:2022 Instruction:"VPERMPS Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:1 w:0 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPS, ND_CAT_AVX512, ND_SET_AVX512F, 1208, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31833,7 +31893,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2019 Instruction:"VPERMPS Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:2 w:0 0x16 /r"/"RAVM"
+    // Pos:2023 Instruction:"VPERMPS Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:2 w:0 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPS, ND_CAT_AVX512, ND_SET_AVX512F, 1208, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31850,7 +31910,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2020 Instruction:"VPERMPS Vqq,Hqq,Wqq" Encoding:"vex m:2 p:1 l:1 w:0 0x16 /r"/"RVM"
+    // Pos:2024 Instruction:"VPERMPS Vqq,Hqq,Wqq" Encoding:"vex m:2 p:1 l:1 w:0 0x16 /r"/"RVM"
     {
         ND_INS_VPERMPS, ND_CAT_AVX2, ND_SET_AVX2, 1208, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31866,7 +31926,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2021 Instruction:"VPERMQ Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:x w:1 0x36 /r"/"RAVM"
+    // Pos:2025 Instruction:"VPERMQ Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:x w:1 0x36 /r"/"RAVM"
     {
         ND_INS_VPERMQ, ND_CAT_AVX512, ND_SET_AVX512F, 1209, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31883,7 +31943,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2022 Instruction:"VPERMQ Vu{K}{z},aKq,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x00 /r ib"/"RAMI"
+    // Pos:2026 Instruction:"VPERMQ Vu{K}{z},aKq,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x00 /r ib"/"RAMI"
     {
         ND_INS_VPERMQ, ND_CAT_AVX512, ND_SET_AVX512F, 1209, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31900,7 +31960,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2023 Instruction:"VPERMQ Vqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:1 0x00 /r ib"/"RMI"
+    // Pos:2027 Instruction:"VPERMQ Vqq,Wqq,Ib" Encoding:"vex m:3 p:1 l:1 w:1 0x00 /r ib"/"RMI"
     {
         ND_INS_VPERMQ, ND_CAT_AVX2, ND_SET_AVX2, 1209, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31916,7 +31976,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2024 Instruction:"VPERMT2B Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x7D /r"/"RAVM"
+    // Pos:2028 Instruction:"VPERMT2B Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x7D /r"/"RAVM"
     {
         ND_INS_VPERMT2B, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1210, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31933,7 +31993,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2025 Instruction:"VPERMT2D Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7E /r"/"RAVM"
+    // Pos:2029 Instruction:"VPERMT2D Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7E /r"/"RAVM"
     {
         ND_INS_VPERMT2D, ND_CAT_AVX512, ND_SET_AVX512F, 1211, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31950,7 +32010,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2026 Instruction:"VPERMT2PD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7F /r"/"RAVM"
+    // Pos:2030 Instruction:"VPERMT2PD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7F /r"/"RAVM"
     {
         ND_INS_VPERMT2PD, ND_CAT_AVX512, ND_SET_AVX512F, 1212, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31967,7 +32027,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2027 Instruction:"VPERMT2PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7F /r"/"RAVM"
+    // Pos:2031 Instruction:"VPERMT2PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7F /r"/"RAVM"
     {
         ND_INS_VPERMT2PS, ND_CAT_AVX512, ND_SET_AVX512F, 1213, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -31984,7 +32044,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2028 Instruction:"VPERMT2Q Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7E /r"/"RAVM"
+    // Pos:2032 Instruction:"VPERMT2Q Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7E /r"/"RAVM"
     {
         ND_INS_VPERMT2Q, ND_CAT_AVX512, ND_SET_AVX512F, 1214, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32001,7 +32061,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2029 Instruction:"VPERMT2W Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x7D /r"/"RAVM"
+    // Pos:2033 Instruction:"VPERMT2W Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x7D /r"/"RAVM"
     {
         ND_INS_VPERMT2W, ND_CAT_AVX512, ND_SET_AVX512BW, 1215, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32018,7 +32078,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2030 Instruction:"VPERMW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x8D /r"/"RAVM"
+    // Pos:2034 Instruction:"VPERMW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x8D /r"/"RAVM"
     {
         ND_INS_VPERMW, ND_CAT_AVX512, ND_SET_AVX512BW, 1216, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32035,7 +32095,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2031 Instruction:"VPEXPANDB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x62 /r"/"RAM"
+    // Pos:2035 Instruction:"VPEXPANDB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x62 /r"/"RAM"
     {
         ND_INS_VPEXPANDB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1217, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32051,7 +32111,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2032 Instruction:"VPEXPANDD Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x89 /r"/"RAM"
+    // Pos:2036 Instruction:"VPEXPANDD Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x89 /r"/"RAM"
     {
         ND_INS_VPEXPANDD, ND_CAT_EXPAND, ND_SET_AVX512F, 1218, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32067,7 +32127,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2033 Instruction:"VPEXPANDQ Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x89 /r"/"RAM"
+    // Pos:2037 Instruction:"VPEXPANDQ Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x89 /r"/"RAM"
     {
         ND_INS_VPEXPANDQ, ND_CAT_EXPAND, ND_SET_AVX512F, 1219, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32083,7 +32143,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2034 Instruction:"VPEXPANDW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x62 /r"/"RAM"
+    // Pos:2038 Instruction:"VPEXPANDW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x62 /r"/"RAM"
     {
         ND_INS_VPEXPANDW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1220, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32099,7 +32159,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2035 Instruction:"VPEXTRB Mb,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x14 /r:mem ib"/"MRI"
+    // Pos:2039 Instruction:"VPEXTRB Mb,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x14 /r:mem ib"/"MRI"
     {
         ND_INS_VPEXTRB, ND_CAT_AVX512, ND_SET_AVX512BW, 1221, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32115,7 +32175,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2036 Instruction:"VPEXTRB Ry,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x14 /r:reg ib"/"MRI"
+    // Pos:2040 Instruction:"VPEXTRB Ry,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x14 /r:reg ib"/"MRI"
     {
         ND_INS_VPEXTRB, ND_CAT_AVX512, ND_SET_AVX512BW, 1221, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32131,7 +32191,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2037 Instruction:"VPEXTRB Mb,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x14 /r:mem ib"/"MRI"
+    // Pos:2041 Instruction:"VPEXTRB Mb,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x14 /r:mem ib"/"MRI"
     {
         ND_INS_VPEXTRB, ND_CAT_AVX, ND_SET_AVX, 1221, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32147,7 +32207,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2038 Instruction:"VPEXTRB Rd,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x14 /r:reg ib"/"MRI"
+    // Pos:2042 Instruction:"VPEXTRB Rd,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x14 /r:reg ib"/"MRI"
     {
         ND_INS_VPEXTRB, ND_CAT_AVX, ND_SET_AVX, 1221, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32163,7 +32223,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2039 Instruction:"VPEXTRD Ed,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:0 0x16 /r ib"/"MRI"
+    // Pos:2043 Instruction:"VPEXTRD Ed,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:0 0x16 /r ib"/"MRI"
     {
         ND_INS_VPEXTRD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1222, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32179,7 +32239,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2040 Instruction:"VPEXTRD Ey,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:0 0x16 /r ib"/"MRI"
+    // Pos:2044 Instruction:"VPEXTRD Ey,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:0 0x16 /r ib"/"MRI"
     {
         ND_INS_VPEXTRD, ND_CAT_AVX, ND_SET_AVX, 1222, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32195,7 +32255,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2041 Instruction:"VPEXTRQ Eq,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:1 0x16 /r ib"/"MRI"
+    // Pos:2045 Instruction:"VPEXTRQ Eq,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:1 0x16 /r ib"/"MRI"
     {
         ND_INS_VPEXTRQ, ND_CAT_AVX512, ND_SET_AVX512DQ, 1223, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32211,7 +32271,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2042 Instruction:"VPEXTRQ Ey,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:1 0x16 /r ib"/"MRI"
+    // Pos:2046 Instruction:"VPEXTRQ Ey,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:1 0x16 /r ib"/"MRI"
     {
         ND_INS_VPEXTRQ, ND_CAT_AVX, ND_SET_AVX, 1223, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32227,7 +32287,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2043 Instruction:"VPEXTRW Gy,Udq,Ib" Encoding:"evex m:1 p:1 l:0 w:i 0xC5 /r:reg ib"/"RMI"
+    // Pos:2047 Instruction:"VPEXTRW Gy,Udq,Ib" Encoding:"evex m:1 p:1 l:0 w:i 0xC5 /r:reg ib"/"RMI"
     {
         ND_INS_VPEXTRW, ND_CAT_AVX512, ND_SET_AVX512BW, 1224, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32243,7 +32303,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2044 Instruction:"VPEXTRW Mw,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x15 /r:mem ib"/"MRI"
+    // Pos:2048 Instruction:"VPEXTRW Mw,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x15 /r:mem ib"/"MRI"
     {
         ND_INS_VPEXTRW, ND_CAT_AVX512, ND_SET_AVX512BW, 1224, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32259,7 +32319,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2045 Instruction:"VPEXTRW Ry,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x15 /r:reg ib"/"MRI"
+    // Pos:2049 Instruction:"VPEXTRW Ry,Vdq,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x15 /r:reg ib"/"MRI"
     {
         ND_INS_VPEXTRW, ND_CAT_AVX512, ND_SET_AVX512BW, 1224, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32275,7 +32335,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2046 Instruction:"VPEXTRW Gy,Udq,Ib" Encoding:"vex m:1 p:1 l:0 w:i 0xC5 /r:reg ib"/"RMI"
+    // Pos:2050 Instruction:"VPEXTRW Gy,Udq,Ib" Encoding:"vex m:1 p:1 l:0 w:i 0xC5 /r:reg ib"/"RMI"
     {
         ND_INS_VPEXTRW, ND_CAT_AVX, ND_SET_AVX, 1224, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32291,7 +32351,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2047 Instruction:"VPEXTRW Mw,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x15 /r:mem ib"/"MRI"
+    // Pos:2051 Instruction:"VPEXTRW Mw,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x15 /r:mem ib"/"MRI"
     {
         ND_INS_VPEXTRW, ND_CAT_AVX, ND_SET_AVX, 1224, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32307,7 +32367,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2048 Instruction:"VPEXTRW Rd,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x15 /r:reg ib"/"MRI"
+    // Pos:2052 Instruction:"VPEXTRW Rd,Vdq,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x15 /r:reg ib"/"MRI"
     {
         ND_INS_VPEXTRW, ND_CAT_AVX, ND_SET_AVX, 1224, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32323,7 +32383,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2049 Instruction:"VPGATHERDD Vn{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x90 /r:mem vsib"/"RAM"
+    // Pos:2053 Instruction:"VPGATHERDD Vn{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x90 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERDD, ND_CAT_GATHER, ND_SET_AVX512F, 1225, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32339,7 +32399,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2050 Instruction:"VPGATHERDD Vx,Mvm32n,Hx" Encoding:"vex m:2 p:1 l:x w:0 0x90 /r:mem vsib"/"RMV"
+    // Pos:2054 Instruction:"VPGATHERDD Vx,Mvm32n,Hx" Encoding:"vex m:2 p:1 l:x w:0 0x90 /r:mem vsib"/"RMV"
     {
         ND_INS_VPGATHERDD, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1225, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32355,7 +32415,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2051 Instruction:"VPGATHERDQ Vn{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x90 /r:mem vsib"/"RAM"
+    // Pos:2055 Instruction:"VPGATHERDQ Vn{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x90 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERDQ, ND_CAT_GATHER, ND_SET_AVX512F, 1226, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32371,7 +32431,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2052 Instruction:"VPGATHERDQ Vx,Mvm32h,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x90 /r:mem vsib"/"RMV"
+    // Pos:2056 Instruction:"VPGATHERDQ Vx,Mvm32h,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x90 /r:mem vsib"/"RMV"
     {
         ND_INS_VPGATHERDQ, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1226, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32387,7 +32447,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2053 Instruction:"VPGATHERQD Vh{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x91 /r:mem vsib"/"RAM"
+    // Pos:2057 Instruction:"VPGATHERQD Vh{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x91 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERQD, ND_CAT_GATHER, ND_SET_AVX512F, 1227, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32403,7 +32463,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2054 Instruction:"VPGATHERQD Vdq,Mvm64n,Hdq" Encoding:"vex m:2 p:1 l:x w:0 0x91 /r:mem vsib"/"RMV"
+    // Pos:2058 Instruction:"VPGATHERQD Vdq,Mvm64n,Hdq" Encoding:"vex m:2 p:1 l:x w:0 0x91 /r:mem vsib"/"RMV"
     {
         ND_INS_VPGATHERQD, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1227, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32419,7 +32479,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2055 Instruction:"VPGATHERQQ Vn{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x91 /r:mem vsib"/"RAM"
+    // Pos:2059 Instruction:"VPGATHERQQ Vn{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x91 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERQQ, ND_CAT_GATHER, ND_SET_AVX512F, 1228, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32435,7 +32495,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2056 Instruction:"VPGATHERQQ Vx,Mvm64n,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x91 /r:mem vsib"/"RMV"
+    // Pos:2060 Instruction:"VPGATHERQQ Vx,Mvm64n,Hx" Encoding:"vex m:2 p:1 l:x w:1 0x91 /r:mem vsib"/"RMV"
     {
         ND_INS_VPGATHERQQ, ND_CAT_AVX2GATHER, ND_SET_AVX2GATHER, 1228, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32451,7 +32511,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2057 Instruction:"VPHADDBD Vdq,Wdq" Encoding:"xop m:9 0xC2 /r"/"RM"
+    // Pos:2061 Instruction:"VPHADDBD Vdq,Wdq" Encoding:"xop m:9 0xC2 /r"/"RM"
     {
         ND_INS_VPHADDBD, ND_CAT_XOP, ND_SET_XOP, 1229, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32466,7 +32526,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2058 Instruction:"VPHADDBQ Vdq,Wdq" Encoding:"xop m:9 0xC3 /r"/"RM"
+    // Pos:2062 Instruction:"VPHADDBQ Vdq,Wdq" Encoding:"xop m:9 0xC3 /r"/"RM"
     {
         ND_INS_VPHADDBQ, ND_CAT_XOP, ND_SET_XOP, 1230, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32481,7 +32541,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2059 Instruction:"VPHADDBW Vdq,Wdq" Encoding:"xop m:9 0xC1 /r"/"RM"
+    // Pos:2063 Instruction:"VPHADDBW Vdq,Wdq" Encoding:"xop m:9 0xC1 /r"/"RM"
     {
         ND_INS_VPHADDBW, ND_CAT_XOP, ND_SET_XOP, 1231, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32496,7 +32556,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2060 Instruction:"VPHADDD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x02 /r"/"RVM"
+    // Pos:2064 Instruction:"VPHADDD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x02 /r"/"RVM"
     {
         ND_INS_VPHADDD, ND_CAT_AVX, ND_SET_AVX, 1232, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32512,7 +32572,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2061 Instruction:"VPHADDDQ Vdq,Wdq" Encoding:"xop m:9 0xCB /r"/"RM"
+    // Pos:2065 Instruction:"VPHADDDQ Vdq,Wdq" Encoding:"xop m:9 0xCB /r"/"RM"
     {
         ND_INS_VPHADDDQ, ND_CAT_XOP, ND_SET_XOP, 1233, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32527,7 +32587,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2062 Instruction:"VPHADDSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x03 /r"/"RVM"
+    // Pos:2066 Instruction:"VPHADDSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x03 /r"/"RVM"
     {
         ND_INS_VPHADDSW, ND_CAT_AVX, ND_SET_AVX, 1234, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32543,7 +32603,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2063 Instruction:"VPHADDUBD Vdq,Wdq" Encoding:"xop m:9 0xD2 /r"/"RM"
+    // Pos:2067 Instruction:"VPHADDUBD Vdq,Wdq" Encoding:"xop m:9 0xD2 /r"/"RM"
     {
         ND_INS_VPHADDUBD, ND_CAT_XOP, ND_SET_XOP, 1235, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32558,7 +32618,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2064 Instruction:"VPHADDUBQ Vdq,Wdq" Encoding:"xop m:9 0xD3 /r"/"RM"
+    // Pos:2068 Instruction:"VPHADDUBQ Vdq,Wdq" Encoding:"xop m:9 0xD3 /r"/"RM"
     {
         ND_INS_VPHADDUBQ, ND_CAT_XOP, ND_SET_XOP, 1236, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32573,7 +32633,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2065 Instruction:"VPHADDUBW Vdq,Wdq" Encoding:"xop m:9 0xD1 /r"/"RM"
+    // Pos:2069 Instruction:"VPHADDUBW Vdq,Wdq" Encoding:"xop m:9 0xD1 /r"/"RM"
     {
         ND_INS_VPHADDUBW, ND_CAT_XOP, ND_SET_XOP, 1237, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32588,7 +32648,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2066 Instruction:"VPHADDUDQ Vdq,Wdq" Encoding:"xop m:9 0xDB /r"/"RM"
+    // Pos:2070 Instruction:"VPHADDUDQ Vdq,Wdq" Encoding:"xop m:9 0xDB /r"/"RM"
     {
         ND_INS_VPHADDUDQ, ND_CAT_XOP, ND_SET_XOP, 1238, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32603,7 +32663,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2067 Instruction:"VPHADDUWD Vdq,Wdq" Encoding:"xop m:9 0xD6 /r"/"RM"
+    // Pos:2071 Instruction:"VPHADDUWD Vdq,Wdq" Encoding:"xop m:9 0xD6 /r"/"RM"
     {
         ND_INS_VPHADDUWD, ND_CAT_XOP, ND_SET_XOP, 1239, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32618,7 +32678,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2068 Instruction:"VPHADDUWQ Vdq,Wdq" Encoding:"xop m:9 0xD7 /r"/"RM"
+    // Pos:2072 Instruction:"VPHADDUWQ Vdq,Wdq" Encoding:"xop m:9 0xD7 /r"/"RM"
     {
         ND_INS_VPHADDUWQ, ND_CAT_XOP, ND_SET_XOP, 1240, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32633,7 +32693,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2069 Instruction:"VPHADDW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x01 /r"/"RVM"
+    // Pos:2073 Instruction:"VPHADDW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x01 /r"/"RVM"
     {
         ND_INS_VPHADDW, ND_CAT_AVX, ND_SET_AVX, 1241, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32649,7 +32709,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2070 Instruction:"VPHADDWD Vdq,Wdq" Encoding:"xop m:9 0xC6 /r"/"RM"
+    // Pos:2074 Instruction:"VPHADDWD Vdq,Wdq" Encoding:"xop m:9 0xC6 /r"/"RM"
     {
         ND_INS_VPHADDWD, ND_CAT_XOP, ND_SET_XOP, 1242, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32664,7 +32724,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2071 Instruction:"VPHADDWQ Vdq,Wdq" Encoding:"xop m:9 0xC7 /r"/"RM"
+    // Pos:2075 Instruction:"VPHADDWQ Vdq,Wdq" Encoding:"xop m:9 0xC7 /r"/"RM"
     {
         ND_INS_VPHADDWQ, ND_CAT_XOP, ND_SET_XOP, 1243, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32679,7 +32739,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2072 Instruction:"VPHMINPOSUW Vdq,Wdq" Encoding:"vex m:2 p:1 l:0 w:i 0x41 /r"/"RM"
+    // Pos:2076 Instruction:"VPHMINPOSUW Vdq,Wdq" Encoding:"vex m:2 p:1 l:0 w:i 0x41 /r"/"RM"
     {
         ND_INS_VPHMINPOSUW, ND_CAT_AVX, ND_SET_AVX, 1244, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32694,7 +32754,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2073 Instruction:"VPHSUBBW Vdq,Wdq" Encoding:"xop m:9 0xE1 /r"/"RM"
+    // Pos:2077 Instruction:"VPHSUBBW Vdq,Wdq" Encoding:"xop m:9 0xE1 /r"/"RM"
     {
         ND_INS_VPHSUBBW, ND_CAT_XOP, ND_SET_XOP, 1245, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32709,7 +32769,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2074 Instruction:"VPHSUBD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x06 /r"/"RVM"
+    // Pos:2078 Instruction:"VPHSUBD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x06 /r"/"RVM"
     {
         ND_INS_VPHSUBD, ND_CAT_AVX, ND_SET_AVX, 1246, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32725,7 +32785,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2075 Instruction:"VPHSUBDQ Vdq,Wdq" Encoding:"xop m:9 0xE3 /r"/"RM"
+    // Pos:2079 Instruction:"VPHSUBDQ Vdq,Wdq" Encoding:"xop m:9 0xE3 /r"/"RM"
     {
         ND_INS_VPHSUBDQ, ND_CAT_XOP, ND_SET_XOP, 1247, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32740,7 +32800,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2076 Instruction:"VPHSUBSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x07 /r"/"RVM"
+    // Pos:2080 Instruction:"VPHSUBSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x07 /r"/"RVM"
     {
         ND_INS_VPHSUBSW, ND_CAT_AVX, ND_SET_AVX, 1248, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32756,7 +32816,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2077 Instruction:"VPHSUBW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x05 /r"/"RVM"
+    // Pos:2081 Instruction:"VPHSUBW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x05 /r"/"RVM"
     {
         ND_INS_VPHSUBW, ND_CAT_AVX, ND_SET_AVX, 1249, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32772,7 +32832,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2078 Instruction:"VPHSUBWD Vdq,Wdq" Encoding:"xop m:9 0xE2 /r"/"RM"
+    // Pos:2082 Instruction:"VPHSUBWD Vdq,Wdq" Encoding:"xop m:9 0xE2 /r"/"RM"
     {
         ND_INS_VPHSUBWD, ND_CAT_XOP, ND_SET_XOP, 1250, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32787,7 +32847,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2079 Instruction:"VPINSRB Vdq,Hdq,Mb,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x20 /r:mem ib"/"RVMI"
+    // Pos:2083 Instruction:"VPINSRB Vdq,Hdq,Mb,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x20 /r:mem ib"/"RVMI"
     {
         ND_INS_VPINSRB, ND_CAT_AVX512, ND_SET_AVX512BW, 1251, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32804,7 +32864,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2080 Instruction:"VPINSRB Vdq,Hdq,Rd,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x20 /r:reg ib"/"RVMI"
+    // Pos:2084 Instruction:"VPINSRB Vdq,Hdq,Rd,Ib" Encoding:"evex m:3 p:1 l:0 w:i 0x20 /r:reg ib"/"RVMI"
     {
         ND_INS_VPINSRB, ND_CAT_AVX512, ND_SET_AVX512BW, 1251, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32821,7 +32881,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2081 Instruction:"VPINSRB Vdq,Hdq,Mb,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x20 /r:mem ib"/"RVMI"
+    // Pos:2085 Instruction:"VPINSRB Vdq,Hdq,Mb,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x20 /r:mem ib"/"RVMI"
     {
         ND_INS_VPINSRB, ND_CAT_AVX, ND_SET_AVX, 1251, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32838,7 +32898,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2082 Instruction:"VPINSRB Vdq,Hdq,Rd,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x20 /r:reg ib"/"RVMI"
+    // Pos:2086 Instruction:"VPINSRB Vdq,Hdq,Rd,Ib" Encoding:"vex m:3 p:1 l:0 w:i 0x20 /r:reg ib"/"RVMI"
     {
         ND_INS_VPINSRB, ND_CAT_AVX, ND_SET_AVX, 1251, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32855,7 +32915,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2083 Instruction:"VPINSRD Vdq,Hdq,Ed,Ib" Encoding:"evex m:3 p:1 l:0 w:0 0x22 /r ib"/"RVMI"
+    // Pos:2087 Instruction:"VPINSRD Vdq,Hdq,Ed,Ib" Encoding:"evex m:3 p:1 l:0 w:0 0x22 /r ib"/"RVMI"
     {
         ND_INS_VPINSRD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1252, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32872,7 +32932,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2084 Instruction:"VPINSRD Vdq,Hdq,Ey,Ib" Encoding:"vex m:3 p:1 l:0 w:0 0x22 /r ib"/"RVMI"
+    // Pos:2088 Instruction:"VPINSRD Vdq,Hdq,Ey,Ib" Encoding:"vex m:3 p:1 l:0 w:0 0x22 /r ib"/"RVMI"
     {
         ND_INS_VPINSRD, ND_CAT_AVX, ND_SET_AVX, 1252, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32889,7 +32949,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2085 Instruction:"VPINSRQ Vdq,Hdq,Eq,Ib" Encoding:"evex m:3 p:1 l:0 w:1 0x22 /r ib"/"RVMI"
+    // Pos:2089 Instruction:"VPINSRQ Vdq,Hdq,Eq,Ib" Encoding:"evex m:3 p:1 l:0 w:1 0x22 /r ib"/"RVMI"
     {
         ND_INS_VPINSRQ, ND_CAT_AVX512, ND_SET_AVX512DQ, 1253, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32906,7 +32966,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2086 Instruction:"VPINSRQ Vdq,Hdq,Ey,Ib" Encoding:"vex m:3 p:1 l:0 w:1 0x22 /r ib"/"RVMI"
+    // Pos:2090 Instruction:"VPINSRQ Vdq,Hdq,Ey,Ib" Encoding:"vex m:3 p:1 l:0 w:1 0x22 /r ib"/"RVMI"
     {
         ND_INS_VPINSRQ, ND_CAT_AVX, ND_SET_AVX, 1253, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32923,7 +32983,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2087 Instruction:"VPINSRW Vdq,Hdq,Mw,Ib" Encoding:"evex m:1 p:1 l:0 w:i 0xC4 /r:mem ib"/"RVMI"
+    // Pos:2091 Instruction:"VPINSRW Vdq,Hdq,Mw,Ib" Encoding:"evex m:1 p:1 l:0 w:i 0xC4 /r:mem ib"/"RVMI"
     {
         ND_INS_VPINSRW, ND_CAT_AVX512, ND_SET_AVX512BW, 1254, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32940,7 +33000,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2088 Instruction:"VPINSRW Vdq,Hdq,Rv,Ib" Encoding:"evex m:1 p:1 l:0 w:i 0xC4 /r:reg ib"/"RVMI"
+    // Pos:2092 Instruction:"VPINSRW Vdq,Hdq,Rv,Ib" Encoding:"evex m:1 p:1 l:0 w:i 0xC4 /r:reg ib"/"RVMI"
     {
         ND_INS_VPINSRW, ND_CAT_AVX512, ND_SET_AVX512BW, 1254, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32957,7 +33017,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2089 Instruction:"VPINSRW Vdq,Hdq,Mw,Ib" Encoding:"vex m:1 p:1 l:0 w:i 0xC4 /r:mem ib"/"RVMI"
+    // Pos:2093 Instruction:"VPINSRW Vdq,Hdq,Mw,Ib" Encoding:"vex m:1 p:1 l:0 w:i 0xC4 /r:mem ib"/"RVMI"
     {
         ND_INS_VPINSRW, ND_CAT_AVX, ND_SET_AVX, 1254, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32974,7 +33034,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2090 Instruction:"VPINSRW Vdq,Hdq,Rd,Ib" Encoding:"vex m:1 p:1 l:0 w:i 0xC4 /r:reg ib"/"RVMI"
+    // Pos:2094 Instruction:"VPINSRW Vdq,Hdq,Rd,Ib" Encoding:"vex m:1 p:1 l:0 w:i 0xC4 /r:reg ib"/"RVMI"
     {
         ND_INS_VPINSRW, ND_CAT_AVX, ND_SET_AVX, 1254, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -32991,7 +33051,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2091 Instruction:"VPLZCNTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x44 /r"/"RAM"
+    // Pos:2095 Instruction:"VPLZCNTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x44 /r"/"RAM"
     {
         ND_INS_VPLZCNTD, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1255, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33007,7 +33067,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2092 Instruction:"VPLZCNTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x44 /r"/"RAM"
+    // Pos:2096 Instruction:"VPLZCNTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x44 /r"/"RAM"
     {
         ND_INS_VPLZCNTQ, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1256, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33023,7 +33083,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2093 Instruction:"VPMACSDD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x9E /r is4"/"RVML"
+    // Pos:2097 Instruction:"VPMACSDD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x9E /r is4"/"RVML"
     {
         ND_INS_VPMACSDD, ND_CAT_XOP, ND_SET_XOP, 1257, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33040,7 +33100,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2094 Instruction:"VPMACSDQH Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x9F /r is4"/"RVML"
+    // Pos:2098 Instruction:"VPMACSDQH Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x9F /r is4"/"RVML"
     {
         ND_INS_VPMACSDQH, ND_CAT_XOP, ND_SET_XOP, 1258, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33057,7 +33117,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2095 Instruction:"VPMACSDQL Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x97 /r is4"/"RVML"
+    // Pos:2099 Instruction:"VPMACSDQL Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x97 /r is4"/"RVML"
     {
         ND_INS_VPMACSDQL, ND_CAT_XOP, ND_SET_XOP, 1259, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33074,7 +33134,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2096 Instruction:"VPMACSSDD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x8E /r is4"/"RVML"
+    // Pos:2100 Instruction:"VPMACSSDD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x8E /r is4"/"RVML"
     {
         ND_INS_VPMACSSDD, ND_CAT_XOP, ND_SET_XOP, 1260, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33091,7 +33151,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2097 Instruction:"VPMACSSDQH Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x8F /r is4"/"RVML"
+    // Pos:2101 Instruction:"VPMACSSDQH Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x8F /r is4"/"RVML"
     {
         ND_INS_VPMACSSDQH, ND_CAT_XOP, ND_SET_XOP, 1261, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33108,7 +33168,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2098 Instruction:"VPMACSSDQL Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x87 /r is4"/"RVML"
+    // Pos:2102 Instruction:"VPMACSSDQL Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x87 /r is4"/"RVML"
     {
         ND_INS_VPMACSSDQL, ND_CAT_XOP, ND_SET_XOP, 1262, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33125,7 +33185,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2099 Instruction:"VPMACSSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x86 /r is4"/"RVML"
+    // Pos:2103 Instruction:"VPMACSSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x86 /r is4"/"RVML"
     {
         ND_INS_VPMACSSWD, ND_CAT_XOP, ND_SET_XOP, 1263, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33142,7 +33202,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2100 Instruction:"VPMACSSWW Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x85 /r is4"/"RVML"
+    // Pos:2104 Instruction:"VPMACSSWW Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x85 /r is4"/"RVML"
     {
         ND_INS_VPMACSSWW, ND_CAT_XOP, ND_SET_XOP, 1264, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33159,7 +33219,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2101 Instruction:"VPMACSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x96 /r is4"/"RVML"
+    // Pos:2105 Instruction:"VPMACSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x96 /r is4"/"RVML"
     {
         ND_INS_VPMACSWD, ND_CAT_XOP, ND_SET_XOP, 1265, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33176,7 +33236,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2102 Instruction:"VPMACSWW Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x95 /r is4"/"RVML"
+    // Pos:2106 Instruction:"VPMACSWW Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0x95 /r is4"/"RVML"
     {
         ND_INS_VPMACSWW, ND_CAT_XOP, ND_SET_XOP, 1266, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33193,7 +33253,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2103 Instruction:"VPMADCSSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0xA6 /r is4"/"RVML"
+    // Pos:2107 Instruction:"VPMADCSSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0xA6 /r is4"/"RVML"
     {
         ND_INS_VPMADCSSWD, ND_CAT_XOP, ND_SET_XOP, 1267, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33210,7 +33270,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2104 Instruction:"VPMADCSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0xB6 /r is4"/"RVML"
+    // Pos:2108 Instruction:"VPMADCSWD Vdq,Hdq,Wdq,Ldq" Encoding:"xop m:8 0xB6 /r is4"/"RVML"
     {
         ND_INS_VPMADCSWD, ND_CAT_XOP, ND_SET_XOP, 1268, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33227,7 +33287,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2105 Instruction:"VPMADD52HUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB5 /r"/"RAVM"
+    // Pos:2109 Instruction:"VPMADD52HUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB5 /r"/"RAVM"
     {
         ND_INS_VPMADD52HUQ, ND_CAT_IFMA, ND_SET_AVX512IFMA, 1269, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33244,7 +33304,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2106 Instruction:"VPMADD52LUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB4 /r"/"RAVM"
+    // Pos:2110 Instruction:"VPMADD52LUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB4 /r"/"RAVM"
     {
         ND_INS_VPMADD52LUQ, ND_CAT_IFMA, ND_SET_AVX512IFMA, 1270, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33261,7 +33321,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2107 Instruction:"VPMADDUBSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x04 /r"/"RAVM"
+    // Pos:2111 Instruction:"VPMADDUBSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x04 /r"/"RAVM"
     {
         ND_INS_VPMADDUBSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1271, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33278,7 +33338,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2108 Instruction:"VPMADDUBSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x04 /r"/"RVM"
+    // Pos:2112 Instruction:"VPMADDUBSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x04 /r"/"RVM"
     {
         ND_INS_VPMADDUBSW, ND_CAT_AVX, ND_SET_AVX, 1271, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33294,7 +33354,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2109 Instruction:"VPMADDWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF5 /r"/"RAVM"
+    // Pos:2113 Instruction:"VPMADDWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF5 /r"/"RAVM"
     {
         ND_INS_VPMADDWD, ND_CAT_AVX512, ND_SET_AVX512BW, 1272, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33311,7 +33371,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2110 Instruction:"VPMADDWD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF5 /r"/"RVM"
+    // Pos:2114 Instruction:"VPMADDWD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF5 /r"/"RVM"
     {
         ND_INS_VPMADDWD, ND_CAT_AVX, ND_SET_AVX, 1272, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33327,7 +33387,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2111 Instruction:"VPMASKMOVD Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:0 0x8C /r:mem"/"RVM"
+    // Pos:2115 Instruction:"VPMASKMOVD Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:0 0x8C /r:mem"/"RVM"
     {
         ND_INS_VPMASKMOVD, ND_CAT_AVX2, ND_SET_AVX2, 1273, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33343,7 +33403,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2112 Instruction:"VPMASKMOVD Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:0 0x8E /r:mem"/"MVR"
+    // Pos:2116 Instruction:"VPMASKMOVD Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:0 0x8E /r:mem"/"MVR"
     {
         ND_INS_VPMASKMOVD, ND_CAT_AVX2, ND_SET_AVX2, 1273, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33359,7 +33419,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2113 Instruction:"VPMASKMOVQ Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:1 0x8C /r:mem"/"RVM"
+    // Pos:2117 Instruction:"VPMASKMOVQ Vx,Hx,Mx" Encoding:"vex m:2 p:1 l:x w:1 0x8C /r:mem"/"RVM"
     {
         ND_INS_VPMASKMOVQ, ND_CAT_AVX2, ND_SET_AVX2, 1274, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33375,7 +33435,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2114 Instruction:"VPMASKMOVQ Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:1 0x8E /r:mem"/"MVR"
+    // Pos:2118 Instruction:"VPMASKMOVQ Mx,Hx,Vx" Encoding:"vex m:2 p:1 l:x w:1 0x8E /r:mem"/"MVR"
     {
         ND_INS_VPMASKMOVQ, ND_CAT_AVX2, ND_SET_AVX2, 1274, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33391,7 +33451,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2115 Instruction:"VPMAXSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3C /r"/"RAVM"
+    // Pos:2119 Instruction:"VPMAXSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3C /r"/"RAVM"
     {
         ND_INS_VPMAXSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1275, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33408,7 +33468,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2116 Instruction:"VPMAXSB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3C /r"/"RVM"
+    // Pos:2120 Instruction:"VPMAXSB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3C /r"/"RVM"
     {
         ND_INS_VPMAXSB, ND_CAT_AVX, ND_SET_AVX, 1275, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33424,7 +33484,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2117 Instruction:"VPMAXSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3D /r"/"RAVM"
+    // Pos:2121 Instruction:"VPMAXSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3D /r"/"RAVM"
     {
         ND_INS_VPMAXSD, ND_CAT_AVX512, ND_SET_AVX512F, 1276, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33441,7 +33501,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2118 Instruction:"VPMAXSD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3D /r"/"RVM"
+    // Pos:2122 Instruction:"VPMAXSD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3D /r"/"RVM"
     {
         ND_INS_VPMAXSD, ND_CAT_AVX, ND_SET_AVX, 1276, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33457,7 +33517,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2119 Instruction:"VPMAXSQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3D /r"/"RAVM"
+    // Pos:2123 Instruction:"VPMAXSQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3D /r"/"RAVM"
     {
         ND_INS_VPMAXSQ, ND_CAT_AVX512, ND_SET_AVX512F, 1277, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33474,7 +33534,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2120 Instruction:"VPMAXSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEE /r"/"RAVM"
+    // Pos:2124 Instruction:"VPMAXSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEE /r"/"RAVM"
     {
         ND_INS_VPMAXSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1278, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33491,7 +33551,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2121 Instruction:"VPMAXSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEE /r"/"RVM"
+    // Pos:2125 Instruction:"VPMAXSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEE /r"/"RVM"
     {
         ND_INS_VPMAXSW, ND_CAT_AVX, ND_SET_AVX, 1278, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33507,7 +33567,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2122 Instruction:"VPMAXUB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDE /r"/"RAVM"
+    // Pos:2126 Instruction:"VPMAXUB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDE /r"/"RAVM"
     {
         ND_INS_VPMAXUB, ND_CAT_AVX512, ND_SET_AVX512BW, 1279, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33524,7 +33584,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2123 Instruction:"VPMAXUB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDE /r"/"RVM"
+    // Pos:2127 Instruction:"VPMAXUB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDE /r"/"RVM"
     {
         ND_INS_VPMAXUB, ND_CAT_AVX, ND_SET_AVX, 1279, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33540,7 +33600,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2124 Instruction:"VPMAXUD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3F /r"/"RAVM"
+    // Pos:2128 Instruction:"VPMAXUD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3F /r"/"RAVM"
     {
         ND_INS_VPMAXUD, ND_CAT_AVX512, ND_SET_AVX512F, 1280, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33557,7 +33617,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2125 Instruction:"VPMAXUD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3F /r"/"RVM"
+    // Pos:2129 Instruction:"VPMAXUD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3F /r"/"RVM"
     {
         ND_INS_VPMAXUD, ND_CAT_AVX, ND_SET_AVX, 1280, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33573,7 +33633,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2126 Instruction:"VPMAXUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3F /r"/"RAVM"
+    // Pos:2130 Instruction:"VPMAXUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3F /r"/"RAVM"
     {
         ND_INS_VPMAXUQ, ND_CAT_AVX512, ND_SET_AVX512F, 1281, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33590,7 +33650,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2127 Instruction:"VPMAXUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3E /r"/"RAVM"
+    // Pos:2131 Instruction:"VPMAXUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3E /r"/"RAVM"
     {
         ND_INS_VPMAXUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1282, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33607,7 +33667,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2128 Instruction:"VPMAXUW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3E /r"/"RVM"
+    // Pos:2132 Instruction:"VPMAXUW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3E /r"/"RVM"
     {
         ND_INS_VPMAXUW, ND_CAT_AVX, ND_SET_AVX, 1282, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33623,7 +33683,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2129 Instruction:"VPMINSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x38 /r"/"RAVM"
+    // Pos:2133 Instruction:"VPMINSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x38 /r"/"RAVM"
     {
         ND_INS_VPMINSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1283, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33640,7 +33700,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2130 Instruction:"VPMINSB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x38 /r"/"RVM"
+    // Pos:2134 Instruction:"VPMINSB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x38 /r"/"RVM"
     {
         ND_INS_VPMINSB, ND_CAT_AVX, ND_SET_AVX, 1283, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33656,7 +33716,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2131 Instruction:"VPMINSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x39 /r"/"RAVM"
+    // Pos:2135 Instruction:"VPMINSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x39 /r"/"RAVM"
     {
         ND_INS_VPMINSD, ND_CAT_AVX512, ND_SET_AVX512F, 1284, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33673,7 +33733,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2132 Instruction:"VPMINSD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x39 /r"/"RVM"
+    // Pos:2136 Instruction:"VPMINSD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x39 /r"/"RVM"
     {
         ND_INS_VPMINSD, ND_CAT_AVX, ND_SET_AVX, 1284, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33689,7 +33749,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2133 Instruction:"VPMINSQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x39 /r"/"RAVM"
+    // Pos:2137 Instruction:"VPMINSQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x39 /r"/"RAVM"
     {
         ND_INS_VPMINSQ, ND_CAT_AVX512, ND_SET_AVX512F, 1285, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33706,7 +33766,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2134 Instruction:"VPMINSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEA /r"/"RAVM"
+    // Pos:2138 Instruction:"VPMINSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEA /r"/"RAVM"
     {
         ND_INS_VPMINSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1286, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33723,7 +33783,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2135 Instruction:"VPMINSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEA /r"/"RVM"
+    // Pos:2139 Instruction:"VPMINSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEA /r"/"RVM"
     {
         ND_INS_VPMINSW, ND_CAT_AVX, ND_SET_AVX, 1286, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33739,7 +33799,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2136 Instruction:"VPMINUB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDA /r"/"RAVM"
+    // Pos:2140 Instruction:"VPMINUB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDA /r"/"RAVM"
     {
         ND_INS_VPMINUB, ND_CAT_AVX512, ND_SET_AVX512BW, 1287, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33756,7 +33816,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2137 Instruction:"VPMINUB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDA /r"/"RVM"
+    // Pos:2141 Instruction:"VPMINUB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xDA /r"/"RVM"
     {
         ND_INS_VPMINUB, ND_CAT_AVX, ND_SET_AVX, 1287, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33772,7 +33832,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2138 Instruction:"VPMINUD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3B /r"/"RAVM"
+    // Pos:2142 Instruction:"VPMINUD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3B /r"/"RAVM"
     {
         ND_INS_VPMINUD, ND_CAT_AVX512, ND_SET_AVX512F, 1288, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33789,7 +33849,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2139 Instruction:"VPMINUD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3B /r"/"RVM"
+    // Pos:2143 Instruction:"VPMINUD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3B /r"/"RVM"
     {
         ND_INS_VPMINUD, ND_CAT_AVX, ND_SET_AVX, 1288, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33805,7 +33865,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2140 Instruction:"VPMINUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3B /r"/"RAVM"
+    // Pos:2144 Instruction:"VPMINUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3B /r"/"RAVM"
     {
         ND_INS_VPMINUQ, ND_CAT_AVX512, ND_SET_AVX512F, 1289, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33822,7 +33882,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2141 Instruction:"VPMINUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3A /r"/"RAVM"
+    // Pos:2145 Instruction:"VPMINUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3A /r"/"RAVM"
     {
         ND_INS_VPMINUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1290, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33839,7 +33899,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2142 Instruction:"VPMINUW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3A /r"/"RVM"
+    // Pos:2146 Instruction:"VPMINUW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x3A /r"/"RVM"
     {
         ND_INS_VPMINUW, ND_CAT_AVX, ND_SET_AVX, 1290, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33855,7 +33915,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2143 Instruction:"VPMOVB2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:0 0x29 /r:reg"/"RM"
+    // Pos:2147 Instruction:"VPMOVB2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:0 0x29 /r:reg"/"RM"
     {
         ND_INS_VPMOVB2M, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1291, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33870,7 +33930,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2144 Instruction:"VPMOVD2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:0 0x39 /r:reg"/"RM"
+    // Pos:2148 Instruction:"VPMOVD2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:0 0x39 /r:reg"/"RM"
     {
         ND_INS_VPMOVD2M, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1292, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33885,7 +33945,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2145 Instruction:"VPMOVDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x31 /r"/"MAR"
+    // Pos:2149 Instruction:"VPMOVDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x31 /r"/"MAR"
     {
         ND_INS_VPMOVDB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1293, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33901,7 +33961,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2146 Instruction:"VPMOVDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x33 /r"/"MAR"
+    // Pos:2150 Instruction:"VPMOVDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x33 /r"/"MAR"
     {
         ND_INS_VPMOVDW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1294, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33917,7 +33977,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2147 Instruction:"VPMOVM2B Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x28 /r:reg"/"RM"
+    // Pos:2151 Instruction:"VPMOVM2B Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x28 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2B, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1295, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33932,7 +33992,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2148 Instruction:"VPMOVM2D Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x38 /r:reg"/"RM"
+    // Pos:2152 Instruction:"VPMOVM2D Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x38 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2D, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1296, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33947,7 +34007,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2149 Instruction:"VPMOVM2Q Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x38 /r:reg"/"RM"
+    // Pos:2153 Instruction:"VPMOVM2Q Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x38 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2Q, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1297, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33962,7 +34022,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2150 Instruction:"VPMOVM2W Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x28 /r:reg"/"RM"
+    // Pos:2154 Instruction:"VPMOVM2W Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x28 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2W, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1298, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33977,7 +34037,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2151 Instruction:"VPMOVMSKB Gy,Ux" Encoding:"vex m:1 p:1 l:x w:i 0xD7 /r:reg"/"RM"
+    // Pos:2155 Instruction:"VPMOVMSKB Gy,Ux" Encoding:"vex m:1 p:1 l:x w:i 0xD7 /r:reg"/"RM"
     {
         ND_INS_VPMOVMSKB, ND_CAT_DATAXFER, ND_SET_AVX, 1299, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -33992,7 +34052,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2152 Instruction:"VPMOVQ2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:1 0x39 /r:reg"/"RM"
+    // Pos:2156 Instruction:"VPMOVQ2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:1 0x39 /r:reg"/"RM"
     {
         ND_INS_VPMOVQ2M, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1300, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34007,7 +34067,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2153 Instruction:"VPMOVQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x32 /r"/"MAR"
+    // Pos:2157 Instruction:"VPMOVQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x32 /r"/"MAR"
     {
         ND_INS_VPMOVQB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1301, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34023,7 +34083,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2154 Instruction:"VPMOVQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x35 /r"/"MAR"
+    // Pos:2158 Instruction:"VPMOVQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x35 /r"/"MAR"
     {
         ND_INS_VPMOVQD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1302, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34039,7 +34099,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2155 Instruction:"VPMOVQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x34 /r"/"MAR"
+    // Pos:2159 Instruction:"VPMOVQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x34 /r"/"MAR"
     {
         ND_INS_VPMOVQW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1303, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34055,7 +34115,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2156 Instruction:"VPMOVSDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x21 /r"/"MAR"
+    // Pos:2160 Instruction:"VPMOVSDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x21 /r"/"MAR"
     {
         ND_INS_VPMOVSDB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1304, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34071,7 +34131,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2157 Instruction:"VPMOVSDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x23 /r"/"MAR"
+    // Pos:2161 Instruction:"VPMOVSDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x23 /r"/"MAR"
     {
         ND_INS_VPMOVSDW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1305, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34087,7 +34147,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2158 Instruction:"VPMOVSQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x22 /r"/"MAR"
+    // Pos:2162 Instruction:"VPMOVSQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x22 /r"/"MAR"
     {
         ND_INS_VPMOVSQB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1306, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34103,7 +34163,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2159 Instruction:"VPMOVSQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x25 /r"/"MAR"
+    // Pos:2163 Instruction:"VPMOVSQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x25 /r"/"MAR"
     {
         ND_INS_VPMOVSQD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1307, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34119,7 +34179,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2160 Instruction:"VPMOVSQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x24 /r"/"MAR"
+    // Pos:2164 Instruction:"VPMOVSQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x24 /r"/"MAR"
     {
         ND_INS_VPMOVSQW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1308, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34135,7 +34195,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2161 Instruction:"VPMOVSWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x20 /r"/"MAR"
+    // Pos:2165 Instruction:"VPMOVSWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x20 /r"/"MAR"
     {
         ND_INS_VPMOVSWB, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1309, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34151,7 +34211,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2162 Instruction:"VPMOVSXBD Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x21 /r"/"RAM"
+    // Pos:2166 Instruction:"VPMOVSXBD Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x21 /r"/"RAM"
     {
         ND_INS_VPMOVSXBD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1310, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34167,7 +34227,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2163 Instruction:"VPMOVSXBD Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x21 /r"/"RM"
+    // Pos:2167 Instruction:"VPMOVSXBD Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x21 /r"/"RM"
     {
         ND_INS_VPMOVSXBD, ND_CAT_AVX, ND_SET_AVX, 1310, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34182,7 +34242,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2164 Instruction:"VPMOVSXBD Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x21 /r"/"RM"
+    // Pos:2168 Instruction:"VPMOVSXBD Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x21 /r"/"RM"
     {
         ND_INS_VPMOVSXBD, ND_CAT_AVX2, ND_SET_AVX2, 1310, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34197,7 +34257,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2165 Instruction:"VPMOVSXBQ Vn{K}{z},aKq,We" Encoding:"evex m:2 p:1 l:x w:i 0x22 /r"/"RAM"
+    // Pos:2169 Instruction:"VPMOVSXBQ Vn{K}{z},aKq,We" Encoding:"evex m:2 p:1 l:x w:i 0x22 /r"/"RAM"
     {
         ND_INS_VPMOVSXBQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1311, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34213,7 +34273,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2166 Instruction:"VPMOVSXBQ Vdq,Ww" Encoding:"vex m:2 p:1 l:0 w:i 0x22 /r"/"RM"
+    // Pos:2170 Instruction:"VPMOVSXBQ Vdq,Ww" Encoding:"vex m:2 p:1 l:0 w:i 0x22 /r"/"RM"
     {
         ND_INS_VPMOVSXBQ, ND_CAT_AVX, ND_SET_AVX, 1311, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34228,7 +34288,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2167 Instruction:"VPMOVSXBQ Vqq,Wd" Encoding:"vex m:2 p:1 l:1 w:i 0x22 /r"/"RM"
+    // Pos:2171 Instruction:"VPMOVSXBQ Vqq,Wd" Encoding:"vex m:2 p:1 l:1 w:i 0x22 /r"/"RM"
     {
         ND_INS_VPMOVSXBQ, ND_CAT_AVX2, ND_SET_AVX2, 1311, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34243,7 +34303,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2168 Instruction:"VPMOVSXBW Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x20 /r"/"RAM"
+    // Pos:2172 Instruction:"VPMOVSXBW Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x20 /r"/"RAM"
     {
         ND_INS_VPMOVSXBW, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1312, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34259,7 +34319,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2169 Instruction:"VPMOVSXBW Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x20 /r"/"RM"
+    // Pos:2173 Instruction:"VPMOVSXBW Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x20 /r"/"RM"
     {
         ND_INS_VPMOVSXBW, ND_CAT_AVX, ND_SET_AVX, 1312, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34274,7 +34334,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2170 Instruction:"VPMOVSXBW Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x20 /r"/"RM"
+    // Pos:2174 Instruction:"VPMOVSXBW Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x20 /r"/"RM"
     {
         ND_INS_VPMOVSXBW, ND_CAT_AVX2, ND_SET_AVX2, 1312, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34289,7 +34349,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2171 Instruction:"VPMOVSXDQ Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:0 0x25 /r"/"RAM"
+    // Pos:2175 Instruction:"VPMOVSXDQ Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:0 0x25 /r"/"RAM"
     {
         ND_INS_VPMOVSXDQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1313, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34305,7 +34365,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2172 Instruction:"VPMOVSXDQ Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x25 /r"/"RM"
+    // Pos:2176 Instruction:"VPMOVSXDQ Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x25 /r"/"RM"
     {
         ND_INS_VPMOVSXDQ, ND_CAT_AVX, ND_SET_AVX, 1313, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34320,7 +34380,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2173 Instruction:"VPMOVSXDQ Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x25 /r"/"RM"
+    // Pos:2177 Instruction:"VPMOVSXDQ Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x25 /r"/"RM"
     {
         ND_INS_VPMOVSXDQ, ND_CAT_AVX2, ND_SET_AVX2, 1313, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34335,7 +34395,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2174 Instruction:"VPMOVSXWD Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x23 /r"/"RAM"
+    // Pos:2178 Instruction:"VPMOVSXWD Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x23 /r"/"RAM"
     {
         ND_INS_VPMOVSXWD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1314, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34351,7 +34411,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2175 Instruction:"VPMOVSXWD Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x23 /r"/"RM"
+    // Pos:2179 Instruction:"VPMOVSXWD Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x23 /r"/"RM"
     {
         ND_INS_VPMOVSXWD, ND_CAT_AVX, ND_SET_AVX, 1314, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34366,7 +34426,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2176 Instruction:"VPMOVSXWD Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x23 /r"/"RM"
+    // Pos:2180 Instruction:"VPMOVSXWD Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x23 /r"/"RM"
     {
         ND_INS_VPMOVSXWD, ND_CAT_AVX2, ND_SET_AVX2, 1314, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34381,7 +34441,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2177 Instruction:"VPMOVSXWQ Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x24 /r"/"RAM"
+    // Pos:2181 Instruction:"VPMOVSXWQ Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x24 /r"/"RAM"
     {
         ND_INS_VPMOVSXWQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1315, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34397,7 +34457,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2178 Instruction:"VPMOVSXWQ Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x24 /r"/"RM"
+    // Pos:2182 Instruction:"VPMOVSXWQ Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x24 /r"/"RM"
     {
         ND_INS_VPMOVSXWQ, ND_CAT_AVX, ND_SET_AVX, 1315, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34412,7 +34472,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2179 Instruction:"VPMOVSXWQ Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x24 /r"/"RM"
+    // Pos:2183 Instruction:"VPMOVSXWQ Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x24 /r"/"RM"
     {
         ND_INS_VPMOVSXWQ, ND_CAT_AVX2, ND_SET_AVX2, 1315, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34427,7 +34487,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2180 Instruction:"VPMOVUSDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x11 /r"/"MAR"
+    // Pos:2184 Instruction:"VPMOVUSDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x11 /r"/"MAR"
     {
         ND_INS_VPMOVUSDB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1316, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34443,7 +34503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2181 Instruction:"VPMOVUSDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x13 /r"/"MAR"
+    // Pos:2185 Instruction:"VPMOVUSDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x13 /r"/"MAR"
     {
         ND_INS_VPMOVUSDW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1317, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34459,7 +34519,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2182 Instruction:"VPMOVUSQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x12 /r"/"MAR"
+    // Pos:2186 Instruction:"VPMOVUSQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x12 /r"/"MAR"
     {
         ND_INS_VPMOVUSQB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1318, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34475,7 +34535,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2183 Instruction:"VPMOVUSQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x15 /r"/"MAR"
+    // Pos:2187 Instruction:"VPMOVUSQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x15 /r"/"MAR"
     {
         ND_INS_VPMOVUSQD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1319, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34491,7 +34551,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2184 Instruction:"VPMOVUSQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x14 /r"/"MAR"
+    // Pos:2188 Instruction:"VPMOVUSQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x14 /r"/"MAR"
     {
         ND_INS_VPMOVUSQW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1320, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34507,7 +34567,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2185 Instruction:"VPMOVUSWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x10 /r"/"MAR"
+    // Pos:2189 Instruction:"VPMOVUSWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x10 /r"/"MAR"
     {
         ND_INS_VPMOVUSWB, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1321, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34523,7 +34583,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2186 Instruction:"VPMOVW2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:1 0x29 /r:reg"/"RM"
+    // Pos:2190 Instruction:"VPMOVW2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:1 0x29 /r:reg"/"RM"
     {
         ND_INS_VPMOVW2M, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1322, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34538,7 +34598,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2187 Instruction:"VPMOVWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x30 /r"/"MAR"
+    // Pos:2191 Instruction:"VPMOVWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x30 /r"/"MAR"
     {
         ND_INS_VPMOVWB, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1323, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34554,7 +34614,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2188 Instruction:"VPMOVZXBD Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x31 /r"/"RAM"
+    // Pos:2192 Instruction:"VPMOVZXBD Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x31 /r"/"RAM"
     {
         ND_INS_VPMOVZXBD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1324, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34570,7 +34630,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2189 Instruction:"VPMOVZXBD Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x31 /r"/"RM"
+    // Pos:2193 Instruction:"VPMOVZXBD Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x31 /r"/"RM"
     {
         ND_INS_VPMOVZXBD, ND_CAT_AVX, ND_SET_AVX, 1324, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34585,7 +34645,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2190 Instruction:"VPMOVZXBD Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x31 /r"/"RM"
+    // Pos:2194 Instruction:"VPMOVZXBD Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x31 /r"/"RM"
     {
         ND_INS_VPMOVZXBD, ND_CAT_AVX2, ND_SET_AVX2, 1324, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34600,7 +34660,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2191 Instruction:"VPMOVZXBQ Vn{K}{z},aKq,We" Encoding:"evex m:2 p:1 l:x w:i 0x32 /r"/"RAM"
+    // Pos:2195 Instruction:"VPMOVZXBQ Vn{K}{z},aKq,We" Encoding:"evex m:2 p:1 l:x w:i 0x32 /r"/"RAM"
     {
         ND_INS_VPMOVZXBQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1325, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34616,7 +34676,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2192 Instruction:"VPMOVZXBQ Vdq,Ww" Encoding:"vex m:2 p:1 l:0 w:i 0x32 /r"/"RM"
+    // Pos:2196 Instruction:"VPMOVZXBQ Vdq,Ww" Encoding:"vex m:2 p:1 l:0 w:i 0x32 /r"/"RM"
     {
         ND_INS_VPMOVZXBQ, ND_CAT_AVX, ND_SET_AVX, 1325, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34631,7 +34691,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2193 Instruction:"VPMOVZXBQ Vqq,Wd" Encoding:"vex m:2 p:1 l:1 w:i 0x32 /r"/"RM"
+    // Pos:2197 Instruction:"VPMOVZXBQ Vqq,Wd" Encoding:"vex m:2 p:1 l:1 w:i 0x32 /r"/"RM"
     {
         ND_INS_VPMOVZXBQ, ND_CAT_AVX2, ND_SET_AVX2, 1325, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34646,7 +34706,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2194 Instruction:"VPMOVZXBW Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x30 /r"/"RAM"
+    // Pos:2198 Instruction:"VPMOVZXBW Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x30 /r"/"RAM"
     {
         ND_INS_VPMOVZXBW, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1326, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34662,7 +34722,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2195 Instruction:"VPMOVZXBW Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x30 /r"/"RM"
+    // Pos:2199 Instruction:"VPMOVZXBW Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x30 /r"/"RM"
     {
         ND_INS_VPMOVZXBW, ND_CAT_AVX, ND_SET_AVX, 1326, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34677,7 +34737,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2196 Instruction:"VPMOVZXBW Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x30 /r"/"RM"
+    // Pos:2200 Instruction:"VPMOVZXBW Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x30 /r"/"RM"
     {
         ND_INS_VPMOVZXBW, ND_CAT_AVX2, ND_SET_AVX2, 1326, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34692,7 +34752,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2197 Instruction:"VPMOVZXDQ Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:0 0x35 /r"/"RAM"
+    // Pos:2201 Instruction:"VPMOVZXDQ Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:0 0x35 /r"/"RAM"
     {
         ND_INS_VPMOVZXDQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1327, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34708,7 +34768,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2198 Instruction:"VPMOVZXDQ Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x35 /r"/"RM"
+    // Pos:2202 Instruction:"VPMOVZXDQ Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x35 /r"/"RM"
     {
         ND_INS_VPMOVZXDQ, ND_CAT_AVX, ND_SET_AVX, 1327, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34723,7 +34783,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2199 Instruction:"VPMOVZXDQ Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x35 /r"/"RM"
+    // Pos:2203 Instruction:"VPMOVZXDQ Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x35 /r"/"RM"
     {
         ND_INS_VPMOVZXDQ, ND_CAT_AVX2, ND_SET_AVX2, 1327, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34738,7 +34798,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2200 Instruction:"VPMOVZXWD Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x33 /r"/"RAM"
+    // Pos:2204 Instruction:"VPMOVZXWD Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x33 /r"/"RAM"
     {
         ND_INS_VPMOVZXWD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1328, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34754,7 +34814,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2201 Instruction:"VPMOVZXWD Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x33 /r"/"RM"
+    // Pos:2205 Instruction:"VPMOVZXWD Vdq,Wq" Encoding:"vex m:2 p:1 l:0 w:i 0x33 /r"/"RM"
     {
         ND_INS_VPMOVZXWD, ND_CAT_AVX, ND_SET_AVX, 1328, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34769,7 +34829,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2202 Instruction:"VPMOVZXWD Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x33 /r"/"RM"
+    // Pos:2206 Instruction:"VPMOVZXWD Vqq,Wdq" Encoding:"vex m:2 p:1 l:1 w:i 0x33 /r"/"RM"
     {
         ND_INS_VPMOVZXWD, ND_CAT_AVX2, ND_SET_AVX2, 1328, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34784,7 +34844,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2203 Instruction:"VPMOVZXWQ Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x34 /r"/"RAM"
+    // Pos:2207 Instruction:"VPMOVZXWQ Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x34 /r"/"RAM"
     {
         ND_INS_VPMOVZXWQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1329, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34800,7 +34860,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2204 Instruction:"VPMOVZXWQ Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x34 /r"/"RM"
+    // Pos:2208 Instruction:"VPMOVZXWQ Vdq,Wd" Encoding:"vex m:2 p:1 l:0 w:i 0x34 /r"/"RM"
     {
         ND_INS_VPMOVZXWQ, ND_CAT_AVX, ND_SET_AVX, 1329, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34815,7 +34875,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2205 Instruction:"VPMOVZXWQ Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x34 /r"/"RM"
+    // Pos:2209 Instruction:"VPMOVZXWQ Vqq,Wq" Encoding:"vex m:2 p:1 l:1 w:i 0x34 /r"/"RM"
     {
         ND_INS_VPMOVZXWQ, ND_CAT_AVX2, ND_SET_AVX2, 1329, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34830,7 +34890,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2206 Instruction:"VPMULDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x28 /r"/"RAVM"
+    // Pos:2210 Instruction:"VPMULDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x28 /r"/"RAVM"
     {
         ND_INS_VPMULDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1330, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34847,7 +34907,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2207 Instruction:"VPMULDQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x28 /r"/"RVM"
+    // Pos:2211 Instruction:"VPMULDQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x28 /r"/"RVM"
     {
         ND_INS_VPMULDQ, ND_CAT_AVX, ND_SET_AVX, 1330, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34863,7 +34923,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2208 Instruction:"VPMULHRSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x0B /r"/"RAVM"
+    // Pos:2212 Instruction:"VPMULHRSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x0B /r"/"RAVM"
     {
         ND_INS_VPMULHRSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1331, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34880,7 +34940,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2209 Instruction:"VPMULHRSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x0B /r"/"RVM"
+    // Pos:2213 Instruction:"VPMULHRSW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x0B /r"/"RVM"
     {
         ND_INS_VPMULHRSW, ND_CAT_AVX, ND_SET_AVX, 1331, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34896,7 +34956,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2210 Instruction:"VPMULHUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE4 /r"/"RAVM"
+    // Pos:2214 Instruction:"VPMULHUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE4 /r"/"RAVM"
     {
         ND_INS_VPMULHUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1332, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34913,7 +34973,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2211 Instruction:"VPMULHUW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE4 /r"/"RVM"
+    // Pos:2215 Instruction:"VPMULHUW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE4 /r"/"RVM"
     {
         ND_INS_VPMULHUW, ND_CAT_AVX, ND_SET_AVX, 1332, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34929,7 +34989,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2212 Instruction:"VPMULHW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE5 /r"/"RAVM"
+    // Pos:2216 Instruction:"VPMULHW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE5 /r"/"RAVM"
     {
         ND_INS_VPMULHW, ND_CAT_AVX512, ND_SET_AVX512BW, 1333, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34946,7 +35006,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2213 Instruction:"VPMULHW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE5 /r"/"RVM"
+    // Pos:2217 Instruction:"VPMULHW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE5 /r"/"RVM"
     {
         ND_INS_VPMULHW, ND_CAT_AVX, ND_SET_AVX, 1333, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34962,7 +35022,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2214 Instruction:"VPMULLD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x40 /r"/"RAVM"
+    // Pos:2218 Instruction:"VPMULLD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x40 /r"/"RAVM"
     {
         ND_INS_VPMULLD, ND_CAT_AVX512, ND_SET_AVX512F, 1334, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34979,7 +35039,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2215 Instruction:"VPMULLD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x40 /r"/"RVM"
+    // Pos:2219 Instruction:"VPMULLD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x40 /r"/"RVM"
     {
         ND_INS_VPMULLD, ND_CAT_AVX, ND_SET_AVX, 1334, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -34995,7 +35055,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2216 Instruction:"VPMULLQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x40 /r"/"RAVM"
+    // Pos:2220 Instruction:"VPMULLQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x40 /r"/"RAVM"
     {
         ND_INS_VPMULLQ, ND_CAT_AVX512, ND_SET_AVX512DQ, 1335, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35012,7 +35072,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2217 Instruction:"VPMULLW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD5 /r"/"RAVM"
+    // Pos:2221 Instruction:"VPMULLW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD5 /r"/"RAVM"
     {
         ND_INS_VPMULLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1336, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35029,7 +35089,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2218 Instruction:"VPMULLW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD5 /r"/"RVM"
+    // Pos:2222 Instruction:"VPMULLW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD5 /r"/"RVM"
     {
         ND_INS_VPMULLW, ND_CAT_AVX, ND_SET_AVX, 1336, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35045,7 +35105,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2219 Instruction:"VPMULTISHIFTQB Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x83 /r"/"RAVM"
+    // Pos:2223 Instruction:"VPMULTISHIFTQB Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x83 /r"/"RAVM"
     {
         ND_INS_VPMULTISHIFTQB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1337, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35062,7 +35122,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2220 Instruction:"VPMULUDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xF4 /r"/"RAVM"
+    // Pos:2224 Instruction:"VPMULUDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xF4 /r"/"RAVM"
     {
         ND_INS_VPMULUDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1338, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35079,7 +35139,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2221 Instruction:"VPMULUDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF4 /r"/"RVM"
+    // Pos:2225 Instruction:"VPMULUDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF4 /r"/"RVM"
     {
         ND_INS_VPMULUDQ, ND_CAT_AVX, ND_SET_AVX, 1338, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35095,7 +35155,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2222 Instruction:"VPOPCNTB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x54 /r"/"RAM"
+    // Pos:2226 Instruction:"VPOPCNTB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x54 /r"/"RAM"
     {
         ND_INS_VPOPCNTB, ND_CAT_VPOPCNT, ND_SET_AVX512BITALG, 1339, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35111,7 +35171,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2223 Instruction:"VPOPCNTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x55 /r"/"RAM"
+    // Pos:2227 Instruction:"VPOPCNTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x55 /r"/"RAM"
     {
         ND_INS_VPOPCNTD, ND_CAT_VPOPCNT, ND_SET_AVX512VPOPCNTDQ, 1340, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35127,7 +35187,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2224 Instruction:"VPOPCNTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x55 /r"/"RAM"
+    // Pos:2228 Instruction:"VPOPCNTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x55 /r"/"RAM"
     {
         ND_INS_VPOPCNTQ, ND_CAT_VPOPCNT, ND_SET_AVX512VPOPCNTDQ, 1341, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35143,7 +35203,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2225 Instruction:"VPOPCNTW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x54 /r"/"RAM"
+    // Pos:2229 Instruction:"VPOPCNTW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x54 /r"/"RAM"
     {
         ND_INS_VPOPCNTW, ND_CAT_VPOPCNT, ND_SET_AVX512BITALG, 1342, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35159,7 +35219,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2226 Instruction:"VPOR Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEB /r"/"RVM"
+    // Pos:2230 Instruction:"VPOR Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEB /r"/"RVM"
     {
         ND_INS_VPOR, ND_CAT_LOGICAL, ND_SET_AVX, 1343, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35175,7 +35235,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2227 Instruction:"VPORD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEB /r"/"RAVM"
+    // Pos:2231 Instruction:"VPORD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEB /r"/"RAVM"
     {
         ND_INS_VPORD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1344, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35192,7 +35252,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2228 Instruction:"VPORQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEB /r"/"RAVM"
+    // Pos:2232 Instruction:"VPORQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEB /r"/"RAVM"
     {
         ND_INS_VPORQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1345, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35209,7 +35269,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2229 Instruction:"VPPERM Vx,Hx,Wx,Lx" Encoding:"xop m:8 w:0 0xA3 /r is4"/"RVML"
+    // Pos:2233 Instruction:"VPPERM Vx,Hx,Wx,Lx" Encoding:"xop m:8 w:0 0xA3 /r is4"/"RVML"
     {
         ND_INS_VPPERM, ND_CAT_XOP, ND_SET_XOP, 1346, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35226,7 +35286,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2230 Instruction:"VPPERM Vx,Hx,Lx,Wx" Encoding:"xop m:8 w:1 0xA3 /r is4"/"RVLM"
+    // Pos:2234 Instruction:"VPPERM Vx,Hx,Lx,Wx" Encoding:"xop m:8 w:1 0xA3 /r is4"/"RVLM"
     {
         ND_INS_VPPERM, ND_CAT_XOP, ND_SET_XOP, 1346, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35243,7 +35303,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2231 Instruction:"VPROLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /1 ib"/"VAMI"
+    // Pos:2235 Instruction:"VPROLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /1 ib"/"VAMI"
     {
         ND_INS_VPROLD, ND_CAT_AVX512, ND_SET_AVX512F, 1347, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35260,7 +35320,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2232 Instruction:"VPROLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /1 ib"/"VAMI"
+    // Pos:2236 Instruction:"VPROLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /1 ib"/"VAMI"
     {
         ND_INS_VPROLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1348, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35277,7 +35337,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2233 Instruction:"VPROLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x15 /r"/"RAVM"
+    // Pos:2237 Instruction:"VPROLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x15 /r"/"RAVM"
     {
         ND_INS_VPROLVD, ND_CAT_AVX512, ND_SET_AVX512F, 1349, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35294,7 +35354,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2234 Instruction:"VPROLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x15 /r"/"RAVM"
+    // Pos:2238 Instruction:"VPROLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x15 /r"/"RAVM"
     {
         ND_INS_VPROLVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1350, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35311,7 +35371,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2235 Instruction:"VPRORD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /0 ib"/"VAMI"
+    // Pos:2239 Instruction:"VPRORD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /0 ib"/"VAMI"
     {
         ND_INS_VPRORD, ND_CAT_AVX512, ND_SET_AVX512F, 1351, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35328,7 +35388,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2236 Instruction:"VPRORQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /0 ib"/"VAMI"
+    // Pos:2240 Instruction:"VPRORQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /0 ib"/"VAMI"
     {
         ND_INS_VPRORQ, ND_CAT_AVX512, ND_SET_AVX512F, 1352, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35345,7 +35405,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2237 Instruction:"VPRORVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x14 /r"/"RAVM"
+    // Pos:2241 Instruction:"VPRORVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x14 /r"/"RAVM"
     {
         ND_INS_VPRORVD, ND_CAT_AVX512, ND_SET_AVX512F, 1353, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35362,7 +35422,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2238 Instruction:"VPRORVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x14 /r"/"RAVM"
+    // Pos:2242 Instruction:"VPRORVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x14 /r"/"RAVM"
     {
         ND_INS_VPRORVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1354, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35379,7 +35439,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2239 Instruction:"VPROTB Vdq,Wdq,Ib" Encoding:"xop m:8 0xC0 /r ib"/"RMI"
+    // Pos:2243 Instruction:"VPROTB Vdq,Wdq,Ib" Encoding:"xop m:8 0xC0 /r ib"/"RMI"
     {
         ND_INS_VPROTB, ND_CAT_XOP, ND_SET_XOP, 1355, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35395,7 +35455,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2240 Instruction:"VPROTB Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x90 /r"/"RMV"
+    // Pos:2244 Instruction:"VPROTB Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x90 /r"/"RMV"
     {
         ND_INS_VPROTB, ND_CAT_XOP, ND_SET_XOP, 1355, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35411,7 +35471,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2241 Instruction:"VPROTB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x90 /r"/"RVM"
+    // Pos:2245 Instruction:"VPROTB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x90 /r"/"RVM"
     {
         ND_INS_VPROTB, ND_CAT_XOP, ND_SET_XOP, 1355, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35427,7 +35487,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2242 Instruction:"VPROTD Vdq,Wdq,Ib" Encoding:"xop m:8 0xC2 /r ib"/"RMI"
+    // Pos:2246 Instruction:"VPROTD Vdq,Wdq,Ib" Encoding:"xop m:8 0xC2 /r ib"/"RMI"
     {
         ND_INS_VPROTD, ND_CAT_XOP, ND_SET_XOP, 1356, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35443,7 +35503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2243 Instruction:"VPROTD Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x92 /r"/"RMV"
+    // Pos:2247 Instruction:"VPROTD Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x92 /r"/"RMV"
     {
         ND_INS_VPROTD, ND_CAT_XOP, ND_SET_XOP, 1356, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35459,7 +35519,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2244 Instruction:"VPROTD Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x92 /r"/"RVM"
+    // Pos:2248 Instruction:"VPROTD Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x92 /r"/"RVM"
     {
         ND_INS_VPROTD, ND_CAT_XOP, ND_SET_XOP, 1356, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35475,7 +35535,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2245 Instruction:"VPROTQ Vdq,Wdq,Ib" Encoding:"xop m:8 0xC3 /r ib"/"RMI"
+    // Pos:2249 Instruction:"VPROTQ Vdq,Wdq,Ib" Encoding:"xop m:8 0xC3 /r ib"/"RMI"
     {
         ND_INS_VPROTQ, ND_CAT_XOP, ND_SET_XOP, 1357, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35491,7 +35551,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2246 Instruction:"VPROTQ Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x93 /r"/"RMV"
+    // Pos:2250 Instruction:"VPROTQ Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x93 /r"/"RMV"
     {
         ND_INS_VPROTQ, ND_CAT_XOP, ND_SET_XOP, 1357, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35507,7 +35567,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2247 Instruction:"VPROTQ Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x93 /r"/"RVM"
+    // Pos:2251 Instruction:"VPROTQ Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x93 /r"/"RVM"
     {
         ND_INS_VPROTQ, ND_CAT_XOP, ND_SET_XOP, 1357, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35523,7 +35583,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2248 Instruction:"VPROTW Vdq,Wdq,Ib" Encoding:"xop m:8 0xC1 /r ib"/"RMI"
+    // Pos:2252 Instruction:"VPROTW Vdq,Wdq,Ib" Encoding:"xop m:8 0xC1 /r ib"/"RMI"
     {
         ND_INS_VPROTW, ND_CAT_XOP, ND_SET_XOP, 1358, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35539,7 +35599,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2249 Instruction:"VPROTW Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x91 /r"/"RMV"
+    // Pos:2253 Instruction:"VPROTW Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x91 /r"/"RMV"
     {
         ND_INS_VPROTW, ND_CAT_XOP, ND_SET_XOP, 1358, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35555,7 +35615,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2250 Instruction:"VPROTW Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x91 /r"/"RVM"
+    // Pos:2254 Instruction:"VPROTW Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x91 /r"/"RVM"
     {
         ND_INS_VPROTW, ND_CAT_XOP, ND_SET_XOP, 1358, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35571,7 +35631,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2251 Instruction:"VPSADBW Vn,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF6 /r"/"RVM"
+    // Pos:2255 Instruction:"VPSADBW Vn,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF6 /r"/"RVM"
     {
         ND_INS_VPSADBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1359, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35587,7 +35647,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2252 Instruction:"VPSADBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF6 /r"/"RVM"
+    // Pos:2256 Instruction:"VPSADBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF6 /r"/"RVM"
     {
         ND_INS_VPSADBW, ND_CAT_AVX, ND_SET_AVX, 1359, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35603,7 +35663,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2253 Instruction:"VPSCATTERDD Mvm32n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0xA0 /r:mem vsib"/"MAR"
+    // Pos:2257 Instruction:"VPSCATTERDD Mvm32n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0xA0 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERDD, ND_CAT_SCATTER, ND_SET_AVX512F, 1360, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35619,7 +35679,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2254 Instruction:"VPSCATTERDQ Mvm32h{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA0 /r:mem vsib"/"MAR"
+    // Pos:2258 Instruction:"VPSCATTERDQ Mvm32h{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA0 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERDQ, ND_CAT_SCATTER, ND_SET_AVX512F, 1361, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35635,7 +35695,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2255 Instruction:"VPSCATTERQD Mvm64n{K},aKq,Vh" Encoding:"evex m:2 p:1 l:x w:0 0xA1 /r:mem vsib"/"MAR"
+    // Pos:2259 Instruction:"VPSCATTERQD Mvm64n{K},aKq,Vh" Encoding:"evex m:2 p:1 l:x w:0 0xA1 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERQD, ND_CAT_SCATTER, ND_SET_AVX512F, 1362, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35651,7 +35711,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2256 Instruction:"VPSCATTERQQ Mvm64n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA1 /r:mem vsib"/"MAR"
+    // Pos:2260 Instruction:"VPSCATTERQQ Mvm64n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA1 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERQQ, ND_CAT_SCATTER, ND_SET_AVX512F, 1363, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35667,7 +35727,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2257 Instruction:"VPSHAB Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x98 /r"/"RMV"
+    // Pos:2261 Instruction:"VPSHAB Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x98 /r"/"RMV"
     {
         ND_INS_VPSHAB, ND_CAT_XOP, ND_SET_XOP, 1364, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35683,7 +35743,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2258 Instruction:"VPSHAB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x98 /r"/"RVM"
+    // Pos:2262 Instruction:"VPSHAB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x98 /r"/"RVM"
     {
         ND_INS_VPSHAB, ND_CAT_XOP, ND_SET_XOP, 1364, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35699,7 +35759,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2259 Instruction:"VPSHAD Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x9A /r"/"RMV"
+    // Pos:2263 Instruction:"VPSHAD Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x9A /r"/"RMV"
     {
         ND_INS_VPSHAD, ND_CAT_XOP, ND_SET_XOP, 1365, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35715,7 +35775,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2260 Instruction:"VPSHAD Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x9A /r"/"RVM"
+    // Pos:2264 Instruction:"VPSHAD Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x9A /r"/"RVM"
     {
         ND_INS_VPSHAD, ND_CAT_XOP, ND_SET_XOP, 1365, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35731,7 +35791,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2261 Instruction:"VPSHAQ Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x9B /r"/"RMV"
+    // Pos:2265 Instruction:"VPSHAQ Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x9B /r"/"RMV"
     {
         ND_INS_VPSHAQ, ND_CAT_XOP, ND_SET_XOP, 1366, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35747,7 +35807,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2262 Instruction:"VPSHAQ Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x9B /r"/"RVM"
+    // Pos:2266 Instruction:"VPSHAQ Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x9B /r"/"RVM"
     {
         ND_INS_VPSHAQ, ND_CAT_XOP, ND_SET_XOP, 1366, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35763,7 +35823,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2263 Instruction:"VPSHAW Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x99 /r"/"RMV"
+    // Pos:2267 Instruction:"VPSHAW Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x99 /r"/"RMV"
     {
         ND_INS_VPSHAW, ND_CAT_XOP, ND_SET_XOP, 1367, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35779,7 +35839,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2264 Instruction:"VPSHAW Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x99 /r"/"RVM"
+    // Pos:2268 Instruction:"VPSHAW Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x99 /r"/"RVM"
     {
         ND_INS_VPSHAW, ND_CAT_XOP, ND_SET_XOP, 1367, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35795,7 +35855,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2265 Instruction:"VPSHLB Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x94 /r"/"RMV"
+    // Pos:2269 Instruction:"VPSHLB Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x94 /r"/"RMV"
     {
         ND_INS_VPSHLB, ND_CAT_XOP, ND_SET_XOP, 1368, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35811,7 +35871,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2266 Instruction:"VPSHLB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x94 /r"/"RVM"
+    // Pos:2270 Instruction:"VPSHLB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x94 /r"/"RVM"
     {
         ND_INS_VPSHLB, ND_CAT_XOP, ND_SET_XOP, 1368, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35827,7 +35887,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2267 Instruction:"VPSHLB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x95 /r"/"RVM"
+    // Pos:2271 Instruction:"VPSHLB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x95 /r"/"RVM"
     {
         ND_INS_VPSHLB, ND_CAT_XOP, ND_SET_XOP, 1368, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35843,7 +35903,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2268 Instruction:"VPSHLB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x96 /r"/"RVM"
+    // Pos:2272 Instruction:"VPSHLB Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x96 /r"/"RVM"
     {
         ND_INS_VPSHLB, ND_CAT_XOP, ND_SET_XOP, 1368, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35859,7 +35919,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2269 Instruction:"VPSHLD Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x96 /r"/"RMV"
+    // Pos:2273 Instruction:"VPSHLD Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x96 /r"/"RMV"
     {
         ND_INS_VPSHLD, ND_CAT_XOP, ND_SET_XOP, 1369, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35875,7 +35935,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2270 Instruction:"VPSHLDD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x71 /r ib"/"RAVMI"
+    // Pos:2274 Instruction:"VPSHLDD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x71 /r ib"/"RAVMI"
     {
         ND_INS_VPSHLDD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1370, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35893,7 +35953,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2271 Instruction:"VPSHLDQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x71 /r ib"/"RAVMI"
+    // Pos:2275 Instruction:"VPSHLDQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x71 /r ib"/"RAVMI"
     {
         ND_INS_VPSHLDQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1371, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35911,7 +35971,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2272 Instruction:"VPSHLDVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x71 /r"/"RAVM"
+    // Pos:2276 Instruction:"VPSHLDVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x71 /r"/"RAVM"
     {
         ND_INS_VPSHLDVD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1372, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35928,7 +35988,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2273 Instruction:"VPSHLDVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x71 /r"/"RAVM"
+    // Pos:2277 Instruction:"VPSHLDVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x71 /r"/"RAVM"
     {
         ND_INS_VPSHLDVQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1373, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35945,7 +36005,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2274 Instruction:"VPSHLDVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x70 /r"/"RAVM"
+    // Pos:2278 Instruction:"VPSHLDVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x70 /r"/"RAVM"
     {
         ND_INS_VPSHLDVW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1374, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35962,7 +36022,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2275 Instruction:"VPSHLDW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x70 /r ib"/"RAVMI"
+    // Pos:2279 Instruction:"VPSHLDW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x70 /r ib"/"RAVMI"
     {
         ND_INS_VPSHLDW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1375, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35980,7 +36040,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2276 Instruction:"VPSHLQ Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x97 /r"/"RMV"
+    // Pos:2280 Instruction:"VPSHLQ Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x97 /r"/"RMV"
     {
         ND_INS_VPSHLQ, ND_CAT_XOP, ND_SET_XOP, 1376, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -35996,7 +36056,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2277 Instruction:"VPSHLQ Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x97 /r"/"RVM"
+    // Pos:2281 Instruction:"VPSHLQ Vdq,Hdq,Wdq" Encoding:"xop m:9 w:1 0x97 /r"/"RVM"
     {
         ND_INS_VPSHLQ, ND_CAT_XOP, ND_SET_XOP, 1376, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36012,7 +36072,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2278 Instruction:"VPSHLW Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x95 /r"/"RMV"
+    // Pos:2282 Instruction:"VPSHLW Vdq,Wdq,Hdq" Encoding:"xop m:9 w:0 0x95 /r"/"RMV"
     {
         ND_INS_VPSHLW, ND_CAT_XOP, ND_SET_XOP, 1377, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36028,7 +36088,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2279 Instruction:"VPSHRDD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x73 /r ib"/"RAVMI"
+    // Pos:2283 Instruction:"VPSHRDD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x73 /r ib"/"RAVMI"
     {
         ND_INS_VPSHRDD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1378, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36046,7 +36106,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2280 Instruction:"VPSHRDQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x73 /r ib"/"RAVMI"
+    // Pos:2284 Instruction:"VPSHRDQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x73 /r ib"/"RAVMI"
     {
         ND_INS_VPSHRDQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1379, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36064,7 +36124,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2281 Instruction:"VPSHRDVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x73 /r"/"RAVM"
+    // Pos:2285 Instruction:"VPSHRDVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x73 /r"/"RAVM"
     {
         ND_INS_VPSHRDVD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1380, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36081,7 +36141,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2282 Instruction:"VPSHRDVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x73 /r"/"RAVM"
+    // Pos:2286 Instruction:"VPSHRDVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x73 /r"/"RAVM"
     {
         ND_INS_VPSHRDVQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1381, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36098,7 +36158,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2283 Instruction:"VPSHRDVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x72 /r"/"RAVM"
+    // Pos:2287 Instruction:"VPSHRDVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x72 /r"/"RAVM"
     {
         ND_INS_VPSHRDVW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1382, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36115,7 +36175,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2284 Instruction:"VPSHRDW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x72 /r ib"/"RAVMI"
+    // Pos:2288 Instruction:"VPSHRDW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x72 /r ib"/"RAVMI"
     {
         ND_INS_VPSHRDW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1383, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36133,7 +36193,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2285 Instruction:"VPSHUFB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x00 /r"/"RAVM"
+    // Pos:2289 Instruction:"VPSHUFB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x00 /r"/"RAVM"
     {
         ND_INS_VPSHUFB, ND_CAT_AVX512, ND_SET_AVX512BW, 1384, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36150,7 +36210,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2286 Instruction:"VPSHUFB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x00 /r"/"RVM"
+    // Pos:2290 Instruction:"VPSHUFB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x00 /r"/"RVM"
     {
         ND_INS_VPSHUFB, ND_CAT_AVX, ND_SET_AVX, 1384, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36166,7 +36226,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2287 Instruction:"VPSHUFBITQMB rK{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x8F /r"/"RAVM"
+    // Pos:2291 Instruction:"VPSHUFBITQMB rK{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x8F /r"/"RAVM"
     {
         ND_INS_VPSHUFBITQMB, ND_CAT_AVX512VBMI, ND_SET_AVX512BITALG, 1385, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36183,7 +36243,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2288 Instruction:"VPSHUFD Vn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x70 /r ib"/"RAMI"
+    // Pos:2292 Instruction:"VPSHUFD Vn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x70 /r ib"/"RAMI"
     {
         ND_INS_VPSHUFD, ND_CAT_AVX512, ND_SET_AVX512F, 1386, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36200,7 +36260,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2289 Instruction:"VPSHUFD Vx,Wx,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x70 /r ib"/"RMI"
+    // Pos:2293 Instruction:"VPSHUFD Vx,Wx,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x70 /r ib"/"RMI"
     {
         ND_INS_VPSHUFD, ND_CAT_AVX, ND_SET_AVX, 1386, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36216,7 +36276,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2290 Instruction:"VPSHUFHW Vn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:2 l:x w:i 0x70 /r ib"/"RAMI"
+    // Pos:2294 Instruction:"VPSHUFHW Vn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:2 l:x w:i 0x70 /r ib"/"RAMI"
     {
         ND_INS_VPSHUFHW, ND_CAT_AVX512, ND_SET_AVX512BW, 1387, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36233,7 +36293,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2291 Instruction:"VPSHUFHW Vx,Wx,Ib" Encoding:"vex m:1 p:2 l:x w:i 0x70 /r ib"/"RMI"
+    // Pos:2295 Instruction:"VPSHUFHW Vx,Wx,Ib" Encoding:"vex m:1 p:2 l:x w:i 0x70 /r ib"/"RMI"
     {
         ND_INS_VPSHUFHW, ND_CAT_AVX, ND_SET_AVX, 1387, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36249,7 +36309,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2292 Instruction:"VPSHUFLW Vn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:3 l:x w:i 0x70 /r ib"/"RAMI"
+    // Pos:2296 Instruction:"VPSHUFLW Vn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:3 l:x w:i 0x70 /r ib"/"RAMI"
     {
         ND_INS_VPSHUFLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1388, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36266,7 +36326,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2293 Instruction:"VPSHUFLW Vx,Wx,Ib" Encoding:"vex m:1 p:3 l:x w:i 0x70 /r ib"/"RMI"
+    // Pos:2297 Instruction:"VPSHUFLW Vx,Wx,Ib" Encoding:"vex m:1 p:3 l:x w:i 0x70 /r ib"/"RMI"
     {
         ND_INS_VPSHUFLW, ND_CAT_AVX, ND_SET_AVX, 1388, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36282,7 +36342,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2294 Instruction:"VPSIGNB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x08 /r"/"RVM"
+    // Pos:2298 Instruction:"VPSIGNB Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x08 /r"/"RVM"
     {
         ND_INS_VPSIGNB, ND_CAT_AVX, ND_SET_AVX, 1389, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36298,7 +36358,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2295 Instruction:"VPSIGND Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x0A /r"/"RVM"
+    // Pos:2299 Instruction:"VPSIGND Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x0A /r"/"RVM"
     {
         ND_INS_VPSIGND, ND_CAT_AVX, ND_SET_AVX, 1390, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36314,7 +36374,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2296 Instruction:"VPSIGNW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x09 /r"/"RVM"
+    // Pos:2300 Instruction:"VPSIGNW Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x09 /r"/"RVM"
     {
         ND_INS_VPSIGNW, ND_CAT_AVX, ND_SET_AVX, 1391, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36330,7 +36390,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2297 Instruction:"VPSLLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /6 ib"/"VAMI"
+    // Pos:2301 Instruction:"VPSLLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /6 ib"/"VAMI"
     {
         ND_INS_VPSLLD, ND_CAT_AVX512, ND_SET_AVX512F, 1392, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36347,7 +36407,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2298 Instruction:"VPSLLD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xF2 /r"/"RAVM"
+    // Pos:2302 Instruction:"VPSLLD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xF2 /r"/"RAVM"
     {
         ND_INS_VPSLLD, ND_CAT_AVX512, ND_SET_AVX512F, 1392, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36364,7 +36424,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2299 Instruction:"VPSLLD Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x72 /6:reg ib"/"VMI"
+    // Pos:2303 Instruction:"VPSLLD Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x72 /6:reg ib"/"VMI"
     {
         ND_INS_VPSLLD, ND_CAT_AVX, ND_SET_AVX, 1392, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36380,7 +36440,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2300 Instruction:"VPSLLD Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xF2 /r"/"RVM"
+    // Pos:2304 Instruction:"VPSLLD Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xF2 /r"/"RVM"
     {
         ND_INS_VPSLLD, ND_CAT_AVX, ND_SET_AVX, 1392, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36396,7 +36456,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2301 Instruction:"VPSLLDQ Hn,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /7 ib"/"VMI"
+    // Pos:2305 Instruction:"VPSLLDQ Hn,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /7 ib"/"VMI"
     {
         ND_INS_VPSLLDQ, ND_CAT_AVX512, ND_SET_AVX512BW, 1393, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36412,7 +36472,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2302 Instruction:"VPSLLDQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /7:reg ib"/"VMI"
+    // Pos:2306 Instruction:"VPSLLDQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /7:reg ib"/"VMI"
     {
         ND_INS_VPSLLDQ, ND_CAT_AVX, ND_SET_AVX, 1393, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36428,7 +36488,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2303 Instruction:"VPSLLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /6 ib"/"VAMI"
+    // Pos:2307 Instruction:"VPSLLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /6 ib"/"VAMI"
     {
         ND_INS_VPSLLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1394, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36445,7 +36505,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2304 Instruction:"VPSLLQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xF3 /r"/"RAVM"
+    // Pos:2308 Instruction:"VPSLLQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xF3 /r"/"RAVM"
     {
         ND_INS_VPSLLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1394, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36462,7 +36522,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2305 Instruction:"VPSLLQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /6:reg ib"/"VMI"
+    // Pos:2309 Instruction:"VPSLLQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /6:reg ib"/"VMI"
     {
         ND_INS_VPSLLQ, ND_CAT_AVX, ND_SET_AVX, 1394, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36478,7 +36538,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2306 Instruction:"VPSLLQ Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xF3 /r"/"RVM"
+    // Pos:2310 Instruction:"VPSLLQ Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xF3 /r"/"RVM"
     {
         ND_INS_VPSLLQ, ND_CAT_AVX, ND_SET_AVX, 1394, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36494,7 +36554,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2307 Instruction:"VPSLLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x47 /r"/"RAVM"
+    // Pos:2311 Instruction:"VPSLLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x47 /r"/"RAVM"
     {
         ND_INS_VPSLLVD, ND_CAT_AVX512, ND_SET_AVX512F, 1395, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36511,7 +36571,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2308 Instruction:"VPSLLVD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x47 /r"/"RVM"
+    // Pos:2312 Instruction:"VPSLLVD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x47 /r"/"RVM"
     {
         ND_INS_VPSLLVD, ND_CAT_AVX2, ND_SET_AVX2, 1395, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36527,7 +36587,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2309 Instruction:"VPSLLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x47 /r"/"RAVM"
+    // Pos:2313 Instruction:"VPSLLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x47 /r"/"RAVM"
     {
         ND_INS_VPSLLVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1396, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36544,7 +36604,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2310 Instruction:"VPSLLVQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x47 /r"/"RVM"
+    // Pos:2314 Instruction:"VPSLLVQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x47 /r"/"RVM"
     {
         ND_INS_VPSLLVQ, ND_CAT_AVX2, ND_SET_AVX2, 1396, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36560,7 +36620,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2311 Instruction:"VPSLLVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x12 /r"/"RAVM"
+    // Pos:2315 Instruction:"VPSLLVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x12 /r"/"RAVM"
     {
         ND_INS_VPSLLVW, ND_CAT_AVX512, ND_SET_AVX512BW, 1397, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36577,7 +36637,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2312 Instruction:"VPSLLW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /6 ib"/"VAMI"
+    // Pos:2316 Instruction:"VPSLLW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /6 ib"/"VAMI"
     {
         ND_INS_VPSLLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1398, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36594,7 +36654,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2313 Instruction:"VPSLLW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xF1 /r"/"RAVM"
+    // Pos:2317 Instruction:"VPSLLW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xF1 /r"/"RAVM"
     {
         ND_INS_VPSLLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1398, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36611,7 +36671,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2314 Instruction:"VPSLLW Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x71 /6:reg ib"/"VMI"
+    // Pos:2318 Instruction:"VPSLLW Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x71 /6:reg ib"/"VMI"
     {
         ND_INS_VPSLLW, ND_CAT_AVX, ND_SET_AVX, 1398, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36627,7 +36687,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2315 Instruction:"VPSLLW Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xF1 /r"/"RVM"
+    // Pos:2319 Instruction:"VPSLLW Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xF1 /r"/"RVM"
     {
         ND_INS_VPSLLW, ND_CAT_AVX, ND_SET_AVX, 1398, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36643,7 +36703,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2316 Instruction:"VPSRAD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /4 ib"/"VAMI"
+    // Pos:2320 Instruction:"VPSRAD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /4 ib"/"VAMI"
     {
         ND_INS_VPSRAD, ND_CAT_AVX512, ND_SET_AVX512F, 1399, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36660,7 +36720,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2317 Instruction:"VPSRAD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xE2 /r"/"RAVM"
+    // Pos:2321 Instruction:"VPSRAD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xE2 /r"/"RAVM"
     {
         ND_INS_VPSRAD, ND_CAT_AVX512, ND_SET_AVX512F, 1399, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36677,7 +36737,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2318 Instruction:"VPSRAD Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x72 /4:reg ib"/"VMI"
+    // Pos:2322 Instruction:"VPSRAD Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x72 /4:reg ib"/"VMI"
     {
         ND_INS_VPSRAD, ND_CAT_AVX, ND_SET_AVX, 1399, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36693,7 +36753,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2319 Instruction:"VPSRAD Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xE2 /r"/"RVM"
+    // Pos:2323 Instruction:"VPSRAD Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xE2 /r"/"RVM"
     {
         ND_INS_VPSRAD, ND_CAT_AVX, ND_SET_AVX, 1399, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36709,7 +36769,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2320 Instruction:"VPSRAQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /4 ib"/"VAMI"
+    // Pos:2324 Instruction:"VPSRAQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /4 ib"/"VAMI"
     {
         ND_INS_VPSRAQ, ND_CAT_AVX512, ND_SET_AVX512F, 1400, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36726,7 +36786,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2321 Instruction:"VPSRAQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xE2 /r"/"RAVM"
+    // Pos:2325 Instruction:"VPSRAQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xE2 /r"/"RAVM"
     {
         ND_INS_VPSRAQ, ND_CAT_AVX512, ND_SET_AVX512F, 1400, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36743,7 +36803,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2322 Instruction:"VPSRAVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x46 /r"/"RAVM"
+    // Pos:2326 Instruction:"VPSRAVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x46 /r"/"RAVM"
     {
         ND_INS_VPSRAVD, ND_CAT_AVX512, ND_SET_AVX512F, 1401, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36760,7 +36820,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2323 Instruction:"VPSRAVD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x46 /r"/"RVM"
+    // Pos:2327 Instruction:"VPSRAVD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x46 /r"/"RVM"
     {
         ND_INS_VPSRAVD, ND_CAT_AVX2, ND_SET_AVX2, 1401, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36776,7 +36836,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2324 Instruction:"VPSRAVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x46 /r"/"RAVM"
+    // Pos:2328 Instruction:"VPSRAVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x46 /r"/"RAVM"
     {
         ND_INS_VPSRAVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1402, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36793,7 +36853,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2325 Instruction:"VPSRAVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x11 /r"/"RAVM"
+    // Pos:2329 Instruction:"VPSRAVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x11 /r"/"RAVM"
     {
         ND_INS_VPSRAVW, ND_CAT_AVX512, ND_SET_AVX512BW, 1403, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36810,7 +36870,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2326 Instruction:"VPSRAW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /4 ib"/"VAMI"
+    // Pos:2330 Instruction:"VPSRAW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /4 ib"/"VAMI"
     {
         ND_INS_VPSRAW, ND_CAT_AVX512, ND_SET_AVX512BW, 1404, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36827,7 +36887,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2327 Instruction:"VPSRAW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xE1 /r"/"RAVM"
+    // Pos:2331 Instruction:"VPSRAW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xE1 /r"/"RAVM"
     {
         ND_INS_VPSRAW, ND_CAT_AVX512, ND_SET_AVX512BW, 1404, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36844,7 +36904,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2328 Instruction:"VPSRAW Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x71 /4:reg ib"/"VMI"
+    // Pos:2332 Instruction:"VPSRAW Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x71 /4:reg ib"/"VMI"
     {
         ND_INS_VPSRAW, ND_CAT_AVX, ND_SET_AVX, 1404, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36860,7 +36920,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2329 Instruction:"VPSRAW Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xE1 /r"/"RVM"
+    // Pos:2333 Instruction:"VPSRAW Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xE1 /r"/"RVM"
     {
         ND_INS_VPSRAW, ND_CAT_AVX, ND_SET_AVX, 1404, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36876,7 +36936,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2330 Instruction:"VPSRLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /2 ib"/"VAMI"
+    // Pos:2334 Instruction:"VPSRLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /2 ib"/"VAMI"
     {
         ND_INS_VPSRLD, ND_CAT_AVX512, ND_SET_AVX512F, 1405, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36893,7 +36953,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2331 Instruction:"VPSRLD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xD2 /r"/"RAVM"
+    // Pos:2335 Instruction:"VPSRLD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xD2 /r"/"RAVM"
     {
         ND_INS_VPSRLD, ND_CAT_AVX512, ND_SET_AVX512F, 1405, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36910,7 +36970,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2332 Instruction:"VPSRLD Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x72 /2:reg ib"/"VMI"
+    // Pos:2336 Instruction:"VPSRLD Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x72 /2:reg ib"/"VMI"
     {
         ND_INS_VPSRLD, ND_CAT_AVX, ND_SET_AVX, 1405, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36926,7 +36986,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2333 Instruction:"VPSRLD Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xD2 /r"/"RVM"
+    // Pos:2337 Instruction:"VPSRLD Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xD2 /r"/"RVM"
     {
         ND_INS_VPSRLD, ND_CAT_AVX, ND_SET_AVX, 1405, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36942,7 +37002,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2334 Instruction:"VPSRLDQ Hn,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /3 ib"/"VMI"
+    // Pos:2338 Instruction:"VPSRLDQ Hn,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /3 ib"/"VMI"
     {
         ND_INS_VPSRLDQ, ND_CAT_AVX512, ND_SET_AVX512BW, 1406, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36958,7 +37018,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2335 Instruction:"VPSRLDQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /3:reg ib"/"VMI"
+    // Pos:2339 Instruction:"VPSRLDQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /3:reg ib"/"VMI"
     {
         ND_INS_VPSRLDQ, ND_CAT_AVX, ND_SET_AVX, 1406, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36974,7 +37034,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2336 Instruction:"VPSRLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /2 ib"/"VAMI"
+    // Pos:2340 Instruction:"VPSRLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /2 ib"/"VAMI"
     {
         ND_INS_VPSRLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1407, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -36991,7 +37051,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2337 Instruction:"VPSRLQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xD3 /r"/"RAVM"
+    // Pos:2341 Instruction:"VPSRLQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xD3 /r"/"RAVM"
     {
         ND_INS_VPSRLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1407, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37008,7 +37068,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2338 Instruction:"VPSRLQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /2:reg ib"/"VMI"
+    // Pos:2342 Instruction:"VPSRLQ Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x73 /2:reg ib"/"VMI"
     {
         ND_INS_VPSRLQ, ND_CAT_AVX, ND_SET_AVX, 1407, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37024,7 +37084,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2339 Instruction:"VPSRLQ Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xD3 /r"/"RVM"
+    // Pos:2343 Instruction:"VPSRLQ Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xD3 /r"/"RVM"
     {
         ND_INS_VPSRLQ, ND_CAT_AVX, ND_SET_AVX, 1407, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37040,7 +37100,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2340 Instruction:"VPSRLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x45 /r"/"RAVM"
+    // Pos:2344 Instruction:"VPSRLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x45 /r"/"RAVM"
     {
         ND_INS_VPSRLVD, ND_CAT_AVX512, ND_SET_AVX512F, 1408, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37057,7 +37117,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2341 Instruction:"VPSRLVD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x45 /r"/"RVM"
+    // Pos:2345 Instruction:"VPSRLVD Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x45 /r"/"RVM"
     {
         ND_INS_VPSRLVD, ND_CAT_AVX2, ND_SET_AVX2, 1408, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37073,7 +37133,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2342 Instruction:"VPSRLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x45 /r"/"RAVM"
+    // Pos:2346 Instruction:"VPSRLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x45 /r"/"RAVM"
     {
         ND_INS_VPSRLVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1409, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37090,7 +37150,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2343 Instruction:"VPSRLVQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x45 /r"/"RVM"
+    // Pos:2347 Instruction:"VPSRLVQ Vx,Hx,Wx" Encoding:"vex m:2 p:1 l:x w:1 0x45 /r"/"RVM"
     {
         ND_INS_VPSRLVQ, ND_CAT_AVX2, ND_SET_AVX2, 1409, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37106,7 +37166,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2344 Instruction:"VPSRLVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x10 /r"/"RAVM"
+    // Pos:2348 Instruction:"VPSRLVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x10 /r"/"RAVM"
     {
         ND_INS_VPSRLVW, ND_CAT_AVX512, ND_SET_AVX512BW, 1410, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37123,7 +37183,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2345 Instruction:"VPSRLW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /2 ib"/"VAMI"
+    // Pos:2349 Instruction:"VPSRLW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /2 ib"/"VAMI"
     {
         ND_INS_VPSRLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1411, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37140,7 +37200,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2346 Instruction:"VPSRLW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xD1 /r"/"RAVM"
+    // Pos:2350 Instruction:"VPSRLW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xD1 /r"/"RAVM"
     {
         ND_INS_VPSRLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1411, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37157,7 +37217,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2347 Instruction:"VPSRLW Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x71 /2:reg ib"/"VMI"
+    // Pos:2351 Instruction:"VPSRLW Hx,Ux,Ib" Encoding:"vex m:1 p:1 l:x w:i 0x71 /2:reg ib"/"VMI"
     {
         ND_INS_VPSRLW, ND_CAT_AVX, ND_SET_AVX, 1411, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37173,7 +37233,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2348 Instruction:"VPSRLW Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xD1 /r"/"RVM"
+    // Pos:2352 Instruction:"VPSRLW Vx,Hx,Wdq" Encoding:"vex m:1 p:1 l:x w:i 0xD1 /r"/"RVM"
     {
         ND_INS_VPSRLW, ND_CAT_AVX, ND_SET_AVX, 1411, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37189,7 +37249,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2349 Instruction:"VPSUBB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF8 /r"/"RAVM"
+    // Pos:2353 Instruction:"VPSUBB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF8 /r"/"RAVM"
     {
         ND_INS_VPSUBB, ND_CAT_AVX512, ND_SET_AVX512BW, 1412, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37206,7 +37266,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2350 Instruction:"VPSUBB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF8 /r"/"RVM"
+    // Pos:2354 Instruction:"VPSUBB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF8 /r"/"RVM"
     {
         ND_INS_VPSUBB, ND_CAT_AVX, ND_SET_AVX, 1412, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37222,7 +37282,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2351 Instruction:"VPSUBD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFA /r"/"RAVM"
+    // Pos:2355 Instruction:"VPSUBD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFA /r"/"RAVM"
     {
         ND_INS_VPSUBD, ND_CAT_AVX512, ND_SET_AVX512F, 1413, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37239,7 +37299,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2352 Instruction:"VPSUBD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFA /r"/"RVM"
+    // Pos:2356 Instruction:"VPSUBD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFA /r"/"RVM"
     {
         ND_INS_VPSUBD, ND_CAT_AVX, ND_SET_AVX, 1413, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37255,7 +37315,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2353 Instruction:"VPSUBQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xFB /r"/"RAVM"
+    // Pos:2357 Instruction:"VPSUBQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xFB /r"/"RAVM"
     {
         ND_INS_VPSUBQ, ND_CAT_AVX512, ND_SET_AVX512F, 1414, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37272,7 +37332,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2354 Instruction:"VPSUBQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFB /r"/"RVM"
+    // Pos:2358 Instruction:"VPSUBQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xFB /r"/"RVM"
     {
         ND_INS_VPSUBQ, ND_CAT_AVX, ND_SET_AVX, 1414, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37288,7 +37348,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2355 Instruction:"VPSUBSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE8 /r"/"RAVM"
+    // Pos:2359 Instruction:"VPSUBSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE8 /r"/"RAVM"
     {
         ND_INS_VPSUBSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1415, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37305,7 +37365,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2356 Instruction:"VPSUBSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE8 /r"/"RVM"
+    // Pos:2360 Instruction:"VPSUBSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE8 /r"/"RVM"
     {
         ND_INS_VPSUBSB, ND_CAT_AVX, ND_SET_AVX, 1415, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37321,7 +37381,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2357 Instruction:"VPSUBSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE9 /r"/"RAVM"
+    // Pos:2361 Instruction:"VPSUBSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE9 /r"/"RAVM"
     {
         ND_INS_VPSUBSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1416, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37338,7 +37398,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2358 Instruction:"VPSUBSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE9 /r"/"RVM"
+    // Pos:2362 Instruction:"VPSUBSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xE9 /r"/"RVM"
     {
         ND_INS_VPSUBSW, ND_CAT_AVX, ND_SET_AVX, 1416, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37354,7 +37414,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2359 Instruction:"VPSUBUSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD8 /r"/"RAVM"
+    // Pos:2363 Instruction:"VPSUBUSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD8 /r"/"RAVM"
     {
         ND_INS_VPSUBUSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1417, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37371,7 +37431,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2360 Instruction:"VPSUBUSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD8 /r"/"RVM"
+    // Pos:2364 Instruction:"VPSUBUSB Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD8 /r"/"RVM"
     {
         ND_INS_VPSUBUSB, ND_CAT_AVX, ND_SET_AVX, 1417, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37387,7 +37447,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2361 Instruction:"VPSUBUSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD9 /r"/"RAVM"
+    // Pos:2365 Instruction:"VPSUBUSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD9 /r"/"RAVM"
     {
         ND_INS_VPSUBUSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1418, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37404,7 +37464,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2362 Instruction:"VPSUBUSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD9 /r"/"RVM"
+    // Pos:2366 Instruction:"VPSUBUSW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xD9 /r"/"RVM"
     {
         ND_INS_VPSUBUSW, ND_CAT_AVX, ND_SET_AVX, 1418, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37420,7 +37480,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2363 Instruction:"VPSUBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF9 /r"/"RAVM"
+    // Pos:2367 Instruction:"VPSUBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF9 /r"/"RAVM"
     {
         ND_INS_VPSUBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1419, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37437,7 +37497,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2364 Instruction:"VPSUBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF9 /r"/"RVM"
+    // Pos:2368 Instruction:"VPSUBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xF9 /r"/"RVM"
     {
         ND_INS_VPSUBW, ND_CAT_AVX, ND_SET_AVX, 1419, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37453,7 +37513,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2365 Instruction:"VPTERNLOGD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x25 /r ib"/"RAVMI"
+    // Pos:2369 Instruction:"VPTERNLOGD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x25 /r ib"/"RAVMI"
     {
         ND_INS_VPTERNLOGD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1420, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37471,7 +37531,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2366 Instruction:"VPTERNLOGQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x25 /r ib"/"RAVMI"
+    // Pos:2370 Instruction:"VPTERNLOGQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x25 /r ib"/"RAVMI"
     {
         ND_INS_VPTERNLOGQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1421, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37489,7 +37549,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2367 Instruction:"VPTEST Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x17 /r"/"RM"
+    // Pos:2371 Instruction:"VPTEST Vx,Wx" Encoding:"vex m:2 p:1 l:x w:i 0x17 /r"/"RM"
     {
         ND_INS_VPTEST, ND_CAT_LOGICAL, ND_SET_AVX, 1422, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37505,7 +37565,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2368 Instruction:"VPTESTMB rKq{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x26 /r"/"RAVM"
+    // Pos:2372 Instruction:"VPTESTMB rKq{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTMB, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1423, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37522,7 +37582,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2369 Instruction:"VPTESTMD rKq{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x27 /r"/"RAVM"
+    // Pos:2373 Instruction:"VPTESTMD rKq{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTMD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1424, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37539,7 +37599,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2370 Instruction:"VPTESTMQ rKq{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x27 /r"/"RAVM"
+    // Pos:2374 Instruction:"VPTESTMQ rKq{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTMQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1425, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37556,7 +37616,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2371 Instruction:"VPTESTMW rKq{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x26 /r"/"RAVM"
+    // Pos:2375 Instruction:"VPTESTMW rKq{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTMW, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1426, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37573,7 +37633,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2372 Instruction:"VPTESTNMB rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:2 l:x w:0 0x26 /r"/"RAVM"
+    // Pos:2376 Instruction:"VPTESTNMB rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:2 l:x w:0 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTNMB, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1427, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37590,7 +37650,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2373 Instruction:"VPTESTNMD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x27 /r"/"RAVM"
+    // Pos:2377 Instruction:"VPTESTNMD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTNMD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1428, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37607,7 +37667,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2374 Instruction:"VPTESTNMQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:2 l:x w:1 0x27 /r"/"RAVM"
+    // Pos:2378 Instruction:"VPTESTNMQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:2 l:x w:1 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTNMQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1429, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37624,7 +37684,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2375 Instruction:"VPTESTNMW rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:2 l:x w:1 0x26 /r"/"RAVM"
+    // Pos:2379 Instruction:"VPTESTNMW rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:2 l:x w:1 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTNMW, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1430, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37641,7 +37701,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2376 Instruction:"VPUNPCKHBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x68 /r"/"RAVM"
+    // Pos:2380 Instruction:"VPUNPCKHBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x68 /r"/"RAVM"
     {
         ND_INS_VPUNPCKHBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1431, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37658,7 +37718,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2377 Instruction:"VPUNPCKHBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x68 /r"/"RVM"
+    // Pos:2381 Instruction:"VPUNPCKHBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x68 /r"/"RVM"
     {
         ND_INS_VPUNPCKHBW, ND_CAT_AVX, ND_SET_AVX, 1431, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37674,7 +37734,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2378 Instruction:"VPUNPCKHDQ Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6A /r"/"RAVM"
+    // Pos:2382 Instruction:"VPUNPCKHDQ Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6A /r"/"RAVM"
     {
         ND_INS_VPUNPCKHDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1432, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37691,7 +37751,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2379 Instruction:"VPUNPCKHDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6A /r"/"RVM"
+    // Pos:2383 Instruction:"VPUNPCKHDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6A /r"/"RVM"
     {
         ND_INS_VPUNPCKHDQ, ND_CAT_AVX, ND_SET_AVX, 1432, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37707,7 +37767,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2380 Instruction:"VPUNPCKHQDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6D /r"/"RAVM"
+    // Pos:2384 Instruction:"VPUNPCKHQDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6D /r"/"RAVM"
     {
         ND_INS_VPUNPCKHQDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1433, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37724,7 +37784,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2381 Instruction:"VPUNPCKHQDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6D /r"/"RVM"
+    // Pos:2385 Instruction:"VPUNPCKHQDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6D /r"/"RVM"
     {
         ND_INS_VPUNPCKHQDQ, ND_CAT_AVX, ND_SET_AVX, 1433, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37740,7 +37800,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2382 Instruction:"VPUNPCKHWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x69 /r"/"RAVM"
+    // Pos:2386 Instruction:"VPUNPCKHWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x69 /r"/"RAVM"
     {
         ND_INS_VPUNPCKHWD, ND_CAT_AVX512, ND_SET_AVX512BW, 1434, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37757,7 +37817,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2383 Instruction:"VPUNPCKHWD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x69 /r"/"RVM"
+    // Pos:2387 Instruction:"VPUNPCKHWD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x69 /r"/"RVM"
     {
         ND_INS_VPUNPCKHWD, ND_CAT_AVX, ND_SET_AVX, 1434, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37773,7 +37833,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2384 Instruction:"VPUNPCKLBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:x 0x60 /r"/"RAVM"
+    // Pos:2388 Instruction:"VPUNPCKLBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:x 0x60 /r"/"RAVM"
     {
         ND_INS_VPUNPCKLBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1435, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37790,7 +37850,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2385 Instruction:"VPUNPCKLBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x60 /r"/"RVM"
+    // Pos:2389 Instruction:"VPUNPCKLBW Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x60 /r"/"RVM"
     {
         ND_INS_VPUNPCKLBW, ND_CAT_AVX, ND_SET_AVX, 1435, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37806,7 +37866,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2386 Instruction:"VPUNPCKLDQ Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x62 /r"/"RAVM"
+    // Pos:2390 Instruction:"VPUNPCKLDQ Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x62 /r"/"RAVM"
     {
         ND_INS_VPUNPCKLDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1436, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37823,7 +37883,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2387 Instruction:"VPUNPCKLDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x62 /r"/"RVM"
+    // Pos:2391 Instruction:"VPUNPCKLDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x62 /r"/"RVM"
     {
         ND_INS_VPUNPCKLDQ, ND_CAT_AVX, ND_SET_AVX, 1436, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37839,7 +37899,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2388 Instruction:"VPUNPCKLQDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6C /r"/"RAVM"
+    // Pos:2392 Instruction:"VPUNPCKLQDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6C /r"/"RAVM"
     {
         ND_INS_VPUNPCKLQDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1437, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37856,7 +37916,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2389 Instruction:"VPUNPCKLQDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6C /r"/"RVM"
+    // Pos:2393 Instruction:"VPUNPCKLQDQ Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x6C /r"/"RVM"
     {
         ND_INS_VPUNPCKLQDQ, ND_CAT_AVX, ND_SET_AVX, 1437, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37872,7 +37932,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2390 Instruction:"VPUNPCKLWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:x 0x61 /r"/"RAVM"
+    // Pos:2394 Instruction:"VPUNPCKLWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:x 0x61 /r"/"RAVM"
     {
         ND_INS_VPUNPCKLWD, ND_CAT_AVX512, ND_SET_AVX512BW, 1438, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37889,7 +37949,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2391 Instruction:"VPUNPCKLWD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x61 /r"/"RVM"
+    // Pos:2395 Instruction:"VPUNPCKLWD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x61 /r"/"RVM"
     {
         ND_INS_VPUNPCKLWD, ND_CAT_AVX, ND_SET_AVX, 1438, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37905,7 +37965,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2392 Instruction:"VPXOR Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEF /r"/"RVM"
+    // Pos:2396 Instruction:"VPXOR Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0xEF /r"/"RVM"
     {
         ND_INS_VPXOR, ND_CAT_LOGICAL, ND_SET_AVX, 1439, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37921,7 +37981,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2393 Instruction:"VPXORD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEF /r"/"RAVM"
+    // Pos:2397 Instruction:"VPXORD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEF /r"/"RAVM"
     {
         ND_INS_VPXORD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1440, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37938,7 +37998,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2394 Instruction:"VPXORQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEF /r"/"RAVM"
+    // Pos:2398 Instruction:"VPXORQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEF /r"/"RAVM"
     {
         ND_INS_VPXORQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1441, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37955,7 +38015,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2395 Instruction:"VRANGEPD Vn{K}{z},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x50 /r ib"/"RAVMI"
+    // Pos:2399 Instruction:"VRANGEPD Vn{K}{z},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x50 /r ib"/"RAVMI"
     {
         ND_INS_VRANGEPD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1442, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37973,7 +38033,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2396 Instruction:"VRANGEPS Vn{K}{z},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x50 /r ib"/"RAVMI"
+    // Pos:2400 Instruction:"VRANGEPS Vn{K}{z},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x50 /r ib"/"RAVMI"
     {
         ND_INS_VRANGEPS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1443, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -37991,7 +38051,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2397 Instruction:"VRANGESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x51 /r ib"/"RAVMI"
+    // Pos:2401 Instruction:"VRANGESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x51 /r ib"/"RAVMI"
     {
         ND_INS_VRANGESD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1444, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38009,7 +38069,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2398 Instruction:"VRANGESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x51 /r ib"/"RAVMI"
+    // Pos:2402 Instruction:"VRANGESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x51 /r ib"/"RAVMI"
     {
         ND_INS_VRANGESS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1445, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38027,7 +38087,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2399 Instruction:"VRCP14PD Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4C /r"/"RAM"
+    // Pos:2403 Instruction:"VRCP14PD Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4C /r"/"RAM"
     {
         ND_INS_VRCP14PD, ND_CAT_AVX512, ND_SET_AVX512F, 1446, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38043,7 +38103,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2400 Instruction:"VRCP14PS Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4C /r"/"RAM"
+    // Pos:2404 Instruction:"VRCP14PS Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4C /r"/"RAM"
     {
         ND_INS_VRCP14PS, ND_CAT_AVX512, ND_SET_AVX512F, 1447, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38059,7 +38119,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2401 Instruction:"VRCP14SD Vdq{K}{z},aKq,Hdq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x4D /r"/"RAVM"
+    // Pos:2405 Instruction:"VRCP14SD Vdq{K}{z},aKq,Hdq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x4D /r"/"RAVM"
     {
         ND_INS_VRCP14SD, ND_CAT_AVX512, ND_SET_AVX512F, 1448, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38076,7 +38136,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2402 Instruction:"VRCP14SS Vdq{K}{z},aKq,Hdq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x4D /r"/"RAVM"
+    // Pos:2406 Instruction:"VRCP14SS Vdq{K}{z},aKq,Hdq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x4D /r"/"RAVM"
     {
         ND_INS_VRCP14SS, ND_CAT_AVX512, ND_SET_AVX512F, 1449, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38093,7 +38153,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2403 Instruction:"VRCP28PD Voq{K}{z},aKq,Woq|B64{sae}" Encoding:"evex m:2 p:1 l:2 w:1 0xCA /r"/"RAM"
+    // Pos:2407 Instruction:"VRCP28PD Voq{K}{z},aKq,Woq|B64{sae}" Encoding:"evex m:2 p:1 l:2 w:1 0xCA /r"/"RAM"
     {
         ND_INS_VRCP28PD, ND_CAT_KNL, ND_SET_AVX512ER, 1450, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38109,7 +38169,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2404 Instruction:"VRCP28PS Voq{K}{z},aKq,Woq|B32{sae}" Encoding:"evex m:2 p:1 l:2 w:0 0xCA /r"/"RAM"
+    // Pos:2408 Instruction:"VRCP28PS Voq{K}{z},aKq,Woq|B32{sae}" Encoding:"evex m:2 p:1 l:2 w:0 0xCA /r"/"RAM"
     {
         ND_INS_VRCP28PS, ND_CAT_KNL, ND_SET_AVX512ER, 1451, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38125,7 +38185,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2405 Instruction:"VRCP28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:2 p:1 l:i w:1 0xCB /r"/"RAVM"
+    // Pos:2409 Instruction:"VRCP28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:2 p:1 l:i w:1 0xCB /r"/"RAVM"
     {
         ND_INS_VRCP28SD, ND_CAT_KNL, ND_SET_AVX512ER, 1452, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38142,7 +38202,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2406 Instruction:"VRCP28SS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:2 p:1 l:i w:0 0xCB /r"/"RAVM"
+    // Pos:2410 Instruction:"VRCP28SS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:2 p:1 l:i w:0 0xCB /r"/"RAVM"
     {
         ND_INS_VRCP28SS, ND_CAT_KNL, ND_SET_AVX512ER, 1453, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38159,7 +38219,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2407 Instruction:"VRCPPS Vps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x53 /r"/"RM"
+    // Pos:2411 Instruction:"VRCPPS Vps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x53 /r"/"RM"
     {
         ND_INS_VRCPPS, ND_CAT_AVX, ND_SET_AVX, 1454, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38174,7 +38234,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2408 Instruction:"VRCPSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x53 /r"/"RVM"
+    // Pos:2412 Instruction:"VRCPSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x53 /r"/"RVM"
     {
         ND_INS_VRCPSS, ND_CAT_AVX, ND_SET_AVX, 1455, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38190,7 +38250,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2409 Instruction:"VREDUCEPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x56 /r ib"/"RAMI"
+    // Pos:2413 Instruction:"VREDUCEPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x56 /r ib"/"RAMI"
     {
         ND_INS_VREDUCEPD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1456, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38207,7 +38267,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2410 Instruction:"VREDUCEPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x56 /r ib"/"RAMI"
+    // Pos:2414 Instruction:"VREDUCEPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x56 /r ib"/"RAMI"
     {
         ND_INS_VREDUCEPS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1457, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38224,7 +38284,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2411 Instruction:"VREDUCESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x57 /r ib"/"RAVMI"
+    // Pos:2415 Instruction:"VREDUCESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x57 /r ib"/"RAVMI"
     {
         ND_INS_VREDUCESD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1458, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38242,7 +38302,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2412 Instruction:"VREDUCESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x57 /r ib"/"RAVMI"
+    // Pos:2416 Instruction:"VREDUCESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x57 /r ib"/"RAVMI"
     {
         ND_INS_VREDUCESS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1459, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38260,7 +38320,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2413 Instruction:"VRNDSCALEPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x09 /r ib"/"RAMI"
+    // Pos:2417 Instruction:"VRNDSCALEPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x09 /r ib"/"RAMI"
     {
         ND_INS_VRNDSCALEPD, ND_CAT_AVX512, ND_SET_AVX512F, 1460, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38277,7 +38337,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2414 Instruction:"VRNDSCALEPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x08 /r ib"/"RAMI"
+    // Pos:2418 Instruction:"VRNDSCALEPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x08 /r ib"/"RAMI"
     {
         ND_INS_VRNDSCALEPS, ND_CAT_AVX512, ND_SET_AVX512F, 1461, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38294,7 +38354,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2415 Instruction:"VRNDSCALESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x0B /r ib"/"RAVMI"
+    // Pos:2419 Instruction:"VRNDSCALESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib" Encoding:"evex m:3 p:1 l:i w:1 0x0B /r ib"/"RAVMI"
     {
         ND_INS_VRNDSCALESD, ND_CAT_AVX512, ND_SET_AVX512F, 1462, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38312,7 +38372,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2416 Instruction:"VRNDSCALESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x0A /r ib"/"RAVMI"
+    // Pos:2420 Instruction:"VRNDSCALESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib" Encoding:"evex m:3 p:1 l:i w:0 0x0A /r ib"/"RAVMI"
     {
         ND_INS_VRNDSCALESS, ND_CAT_AVX512, ND_SET_AVX512F, 1463, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38330,7 +38390,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2417 Instruction:"VROUNDPD Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x09 /r ib"/"RMI"
+    // Pos:2421 Instruction:"VROUNDPD Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x09 /r ib"/"RMI"
     {
         ND_INS_VROUNDPD, ND_CAT_AVX, ND_SET_AVX, 1464, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38346,7 +38406,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2418 Instruction:"VROUNDPS Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x08 /r ib"/"RMI"
+    // Pos:2422 Instruction:"VROUNDPS Vx,Wx,Ib" Encoding:"vex m:3 p:1 l:x w:i 0x08 /r ib"/"RMI"
     {
         ND_INS_VROUNDPS, ND_CAT_AVX, ND_SET_AVX, 1465, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38362,7 +38422,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2419 Instruction:"VROUNDSD Vsd,Hsd,Wsd,Ib" Encoding:"vex m:3 p:1 l:i w:i 0x0B /r ib"/"RVMI"
+    // Pos:2423 Instruction:"VROUNDSD Vsd,Hsd,Wsd,Ib" Encoding:"vex m:3 p:1 l:i w:i 0x0B /r ib"/"RVMI"
     {
         ND_INS_VROUNDSD, ND_CAT_AVX, ND_SET_AVX, 1466, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38379,7 +38439,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2420 Instruction:"VROUNDSS Vss,Hss,Wss,Ib" Encoding:"vex m:3 p:1 l:i w:i 0x0A /r ib"/"RVMI"
+    // Pos:2424 Instruction:"VROUNDSS Vss,Hss,Wss,Ib" Encoding:"vex m:3 p:1 l:i w:i 0x0A /r ib"/"RVMI"
     {
         ND_INS_VROUNDSS, ND_CAT_AVX, ND_SET_AVX, 1467, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38396,7 +38456,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2421 Instruction:"VRSQRT14PD Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4E /r"/"RAM"
+    // Pos:2425 Instruction:"VRSQRT14PD Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4E /r"/"RAM"
     {
         ND_INS_VRSQRT14PD, ND_CAT_AVX512, ND_SET_AVX512F, 1468, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38412,7 +38472,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2422 Instruction:"VRSQRT14PS Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4E /r"/"RAM"
+    // Pos:2426 Instruction:"VRSQRT14PS Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4E /r"/"RAM"
     {
         ND_INS_VRSQRT14PS, ND_CAT_AVX512, ND_SET_AVX512F, 1469, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38428,7 +38488,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2423 Instruction:"VRSQRT14SD Vdq{K}{z},aKq,Hdq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x4F /r"/"RAVM"
+    // Pos:2427 Instruction:"VRSQRT14SD Vdq{K}{z},aKq,Hdq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x4F /r"/"RAVM"
     {
         ND_INS_VRSQRT14SD, ND_CAT_AVX512, ND_SET_AVX512F, 1470, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38445,7 +38505,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2424 Instruction:"VRSQRT14SS Vdq{K}{z},aKq,Hdq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x4F /r"/"RAVM"
+    // Pos:2428 Instruction:"VRSQRT14SS Vdq{K}{z},aKq,Hdq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x4F /r"/"RAVM"
     {
         ND_INS_VRSQRT14SS, ND_CAT_AVX512, ND_SET_AVX512F, 1471, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38462,7 +38522,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2425 Instruction:"VRSQRT28PD Voq{K}{z},aKq,Woq|B64{sae}" Encoding:"evex m:2 p:1 l:2 w:1 0xCC /r"/"RAM"
+    // Pos:2429 Instruction:"VRSQRT28PD Voq{K}{z},aKq,Woq|B64{sae}" Encoding:"evex m:2 p:1 l:2 w:1 0xCC /r"/"RAM"
     {
         ND_INS_VRSQRT28PD, ND_CAT_KNL, ND_SET_AVX512ER, 1472, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38478,7 +38538,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2426 Instruction:"VRSQRT28PS Voq{K}{z},aKq,Woq|B32{sae}" Encoding:"evex m:2 p:1 l:2 w:0 0xCC /r"/"RAM"
+    // Pos:2430 Instruction:"VRSQRT28PS Voq{K}{z},aKq,Woq|B32{sae}" Encoding:"evex m:2 p:1 l:2 w:0 0xCC /r"/"RAM"
     {
         ND_INS_VRSQRT28PS, ND_CAT_KNL, ND_SET_AVX512ER, 1473, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38494,7 +38554,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2427 Instruction:"VRSQRT28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:2 p:1 l:i w:1 0xCD /r"/"RAVM"
+    // Pos:2431 Instruction:"VRSQRT28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}" Encoding:"evex m:2 p:1 l:i w:1 0xCD /r"/"RAVM"
     {
         ND_INS_VRSQRT28SD, ND_CAT_KNL, ND_SET_AVX512ER, 1474, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38511,7 +38571,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2428 Instruction:"VRSQRT28SS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:2 p:1 l:i w:0 0xCD /r"/"RAVM"
+    // Pos:2432 Instruction:"VRSQRT28SS Vdq{K}{z},aKq,Hdq,Wss{sae}" Encoding:"evex m:2 p:1 l:i w:0 0xCD /r"/"RAVM"
     {
         ND_INS_VRSQRT28SS, ND_CAT_KNL, ND_SET_AVX512ER, 1475, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38528,7 +38588,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2429 Instruction:"VRSQRTPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x52 /r"/"RM"
+    // Pos:2433 Instruction:"VRSQRTPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x52 /r"/"RM"
     {
         ND_INS_VRSQRTPS, ND_CAT_AVX, ND_SET_AVX, 1476, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38543,7 +38603,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2430 Instruction:"VRSQRTSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x52 /r"/"RVM"
+    // Pos:2434 Instruction:"VRSQRTSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x52 /r"/"RVM"
     {
         ND_INS_VRSQRTSS, ND_CAT_AVX, ND_SET_AVX, 1477, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38559,7 +38619,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2431 Instruction:"VSCALEFPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x2C /r"/"RAVM"
+    // Pos:2435 Instruction:"VSCALEFPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x2C /r"/"RAVM"
     {
         ND_INS_VSCALEFPD, ND_CAT_AVX512, ND_SET_AVX512F, 1478, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38576,7 +38636,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2432 Instruction:"VSCALEFPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x2C /r"/"RAVM"
+    // Pos:2436 Instruction:"VSCALEFPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x2C /r"/"RAVM"
     {
         ND_INS_VSCALEFPS, ND_CAT_AVX512, ND_SET_AVX512F, 1479, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38593,7 +38653,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2433 Instruction:"VSCALEFSD Vsd{K}{z},aKq,Hsd,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x2D /r"/"RAVM"
+    // Pos:2437 Instruction:"VSCALEFSD Vsd{K}{z},aKq,Hsd,Wsd{er}" Encoding:"evex m:2 p:1 l:i w:1 0x2D /r"/"RAVM"
     {
         ND_INS_VSCALEFSD, ND_CAT_AVX512, ND_SET_AVX512F, 1480, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38610,7 +38670,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2434 Instruction:"VSCALEFSS Vss{K}{z},aKq,Hss,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x2D /r"/"RAVM"
+    // Pos:2438 Instruction:"VSCALEFSS Vss{K}{z},aKq,Hss,Wss{er}" Encoding:"evex m:2 p:1 l:i w:0 0x2D /r"/"RAVM"
     {
         ND_INS_VSCALEFSS, ND_CAT_AVX512, ND_SET_AVX512F, 1481, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38627,7 +38687,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2435 Instruction:"VSCATTERDPD Mvm32h{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA2 /r:mem vsib"/"MAR"
+    // Pos:2439 Instruction:"VSCATTERDPD Mvm32h{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA2 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERDPD, ND_CAT_SCATTER, ND_SET_AVX512F, 1482, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38643,7 +38703,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2436 Instruction:"VSCATTERDPS Mvm32n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0xA2 /r:mem vsib"/"MAR"
+    // Pos:2440 Instruction:"VSCATTERDPS Mvm32n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0xA2 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERDPS, ND_CAT_SCATTER, ND_SET_AVX512F, 1483, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38659,7 +38719,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2437 Instruction:"VSCATTERPF0DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /5:mem vsib"/"MA"
+    // Pos:2441 Instruction:"VSCATTERPF0DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /5:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF0DPD, ND_CAT_SCATTER, ND_SET_AVX512PF, 1484, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38674,7 +38734,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2438 Instruction:"VSCATTERPF0DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /5:mem vsib"/"MA"
+    // Pos:2442 Instruction:"VSCATTERPF0DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /5:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF0DPS, ND_CAT_SCATTER, ND_SET_AVX512PF, 1485, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38689,7 +38749,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2439 Instruction:"VSCATTERPF0QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /5:mem vsib"/"MA"
+    // Pos:2443 Instruction:"VSCATTERPF0QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /5:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF0QPD, ND_CAT_SCATTER, ND_SET_AVX512PF, 1486, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38704,7 +38764,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2440 Instruction:"VSCATTERPF0QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /5:mem vsib"/"MA"
+    // Pos:2444 Instruction:"VSCATTERPF0QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /5:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF0QPS, ND_CAT_SCATTER, ND_SET_AVX512PF, 1487, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38719,7 +38779,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2441 Instruction:"VSCATTERPF1DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /6:mem vsib"/"MA"
+    // Pos:2445 Instruction:"VSCATTERPF1DPD Mvm32h{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC6 /6:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF1DPD, ND_CAT_SCATTER, ND_SET_AVX512PF, 1488, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38734,7 +38794,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2442 Instruction:"VSCATTERPF1DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /6:mem vsib"/"MA"
+    // Pos:2446 Instruction:"VSCATTERPF1DPS Mvm32n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC6 /6:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF1DPS, ND_CAT_SCATTER, ND_SET_AVX512PF, 1489, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38749,7 +38809,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2443 Instruction:"VSCATTERPF1QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /6:mem vsib"/"MA"
+    // Pos:2447 Instruction:"VSCATTERPF1QPD Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:1 0xC7 /6:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF1QPD, ND_CAT_SCATTER, ND_SET_AVX512PF, 1490, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38764,7 +38824,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2444 Instruction:"VSCATTERPF1QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /6:mem vsib"/"MA"
+    // Pos:2448 Instruction:"VSCATTERPF1QPS Mvm64n{K},aKq" Encoding:"evex m:2 p:1 l:2 w:0 0xC7 /6:mem vsib"/"MA"
     {
         ND_INS_VSCATTERPF1QPS, ND_CAT_SCATTER, ND_SET_AVX512PF, 1491, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38779,7 +38839,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2445 Instruction:"VSCATTERQPD Mvm64n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA3 /r:mem vsib"/"MAR"
+    // Pos:2449 Instruction:"VSCATTERQPD Mvm64n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA3 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERQPD, ND_CAT_SCATTER, ND_SET_AVX512F, 1492, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38795,7 +38855,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2446 Instruction:"VSCATTERQPS Mvm64n{K},aKq,Vh" Encoding:"evex m:2 p:1 l:x w:0 0xA3 /r:mem vsib"/"MAR"
+    // Pos:2450 Instruction:"VSCATTERQPS Mvm64n{K},aKq,Vh" Encoding:"evex m:2 p:1 l:x w:0 0xA3 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERQPS, ND_CAT_SCATTER, ND_SET_AVX512F, 1493, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38811,7 +38871,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2447 Instruction:"VSHUFF32X4 Vu{K}{z},aKq,Hu,Wu|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x23 /r ib"/"RAVMI"
+    // Pos:2451 Instruction:"VSHUFF32X4 Vu{K}{z},aKq,Hu,Wu|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x23 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFF32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1494, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38829,7 +38889,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2448 Instruction:"VSHUFF64X2 Vu{K}{z},aKq,Hu,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x23 /r ib"/"RAVMI"
+    // Pos:2452 Instruction:"VSHUFF64X2 Vu{K}{z},aKq,Hu,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x23 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFF64X2, ND_CAT_AVX512, ND_SET_AVX512F, 1495, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38847,7 +38907,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2449 Instruction:"VSHUFI32X4 Vu{K}{z},aKq,Hu,Wu|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x43 /r ib"/"RAVMI"
+    // Pos:2453 Instruction:"VSHUFI32X4 Vu{K}{z},aKq,Hu,Wu|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x43 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFI32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1496, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38865,7 +38925,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2450 Instruction:"VSHUFI64X2 Vu{K}{z},aKq,Hu,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x43 /r ib"/"RAVMI"
+    // Pos:2454 Instruction:"VSHUFI64X2 Vu{K}{z},aKq,Hu,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x43 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFI64X2, ND_CAT_AVX512, ND_SET_AVX512F, 1497, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38883,7 +38943,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2451 Instruction:"VSHUFPD Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC6 /r ib"/"RAVMI"
+    // Pos:2455 Instruction:"VSHUFPD Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC6 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFPD, ND_CAT_AVX512, ND_SET_AVX512F, 1498, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38901,7 +38961,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2452 Instruction:"VSHUFPD Vpd,Hpd,Wpd,Ib" Encoding:"vex m:1 p:1 l:x w:i 0xC6 /r ib"/"RVMI"
+    // Pos:2456 Instruction:"VSHUFPD Vpd,Hpd,Wpd,Ib" Encoding:"vex m:1 p:1 l:x w:i 0xC6 /r ib"/"RVMI"
     {
         ND_INS_VSHUFPD, ND_CAT_AVX, ND_SET_AVX, 1498, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38918,7 +38978,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2453 Instruction:"VSHUFPS Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC6 /r ib"/"RAVMI"
+    // Pos:2457 Instruction:"VSHUFPS Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC6 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFPS, ND_CAT_AVX512, ND_SET_AVX512F, 1499, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38936,7 +38996,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2454 Instruction:"VSHUFPS Vps,Hps,Wps,Ib" Encoding:"vex m:1 p:0 l:x w:i 0xC6 /r ib"/"RVMI"
+    // Pos:2458 Instruction:"VSHUFPS Vps,Hps,Wps,Ib" Encoding:"vex m:1 p:0 l:x w:i 0xC6 /r ib"/"RVMI"
     {
         ND_INS_VSHUFPS, ND_CAT_AVX, ND_SET_AVX, 1499, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38953,7 +39013,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2455 Instruction:"VSQRTPD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x51 /r"/"RAM"
+    // Pos:2459 Instruction:"VSQRTPD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x51 /r"/"RAM"
     {
         ND_INS_VSQRTPD, ND_CAT_AVX512, ND_SET_AVX512F, 1500, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38969,7 +39029,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2456 Instruction:"VSQRTPD Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x51 /r"/"RM"
+    // Pos:2460 Instruction:"VSQRTPD Vx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x51 /r"/"RM"
     {
         ND_INS_VSQRTPD, ND_CAT_AVX, ND_SET_AVX, 1500, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -38984,7 +39044,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2457 Instruction:"VSQRTPS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x51 /r"/"RAM"
+    // Pos:2461 Instruction:"VSQRTPS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x51 /r"/"RAM"
     {
         ND_INS_VSQRTPS, ND_CAT_AVX512, ND_SET_AVX512F, 1501, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39000,7 +39060,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2458 Instruction:"VSQRTPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x51 /r"/"RM"
+    // Pos:2462 Instruction:"VSQRTPS Vx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x51 /r"/"RM"
     {
         ND_INS_VSQRTPS, ND_CAT_AVX, ND_SET_AVX, 1501, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39015,7 +39075,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2459 Instruction:"VSQRTSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x51 /r"/"RAVM"
+    // Pos:2463 Instruction:"VSQRTSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x51 /r"/"RAVM"
     {
         ND_INS_VSQRTSD, ND_CAT_AVX512, ND_SET_AVX512F, 1502, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39032,7 +39092,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2460 Instruction:"VSQRTSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x51 /r"/"RVM"
+    // Pos:2464 Instruction:"VSQRTSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x51 /r"/"RVM"
     {
         ND_INS_VSQRTSD, ND_CAT_AVX, ND_SET_AVX, 1502, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39048,7 +39108,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2461 Instruction:"VSQRTSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x51 /r"/"RAVM"
+    // Pos:2465 Instruction:"VSQRTSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x51 /r"/"RAVM"
     {
         ND_INS_VSQRTSS, ND_CAT_AVX512, ND_SET_AVX512F, 1503, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39065,7 +39125,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2462 Instruction:"VSQRTSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x51 /r"/"RVM"
+    // Pos:2466 Instruction:"VSQRTSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x51 /r"/"RVM"
     {
         ND_INS_VSQRTSS, ND_CAT_AVX, ND_SET_AVX, 1503, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39081,7 +39141,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2463 Instruction:"VSTMXCSR Md" Encoding:"vex m:1 p:0 0xAE /3:mem"/"M"
+    // Pos:2467 Instruction:"VSTMXCSR Md" Encoding:"vex m:1 p:0 0xAE /3:mem"/"M"
     {
         ND_INS_VSTMXCSR, ND_CAT_AVX, ND_SET_AVX, 1504, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39096,7 +39156,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2464 Instruction:"VSUBPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5C /r"/"RAVM"
+    // Pos:2468 Instruction:"VSUBPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBPD, ND_CAT_AVX512, ND_SET_AVX512F, 1505, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39113,7 +39173,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2465 Instruction:"VSUBPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5C /r"/"RVM"
+    // Pos:2469 Instruction:"VSUBPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x5C /r"/"RVM"
     {
         ND_INS_VSUBPD, ND_CAT_AVX, ND_SET_AVX, 1505, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39129,7 +39189,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2466 Instruction:"VSUBPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5C /r"/"RAVM"
+    // Pos:2470 Instruction:"VSUBPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBPS, ND_CAT_AVX512, ND_SET_AVX512F, 1506, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39146,7 +39206,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2467 Instruction:"VSUBPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5C /r"/"RVM"
+    // Pos:2471 Instruction:"VSUBPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x5C /r"/"RVM"
     {
         ND_INS_VSUBPS, ND_CAT_AVX, ND_SET_AVX, 1506, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39162,7 +39222,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2468 Instruction:"VSUBSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x5C /r"/"RAVM"
+    // Pos:2472 Instruction:"VSUBSD Vdq{K}{z},aKq,Hdq,Wsd{er}" Encoding:"evex m:1 p:3 l:i w:1 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBSD, ND_CAT_AVX512, ND_SET_AVX512F, 1507, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39179,7 +39239,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2469 Instruction:"VSUBSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5C /r"/"RVM"
+    // Pos:2473 Instruction:"VSUBSD Vsd,Hsd,Wsd" Encoding:"vex m:1 p:3 l:i w:i 0x5C /r"/"RVM"
     {
         ND_INS_VSUBSD, ND_CAT_AVX, ND_SET_AVX, 1507, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39195,7 +39255,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2470 Instruction:"VSUBSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x5C /r"/"RAVM"
+    // Pos:2474 Instruction:"VSUBSS Vdq{K}{z},aKq,Hdq,Wss{er}" Encoding:"evex m:1 p:2 l:i w:0 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBSS, ND_CAT_AVX512, ND_SET_AVX512F, 1508, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39212,7 +39272,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2471 Instruction:"VSUBSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5C /r"/"RVM"
+    // Pos:2475 Instruction:"VSUBSS Vss,Hss,Wss" Encoding:"vex m:1 p:2 l:i w:i 0x5C /r"/"RVM"
     {
         ND_INS_VSUBSS, ND_CAT_AVX, ND_SET_AVX, 1508, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39228,7 +39288,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2472 Instruction:"VTESTPD Vx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0F /r"/"RM"
+    // Pos:2476 Instruction:"VTESTPD Vx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0F /r"/"RM"
     {
         ND_INS_VTESTPD, ND_CAT_LOGICAL_FP, ND_SET_AVX, 1509, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39244,7 +39304,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2473 Instruction:"VTESTPS Vx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0E /r"/"RM"
+    // Pos:2477 Instruction:"VTESTPS Vx,Wx" Encoding:"vex m:2 p:1 l:x w:0 0x0E /r"/"RM"
     {
         ND_INS_VTESTPS, ND_CAT_LOGICAL_FP, ND_SET_AVX, 1510, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39260,7 +39320,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2474 Instruction:"VUCOMISD Vdq,Wsd{sae}" Encoding:"evex m:1 p:1 l:i w:1 0x2E /r"/"RM"
+    // Pos:2478 Instruction:"VUCOMISD Vdq,Wsd{sae}" Encoding:"evex m:1 p:1 l:i w:1 0x2E /r"/"RM"
     {
         ND_INS_VUCOMISD, ND_CAT_AVX512, ND_SET_AVX512F, 1511, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39276,7 +39336,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2475 Instruction:"VUCOMISD Vsd,Wsd" Encoding:"vex m:1 p:1 l:i w:i 0x2E /r"/"RM"
+    // Pos:2479 Instruction:"VUCOMISD Vsd,Wsd" Encoding:"vex m:1 p:1 l:i w:i 0x2E /r"/"RM"
     {
         ND_INS_VUCOMISD, ND_CAT_AVX, ND_SET_AVX, 1511, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39292,7 +39352,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2476 Instruction:"VUCOMISS Vdq,Wss{sae}" Encoding:"evex m:1 p:0 l:i w:0 0x2E /r"/"RM"
+    // Pos:2480 Instruction:"VUCOMISS Vdq,Wss{sae}" Encoding:"evex m:1 p:0 l:i w:0 0x2E /r"/"RM"
     {
         ND_INS_VUCOMISS, ND_CAT_AVX512, ND_SET_AVX512F, 1512, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39308,7 +39368,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2477 Instruction:"VUCOMISS Vss,Wss" Encoding:"vex m:1 p:0 l:i w:i 0x2E /r"/"RM"
+    // Pos:2481 Instruction:"VUCOMISS Vss,Wss" Encoding:"vex m:1 p:0 l:i w:i 0x2E /r"/"RM"
     {
         ND_INS_VUCOMISS, ND_CAT_AVX, ND_SET_AVX, 1512, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39324,7 +39384,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2478 Instruction:"VUNPCKHPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x15 /r"/"RAVM"
+    // Pos:2482 Instruction:"VUNPCKHPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x15 /r"/"RAVM"
     {
         ND_INS_VUNPCKHPD, ND_CAT_AVX512, ND_SET_AVX512F, 1513, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39341,7 +39401,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2479 Instruction:"VUNPCKHPD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x15 /r"/"RVM"
+    // Pos:2483 Instruction:"VUNPCKHPD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x15 /r"/"RVM"
     {
         ND_INS_VUNPCKHPD, ND_CAT_AVX, ND_SET_AVX, 1513, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39357,7 +39417,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2480 Instruction:"VUNPCKHPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x15 /r"/"RAVM"
+    // Pos:2484 Instruction:"VUNPCKHPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x15 /r"/"RAVM"
     {
         ND_INS_VUNPCKHPS, ND_CAT_AVX512, ND_SET_AVX512F, 1514, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39374,7 +39434,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2481 Instruction:"VUNPCKHPS Vx,Hx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x15 /r"/"RVM"
+    // Pos:2485 Instruction:"VUNPCKHPS Vx,Hx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x15 /r"/"RVM"
     {
         ND_INS_VUNPCKHPS, ND_CAT_AVX, ND_SET_AVX, 1514, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39390,7 +39450,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2482 Instruction:"VUNPCKLPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x14 /r"/"RAVM"
+    // Pos:2486 Instruction:"VUNPCKLPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x14 /r"/"RAVM"
     {
         ND_INS_VUNPCKLPD, ND_CAT_AVX512, ND_SET_AVX512F, 1515, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39407,7 +39467,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2483 Instruction:"VUNPCKLPD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x14 /r"/"RVM"
+    // Pos:2487 Instruction:"VUNPCKLPD Vx,Hx,Wx" Encoding:"vex m:1 p:1 l:x w:i 0x14 /r"/"RVM"
     {
         ND_INS_VUNPCKLPD, ND_CAT_AVX, ND_SET_AVX, 1515, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39423,7 +39483,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2484 Instruction:"VUNPCKLPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x14 /r"/"RAVM"
+    // Pos:2488 Instruction:"VUNPCKLPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x14 /r"/"RAVM"
     {
         ND_INS_VUNPCKLPS, ND_CAT_AVX512, ND_SET_AVX512F, 1516, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39440,7 +39500,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2485 Instruction:"VUNPCKLPS Vx,Hx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x14 /r"/"RVM"
+    // Pos:2489 Instruction:"VUNPCKLPS Vx,Hx,Wx" Encoding:"vex m:1 p:0 l:x w:i 0x14 /r"/"RVM"
     {
         ND_INS_VUNPCKLPS, ND_CAT_AVX, ND_SET_AVX, 1516, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39456,7 +39516,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2486 Instruction:"VXORPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x57 /r"/"RAVM"
+    // Pos:2490 Instruction:"VXORPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x57 /r"/"RAVM"
     {
         ND_INS_VXORPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1517, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39473,7 +39533,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2487 Instruction:"VXORPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x57 /r"/"RVM"
+    // Pos:2491 Instruction:"VXORPD Vpd,Hpd,Wpd" Encoding:"vex m:1 p:1 l:x w:i 0x57 /r"/"RVM"
     {
         ND_INS_VXORPD, ND_CAT_LOGICAL_FP, ND_SET_AVX, 1517, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39489,7 +39549,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2488 Instruction:"VXORPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x57 /r"/"RAVM"
+    // Pos:2492 Instruction:"VXORPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x57 /r"/"RAVM"
     {
         ND_INS_VXORPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1518, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39506,7 +39566,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2489 Instruction:"VXORPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x57 /r"/"RVM"
+    // Pos:2493 Instruction:"VXORPS Vps,Hps,Wps" Encoding:"vex m:1 p:0 l:x w:i 0x57 /r"/"RVM"
     {
         ND_INS_VXORPS, ND_CAT_LOGICAL_FP, ND_SET_AVX, 1518, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39522,7 +39582,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2490 Instruction:"VZEROALL" Encoding:"vex m:1 p:0 l:1 0x77"/""
+    // Pos:2494 Instruction:"VZEROALL" Encoding:"vex m:1 p:0 l:1 0x77"/""
     {
         ND_INS_VZEROALL, ND_CAT_AVX, ND_SET_AVX, 1519, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39536,7 +39596,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2491 Instruction:"VZEROUPPER" Encoding:"vex m:1 p:0 l:0 0x77"/""
+    // Pos:2495 Instruction:"VZEROUPPER" Encoding:"vex m:1 p:0 l:0 0x77"/""
     {
         ND_INS_VZEROUPPER, ND_CAT_AVX, ND_SET_AVX, 1520, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_SMM|ND_MOD_SGX|ND_MOD_TSX|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO, 
@@ -39550,7 +39610,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2492 Instruction:"WAIT" Encoding:"0x9B"/""
+    // Pos:2496 Instruction:"WAIT" Encoding:"0x9B"/""
     {
         ND_INS_WAIT, ND_CAT_X87_ALU, ND_SET_X87, 1521, 
         ND_MOD_ANY, 
@@ -39564,7 +39624,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2493 Instruction:"WBINVD" Encoding:"0x0F 0x09"/""
+    // Pos:2497 Instruction:"WBINVD" Encoding:"0x0F 0x09"/""
     {
         ND_INS_WBINVD, ND_CAT_SYSTEM, ND_SET_I486REAL, 1522, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -39578,7 +39638,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2494 Instruction:"WBNOINVD" Encoding:"a0xF3 0x0F 0x09"/""
+    // Pos:2498 Instruction:"WBNOINVD" Encoding:"a0xF3 0x0F 0x09"/""
     {
         ND_INS_WBNOINVD, ND_CAT_WBNOINVD, ND_SET_WBNOINVD, 1523, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -39592,7 +39652,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2495 Instruction:"WRFSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /2:reg"/"M"
+    // Pos:2499 Instruction:"WRFSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /2:reg"/"M"
     {
         ND_INS_WRFSBASE, ND_CAT_RDWRFSGS, ND_SET_RDWRFSGS, 1524, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -39607,7 +39667,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2496 Instruction:"WRGSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /3:reg"/"M"
+    // Pos:2500 Instruction:"WRGSBASE Ry" Encoding:"o64 0xF3 0x0F 0xAE /3:reg"/"M"
     {
         ND_INS_WRGSBASE, ND_CAT_RDWRFSGS, ND_SET_RDWRFSGS, 1525, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -39622,7 +39682,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2497 Instruction:"WRMSR" Encoding:"0x0F 0x30"/""
+    // Pos:2501 Instruction:"WRMSR" Encoding:"0x0F 0x30"/""
     {
         ND_INS_WRMSR, ND_CAT_SYSTEM, ND_SET_PENTIUMREAL, 1526, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -39639,7 +39699,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2498 Instruction:"WRPKRU" Encoding:"NP 0x0F 0x01 /0xEF"/""
+    // Pos:2502 Instruction:"WRPKRU" Encoding:"NP 0x0F 0x01 /0xEF"/""
     {
         ND_INS_WRPKRU, ND_CAT_MISC, ND_SET_PKU, 1527, 
         ND_MOD_ANY, 
@@ -39656,7 +39716,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2499 Instruction:"WRSHR Ed" Encoding:"cyrix 0x0F 0x37 /r"/"M"
+    // Pos:2503 Instruction:"WRSHR Ed" Encoding:"cyrix 0x0F 0x37 /r"/"M"
     {
         ND_INS_WRSHR, ND_CAT_SYSTEM, ND_SET_CYRIX, 1528, 
         ND_MOD_ANY, 
@@ -39670,7 +39730,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2500 Instruction:"WRSSD My,Gy" Encoding:"NP 0x0F 0x38 0xF6 /r:mem"/"MR"
+    // Pos:2504 Instruction:"WRSSD My,Gy" Encoding:"NP 0x0F 0x38 0xF6 /r:mem"/"MR"
     {
         ND_INS_WRSS, ND_CAT_CET, ND_SET_CET_SS, 1529, 
         ND_MOD_ANY, 
@@ -39685,7 +39745,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2501 Instruction:"WRSSQ My,Gy" Encoding:"rexw NP 0x0F 0x38 0xF6 /r:mem"/"MR"
+    // Pos:2505 Instruction:"WRSSQ My,Gy" Encoding:"rexw NP 0x0F 0x38 0xF6 /r:mem"/"MR"
     {
         ND_INS_WRSS, ND_CAT_CET, ND_SET_CET_SS, 1530, 
         ND_MOD_ANY, 
@@ -39700,7 +39760,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2502 Instruction:"WRUSSD My,Gy" Encoding:"0x66 0x0F 0x38 0xF5 /r:mem"/"MR"
+    // Pos:2506 Instruction:"WRUSSD My,Gy" Encoding:"0x66 0x0F 0x38 0xF5 /r:mem"/"MR"
     {
         ND_INS_WRUSS, ND_CAT_CET, ND_SET_CET_SS, 1531, 
         ND_MOD_ANY, 
@@ -39715,7 +39775,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2503 Instruction:"WRUSSQ My,Gy" Encoding:"rexw 0x66 0x0F 0x38 0xF5 /r:mem"/"MR"
+    // Pos:2507 Instruction:"WRUSSQ My,Gy" Encoding:"rexw 0x66 0x0F 0x38 0xF5 /r:mem"/"MR"
     {
         ND_INS_WRUSS, ND_CAT_CET, ND_SET_CET_SS, 1532, 
         ND_MOD_ANY, 
@@ -39730,7 +39790,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2504 Instruction:"XABORT Ib" Encoding:"0xC6 /0xF8 ib"/"I"
+    // Pos:2508 Instruction:"XABORT Ib" Encoding:"0xC6 /0xF8 ib"/"I"
     {
         ND_INS_XABORT, ND_CAT_UNCOND_BR, ND_SET_TSX, 1533, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX, 
@@ -39745,7 +39805,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2505 Instruction:"XADD Eb,Gb" Encoding:"0x0F 0xC0 /r"/"MR"
+    // Pos:2509 Instruction:"XADD Eb,Gb" Encoding:"0x0F 0xC0 /r"/"MR"
     {
         ND_INS_XADD, ND_CAT_SEMAPHORE, ND_SET_I486REAL, 1534, 
         ND_MOD_ANY, 
@@ -39761,7 +39821,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2506 Instruction:"XADD Ev,Gv" Encoding:"0x0F 0xC1 /r"/"MR"
+    // Pos:2510 Instruction:"XADD Ev,Gv" Encoding:"0x0F 0xC1 /r"/"MR"
     {
         ND_INS_XADD, ND_CAT_SEMAPHORE, ND_SET_I486REAL, 1534, 
         ND_MOD_ANY, 
@@ -39777,7 +39837,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2507 Instruction:"XBEGIN Jz" Encoding:"0xC7 /0xF8 cz"/"D"
+    // Pos:2511 Instruction:"XBEGIN Jz" Encoding:"0xC7 /0xF8 cz"/"D"
     {
         ND_INS_XBEGIN, ND_CAT_COND_BR, ND_SET_TSX, 1535, 
         ND_MOD_ANY, 
@@ -39793,7 +39853,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2508 Instruction:"XCHG Eb,Gb" Encoding:"0x86 /r"/"MR"
+    // Pos:2512 Instruction:"XCHG Eb,Gb" Encoding:"0x86 /r"/"MR"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39808,7 +39868,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2509 Instruction:"XCHG Ev,Gv" Encoding:"0x87 /r"/"MR"
+    // Pos:2513 Instruction:"XCHG Ev,Gv" Encoding:"0x87 /r"/"MR"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39823,7 +39883,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2510 Instruction:"XCHG rAX,Zv" Encoding:"rex 0x90"/"O"
+    // Pos:2514 Instruction:"XCHG rAX,Zv" Encoding:"rex 0x90"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39838,7 +39898,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2511 Instruction:"XCHG rAX,Zv" Encoding:"0x91"/"O"
+    // Pos:2515 Instruction:"XCHG rAX,Zv" Encoding:"0x91"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39853,7 +39913,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2512 Instruction:"XCHG rAX,Zv" Encoding:"0x92"/"O"
+    // Pos:2516 Instruction:"XCHG rAX,Zv" Encoding:"0x92"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39868,7 +39928,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2513 Instruction:"XCHG rAX,Zv" Encoding:"0x93"/"O"
+    // Pos:2517 Instruction:"XCHG rAX,Zv" Encoding:"0x93"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39883,7 +39943,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2514 Instruction:"XCHG rAX,Zv" Encoding:"0x94"/"O"
+    // Pos:2518 Instruction:"XCHG rAX,Zv" Encoding:"0x94"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39898,7 +39958,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2515 Instruction:"XCHG rAX,Zv" Encoding:"0x95"/"O"
+    // Pos:2519 Instruction:"XCHG rAX,Zv" Encoding:"0x95"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39913,7 +39973,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2516 Instruction:"XCHG rAX,Zv" Encoding:"0x96"/"O"
+    // Pos:2520 Instruction:"XCHG rAX,Zv" Encoding:"0x96"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39928,7 +39988,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2517 Instruction:"XCHG rAX,Zv" Encoding:"0x97"/"O"
+    // Pos:2521 Instruction:"XCHG rAX,Zv" Encoding:"0x97"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1536, 
         ND_MOD_ANY, 
@@ -39943,7 +40003,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2518 Instruction:"XCRYPTCBC" Encoding:"0xF3 0x0F 0xA7 /0xD0"/""
+    // Pos:2522 Instruction:"XCRYPTCBC" Encoding:"0xF3 0x0F 0xA7 /0xD0"/""
     {
         ND_INS_XCRYPTCBC, ND_CAT_PADLOCK, ND_SET_CYRIX, 1537, 
         ND_MOD_ANY, 
@@ -39957,7 +40017,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2519 Instruction:"XCRYPTCFB" Encoding:"0xF3 0x0F 0xA7 /0xE0"/""
+    // Pos:2523 Instruction:"XCRYPTCFB" Encoding:"0xF3 0x0F 0xA7 /0xE0"/""
     {
         ND_INS_XCRYPTCFB, ND_CAT_PADLOCK, ND_SET_CYRIX, 1538, 
         ND_MOD_ANY, 
@@ -39971,7 +40031,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2520 Instruction:"XCRYPTCTR" Encoding:"0xF3 0x0F 0xA7 /0xD8"/""
+    // Pos:2524 Instruction:"XCRYPTCTR" Encoding:"0xF3 0x0F 0xA7 /0xD8"/""
     {
         ND_INS_XCRYPTCTR, ND_CAT_PADLOCK, ND_SET_CYRIX, 1539, 
         ND_MOD_ANY, 
@@ -39985,7 +40045,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2521 Instruction:"XCRYPTECB" Encoding:"0xF3 0x0F 0xA7 /0xC8"/""
+    // Pos:2525 Instruction:"XCRYPTECB" Encoding:"0xF3 0x0F 0xA7 /0xC8"/""
     {
         ND_INS_XCRYPTECB, ND_CAT_PADLOCK, ND_SET_CYRIX, 1540, 
         ND_MOD_ANY, 
@@ -39999,7 +40059,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2522 Instruction:"XCRYPTOFB" Encoding:"0xF3 0x0F 0xA7 /0xE8"/""
+    // Pos:2526 Instruction:"XCRYPTOFB" Encoding:"0xF3 0x0F 0xA7 /0xE8"/""
     {
         ND_INS_XCRYPTOFB, ND_CAT_PADLOCK, ND_SET_CYRIX, 1541, 
         ND_MOD_ANY, 
@@ -40013,7 +40073,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2523 Instruction:"XEND" Encoding:"NP 0x0F 0x01 /0xD5"/""
+    // Pos:2527 Instruction:"XEND" Encoding:"NP 0x0F 0x01 /0xD5"/""
     {
         ND_INS_XEND, ND_CAT_COND_BR, ND_SET_TSX, 1542, 
         ND_MOD_ANY, 
@@ -40027,7 +40087,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2524 Instruction:"XGETBV" Encoding:"NP 0x0F 0x01 /0xD0"/""
+    // Pos:2528 Instruction:"XGETBV" Encoding:"NP 0x0F 0x01 /0xD0"/""
     {
         ND_INS_XGETBV, ND_CAT_XSAVE, ND_SET_XSAVE, 1543, 
         ND_MOD_ANY, 
@@ -40044,7 +40104,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2525 Instruction:"XLATB" Encoding:"0xD7"/""
+    // Pos:2529 Instruction:"XLATB" Encoding:"0xD7"/""
     {
         ND_INS_XLATB, ND_CAT_MISC, ND_SET_I86, 1544, 
         ND_MOD_ANY, 
@@ -40059,7 +40119,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2526 Instruction:"XOR Eb,Gb" Encoding:"0x30 /r"/"MR"
+    // Pos:2530 Instruction:"XOR Eb,Gb" Encoding:"0x30 /r"/"MR"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40075,7 +40135,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2527 Instruction:"XOR Ev,Gv" Encoding:"0x31 /r"/"MR"
+    // Pos:2531 Instruction:"XOR Ev,Gv" Encoding:"0x31 /r"/"MR"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40091,7 +40151,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2528 Instruction:"XOR Gb,Eb" Encoding:"0x32 /r"/"RM"
+    // Pos:2532 Instruction:"XOR Gb,Eb" Encoding:"0x32 /r"/"RM"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40107,7 +40167,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2529 Instruction:"XOR Gv,Ev" Encoding:"0x33 /r"/"RM"
+    // Pos:2533 Instruction:"XOR Gv,Ev" Encoding:"0x33 /r"/"RM"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40123,7 +40183,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2530 Instruction:"XOR AL,Ib" Encoding:"0x34 ib"/"I"
+    // Pos:2534 Instruction:"XOR AL,Ib" Encoding:"0x34 ib"/"I"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40139,7 +40199,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2531 Instruction:"XOR rAX,Iz" Encoding:"0x35 iz"/"I"
+    // Pos:2535 Instruction:"XOR rAX,Iz" Encoding:"0x35 iz"/"I"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40155,7 +40215,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2532 Instruction:"XOR Eb,Ib" Encoding:"0x80 /6 ib"/"MI"
+    // Pos:2536 Instruction:"XOR Eb,Ib" Encoding:"0x80 /6 ib"/"MI"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40171,7 +40231,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2533 Instruction:"XOR Ev,Iz" Encoding:"0x81 /6 iz"/"MI"
+    // Pos:2537 Instruction:"XOR Ev,Iz" Encoding:"0x81 /6 iz"/"MI"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40187,7 +40247,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2534 Instruction:"XOR Eb,Ib" Encoding:"0x82 /6 iz"/"MI"
+    // Pos:2538 Instruction:"XOR Eb,Ib" Encoding:"0x82 /6 iz"/"MI"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_SGX|ND_MOD_TSX, 
@@ -40203,7 +40263,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2535 Instruction:"XOR Ev,Ib" Encoding:"0x83 /6 ib"/"MI"
+    // Pos:2539 Instruction:"XOR Ev,Ib" Encoding:"0x83 /6 ib"/"MI"
     {
         ND_INS_XOR, ND_CAT_LOGIC, ND_SET_I86, 1545, 
         ND_MOD_ANY, 
@@ -40219,7 +40279,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2536 Instruction:"XORPD Vpd,Wpd" Encoding:"0x66 0x0F 0x57 /r"/"RM"
+    // Pos:2540 Instruction:"XORPD Vpd,Wpd" Encoding:"0x66 0x0F 0x57 /r"/"RM"
     {
         ND_INS_XORPD, ND_CAT_LOGICAL_FP, ND_SET_SSE2, 1546, 
         ND_MOD_ANY, 
@@ -40234,7 +40294,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2537 Instruction:"XORPS Vps,Wps" Encoding:"NP 0x0F 0x57 /r"/"RM"
+    // Pos:2541 Instruction:"XORPS Vps,Wps" Encoding:"NP 0x0F 0x57 /r"/"RM"
     {
         ND_INS_XORPS, ND_CAT_LOGICAL_FP, ND_SET_SSE, 1547, 
         ND_MOD_ANY, 
@@ -40249,7 +40309,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2538 Instruction:"XRESLDTRK" Encoding:"0xF2 0x0F 0x01 /0xE9"/""
+    // Pos:2542 Instruction:"XRESLDTRK" Encoding:"0xF2 0x0F 0x01 /0xE9"/""
     {
         ND_INS_XRESLDTRK, ND_CAT_MISC, ND_SET_TSXLDTRK, 1548, 
         ND_MOD_ANY, 
@@ -40263,7 +40323,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2539 Instruction:"XRSTOR M?" Encoding:"NP 0x0F 0xAE /5:mem"/"M"
+    // Pos:2543 Instruction:"XRSTOR M?" Encoding:"NP 0x0F 0xAE /5:mem"/"M"
     {
         ND_INS_XRSTOR, ND_CAT_XSAVE, ND_SET_XSAVE, 1549, 
         ND_MOD_ANY, 
@@ -40281,7 +40341,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2540 Instruction:"XRSTOR64 M?" Encoding:"rexw NP 0x0F 0xAE /5:mem"/"M"
+    // Pos:2544 Instruction:"XRSTOR64 M?" Encoding:"rexw NP 0x0F 0xAE /5:mem"/"M"
     {
         ND_INS_XRSTOR, ND_CAT_XSAVE, ND_SET_XSAVE, 1550, 
         ND_MOD_ANY, 
@@ -40299,7 +40359,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2541 Instruction:"XRSTORS M?" Encoding:"NP 0x0F 0xC7 /3:mem"/"M"
+    // Pos:2545 Instruction:"XRSTORS M?" Encoding:"NP 0x0F 0xC7 /3:mem"/"M"
     {
         ND_INS_XRSTORS, ND_CAT_XSAVE, ND_SET_XSAVES, 1551, 
         ND_MOD_ANY, 
@@ -40317,7 +40377,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2542 Instruction:"XRSTORS64 M?" Encoding:"rexw NP 0x0F 0xC7 /3:mem"/"M"
+    // Pos:2546 Instruction:"XRSTORS64 M?" Encoding:"rexw NP 0x0F 0xC7 /3:mem"/"M"
     {
         ND_INS_XRSTORS, ND_CAT_XSAVE, ND_SET_XSAVES, 1552, 
         ND_MOD_ANY, 
@@ -40335,7 +40395,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2543 Instruction:"XSAVE M?" Encoding:"NP 0x0F 0xAE /4:mem"/"M"
+    // Pos:2547 Instruction:"XSAVE M?" Encoding:"NP 0x0F 0xAE /4:mem"/"M"
     {
         ND_INS_XSAVE, ND_CAT_XSAVE, ND_SET_XSAVE, 1553, 
         ND_MOD_ANY, 
@@ -40353,7 +40413,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2544 Instruction:"XSAVE64 M?" Encoding:"rexw NP 0x0F 0xAE /4:mem"/"M"
+    // Pos:2548 Instruction:"XSAVE64 M?" Encoding:"rexw NP 0x0F 0xAE /4:mem"/"M"
     {
         ND_INS_XSAVE, ND_CAT_XSAVE, ND_SET_XSAVE, 1554, 
         ND_MOD_ANY, 
@@ -40371,7 +40431,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2545 Instruction:"XSAVEC M?" Encoding:"NP 0x0F 0xC7 /4:mem"/"M"
+    // Pos:2549 Instruction:"XSAVEC M?" Encoding:"NP 0x0F 0xC7 /4:mem"/"M"
     {
         ND_INS_XSAVEC, ND_CAT_XSAVE, ND_SET_XSAVEC, 1555, 
         ND_MOD_ANY, 
@@ -40389,7 +40449,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2546 Instruction:"XSAVEC64 M?" Encoding:"rexw NP 0x0F 0xC7 /4:mem"/"M"
+    // Pos:2550 Instruction:"XSAVEC64 M?" Encoding:"rexw NP 0x0F 0xC7 /4:mem"/"M"
     {
         ND_INS_XSAVEC, ND_CAT_XSAVE, ND_SET_XSAVEC, 1556, 
         ND_MOD_ANY, 
@@ -40407,7 +40467,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2547 Instruction:"XSAVEOPT M?" Encoding:"NP 0x0F 0xAE /6:mem"/"M"
+    // Pos:2551 Instruction:"XSAVEOPT M?" Encoding:"NP 0x0F 0xAE /6:mem"/"M"
     {
         ND_INS_XSAVEOPT, ND_CAT_XSAVE, ND_SET_XSAVE, 1557, 
         ND_MOD_ANY, 
@@ -40425,7 +40485,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2548 Instruction:"XSAVEOPT64 M?" Encoding:"rexw NP 0x0F 0xAE /6:mem"/"M"
+    // Pos:2552 Instruction:"XSAVEOPT64 M?" Encoding:"rexw NP 0x0F 0xAE /6:mem"/"M"
     {
         ND_INS_XSAVEOPT, ND_CAT_XSAVE, ND_SET_XSAVE, 1558, 
         ND_MOD_ANY, 
@@ -40443,7 +40503,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2549 Instruction:"XSAVES M?" Encoding:"NP 0x0F 0xC7 /5:mem"/"M"
+    // Pos:2553 Instruction:"XSAVES M?" Encoding:"NP 0x0F 0xC7 /5:mem"/"M"
     {
         ND_INS_XSAVES, ND_CAT_XSAVE, ND_SET_XSAVES, 1559, 
         ND_MOD_ANY, 
@@ -40461,7 +40521,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2550 Instruction:"XSAVES64 M?" Encoding:"rexw NP 0x0F 0xC7 /5:mem"/"M"
+    // Pos:2554 Instruction:"XSAVES64 M?" Encoding:"rexw NP 0x0F 0xC7 /5:mem"/"M"
     {
         ND_INS_XSAVES, ND_CAT_XSAVE, ND_SET_XSAVES, 1560, 
         ND_MOD_ANY, 
@@ -40479,7 +40539,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2551 Instruction:"XSETBV" Encoding:"NP 0x0F 0x01 /0xD1"/""
+    // Pos:2555 Instruction:"XSETBV" Encoding:"NP 0x0F 0x01 /0xD1"/""
     {
         ND_INS_XSETBV, ND_CAT_XSAVE, ND_SET_XSAVE, 1561, 
         ND_MOD_R0|ND_MOD_REAL|ND_MOD_SMM|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_LONG|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXO|ND_MOD_TSX, 
@@ -40496,7 +40556,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2552 Instruction:"XSHA1" Encoding:"0xF3 0x0F 0xA6 /0xC8"/""
+    // Pos:2556 Instruction:"XSHA1" Encoding:"0xF3 0x0F 0xA6 /0xC8"/""
     {
         ND_INS_XSHA1, ND_CAT_PADLOCK, ND_SET_CYRIX, 1562, 
         ND_MOD_ANY, 
@@ -40510,7 +40570,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2553 Instruction:"XSHA256" Encoding:"0xF3 0x0F 0xA6 /0xD0"/""
+    // Pos:2557 Instruction:"XSHA256" Encoding:"0xF3 0x0F 0xA6 /0xD0"/""
     {
         ND_INS_XSHA256, ND_CAT_PADLOCK, ND_SET_CYRIX, 1563, 
         ND_MOD_ANY, 
@@ -40524,7 +40584,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2554 Instruction:"XSTORE" Encoding:"0x0F 0xA7 /0xC0"/""
+    // Pos:2558 Instruction:"XSTORE" Encoding:"0x0F 0xA7 /0xC0"/""
     {
         ND_INS_XSTORE, ND_CAT_PADLOCK, ND_SET_CYRIX, 1564, 
         ND_MOD_ANY, 
@@ -40538,7 +40598,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2555 Instruction:"XSUSLDTRK" Encoding:"0xF2 0x0F 0x01 /0xE8"/""
+    // Pos:2559 Instruction:"XSUSLDTRK" Encoding:"0xF2 0x0F 0x01 /0xE8"/""
     {
         ND_INS_XSUSLDTRK, ND_CAT_MISC, ND_SET_TSXLDTRK, 1565, 
         ND_MOD_ANY, 
@@ -40552,7 +40612,7 @@ const ND_INSTRUCTION gInstructions[2557] =
         },
     }, 
 
-    // Pos:2556 Instruction:"XTEST" Encoding:"NP 0x0F 0x01 /0xD6"/""
+    // Pos:2560 Instruction:"XTEST" Encoding:"NP 0x0F 0x01 /0xD6"/""
     {
         ND_INS_XTEST, ND_CAT_LOGIC, ND_SET_TSX, 1566, 
         ND_MOD_ANY, 
