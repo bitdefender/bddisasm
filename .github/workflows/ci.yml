@@ -1,0 +1,77 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+    paths-ignore: 
+      - '*.md'
+      - 'docs/**'
+      - 'isagenerator/**'
+      - 'bddisasm_test/**'
+      - 'bdshemu_test/**'
+      - 'LICENSE'
+  pull_request:
+    branches: [ master ]
+    paths-ignore: 
+      - '*.md'
+      - 'docs/**'
+      - 'isagenerator/**'
+      - 'bddisasm_test/**'
+      - 'bdshemu_test/**'
+      - 'LICENSE'
+
+jobs:
+  Linux-build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build bddisasm and bdshemu
+      run: make -j$(nproc)
+    - name: Install rapidjson
+      uses: actions/checkout@master
+      with:
+        repository: Tencent/rapidjson
+        path: rapidjson
+    - name: Build dependencies
+      run: |
+        cd rapidjson
+        mkdir _build
+        cd _build
+        cmake ..
+        make -j$(nproc)
+        sudo make install
+        cd ..
+        cd ..
+    - name: Build disasmtool_lix
+      run: |
+        cd disasmtool_lix
+        mkdir _build
+        cd _build
+        cmake ..
+        make -j$(nproc)
+        cd ..
+        cd ..
+    - name: Install setuptools
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install setuptools
+    - name: Build pydis
+      run: |
+        cd pydis
+        python3 setup.py build
+        cd ..
+
+  Windows-build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.1
+    - name: Build bddisasm and bdshemu for x64
+      run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
+    - name: Build bddisasm and bdshemu for Win32
+      run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
