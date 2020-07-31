@@ -13,5 +13,29 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: build-bddisasm
+    - name: Build bddisasm and bdshemu
       run: make -j$(nproc)
+    - name: Install rapidjson
+      uses: actions/checkout@master
+      with:
+        repository: Tencent/rapidjson
+    - name: Build dependencies
+      run: |
+        cd rapidjson
+        mkdir _build
+        cd _build
+        cmake ..
+        make -j$(nproc)
+        sudo make install
+        cd ..
+        cd ..
+    - name: Build disasmtool_lix
+      run: |
+        cd disasmtool_lix
+        mkdir _build
+        cd _build
+        cmake ..
+        make -j$(nproc)
+        cd ..
+        cd ..
+        
