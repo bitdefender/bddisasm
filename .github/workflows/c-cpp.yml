@@ -53,11 +53,6 @@ jobs:
         make -j$(nproc)
         cd ..
         cd ..
-    - name: Build shemu fuzzer
-      run: |
-        cd bdshemu_fuzz
-        AFL_COMPILER=gcc make -j$(nproc)
-        cd ..
     - name: Install setuptools
       run: |
         python3 -m pip install --upgrade pip
