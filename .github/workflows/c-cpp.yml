@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  Linux build:
 
     runs-on: ubuntu-latest
 
@@ -48,3 +48,18 @@ jobs:
         cd pydis
         python3 setup.py build
         cd ..
+
+  Windows build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.1
+    - name: Build bddisasm and bdshemu for x64
+      run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
+    - name: Build bddisasm and bdshemu for Win32
+      run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
+    - name: Build disasmtool
+      run: MSBuild /t:Build /p:Configuration=Release /p:Platform=x64 disasmtool\disasmtool.vcxproj
