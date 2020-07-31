@@ -39,4 +39,9 @@ jobs:
         make -j$(nproc)
         cd ..
         cd ..
+    - name: Build pydis
+      run: |
+        cd pydis
+        python3 setup.py build
+        cd ..
         
