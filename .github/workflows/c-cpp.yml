@@ -61,8 +61,3 @@ jobs:
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
-    - name: Build disasmtool
-      run: |
-        cd disasmtool
-        MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 disasmtool.vcxproj
-        cd ..
