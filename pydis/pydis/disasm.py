@@ -49,18 +49,6 @@ def nd_decode(code, arch_code_size, arch_data_size=0, rip=0):
     return NdInstruction(instruction)
 
 
-def nd_decode_ex(code, arch_code_size, arch_data_size=0, rip=0):
-    if not arch_data_size:
-        arch_data_size = arch_code_size
-
-    instruction = _pydis.nd_decode_ex(code, arch_code_size, arch_data_size, rip)
-
-    if not instruction:
-        return None
-
-    return NdInstruction(instruction)
-
-
 def nd_decode_ex2(code, arch_code_size, arch_data_size, arch_stack_size, vendor, rip=0):
     instruction = _pydis.nd_decode_ex2(code, arch_code_size, arch_data_size,
                                        arch_stack_size, vendor, rip)
