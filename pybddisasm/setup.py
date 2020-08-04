@@ -11,7 +11,7 @@ import re
 from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
-VERSION = (0, 1, 4)
+VERSION = (0, 1, 0)
 
 packages = ['pybddisasm']
 requires = [ "setuptools"]
