@@ -5,7 +5,7 @@
 import os
 import sys
 
-from pydis.disasm import *
+from pybddisasm.bddisasm import *
 
 try:
     from termcolor import colored

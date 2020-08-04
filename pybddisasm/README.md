@@ -11,11 +11,18 @@ python3 setup.py install
 
 ## Usage
 
-Use it by importing the pydis.disasm module:
+Use it by importing the pybddisasm.disasm module:
 
 ```python
-from pydis.disasm import *
+from pybddisasm.bddisasm import *
 
 instr = nd_decode_ex2(buff, arch, arch, arch, vendor, current_rip)
 ```
 
+## Pip
+
+Use pip to install the package:
+
+```bash
+pip install pybddisasm
+```

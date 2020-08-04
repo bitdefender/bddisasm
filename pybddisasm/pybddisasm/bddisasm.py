@@ -4,7 +4,7 @@
 #
 """Interface for disassembling code."""
 
-import _pydis
+import _pybddisasm
 
 class NdInstruction(dict):
     """Magic wrapper around a dictionary, that makes all the keys available
@@ -34,14 +34,14 @@ def nd_to_text(code, arch_code_size, arch_data_size=0, rip=0):
     if not arch_data_size:
         arch_data_size = arch_code_size
 
-    return _pydis.nd_to_text(code, arch_code_size, arch_data_size, rip)
+    return _pybddisasm.nd_to_text(code, arch_code_size, arch_data_size, rip)
 
 
 def nd_decode(code, arch_code_size, arch_data_size=0, rip=0):
     if not arch_data_size:
         arch_data_size = arch_code_size
 
-    instruction = _pydis.nd_decode_ex(code, arch_code_size, arch_data_size, rip)
+    instruction = _pybddisasm.nd_decode_ex(code, arch_code_size, arch_data_size, rip)
 
     if not instruction:
         return None
@@ -53,7 +53,7 @@ def nd_decode_ex(code, arch_code_size, arch_data_size=0, rip=0):
     if not arch_data_size:
         arch_data_size = arch_code_size
 
-    instruction = _pydis.nd_decode_ex(code, arch_code_size, arch_data_size, rip)
+    instruction = _pybddisasm.nd_decode_ex(code, arch_code_size, arch_data_size, rip)
 
     if not instruction:
         return None
@@ -61,8 +61,8 @@ def nd_decode_ex(code, arch_code_size, arch_data_size=0, rip=0):
     return NdInstruction(instruction)
 
 
-def nd_decode_ex2(code, arch_code_size, arch_data_size, arch_stack_size, vendor, rip=0):
-    instruction = _pydis.nd_decode_ex2(code, arch_code_size, arch_data_size,
+def nd_decode_ex2(code, arch_code_size, arch_data_size, arch_stack_size, vendor='intel', rip=0):
+    instruction = _pybddisasm.nd_decode_ex2(code, arch_code_size, arch_data_size,
                                        arch_stack_size, vendor, rip)
 
     if not instruction:

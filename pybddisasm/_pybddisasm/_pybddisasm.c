@@ -4,15 +4,15 @@
  */
 #define _SIGNAL_H
 #include <Python.h>
-#include "pydis.h"
+#include "pybddisasm.h"
 
 
 static char module_docstring[] = "This module provides an interface for bddisasm.";
 
-static char pydis_decode_ex_docstring[] = "Disasemble at the provided address.";
-static char pydis_decode_ex2_docstring[] = "Disasemble at the provided address.";
-static char pydis_decode_docstring[] = "Disasemble at the provided address.";
-static char pydis_to_text_docstring[] = "Disasemble at the provided address and give back only the text.";
+static char pybddisasm_decode_ex_docstring[] = "Disasemble at the provided address.";
+static char pybddisasm_decode_ex2_docstring[] = "Disasemble at the provided address.";
+static char pybddisasm_decode_docstring[] = "Disasemble at the provided address.";
+static char pybddisasm_to_text_docstring[] = "Disasemble at the provided address and give back only the text.";
 
 
 static char *OperandTypeToString(ND_OPERAND_TYPE Type)
@@ -128,7 +128,7 @@ static char *RoundingModeToString(ND_ROUNDING RoundingMode)
 }
 
 
-static PyObject *_pydis_build_rex(ND_REX *rex)
+static PyObject *_pybddisasm_build_rex(ND_REX *rex)
 {
     return Py_BuildValue("{s,B, s,B, s,B, s,B, s,B}",
                          "Rex", rex->Rex,
@@ -139,7 +139,7 @@ static PyObject *_pydis_build_rex(ND_REX *rex)
 }
 
 
-static PyObject *_pydis_build_modrm(ND_MODRM *modrm)
+static PyObject *_pybddisasm_build_modrm(ND_MODRM *modrm)
 {
     return Py_BuildValue("{s,B, s,B, s,B, s,B}",
                          "ModRm", modrm->ModRm,
@@ -149,7 +149,7 @@ static PyObject *_pydis_build_modrm(ND_MODRM *modrm)
 }
 
 
-static PyObject *_pydis_build_sib(ND_SIB *sib)
+static PyObject *_pybddisasm_build_sib(ND_SIB *sib)
 {
     return Py_BuildValue("{s,B, s,B, s,B, s,B}",
                          "Sib", sib->Sib,
@@ -159,7 +159,7 @@ static PyObject *_pydis_build_sib(ND_SIB *sib)
 }
 
 
-static PyObject *_pydis_build_drex(ND_DREX *drex)
+static PyObject *_pybddisasm_build_drex(ND_DREX *drex)
 {
     return Py_BuildValue("{s,B, s,B, s,B, s,B, s,B, s,B, s,B}",
                          "Drex", drex->Drex,
@@ -172,7 +172,7 @@ static PyObject *_pydis_build_drex(ND_DREX *drex)
 }
 
 
-static PyObject *_pydis_build_op_access(ND_OPERAND_ACCESS *access)
+static PyObject *_pybddisasm_build_op_access(ND_OPERAND_ACCESS *access)
 {
     return Py_BuildValue("{s,B, s,B, s,B, s,B, s,B}",
                          "Access", access->Access,
@@ -183,7 +183,7 @@ static PyObject *_pydis_build_op_access(ND_OPERAND_ACCESS *access)
 }
 
 
-static PyObject *_pydis_build_op_flags(ND_OPERAND_FLAGS *flags)
+static PyObject *_pybddisasm_build_op_flags(ND_OPERAND_FLAGS *flags)
 {
     return Py_BuildValue("{s,B, s,B, s,B, s,B}",
                          "Flags", flags->Flags,
@@ -193,7 +193,7 @@ static PyObject *_pydis_build_op_flags(ND_OPERAND_FLAGS *flags)
 }
 
 
-static PyObject *_pydis_build_op_reg(ND_OPDESC_REGISTER *reg)
+static PyObject *_pybddisasm_build_op_reg(ND_OPDESC_REGISTER *reg)
 {
     return Py_BuildValue("{s,s, s,B, s,I, s,I}",
                          "Type", RegTypeToString(reg->Type),
@@ -203,7 +203,7 @@ static PyObject *_pydis_build_op_reg(ND_OPDESC_REGISTER *reg)
 }
 
 
-static PyObject *_pydis_build_op_memory(ND_OPDESC_MEMORY *mem)
+static PyObject *_pybddisasm_build_op_memory(ND_OPDESC_MEMORY *mem)
 {
     PyObject *nd_vsib = Py_BuildValue("{s,B, s,B, s,B}",
                                       "IndexSize", mem->Vsib.IndexSize,
@@ -277,19 +277,19 @@ static PyObject *_pydis_build_op_memory(ND_OPDESC_MEMORY *mem)
 }
 
 
-static PyObject *_pydis_build_op_immediate(ND_OPDESC_IMMEDIATE *imm)
+static PyObject *_pybddisasm_build_op_immediate(ND_OPDESC_IMMEDIATE *imm)
 {
     return Py_BuildValue("{s,K}", "Imm", imm->Imm);
 }
 
 
-static PyObject *_pydis_build_op_rel_offset(ND_OPDESC_RELOFFSET *rel_offset)
+static PyObject *_pybddisasm_build_op_rel_offset(ND_OPDESC_RELOFFSET *rel_offset)
 {
     return Py_BuildValue("{s,K}", "Rel", rel_offset->Rel);
 }
 
 
-static PyObject *_pydis_build_op_address(ND_OPDESC_ADDRESS *address)
+static PyObject *_pybddisasm_build_op_address(ND_OPDESC_ADDRESS *address)
 {
     return Py_BuildValue("{s,H, s,K}",
                          "BaseSeg", address->BaseSeg,
@@ -297,44 +297,44 @@ static PyObject *_pydis_build_op_address(ND_OPDESC_ADDRESS *address)
 }
 
 
-static PyObject *_pydis_build_op_const(ND_OPDESC_CONSTANT *constant)
+static PyObject *_pybddisasm_build_op_const(ND_OPDESC_CONSTANT *constant)
 {
     return Py_BuildValue("{s,K}", "Const", constant->Const);
 }
 
 
-static PyObject *_pydis_build_operand(ND_OPERAND *operand)
+static PyObject *_pybddisasm_build_operand(ND_OPERAND *operand)
 {
-    PyObject *nd_access = _pydis_build_op_access(&operand->Access);
-    PyObject *nd_flags = _pydis_build_op_flags(&operand->Flags);
+    PyObject *nd_access = _pybddisasm_build_op_access(&operand->Access);
+    PyObject *nd_flags = _pybddisasm_build_op_flags(&operand->Flags);
 
     PyObject *nd_operand = NULL;
 
     switch (operand->Type)
     {
     case ND_OP_REG:
-        nd_operand = _pydis_build_op_reg(&operand->Info.Register);
+        nd_operand = _pybddisasm_build_op_reg(&operand->Info.Register);
         break;
     case ND_OP_MEM:
-        nd_operand = _pydis_build_op_memory(&operand->Info.Memory);
+        nd_operand = _pybddisasm_build_op_memory(&operand->Info.Memory);
         break;
     case ND_OP_IMM:
-        nd_operand = _pydis_build_op_immediate(&operand->Info.Immediate);
+        nd_operand = _pybddisasm_build_op_immediate(&operand->Info.Immediate);
         break;
     case ND_OP_OFFS:
-        nd_operand = _pydis_build_op_rel_offset(&operand->Info.RelativeOffset);
+        nd_operand = _pybddisasm_build_op_rel_offset(&operand->Info.RelativeOffset);
         break;
     case ND_OP_ADDR:
-        nd_operand = _pydis_build_op_address(&operand->Info.Address);
+        nd_operand = _pybddisasm_build_op_address(&operand->Info.Address);
         break;
     case ND_OP_CONST:
-        nd_operand = _pydis_build_op_const(&operand->Info.Constant);
+        nd_operand = _pybddisasm_build_op_const(&operand->Info.Constant);
         break;
     case ND_OP_BANK:
         nd_operand = Py_BuildValue("{}");
         break;
     default:
-        PyErr_SetString(PyExc_RuntimeError, "invalid operand type... Talk with @csirb to update pydis...");
+        PyErr_SetString(PyExc_RuntimeError, "invalid operand type... Talk with @csirb to update pybddisasm...");
         Py_RETURN_NONE;
     }
 
@@ -363,7 +363,7 @@ static PyObject *_pydis_build_operand(ND_OPERAND *operand)
 }
 
 
-static PyObject *_pydis_build_operands(ND_OPERAND *operands, size_t count)
+static PyObject *_pybddisasm_build_operands(ND_OPERAND *operands, size_t count)
 {
     char op_str_format[400] = {'[', 0};
     size_t last = 1;
@@ -380,7 +380,7 @@ static PyObject *_pydis_build_operands(ND_OPERAND *operands, size_t count)
 
         op_str_format[last++] = 'O';
 
-        nd_operands[op] = _pydis_build_operand(&operands[op]);
+        nd_operands[op] = _pybddisasm_build_operand(&operands[op]);
     }
 
     op_str_format[last] = ']';
@@ -406,7 +406,7 @@ static PyObject *_pydis_build_operands(ND_OPERAND *operands, size_t count)
 }
 
 
-static PyObject *_pydis_build_exs(INSTRUX *instr)
+static PyObject *_pybddisasm_build_exs(INSTRUX *instr)
 {
     return Py_BuildValue("{"
                          "s,B,"         // w
@@ -443,7 +443,7 @@ static PyObject *_pydis_build_exs(INSTRUX *instr)
 }
 
 
-static PyObject *_pydis_build_address(INSTRUX *instr)
+static PyObject *_pybddisasm_build_address(INSTRUX *instr)
 {
     return Py_BuildValue("{s,I, s,H}",
                          "Ip", instr->Address.Ip,
@@ -451,7 +451,7 @@ static PyObject *_pydis_build_address(INSTRUX *instr)
 }
 
 
-static PyObject *_pydis_build_cpuid_flag(ND_CPUID_FLAG *cpuid_flag)
+static PyObject *_pybddisasm_build_cpuid_flag(ND_CPUID_FLAG *cpuid_flag)
 {
     return Py_BuildValue("{"
                          "s,K,"         // Flag
@@ -468,7 +468,7 @@ static PyObject *_pydis_build_cpuid_flag(ND_CPUID_FLAG *cpuid_flag)
 }
 
 
-static PyObject *_pydis_build_flags_access(INSTRUX *instr)
+static PyObject *_pybddisasm_build_flags_access(INSTRUX *instr)
 {
     return Py_BuildValue("{"
                          "s,B,"        // RegAccess
@@ -487,7 +487,7 @@ static PyObject *_pydis_build_flags_access(INSTRUX *instr)
 }
 
 
-static PyObject *_pydis_build_valid_modes(ND_VALID_MODES *valid_modes)
+static PyObject *_pybddisasm_build_valid_modes(ND_VALID_MODES *valid_modes)
 {
     return Py_BuildValue("{"
                          "s,H,"         // Raw
@@ -535,7 +535,7 @@ static PyObject *_pydis_build_valid_modes(ND_VALID_MODES *valid_modes)
 }
 
 
-static PyObject *_pydis_build_valid_prefixes(ND_VALID_PREFIXES *valid_prefixes)
+static PyObject *_pybddisasm_build_valid_prefixes(ND_VALID_PREFIXES *valid_prefixes)
 {
     return Py_BuildValue("{"
                          "s,H,"         // Raw
@@ -565,7 +565,7 @@ static PyObject *_pydis_build_valid_prefixes(ND_VALID_PREFIXES *valid_prefixes)
 }
 
 
-static PyObject *_pydis_build_valid_decorators(ND_VALID_DECORATORS *valid_deorators)
+static PyObject *_pybddisasm_build_valid_decorators(ND_VALID_DECORATORS *valid_deorators)
 {
     return Py_BuildValue("{"
                          "s,H,"         // Raw
@@ -585,27 +585,27 @@ static PyObject *_pydis_build_valid_decorators(ND_VALID_DECORATORS *valid_deorat
 }
 
 
-static PyObject *_pydis_build_instr_dict(INSTRUX *instr, uint64_t rip)
+static PyObject *_pybddisasm_build_instr_dict(INSTRUX *instr, uint64_t rip)
 {
-    PyObject *nd_rex = _pydis_build_rex(&instr->Rex);
+    PyObject *nd_rex = _pybddisasm_build_rex(&instr->Rex);
 
-    PyObject *nd_modrm = _pydis_build_modrm(&instr->ModRm);
+    PyObject *nd_modrm = _pybddisasm_build_modrm(&instr->ModRm);
 
-    PyObject *nd_sib = _pydis_build_sib(&instr->Sib);
+    PyObject *nd_sib = _pybddisasm_build_sib(&instr->Sib);
 
-    PyObject *nd_drex = _pydis_build_drex(&instr->Drex);
+    PyObject *nd_drex = _pybddisasm_build_drex(&instr->Drex);
 
-    PyObject *nd_op_array = _pydis_build_operands(instr->Operands, instr->OperandsCount);
+    PyObject *nd_op_array = _pybddisasm_build_operands(instr->Operands, instr->OperandsCount);
 
-    PyObject *nd_exs = _pydis_build_exs(instr);
+    PyObject *nd_exs = _pybddisasm_build_exs(instr);
 
-    PyObject *nd_address = _pydis_build_address(instr);
+    PyObject *nd_address = _pybddisasm_build_address(instr);
 
-    PyObject *nd_cpuid_flag = _pydis_build_cpuid_flag(&instr->CpuidFlag);
+    PyObject *nd_cpuid_flag = _pybddisasm_build_cpuid_flag(&instr->CpuidFlag);
 
-    PyObject *nd_valid_modes = _pydis_build_valid_modes(&instr->ValidModes);
-    PyObject *nd_valid_prefixes = _pydis_build_valid_prefixes(&instr->ValidPrefixes);
-    PyObject *nd_valid_decorators = _pydis_build_valid_decorators(&instr->ValidDecorators);
+    PyObject *nd_valid_modes = _pybddisasm_build_valid_modes(&instr->ValidModes);
+    PyObject *nd_valid_prefixes = _pybddisasm_build_valid_prefixes(&instr->ValidPrefixes);
+    PyObject *nd_valid_decorators = _pybddisasm_build_valid_decorators(&instr->ValidDecorators);
 
     char instr_text[ND_MIN_BUF_SIZE] = {0};
     NDSTATUS status = nd_to_text(instr, rip, sizeof(instr_text), instr_text);
@@ -614,7 +614,7 @@ static PyObject *_pydis_build_instr_dict(INSTRUX *instr, uint64_t rip)
         strcpy(instr_text, "<error decoding>");
     }
 
-    PyObject *nd_flags_access = _pydis_build_flags_access(instr);
+    PyObject *nd_flags_access = _pybddisasm_build_flags_access(instr);
 
     PyObject *p = Py_BuildValue("{"
                                 "s,B,"         // DefCode
@@ -906,7 +906,7 @@ static PyObject *_pydis_build_instr_dict(INSTRUX *instr, uint64_t rip)
 }
 
 
-static uint8_t _pydis_py_code_to_disasm(uint8_t code)
+static uint8_t _pybddisasm_py_code_to_disasm(uint8_t code)
 {
     if (16 == code)
     {
@@ -926,7 +926,7 @@ static uint8_t _pydis_py_code_to_disasm(uint8_t code)
 }
 
 
-static uint8_t _pydis_py_data_to_disasm(uint8_t data)
+static uint8_t _pybddisasm_py_data_to_disasm(uint8_t data)
 {
     if (16 == data)
     {
@@ -946,7 +946,7 @@ static uint8_t _pydis_py_data_to_disasm(uint8_t data)
 }
 
 
-static uint8_t _pydis_py_stack_to_disasm(uint8_t stack)
+static uint8_t _pybddisasm_py_stack_to_disasm(uint8_t stack)
 {
     if (16 == stack)
     {
@@ -966,7 +966,7 @@ static uint8_t _pydis_py_stack_to_disasm(uint8_t stack)
 }
 
 
-static PyObject *pydis_decode_ex(PyObject *self, PyObject *args)
+static PyObject *pybddisasm_decode_ex(PyObject *self, PyObject *args)
 {
     char *buf = NULL;
     Py_ssize_t bufsize = 0;
@@ -981,8 +981,8 @@ static PyObject *pydis_decode_ex(PyObject *self, PyObject *args)
         Py_RETURN_NONE;
     }
 
-    code = _pydis_py_code_to_disasm(code);
-    data = _pydis_py_data_to_disasm(data);
+    code = _pybddisasm_py_code_to_disasm(code);
+    data = _pybddisasm_py_data_to_disasm(data);
 
     if (PyErr_Occurred())
     {
@@ -997,11 +997,11 @@ static PyObject *pydis_decode_ex(PyObject *self, PyObject *args)
         Py_RETURN_NONE;
     }
 
-    return _pydis_build_instr_dict(&instr, rip);
+    return _pybddisasm_build_instr_dict(&instr, rip);
 }
 
 
-static PyObject *pydis_decode_ex2(PyObject *self, PyObject *args)
+static PyObject *pybddisasm_decode_ex2(PyObject *self, PyObject *args)
 {
     char *buf = NULL;
     char *str_vend = NULL;
@@ -1043,9 +1043,9 @@ static PyObject *pydis_decode_ex2(PyObject *self, PyObject *args)
         Py_RETURN_NONE;
     }
 
-    code = _pydis_py_code_to_disasm(code);
-    data = _pydis_py_data_to_disasm(data);
-    stack = _pydis_py_stack_to_disasm(stack);
+    code = _pybddisasm_py_code_to_disasm(code);
+    data = _pybddisasm_py_data_to_disasm(data);
+    stack = _pybddisasm_py_stack_to_disasm(stack);
 
     if (PyErr_Occurred())
     {
@@ -1060,11 +1060,11 @@ static PyObject *pydis_decode_ex2(PyObject *self, PyObject *args)
         Py_RETURN_NONE;
     }
 
-    return _pydis_build_instr_dict(&instr, rip);
+    return _pybddisasm_build_instr_dict(&instr, rip);
 }
 
 
-static PyObject *pydis_to_text(PyObject *self, PyObject *args)
+static PyObject *pybddisasm_to_text(PyObject *self, PyObject *args)
 {
     char *buf = NULL;
     Py_ssize_t bufsize = 0;
@@ -1079,8 +1079,8 @@ static PyObject *pydis_to_text(PyObject *self, PyObject *args)
         Py_RETURN_NONE;
     }
 
-    code = _pydis_py_code_to_disasm(code);
-    data = _pydis_py_data_to_disasm(data);
+    code = _pybddisasm_py_code_to_disasm(code);
+    data = _pybddisasm_py_data_to_disasm(data);
 
     if (PyErr_Occurred())
     {
@@ -1108,24 +1108,24 @@ static PyObject *pydis_to_text(PyObject *self, PyObject *args)
 
 
 static PyMethodDef module_methods[] = {
-    {"nd_decode_ex", pydis_decode_ex, METH_VARARGS, pydis_decode_ex_docstring},
-    {"nd_decode_ex2", pydis_decode_ex2, METH_VARARGS, pydis_decode_ex2_docstring},
-    {"nd_decode", pydis_decode_ex, METH_VARARGS, pydis_decode_docstring},
-    {"nd_to_text", pydis_to_text, METH_VARARGS, pydis_to_text_docstring},
+    {"nd_decode_ex", pybddisasm_decode_ex, METH_VARARGS, pybddisasm_decode_ex_docstring},
+    {"nd_decode_ex2", pybddisasm_decode_ex2, METH_VARARGS, pybddisasm_decode_ex2_docstring},
+    {"nd_decode", pybddisasm_decode_ex, METH_VARARGS, pybddisasm_decode_docstring},
+    {"nd_to_text", pybddisasm_to_text, METH_VARARGS, pybddisasm_to_text_docstring},
     {NULL, NULL, 0, NULL}
 };
 
 
-static struct PyModuleDef PyDis =
+static struct PyModuleDef pybddisasm =
 {
     PyModuleDef_HEAD_INIT,
-    "pydis",                               // name of module
+    "pybddisasm",                               // name of module
     module_docstring,
     -1,                                    // size of per-interpreter state of the module, or -1 if the module keeps state in global variables
     module_methods
 };
 
-PyMODINIT_FUNC PyInit__pydis(void)
+PyMODINIT_FUNC PyInit__pybddisasm(void)
 {
-    return PyModule_Create(&PyDis);
+    return PyModule_Create(&pybddisasm);
 }

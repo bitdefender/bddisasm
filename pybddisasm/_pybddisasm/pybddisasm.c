@@ -2,7 +2,7 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#include "pydis.h"
+#include "pybddisasm.h"
 #include <stdlib.h>
 
 
