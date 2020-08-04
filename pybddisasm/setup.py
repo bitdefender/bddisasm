@@ -59,6 +59,7 @@ setup(
                       define_macros = [('AMD64', None), ('Py_LIMITED_API', None)],
                       include_dirs = ['../inc'],
                       libraries = ['bddisasm'],
+                      library_dirs = ['/usr/local/lib', '../bin/x64/Release'],
                       py_limited_api=True)],
     distclass=BinaryDistribution
 )
