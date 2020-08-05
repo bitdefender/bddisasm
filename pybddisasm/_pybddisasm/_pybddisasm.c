@@ -4,6 +4,7 @@
  */
 #define _SIGNAL_H
 #include <Python.h>
+#include <assert.h>
 #include "pybddisasm.h"
 
 
@@ -334,7 +335,7 @@ static PyObject *_pybddisasm_build_operand(ND_OPERAND *operand)
         nd_operand = Py_BuildValue("{}");
         break;
     default:
-        PyErr_SetString(PyExc_RuntimeError, "invalid operand type... Talk with @csirb to update pybddisasm...");
+        PyErr_SetString(PyExc_RuntimeError, "invalid operand type...");
         Py_RETURN_NONE;
     }
 
@@ -365,7 +366,7 @@ static PyObject *_pybddisasm_build_operand(ND_OPERAND *operand)
 
 static PyObject *_pybddisasm_build_operands(ND_OPERAND *operands, size_t count)
 {
-    char op_str_format[400] = {'[', 0};
+    char op_str_format[1024] = {'[', 0};
     size_t last = 1;
 
     PyObject *nd_operands[ND_MAX_OPERAND] = {0};
@@ -1127,5 +1128,7 @@ static struct PyModuleDef pybddisasm =
 
 PyMODINIT_FUNC PyInit__pybddisasm(void)
 {
+    static_assert(sizeof(INSTRUX) == LIBRARY_INSTRUX_SIZE, "The size of INSTRUX is not compatible with pybddisasm!");
+
     return PyModule_Create(&pybddisasm);
 }
