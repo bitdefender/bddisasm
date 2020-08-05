@@ -2,8 +2,8 @@
  * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef _PYDIS_H_
-#define _PYDIS_H_
+#ifndef _PYBDDISASM_H_
+#define _PYBDDISASM_H_
 
 #include <stddef.h>
 #include <stdint.h>
@@ -17,4 +17,4 @@ int nd_decode_ex2(INSTRUX *instrux, void *code, size_t size, int def_code, int d
 
 int nd_to_text(INSTRUX *instrux, size_t rip, size_t bufsize, char *buf);
 
-#endif // _PYDIS_H_
+#endif // _PYBDDISASM_H_
