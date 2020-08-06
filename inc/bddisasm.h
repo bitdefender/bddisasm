@@ -1424,12 +1424,12 @@ typedef struct _INSTRUX
 //
 typedef struct _ND_CONTEXT
 {
-    uint64_t DefCode : 4;
-    uint64_t DefData : 4;
-    uint64_t DefStack : 4;
-    uint64_t VendMode : 4;
-    uint64_t FeatMode : 8;
-    uint64_t Reserved : 40;
+    uint64_t DefCode : 4;       // Decode mode - one of the ND_CODE_* values.
+    uint64_t DefData : 4;       // Data mode - one of the ND_DATA_* values.
+    uint64_t DefStack : 4;      // Stack mode - one of the ND_STACK_* values.
+    uint64_t VendMode : 4;      // Prefered vendor - one of the ND_VEND_* values.
+    uint64_t FeatMode : 8;      // Supported features mask. A combination of ND_FEAT_* values.
+    uint64_t Reserved : 40;     // Reserved for future use.
 } ND_CONTEXT;
 
 
@@ -1453,10 +1453,10 @@ NdGetVersion(
 // 
 NDSTATUS
 NdDecode(
-    INSTRUX *Instrux,
-    const uint8_t *Code,
-    uint8_t DefCode,
-    uint8_t DefData
+    INSTRUX *Instrux,       // Output decoded instruction.
+    const uint8_t *Code,    // Buffer containing the instruction bytes.
+    uint8_t DefCode,        // Decode mode - one of the ND_CODE_* values.
+    uint8_t DefData         // Data mode - one of the ND_DATA_* value.
     );
 
 //
@@ -1468,11 +1468,11 @@ NdDecode(
 // 
 NDSTATUS
 NdDecodeEx(
-    INSTRUX *Instrux,
-    const uint8_t *Code,
-    size_t Size,
-    uint8_t DefCode,
-    uint8_t DefData
+    INSTRUX *Instrux,       // Output decoded instruction.
+    const uint8_t *Code,    // Buffer containing the instruction bytes.
+    size_t Size,            // Maximum size of the Code buffer.
+    uint8_t DefCode,        // Decode mode - one of the ND_CODE_* values.
+    uint8_t DefData         // Data mode - one of the ND_DATA_* value.
     );
 
 //
@@ -1480,13 +1480,13 @@ NdDecodeEx(
 //
 NDSTATUS
 NdDecodeEx2(
-    INSTRUX *Instrux,
-    const uint8_t *Code,
-    size_t Size,
-    uint8_t DefCode,
-    uint8_t DefData,
-    uint8_t DefStack,
-    uint8_t PreferedVendor
+    INSTRUX *Instrux,       // Output decoded instruction.
+    const uint8_t *Code,    // Buffer containing the instruction bytes.
+    size_t Size,            // Maximum size of the Code buffer.
+    uint8_t DefCode,        // Decode mode - one of the ND_CODE_* values.
+    uint8_t DefData,        // Data mode - one of the ND_DATA_* value.
+    uint8_t DefStack,       // Stack mode - one of the ND_STACK_* values.
+    uint8_t PreferedVendor  // Preferred vendor - one of the ND_VEND_* values.
     );
 
 //
@@ -1500,10 +1500,10 @@ NdDecodeEx2(
 //
 NDSTATUS
 NdDecodeWithContext(
-    INSTRUX *Instrux,
-    const uint8_t *Code,
-    size_t Size,
-    ND_CONTEXT *Context
+    INSTRUX *Instrux,       // Output decoded instruction.
+    const uint8_t *Code,    // Buffer containing the instruction bytes.
+    size_t Size,            // Maximum size of the Code buffer.
+    ND_CONTEXT *Context     // Context describing decode mode, vendor mode and supported features.
     );
 
 //
