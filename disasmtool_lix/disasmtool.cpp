@@ -596,17 +596,17 @@ static bool _validate_and_fix_args(options& opts)
 }
 
 
-static size_t _get_hex_opt(ArgumentParser &parser, const std::string &field)
+static size_t _get_hex_opt(argparse::ArgumentParser &parser, const std::string &field)
 {
     return std::strtoul(parser.get<std::string>(field).c_str(), nullptr, 0);
 }
 
 
-int main(int argc, char **argv)
+int main(int argc, const char **argv)
 {
     auto opts = options{};
 
-    auto parser = ArgumentParser(argv[0]);
+    auto parser = argparse::ArgumentParser(argv[0], "Disassembler tool for Linux");
 
     parser.add_argument("-i", "--interactive", "Interactive mode", false);
     parser.add_argument("-c", "--comm", "Comm mode", false);
@@ -624,16 +624,22 @@ int main(int argc, char **argv)
     parser.add_argument("--json", "Output to json", false);
     parser.add_argument("--extended", "Extended instruction info", false);
 
-    try {
-        parser.parse(argc, argv);
-    } catch (const ArgumentParser::ArgumentNotFound& ex) {
-        std::cout << ex.what() << std::endl;
-        return 1;
+    parser.enable_help();
+
+    auto err = parser.parse(argc, argv);
+    if (err) {
+        std::cout << err << std::endl;
+        return -1;
+    }
+
+    if (parser.exists("help")) {
+        parser.print_help();
+        return 0;
     }
 
     opts.bits = parser.get<uint64_t>("bits");
-    opts.interactive = parser.get<bool>("interactive");
-    opts.comm = parser.get<bool>("comm");
+    opts.interactive = parser.exists("interactive");
+    opts.comm = parser.exists("comm");
     opts.offset = _get_hex_opt(parser, "offset");
     opts.size = _get_hex_opt(parser, "size");
     opts.count = _get_hex_opt(parser, "count");
@@ -641,17 +647,17 @@ int main(int argc, char **argv)
     opts.in_file = parser.get<std::string>("file");
     opts.hex_string = parser.get<std::string>("hex");
     opts.hex_file = parser.get<std::string>("hexfile");
-    opts.no_color = parser.get<bool>("no-color");
-    opts.dump_stats = parser.get<bool>("stats");
-    opts.verbose = parser.get<bool>("verbose");
-    opts.json_output = parser.get<bool>("json");
-    opts.extended = parser.get<bool>("extended");
+    opts.no_color = parser.exists("no-color");
+    opts.dump_stats = parser.exists("stats");
+    opts.verbose = parser.exists("verbose");
+    opts.json_output = parser.exists("json");
+    opts.extended = parser.exists("extended");
 
     if (opts.verbose) {
         std::cout << "interactive: " << opts.interactive << std::endl;
         std::cout << "comm: " << opts.comm << std::endl;
         std::cout << "rip: " << opts.rip << std::endl;
-        std::cout << "bits: " << opts.bits << std::endl;
+        std::cout << "bits: " << static_cast<uint16_t>(opts.bits) << std::endl;
         std::cout << "offset: " << opts.offset << std::endl;
         std::cout << "size: " << opts.offset << std::endl;
         std::cout << "count: " << opts.count << std::endl;
@@ -660,7 +666,7 @@ int main(int argc, char **argv)
         std::cout << "stats: " << opts.dump_stats << std::endl;
         std::cout << "hex: " << opts.hex_string << std::endl;
         std::cout << "json: " << opts.json_output << std::endl;
-	std::cout << "extended: " << opts.extended << std::endl;
+        std::cout << "extended: " << opts.extended << std::endl;
     }
 
     if (!_validate_and_fix_args(opts)) {
