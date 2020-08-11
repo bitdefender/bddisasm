@@ -12,7 +12,7 @@ from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
 VERSION = (0, 1, 2)
-LIBRARY_VERSION = (1, 28, 0)
+LIBRARY_VERSION = (1, 28, 1)
 LIBRARY_INSTRUX_SIZE = 856
 
 packages = ['pybddisasm']
