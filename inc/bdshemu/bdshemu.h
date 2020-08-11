@@ -130,7 +130,11 @@ typedef struct _SHEMU_CONTEXT
     uint64_t        MmxRegisters[ND_MAX_MMX_REGS];
 
     // SSE registers state. 32 x 64 bytes = 2048 bytes for the SSE registers. Can be provided on input, if needed.
-    uint8_t         SseRegisters[ND_MAX_SSE_REGS * ND_MAX_REGISTER_SIZE]; 
+    uint8_t         SseRegisters[ND_MAX_SSE_REGS * ND_MAX_REGISTER_SIZE];
+
+    // General purpose registers write bitmap. After the first write, a register will be marked dirty in here. 
+    // Should be 0 on input.
+    uint16_t        DirtyGprBitmap;
 
     // Operating mode (ND_CODE_16, ND_CODE_32 or ND_CODE_64). Must be provided as input.
     uint8_t         Mode;

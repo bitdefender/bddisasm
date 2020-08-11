@@ -655,13 +655,15 @@ ShemuSetGprValue(
     bool High8
     )
 {
+    uint32_t bit;
+
     switch (Size)
     {
     case 1:
         if (High8)
         {
             // AH, CH, DH or BH accessed.
-            *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) = Value & 0xFF;
+            *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) = Value & 0xff;
         }
         else
         {
@@ -681,6 +683,55 @@ ShemuSetGprValue(
     default:
         *(&Context->Registers.RegRax + Reg) = Value;
         break;
+    }
+
+    if (High8)
+    {
+        bit = Reg - 4;
+    }
+    else
+    {
+        bit = Reg;
+    }
+
+    // Mark the GPR as being dirty/written.
+    Context->DirtyGprBitmap |= (1 << bit);
+}
+
+
+//
+// ShemuCmpGprValue
+//
+static bool
+ShemuCmpGprValue(
+    SHEMU_CONTEXT *Context,
+    uint32_t Reg,
+    uint32_t Size,
+    uint64_t Value,
+    bool High8
+    )
+{
+    switch (Size)
+    {
+    case 1:
+        if (High8)
+        {
+            // AH, CH, DH or BH.
+            return *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) == (Value & 0xff);
+        }
+        else
+        {
+            return *((uint8_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xff);
+        }
+
+    case 2:
+        return *((uint16_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffff);
+
+    case 4:
+        return *((uint32_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffffffff);
+
+    default:
+        return *(&Context->Registers.RegRax + Reg) == Value;
     }
 }
 
@@ -1299,6 +1350,8 @@ ShemuSetOperandValue(
         // Handle RIP save on the stack.
         if (ShemuIsStackPtr(Context, gla, MAX(op->Size, Context->Instruction.WordLength)))
         {
+            uint8_t stckstrlen = 0;
+
             // Note: only Context->Instruction.WordLength bits are flagged as RIP, as that is the RIP size.
             if (Context->Instruction.Instruction == ND_INS_CALLNR ||
                 Context->Instruction.Instruction == ND_INS_CALLNI)
@@ -1327,6 +1380,9 @@ ShemuSetOperandValue(
             // ...
             // PUSH strn
             // Other variants may exist, but all we care about are stores on the stack, and all are checked.
+            // Note that we will ignore registers which have not been modified during emulation; those are considered
+            // input values for the emulated code, and may be pointers or other data. We are interested only in
+            // stack values built within the emulate code.
             for (uint32_t i = 0; i < Value->Size; i++)
             {
                 unsigned char c = Value->Value.Bytes[i];
@@ -1334,18 +1390,40 @@ ShemuSetOperandValue(
                 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') ||
                     c == '\\' || c == '/' || c == ':' || c == ' ')
                 {
-                    Context->StrLength++;
-
-                    if (Context->StrLength >= Context->StrThreshold)
-                    {
-                        Context->Flags |= SHEMU_FLAG_STACK_STR;
-                        break;
-                    }
+                    stckstrlen++;
                 }
                 else
                 {
-                    Context->StrLength = 0;
+                    break;
                 }
+            }
+
+            if (stckstrlen == Value->Size)
+            {
+                // Make sure the value is not present inside a non-dirty GPR. 
+                for (uint32_t i = 0; i < 16; i++)
+                {
+                    if (ShemuCmpGprValue(Context, i, Value->Size, Value->Value.Qwords[0], false) &&
+                        (0 == (Context->DirtyGprBitmap & (1 << i))))
+                    {
+                        // A register is saved on the stack, but that register wasn't written during the emulation.
+                        stckstrlen = 0;
+                        break;
+                    }
+                }
+            }
+
+            Context->StrLength += stckstrlen;
+
+            if (Context->StrLength >= Context->StrThreshold)
+            {
+                Context->Flags |= SHEMU_FLAG_STACK_STR;
+            }
+            
+            if (stckstrlen != Value->Size)
+            {
+                // Not a full string stored on the stack, reset the counter.
+                Context->StrLength = 0;
             }
         }
 
