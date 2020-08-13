@@ -967,7 +967,7 @@ static uint8_t _pybddisasm_py_stack_to_disasm(uint8_t stack)
 }
 
 
-static char * _pybddisasm_get_contiguous_buffer(Py_buffer *view)
+static char *_pybddisasm_get_contiguous_buffer(Py_buffer *view)
 {
     char *buffer = NULL;
 
@@ -986,7 +986,7 @@ static char * _pybddisasm_get_contiguous_buffer(Py_buffer *view)
     if (PyBuffer_ToContiguous(buffer, view, view->len, 'C') < 0)
     {
         PyErr_SetString(PyExc_ValueError, "PyBuffer_ToContiguous failed!");
-        free (buffer);
+        free(buffer);
         return NULL;
     }
 
