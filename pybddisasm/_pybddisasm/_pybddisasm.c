@@ -967,18 +967,60 @@ static uint8_t _pybddisasm_py_stack_to_disasm(uint8_t stack)
 }
 
 
+static char * _pybddisasm_get_contiguous_buffer(Py_buffer *view)
+{
+    char *buffer = NULL;
+
+    if (PyBuffer_IsContiguous(view, 'C'))
+    {
+        return view->buf;
+    }
+
+    buffer = (char *)malloc(sizeof(char) * view->len);
+    if (!buffer)
+    {
+        PyErr_SetString(PyExc_ValueError, "failed to allocate memory for contiguous buffer!");
+        return NULL;
+    }
+
+    if (PyBuffer_ToContiguous(buffer, view, view->len, 'C') < 0)
+    {
+        PyErr_SetString(PyExc_ValueError, "PyBuffer_ToContiguous failed!");
+        free (buffer);
+        return NULL;
+    }
+
+    return buffer;
+}
+
+
+static void _pybddisasm_release_contiguous_buffer(Py_buffer *view, char *buffer)
+{
+    if (!PyBuffer_IsContiguous(view, 'C'))
+    {
+        free(buffer);
+    }
+}
+
+
 static PyObject *pybddisasm_decode_ex(PyObject *self, PyObject *args)
 {
-    char *buf = NULL;
-    Py_ssize_t bufsize = 0;
+    char *buffer = NULL;
     uint64_t rip = 0;
     uint8_t code, data;
+    Py_buffer view;
 
     (void)self;
 
-    if (!PyArg_ParseTuple(args, "s#BB|K", &buf, &bufsize, &code, &data, &rip))
+    if (!PyArg_ParseTuple(args, "y*BB|K", &view, &code, &data, &rip))
     {
-        PyErr_SetString(PyExc_ValueError, "invalid arguments. expected: <buffer[bytes]> <bufsize> <code> <data> <rip>");
+        PyErr_SetString(PyExc_ValueError, "invalid arguments. expected: <buffer[byte-like object]> <code> <data> <rip>");
+        Py_RETURN_NONE;
+    }
+
+    buffer = _pybddisasm_get_contiguous_buffer(&view);
+    if (!buffer)
+    {
         Py_RETURN_NONE;
     }
 
@@ -992,11 +1034,14 @@ static PyObject *pybddisasm_decode_ex(PyObject *self, PyObject *args)
 
     INSTRUX instr;
 
-    NDSTATUS status = nd_decode_ex(&instr, buf, bufsize, code, data);
+    NDSTATUS status = nd_decode_ex(&instr, buffer, view.len, code, data);
     if (!ND_SUCCESS(status))
     {
         Py_RETURN_NONE;
     }
+
+    _pybddisasm_release_contiguous_buffer(&view, buffer);
+    PyBuffer_Release(&view);
 
     return _pybddisasm_build_instr_dict(&instr, rip);
 }
@@ -1004,17 +1049,23 @@ static PyObject *pybddisasm_decode_ex(PyObject *self, PyObject *args)
 
 static PyObject *pybddisasm_decode_ex2(PyObject *self, PyObject *args)
 {
-    char *buf = NULL;
     char *str_vend = NULL;
-    Py_ssize_t bufsize = 0;
+    char *buffer = NULL;
     uint64_t rip = 0;
     uint8_t code, data, stack, vend;
+    Py_buffer view;
 
     (void)self;
 
-    if (!PyArg_ParseTuple(args, "s#BBBs|K", &buf, &bufsize, &code, &data, &stack, &str_vend, &rip))
+    if (!PyArg_ParseTuple(args, "y*BBBs|K", &view, &code, &data, &stack, &str_vend, &rip))
     {
-        PyErr_SetString(PyExc_ValueError, "invalid arguments. expected: <buffer[bytes]> <bufsize> <code> <data> <stack> <vendor> <rip>");
+        PyErr_SetString(PyExc_ValueError, "invalid arguments. expected: <buffer[byte-like object]> <code> <data> <stack> <vendor> <rip>");
+        Py_RETURN_NONE;
+    }
+
+    buffer = _pybddisasm_get_contiguous_buffer(&view);
+    if (!buffer)
+    {
         Py_RETURN_NONE;
     }
 
@@ -1055,11 +1106,14 @@ static PyObject *pybddisasm_decode_ex2(PyObject *self, PyObject *args)
 
     INSTRUX instr;
 
-    NDSTATUS status = nd_decode_ex2(&instr, buf, bufsize, code, data, stack, vend);
+    NDSTATUS status = nd_decode_ex2(&instr, buffer, view.len, code, data, stack, vend);
     if (!ND_SUCCESS(status))
     {
         Py_RETURN_NONE;
     }
+
+    _pybddisasm_release_contiguous_buffer(&view, buffer);
+    PyBuffer_Release(&view);
 
     return _pybddisasm_build_instr_dict(&instr, rip);
 }
@@ -1067,16 +1121,22 @@ static PyObject *pybddisasm_decode_ex2(PyObject *self, PyObject *args)
 
 static PyObject *pybddisasm_to_text(PyObject *self, PyObject *args)
 {
-    char *buf = NULL;
-    Py_ssize_t bufsize = 0;
+    char *buffer = NULL;
     uint64_t rip = 0;
     uint8_t code, data;
+    Py_buffer view;
 
     (void)self;
 
-    if (!PyArg_ParseTuple(args, "s#BB|K", &buf, &bufsize, &code, &data, &rip))
+    if (!PyArg_ParseTuple(args, "y*BB|K", &view, &code, &data, &rip))
     {
-        PyErr_SetString(PyExc_ValueError, "invalid arguments. expected: <buffer[bytes]> <bufsize> <code> <data> <rip>");
+        PyErr_SetString(PyExc_ValueError, "invalid arguments. expected: <buffer[byte-like object]>  <code> <data> <rip>");
+        Py_RETURN_NONE;
+    }
+
+    buffer = _pybddisasm_get_contiguous_buffer(&view);
+    if (!buffer)
+    {
         Py_RETURN_NONE;
     }
 
@@ -1090,7 +1150,7 @@ static PyObject *pybddisasm_to_text(PyObject *self, PyObject *args)
 
     INSTRUX instr;
 
-    NDSTATUS status = nd_decode_ex(&instr, buf, bufsize, code, data);
+    NDSTATUS status = nd_decode_ex(&instr, buffer, view.len, code, data);
     if (!ND_SUCCESS(status))
     {
         Py_RETURN_NONE;
@@ -1103,6 +1163,9 @@ static PyObject *pybddisasm_to_text(PyObject *self, PyObject *args)
     {
         Py_RETURN_NONE;
     }
+
+    _pybddisasm_release_contiguous_buffer(&view, buffer);
+    PyBuffer_Release(&view);
 
     return Py_BuildValue("{s,s,s,y#}", "text", instr_text, "bytes", instr.InstructionBytes, instr.Length);
 }
