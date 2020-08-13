@@ -75,7 +75,7 @@ setup(
     package_dir={'pybddisasm': 'pybddisasm'},
     platforms = ["Windows", "Linux"],
     include_package_data=True,
-    python_requires=">=3.4",
+    python_requires=">=3.5",
     setup_requires=['wheel'],
     install_requires=requires,
     zip_safe=False,
