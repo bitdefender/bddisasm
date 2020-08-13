@@ -11,7 +11,7 @@ import re
 from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
-VERSION = (0, 1, 2)
+VERSION = (0, 1, 3)
 LIBRARY_VERSION = (1, 28, 1)
 LIBRARY_INSTRUX_SIZE = 856
 
@@ -75,7 +75,7 @@ setup(
     package_dir={'pybddisasm': 'pybddisasm'},
     platforms = ["Windows", "Linux"],
     include_package_data=True,
-    python_requires=">=3.4",
+    python_requires=">=3.5",
     setup_requires=['wheel'],
     install_requires=requires,
     zip_safe=False,
@@ -85,14 +85,14 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: Apache Software License',
-        'Operating System :: OS Independent',
+        'Operating System :: Microsoft :: Windows',
+        'Operating System :: POSIX :: Linux'
     ],
     ext_modules = [Extension("_pybddisasm",
                       sources = ["_pybddisasm/_pybddisasm.c", "_pybddisasm/pybddisasm.c"],
-                      define_macros = [('AMD64', None), ('Py_LIMITED_API', None), ('LIBRARY_INSTRUX_SIZE', LIBRARY_INSTRUX_SIZE)],
+                      define_macros = [('AMD64', None), ('LIBRARY_INSTRUX_SIZE', LIBRARY_INSTRUX_SIZE)],
                       include_dirs = ['../inc'],
                       libraries = ['bddisasm'],
-                      library_dirs = ['/usr/local/lib', '../bin/x64/Release'],
-                      py_limited_api=True)],
+                      library_dirs = ['/usr/local/lib', '../bin/x64/Release'])],
     distclass=BinaryDistribution
 )
