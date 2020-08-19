@@ -3,11 +3,14 @@
 # Accepted flags: CF, PF, AF, ZF, TF, IF, OF, DF, AC, IOPL, RF, NT, VIF, VIP, VM
 # Accepted modifiers: t (tested), m (modified according to the result), 0 (cleared), 1 (set), u (undefined)
 
-# All airthmetic instructions: ADD, SUB, CMP, XADD
+# All arithmetic instructions: ADD, SUB, CMP, XADD
 ARITH       : CF=m|PF=m|AF=m|ZF=m|SF=m|OF=m
 
-# Airthmetic with carry instructions: ADC, SBB
+# Arithmetic with carry instructions: ADC, SBB
 ARITHC      : CF=t|CF=m|PF=m|AF=m|ZF=m|SF=m|OF=m
+
+# INC/DEC do not alter CF.
+INCDEC      : PF=m|AF=m|ZF=m|SF=m|OF=m
 
 # Logic instructions: OR, AND, XOR, TEST
 LOGIC       : CF=0|PF=m|AF=u|ZF=m|SF=m|OF=0
@@ -54,6 +57,9 @@ REPCMPS     : CF=m|PF=m|AF=m|ZF=t|ZF=m|SF=m|OF=m|DF=t
 
 # Used by PCMPESTRM, PCMPESTRI, PCMPISTRM, PCMPISTRI
 PCMPSTR     : CF=m|PF=0|AF=0|ZF=m|SF=m|OF=m
+
+# MOV to/from control/debug registers, all flags are undefined.
+MOVCRDR     : CF=u|PF=u|AF=u|ZF=u|SF=u|OF=u
 
 # Used by VMX instructions.
 VMX         : CF=m|PF=0|AF=0|ZF=m|SF=0|OF=0

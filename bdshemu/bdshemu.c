@@ -1363,7 +1363,8 @@ ShemuSetOperandValue(
                 // OK: op->Size will be the FPU state size.
                 ShemuSetBits(STACKBMP(Context), (gla + 0xC) - Context->StackBase, Context->Instruction.WordLength, 1);
             }
-            else if (Context->Instruction.Instruction == ND_INS_FXSAVE)
+            else if (Context->Instruction.Instruction == ND_INS_FXSAVE || 
+                Context->Instruction.Instruction == ND_INS_FXSAVE64)
             {
                 // OK: op->Size will be the FXSAVE size.
                 ShemuSetBits(STACKBMP(Context), (gla + 0x8) - Context->StackBase, Context->Instruction.WordLength, 1);
@@ -1545,7 +1546,7 @@ ShemuEmulate(
 {
     NDSTATUS ndstatus;
     SHEMU_VALUE res = { 0 }, dst = { 0 }, src = { 0 }, rcx = { 0 }, aux = { 0 };
-    bool stop = false;
+    bool stop = false, cf;
     uint64_t rip = 0;
 
     if (NULL == Context)
@@ -1660,6 +1661,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_FXSAVE:
+        case ND_INS_FXSAVE64:
             src.Size = MIN(Context->Instruction.Operands[0].Size, sizeof(src.Value.XsaveArea));
             src.Value.XsaveArea.FpuRip = Context->Registers.FpuRip;
             SET_OP(Context, 0, &src);
@@ -1794,7 +1796,9 @@ ShemuEmulate(
             src.Value.Qwords[0] = 1;
             res.Size = src.Size;
             res.Value.Qwords[0] = dst.Value.Qwords[0] + src.Value.Qwords[0];
+            cf = GET_FLAG(Context, NDR_RFLAG_CF);
             SET_FLAGS(Context, res, dst, src, FM_ADD);
+            SET_FLAG(Context, NDR_RFLAG_CF, cf);
             SET_OP(Context, 0, &res);
             break;
 
@@ -1804,7 +1808,9 @@ ShemuEmulate(
             src.Value.Qwords[0] = 1;
             res.Size = src.Size;
             res.Value.Qwords[0] = dst.Value.Qwords[0] - src.Value.Qwords[0];
+            cf = GET_FLAG(Context, NDR_RFLAG_CF);
             SET_FLAGS(Context, res, dst, src, FM_SUB);
+            SET_FLAG(Context, NDR_RFLAG_CF, cf);
             SET_OP(Context, 0, &res);
             break;
 
@@ -1821,6 +1827,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_PUSHA:
+        case ND_INS_PUSHAD:
             src.Size = 32;
             src.Value.Dwords[7] = (uint32_t)Context->Registers.RegRax;
             src.Value.Dwords[6] = (uint32_t)Context->Registers.RegRcx;
@@ -1834,6 +1841,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_POPA:
+        case ND_INS_POPAD:
             GET_OP(Context, 1, &src);
             Context->Registers.RegRax = src.Value.Dwords[7];
             Context->Registers.RegRcx = src.Value.Dwords[6];
