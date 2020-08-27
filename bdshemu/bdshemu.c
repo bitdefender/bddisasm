@@ -663,7 +663,7 @@ ShemuSetGprValue(
         if (High8)
         {
             // AH, CH, DH or BH accessed.
-            *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) = Value & 0xff;
+            *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) = Value & 0xFF;
         }
         else
         {
@@ -1506,6 +1506,116 @@ ShemuMultiply64Signed(
     ShemuMultiply64Unsigned((uint64_t)Operand1, (uint64_t)Operand2, (uint64_t *)ResHigh, (uint64_t *)ResLow);
     if (Operand1 < 0LL) *ResHigh -= Operand2;
     if (Operand2 < 0LL) *ResHigh -= Operand1;
+}
+
+
+//
+// ShemuCheckDiv
+//
+static bool
+ShemuCheckDiv(
+    uint64_t Divident,
+    uint64_t Divider,
+    uint8_t Size            // The size of the Source (Divider). The Divident is twice as large.
+    )
+{
+    // Returns true if all checks are OK, and Divident / Divider will not cause #DE.
+
+    if (Divider == 0)
+    {
+        // Division by zero.
+        return false;
+    }
+
+    // If the result won't fit in the destination, a #DE would be generated.
+    switch (Size)
+    {
+    case 1:
+        if (((Divident >> 8) & 0xFF) >= Divider)
+        {
+            return false;
+        }
+        break;
+
+    case 2:
+        if (((Divident >> 16) & 0xFFFF) >= Divider)
+        {
+            return false;
+        }
+        break;
+
+    case 4:
+        if (((Divident >> 32) & 0xFFFFFFFF) >= Divider)
+        {
+            return false;
+        }
+        break;
+
+    default:
+        // 64 bit source division is not supported.
+        return false;
+    }
+
+    return true;
+}
+
+
+//
+// ShemuCheckIdiv
+//
+static bool
+ShemuCheckIdiv(
+    int64_t Divident,
+    int64_t Divider,
+    uint8_t Size            // The size of the Source (Divider).
+    )
+{
+    bool neg1, neg2;
+    uint64_t quotient, max;
+
+    neg1 = Divident < 0;
+    neg2 = Divider < 0;
+
+    if (neg1)
+    {
+        Divident = -Divident;
+    }
+
+    if (neg2)
+    {
+        Divider = -Divider;
+    }
+
+    // Do checks when dividing positive values.
+    if (!ShemuCheckDiv(Divident, Divider, Size))
+    {
+        return false;
+    }
+
+    // Get the positive quotient.
+    quotient = (uint64_t)Divident / (uint64_t)Divider;
+
+    max = (Size == 1) ? 0x80 : (Size == 2) ? 0x8000 : (Size == 4) ? 0x80000000 : 0x8000000000000000;
+
+    if (neg1 ^ neg2)
+    {
+        // The Divident and the Divider have different signs, the quotient must be negative. If it's positive => #DE.
+        if (ND_GET_SIGN(Size, quotient) && quotient != max)
+        {
+            return false;
+        }
+    }
+    else
+    {
+        // Both the Divident and the Divider are positive/negative, so a positive result must be produced. If it's 
+        // negative => #DE.
+        if (ND_GET_SIGN(Size, quotient))
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 
@@ -2417,22 +2527,31 @@ ShemuEmulate(
 
             if (src.Size == 1)
             {
-                if (src.Value.Bytes[0] == 0)
-                {
-                    // Division by zero, force emulation stop.
-                    stop = true;
-                    break;
-                }
+                uint16_t divident;
+
+                divident = (uint16_t)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
-                    res.Value.Bytes[0] = (uint8_t)((uint16_t)Context->Registers.RegRax / (uint8_t)src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (uint8_t)((uint16_t)Context->Registers.RegRax % (uint8_t)src.Value.Bytes[0]);
+                    if (!ShemuCheckDiv(divident, src.Value.Bytes[0], 1))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Bytes[0] = (uint8_t)(divident / src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (uint8_t)(divident % src.Value.Bytes[0]);
                 }
                 else
                 {
-                    res.Value.Bytes[0] = (int8_t)((int16_t)Context->Registers.RegRax / (int8_t)src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (int8_t)((int16_t)Context->Registers.RegRax % (int8_t)src.Value.Bytes[0]);
+                    if (!ShemuCheckIdiv((int64_t)(int16_t)divident, (int64_t)(int8_t)src.Value.Bytes[0], 1))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Bytes[0] = (int8_t)((int16_t)divident / (int8_t)src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (int8_t)((int16_t)divident % (int8_t)src.Value.Bytes[0]);
                 }
 
                 // Result in AX (AL - quotient, AH - reminder).
@@ -2442,23 +2561,28 @@ ShemuEmulate(
             {
                 uint32_t divident;
 
-                if (src.Value.Words[0] == 0)
-                {
-                    // Division by zero, force emulation stop.
-                    stop = true;
-                    break;
-                }
-
                 divident = ((uint32_t)(uint16_t)Context->Registers.RegRdx << 16) | 
                             (uint32_t)(uint16_t)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
-                    res.Value.Words[0] = (uint16_t)((uint32_t)divident / (uint16_t)src.Value.Words[0]);
-                    res.Value.Words[1] = (uint16_t)((uint32_t)divident % (uint16_t)src.Value.Words[0]);
+                    if (!ShemuCheckDiv(divident, src.Value.Words[0], 2))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Words[0] = (uint16_t)(divident / src.Value.Words[0]);
+                    res.Value.Words[1] = (uint16_t)(divident % src.Value.Words[0]);
                 }
                 else
                 {
+                    if (!ShemuCheckIdiv((int64_t)(int32_t)divident, (int64_t)(int16_t)src.Value.Words[0], 2))
+                    {
+                        stop = true;
+                        break;
+                    }
+
                     res.Value.Words[0] = (int16_t)((int32_t)divident / (int16_t)src.Value.Words[0]);
                     res.Value.Words[1] = (int16_t)((int32_t)divident % (int16_t)src.Value.Words[0]);
                 }
@@ -2470,23 +2594,28 @@ ShemuEmulate(
             {
                 uint64_t divident;
 
-                if (src.Value.Dwords[0] == 0)
-                {
-                    // Division by zero, force emulation stop.
-                    stop = true;
-                    break;
-                }
-
                 divident = ((uint64_t)(uint32_t)Context->Registers.RegRdx << 32) | 
                             (uint64_t)(uint32_t)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
-                    res.Value.Dwords[0] = (uint32_t)((uint64_t)divident / (uint32_t)src.Value.Dwords[0]);
-                    res.Value.Dwords[1] = (uint32_t)((uint64_t)divident % (uint32_t)src.Value.Dwords[0]);
+                    if (!ShemuCheckDiv(divident, src.Value.Dwords[0], 4))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Dwords[0] = (uint32_t)(divident / src.Value.Dwords[0]);
+                    res.Value.Dwords[1] = (uint32_t)(divident % src.Value.Dwords[0]);
                 }
                 else
                 {
+                    if (!ShemuCheckIdiv((int64_t)divident, (int64_t)(int32_t)src.Value.Dwords[0], 4))
+                    {
+                        stop = true;
+                        break;
+                    }
+
                     res.Value.Dwords[0] = (int32_t)((int64_t)divident / (int32_t)src.Value.Dwords[0]);
                     res.Value.Dwords[1] = (int32_t)((int64_t)divident % (int32_t)src.Value.Dwords[0]);
                 }
