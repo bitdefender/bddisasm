@@ -1672,7 +1672,7 @@ int main(
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED|FOREGROUND_INTENSITY);
         printf("            light red        relative offset, immediate, address\n");
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED);
-        printf("Instrux size: %zx bytes\n", sizeof(INSTRUX));
+        printf("Instrux size: 0x%zx bytes\n", sizeof(INSTRUX));
         ret = -1;
         goto cleanup_and_exit;
     }
