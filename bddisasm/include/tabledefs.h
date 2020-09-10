@@ -198,8 +198,8 @@ typedef struct _ND_INSTRUCTION
     uint8_t         IsaSet;         // Instruction set. Check ND_INS_SET.
     uint16_t        Mnemonic;       // Mnemonic (index inside the global mnemonic table).
 
-    uint16_t        ValidModes;     // Valid operating modes for the instruction.
     uint16_t        ValidPrefixes;  // Accepted prefixes.
+    uint32_t        ValidModes;     // Valid operating modes for the instruction.
     uint8_t         ValidDecorators;// Accepted decorators (valid for EVEX instructions).
 
     uint8_t         OpsCount;       // Low 4 bits: explicit operands count; high 4 bits: implicit ops count.
@@ -211,7 +211,7 @@ typedef struct _ND_INSTRUCTION
     uint8_t         FpuFlags;       // FPU status word C0, C1, C2 & C3 access type.
 
     uint8_t         Reserved2;
-    uint32_t        Reserved3;
+    uint16_t        Reserved3;
 
     uint32_t        Attributes;     // Instruction attributes.
     uint64_t        CpuidFlag;      // Required CPUID feature flag.
@@ -407,6 +407,8 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_GPR_rBP,
     ND_OPT_GPR_rSI,
     ND_OPT_GPR_rDI,
+    ND_OPT_GPR_rR8,
+    ND_OPT_GPR_rR9,
     ND_OPT_GPR_rR11,
 
     // Segment registers.

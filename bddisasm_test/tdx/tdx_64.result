@@ -1,0 +1,57 @@
+0000000000000000 660f01cc                        TDCALL
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TDX, Ins cat: TDX, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: no, VMXNonRoot: yes, VMXRoot SEAM: no, VMXNonRoot SEAM: yes, VMX off: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000004 660f01cd                        SEAMRET
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TDX, Ins cat: TDX, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: no, VMXNonRoot: no, VMXRoot SEAM: yes, VMXNonRoot SEAM: no, VMX off: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+
+0000000000000008 660f01ce                        SEAMOPS
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TDX, Ins cat: TDX, CET tracked: no
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: no, VMXNonRoot: no, VMXRoot SEAM: yes, VMXNonRoot SEAM: no, VMX off: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 4, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 9, RegCount: 1
+
+000000000000000C 660f01cf                        SEAMCALL
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: TDX, Ins cat: TDX, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: no, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: no, VMXNonRoot SEAM: yes, VMX off: no
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+

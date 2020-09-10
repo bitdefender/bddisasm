@@ -183,6 +183,8 @@ static const uint16_t gOperandMap[] =
     ND_OPE_S,       // ND_OPT_GPR_rBP
     ND_OPE_S,       // ND_OPT_GPR_rSI
     ND_OPE_S,       // ND_OPT_GPR_rDI
+    ND_OPE_S,       // ND_OPT_GPR_rR8
+    ND_OPE_S,       // ND_OPT_GPR_rR9
     ND_OPE_S,       // ND_OPT_GPR_rR11
 
     ND_OPE_S,       // ND_OPT_SEG_CS
@@ -1780,6 +1782,22 @@ NdParseOperand(
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
         operand->Info.Register.Reg = NDR_RDI;
+        break;
+
+    case ND_OPT_GPR_rR8:
+        // Operand is R8.
+        operand->Type = ND_OP_REG;
+        operand->Info.Register.Type = ND_REG_GPR;
+        operand->Info.Register.Size = (ND_REG_SIZE)size;
+        operand->Info.Register.Reg = NDR_R8;
+        break;
+
+    case ND_OPT_GPR_rR9:
+        // Operand is R9.
+        operand->Type = ND_OP_REG;
+        operand->Info.Register.Type = ND_REG_GPR;
+        operand->Info.Register.Size = (ND_REG_SIZE)size;
+        operand->Info.Register.Reg = NDR_R9;
         break;
 
     case ND_OPT_GPR_rR11:

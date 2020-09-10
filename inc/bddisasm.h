@@ -308,35 +308,41 @@ typedef uint32_t ND_REG_SIZE;
 // Valid CPU modes.
 //
 // Group 1: ring
-#define ND_MOD_R0                   0x0001      // Instruction valid in ring 0.
-#define ND_MOD_R1                   0x0002      // Instruction valid in ring 1.
-#define ND_MOD_R2                   0x0004      // Instruction valid in ring 2.
-#define ND_MOD_R3                   0x0008      // Instruction valid in ring 3.
+#define ND_MOD_R0                   0x00000001  // Instruction valid in ring 0.
+#define ND_MOD_R1                   0x00000002  // Instruction valid in ring 1.
+#define ND_MOD_R2                   0x00000004  // Instruction valid in ring 2.
+#define ND_MOD_R3                   0x00000008  // Instruction valid in ring 3.
 
 // Group 2: operating mode.
-#define ND_MOD_REAL                 0x0010      // Instruction valid in real mode.
-#define ND_MOD_V8086                0x0020      // Instruction valid in virtual 8086 mode.
-#define ND_MOD_PROT                 0x0040      // Instruction valid in protected mode.
-#define ND_MOD_COMPAT               0x0080      // Instruction valid in compatibility mode.
-#define ND_MOD_LONG                 0x0100      // Instruction valid in long mode.
-#define ND_MOD_SMM                  0x0200      // Instruction valid in System-Management Mode.
+#define ND_MOD_REAL                 0x00000010  // Instruction valid in real mode.
+#define ND_MOD_V8086                0x00000020  // Instruction valid in virtual 8086 mode.
+#define ND_MOD_PROT                 0x00000040  // Instruction valid in protected mode.
+#define ND_MOD_COMPAT               0x00000080  // Instruction valid in compatibility mode.
+#define ND_MOD_LONG                 0x00000100  // Instruction valid in long mode.
 
-// Group 3: SGX and TSX
-#define ND_MOD_SGX                  0x0400      // Instruction valid in SGX enclaves.
-#define ND_MOD_TSX                  0x0800      // Instruction valid in TSX transactional regions.
+// Group 3: misc modes.
+#define ND_MOD_SMM                  0x00001000  // Instruction valid in System-Management Mode.
+#define ND_MOD_SMM_OFF              0x00002000  // Instruction valid outside SMM.
+#define ND_MOD_SGX                  0x00004000  // Instruction valid in SGX enclaves.
+#define ND_MOD_SGX_OFF              0x00008000  // Instruction valid outside SGX enclaves.
+#define ND_MOD_TSX                  0x00010000  // Instruction valid in TSX transactional regions.
+#define ND_MOD_TSX_OFF              0x00020000  // Instruction valid outside TSX.
+
 
 // Group 4: VMX
-#define ND_MOD_VMXR                 0x1000      // Instruction valid in VMX Root mode.
-#define ND_MOD_VMXN                 0x2000      // Instruction valid in VMX non-root mode.
-#define ND_MOD_VMXO                 0x4000      // Instruction valid outside VMX operation.
+#define ND_MOD_VMXR                 0x00040000  // Instruction valid in VMX Root mode.
+#define ND_MOD_VMXN                 0x00080000  // Instruction valid in VMX non-root mode.
+#define ND_MOD_VMXR_SEAM            0x00100000  // Instruction valid in VMX root Secure Arbitration Mode.
+#define ND_MOD_VMXN_SEAM            0x00200000  // Instruction valid in VMX non-root Secure Arbitration Mode.
+#define ND_MOD_VMX_OFF              0x00400000  // Instruction valid outside VMX operation.
 
-#define ND_MOD_RING_MASK            0x000F      // Valid ring mask.
-#define ND_MOD_MODE_MASK            0x03F0      // Valid mode mask.
-#define ND_MOD_OTHER_MASK           0x0C00      // Misc mask.
-#define ND_MOD_VMX_MASK             0x7000      // VMX mask.
+#define ND_MOD_RING_MASK            0x0000000F  // Valid ring mask.
+#define ND_MOD_MODE_MASK            0x000001F0  // Valid mode mask.
+#define ND_MOD_OTHER_MASK           0x0003F000  // Misc mask.
+#define ND_MOD_VMX_MASK             0x007C0000  // VMX mask.
 
 // For instructions valid in any operating mode.
-#define ND_MOD_ANY                  0xFFFF      // Instruction valid in any mode.
+#define ND_MOD_ANY                  0xFFFFFFFF  // Instruction valid in any mode.
 
 
 //
@@ -1131,31 +1137,39 @@ typedef union _ND_VALID_DECORATORS
 //
 typedef union _ND_VALID_MODES
 {
-    uint16_t     Raw;
+    uint32_t     Raw;
     struct
     {
         // Group 1: privilege level.
-        uint16_t Ring0 : 1;     // The instruction is valid in ring 0.
-        uint16_t Ring1 : 1;     // The instruction is valid in ring 1.
-        uint16_t Ring2 : 1;     // The instruction is valid in ring 2.
-        uint16_t Ring3 : 1;     // The instruction is valid in ring 3.
+        uint32_t Ring0 : 1;     // The instruction is valid in ring 0.
+        uint32_t Ring1 : 1;     // The instruction is valid in ring 1.
+        uint32_t Ring2 : 1;     // The instruction is valid in ring 2.
+        uint32_t Ring3 : 1;     // The instruction is valid in ring 3.
 
         // Group 2: operating mode - the CPU can be on only one of these modes at any moment.
-        uint16_t Real : 1;      // The instruction is valid in real mode.
-        uint16_t V8086 : 1;     // The instruction is valid in Virtual 8086 mode.
-        uint16_t Protected : 1; // The instruction is valid in protected mode (32 bit).
-        uint16_t Compat : 1;    // The instruction is valid in compatibility mode (32 bit in 64 bit).
-        uint16_t Long : 1;      // The instruction is valid in long mode.
-        uint16_t Smm : 1;       // The instruction is valid in System Management Mode.
+        uint32_t Real : 1;      // The instruction is valid in real mode.
+        uint32_t V8086 : 1;     // The instruction is valid in Virtual 8086 mode.
+        uint32_t Protected : 1; // The instruction is valid in protected mode (32 bit).
+        uint32_t Compat : 1;    // The instruction is valid in compatibility mode (32 bit in 64 bit).
+        uint32_t Long : 1;      // The instruction is valid in long mode.
+
+        uint32_t Reserved : 3;  // Reserved for padding/future use.
 
         // Group 3: special modes - these may be active inside other modes (example: TSX in Long mode).
-        uint16_t Sgx : 1;       // The instruction is valid in SGX mode.
-        uint16_t Tsx : 1;       // The instruction is valid in transactional regions.
+        uint32_t Smm : 1;       // The instruction is valid in System Management Mode.
+        uint32_t SmmOff : 1;    // The instruction is valid outside SMM.
+        uint32_t Sgx : 1;       // The instruction is valid in SGX mode.
+        uint32_t SgxOff : 1;    // The instruction is valid outside SGX.
+        uint32_t Tsx : 1;       // The instruction is valid in transactional regions.
+        uint32_t TsxOff : 1;    // The instruction is valid outside TSX.
 
         // Group 4: VMX mode - they engulf all the other modes.
-        uint16_t VmxRoot : 1;   // The instruction is valid in VMX root mode.
-        uint16_t VmxNonRoot : 1;// The instruction is valid in VMX non root mode.
-        uint16_t VmxOff : 1;    // The instruction is valid outside VMX operation.
+        uint32_t VmxRoot : 1;   // The instruction is valid in VMX root mode.
+        uint32_t VmxNonRoot : 1;// The instruction is valid in VMX non root mode.
+        uint32_t VmxRootSeam : 1;   // The instruction is valid in VMX root SEAM.
+        uint32_t VmxNonRootSeam : 1;// The instruction is valid in VMX non-root SEAM.
+        uint32_t VmxOff : 1;    // The instruction is valid outside VMX operation.
+        
     };
 } ND_VALID_MODES, *PND_VALID_MODES;
 

@@ -681,6 +681,9 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_SAVEPREVSSP: return "saveprevssp";
     case ND_INS_SBB: return "sbb";
     case ND_INS_SCAS: return "scas";
+    case ND_INS_SEAMOPS: return "seamops";
+    case ND_INS_SEAMCALL: return "seamcall";
+    case ND_INS_SEAMRET: return "seamret";
     case ND_INS_SERIALIZE: return "serialize";
     case ND_INS_SETSSBSY: return "setssbsy";
     case ND_INS_SETcc: return "setcc";
@@ -735,6 +738,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_SYSEXIT: return "sysexit";
     case ND_INS_SYSRET: return "sysret";
     case ND_INS_T1MSKC: return "t1mskc";
+    case ND_INS_TDCALL: return "tdcall";
     case ND_INS_TDPBF16PS: return "tdpbf16ps";
     case ND_INS_TDPBSSD: return "tdpbssd";
     case ND_INS_TDPBSUD: return "tdpbsud";
@@ -1612,6 +1616,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_SYSCALL: return "syscall";
     case ND_CAT_SYSRET: return "sysret";
     case ND_CAT_SYSTEM: return "system";
+    case ND_CAT_TDX: return "tdx";
     case ND_CAT_UD: return "ud";
     case ND_CAT_UNCOND_BR: return "uncond_br";
     case ND_CAT_UNKNOWN: return "unknown";
@@ -1736,6 +1741,7 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_SSSE3: return "ssse3";
     case ND_SET_SVM: return "svm";
     case ND_SET_TBM: return "tbm";
+    case ND_SET_TDX: return "tdx";
     case ND_SET_TSX: return "tsx";
     case ND_SET_TSXLDTRK: return "tsxldtrk";
     case ND_SET_UD: return "ud";

@@ -186,6 +186,7 @@ const char* set_to_string(
     case ND_SET_SSSE3:                 return "SSSE3";
     case ND_SET_SVM:                   return "SVM";
     case ND_SET_TBM:                   return "TBM";
+    case ND_SET_TDX:                   return "TDX";
     case ND_SET_TSX:                   return "TSX";
     case ND_SET_TSXLDTRK:              return "TSXLDTRK";
     case ND_SET_UD:                    return "UD";
@@ -291,6 +292,7 @@ const char* category_to_string(
     case ND_CAT_SYSCALL:              return "SYSCALL";
     case ND_CAT_SYSRET:               return "SYSRET";
     case ND_CAT_SYSTEM:               return "SYSTEM";
+    case ND_CAT_TDX:                  return "TDX";
     case ND_CAT_UD:                   return "UD";
     case ND_CAT_UNCOND_BR:            return "UNCOND_BR";
     case ND_CAT_UNKNOWN:              return "UNKNOWN";
@@ -828,7 +830,8 @@ print_instruction(
         printf("        Valid modes\n"
                "                R0: %s, R1: %s, R2: %s, R3: %s\n"
                "                Real: %s, V8086: %s, Prot: %s, Compat: %s, Long: %s\n"
-               "                SMM: %s, SGX: %s, TSX: %s, VMXRoot: %s, VMXNonRoot: %s\n",
+               "                SMM on: %s, SMM off: %s, SGX on: %s, SGX off: %s, TSX on: %s, TSX off: %s\n"
+               "                VMXRoot: %s, VMXNonRoot: %s, VMXRoot SEAM: %s, VMXNonRoot SEAM: %s, VMX off: %s\n",
                Instrux->ValidModes.Ring0 ? "yes" : "no",
                Instrux->ValidModes.Ring1 ? "yes" : "no",
                Instrux->ValidModes.Ring2 ? "yes" : "no",
@@ -839,10 +842,16 @@ print_instruction(
                Instrux->ValidModes.Compat ? "yes" : "no",
                Instrux->ValidModes.Long ? "yes" : "no",
                Instrux->ValidModes.Smm ? "yes" : "no",
+               Instrux->ValidModes.SmmOff ? "yes" : "no",
                Instrux->ValidModes.Sgx ? "yes" : "no",
+               Instrux->ValidModes.SgxOff ? "yes" : "no",
                Instrux->ValidModes.Tsx ? "yes" : "no",
+               Instrux->ValidModes.TsxOff ? "yes" : "no",
                Instrux->ValidModes.VmxRoot ? "yes" : "no",
-               Instrux->ValidModes.VmxNonRoot ? "yes" : "no"
+               Instrux->ValidModes.VmxNonRoot ? "yes" : "no",
+               Instrux->ValidModes.VmxRootSeam ? "yes" : "no",
+               Instrux->ValidModes.VmxNonRootSeam ? "yes" : "no",
+               Instrux->ValidModes.VmxOff ? "yes" : "no"
                );
 
         printf("        Valid prefixes\n"

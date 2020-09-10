@@ -21,16 +21,22 @@
 #         prot  - instruction valid in protected mode (32 bit)
 #         compat- instruction valid in compatibility mode (32 inside 64 bit mode)
 #         long  - instruction valid in long mode (64 bit) 
-#         smm   - instruction valid in System Management Mode
 #
 # other - can be any of:
-#         sgx - instruction is valid inside a Software Guard Extensions enclave
-#         tsx - instruction is valid inside a Transactional Syncronization Extensions region
+#         smm  - instruction valid in System Management Mode
+#         smm_off - instruction valid outside SMM
+#         sgx  - instruction is valid inside a Software Guard Extensions enclave
+#         sgx_off - instruction valid outside SGX
+#         tsx  - instruction is valid inside a Transactional Syncronization Extensions region
+#         tsx_off - instruction valid outside TSX
 #
 # vmx  - can be any of:
 #         vmxr - instruction valid in VMX root mode
 #         vmxn - instruction valid in VMX non-root mode
-#         vmxo - instruction valid outside VMX operation
+#         vmxr_seam - instruction is valid inside VMX root Secure Arbitration Mode
+#         vmxn_seam - instruction is valid inside VMX non-root Secure Arbitration Mode
+#         vmx_off - instruction valid outside VMX operation
+
 #
 # If a group is not specified, all modes for that group will be considered valid.
 # If only some modes are specified for a group, only they will be considered valid, and all the others invalid.
@@ -39,13 +45,20 @@
 # For SGX and TSX, the most restrictive rule is applied: an instruction is listed as valid in any of these modes if
 # it will always execute successfully; instructions that may be valid or invalid depending on microarchitectural
 # design/conditions are listed as invalid in these modes.
+# 
+# SMM, SGX, TSX, VMX, SEAM are special operating modes for bddisasm, so validty of an instruction must be specified both
+# inside and outside each of these modes. This is because an instruction may be valid in both modes (both SMM/SGX/TSX/SEAM
+# on or off), but others may be valid only if the respective operating mode is on or off.
 #
 
 # Instruction that are valid ONLY in VMX root operation; this also implies ring0, and only protected or long mode.
-VMXROOT : ring=r0|vmx=vmxr|mode=prot+long|other=!sgx+!tsx
+VMXROOT : ring=r0|vmx=vmxr+vmxr_seam|mode=prot+long|other=sgx_off+tsx_off+smm_off
 
 # Instructions valid only in VMX operation, be it VMX root or VMX non-root.
-VMX     : vmx=!vmxo
+VMX     : vmx=!vmx_off
+
+# Instruction valid only in VMX-non root
+VMXNROOT : vmx=vmxn+vmxn_seam
 
 # Instructions valid only in r0. SGX enclaves exist only in r3, so a 0 instruction will not be valid in SGX mode.
 KERNEL  : ring=r0|other=!sgx
@@ -72,7 +85,13 @@ NOTSX   : other=!tsx
 NOSGX   : other=!sgx
 
 # Instructions valid only in SMM. Note that while in SMM, one can transition in protected/long mode.
-SMM     : mode=prot+compat+long+smm
+SMM     : other=!smm_off
 
 # Instructions invalid inside SMM, real-mode or V8086.
-NOSMM   : mode=!real+!v8086+!smm
+NOSMM   : mode=!real+!v8086|other=!smm
+
+# Instruction valid inside SEAM VXM root.
+SEAMR   : ring=r0|mode=long|vmx=vmxr_seam
+
+# Instruction valid in SEAM non-root mode or VMX root. Not valid in SMM.
+SEAMN   : mode=long|vmx=vmxr+vmxn+vmxn_seam|other=!smm

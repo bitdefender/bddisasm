@@ -237,6 +237,8 @@ valid_impops = {# register      size
     'sSP'      : ('rSP',        'ssz'), # SP, ESP or RSP register, depending on stack size.
     'aSI'      : ('rSI',        'asz'), # SI, ESI, or RSI register, depending on address size.
     'aDI'      : ('rDI',        'asz'), # DI, EDI, or RDI register, depending on address size.
+    'R8'       : ('rR8',        'q'),   # R8 register.
+    'R9'       : ('rR9',        'q'),   # R9 register.
     'R11'      : ('rR11',       'q'),   # R11 register.
     'rIP'      : ('rIP',        'v'),   # IP, EIP or RIP, depending on op size.
     'yIP'      : ('rIP',        'yf'),  # EIP in 16/32 bit mode, or RIP in 64 bit mode.
@@ -395,11 +397,16 @@ valid_cpu_modes = [
     'compat',       # Compatibility mode.
     'long',         # Long mode.
     'smm',          # System Management Mode.
+    'smm_off',      # Outside SMM.
     'sgx',          # Software Guard Extensions SGX enclave.
+    'sgx_off',      # Outside SGX.
     'tsx',          # Transactional Synchronization Extensions.
+    'tsx_off',      # Outside TSX.
     'vmxr',         # VMX root.
     'vmxn',         # VMX non-root.
-    'vmxo',         # Outside VMX operation.
+    'vmxr_seam',    # VMX root SEAM.
+    'vmxn_seam',    # VMX non-root SEAM.
+    'vmx_off',      # Outside VMX operation.
 ]
 
 valid_mode_groups = [
@@ -418,7 +425,6 @@ valid_ring_modes = [
 
 valid_mode_modes = [
     "real",  
-    "smm",   
     "v8086", 
     "prot",  
     "compat",
@@ -428,12 +434,18 @@ valid_mode_modes = [
 valid_vmx_modes = [
     "vmxr",
     "vmxn",
-    "vmxo",
+    "vmxr_seam",
+    "vmxn_seam",
+    "vmx_off",
 ]
 
 valid_other_modes = [
+    "smm",
+    "smm_off",
     "sgx",
+    "sgx_off",
     "tsx",
+    "tsx_off",
 ]
 
 valid_mode_map = {
