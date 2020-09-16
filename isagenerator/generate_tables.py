@@ -136,6 +136,13 @@ optype = {
     'ST(0)'    : 'ND_OPT_FPU_ST0',
     'ST(i)'    : 'ND_OPT_FPU_STX',
     'XMM0'     : 'ND_OPT_SSE_XMM0',
+    'XMM1'     : 'ND_OPT_SSE_XMM1',
+    'XMM2'     : 'ND_OPT_SSE_XMM2',
+    'XMM3'     : 'ND_OPT_SSE_XMM3',
+    'XMM4'     : 'ND_OPT_SSE_XMM4',
+    'XMM5'     : 'ND_OPT_SSE_XMM5',
+    'XMM6'     : 'ND_OPT_SSE_XMM6',
+    'XMM7'     : 'ND_OPT_SSE_XMM7',
 
     # Memory operands
     'pBXAL'    : 'ND_OPT_MEM_rBX_AL',
@@ -233,6 +240,8 @@ opsize = {
     'cl'       : 'ND_OPS_cl',
     '12'       : 'ND_OPS_12',
     't'        : 'ND_OPS_t',
+    '384'      : 'ND_OPS_384',
+    '512'      : 'ND_OPS_512',
 }
 
 opdecorators = {

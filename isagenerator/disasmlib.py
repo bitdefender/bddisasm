@@ -202,6 +202,9 @@ valid_opsize = [
     'cl',           # 32/64/128 bytes - the size of one cache line.
     '12',           # 4 bytes (0) + 8 bytes (old SSP), used by SAVEPREVSSP.
     't',            # A tile register. The size varies dependning on execution environment, but can be as high as 1K.
+
+    '384',          # 384 bits representing a Key Locker handle.
+    '512',          # 512 bits representing a Key Locker handle.
 ]
 
 # Implicit/fixed operands. Self explanatory.
@@ -244,6 +247,13 @@ valid_impops = {# register      size
     'yIP'      : ('rIP',        'yf'),  # EIP in 16/32 bit mode, or RIP in 64 bit mode.
     '1'        : ('1',          'b'),   # Constant 1.
     'XMM0'     : ('XMM0',       'dq'),  # XMM0 register.
+    'XMM1'     : ('XMM1',       'dq'),  # XMM1 register.
+    'XMM2'     : ('XMM2',       'dq'),  # XMM2 register.
+    'XMM3'     : ('XMM3',       'dq'),  # XMM3 register.
+    'XMM4'     : ('XMM4',       'dq'),  # XMM4 register.
+    'XMM5'     : ('XMM5',       'dq'),  # XMM5 register.
+    'XMM6'     : ('XMM6',       'dq'),  # XMM6 register.
+    'XMM7'     : ('XMM7',       'dq'),  # XMM7 register.
     'ST(0)'    : ('ST(0)',      'ft'),  # ST(0) register.
     'ST(i)'    : ('ST(i)',      'ft'),  # ST(1) register.
     'CS'       : ('CS',         'v'),   # CS register.
@@ -550,6 +560,13 @@ class Operand():
         elif op.endswith('+1'):
             self.Block = 2
             op = op.replace('+1', '')
+        else:
+            m = re.match(r'XMM(\d)-(\d)', op)
+            if m:
+                start = m.group(1)
+                end = m.group(2)
+                self.Block = int(end) - int(start) + 1
+                op = 'XMM' + start
 
         # Handle the decorators.
         for dec in valid_decorators:

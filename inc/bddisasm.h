@@ -110,7 +110,8 @@
 #define ND_SIZE_128BIT              16          // 1 xmm word or 16 bytes.
 #define ND_SIZE_224BIT              28          // FPU environment, 28 bytes.
 #define ND_SIZE_256BIT              32          // 1 ymm word or 32 bytes.
-#define ND_SIZE_512BIT              64          // 1 zmm word or 64 bytes.
+#define ND_SIZE_384BIT              48          // 48 bytes, used for Key Locker handles.
+#define ND_SIZE_512BIT              64          // 1 zmm word or 64 bytes. Used also for Key Locker handles.
 #define ND_SIZE_752BIT              94          // FPU state, 94 bytes.
 #define ND_SIZE_864BIT              108         // FPU state, 108 bytes.
 #define ND_SIZE_4096BIT             512         // Extended state, 512 bytes.

@@ -143,6 +143,7 @@ const char* set_to_string(
     case ND_SET_I86:                   return "I86";
     case ND_SET_INVPCID:               return "INVPCID";
     case ND_SET_INVLPGB:               return "INVLPGB";
+    case ND_SET_KL:                    return "KL";
     case ND_SET_LONGMODE:              return "LONGMODE";
     case ND_SET_LWP:                   return "LWP";
     case ND_SET_LZCNT:                 return "LZCNT";
@@ -217,6 +218,7 @@ const char* category_to_string(
     {
     case ND_CAT_3DNOW:                return "3DNOW";
     case ND_CAT_AES:                  return "AES";
+    case ND_CAT_AESKL:                return "AESKL";
     case ND_CAT_ARITH:                return "ARITH";
     case ND_CAT_AMX:                  return "AMX";
     case ND_CAT_AVX:                  return "AVX";
@@ -252,6 +254,7 @@ const char* category_to_string(
     case ND_CAT_INTERRUPT:            return "INTERRUPT";
     case ND_CAT_IO:                   return "IO";
     case ND_CAT_IOSTRINGOP:           return "IOSTRINGOP";
+    case ND_CAT_KL:                   return "KL";
     case ND_CAT_KMASK:                return "KMASK";
     case ND_CAT_KNL:                  return "KNL";
     case ND_CAT_LOGIC:                return "LOGIC";
@@ -307,6 +310,7 @@ const char* category_to_string(
     case ND_CAT_WAITPKG:              return "WAITPKG";
     case ND_CAT_WBNOINVD:             return "WBNOINVD";
     case ND_CAT_WIDENOP:              return "WIDENOP";
+    case ND_CAT_WIDE_KL:              return "WIDE_KL";
     case ND_CAT_X87_ALU:              return "X87_ALU";
     case ND_CAT_XOP:                  return "XOP";
     case ND_CAT_XSAVE:                return "XSAVE";

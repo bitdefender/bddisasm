@@ -99,3 +99,9 @@ CL          : SF=t|OF=t
 CNL         : SF=t|OF=t     
 CLE         : SF=t|ZF=t|OF=t
 CNLE        : SF=t|ZF=t|OF=t
+
+# AES Key Locker instructions. ZF set to 0 or 1, depending on success. All other flags are cleared to 0.
+AESKL       : CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
+
+# All flags are zeroed.
+ZERO        : CF=0|PF=0|AF=0|ZF=0|SF=0|OF=0

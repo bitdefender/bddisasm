@@ -99,11 +99,20 @@ SHA256MSG2          Vdq,Wdq               nil               [         NP 0x0F 0x
 GF2P8MULB           Vdq,Wdq               nil               [       0x66 0x0F 0x38 0xCF /r]         s:GFNI, t:GFNI, w:RW|R, e:4
 
 # 0xD0 - 0xDF
+AESENCWIDE128KL     M384                  XMM0-7,Fv         [       0xF3 0x0F 0x38 0xD8 /0:mem]     s:KL, t:WIDE_KL, w:R|RW|W, f:AESKL
+AESDECWIDE128KL     M384                  XMM0-7,Fv         [       0xF3 0x0F 0x38 0xD8 /1:mem]     s:KL, t:WIDE_KL, w:R|RW|W, f:AESKL
+AESENCWIDE256KL     M512                  XMM0-7,Fv         [       0xF3 0x0F 0x38 0xD8 /2:mem]     s:KL, t:WIDE_KL, w:R|RW|W, f:AESKL
+AESDECWIDE256KL     M512                  XMM0-7,Fv         [       0xF3 0x0F 0x38 0xD8 /3:mem]     s:KL, t:WIDE_KL, w:R|RW|W, f:AESKL
 AESIMC              Vdq,Wdq               nil               [       0x66 0x0F 0x38 0xDB /r]         s:AES, t:AES, w:W|R, e:4
 AESENC              Vdq,Wdq               nil               [       0x66 0x0F 0x38 0xDC /r]         s:AES, t:AES, w:RW|R, e:4
+AESENC128KL         Vdq,M384              Fv                [       0xF3 0x0F 0x38 0xDC /r:mem]     s:KL, t:AESKL, w:RW|R|W, f:AESKL
+LOADIWKEY           Vdq,Udq               EAX,XMM0,Fv       [       0xF3 0x0F 0x38 0xDC /r:reg]     s:KL, t:KL, w:R|R|R|R|W, f:AESKL, m:KERNEL
 AESENCLAST          Vdq,Wdq               nil               [       0x66 0x0F 0x38 0xDD /r]         s:AES, t:AES, w:RW|R, e:4
+AESDEC128KL         Vdq,M384              Fv                [       0xF3 0x0F 0x38 0xDD /r:mem]     s:KL, t:AESKL, w:RW|R|W, f:AESKL
 AESDEC              Vdq,Wdq               nil               [       0x66 0x0F 0x38 0xDE /r]         s:AES, t:AES, w:RW|R, e:4
+AESENC256KL         Vdq,M512              Fv                [       0xF3 0x0F 0x38 0xDE /r:mem]     s:KL, t:AESKL, w:RW|R|W, f:AESKL
 AESDECLAST          Vdq,Wdq               nil               [       0x66 0x0F 0x38 0xDF /r]         s:AES, t:AES, w:RW|R, e:4
+AESDEC256KL         Vdq,M512              Fv                [       0xF3 0x0F 0x38 0xDF /r:mem]     s:KL, t:AESKL, w:RW|R|W, f:AESKL
 
 # 0xE0 - 0xEF
 
@@ -126,3 +135,6 @@ MOVDIR64B           rMoq,Moq              nil               [       0x66 0x0F 0x
 ENQCMD              rM?,Moq               Fv                [       0xF2 0x0F 0x38 0xF8 /r:mem]     s:ENQCMD, t:ENQCMD, w:W|R|W, f:ENQCMD
 ENQCMDS             rM?,Moq               Fv                [       0xF3 0x0F 0x38 0xF8 /r:mem]     s:ENQCMD, t:ENQCMD, w:W|R|W, f:ENQCMD
 MOVDIRI             My,Gy                 nil               [         NP 0x0F 0x38 0xF9 /r:mem]     s:MOVDIRI, t:MOVDIRI, w:W|R
+
+ENCODEKEY128        Gd,Rd                 XMM0,XMM0-2,XMM4-6,Fv [   0xF3 0x0F 0x38 0xFA /r:reg]     s:KL, t:AESKL, w:W|R|R|W|W|W, f:ZERO
+ENCODEKEY256        Gd,Rd                 XMM0-1,XMM2-6,Fv  [       0xF3 0x0F 0x38 0xFB /r:reg]     s:KL, t:AESKL, w:W|R|RW|W|W, f:ZERO

@@ -312,6 +312,8 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_n,
     ND_OPS_u,
     ND_OPS_t,       // Tile register size, can be up to 1K.
+    ND_OPS_384,     // 384 bit Key Locker handle.
+    ND_OPS_512,     // 512 bit Key Locker handle.
     // Stack sizes - indicates number of words. Also, hybrid sizes - sizes where from a large register (say 32 bit GPR)
     // only a smaller amount of data is used (for example, 8 bit).
     ND_OPS_v2,
@@ -425,6 +427,13 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 
     // SSE registers.
     ND_OPT_SSE_XMM0,
+    ND_OPT_SSE_XMM1,
+    ND_OPT_SSE_XMM2,
+    ND_OPT_SSE_XMM3,
+    ND_OPT_SSE_XMM4,
+    ND_OPT_SSE_XMM5,
+    ND_OPT_SSE_XMM6,
+    ND_OPT_SSE_XMM7,
 
     // Implicit memory operands.
     ND_OPT_MEM_rBX_AL,

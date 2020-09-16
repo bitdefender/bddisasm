@@ -198,6 +198,13 @@ static const uint16_t gOperandMap[] =
     ND_OPE_M,       // ND_OPT_FPU_STX
 
     ND_OPE_S,       // ND_OPT_SSE_XMM0
+    ND_OPE_S,       // ND_OPT_SSE_XMM1
+    ND_OPE_S,       // ND_OPT_SSE_XMM2
+    ND_OPE_S,       // ND_OPT_SSE_XMM3
+    ND_OPE_S,       // ND_OPT_SSE_XMM4
+    ND_OPE_S,       // ND_OPT_SSE_XMM5
+    ND_OPE_S,       // ND_OPT_SSE_XMM6
+    ND_OPE_S,       // ND_OPT_SSE_XMM7
 
     ND_OPE_S,       // ND_OPT_MEM_rBX_AL (as used by XLAT)
     ND_OPE_S,       // ND_OPT_MEM_rDI (as used by masked moves)
@@ -1680,6 +1687,16 @@ NdParseOperand(
         size = ND_SIZE_1KB;
         break;
 
+    case ND_OPS_384:
+        // 384 bit Key Locker handle.
+        size = ND_SIZE_384BIT;
+        break;
+
+    case ND_OPS_512:
+        // 512 bit Key Locker handle.
+        size = ND_SIZE_512BIT;
+        break;
+
     case ND_OPS_unknown:
         size = ND_SIZE_UNKNOWN;
         break;
@@ -1873,11 +1890,18 @@ NdParseOperand(
         break;
 
     case ND_OPT_SSE_XMM0:
-        // Operand is the XMM0 register.
+    case ND_OPT_SSE_XMM1:
+    case ND_OPT_SSE_XMM2:
+    case ND_OPT_SSE_XMM3:
+    case ND_OPT_SSE_XMM4:
+    case ND_OPT_SSE_XMM5:
+    case ND_OPT_SSE_XMM6:
+    case ND_OPT_SSE_XMM7:
+        // Operand is a hard-coded XMM register.
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SSE;
         operand->Info.Register.Size = ND_SIZE_128BIT;
-        operand->Info.Register.Reg = 0;
+        operand->Info.Register.Reg = opt - ND_OPT_SSE_XMM0;
         break;
 
     // Special operands. These are always implicit, and can't be encoded inside the instruction.
@@ -4680,6 +4704,10 @@ NdToText(
                     break;
                 case 32:
                     res = nd_strcat_s(Buffer, BufferSize, "ymmword ptr ");
+                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    break;
+                case 48:
+                    res = nd_strcat_s(Buffer, BufferSize, "m384 ptr ");
                     RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case 64:

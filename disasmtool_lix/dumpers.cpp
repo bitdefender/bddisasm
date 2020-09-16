@@ -83,8 +83,16 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_ADDSUBPS: return "addsubps";
     case ND_INS_ADOX: return "adox";
     case ND_INS_AESDEC: return "aesdec";
+    case ND_INS_AESDEC128KL: return "aesdec128kl";
+    case ND_INS_AESDEC256KL: return "aesdec256kl";
+    case ND_INS_AESDECWIDE128KL: return "aesdecwide128kl";
+    case ND_INS_AESDECWIDE256KL: return "aesdecwide256kl";
     case ND_INS_AESDECLAST: return "aesdeclast";
     case ND_INS_AESENC: return "aesenc";
+    case ND_INS_AESENC128KL: return "aesenc128kl";
+    case ND_INS_AESENC256KL: return "aesenc256kl";
+    case ND_INS_AESENCWIDE128KL: return "aesencwide128kl";
+    case ND_INS_AESENCWIDE256KL: return "aesencwide256kl";
     case ND_INS_AESENCLAST: return "aesenclast";
     case ND_INS_AESIMC: return "aesimc";
     case ND_INS_AESKEYGENASSIST: return "aeskeygenassist";
@@ -207,6 +215,8 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_ENCLS: return "encls";
     case ND_INS_ENCLU: return "enclu";
     case ND_INS_ENCLV: return "enclv";
+    case ND_INS_ENCODEKEY128: return "encodekey128";
+    case ND_INS_ENCODEKEY256: return "encodekey256";
     case ND_INS_ENDBR: return "endbr";
     case ND_INS_ENQCMD: return "enqcmd";
     case ND_INS_ENQCMDS: return "enqcmds";
@@ -380,6 +390,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_LLDT: return "lldt";
     case ND_INS_LLWPCB: return "llwpcb";
     case ND_INS_LMSW: return "lmsw";
+    case ND_INS_LOADIWKEY: return "loadiwkey";
     case ND_INS_LODS: return "lods";
     case ND_INS_LOOP: return "loop";
     case ND_INS_LOOPNZ: return "loopnz";
@@ -1541,6 +1552,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_INVALID: return "invalid";
     case ND_CAT_3DNOW: return "3dnow";
     case ND_CAT_AES: return "aes";
+    case ND_CAT_AESKL: return "aeskl";
     case ND_CAT_AMX: return "amx";
     case ND_CAT_ARITH: return "arith";
     case ND_CAT_AVX: return "avx";
@@ -1576,6 +1588,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_INTERRUPT: return "interrupt";
     case ND_CAT_IO: return "io";
     case ND_CAT_IOSTRINGOP: return "iostringop";
+    case ND_CAT_KL: return "kl";
     case ND_CAT_KMASK: return "kmask";
     case ND_CAT_KNL: return "knl";
     case ND_CAT_LOGIC: return "logic";
@@ -1630,6 +1643,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_VTX: return "vtx";
     case ND_CAT_WAITPKG: return "waitpkg";
     case ND_CAT_WBNOINVD: return "wbnoinvd";
+    case ND_CAT_WIDE_KL: return "wide_kl";
     case ND_CAT_WIDENOP: return "widenop";
     case ND_CAT_X87_ALU: return "x87_alu";
     case ND_CAT_XOP: return "xop";
@@ -1698,6 +1712,7 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_I64: return "i64";
     case ND_SET_I86: return "i86";
     case ND_SET_INVPCID: return "invpcid";
+    case ND_SET_KL: return "kl";
     case ND_SET_LONGMODE: return "longmode";
     case ND_SET_LWP: return "lwp";
     case ND_SET_LZCNT: return "lzcnt";
