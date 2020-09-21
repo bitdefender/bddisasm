@@ -205,7 +205,7 @@ static void _set_text_color(Colors color)
 }
 
 
-static struct timespec diff_time(struct timespec &end, struct timespec &start)
+static struct timespec diff_time(struct timespec const &end, struct timespec const &start)
 {
     struct timespec result;
 
@@ -313,7 +313,7 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
                 printf(", sub-leaf: 0x%08x", instrux->CpuidFlag.SubLeaf);
             }
 
-            printf(", reg: %s, bit %d\n", regs[instrux->CpuidFlag.Reg], instrux->CpuidFlag.Bit);
+            printf(", reg: %s, bit %u\n", regs[instrux->CpuidFlag.Reg], instrux->CpuidFlag.Bit);
         }
 
         printf("         FLAGS access: ");
@@ -376,8 +376,8 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
             printf("         Operand %d  %s  Type: %10s, Size: %2d, RawSize: %2d, Encoding: %s", i,
                    instrux->Operands[i].Access.Read && instrux->Operands[i].Access.Write ? "RW" :
                    instrux->Operands[i].Access.Write ? "-W" : instrux->Operands[i].Access.Read ? "R-" : "--",
-                   op_type_to_str(instrux->Operands[i].Type).c_str(), instrux->Operands[i].Size,
-                   instrux->Operands[i].RawSize, op_enc_to_str(instrux->Operands[i].Encoding).c_str());
+                   op_type_to_str(instrux->Operands[i].Type).c_str(), (int)instrux->Operands[i].Size,
+                   (int)instrux->Operands[i].RawSize, op_enc_to_str(instrux->Operands[i].Encoding).c_str());
 
             if (ND_OP_MEM == instrux->Operands[i].Type) {
                 printf(", ");
@@ -408,11 +408,21 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
             }
 
             if (ND_OP_REG == instrux->Operands[i].Type) {
-                printf(", Type: %16s, Size: %2d, Reg: %d, Count: %d",
-                    reg_type_to_str(instrux->Operands[i].Info.Register.Type).c_str(),
-                    instrux->Operands[i].Info.Register.Size,
-                    instrux->Operands[i].Info.Register.Reg,
-                    instrux->Operands[i].Info.Register.Count);
+                printf(", RegType: %16s, RegSize: %2u, ",
+                       reg_type_to_str(instrux->Operands[i].Info.Register.Type).c_str(),
+                       instrux->Operands[i].Info.Register.Size);
+                if (instrux->Operands[i].Info.Register.Type == ND_REG_MSR)
+                {
+                    printf("RegId: 0x%08x, RegCount: %u\n",
+                           instrux->Operands[i].Info.Register.Reg,
+                           instrux->Operands[i].Info.Register.Count);
+                }
+                else
+                {
+                    printf("RegId: %u, RegCount: %u\n",
+                           instrux->Operands[i].Info.Register.Reg,
+                           instrux->Operands[i].Info.Register.Count);
+                }
             }
 
             printf("\n");
@@ -518,7 +528,7 @@ size_t disassemble(options &opts)
 
         long total_ns = result.tv_sec * NSEC_PER_SEC + result.tv_nsec;
 
-        printf("Disassembled %zu instructions took %ld.%09ld seconds, %ld ns / instr.\n",
+        printf("Disassembled %zu instructions took %ld.%09ld seconds, %lu ns / instr.\n",
                icount, result.tv_sec, result.tv_nsec, total_ns / icount);
         printf("Invalid: %zu/%zu (%.2f) bytes\n", miss_count, ibytes,
                (static_cast<double>(miss_count) / static_cast<double>(disasm_size)) * 100.0);

@@ -2086,7 +2086,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_GS_BASE;
+        operand->Info.Register.Reg = NDR_IA32_KERNEL_GS_BASE;
         break;
 
     case ND_OPT_XCR:
@@ -2135,8 +2135,6 @@ NdParseOperand(
         operand->Type = ND_OP_ADDR;
         operand->Info.Address.BaseSeg = Instrux->Address.Cs;
         operand->Info.Address.Offset = Instrux->Address.Ip;
-
-        Offset = Instrux->Length;
         break;
 
     case ND_OPT_B:
@@ -2367,8 +2365,6 @@ NdParseOperand(
             {
                 operand->Info.Immediate.Imm = imm;
             }
-
-            Offset = Instrux->Length;
         }
         break;
 
@@ -2395,8 +2391,6 @@ NdParseOperand(
         // branches that have 0x66 prefix (in 32 bit mode)!
         operand->Size = Instrux->WordLength;
         operand->Info.RelativeOffset.Rel = ND_SIGN_EX(size, Instrux->RelativeOffset);
-
-        Offset = Instrux->Length;
 
         break;
 
@@ -2457,8 +2451,6 @@ NdParseOperand(
             operand->Info.Memory.Disp = Instrux->Moffset;
             operand->Info.Memory.HasSeg = true;
             operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-
-            Offset = Instrux->Length;
         }
         break;
 
@@ -2784,7 +2776,6 @@ memory:
             operand->Info.Register.Reg &= 0x7;
         }
 
-        Offset = Instrux->Length;
         break;
 
     case ND_OPT_U:
@@ -4660,6 +4651,11 @@ NdToText(
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
+                }
+
+                if (!ND_SUCCESS(status))
+                {
+                    return status;
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, temp);

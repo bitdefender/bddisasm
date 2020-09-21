@@ -1654,10 +1654,8 @@ ShemuEmulate(
     SHEMU_CONTEXT *Context
     )
 {
-    NDSTATUS ndstatus;
     SHEMU_VALUE res = { 0 }, dst = { 0 }, src = { 0 }, rcx = { 0 }, aux = { 0 };
     bool stop = false, cf;
-    uint64_t rip = 0;
 
     if (NULL == Context)
     {
@@ -1696,6 +1694,9 @@ ShemuEmulate(
 
     while (Context->InstructionsCount++ < Context->MaxInstructionsCount)
     {
+        NDSTATUS ndstatus;
+        uint64_t rip;
+
         // The stop flag has been set, this means we've reached a valid instruction, but that instruction cannot be
         // emulated (for example, SYSCALL, INT, system instructions, etc).
         if (stop)
