@@ -86,4 +86,7 @@ jobs:
     - name: Install cppcheck
       run: sudo apt install -y cppcheck
     - name: Run cppcheck
-      run: cppcheck --error-exitcode=1 --language=c --enable=all -I inc/ -I inc/bdshemu -I bddisasm/include bddisasm/ bdshemu/
+      run: cppcheck --error-exitcode=1 --language=c \
+        --enable=all --suppress=missingIncludeSystem --suppress=unusedStructMember --suppress=unusedFunction \
+        -I inc/ -I inc/bdshemu -I bddisasm/include bddisasm/ bdshemu/ \
+         /
