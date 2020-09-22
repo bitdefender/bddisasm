@@ -4,7 +4,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -18,7 +19,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -32,7 +34,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -46,7 +49,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -60,7 +64,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -74,7 +79,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -88,7 +94,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -102,7 +109,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -116,7 +124,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -130,7 +139,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -144,7 +154,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -158,7 +169,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -172,7 +184,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -187,7 +200,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -202,7 +216,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -217,7 +232,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -232,7 +248,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -246,7 +263,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -260,7 +278,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -275,7 +294,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -291,7 +311,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -299,7 +320,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: -1, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
 
 000000000000003E 0f30                            WRMSR
         DSIZE: 16, ASIZE: 16, VLEN: -
@@ -308,7 +329,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -316,7 +338,7 @@
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: -1, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
 
 0000000000000040 0f31                            RDTSC
         DSIZE: 16, ASIZE: 16, VLEN: -
@@ -324,14 +346,15 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 16, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0x00000010, RegCount: 1
 
 0000000000000042 0f01f9                          RDTSCP
         DSIZE: 16, ASIZE: 16, VLEN: -
@@ -340,7 +363,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -348,8 +372,8 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 16, RegCount: 1
-        Operand: 4, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: -1073741565, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0x00000010, RegCount: 1
+        Operand: 4, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000103, RegCount: 1
 
 0000000000000045 0f00e8                          VERW      ax
         DSIZE: 16, ASIZE: 16, VLEN: -
@@ -359,7 +383,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -375,7 +400,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -391,7 +417,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -408,7 +435,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -423,7 +451,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -437,7 +466,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -451,7 +481,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -466,7 +497,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -484,7 +516,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -500,7 +533,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -513,7 +547,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -526,7 +561,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -538,7 +574,8 @@
         Valid modes
                 R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: no, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
@@ -551,7 +588,8 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM: yes, SGX: yes, TSX: yes, VMXRoot: yes, VMXNonRoot: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no

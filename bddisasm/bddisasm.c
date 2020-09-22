@@ -183,6 +183,8 @@ static const uint16_t gOperandMap[] =
     ND_OPE_S,       // ND_OPT_GPR_rBP
     ND_OPE_S,       // ND_OPT_GPR_rSI
     ND_OPE_S,       // ND_OPT_GPR_rDI
+    ND_OPE_S,       // ND_OPT_GPR_rR8
+    ND_OPE_S,       // ND_OPT_GPR_rR9
     ND_OPE_S,       // ND_OPT_GPR_rR11
 
     ND_OPE_S,       // ND_OPT_SEG_CS
@@ -196,6 +198,13 @@ static const uint16_t gOperandMap[] =
     ND_OPE_M,       // ND_OPT_FPU_STX
 
     ND_OPE_S,       // ND_OPT_SSE_XMM0
+    ND_OPE_S,       // ND_OPT_SSE_XMM1
+    ND_OPE_S,       // ND_OPT_SSE_XMM2
+    ND_OPE_S,       // ND_OPT_SSE_XMM3
+    ND_OPE_S,       // ND_OPT_SSE_XMM4
+    ND_OPE_S,       // ND_OPT_SSE_XMM5
+    ND_OPE_S,       // ND_OPT_SSE_XMM6
+    ND_OPE_S,       // ND_OPT_SSE_XMM7
 
     ND_OPE_S,       // ND_OPT_MEM_rBX_AL (as used by XLAT)
     ND_OPE_S,       // ND_OPT_MEM_rDI (as used by masked moves)
@@ -1678,6 +1687,16 @@ NdParseOperand(
         size = ND_SIZE_1KB;
         break;
 
+    case ND_OPS_384:
+        // 384 bit Key Locker handle.
+        size = ND_SIZE_384BIT;
+        break;
+
+    case ND_OPS_512:
+        // 512 bit Key Locker handle.
+        size = ND_SIZE_512BIT;
+        break;
+
     case ND_OPS_unknown:
         size = ND_SIZE_UNKNOWN;
         break;
@@ -1782,6 +1801,22 @@ NdParseOperand(
         operand->Info.Register.Reg = NDR_RDI;
         break;
 
+    case ND_OPT_GPR_rR8:
+        // Operand is R8.
+        operand->Type = ND_OP_REG;
+        operand->Info.Register.Type = ND_REG_GPR;
+        operand->Info.Register.Size = (ND_REG_SIZE)size;
+        operand->Info.Register.Reg = NDR_R8;
+        break;
+
+    case ND_OPT_GPR_rR9:
+        // Operand is R9.
+        operand->Type = ND_OP_REG;
+        operand->Info.Register.Type = ND_REG_GPR;
+        operand->Info.Register.Size = (ND_REG_SIZE)size;
+        operand->Info.Register.Reg = NDR_R9;
+        break;
+
     case ND_OPT_GPR_rR11:
         // Operand is R11.
         operand->Type = ND_OP_REG;
@@ -1855,11 +1890,18 @@ NdParseOperand(
         break;
 
     case ND_OPT_SSE_XMM0:
-        // Operand is the XMM0 register.
+    case ND_OPT_SSE_XMM1:
+    case ND_OPT_SSE_XMM2:
+    case ND_OPT_SSE_XMM3:
+    case ND_OPT_SSE_XMM4:
+    case ND_OPT_SSE_XMM5:
+    case ND_OPT_SSE_XMM6:
+    case ND_OPT_SSE_XMM7:
+        // Operand is a hard-coded XMM register.
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SSE;
         operand->Info.Register.Size = ND_SIZE_128BIT;
-        operand->Info.Register.Reg = 0;
+        operand->Info.Register.Reg = opt - ND_OPT_SSE_XMM0;
         break;
 
     // Special operands. These are always implicit, and can't be encoded inside the instruction.
@@ -2044,7 +2086,7 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_GS_BASE;
+        operand->Info.Register.Reg = NDR_IA32_KERNEL_GS_BASE;
         break;
 
     case ND_OPT_XCR:
@@ -2093,8 +2135,6 @@ NdParseOperand(
         operand->Type = ND_OP_ADDR;
         operand->Info.Address.BaseSeg = Instrux->Address.Cs;
         operand->Info.Address.Offset = Instrux->Address.Ip;
-
-        Offset = Instrux->Length;
         break;
 
     case ND_OPT_B:
@@ -2325,8 +2365,6 @@ NdParseOperand(
             {
                 operand->Info.Immediate.Imm = imm;
             }
-
-            Offset = Instrux->Length;
         }
         break;
 
@@ -2353,8 +2391,6 @@ NdParseOperand(
         // branches that have 0x66 prefix (in 32 bit mode)!
         operand->Size = Instrux->WordLength;
         operand->Info.RelativeOffset.Rel = ND_SIGN_EX(size, Instrux->RelativeOffset);
-
-        Offset = Instrux->Length;
 
         break;
 
@@ -2415,8 +2451,6 @@ NdParseOperand(
             operand->Info.Memory.Disp = Instrux->Moffset;
             operand->Info.Memory.HasSeg = true;
             operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-
-            Offset = Instrux->Length;
         }
         break;
 
@@ -2742,7 +2776,6 @@ memory:
             operand->Info.Register.Reg &= 0x7;
         }
 
-        Offset = Instrux->Length;
         break;
 
     case ND_OPT_U:
@@ -4620,6 +4653,11 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
+                if (!ND_SUCCESS(status))
+                {
+                    return status;
+                }
+
                 res = nd_strcat_s(Buffer, BufferSize, temp);
                 RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
@@ -4662,6 +4700,10 @@ NdToText(
                     break;
                 case 32:
                     res = nd_strcat_s(Buffer, BufferSize, "ymmword ptr ");
+                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    break;
+                case 48:
+                    res = nd_strcat_s(Buffer, BufferSize, "m384 ptr ");
                     RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case 64:

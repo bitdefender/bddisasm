@@ -655,6 +655,8 @@ ShemuSetGprValue(
     bool High8
     )
 {
+    uint32_t bit;
+
     switch (Size)
     {
     case 1:
@@ -681,6 +683,55 @@ ShemuSetGprValue(
     default:
         *(&Context->Registers.RegRax + Reg) = Value;
         break;
+    }
+
+    if (High8)
+    {
+        bit = Reg - 4;
+    }
+    else
+    {
+        bit = Reg;
+    }
+
+    // Mark the GPR as being dirty/written.
+    Context->DirtyGprBitmap |= (1 << bit);
+}
+
+
+//
+// ShemuCmpGprValue
+//
+static bool
+ShemuCmpGprValue(
+    SHEMU_CONTEXT *Context,
+    uint32_t Reg,
+    uint32_t Size,
+    uint64_t Value,
+    bool High8
+    )
+{
+    switch (Size)
+    {
+    case 1:
+        if (High8)
+        {
+            // AH, CH, DH or BH.
+            return *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) == (Value & 0xff);
+        }
+        else
+        {
+            return *((uint8_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xff);
+        }
+
+    case 2:
+        return *((uint16_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffff);
+
+    case 4:
+        return *((uint32_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffffffff);
+
+    default:
+        return *(&Context->Registers.RegRax + Reg) == Value;
     }
 }
 
@@ -1299,6 +1350,8 @@ ShemuSetOperandValue(
         // Handle RIP save on the stack.
         if (ShemuIsStackPtr(Context, gla, MAX(op->Size, Context->Instruction.WordLength)))
         {
+            uint8_t stckstrlen = 0;
+
             // Note: only Context->Instruction.WordLength bits are flagged as RIP, as that is the RIP size.
             if (Context->Instruction.Instruction == ND_INS_CALLNR ||
                 Context->Instruction.Instruction == ND_INS_CALLNI)
@@ -1310,7 +1363,8 @@ ShemuSetOperandValue(
                 // OK: op->Size will be the FPU state size.
                 ShemuSetBits(STACKBMP(Context), (gla + 0xC) - Context->StackBase, Context->Instruction.WordLength, 1);
             }
-            else if (Context->Instruction.Instruction == ND_INS_FXSAVE)
+            else if (Context->Instruction.Instruction == ND_INS_FXSAVE || 
+                Context->Instruction.Instruction == ND_INS_FXSAVE64)
             {
                 // OK: op->Size will be the FXSAVE size.
                 ShemuSetBits(STACKBMP(Context), (gla + 0x8) - Context->StackBase, Context->Instruction.WordLength, 1);
@@ -1327,6 +1381,9 @@ ShemuSetOperandValue(
             // ...
             // PUSH strn
             // Other variants may exist, but all we care about are stores on the stack, and all are checked.
+            // Note that we will ignore registers which have not been modified during emulation; those are considered
+            // input values for the emulated code, and may be pointers or other data. We are interested only in
+            // stack values built within the emulate code.
             for (uint32_t i = 0; i < Value->Size; i++)
             {
                 unsigned char c = Value->Value.Bytes[i];
@@ -1334,18 +1391,40 @@ ShemuSetOperandValue(
                 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') ||
                     c == '\\' || c == '/' || c == ':' || c == ' ')
                 {
-                    Context->StrLength++;
-
-                    if (Context->StrLength >= Context->StrThreshold)
-                    {
-                        Context->Flags |= SHEMU_FLAG_STACK_STR;
-                        break;
-                    }
+                    stckstrlen++;
                 }
                 else
                 {
-                    Context->StrLength = 0;
+                    break;
                 }
+            }
+
+            if (stckstrlen == Value->Size)
+            {
+                // Make sure the value is not present inside a non-dirty GPR. 
+                for (uint32_t i = 0; i < 16; i++)
+                {
+                    if (ShemuCmpGprValue(Context, i, Value->Size, Value->Value.Qwords[0], false) &&
+                        (0 == (Context->DirtyGprBitmap & (1 << i))))
+                    {
+                        // A register is saved on the stack, but that register wasn't written during the emulation.
+                        stckstrlen = 0;
+                        break;
+                    }
+                }
+            }
+
+            Context->StrLength += stckstrlen;
+
+            if (Context->StrLength >= Context->StrThreshold)
+            {
+                Context->Flags |= SHEMU_FLAG_STACK_STR;
+            }
+            
+            if (stckstrlen != Value->Size)
+            {
+                // Not a full string stored on the stack, reset the counter.
+                Context->StrLength = 0;
             }
         }
 
@@ -1431,6 +1510,116 @@ ShemuMultiply64Signed(
 
 
 //
+// ShemuCheckDiv
+//
+static bool
+ShemuCheckDiv(
+    uint64_t Divident,
+    uint64_t Divider,
+    uint8_t Size            // The size of the Source (Divider). The Divident is twice as large.
+    )
+{
+    // Returns true if all checks are OK, and Divident / Divider will not cause #DE.
+
+    if (Divider == 0)
+    {
+        // Division by zero.
+        return false;
+    }
+
+    // If the result won't fit in the destination, a #DE would be generated.
+    switch (Size)
+    {
+    case 1:
+        if (((Divident >> 8) & 0xFF) >= Divider)
+        {
+            return false;
+        }
+        break;
+
+    case 2:
+        if (((Divident >> 16) & 0xFFFF) >= Divider)
+        {
+            return false;
+        }
+        break;
+
+    case 4:
+        if (((Divident >> 32) & 0xFFFFFFFF) >= Divider)
+        {
+            return false;
+        }
+        break;
+
+    default:
+        // 64 bit source division is not supported.
+        return false;
+    }
+
+    return true;
+}
+
+
+//
+// ShemuCheckIdiv
+//
+static bool
+ShemuCheckIdiv(
+    int64_t Divident,
+    int64_t Divider,
+    uint8_t Size            // The size of the Source (Divider).
+    )
+{
+    bool neg1, neg2;
+    uint64_t quotient, max;
+
+    neg1 = Divident < 0;
+    neg2 = Divider < 0;
+
+    if (neg1)
+    {
+        Divident = -Divident;
+    }
+
+    if (neg2)
+    {
+        Divider = -Divider;
+    }
+
+    // Do checks when dividing positive values.
+    if (!ShemuCheckDiv(Divident, Divider, Size))
+    {
+        return false;
+    }
+
+    // Get the positive quotient.
+    quotient = (uint64_t)Divident / (uint64_t)Divider;
+
+    max = (Size == 1) ? 0x80 : (Size == 2) ? 0x8000 : (Size == 4) ? 0x80000000 : 0x8000000000000000;
+
+    if (neg1 ^ neg2)
+    {
+        // The Divident and the Divider have different signs, the quotient must be negative. If it's positive => #DE.
+        if (ND_GET_SIGN(Size, quotient) && quotient != max)
+        {
+            return false;
+        }
+    }
+    else
+    {
+        // Both the Divident and the Divider are positive/negative, so a positive result must be produced. If it's 
+        // negative => #DE.
+        if (ND_GET_SIGN(Size, quotient))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+//
 // ShemuPrintContext
 //
 static void
@@ -1465,10 +1654,8 @@ ShemuEmulate(
     SHEMU_CONTEXT *Context
     )
 {
-    NDSTATUS ndstatus;
     SHEMU_VALUE res = { 0 }, dst = { 0 }, src = { 0 }, rcx = { 0 }, aux = { 0 };
-    bool stop = false;
-    uint64_t rip = 0;
+    bool stop = false, cf;
 
     if (NULL == Context)
     {
@@ -1507,6 +1694,9 @@ ShemuEmulate(
 
     while (Context->InstructionsCount++ < Context->MaxInstructionsCount)
     {
+        NDSTATUS ndstatus;
+        uint64_t rip;
+
         // The stop flag has been set, this means we've reached a valid instruction, but that instruction cannot be
         // emulated (for example, SYSCALL, INT, system instructions, etc).
         if (stop)
@@ -1582,6 +1772,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_FXSAVE:
+        case ND_INS_FXSAVE64:
             src.Size = MIN(Context->Instruction.Operands[0].Size, sizeof(src.Value.XsaveArea));
             src.Value.XsaveArea.FpuRip = Context->Registers.FpuRip;
             SET_OP(Context, 0, &src);
@@ -1716,7 +1907,9 @@ ShemuEmulate(
             src.Value.Qwords[0] = 1;
             res.Size = src.Size;
             res.Value.Qwords[0] = dst.Value.Qwords[0] + src.Value.Qwords[0];
+            cf = GET_FLAG(Context, NDR_RFLAG_CF);
             SET_FLAGS(Context, res, dst, src, FM_ADD);
+            SET_FLAG(Context, NDR_RFLAG_CF, cf);
             SET_OP(Context, 0, &res);
             break;
 
@@ -1726,7 +1919,9 @@ ShemuEmulate(
             src.Value.Qwords[0] = 1;
             res.Size = src.Size;
             res.Value.Qwords[0] = dst.Value.Qwords[0] - src.Value.Qwords[0];
+            cf = GET_FLAG(Context, NDR_RFLAG_CF);
             SET_FLAGS(Context, res, dst, src, FM_SUB);
+            SET_FLAG(Context, NDR_RFLAG_CF, cf);
             SET_OP(Context, 0, &res);
             break;
 
@@ -1743,6 +1938,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_PUSHA:
+        case ND_INS_PUSHAD:
             src.Size = 32;
             src.Value.Dwords[7] = (uint32_t)Context->Registers.RegRax;
             src.Value.Dwords[6] = (uint32_t)Context->Registers.RegRcx;
@@ -1756,6 +1952,7 @@ ShemuEmulate(
             break;
 
         case ND_INS_POPA:
+        case ND_INS_POPAD:
             GET_OP(Context, 1, &src);
             Context->Registers.RegRax = src.Value.Dwords[7];
             Context->Registers.RegRcx = src.Value.Dwords[6];
@@ -2331,22 +2528,31 @@ ShemuEmulate(
 
             if (src.Size == 1)
             {
-                if (src.Value.Bytes[0] == 0)
-                {
-                    // Division by zero, force emulation stop.
-                    stop = true;
-                    break;
-                }
+                uint16_t divident;
+
+                divident = (uint16_t)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
-                    res.Value.Bytes[0] = (uint8_t)((uint16_t)Context->Registers.RegRax / (uint8_t)src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (uint8_t)((uint16_t)Context->Registers.RegRax % (uint8_t)src.Value.Bytes[0]);
+                    if (!ShemuCheckDiv(divident, src.Value.Bytes[0], 1))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Bytes[0] = (uint8_t)(divident / src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (uint8_t)(divident % src.Value.Bytes[0]);
                 }
                 else
                 {
-                    res.Value.Bytes[0] = (int8_t)((int16_t)Context->Registers.RegRax / (int8_t)src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (int8_t)((int16_t)Context->Registers.RegRax % (int8_t)src.Value.Bytes[0]);
+                    if (!ShemuCheckIdiv((int64_t)(int16_t)divident, (int64_t)(int8_t)src.Value.Bytes[0], 1))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Bytes[0] = (int8_t)((int16_t)divident / (int8_t)src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (int8_t)((int16_t)divident % (int8_t)src.Value.Bytes[0]);
                 }
 
                 // Result in AX (AL - quotient, AH - reminder).
@@ -2356,23 +2562,28 @@ ShemuEmulate(
             {
                 uint32_t divident;
 
-                if (src.Value.Words[0] == 0)
-                {
-                    // Division by zero, force emulation stop.
-                    stop = true;
-                    break;
-                }
-
                 divident = ((uint32_t)(uint16_t)Context->Registers.RegRdx << 16) | 
                             (uint32_t)(uint16_t)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
-                    res.Value.Words[0] = (uint16_t)((uint32_t)divident / (uint16_t)src.Value.Words[0]);
-                    res.Value.Words[1] = (uint16_t)((uint32_t)divident % (uint16_t)src.Value.Words[0]);
+                    if (!ShemuCheckDiv(divident, src.Value.Words[0], 2))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Words[0] = (uint16_t)(divident / src.Value.Words[0]);
+                    res.Value.Words[1] = (uint16_t)(divident % src.Value.Words[0]);
                 }
                 else
                 {
+                    if (!ShemuCheckIdiv((int64_t)(int32_t)divident, (int64_t)(int16_t)src.Value.Words[0], 2))
+                    {
+                        stop = true;
+                        break;
+                    }
+
                     res.Value.Words[0] = (int16_t)((int32_t)divident / (int16_t)src.Value.Words[0]);
                     res.Value.Words[1] = (int16_t)((int32_t)divident % (int16_t)src.Value.Words[0]);
                 }
@@ -2384,23 +2595,28 @@ ShemuEmulate(
             {
                 uint64_t divident;
 
-                if (src.Value.Dwords[0] == 0)
-                {
-                    // Division by zero, force emulation stop.
-                    stop = true;
-                    break;
-                }
-
                 divident = ((uint64_t)(uint32_t)Context->Registers.RegRdx << 32) | 
                             (uint64_t)(uint32_t)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
-                    res.Value.Dwords[0] = (uint32_t)((uint64_t)divident / (uint32_t)src.Value.Dwords[0]);
-                    res.Value.Dwords[1] = (uint32_t)((uint64_t)divident % (uint32_t)src.Value.Dwords[0]);
+                    if (!ShemuCheckDiv(divident, src.Value.Dwords[0], 4))
+                    {
+                        stop = true;
+                        break;
+                    }
+
+                    res.Value.Dwords[0] = (uint32_t)(divident / src.Value.Dwords[0]);
+                    res.Value.Dwords[1] = (uint32_t)(divident % src.Value.Dwords[0]);
                 }
                 else
                 {
+                    if (!ShemuCheckIdiv((int64_t)divident, (int64_t)(int32_t)src.Value.Dwords[0], 4))
+                    {
+                        stop = true;
+                        break;
+                    }
+
                     res.Value.Dwords[0] = (int32_t)((int64_t)divident / (int32_t)src.Value.Dwords[0]);
                     res.Value.Dwords[1] = (int32_t)((int64_t)divident % (int32_t)src.Value.Dwords[0]);
                 }

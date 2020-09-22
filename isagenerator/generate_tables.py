@@ -123,6 +123,8 @@ optype = {
     'rBP'      : 'ND_OPT_GPR_rBP',
     'rSI'      : 'ND_OPT_GPR_rSI',
     'rDI'      : 'ND_OPT_GPR_rDI',
+    'rR8'      : 'ND_OPT_GPR_rR8',
+    'rR9'      : 'ND_OPT_GPR_rR9',
     'rR11'     : 'ND_OPT_GPR_rR11',
     'rIP'      : 'ND_OPT_RIP',
     'CS'       : 'ND_OPT_SEG_CS',
@@ -134,6 +136,13 @@ optype = {
     'ST(0)'    : 'ND_OPT_FPU_ST0',
     'ST(i)'    : 'ND_OPT_FPU_STX',
     'XMM0'     : 'ND_OPT_SSE_XMM0',
+    'XMM1'     : 'ND_OPT_SSE_XMM1',
+    'XMM2'     : 'ND_OPT_SSE_XMM2',
+    'XMM3'     : 'ND_OPT_SSE_XMM3',
+    'XMM4'     : 'ND_OPT_SSE_XMM4',
+    'XMM5'     : 'ND_OPT_SSE_XMM5',
+    'XMM6'     : 'ND_OPT_SSE_XMM6',
+    'XMM7'     : 'ND_OPT_SSE_XMM7',
 
     # Memory operands
     'pBXAL'    : 'ND_OPT_MEM_rBX_AL',
@@ -231,6 +240,8 @@ opsize = {
     'cl'       : 'ND_OPS_cl',
     '12'       : 'ND_OPS_12',
     't'        : 'ND_OPS_t',
+    '384'      : 'ND_OPS_384',
+    '512'      : 'ND_OPS_512',
 }
 
 opdecorators = {
@@ -330,21 +341,26 @@ extype = {
 }
 
 modes = {
-    'r0'    : 'ND_MOD_R0',
-    'r1'    : 'ND_MOD_R1',
-    'r2'    : 'ND_MOD_R2',
-    'r3'    : 'ND_MOD_R3',
-    'real'  : 'ND_MOD_REAL',
-    'v8086' : 'ND_MOD_V8086',
-    'prot'  : 'ND_MOD_PROT',
-    'compat': 'ND_MOD_COMPAT',
-    'long'  : 'ND_MOD_LONG',
-    'smm'   : 'ND_MOD_SMM',
-    'sgx'   : 'ND_MOD_SGX',
-    'tsx'   : 'ND_MOD_TSX',
-    'vmxr'  : 'ND_MOD_VMXR',
-    'vmxn'  : 'ND_MOD_VMXN',
-    'vmxo'  : 'ND_MOD_VMXO',
+    'r0'        : 'ND_MOD_R0',
+    'r1'        : 'ND_MOD_R1',
+    'r2'        : 'ND_MOD_R2',
+    'r3'        : 'ND_MOD_R3',
+    'real'      : 'ND_MOD_REAL',
+    'v8086'     : 'ND_MOD_V8086',
+    'prot'      : 'ND_MOD_PROT',
+    'compat'    : 'ND_MOD_COMPAT',
+    'long'      : 'ND_MOD_LONG',
+    'smm'       : 'ND_MOD_SMM',
+    'smm_off'   : 'ND_MOD_SMM_OFF',
+    'sgx'       : 'ND_MOD_SGX',
+    'sgx_off'   : 'ND_MOD_SGX_OFF',
+    'tsx'       : 'ND_MOD_TSX',
+    'tsx_off'   : 'ND_MOD_TSX_OFF',
+    'vmxr'      : 'ND_MOD_VMXR',
+    'vmxn'      : 'ND_MOD_VMXN',
+    'vmxr_seam' : 'ND_MOD_VMXR_SEAM',
+    'vmxn_seam' : 'ND_MOD_VMXN_SEAM',
+    'vmx_off'   : 'ND_MOD_VMX_OFF',
 }
 
 indexes = {
@@ -466,6 +482,10 @@ def cdef_instruction(self):
         
     c += '\n        '
 
+    # Add the prefixes map.
+    c += '|'.join([prefixes_map[x] for x in self.Prefmap] or '0') + ', '
+
+    c += '\n        '
 
     # Add the valid modes map.
     all = True
@@ -478,9 +498,6 @@ def cdef_instruction(self):
         c += '|'.join([modes[m] for m in self.Modes]) + ', '
 
     c += '\n        '
-
-    # Add the prefixes map.
-    c += '|'.join([prefixes_map[x] for x in self.Prefmap] or '0') + ', '
 
     # Add the decorators map.
     c += '|'.join([decorators_map[x] for x in self.DecoFlags] or '0') + ', '

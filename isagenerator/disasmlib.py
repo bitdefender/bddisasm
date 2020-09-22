@@ -202,6 +202,9 @@ valid_opsize = [
     'cl',           # 32/64/128 bytes - the size of one cache line.
     '12',           # 4 bytes (0) + 8 bytes (old SSP), used by SAVEPREVSSP.
     't',            # A tile register. The size varies dependning on execution environment, but can be as high as 1K.
+
+    '384',          # 384 bits representing a Key Locker handle.
+    '512',          # 512 bits representing a Key Locker handle.
 ]
 
 # Implicit/fixed operands. Self explanatory.
@@ -237,11 +240,20 @@ valid_impops = {# register      size
     'sSP'      : ('rSP',        'ssz'), # SP, ESP or RSP register, depending on stack size.
     'aSI'      : ('rSI',        'asz'), # SI, ESI, or RSI register, depending on address size.
     'aDI'      : ('rDI',        'asz'), # DI, EDI, or RDI register, depending on address size.
+    'R8'       : ('rR8',        'q'),   # R8 register.
+    'R9'       : ('rR9',        'q'),   # R9 register.
     'R11'      : ('rR11',       'q'),   # R11 register.
     'rIP'      : ('rIP',        'v'),   # IP, EIP or RIP, depending on op size.
     'yIP'      : ('rIP',        'yf'),  # EIP in 16/32 bit mode, or RIP in 64 bit mode.
     '1'        : ('1',          'b'),   # Constant 1.
     'XMM0'     : ('XMM0',       'dq'),  # XMM0 register.
+    'XMM1'     : ('XMM1',       'dq'),  # XMM1 register.
+    'XMM2'     : ('XMM2',       'dq'),  # XMM2 register.
+    'XMM3'     : ('XMM3',       'dq'),  # XMM3 register.
+    'XMM4'     : ('XMM4',       'dq'),  # XMM4 register.
+    'XMM5'     : ('XMM5',       'dq'),  # XMM5 register.
+    'XMM6'     : ('XMM6',       'dq'),  # XMM6 register.
+    'XMM7'     : ('XMM7',       'dq'),  # XMM7 register.
     'ST(0)'    : ('ST(0)',      'ft'),  # ST(0) register.
     'ST(i)'    : ('ST(i)',      'ft'),  # ST(1) register.
     'CS'       : ('CS',         'v'),   # CS register.
@@ -395,11 +407,16 @@ valid_cpu_modes = [
     'compat',       # Compatibility mode.
     'long',         # Long mode.
     'smm',          # System Management Mode.
+    'smm_off',      # Outside SMM.
     'sgx',          # Software Guard Extensions SGX enclave.
+    'sgx_off',      # Outside SGX.
     'tsx',          # Transactional Synchronization Extensions.
+    'tsx_off',      # Outside TSX.
     'vmxr',         # VMX root.
     'vmxn',         # VMX non-root.
-    'vmxo',         # Outside VMX operation.
+    'vmxr_seam',    # VMX root SEAM.
+    'vmxn_seam',    # VMX non-root SEAM.
+    'vmx_off',      # Outside VMX operation.
 ]
 
 valid_mode_groups = [
@@ -418,7 +435,6 @@ valid_ring_modes = [
 
 valid_mode_modes = [
     "real",  
-    "smm",   
     "v8086", 
     "prot",  
     "compat",
@@ -428,12 +444,18 @@ valid_mode_modes = [
 valid_vmx_modes = [
     "vmxr",
     "vmxn",
-    "vmxo",
+    "vmxr_seam",
+    "vmxn_seam",
+    "vmx_off",
 ]
 
 valid_other_modes = [
+    "smm",
+    "smm_off",
     "sgx",
+    "sgx_off",
     "tsx",
+    "tsx_off",
 ]
 
 valid_mode_map = {
@@ -538,6 +560,13 @@ class Operand():
         elif op.endswith('+1'):
             self.Block = 2
             op = op.replace('+1', '')
+        else:
+            m = re.match(r'XMM(\d)-(\d)', op)
+            if m:
+                start = m.group(1)
+                end = m.group(2)
+                self.Block = int(end) - int(start) + 1
+                op = 'XMM' + start
 
         # Handle the decorators.
         for dec in valid_decorators:

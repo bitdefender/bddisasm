@@ -198,8 +198,8 @@ typedef struct _ND_INSTRUCTION
     uint8_t         IsaSet;         // Instruction set. Check ND_INS_SET.
     uint16_t        Mnemonic;       // Mnemonic (index inside the global mnemonic table).
 
-    uint16_t        ValidModes;     // Valid operating modes for the instruction.
     uint16_t        ValidPrefixes;  // Accepted prefixes.
+    uint32_t        ValidModes;     // Valid operating modes for the instruction.
     uint8_t         ValidDecorators;// Accepted decorators (valid for EVEX instructions).
 
     uint8_t         OpsCount;       // Low 4 bits: explicit operands count; high 4 bits: implicit ops count.
@@ -211,7 +211,7 @@ typedef struct _ND_INSTRUCTION
     uint8_t         FpuFlags;       // FPU status word C0, C1, C2 & C3 access type.
 
     uint8_t         Reserved2;
-    uint32_t        Reserved3;
+    uint16_t        Reserved3;
 
     uint32_t        Attributes;     // Instruction attributes.
     uint64_t        CpuidFlag;      // Required CPUID feature flag.
@@ -312,6 +312,8 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_n,
     ND_OPS_u,
     ND_OPS_t,       // Tile register size, can be up to 1K.
+    ND_OPS_384,     // 384 bit Key Locker handle.
+    ND_OPS_512,     // 512 bit Key Locker handle.
     // Stack sizes - indicates number of words. Also, hybrid sizes - sizes where from a large register (say 32 bit GPR)
     // only a smaller amount of data is used (for example, 8 bit).
     ND_OPS_v2,
@@ -407,6 +409,8 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_GPR_rBP,
     ND_OPT_GPR_rSI,
     ND_OPT_GPR_rDI,
+    ND_OPT_GPR_rR8,
+    ND_OPT_GPR_rR9,
     ND_OPT_GPR_rR11,
 
     // Segment registers.
@@ -423,6 +427,13 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 
     // SSE registers.
     ND_OPT_SSE_XMM0,
+    ND_OPT_SSE_XMM1,
+    ND_OPT_SSE_XMM2,
+    ND_OPT_SSE_XMM3,
+    ND_OPT_SSE_XMM4,
+    ND_OPT_SSE_XMM5,
+    ND_OPT_SSE_XMM6,
+    ND_OPT_SSE_XMM7,
 
     // Implicit memory operands.
     ND_OPT_MEM_rBX_AL,

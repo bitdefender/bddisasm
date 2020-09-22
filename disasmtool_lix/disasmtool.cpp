@@ -205,7 +205,7 @@ static void _set_text_color(Colors color)
 }
 
 
-static struct timespec diff_time(struct timespec &end, struct timespec &start)
+static struct timespec diff_time(struct timespec const &end, struct timespec const &start)
 {
     struct timespec result;
 
@@ -313,7 +313,7 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
                 printf(", sub-leaf: 0x%08x", instrux->CpuidFlag.SubLeaf);
             }
 
-            printf(", reg: %s, bit %d\n", regs[instrux->CpuidFlag.Reg], instrux->CpuidFlag.Bit);
+            printf(", reg: %s, bit %u\n", regs[instrux->CpuidFlag.Reg], instrux->CpuidFlag.Bit);
         }
 
         printf("         FLAGS access: ");
@@ -376,8 +376,8 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
             printf("         Operand %d  %s  Type: %10s, Size: %2d, RawSize: %2d, Encoding: %s", i,
                    instrux->Operands[i].Access.Read && instrux->Operands[i].Access.Write ? "RW" :
                    instrux->Operands[i].Access.Write ? "-W" : instrux->Operands[i].Access.Read ? "R-" : "--",
-                   op_type_to_str(instrux->Operands[i].Type).c_str(), instrux->Operands[i].Size,
-                   instrux->Operands[i].RawSize, op_enc_to_str(instrux->Operands[i].Encoding).c_str());
+                   op_type_to_str(instrux->Operands[i].Type).c_str(), (int)instrux->Operands[i].Size,
+                   (int)instrux->Operands[i].RawSize, op_enc_to_str(instrux->Operands[i].Encoding).c_str());
 
             if (ND_OP_MEM == instrux->Operands[i].Type) {
                 printf(", ");
@@ -408,11 +408,21 @@ void print_instruction(const size_t rip, INSTRUX *instrux, const options &opts)
             }
 
             if (ND_OP_REG == instrux->Operands[i].Type) {
-                printf(", Type: %16s, Size: %2d, Reg: %d, Count: %d",
-                    reg_type_to_str(instrux->Operands[i].Info.Register.Type).c_str(),
-                    instrux->Operands[i].Info.Register.Size,
-                    instrux->Operands[i].Info.Register.Reg,
-                    instrux->Operands[i].Info.Register.Count);
+                printf(", RegType: %16s, RegSize: %2u, ",
+                       reg_type_to_str(instrux->Operands[i].Info.Register.Type).c_str(),
+                       instrux->Operands[i].Info.Register.Size);
+                if (instrux->Operands[i].Info.Register.Type == ND_REG_MSR)
+                {
+                    printf("RegId: 0x%08x, RegCount: %u\n",
+                           instrux->Operands[i].Info.Register.Reg,
+                           instrux->Operands[i].Info.Register.Count);
+                }
+                else
+                {
+                    printf("RegId: %u, RegCount: %u\n",
+                           instrux->Operands[i].Info.Register.Reg,
+                           instrux->Operands[i].Info.Register.Count);
+                }
             }
 
             printf("\n");
@@ -518,7 +528,7 @@ size_t disassemble(options &opts)
 
         long total_ns = result.tv_sec * NSEC_PER_SEC + result.tv_nsec;
 
-        printf("Disassembled %zu instructions took %ld.%09ld seconds, %ld ns / instr.\n",
+        printf("Disassembled %zu instructions took %ld.%09ld seconds, %lu ns / instr.\n",
                icount, result.tv_sec, result.tv_nsec, total_ns / icount);
         printf("Invalid: %zu/%zu (%.2f) bytes\n", miss_count, ibytes,
                (static_cast<double>(miss_count) / static_cast<double>(disasm_size)) * 100.0);
@@ -596,17 +606,17 @@ static bool _validate_and_fix_args(options& opts)
 }
 
 
-static size_t _get_hex_opt(ArgumentParser &parser, const std::string &field)
+static size_t _get_hex_opt(argparse::ArgumentParser &parser, const std::string &field)
 {
     return std::strtoul(parser.get<std::string>(field).c_str(), nullptr, 0);
 }
 
 
-int main(int argc, char **argv)
+int main(int argc, const char **argv)
 {
     auto opts = options{};
 
-    auto parser = ArgumentParser(argv[0]);
+    auto parser = argparse::ArgumentParser(argv[0], "Disassembler tool for Linux");
 
     parser.add_argument("-i", "--interactive", "Interactive mode", false);
     parser.add_argument("-c", "--comm", "Comm mode", false);
@@ -624,16 +634,22 @@ int main(int argc, char **argv)
     parser.add_argument("--json", "Output to json", false);
     parser.add_argument("--extended", "Extended instruction info", false);
 
-    try {
-        parser.parse(argc, argv);
-    } catch (const ArgumentParser::ArgumentNotFound& ex) {
-        std::cout << ex.what() << std::endl;
-        return 1;
+    parser.enable_help();
+
+    auto err = parser.parse(argc, argv);
+    if (err) {
+        std::cout << err << std::endl;
+        return -1;
+    }
+
+    if (parser.exists("help")) {
+        parser.print_help();
+        return 0;
     }
 
     opts.bits = parser.get<uint64_t>("bits");
-    opts.interactive = parser.get<bool>("interactive");
-    opts.comm = parser.get<bool>("comm");
+    opts.interactive = parser.exists("interactive");
+    opts.comm = parser.exists("comm");
     opts.offset = _get_hex_opt(parser, "offset");
     opts.size = _get_hex_opt(parser, "size");
     opts.count = _get_hex_opt(parser, "count");
@@ -641,17 +657,17 @@ int main(int argc, char **argv)
     opts.in_file = parser.get<std::string>("file");
     opts.hex_string = parser.get<std::string>("hex");
     opts.hex_file = parser.get<std::string>("hexfile");
-    opts.no_color = parser.get<bool>("no-color");
-    opts.dump_stats = parser.get<bool>("stats");
-    opts.verbose = parser.get<bool>("verbose");
-    opts.json_output = parser.get<bool>("json");
-    opts.extended = parser.get<bool>("extended");
+    opts.no_color = parser.exists("no-color");
+    opts.dump_stats = parser.exists("stats");
+    opts.verbose = parser.exists("verbose");
+    opts.json_output = parser.exists("json");
+    opts.extended = parser.exists("extended");
 
     if (opts.verbose) {
         std::cout << "interactive: " << opts.interactive << std::endl;
         std::cout << "comm: " << opts.comm << std::endl;
         std::cout << "rip: " << opts.rip << std::endl;
-        std::cout << "bits: " << opts.bits << std::endl;
+        std::cout << "bits: " << static_cast<uint16_t>(opts.bits) << std::endl;
         std::cout << "offset: " << opts.offset << std::endl;
         std::cout << "size: " << opts.offset << std::endl;
         std::cout << "count: " << opts.count << std::endl;
@@ -660,7 +676,7 @@ int main(int argc, char **argv)
         std::cout << "stats: " << opts.dump_stats << std::endl;
         std::cout << "hex: " << opts.hex_string << std::endl;
         std::cout << "json: " << opts.json_output << std::endl;
-	std::cout << "extended: " << opts.extended << std::endl;
+        std::cout << "extended: " << opts.extended << std::endl;
     }
 
     if (!_validate_and_fix_args(opts)) {

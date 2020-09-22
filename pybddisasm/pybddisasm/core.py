@@ -6,7 +6,7 @@
 
 import sys
 import argparse
-import pydis
+import pybddisasm
 
 
 def _auto_int(x):
@@ -15,7 +15,7 @@ def _auto_int(x):
 
 def _get_argparser():
     """Get the argpase parser."""
-    parser = argparse.ArgumentParser(prog='pydis')
+    parser = argparse.ArgumentParser(prog='pybddisasm')
 
     parser.add_argument('-b', '--arch', choices=[16, 32, 64], default=64, type=int)
 
@@ -48,5 +48,5 @@ def main():
         parser.print_usage()
         return 1
 
-    from pydis import app
+    from pybddisasm import app
     app.run(args)

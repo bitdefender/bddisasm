@@ -74,22 +74,22 @@ BHT            nil           nil               [            0x3E]          s:UNK
 AAS            nil           AH,AL,Fv          [            0x3F]          s:I86, t:DECIMAL, w:RW|RW|RW, f:AAAS, m:NO64
 
 # 0x40 - 0x4F
-INC            Zv            Fv                [            0x40]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x41]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x42]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x43]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x44]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x45]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x46]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-INC            Zv            Fv                [            0x47]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x48]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x49]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x4A]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x4B]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x4C]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x4D]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x4E]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
-DEC            Zv            Fv                [            0x4F]          s:I86, t:ARITH, w:RW|W, f:ARITH, m:NO64
+INC            Zv            Fv                [            0x40]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x41]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x42]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x43]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x44]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x45]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x46]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+INC            Zv            Fv                [            0x47]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x48]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x49]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x4A]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x4B]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x4C]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x4D]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x4E]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
+DEC            Zv            Fv                [            0x4F]          s:I86, t:ARITH, w:RW|W, f:INCDEC, m:NO64
 
 # 0x50 - 0x5F
 PUSH           Zv            Kv                [            0x50]          s:I86, t:PUSH, w:R|W, a:D64  
@@ -436,10 +436,10 @@ CLI            nil           Fv                [            0xFA]          s:I86
 STI            nil           Fv                [            0xFB]          s:I86, t:FLAGOP, w:RW, f:IF=1
 CLD            nil           Fv                [            0xFC]          s:I86, t:FLAGOP, w:W, f:DF=0
 STD            nil           Fv                [            0xFD]          s:I86, t:FLAGOP, w:W, f:DF=1
-INC            Eb            Fv                [            0xFE /0]       s:I86, t:ARITH, w:RW|W, f:ARITH, p:HLE|LOCK
-DEC            Eb            Fv                [            0xFE /1]       s:I86, t:ARITH, w:RW|W, f:ARITH, p:HLE|LOCK
-INC            Ev            Fv                [            0xFF /0]       s:I86, t:ARITH, w:RW|W, f:ARITH, p:HLE|LOCK
-DEC            Ev            Fv                [            0xFF /1]       s:I86, t:ARITH, w:RW|W, f:ARITH, p:HLE|LOCK
+INC            Eb            Fv                [            0xFE /0]       s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
+DEC            Eb            Fv                [            0xFE /1]       s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
+INC            Ev            Fv                [            0xFF /0]       s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
+DEC            Ev            Fv                [            0xFF /1]       s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
 CALL           Ev            rIP,Kv,SHS1       [            0xFF /2]       s:I86, t:CALL, c:CALLNI, w:R|W|W|W, a:F64|CETT, p:BND|DNT
 CALLF          Mp            CS,rIP,Kv2,SHS2   [            0xFF /3:mem]   s:I86, t:CALL, c:CALLFI, w:R|W|W|W|W, a:CETT, m:NOSGX
 JMP            Ev            rIP               [            0xFF /4]       s:I86, t:UNCOND_BR, c:JMPNI, w:R|W, a:F64|CETT, p:BND|DNT

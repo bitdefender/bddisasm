@@ -2,8 +2,8 @@
 # Copyright (c) 2020 Bitdefender
 # SPDX-License-Identifier: Apache-2.0
 #
-from pydis.disasm import *
-from pydis.helpers import *
+from pybddisasm.bddisasm import *
+from pybddisasm.helpers import *
 
 
 def run(args):

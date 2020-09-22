@@ -57,9 +57,10 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install setuptools
-    - name: Build pydis
+    - name: Build pybddisasm
       run: |
-        cd pydis
+        sudo make install
+        cd pybddisasm
         python3 setup.py build
         cd ..
 

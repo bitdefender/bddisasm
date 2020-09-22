@@ -15,7 +15,7 @@ emulate raw binary files, and see their output. Note that this simple emulator s
 
 5. disasmtool_lix - like disasmtool, but for Linux.
 
-6. pydis - this is the Python binding for the bddisasm project. You will need Python 3 for this.
+6. pybddisasm - this is the Python binding for the bddisasm project. You will need Python 3 for this.
 
 ## Objectives
 
