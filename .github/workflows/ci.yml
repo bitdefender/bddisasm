@@ -77,7 +77,7 @@ jobs:
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
 
-  Code checks:
+  Code-checks:
 
     runs-on: ubuntu-latest
 
