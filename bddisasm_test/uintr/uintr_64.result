@@ -1,0 +1,87 @@
+0000000000000000 f30f01ec                        UIRET
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: UINTR, Ins cat: UINTR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 5
+        FLAGS access
+                Entire register
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 4, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:              UIF, RegSize:  1, RegId: 0, RegCount: 1
+        Operand: 4, Acc:  R-,  Type:     Memory, Size: 24, RawSize: 24, Encoding: S, Stack: yes, 
+                Segment: 2, Base: 4, 
+        Operand: 5, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: S, Shadow stack: 3, 
+                
+
+0000000000000004 f30f01ed                        TESTUI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: UINTR, Ins cat: UINTR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 5
+        FLAGS access
+                CF: m, PF: 0, AF: 0, ZF: 0, SF: 0, OF: 0, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:              UIF, RegSize:  1, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000008 f30f01ee                        CLUI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: UINTR, Ins cat: UINTR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 5
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:              UIF, RegSize:  1, RegId: 0, RegCount: 1
+
+000000000000000C f30f01ef                        STUI
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: UINTR, Ins cat: UINTR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 5
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  1, RawSize:  1, Encoding: S, RegType:              UIF, RegSize:  1, RegId: 0, RegCount: 1
+
+0000000000000010 f30fc7f1                        SENDUIPI  rcx
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: UINTR, Ins cat: UINTR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 5
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+

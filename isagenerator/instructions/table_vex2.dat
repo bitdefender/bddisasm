@@ -94,6 +94,11 @@ TILERELEASE         nil                   nil               [vex m:2 p:0 l:0 w:0
 TILEZERO            rTt                   nil               [vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0]  s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E5
 
 # 0x50 - 0x5F
+VPDPBUSD            Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x50 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPBUSDS           Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x51 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPWSSD            Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x52 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPWSSDS           Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x53 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+
 VPBROADCASTD        Vx,Wd                 nil               [vex m:2 p:1 l:x w:0 0x58 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
 VPBROADCASTQ        Vx,Wq                 nil               [vex m:2 p:1 l:x w:0 0x59 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
 VBROADCASTI128      Vqq,Mdq               nil               [vex m:2 p:1 l:1 w:0 0x5A /r:mem]       s:AVX2, t:BROADCAST, w:W|R, e:6

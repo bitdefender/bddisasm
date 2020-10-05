@@ -66,3 +66,4 @@ AESKEYGENASSIST     Vdq,Wdq,Ib            nil               [       0x66 0x0F 0x
 # 0xE0 - 0xEF
 
 # 0xF0 - 0xFF
+HRESET              Ib                    EAX               [       0xF3 0x0F 0x3A 0xF0 /0xC0 ib]   s:HRESET, t:HRESET, w:N|R, m:KERNEL|NOV86|NOTSX

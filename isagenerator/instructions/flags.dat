@@ -105,3 +105,6 @@ AESKL       : CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
 
 # All flags are zeroed.
 ZERO        : CF=0|PF=0|AF=0|ZF=0|SF=0|OF=0
+
+# UINTR flags access, as done by TESTUI.
+UINTR       : CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0

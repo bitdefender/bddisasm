@@ -56,8 +56,12 @@ SETSSBSY       nil           SHS0,SSP                  [       0xF3 0x0F 0x01 /0
 XSUSLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE8]           s:TSXLDTRK, t:MISC
 XRESLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE9]           s:TSXLDTRK, t:MISC
 SAVEPREVSSP    nil           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET_SS, t:CET, w:RW|R, f:CF=t
+UIRET          nil           rIP,Fv,sSP,UIF,Kv3,SHS1   [       0xF3 0x0F 0x01 /0xEC]           s:UINTR, t:UINTR, a:F64, w:W|W|W|W|R|R, m:O64|NOTSX|NOSGX
+TESTUI         nil           UIF,Fv                    [       0xF3 0x0F 0x01 /0xED]           s:UINTR, t:UINTR, w:R|W, f:UINTR, m:O64|NOSGX
 RDPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEE]           s:PKU, t:MISC, w:W|W|R|R
+CLUI           nil           UIF                       [       0xF3 0x0F 0x01 /0xEE]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
 WRPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEF]           s:PKU, t:MISC, w:R|R|R|W
+STUI           nil           UIF                       [       0xF3 0x0F 0x01 /0xEF]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
 SWAPGS         nil           GSBASE,KGSBASE            [            0x0F 0x01 /0xF8]           s:LONGMODE, t:SYSTEM, w:RW|RW, m:KERNEL|O64
 RDTSCP         nil           EAX,EDX,ECX,TSC,TSCAUX    [            0x0F 0x01 /0xF9]           s:RDTSCP, t:SYSTEM, w:W|W|W|R|R
 MONITORX       nil           EAX,ECX,EDX               [         NP 0x0F 0x01 /0xFA]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
@@ -570,6 +574,7 @@ VMXON          Mq            Fv                        [       0xF3 0x0F 0xC7 /6
 VMPTRST        Mq            Fv                        [         NP 0x0F 0xC7 /7:mem]          s:VTX, t:VTX, w:W|W, f:VMX, m:VMXROOT
 RDRAND         Rv            Fv                        [            0x0F 0xC7 /6:reg]          s:RDRAND, t:RDRAND, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 RDRAND         Rv            Fv                        [       0x66 0x0F 0xC7 /6:reg]          s:RDRAND, t:RDRAND, a:S66, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
+SENDUIPI       Rq            nil                       [       0xF3 0x0F 0xC7 /6:reg]          s:UINTR, t:UINTR, w:RW, m:O64|NOTSX|NOSGX
 RDSEED         Rv            Fv                        [            0x0F 0xC7 /7:reg]          s:RDSEED, t:RDSEED, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 RDSEED         Rv            Fv                        [       0x66 0x0F 0xC7 /7:reg]          s:RDSEED, t:RDSEED, a:S66, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 RDPID          Ryf           TSCAUX                    [       0xF3 0x0F 0xC7 /7:reg]          s:RDPID, t:RDPID, w:W|R

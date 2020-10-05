@@ -376,11 +376,11 @@ typedef uint32_t ND_REG_SIZE;
 //
 
 // Sign extend 8 bit to 64 bit.
-#define ND_SIGN_EX_8(x)             ((x) & 0x00000080 ? 0xFFFFFFFFFFFFFF00 | (x) : (x))
+#define ND_SIGN_EX_8(x)             (((x) & 0x00000080) ? (0xFFFFFFFFFFFFFF00 | (x)) : (x))
 // Sign extend 16 bit to 64 bit.
-#define ND_SIGN_EX_16(x)            ((x) & 0x00008000 ? 0xFFFFFFFFFFFF0000 | (x) : (x))
+#define ND_SIGN_EX_16(x)            (((x) & 0x00008000) ? (0xFFFFFFFFFFFF0000 | (x)) : (x))
 // Sign extend 32 bit to 64 bit.
-#define ND_SIGN_EX_32(x)            ((x) & 0x80000000 ? 0xFFFFFFFF00000000 | (x) : (x))
+#define ND_SIGN_EX_32(x)            (((x) & 0x80000000) ? (0xFFFFFFFF00000000 | (x)) : (x))
 // Wrapper for for ND_SIGN_EX_8/ND_SIGN_EX_16/ND_SIGN_EX_32. Sign extend sz bytes to 64 bits.
 #define ND_SIGN_EX(sz, x)           ((sz) == 1 ? ND_SIGN_EX_8(x) : (sz) == 2 ? ND_SIGN_EX_16(x) :                   \
                                      (sz) == 4 ? ND_SIGN_EX_32(x) : (x))
@@ -511,6 +511,7 @@ typedef enum _ND_REG_TYPE
     ND_REG_SSP,             // The register is the SSP (Shadow Stack Pointer) register.
     ND_REG_FLG,             // The register is the FLAGS register.
     ND_REG_RIP,             // The register is the instruction pointer register.
+    ND_REG_UIF,             // The register is the User Interrupt Flag.
 } ND_REG_TYPE;
 
 

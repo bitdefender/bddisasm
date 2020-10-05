@@ -302,6 +302,8 @@ valid_impops = {# register      size
     'SHS2'     : ('SHSP',       'v2'),  # Shadow stack push/pop, 2 words.
     'SHS3'     : ('SHSP',       'v3'),  # Shadow stack push/pop, 3 words.
     'SHS4'     : ('SHSP',       'v4'),  # Shadow stack push/pop, 4 words.
+    # User Interrupt Flag.
+    'UIF'      : ('UIF',        'b'),   # User Interrupt Flag, stored with size of 1 byte, although it is 1 bit.
 }
 
 # If an operand type is not present here, than that operand is implicit & it's not encoded inside the instruction.

@@ -181,6 +181,7 @@ optype = {
     'MXCSR'    : 'ND_OPT_MXCSR',
     'PKRU'     : 'ND_OPT_PKRU',
     'SSP'      : 'ND_OPT_SSP',
+    'UIF'      : 'ND_OPT_UIF'
 }
 
 opsize = {

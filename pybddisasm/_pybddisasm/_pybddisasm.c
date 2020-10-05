@@ -82,6 +82,7 @@ static char *RegTypeToString(ND_REG_TYPE RegType)
     case ND_REG_SSP: return "SSP";
     case ND_REG_FLG: return "FLG";
     case ND_REG_RIP: return "RIP";
+    case ND_REG_UIF: return "UIF";
     }
 
     return "unknown";

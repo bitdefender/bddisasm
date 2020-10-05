@@ -173,6 +173,7 @@ static const uint16_t gOperandMap[] =
     ND_OPE_S,       // ND_OPT_MXCSR
     ND_OPE_S,       // ND_OPT_PKRU
     ND_OPE_S,       // ND_OPT_SSP
+    ND_OPE_S,       // ND_OPT_UIF
 
     ND_OPE_S,       // ND_OPT_GPR_AH
     ND_OPE_S,       // ND_OPT_GPR_rAX
@@ -1990,6 +1991,14 @@ NdParseOperand(
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_SSP;
         operand->Info.Register.Size = operand->Size;
+        operand->Info.Register.Reg = 0;
+        break;
+
+    case ND_OPT_UIF:
+        // The operand is the User Interrupt Flag.
+        operand->Type = ND_OP_REG;
+        operand->Info.Register.Type = ND_REG_UIF;
+        operand->Info.Register.Size = ND_SIZE_8BIT; // 1 bit, in fact, but there is no size defined for one bit.
         operand->Info.Register.Reg = 0;
         break;
 
@@ -5083,7 +5092,7 @@ NdGetFullAccessMap(
             {
             case ND_REG_GPR:
                 {
-                    uint8_t k;
+                    uint32_t k;
 
                     for (k = 0; k < pOp->Info.Register.Count; k++)
                     {
@@ -5102,7 +5111,7 @@ NdGetFullAccessMap(
                 break;
             case ND_REG_SSE:
                 {
-                    uint8_t k;
+                    uint32_t k;
 
                     for (k = 0; k < pOp->Info.Register.Count; k++)
                     {

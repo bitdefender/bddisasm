@@ -398,6 +398,7 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_MXCSR,
     ND_OPT_PKRU,
     ND_OPT_SSP,
+    ND_OPT_UIF,
 
     // General Purpose REgisters.
     ND_OPT_GPR_AH,

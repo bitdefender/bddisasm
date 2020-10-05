@@ -115,6 +115,7 @@ const char* set_to_string(
     case ND_SET_AVX512VNNI:            return "AVX512VNNI";
     case ND_SET_AVX512VP2INTERSECT:    return "AVX512VP2INTERSECT";
     case ND_SET_AVX512VPOPCNTDQ:       return "AVX512VPOPCNTDQ";
+    case ND_SET_AVXVNNI:               return "AVXVNNI";
     case ND_SET_BMI1:                  return "BMI1";
     case ND_SET_BMI2:                  return "BMI2";
     case ND_SET_CET_SS:                return "CET_SS";
@@ -133,6 +134,7 @@ const char* set_to_string(
     case ND_SET_FMA4:                  return "FMA4";
     case ND_SET_FXSAVE:                return "FXSAVE";
     case ND_SET_GFNI:                  return "GFNI";
+    case ND_SET_HRESET:                return "HRESET";
     case ND_SET_I186:                  return "I186";
     case ND_SET_I286PROT:              return "I286PROT";
     case ND_SET_I286REAL:              return "I286REAL";
@@ -191,6 +193,7 @@ const char* set_to_string(
     case ND_SET_TSX:                   return "TSX";
     case ND_SET_TSXLDTRK:              return "TSXLDTRK";
     case ND_SET_UD:                    return "UD";
+    case ND_SET_UINTR:                 return "UINTR";
     case ND_SET_UNKNOWN:               return "UNKNOWN";
     case ND_SET_VAES:                  return "VAES";
     case ND_SET_VPCLMULQDQ:            return "VPCLMULQDQ";
@@ -228,6 +231,7 @@ const char* category_to_string(
     case ND_CAT_AVX512BF16:           return "AVX512BF16";
     case ND_CAT_AVX512VBMI:           return "AVX512VBMI";
     case ND_CAT_AVX512VP2INTERSECT:   return "AVX512VP2INTERSECT";
+    case ND_CAT_AVXVNNI:              return "AVXVNNI";
     case ND_CAT_BITBYTE:              return "BITBYTE";
     case ND_CAT_BLEND:                return "BLEND";
     case ND_CAT_BMI1:                 return "BMI1";
@@ -249,6 +253,7 @@ const char* category_to_string(
     case ND_CAT_FMA4:                 return "FMA4";
     case ND_CAT_GATHER:               return "GATHER";
     case ND_CAT_GFNI:                 return "GFNI";
+    case ND_CAT_HRESET:               return "HRESET";
     case ND_CAT_I386:                 return "I386";
     case ND_CAT_IFMA:                 return "IFMA";
     case ND_CAT_INTERRUPT:            return "INTERRUPT";
@@ -297,6 +302,7 @@ const char* category_to_string(
     case ND_CAT_SYSTEM:               return "SYSTEM";
     case ND_CAT_TDX:                  return "TDX";
     case ND_CAT_UD:                   return "UD";
+    case ND_CAT_UINTR:                return "UINTR";
     case ND_CAT_UNCOND_BR:            return "UNCOND_BR";
     case ND_CAT_UNKNOWN:              return "UNKNOWN";
     case ND_CAT_VAES:                 return "VAES";
@@ -368,6 +374,7 @@ const char* regtype_to_string(
     case ND_REG_SSP: return "SSP";
     case ND_REG_FLG: return "Flags";
     case ND_REG_RIP: return "IP";
+    case ND_REG_UIF: return "UIF";
     default: return "???";
     }
 }
