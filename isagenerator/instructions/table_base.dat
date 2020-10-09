@@ -212,7 +212,7 @@ POP            Ev            Kv                [            0x8F /0]       s:I86
 # 0x90 - 0x9F
 NOP            nil           nil               [            0x90]          s:I86, t:NOP, 
 PAUSE          nil           nil               [      a0xF3 0x90]          s:PAUSE, t:MISC, m:NOTSX
-XCHG           rAX,Zv        nil               [        rex 0x90]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           rAX,Zv        nil               [       rexb 0x90]          s:I86, t:DATAXFER, w:RW|RW
 XCHG           rAX,Zv        nil               [            0x91]          s:I86, t:DATAXFER, w:RW|RW
 XCHG           rAX,Zv        nil               [            0x92]          s:I86, t:DATAXFER, w:RW|RW
 XCHG           rAX,Zv        nil               [            0x93]          s:I86, t:DATAXFER, w:RW|RW

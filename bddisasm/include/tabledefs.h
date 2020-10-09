@@ -62,7 +62,7 @@ typedef enum _ND_ILUT_TYPE
 #define ND_ILUT_INDEX_ASIZE_64          3
 
 #define ND_ILUT_INDEX_AUX_NONE          0
-#define ND_ILUT_INDEX_AUX_REX           1
+#define ND_ILUT_INDEX_AUX_REXB          1
 #define ND_ILUT_INDEX_AUX_REXW          2
 #define ND_ILUT_INDEX_AUX_O64           3
 #define ND_ILUT_INDEX_AUX_F3            4

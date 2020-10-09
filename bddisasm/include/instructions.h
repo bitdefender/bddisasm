@@ -42820,7 +42820,7 @@ const ND_INSTRUCTION gInstructions[2586] =
         },
     }, 
 
-    // Pos:2539 Instruction:"XCHG rAX,Zv" Encoding:"rex 0x90"/"O"
+    // Pos:2539 Instruction:"XCHG rAX,Zv" Encoding:"rexb 0x90"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1557, 
         0, 

@@ -663,7 +663,7 @@ class Instruction():
         # Sixth redirection class: default address size
         self.RedAs16 = self.RedAs32 = self.RedAs64 = False
         # Seventh redirecton class: rex, rex.w, rep, repz
-        self.RedRex = self.RedRexW = self.RedRep = self.Red64 = self.RedF3 = False
+        self.RedRexB = self.RedRexW = self.RedRep = self.Red64 = self.RedF3 = False
         # Misc - vendor
         self.Vendor = None
         # Misc - feature.
@@ -693,8 +693,8 @@ class Instruction():
                 self.Red64 = True
             elif 'rexw' == t: 
                 self.RedRexW = True
-            elif 'rex' == t: 
-                self.RedRex = True
+            elif 'rexb' == t: 
+                self.RedRexB = True
             elif 'rep' == t: 
                 self.RedRep = True
             elif 'ds16' == t: 
@@ -1003,8 +1003,8 @@ class Instruction():
         # the other classes, this is not exhaustive - if an instruction does not fit in any of the entries, it 
         # will default to index 0 (and it will not return invalid encoding, unless entry 0 is invalid).
         oprefixes = []
-        if self.RedRex: 
-            oprefixes.append('rex')
+        if self.RedRexB: 
+            oprefixes.append('rexb')
         if self.RedRexW: 
             oprefixes.append('rexw')
         if self.Red64: 

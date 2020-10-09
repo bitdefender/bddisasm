@@ -3398,9 +3398,9 @@ NdFindInstruction(
 
         case ND_ILUT_AUXILIARY:
             // Auxiliary redirection. Default to table[0] if nothing matches.
-            if (Instrux->HasRex && (NULL != pTable->Table[ND_ILUT_INDEX_AUX_REX]))
+            if (Instrux->HasRex && Instrux->Rex.b && (NULL != pTable->Table[ND_ILUT_INDEX_AUX_REXB]))
             {
-                nextIndex = ND_ILUT_INDEX_AUX_REX;
+                nextIndex = ND_ILUT_INDEX_AUX_REXB;
             }
             else if (Instrux->HasRex && Instrux->Rex.w && (NULL != pTable->Table[ND_ILUT_INDEX_AUX_REXW]))
             {

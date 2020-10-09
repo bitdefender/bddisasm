@@ -14536,7 +14536,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_90_aF3_leaf =
     (const void *)&gInstructions[848]
 };
 
-const ND_TABLE_INSTRUCTION gRootTable_root_90_rex_leaf = 
+const ND_TABLE_INSTRUCTION gRootTable_root_90_rexb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
     (const void *)&gInstructions[2539]
@@ -14547,7 +14547,7 @@ const ND_TABLE_AUXILIARY gRootTable_root_90_auxiliary =
     ND_ILUT_AUXILIARY,
     { 
         /* 00 */ (const void *)&gRootTable_root_90_None_leaf,
-        /* 01 */ (const void *)&gRootTable_root_90_rex_leaf,
+        /* 01 */ (const void *)&gRootTable_root_90_rexb_leaf,
         /* 02 */ NULL,
         /* 03 */ NULL,
         /* 04 */ (const void *)&gRootTable_root_90_aF3_leaf,

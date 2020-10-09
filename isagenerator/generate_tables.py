@@ -380,7 +380,7 @@ indexes = {
     "F2"    : 3,
 
     # other prefixes
-    "rex"   : 1,
+    "rexb"  : 1,
     "rexw"  : 2,
     "64"    : 3,
     "aF3"   : 4,
