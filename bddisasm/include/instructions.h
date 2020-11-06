@@ -3982,7 +3982,7 @@ const ND_INSTRUCTION gInstructions[2586] =
         ND_INS_ENTER, ND_CAT_MISC, ND_SET_I186, 169, 
         0, 
         ND_MOD_ANY, 
-        0, ND_OPS_CNT(2, 3), 0, 0, 0, 0, 0, 0, 0, 0, 
+        0, ND_OPS_CNT(2, 3), 0, 0, 0, 0, 0, 0, ND_FLAG_D64, 0, 
         0,
         0,
         0,

@@ -9,6 +9,10 @@
 # include <ntddk.h>
 # include <Ntstrsafe.h>
 
+#elif defined(__KERNEL__) && defined(__GNUC__)
+
+# include <linux/types.h>
+
 #else
 
 # include <stddef.h>

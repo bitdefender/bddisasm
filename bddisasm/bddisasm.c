@@ -288,6 +288,23 @@ NdGetVersion(
         *Revision = DISASM_VERSION_REVISION;
     }
 
+//
+// Do not use __TIME__ and __DATE__ macros when compiling against a kernel tree.
+//
+#if defined(__KERNEL__) && defined(__GNUC__)
+
+    if (NULL != BuildDate)
+    {
+        *BuildDate = NULL;
+    }
+
+    if (NULL != BuildTime)
+    {
+        *BuildTime = NULL;
+    }
+
+#else
+
     if (NULL != BuildDate)
     {
         *BuildDate = __DATE__;
@@ -297,6 +314,9 @@ NdGetVersion(
     {
         *BuildTime = __TIME__;
     }
+
+#endif
+
 }
 
 #ifndef KERNEL_MODE
@@ -3691,9 +3711,11 @@ NdGetEffectiveOpMode(
     // Extract the flags.
     width = (0 != Instrux->Exs.w) && !(Instrux->Attributes & ND_FLAG_WIG);
     // In 64 bit mode, the operand is forced to 64 bit. Size-changing prefixes are ignored.
-    f64 = 0 != (Instrux->Attributes & ND_FLAG_F64);
-    // In 64 bit mode, the operand defaults to 64 bit  No 32 bit form of the instruction exists.
-    d64 = 0 != (Instrux->Attributes & ND_FLAG_D64);
+    f64 = 0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD != Instrux->VendMode);
+    // In 64 bit mode, the operand defaults to 64 bit. No 32 bit form of the instruction exists. Note that on AMD,
+    // only default 64 bit operands exist, even for branches - no operand is forced to 64 bit.
+    d64 = (0 != (Instrux->Attributes & ND_FLAG_D64)) ||
+          (0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD == Instrux->VendMode));
     // Check if 0x66 is indeed interpreted as a size changing prefix. Note that if 0x66 is a mandatory prefix,
     // then it won't be interpreted as a size changing prefix. However, there is an exception: MOVBE and CRC32
     // have mandatory 0xF2, and 0x66 is in fact a size changing prefix.
@@ -3770,8 +3792,9 @@ NdValidateInstruction(
         if (ND_HAS_VSIB(Instrux) && Instrux->Category != ND_CAT_SCATTER)
         {
             uint8_t usedVects[32] = { 0 };
+            uint32_t i;
 
-            for (uint32_t i = 0; i < Instrux->OperandsCount; i++)
+            for (i = 0; i < Instrux->OperandsCount; i++)
             {
                 if (Instrux->Operands[i].Type == ND_OP_REG && Instrux->Operands[i].Info.Register.Type == ND_REG_SSE)
                 {
@@ -3903,6 +3926,7 @@ NdDecodeWithContext(
     NDSTATUS status;
     PND_INSTRUCTION pIns;
     uint32_t opIndex;
+    size_t i;
 
     // pre-init
     status = ND_STATUS_SUCCESS;
@@ -4000,7 +4024,7 @@ NdDecodeWithContext(
     Instrux->TupleType = pIns->TupleType;
 
     // Copy the mnemonic, up until the NULL terminator.
-    for (size_t i = 0; i < sizeof(Instrux->Mnemonic); i++)
+    for (i = 0; i < sizeof(Instrux->Mnemonic); i++)
     {
         Instrux->Mnemonic[i] = gMnemonics[pIns->Mnemonic][i];
         if (Instrux->Mnemonic[i] == 0)
@@ -4858,13 +4882,13 @@ NdToText(
                         switch (pOp->Info.Memory.DispSize)
                         {
                         case 1:
-                            normDisp = ((disp & 0x80) ? ~((uint8_t)disp) + 1UL : disp) & 0xFF;
+                            normDisp = ((disp & 0x80) ? ~((uint8_t)disp) + 1ULL : disp) & 0xFF;
                             break;
                         case 2:
-                            normDisp = ((disp & 0x8000) ? ~((uint16_t)disp) + 1UL : disp) & 0xFFFF;
+                            normDisp = ((disp & 0x8000) ? ~((uint16_t)disp) + 1ULL : disp) & 0xFFFF;
                             break;
                         case 4:
-                            normDisp = ((disp & 0x80000000) ? ~((uint32_t)disp) + 1 : disp) & 0xFFFFFFFF;
+                            normDisp = ((disp & 0x80000000) ? ~((uint32_t)disp) + 1ULL : disp) & 0xFFFFFFFF;
                             break;
                         default:
                             normDisp = disp;
@@ -4876,7 +4900,7 @@ NdToText(
                         // the normDisp is converted to a positive quantity, so no sign-extension is needed.
                         if (pOp->Info.Memory.HasCompDisp)
                         {
-                            normDisp = (uint32_t)normDisp * pOp->Info.Memory.CompDispSize;
+                            normDisp = (uint64_t)(uint32_t)normDisp * pOp->Info.Memory.CompDispSize;
                         }
                     }
 
