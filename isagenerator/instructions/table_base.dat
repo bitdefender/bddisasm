@@ -334,7 +334,7 @@ MOV            Eb,Ib         nil               [            0xC6 /0 ib]    s:I86
 XABORT         Ib            EAX               [            0xC6 /0xF8 ib] s:TSX, t:UNCOND_BR, w:R|RCW, i:RTM, m:NOTSX
 MOV            Ev,Iz         nil               [            0xC7 /0 iz]    s:I86, t:DATAXFER, w:W|R, a:OP2SEXO1, p:XRELEASE|HLEWOL
 XBEGIN         Jz            yIP,EAX           [            0xC7 /0xF8 cz] s:TSX, t:COND_BR, w:R|RW|CW, i:RTM
-ENTER          Iw,Ib         rBP,sSP,Kv        [            0xC8 iw ib]    s:I186, t:MISC, w:R|R|RW|RW|W
+ENTER          Iw,Ib         rBP,sSP,Kv        [            0xC8 iw ib]    s:I186, t:MISC, w:R|R|RW|RW|W, a:D64
 LEAVE          nil           sBP,rBP,rSP,Kv    [            0xC9]          s:I186, t:MISC, w:R|RW|RW|R, a:D64
 RETF           Iw            CS,rIP,Kv2,SHS2   [            0xCA iw]       s:I86, t:RET, w:R|W|W|R|R
 RETF           nil           CS,rIP,Kv2,SHS2   [            0xCB]          s:I86, t:RET, w:W|W|R|R
