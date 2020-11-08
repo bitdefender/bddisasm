@@ -340,7 +340,7 @@ RETF           Iw            CS,rIP,Kv2,SHS2   [            0xCA iw]       s:I86
 RETF           nil           CS,rIP,Kv2,SHS2   [            0xCB]          s:I86, t:RET, w:W|W|R|R
 INT3           nil           CS,rIP,Kv3,Fv,SHS3 [           0xCC]          s:I86, t:INTERRUPT, w:RW|RW|RW|W|W, f:INT, m:NOSGX
 INT            Ib            CS,rIP,Kv3,Fv,SHS3 [           0xCD ib]       s:I86, t:INTERRUPT, w:R|RW|RW|RW|W|W, f:INT, m:NOSGX
-INTO           nil           CS,rIP,Kv3,Fv,SHS3 [           0xCE]          s:I86, t:INTERRUPT, w:RW|RW|RW|W|W, f:INT, m:NO64, m:NOSGX
+INTO           nil           CS,rIP,Kv3,Fv,SHS3 [           0xCE]          s:I86, t:INTERRUPT, w:RW|RW|RW|W|W, f:INT, m:NO64|NOSGX
 IRETW          nil           CS,rIP,Kv3,Fv,SHS3 [      ds16 0xCF]          s:I86, t:RET, c:IRET, w:RW|W|R|RW|RW, a:SERIAL
 IRETD          nil           CS,rIP,Kv3,Fv,SHS3 [      ds32 0xCF]          s:I86, t:RET, c:IRET, w:RW|W|R|RW|RW, a:SERIAL
 IRETQ          nil           CS,rIP,Kv3,Fv,SHS3 [      ds64 0xCF]          s:I86, t:RET, c:IRET, w:RW|W|R|RW|RW, a:SERIAL

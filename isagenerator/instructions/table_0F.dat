@@ -254,7 +254,7 @@ SYSEXIT        nil           SS,sSP,CS,rIP,SSP         [            0x0F 0x35]  
 RDSHR          Ed            nil                       [      cyrix 0x0F 0x36 /r]              s:CYRIX, t:SYSTEM, w:R
 GETSEC         nil           EAX,EBX                   [         NP 0x0F 0x37]                 s:SMX, t:SYSTEM, w:RCW|R, m:KERNEL|NOREAL|NOSGX
 WRSHR          Ed            nil                       [      cyrix 0x0F 0x37 /r]              s:CYRIX, t:SYSTEM, w:W
-DMINT          nil           nil                       [            0x0F 0x39]                 s:CYRIX, t:SYSTEM
+DMINT          nil           nil                       [            0x0F 0x39]                 s:CYRIX, t:SYSTEM, m:NO64
 CPU_WRITE      nil           nil                       [            0x0F 0x3C]                 s:CYRIX, t:SYSTEM
 CPU_READ       nil           nil                       [            0x0F 0x3D]                 s:CYRIX, t:SYSTEM
 ALTINST        nil           nil                       [            0x0F 0x3F]                 s:CYRIX, t:SYSTEM
