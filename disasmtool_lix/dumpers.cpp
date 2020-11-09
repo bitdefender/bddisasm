@@ -1736,7 +1736,6 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_MWAITT: return "mwaitt";
     case ND_SET_PAUSE: return "pause";
     case ND_SET_PCLMULQDQ: return "pclmulqdq";
-    case ND_SET_PCOMMIT: return "pcommit";
     case ND_SET_PCONFIG: return "pconfig";
     case ND_SET_PENTIUMREAL: return "pentiumreal";
     case ND_SET_PKU: return "pku";
@@ -1751,7 +1750,6 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_RDSEED: return "rdseed";
     case ND_SET_RDTSCP: return "rdtscp";
     case ND_SET_RDWRFSGS: return "rdwrfsgs";
-    case ND_SET_SCC: return "scc";
     case ND_SET_SERIALIZE: return "serialize";
     case ND_SET_SGX: return "sgx";
     case ND_SET_SHA: return "sha";
