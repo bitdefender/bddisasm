@@ -48,7 +48,6 @@
 #define ND_CFF_ADX                      ND_CFF(0x00000007, 0x00000000, NDR_EBX, 19)
 #define ND_CFF_SMAP                     ND_CFF(0x00000007, 0x00000000, NDR_EBX, 20)
 #define ND_CFF_AVX512IFMA               ND_CFF(0x00000007, 0x00000000, NDR_EBX, 21)
-#define ND_CFF_PCOMMIT                  ND_CFF(0x00000007, 0x00000000, NDR_EBX, 22)
 #define ND_CFF_CLFSHOPT                 ND_CFF(0x00000007, 0x00000000, NDR_EBX, 23)
 #define ND_CFF_CLWB                     ND_CFF(0x00000007, 0x00000000, NDR_EBX, 24)
 #define ND_CFF_AVX512PF                 ND_CFF(0x00000007, 0x00000000, NDR_EBX, 26)

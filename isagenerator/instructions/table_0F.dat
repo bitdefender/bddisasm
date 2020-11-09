@@ -87,7 +87,8 @@ SYSRET         nil           STAR,SS,rCX,R11,CS,rIP,Fv,SSP [        0x0F 0x07]  
 INVD           nil           nil                       [            0x0F 0x08]                 s:I486REAL, t:SYSTEM, a:SERIAL, m:KERNEL|NOV86
 WBINVD         nil           nil                       [            0x0F 0x09]                 s:I486REAL, t:SYSTEM, a:SERIAL, m:KERNEL|NOV86
 WBNOINVD       nil           nil                       [      a0xF3 0x0F 0x09]                 s:WBNOINVD, t:WBNOINVD, m:KERNEL|NOV86
-CL1INVMB       nil           nil                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM
+# Not supported by regulat x86 CPUs.
+#CL1INVMB       nil           nil                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM, m:NO64
 UD2            nil           nil                       [            0x0F 0x0B]                 s:PPRO, t:MISC
 PREFETCHE      Mb            nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP            Ev,Gv         nil                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:N|N
@@ -217,8 +218,8 @@ MOV            Ry,Cy         nil                       [            0x0F 0x20 /r
 MOV            Ry,Dy         nil                       [            0x0F 0x21 /r]              s:I86, t:DATAXFER, c:MOV_DR, w:W|R, a:MFR|F64, m:KERNEL|NOV86
 MOV            Cy,Ry         nil                       [            0x0F 0x22 /r]              s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64|SERIAL, m:KERNEL|NOV86
 MOV            Dy,Ry         nil                       [            0x0F 0x23 /r]              s:I86, t:DATAXFER, c:MOV_DR, w:W|R, a:MFR|F64|SERIAL, m:KERNEL|NOV86
-MOV            Ry,Ty         nil                       [            0x0F 0x24 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86
-MOV            Ty,Ry         nil                       [            0x0F 0x26 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86
+MOV            Ry,Ty         nil                       [            0x0F 0x24 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86|NO64
+MOV            Ty,Ry         nil                       [            0x0F 0x26 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86|NO64
 MOVAPS         Vps,Wps       nil                       [         NP 0x0F 0x28 /r]              s:SSE, t:DATAXFER, w:W|R, e:1
 MOVAPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x28 /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
 MOVAPS         Wps,Vps       nil                       [         NP 0x0F 0x29 /r]              s:SSE, t:DATAXFER, w:W|R, e:1
@@ -516,7 +517,7 @@ TPAUSE         Ry            EDX,EAX,Fv                [       0x66 0x0F 0xAE /6
 MFENCE         nil           nil                       [         NP 0x0F 0xAE /6:reg]          s:SSE2, t:MISC
 SFENCE         nil           nil                       [         NP 0x0F 0xAE /7:reg]          s:SSE2, t:MISC
 # Intel dropped support for the PCOMMIT instruction before it was shipped in any CPU. The following instruction wil ALWAYS cause a #UD from now on.
-PCOMMIT        nil           nil                       [       0x66 0x0F 0xAE /7:reg]          s:PCOMMIT, t:MISC
+#PCOMMIT        nil           nil                       [       0x66 0x0F 0xAE /7:reg]          s:PCOMMIT, t:MISC
 
 IMUL           Gv,Ev         Fv                        [            0x0F 0xAF /r]              s:I86, t:ARITH, w:RW|R|W, f:MUL
 

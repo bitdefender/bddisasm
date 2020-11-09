@@ -142,7 +142,6 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_CBW: return "cbw";
     case ND_INS_CDQ: return "cdq";
     case ND_INS_CDQE: return "cdqe";
-    case ND_INS_CL1INVMB: return "cl1invmb";
     case ND_INS_CLAC: return "clac";
     case ND_INS_CLC: return "clc";
     case ND_INS_CLD: return "cld";
@@ -512,7 +511,6 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_PCMPGTW: return "pcmpgtw";
     case ND_INS_PCMPISTRI: return "pcmpistri";
     case ND_INS_PCMPISTRM: return "pcmpistrm";
-    case ND_INS_PCOMMIT: return "pcommit";
     case ND_INS_PCONFIG: return "pconfig";
     case ND_INS_PDEP: return "pdep";
     case ND_INS_PEXT: return "pext";

@@ -48,7 +48,8 @@ RDSEED                  : 0x00000007, 0x00000000, EBX, 18
 ADX                     : 0x00000007, 0x00000000, EBX, 19
 SMAP                    : 0x00000007, 0x00000000, EBX, 20
 AVX512IFMA              : 0x00000007, 0x00000000, EBX, 21
-PCOMMIT                 : 0x00000007, 0x00000000, EBX, 22
+# Dropped by Intel.
+#PCOMMIT                 : 0x00000007, 0x00000000, EBX, 22
 CLFSHOPT                : 0x00000007, 0x00000000, EBX, 23
 CLWB                    : 0x00000007, 0x00000000, EBX, 24
 AVX512PF                : 0x00000007, 0x00000000, EBX, 26

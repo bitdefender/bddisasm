@@ -158,7 +158,6 @@ const char* set_to_string(
     case ND_SET_MWAITT:                return "MWAITT";
     case ND_SET_PAUSE:                 return "PAUSE";
     case ND_SET_PCLMULQDQ:             return "PCLMULQDQ";
-    case ND_SET_PCOMMIT:               return "PCOMMIT";
     case ND_SET_PCONFIG:               return "PCONFIG";
     case ND_SET_PENTIUMREAL:           return "PENTIUMREAL";
     case ND_SET_PKU:                   return "PKU";
@@ -173,7 +172,6 @@ const char* set_to_string(
     case ND_SET_RDSEED:                return "RDSEED";
     case ND_SET_RDTSCP:                return "RDTSCP";
     case ND_SET_RDWRFSGS:              return "RDWRFSGS";
-    case ND_SET_SCC:                   return "SCC";
     case ND_SET_SERIALIZE:             return "SERIALIZE";
     case ND_SET_SGX:                   return "SGX";
     case ND_SET_SHA:                   return "SHA";
