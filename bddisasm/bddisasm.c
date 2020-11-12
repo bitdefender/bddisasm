@@ -3978,10 +3978,16 @@ NdDecodeWithContext(
     Instrux->VendMode = (uint8_t)Context->VendMode;
     Instrux->FeatMode = (uint8_t)Context->FeatMode;
 
-    // Fetch prefixes. We peek at the first byte, if that's not a prefix, there's no need to call the main decoder.
-    if (ND_PREF_CODE_NONE != gPrefixesMap[Code[0]])
+    // Copy the instruction bytes.
+    for (opIndex = 0; opIndex < ((Size < ND_MAX_INSTRUCTION_LENGTH) ? Size : ND_MAX_INSTRUCTION_LENGTH); opIndex++)
     {
-        status = NdFetchPrefixes(Instrux, Code, 0, Size);
+        Instrux->InstructionBytes[opIndex] = Code[opIndex];
+    }
+
+    // Fetch prefixes. We peek at the first byte, if that's not a prefix, there's no need to call the main decoder.
+    if (ND_PREF_CODE_NONE != gPrefixesMap[Instrux->InstructionBytes[0]])
+    {
+        status = NdFetchPrefixes(Instrux, Instrux->InstructionBytes, 0, Size);
         if (!ND_SUCCESS(status))
         {
             return status;
@@ -3996,7 +4002,7 @@ NdDecodeWithContext(
     }
 
     // Start iterating the tables, in order to extract the instruction entry.
-    status = NdFindInstruction(Instrux, Code, Instrux->Length, Size, &pIns);
+    status = NdFindInstruction(Instrux, Instrux->InstructionBytes, Instrux->Length, Size, &pIns);
     if (!ND_SUCCESS(status))
     {
         return status;
@@ -4086,7 +4092,8 @@ NdDecodeWithContext(
     // And now decode each operand.
     for (opIndex = 0; opIndex < Instrux->OperandsCount; ++opIndex)
     {
-        status = NdParseOperand(Instrux, Code, Instrux->Length, Size, opIndex, pIns->Operands[opIndex]);
+        status = NdParseOperand(Instrux, Instrux->InstructionBytes, Instrux->Length, Size, 
+                                opIndex, pIns->Operands[opIndex]);
         if (!ND_SUCCESS(status))
         {
             return status;
@@ -4122,12 +4129,6 @@ NdDecodeWithContext(
     if (!ND_SUCCESS(status))
     {
         return status;
-    }
-
-    // Copy the instruction bytes.
-    for (opIndex = 0; opIndex < Instrux->Length; opIndex++)
-    {
-        Instrux->InstructionBytes[opIndex] = Code[opIndex];
     }
 
     // All done! Instruction successfully decoded!
