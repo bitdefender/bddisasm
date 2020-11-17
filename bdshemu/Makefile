@@ -4,7 +4,7 @@ SRC_FILES := bdshemu.c
 
 OBJECTS := $(SRC_FILES:.c=.o)
 
-INCLUDES := -I. -I../inc -I../bddisasm/include -I../inc/bdshemu
+INCLUDES := -I. -I../inc -I../bddisasm/include
 
 ifeq ($(PLATFORM),)
 	PLATFORM := x64
@@ -119,5 +119,5 @@ clean: clean_lib_file clean_int_dir clean_dep_dir
 install: all
 	install -d $(DESTDIR)$(PREFIX)/lib/
 	install -m 644 $(OUT_DIR)/$(LIB_NAME) $(DESTDIR)$(PREFIX)/lib/
-	install -d $(DESTDIR)$(PREFIX)/include/bddisasm/bdshemu/
-	cp -r ../inc/bdshemu/* $(DESTDIR)$(PREFIX)/include/bddisasm/bdshemu/
+	install -d $(DESTDIR)$(PREFIX)/include/bddisasm/
+	cp -r ../inc/bdshemu.h $(DESTDIR)$(PREFIX)/include/bddisasm/

@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\inc\bdshemu\bdshemu.h">
+    <ClInclude Include="..\inc\bdshemu.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
   </ItemGroup>
