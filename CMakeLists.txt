@@ -117,7 +117,7 @@ set_target_properties(bddisasm PROPERTIES PUBLIC_HEADER "${public_headers}")
 set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
 set(LIB_DIR "${CMAKE_INSTALL_LIBDIR}")
 set(INC_DIR "${CMAKE_INSTALL_INCLUDEDIR}")
-set(PRIVATE_LIBS "-lbddisasm -lbdshemu")
+set(PRIVATE_LIBS "-lbdshemu -lbddisasm")
 set(DATA_DIR "${CMAKE_INSTALL_DATADIR}")
 
 CONFIGURE_FILE("${CMAKE_STATIC_LIBRARY_PREFIX}bddisasm.pc.in"
