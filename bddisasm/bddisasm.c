@@ -640,7 +640,7 @@ NdFetchEvex(
     // Do EVEX validations outside 64 bits mode.
     if (ND_CODE_64 != Instrux->DefCode)
     {
-        // Evex.R and Evex.X must be 1. If they're not, we have BOUND instruction. This is checkked in the
+        // Evex.R and Evex.X must be 1. If they're not, we have BOUND instruction. This is checked in the
         // first if. Note that they are inverted inside the Evex prefix.
         Instrux->Exs.r = 0;
         Instrux->Exs.x = 0;
@@ -654,8 +654,11 @@ NdFetchEvex(
         // High bit inside Evex.VVVV is ignored, so we force it to 0.
         Instrux->Exs.v &= 0x7;
 
-        // Evex.V' is ignored.
-        Instrux->Exs.vp = 0;
+        // Evex.V' must be 1 (negated to 0) in 32-bit mode.
+        if (Instrux->Exs.vp == 1)
+        {
+            return ND_STATUS_BAD_EVEX_V_PRIME;
+        }
     }
 
     // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
@@ -3775,10 +3778,16 @@ NdValidateInstruction(
     // VEX/EVEX validations.
     if (ND_ENCM_LEGACY != Instrux->EncMode)
     {
-        // Instructions that don't use VEX/XOP vvvv field must set it to 1111b/0, otherwise a #UD will be generated.
+        // Instructions that don't use VEX/XOP/EVEX vvvv field must set it to 1111b/0, otherwise a #UD will be generated.
         if ((0 == (Instrux->OperandsEncodingMap & (1 << ND_OPE_V))) && (0 != Instrux->Exs.v))
         {
             return ND_STATUS_VEX_VVVV_MUST_BE_ZERO;
+        }
+
+        // Instruction that don't use EVEX.V' field must set to to 1b/0, otherwise a #UD will be generated.
+        if ((0 == (Instrux->OperandsEncodingMap & (1 << ND_OPE_V))) && !ND_HAS_VSIB(Instrux) && (0 != Instrux->Exs.vp))
+        {
+            return ND_STATUS_BAD_EVEX_V_PRIME;
         }
 
         // Some instructions don't support 128 bit vectors.

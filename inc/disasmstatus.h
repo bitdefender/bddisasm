@@ -43,6 +43,7 @@ typedef unsigned int NDSTATUS;
 #define ND_STATUS_ZEROING_ON_MEMORY                     0x80000037 // Zeroing on memory.
 #define ND_STATUS_ZEROING_NO_MASK                       0x80000038 // Zeroing without masking.
 #define ND_STATUS_BROADCAST_NOT_SUPPORTED               0x80000039 // Broadcast not supported.
+#define ND_STATUS_BAD_EVEX_V_PRIME                      0x80000040 // EVEX.V' field must be one (negated 0).
 
 // Not encoding specific.
 #define ND_STATUS_INVALID_PARAMETER                     0x80000100 // An invalid parameter was provided.
