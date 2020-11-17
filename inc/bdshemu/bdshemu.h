@@ -6,7 +6,7 @@
 #define BDSHEMU_H
 
 
-#include "../bddisasm.h"
+#include "bddisasm.h"
 
 
 //
