@@ -28,7 +28,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build bddisasm and bdshemu
-      run: make -j$(nproc)
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+        cd -
     - name: Install rapidjson
       uses: actions/checkout@master
       with:
