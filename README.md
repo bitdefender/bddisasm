@@ -74,9 +74,7 @@ make
 make install
 ```
 
-The default build type is Release.
-
-Note that the current install behavior differs based on how the installation is done. When using make, the `bdshemu.h` header is placed by default in `include/bddisasm/bdshemu` in your install location, while the cmake method will place it in `include/bddisasm`. Using cmake also provides support for pkg-config.
+The default build type is Release. Using cmake provides support for pkg-config.
 
 ### Building disasmtool_lix
 
