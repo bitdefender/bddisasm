@@ -2,8 +2,20 @@ cmake_minimum_required(VERSION 3.12)
 
 include("${CMAKE_CURRENT_LIST_DIR}/project-meta-info.in")
 
+set(disasm_version_file ${CMAKE_SOURCE_DIR}/inc/version.h)
+
+file(STRINGS ${disasm_version_file} disasm_ver_major REGEX "DISASM_VERSION_MAJOR")
+file(STRINGS ${disasm_version_file} disasm_ver_minor REGEX "DISASM_VERSION_MINOR")
+file(STRINGS ${disasm_version_file} disasm_ver_patch REGEX "DISASM_VERSION_REVISION")
+
+string(REGEX REPLACE "#define DISASM_VERSION_MAJOR[ \t\r\n]*" "" disasm_ver_major ${disasm_ver_major})
+string(REGEX REPLACE "#define DISASM_VERSION_MINOR[ \t\r\n]*" "" disasm_ver_minor ${disasm_ver_minor})
+string(REGEX REPLACE "#define DISASM_VERSION_REVISION[ \t\r\n]*" "" disasm_ver_patch ${disasm_ver_patch})
+
+message(STATUS "Extracted version from ${disasm_version_file}: ${disasm_ver_major}.${disasm_ver_minor}.${disasm_ver_patch}")
+
 project(bddisasm
-    VERSION ${project_version}
+    VERSION ${disasm_ver_major}.${disasm_ver_minor}.${disasm_ver_patch}
     DESCRIPTION ${project_description}
     LANGUAGES C
     )
