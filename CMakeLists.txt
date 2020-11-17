@@ -9,8 +9,8 @@ project(bddisasm
     )
 
 if (NOT CMAKE_BUILD_TYPE)
-    message(STATUS "No build type given. Will use 'Debug'")
-    set(CMAKE_BUILD_TYPE Debug)
+    message(STATUS "No build type given. Will use 'Release'")
+    set(CMAKE_BUILD_TYPE Release)
 endif ()
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/x64/${CMAKE_BUILD_TYPE})
