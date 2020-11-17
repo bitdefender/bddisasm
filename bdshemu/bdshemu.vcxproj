@@ -405,7 +405,7 @@
     <ClCompile Include="bdshemu.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\inc\bdshemu\bdshemu.h" />
+    <ClInclude Include="..\inc\bdshemu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -253,7 +253,6 @@ endif()
 
 include_directories(
   ${DISASM_DIRECTORY}/inc
-  ${DISASM_DIRECTORY}/inc/bdshemu
   ${DISASM_DIRECTORY}/bddisasm/include
   )
 

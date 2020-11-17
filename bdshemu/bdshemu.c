@@ -9,7 +9,7 @@
 
 #include "nd_crt.h"
 #include "bddisasm.h"
-#include "bdshemu/bdshemu.h"
+#include "bdshemu.h"
 
 
 //

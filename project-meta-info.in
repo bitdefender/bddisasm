@@ -1,0 +1,3 @@
+# project-meta-info.in
+
+set(project_description "Bitdefender x86 instruction decoder and emulator")
