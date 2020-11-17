@@ -93,5 +93,5 @@ jobs:
     - name: Run cppcheck
       run: cppcheck --error-exitcode=1 --language=c \
         --enable=all --suppress=missingIncludeSystem --suppress=unusedStructMember --suppress=unusedFunction \
-        -I inc/ -I inc/bdshemu -I bddisasm/include bddisasm/ bdshemu/ \
+        -I inc/ -I bddisasm/include bddisasm/ bdshemu/ \
          /
