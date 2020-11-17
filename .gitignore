@@ -66,3 +66,4 @@ docs/build
 libbddisasm.pc
 build
 .vscode
+disasmtool_lix/_build
