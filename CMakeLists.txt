@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 include("${CMAKE_CURRENT_LIST_DIR}/project-meta-info.in")
 
-set(disasm_version_file ${CMAKE_SOURCE_DIR}/inc/version.h)
+set(disasm_version_file ${CMAKE_CURRENT_LIST_DIR}/inc/version.h)
 
 file(STRINGS ${disasm_version_file} disasm_ver_major REGEX "DISASM_VERSION_MAJOR")
 file(STRINGS ${disasm_version_file} disasm_ver_minor REGEX "DISASM_VERSION_MINOR")
