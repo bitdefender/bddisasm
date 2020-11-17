@@ -13,6 +13,12 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug)
 endif ()
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/x64/${CMAKE_BUILD_TYPE})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/x64/${CMAKE_BUILD_TYPE})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/x64/${CMAKE_BUILD_TYPE})
+
+message(STATUS "Output directory set to: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
+
 set(bddisasm_src
     bddisasm/crt.c
     bddisasm/bddisasm.c
