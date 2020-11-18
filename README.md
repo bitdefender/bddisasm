@@ -74,7 +74,11 @@ make
 make install
 ```
 
-The default build type is Release. Using cmake provides support for pkg-config.
+The default build type is Release. Using cmake provides support for pkg-config. Other CMake projects can also use `find_package(bddisasm CONFIG REQUIRED)` to find bddisasm. In both cases the following variables will be defined:
+
+* `BDDISASM_INCLUDE_DIRS` - holds the path of the `bddisasm` directory, which contains the public `bddisasm` and `bdshemu` headers.
+* `BDDISASM_LIBRARY_DIRS` - holds the path of the directory that contains the `libbddisasm.a` and `libbdshemu.a` libraries.
+* `BDDISASM_LIBRARIES` - holds the libraries against which integrators should link.
 
 ### Building disasmtool_lix
 
