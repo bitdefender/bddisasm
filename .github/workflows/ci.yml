@@ -34,8 +34,8 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake ..
-        make
+        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr
+        make bddisasm bdshemu
         cd -
     - name: Install rapidjson
       uses: actions/checkout@master
@@ -54,13 +54,9 @@ jobs:
         cd ..
     - name: Build disasmtool_lix
       run: |
-        cd disasmtool_lix
-        mkdir _build
-        cd _build
-        cmake ..
-        make -j$(nproc)
-        cd ..
-        cd ..
+        cd build
+        make disasmtool
+        cd -
     - name: Install setuptools
       run: |
         python3 -m pip install --upgrade pip
@@ -71,6 +67,12 @@ jobs:
         cd pybddisasm
         python3 setup.py build
         cd ..
+    - name: Release
+      if: ${{ github.event_name == 'release' }}
+      uses: AButler/upload-release-assets@v2.0
+      with:
+        files: 'build/*.deb'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   Windows-build:
 
