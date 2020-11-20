@@ -254,6 +254,7 @@ endif()
 
 target_include_directories(${PROJECT_NAME} PRIVATE
   ${DISASM_DIRECTORY}/inc
+  ${DISASM_DIRECTORY}/inc/bdshemu
   ${DISASM_DIRECTORY}/bddisasm/include
   )
 
@@ -279,3 +280,4 @@ INSTALL(TARGETS disasmtool
     )
 
 unset(DISASM_LIB CACHE)
+unset(SHEMU_LIB CACHE)

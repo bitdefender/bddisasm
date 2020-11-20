@@ -8,6 +8,7 @@
 
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
+#include <rapidjson/reader.h>
 
 
 using namespace rapidjson;
@@ -1171,4 +1172,38 @@ StringBuffer byte_to_json(uint8_t byte, size_t rip)
 const char *json_to_string(StringBuffer &j)
 {
     return j.GetString();
+}
+
+bool regs_from_json(const std::string &str, SHEMU_GPR_REGS &regs, bool &update_rsp)
+{
+    Document d;
+    if (d.Parse(str.c_str()).IsNull()) {
+        return false;
+    }
+
+    regs.RegRax = d["rax"].GetUint64();
+    regs.RegRcx = d["rcx"].GetUint64();
+    regs.RegRdx = d["rdx"].GetUint64();
+    regs.RegRbx = d["rbx"].GetUint64();
+    regs.RegRsp = d["rsp"].GetUint64();
+    regs.RegRbp = d["rbp"].GetUint64();
+    regs.RegRsi = d["rsi"].GetUint64();
+    regs.RegRdi = d["rdi"].GetUint64();
+    regs.RegR8 = d["r8"].GetUint64();
+    regs.RegR9 = d["r9"].GetUint64();
+    regs.RegR10 = d["r10"].GetUint64();
+    regs.RegR11 = d["r11"].GetUint64();
+    regs.RegR12 = d["r12"].GetUint64();
+    regs.RegR13 = d["r13"].GetUint64();
+    regs.RegR14 = d["r14"].GetUint64();
+    regs.RegR15 = d["r15"].GetUint64();
+
+    if ((update_rsp = !d["rsp"].IsNull())) {
+        regs.RegRsp = d["rsp"].GetUint64();
+    }
+
+    if (!d["rip"].IsNull())
+        regs.RegRip = d["rip"].GetUint64();
+
+    return true;
 }
