@@ -30,13 +30,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build bddisasm and bdshemu
-      run: |
-        mkdir build
-        cd build
-        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr
-        make bddisasm bdshemu
-        cd -
     - name: Install rapidjson
       uses: actions/checkout@master
       with:
@@ -52,6 +45,13 @@ jobs:
         sudo make install
         cd ..
         cd ..
+    - name: Build bddisasm and bdshemu
+      run: |
+        mkdir build
+        cd build
+        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr
+        make bddisasm bdshemu
+        cd -
     - name: Build disasmtool_lix
       run: |
         cd build
@@ -67,6 +67,12 @@ jobs:
         cd pybddisasm
         python3 setup.py build
         cd ..
+    - name: Create package
+      if: ${{ github.event_name == 'release' }}
+      run: |
+        cd build
+        make package
+        cd -
     - name: Release
       if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0
