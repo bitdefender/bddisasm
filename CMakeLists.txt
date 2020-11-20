@@ -55,7 +55,6 @@ add_dependencies(bdshemu bddisasm)
 
 include_directories(
     inc
-    inc/bdshemu    
     bddisasm/include
     )
 
@@ -65,7 +64,7 @@ else ()
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -D_DEBUG -DDEBUG")
 endif ()
 
-add_compile_options(
+set(BDDISASM_COMPILE_OPTIONS
     "$<$<CONFIG:Release>:-U_FORTIFY_SOURCE>"
     "$<$<CONFIG:Release>:-D_FORTIFY_SOURCE=2>"
     -Wall
@@ -78,14 +77,10 @@ add_compile_options(
     -Wwrite-strings
     -Wshadow
     -Winit-self
-    -Wswitch-default
-    -Wmissing-variable-declarations
-    -Wused-but-marked-unused
-    -Wswitch-enum
     -Wno-unused-function
     -Wno-multichar
     -Wno-incompatible-pointer-types
-    -Wcast-qual
+    -Wno-discarded-qualifiers
     -Wnull-dereference
     -Wduplicated-cond
     -Werror=format-security
@@ -102,6 +97,9 @@ add_compile_options(
     -grecord-gcc-switches
     -march=nehalem
     )
+
+target_compile_options(bddisasm PRIVATE ${BDDISASM_COMPILE_OPTIONS})
+target_compile_options(bdshemu PRIVATE ${BDDISASM_COMPILE_OPTIONS})
 
 include(GNUInstallDirs)
 
@@ -156,3 +154,19 @@ install(FILES ${PROJECT_BINARY_DIR}/bddisasmConfig.cmake ${PROJECT_BINARY_DIR}/b
 INSTALL(FILES "${PROJECT_SOURCE_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}bddisasm.pc"
     DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/pkgconfig"
     )
+
+if (NOT CPACK_GENERATOR)
+    set(CPACK_GENERATOR "DEB")
+endif()
+
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Bitdefender HVI Team <hvmi-oss@bitdefender.com>")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "")
+set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
+set(CPACK_DEBIAN_PACKAGE_SECTION "devel")
+
+if (INCLUDE_TOOL)
+    add_subdirectory("disasmtool_lix")
+    add_dependencies(disasmtool bdshemu)
+endif()
+
+include(CPack)
