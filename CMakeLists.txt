@@ -164,4 +164,9 @@ set(CPACK_DEBIAN_PACKAGE_DEPENDS "")
 set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE "amd64")
 set(CPACK_DEBIAN_PACKAGE_SECTION "devel")
 
+if (INCLUDE_TOOL)
+    add_subdirectory("disasmtool_lix")
+    add_dependencies(disasmtool bdshemu)
+endif()
+
 include(CPack)

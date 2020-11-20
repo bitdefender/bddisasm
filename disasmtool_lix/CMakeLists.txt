@@ -27,9 +27,6 @@ set(disasmtool_src_files
   dumpers.cpp
   )
 
-find_library(DISASM_LIB bddisasm PATHS "${DISASM_DIRECTORY}/${DISASM_BUILD_PREFIX}/${CMAKE_BUILD_TYPE}" NO_DEFAULT_PATH)
-message(STATUS "Disasm lib used: ${DISASM_LIB}")
-
 find_package(RapidJSON)
 
 if (RapidJSON_FOUND)
@@ -274,6 +271,11 @@ set_target_properties(${PROJECT_NAME}
   CXX_EXTENSIONS ON
   )
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${DISASM_LIB})
+target_link_directories(${PROJECT_NAME} PRIVATE "${DISASM_DIRECTORY}/bin/x64/${CMAKE_BUILD_TYPE}")
+target_link_libraries(${PROJECT_NAME} PRIVATE bddisasm bdshemu)
+
+INSTALL(TARGETS disasmtool
+    RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR}"
+    )
 
 unset(DISASM_LIB CACHE)
