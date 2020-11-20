@@ -85,13 +85,14 @@ jobs:
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
     - name: Zip binaries
+      if: ${{ github.event_name == 'release' }}
       run: |
         del bin\x64\Release\*.idb
         del bin\Win32\Release\*.idb
         tar.exe -acf x64-windows-release.zip bin\x64\Release
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
-      if: ${{ github.event_name == 'release' }}
     - name: Release
+      if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0
       with:
         files: 'x64-windows-release.zip;x86-windows-release.zip'
