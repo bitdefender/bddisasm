@@ -41,7 +41,11 @@ else()
   message(FATAL_ERROR "Dependency: rapidjson not found")
 endif()
 
-add_compile_options(
+
+add_executable(${PROJECT_NAME} ${disasmtool_src_files})
+
+
+target_compile_options(${PROJECT_NAME} PRIVATE
   "$<$<CONFIG:Release>:-U_FORTIFY_SOURCE>"
   "$<$<CONFIG:Release>:-D_FORTIFY_SOURCE=2>"
   -Wall
@@ -81,7 +85,7 @@ set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} -Wl,
 
 if (CMAKE_COMPILER_IS_GNUCXX)
   if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 6.0))
-    add_compile_options(
+      target_compile_options(${PROJECT_NAME} PRIVATE
       -Wshift-overflow=2
       -Wnull-dereference
       -Wduplicated-cond
@@ -91,7 +95,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
   endif()
 
   if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 7.0))
-    add_compile_options(
+      target_compile_options(${PROJECT_NAME} PRIVATE
       -Wdangling-else
       -Wshadow=global
       -Walloc-zero
@@ -99,7 +103,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
   endif()
 
   if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 8.0))
-    add_compile_options(
+      target_compile_options(${PROJECT_NAME} PRIVATE
       -Wmultistatement-macros
       -Warray-bounds=2
       -Wformat-overflow=2
@@ -127,7 +131,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
   endif()
 
   if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 9.0))
-    add_compile_options(
+      target_compile_options(${PROJECT_NAME} PRIVATE
       -Wcatch-value=2
       -Wduplicated-branches
       -Wextra-semi
@@ -140,12 +144,12 @@ if (CMAKE_COMPILER_IS_GNUCXX)
       )
     endif()
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-  add_compile_options(
+    target_compile_options(${PROJECT_NAME} PRIVATE
     -Wno-missing-braces
     )
 
   if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 6.0))
-    add_compile_options(
+      target_compile_options(${PROJECT_NAME} PRIVATE
       -Wshift-overflow
       -Wnull-dereference
       -Wvla
@@ -157,7 +161,7 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
   endif()
 
   if (NOT (CMAKE_CXX_COMPILER_VERSION LESS 10.0))
-    add_compile_options(
+      target_compile_options(${PROJECT_NAME} PRIVATE
       -Warray-bounds-pointer-arithmetic
       -Wassign-enum
       -Watomic-implicit-seq-cst
@@ -251,20 +255,18 @@ else()
   message(FATAL_ERROR "Unsupported compiler!")
 endif()
 
-include_directories(
+target_include_directories(${PROJECT_NAME} PRIVATE
   ${DISASM_DIRECTORY}/inc
   ${DISASM_DIRECTORY}/bddisasm/include
   )
 
-add_executable(${CMAKE_PROJECT_NAME} ${disasmtool_src_files})
-
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
   include(CheckIPOSupported)
   check_ipo_supported(RESULT USE_IPO)
-  set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
+  set_target_properties(${PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
 endif()
 
-set_target_properties(${CMAKE_PROJECT_NAME}
+set_target_properties(${PROJECT_NAME}
   PROPERTIES
   POSITION_INDEPENDENT_CODE ON
   CXX_STANDARD 17
