@@ -30,6 +30,9 @@ set(disasmtool_src_files
 find_library(DISASM_LIB bddisasm PATHS "${DISASM_DIRECTORY}/${DISASM_BUILD_PREFIX}/${CMAKE_BUILD_TYPE}" NO_DEFAULT_PATH)
 message(STATUS "Disasm lib used: ${DISASM_LIB}")
 
+find_library(SHEMU_LIB bdshemu PATHS "${DISASM_DIRECTORY}/${DISASM_BUILD_PREFIX}/${CMAKE_BUILD_TYPE}" NO_DEFAULT_PATH)
+message(STATUS "Shemu lib used: ${SHEMU_LIB}")
+
 find_package(RapidJSON)
 
 if (RapidJSON_FOUND)
@@ -253,6 +256,7 @@ endif()
 
 include_directories(
   ${DISASM_DIRECTORY}/inc
+  ${DISASM_DIRECTORY}/inc/bdshemu
   ${DISASM_DIRECTORY}/bddisasm/include
   )
 
@@ -272,6 +276,7 @@ set_target_properties(${CMAKE_PROJECT_NAME}
   CXX_EXTENSIONS ON
   )
 
-target_link_libraries(${CMAKE_PROJECT_NAME} ${DISASM_LIB})
+target_link_libraries(${CMAKE_PROJECT_NAME} ${SHEMU_LIB} ${DISASM_LIB})
 
 unset(DISASM_LIB CACHE)
+unset(SHEMU_LIB CACHE)

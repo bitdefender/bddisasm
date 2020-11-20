@@ -44,7 +44,7 @@ typedef size_t SIZE_T;
 #endif
 
 // Main disasm header file.
-// #include "bdshemu.h"
+#include "bdshemu.h"
 #include "bddisasm.h"
 
 #include <unistd.h>
@@ -68,3 +68,4 @@ StringBuffer instrux_to_json(INSTRUX *instrux, size_t rip, bool text_only = fals
 StringBuffer byte_to_json(uint8_t byte, size_t rip);
 StringBuffer disassemble_one(uint8_t *bytes, size_t size, size_t rip, uint8_t bits, uint8_t vendor = ND_VEND_INTEL);
 
+bool regs_from_json(const std::string &str, SHEMU_GPR_REGS &regs, bool &update_rsp);

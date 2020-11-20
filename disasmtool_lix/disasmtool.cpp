@@ -12,6 +12,9 @@
 
 #include "disasm.hpp"
 
+#define STACK_SIZE 0x2000
+#define PAGE_MASK 0xFFFFFFFFFFFFF000
+
 static const long NSEC_PER_SEC = (1000ULL * 1000ULL * 1000ULL);
 
 static const char *gSpaces[16] =
@@ -52,9 +55,15 @@ struct options {
     bool json_output;
     bool extended;
 
+    bool shemu;
+    std::string shctx;
+    bool kernel;
+
     std::string in_file;
     std::string hex_string;
     std::string hex_file;
+    std::string shctx_file;
+    std::string shdec_file;
 
     // From here on, these are set internally
     std::unique_ptr<uint8_t[]> bytes;
@@ -104,7 +113,7 @@ static bool _hexstring_to_bytes(options &opts)
     opts.hex_string.erase(std::remove_if(opts.hex_string.begin(), opts.hex_string.end(), isspace), opts.hex_string.end());
 
     // This is the maximum size, not the actual size
-    auto initial_size = opts.hex_string.length() / 2;
+    auto initial_size = opts.hex_string.length() / 2 + 1;
 
     opts.bytes = std::make_unique<uint8_t[]>(initial_size);
     auto bytes = opts.bytes.get();
@@ -127,6 +136,26 @@ static bool _hexstring_to_bytes(options &opts)
 
         bytes[opts.actual_size++] = b;
     }
+
+    return true;
+}
+
+static bool _load_shctx(options &opts)
+{
+    if (opts.shctx_file.empty())
+        return false;
+
+    auto f = std::ifstream(opts.shctx_file, std::ios::in);
+    if (!f.is_open()) {
+        std::cout << "Failed to open file " << opts.shctx_file << std::endl;
+        return false;
+    }
+
+    f.seekg(0, std::ios::end);
+    opts.shctx.reserve(f.tellg());
+    f.seekg(0, std::ios::beg);
+
+    opts.shctx.assign((std::istreambuf_iterator<char>(f)), std::istreambuf_iterator<char>());
 
     return true;
 }
@@ -458,6 +487,138 @@ StringBuffer disassemble_one(uint8_t *bytes, size_t size, size_t rip, uint8_t bi
         return instrux_to_json(&instrux, rip);
 }
 
+void shemu_log(PCHAR msg)
+{
+    printf("%s", msg);
+}
+
+bool shemu_access_mem(void * /* Ctx */, uint64_t /* Gla */, size_t Size, uint8_t *Buffer, bool Store)
+{
+    if (!Store)
+    {
+        memset(Buffer, 0, Size);
+    }
+
+    return true;
+}
+
+void shemu(options &opts)
+{
+    SHEMU_CONTEXT ctx = { };
+    SHEMU_STATUS shstatus;
+
+    auto stack = std::make_unique<uint8_t[]>(STACK_SIZE);
+    auto intbuf = std::make_unique<uint8_t[]>(opts.actual_size + STACK_SIZE);
+    auto shellcode = std::make_unique<uint8_t[]>(opts.actual_size);
+
+    ctx.Stack = stack.get();
+    memset(ctx.Stack, 0, STACK_SIZE);
+
+    ctx.Intbuf = intbuf.get();
+    memset(ctx.Intbuf, 0, opts.actual_size + STACK_SIZE);
+
+    ctx.Shellcode = shellcode.get();
+    memcpy(ctx.Shellcode, opts.bytes.get(), opts.actual_size);
+
+    ctx.ShellcodeSize = opts.actual_size;
+    ctx.StackSize = STACK_SIZE;
+    ctx.Registers.RegRsp = 0x101000;
+    ctx.IntbufSize = opts.actual_size + STACK_SIZE;
+
+    ctx.Registers.RegFlags = NDR_RFLAG_IF | 2;
+    ctx.Registers.RegRip = opts.rip;
+    ctx.Segments.Cs.Selector = 0x10;
+    ctx.Segments.Ds.Selector = 0x28;
+    ctx.Segments.Es.Selector = 0x28;
+    ctx.Segments.Ss.Selector = 0x28;
+    ctx.Segments.Fs.Selector = 0x30;
+    ctx.Segments.Fs.Base = 0x7FFF0000;
+    ctx.Segments.Gs.Selector = 0x30;
+    ctx.Segments.Gs.Base = 0x7FFF0000;
+
+    // Dummy values, to resemble regular CR0/CR4 values.
+    ctx.Registers.RegCr0 = 0x0000000080050031;
+    ctx.Registers.RegCr4 = 0x0000000000170678;
+
+    ctx.Mode = opts.bits;
+    ctx.Ring = opts.kernel ? 0 : 3;
+    ctx.TibBase = (opts.bits == ND_DATA_32 ? ctx.Segments.Fs.Base : ctx.Segments.Gs.Base);
+    ctx.MaxInstructionsCount = 4096;
+    ctx.Options = SHEMU_OPT_TRACE_EMULATION;
+    ctx.Log = shemu_log;
+    ctx.AccessMemory = shemu_access_mem;
+
+    // Configurable thresholds.
+    ctx.NopThreshold = SHEMU_DEFAULT_NOP_THRESHOLD;
+    ctx.StrThreshold = SHEMU_DEFAULT_STR_THRESHOLD;
+    ctx.MemThreshold = SHEMU_DEFAULT_MEM_THRESHOLD;
+
+    bool update_rsp = false;
+
+    if (!opts.shctx.empty() && !regs_from_json(opts.shctx, ctx.Registers, update_rsp)) {
+        std::cerr << "Failed to parse context file." << std::endl;
+        return;
+    }
+
+    // Consider the stack base at least with a page before the current RSP. In case of pushes or operations
+    // which decrease the RSP, we will always give SHEMU_ABORT_BRANCH_OUTSIDE otherwise.
+    ctx.StackBase = ctx.Registers.RegRsp - 0x1000;
+    ctx.ShellcodeBase = (ctx.Registers.RegRip ? ctx.Registers.RegRip & PAGE_MASK : 0x200000);
+
+    shstatus = ShemuEmulate(&ctx);
+
+    printf("Emulation terminated with status 0x%08x, flags: 0x%llx, %u NOPs\n",
+           shstatus, (unsigned long long)ctx.Flags, ctx.NopCount);
+    if (ctx.Flags & SHEMU_FLAG_NOP_SLED)
+    {
+        printf("        SHEMU_FLAG_NOP_SLED\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_LOAD_RIP)
+    {
+        printf("        SHEMU_FLAG_LOAD_RIP\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_WRITE_SELF)
+    {
+        printf("        SHEMU_FLAG_WRITE_SELF\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_TIB_ACCESS)
+    {
+        printf("        SHEMU_FLAG_TIB_ACCESS\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_SYSCALL)
+    {
+        printf("        SHEMU_FLAG_SYSCALL\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_STACK_STR)
+    {
+        printf("        SHEMU_FLAG_STACK_STR\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_KPCR_ACCESS)
+    {
+        printf("        SHEMU_FLAG_KPCR_ACCESS\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_SWAPGS)
+    {
+        printf("        SHEMU_FLAG_SWAPGS\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_SYSCALL_MSR_READ)
+    {
+        printf("        SHEMU_FLAG_SYSCALL_MSR_READ\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_SYSCALL_MSR_WRITE)
+    {
+        printf("        SHEMU_FLAG_SYSCALL_MSR_WRITE\n");
+    }
+
+    if (!opts.shdec_file.empty()) {
+        auto f = std::ofstream(opts.shdec_file, std::ios::out | std::ios::binary);
+
+        if (!f.is_open())
+            std::cerr << "Failed to open file " << opts.shdec_file<< std::endl;
+        else
+            f.write(reinterpret_cast<char*>(ctx.Shellcode), ctx.ShellcodeSize);
+    }
+}
 
 size_t disassemble(options &opts)
 {
@@ -602,6 +763,13 @@ static bool _validate_and_fix_args(options& opts)
     if (!isatty(fileno(stdout)))
         opts.output_redirected = true;
 
+    if (!opts.hex_file.empty())
+        opts.shdec_file = opts.hex_file + "_decoded.bin";
+    else if (!opts.in_file.empty())
+        opts.shdec_file = opts.in_file + "_decoded.bin";
+    else
+        opts.shdec_file = "hex_string_decoded.bin";
+
     return true;
 }
 
@@ -633,6 +801,9 @@ int main(int argc, const char **argv)
     parser.add_argument("--verbose", "Verbose mode", false);
     parser.add_argument("--json", "Output to json", false);
     parser.add_argument("--extended", "Extended instruction info", false);
+    parser.add_argument("--shemu", "Emulate the input hexfile", false);
+    parser.add_argument("--kernel", "Kernel mode for shemu context", false);
+    parser.add_argument("--shctx", "Shemu context file. Must be a JSON file.", false);
 
     parser.enable_help();
 
@@ -662,6 +833,9 @@ int main(int argc, const char **argv)
     opts.verbose = parser.exists("verbose");
     opts.json_output = parser.exists("json");
     opts.extended = parser.exists("extended");
+    opts.shemu = parser.exists("shemu");
+    opts.kernel = parser.exists("kernel");
+    opts.shctx_file = parser.get<std::string>("shctx");
 
     if (opts.verbose) {
         std::cout << "interactive: " << opts.interactive << std::endl;
@@ -677,6 +851,9 @@ int main(int argc, const char **argv)
         std::cout << "hex: " << opts.hex_string << std::endl;
         std::cout << "json: " << opts.json_output << std::endl;
         std::cout << "extended: " << opts.extended << std::endl;
+        std::cout << "shemu:" << opts.shemu << std::endl;
+        std::cout << "kernel:" << opts.kernel << std::endl;
+        std::cout << "shctx:" << opts.shctx_file << std::endl;
     }
 
     if (!_validate_and_fix_args(opts)) {
@@ -695,7 +872,14 @@ int main(int argc, const char **argv)
         if (opts.offset >= opts.actual_size)
             return 1;
 
-        disassemble(opts);
+        if (!opts.shemu) {
+            disassemble(opts);
+        }
+        else {
+            _load_shctx(opts);
+            shemu(opts);
+        }
+
     } else {
         while (true) {
             opts.hex_string.clear();
