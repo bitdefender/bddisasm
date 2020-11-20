@@ -56,7 +56,7 @@ jobs:
       run: |
         cd build
         make disasmtool
-        ./disasmtool -h
+        ../../bin/x64/Release/disasmtool -h
         cd -
     - name: Install setuptools
       run: |
