@@ -50,13 +50,12 @@ jobs:
         mkdir build
         cd build
         cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr
-        make bddisasm bdshemu
+        make bddisasm bdshemu -j$(nproc)
         cd -
     - name: Build disasmtool_lix
       run: |
         cd build
-        make disasmtool
-        ../../bin/x64/Release/disasmtool -h
+        make disasmtool -j$(nproc)
         cd -
     - name: Install setuptools
       run: |
