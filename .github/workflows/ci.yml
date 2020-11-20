@@ -49,7 +49,7 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr
+        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
         make bddisasm bdshemu -j$(nproc)
         cd -
     - name: Build disasmtool_lix
