@@ -88,7 +88,11 @@ jobs:
       if: ${{ github.event_name == 'release' }}
       run: |
         del bin\x64\Release\*.idb
+        del bin\x64\Release\*.iobj
+        del bin\x64\Release\*.ipdb
         del bin\Win32\Release\*.idb
+        del bin\Win32\Release\*.iobj
+        del bin\Win32\Release\*.ipdb
         tar.exe -acf x64-windows-release.zip bin\x64\Release
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
     - name: Release
