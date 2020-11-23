@@ -63,7 +63,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
   -g3
   -gdwarf-4
   -grecord-gcc-switches
-  -march=native
+  -march=nehalem
   -fno-omit-frame-pointer
   # -fsanitize=leak
   # -fsanitize=address
@@ -254,7 +254,6 @@ endif()
 
 target_include_directories(${PROJECT_NAME} PRIVATE
   ${DISASM_DIRECTORY}/inc
-  ${DISASM_DIRECTORY}/inc/bdshemu
   ${DISASM_DIRECTORY}/bddisasm/include
   )
 

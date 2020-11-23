@@ -19,6 +19,9 @@ on:
       - 'bddisasm_test/**'
       - 'bdshemu_test/**'
       - 'LICENSE'
+  release:
+    types: [published]
+  
 
 jobs:
   Linux-build:
@@ -27,13 +30,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build bddisasm and bdshemu
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        make
-        cd -
     - name: Install rapidjson
       uses: actions/checkout@master
       with:
@@ -49,15 +45,18 @@ jobs:
         sudo make install
         cd ..
         cd ..
+    - name: Build bddisasm and bdshemu
+      run: |
+        mkdir build
+        cd build
+        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+        make bddisasm bdshemu -j$(nproc)
+        cd -
     - name: Build disasmtool_lix
       run: |
-        cd disasmtool_lix
-        mkdir _build
-        cd _build
-        cmake ..
-        make -j$(nproc)
-        cd ..
-        cd ..
+        cd build
+        make disasmtool -j$(nproc)
+        cd -
     - name: Install setuptools
       run: |
         python3 -m pip install --upgrade pip
@@ -68,6 +67,18 @@ jobs:
         cd pybddisasm
         python3 setup.py build
         cd ..
+    - name: Create package
+      if: ${{ github.event_name == 'release' }}
+      run: |
+        cd build
+        make package
+        cd -
+    - name: Release
+      if: ${{ github.event_name == 'release' }}
+      uses: AButler/upload-release-assets@v2.0
+      with:
+        files: 'build/*.deb'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   Windows-build:
 
@@ -81,6 +92,24 @@ jobs:
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
+    - name: Zip binaries
+      if: ${{ github.event_name == 'release' }}
+      run: |
+        del bin\x64\Release\*.idb
+        del bin\x64\Release\*.iobj
+        del bin\x64\Release\*.ipdb
+        del bin\Win32\Release\*.idb
+        del bin\Win32\Release\*.iobj
+        del bin\Win32\Release\*.ipdb
+        tar.exe -acf x64-windows-release.zip bin\x64\Release
+        tar.exe -acf x86-windows-release.zip bin\Win32\Release
+    - name: Release
+      if: ${{ github.event_name == 'release' }}
+      uses: AButler/upload-release-assets@v2.0
+      with:
+        files: 'x64-windows-release.zip;x86-windows-release.zip'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      
 
   Code-checks:
 
