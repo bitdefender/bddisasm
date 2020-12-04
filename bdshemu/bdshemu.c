@@ -10,7 +10,7 @@
 #include "nd_crt.h"
 #include "bddisasm.h"
 #include "bdshemu.h"
-
+#include <immintrin.h>
 
 //
 // A generic emulator value.
@@ -357,7 +357,7 @@ ShemuSetFlags(
     else if (FM_SHL == FlagsMode)
     {
         // CF is the last bit shifted out of the destination.
-        if (ND_GET_BIT(Src1, (Size * 8) - Src2))
+        if (ND_GET_BIT(Src1, (Size * 8ULL) - Src2))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
@@ -368,7 +368,7 @@ ShemuSetFlags(
 
         if (Src2 == 1)
         {
-            if (ND_GET_BIT(Size * 8 - 1, Dst) ^ ND_GET_BIT(Src1, (Size * 8) - Src2))
+            if (ND_GET_BIT(Size * 8ULL - 1, Dst) ^ ND_GET_BIT(Src1, (Size * 8ULL) - Src2))
             {
                 Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
@@ -1351,6 +1351,7 @@ ShemuSetOperandValue(
         if (ShemuIsStackPtr(Context, gla, MAX(op->Size, Context->Instruction.WordLength)))
         {
             uint8_t stckstrlen = 0;
+            uint32_t i;
 
             // Note: only Context->Instruction.WordLength bits are flagged as RIP, as that is the RIP size.
             if (Context->Instruction.Instruction == ND_INS_CALLNR ||
@@ -1384,7 +1385,7 @@ ShemuSetOperandValue(
             // Note that we will ignore registers which have not been modified during emulation; those are considered
             // input values for the emulated code, and may be pointers or other data. We are interested only in
             // stack values built within the emulate code.
-            for (uint32_t i = 0; i < Value->Size; i++)
+            for (i = 0; i < Value->Size; i++)
             {
                 unsigned char c = Value->Value.Bytes[i];
 
@@ -1402,7 +1403,7 @@ ShemuSetOperandValue(
             if (stckstrlen == Value->Size)
             {
                 // Make sure the value is not present inside a non-dirty GPR. 
-                for (uint32_t i = 0; i < 16; i++)
+                for (i = 0; i < 16; i++)
                 {
                     if (ShemuCmpGprValue(Context, i, Value->Size, Value->Value.Qwords[0], false) &&
                         (0 == (Context->DirtyGprBitmap & (1 << i))))
@@ -1696,6 +1697,7 @@ ShemuEmulate(
     {
         NDSTATUS ndstatus;
         uint64_t rip;
+        uint32_t i;
 
         // The stop flag has been set, this means we've reached a valid instruction, but that instruction cannot be
         // emulated (for example, SYSCALL, INT, system instructions, etc).
@@ -2182,7 +2184,7 @@ ShemuEmulate(
             GET_OP(Context, 0, &dst);
             GET_OP(Context, 1, &src);
 
-            src.Value.Qwords[0] %= dst.Size * 8;
+            src.Value.Qwords[0] %= dst.Size * 8ULL;
 
             // Store the bit inside CF.
             SET_FLAG(Context, NDR_RFLAG_CF, (dst.Value.Qwords[0] >> src.Value.Qwords[0]) & 1);
@@ -2811,7 +2813,7 @@ ShemuEmulate(
         case ND_INS_PXOR:
             GET_OP(Context, 0, &dst);
             GET_OP(Context, 1, &src);
-            for (uint32_t i = 0; i < dst.Size; i++)
+            for (i = 0; i < dst.Size; i++)
             {
                 dst.Value.Bytes[i] ^= src.Value.Bytes[i];
             }
@@ -2839,7 +2841,7 @@ ShemuEmulate(
         case ND_INS_VPBROADCASTQ:
             GET_OP(Context, 1, &src);
             dst.Size = Context->Instruction.Operands[0].Size;
-            for (uint32_t i = 0; i < dst.Size / src.Size; i++)
+            for (i = 0; i < dst.Size / src.Size; i++)
             {
                 switch (src.Size)
                 {
@@ -2863,7 +2865,7 @@ ShemuEmulate(
         case ND_INS_VPXOR:
             GET_OP(Context, 1, &dst);
             GET_OP(Context, 2, &src);
-            for (uint32_t i = 0; i < dst.Size; i++)
+            for (i = 0; i < dst.Size; i++)
             {
                 dst.Value.Bytes[i] ^= src.Value.Bytes[i];
             }
@@ -2927,6 +2929,45 @@ ShemuEmulate(
 
             stop = true;
             break;
+
+        case ND_INS_AESIMC:
+        case ND_INS_AESDEC:
+        case ND_INS_AESDECLAST:
+        {
+            __m128i val, key;
+
+            // Make sure AES support is present, and we can emulate AES decryption using AES instructions.
+            if (0 == (Context->Options & SHEMU_OPT_SUPPORT_AES))
+            {
+                stop = true;
+                break;
+            }
+
+            GET_OP(Context, 0, &dst);
+            GET_OP(Context, 1, &src);
+
+            shemu_memcpy(&val, &dst, 16);
+            shemu_memcpy(&key, &src, 16);
+
+            if (Context->Instruction.Instruction == ND_INS_AESDEC)
+            {
+                val = _mm_aesdec_si128(val, key);
+            }
+            else if (Context->Instruction.Instruction == ND_INS_AESDECLAST)
+            {
+                val = _mm_aesdeclast_si128(val, key);
+            }
+            else if (Context->Instruction.Instruction == ND_INS_AESIMC)
+            {
+                val = _mm_aesimc_si128(key);
+            }
+
+            shemu_memcpy(&dst, &val, 16);
+
+            SET_OP(Context, 0, &dst);
+            break;
+        }
+
 
         default:
             return SHEMU_ABORT_UNSUPPORTED_INSTRUX;

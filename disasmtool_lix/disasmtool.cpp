@@ -7,6 +7,7 @@
 #include <memory>
 #include <limits>
 #include <cmath>
+#include <cpuid.h>
 
 #include "external/argparse.h"
 
@@ -526,7 +527,7 @@ void shemu(options &opts)
     ctx.IntbufSize = opts.actual_size + STACK_SIZE;
 
     ctx.Registers.RegFlags = NDR_RFLAG_IF | 2;
-    ctx.Registers.RegRip = opts.rip;
+    ctx.Registers.RegRip = opts.rip ? opts.rip : 0x200000;
     ctx.Segments.Cs.Selector = 0x10;
     ctx.Segments.Ds.Selector = 0x28;
     ctx.Segments.Es.Selector = 0x28;
@@ -547,6 +548,17 @@ void shemu(options &opts)
     ctx.Options = SHEMU_OPT_TRACE_EMULATION;
     ctx.Log = shemu_log;
     ctx.AccessMemory = shemu_access_mem;
+    
+    uint32_t eax, ebx, ecx, edx;
+
+    eax = ebx = ecx = edx = 0;
+    
+    __get_cpuid(1, &eax, &ebx, &ecx, &edx);
+    
+    if (!!(ecx & (1UL << 25)))
+    {
+        ctx.Options |= SHEMU_OPT_SUPPORT_AES;
+    }
 
     // Configurable thresholds.
     ctx.NopThreshold = SHEMU_DEFAULT_NOP_THRESHOLD;

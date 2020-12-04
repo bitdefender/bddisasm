@@ -1520,6 +1520,17 @@ handle_shemu(
     ctx.StrThreshold = SHEMU_DEFAULT_STR_THRESHOLD;
     ctx.MemThreshold = SHEMU_DEFAULT_MEM_THRESHOLD;
 
+    // Check for AES support.
+    int regs[4] = { 0 };
+
+    __cpuid(regs, 1);
+
+    // CPUID leaf function 1, register ECX, bit 25 indicates AES-NI support.
+    if (!!(regs[2] & (1UL << 25)))
+    {
+        ctx.Options |= SHEMU_OPT_SUPPORT_AES;
+    }
+
     if (Options->UseShemuRegs)
     {
         // Copy the new GPRs

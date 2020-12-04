@@ -95,7 +95,7 @@ set(BDDISASM_COMPILE_OPTIONS
     -g3
     -gdwarf-4
     -grecord-gcc-switches
-    -march=nehalem
+    -march=westmere
     )
 
 target_compile_options(bddisasm PRIVATE ${BDDISASM_COMPILE_OPTIONS})
