@@ -99,7 +99,7 @@ set(BDDISASM_COMPILE_OPTIONS
     )
 
 target_compile_options(bddisasm PRIVATE ${BDDISASM_COMPILE_OPTIONS})
-target_compile_options(bdshemu PRIVATE ${BDDISASM_COMPILE_OPTIONS})
+target_compile_options(bdshemu PRIVATE ${BDDISASM_COMPILE_OPTIONS} -maes)
 
 include(GNUInstallDirs)
 

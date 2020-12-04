@@ -67,7 +67,7 @@ endif
 
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEP_DIR)/$*.Td
 
-CFLAGS = -pipe -std=c11 -fpic -fno-strict-aliasing -march=westmere \
+CFLAGS = -pipe -std=c11 -fpic -fno-strict-aliasing -march=westmere -maes \
 	-D_REENTRANT -fstack-protector -ffunction-sections -fdata-sections \
 	$(WARNINGS_ENABLE) $(WARNINGS_DISABLE) $(DEFINES) $(INCLUDES)
 
