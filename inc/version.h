@@ -7,6 +7,6 @@
 
 #define DISASM_VERSION_MAJOR        1
 #define DISASM_VERSION_MINOR        31
-#define DISASM_VERSION_REVISION     5
+#define DISASM_VERSION_REVISION     6
 
 #endif // DISASM_VER_H

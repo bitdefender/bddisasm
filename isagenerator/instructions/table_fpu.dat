@@ -168,7 +168,7 @@ FXCH           ST(0),ST(i)   X87TAG                      [0xDF /1:reg]         s
 FSTP           ST(i),ST(0)   X87STATUS                   [0xDF /2:reg]         s:X87, t:X87_ALU, w:R|W|W, u:C1=m
 FSTP           ST(i),ST(0)   X87STATUS                   [0xDF /3:reg]         s:X87, t:X87_ALU, w:R|W|W, u:C1=m
 FNSTSW         AX            X87STATUS                   [0xDF /0xE0]          s:X87, t:X87_ALU, w:W|W, u:C0=u|C1=u|C2=u|C3=u
-FSTDW          AX            nil                         [0xDF /0xE1]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u
+FSTDW          AX            nil                         [0xDF /0xE1]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u, m:NO64
 FSTSG          AX            nil                         [0xDF /0xE2]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u
 FUCOMIP        ST(0),ST(i)   X87STATUS,Fv                [0xDF /5:reg]         s:X87, t:X87_ALU, w:R|R|W|W, f:CF=m|PF=m|ZF=m|OF=0, u:C0=m|C1=0|C2=m|C3=m
 FCOMIP         ST(0),ST(i)   X87STATUS,Fv                [0xDF /6:reg]         s:X87, t:X87_ALU, w:R|R|W|W, f:CF=m|PF=m|ZF=m|OF=0, u:C0=m|C1=0|C2=m|C3=m

@@ -4,8 +4,8 @@ PI2FW          Pq,Qq         nil           [0x0F 0x0F /r 0x0C]         s:3DNOW, 
 PI2FD          Pq,Qq         nil           [0x0F 0x0F /r 0x0D]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PF2IW          Pq,Qq         nil           [0x0F 0x0F /r 0x1C]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PF2ID          Pq,Qq         nil           [0x0F 0x0F /r 0x1D]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRCPV         Pq,Qq         nil           [0x0F 0x0F /r 0x86]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRSQRTV       Pq,Qq         nil           [0x0F 0x0F /r 0x87]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRCPV         Pq,Qq         nil           [0x0F 0x0F /r 0x86]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW, m:NO64
+PFRSQRTV       Pq,Qq         nil           [0x0F 0x0F /r 0x87]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW, m:NO64
 PFNACC         Pq,Qq         nil           [0x0F 0x0F /r 0x8A]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFPNACC        Pq,Qq         nil           [0x0F 0x0F /r 0x8E]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
 PFCMPGE        Pq,Qq         nil           [0x0F 0x0F /r 0x90]         s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW

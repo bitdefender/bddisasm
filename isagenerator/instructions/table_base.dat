@@ -212,14 +212,14 @@ POP            Ev            Kv                [            0x8F /0]       s:I86
 # 0x90 - 0x9F
 NOP            nil           nil               [            0x90]          s:I86, t:NOP, 
 PAUSE          nil           nil               [      a0xF3 0x90]          s:PAUSE, t:MISC, m:NOTSX
-XCHG           rAX,Zv        nil               [       rexb 0x90]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x91]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x92]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x93]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x94]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x95]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x96]          s:I86, t:DATAXFER, w:RW|RW
-XCHG           rAX,Zv        nil               [            0x97]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [       rexb 0x90]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x91]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x92]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x93]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x94]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x95]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x96]          s:I86, t:DATAXFER, w:RW|RW
+XCHG           Zv,rAX        nil               [            0x97]          s:I86, t:DATAXFER, w:RW|RW
 CBW            nil           AX,AL             [       ds16 0x98]          s:I386, t:CONVERT, w:W|R
 CWDE           nil           EAX,AX            [       ds32 0x98]          s:I386, t:CONVERT, w:W|R
 CDQE           nil           RAX,EAX           [       ds64 0x98]          s:I386, t:CONVERT, w:W|R

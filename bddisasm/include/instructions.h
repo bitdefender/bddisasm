@@ -5951,8 +5951,8 @@ const ND_INSTRUCTION gInstructions[2584] =
     {
         ND_INS_FSTDW, ND_CAT_X87_ALU, ND_SET_X87, 245, 
         0, 
-        ND_MOD_ANY, 
-        0, ND_OPS_CNT(1, 0), 0, 0, 0, 0xff, 0, 0, ND_FLAG_MODRM, 0, 
+        ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXR_SEAM|ND_MOD_VMXN_SEAM|ND_MOD_VMX_OFF|ND_MOD_SMM|ND_MOD_SMM_OFF|ND_MOD_SGX|ND_MOD_SGX_OFF|ND_MOD_TSX|ND_MOD_TSX_OFF, 
+        0, ND_OPS_CNT(1, 0), 0, 0, 0, 0xff, 0, 0, ND_FLAG_MODRM|ND_FLAG_I64, 0, 
         0,
         0,
         0,
@@ -14905,8 +14905,8 @@ const ND_INSTRUCTION gInstructions[2584] =
     {
         ND_INS_PFRCPV, ND_CAT_3DNOW, ND_SET_3DNOW, 543, 
         0, 
-        ND_MOD_ANY, 
-        0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_3DNOW|ND_FLAG_MODRM, ND_CFF_3DNOW, 
+        ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXR_SEAM|ND_MOD_VMXN_SEAM|ND_MOD_VMX_OFF|ND_MOD_SMM|ND_MOD_SMM_OFF|ND_MOD_SGX|ND_MOD_SGX_OFF|ND_MOD_TSX|ND_MOD_TSX_OFF, 
+        0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_3DNOW|ND_FLAG_MODRM|ND_FLAG_I64, ND_CFF_3DNOW, 
         0,
         0,
         0,
@@ -14953,8 +14953,8 @@ const ND_INSTRUCTION gInstructions[2584] =
     {
         ND_INS_PFRSQRTV, ND_CAT_3DNOW, ND_SET_3DNOW, 546, 
         0, 
-        ND_MOD_ANY, 
-        0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_3DNOW|ND_FLAG_MODRM, ND_CFF_3DNOW, 
+        ND_MOD_R0|ND_MOD_R1|ND_MOD_R2|ND_MOD_R3|ND_MOD_REAL|ND_MOD_V8086|ND_MOD_PROT|ND_MOD_COMPAT|ND_MOD_VMXR|ND_MOD_VMXN|ND_MOD_VMXR_SEAM|ND_MOD_VMXN_SEAM|ND_MOD_VMX_OFF|ND_MOD_SMM|ND_MOD_SMM_OFF|ND_MOD_SGX|ND_MOD_SGX_OFF|ND_MOD_TSX|ND_MOD_TSX_OFF, 
+        0, ND_OPS_CNT(2, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_3DNOW|ND_FLAG_MODRM|ND_FLAG_I64, ND_CFF_3DNOW, 
         0,
         0,
         0,
@@ -42790,7 +42790,7 @@ const ND_INSTRUCTION gInstructions[2584] =
         },
     }, 
 
-    // Pos:2537 Instruction:"XCHG rAX,Zv" Encoding:"rexb 0x90"/"O"
+    // Pos:2537 Instruction:"XCHG Zv,rAX" Encoding:"rexb 0x90"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42801,12 +42801,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2538 Instruction:"XCHG rAX,Zv" Encoding:"0x91"/"O"
+    // Pos:2538 Instruction:"XCHG Zv,rAX" Encoding:"0x91"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42817,12 +42817,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2539 Instruction:"XCHG rAX,Zv" Encoding:"0x92"/"O"
+    // Pos:2539 Instruction:"XCHG Zv,rAX" Encoding:"0x92"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42833,12 +42833,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2540 Instruction:"XCHG rAX,Zv" Encoding:"0x93"/"O"
+    // Pos:2540 Instruction:"XCHG Zv,rAX" Encoding:"0x93"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42849,12 +42849,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2541 Instruction:"XCHG rAX,Zv" Encoding:"0x94"/"O"
+    // Pos:2541 Instruction:"XCHG Zv,rAX" Encoding:"0x94"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42865,12 +42865,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2542 Instruction:"XCHG rAX,Zv" Encoding:"0x95"/"O"
+    // Pos:2542 Instruction:"XCHG Zv,rAX" Encoding:"0x95"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42881,12 +42881,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2543 Instruction:"XCHG rAX,Zv" Encoding:"0x96"/"O"
+    // Pos:2543 Instruction:"XCHG Zv,rAX" Encoding:"0x96"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42897,12 +42897,12 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2544 Instruction:"XCHG rAX,Zv" Encoding:"0x97"/"O"
+    // Pos:2544 Instruction:"XCHG Zv,rAX" Encoding:"0x97"/"O"
     {
         ND_INS_XCHG, ND_CAT_DATAXFER, ND_SET_I86, 1555, 
         0, 
@@ -42913,8 +42913,8 @@ const ND_INSTRUCTION gInstructions[2584] =
         0,
         0,
         {
-            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
             OP(ND_OPT_Z, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_GPR_rAX, ND_OPS_v, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
