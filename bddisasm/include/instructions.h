@@ -5,7 +5,7 @@
 #ifndef INSTRUCTIONS_H
 #define INSTRUCTIONS_H
 
-const ND_INSTRUCTION gInstructions[2584] = 
+const ND_INSTRUCTION gInstructions[2585] = 
 {
     // Pos:0 Instruction:"AAA" Encoding:"0x37"/""
     {
@@ -43538,6 +43538,21 @@ const ND_INSTRUCTION gInstructions[2584] =
     // Pos:2581 Instruction:"XSTORE" Encoding:"0x0F 0xA7 /0xC0"/""
     {
         ND_INS_XSTORE, ND_CAT_PADLOCK, ND_SET_CYRIX, 1583, 
+        0, 
+        ND_MOD_ANY, 
+        0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, 0, 
+        0,
+        0,
+        0,
+        0,
+        {
+            0 
+        },
+    }, 
+
+    // Pos:2582 Instruction:"XSTORE" Encoding:"0xF3 0x0F 0xA7 /0xC0"/""
+    {
+        ND_INS_XSTORE, ND_CAT_PADLOCK, ND_SET_CYRIX, 1583, 
         ND_PREF_REP, 
         ND_MOD_ANY, 
         0, ND_OPS_CNT(0, 0), 0, 0, 0, 0, 0, 0, ND_FLAG_MODRM, 0, 
@@ -43550,7 +43565,7 @@ const ND_INSTRUCTION gInstructions[2584] =
         },
     }, 
 
-    // Pos:2582 Instruction:"XSUSLDTRK" Encoding:"0xF2 0x0F 0x01 /0xE8"/""
+    // Pos:2583 Instruction:"XSUSLDTRK" Encoding:"0xF2 0x0F 0x01 /0xE8"/""
     {
         ND_INS_XSUSLDTRK, ND_CAT_MISC, ND_SET_TSXLDTRK, 1584, 
         0, 
@@ -43565,7 +43580,7 @@ const ND_INSTRUCTION gInstructions[2584] =
         },
     }, 
 
-    // Pos:2583 Instruction:"XTEST" Encoding:"NP 0x0F 0x01 /0xD6"/""
+    // Pos:2584 Instruction:"XTEST" Encoding:"NP 0x0F 0x01 /0xD6"/""
     {
         ND_INS_XTEST, ND_CAT_LOGIC, ND_SET_TSX, 1585, 
         0, 

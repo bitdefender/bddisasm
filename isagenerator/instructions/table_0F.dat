@@ -471,7 +471,8 @@ SHLD           Ev,Gv,CL      Fv                        [            0x0F 0xA5 /r
 MONTMUL        nil           nil                       [       0xF3 0x0F 0xA6 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
 XSHA1          nil           nil                       [       0xF3 0x0F 0xA6 /0xC8]           s:CYRIX, t:PADLOCK, p:REP
 XSHA256        nil           nil                       [       0xF3 0x0F 0xA6 /0xD0]           s:CYRIX, t:PADLOCK, p:REP
-XSTORE         nil           nil                       [            0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
+XSTORE         nil           nil                       [            0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK
+XSTORE         nil           nil                       [       0xF3 0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
 XCRYPTECB      nil           nil                       [       0xF3 0x0F 0xA7 /0xC8]           s:CYRIX, t:PADLOCK, p:REP
 XCRYPTCBC      nil           nil                       [       0xF3 0x0F 0xA7 /0xD0]           s:CYRIX, t:PADLOCK, p:REP
 XCRYPTCTR      nil           nil                       [       0xF3 0x0F 0xA7 /0xD8]           s:CYRIX, t:PADLOCK, p:REP

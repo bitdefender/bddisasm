@@ -12,7 +12,7 @@ from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
 VERSION = (0, 1, 3)
-LIBRARY_VERSION = (1, 31, 6)
+LIBRARY_VERSION = (1, 31, 7)
 LIBRARY_INSTRUX_SIZE = 864
 
 packages = ['pybddisasm']
@@ -89,7 +89,7 @@ setup(
         'Operating System :: POSIX :: Linux'
     ],
     ext_modules = [Extension("_pybddisasm",
-                      extra_compile_args = ["-march=westmere", "-maes"], 
+                      extra_compile_args = ["-march=westmere"], 
                       sources = ["_pybddisasm/_pybddisasm.c", "_pybddisasm/pybddisasm.c"],
                       define_macros = [('AMD64', None), ('LIBRARY_INSTRUX_SIZE', LIBRARY_INSTRUX_SIZE)],
                       include_dirs = ['../inc'],

@@ -4,7 +4,6 @@
     pi2fd          mm0,mm7
     pf2iw          mm0,mm7
     pf2id          mm0,mm7
-    pfrcpv         mm0,mm7
     pfrsqrtv       mm0,mm7
     pfnacc         mm0,mm7
     pfpnacc        mm0,mm7
@@ -30,7 +29,6 @@
     pi2fd          mm0,[rbx]
     pf2iw          mm0,[rbx]
     pf2id          mm0,[rbx]
-    pfrcpv         mm0,[rbx]
     pfrsqrtv       mm0,[rbx]
     pfnacc         mm0,[rbx]
     pfpnacc        mm0,[rbx]

@@ -62,7 +62,25 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000010 0f0fc786                        PFRCPV    mm0, mm7
+0000000000000010 0f                              db 0x0f (0x80000009)
+0000000000000011 0f                              db 0x0f (0x80000002)
+0000000000000012 c7870f0fc78a0f0fc78e            MOV       dword ptr [rdi-0x7538f0f1], 0x8ec70f0f
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I86, Ins cat: DATAXFER, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: yes
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 7, Displacement: 0xffffffff8ac70f0f, 
+        Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
+
+000000000000001C 0f0fc790                        PFCMPGE   mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -78,55 +96,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000014 0f0fc787                        PFRSQRTV  mm0, mm7
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
-
-0000000000000018 0f0fc78a                        PFNACC    mm0, mm7
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
-
-000000000000001C 0f0fc78e                        PFPNACC   mm0, mm7
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
-
-0000000000000020 0f0fc790                        PFCMPGE   mm0, mm7
+0000000000000020 0f0fc794                        PFMIN     mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -158,7 +128,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000028 0f0fc794                        PFMIN     mm0, mm7
+0000000000000028 0f0fc797                        PFRSQRT   mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -174,7 +144,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-000000000000002C 0f0fc797                        PFRSQRT   mm0, mm7
+000000000000002C 0f0fc79a                        PFSUB     mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -190,7 +160,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000030 0f0fc79a                        PFSUB     mm0, mm7
+0000000000000030 0f0fc79e                        PFADD     mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -206,7 +176,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000034 0f0fc79e                        PFADD     mm0, mm7
+0000000000000034 0f0fc7a0                        PFCMPGT   mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -222,7 +192,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000038 0f0fc7a0                        PFCMPGT   mm0, mm7
+0000000000000038 0f0fc7a4                        PFMAX     mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -238,7 +208,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-000000000000003C 0f0fc7a4                        PFMAX     mm0, mm7
+000000000000003C 0f0fc7a6                        PFRCPIT1  mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -254,7 +224,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000040 0f0fc7a6                        PFRCPIT1  mm0, mm7
+0000000000000040 0f0fc7a7                        PFRSQIT1  mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -270,7 +240,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000044 0f0fc7a7                        PFRSQIT1  mm0, mm7
+0000000000000044 0f0fc7aa                        PFSUBR    mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -286,7 +256,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000048 0f0fc7aa                        PFSUBR    mm0, mm7
+0000000000000048 0f0fc7ae                        PFACC     mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -302,7 +272,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-000000000000004C 0f0fc7ae                        PFACC     mm0, mm7
+000000000000004C 0f0fc7b0                        PFCMPEQ   mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -318,7 +288,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000050 0f0fc7b0                        PFCMPEQ   mm0, mm7
+0000000000000050 0f0fc7b4                        PFMUL     mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -334,7 +304,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000054 0f0fc7b4                        PFMUL     mm0, mm7
+0000000000000054 0f0fc7b6                        PFRCPIT2  mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -350,7 +320,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000058 0f0fc7b6                        PFRCPIT2  mm0, mm7
+0000000000000058 0f0fc7bb                        PSWAPD    mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -366,7 +336,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-000000000000005C 0f0fc7bb                        PSWAPD    mm0, mm7
+000000000000005C 0f0fc7bf                        PAVGUSB   mm0, mm7
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -382,23 +352,7 @@
         Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
 
-0000000000000060 0f0fc7bf                        PAVGUSB   mm0, mm7
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:              MMX, RegSize:  8, RegId: 7, RegCount: 1
-
-0000000000000064 0f0f030c                        PI2FW     mm0, qword ptr [rbx]
+0000000000000060 0f0f030c                        PI2FW     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -415,7 +369,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000068 0f0f030d                        PI2FD     mm0, qword ptr [rbx]
+0000000000000064 0f0f030d                        PI2FD     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -432,7 +386,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000006C 0f0f031c                        PF2IW     mm0, qword ptr [rbx]
+0000000000000068 0f0f031c                        PF2IW     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -449,7 +403,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000070 0f0f031d                        PF2ID     mm0, qword ptr [rbx]
+000000000000006C 0f0f031d                        PF2ID     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -466,7 +420,27 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000074 0f0f0386                        PFRCPV    mm0, qword ptr [rbx]
+0000000000000070 0f                              db 0x0f (0x80000009)
+0000000000000071 0f03870f0f038a                  LSL       eax, word ptr [rdi-0x75fcf0f1]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: I286PROT, Ins cat: SYSTEM, CET tracked: no
+        FLAGS access
+                ZF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 7, Displacement: 0xffffffff8a030f0f, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000078 0f0f038e                        PFPNACC   mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -483,7 +457,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000078 0f0f0387                        PFRSQRTV  mm0, qword ptr [rbx]
+000000000000007C 0f0f0390                        PFCMPGE   mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -500,7 +474,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000007C 0f0f038a                        PFNACC    mm0, qword ptr [rbx]
+0000000000000080 0f0f0394                        PFMIN     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -517,7 +491,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000080 0f0f038e                        PFPNACC   mm0, qword ptr [rbx]
+0000000000000084 0f0f0394                        PFMIN     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -534,7 +508,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000084 0f0f0390                        PFCMPGE   mm0, qword ptr [rbx]
+0000000000000088 0f0f0397                        PFRSQRT   mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -551,7 +525,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000088 0f0f0394                        PFMIN     mm0, qword ptr [rbx]
+000000000000008C 0f0f039a                        PFSUB     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -568,7 +542,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000008C 0f0f0394                        PFMIN     mm0, qword ptr [rbx]
+0000000000000090 0f0f039e                        PFADD     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -585,7 +559,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000090 0f0f0397                        PFRSQRT   mm0, qword ptr [rbx]
+0000000000000094 0f0f03a0                        PFCMPGT   mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -602,7 +576,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000094 0f0f039a                        PFSUB     mm0, qword ptr [rbx]
+0000000000000098 0f0f03a4                        PFMAX     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -619,7 +593,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000098 0f0f039e                        PFADD     mm0, qword ptr [rbx]
+000000000000009C 0f0f03a6                        PFRCPIT1  mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -636,7 +610,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000009C 0f0f03a0                        PFCMPGT   mm0, qword ptr [rbx]
+00000000000000A0 0f0f03a7                        PFRSQIT1  mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -653,7 +627,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000A0 0f0f03a4                        PFMAX     mm0, qword ptr [rbx]
+00000000000000A4 0f0f03aa                        PFSUBR    mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -670,7 +644,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000A4 0f0f03a6                        PFRCPIT1  mm0, qword ptr [rbx]
+00000000000000A8 0f0f03ae                        PFACC     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -687,7 +661,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000A8 0f0f03a7                        PFRSQIT1  mm0, qword ptr [rbx]
+00000000000000AC 0f0f03b0                        PFCMPEQ   mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -704,7 +678,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000AC 0f0f03aa                        PFSUBR    mm0, qword ptr [rbx]
+00000000000000B0 0f0f03b4                        PFMUL     mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -721,7 +695,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000B0 0f0f03ae                        PFACC     mm0, qword ptr [rbx]
+00000000000000B4 0f0f03b6                        PFRCPIT2  mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -738,7 +712,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000B4 0f0f03b0                        PFCMPEQ   mm0, qword ptr [rbx]
+00000000000000B8 0f0f03bb                        PSWAPD    mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
@@ -755,58 +729,7 @@
         Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000B8 0f0f03b4                        PFMUL     mm0, qword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000000BC 0f0f03b6                        PFRCPIT2  mm0, qword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000000C0 0f0f03bb                        PSWAPD    mm0, qword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: -
-        ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
-        CPUID leaf: 0x80000001, reg: edx, bit: 31
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:              MMX, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000000C4 0f0f03bf                        PAVGUSB   mm0, qword ptr [rbx]
+00000000000000BC 0f0f03bf                        PAVGUSB   mm0, qword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: 3DNOW, Ins cat: 3DNOW, CET tracked: no
         CPUID leaf: 0x80000001, reg: edx, bit: 31
