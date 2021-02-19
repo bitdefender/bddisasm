@@ -27,6 +27,7 @@ typedef struct _DISASM_OPTIONS
     char        *Target;        // If in search mode, this indicates the instruction to be searched for.
     BOOLEAN     Highlight;      // Highlight instruction components, if true.
     BOOLEAN     ExtendedInfo;   // Display extended instruction info, if true.
+    BOOLEAN     BitFields;      // Display the various bitfields inside the instruction, if true.
     BOOLEAN     Stats;          // Display disassembly stats (clocks / instruction, instructions / second), if true.
     BOOLEAN     Search;         // Search for the Target instruction in the provided buffer.
     BOOLEAN     Print;          // Print instruction disassembly, if true.
@@ -1029,6 +1030,62 @@ print_instruction(
 
         printf("\n");
     }
+
+    if (Options->BitFields)
+    {
+        printf("        Instruction bit fields:\n");
+
+        if (Instrux->HasEvex)
+        {
+            printf("            EVEX:   0x%02x 0x%02x 0x%02x 0x%02x > mm: %d, R': %d, B: %d, X: %d, R: %d, pp: %d, "
+                "vvvv: %d, W: %d, aaa: %d, V': %d, b: %d, L'L: %d, z: %d\n",
+                Instrux->Evex.Evex[0], Instrux->Evex.Evex[1], Instrux->Evex.Evex[2], Instrux->Evex.Evex[3],
+                Instrux->Evex.m, Instrux->Evex.rp, Instrux->Evex.b, Instrux->Evex.x, Instrux->Evex.r, Instrux->Evex.p,
+                Instrux->Evex.v, Instrux->Evex.w, Instrux->Evex.a, Instrux->Evex.vp, Instrux->Evex.bm, Instrux->Evex.l,
+                Instrux->Evex.z);
+        }
+
+        if (Instrux->HasVex)
+        {
+            if (Instrux->VexMode == ND_VEXM_2B)
+            {
+                printf("            VEX2:   0x%02x 0x%02x > pp: %d, L: %d, vvvv: %d, R: %d\n",
+                    Instrux->Vex2.Vex[0], Instrux->Vex2.Vex[1], Instrux->Vex2.p, Instrux->Vex2.l, Instrux->Vex2.v,
+                    Instrux->Vex2.r);
+            }
+            else
+            {
+                printf("            VEX3:   0x%02x 0x%02x 0x%02x > m-mmmm: %d, B: %d, X: %d, R: %d, pp: %d, L: %d, vvvv: %d, W: %d\n",
+                    Instrux->Vex3.Vex[0], Instrux->Vex3.Vex[1], Instrux->Vex3.Vex[2], Instrux->Vex3.m, Instrux->Vex3.b,
+                    Instrux->Vex3.x, Instrux->Vex3.r, Instrux->Vex3.p, Instrux->Vex3.l, Instrux->Vex3.v, Instrux->Vex3.w);
+            }
+        }
+
+        if (Instrux->HasXop)
+        {
+            printf("            XOP:    0x%02x 0x%02x 0x%02x > m: %d, B: %d, X: %d, R: %d, p: %d, L: %d, v: %d, W: %d\n",
+                Instrux->Xop.Xop[0], Instrux->Xop.Xop[1], Instrux->Xop.Xop[2], Instrux->Xop.m, Instrux->Xop.b,
+                Instrux->Xop.x, Instrux->Xop.r, Instrux->Xop.p, Instrux->Xop.l, Instrux->Xop.v, Instrux->Xop.w);
+        }
+
+        if (Instrux->HasRex)
+        {
+            printf("            REX:    0x%02x > B: %d, X: %d, R: %d, W: %d\n",
+                Instrux->Rex.Rex, Instrux->Rex.b, Instrux->Rex.x, Instrux->Rex.r, Instrux->Rex.w);
+        }
+
+        if (Instrux->HasModRm)
+        {
+            printf("            ModR/M: 0x%02x > mod: %d, reg: %d, rm: %d\n",
+                Instrux->ModRm.ModRm, Instrux->ModRm.mod, Instrux->ModRm.reg, Instrux->ModRm.rm);
+        }
+
+        if (Instrux->HasSib)
+        {
+            printf("            SIB:    0x%02x > scale: %d, index: %d, base: %d\n",
+                Instrux->Sib.Sib, Instrux->Sib.scale, Instrux->Sib.index, Instrux->Sib.base);
+        }
+    }
 }
 
 
@@ -1628,7 +1685,7 @@ int main(
     DWORD fsize, offset;
     SIZE_T rip;
     char text[ND_MIN_BUF_SIZE], *fname, *target, *shemuCtxFname;
-    BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, feat, search, isShemu, isShemuCtxf, isKernel;
+    BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, feat, search, isShemu, isShemuCtxf, isKernel, bitfields;
     INT ret, i;
     BYTE hexbuf[256], *buffer;
     DISASM_OPTIONS options;
@@ -1657,6 +1714,7 @@ int main(
     isShemu = 0;
     isShemuCtxf = 0;
     isKernel = 0;
+    bitfields = 0;
 
     if (NULL == argv)
     {
@@ -1692,6 +1750,7 @@ int main(
         printf("            Examples of valid command line register naming: \"RegRax\" ; \"rax\" ; \"reg_rax\"\n");
         printf("        -k               specify kernel mode for shemu emulation. Ignore if shemu is not specified.\n");
         printf("        -hl              highlight instruction parts:\n");
+        printf("        -bits            display the instruction bit fields");
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
             FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED|FOREGROUND_INTENSITY);
         printf("            light white      prefixes\n");
@@ -1881,6 +1940,10 @@ int main(
                 return -1;
             }
         }
+        else if (0 == strcmp(argv[i], "-bits"))
+        {
+            bitfields = 1;
+        }
         else
         {
             printf("Unknown option: '%s'\n", argv[i]);
@@ -1968,6 +2031,7 @@ int main(
     options.Buffer = buffer;
     options.Size = fsize;
     options.ExtendedInfo = exi;
+    options.BitFields = bitfields;
     options.Highlight = highlight;
     options.Mode = mode;
     options.Ring = isKernel ? 0 : 3;

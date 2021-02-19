@@ -4892,13 +4892,13 @@ NdToText(
                         switch (pOp->Info.Memory.DispSize)
                         {
                         case 1:
-                            normDisp = ((disp & 0x80) ? ~((uint8_t)disp) + 1ULL : disp) & 0xFF;
+                            normDisp = ((disp & 0x80) ? ~disp + 1ULL : disp) & 0xFF;
                             break;
                         case 2:
-                            normDisp = ((disp & 0x8000) ? ~((uint16_t)disp) + 1ULL : disp) & 0xFFFF;
+                            normDisp = ((disp & 0x8000) ? ~disp + 1ULL : disp) & 0xFFFF;
                             break;
                         case 4:
-                            normDisp = ((disp & 0x80000000) ? ~((uint32_t)disp) + 1ULL : disp) & 0xFFFFFFFF;
+                            normDisp = ((disp & 0x80000000) ? ~disp + 1ULL : disp) & 0xFFFFFFFF;
                             break;
                         default:
                             normDisp = disp;
