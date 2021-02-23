@@ -89,7 +89,7 @@ enum
 #define GET_FLAG(ctx, flg)          (!!((ctx)->Registers.RegFlags & (flg)))
 #define SET_FLAG(ctx, flg, val)     ((ctx)->Registers.RegFlags = (val) ? ((ctx)->Registers.RegFlags | flg) :           \
                                                                          ((ctx)->Registers.RegFlags & ~(flg)))
-#define SET_FLAGS(ctx, dst, src1, src2, fm) ShemuSetFlags(ctx, dst.Value.Qwords[0], src.Value.Qwords[0],               \
+#define SET_FLAGS(ctx, dst, src1, src2, fm) ShemuSetFlags(ctx, dst.Value.Qwords[0], src1.Value.Qwords[0],               \
                                                           src2.Value.Qwords[0], dst.Size, fm)
 
 #define SHELLBMP(ctx)               ((ctx)->Intbuf)
@@ -318,6 +318,15 @@ ShemuSetFlags(
     Src1 = ND_TRIM(Size, Src1);
     Src2 = ND_TRIM(Size, Src2);
 
+    if (FlagsMode == FM_SHL || FlagsMode == FM_SHR || FlagsMode == FM_SAR)
+    {
+        // Shift with 0 count does not affect flags.
+        if (Src2 == 0)
+        {
+            return;
+        }
+    }
+
     // PF set if the first bytes has an even number of 1 bits.
     if ((pfArr[Dst & 0xF] + pfArr[(Dst >> 4) & 0xF]) % 2 == 0)
     {
@@ -357,7 +366,7 @@ ShemuSetFlags(
     else if (FM_SHL == FlagsMode)
     {
         // CF is the last bit shifted out of the destination.
-        if (ND_GET_BIT(Src1, (Size * 8ULL) - Src2))
+        if (ND_GET_BIT((Size * 8ULL) - Src2, Src1))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
@@ -368,7 +377,7 @@ ShemuSetFlags(
 
         if (Src2 == 1)
         {
-            if (ND_GET_BIT(Size * 8ULL - 1, Dst) ^ ND_GET_BIT(Src1, (Size * 8ULL) - Src2))
+            if (ND_GET_BIT(Size * 8ULL - 1, Dst) ^ ND_GET_BIT(Size * 8ULL - Src2, Src1))
             {
                 Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
@@ -381,7 +390,7 @@ ShemuSetFlags(
     else if (FM_SHR == FlagsMode)
     {
         // CF is the last bit shifted out of the destination.
-        if (ND_GET_BIT(Src1, Src2 - 1))
+        if (ND_GET_BIT(Src2 - 1, Src1))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
@@ -405,7 +414,7 @@ ShemuSetFlags(
     else if (FM_SAR == FlagsMode)
     {
         // CF is the last bit shifted out of the destination.
-        if (ND_GET_BIT(Src1, Src2 - 1))
+        if (ND_GET_BIT(Src2 - 1, Src1))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
@@ -1282,7 +1291,10 @@ ShemuSetOperandValue(
         case ND_REG_MMX:
             Context->MmxRegisters[op->Info.Register.Reg] = Value->Value.Qwords[0];
             // Only log these when they're written.
-            shemu_printf(Context, "        MM%d = 0x%016llx\n", op->Info.Register.Reg, Value->Value.Qwords[0]);
+            if (Context->Options & SHEMU_OPT_TRACE_EMULATION)
+            {
+                shemu_printf(Context, "        MM%d = 0x%016llx\n", op->Info.Register.Reg, Value->Value.Qwords[0]);
+            }
             break;
 
         case ND_REG_SSE:
@@ -1290,14 +1302,19 @@ ShemuSetOperandValue(
                          Value->Value.Bytes, 
                          op->Size);
             // Only log these when they're written.
-            shemu_printf(Context,
-                         "        %cMM%d (HI_32) = 0x%016llx%016llx%016llx%016llx\n", 
-                         op->Size == 16 ? 'X' : op->Size == 32 ? 'Y' : 'Z', op->Info.Register.Reg,
-                         Value->Value.Qwords[7], Value->Value.Qwords[6], Value->Value.Qwords[5], Value->Value.Qwords[4]);
-            shemu_printf(Context,
-                         "        %cMM%d (LO_32) = 0x%016llx%016llx%016llx%016llx\n",
-                         op->Size == 16 ? 'X' : op->Size == 32 ? 'Y' : 'Z', op->Info.Register.Reg,
-                         Value->Value.Qwords[3], Value->Value.Qwords[2], Value->Value.Qwords[1], Value->Value.Qwords[0]);
+            if (Context->Options & SHEMU_OPT_TRACE_EMULATION)
+            {
+                shemu_printf(Context,
+                             "        %cMM%d (HI_32) = 0x%016llx%016llx%016llx%016llx\n",
+                             op->Size == 16 ? 'X' : op->Size == 32 ? 'Y' : 'Z', op->Info.Register.Reg,
+                             Value->Value.Qwords[7], Value->Value.Qwords[6], 
+                             Value->Value.Qwords[5], Value->Value.Qwords[4]);
+                shemu_printf(Context,
+                             "        %cMM%d (LO_32) = 0x%016llx%016llx%016llx%016llx\n",
+                             op->Size == 16 ? 'X' : op->Size == 32 ? 'Y' : 'Z', op->Info.Register.Reg,
+                             Value->Value.Qwords[3], Value->Value.Qwords[2], 
+                             Value->Value.Qwords[1], Value->Value.Qwords[0]);
+            }
             break;
 
         case ND_REG_RIP:
