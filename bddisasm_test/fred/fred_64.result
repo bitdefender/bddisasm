@@ -1,0 +1,147 @@
+0000000000000000 f30f01ca                        ERETU
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: FRED, Ins cat: FRED, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 17
+        FLAGS access
+                Entire register
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 4, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:          Segment, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 4, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:          Segment, RegSize:  8, RegId: 2, RegCount: 1
+        Operand: 5, Acc:  R-,  Type:     Memory, Size: 40, RawSize: 40, Encoding: S, Stack: yes, 
+                Segment: 2, Base: 4, 
+        Operand: 6, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:              SSP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 7, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000101, RegCount: 1
+        Operand: 8, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+
+0000000000000004 f20f01ca                        ERETS
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: FRED, Ins cat: FRED, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 17
+        FLAGS access
+                Entire register
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 4, RegCount: 1
+        Operand: 3, Acc:  R-,  Type:     Memory, Size: 40, RawSize: 40, Encoding: S, Stack: yes, 
+                Segment: 2, Base: 4, 
+        Operand: 4, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:              SSP, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000008 f20f0030                        LKGS      word ptr [rax]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: LKGS, Ins cat: LKGS, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 18
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+
+000000000000000C f2480f0030                      LKGS      word ptr [rax]
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: LKGS, Ins cat: LKGS, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 18
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+
+0000000000000011 f2660f0030                      LKGS      word ptr [rax]
+        DSIZE: 16, ASIZE: 64, VLEN: -
+        ISA Set: LKGS, Ins cat: LKGS, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 18
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+
+0000000000000016 f20f00f1                        LKGS      ecx
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: LKGS, Ins cat: LKGS, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 18
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+
+000000000000001A f2480f00f1                      LKGS      rcx
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: LKGS, Ins cat: LKGS, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 18
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+
+000000000000001F f2660f00f1                      LKGS      cx
+        DSIZE: 16, ASIZE: 64, VLEN: -
+        ISA Set: LKGS, Ins cat: LKGS, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 18
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:  General Purpose, RegSize:  2, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:   Model Specific, RegSize:  8, RegId: 0xc0000102, RegCount: 1
+

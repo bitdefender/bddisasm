@@ -13,6 +13,10 @@
 #define RET_GE(x, y, z)     if ((x) >= (y)) { return (z); }
 #define RET_GT(x, y, z)     if ((x) >  (y)) { return (z); }
 
+#ifndef UNREFERENCED_PARAMETER
+#define UNREFERENCED_PARAMETER(P) ((void)(P))
+#endif
+
 
 static const char *gReg8Bit[] =
 {
@@ -291,7 +295,7 @@ NdGetVersion(
 //
 // Do not use __TIME__ and __DATE__ macros when compiling against a kernel tree.
 //
-#if defined(__KERNEL__) && defined(__GNUC__)
+#if defined(__KERNEL__)
 
     if (NULL != BuildDate)
     {
@@ -319,10 +323,10 @@ NdGetVersion(
 
 }
 
-#ifndef KERNEL_MODE
 //
 // NdSprintf
 //
+#ifndef BDDISASM_NO_FORMAT
 static NDSTATUS
 NdSprintf(
     char *Destination,
@@ -364,12 +368,7 @@ NdSprintf(
 
     return ND_STATUS_SUCCESS;
 }
-#else
-#define NdSprintf(Destination, DestinationSize, Formatstring, ...) RtlStringCbPrintfA(Destination,                  \
-                                                                                      DestinationSize,              \
-                                                                                      Formatstring,                 \
-                                                                                      __VA_ARGS__);
-#endif
+#endif // !BDDISASM_NO_FORMAT
 
 
 //
@@ -1688,13 +1687,17 @@ NdParseOperand(
     case ND_OPS_v2:
     case ND_OPS_v3:
     case ND_OPS_v4:
+    case ND_OPS_v5:
     case ND_OPS_v8:
         // Multiple words accessed.
         {
             static const uint8_t szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
             uint8_t scale = 1;
 
-            scale = (ops == ND_OPS_v2) ? 2 : ((ops == ND_OPS_v3) ? 3 : ((ops == ND_OPS_v4) ? 4 : 8));
+            scale = (ops == ND_OPS_v2) ? 2 : 
+                    (ops == ND_OPS_v3) ? 3 : 
+                    (ops == ND_OPS_v4) ? 4 : 
+                    (ops == ND_OPS_v5) ? 5 : 8;
 
             size =  scale * szLut[Instrux->EfOpMode];
         }
@@ -4179,6 +4182,7 @@ NdDecode(
 //
 // NdToText
 //
+#ifndef BDDISASM_NO_FORMAT
 NDSTATUS
 NdToText(
     const INSTRUX *Instrux,
@@ -5030,6 +5034,29 @@ NdToText(
 
    return ND_STATUS_SUCCESS;
 }
+#else
+NDSTATUS
+NdToText(
+    const INSTRUX *Instrux,
+    uint64_t Rip,
+    uint32_t BufferSize,
+    char *Buffer
+    )
+{
+    UNREFERENCED_PARAMETER(Instrux);
+    UNREFERENCED_PARAMETER(Rip);
+
+    // At least make sure the buffer is NULL-terminated so integrators can use NdToText without checking if the
+    // BDDISASM_NO_FORMAT macro is defined. This makes switching between versions with formatting and versions without
+    // formatting easier.
+    if (Buffer != NULL && BufferSize >= 1)
+    {
+        *Buffer = '\0';
+    }
+
+    return ND_STATUS_SUCCESS;
+}
+#endif // !BDDISASM_NO_FORMAT
 
 
 //

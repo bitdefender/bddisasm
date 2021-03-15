@@ -10,13 +10,13 @@ const ND_TABLE_INSTRUCTION gXopTable_root_0a_10_leaf =
 const ND_TABLE_INSTRUCTION gXopTable_root_0a_12_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[596]
+    (const void *)&gInstructions[600]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_0a_12_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[597]
+    (const void *)&gInstructions[601]
 };
 
 const ND_TABLE_MODRM_REG gXopTable_root_0a_12_modrmreg = 
@@ -330,13 +330,13 @@ const ND_TABLE_INSTRUCTION gXopTable_root_09_01_06_leaf =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_01_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1315]
+    (const void *)&gInstructions[1319]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_01_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1339]
+    (const void *)&gInstructions[1343]
 };
 
 const ND_TABLE_MODRM_REG gXopTable_root_09_01_modrmreg = 
@@ -384,13 +384,13 @@ const ND_TABLE_MODRM_REG gXopTable_root_09_02_modrmreg =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_12_reg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[578]
+    (const void *)&gInstructions[582]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_12_reg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1266]
+    (const void *)&gInstructions[1270]
 };
 
 const ND_TABLE_MODRM_REG gXopTable_root_09_12_reg_modrmreg = 
@@ -420,127 +420,127 @@ const ND_TABLE_MODRM_MOD gXopTable_root_09_12_modrmmod =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_81_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1691]
+    (const void *)&gInstructions[1695]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_80_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1692]
+    (const void *)&gInstructions[1696]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_83_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1693]
+    (const void *)&gInstructions[1697]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_82_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1694]
+    (const void *)&gInstructions[1698]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_c2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2084]
+    (const void *)&gInstructions[2088]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_c3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2085]
+    (const void *)&gInstructions[2089]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_c1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2086]
+    (const void *)&gInstructions[2090]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_cb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2088]
+    (const void *)&gInstructions[2092]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_d2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2090]
+    (const void *)&gInstructions[2094]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_d3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2091]
+    (const void *)&gInstructions[2095]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_d1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2092]
+    (const void *)&gInstructions[2096]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_db_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2093]
+    (const void *)&gInstructions[2097]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_d6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2094]
+    (const void *)&gInstructions[2098]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_d7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2095]
+    (const void *)&gInstructions[2099]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_c6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2097]
+    (const void *)&gInstructions[2101]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_c7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2098]
+    (const void *)&gInstructions[2102]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_e1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2100]
+    (const void *)&gInstructions[2104]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_e3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2102]
+    (const void *)&gInstructions[2106]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_e2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2105]
+    (const void *)&gInstructions[2109]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_90_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2267]
+    (const void *)&gInstructions[2271]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_90_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2268]
+    (const void *)&gInstructions[2272]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_90_w = 
@@ -555,13 +555,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_90_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_92_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2270]
+    (const void *)&gInstructions[2274]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_92_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2271]
+    (const void *)&gInstructions[2275]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_92_w = 
@@ -576,13 +576,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_92_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_93_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2273]
+    (const void *)&gInstructions[2277]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_93_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2274]
+    (const void *)&gInstructions[2278]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_93_w = 
@@ -597,13 +597,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_93_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_91_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2276]
+    (const void *)&gInstructions[2280]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_91_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2277]
+    (const void *)&gInstructions[2281]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_91_w = 
@@ -618,13 +618,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_91_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_98_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2284]
+    (const void *)&gInstructions[2288]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_98_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2285]
+    (const void *)&gInstructions[2289]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_98_w = 
@@ -639,13 +639,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_98_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_9a_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2286]
+    (const void *)&gInstructions[2290]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_9a_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2287]
+    (const void *)&gInstructions[2291]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_9a_w = 
@@ -660,13 +660,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_9a_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_9b_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2288]
+    (const void *)&gInstructions[2292]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_9b_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2289]
+    (const void *)&gInstructions[2293]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_9b_w = 
@@ -681,13 +681,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_9b_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_99_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2290]
+    (const void *)&gInstructions[2294]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_99_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2291]
+    (const void *)&gInstructions[2295]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_99_w = 
@@ -702,13 +702,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_99_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_94_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2292]
+    (const void *)&gInstructions[2296]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_94_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2293]
+    (const void *)&gInstructions[2297]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_94_w = 
@@ -723,13 +723,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_94_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_95_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2294]
+    (const void *)&gInstructions[2298]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_95_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2305]
+    (const void *)&gInstructions[2309]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_95_w = 
@@ -744,13 +744,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_95_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_96_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2295]
+    (const void *)&gInstructions[2299]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_96_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2296]
+    (const void *)&gInstructions[2300]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_96_w = 
@@ -765,13 +765,13 @@ const ND_TABLE_VEX_W gXopTable_root_09_96_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_09_97_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2303]
+    (const void *)&gInstructions[2307]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_09_97_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2304]
+    (const void *)&gInstructions[2308]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_09_97_w = 
@@ -1049,13 +1049,13 @@ const ND_TABLE_OPCODE gXopTable_root_09_opcode =
 const ND_TABLE_INSTRUCTION gXopTable_root_08_a2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1966]
+    (const void *)&gInstructions[1970]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_a2_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1967]
+    (const void *)&gInstructions[1971]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_08_a2_w = 
@@ -1070,133 +1070,133 @@ const ND_TABLE_VEX_W gXopTable_root_08_a2_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_08_cc_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1996]
+    (const void *)&gInstructions[2000]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_ce_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1997]
+    (const void *)&gInstructions[2001]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_cf_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2002]
+    (const void *)&gInstructions[2006]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_ec_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2003]
+    (const void *)&gInstructions[2007]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_ee_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2004]
+    (const void *)&gInstructions[2008]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_ef_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2005]
+    (const void *)&gInstructions[2009]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_ed_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2006]
+    (const void *)&gInstructions[2010]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_cd_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2007]
+    (const void *)&gInstructions[2011]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_9e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2120]
+    (const void *)&gInstructions[2124]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_9f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2121]
+    (const void *)&gInstructions[2125]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_97_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2122]
+    (const void *)&gInstructions[2126]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_8e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2123]
+    (const void *)&gInstructions[2127]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_8f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2124]
+    (const void *)&gInstructions[2128]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_87_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2125]
+    (const void *)&gInstructions[2129]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_86_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2126]
+    (const void *)&gInstructions[2130]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_85_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2127]
+    (const void *)&gInstructions[2131]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_96_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2128]
+    (const void *)&gInstructions[2132]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_95_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2129]
+    (const void *)&gInstructions[2133]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_a6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2130]
+    (const void *)&gInstructions[2134]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_b6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2131]
+    (const void *)&gInstructions[2135]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_a3_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2256]
+    (const void *)&gInstructions[2260]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_a3_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2257]
+    (const void *)&gInstructions[2261]
 };
 
 const ND_TABLE_VEX_W gXopTable_root_08_a3_w = 
@@ -1211,25 +1211,25 @@ const ND_TABLE_VEX_W gXopTable_root_08_a3_w =
 const ND_TABLE_INSTRUCTION gXopTable_root_08_c0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2266]
+    (const void *)&gInstructions[2270]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_c2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2269]
+    (const void *)&gInstructions[2273]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_c3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2272]
+    (const void *)&gInstructions[2276]
 };
 
 const ND_TABLE_INSTRUCTION gXopTable_root_08_c1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2275]
+    (const void *)&gInstructions[2279]
 };
 
 const ND_TABLE_OPCODE gXopTable_root_08_opcode = 

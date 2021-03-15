@@ -167,6 +167,7 @@ valid_opsize = [
     'v2',           # Two stack words.
     'v3',           # Three stack words.
     'v4',           # Four stack words.
+    'v5',           # Five stack words.
     'v8',           # Eight stack words.
 
     # These are aliased over 'dq.*' encodings.

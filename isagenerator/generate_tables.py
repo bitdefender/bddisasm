@@ -209,6 +209,7 @@ opsize = {
     'v2'       : 'ND_OPS_v2',
     'v3'       : 'ND_OPS_v3',
     'v4'       : 'ND_OPS_v4',
+    'v5'       : 'ND_OPS_v5',
     'v8'       : 'ND_OPS_v8',
     'oq'       : 'ND_OPS_oq',
     'p'        : 'ND_OPS_p',

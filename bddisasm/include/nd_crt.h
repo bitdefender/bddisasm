@@ -64,8 +64,11 @@ extern void __cdecl __va_start(__out va_list *, ...);       // is this exported 
 
 #endif // _MSC_VER
 
-#ifndef KERNEL_MODE
-// Declared here only. Expecting it to be defined in the integrator.
+// By default, an integrator is expected to provide nd_vsnprintf_s and nd_strcat_s.
+// bddisasm needs both for NdToText, while bdshemu needs nd_vsnprintf_s for emulation tracing.
+// If BDDISASM_NO_FORMAT is defined at compile time these requirements are removed. Instruction formatting will no
+// longer be available in bddisasm and emulation tracing will no longer be available in bdshemu.
+#ifndef BDDISASM_NO_FORMAT
 extern int nd_vsnprintf_s(
     char *buffer,
     size_t sizeOfBuffer,
@@ -73,12 +76,6 @@ extern int nd_vsnprintf_s(
     const char *format,
     va_list argptr
     );
-#endif // KERNEL_MODE
-
-// Declared here only. Expecting it to be defined in the integrator.
-extern void *nd_memset(void *s, int c, size_t n);
-
-#define nd_memzero(Dest, Size)         nd_memset((Dest), 0, (Size))
 
 char *
 nd_strcat_s(
@@ -86,5 +83,11 @@ nd_strcat_s(
     size_t dst_size,
     const char *src
     );
+#endif // !BDDISASM_NO_FORMAT
+
+// Declared here only. Expecting it to be defined in the integrator.
+extern void *nd_memset(void *s, int c, size_t n);
+
+#define nd_memzero(Dest, Size)         nd_memset((Dest), 0, (Size))
 
 #endif // ND_CRT_H

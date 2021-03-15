@@ -220,6 +220,8 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_ENQCMD: return "enqcmd";
     case ND_INS_ENQCMDS: return "enqcmds";
     case ND_INS_ENTER: return "enter";
+    case ND_INS_ERETS: return "erets";
+    case ND_INS_ERETU: return "eretu";
     case ND_INS_EXTRACTPS: return "extractps";
     case ND_INS_EXTRQ: return "extrq";
     case ND_INS_F2XM1: return "f2xm1";
@@ -386,6 +388,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_LGDT: return "lgdt";
     case ND_INS_LGS: return "lgs";
     case ND_INS_LIDT: return "lidt";
+    case ND_INS_LKGS: return "lkgs";
     case ND_INS_LLDT: return "lldt";
     case ND_INS_LLWPCB: return "llwpcb";
     case ND_INS_LMSW: return "lmsw";
@@ -1588,6 +1591,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_EXPAND: return "expand";
     case ND_CAT_FLAGOP: return "flagop";
     case ND_CAT_FMA4: return "fma4";
+    case ND_CAT_FRED: return "fred";
     case ND_CAT_GATHER: return "gather";
     case ND_CAT_GFNI: return "gfni";
     case ND_CAT_HRESET: return "hreset";
@@ -1599,6 +1603,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_KL: return "kl";
     case ND_CAT_KMASK: return "kmask";
     case ND_CAT_KNL: return "knl";
+    case ND_CAT_LKGS: return "lkgs";
     case ND_CAT_LOGIC: return "logic";
     case ND_CAT_LOGICAL: return "logical";
     case ND_CAT_LOGICAL_FP: return "logical_fp";
@@ -1710,6 +1715,7 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_F16C: return "f16c";
     case ND_SET_FMA: return "fma";
     case ND_SET_FMA4: return "fma4";
+    case ND_SET_FRED: return "fred";
     case ND_SET_FXSAVE: return "fxsave";
     case ND_SET_GFNI: return "gfni";
     case ND_SET_HRESET: return "hreset";
@@ -1724,6 +1730,7 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_I86: return "i86";
     case ND_SET_INVPCID: return "invpcid";
     case ND_SET_KL: return "kl";
+    case ND_SET_LKGS: return "lkgs";
     case ND_SET_LONGMODE: return "longmode";
     case ND_SET_LWP: return "lwp";
     case ND_SET_LZCNT: return "lzcnt";

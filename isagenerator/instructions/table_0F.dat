@@ -9,7 +9,9 @@ LLDT           Ew            LDTR                      [            0x0F 0x00 /2
 LTR            Ew            TR                        [            0x0F 0x00 /3]              s:I286PROT, t:SYSTEM, w:R|W, a:SERIAL, m:KERNEL|NOREAL
 VERR           Ew            Fv                        [            0x0F 0x00 /4]              s:I286PROT, t:SYSTEM, w:R|W, f:ZF=m, m:NOREAL
 VERW           Ew            Fv                        [            0x0F 0x00 /5]              s:I286PROT, t:SYSTEM, w:R|W, f:ZF=m, m:NOREAL
-JMPE           Ev            rIP                       [            0x0F 0x00 /6]              s:I64, t:SYSTEM, w:R|W, m:NO64 
+JMPE           Ev            rIP                       [         NP 0x0F 0x00 /6]              s:I64, t:SYSTEM, w:R|W, m:NO64 
+LKGS           Mw            KGSBASE                   [       0xF2 0x0F 0x00 /6:mem]          s:LKGS, t:LKGS, w:R|W, m:KERNEL|O64|NOSGX
+LKGS           Rv            KGSBASE                   [       0xF2 0x0F 0x00 /6:reg]          s:LKGS, t:LKGS, w:R|W, m:KERNEL|O64|NOSGX
 SGDT           Ms            GDTR                      [            0x0F 0x01 /0:mem]          s:I286REAL, t:SYSTEM, w:W|R, m:NOSGX
 SIDT           Ms            IDTR                      [            0x0F 0x01 /1:mem]          s:I286REAL, t:SYSTEM, w:W|R, m:NOSGX
 LGDT           Ms            GDTR                      [            0x0F 0x01 /2:mem]          s:I286REAL, t:SYSTEM, w:R|W, a:SERIAL, m:KERNEL
@@ -28,6 +30,8 @@ PCONFIG        nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0
 MONITOR        nil           EAX,ECX,EDX               [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
 MWAIT          nil           EAX,ECX                   [         NP 0x0F 0x01 /0xC9]           s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
 CLAC           nil           Fv                        [         NP 0x0F 0x01 /0xCA]           s:SMAP, t:SMAP, w:W, f:AC=0, m:KERNEL|NOV86
+ERETU          nil           rIP,Fv,rSP,CS,SS,Kv5,SSP,GSBASE,KGSBASE [0xF3 0x0F 0x01 /0xCA]    s:FRED, t:FRED, w:W|W|W|W|W|R|CRCW|RW|RW, m:KERNEL|O64|NOTSX, a:F64
+ERETS          nil           rIP,Fv,rSP,Kv5,SSP        [       0xF2 0x0F 0x01 /0xCA]           s:FRED, t:FRED, w:W|W|W|R|CRCW, m:KERNEL|O64|NOTSX, a:F64
 STAC           nil           Fv                        [         NP 0x0F 0x01 /0xCB]           s:SMAP, t:SMAP, w:W, f:AC=1, m:KERNEL|NOV86
 TDCALL         nil           nil                       [       0x66 0x0F 0x01 /0xCC]           s:TDX, t:TDX, m:KERNEL|VMXNROOT
 SEAMRET        nil           nil                       [       0x66 0x0F 0x01 /0xCD]           s:TDX, t:TDX, f:VMX, m:SEAMR

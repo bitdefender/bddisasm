@@ -87,6 +87,8 @@
 #define ND_CFF_AMXINT8                  ND_CFF(0x00000007, 0x00000000, NDR_EDX, 25)
 #define ND_CFF_AVXVNNI                  ND_CFF(0x00000007, 0x00000001, NDR_EAX, 4)
 #define ND_CFF_AVX512BF16               ND_CFF(0x00000007, 0x00000001, NDR_EAX, 5)
+#define ND_CFF_FRED                     ND_CFF(0x00000007, 0x00000001, NDR_EAX, 17)
+#define ND_CFF_LKGS                     ND_CFF(0x00000007, 0x00000001, NDR_EAX, 18)
 #define ND_CFF_HRESET                   ND_CFF(0x00000007, 0x00000001, NDR_EAX, 22)
 #define ND_CFF_XSAVEOPT                 ND_CFF(0x0000000D, 0x00000001, NDR_EAX, 0)
 #define ND_CFF_XSAVEC                   ND_CFF(0x0000000D, 0x00000001, NDR_EAX, 1)

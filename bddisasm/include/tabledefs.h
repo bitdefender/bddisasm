@@ -319,6 +319,7 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_v2,
     ND_OPS_v3,
     ND_OPS_v4,
+    ND_OPS_v5,
     ND_OPS_v8,
     // 4 + 8 bytes accessed on the shadow stack by the SAVPREVSSP instruction.
     ND_OPS_12,
