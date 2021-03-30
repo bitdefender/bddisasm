@@ -167,6 +167,11 @@ if((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
     endif()
 endif()
 
+# If this is the master project (or if the user requested it) add isagenerator.
+if((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_ISAGENERATOR)
+    add_subdirectory(isagenerator)
+endif()
+
 # If this is the master project add install and package targets.
 if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
     set(BDDISASM_INSTALL_CMAKEDIR
