@@ -115,6 +115,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: ashutoshvarma/setup-ninja@master
     - name: Build all
       run: |
         mkdir build
