@@ -186,7 +186,7 @@ if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
     install(
-        TARGETS bddisasm bdshemu disasmtool
+        TARGETS bddisasm bdshemu
         EXPORT bddisasmTargets
         INCLUDES
         DESTINATION ${BDDISASM_INSTALL_INCLUDE_DIR}
@@ -196,6 +196,12 @@ if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
                 COMPONENT bddisasm_Runtime
                 NAMELINK_COMPONENT bddisasm_Development
         ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT bddisasm_Development)
+    
+    if (BDD_INCLUDE_TOOL)
+        install(
+            TARGETS disasmtool
+            RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT bddisasm_Runtime)
+    endif ()
 
     install(
         EXPORT bddisasmTargets
