@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.12)
 
+option(BDD_INCLUDE_TOOL "Include the disasmtool executable" ON)
+option(BDD_INCLUDE_ISAGENERATOR "Include the isagenerator target (if a python interpreter is found)" ON)
+
 set(BDD_VER_FILE ${CMAKE_CURRENT_LIST_DIR}/inc/version.h)
 
 file(STRINGS ${BDD_VER_FILE} disasm_ver_major REGEX "DISASM_VERSION_MAJOR")
@@ -153,8 +156,8 @@ set_target_properties(
 
 add_library(bddisasm::bdshemu ALIAS bdshemu)
 
-# If this is the master project (or if the user requested it) add disasmtool.
-if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
+# If this is the master project (and if the user requested it) add disasmtool.
+if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) AND BDD_INCLUDE_TOOL)
     if (WIN32)
         add_subdirectory(disasmtool)
     else ()
@@ -162,8 +165,8 @@ if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
     endif ()
 endif ()
 
-# If this is the master project (or if the user requested it) add isagenerator.
-if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_ISAGENERATOR)
+# If this is the master project (and if the user requested it) add isagenerator.
+if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) AND BDD_INCLUDE_ISAGENERATOR)
     add_subdirectory(isagenerator)
 endif ()
 
