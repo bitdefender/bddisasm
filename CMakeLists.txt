@@ -14,23 +14,25 @@ string(REGEX REPLACE "#define DISASM_VERSION_REVISION[ \t\r\n]*" "" disasm_ver_p
 
 message(STATUS "Extracted version from ${BDD_VER_FILE}: ${disasm_ver_major}.${disasm_ver_minor}.${disasm_ver_patch}")
 
-project(bddisasm
+project(
+    bddisasm
     VERSION ${disasm_ver_major}.${disasm_ver_minor}.${disasm_ver_patch}
     DESCRIPTION "Bitdefender x86 instruction decoder and emulator"
     LANGUAGES C
-    HOMEPAGE_URL https://github.com/bitdefender/bddisasm
-)
+    HOMEPAGE_URL https://github.com/bitdefender/bddisasm)
 
 # Use Release as the build type if no build type was specified and we're not using a multi-config generator    .
 if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     message(STATUS "No build type given. Will use 'Release'")
-    set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
+    set(CMAKE_BUILD_TYPE
+        "Release"
+        CACHE STRING "Choose the type of build." FORCE)
     # Set the possible values of build type for cmake-gui.
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
 endif()
 
 # These are shared by bddisasm and bdshemu.
-if (NOT MSVC)
+if(NOT MSVC)
     set(BDDISASM_COMMON_COMPILE_OPTIONS
         "$<$<CONFIG:Release>:-U_FORTIFY_SOURCE>"
         "$<$<CONFIG:Release>:-D_FORTIFY_SOURCE=2>"
@@ -62,11 +64,10 @@ if (NOT MSVC)
         -g3
         -gdwarf-4
         -grecord-gcc-switches
-        -march=westmere
-    )
-else ()
+        -march=westmere)
+else()
     set(BDDISASM_COMMON_COMPILE_OPTIONS /W4 /WX)
-endif ()
+endif()
 
 set(BDDISASM_PUBLIC_HEADERS
     "inc/bddisasm.h"
@@ -75,21 +76,21 @@ set(BDDISASM_PUBLIC_HEADERS
     "inc/disasmstatus.h"
     "inc/disasmtypes.h"
     "inc/registers.h"
-    "inc/version.h"
-)
+    "inc/version.h")
 
 cmake_print_variables(BDDISASM_PUBLIC_HEADERS)
 cmake_print_variables(CMAKE_INSTALL_PREFIX)
 
 include(GNUInstallDirs)
 
-set(BDDISASM_INSTALL_INCLUDE_DIR "${CMAKE_INSTALL_INCLUDEDIR}/bddisasm"
-    CACHE STRING "Path to bddisasm public include files."
-)
+set(BDDISASM_INSTALL_INCLUDE_DIR
+    "${CMAKE_INSTALL_INCLUDEDIR}/bddisasm"
+    CACHE STRING "Path to bddisasm public include files.")
 
 # -- bddisasm --
 
-add_library(bddisasm STATIC
+add_library(
+    bddisasm STATIC
     bddisasm/crt.c
     bddisasm/bddisasm.c
     # Add the headers so they will show up in IDEs.
@@ -102,143 +103,131 @@ add_library(bddisasm STATIC
     bddisasm/include/table_vex.h
     bddisasm/include/table_xop.h
     bddisasm/include/tabledefs.h
-    "${BDDISASM_PUBLIC_HEADERS}"
-)
+    "${BDDISASM_PUBLIC_HEADERS}")
 
-set_target_properties(bddisasm PROPERTIES
-    POSITION_INDEPENDENT_CODE ON
-    C_STANDARD 11
-    VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
-)
+set_target_properties(
+    bddisasm
+    PROPERTIES POSITION_INDEPENDENT_CODE ON
+               C_STANDARD 11
+               VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH})
 
 target_include_directories(bddisasm PRIVATE bddisasm/include)
-target_include_directories(bddisasm PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/inc>
-    $<INSTALL_INTERFACE:${BDDISASM_INSTALL_INCLUDE_DIR}>
-)
+target_include_directories(bddisasm PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/inc>
+                                           $<INSTALL_INTERFACE:${BDDISASM_INSTALL_INCLUDE_DIR}>)
 
 target_compile_options(bddisasm PRIVATE ${BDDISASM_COMMON_COMPILE_OPTIONS})
 
-set_target_properties(bddisasm PROPERTIES
-    PUBLIC_HEADER "${BDDISASM_PUBLIC_HEADERS}"
-    VERSION ${CMAKE_PROJECT_VERSION}
-    SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
-)
+set_target_properties(
+    bddisasm
+    PROPERTIES PUBLIC_HEADER "${BDDISASM_PUBLIC_HEADERS}"
+               VERSION ${CMAKE_PROJECT_VERSION}
+               SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 
 add_library(bddisasm::bddisasm ALIAS bddisasm)
 
 # -- bdshemu --
 
-add_library(bdshemu STATIC
+add_library(
+    bdshemu STATIC
     bdshemu/bdshemu.c
     # Add the headers so they will show up in IDEs.
-    inc/bdshemu.h
-)
+    inc/bdshemu.h)
 
-set_target_properties(bdshemu PROPERTIES
-    POSITION_INDEPENDENT_CODE ON
-    C_STANDARD 11
-    VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}
-)
+set_target_properties(
+    bdshemu
+    PROPERTIES POSITION_INDEPENDENT_CODE ON
+               C_STANDARD 11
+               VERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH})
 
 target_include_directories(bdshemu PRIVATE bddisasm/include)
-target_include_directories(bddisasm PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/inc>
-    $<INSTALL_INTERFACE:${BDDISASM_INSTALL_INCLUDE_DIR}>
-)
+target_include_directories(bddisasm PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/inc>
+                                           $<INSTALL_INTERFACE:${BDDISASM_INSTALL_INCLUDE_DIR}>)
 
 target_link_libraries(bdshemu PUBLIC bddisasm)
 
 target_compile_options(bdshemu PRIVATE ${BDDISASM_COMMON_COMPILE_OPTIONS})
-if (NOT MSVC)
+if(NOT MSVC)
     target_compile_options(bdshemu PRIVATE -maes)
-endif ()
+endif()
 
-set_target_properties(bdshemu PROPERTIES
-    PUBLIC_HEADER "inc/bdshemu.h"
-    VERSION ${CMAKE_PROJECT_VERSION}
-    SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR}
-)
+set_target_properties(
+    bdshemu
+    PROPERTIES PUBLIC_HEADER "inc/bdshemu.h"
+               VERSION ${CMAKE_PROJECT_VERSION}
+               SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 
 add_library(bddisasm::bdshemu ALIAS bdshemu)
 
 # If this is the master project (or if the user requested it) add disasmtool.
-if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
-    if (WIN32)
+if((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
+    if(WIN32)
         add_subdirectory(disasmtool)
-    else ()
+    else()
         add_subdirectory(disasmtool_lix)
-    endif ()
+    endif()
 endif()
 
 # If this is the master project add install and package targets.
-if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
-    set(BDDISASM_INSTALL_CMAKEDIR "${CMAKE_INSTALL_LIBDIR}/cmake/bddisasm"
-        CACHE STRING "Path to bddisasm cmake files."
-    )
+if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+    set(BDDISASM_INSTALL_CMAKEDIR
+        "${CMAKE_INSTALL_LIBDIR}/cmake/bddisasm"
+        CACHE STRING "Path to bddisasm cmake files.")
 
-    set(BDDISASM_INSTALL_PCDIR "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
-        CACHE STRING "Path to bddisasm pkgconfig files."
-    )
+    set(BDDISASM_INSTALL_PCDIR
+        "${CMAKE_INSTALL_LIBDIR}/pkgconfig"
+        CACHE STRING "Path to bddisasm pkgconfig files.")
 
     set(CMAKE_SKIP_BUILD_RPATH TRUE)
     set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
-    install(TARGETS bddisasm bdshemu disasmtool
+    install(
+        TARGETS bddisasm bdshemu disasmtool
         EXPORT bddisasmTargets
         INCLUDES
-            DESTINATION ${BDDISASM_INSTALL_INCLUDE_DIR}
-        PUBLIC_HEADER
-            DESTINATION ${BDDISASM_INSTALL_INCLUDE_DIR}
-            COMPONENT bddisasm_Development
-        RUNTIME
-            DESTINATION ${CMAKE_INSTALL_BINDIR}
-            COMPONENT bddisasm_Runtime
-        LIBRARY
-            DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            COMPONENT bddisasm_Runtime
-            NAMELINK_COMPONENT bddisasm_Development
-        ARCHIVE
-            DESTINATION ${CMAKE_INSTALL_LIBDIR}
-            COMPONENT bddisasm_Development
-    )
+        DESTINATION ${BDDISASM_INSTALL_INCLUDE_DIR}
+        PUBLIC_HEADER DESTINATION ${BDDISASM_INSTALL_INCLUDE_DIR} COMPONENT bddisasm_Development
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT bddisasm_Runtime
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+                COMPONENT bddisasm_Runtime
+                NAMELINK_COMPONENT bddisasm_Development
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT bddisasm_Development)
 
-    install(EXPORT bddisasmTargets
+    install(
+        EXPORT bddisasmTargets
         DESTINATION ${BDDISASM_INSTALL_CMAKEDIR}
         NAMESPACE bddisasm::
         FILE bddisasmTargets.cmake
-        COMPONENT bddisasm_Development
-    )
+        COMPONENT bddisasm_Development)
 
     include(CMakePackageConfigHelpers)
 
-    write_basic_package_version_file("bddisasmConfigVersion.cmake"
+    write_basic_package_version_file(
+        "bddisasmConfigVersion.cmake"
         VERSION ${CMAKE_PROJECT_VERSION}
-        COMPATIBILITY SameMajorVersion
-    )
+        COMPATIBILITY SameMajorVersion)
 
-    install(FILES bddisasmConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/bddisasmConfigVersion.cmake
+    install(
+        FILES bddisasmConfig.cmake ${CMAKE_CURRENT_BINARY_DIR}/bddisasmConfigVersion.cmake
         DESTINATION ${BDDISASM_INSTALL_CMAKEDIR}
-        COMPONENT bddisasm_Development
-    )
+        COMPONENT bddisasm_Development)
 
-    CONFIGURE_FILE("bddisasm.pc.in" "${CMAKE_STATIC_LIBRARY_PREFIX}bddisasm.pc" @ONLY)
+    configure_file("bddisasm.pc.in" "${CMAKE_STATIC_LIBRARY_PREFIX}bddisasm.pc" @ONLY)
 
-    INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}bddisasm.pc"
+    install(
+        FILES "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_STATIC_LIBRARY_PREFIX}bddisasm.pc"
         DESTINATION "${BDDISASM_INSTALL_PCDIR}"
-        COMPONENT bddisasm_Development
-    )
+        COMPONENT bddisasm_Development)
 
     set(CPACK_PACKAGE_VENDOR "Bitdefender")
 
-    if (NOT CPACK_GENERATOR)
-        if (NOT WIN32)
+    if(NOT CPACK_GENERATOR)
+        if(NOT WIN32)
             set(CPACK_GENERATOR "DEB")
-        else ()
+        else()
             set(CPACK_GENERATOR "ZIP")
-        endif ()
+        endif()
     endif()
 
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Bitdefender HVI Team <hvmi-oss@bitdefender.com>")
@@ -247,4 +236,4 @@ if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
     set(CPACK_DEBIAN_PACKAGE_SECTION "devel")
 
     include(CPack)
-endif ()
+endif()
