@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 
 option(BDD_INCLUDE_TOOL "Include the disasmtool executable" ON)
 option(BDD_INCLUDE_ISAGENERATOR "Include the isagenerator target (if a python interpreter is found)" ON)
+option(BDD_USE_EXTERNAL_VSNPRINTF "Expect nd_vsnprintf_s implementation from the integrator" OFF)
+option(BDD_USE_EXTERNAL_MEMSET "Expect nd_memset implementation from the integrator" OFF)
 
 set(BDD_VER_FILE ${CMAKE_CURRENT_LIST_DIR}/inc/version.h)
 
@@ -87,6 +89,9 @@ set(BDDISASM_INSTALL_INCLUDE_DIR
 
 # -- bddisasm --
 
+include(CheckFunctionExists)
+include(CheckSymbolExists)
+
 add_library(
     bddisasm STATIC
     bddisasm/crt.c
@@ -102,6 +107,26 @@ add_library(
     bddisasm/include/table_xop.h
     bddisasm/include/tabledefs.h
     "${BDDISASM_PUBLIC_HEADERS}")
+
+if (NOT BDD_USE_EXTERNAL_VSNPRINTF)
+    check_function_exists(vsnprintf HAS_VSNPRINTF)
+    if (HAS_VSNPRINTF)
+        target_compile_definitions(bddisasm PUBLIC -DBDDISASM_HAS_VSNPRINTF)
+    else ()
+        # See https://cmake.org/Bug/view.php?id=15659
+        check_symbol_exists(vsnprintf stdio.h HAS_VSNPRINTF_SYMBOL)
+        if (HAS_VSNPRINTF_SYMBOL)
+            target_compile_definitions(bddisasm PUBLIC -DBDDISASM_HAS_VSNPRINTF)
+        endif ()
+    endif ()
+endif ()
+
+if (NOT BDD_USE_EXTERNAL_MEMSET)
+    check_function_exists(memset HAS_MEMSET)
+    if (HAS_MEMSET)
+        target_compile_definitions(bddisasm PUBLIC -DBDDISASM_HAS_MEMSET)
+    endif ()
+endif ()
 
 set_target_properties(
     bddisasm

@@ -4,7 +4,6 @@
  */
 #include "include/nd_crt.h"
 
-
 //
 // nd_strcat_s
 //
@@ -42,3 +41,22 @@ nd_strcat_s(
 
     return dst;
 }
+
+#if !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_VSNPRINTF)
+#include <stdio.h>
+
+int nd_vsnprintf_s(char *buffer, size_t sizeOfBuffer, size_t count, const char *format, va_list argptr)
+{
+    UNREFERENCED_PARAMETER(count);
+    return vsnprintf(buffer, sizeOfBuffer, format, argptr);
+}
+#endif // !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_VSNPRINTF)
+
+#if !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_MEMSET)
+#include <string.h>
+
+void *nd_memset(void *s, int c, size_t n)
+{
+    return memset(s, c, n);
+}
+#endif // !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_MEMSET)

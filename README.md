@@ -94,6 +94,10 @@ target_link_libraries(decoder-tool PRIVATE bddisasm::bddisasm)
 target_link_libraries(emulator-tool PRIVATE bddisasm::bdshemu)
 ```
 
+### nd_vsnprintf_s and nd_memset
+
+By default, if `vsnprintf` and `memset` functions are available, the `nd_vsnprintf_s` and `nd_memset` functions are implemented directly by `bddisasm`. To signal this, `BDDISASM_HAS_VSNPRINTF` and `BDDISASM_HAS_MEMSET` will be added to the public compile definitions of `bddisasm`. This can be disabled by configuring CMake with `BDD_USE_EXTERNAL_VSNPRINTF=ON` and `BDD_USE_EXTERNAL_MEMSET=ON`.
+
 #### Using as a sub-project
 
 The project can be consumed as a sub-project, either by adding it as a git submodule, or by using [CMake's FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html):
@@ -127,6 +131,8 @@ To build the project run `make` in the root of the repository. This will build o
 
 To install the project run `make install`. Depending on the install location you may need to run the command as root.
 
+[nd_vsnprintf_s and nd_memset](#nd_vsnprintf_s-and-nd_memset) will not be defined by `bddisasm`, integrators must provide these functions.
+
 ### Using MSBuild on Windows
 
 In order to build the projects on Windows you need:
@@ -145,6 +151,8 @@ For `isagenerator`, Python 3 is needed.
 Building any of the projects is done directly from Visual Studio.
 
 The results will be in the bin directory in the root of the repository.
+
+[nd_vsnprintf_s and nd_memset](#nd_vsnprintf_s-and-nd_memset) will not be defined by `bddisasm`, integrators must provide these functions.
 
 ## Decoding instructions
 
