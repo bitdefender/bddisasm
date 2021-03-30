@@ -55,7 +55,7 @@ jobs:
     - name: Install
       run: |
         cd build
-        make install
+        sudo make install
         cd -
     - name: Install setuptools
       run: |
@@ -70,7 +70,7 @@ jobs:
       if: ${{ github.event_name == 'release' }}
       run: |
         cd build
-        make package
+        sudo make package
         cd -
     - name: Release
       if: ${{ github.event_name == 'release' }}
