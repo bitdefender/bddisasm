@@ -3,27 +3,27 @@ cmake_minimum_required(VERSION 3.16)
 project(disasmtool LANGUAGES C)
 
 # Use Release as the build type if no build type was specified and we're not using a multi-config generator    .
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     message(STATUS "No build type given. Will use 'Release'")
     set(CMAKE_BUILD_TYPE
         "Release"
         CACHE STRING "Choose the type of build." FORCE)
     # Set the possible values of build type for cmake-gui.
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
-endif()
+endif ()
 
 add_executable(disasmtool disasmtool.c)
 target_link_libraries(disasmtool PRIVATE bddisasm::bddisasm bddisasm::bdshemu)
 
-if("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     include(CheckIPOSupported)
     check_ipo_supported(RESULT USE_IPO)
-    if(USE_IPO)
+    if (USE_IPO)
         set_target_properties(bddisasm PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
-    endif()
-endif()
+    endif ()
+endif ()
 
-if(NOT MSVC)
+if (NOT MSVC)
     target_compile_options(
         disasmtool
         PRIVATE -Wall
@@ -55,6 +55,6 @@ if(NOT MSVC)
                 -gdwarf-4
                 -grecord-gcc-switches
                 -march=westmere)
-else()
+else ()
     target_compile_options(disasmtool PRIVATE /W4 /WX)
-endif()
+endif ()

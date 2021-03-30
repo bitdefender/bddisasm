@@ -3,14 +3,14 @@ cmake_minimum_required(VERSION 3.12)
 project(disasmtool LANGUAGES CXX)
 
 # Use Release as the build type if no build type was specified and we're not using a multi-config generator    .
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     message(STATUS "No build type given. Will use 'Release'")
     set(CMAKE_BUILD_TYPE
         "Release"
         CACHE STRING "Choose the type of build." FORCE)
     # Set the possible values of build type for cmake-gui.
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
-endif()
+endif ()
 
 add_executable(disasmtool disasmtool.cpp dumpers.cpp)
 
@@ -43,20 +43,20 @@ target_compile_options(
 find_package(RapidJSON QUIET)
 
 target_link_libraries(disasmtool PRIVATE bddisasm::bddisasm bddisasm::bdshemu)
-if(RapidJSON_FOUND)
+if (RapidJSON_FOUND)
     # :( https://github.com/satishbabariya/modern-cmake#good-boys-export-their-targets
     target_include_directories(disasmtool PRIVATE ${RapidJSON_INCLUDE_DIRS})
     target_sources(disasmtool PRIVATE rapidjson.cpp)
     target_compile_definitions(disasmtool PRIVATE HAS_RAPIDJSON)
-endif()
+endif ()
 
-if("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     include(CheckIPOSupported)
     check_ipo_supported(RESULT USE_IPO)
-    if(USE_IPO)
+    if (USE_IPO)
         set_target_properties(bddisasm PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
-    endif()
-endif()
+    endif ()
+endif ()
 
 set_target_properties(
     disasmtool

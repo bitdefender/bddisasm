@@ -22,17 +22,17 @@ project(
     HOMEPAGE_URL https://github.com/bitdefender/bddisasm)
 
 # Use Release as the build type if no build type was specified and we're not using a multi-config generator    .
-if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     message(STATUS "No build type given. Will use 'Release'")
     set(CMAKE_BUILD_TYPE
         "Release"
         CACHE STRING "Choose the type of build." FORCE)
     # Set the possible values of build type for cmake-gui.
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
-endif()
+endif ()
 
 # These are shared by bddisasm and bdshemu.
-if(NOT MSVC)
+if (NOT MSVC)
     set(BDDISASM_COMMON_COMPILE_OPTIONS
         "$<$<CONFIG:Release>:-U_FORTIFY_SOURCE>"
         "$<$<CONFIG:Release>:-D_FORTIFY_SOURCE=2>"
@@ -65,9 +65,9 @@ if(NOT MSVC)
         -gdwarf-4
         -grecord-gcc-switches
         -march=westmere)
-else()
+else ()
     set(BDDISASM_COMMON_COMPILE_OPTIONS /W4 /WX)
-endif()
+endif ()
 
 set(BDDISASM_PUBLIC_HEADERS
     "inc/bddisasm.h"
@@ -146,9 +146,9 @@ target_include_directories(bddisasm PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOU
 target_link_libraries(bdshemu PUBLIC bddisasm)
 
 target_compile_options(bdshemu PRIVATE ${BDDISASM_COMMON_COMPILE_OPTIONS})
-if(NOT MSVC)
+if (NOT MSVC)
     target_compile_options(bdshemu PRIVATE -maes)
-endif()
+endif ()
 
 set_target_properties(
     bdshemu
@@ -159,21 +159,21 @@ set_target_properties(
 add_library(bddisasm::bdshemu ALIAS bdshemu)
 
 # If this is the master project (or if the user requested it) add disasmtool.
-if((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
-    if(WIN32)
+if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_TOOL)
+    if (WIN32)
         add_subdirectory(disasmtool)
-    else()
+    else ()
         add_subdirectory(disasmtool_lix)
-    endif()
-endif()
+    endif ()
+endif ()
 
 # If this is the master project (or if the user requested it) add isagenerator.
-if((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_ISAGENERATOR)
+if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) OR BDD_INCLUDE_ISAGENERATOR)
     add_subdirectory(isagenerator)
-endif()
+endif ()
 
 # If this is the master project add install and package targets.
-if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
     set(BDDISASM_INSTALL_CMAKEDIR
         "${CMAKE_INSTALL_LIBDIR}/cmake/bddisasm"
         CACHE STRING "Path to bddisasm cmake files.")
@@ -227,13 +227,13 @@ if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
 
     set(CPACK_PACKAGE_VENDOR "Bitdefender")
 
-    if(NOT CPACK_GENERATOR)
-        if(NOT WIN32)
+    if (NOT CPACK_GENERATOR)
+        if (NOT WIN32)
             set(CPACK_GENERATOR "DEB")
-        else()
+        else ()
             set(CPACK_GENERATOR "ZIP")
-        endif()
-    endif()
+        endif ()
+    endif ()
 
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Bitdefender HVI Team <hvmi-oss@bitdefender.com>")
     set(CPACK_DEBIAN_PACKAGE_DEPENDS "")
@@ -241,4 +241,4 @@ if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
     set(CPACK_DEBIAN_PACKAGE_SECTION "devel")
 
     include(CPack)
-endif()
+endif ()
