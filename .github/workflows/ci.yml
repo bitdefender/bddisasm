@@ -120,7 +120,7 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake .. -G Ninja
+        cmake .. -G Ninja -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl
         ninja
         cd -
 
