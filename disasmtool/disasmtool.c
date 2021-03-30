@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <time.h>
+#include <Intrin.h>
 
 typedef uint64_t    QWORD, *PQWORD;
 
