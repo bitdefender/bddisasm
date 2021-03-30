@@ -38,7 +38,7 @@ Prerequesites:
 - CMake 3.16 or newer (older version may work, but they have not been tested)
 - Ninja (optional, but recommended, especially on Windows)
 
-The build process was tested with GCC and Clang on Linux and MSVC on Windows. Note that the Windows kernel build target is available only when using [MSBuild](#-Using-MSBuild-on-Windows).
+The build process was tested with GCC and Clang on Linux and MSVC on Windows. Note that the Windows kernel build target is available only when using [MSBuild](#Using-MSBuild-on-Windows).
 
 To build the project run:
 
@@ -120,10 +120,6 @@ add_subdirectory(external/bddisasm)
 In both cases the `bddisasm::bddisasm` and `bddisasm::bdshemu` targets will be provided.
 
 When used as a sub-project the `disasmtool`, `isagenerator`, and `install` targets are not available.
-
-#### Packaging
-
-`CPack` is used to generate packages. Simply run the `package` target to generate a package. By default, on Linux the package will be a `.deb` file, and on Windows a `.zip` file. This can be changed by setting `CPACK_GENERATOR` when configurin CMake.
 
 ### Using Make on Linux
 
