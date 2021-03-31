@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.16)
 
 option(BDD_INCLUDE_TOOL "Include the disasmtool executable" ON)
 option(BDD_INCLUDE_ISAGENERATOR "Include the isagenerator target (if a python interpreter is found)" ON)
