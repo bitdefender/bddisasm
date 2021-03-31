@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <time.h>
+#include <Intrin.h>
 
 typedef uint64_t    QWORD, *PQWORD;
 
@@ -61,6 +62,7 @@ char *gSpaces[16] =
 };
 
 
+#if !defined(BDDISASM_HAS_VSNPRINTF)
 //
 // nd_vsnprintf
 //
@@ -74,12 +76,14 @@ int nd_vsnprintf_s(
 {
     return _vsnprintf_s(buffer, sizeOfBuffer, count, format, argptr);
 }
+#endif // !defined(BDDISASM_HAS_VSNPRINTF)
 
+#if !defined(BDDISASM_HAS_MEMSET)
 void* nd_memset(void *s, int c, size_t n)
 {
     return memset(s, c, n);
 }
-
+#endif // !defined(BDDISASM_HAS_MEMSET)
 
 //
 // set_to_string

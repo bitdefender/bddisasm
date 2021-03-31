@@ -29,81 +29,145 @@ The main objectives of this disassembler are:
 
 ## Build and install
 
-### Windows
+### Using CMake
+
+This is the recommended way of using the library.
+
+Prerequesites:
+
+- CMake 3.16 or newer (older version may work, but they have not been tested)
+- Ninja (optional, but recommended, especially on Windows)
+
+The build process was tested with GCC and Clang on Linux and MSVC on Windows. Note that the Windows kernel build target is available only when using [MSBuild](#Using-MSBuild-on-Windows).
+
+To build the project run:
+
+```console
+mkdir build
+cmake -B build .
+cmake --build build
+```
+
+This will build `bddisasm`, `bdshemu`, and `disasmtool`. For skipping the `disasmtool` build configure CMake with `BDD_INCLUDE_TOOL=OFF`:
+
+```console
+mkdir build
+cmake -B build . -DBDD_INCLUDE_TOOL=OFF
+```
+
+To install the project use:
+
+```console
+cmake --build build --target install
+```
+
+This will install the `bddisasm` and `bdshemu` static libraries and their public headers. If `disasmtool` was built it will also be installed. Depending on the install location you may need to run the command as root.
+
+Optionally, if a python 3 interpreter is found the instruction tables can be regenerated with:
+
+```console
+cmake --build build --target isagenerator
+```
+
+To disable the `isagenerator` target configure CMake with `BDD_INCLUDE_ISAGENERATOR=OFF`.
+
+Once installed, CMake projects can use `find_package` to find the library:
+
+```cmake
+find_package(bddisasm REQUIRED)
+```
+
+Two targets are provided:
+
+- `bddisasm::bddisasm` - this should be used for targets that need only the decoder, without the shell code emulator
+- `bddisasm::bdshemu` - this should be used for targets that need the shell code emulator (note that it will pull in `bddisasm::bddisasm` automatically)
+
+There is no need to manually set include or link directories, simply use `target_link_libraries` with the needed target, for example:
+
+```cmake
+find_package(bddisasm REQUIRED)
+
+# decoder-tool needs only the decoder library
+target_link_libraries(decoder-tool PRIVATE bddisasm::bddisasm)
+
+# emulator-tool needs bdshemu
+target_link_libraries(emulator-tool PRIVATE bddisasm::bdshemu)
+```
+
+### nd_vsnprintf_s and nd_memset
+
+By default, if `vsnprintf` and `memset` functions are available, the `nd_vsnprintf_s` and `nd_memset` functions are implemented directly by `bddisasm`. To signal this, `BDDISASM_HAS_VSNPRINTF` and `BDDISASM_HAS_MEMSET` will be added to the public compile definitions of `bddisasm`. This can be disabled by configuring CMake with `BDD_USE_EXTERNAL_VSNPRINTF=ON` and `BDD_USE_EXTERNAL_MEMSET=ON`.
+
+#### Using as a sub-project
+
+The project can be consumed as a sub-project, either by adding it as a git submodule, or by using [CMake's FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html):
+
+With `FetchContent`:
+
+```cmake
+FetchContent_Declare(
+    bddisasm
+    GIT_REPOSITORY https://github.com/bddisasm/bddisasm
+    GIT_TAG origin/master
+)
+
+FetchContent_MakeAvailable(bddisasm)
+```
+
+As a git submodule:
+
+```cmake
+# Assuming the submodule is checked out at external/bddisasm
+add_subdirectory(external/bddisasm)
+```
+
+In both cases the `bddisasm::bddisasm` and `bddisasm::bdshemu` targets will be provided.
+
+When used as a sub-project the `disasmtool`, `isagenerator`, and `install` targets are not available.
+
+### Using Make on Linux
+
+To build the project run `make` in the root of the repository. This will build only the `bddisasm` and `bdshemu` static libraries, without `disasmtool`.
+
+To install the project run `make install`. Depending on the install location you may need to run the command as root.
+
+[nd_vsnprintf_s and nd_memset](#nd_vsnprintf_s-and-nd_memset) will not be defined by `bddisasm`, integrators must provide these functions.
+
+### Using MSBuild on Windows
 
 In order to build the projects on Windows you need:
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) with the Desktop development with C++ workload.
-* [Windows SDK 10.0.18362.0](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/).
-* [Python 3.7 or newer](https://www.python.org/downloads/release/python-373/)
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) with the Desktop development with C++ workload.
+- [Windows SDK 10.0.18362.0](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/).
+- [Python 3.7 or newer](https://www.python.org/downloads/release/python-373/) (optional)
 
-When you first open the solution Visual Studio should prompt you to install any missing components.
-This should be enough to build bddisasm, disasmtool and bdshemu for the Debug and Release configurations.
+When you first open `bddisasm.sln` in Visual Studio should prompt you to install any missing components.
+This should be enough to build `bddisasm`, `bdshemu`, and `disasmtool`.
 
 For the DebugKernel and ReleaseKernel configurations, [WDK 1903](https://go.microsoft.com/fwlink/?linkid=2085767) is needed, alongside the Windows Driver Kit Visual Studio extension (the WDK installer should take care of this).
 
-For isagenerator, Python 3 is needed.
+For `isagenerator`, Python 3 is needed.
 
 Building any of the projects is done directly from Visual Studio.
 
 The results will be in the bin directory in the root of the repository.
 
-### Linux
-
-In order to build the projects on Linux you need:
-
-* gcc
-* make
-* cmake 3.12 or newer (optional)
-
-#### Building and installing with make
-
-In order to build bddisasm and bdshemu run `make` in the root of the repository. The results will be placed in the bin directory.
-
-In order to install bddisasm and bdshemu run `make install`.
-
-#### Building and installing with cmake
-
-```console
-mkdir build
-cd build
-
-cmake ..
-
-make
-make install
-```
-
-The default build type is Release. Using cmake provides support for pkg-config. Other CMake projects can also use `find_package(bddisasm CONFIG REQUIRED)` to find bddisasm. In both cases the following variables will be defined:
-
-* `BDDISASM_INCLUDE_DIRS` - holds the path of the `bddisasm` directory, which contains the public `bddisasm` and `bdshemu` headers.
-* `BDDISASM_LIBRARY_DIRS` - holds the path of the directory that contains the `libbddisasm.a` and `libbdshemu.a` libraries.
-* `BDDISASM_LIBRARIES` - holds the libraries against which integrators should link.
-
-### Building disasmtool_lix
-
-For disasmtool_lix you also need:
-
-* g++
-* cmake 3.12 or newer
-* [RapidJSON](https://github.com/Tencent/rapidjson/)
-
-In order to build disasmtool_lix go to the disasmtool_lix directory and run `make`. The results will be in the bin directory in the disasmtool_lix/build directory.
+[nd_vsnprintf_s and nd_memset](#nd_vsnprintf_s-and-nd_memset) will not be defined by `bddisasm`, integrators must provide these functions.
 
 ## Decoding instructions
 
 ### Decoding API
 
 There are 4 decoding functions, but internally, they all do the same, albeit some of them with implicit arguments:
-* `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer; 
-* `NDSTATUS NdDecodeEx(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData);` - decode instruction from a buffer with maximum length `Size`;
-* `NDSTATUS NdDecodeEx2(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData, uint8_t DefStack, uint8_t PreferedVendor);` - decode instructions with a preferred vendor;
-* `NDSTATUS NdDecodeWithContext(INSTRUX *Instrux, const uint8_t *Code, size_t Size, ND_CONTEXT *Context);` - base decode API; the input parameters - `DefCode`, `DefData`, `DefStack`, `VendMode` and `FeatMode` must all be filled in the `Context` structure before calling this function. The Context structure should also be initialized using `NdInitContext` before the first decode call.
+
+- `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer; 
+- `NDSTATUS NdDecodeEx(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData);` - decode instruction from a buffer with maximum length `Size`;
+- `NDSTATUS NdDecodeEx2(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData, uint8_t DefStack, uint8_t PreferedVendor);` - decode instructions with a preferred vendor;
+- `NDSTATUS NdDecodeWithContext(INSTRUX *Instrux, const uint8_t *Code, size_t Size, ND_CONTEXT *Context);` - base decode API; the input parameters - `DefCode`, `DefData`, `DefStack`, `VendMode` and `FeatMode` must all be filled in the `Context` structure before calling this function. The Context structure should also be initialized using `NdInitContext` before the first decode call.
 
 Note that by default, the default vendor `ND_VEND_ANY` is used for decoding (which means that bddisasm will try to decode as much as possible). Also, the default features mask is `ND_FEAT_ALL`, meaning that bddisasm will optimistically try to decode instructions which are mapped onto the wide NOP space as well (for example, MPX or CET). If these parameters must be changed, it is advised to use the `NdDecodeWithContext` API.
 
 Converting decoded instructions to textual disassembly must be done using the `NdToText` API. bddisasm only supports Intel, masm-style syntax.
-
 
 ### Example
 
@@ -201,6 +265,7 @@ int main()
 ```
 
 Working with the extended API is also trivial:
+
 ```c
     INSTRUX ix;
     ND_CONTEXT ctx;

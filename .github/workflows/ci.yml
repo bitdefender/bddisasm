@@ -38,24 +38,24 @@ jobs:
     - name: Build dependencies
       run: |
         cd rapidjson
-        mkdir _build
-        cd _build
+        mkdir build
+        cd build
         cmake ..
         make -j$(nproc)
         sudo make install
         cd ..
         cd ..
-    - name: Build bddisasm and bdshemu
+    - name: Build all
       run: |
         mkdir build
         cd build
-        cmake .. -DINCLUDE_TOOL=y -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
-        make bddisasm bdshemu -j$(nproc)
+        cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+        make -j$(nproc)
         cd -
-    - name: Build disasmtool_lix
+    - name: Install
       run: |
         cd build
-        make disasmtool -j$(nproc)
+        sudo make install
         cd -
     - name: Install setuptools
       run: |
@@ -63,15 +63,14 @@ jobs:
         python3 -m pip install setuptools
     - name: Build pybddisasm
       run: |
-        sudo make install
         cd pybddisasm
         python3 setup.py build
-        cd ..
+        cd -
     - name: Create package
       if: ${{ github.event_name == 'release' }}
       run: |
         cd build
-        make package
+        sudo make package
         cd -
     - name: Release
       if: ${{ github.event_name == 'release' }}
@@ -80,7 +79,7 @@ jobs:
         files: 'build/*.deb'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-  Windows-build:
+  Windows-msbuild:
 
     runs-on: windows-latest
 
@@ -88,7 +87,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
-    - name: Build bddisasm and bdshemu for x64
+    - name: Build all
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
@@ -109,7 +108,24 @@ jobs:
       with:
         files: 'x64-windows-release.zip;x86-windows-release.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-      
+        
+  Windows-cmake-build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+    - uses: ilammy/msvc-dev-cmd@v1
+    - uses: seanmiddleditch/gha-setup-ninja@master
+    - name: Build all
+      run: |
+        mkdir build
+        cd build
+        cmake .. -G Ninja -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl
+        ninja
+        cd -
 
   Code-checks:
 
