@@ -17,6 +17,7 @@
 #define UNREFERENCED_PARAMETER(P) ((void)(P))
 #endif
 
+#ifndef BDDISASM_NO_FORMAT
 
 static const char *gReg8Bit[] =
 {
@@ -131,6 +132,9 @@ static const char *gEmbeddedRounding[] =
 {
     "rn", "rd", "ru", "rz",
 };
+
+#endif // !BDDISASM_NO_FORMAT 
+
 
 static const uint16_t gOperandMap[] =
 {

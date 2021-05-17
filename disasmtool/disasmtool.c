@@ -39,6 +39,7 @@ typedef struct _DISASM_OPTIONS
     char        *FileName;      // Input file, if any.
     size_t      ShemuRegs[NDR_R15 + 1];
     BOOLEAN     UseShemuRegs;
+    BOOLEAN     BypassSelfWrites; // If true, shemu emulation will ignore self-modifications made by the shellcode.
 } DISASM_OPTIONS, *PDISASM_OPTIONS;
 
 char *gSpaces[16] = 
@@ -743,7 +744,7 @@ print_instruction(
         if (Instrux->HasEvex)
         {
             printf("        EVEX Tuple Type: %s\n", 
-                tuple_to_string(Instrux->TupleType));
+                tuple_to_string((ND_TUPLE)Instrux->TupleType));
         }
 
         if (Instrux->ExceptionClass != ND_EXC_None)
@@ -760,7 +761,7 @@ print_instruction(
                 printf("exception type: %d\n", Instrux->ExceptionType);
                 break;
             case ND_EXC_EVEX:
-                printf("exception type: %s\n", exception_evex_to_string(Instrux->ExceptionType));
+                printf("exception type: %s\n", exception_evex_to_string((ND_EX_TYPE_EVEX)Instrux->ExceptionType));
                 break;
             case ND_EXC_OPMASK:
                 printf("exception type: K%d\n", Instrux->ExceptionType + 19);
@@ -1517,7 +1518,7 @@ handle_shemu(
     shellSize = fsize + 0x100;
 
     // Allocate the shellcode, stack, shell bitmap and stack bitmaps.
-    ctx.Shellcode = malloc(shellSize);
+    ctx.Shellcode = (uint8_t *)malloc(shellSize);
     if (NULL == ctx.Shellcode)
     {
         printf("Memory error: couldn't allocated %zu bytes!\n", fsize);
@@ -1527,7 +1528,7 @@ handle_shemu(
 
 #define STACK_SIZE 0x2000
 
-    ctx.Stack = malloc(STACK_SIZE);
+    ctx.Stack = (uint8_t *)malloc(STACK_SIZE);
     if (NULL == ctx.Stack)
     {
         printf("Memory error: couldn't allocated %zu bytes!\n", fsize);
@@ -1535,7 +1536,7 @@ handle_shemu(
         return;
     }
 
-    ctx.Intbuf = malloc(shellSize + STACK_SIZE);
+    ctx.Intbuf = (uint8_t *)malloc(shellSize + STACK_SIZE);
     if (NULL == ctx.Intbuf)
     {
         printf("Memory error: couldn't allocated %zu bytes!\n", fsize);
@@ -1578,7 +1579,7 @@ handle_shemu(
     ctx.Flags = 0;
     ctx.Options = SHEMU_OPT_TRACE_EMULATION;
     ctx.Log = &ShemuLog;
-    ctx.AccessMemory = &ShemuAccessMem;
+    ctx.AccessMemory = (ShemuMemAccess)&ShemuAccessMem;
 
     // Configurable thresholds.
     ctx.NopThreshold = SHEMU_DEFAULT_NOP_THRESHOLD;
@@ -1594,6 +1595,11 @@ handle_shemu(
     if (!!(regs[2] & (1UL << 25)))
     {
         ctx.Options |= SHEMU_OPT_SUPPORT_AES;
+    }
+
+    if (Options->BypassSelfWrites)
+    {
+        ctx.Options |= SHEMU_OPT_BYPASS_SELF_WRITES;
     }
 
     if (Options->UseShemuRegs)
@@ -1694,6 +1700,7 @@ int main(
     SIZE_T rip;
     char text[ND_MIN_BUF_SIZE], *fname, *target, *shemuCtxFname;
     BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, feat, search, isShemu, isShemuCtxf, isKernel, bitfields;
+    BYTE bypassw;
     INT ret, i;
     BYTE hexbuf[256], *buffer;
     DISASM_OPTIONS options;
@@ -1723,6 +1730,7 @@ int main(
     isShemuCtxf = 0;
     isKernel = 0;
     bitfields = 0;
+    bypassw = 0;
 
     if (NULL == argv)
     {
@@ -1757,6 +1765,7 @@ int main(
         printf("        -regname regval specify registers to be set for the shemu context. Ignored if shemu is not used\n");
         printf("            Examples of valid command line register naming: \"RegRax\" ; \"rax\" ; \"reg_rax\"\n");
         printf("        -k               specify kernel mode for shemu emulation. Ignore if shemu is not specified.\n");
+        printf("        -bw              bypass self-modifications for shemu emulation.\n");
         printf("        -hl              highlight instruction parts:\n");
         printf("        -bits            display the instruction bit fields");
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
@@ -1846,6 +1855,10 @@ int main(
         else if (argv[i][0] == '-' && argv[i][1] == 'k' && argv[i][2] == 0)
         {
             isKernel = 1;
+        }
+        else if (argv[i][0] == '-' && argv[i][1] == 'b' && argv[i][2] == 'w' && argv[i][3] == 0)
+        {
+            bypassw = 1;
         }
         else if (0 == strcmp(argv[i], "-b16"))
         {
@@ -1988,7 +2001,7 @@ int main(
         }
 
         // Map the file.
-        buffer = MapViewOfFile(hMapping, FILE_MAP_ALL_ACCESS, 0, 0, 0);
+        buffer = (BYTE *)MapViewOfFile(hMapping, FILE_MAP_ALL_ACCESS, 0, 0, 0);
         if (NULL == buffer)
         {
             printf("Couldn't map the view for '%s': 0x%08x\n", argv[1], GetLastError());
@@ -2051,6 +2064,7 @@ int main(
     options.Vendor = vend;
     options.Feature = feat;
     options.Rip = rip;
+    options.BypassSelfWrites = bypassw;
 
     if (isShemu)
     {

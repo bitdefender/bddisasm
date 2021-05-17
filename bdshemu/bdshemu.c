@@ -10,7 +10,12 @@
 #include "nd_crt.h"
 #include "bddisasm.h"
 #include "bdshemu.h"
+
+#ifdef __clang__
+#include <wmmintrin.h>
+#else
 #include <immintrin.h>
+#endif // __clang__
 
 //
 // A generic emulator value.

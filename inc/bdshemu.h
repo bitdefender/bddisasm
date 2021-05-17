@@ -278,6 +278,10 @@ typedef unsigned int SHEMU_STATUS;
 #define SHEMU_INTERNAL_BUFFER_SIZE(ctx)         ((ctx)->ShellcodeSize + (ctx)->StackSize)
 
 
+#ifdef __cplusplus 
+extern "C" {
+#endif
+
 //
 // API
 //
@@ -286,5 +290,8 @@ ShemuEmulate(
     SHEMU_CONTEXT *Context
     );
 
+#ifdef __cplusplus 
+}
+#endif
 
 #endif // BDSHEMU_H

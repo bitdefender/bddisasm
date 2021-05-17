@@ -1449,6 +1449,10 @@ typedef struct _ND_CONTEXT
 } ND_CONTEXT;
 
 
+#ifdef __cplusplus 
+extern "C" {
+#endif
+
 //
 // Returns the bddisasm version.
 //
@@ -1558,6 +1562,10 @@ void
 NdInitContext(
     ND_CONTEXT *Context
     );
+
+#ifdef __cplusplus 
+}
+#endif
 
 // #pragma warning(default: 4214) // Bitfield in type other than int.
 // #pragma warning(default: 4201) // Nonstandard extension used: nameless struct/union.
