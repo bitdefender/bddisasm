@@ -12,7 +12,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  4, Encoding: D
-        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  CW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000006 0f01d6                          XTEST

@@ -7569,7 +7569,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7586,7 +7586,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7603,7 +7603,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7620,7 +7620,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7638,7 +7638,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_GPR_rCX, ND_OPS_asz, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
         },
     }, 
 
@@ -7655,7 +7655,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_GPR_rCX, ND_OPS_asz, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
         },
     }, 
 
@@ -7671,7 +7671,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7688,7 +7688,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7705,7 +7705,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7722,7 +7722,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7853,7 +7853,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7870,7 +7870,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7887,7 +7887,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7904,7 +7904,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7921,7 +7921,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7938,7 +7938,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7955,7 +7955,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7972,7 +7972,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -7989,7 +7989,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8006,7 +8006,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8023,7 +8023,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8040,7 +8040,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8057,7 +8057,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8074,7 +8074,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8091,7 +8091,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8108,7 +8108,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8125,7 +8125,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8142,7 +8142,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8159,7 +8159,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8176,7 +8176,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8194,7 +8194,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_GPR_rCX, ND_OPS_asz, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
         },
     }, 
 
@@ -8210,7 +8210,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8227,7 +8227,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8244,7 +8244,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -8261,7 +8261,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -9914,7 +9914,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_GPR_rCX, ND_OPS_asz, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -9932,7 +9932,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_GPR_rCX, ND_OPS_asz, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -9950,7 +9950,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         {
             OP(ND_OPT_J, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_GPR_rCX, ND_OPS_asz, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_CRCW, 0, 0), 
             OP(ND_OPT_F, ND_OPS_v, ND_OPF_DEFAULT, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42827,7 +42827,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         {
             OP(ND_OPT_J, ND_OPS_z, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_RIP, ND_OPS_yf, ND_OPF_DEFAULT, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_RIP, ND_OPS_yf, ND_OPF_DEFAULT, ND_OPA_RCW, 0, 0), 
             OP(ND_OPT_GPR_rAX, ND_OPS_d, ND_OPF_DEFAULT, ND_OPA_CW, 0, 0), 
         },
     }, 

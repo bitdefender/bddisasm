@@ -15,7 +15,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000003 5e                              POP       rsi
@@ -96,7 +96,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000010 5e                              POP       rsi
@@ -177,7 +177,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 000000000000001D 5e                              POP       rsi
@@ -297,7 +297,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 000000000000002A 5e                              POP       rsi
@@ -378,7 +378,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000037 4b009090909090                  ADD       byte ptr [r8-0x6f6f6f70], dl
@@ -456,7 +456,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000044 4b009090909090                  ADD       byte ptr [r8-0x6f6f6f70], dl
@@ -534,7 +534,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000051 4b009090909090                  ADD       byte ptr [r8-0x6f6f6f70], dl
@@ -612,7 +612,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 000000000000005E 49009090909090                  ADD       byte ptr [r8-0x6f6f6f70], dl
@@ -690,7 +690,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 000000000000006B 49009090909090                  ADD       byte ptr [r8-0x6f6f6f70], dl
@@ -768,7 +768,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000078 4b0400                          ADD       al, 0x00
@@ -910,7 +910,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000086 4b0400                          ADD       al, 0x00
@@ -1052,7 +1052,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 0000000000000094 4b0400                          ADD       al, 0x00
@@ -1194,7 +1194,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 00000000000000A2 4b8400                          TEST      byte ptr [r8], al
@@ -1375,7 +1375,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 00000000000000B4 4b8400                          TEST      byte ptr [r8], al
@@ -1556,7 +1556,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 00000000000000C6 4b8400                          TEST      byte ptr [r8], al
@@ -1737,7 +1737,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 00000000000000D8 49c0909090909090                RCL       byte ptr [r8-0x6f6f6f70], 0x90
@@ -1802,7 +1802,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 00000000000000E5 49c0909090909090                RCL       byte ptr [r8-0x6f6f6f70], 0x90
@@ -1867,7 +1867,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  8, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
 00000000000000F2 49f8                            CLC

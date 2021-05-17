@@ -263,6 +263,10 @@ typedef unsigned int SHEMU_STATUS;
 //
 #define SHEMU_OPT_TRACE_EMULATION               0x00000001  // Trace each emulated instruction.
 #define SHEMU_OPT_STOP_ON_EXPLOIT               0x00000002  // When shellcode indications are confirmed, stop emulation.
+#define SHEMU_OPT_BYPASS_SELF_WRITES            0x00000004  // When a shellcode self-modifies, the modification will
+                                                            // not be committed. Use this when emulating an already
+                                                            // decoded shellcode, where emulating the decryption again
+                                                            // will in fact scramble the shellcode and make it useless.
 #define SHEMU_OPT_SUPPORT_AES                   0x00010000  // Indicates that AES instructions are supported, and 
                                                             // therefore, the AES intrinsics can be used to emulate
                                                             // AES decryption.

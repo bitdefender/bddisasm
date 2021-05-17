@@ -428,22 +428,22 @@ RSTS           Ms            nil                       [      cyrix 0x0F 0x7D /r
 SMINT          nil           nil                       [      cyrix 0x0F 0x7E]                 s:CYRIX_SMM, t:SEGOP
 
 # 0x80 - 0x8F
-JO             Jz            rIP,Fv                    [            0x0F 0x80 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CO,    a:F64|COND, p:BND|BH
-JNO            Jz            rIP,Fv                    [            0x0F 0x81 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNO,   a:F64|COND, p:BND|BH
-JC             Jz            rIP,Fv                    [            0x0F 0x82 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CC,    a:F64|COND, p:BND|BH
-JNC            Jz            rIP,Fv                    [            0x0F 0x83 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNC,   a:F64|COND, p:BND|BH
-JZ             Jz            rIP,Fv                    [            0x0F 0x84 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CZ,    a:F64|COND, p:BND|BH
-JNZ            Jz            rIP,Fv                    [            0x0F 0x85 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNZ,   a:F64|COND, p:BND|BH
-JBE            Jz            rIP,Fv                    [            0x0F 0x86 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CBE,   a:F64|COND, p:BND|BH
-JNBE           Jz            rIP,Fv                    [            0x0F 0x87 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNBE,  a:F64|COND, p:BND|BH
-JS             Jz            rIP,Fv                    [            0x0F 0x88 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CS,    a:F64|COND, p:BND|BH
-JNS            Jz            rIP,Fv                    [            0x0F 0x89 cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNS,   a:F64|COND, p:BND|BH
-JP             Jz            rIP,Fv                    [            0x0F 0x8A cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CP,    a:F64|COND, p:BND|BH
-JNP            Jz            rIP,Fv                    [            0x0F 0x8B cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNP,   a:F64|COND, p:BND|BH
-JL             Jz            rIP,Fv                    [            0x0F 0x8C cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CL,    a:F64|COND, p:BND|BH
-JNL            Jz            rIP,Fv                    [            0x0F 0x8D cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNL,   a:F64|COND, p:BND|BH
-JLE            Jz            rIP,Fv                    [            0x0F 0x8E cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CLE,   a:F64|COND, p:BND|BH
-JNLE           Jz            rIP,Fv                    [            0x0F 0x8F cz]              s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNLE,  a:F64|COND, p:BND|BH
+JO             Jz            rIP,Fv                    [            0x0F 0x80 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CO,    a:F64|COND, p:BND|BH
+JNO            Jz            rIP,Fv                    [            0x0F 0x81 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNO,   a:F64|COND, p:BND|BH
+JC             Jz            rIP,Fv                    [            0x0F 0x82 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CC,    a:F64|COND, p:BND|BH
+JNC            Jz            rIP,Fv                    [            0x0F 0x83 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNC,   a:F64|COND, p:BND|BH
+JZ             Jz            rIP,Fv                    [            0x0F 0x84 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CZ,    a:F64|COND, p:BND|BH
+JNZ            Jz            rIP,Fv                    [            0x0F 0x85 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNZ,   a:F64|COND, p:BND|BH
+JBE            Jz            rIP,Fv                    [            0x0F 0x86 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CBE,   a:F64|COND, p:BND|BH
+JNBE           Jz            rIP,Fv                    [            0x0F 0x87 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNBE,  a:F64|COND, p:BND|BH
+JS             Jz            rIP,Fv                    [            0x0F 0x88 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CS,    a:F64|COND, p:BND|BH
+JNS            Jz            rIP,Fv                    [            0x0F 0x89 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNS,   a:F64|COND, p:BND|BH
+JP             Jz            rIP,Fv                    [            0x0F 0x8A cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CP,    a:F64|COND, p:BND|BH
+JNP            Jz            rIP,Fv                    [            0x0F 0x8B cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNP,   a:F64|COND, p:BND|BH
+JL             Jz            rIP,Fv                    [            0x0F 0x8C cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CL,    a:F64|COND, p:BND|BH
+JNL            Jz            rIP,Fv                    [            0x0F 0x8D cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNL,   a:F64|COND, p:BND|BH
+JLE            Jz            rIP,Fv                    [            0x0F 0x8E cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CLE,   a:F64|COND, p:BND|BH
+JNLE           Jz            rIP,Fv                    [            0x0F 0x8F cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNLE,  a:F64|COND, p:BND|BH
 
 # 0x90 - 0x9F
 SETO           Eb            Fv                        [            0x0F 0x90 /r]              s:I386, t:BITBYTE, c:SETcc, w:W|R, f:CO,    a:COND

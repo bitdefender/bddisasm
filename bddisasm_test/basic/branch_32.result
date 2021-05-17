@@ -487,7 +487,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: yes, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  1, Encoding: D
-        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  CRCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000059 73fe                            JNC       0x59
@@ -505,7 +505,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: yes, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  1, Encoding: D
-        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  CRCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 000000000000005B e2fe                            LOOP      0x5b
@@ -524,7 +524,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 000000000000005D e0fe                            LOOPNZ    0x5d
@@ -543,7 +543,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  1, Encoding: D
         Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
 000000000000005F 67e3fd                          JCXZ      0x5f
@@ -560,7 +560,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  1, Encoding: D
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:  General Purpose, RegSize:  2, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000062 e3fe                            JECXZ     0x62
         DSIZE: 32, ASIZE: 32, VLEN: -
@@ -576,7 +576,7 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:     Offset, Size:  4, RawSize:  1, Encoding: D
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 2, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  CRCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
 
 0000000000000064 cd21                            INT       0x21
         DSIZE: 32, ASIZE: 32, VLEN: -

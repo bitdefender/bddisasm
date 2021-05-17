@@ -140,22 +140,22 @@ OUTSD          DX,Xz         aSI,Fv            [            0x6F]          s:I86
 OUTSD          DX,Xz         aCX,aSI,Fv        [        rep 0x6F]          s:I86, t:IOSTRINGOP, c:OUTS, w:R|CR|RCW|RCW|R, f:IOS, a:OP1DEF|OP2DEF|SERIAL, p:REP, m:NOSGX
 
 # 0x70 - 0x7F
-JO             Jb            rIP,Fv            [            0x70 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CO,   a:F64|COND, p:BND|BH
-JNO            Jb            rIP,Fv            [            0x71 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNO,  a:F64|COND, p:BND|BH
-JC             Jb            rIP,Fv            [            0x72 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CC,   a:F64|COND, p:BND|BH
-JNC            Jb            rIP,Fv            [            0x73 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNC,  a:F64|COND, p:BND|BH
-JZ             Jb            rIP,Fv            [            0x74 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CZ,   a:F64|COND, p:BND|BH
-JNZ            Jb            rIP,Fv            [            0x75 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNZ,  a:F64|COND, p:BND|BH
-JBE            Jb            rIP,Fv            [            0x76 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CBE,  a:F64|COND, p:BND|BH
-JNBE           Jb            rIP,Fv            [            0x77 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNBE, a:F64|COND, p:BND|BH
-JS             Jb            rIP,Fv            [            0x78 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CS,   a:F64|COND, p:BND|BH
-JNS            Jb            rIP,Fv            [            0x79 cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNS,  a:F64|COND, p:BND|BH
-JP             Jb            rIP,Fv            [            0x7A cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CP,   a:F64|COND, p:BND|BH
-JNP            Jb            rIP,Fv            [            0x7B cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNP,  a:F64|COND, p:BND|BH
-JL             Jb            rIP,Fv            [            0x7C cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CL,   a:F64|COND, p:BND|BH
-JNL            Jb            rIP,Fv            [            0x7D cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNL,  a:F64|COND, p:BND|BH
-JLE            Jb            rIP,Fv            [            0x7E cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CLE,  a:F64|COND, p:BND|BH
-JNLE           Jb            rIP,Fv            [            0x7F cb]       s:I86, t:COND_BR, c:Jcc, w:R|RW|R, f:CNLE, a:F64|COND, p:BND|BH
+JO             Jb            rIP,Fv            [            0x70 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CO,   a:F64|COND, p:BND|BH
+JNO            Jb            rIP,Fv            [            0x71 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNO,  a:F64|COND, p:BND|BH
+JC             Jb            rIP,Fv            [            0x72 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CC,   a:F64|COND, p:BND|BH
+JNC            Jb            rIP,Fv            [            0x73 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNC,  a:F64|COND, p:BND|BH
+JZ             Jb            rIP,Fv            [            0x74 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CZ,   a:F64|COND, p:BND|BH
+JNZ            Jb            rIP,Fv            [            0x75 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNZ,  a:F64|COND, p:BND|BH
+JBE            Jb            rIP,Fv            [            0x76 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CBE,  a:F64|COND, p:BND|BH
+JNBE           Jb            rIP,Fv            [            0x77 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNBE, a:F64|COND, p:BND|BH
+JS             Jb            rIP,Fv            [            0x78 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CS,   a:F64|COND, p:BND|BH
+JNS            Jb            rIP,Fv            [            0x79 cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNS,  a:F64|COND, p:BND|BH
+JP             Jb            rIP,Fv            [            0x7A cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CP,   a:F64|COND, p:BND|BH
+JNP            Jb            rIP,Fv            [            0x7B cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNP,  a:F64|COND, p:BND|BH
+JL             Jb            rIP,Fv            [            0x7C cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CL,   a:F64|COND, p:BND|BH
+JNL            Jb            rIP,Fv            [            0x7D cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNL,  a:F64|COND, p:BND|BH
+JLE            Jb            rIP,Fv            [            0x7E cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CLE,  a:F64|COND, p:BND|BH
+JNLE           Jb            rIP,Fv            [            0x7F cb]       s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CNLE, a:F64|COND, p:BND|BH
 
 # 0x80 - 0x8F
 ADD            Eb,Ib         Fv                [            0x80 /0 ib]    s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  p:HLE|LOCK
@@ -333,7 +333,7 @@ LDS            Gz,Mp         DS                [            0xC5 /r:mem]   s:I86
 MOV            Eb,Ib         nil               [            0xC6 /0 ib]    s:I86, t:DATAXFER, w:W|R, p:XRELEASE|HLEWOL
 XABORT         Ib            EAX               [            0xC6 /0xF8 ib] s:TSX, t:UNCOND_BR, w:R|RCW, i:RTM, m:NOTSX
 MOV            Ev,Iz         nil               [            0xC7 /0 iz]    s:I86, t:DATAXFER, w:W|R, a:OP2SEXO1, p:XRELEASE|HLEWOL
-XBEGIN         Jz            yIP,EAX           [            0xC7 /0xF8 cz] s:TSX, t:COND_BR, w:R|RW|CW, i:RTM
+XBEGIN         Jz            yIP,EAX           [            0xC7 /0xF8 cz] s:TSX, t:COND_BR, w:R|RCW|CW, i:RTM
 ENTER          Iw,Ib         rBP,sSP,Kv        [            0xC8 iw ib]    s:I186, t:MISC, w:R|R|RW|RW|W, a:D64
 LEAVE          nil           sBP,rBP,rSP,Kv    [            0xC9]          s:I186, t:MISC, w:R|RW|RW|R, a:D64
 RETF           Iw            CS,rIP,Kv2,SHS2   [            0xCA iw]       s:I86, t:RET, w:R|W|W|R|R
@@ -384,12 +384,12 @@ SALC           nil           AL,Fv             [            0xD6]          s:I86
 XLATB          nil           AL,pBXALb         [            0xD7]          s:I86, t:MISC, w:W|R
 
 # 0xE0 - 0xEF
-LOOPNZ         Jb            aCX,rIP,Fv        [            0xE0 cb]       s:I86, t:COND_BR, w:R|RW|RW|R, f:ZF=t, a:F64
-LOOPZ          Jb            aCX,rIP,Fv        [            0xE1 cb]       s:I86, t:COND_BR, w:R|RW|RW|R, f:ZF=t, a:F64
-LOOP           Jb            aCX,rIP,Fv        [            0xE2 cb]       s:I86, t:COND_BR, w:R|RW|RW|R, a:F64
-JCXZ           Jb            aCX,rIP           [       as16 0xE3 cb]       s:I86, t:COND_BR, c:JrCXZ, w:R|R|RW, a:F64
-JECXZ          Jb            aCX,rIP           [       as32 0xE3 cb]       s:I86, t:COND_BR, c:JrCXZ, w:R|R|RW, a:F64
-JRCXZ          Jb            aCX,rIP           [       as64 0xE3 cb]       s:I86, t:COND_BR, c:JrCXZ, w:R|R|RW, a:F64
+LOOPNZ         Jb            aCX,rIP,Fv        [            0xE0 cb]       s:I86, t:COND_BR, w:R|RW|CRCW|R, f:ZF=t, a:F64
+LOOPZ          Jb            aCX,rIP,Fv        [            0xE1 cb]       s:I86, t:COND_BR, w:R|RW|CRCW|R, f:ZF=t, a:F64
+LOOP           Jb            aCX,rIP,Fv        [            0xE2 cb]       s:I86, t:COND_BR, w:R|RW|CRCW|R, a:F64
+JCXZ           Jb            aCX,rIP           [       as16 0xE3 cb]       s:I86, t:COND_BR, c:JrCXZ, w:R|R|CRCW, a:F64
+JECXZ          Jb            aCX,rIP           [       as32 0xE3 cb]       s:I86, t:COND_BR, c:JrCXZ, w:R|R|CRCW, a:F64
+JRCXZ          Jb            aCX,rIP           [       as64 0xE3 cb]       s:I86, t:COND_BR, c:JrCXZ, w:R|R|CRCW, a:F64
 IN             AL,Ib         Fv                [            0xE4 ib]       s:I86, t:IO, w:W|R|R, f:IO, m:NOSGX
 IN             eAX,Ib        Fv                [            0xE5 ib]       s:I86, t:IO, w:W|R|R, f:IO, m:NOSGX
 OUT            Ib,AL         Fv                [            0xE6 ib]       s:I86, t:IO, w:R|R|R, f:IO, a:SERIAL, m:NOSGX
