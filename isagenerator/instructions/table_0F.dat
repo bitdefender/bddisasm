@@ -22,10 +22,10 @@ LMSW           Ew            CR0                       [            0x0F 0x01 /6
 INVLPG         Mb            nil                       [            0x0F 0x01 /7:mem]          s:I486REAL, t:SYSTEM, w:R, a:AG, m:KERNEL|NOV86
 RSTORSSP       Mq            SSP                       [       0xF3 0x0F 0x01 /5:mem]          s:CET_SS, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
 ENCLV          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC0]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:KERNEL|NOSMM|NOTSX|VMX
-VMCALL         nil           nil                       [            0x0F 0x01 /0xC1]           s:VTX, t:VTX, m:VMX|NOSGX
-VMLAUNCH       nil           Fv                        [            0x0F 0x01 /0xC2]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
-VMRESUME       nil           Fv                        [            0x0F 0x01 /0xC3]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
-VMXOFF         nil           Fv                        [            0x0F 0x01 /0xC4]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
+VMCALL         nil           nil                       [         NP 0x0F 0x01 /0xC1]           s:VTX, t:VTX, m:VMX|NOSGX
+VMLAUNCH       nil           Fv                        [         NP 0x0F 0x01 /0xC2]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
+VMRESUME       nil           Fv                        [         NP 0x0F 0x01 /0xC3]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
+VMXOFF         nil           Fv                        [         NP 0x0F 0x01 /0xC4]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 PCONFIG        nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC5]           s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW, m:NOV86
 MONITOR        nil           EAX,ECX,EDX               [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
 MWAIT          nil           EAX,ECX                   [         NP 0x0F 0x01 /0xC9]           s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
@@ -157,7 +157,7 @@ NOP            Ev            nil                       [            0x0F 0x19 /r
 # that Xed doesn't do those checks either).
 
 # MPX not used, these guys are wide NOPs.
-NOP            Gv,Ev         nil                       [            0x0F 0x1A /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         nil                       [            0x0F 0x1A /r]              s:PPRO, t:WIDENOP, w:N|N
 NOP            Gv,Ev         nil                       [            0x0F 0x1B /r]              s:PPRO, t:WIDENOP, w:N|N
 NOP            Ev,Gv         nil                       [            0x0F 0x1C /r]              s:PPRO, t:WIDENOP, w:N|N
 NOP            Ev,Gv         nil                       [            0x0F 0x1D /r]              s:PPRO, t:WIDENOP, w:N|N

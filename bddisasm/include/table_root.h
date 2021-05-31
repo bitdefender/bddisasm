@@ -4480,28 +4480,72 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_05_mprefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_01_leaf = 
+const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_01_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
     (const void *)&gInstructions[1762]
 };
 
-const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_02_leaf = 
+const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_01_mprefix = 
+{
+    ND_ILUT_MAN_PREFIX,
+    { 
+        /* 00 */ (const void *)&gRootTable_root_0f_01_reg_00_01_NP_leaf,
+        /* 01 */ NULL,
+        /* 02 */ NULL,
+        /* 03 */ NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_02_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
     (const void *)&gInstructions[1775]
 };
 
-const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_03_leaf = 
+const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_02_mprefix = 
+{
+    ND_ILUT_MAN_PREFIX,
+    { 
+        /* 00 */ (const void *)&gRootTable_root_0f_01_reg_00_02_NP_leaf,
+        /* 01 */ NULL,
+        /* 02 */ NULL,
+        /* 03 */ NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_03_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
     (const void *)&gInstructions[1882]
 };
 
-const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_04_leaf = 
+const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_03_mprefix = 
+{
+    ND_ILUT_MAN_PREFIX,
+    { 
+        /* 00 */ (const void *)&gRootTable_root_0f_01_reg_00_03_NP_leaf,
+        /* 01 */ NULL,
+        /* 02 */ NULL,
+        /* 03 */ NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_04_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
     (const void *)&gInstructions[1894]
+};
+
+const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_04_mprefix = 
+{
+    ND_ILUT_MAN_PREFIX,
+    { 
+        /* 00 */ (const void *)&gRootTable_root_0f_01_reg_00_04_NP_leaf,
+        /* 01 */ NULL,
+        /* 02 */ NULL,
+        /* 03 */ NULL,
+    }
 };
 
 const ND_TABLE_MODRM_RM gRootTable_root_0f_01_reg_00_modrmrm = 
@@ -4509,10 +4553,10 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_01_reg_00_modrmrm =
     ND_ILUT_MODRM_RM,
     { 
         /* 00 */ (const void *)&gRootTable_root_0f_01_reg_00_00_mprefix,
-        /* 01 */ (const void *)&gRootTable_root_0f_01_reg_00_01_leaf,
-        /* 02 */ (const void *)&gRootTable_root_0f_01_reg_00_02_leaf,
-        /* 03 */ (const void *)&gRootTable_root_0f_01_reg_00_03_leaf,
-        /* 04 */ (const void *)&gRootTable_root_0f_01_reg_00_04_leaf,
+        /* 01 */ (const void *)&gRootTable_root_0f_01_reg_00_01_mprefix,
+        /* 02 */ (const void *)&gRootTable_root_0f_01_reg_00_02_mprefix,
+        /* 03 */ (const void *)&gRootTable_root_0f_01_reg_00_03_mprefix,
+        /* 04 */ (const void *)&gRootTable_root_0f_01_reg_00_04_mprefix,
         /* 05 */ (const void *)&gRootTable_root_0f_01_reg_00_05_mprefix,
         /* 06 */ NULL,
         /* 07 */ NULL,

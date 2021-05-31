@@ -12517,7 +12517,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         },
     }, 
 
-    // Pos:754 Instruction:"NOP Gv,Ev" Encoding:"0x0F 0x1A /r"/"RM"
+    // Pos:754 Instruction:"NOP Ev,Gv" Encoding:"0x0F 0x1A /r"/"MR"
     {
         ND_INS_NOP, ND_CAT_WIDENOP, ND_SET_PPRO, 478, 
         0, 
@@ -12528,8 +12528,8 @@ const ND_INSTRUCTION gInstructions[2589] =
         0,
         0,
         {
-            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
             OP(ND_OPT_E, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
+            OP(ND_OPT_G, ND_OPS_v, 0, ND_OPA_N, 0, 0), 
         },
     }, 
 
@@ -29451,7 +29451,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         },
     }, 
 
-    // Pos:1762 Instruction:"VMCALL" Encoding:"0x0F 0x01 /0xC1"/""
+    // Pos:1762 Instruction:"VMCALL" Encoding:"NP 0x0F 0x01 /0xC1"/""
     {
         ND_INS_VMCALL, ND_CAT_VTX, ND_SET_VTX, 1075, 
         0, 
@@ -29667,7 +29667,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         },
     }, 
 
-    // Pos:1775 Instruction:"VMLAUNCH" Encoding:"0x0F 0x01 /0xC2"/""
+    // Pos:1775 Instruction:"VMLAUNCH" Encoding:"NP 0x0F 0x01 /0xC2"/""
     {
         ND_INS_VMLAUNCH, ND_CAT_VTX, ND_SET_VTX, 1083, 
         0, 
@@ -31431,7 +31431,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         },
     }, 
 
-    // Pos:1882 Instruction:"VMRESUME" Encoding:"0x0F 0x01 /0xC3"/""
+    // Pos:1882 Instruction:"VMRESUME" Encoding:"NP 0x0F 0x01 /0xC3"/""
     {
         ND_INS_VMRESUME, ND_CAT_VTX, ND_SET_VTX, 1121, 
         0, 
@@ -31633,7 +31633,7 @@ const ND_INSTRUCTION gInstructions[2589] =
         },
     }, 
 
-    // Pos:1894 Instruction:"VMXOFF" Encoding:"0x0F 0x01 /0xC4"/""
+    // Pos:1894 Instruction:"VMXOFF" Encoding:"NP 0x0F 0x01 /0xC4"/""
     {
         ND_INS_VMXOFF, ND_CAT_VTX, ND_SET_VTX, 1129, 
         0, 
