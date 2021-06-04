@@ -29,6 +29,18 @@ The main objectives of this disassembler are:
 
 ## Build and install
 
+### Using [vcpkg](https://github.com/microsoft/vcpkg)
+
+The easiest way of installing bddisasm is with [vcpkg](https://github.com/microsoft/vcpkg):
+
+```console
+vcpkg install bddisasm
+```
+
+This will install `bddisasm` and `bdshemu` static libraries.
+
+Note that the version available on vcpkg may not always be the latest.
+
 ### Using CMake
 
 This is the recommended way of using the library.
