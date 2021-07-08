@@ -75,6 +75,12 @@
     <None Include="instructions\table_xop.dat">
       <Filter>data</Filter>
     </None>
+    <None Include="instructions\table_evex5.dat">
+      <Filter>data</Filter>
+    </None>
+    <None Include="instructions\table_evex6.dat">
+      <Filter>data</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="instructions\help.txt">

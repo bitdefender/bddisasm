@@ -45,6 +45,7 @@ valid_attributes = {
     'SIBMEM',       # Instruction uses sibmem addressing (AMX instructions).
     'I67',          # Ignore the address size override (0x67) prefix in 64 bit mode.
     'IER',          # Ignore embedded rounding for the instruction.
+    'IWO64',        # The VEX/EVEX.W field is ignored outside 64 bit mode, and behaves as if it's 0.
 }
 
 #
@@ -175,12 +176,14 @@ valid_opsize = [
     'oq',           # 512 bit regardless the operand size/vector length.
     'p',            # 32, 48 or 80 bits pointer, depending on operand size.
     'pd',           # 128 bit or 256 bit double-precision fp data.
-    'ps',           # 128 bit or 256 bit single-prevision fp data.
+    'ps',           # 128 bit or 256 bit single-precision fp data.
+    'ph',           # Packed FP16 values.
     'q',            # Always 1 QWORD.
     'qq',           # Always 4 QWORDs.
     's',            # 6-byte or 10-byte pseudo-descriptor.
     'sd',           # Scalar element of 128 bit double-precision fp data.
     'ss',           # Scalar element of 128 bit single-precision fp data.
+    'sh',           # Scalar element of FP16.
     'v',            # WORD, DWORD or QWORD, depending on operand size.
     'w',            # Always WORD.
     'x',            # 128 bit, 256 bit, depending on operand size.
@@ -476,11 +479,13 @@ valid_decorators = [
     '{er}',         # Embedded Rounding.
     '|B32',         # Broadcast 32.
     '|B64',         # Broadcast 64.
+    '|B16',         # Broadcast 16.
 ]
 
 valid_tuples = [
     'fv',           # Full Vector, Load+Op (Full Vector Dword/Qword).
     'hv',           # Half Vector, Load+Op (Half Vector).
+    'qv',           # Quarter vector, Load+op (Quarter Vector, FP16)
     'fvm',          # Full Vector Memory, Load/store or subDword full vector.
     'hvm',          # Half Vector Memory, SubQword Conversion.
     'qvm',          # Quarter Vector Memory, SubDword Conversion.
@@ -889,7 +894,7 @@ class Instruction():
         # Post-process the operands. We fill up the flags with additional info based on the operands.
         for op in self.ExpOps:
             for deco in op.Decorators:
-                self.DecoFlags.append({'{K}':'MASK', '{z}':'ZERO', '{sae}':'SAE', '{er}':'ER', '|B32':'BROADCAST', '|B64':'BROADCAST'}[deco])
+                self.DecoFlags.append({'{K}':'MASK', '{z}':'ZERO', '{sae}':'SAE', '{er}':'ER', '|B32':'BROADCAST', '|B64':'BROADCAST', '|B16':'BROADCAST'}[deco])
             if op.Type in ['U', 'V', 'W', 'H', 'L'] and 'VECT' not in self.Flags:
                 self.Flags.append('VECT')
 
@@ -907,10 +912,26 @@ class Instruction():
         # Split the instruction into encoding entities.
         e = self.split_encoding()
         if self.Vex or self.Xop or self.Evex:
-            self.Spec = { "mmmmm" : e[0], "opcodes" : e[1], "modrm" : e[2], "pp" : e[3], "l" : e[4], "w" : e[5] }
+            self.Spec = { 
+                "mmmmm" : e[0], 
+                "opcodes" : e[1], 
+                "modrm" : e[2], 
+                "pp" : e[3], 
+                "l" : e[4], 
+                "w" : e[5],
+            }
         else:
-            self.Spec = { "opcodes" : e[0], "modrm" : e[1], "mpre" : e[2], "mode" : e[3], "dsize" : e[4], \
-                          "asize" : e[5], "opre" : e[6], "vendor" : e[7], "feature": e[8] }
+            self.Spec = { 
+                "opcodes" : e[0], 
+                "modrm" : e[1], 
+                "mpre" : e[2], 
+                "mode" : e[3], 
+                "dsize" : e[4], 
+                "asize" : e[5], 
+                "opre" : e[6], 
+                "vendor" : e[7], 
+                "feature": e[8] 
+            }
 
     def process_operands(self, ops, imp = False):
         p = 1

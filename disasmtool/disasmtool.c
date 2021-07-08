@@ -29,6 +29,7 @@ typedef struct _DISASM_OPTIONS
     BOOLEAN     Highlight;      // Highlight instruction components, if true.
     BOOLEAN     ExtendedInfo;   // Display extended instruction info, if true.
     BOOLEAN     BitFields;      // Display the various bitfields inside the instruction, if true.
+    BOOLEAN     Skip16;         // Automatically jump over 16 bytes after each instruction.
     BOOLEAN     Stats;          // Display disassembly stats (clocks / instruction, instructions / second), if true.
     BOOLEAN     Search;         // Search for the Target instruction in the provided buffer.
     BOOLEAN     Print;          // Print instruction disassembly, if true.
@@ -121,6 +122,7 @@ const char* set_to_string(
     case ND_SET_AVX512VNNI:            return "AVX512VNNI";
     case ND_SET_AVX512VP2INTERSECT:    return "AVX512VP2INTERSECT";
     case ND_SET_AVX512VPOPCNTDQ:       return "AVX512VPOPCNTDQ";
+    case ND_SET_AVX512FP16:            return "AVX512FP16";
     case ND_SET_AVXVNNI:               return "AVXVNNI";
     case ND_SET_BMI1:                  return "BMI1";
     case ND_SET_BMI2:                  return "BMI2";
@@ -237,6 +239,7 @@ const char* category_to_string(
     case ND_CAT_AVX512BF16:           return "AVX512BF16";
     case ND_CAT_AVX512VBMI:           return "AVX512VBMI";
     case ND_CAT_AVX512VP2INTERSECT:   return "AVX512VP2INTERSECT";
+    case ND_CAT_AVX512FP16:           return "AVX512FP16";
     case ND_CAT_AVXVNNI:              return "AVXVNNI";
     case ND_CAT_BITBYTE:              return "BITBYTE";
     case ND_CAT_BLEND:                return "BLEND";
@@ -1284,7 +1287,14 @@ handle_disasm(
                 printf("db 0x%02x (0x%08x)\n", buffer[rip], status);
             }
 
-            rip++;
+            if (Options->Skip16)
+            {
+                rip += 16;
+            }
+            else
+            {
+                rip++;
+            }
         }
         else
         {
@@ -1293,7 +1303,14 @@ handle_disasm(
                 print_instruction(rip + Options->Rip, &instrux, Options);
             }
 
-            rip += instrux.Length;
+            if (Options->Skip16)
+            {
+                rip += 16;
+            }
+            else
+            {
+                rip += instrux.Length;
+            }
         }
     }
 
@@ -1700,7 +1717,7 @@ int main(
     SIZE_T rip;
     char text[ND_MIN_BUF_SIZE], *fname, *target, *shemuCtxFname;
     BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, feat, search, isShemu, isShemuCtxf, isKernel, bitfields;
-    BYTE bypassw;
+    BYTE bypassw, skip16;
     INT ret, i;
     BYTE hexbuf[256], *buffer;
     DISASM_OPTIONS options;
@@ -1731,6 +1748,7 @@ int main(
     isKernel = 0;
     bitfields = 0;
     bypassw = 0;
+    skip16 = 0;
 
     if (NULL == argv)
     {
@@ -1768,6 +1786,7 @@ int main(
         printf("        -bw              bypass self-modifications for shemu emulation.\n");
         printf("        -hl              highlight instruction parts:\n");
         printf("        -bits            display the instruction bit fields");
+        printf("        -skip16          skip 16 bytes after each decoded instruction");
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
             FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED|FOREGROUND_INTENSITY);
         printf("            light white      prefixes\n");
@@ -1965,6 +1984,10 @@ int main(
         {
             bitfields = 1;
         }
+        else if (0 == strcmp(argv[i], "-skip16"))
+        {
+            skip16 = 1;
+        }
         else
         {
             printf("Unknown option: '%s'\n", argv[i]);
@@ -2053,6 +2076,7 @@ int main(
     options.Size = fsize;
     options.ExtendedInfo = exi;
     options.BitFields = bitfields;
+    options.Skip16 = skip16;
     options.Highlight = highlight;
     options.Mode = mode;
     options.Ring = isKernel ? 0 : 3;

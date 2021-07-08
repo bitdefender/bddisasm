@@ -12,6 +12,10 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
 endif ()
 
+if (NOT TARGET bddisasm)
+    find_package(bddisasm REQUIRED)
+endif ()
+
 add_executable(disasmtool disasmtool.c)
 target_link_libraries(disasmtool PRIVATE bddisasm::bddisasm bddisasm::bdshemu)
 

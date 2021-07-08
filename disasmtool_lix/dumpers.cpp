@@ -1541,14 +1541,13 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_XSUSLDTRK: return "xsusldtrk";
     case ND_INS_XSTORE: return "xstore";
     case ND_INS_XTEST: return "xtest";
-    
     case ND_INS_HRESET: return "hreset";
-    
     case ND_INS_CLUI: return "clui";
     case ND_INS_STUI: return "stui";
     case ND_INS_TESTUI: return "testui";
     case ND_INS_UIRET: return "uiret";
     case ND_INS_SENDUIPI: return "senduipi";
+    default: return "unhandled!";
     }
 
     return "<unknown>";
@@ -1571,6 +1570,7 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_AVX512BF16: return "avx512bf16";
     case ND_CAT_AVX512VBMI: return "avx512vbmi";
     case ND_CAT_AVX512VP2INTERSECT: return "avx512vp2intersect";
+    case ND_CAT_AVX512FP16: return "avx512fp16";
     case ND_CAT_AVXVNNI: return "avxvnni";
     case ND_CAT_BITBYTE: return "bitbyte";
     case ND_CAT_BLEND: return "blend";
@@ -1698,6 +1698,7 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_AVX512VNNI: return "avx512vnni";
     case ND_SET_AVX512VP2INTERSECT: return "avx512vp2intersect";
     case ND_SET_AVX512VPOPCNTDQ: return "avx512vpopcntdq";
+    case ND_SET_AVX512FP16: return "avx512fp16";
     case ND_SET_AVXVNNI: return "avxvnni";
     case ND_SET_BMI1: return "bmi1";
     case ND_SET_BMI2: return "bmi2";

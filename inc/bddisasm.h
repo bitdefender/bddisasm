@@ -191,6 +191,7 @@ typedef uint32_t ND_REG_SIZE;
 #define ND_FLAG_SIBMEM              0x08000000  // sibmem addressing is used (Intel AMX instructions).
 #define ND_FLAG_I67                 0x10000000  // Ignore the 0x67 prefix in 64 bit mode (Intel MPX instructions).
 #define ND_FLAG_IER                 0x20000000  // Ignore EVEX embedded rounding.
+#define ND_FLAG_IWO64               0x40000000  // Ignore VEX/EVEX.W outside 64 bit mode. It behaves as if it's 0.
 
 
 //
@@ -545,6 +546,7 @@ typedef enum _ND_TUPLE
     ND_TUPLE_None,
     ND_TUPLE_FV,            // Full Vector
     ND_TUPLE_HV,            // Half Vector
+    ND_TUPLE_QV,            // Quarter Vector
     ND_TUPLE_T1S8,          // Tuple1 scalar, size 8 bit
     ND_TUPLE_T1S16,         // Tuple1 scalar, size 16 bit
     ND_TUPLE_T1S,           // Tuple1 scalar, size 32/64 bit
@@ -621,6 +623,7 @@ typedef enum _ND_EX_TYPE_EVEX
     ND_EXT_E3,
     ND_EXT_E3NF,
     ND_EXT_E4,
+    ND_EXT_E4S,     // E4, with an additional case: if (dst == src1) or (dst == src2)
     ND_EXT_E4nb,
     ND_EXT_E4NF,
     ND_EXT_E4NFnb,
@@ -632,6 +635,7 @@ typedef enum _ND_EX_TYPE_EVEX
     ND_EXT_E9,
     ND_EXT_E9NF,
     ND_EXT_E10,
+    ND_EXT_E10S,    // E10, with an additional case: if (dst == src1) or (dst == src2)
     ND_EXT_E10NF,
     ND_EXT_E11,
     ND_EXT_E12,
@@ -1053,8 +1057,8 @@ typedef union _ND_EVEX
     {
         uint8_t     op;         // 0x62
 
-        uint8_t     m : 2;      // m0, m1
-        uint8_t     zero : 2;   // 00
+        uint8_t     m : 3;      // m0, m1, m2. Indicates opcode map.
+        uint8_t     zero : 1;   // 0, must be 0.
         uint8_t     rp : 1;     // ~R'
         uint8_t     b : 1;      // ~B
         uint8_t     x : 1;      // ~X
@@ -1284,6 +1288,7 @@ typedef struct _INSTRUX
     bool                HasZero:1;                  // TRUE - the instruction uses zeroing.
     bool                HasEr:1;                    // TRUE - the instruction has embedded rounding.
     bool                HasSae:1;                   // TRUE - the instruction has SAE.
+    bool                HasIgnEr:1;                 // TRUE - the instruction ignores embedded rounding.
 
     bool                SignDisp:1;                 // Displacement sign. 0 is positive, 1 is negative.
 

@@ -44,6 +44,11 @@ typedef unsigned int NDSTATUS;
 #define ND_STATUS_ZEROING_NO_MASK                       0x80000038 // Zeroing without masking.
 #define ND_STATUS_BROADCAST_NOT_SUPPORTED               0x80000039 // Broadcast not supported.
 #define ND_STATUS_BAD_EVEX_V_PRIME                      0x80000040 // EVEX.V' field must be one (negated 0).
+#define ND_STATUS_BAD_EVEX_LL                           0x80000041 // EVEX.L'L field is invalid for the instruction.
+#define ND_STATUS_SIBMEM_WITHOUT_SIB                    0x80000042 // Instruction uses SIBMEM, but SIB is not present.
+#define ND_STATUS_INVALID_TILE_REGS                     0x80000043 // Tile registers are not unique.
+#define ND_STATUS_INVALID_DEST_REGS                     0x80000044 // Destination register is not unique (used as src).
+
 
 // Not encoding specific.
 #define ND_STATUS_INVALID_PARAMETER                     0x80000100 // An invalid parameter was provided.

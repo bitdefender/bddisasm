@@ -151,6 +151,8 @@
     <None Include="instructions\table_evex1.dat" />
     <None Include="instructions\table_evex2.dat" />
     <None Include="instructions\table_evex3.dat" />
+    <None Include="instructions\table_evex5.dat" />
+    <None Include="instructions\table_evex6.dat" />
     <None Include="instructions\table_fpu.dat" />
     <None Include="instructions\table_vex1.dat" />
     <None Include="instructions\table_vex2.dat" />

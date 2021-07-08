@@ -75,6 +75,8 @@ def test_dir(dir):
                 mod = '-b64'
             if 0 < f.find('_r0'):
                 mod += ' -k'
+            if 0 < f.find('_skip'):
+                mod += ' -skip16'
                 
             print('    * Running test case %s...' % f)
             os.system('disasm -exi %s -f %s >%s.temp' % (mod, f, f))
@@ -111,6 +113,8 @@ def regenerate(dir):
                 mod = '-b64'
             if 0 < f.find('_r0'):
                 mod += ' -k'
+            if 0 < f.find('_skip'):
+                mod += ' -skip16'
                 
             print('    * Regenerating test case %s...' % f)
             os.system('disasm -exi %s -f %s >%s.result' % (mod, f, f))

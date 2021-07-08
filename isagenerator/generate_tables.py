@@ -42,6 +42,7 @@ flags = {
     'SIBMEM'   : 'ND_FLAG_SIBMEM',
     'I67'      : 'ND_FLAG_I67',
     'IER'      : 'ND_FLAG_IER',
+    'IWO64'    : 'ND_FLAG_IWO64',
 }
 
 prefixes_map = {
@@ -215,11 +216,13 @@ opsize = {
     'p'        : 'ND_OPS_p',
     'pd'       : 'ND_OPS_pd',
     'ps'       : 'ND_OPS_ps',
+    'ph'       : 'ND_OPS_ph',
     'q'        : 'ND_OPS_q',
     'qq'       : 'ND_OPS_qq',
     's'        : 'ND_OPS_s',
     'sd'       : 'ND_OPS_sd',
     'ss'       : 'ND_OPS_ss',
+    'sh'       : 'ND_OPS_sh',
     'v'        : 'ND_OPS_v',
     'w'        : 'ND_OPS_w',
     'x'        : 'ND_OPS_x',
@@ -253,6 +256,7 @@ opdecorators = {
     '{er}'     : 'ND_OPD_ER',
     '|B32'     : 'ND_OPD_B32',
     '|B64'     : 'ND_OPD_B64',
+    '|B16'     : 'ND_OPD_B16',
 }
 
 accessmap = {
@@ -272,6 +276,7 @@ tuples = {
     None    : '0',
     'fv'    : 'ND_TUPLE_FV',
     'hv'    : 'ND_TUPLE_HV',
+    'qv'    : 'ND_TUPLE_QV',
     'fvm'   : 'ND_TUPLE_FVM',
     'hvm'   : 'ND_TUPLE_HVM',
     'qvm'   : 'ND_TUPLE_QVM',
@@ -313,6 +318,7 @@ extype = {
     'E3'    : 'ND_EXT_E3',
     'E3NF'  : 'ND_EXT_E3NF',
     'E4'    : 'ND_EXT_E4',
+    'E4S'   : 'ND_EXT_E4S',
     'E4nb'  : 'ND_EXT_E4nb',
     'E4NF'  : 'ND_EXT_E4NF',
     'E4NFnb': 'ND_EXT_E4NFnb',
@@ -324,6 +330,7 @@ extype = {
     'E9'    : 'ND_EXT_E9',
     'E9NF'  : 'ND_EXT_E9NF',
     'E10'   : 'ND_EXT_E10',
+    'E10S'  : 'ND_EXT_E10S',
     'E10NF' : 'ND_EXT_E10NF',
     'E11'   : 'ND_EXT_E11',
     'E12'   : 'ND_EXT_E12',
@@ -437,6 +444,7 @@ ilut = {
     "pp" :              ("ND_ILUT_VEX_PP",          4,      "ND_TABLE_VEX_PP"),
     "l" :               ("ND_ILUT_VEX_L",           4,      "ND_TABLE_VEX_L"),
     "w" :               ("ND_ILUT_VEX_W",           2,      "ND_TABLE_VEX_W"),
+    "wi" :              ("ND_ILUT_VEX_WI",          2,      "ND_TABLE_VEX_W"),
 }
 
 
@@ -822,13 +830,15 @@ def group_instructions_vex_xop_evex(ilist):
         elif i.Spec["modrm"]["rm"]:
             if "__TYPE__" not in d or d["__TYPE__"] in ["w", "l"]:
                 d["__TYPE__"] = "modrmrm"
-        
         elif i.Spec["l"]:
             if "__TYPE__" not in d or d["__TYPE__"] in ["w"]:
                 d["__TYPE__"] = "l"
         elif i.Spec["w"]:
             if "__TYPE__" not in d:
-                d["__TYPE__"] = "w"
+                if 'IWO64' in i.Flags:
+                    d["__TYPE__"] = "wi"
+                else:
+                    d["__TYPE__"] = "w"
         elif len(ilist) == 1:
             return ilist[0]
 
@@ -914,7 +924,7 @@ def group_instructions_vex_xop_evex(ilist):
                 d[p].append(i)
             # Remove the prefix from the list.
             i.Spec["l"] = None
-        elif d["__TYPE__"] == "w":
+        elif d["__TYPE__"] in ["w", "wi"]:
             p = int(i.Spec["w"])
             if p not in d:
                 d[p] = [i]
@@ -1189,7 +1199,7 @@ def dump_translation_tree_c(t, hname, f):
             else:
                 name = dump_translation_tree_c(t[h], hname + '_%s' % h, f)
 
-            if ttype in ["opcode", "opcode_3dnow", "mmmmm", "pp", "l", "w", "modrmreg", "modrmrm"]:
+            if ttype in ["opcode", "opcode_3dnow", "mmmmm", "pp", "l", "w", "wi", "modrmreg", "modrmrm"]:
                 index = h
             else:
                 index = indexes[h]

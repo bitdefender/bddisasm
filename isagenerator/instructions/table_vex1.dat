@@ -39,14 +39,14 @@ VMOVAPS             Vx,Wx                 nil               [vex m:1 p:0 l:x w:i
 VMOVAPD             Vx,Wx                 nil               [vex m:1 p:1 l:x w:i 0x28 /r]           s:AVX, t:DATAXFER, w:W|R, e:1
 VMOVAPS             Wx,Vx                 nil               [vex m:1 p:0 l:x w:i 0x29 /r]           s:AVX, t:DATAXFER, w:W|R, e:1
 VMOVAPD             Wx,Vx                 nil               [vex m:1 p:1 l:x w:i 0x29 /r]           s:AVX, t:DATAXFER, w:W|R, e:1
-VCVTSI2SS           Vss,Hss,Ey            nil               [vex m:1 p:2 l:i w:x 0x2A /r]           s:AVX, t:CONVERT, w:W|R|R, e:3
-VCVTSI2SD           Vsd,Hsd,Ey            nil               [vex m:1 p:3 l:i w:x 0x2A /r]           s:AVX, t:CONVERT, w:W|R|R, e:3
+VCVTSI2SS           Vss,Hss,Ey            nil               [vex m:1 p:2 l:i w:x 0x2A /r]           s:AVX, t:CONVERT, w:W|R|R, e:3, a:IWO64
+VCVTSI2SD           Vsd,Hsd,Ey            nil               [vex m:1 p:3 l:i w:x 0x2A /r]           s:AVX, t:CONVERT, w:W|R|R, e:3, a:IWO64
 VMOVNTPS            Mx,Vx                 nil               [vex m:1 p:0 l:x w:i 0x2B /r:mem]       s:AVX, t:AVX, w:W|R, e:1
 VMOVNTPD            Mx,Vx                 nil               [vex m:1 p:1 l:x w:i 0x2B /r:mem]       s:AVX, t:AVX, w:W|R, e:1
-VCVTTSS2SI          Gy,Wss                nil               [vex m:1 p:2 l:i w:x 0x2C /r]           s:AVX, t:CONVERT, w:W|R, e:3
-VCVTTSD2SI          Gy,Wsd                nil               [vex m:1 p:3 l:i w:x 0x2C /r]           s:AVX, t:CONVERT, w:W|R, e:3
-VCVTSS2SI           Gy,Wss                nil               [vex m:1 p:2 l:i w:x 0x2D /r]           s:AVX, t:CONVERT, w:W|R, e:3
-VCVTSD2SI           Gy,Wsd                nil               [vex m:1 p:3 l:i w:x 0x2D /r]           s:AVX, t:CONVERT, w:W|R, e:3
+VCVTTSS2SI          Gy,Wss                nil               [vex m:1 p:2 l:i w:x 0x2C /r]           s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VCVTTSD2SI          Gy,Wsd                nil               [vex m:1 p:3 l:i w:x 0x2C /r]           s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VCVTSS2SI           Gy,Wss                nil               [vex m:1 p:2 l:i w:x 0x2D /r]           s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VCVTSD2SI           Gy,Wsd                nil               [vex m:1 p:3 l:i w:x 0x2D /r]           s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
 VUCOMISS            Vss,Wss               Fv                [vex m:1 p:0 l:i w:i 0x2E /r]           s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
 VUCOMISD            Vsd,Wsd               Fv                [vex m:1 p:1 l:i w:i 0x2E /r]           s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
 VCOMISS             Vss,Wss               Fv                [vex m:1 p:0 l:i w:i 0x2F /r]           s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
@@ -187,8 +187,8 @@ VPUNPCKHDQ          Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i
 VPACKSSDW           Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0x6B /r]           s:AVX, t:AVX, w:W|R|R, e:4
 VPUNPCKLQDQ         Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0x6C /r]           s:AVX, t:AVX, w:W|R|R, e:4
 VPUNPCKHQDQ         Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0x6D /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VMOVD               Vdq,Ey                nil               [vex m:1 p:1 l:0 w:0 0x6E /r]           s:AVX, t:DATAXFER, w:W|R, e:5
-VMOVQ               Vdq,Ey                nil               [vex m:1 p:1 l:0 w:1 0x6E /r]           s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVD               Vdq,Ey                nil               [vex m:1 p:1 l:0 w:0 0x6E /r]           s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
+VMOVQ               Vdq,Ey                nil               [vex m:1 p:1 l:0 w:1 0x6E /r]           s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
 VMOVDQA             Vx,Wx                 nil               [vex m:1 p:1 l:x w:i 0x6F /r]           s:AVX, t:DATAXFER, w:W|R, e:1
 VMOVDQU             Vx,Wx                 nil               [vex m:1 p:2 l:x w:i 0x6F /r]           s:AVX, t:DATAXFER, w:W|R, e:4
 
@@ -207,8 +207,8 @@ VHADDPD             Vpd,Hpd,Wpd           nil               [vex m:1 p:1 l:x w:i
 VHADDPS             Vps,Hps,Wps           nil               [vex m:1 p:3 l:x w:i 0x7C /r]           s:AVX, t:AVX, w:W|R|R, e:2
 VHSUBPD             Vpd,Hpd,Wpd           nil               [vex m:1 p:1 l:x w:i 0x7D /r]           s:AVX, t:AVX, w:W|R|R, e:2
 VHSUBPS             Vps,Hps,Wps           nil               [vex m:1 p:3 l:x w:i 0x7D /r]           s:AVX, t:AVX, w:W|R|R, e:2
-VMOVD               Ey,Vd                 nil               [vex m:1 p:1 l:0 w:0 0x7E /r]           s:AVX, t:DATAXFER, w:W|R, e:5
-VMOVQ               Ey,Vq                 nil               [vex m:1 p:1 l:0 w:1 0x7E /r]           s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVD               Ey,Vd                 nil               [vex m:1 p:1 l:0 w:0 0x7E /r]           s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
+VMOVQ               Ey,Vq                 nil               [vex m:1 p:1 l:0 w:1 0x7E /r]           s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
 VMOVQ               Vdq,Wq                nil               [vex m:1 p:2 l:0 w:i 0x7E /r]           s:AVX, t:DATAXFER, w:W|R, e:5
 VMOVDQA             Wx,Vx                 nil               [vex m:1 p:1 l:x w:i 0x7F /r]           s:AVX, t:DATAXFER, w:W|R, e:1
 VMOVDQU             Wx,Vx                 nil               [vex m:1 p:2 l:x w:i 0x7F /r]           s:AVX, t:DATAXFER, w:W|R, e:4

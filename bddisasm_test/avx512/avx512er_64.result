@@ -242,132 +242,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000050 6202fdc8c8c7                    VEXP2PD   zmm24, zmm31
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-0000000000000056 6202fd98c8c7                    VEXP2PD   zmm24, zmm31, {sae}
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-000000000000005C 6262fdc8c803                    VEXP2PD   zmm24, zmmword ptr [rbx]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-0000000000000062 6262fdd8c803                    VEXP2PD   zmm24, qword ptr [rbx]{1to8}
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Broadcast: yes, 
-                Segment: 3, Base: 3, 
-                Decorator: Broadcast 8 bytes element 8 times
-
-0000000000000068 6222fdc8c844db04                VEXP2PD   zmm24, zmmword ptr [rbx+r11*8+0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
-
-0000000000000070 6222fdc8c844dbfc                VEXP2PD   zmm24, zmmword ptr [rbx+r11*8-0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
-
-0000000000000078 6202fdcdc8c7                    VEXP2PD   zmm24{k5}{z}, zmm31
+0000000000000050 6202fdcdc8c7                    VEXP2PD   zmm24{k5}{z}, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -388,7 +263,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000007E 6202fd9dc8c7                    VEXP2PD   zmm24{k5}{z}, zmm31, {sae}
+0000000000000056 6202fd9dc8c7                    VEXP2PD   zmm24{k5}{z}, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -409,7 +284,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000084 6262fdcdc803                    VEXP2PD   zmm24{k5}{z}, zmmword ptr [rbx]
+000000000000005C 6262fdcdc803                    VEXP2PD   zmm24{k5}{z}, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -431,7 +306,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000008A 6262fdddc803                    VEXP2PD   zmm24{k5}{z}, qword ptr [rbx]{1to8}
+0000000000000062 6262fdddc803                    VEXP2PD   zmm24{k5}{z}, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -454,7 +329,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-0000000000000090 6222fdcdc844db04                VEXP2PD   zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
+0000000000000068 6222fdcdc844db04                VEXP2PD   zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -476,7 +351,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000098 6222fdcdc844dbfc                VEXP2PD   zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
+0000000000000070 6222fdcdc844dbfc                VEXP2PD   zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -498,7 +373,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000000A0 62027d48c8c7                    VEXP2PS   zmm24, zmm31
+0000000000000078 62027d48c8c7                    VEXP2PS   zmm24, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -517,7 +392,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000000A6 62027d18c8c7                    VEXP2PS   zmm24, zmm31, {sae}
+000000000000007E 62027d18c8c7                    VEXP2PS   zmm24, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -536,7 +411,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000000AC 62627d48c803                    VEXP2PS   zmm24, zmmword ptr [rbx]
+0000000000000084 62627d48c803                    VEXP2PS   zmm24, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -556,7 +431,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000B2 62627d58c803                    VEXP2PS   zmm24, dword ptr [rbx]{1to16}
+000000000000008A 62627d58c803                    VEXP2PS   zmm24, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -577,7 +452,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-00000000000000B8 62227d48c844db04                VEXP2PS   zmm24, zmmword ptr [rbx+r11*8+0x100]
+0000000000000090 62227d48c844db04                VEXP2PS   zmm24, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -597,7 +472,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-00000000000000C0 62227d48c844dbfc                VEXP2PS   zmm24, zmmword ptr [rbx+r11*8-0x100]
+0000000000000098 62227d48c844dbfc                VEXP2PS   zmm24, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -617,7 +492,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000000C8 62027d4dc8c7                    VEXP2PS   zmm24{k5}, zmm31
+00000000000000A0 62027d4dc8c7                    VEXP2PS   zmm24{k5}, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -637,7 +512,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000000CE 62027d1dc8c7                    VEXP2PS   zmm24{k5}, zmm31, {sae}
+00000000000000A6 62027d1dc8c7                    VEXP2PS   zmm24{k5}, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -657,7 +532,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000000D4 62627d4dc803                    VEXP2PS   zmm24{k5}, zmmword ptr [rbx]
+00000000000000AC 62627d4dc803                    VEXP2PS   zmm24{k5}, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -678,7 +553,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000000DA 62627d5dc803                    VEXP2PS   zmm24{k5}, dword ptr [rbx]{1to16}
+00000000000000B2 62627d5dc803                    VEXP2PS   zmm24{k5}, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -700,7 +575,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-00000000000000E0 62227d4dc844db04                VEXP2PS   zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
+00000000000000B8 62227d4dc844db04                VEXP2PS   zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -721,7 +596,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-00000000000000E8 62227d4dc844dbfc                VEXP2PS   zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
+00000000000000C0 62227d4dc844dbfc                VEXP2PS   zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -742,132 +617,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000000F0 62027dc8c8c7                    VEXP2PS   zmm24, zmm31
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-00000000000000F6 62027d98c8c7                    VEXP2PS   zmm24, zmm31, {sae}
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-00000000000000FC 62627dc8c803                    VEXP2PS   zmm24, zmmword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-0000000000000102 62627dd8c803                    VEXP2PS   zmm24, dword ptr [rbx]{1to16}
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Broadcast: yes, 
-                Segment: 3, Base: 3, 
-                Decorator: Broadcast 4 bytes element 16 times
-
-0000000000000108 62227dc8c844db04                VEXP2PS   zmm24, zmmword ptr [rbx+r11*8+0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
-
-0000000000000110 62227dc8c844dbfc                VEXP2PS   zmm24, zmmword ptr [rbx+r11*8-0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
-
-0000000000000118 62027dcdc8c7                    VEXP2PS   zmm24{k5}{z}, zmm31
+00000000000000C8 62027dcdc8c7                    VEXP2PS   zmm24{k5}{z}, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -888,7 +638,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000011E 62027d9dc8c7                    VEXP2PS   zmm24{k5}{z}, zmm31, {sae}
+00000000000000CE 62027d9dc8c7                    VEXP2PS   zmm24{k5}{z}, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -909,7 +659,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000124 62627dcdc803                    VEXP2PS   zmm24{k5}{z}, zmmword ptr [rbx]
+00000000000000D4 62627dcdc803                    VEXP2PS   zmm24{k5}{z}, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -931,7 +681,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000012A 62627dddc803                    VEXP2PS   zmm24{k5}{z}, dword ptr [rbx]{1to16}
+00000000000000DA 62627dddc803                    VEXP2PS   zmm24{k5}{z}, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -954,7 +704,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-0000000000000130 62227dcdc844db04                VEXP2PS   zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
+00000000000000E0 62227dcdc844db04                VEXP2PS   zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -976,7 +726,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000138 62227dcdc844dbfc                VEXP2PS   zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
+00000000000000E8 62227dcdc844dbfc                VEXP2PS   zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -998,7 +748,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000140 6202fd48cac7                    VRCP28PD  zmm24, zmm31
+00000000000000F0 6202fd48cac7                    VRCP28PD  zmm24, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1017,7 +767,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000146 6202fd18cac7                    VRCP28PD  zmm24, zmm31, {sae}
+00000000000000F6 6202fd18cac7                    VRCP28PD  zmm24, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1036,7 +786,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000014C 6262fd48ca03                    VRCP28PD  zmm24, zmmword ptr [rbx]
+00000000000000FC 6262fd48ca03                    VRCP28PD  zmm24, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1056,7 +806,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000152 6262fd58ca03                    VRCP28PD  zmm24, qword ptr [rbx]{1to8}
+0000000000000102 6262fd58ca03                    VRCP28PD  zmm24, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1077,7 +827,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-0000000000000158 6222fd48ca44db04                VRCP28PD  zmm24, zmmword ptr [rbx+r11*8+0x100]
+0000000000000108 6222fd48ca44db04                VRCP28PD  zmm24, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1097,7 +847,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000160 6222fd48ca44dbfc                VRCP28PD  zmm24, zmmword ptr [rbx+r11*8-0x100]
+0000000000000110 6222fd48ca44dbfc                VRCP28PD  zmm24, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1117,7 +867,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000168 6202fd4dcac7                    VRCP28PD  zmm24{k5}, zmm31
+0000000000000118 6202fd4dcac7                    VRCP28PD  zmm24{k5}, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1137,7 +887,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000016E 6202fd1dcac7                    VRCP28PD  zmm24{k5}, zmm31, {sae}
+000000000000011E 6202fd1dcac7                    VRCP28PD  zmm24{k5}, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1157,7 +907,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000174 6262fd4dca03                    VRCP28PD  zmm24{k5}, zmmword ptr [rbx]
+0000000000000124 6262fd4dca03                    VRCP28PD  zmm24{k5}, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1178,7 +928,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000017A 6262fd5dca03                    VRCP28PD  zmm24{k5}, qword ptr [rbx]{1to8}
+000000000000012A 6262fd5dca03                    VRCP28PD  zmm24{k5}, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1200,7 +950,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-0000000000000180 6222fd4dca44db04                VRCP28PD  zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
+0000000000000130 6222fd4dca44db04                VRCP28PD  zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1221,7 +971,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000188 6222fd4dca44dbfc                VRCP28PD  zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
+0000000000000138 6222fd4dca44dbfc                VRCP28PD  zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1242,132 +992,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000190 6202fdc8cac7                    VRCP28PD  zmm24, zmm31
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-0000000000000196 6202fd98cac7                    VRCP28PD  zmm24, zmm31, {sae}
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-000000000000019C 6262fdc8ca03                    VRCP28PD  zmm24, zmmword ptr [rbx]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000001A2 6262fdd8ca03                    VRCP28PD  zmm24, qword ptr [rbx]{1to8}
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Broadcast: yes, 
-                Segment: 3, Base: 3, 
-                Decorator: Broadcast 8 bytes element 8 times
-
-00000000000001A8 6222fdc8ca44db04                VRCP28PD  zmm24, zmmword ptr [rbx+r11*8+0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
-
-00000000000001B0 6222fdc8ca44dbfc                VRCP28PD  zmm24, zmmword ptr [rbx+r11*8-0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
-
-00000000000001B8 6202fdcdcac7                    VRCP28PD  zmm24{k5}{z}, zmm31
+0000000000000140 6202fdcdcac7                    VRCP28PD  zmm24{k5}{z}, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1388,7 +1013,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000001BE 6202fd9dcac7                    VRCP28PD  zmm24{k5}{z}, zmm31, {sae}
+0000000000000146 6202fd9dcac7                    VRCP28PD  zmm24{k5}{z}, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1409,7 +1034,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000001C4 6262fdcdca03                    VRCP28PD  zmm24{k5}{z}, zmmword ptr [rbx]
+000000000000014C 6262fdcdca03                    VRCP28PD  zmm24{k5}{z}, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1431,7 +1056,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000001CA 6262fdddca03                    VRCP28PD  zmm24{k5}{z}, qword ptr [rbx]{1to8}
+0000000000000152 6262fdddca03                    VRCP28PD  zmm24{k5}{z}, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1454,7 +1079,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-00000000000001D0 6222fdcdca44db04                VRCP28PD  zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
+0000000000000158 6222fdcdca44db04                VRCP28PD  zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1476,7 +1101,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-00000000000001D8 6222fdcdca44dbfc                VRCP28PD  zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
+0000000000000160 6222fdcdca44dbfc                VRCP28PD  zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1498,7 +1123,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000001E0 62027d48cac7                    VRCP28PS  zmm24, zmm31
+0000000000000168 62027d48cac7                    VRCP28PS  zmm24, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1517,7 +1142,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000001E6 62027d18cac7                    VRCP28PS  zmm24, zmm31, {sae}
+000000000000016E 62027d18cac7                    VRCP28PS  zmm24, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1536,7 +1161,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000001EC 62627d48ca03                    VRCP28PS  zmm24, zmmword ptr [rbx]
+0000000000000174 62627d48ca03                    VRCP28PS  zmm24, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1556,7 +1181,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000001F2 62627d58ca03                    VRCP28PS  zmm24, dword ptr [rbx]{1to16}
+000000000000017A 62627d58ca03                    VRCP28PS  zmm24, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1577,7 +1202,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-00000000000001F8 62227d48ca44db04                VRCP28PS  zmm24, zmmword ptr [rbx+r11*8+0x100]
+0000000000000180 62227d48ca44db04                VRCP28PS  zmm24, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1597,7 +1222,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000200 62227d48ca44dbfc                VRCP28PS  zmm24, zmmword ptr [rbx+r11*8-0x100]
+0000000000000188 62227d48ca44dbfc                VRCP28PS  zmm24, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1617,7 +1242,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000208 62027d4dcac7                    VRCP28PS  zmm24{k5}, zmm31
+0000000000000190 62027d4dcac7                    VRCP28PS  zmm24{k5}, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1637,7 +1262,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000020E 62027d1dcac7                    VRCP28PS  zmm24{k5}, zmm31, {sae}
+0000000000000196 62027d1dcac7                    VRCP28PS  zmm24{k5}, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1657,7 +1282,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000214 62627d4dca03                    VRCP28PS  zmm24{k5}, zmmword ptr [rbx]
+000000000000019C 62627d4dca03                    VRCP28PS  zmm24{k5}, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1678,7 +1303,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000021A 62627d5dca03                    VRCP28PS  zmm24{k5}, dword ptr [rbx]{1to16}
+00000000000001A2 62627d5dca03                    VRCP28PS  zmm24{k5}, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1700,7 +1325,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-0000000000000220 62227d4dca44db04                VRCP28PS  zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
+00000000000001A8 62227d4dca44db04                VRCP28PS  zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1721,7 +1346,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000228 62227d4dca44dbfc                VRCP28PS  zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
+00000000000001B0 62227d4dca44dbfc                VRCP28PS  zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1742,132 +1367,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000230 62027dc8cac7                    VRCP28PS  zmm24, zmm31
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-0000000000000236 62027d98cac7                    VRCP28PS  zmm24, zmm31, {sae}
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-000000000000023C 62627dc8ca03                    VRCP28PS  zmm24, zmmword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-0000000000000242 62627dd8ca03                    VRCP28PS  zmm24, dword ptr [rbx]{1to16}
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Broadcast: yes, 
-                Segment: 3, Base: 3, 
-                Decorator: Broadcast 4 bytes element 16 times
-
-0000000000000248 62227dc8ca44db04                VRCP28PS  zmm24, zmmword ptr [rbx+r11*8+0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
-
-0000000000000250 62227dc8ca44dbfc                VRCP28PS  zmm24, zmmword ptr [rbx+r11*8-0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
-
-0000000000000258 62027dcdcac7                    VRCP28PS  zmm24{k5}{z}, zmm31
+00000000000001B8 62027dcdcac7                    VRCP28PS  zmm24{k5}{z}, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1888,7 +1388,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000025E 62027d9dcac7                    VRCP28PS  zmm24{k5}{z}, zmm31, {sae}
+00000000000001BE 62027d9dcac7                    VRCP28PS  zmm24{k5}{z}, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1909,7 +1409,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000264 62627dcdca03                    VRCP28PS  zmm24{k5}{z}, zmmword ptr [rbx]
+00000000000001C4 62627dcdca03                    VRCP28PS  zmm24{k5}{z}, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1931,7 +1431,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000026A 62627dddca03                    VRCP28PS  zmm24{k5}{z}, dword ptr [rbx]{1to16}
+00000000000001CA 62627dddca03                    VRCP28PS  zmm24{k5}{z}, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1954,7 +1454,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-0000000000000270 62227dcdca44db04                VRCP28PS  zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
+00000000000001D0 62227dcdca44db04                VRCP28PS  zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1976,7 +1476,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000278 62227dcdca44dbfc                VRCP28PS  zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
+00000000000001D8 62227dcdca44dbfc                VRCP28PS  zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -1998,7 +1498,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000280 62f2c508cbd0                    VRCP28SD  xmm2, xmm7, xmm0
+00000000000001E0 62f2c508cbd0                    VRCP28SD  xmm2, xmm7, xmm0
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2018,7 +1518,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000286 62f2c518cbd0                    VRCP28SD  xmm2, xmm7, xmm0, {sae}
+00000000000001E6 62f2c518cbd0                    VRCP28SD  xmm2, xmm7, xmm0, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2038,7 +1538,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-000000000000028C 62f2c508cb13                    VRCP28SD  xmm2, xmm7, qword ptr [rbx]
+00000000000001EC 62f2c508cb13                    VRCP28SD  xmm2, xmm7, qword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2059,7 +1559,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000292 62b2c508cb54db20                VRCP28SD  xmm2, xmm7, qword ptr [rbx+r11*8+0x100]
+00000000000001F2 62b2c508cb54db20                VRCP28SD  xmm2, xmm7, qword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2080,7 +1580,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
 
-000000000000029A 62b2c508cb54dbe0                VRCP28SD  xmm2, xmm7, qword ptr [rbx+r11*8-0x100]
+00000000000001FA 62b2c508cb54dbe0                VRCP28SD  xmm2, xmm7, qword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2101,7 +1601,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
 
-00000000000002A2 62f2c50dcbd0                    VRCP28SD  xmm2{k5}, xmm7, xmm0
+0000000000000202 62f2c50dcbd0                    VRCP28SD  xmm2{k5}, xmm7, xmm0
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2122,7 +1622,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000002A8 62f2c51dcbd0                    VRCP28SD  xmm2{k5}, xmm7, xmm0, {sae}
+0000000000000208 62f2c51dcbd0                    VRCP28SD  xmm2{k5}, xmm7, xmm0, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2143,7 +1643,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000002AE 62f2c50dcb13                    VRCP28SD  xmm2{k5}, xmm7, qword ptr [rbx]
+000000000000020E 62f2c50dcb13                    VRCP28SD  xmm2{k5}, xmm7, qword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2165,7 +1665,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000002B4 62b2c50dcb54db20                VRCP28SD  xmm2{k5}, xmm7, qword ptr [rbx+r11*8+0x100]
+0000000000000214 62b2c50dcb54db20                VRCP28SD  xmm2{k5}, xmm7, qword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2187,7 +1687,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
 
-00000000000002BC 62b2c50dcb54dbe0                VRCP28SD  xmm2{k5}, xmm7, qword ptr [rbx+r11*8-0x100]
+000000000000021C 62b2c50dcb54dbe0                VRCP28SD  xmm2{k5}, xmm7, qword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2209,115 +1709,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
 
-00000000000002C4 62f2c588cbd0                    VRCP28SD  xmm2, xmm7, xmm0
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-00000000000002CA 62f2c598cbd0                    VRCP28SD  xmm2, xmm7, xmm0, {sae}
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-00000000000002D0 62f2c588cb13                    VRCP28SD  xmm2, xmm7, qword ptr [rbx]
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000002D6 62b2c588cb54db20                VRCP28SD  xmm2, xmm7, qword ptr [rbx+r11*8+0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
-
-00000000000002DE 62b2c588cb54dbe0                VRCP28SD  xmm2, xmm7, qword ptr [rbx+r11*8-0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
-
-00000000000002E6 62f2c58dcbd0                    VRCP28SD  xmm2{k5}{z}, xmm7, xmm0
+0000000000000224 62f2c58dcbd0                    VRCP28SD  xmm2{k5}{z}, xmm7, xmm0
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2339,7 +1731,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000002EC 62f2c59dcbd0                    VRCP28SD  xmm2{k5}{z}, xmm7, xmm0, {sae}
+000000000000022A 62f2c59dcbd0                    VRCP28SD  xmm2{k5}{z}, xmm7, xmm0, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2361,7 +1753,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000002F2 62f2c58dcb13                    VRCP28SD  xmm2{k5}{z}, xmm7, qword ptr [rbx]
+0000000000000230 62f2c58dcb13                    VRCP28SD  xmm2{k5}{z}, xmm7, qword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2384,7 +1776,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000002F8 62b2c58dcb54db20                VRCP28SD  xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8+0x100]
+0000000000000236 62b2c58dcb54db20                VRCP28SD  xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2407,7 +1799,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
 
-0000000000000300 62b2c58dcb54dbe0                VRCP28SD  xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8-0x100]
+000000000000023E 62b2c58dcb54dbe0                VRCP28SD  xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2430,7 +1822,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
 
-0000000000000308 62f24508cbd0                    VRCP28SS  xmm2, xmm7, xmm0
+0000000000000246 62f24508cbd0                    VRCP28SS  xmm2, xmm7, xmm0
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2450,7 +1842,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-000000000000030E 62f24518cbd0                    VRCP28SS  xmm2, xmm7, xmm0, {sae}
+000000000000024C 62f24518cbd0                    VRCP28SS  xmm2, xmm7, xmm0, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2470,7 +1862,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000314 62f24508cb13                    VRCP28SS  xmm2, xmm7, dword ptr [rbx]
+0000000000000252 62f24508cb13                    VRCP28SS  xmm2, xmm7, dword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2491,7 +1883,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000031A 62b24508cb54db40                VRCP28SS  xmm2, xmm7, dword ptr [rbx+r11*8+0x100]
+0000000000000258 62b24508cb54db40                VRCP28SS  xmm2, xmm7, dword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2512,7 +1904,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
 
-0000000000000322 62b24508cb54dbc0                VRCP28SS  xmm2, xmm7, dword ptr [rbx+r11*8-0x100]
+0000000000000260 62b24508cb54dbc0                VRCP28SS  xmm2, xmm7, dword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2533,7 +1925,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
 
-000000000000032A 62f2450dcbd0                    VRCP28SS  xmm2{k5}, xmm7, xmm0
+0000000000000268 62f2450dcbd0                    VRCP28SS  xmm2{k5}, xmm7, xmm0
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2554,7 +1946,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000330 62f2451dcbd0                    VRCP28SS  xmm2{k5}, xmm7, xmm0, {sae}
+000000000000026E 62f2451dcbd0                    VRCP28SS  xmm2{k5}, xmm7, xmm0, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2575,7 +1967,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000336 62f2450dcb13                    VRCP28SS  xmm2{k5}, xmm7, dword ptr [rbx]
+0000000000000274 62f2450dcb13                    VRCP28SS  xmm2{k5}, xmm7, dword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2597,7 +1989,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000033C 62b2450dcb54db40                VRCP28SS  xmm2{k5}, xmm7, dword ptr [rbx+r11*8+0x100]
+000000000000027A 62b2450dcb54db40                VRCP28SS  xmm2{k5}, xmm7, dword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2619,7 +2011,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
 
-0000000000000344 62b2450dcb54dbc0                VRCP28SS  xmm2{k5}, xmm7, dword ptr [rbx+r11*8-0x100]
+0000000000000282 62b2450dcb54dbc0                VRCP28SS  xmm2{k5}, xmm7, dword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2641,115 +2033,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
 
-000000000000034C 62f24588cbd0                    VRCP28SS  xmm2, xmm7, xmm0
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-0000000000000352 62f24598cbd0                    VRCP28SS  xmm2, xmm7, xmm0, {sae}
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-0000000000000358 62f24588cb13                    VRCP28SS  xmm2, xmm7, dword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-000000000000035E 62b24588cb54db40                VRCP28SS  xmm2, xmm7, dword ptr [rbx+r11*8+0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
-
-0000000000000366 62b24588cb54dbc0                VRCP28SS  xmm2, xmm7, dword ptr [rbx+r11*8-0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
-
-000000000000036E 62f2458dcbd0                    VRCP28SS  xmm2{k5}{z}, xmm7, xmm0
+000000000000028A 62f2458dcbd0                    VRCP28SS  xmm2{k5}{z}, xmm7, xmm0
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2771,7 +2055,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000374 62f2459dcbd0                    VRCP28SS  xmm2{k5}{z}, xmm7, xmm0, {sae}
+0000000000000290 62f2459dcbd0                    VRCP28SS  xmm2{k5}{z}, xmm7, xmm0, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2793,7 +2077,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-000000000000037A 62f2458dcb13                    VRCP28SS  xmm2{k5}{z}, xmm7, dword ptr [rbx]
+0000000000000296 62f2458dcb13                    VRCP28SS  xmm2{k5}{z}, xmm7, dword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2816,7 +2100,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000380 62b2458dcb54db40                VRCP28SS  xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8+0x100]
+000000000000029C 62b2458dcb54db40                VRCP28SS  xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2839,7 +2123,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
 
-0000000000000388 62b2458dcb54dbc0                VRCP28SS  xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8-0x100]
+00000000000002A4 62b2458dcb54dbc0                VRCP28SS  xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2862,7 +2146,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
 
-0000000000000390 6202fd48ccc7                    VRSQRT28PD zmm24, zmm31
+00000000000002AC 6202fd48ccc7                    VRSQRT28PD zmm24, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2881,7 +2165,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000396 6202fd18ccc7                    VRSQRT28PD zmm24, zmm31, {sae}
+00000000000002B2 6202fd18ccc7                    VRSQRT28PD zmm24, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2900,7 +2184,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000039C 6262fd48cc03                    VRSQRT28PD zmm24, zmmword ptr [rbx]
+00000000000002B8 6262fd48cc03                    VRSQRT28PD zmm24, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2920,7 +2204,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000003A2 6262fd58cc03                    VRSQRT28PD zmm24, qword ptr [rbx]{1to8}
+00000000000002BE 6262fd58cc03                    VRSQRT28PD zmm24, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2941,7 +2225,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-00000000000003A8 6222fd48cc44db04                VRSQRT28PD zmm24, zmmword ptr [rbx+r11*8+0x100]
+00000000000002C4 6222fd48cc44db04                VRSQRT28PD zmm24, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2961,7 +2245,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-00000000000003B0 6222fd48cc44dbfc                VRSQRT28PD zmm24, zmmword ptr [rbx+r11*8-0x100]
+00000000000002CC 6222fd48cc44dbfc                VRSQRT28PD zmm24, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -2981,7 +2265,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000003B8 6202fd4dccc7                    VRSQRT28PD zmm24{k5}, zmm31
+00000000000002D4 6202fd4dccc7                    VRSQRT28PD zmm24{k5}, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3001,7 +2285,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000003BE 6202fd1dccc7                    VRSQRT28PD zmm24{k5}, zmm31, {sae}
+00000000000002DA 6202fd1dccc7                    VRSQRT28PD zmm24{k5}, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3021,7 +2305,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000003C4 6262fd4dcc03                    VRSQRT28PD zmm24{k5}, zmmword ptr [rbx]
+00000000000002E0 6262fd4dcc03                    VRSQRT28PD zmm24{k5}, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3042,7 +2326,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000003CA 6262fd5dcc03                    VRSQRT28PD zmm24{k5}, qword ptr [rbx]{1to8}
+00000000000002E6 6262fd5dcc03                    VRSQRT28PD zmm24{k5}, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3064,7 +2348,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-00000000000003D0 6222fd4dcc44db04                VRSQRT28PD zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
+00000000000002EC 6222fd4dcc44db04                VRSQRT28PD zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3085,7 +2369,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-00000000000003D8 6222fd4dcc44dbfc                VRSQRT28PD zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
+00000000000002F4 6222fd4dcc44dbfc                VRSQRT28PD zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3106,132 +2390,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000003E0 6202fdc8ccc7                    VRSQRT28PD zmm24, zmm31
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-00000000000003E6 6202fd98ccc7                    VRSQRT28PD zmm24, zmm31, {sae}
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-00000000000003EC 6262fdc8cc03                    VRSQRT28PD zmm24, zmmword ptr [rbx]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000003F2 6262fdd8cc03                    VRSQRT28PD zmm24, qword ptr [rbx]{1to8}
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Broadcast: yes, 
-                Segment: 3, Base: 3, 
-                Decorator: Broadcast 8 bytes element 8 times
-
-00000000000003F8 6222fdc8cc44db04                VRSQRT28PD zmm24, zmmword ptr [rbx+r11*8+0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
-
-0000000000000400 6222fdc8cc44dbfc                VRSQRT28PD zmm24, zmmword ptr [rbx+r11*8-0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
-
-0000000000000408 6202fdcdccc7                    VRSQRT28PD zmm24{k5}{z}, zmm31
+00000000000002FC 6202fdcdccc7                    VRSQRT28PD zmm24{k5}{z}, zmm31
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3252,7 +2411,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000040E 6202fd9dccc7                    VRSQRT28PD zmm24{k5}{z}, zmm31, {sae}
+0000000000000302 6202fd9dccc7                    VRSQRT28PD zmm24{k5}{z}, zmm31, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3273,7 +2432,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000414 6262fdcdcc03                    VRSQRT28PD zmm24{k5}{z}, zmmword ptr [rbx]
+0000000000000308 6262fdcdcc03                    VRSQRT28PD zmm24{k5}{z}, zmmword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3295,7 +2454,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000041A 6262fdddcc03                    VRSQRT28PD zmm24{k5}{z}, qword ptr [rbx]{1to8}
+000000000000030E 6262fdddcc03                    VRSQRT28PD zmm24{k5}{z}, qword ptr [rbx]{1to8}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3318,7 +2477,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 8 bytes element 8 times
 
-0000000000000420 6222fdcdcc44db04                VRSQRT28PD zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
+0000000000000314 6222fdcdcc44db04                VRSQRT28PD zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3340,7 +2499,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000428 6222fdcdcc44dbfc                VRSQRT28PD zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
+000000000000031C 6222fdcdcc44dbfc                VRSQRT28PD zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3362,7 +2521,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000430 62027d48ccc7                    VRSQRT28PS zmm24, zmm31
+0000000000000324 62027d48ccc7                    VRSQRT28PS zmm24, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3381,7 +2540,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000436 62027d18ccc7                    VRSQRT28PS zmm24, zmm31, {sae}
+000000000000032A 62027d18ccc7                    VRSQRT28PS zmm24, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3400,7 +2559,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000043C 62627d48cc03                    VRSQRT28PS zmm24, zmmword ptr [rbx]
+0000000000000330 62627d48cc03                    VRSQRT28PS zmm24, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3420,7 +2579,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000442 62627d58cc03                    VRSQRT28PS zmm24, dword ptr [rbx]{1to16}
+0000000000000336 62627d58cc03                    VRSQRT28PS zmm24, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3441,7 +2600,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-0000000000000448 62227d48cc44db04                VRSQRT28PS zmm24, zmmword ptr [rbx+r11*8+0x100]
+000000000000033C 62227d48cc44db04                VRSQRT28PS zmm24, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3461,7 +2620,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000450 62227d48cc44dbfc                VRSQRT28PS zmm24, zmmword ptr [rbx+r11*8-0x100]
+0000000000000344 62227d48cc44dbfc                VRSQRT28PS zmm24, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3481,7 +2640,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000458 62027d4dccc7                    VRSQRT28PS zmm24{k5}, zmm31
+000000000000034C 62027d4dccc7                    VRSQRT28PS zmm24{k5}, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3501,7 +2660,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000045E 62027d1dccc7                    VRSQRT28PS zmm24{k5}, zmm31, {sae}
+0000000000000352 62027d1dccc7                    VRSQRT28PS zmm24{k5}, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3521,7 +2680,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000464 62627d4dcc03                    VRSQRT28PS zmm24{k5}, zmmword ptr [rbx]
+0000000000000358 62627d4dcc03                    VRSQRT28PS zmm24{k5}, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3542,7 +2701,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000046A 62627d5dcc03                    VRSQRT28PS zmm24{k5}, dword ptr [rbx]{1to16}
+000000000000035E 62627d5dcc03                    VRSQRT28PS zmm24{k5}, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3564,7 +2723,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-0000000000000470 62227d4dcc44db04                VRSQRT28PS zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
+0000000000000364 62227d4dcc44db04                VRSQRT28PS zmm24{k5}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3585,7 +2744,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-0000000000000478 62227d4dcc44dbfc                VRSQRT28PS zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
+000000000000036C 62227d4dcc44dbfc                VRSQRT28PS zmm24{k5}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3606,132 +2765,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000000480 62027dc8ccc7                    VRSQRT28PS zmm24, zmm31
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-0000000000000486 62027d98ccc7                    VRSQRT28PS zmm24, zmm31, {sae}
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
-
-000000000000048C 62627dc8cc03                    VRSQRT28PS zmm24, zmmword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-0000000000000492 62627dd8cc03                    VRSQRT28PS zmm24, dword ptr [rbx]{1to16}
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Broadcast: yes, 
-                Segment: 3, Base: 3, 
-                Decorator: Broadcast 4 bytes element 16 times
-
-0000000000000498 62227dc8cc44db04                VRSQRT28PS zmm24, zmmword ptr [rbx+r11*8+0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
-
-00000000000004A0 62227dc8cc44dbfc                VRSQRT28PS zmm24, zmmword ptr [rbx+r11*8-0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 512
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Full
-        Exception class: EVEX, exception type: E2
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 64, RawSize: 64, Encoding: R, RegType:           Vector, RegSize: 64, RegId: 24, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
-
-00000000000004A8 62027dcdccc7                    VRSQRT28PS zmm24{k5}{z}, zmm31
+0000000000000374 62027dcdccc7                    VRSQRT28PS zmm24{k5}{z}, zmm31
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3752,7 +2786,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000004AE 62027d9dccc7                    VRSQRT28PS zmm24{k5}{z}, zmm31, {sae}
+000000000000037A 62027d9dccc7                    VRSQRT28PS zmm24{k5}{z}, zmm31, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3773,7 +2807,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000004B4 62627dcdcc03                    VRSQRT28PS zmm24{k5}{z}, zmmword ptr [rbx]
+0000000000000380 62627dcdcc03                    VRSQRT28PS zmm24{k5}{z}, zmmword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3795,7 +2829,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000004BA 62627dddcc03                    VRSQRT28PS zmm24{k5}{z}, dword ptr [rbx]{1to16}
+0000000000000386 62627dddcc03                    VRSQRT28PS zmm24{k5}{z}, dword ptr [rbx]{1to16}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3818,7 +2852,7 @@
                 Segment: 3, Base: 3, 
                 Decorator: Broadcast 4 bytes element 16 times
 
-00000000000004C0 62227dcdcc44db04                VRSQRT28PS zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
+000000000000038C 62227dcdcc44db04                VRSQRT28PS zmm24{k5}{z}, zmmword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3840,7 +2874,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000004, 
 
-00000000000004C8 62227dcdcc44dbfc                VRSQRT28PS zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
+0000000000000394 62227dcdcc44dbfc                VRSQRT28PS zmm24{k5}{z}, zmmword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3862,7 +2896,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-00000000000004D0 62f2c508cdd0                    VRSQRT28SD xmm2, xmm7, xmm0
+000000000000039C 62f2c508cdd0                    VRSQRT28SD xmm2, xmm7, xmm0
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3882,7 +2916,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000004D6 62f2c518cdd0                    VRSQRT28SD xmm2, xmm7, xmm0, {sae}
+00000000000003A2 62f2c518cdd0                    VRSQRT28SD xmm2, xmm7, xmm0, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3902,7 +2936,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000004DC 62f2c508cd13                    VRSQRT28SD xmm2, xmm7, qword ptr [rbx]
+00000000000003A8 62f2c508cd13                    VRSQRT28SD xmm2, xmm7, qword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3923,7 +2957,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000004E2 62b2c508cd54db20                VRSQRT28SD xmm2, xmm7, qword ptr [rbx+r11*8+0x100]
+00000000000003AE 62b2c508cd54db20                VRSQRT28SD xmm2, xmm7, qword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3944,7 +2978,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
 
-00000000000004EA 62b2c508cd54dbe0                VRSQRT28SD xmm2, xmm7, qword ptr [rbx+r11*8-0x100]
+00000000000003B6 62b2c508cd54dbe0                VRSQRT28SD xmm2, xmm7, qword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3965,7 +2999,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
 
-00000000000004F2 62f2c50dcdd0                    VRSQRT28SD xmm2{k5}, xmm7, xmm0
+00000000000003BE 62f2c50dcdd0                    VRSQRT28SD xmm2{k5}, xmm7, xmm0
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -3986,7 +3020,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000004F8 62f2c51dcdd0                    VRSQRT28SD xmm2{k5}, xmm7, xmm0, {sae}
+00000000000003C4 62f2c51dcdd0                    VRSQRT28SD xmm2{k5}, xmm7, xmm0, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4007,7 +3041,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000004FE 62f2c50dcd13                    VRSQRT28SD xmm2{k5}, xmm7, qword ptr [rbx]
+00000000000003CA 62f2c50dcd13                    VRSQRT28SD xmm2{k5}, xmm7, qword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4029,7 +3063,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000504 62b2c50dcd54db20                VRSQRT28SD xmm2{k5}, xmm7, qword ptr [rbx+r11*8+0x100]
+00000000000003D0 62b2c50dcd54db20                VRSQRT28SD xmm2{k5}, xmm7, qword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4051,7 +3085,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
 
-000000000000050C 62b2c50dcd54dbe0                VRSQRT28SD xmm2{k5}, xmm7, qword ptr [rbx+r11*8-0x100]
+00000000000003D8 62b2c50dcd54dbe0                VRSQRT28SD xmm2{k5}, xmm7, qword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4073,115 +3107,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
 
-0000000000000514 62f2c588cdd0                    VRSQRT28SD xmm2, xmm7, xmm0
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-000000000000051A 62f2c598cdd0                    VRSQRT28SD xmm2, xmm7, xmm0, {sae}
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-0000000000000520 62f2c588cd13                    VRSQRT28SD xmm2, xmm7, qword ptr [rbx]
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-0000000000000526 62b2c588cd54db20                VRSQRT28SD xmm2, xmm7, qword ptr [rbx+r11*8+0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
-
-000000000000052E 62b2c588cd54dbe0                VRSQRT28SD xmm2, xmm7, qword ptr [rbx+r11*8-0x100]
-        DSIZE: 64, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
-
-0000000000000536 62f2c58dcdd0                    VRSQRT28SD xmm2{k5}{z}, xmm7, xmm0
+00000000000003E0 62f2c58dcdd0                    VRSQRT28SD xmm2{k5}{z}, xmm7, xmm0
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4203,7 +3129,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-000000000000053C 62f2c59dcdd0                    VRSQRT28SD xmm2{k5}{z}, xmm7, xmm0, {sae}
+00000000000003E6 62f2c59dcdd0                    VRSQRT28SD xmm2{k5}{z}, xmm7, xmm0, {sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4225,7 +3151,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000542 62f2c58dcd13                    VRSQRT28SD xmm2{k5}{z}, xmm7, qword ptr [rbx]
+00000000000003EC 62f2c58dcd13                    VRSQRT28SD xmm2{k5}{z}, xmm7, qword ptr [rbx]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4248,7 +3174,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-0000000000000548 62b2c58dcd54db20                VRSQRT28SD xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8+0x100]
+00000000000003F2 62b2c58dcd54db20                VRSQRT28SD xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8+0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4271,7 +3197,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000020, 
 
-0000000000000550 62b2c58dcd54dbe0                VRSQRT28SD xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8-0x100]
+00000000000003FA 62b2c58dcd54dbe0                VRSQRT28SD xmm2{k5}{z}, xmm7, qword ptr [rbx+r11*8-0x100]
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4294,7 +3220,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffe0, 
 
-0000000000000558 62f24508cdd0                    VRSQRT28SS xmm2, xmm7, xmm0
+0000000000000402 62f24508cdd0                    VRSQRT28SS xmm2, xmm7, xmm0
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4314,7 +3240,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-000000000000055E 62f24518cdd0                    VRSQRT28SS xmm2, xmm7, xmm0, {sae}
+0000000000000408 62f24518cdd0                    VRSQRT28SS xmm2, xmm7, xmm0, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4334,7 +3260,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000564 62f24508cd13                    VRSQRT28SS xmm2, xmm7, dword ptr [rbx]
+000000000000040E 62f24508cd13                    VRSQRT28SS xmm2, xmm7, dword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4355,7 +3281,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000056A 62b24508cd54db40                VRSQRT28SS xmm2, xmm7, dword ptr [rbx+r11*8+0x100]
+0000000000000414 62b24508cd54db40                VRSQRT28SS xmm2, xmm7, dword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4376,7 +3302,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
 
-0000000000000572 62b24508cd54dbc0                VRSQRT28SS xmm2, xmm7, dword ptr [rbx+r11*8-0x100]
+000000000000041C 62b24508cd54dbc0                VRSQRT28SS xmm2, xmm7, dword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4397,7 +3323,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
 
-000000000000057A 62f2450dcdd0                    VRSQRT28SS xmm2{k5}, xmm7, xmm0
+0000000000000424 62f2450dcdd0                    VRSQRT28SS xmm2{k5}, xmm7, xmm0
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4418,7 +3344,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000580 62f2451dcdd0                    VRSQRT28SS xmm2{k5}, xmm7, xmm0, {sae}
+000000000000042A 62f2451dcdd0                    VRSQRT28SS xmm2{k5}, xmm7, xmm0, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4439,7 +3365,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-0000000000000586 62f2450dcd13                    VRSQRT28SS xmm2{k5}, xmm7, dword ptr [rbx]
+0000000000000430 62f2450dcd13                    VRSQRT28SS xmm2{k5}, xmm7, dword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4461,7 +3387,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-000000000000058C 62b2450dcd54db40                VRSQRT28SS xmm2{k5}, xmm7, dword ptr [rbx+r11*8+0x100]
+0000000000000436 62b2450dcd54db40                VRSQRT28SS xmm2{k5}, xmm7, dword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4483,7 +3409,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
 
-0000000000000594 62b2450dcd54dbc0                VRSQRT28SS xmm2{k5}, xmm7, dword ptr [rbx+r11*8-0x100]
+000000000000043E 62b2450dcd54dbc0                VRSQRT28SS xmm2{k5}, xmm7, dword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4505,115 +3431,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
 
-000000000000059C 62f24588cdd0                    VRSQRT28SS xmm2, xmm7, xmm0
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-00000000000005A2 62f24598cdd0                    VRSQRT28SS xmm2, xmm7, xmm0, {sae}
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
-
-00000000000005A8 62f24588cd13                    VRSQRT28SS xmm2, xmm7, dword ptr [rbx]
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
-                Segment: 3, Base: 3, 
-
-00000000000005AE 62b24588cd54db40                VRSQRT28SS xmm2, xmm7, dword ptr [rbx+r11*8+0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
-
-00000000000005B6 62b24588cd54dbc0                VRSQRT28SS xmm2, xmm7, dword ptr [rbx+r11*8-0x100]
-        DSIZE: 32, ASIZE: 64, VLEN: 128
-        ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
-        CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
-        EVEX Tuple Type: Tuple 1 Scalar
-        Exception class: EVEX, exception type: E3
-        Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
-                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
-                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
-        Valid prefixes
-                REP: no, REPcc: no, LOCK: no
-                HLE: no, XACQUIRE only: no, XRELEASE only: no
-                BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
-                Decorator: Zero (no merging)
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
-        Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
-                Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xffffffffffffffc0, 
-
-00000000000005BE 62f2458dcdd0                    VRSQRT28SS xmm2{k5}{z}, xmm7, xmm0
+0000000000000446 62f2458dcdd0                    VRSQRT28SS xmm2{k5}{z}, xmm7, xmm0
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4635,7 +3453,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000005C4 62f2459dcdd0                    VRSQRT28SS xmm2{k5}{z}, xmm7, xmm0, {sae}
+000000000000044C 62f2459dcdd0                    VRSQRT28SS xmm2{k5}{z}, xmm7, xmm0, {sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4657,7 +3475,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: V, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 0, RegCount: 1
 
-00000000000005CA 62f2458dcd13                    VRSQRT28SS xmm2{k5}{z}, xmm7, dword ptr [rbx]
+0000000000000452 62f2458dcd13                    VRSQRT28SS xmm2{k5}{z}, xmm7, dword ptr [rbx]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4680,7 +3498,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 3, 
 
-00000000000005D0 62b2458dcd54db40                VRSQRT28SS xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8+0x100]
+0000000000000458 62b2458dcd54db40                VRSQRT28SS xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8+0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27
@@ -4703,7 +3521,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0x0000000000000040, 
 
-00000000000005D8 62b2458dcd54dbc0                VRSQRT28SS xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8-0x100]
+0000000000000460 62b2458dcd54dbc0                VRSQRT28SS xmm2{k5}{z}, xmm7, dword ptr [rbx+r11*8-0x100]
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX512ER, Ins cat: KNL, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 27

@@ -21,8 +21,8 @@ VPEXTRB             Mb,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i
 VPEXTRB             Rd,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x14 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
 VPEXTRW             Mw,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x15 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
 VPEXTRW             Rd,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x15 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
-VPEXTRD             Ey,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x16 /r ib]        s:AVX, t:AVX, w:W|R|R, e:5
-VPEXTRQ             Ey,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:1 0x16 /r ib]        s:AVX, t:AVX, w:W|R|R, e:5
+VPEXTRD             Ey,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:0 0x16 /r ib]        s:AVX, t:AVX, w:W|R|R, e:5, a:IWO64
+VPEXTRQ             Ey,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:1 0x16 /r ib]        s:AVX, t:AVX, w:W|R|R, e:5, a:IWO64
 VEXTRACTPS          Md,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x17 /r:mem ib]    s:AVX, t:AVX, w:W|R|R, e:5
 VEXTRACTPS          Ry,Vdq,Ib             nil               [vex m:3 p:1 l:0 w:i 0x17 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
 VINSERTF128         Vqq,Hqq,Wdq,Ib        nil               [vex m:3 p:1 l:1 w:0 0x18 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:6
@@ -35,8 +35,8 @@ VPINSRB             Vdq,Hdq,Mb,Ib         nil               [vex m:3 p:1 l:0 w:i
 VPINSRB             Vdq,Hdq,Rd,Ib         nil               [vex m:3 p:1 l:0 w:i 0x20 /r:reg ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
 VINSERTPS           Vdq,Hdq,Md,Ib         nil               [vex m:3 p:1 l:0 w:i 0x21 /r:mem ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
 VINSERTPS           Vdq,Hdq,Udq,Ib        nil               [vex m:3 p:1 l:0 w:i 0x21 /r:reg ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
-VPINSRD             Vdq,Hdq,Ey,Ib         nil               [vex m:3 p:1 l:0 w:0 0x22 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:5
-VPINSRQ             Vdq,Hdq,Ey,Ib         nil               [vex m:3 p:1 l:0 w:1 0x22 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:5
+VPINSRD             Vdq,Hdq,Ey,Ib         nil               [vex m:3 p:1 l:0 w:0 0x22 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:5, a:IWO64
+VPINSRQ             Vdq,Hdq,Ey,Ib         nil               [vex m:3 p:1 l:0 w:1 0x22 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:5, a:IWO64
 
 # 0x30 - 0x3F
 KSHIFTRW            rKw,mKw,Ib            nil               [vex m:3 p:1 l:0 w:1 0x30 /r:reg ib]    s:AVX512F, t:KMASK, c:KSHIFTR, w:W|R|R, e:K20

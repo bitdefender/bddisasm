@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.16)
 
 project(disasmtool LANGUAGES CXX)
 
@@ -39,7 +39,10 @@ target_compile_options(
             -march=nehalem
             -fno-omit-frame-pointer)
 
-# find_package(bddisasm REQUIRED)
+if (NOT TARGET bddisasm)
+    find_package(bddisasm REQUIRED)
+endif ()
+
 find_package(RapidJSON QUIET)
 
 target_link_libraries(disasmtool PRIVATE bddisasm::bddisasm bddisasm::bdshemu)
@@ -54,7 +57,7 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     include(CheckIPOSupported)
     check_ipo_supported(RESULT USE_IPO)
     if (USE_IPO)
-        set_target_properties(bddisasm PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
+        set_target_properties(disasmtool PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
     endif ()
 endif ()
 

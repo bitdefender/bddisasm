@@ -38,15 +38,15 @@ VMOVAPS              Vn{K}{z},Wn                  nil       [evex m:1 p:0 l:x w:
 VMOVAPD              Vn{K}{z},Wn                  nil       [evex m:1 p:1 l:x w:1 0x28 /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R
 VMOVAPS              Wn{K}{z},Vn                  nil       [evex m:1 p:0 l:x w:0 0x29 /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R
 VMOVAPD              Wn{K}{z},Vn                  nil       [evex m:1 p:1 l:x w:1 0x29 /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R
-VCVTSI2SS            Vdq,Hdq{er},Ey               nil       [evex m:1 p:2 l:i w:x 0x2A /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R
-VCVTSI2SD            Vdq,Hdq,Ey                   nil       [evex m:1 p:3 l:i w:0 0x2A /r]             s:AVX512F, t:CONVERT, l:t1s, e:E10NF, w:W|R|R, a:IER
-VCVTSI2SD            Vdq,Hdq{er},Ey               nil       [evex m:1 p:3 l:i w:1 0x2A /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R
+VCVTSI2SS            Vdq,Hdq{er},Ey               nil       [evex m:1 p:2 l:i w:x 0x2A /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R, a:IWO64
+VCVTSI2SD            Vdq,Hdq,Ey                   nil       [evex m:1 p:3 l:i w:0 0x2A /r]             s:AVX512F, t:CONVERT, l:t1s, e:E10NF, w:W|R|R, a:IER|IWO64
+VCVTSI2SD            Vdq,Hdq{er},Ey               nil       [evex m:1 p:3 l:i w:1 0x2A /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R, a:IWO64
 VMOVNTPS             Mn,Vn                        nil       [evex m:1 p:0 l:x w:0 0x2B /r:mem]         s:AVX512F, t:DATAXFER, l:fvm, e:E1NF, w:W|R
 VMOVNTPD             Mn,Vn                        nil       [evex m:1 p:1 l:x w:1 0x2B /r:mem]         s:AVX512F, t:DATAXFER, l:fvm, e:E1NF, w:W|R
-VCVTTSS2SI           Gy,Wss{sae}                  nil       [evex m:1 p:2 l:i w:x 0x2C /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
-VCVTTSD2SI           Gy,Wsd{sae}                  nil       [evex m:1 p:3 l:i w:x 0x2C /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
-VCVTSS2SI            Gy,Wss{er}                   nil       [evex m:1 p:2 l:i w:x 0x2D /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
-VCVTSD2SI            Gy,Wsd{er}                   nil       [evex m:1 p:3 l:i w:x 0x2D /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
+VCVTTSS2SI           Gy,Wss{sae}                  nil       [evex m:1 p:2 l:i w:x 0x2C /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
+VCVTTSD2SI           Gy,Wsd{sae}                  nil       [evex m:1 p:3 l:i w:x 0x2C /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
+VCVTSS2SI            Gy,Wss{er}                   nil       [evex m:1 p:2 l:i w:x 0x2D /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
+VCVTSD2SI            Gy,Wsd{er}                   nil       [evex m:1 p:3 l:i w:x 0x2D /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
 VUCOMISS             Vdq,Wss{sae}                 Fv        [evex m:1 p:0 l:i w:0 0x2E /r]             s:AVX512F, t:AVX512, l:t1s, w:R|R|W, e:E3, f:COMIS
 VUCOMISD             Vdq,Wsd{sae}                 Fv        [evex m:1 p:1 l:i w:1 0x2E /r]             s:AVX512F, t:AVX512, l:t1s, w:R|R|W, e:E3, f:COMIS
 VCOMISS              Vdq,Wss{sae}                 Fv        [evex m:1 p:0 l:i w:0 0x2F /r]             s:AVX512F, t:AVX512, l:t1s, w:R|R|W, e:E3, f:COMIS
@@ -113,8 +113,8 @@ VPUNPCKHDQ           Vn{K}{z},Hn,Wn|B32           nil       [evex m:1 p:1 l:x w:
 VPACKSSDW            Vn{K}{z},Hn,Wn|B32           nil       [evex m:1 p:1 l:x w:0 0x6B /r]             s:AVX512BW, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
 VPUNPCKLQDQ          Vn{K}{z},Hn,Wn|B64           nil       [evex m:1 p:1 l:x w:1 0x6C /r]             s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
 VPUNPCKHQDQ          Vn{K}{z},Hn,Wn|B64           nil       [evex m:1 p:1 l:x w:1 0x6D /r]             s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
-VMOVD                Vdq,Ed                       nil       [evex m:1 p:1 l:0 w:0 0x6E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R
-VMOVQ                Vdq,Eq                       nil       [evex m:1 p:1 l:0 w:1 0x6E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R
+VMOVD                Vdq,Ed                       nil       [evex m:1 p:1 l:0 w:0 0x6E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R, a:IWO64
+VMOVQ                Vdq,Eq                       nil       [evex m:1 p:1 l:0 w:1 0x6E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R, a:IWO64
 VMOVDQA32            Vn{K}{z},Wn                  nil       [evex m:1 p:1 l:x w:0 0x6F /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R
 VMOVDQA64            Vn{K}{z},Wn                  nil       [evex m:1 p:1 l:x w:1 0x6F /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R
 VMOVDQU32            Vn{K}{z},Wn                  nil       [evex m:1 p:2 l:x w:0 0x6F /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E4nb, w:W|R|R
@@ -148,14 +148,14 @@ VCVTTPS2UDQ          Vn{K}{z},Wn|B32{sae}         nil       [evex m:1 p:0 l:x w:
 VCVTTPD2UDQ          Vh{K}{z},Wn|B64{sae}         nil       [evex m:1 p:0 l:x w:1 0x78 /r]             s:AVX512F, t:CONVERT, l:fv, e:E2, w:W|R|R
 VCVTTPS2UQQ          Vn{K}{z},Wh|B32{sae}         nil       [evex m:1 p:1 l:x w:0 0x78 /r]             s:AVX512DQ, t:CONVERT, l:hv, e:E3, w:W|R|R
 VCVTTPD2UQQ          Vn{K}{z},Wn|B64{sae}         nil       [evex m:1 p:1 l:x w:1 0x78 /r]             s:AVX512DQ, t:CONVERT, l:fv, e:E2, w:W|R|R
-VCVTTSS2USI          Gy,Wss{sae}                  nil       [evex m:1 p:2 l:i w:x 0x78 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
-VCVTTSD2USI          Gy,Wsd{sae}                  nil       [evex m:1 p:3 l:i w:x 0x78 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
+VCVTTSS2USI          Gy,Wss{sae}                  nil       [evex m:1 p:2 l:i w:x 0x78 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
+VCVTTSD2USI          Gy,Wsd{sae}                  nil       [evex m:1 p:3 l:i w:x 0x78 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
 VCVTPS2UDQ           Vn{K}{z},Wn|B32{er}          nil       [evex m:1 p:0 l:x w:0 0x79 /r]             s:AVX512F, t:CONVERT, l:fv, e:E2, w:W|R|R
 VCVTPD2UDQ           Vh{K}{z},Wn|B64{er}          nil       [evex m:1 p:0 l:x w:1 0x79 /r]             s:AVX512F, t:CONVERT, l:fv, e:E2, w:W|R|R
 VCVTPS2UQQ           Vn{K}{z},Wh|B32{er}          nil       [evex m:1 p:1 l:x w:0 0x79 /r]             s:AVX512DQ, t:CONVERT, l:hv, e:E3, w:W|R|R
 VCVTPD2UQQ           Vn{K}{z},Wn|B64{er}          nil       [evex m:1 p:1 l:x w:1 0x79 /r]             s:AVX512DQ, t:CONVERT, l:fv, e:E2, w:W|R|R
-VCVTSS2USI           Gy,Wss{er}                   nil       [evex m:1 p:2 l:i w:x 0x79 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
-VCVTSD2USI           Gy,Wsd{er}                   nil       [evex m:1 p:3 l:i w:x 0x79 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R
+VCVTSS2USI           Gy,Wss{er}                   nil       [evex m:1 p:2 l:i w:x 0x79 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
+VCVTSD2USI           Gy,Wsd{er}                   nil       [evex m:1 p:3 l:i w:x 0x79 /r]             s:AVX512F, t:CONVERT, l:t1f, e:E3, w:W|R, a:IWO64
 VCVTTPS2QQ           Vn{K}{z},Wh|B32{sae}         nil       [evex m:1 p:1 l:x w:0 0x7A /r]             s:AVX512DQ, t:CONVERT, l:hv, e:E3, w:W|R|R
 VCVTTPD2QQ           Vn{K}{z},Wn|B64{sae}         nil       [evex m:1 p:1 l:x w:1 0x7A /r]             s:AVX512DQ, t:CONVERT, l:fv, e:E2, w:W|R|R
 VCVTUDQ2PD           Vn{K}{z},Wh|B32              nil       [evex m:1 p:2 l:x w:0 0x7A /r]             s:AVX512F, t:CONVERT, l:hv, e:E5, w:W|R|R, a:IER
@@ -164,11 +164,11 @@ VCVTUDQ2PS           Vn{K}{z},Wn|B32{er}          nil       [evex m:1 p:3 l:x w:
 VCVTUQQ2PS           Vh{K}{z},Wn|B64{er}          nil       [evex m:1 p:3 l:x w:1 0x7A /r]             s:AVX512DQ, t:CONVERT, l:fv, e:E2, w:W|R|R
 VCVTPS2QQ            Vn{K}{z},Wh|B32{er}          nil       [evex m:1 p:1 l:x w:0 0x7B /r]             s:AVX512DQ, t:CONVERT, l:hv, e:E3, w:W|R|R
 VCVTPD2QQ            Vn{K}{z},Wn|B64{er}          nil       [evex m:1 p:1 l:x w:1 0x7B /r]             s:AVX512DQ, t:CONVERT, l:fv, e:E2, w:W|R|R
-VCVTUSI2SS           Vss,Hss{er},Ey               nil       [evex m:1 p:2 l:i w:x 0x7B /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R
-VCVTUSI2SD           Vdq,Hdq,Ey                   nil       [evex m:1 p:3 l:i w:0 0x7B /r]             s:AVX512F, t:CONVERT, l:t1s, e:E10NF, w:W|R|R, a:IER
-VCVTUSI2SD           Vdq,Hdq{er},Ey               nil       [evex m:1 p:3 l:i w:1 0x7B /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R
-VMOVD                Ey,Vdq                       nil       [evex m:1 p:1 l:0 w:0 0x7E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R
-VMOVQ                Ey,Vdq                       nil       [evex m:1 p:1 l:0 w:1 0x7E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R
+VCVTUSI2SS           Vss,Hss{er},Ey               nil       [evex m:1 p:2 l:i w:x 0x7B /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R, a:IWO64
+VCVTUSI2SD           Vdq,Hdq,Ey                   nil       [evex m:1 p:3 l:i w:0 0x7B /r]             s:AVX512F, t:CONVERT, l:t1s, e:E10NF, w:W|R|R, a:IER|IWO64
+VCVTUSI2SD           Vdq,Hdq{er},Ey               nil       [evex m:1 p:3 l:i w:1 0x7B /r]             s:AVX512F, t:CONVERT, l:t1s, e:E3, w:W|R|R, a:IWO64
+VMOVD                Ey,Vdq                       nil       [evex m:1 p:1 l:0 w:0 0x7E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R, a:IWO64
+VMOVQ                Ey,Vdq                       nil       [evex m:1 p:1 l:0 w:1 0x7E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R, a:IWO64
 VMOVQ                Vdq,Wq                       nil       [evex m:1 p:2 l:0 w:1 0x7E /r]             s:AVX512F, t:DATAXFER, l:t1s, e:E9NF, w:W|R
 VMOVDQA32            Wn{K}{z},Vn                  nil       [evex m:1 p:1 l:x w:0 0x7F /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R
 VMOVDQA64            Wn{K}{z},Vn                  nil       [evex m:1 p:1 l:x w:1 0x7F /r]             s:AVX512F, t:DATAXFER, l:fvm, e:E1, w:W|R|R

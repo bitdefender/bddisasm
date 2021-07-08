@@ -10,11 +10,6 @@
     vpdpbusd xmm2{k5}, xmm7, [rbx]{1to4}
     vpdpbusd xmm2{k5}, xmm7, [rbx+r11*8+256]
     vpdpbusd xmm2{k5}, xmm7, [rbx+r11*8-256]
-    vpdpbusd xmm2{z}, xmm7, xmm0
-    vpdpbusd xmm2{z}, xmm7, [rbx]
-    vpdpbusd xmm2{z}, xmm7, [rbx]{1to4}
-    vpdpbusd xmm2{z}, xmm7, [rbx+r11*8+256]
-    vpdpbusd xmm2{z}, xmm7, [rbx+r11*8-256]
     vpdpbusd xmm2{k5}{z}, xmm7, xmm0
     vpdpbusd xmm2{k5}{z}, xmm7, [rbx]
     vpdpbusd xmm2{k5}{z}, xmm7, [rbx]{1to4}
@@ -30,11 +25,6 @@
     vpdpbusd ymm16{k5}, ymm13, [rbx]{1to8}
     vpdpbusd ymm16{k5}, ymm13, [rbx+r11*8+256]
     vpdpbusd ymm16{k5}, ymm13, [rbx+r11*8-256]
-    vpdpbusd ymm16{z}, ymm13, ymm15
-    vpdpbusd ymm16{z}, ymm13, [rbx]
-    vpdpbusd ymm16{z}, ymm13, [rbx]{1to8}
-    vpdpbusd ymm16{z}, ymm13, [rbx+r11*8+256]
-    vpdpbusd ymm16{z}, ymm13, [rbx+r11*8-256]
     vpdpbusd ymm16{k5}{z}, ymm13, ymm15
     vpdpbusd ymm16{k5}{z}, ymm13, [rbx]
     vpdpbusd ymm16{k5}{z}, ymm13, [rbx]{1to8}
@@ -50,11 +40,6 @@
     vpdpbusd zmm24{k5}, zmm24, [rbx]{1to16}
     vpdpbusd zmm24{k5}, zmm24, [rbx+r11*8+256]
     vpdpbusd zmm24{k5}, zmm24, [rbx+r11*8-256]
-    vpdpbusd zmm24{z}, zmm24, zmm31
-    vpdpbusd zmm24{z}, zmm24, [rbx]
-    vpdpbusd zmm24{z}, zmm24, [rbx]{1to16}
-    vpdpbusd zmm24{z}, zmm24, [rbx+r11*8+256]
-    vpdpbusd zmm24{z}, zmm24, [rbx+r11*8-256]
     vpdpbusd zmm24{k5}{z}, zmm24, zmm31
     vpdpbusd zmm24{k5}{z}, zmm24, [rbx]
     vpdpbusd zmm24{k5}{z}, zmm24, [rbx]{1to16}
@@ -70,11 +55,6 @@
     vpdpbusds xmm2{k5}, xmm7, [rbx]{1to4}
     vpdpbusds xmm2{k5}, xmm7, [rbx+r11*8+256]
     vpdpbusds xmm2{k5}, xmm7, [rbx+r11*8-256]
-    vpdpbusds xmm2{z}, xmm7, xmm0
-    vpdpbusds xmm2{z}, xmm7, [rbx]
-    vpdpbusds xmm2{z}, xmm7, [rbx]{1to4}
-    vpdpbusds xmm2{z}, xmm7, [rbx+r11*8+256]
-    vpdpbusds xmm2{z}, xmm7, [rbx+r11*8-256]
     vpdpbusds xmm2{k5}{z}, xmm7, xmm0
     vpdpbusds xmm2{k5}{z}, xmm7, [rbx]
     vpdpbusds xmm2{k5}{z}, xmm7, [rbx]{1to4}
@@ -90,11 +70,6 @@
     vpdpbusds ymm16{k5}, ymm13, [rbx]{1to8}
     vpdpbusds ymm16{k5}, ymm13, [rbx+r11*8+256]
     vpdpbusds ymm16{k5}, ymm13, [rbx+r11*8-256]
-    vpdpbusds ymm16{z}, ymm13, ymm15
-    vpdpbusds ymm16{z}, ymm13, [rbx]
-    vpdpbusds ymm16{z}, ymm13, [rbx]{1to8}
-    vpdpbusds ymm16{z}, ymm13, [rbx+r11*8+256]
-    vpdpbusds ymm16{z}, ymm13, [rbx+r11*8-256]
     vpdpbusds ymm16{k5}{z}, ymm13, ymm15
     vpdpbusds ymm16{k5}{z}, ymm13, [rbx]
     vpdpbusds ymm16{k5}{z}, ymm13, [rbx]{1to8}
@@ -110,11 +85,6 @@
     vpdpbusds zmm24{k5}, zmm24, [rbx]{1to16}
     vpdpbusds zmm24{k5}, zmm24, [rbx+r11*8+256]
     vpdpbusds zmm24{k5}, zmm24, [rbx+r11*8-256]
-    vpdpbusds zmm24{z}, zmm24, zmm31
-    vpdpbusds zmm24{z}, zmm24, [rbx]
-    vpdpbusds zmm24{z}, zmm24, [rbx]{1to16}
-    vpdpbusds zmm24{z}, zmm24, [rbx+r11*8+256]
-    vpdpbusds zmm24{z}, zmm24, [rbx+r11*8-256]
     vpdpbusds zmm24{k5}{z}, zmm24, zmm31
     vpdpbusds zmm24{k5}{z}, zmm24, [rbx]
     vpdpbusds zmm24{k5}{z}, zmm24, [rbx]{1to16}
@@ -130,11 +100,6 @@
     vpdpwssd xmm2{k5}, xmm7, [rbx]{1to4}
     vpdpwssd xmm2{k5}, xmm7, [rbx+r11*8+256]
     vpdpwssd xmm2{k5}, xmm7, [rbx+r11*8-256]
-    vpdpwssd xmm2{z}, xmm7, xmm0
-    vpdpwssd xmm2{z}, xmm7, [rbx]
-    vpdpwssd xmm2{z}, xmm7, [rbx]{1to4}
-    vpdpwssd xmm2{z}, xmm7, [rbx+r11*8+256]
-    vpdpwssd xmm2{z}, xmm7, [rbx+r11*8-256]
     vpdpwssd xmm2{k5}{z}, xmm7, xmm0
     vpdpwssd xmm2{k5}{z}, xmm7, [rbx]
     vpdpwssd xmm2{k5}{z}, xmm7, [rbx]{1to4}
@@ -150,11 +115,6 @@
     vpdpwssd ymm16{k5}, ymm13, [rbx]{1to8}
     vpdpwssd ymm16{k5}, ymm13, [rbx+r11*8+256]
     vpdpwssd ymm16{k5}, ymm13, [rbx+r11*8-256]
-    vpdpwssd ymm16{z}, ymm13, ymm15
-    vpdpwssd ymm16{z}, ymm13, [rbx]
-    vpdpwssd ymm16{z}, ymm13, [rbx]{1to8}
-    vpdpwssd ymm16{z}, ymm13, [rbx+r11*8+256]
-    vpdpwssd ymm16{z}, ymm13, [rbx+r11*8-256]
     vpdpwssd ymm16{k5}{z}, ymm13, ymm15
     vpdpwssd ymm16{k5}{z}, ymm13, [rbx]
     vpdpwssd ymm16{k5}{z}, ymm13, [rbx]{1to8}
@@ -170,11 +130,6 @@
     vpdpwssd zmm24{k5}, zmm24, [rbx]{1to16}
     vpdpwssd zmm24{k5}, zmm24, [rbx+r11*8+256]
     vpdpwssd zmm24{k5}, zmm24, [rbx+r11*8-256]
-    vpdpwssd zmm24{z}, zmm24, zmm31
-    vpdpwssd zmm24{z}, zmm24, [rbx]
-    vpdpwssd zmm24{z}, zmm24, [rbx]{1to16}
-    vpdpwssd zmm24{z}, zmm24, [rbx+r11*8+256]
-    vpdpwssd zmm24{z}, zmm24, [rbx+r11*8-256]
     vpdpwssd zmm24{k5}{z}, zmm24, zmm31
     vpdpwssd zmm24{k5}{z}, zmm24, [rbx]
     vpdpwssd zmm24{k5}{z}, zmm24, [rbx]{1to16}
@@ -190,11 +145,6 @@
     vpdpwssds xmm2{k5}, xmm7, [rbx]{1to4}
     vpdpwssds xmm2{k5}, xmm7, [rbx+r11*8+256]
     vpdpwssds xmm2{k5}, xmm7, [rbx+r11*8-256]
-    vpdpwssds xmm2{z}, xmm7, xmm0
-    vpdpwssds xmm2{z}, xmm7, [rbx]
-    vpdpwssds xmm2{z}, xmm7, [rbx]{1to4}
-    vpdpwssds xmm2{z}, xmm7, [rbx+r11*8+256]
-    vpdpwssds xmm2{z}, xmm7, [rbx+r11*8-256]
     vpdpwssds xmm2{k5}{z}, xmm7, xmm0
     vpdpwssds xmm2{k5}{z}, xmm7, [rbx]
     vpdpwssds xmm2{k5}{z}, xmm7, [rbx]{1to4}
@@ -210,11 +160,6 @@
     vpdpwssds ymm16{k5}, ymm13, [rbx]{1to8}
     vpdpwssds ymm16{k5}, ymm13, [rbx+r11*8+256]
     vpdpwssds ymm16{k5}, ymm13, [rbx+r11*8-256]
-    vpdpwssds ymm16{z}, ymm13, ymm15
-    vpdpwssds ymm16{z}, ymm13, [rbx]
-    vpdpwssds ymm16{z}, ymm13, [rbx]{1to8}
-    vpdpwssds ymm16{z}, ymm13, [rbx+r11*8+256]
-    vpdpwssds ymm16{z}, ymm13, [rbx+r11*8-256]
     vpdpwssds ymm16{k5}{z}, ymm13, ymm15
     vpdpwssds ymm16{k5}{z}, ymm13, [rbx]
     vpdpwssds ymm16{k5}{z}, ymm13, [rbx]{1to8}
@@ -230,11 +175,6 @@
     vpdpwssds zmm24{k5}, zmm24, [rbx]{1to16}
     vpdpwssds zmm24{k5}, zmm24, [rbx+r11*8+256]
     vpdpwssds zmm24{k5}, zmm24, [rbx+r11*8-256]
-    vpdpwssds zmm24{z}, zmm24, zmm31
-    vpdpwssds zmm24{z}, zmm24, [rbx]
-    vpdpwssds zmm24{z}, zmm24, [rbx]{1to16}
-    vpdpwssds zmm24{z}, zmm24, [rbx+r11*8+256]
-    vpdpwssds zmm24{z}, zmm24, [rbx+r11*8-256]
     vpdpwssds zmm24{k5}{z}, zmm24, zmm31
     vpdpwssds zmm24{k5}{z}, zmm24, [rbx]
     vpdpwssds zmm24{k5}{z}, zmm24, [rbx]{1to16}

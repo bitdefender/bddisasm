@@ -619,7 +619,7 @@ NdFetchEvex(
         return ND_STATUS_EVEX_WITH_PREFIX;
     }
 
-    // Do the opcode independent checks. Opcode dependent checks are done when decoding each
+    // Do the opcode independent checks. Opcode dependent checks are done when decoding each instruction.
     if (Instrux->Evex.zero != 0 || Instrux->Evex.one != 1 || Instrux->Evex.m == 0)
     {
         return ND_STATUS_INVALID_ENCODING;
@@ -1242,25 +1242,32 @@ NdGetCompDispSize(
     uint32_t MemSize
     )
 {
-    static const uint8_t fvszLut[2][2][4] =
-    {
-        { { 16, 32, 64, 0 }, { 4, 4, 4, 0 }, },
-        { { 16, 32, 64, 0 }, { 8, 8, 8, 0 }, },
-    };
-
-    static const uint8_t hvszLut[2][4] =  { { 8, 16, 32, 0 }, { 4, 4, 4, 0 }, };
+    static const uint8_t fvszLut[4] = { 16, 32, 64, 0 };
+    static const uint8_t hvszLut[4] = { 8, 16, 32, 0 };
+    static const uint8_t qvszLut[4] = { 4, 8, 16, 0 };
     static const uint8_t dupszLut[4] = { 8, 32, 64, 0 };
     static const uint8_t fvmszLut[4] = { 16, 32, 64, 0 };
     static const uint8_t hvmszLut[4] = { 8, 16, 32, 0 };
     static const uint8_t qvmszLut[4] = { 4, 8, 16, 0 };
     static const uint8_t ovmszLut[4] = { 2, 4, 8, 0 };
 
+    if (Instrux->HasBroadcast)
+    {
+        // If the instruction uses broadcast, then compressed displacement will use the size of the element as scale:
+        // - 2 when broadcasting 16 bit
+        // - 4 when broadcasting 32 bit
+        // - 8 when broadcasting 64 bit
+        return (uint8_t)MemSize;
+    }
+
     switch (Instrux->TupleType)
     {
     case ND_TUPLE_FV:
-        return fvszLut[Instrux->Exs.w][Instrux->Exs.bm][Instrux->Exs.l];
+        return fvszLut[Instrux->Exs.l];
     case ND_TUPLE_HV:
-        return hvszLut[Instrux->Exs.bm][Instrux->Exs.l];
+        return hvszLut[Instrux->Exs.l];
+    case ND_TUPLE_QV:
+        return qvszLut[Instrux->Exs.l];
     case ND_TUPLE_DUP:
         return dupszLut[Instrux->Exs.l];
     case ND_TUPLE_FVM:
@@ -1601,7 +1608,8 @@ NdParseOperand(
 
     case ND_OPS_pd:
     case ND_OPS_ps:
-        // packed double or packed single precision values.
+    case ND_OPS_ph:
+        // packed double or packed single or packed FP16 values.
         {
             static const uint8_t szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
 
@@ -1609,14 +1617,19 @@ NdParseOperand(
         }
         break;
 
+    case ND_OPS_sd:
+        // Scalar double.
+        size = ND_SIZE_64BIT;
+        break;
+
     case ND_OPS_ss:
         // Scalar single.
         size = ND_SIZE_32BIT;
         break;
 
-    case ND_OPS_sd:
-        // Scalar double.
-        size = ND_SIZE_64BIT;
+    case ND_OPS_sh:
+        // Scalar FP16.
+        size = ND_SIZE_16BIT;
         break;
 
     case ND_OPS_mib:
@@ -2315,11 +2328,6 @@ NdParseOperand(
 
     case ND_OPT_G:
         // General purpose register encoded in modrm.reg.
-        if (Instrux->Exs.rp == 1)
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
-
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
@@ -2712,48 +2720,47 @@ memory:
             // sibmem requires SIB to be present.
             if (!Instrux->HasSib)
             {
-                return ND_STATUS_INVALID_ENCODING;
+                return ND_STATUS_SIBMEM_WITHOUT_SIB;
             }
 
             operand->Info.Memory.IsSibMem = true;
         }
 
-        if (Instrux->HasEvex)
+        // If we have broadcast, the operand size is fixed to either 16, 32 or 64 bit, depending on bcast size.
+        // Therefore, we will override the rawSize with either 16, 32 or 64 bits. Note that bcstSize will save the 
+        // total size of the access, and it will be used to compute the number of broadcasted elements: 
+        // bcstSize / rawSize.
+        if (Instrux->HasBroadcast)
         {
-            // Handle compressed displacement, if any. Note that most EVEX instructions with 8 bit displacement
-            // use compressed displacement addressing.
-            if ((Instrux->HasDisp) && (ND_SIZE_8BIT == Instrux->DispLength))
-            {
-                Instrux->HasCompDisp = true;
+            operand->Info.Memory.HasBroadcast = true;
 
-                operand->Info.Memory.HasCompDisp = true;
-                operand->Info.Memory.CompDispSize = NdGetCompDispSize(Instrux, operand->Size);
+            if (opd & ND_OPD_B32)
+            {
+                size = ND_SIZE_32BIT;
+            }
+            else if (opd & ND_OPD_B64)
+            {
+                size = ND_SIZE_64BIT;
+            }
+            else if (opd & ND_OPD_B16)
+            {
+                size = ND_SIZE_16BIT;
+            }
+            else
+            {
+                size = width ? ND_SIZE_64BIT : ND_SIZE_32BIT;
             }
 
-            // If we have broadcast, the operand size is fixed to either 32 bit, either 64 bit, depending on bcast size.
-            // Therefore, we will override the rawSize with either 32 or 64 bits. Note that bcstSize will save the total
-            // size of the access, and it will be used to compute the number of broadcasted elements: bcstSize / rawSize.
-            if ((Instrux->Exs.bm) && (opd & (ND_OPD_B32 | ND_OPD_B64)))
-            {
-                Instrux->HasBroadcast = true;
-                operand->Info.Memory.HasBroadcast = true;
+            // Override operand size.
+            operand->Size = operand->RawSize = size;
+        }
 
-                if (opd & ND_OPD_B32)
-                {
-                    size = ND_SIZE_32BIT;
-                }
-                else if (opd & ND_OPD_B64)
-                {
-                    size = ND_SIZE_64BIT;
-                }
-                else
-                {
-                    size = width ? ND_SIZE_64BIT : ND_SIZE_32BIT;
-                }
-
-                // Override operand size.
-                operand->Size = operand->RawSize = size;
-            }
+        // Handle compressed displacement, if any. Note that most EVEX instructions with 8 bit displacement
+        // use compressed displacement addressing.
+        if (Instrux->HasCompDisp)
+        {
+            operand->Info.Memory.HasCompDisp = true;
+            operand->Info.Memory.CompDispSize = NdGetCompDispSize(Instrux, operand->Size);
         }
 
         // MIB, if any. Used by some MPX instructions.
@@ -3122,23 +3129,26 @@ memory:
     {
         // Check for mask register. Mask if present only if the operand supports masking and if the
         // mask register is not k0 (which implies "no masking").
-        if ((opd & ND_OPD_MASK) && (Instrux->Exs.k != 0))
+        if ((opd & ND_OPD_MASK) && (Instrux->HasMask))
         {
             operand->Decorator.HasMask = true;
             operand->Decorator.Mask.Msk = (uint8_t)Instrux->Exs.k;
-            Instrux->HasMask = true;
         }
 
-        // Check for zeroing. The operand must support zeroing and the z bit inside vex3 must be set. Note that
+        // Check for zeroing. The operand must support zeroing and the z bit inside evex3 must be set. Note that
         // zeroing is allowed only for register destinations, and NOT for memory.
-        if ((opd & ND_OPD_Z) && (Instrux->Exs.z) && (operand->Type != ND_OP_MEM))
+        if ((opd & ND_OPD_Z) && (Instrux->HasZero))
         {
+            if (operand->Type == ND_OP_MEM)
+            {
+                return ND_STATUS_ZEROING_ON_MEMORY;
+            }
+
             operand->Decorator.HasZero = true;
-            Instrux->HasZero = true;
         }
 
         // Check for broadcast again. We've already filled the broadcast size before parsing the op size.
-        if (((opd & ND_OPD_B32) || (opd & ND_OPD_B64)) && (Instrux->Exs.bm) && (Instrux->ModRm.mod != 3))
+        if ((opd & ND_OPD_BCAST) && (Instrux->HasBroadcast))
         {
             operand->Decorator.HasBroadcast = true;
             operand->Decorator.Broadcast.Size = (uint8_t)operand->Size;
@@ -3554,6 +3564,10 @@ NdFindInstruction(
             pTable = (const ND_TABLE *)pTable->Table[Instrux->Exs.w];
             break;
 
+        case ND_ILUT_VEX_WI:
+            pTable = (const ND_TABLE *)pTable->Table[Instrux->DefCode == ND_CODE_64 ? Instrux->Exs.w : 0];
+            break;
+
         default:
             status = ND_STATUS_INTERNAL_ERROR;
             stop = true;
@@ -3637,11 +3651,13 @@ NdGetVectorLength(
     INSTRUX *Instrux
     )
 {
-    if (Instrux->HasEvex && Instrux->Exs.bm && (Instrux->ModRm.mod == 3) &&
-        (ND_ER_SUPPORT(Instrux) || ND_SAE_SUPPORT(Instrux) || !!(Instrux->Attributes & ND_FLAG_IER)))
+    if (Instrux->HasEr || Instrux->HasSae || Instrux->HasIgnEr)
     {
-        // Embedded rounding present, force the vector length to 512.
-        if ((Instrux->TupleType == ND_TUPLE_T1S) || (Instrux->TupleType == ND_TUPLE_T1F))
+        // Embedded rounding or SAE present, force the vector length to 512 or scalar.
+        if ((Instrux->TupleType == ND_TUPLE_T1S) || 
+            (Instrux->TupleType == ND_TUPLE_T1S8) ||
+            (Instrux->TupleType == ND_TUPLE_T1S16) ||
+            (Instrux->TupleType == ND_TUPLE_T1F))
         {
             Instrux->VecMode = Instrux->EfVecMode = ND_VECM_128;
         }
@@ -3653,7 +3669,7 @@ NdGetVectorLength(
         return ND_STATUS_SUCCESS;
     }
 
-    // Decode VEX vector length. Also take into consideration the "ignore L" flag.
+    // Decode EVEX vector length. Also take into consideration the "ignore L" flag.
     switch (Instrux->Exs.l)
     {
     case 0:
@@ -3669,7 +3685,13 @@ NdGetVectorLength(
         Instrux->EfVecMode = (Instrux->Attributes & ND_FLAG_LIG) ? ND_VECM_128 : ND_VECM_512;
         break;
     default:
-        return ND_STATUS_INVALID_INSTRUX;
+        return ND_STATUS_BAD_EVEX_LL;
+    }
+
+    // Some instructions don't support 128 bit vectors.
+    if ((ND_VECM_128 == Instrux->EfVecMode) && (0 != (Instrux->Attributes & ND_FLAG_NOL0)))
+    {
+        return ND_STATUS_INVALID_ENCODING;
     }
 
     return ND_STATUS_SUCCESS;
@@ -3718,6 +3740,12 @@ NdGetEffectiveOpMode(
     static const uint8_t szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
     bool width, f64, d64, has66;
 
+    if ((ND_CODE_64 != Instrux->DefCode) && !!(Instrux->Attributes & ND_FLAG_IWO64))
+    {
+        // Some instructions ignore VEX/EVEX.W field outside 64 bit mode, and treat it as 0.
+        Instrux->Exs.w = 0;
+    }
+
     // Extract the flags.
     width = (0 != Instrux->Exs.w) && !(Instrux->Attributes & ND_FLAG_WIG);
     // In 64 bit mode, the operand is forced to 64 bit. Size-changing prefixes are ignored.
@@ -3750,6 +3778,108 @@ NdGetEffectiveOpMode(
 
     // Fill in the default word length. It can't be more than 8 bytes.
     Instrux->WordLength = szLut[Instrux->EfOpMode];
+
+    return ND_STATUS_SUCCESS;
+}
+
+
+//
+// NdPostProcessEvex
+//
+static NDSTATUS
+NdPostProcessEvex(
+    INSTRUX *Instrux
+    )
+{
+    // Handle embedded broadcast/rounding-control.
+    if (Instrux->Exs.bm == 1)
+    {
+        if (Instrux->ModRm.mod == 3)
+        {
+            // reg form for the instruction, check for ER or SAE support.
+            if (Instrux->ValidDecorators.Er)
+            {
+                Instrux->HasEr = 1;
+                Instrux->HasSae = 1;
+                Instrux->RoundingMode = (uint8_t)Instrux->Exs.l;
+            }
+            else if (Instrux->ValidDecorators.Sae)
+            {
+                Instrux->HasSae = 1;
+            }
+            else if (!!(Instrux->Attributes & ND_FLAG_IER))
+            {
+                // The encoding behaves as if embedded rounding is enabled, but it is in fact ignored.
+                Instrux->HasIgnEr = 1;
+            }
+            else
+            {
+                return ND_STATUS_ER_SAE_NOT_SUPPORTED;
+            }
+        }
+        else
+        {
+            // mem form for the instruction, check for broadcast.
+            if (Instrux->ValidDecorators.Broadcast)
+            {
+                Instrux->HasBroadcast = 1;
+            }
+            else
+            {
+                return ND_STATUS_BROADCAST_NOT_SUPPORTED;
+            }
+        }
+    }
+
+    // Handle masking.
+    if (Instrux->Exs.k != 0)
+    {
+        if (Instrux->ValidDecorators.Mask)
+        {
+            Instrux->HasMask = 1;
+        }
+        else
+        {
+            return ND_STATUS_MASK_NOT_SUPPORTED;
+        }
+    }
+    else
+    {
+        if (!!(Instrux->Attributes & ND_FLAG_MMASK))
+        {
+            return ND_STATUS_MASK_REQUIRED;
+        }
+    }
+
+    // Handle zeroing.
+    if (Instrux->Exs.z != 0)
+    {
+        if (Instrux->ValidDecorators.Zero)
+        {
+            // Zeroing restrictions:
+            // - valid with register only;
+            // - valid only if masking is also used;
+            if (Instrux->HasMask)
+            {
+                Instrux->HasZero = 1;
+            }
+            else
+            {
+                return ND_STATUS_ZEROING_NO_MASK;
+            }
+        }
+        else
+        {
+            return ND_STATUS_ZEROING_NOT_SUPPORTED;
+        }
+    }
+
+    // EVEX instructions with 8 bit displacement use compressed displacement addressing, where the displacement
+    // is scaled according to the data type accessed by the instruction.
+    if (Instrux->HasDisp && Instrux->DispLength == 1)
+    {
+        Instrux->HasCompDisp = true;
+    }
 
     return ND_STATUS_SUCCESS;
 }
@@ -3797,12 +3927,6 @@ NdValidateInstruction(
             return ND_STATUS_BAD_EVEX_V_PRIME;
         }
 
-        // Some instructions don't support 128 bit vectors.
-        if ((ND_VECM_128 == Instrux->EfVecMode) && (0 != (Instrux->Attributes & ND_FLAG_NOL0)))
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
-
         // VSIB instructions have a restriction: the same vector register can't be used by more than one operand.
         // The exception is SCATTER*, which can use the VSIB reg as two sources.
         if (ND_HAS_VSIB(Instrux) && Instrux->Category != ND_CAT_SCATTER)
@@ -3839,7 +3963,7 @@ NdValidateInstruction(
                     Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[2].Info.Register.Reg ||
                     Instrux->Operands[1].Info.Register.Reg == Instrux->Operands[2].Info.Register.Reg)
                 {
-                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+                    return ND_STATUS_INVALID_TILE_REGS;
                 }
             }
             else
@@ -3852,49 +3976,28 @@ NdValidateInstruction(
             }
         }
 
-        if (Instrux->HasEvex)
+        // Handle EVEX exception class.
+        if (Instrux->ExceptionClass == ND_EXC_EVEX)
         {
-            // Instructions that don't support masking must have EVEX.aaa = 0.
-            if (!ND_MASK_SUPPORT(Instrux) && (0 != Instrux->Exs.k))
+            // If E4* or E10* exception class is used (check out AVX512-FP16 instructions), an additional #UD case
+            // exists: if the destination register is equal to either of the source registers.
+            if (Instrux->ExceptionType == ND_EXT_E4S || Instrux->ExceptionType == ND_EXT_E10S)
             {
-                return ND_STATUS_MASK_NOT_SUPPORTED;
-            }
+                // Note that operand 0 is the destination, operand 1 is the mask, operand 2 is first source, operand
+                // 3 is the second source.
 
-            // Some instructions have mandatory masking, and using k0 as a mask triggers #UD.
-            if ((Instrux->Attributes & ND_FLAG_MMASK) && (0 == Instrux->Exs.k))
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-
-            // EVEX.z must be 0 if:
-            // - zeroing is not supported by the instruction.
-            // - zeroing is supported, but the destination is memory.
-            // If zeroing is supported and the mask is 0, then zeroing is ignored.
-            if (0 != Instrux->Exs.z)
-            {
-                if (!ND_ZERO_SUPPORT(Instrux))
+                if (Instrux->Operands[0].Type == ND_OP_REG && Instrux->Operands[2].Type == ND_OP_REG &&
+                    Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[2].Info.Register.Reg)
                 {
-                    return ND_STATUS_ZEROING_NOT_SUPPORTED;
+                    return ND_STATUS_INVALID_DEST_REGS;
                 }
 
-                if (Instrux->Operands[0].Type == ND_OP_MEM)
+                
+                if (Instrux->Operands[0].Type == ND_OP_REG && Instrux->Operands[3].Type == ND_OP_REG &&
+                    Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[3].Info.Register.Reg)
                 {
-                    return ND_STATUS_ZEROING_ON_MEMORY;
+                    return ND_STATUS_INVALID_DEST_REGS;
                 }
-            }
-
-            // EVEX.b must be 0 if SAE/ER is not used, but can be ignored if the ignore embedded rounding flag is set.
-            if (Instrux->Exs.bm && (Instrux->ModRm.mod == 3) && 
-                !ND_SAE_SUPPORT(Instrux) && !ND_ER_SUPPORT(Instrux) &&
-                !(Instrux->Attributes & ND_FLAG_IER))
-            {
-                return ND_STATUS_ER_SAE_NOT_SUPPORTED;
-            }
-
-            // EVEX.b must be 0 if broadcast is not supported.
-            if (Instrux->Exs.bm && (Instrux->ModRm.mod != 3) && !ND_BROADCAST_SUPPORT(Instrux))
-            {
-                return ND_STATUS_BROADCAST_NOT_SUPPORTED;
             }
         }
     }
@@ -4062,6 +4165,18 @@ NdDecodeWithContext(
         return status;
     }
 
+    if (Instrux->HasEvex)
+    {
+        // Post-process EVEX encoded instructions. This does two thing:
+        // - check and fill in decorator info;
+        // - generate error for invalid broadcast/rounding, mask or zeroing bits.
+        status = NdPostProcessEvex(Instrux);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+    }
+
     if (ND_HAS_VECTOR(Instrux))
     {
         // Get vector length.
@@ -4082,24 +4197,6 @@ NdDecodeWithContext(
     if (ND_HAS_CONDITION(Instrux))
     {
         Instrux->Condition = Instrux->Predicate = Instrux->PrimaryOpCode & 0xF;
-    }
-
-    if (0 != pIns->ValidDecorators)
-    {
-        // Check for suppress all exceptions.
-        if ((Instrux->ValidDecorators.Sae) && (Instrux->Exs.bm) && (Instrux->ModRm.mod == 3))
-        {
-            Instrux->HasSae = true;
-        }
-
-        // Check for embedded rounding. This is available only in reg-reg encodings. Also, if embedded
-        // rounding is used, the vector length is forced to 512 bit, as the
-        if ((Instrux->ValidDecorators.Er) && (Instrux->Exs.bm) && (Instrux->ModRm.mod == 3))
-        {
-            Instrux->HasEr = true;
-            Instrux->HasSae = true;
-            Instrux->RoundingMode = (uint8_t)Instrux->Exs.l;
-        }
     }
 
     Instrux->ExpOperandsCount = ND_EXP_OPS_CNT(pIns->OpsCount);

@@ -32,6 +32,7 @@ typedef enum _ND_ILUT_TYPE
     ND_ILUT_VEX_PP,         // Table contains 4 entries. Next entry is vex/xop/evex.pp
     ND_ILUT_VEX_L,          // Table contains 4 entries. Next entry is vex/xop.l or evex.l'l
     ND_ILUT_VEX_W,          // Table contains 2 entries. Next entry is vex/xop/evex.w
+    ND_ILUT_VEX_WI,         // Table contains 2 entries. Next entry is vex/xop/evex.w. If not in 64 bit, next entry is 0.
 } ND_ILUT_TYPE;
 
 
@@ -303,8 +304,10 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_cl,
     ND_OPS_sd,
     ND_OPS_ss,
+    ND_OPS_sh,
     ND_OPS_ps,
     ND_OPS_pd,
+    ND_OPS_ph,
     ND_OPS_e,
     ND_OPS_f,
     ND_OPS_h,
@@ -507,6 +510,9 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 #define ND_OPD_B64                  0x08    // 64 bit broadcast supported.
 #define ND_OPD_SAE                  0x10    // Suppress all exceptions supported.
 #define ND_OPD_ER                   0x20    // Embedded rounding supported.
+#define ND_OPD_B16                  0x40    // 16 bit broadcast supported.
+
+#define ND_OPD_BCAST                (ND_OPD_B16 | ND_OPD_B32 | ND_OPD_B64)
 
 
 //
