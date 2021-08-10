@@ -2226,9 +2226,14 @@ ShemuEmulate(
             break;
 
         case ND_INS_NEG:
-            GET_OP(Context, 0, &dst);
-            dst.Value.Qwords[0] = 0 - dst.Value.Qwords[0];
-            SET_OP(Context, 0, &dst);
+            GET_OP(Context, 0, &src);
+            dst.Size = src.Size;
+            dst.Value.Qwords[0] = 0;
+            res.Size = src.Size;
+            res.Value.Qwords[0] = dst.Value.Qwords[0] - src.Value.Qwords[0];
+            SET_OP(Context, 0, &res);
+            SET_FLAGS(Context, res, dst, src, FM_SUB);
+            SET_FLAG(Context, NDR_RFLAG_CF, src.Value.Qwords[0] != 0);
             break;
 
         case ND_INS_BT:
