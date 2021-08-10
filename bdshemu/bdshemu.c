@@ -1213,9 +1213,17 @@ ShemuGetOperandValue(
 
             // Check if this is a TIB/PCR access. Make sure the FS/GS register is used for the access, in order to avoid
             // false positives where legitimate code accesses a linear TIB directly.
+            // Note that this covers accesses to the PEB field inside the TIB.
             if (gla == Context->TibBase + offset && Context->Instruction.Seg == seg)
             {
                 Context->Flags |= SHEMU_FLAG_TIB_ACCESS;
+            }
+
+            // Note that this covers accesses to the Wow32Reserved in Wow64 mode. That field can be used to issue
+            // syscalls.
+            if (gla == Context->TibBase + 0xC0 && Context->Instruction.Seg == seg && Context->Mode == ND_CODE_32)
+            {
+                Context->Flags |= SHEMU_FLAG_TIB_ACCESS_WOW32;
             }
 
             // Check if we are reading a previously saved RIP. Ignore RET category, which naturally uses the saved RIP.
@@ -1295,6 +1303,12 @@ ShemuSetOperandValue(
         switch (op->Info.Register.Type)
         {
         case ND_REG_GPR:
+            if (Context->Instruction.Instruction == ND_INS_XCHG &&
+                op->Info.Register.Reg == NDR_RSP)
+            {
+                Context->Flags |= SHEMU_FLAG_STACK_PIVOT;
+            }
+
             ShemuSetGprValue(Context, op->Info.Register.Reg, op->Size, Value->Value.Qwords[0], 
                              op->Info.Register.IsHigh8);
             break;
@@ -1689,6 +1703,7 @@ ShemuEmulate(
 {
     SHEMU_VALUE res = { 0 }, dst = { 0 }, src = { 0 }, rcx = { 0 }, aux = { 0 };
     bool stop = false, cf;
+    uint16_t cs = 0;
 
     if (NULL == Context)
     {
@@ -1730,6 +1745,13 @@ ShemuEmulate(
         NDSTATUS ndstatus;
         uint64_t rip;
         uint32_t i;
+
+        // Reset all the operands to 0.
+        nd_memzero(&dst, sizeof(dst));
+        nd_memzero(&src, sizeof(src));
+        nd_memzero(&res, sizeof(res));
+        nd_memzero(&aux, sizeof(aux));
+        nd_memzero(&rcx, sizeof(rcx));
 
         // The stop flag has been set, this means we've reached a valid instruction, but that instruction cannot be
         // emulated (for example, SYSCALL, INT, system instructions, etc).
@@ -2328,6 +2350,68 @@ ShemuEmulate(
                 aux.Value.Qwords[0] += Context->Instruction.Operands[0].Info.Immediate.Imm;
                 SET_OP(Context, 2, &aux);
             }
+            break;
+
+        case ND_INS_JMPFD:
+        case ND_INS_CALLFD:
+            cs = (uint16_t)Context->Instruction.Operands[0].Info.Address.BaseSeg;
+            goto check_far_branch;
+
+        case ND_INS_JMPFI:
+        case ND_INS_CALLFI:
+        case ND_INS_IRET:
+        case ND_INS_RETF:
+            if (Context->Instruction.Instruction == ND_INS_RETF)
+            {
+                if (Context->Instruction.Operands[0].Type == ND_OP_IMM)
+                {
+                    // RETF imm
+                    GET_OP(Context, 3, &src);
+                }
+                else
+                {
+                    // RETF
+                    GET_OP(Context, 2, &src);
+                }
+            }
+            else if (Context->Instruction.Instruction == ND_INS_IRET)
+            {
+                // IRET
+                 GET_OP(Context, 2, &src);
+            }
+            else
+            {
+                // JMP/CALL far
+                GET_OP(Context, 0, &src);
+            }
+
+            // The destination code segment is the second WORD/DWORD/QWORD.
+            switch (Context->Instruction.WordLength)
+            {
+            case 2:
+                cs = (uint16_t)src.Value.Words[1];
+                break;
+            case 4:
+                cs = (uint16_t)src.Value.Dwords[1];
+                break;
+            case 8:
+                cs = (uint16_t)src.Value.Qwords[1];
+                break;
+            default:
+                cs = 0;
+                break;
+            }
+
+check_far_branch:
+            if (Context->Mode == ND_CODE_32 && cs == 0x33)
+            {
+                Context->Flags |= SHEMU_FLAG_HEAVENS_GATE;
+            }
+
+            // We may, in the future, emulate far branches, but they imply some tricky context switches (including
+            // the default TEB), so it may not be as straight forward as it seems. For now, al we wish to achieve 
+            // is detection of far branches in long-mode, from Wow 64.
+            stop = true;
             break;
 
         case ND_INS_LODS:

@@ -5,6 +5,8 @@
 import os
 import sys
 import glob
+from zipfile import ZipFile
+from pathlib import Path
 
 total_tests = 0
 failed_tests = 0
@@ -64,7 +66,15 @@ def regenerate(dir):
             os.system('disasm -exi -shemu %s -f %s >%s.result' % (mod, f, f))
                             
     for f in glob.glob('%s\\*_decoded.bin' % dir):
-        os.remove(f)        
+        os.remove(f)    
+
+cleanup_files = []
+
+print("Extracting test archive...\n")
+with ZipFile('bdshemu_test.zip') as zf:
+    cleanup_files = zf.namelist()
+    zf.extractall(pwd=b'infected')
+print("Done!\n")    
 
 for dn in glob.glob("*"):
     if not os.path.isdir(dn):
@@ -72,3 +82,10 @@ for dn in glob.glob("*"):
     print('Testing %s...' % dn)
     test_dir(dn)
 print("Ran %d tests, %d failed" % (total_tests, failed_tests))
+
+print("Cleaning up test files...\n")
+for f in cleanup_files:
+    p = Path(os.getcwd()) / f
+    if p.is_file():
+        p.unlink()
+print("Done!\n")

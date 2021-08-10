@@ -1661,6 +1661,18 @@ handle_shemu(
     {
         printf("        SHEMU_FLAG_STACK_STR\n");
     }
+    if (ctx.Flags & SHEMU_FLAG_TIB_ACCESS_WOW32)
+    {
+        printf("        SHEMU_FLAG_TIB_ACCESS_WOW32\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_HEAVENS_GATE)
+    {
+        printf("        SHEMU_FLAG_HEAVENS_GATE\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_STACK_PIVOT)
+    {
+        printf("        SHEMU_FLAG_STACK_PIVOT\n");
+    }
     if (ctx.Flags & SHEMU_FLAG_KPCR_ACCESS)
     {
         printf("        SHEMU_FLAG_KPCR_ACCESS\n");

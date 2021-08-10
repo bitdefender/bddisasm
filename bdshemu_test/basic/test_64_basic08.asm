@@ -1,6 +1,0 @@
-    
-    bits 64
-
-    nop
-    nop
-    db 0x0f, 0x0f, 0x0f, 0x0f
