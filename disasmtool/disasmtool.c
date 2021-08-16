@@ -1673,6 +1673,10 @@ handle_shemu(
     {
         printf("        SHEMU_FLAG_STACK_PIVOT\n");
     }
+    if (ctx.Flags & SHEMU_FLAG_SUD_ACCESS)
+    {
+        printf("        SHEMU_FLAG_SUD_ACCESS\n");
+    }
     if (ctx.Flags & SHEMU_FLAG_KPCR_ACCESS)
     {
         printf("        SHEMU_FLAG_KPCR_ACCESS\n");

@@ -1187,82 +1187,89 @@ ShemuGetOperandValue(
     else if (op->Type == ND_OP_MEM)
     {
         uint64_t gla = ShemuComputeLinearAddress(Context, op);
+        uint32_t offset;
+        uint8_t seg;
 
         if (op->Info.Memory.IsAG)
         {
             // Address generation instruction, the result is the linear address itself.
             Value->Value.Qwords[0] = gla;
+            goto done_gla;
+        }
+
+        if (Context->Ring == 3)
+        {
+            // User-mode TIB offset that contains the PEB address.
+            offset = Context->Mode == ND_CODE_32 ? 0x30 : 0x60;
+            seg = Context->Mode == ND_CODE_32 ? ND_PREFIX_G2_SEG_FS : ND_PREFIX_G2_SEG_GS;
         }
         else
         {
-            uint32_t offset;
-            uint8_t seg;
-
-            if (Context->Ring == 3)
-            {
-                // User-mode TIB offset that contains the PEB address.
-                offset = Context->Mode == ND_CODE_32 ? 0x30 : 0x60;
-                seg = Context->Mode == ND_CODE_32 ? ND_PREFIX_G2_SEG_FS : ND_PREFIX_G2_SEG_GS;
-            }
-            else
-            {
-                // Kernel-mode KPCR offset that contains the current KTHREAD address.
-                offset = Context->Mode == ND_CODE_32 ? 0x124 : 0x188;
-                seg = Context->Mode == ND_CODE_32 ? ND_PREFIX_G2_SEG_FS : ND_PREFIX_G2_SEG_GS;
-            }
-
-            // Check if this is a TIB/PCR access. Make sure the FS/GS register is used for the access, in order to avoid
-            // false positives where legitimate code accesses a linear TIB directly.
-            // Note that this covers accesses to the PEB field inside the TIB.
-            if (gla == Context->TibBase + offset && Context->Instruction.Seg == seg)
-            {
-                Context->Flags |= SHEMU_FLAG_TIB_ACCESS;
-            }
-
-            // Note that this covers accesses to the Wow32Reserved in Wow64 mode. That field can be used to issue
-            // syscalls.
-            if (gla == Context->TibBase + 0xC0 && Context->Instruction.Seg == seg && Context->Mode == ND_CODE_32)
-            {
-                Context->Flags |= SHEMU_FLAG_TIB_ACCESS_WOW32;
-            }
-
-            // Check if we are reading a previously saved RIP. Ignore RET category, which naturally uses the saved RIP.
-            // Also, ignore RMW instruction which naturally read the current value - this could happen if the code
-            // modifies the return value, for example "ADD qword [rsp], r8".
-            if (Context->Instruction.Category != ND_CAT_RET && !(op->Access.Access & ND_ACCESS_ANY_WRITE) &&
-                ShemuIsStackPtr(Context, gla, op->Size) &&
-                ShemuAnyBitsSet(STACKBMP(Context), gla - Context->StackBase, op->Size))
-            {
-                Context->Flags |= SHEMU_FLAG_LOAD_RIP;
-            }
-
-            // Get the memory value.
-            status = ShemuGetMemValue(Context, gla, Value->Size, Value->Value.Bytes);
-            if (SHEMU_SUCCESS != status)
-            {
-                return status;
-            }
-
-            // If this is a stack access, we need to update the stack pointer.
-            if (op->Info.Memory.IsStack)
-            {
-                uint64_t regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), false);
-
-                regval += op->Size;
-
-                ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, false);
-            }
-
-            // If this is a string operation, make sure we update RSI/RDI.
-            if (op->Info.Memory.IsString)
-            {
-                uint64_t regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, false);
-
-                regval = GET_FLAG(Context, NDR_RFLAG_DF) ? regval - op->Size : regval + op->Size;
-
-                ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, false);
-            }
+            // Kernel-mode KPCR offset that contains the current KTHREAD address.
+            offset = Context->Mode == ND_CODE_32 ? 0x124 : 0x188;
+            seg = Context->Mode == ND_CODE_32 ? ND_PREFIX_G2_SEG_FS : ND_PREFIX_G2_SEG_GS;
         }
+
+        // Check if this is a TIB/PCR access. Make sure the FS/GS register is used for the access, in order to avoid
+        // false positives where legitimate code accesses a linear TIB directly.
+        // Note that this covers accesses to the PEB field inside the TIB.
+        if (gla == Context->TibBase + offset && Context->Instruction.Seg == seg)
+        {
+            Context->Flags |= SHEMU_FLAG_TIB_ACCESS;
+        }
+
+        // Note that this covers accesses to the Wow32Reserved in Wow64 mode. That field can be used to issue
+        // syscalls.
+        if (gla == Context->TibBase + 0xC0 && Context->Instruction.Seg == seg && Context->Mode == ND_CODE_32)
+        {
+            Context->Flags |= SHEMU_FLAG_TIB_ACCESS_WOW32;
+        }
+
+        // Check for accesses inside the KUSER_SHARED_DATA (SharedUserData). This page contains some
+        // global system information, it may host shellcodes, and is hard-coded at this address.
+        if (gla >= 0x7FFE0000 && gla < 0x7FFE1000)
+        {
+            Context->Flags |= SHEMU_FLAG_SUD_ACCESS;
+        }
+
+        // Check if we are reading a previously saved RIP. Ignore RET category, which naturally uses the saved RIP.
+        // Also, ignore RMW instruction which naturally read the current value - this could happen if the code
+        // modifies the return value, for example "ADD qword [rsp], r8".
+        if (Context->Instruction.Category != ND_CAT_RET && !(op->Access.Access & ND_ACCESS_ANY_WRITE) &&
+            ShemuIsStackPtr(Context, gla, op->Size) &&
+            ShemuAnyBitsSet(STACKBMP(Context), gla - Context->StackBase, op->Size))
+        {
+            Context->Flags |= SHEMU_FLAG_LOAD_RIP;
+        }
+
+        // Get the memory value.
+        status = ShemuGetMemValue(Context, gla, Value->Size, Value->Value.Bytes);
+        if (SHEMU_SUCCESS != status)
+        {
+            return status;
+        }
+
+        // If this is a stack access, we need to update the stack pointer.
+        if (op->Info.Memory.IsStack)
+        {
+            uint64_t regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), false);
+
+            regval += op->Size;
+
+            ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, false);
+        }
+
+        // If this is a string operation, make sure we update RSI/RDI.
+        if (op->Info.Memory.IsString)
+        {
+            uint64_t regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, false);
+
+            regval = GET_FLAG(Context, NDR_RFLAG_DF) ? regval - op->Size : regval + op->Size;
+
+            ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, false);
+        }
+
+done_gla:;
     }
     else if (op->Type == ND_OP_IMM)
     {
@@ -2414,7 +2421,7 @@ check_far_branch:
             }
 
             // We may, in the future, emulate far branches, but they imply some tricky context switches (including
-            // the default TEB), so it may not be as straight forward as it seems. For now, al we wish to achieve 
+            // the default TEB), so it may not be as straight forward as it seems. For now, all we wish to achieve 
             // is detection of far branches in long-mode, from Wow 64.
             stop = true;
             break;

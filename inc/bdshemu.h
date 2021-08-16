@@ -254,6 +254,7 @@ typedef unsigned int SHEMU_STATUS;
 #define SHEMU_FLAG_TIB_ACCESS_WOW32             0x00000040  // The code accesses the Wow32Reserved field inside TIB.
 #define SHEMU_FLAG_HEAVENS_GATE                 0x00000080  // The code uses Heaven's gate to switch into 64 bit mode.
 #define SHEMU_FLAG_STACK_PIVOT                  0x00000100  // The code switched the stack using XCHG esp, *.
+#define SHEMU_FLAG_SUD_ACCESS                   0x00000200  // The code accesses the KUSER_SHARED_DATA page.
 // Kernel specific flags.
 #define SHEMU_FLAG_KPCR_ACCESS                  0x00010000  // KPCR current thread access via gs:[0x188]/fs:[0x124].
 #define SHEMU_FLAG_SWAPGS                       0x00020000  // SWAPGS was executed.
