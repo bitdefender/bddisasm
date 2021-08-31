@@ -260,6 +260,7 @@ typedef unsigned int SHEMU_STATUS;
 #define SHEMU_FLAG_SWAPGS                       0x00020000  // SWAPGS was executed.
 #define SHEMU_FLAG_SYSCALL_MSR_READ             0x00040000  // A SYSCALL/SYSENTER MSR read.
 #define SHEMU_FLAG_SYSCALL_MSR_WRITE            0x00080000  // A SYSCALL/SYSENTER MSR write.
+#define SHEMU_FLAG_SIDT                         0x00100000  // SIDT was executed.
 
 
 //

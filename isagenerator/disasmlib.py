@@ -294,6 +294,8 @@ valid_impops = {# register      size
     'SSP'      : ('SSP',        'yf'),  # Shadow stack pointer. 32 bit in protected/compat mode, 64 in long mode.
 
     # Implicit memory operands.
+    'pAXb'     : ('pAX',        'b'),   # Implicit byte [rAX], used by MONITOR and MONITORX. Can be overriden.
+    'pCXdq'    : ('pCX',        'dq'),  # Implicit xmmword [rCX], used by RMPADJUST. Can be overriden.
     'pBXALb'   : ('pBXAL',      'b'),   # Implicit [RBX + AL], as used by XLAT.
     'pDIq'     : ('pDI',        'q'),   # Implicit qword [RDI].
     'pDIdq'    : ('pDI',        'dq'),  # Implicit xmmword [RDI].

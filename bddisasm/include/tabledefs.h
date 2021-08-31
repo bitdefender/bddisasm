@@ -441,6 +441,8 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_SSE_XMM7,
 
     // Implicit memory operands.
+    ND_OPT_MEM_rAX,
+    ND_OPT_MEM_rCX,
     ND_OPT_MEM_rBX_AL,
     ND_OPT_MEM_rDI,
     ND_OPT_MEM_SHS,

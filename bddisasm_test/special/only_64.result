@@ -60,7 +60,7 @@
 
 000000000000000B 0f05                            SYSCALL
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: AMD, Ins cat: SYSCALL, CET tracked: no
+        ISA Set: AMD, Ins cat: SYSCALL, CET tracked: yes
         CPUID leaf: 0x80000001, reg: ecx, bit: 11
         FLAGS access
                 Entire register

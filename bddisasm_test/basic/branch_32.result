@@ -580,7 +580,7 @@
 
 0000000000000064 cd21                            INT       0x21
         DSIZE: 32, ASIZE: 32, VLEN: -
-        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: no
+        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: yes
         FLAGS access
                 TF: m, IF: m, NT: m, RF: m, VM: tm, AC: m, 
         Valid modes
@@ -603,7 +603,7 @@
 
 0000000000000066 cc                              INT3
         DSIZE: 32, ASIZE: 32, VLEN: -
-        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: no
+        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: yes
         FLAGS access
                 TF: m, IF: m, NT: m, RF: m, VM: tm, AC: m, 
         Valid modes
@@ -786,7 +786,7 @@
 
 0000000000000074 0f34                            SYSENTER
         DSIZE: 32, ASIZE: 32, VLEN: -
-        ISA Set: PPRO, Ins cat: SYSCALL, CET tracked: no
+        ISA Set: PPRO, Ins cat: SYSCALL, CET tracked: yes
         CPUID leaf: 0x00000001, reg: edx, bit: 11
         FLAGS access
                 IF: 0, 

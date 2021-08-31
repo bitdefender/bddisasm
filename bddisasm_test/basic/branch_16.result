@@ -580,7 +580,7 @@
 
 0000000000000066 cd21                            INT       0x21
         DSIZE: 16, ASIZE: 16, VLEN: -
-        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: no
+        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: yes
         FLAGS access
                 TF: m, IF: m, NT: m, RF: m, VM: tm, AC: m, 
         Valid modes
@@ -603,7 +603,7 @@
 
 0000000000000068 cc                              INT3
         DSIZE: 16, ASIZE: 16, VLEN: -
-        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: no
+        ISA Set: I86, Ins cat: INTERRUPT, CET tracked: yes
         FLAGS access
                 TF: m, IF: m, NT: m, RF: m, VM: tm, AC: m, 
         Valid modes

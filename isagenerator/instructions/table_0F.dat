@@ -27,7 +27,7 @@ VMLAUNCH       nil           Fv                        [         NP 0x0F 0x01 /0
 VMRESUME       nil           Fv                        [         NP 0x0F 0x01 /0xC3]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 VMXOFF         nil           Fv                        [         NP 0x0F 0x01 /0xC4]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 PCONFIG        nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC5]           s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW, m:NOV86
-MONITOR        nil           EAX,ECX,EDX               [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
+MONITOR        nil           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
 MWAIT          nil           EAX,ECX                   [         NP 0x0F 0x01 /0xC9]           s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
 CLAC           nil           Fv                        [         NP 0x0F 0x01 /0xCA]           s:SMAP, t:SMAP, w:W, f:AC=0, m:KERNEL|NOV86
 ERETU          nil           rIP,Fv,rSP,CS,SS,Kv5,SSP,GSBASE,KGSBASE [0xF3 0x0F 0x01 /0xCA]    s:FRED, t:FRED, w:W|W|W|W|W|R|CRCW|RW|RW, m:KERNEL|O64|NOTSX, a:F64
@@ -68,14 +68,14 @@ WRPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0
 STUI           nil           UIF                       [       0xF3 0x0F 0x01 /0xEF]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
 SWAPGS         nil           GSBASE,KGSBASE            [            0x0F 0x01 /0xF8]           s:LONGMODE, t:SYSTEM, w:RW|RW, m:KERNEL|O64
 RDTSCP         nil           EAX,EDX,ECX,TSC,TSCAUX    [            0x0F 0x01 /0xF9]           s:RDTSCP, t:SYSTEM, w:W|W|W|R|R
-MONITORX       nil           EAX,ECX,EDX               [         NP 0x0F 0x01 /0xFA]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
+MONITORX       nil           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xFA]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
 MCOMMIT        nil           Fv                        [       0xF3 0x0F 0x01 /0xFA]           s:MCOMMIT, t:MISC, w:W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 MWAITX         nil           EAX,ECX,EBX               [         NP 0x0F 0x01 /0xFB]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
 CLZERO         nil           rAX                       [            0x0F 0x01 /0xFC]           s:CLZERO, t:MISC, w:R
 RDPRU          nil           EAX,EDX,ECX,Fv            [            0x0F 0x01 /0xFD]           s:RDPRU, t:MISC, w:W|W|R|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 INVLPGB        nil           rAX,ECX,EDX               [            0x0F 0x01 /0xFE]           s:INVLPGB, t:SYSTEM, w:R|R|R, m:NOREAL|KERNEL
-RMPADJUST      nil           RAX,RCX,RDX,Fv            [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
-RMPUPDATE      nil           RAX,RCX,Fv                [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
+RMPADJUST      nil           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:R|RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
+RMPUPDATE      nil           RAX,pCXdq,Fv              [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
 TLBSYNC        nil           nil                       [            0x0F 0x01 /0xFF]           s:INVLPGB, t:SYSTEM, m:NOREAL|KERNEL
 PSMASH         nil           RAX,Fv                    [       0xF3 0x0F 0x01 /0xFF]           s:SNP, t:SYSTEM, w:RW|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
 PVALIDATE      nil           rAX,ECX,EDX,Fv            [       0xF2 0x0F 0x01 /0xFF]           s:SNP, t:SYSTEM, w:RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m|CF=m, m:KERNEL
@@ -84,7 +84,7 @@ LAR            Gv,Rz         Fv                        [            0x0F 0x02 /r
 LSL            Gv,Mw         Fv                        [            0x0F 0x03 /r:mem]          s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 LSL            Gv,Rz         Fv                        [            0x0F 0x03 /r:reg]          s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 #LOADALL        nil           BANK                      [            0x0F 0x05]                s:I486REAL, t:UNDOC, w:R
-SYSCALL        nil           STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP [        0x0F 0x05]     s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW|RW, a:F64, i:FSC, m:NOSGX
+SYSCALL        nil           STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP [        0x0F 0x05]     s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW|RW, a:F64|CETT, i:FSC, m:NOSGX
 CLTS           nil           CR0                       [            0x0F 0x06]                 s:I286REAL, t:SYSTEM, w:W, m:KERNEL|NOV86
 #LOADALLD       nil           BANK                      [            0x0F 0x07]                s:I486REAL, t:UNDOC, w:R
 SYSRET         nil           STAR,SS,rCX,R11,CS,rIP,Fv,SSP [        0x0F 0x07]                 s:AMD, t:SYSRET, w:R|W|R|R|W|W|W|W, i:FSC, m:KERNEL
@@ -254,7 +254,7 @@ WRMSR          nil           EAX,EDX,ECX,MSR           [            0x0F 0x30]  
 RDTSC          nil           EAX,EDX,TSC               [            0x0F 0x31]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R
 RDMSR          nil           EAX,EDX,ECX,MSR           [            0x0F 0x32]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R|R, m:KERNEL|NOV86, i:MSR
 RDPMC          nil           EAX,EDX,ECX,MSR           [            0x0F 0x33]                 s:RDPMC, t:SYSTEM, w:W|W|R|R, m:NOSGX
-SYSENTER       nil           SCS,SESP,SEIP,SS,sSP,CS,rIP,Fv,SSP [   0x0F 0x34]                 s:PPRO, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW, i:SEP, f:IF=0, m:NOREAL|NOSGX
+SYSENTER       nil           SCS,SESP,SEIP,SS,sSP,CS,rIP,Fv,SSP [   0x0F 0x34]                 s:PPRO, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW, a:CETT, i:SEP, f:IF=0, m:NOREAL|NOSGX
 SYSEXIT        nil           SS,sSP,CS,rIP,SSP         [            0x0F 0x35]                 s:PPRO, t:SYSRET, w:W|W|W|W|W|W, a:F64, i:SEP, m:KERNEL|NOREAL
 RDSHR          Ed            nil                       [      cyrix 0x0F 0x36 /r]              s:CYRIX, t:SYSTEM, w:R
 GETSEC         nil           EAX,EBX                   [         NP 0x0F 0x37]                 s:SMX, t:SYSTEM, w:RCW|R, m:KERNEL|NOREAL|NOSGX

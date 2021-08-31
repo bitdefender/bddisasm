@@ -146,6 +146,8 @@ optype = {
     'XMM7'     : 'ND_OPT_SSE_XMM7',
 
     # Memory operands
+    'pAX'      : 'ND_OPT_MEM_rAX',
+    'pCX'      : 'ND_OPT_MEM_rCX',
     'pBXAL'    : 'ND_OPT_MEM_rBX_AL',
     'pDI'      : 'ND_OPT_MEM_rDI',
     'SHS'      : 'ND_OPT_MEM_SHS',

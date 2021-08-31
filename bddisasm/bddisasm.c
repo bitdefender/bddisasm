@@ -215,6 +215,8 @@ static const uint16_t gOperandMap[] =
     ND_OPE_S,       // ND_OPT_SSE_XMM6
     ND_OPE_S,       // ND_OPT_SSE_XMM7
 
+    ND_OPE_S,       // ND_OPT_MEM_rAX (as used by MONITOR, MONITORX and RMPADJUST)
+    ND_OPE_S,       // ND_OPT_MEM_rCX (as used by RMPUPDATE)
     ND_OPE_S,       // ND_OPT_MEM_rBX_AL (as used by XLAT)
     ND_OPE_S,       // ND_OPT_MEM_rDI (as used by masked moves)
     ND_OPE_S,       // ND_OPT_MEM_SHS
@@ -733,10 +735,26 @@ NdFetchPrefixes(
             case ND_PREFIX_G2_SEG_GS:
                 if (ND_CODE_64 == Instrux->DefCode)
                 {
-                    // Do not overwrite FS/GS with ES/CS/DS/SS in 64 bit mode. In 64 bit mode, only FS/GS overrides
-                    // are considered.
-                    if (prefix == ND_PREFIX_G2_SEG_FS || prefix == ND_PREFIX_G2_SEG_GS)
+                    if (prefix == ND_PREFIX_G2_SEG_FS || 
+                        prefix == ND_PREFIX_G2_SEG_GS)
                     {
+                        // The last FS/GS is always used, if present.
+                        Instrux->Seg = prefix;
+                        Instrux->HasSeg = true;
+                    }
+                    else if (prefix == ND_PREFIX_G2_NO_TRACK && 
+                        Instrux->Seg != ND_PREFIX_G2_SEG_FS &&
+                        Instrux->Seg != ND_PREFIX_G2_SEG_GS)
+                    {
+                        // The Do Not Track prefix is considered only if there isn't a FS/GS prefix.
+                        Instrux->Seg = prefix;
+                        Instrux->HasSeg = true;
+                    }
+                    else if (Instrux->Seg != ND_PREFIX_G2_SEG_FS && 
+                        Instrux->Seg != ND_PREFIX_G2_SEG_GS &&
+                        Instrux->Seg != ND_PREFIX_G2_NO_TRACK)
+                    {
+                        // All other prefixes are considered if Do Not Track, FS, GS are not present.
                         Instrux->Seg = prefix;
                         Instrux->HasSeg = true;
                     }
@@ -744,11 +762,6 @@ NdFetchPrefixes(
                 else
                 {
                     Instrux->Seg = prefix;
-                    Instrux->HasSeg = true;
-                }
-                if (prefix == ND_PREFIX_G2_BR_TAKEN || prefix == ND_PREFIX_G2_BR_NOT_TAKEN)
-                {
-                    Instrux->Bhint = prefix;
                     Instrux->HasSeg = true;
                 }
                 morePrefixes = true;
@@ -2909,6 +2922,28 @@ memory:
         operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
         break;
 
+    case ND_OPT_MEM_rAX:
+        // [rAX], used implicitly by MONITOR, MONITORX and RMPADJUST instructions.
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.HasBase = true;
+        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
+        operand->Info.Memory.Base = NDR_RAX;            // Always rAX.
+        operand->Info.Memory.HasSeg = true;
+        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
+        break;
+
+    case ND_OPT_MEM_rCX:
+        // [rCX], used implicitly by RMPUPDATE.
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.HasBase = true;
+        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
+        operand->Info.Memory.Base = NDR_RCX;            // Always rCX.
+        operand->Info.Memory.HasSeg = true;
+        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
+        break;
+
     case ND_OPT_MEM_SHS:
         // Shadow stack access using the current SSP.
         Instrux->MemoryAccess |= operand->Access.Access;
@@ -4231,10 +4266,9 @@ NdDecodeWithContext(
     Instrux->IsRepeated = ((Instrux->Rep != 0) && (ND_REP_SUPPORT(Instrux) || ND_REPC_SUPPORT(Instrux)));
 
     // Check if the instruction is CET tracked. The do not track prefix (0x3E) works only for indirect near JMP and CALL
-    // via register. It is always enabled for indirect far JMP and CALL or near indirect JMP and CALL via memoery.
+    // instructions. It is always enabled for far JMP and CALL instructions.
     Instrux->IsCetTracked = ND_HAS_CETT(Instrux) && ((!ND_DNT_SUPPORT(Instrux)) ||
-                                                     (Instrux->Seg != ND_PREFIX_G2_NO_TRACK) ||
-                                                     (Instrux->HasModRm && (Instrux->ModRm.mod != 3)));
+                                                     (Instrux->Seg != ND_PREFIX_G2_NO_TRACK));
 
     // Do instruction validations. These checks are made in order to filter out encodings that would normally
     // be invalid and would generate #UD.
@@ -4391,7 +4425,7 @@ NdToText(
 
     if (Instrux->HasSeg && ND_BHINT_SUPPORT(Instrux))
     {
-       switch (Instrux->Bhint)
+       switch (Instrux->Seg)
        {
        case ND_PREFIX_G2_BR_TAKEN:
             res = nd_strcat_s(Buffer, BufferSize, "BHT ");
