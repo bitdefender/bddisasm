@@ -1,0 +1,17 @@
+[package]
+name = "bddisasm"
+version = "0.1.0"
+authors = ["Cristi Anichitei <ianichitei@bitdefender.com>"]
+edition = "2018"
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/bitdefender/bddisasm"
+documentation = "https://docs.rs/bddisasm"
+description = """
+Bindings to bddisasm instruction decoder library
+"""
+categories = ["api-bindings", "hardware-support"]
+keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64", "bindings"]
+
+[dependencies]
+bddisasm-sys = { version = "0.1.0", path = "../bddisasm-sys" }

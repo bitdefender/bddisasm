@@ -64,6 +64,8 @@ bdshemu_fuzz/out-32
 bdshemu_fuzz/out-64
 docs/build
 libbddisasm.pc
-build*
+build/
 .vscode
 disasmtool_lix/_build
+rsbddisasm/target
+rsbddisasm/Cargo.lock
