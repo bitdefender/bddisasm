@@ -1,0 +1,32 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ windows-latest, macos-latest, ubuntu-latest ]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Debug Build
+      run: cargo build --verbose --manifest-path rsbddisasm/Cargo.toml
+    - name: Release build
+      run: cargo build --release --verbose --manifest-path rsbddisasm/Cargo.toml
+    - name: Run tests
+      run: cargo test --verbose --manifest-path rsbddisasm/Cargo.toml
+    - name: Run clippy
+      run: cargo clippy --manifest-path rsbddisasm/Cargo.toml
+    - name: Run format checks
+      run: cargo fmt -- --check --manifest-path rsbddisasm/Cargo.toml
