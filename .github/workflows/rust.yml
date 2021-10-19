@@ -20,6 +20,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set LIBCLANG_PATH
+      run: echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
+      if: matrix.os == 'windows-latest'
     - name: Debug Build
       run: cargo build --verbose --manifest-path rsbddisasm/Cargo.toml
     - name: Release build
