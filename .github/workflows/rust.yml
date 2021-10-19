@@ -29,4 +29,8 @@ jobs:
     - name: Run clippy
       run: cargo clippy --manifest-path rsbddisasm/Cargo.toml
     - name: Run format checks
-      run: cargo fmt -- --check --manifest-path rsbddisasm/Cargo.toml
+      run: |
+        cd rsbddisasm
+        cargo fmt -- --check
+        cd ..
+
