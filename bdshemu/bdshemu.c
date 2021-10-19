@@ -1693,8 +1693,18 @@ ShemuPrintContext(
         Context->Registers.RegR8, Context->Registers.RegR9, Context->Registers.RegR10, Context->Registers.RegR11);
     shemu_printf(Context, "        R12 = 0x%016llx R13 = 0x%016llx R14 = 0x%016llx R15 = 0x%016llx\n",
         Context->Registers.RegR12, Context->Registers.RegR13, Context->Registers.RegR14, Context->Registers.RegR15);
-    shemu_printf(Context, "        RIP = 0x%016llx RFLAGS = 0x%016llx\n", 
+    shemu_printf(Context, "        RIP = 0x%016llx RFLAGS = 0x%016llx ", 
         Context->Registers.RegRip, Context->Registers.RegFlags);
+    shemu_printf(Context, "  CF:%d PF:%d AF:%d ZF:%d SF:%d TF:%d IF:%d DF:%d OF:%d\n",
+        GET_FLAG(Context, NDR_RFLAG_CF),
+        GET_FLAG(Context, NDR_RFLAG_PF),
+        GET_FLAG(Context, NDR_RFLAG_AF),
+        GET_FLAG(Context, NDR_RFLAG_ZF),
+        GET_FLAG(Context, NDR_RFLAG_SF),
+        GET_FLAG(Context, NDR_RFLAG_TF),
+        GET_FLAG(Context, NDR_RFLAG_IF),
+        GET_FLAG(Context, NDR_RFLAG_DF),
+        GET_FLAG(Context, NDR_RFLAG_OF));
 
     shemu_printf(Context, "Emulating: 0x%016llx %s\n", Context->Registers.RegRip, text);
 }
@@ -1711,6 +1721,7 @@ ShemuEmulate(
     SHEMU_VALUE res = { 0 }, dst = { 0 }, src = { 0 }, rcx = { 0 }, aux = { 0 };
     bool stop = false, cf;
     uint16_t cs = 0;
+    uint64_t tsc = 0x1248fe7a5c30;
 
     if (NULL == Context)
     {
@@ -1752,6 +1763,8 @@ ShemuEmulate(
         NDSTATUS ndstatus;
         uint64_t rip;
         uint32_t i;
+
+        tsc++;
 
         // Reset all the operands to 0.
         nd_memzero(&dst, sizeof(dst));
@@ -3058,6 +3071,17 @@ check_far_branch:
             stop = true;
             break;
 
+        case ND_INS_SIDT:
+            if (Context->Ring == 0)
+            {
+                // Flag this only in ring0, as we treat the SHEMU_FLAG_SIDT as a ring0 specific indicator - it can be
+                // used to locate the kernel image.
+                Context->Flags |= SHEMU_FLAG_SIDT;
+            }
+
+            stop = true;
+            break;
+
         case ND_INS_AESIMC:
         case ND_INS_AESDEC:
         case ND_INS_AESDECLAST:
@@ -3095,6 +3119,16 @@ check_far_branch:
             SET_OP(Context, 0, &dst);
             break;
         }
+
+        case ND_INS_RDTSC:
+            src.Size = 4;
+            // Set EAX to lower 32 bits.
+            src.Value.Dwords[0] = tsc & 0xFFFFFFFF;
+            SET_OP(Context, 0, &src);
+            // Set EDX to upper 32 bits.
+            src.Value.Dwords[0] = tsc >> 32;
+            SET_OP(Context, 1, &src);
+            break;
 
 
         default:

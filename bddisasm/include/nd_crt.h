@@ -90,4 +90,11 @@ extern void *nd_memset(void *s, int c, size_t n);
 
 #define nd_memzero(Dest, Size)         nd_memset((Dest), 0, (Size))
 
+
+// Handy macros.
+#define RET_EQ(x, y, z)     if ((x) == (y)) { return (z); }
+#define RET_GE(x, y, z)     if ((x) >= (y)) { return (z); }
+#define RET_GT(x, y, z)     if ((x) >  (y)) { return (z); }
+
+
 #endif // ND_CRT_H

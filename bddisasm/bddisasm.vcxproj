@@ -420,6 +420,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bdformat.c" />
     <ClCompile Include="crt.c" />
     <ClCompile Include="bddisasm.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseKernel|Win32'">NotUsing</PrecompiledHeader>

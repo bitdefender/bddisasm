@@ -27,6 +27,9 @@
     <ClCompile Include="bddisasm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bdformat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\instructions.h">
