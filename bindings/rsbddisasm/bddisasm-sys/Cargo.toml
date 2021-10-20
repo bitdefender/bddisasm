@@ -13,7 +13,7 @@ description = """
 Bindings to bddisasm instruction decoder library
 """
 categories = ["external-ffi-bindings", "hardware-support"]
-keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64", "bindings"]
+keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64"]
 
 [lib]
 name = "bddisasm_sys"
