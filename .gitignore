@@ -64,6 +64,6 @@ libbddisasm.pc
 build/
 .vscode
 disasmtool_lix/_build
-rsbddisasm/target
-rsbddisasm/Cargo.lock
+bindings/rsbddisasm/target
+bindings/rsbddisasm/Cargo.lock
 bindings/pybddisasm/pybddisasm.egg-info

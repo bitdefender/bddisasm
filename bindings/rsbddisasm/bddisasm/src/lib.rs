@@ -4,7 +4,9 @@
  */
 //! bddisasm x86/x64 instruction decoder
 //!
-//! This crate contains bindings for the [bddisasm](https://github.com/bitdefender/bddisasm) x86/x64 decoder library.
+//! Rust bindings for the [bddisasm](https://github.com/bitdefender/bddisasm) x86/x64 decoder library, built on top
+//! of [bddisasm-sys](https://crates.io/crates/bddisasm-sys).
+//!
 //! It supports all existing x86 instruction, offering a wide range of information about each one, including:
 //!
 //! - operands (implicit and explicit)

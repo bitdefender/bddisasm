@@ -24,16 +24,16 @@ jobs:
       run: echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
       if: matrix.os == 'windows-latest'
     - name: Debug Build
-      run: cargo build --verbose --manifest-path rsbddisasm/Cargo.toml
+      run: cargo build --verbose --manifest-path bindings/rsbddisasm/Cargo.toml
     - name: Release build
-      run: cargo build --release --verbose --manifest-path rsbddisasm/Cargo.toml
+      run: cargo build --release --verbose --manifest-path bindings/rsbddisasm/Cargo.toml
     - name: Run tests
-      run: cargo test --verbose --manifest-path rsbddisasm/Cargo.toml
+      run: cargo test --verbose --manifest-path bindings/rsbddisasm/Cargo.toml
     - name: Run clippy
-      run: cargo clippy --manifest-path rsbddisasm/Cargo.toml
+      run: cargo clippy --manifest-path bindings/rsbddisasm/Cargo.toml
     - name: Run format checks
       run: |
-        cd rsbddisasm
+        cd bindings/rsbddisasm
         cargo fmt -- --check
         cd ..
 
