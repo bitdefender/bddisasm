@@ -47,9 +47,6 @@ _UpgradeReport_Files/*
 *.pyc
 .*.swp
 *.pyd
-pydis/pydis.egg-info/
-pydis/build/
-pydis/dist/
 .vs/
 
 disasmtool_lix/build
@@ -69,3 +66,4 @@ build/
 disasmtool_lix/_build
 rsbddisasm/target
 rsbddisasm/Cargo.lock
+bindings/pybddisasm/pybddisasm.egg-info
