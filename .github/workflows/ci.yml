@@ -63,7 +63,7 @@ jobs:
         python3 -m pip install setuptools
     - name: Build pybddisasm
       run: |
-        cd pybddisasm
+        cd bindings/pybddisasm
         python3 setup.py build
         cd -
     - name: Create package

@@ -4,18 +4,13 @@ The Bitdefender disassembler (bddisasm) is a lightweight, x86/x64 only instructi
 
 ## Projects
 
-1. bddisasm - this is the main disassembler project. In order to use the Bitdefender disassembler, all you have to do is build this project, and link with the output library. The only headers you need are located inside the `inc` folder.
-
-2. bdshemu - this project makes use of the main bddisasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can
+1. [bddisasm](https://github.com/bitdefender/bddisasm/tree/master/bddisasm) - this is the main disassembler project. In order to use the Bitdefender disassembler, all you have to do is build this project, and link with the output library. The only headers you need are located inside the `inc` folder.
+2. [bdshemu](https://github.com/bitdefender/bddisasm/tree/master/bdshemu) - this project makes use of the main bddisasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can
 emulate raw binary files, and see their output. Note that this simple emulator supports basic x86/x64 instructions, and does not support emulating any kind of API call. In addition, the only supported memory accesses are inside the shellcode itself, and on the emulated stack.
-
-3. isagenerator - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files. You will need Python 3 to run the generation scripts.
-
-4. disasmtool - this project is a command line disassembler tool, used mainly as an example of how to integrate the bddisasm and bdshemu libraries.
-
-5. disasmtool_lix - like disasmtool, but for Linux.
-
-6. pybddisasm - this is the Python binding for the bddisasm project. You will need Python 3 for this.
+3. [isagenerator](https://github.com/bitdefender/bddisasm/tree/master/isagenerator) - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files. You will need Python 3 to run the generation scripts.
+4. [disasmtool](https://github.com/bitdefender/bddisasm/tree/master/disasmtool) - this project is a command line disassembler tool, used mainly as an example of how to integrate the bddisasm and bdshemu libraries.
+5. [disasmtool_lix](https://github.com/bitdefender/bddisasm/tree/master/disasmtool_lix) - like disasmtool, but for Linux.
+6. [bindings](https://github.com/bitdefender/bddisasm/tree/master/bindings) - bindings for [python](https://github.com/bitdefender/bddisasm/tree/master/bindings/pybddisasm), and [Rust](https://github.com/bitdefender/bddisasm/tree/master/bindings/rsbddisasm).
 
 ## Objectives
 

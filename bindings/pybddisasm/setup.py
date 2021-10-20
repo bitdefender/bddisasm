@@ -20,7 +20,7 @@ requires = ['setuptools']
 here = os.path.abspath(os.path.dirname(__file__))
 
 def _check_library_version():
-    version_header = '../inc/version.h'
+    version_header = '../../inc/version.h'
     with open(version_header, 'r') as file:
         data = file.read()
 
@@ -92,8 +92,8 @@ setup(
                       extra_compile_args = ["-march=westmere"], 
                       sources = ["_pybddisasm/_pybddisasm.c", "_pybddisasm/pybddisasm.c"],
                       define_macros = [('AMD64', None), ('LIBRARY_INSTRUX_SIZE', LIBRARY_INSTRUX_SIZE)],
-                      include_dirs = ['../inc'],
+                      include_dirs = ['../../inc'],
                       libraries = ['bddisasm'],
-                      library_dirs = ['/usr/local/lib', '../bin/x64/Release'])],
+                      library_dirs = ['/usr/local/lib', '../../build', '../../bin/x64/Release'])],
     distclass=BinaryDistribution
 )

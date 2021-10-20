@@ -96,6 +96,7 @@ static char *TupleTypeToString(ND_TUPLE TupleType)
     case ND_TUPLE_None: return "None";
     case ND_TUPLE_FV: return "FV";
     case ND_TUPLE_HV: return "HV";
+    case ND_TUPLE_QV: return "QV";
     case ND_TUPLE_T1S8: return "T1S8";
     case ND_TUPLE_T1S16: return "T1S16";
     case ND_TUPLE_T1S: return "T1S";
