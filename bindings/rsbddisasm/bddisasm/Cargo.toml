@@ -11,7 +11,7 @@ description = """
 Bindings to bddisasm instruction decoder library
 """
 categories = ["api-bindings", "hardware-support"]
-keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64", "bindings"]
+keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64"]
 
 [dependencies]
 bddisasm-sys = { version = "0.1.0", path = "../bddisasm-sys" }
