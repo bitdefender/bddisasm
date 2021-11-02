@@ -4109,7 +4109,7 @@ NdDecodeWithContext(
         Instrux->BranchInfo.IsConditional = Instrux->Category == ND_CAT_COND_BR;
         // Indirect branches are those which get their target address from a register or memory, including RET familly.
         Instrux->BranchInfo.IsIndirect = ((!Instrux->Operands[0].Flags.IsDefault) && 
-            (Instrux->Operands[0].Type == ND_OP_REG) || (Instrux->Operands[0].Type == ND_OP_MEM)) || 
+            ((Instrux->Operands[0].Type == ND_OP_REG) || (Instrux->Operands[0].Type == ND_OP_MEM))) || 
             (Instrux->Category == ND_CAT_RET);
         Instrux->BranchInfo.IsFar = !!(Instrux->CsAccess & ND_ACCESS_ANY_WRITE);
     }
