@@ -1719,6 +1719,7 @@ NdParseOperand(
         operand->Info.Register.Type = ND_REG_SEG;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
         operand->Info.Register.Reg = NDR_CS;
+        Instrux->CsAccess |= operand->Access.Access;
         break;
 
     case ND_OPT_SEG_SS:
@@ -4101,6 +4102,18 @@ NdDecodeWithContext(
     Instrux->IsCetTracked = ND_HAS_CETT(Instrux) && ((!ND_DNT_SUPPORT(Instrux)) ||
                                                      (Instrux->Seg != ND_PREFIX_G2_NO_TRACK));
 
+    // Fill in branch information.
+    if (!!(Instrux->RipAccess & ND_ACCESS_ANY_WRITE))
+    {
+        Instrux->BranchInfo.IsBranch = 1;
+        Instrux->BranchInfo.IsConditional = Instrux->Category == ND_CAT_COND_BR;
+        // Indirect branches are those which get their target address from a register or memory, including RET familly.
+        Instrux->BranchInfo.IsIndirect = ((!Instrux->Operands[0].Flags.IsDefault) && 
+            (Instrux->Operands[0].Type == ND_OP_REG) || (Instrux->Operands[0].Type == ND_OP_MEM)) || 
+            (Instrux->Category == ND_CAT_RET);
+        Instrux->BranchInfo.IsFar = !!(Instrux->CsAccess & ND_ACCESS_ANY_WRITE);
+    }
+
     // Do instruction validations. These checks are made in order to filter out encodings that would normally
     // be invalid and would generate #UD.
     status = NdValidateInstruction(Instrux);
@@ -4145,212 +4158,9 @@ NdDecode(
 }
 
 
-
-
 //
-// NdIsInstruxRipRelative
+// NdInitContext
 //
-bool
-NdIsInstruxRipRelative(
-    const INSTRUX *Instrux
-    )
-//
-// Provided for backwards compatibility with existing code that uses disasm 1.0
-//
-{
-    if (NULL == Instrux)
-    {
-        return false;
-    }
-    else
-    {
-        return Instrux->IsRipRelative;
-    }
-}
-
-
-//
-// NdGetFullAccessMap
-//
-NDSTATUS
-NdGetFullAccessMap(
-    const INSTRUX *Instrux,
-    ND_ACCESS_MAP *AccessMap
-    )
-{
-    uint32_t i;
-    const ND_OPERAND *pOp;
-
-    // pre-init
-    i = 0;
-    pOp = NULL;
-
-    // validate
-    if (NULL == Instrux)
-    {
-        return ND_STATUS_INVALID_PARAMETER;
-    }
-
-    if (NULL == AccessMap)
-    {
-        return ND_STATUS_INVALID_PARAMETER;
-    }
-
-    for (i = 0; i < Instrux->OperandsCount; i++)
-    {
-        pOp = &Instrux->Operands[i];
-
-        if (ND_OP_MEM == pOp->Type)
-        {
-            if (pOp->Info.Memory.IsStack)
-            {
-                AccessMap->StackAccess |= pOp->Access.Access;
-                AccessMap->GprAccess[NDR_RSP] |= ND_ACCESS_READ|ND_ACCESS_WRITE;
-                AccessMap->SegAccess[NDR_SS] |= ND_ACCESS_READ;
-            }
-            else
-            {
-                AccessMap->MemAccess |= pOp->Access.Access;
-
-                if (pOp->Info.Memory.HasSeg)
-                {
-                    AccessMap->SegAccess[pOp->Info.Memory.Seg] |= ND_ACCESS_READ;
-                }
-
-                if (pOp->Info.Memory.HasBase)
-                {
-                    AccessMap->GprAccess[pOp->Info.Memory.Base] |= ND_ACCESS_READ;
-                }
-
-                if (pOp->Info.Memory.HasIndex)
-                {
-                    if (pOp->Info.Memory.IsVsib)
-                    {
-                        AccessMap->SseAccess[pOp->Info.Memory.Index] |= ND_ACCESS_READ;
-                    }
-                    else
-                    {
-                        AccessMap->GprAccess[pOp->Info.Memory.Index] |= ND_ACCESS_READ;
-                    }
-                }
-            }
-        }
-        else if (ND_OP_REG == pOp->Type)
-        {
-            switch (pOp->Info.Register.Type)
-            {
-            case ND_REG_GPR:
-                {
-                    uint32_t k;
-
-                    for (k = 0; k < pOp->Info.Register.Count; k++)
-                    {
-                        AccessMap->GprAccess[pOp->Info.Register.Reg + k] |= pOp->Access.Access;
-                    }
-                }
-                break;
-            case ND_REG_SEG:
-                AccessMap->SegAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_FPU:
-                AccessMap->FpuAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_MMX:
-                AccessMap->MmxAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_SSE:
-                {
-                    uint32_t k;
-
-                    for (k = 0; k < pOp->Info.Register.Count; k++)
-                    {
-                        AccessMap->SseAccess[pOp->Info.Register.Reg + k] |= pOp->Access.Access;
-                    }
-                }
-                break;
-            case ND_REG_CR:
-                AccessMap->CrAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_DR:
-                AccessMap->DrAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_TR:
-                AccessMap->TrAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_BND:
-                AccessMap->BndAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_MSK:
-                AccessMap->MskAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_SYS:
-                AccessMap->SysAccess[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_X87:
-                AccessMap->X87Access[pOp->Info.Register.Reg] |= pOp->Access.Access;
-                break;
-            case ND_REG_FLG:
-                AccessMap->FlagsAccess |= pOp->Access.Access;
-                break;
-            case ND_REG_RIP:
-                AccessMap->RipAccess |= pOp->Access.Access;
-                break;
-            case ND_REG_MXCSR:
-                AccessMap->MxcsrAccess |= pOp->Access.Access;
-                break;
-            case ND_REG_PKRU:
-                AccessMap->PkruAccess |= pOp->Access.Access;
-                break;
-            case ND_REG_SSP:
-                AccessMap->SspAccess |= pOp->Access.Access;
-                break;
-            default:
-                break;
-            }
-        }
-        else if (ND_OP_BANK == Instrux->Operands[i].Type)
-        {
-            uint8_t j;
-
-            // Bank registers access. This needs special handling. Note that LOADALL/LOADALLD is not supported, as
-            // it is too old and it's not valid since the good old 486.
-            if (ND_INS_FNSAVE == Instrux->Instruction)
-            {
-                for (j = 0; j < ND_MAX_FPU_REGS; j++)
-                {
-                    AccessMap->FpuAccess[j] |= ND_ACCESS_READ;
-                }
-            }
-            else if (ND_INS_FRSTOR == Instrux->Instruction)
-            {
-                for (j = 0; j < ND_MAX_FPU_REGS; j++)
-                {
-                    AccessMap->FpuAccess[j] |= ND_ACCESS_WRITE;
-                }
-            }
-
-            if ((ND_INS_XSAVE == Instrux->Instruction)  || (ND_INS_XSAVEOPT == Instrux->Instruction) ||
-                (ND_INS_XSAVES == Instrux->Instruction) || (ND_INS_XSAVEC == Instrux->Instruction))
-            {
-                for (j = 0; j < ND_MAX_SSE_REGS; j++)
-                {
-                    AccessMap->SseAccess[j] |= ND_ACCESS_READ;
-                }
-            }
-            else if ((ND_INS_XRSTOR == Instrux->Instruction) || (ND_INS_XRSTORS == Instrux->Instruction))
-            {
-                for (j = 0; j < ND_MAX_SSE_REGS; j++)
-                {
-                    AccessMap->SseAccess[j] |= ND_ACCESS_WRITE;
-                }
-            }
-        }
-    }
-
-    return ND_STATUS_SUCCESS;
-}
-
-
 void
 NdInitContext(
     ND_CONTEXT *Context

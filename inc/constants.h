@@ -1758,7 +1758,6 @@ typedef enum _ND_INS_TYPE
     ND_CAT_EXPAND,
     ND_CAT_FLAGOP,
     ND_CAT_FMA4,
-    ND_CAT_FRED,
     ND_CAT_GATHER,
     ND_CAT_GFNI,
     ND_CAT_HRESET,

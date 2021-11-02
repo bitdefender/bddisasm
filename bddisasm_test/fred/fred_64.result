@@ -1,6 +1,6 @@
 0000000000000000 f30f01ca                        ERETU
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: FRED, Ins cat: FRED, CET tracked: no
+        ISA Set: FRED, Ins cat: RET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 17
         FLAGS access
                 Entire register
@@ -26,7 +26,7 @@
 
 0000000000000004 f20f01ca                        ERETS
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: FRED, Ins cat: FRED, CET tracked: no
+        ISA Set: FRED, Ins cat: RET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 17
         FLAGS access
                 Entire register

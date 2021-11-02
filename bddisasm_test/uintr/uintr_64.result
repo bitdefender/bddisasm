@@ -1,6 +1,6 @@
 0000000000000000 f30f01ec                        UIRET
         DSIZE: 64, ASIZE: 64, VLEN: -
-        ISA Set: UINTR, Ins cat: UINTR, CET tracked: no
+        ISA Set: UINTR, Ins cat: RET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: edx, bit: 5
         FLAGS access
                 Entire register

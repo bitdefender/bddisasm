@@ -331,7 +331,7 @@ RETN           nil           rIP,Kv,SHS1       [            0xC3]          s:I86
 LES            Gz,Mp         ES                [            0xC4 /r:mem]   s:I86, t:SEGOP, w:W|R|W, m:NO64|NOSGX
 LDS            Gz,Mp         DS                [            0xC5 /r:mem]   s:I86, t:SEGOP, w:W|R|W, m:NO64|NOSGX
 MOV            Eb,Ib         nil               [            0xC6 /0 ib]    s:I86, t:DATAXFER, w:W|R, p:XRELEASE|HLEWOL
-XABORT         Ib            EAX               [            0xC6 /0xF8 ib] s:TSX, t:UNCOND_BR, w:R|RCW, i:RTM, m:NOTSX
+XABORT         Ib            yIP,EAX           [            0xC6 /0xF8 ib] s:TSX, t:UNCOND_BR, w:R|W|RCW, i:RTM
 MOV            Ev,Iz         nil               [            0xC7 /0 iz]    s:I86, t:DATAXFER, w:W|R, a:OP2SEXO1, p:XRELEASE|HLEWOL
 XBEGIN         Jz            yIP,EAX           [            0xC7 /0xF8 cz] s:TSX, t:COND_BR, w:R|RCW|CW, i:RTM
 ENTER          Iw,Ib         rBP,sSP,Kv        [            0xC8 iw ib]    s:I186, t:MISC, w:R|R|RW|RW|W, a:D64

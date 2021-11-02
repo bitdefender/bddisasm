@@ -46,7 +46,8 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
-        Operand: 1, Acc:  RCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  RCW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
 
 000000000000000C 0f01d5                          XEND
         DSIZE: 32, ASIZE: 64, VLEN: -
@@ -61,6 +62,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  CW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:               IP, RegSize:  8, RegId: 0, RegCount: 1
 
 000000000000000F f20f01e8                        XSUSLDTRK
         DSIZE: 32, ASIZE: 64, VLEN: -

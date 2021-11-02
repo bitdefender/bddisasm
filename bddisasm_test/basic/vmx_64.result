@@ -5,7 +5,7 @@
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: no, TSX off: yes
                 VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: no
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no

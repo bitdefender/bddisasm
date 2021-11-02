@@ -30,6 +30,9 @@
     <ClCompile Include="bdformat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bdhelpers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\instructions.h">
