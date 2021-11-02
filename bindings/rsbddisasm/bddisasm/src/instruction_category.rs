@@ -160,7 +160,6 @@ impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
             ffi::_ND_INS_TYPE::ND_CAT_EXPAND => Ok(Category::Expand),
             ffi::_ND_INS_TYPE::ND_CAT_FLAGOP => Ok(Category::Flagop),
             ffi::_ND_INS_TYPE::ND_CAT_FMA4 => Ok(Category::Fma4),
-            ffi::_ND_INS_TYPE::ND_CAT_FRED => Ok(Category::Fred),
             ffi::_ND_INS_TYPE::ND_CAT_GATHER => Ok(Category::Gather),
             ffi::_ND_INS_TYPE::ND_CAT_GFNI => Ok(Category::Gfni),
             ffi::_ND_INS_TYPE::ND_CAT_HRESET => Ok(Category::Hreset),
