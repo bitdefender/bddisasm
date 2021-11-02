@@ -1591,7 +1591,6 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_EXPAND: return "expand";
     case ND_CAT_FLAGOP: return "flagop";
     case ND_CAT_FMA4: return "fma4";
-    case ND_CAT_FRED: return "fred";
     case ND_CAT_GATHER: return "gather";
     case ND_CAT_GFNI: return "gfni";
     case ND_CAT_HRESET: return "hreset";

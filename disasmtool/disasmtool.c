@@ -260,7 +260,6 @@ const char* category_to_string(
     case ND_CAT_EXPAND:               return "EXPAND";
     case ND_CAT_FLAGOP:               return "FLAGOP";
     case ND_CAT_FMA4:                 return "FMA4";
-    case ND_CAT_FRED:                 return "FRED";
     case ND_CAT_GATHER:               return "GATHER";
     case ND_CAT_GFNI:                 return "GFNI";
     case ND_CAT_HRESET:               return "HRESET";
@@ -1692,6 +1691,10 @@ handle_shemu(
     if (ctx.Flags & SHEMU_FLAG_SYSCALL_MSR_WRITE)
     {
         printf("        SHEMU_FLAG_SYSCALL_MSR_WRITE\n");
+    }
+    if (ctx.Flags & SHEMU_FLAG_SIDT)
+    {
+        printf("        SHEMU_FLAG_SIDT\n");
     }
 
     if (fNameDecoded != NULL)
