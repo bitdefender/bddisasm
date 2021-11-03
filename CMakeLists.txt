@@ -97,6 +97,7 @@ add_library(
     bddisasm/crt.c
     bddisasm/bddisasm.c
     bddisasm/bdformat.c
+    bddisasm/bdhelpers.c
     # Add the headers so they will show up in IDEs.
     bddisasm/include/instructions.h
     bddisasm/include/mnemonics.h
