@@ -5,7 +5,7 @@
 #ifndef DISASM_TYPES_H
 #define DISASM_TYPES_H
 
-#if defined(KERNEL_MODE) && defined(_MSC_VER)
+#if defined(_KERNEL_MODE) && defined(_MSC_VER)
 # include <ntddk.h>
 # include <Ntstrsafe.h>
 # include <basetsd.h>

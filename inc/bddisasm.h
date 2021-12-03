@@ -455,16 +455,39 @@ typedef uint32_t ND_REG_SIZE;
 #define ND_SAE_SUPPORT(ix)          (!!((ix)->ValidDecorators.Sae))
 #define ND_BROADCAST_SUPPORT(ix)    (!!((ix)->ValidDecorators.Broadcast))
 
-// Generates a unique ID per register type, size and reg.
-#define ND_OP_REG_ID(op)            (((op)->Type << 24) | ((op)->Info.Register.Type << 16) | \
-                                     ((op)->Info.Register.Size << 8) | ((op)->Info.Register.Reg))
+// Generates a unique ID per register type, size and reg. The layout is the following:
+//  - bits [63, 60] (4 bits)    - the operand type (ND_OP_REG)
+//  - bits [59, 52] (8 bits)    - the register type
+//  - bits [51, 36] (16 bits)   - the register size, in bytes
+//  - bits [35, 30] (6 bits)    - the number of registers accessed starting with this reg (for block addressing)
+//  - bits [29, 9] (21 bits)    - reserved
+//  - bit 8                     - High8 indicator: indicates whether the reg is AH/CH/DH/BH
+//  - bits [7, 0] (8 bits)      - the register ID
+#define ND_OP_REG_ID(op)            (((uint64_t)((op)->Type & 0xF) << 60) |                                 \
+                                     ((uint64_t)((op)->Info.Register.Type & 0xFF) << 52) |                  \
+                                     ((uint64_t)((op)->Info.Register.Size & 0xFFFF) << 36) |                \
+                                     ((uint64_t)((op)->Info.Register.Count & 0x3F) << 30) |                 \
+                                     ((uint64_t)((op)->Info.Register.IsHigh8 & 0x1) << 8) |                 \
+                                     ((uint64_t)((op)->Info.Register.Reg)))
 
 // Example: ND_IS_OP_REG(op, ND_REG_GPR, 4, REG_ESP)
 // Example: ND_IS_OP_REG(op, ND_REG_CR,  8, REG_CR3)
 // Example: ND_IS_OP_REG(op, ND_REG_RIP, 8, 0)
 
 // Checks if the indicated operand op is a register of type t, with size s and index r.
-#define ND_IS_OP_REG(op, t, s, r)   ((uint32_t)(ND_OP_REG_ID(op)) == (uint32_t)((ND_OP_REG << 24)|(t << 16)|(s << 8)|(r)))
+#define ND_IS_OP_REG(op, t, s, r)   (ND_OP_REG_ID(op) == (((uint64_t)(ND_OP_REG) << 60) |                   \
+                                                          ((uint64_t)((t) & 0xFF) << 52) |                  \
+                                                          ((uint64_t)((s) & 0xFFFF) << 36) |                \
+                                                          ((uint64_t)(1) << 30) |                           \
+                                                          ((uint64_t)(r))))
+
+// Checks if the indicated operand op is a register of type t, with size s and index r.
+#define ND_IS_OP_REG_EX(op, t, s, r, b, h)   (ND_OP_REG_ID(op) == (((uint64_t)(ND_OP_REG) << 60) |          \
+                                                          ((uint64_t)((t) & 0xFF) << 52) |                  \
+                                                          ((uint64_t)((s) & 0xFFFF) << 36) |                \
+                                                          ((uint64_t)((b) & 0x3F) << 30) |                  \
+                                                          ((uint64_t)((h) & 0x1) << 8) |                    \
+                                                          ((uint64_t)(r))))
 
 // Checjs if the indicated operand is the stack.
 #define ND_IS_OP_STACK(op)          ((op)->Type == ND_OP_MEM && (op)->Info.Memory.IsStack)
@@ -1619,7 +1642,7 @@ NdGetFullAccessMap(
 //
 NDSTATUS
 NdGetOperandRlut(
-    INSTRUX *Instrux,
+    const INSTRUX *Instrux,
     ND_OPERAND_RLUT *Rlut
     );
 
