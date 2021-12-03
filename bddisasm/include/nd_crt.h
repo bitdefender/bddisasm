@@ -22,7 +22,7 @@
 #  endif  // __cplusplus
 # endif // !_ADDRESSOF
 
-# ifndef KERNEL_MODE
+# ifndef _KERNEL_MODE
 
 #  if defined(AMD64) || defined(WIN64)
 
@@ -51,7 +51,7 @@
 # define va_arg _crt_va_arg
 # define va_end _crt_va_end
 
-#endif // KERNEL_MODE
+#endif // _KERNEL_MODE
 
 #else
 

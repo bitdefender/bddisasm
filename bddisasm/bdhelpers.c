@@ -214,7 +214,7 @@ NdGetFullAccessMap(
 //
 NDSTATUS
 NdGetOperandRlut(
-    INSTRUX *Instrux,
+    const INSTRUX *Instrux,
     ND_OPERAND_RLUT *Rlut
     )
 {
@@ -238,11 +238,11 @@ NdGetOperandRlut(
             // We only care about the first 2 destination operands.
             if (Rlut->Dst1 == NULL)
             {
-                Rlut->Dst1 = &Instrux->Operands[i];
+                Rlut->Dst1 = (PND_OPERAND)&Instrux->Operands[i];
             }
             else if (Rlut->Dst2 == NULL)
             {
-                Rlut->Dst2 = &Instrux->Operands[i];
+                Rlut->Dst2 = (PND_OPERAND)&Instrux->Operands[i];
             }
         }
 
@@ -251,19 +251,19 @@ NdGetOperandRlut(
             // We only care about the first 4 source operands.
             if (Rlut->Src1 == NULL)
             {
-                Rlut->Src1 = &Instrux->Operands[i];
+                Rlut->Src1 = (PND_OPERAND)&Instrux->Operands[i];
             }
             else if (Rlut->Src2 == NULL)
             {
-                Rlut->Src2 = &Instrux->Operands[i];
+                Rlut->Src2 = (PND_OPERAND)&Instrux->Operands[i];
             }
             else if (Rlut->Src3 == NULL)
             {
-                Rlut->Src3 = &Instrux->Operands[i];
+                Rlut->Src3 = (PND_OPERAND)&Instrux->Operands[i];
             }
             else if (Rlut->Src4 == NULL)
             {
-                Rlut->Src4 = &Instrux->Operands[i];
+                Rlut->Src4 = (PND_OPERAND)&Instrux->Operands[i];
             }
         }
 
@@ -272,16 +272,16 @@ NdGetOperandRlut(
             // We only care about the first 2 memory operands.
             if (Rlut->Mem1 == NULL)
             {
-                Rlut->Mem1 = &Instrux->Operands[i];
+                Rlut->Mem1 = (PND_OPERAND)&Instrux->Operands[i];
             }
             else if (Rlut->Mem2 == NULL)
             {
-                Rlut->Mem2 = &Instrux->Operands[i];
+                Rlut->Mem2 = (PND_OPERAND)&Instrux->Operands[i];
             }
 
             if (Instrux->Operands[i].Info.Memory.IsStack)
             {
-                Rlut->Stack = &Instrux->Operands[i];
+                Rlut->Stack = (PND_OPERAND)&Instrux->Operands[i];
             }
         }
 
@@ -290,25 +290,25 @@ NdGetOperandRlut(
             switch (Instrux->Operands[i].Info.Register.Type)
             {
             case ND_REG_FLG:
-                Rlut->Flags = &Instrux->Operands[i];
+                Rlut->Flags = (PND_OPERAND)&Instrux->Operands[i];
                 break;
             case ND_REG_RIP:
-                Rlut->Rip = &Instrux->Operands[i];;
+                Rlut->Rip = (PND_OPERAND)&Instrux->Operands[i];;
                 break;
             case ND_REG_SEG:
                 if (Instrux->Operands[i].Info.Register.Reg == NDR_CS)
                 {
-                    Rlut->Cs = &Instrux->Operands[i];
+                    Rlut->Cs = (PND_OPERAND)&Instrux->Operands[i];
                 }
                 else if (Instrux->Operands[i].Info.Register.Reg == NDR_SS)
                 {
-                    Rlut->Ss = &Instrux->Operands[i];
+                    Rlut->Ss = (PND_OPERAND)&Instrux->Operands[i];
                 }
                 break;
             case ND_REG_GPR:
                 if (Instrux->Operands[i].Info.Register.Reg < 8)
                 {
-                    *(&Rlut->Rax + Instrux->Operands[i].Info.Register.Reg) = &Instrux->Operands[i];
+                    *(&Rlut->Rax + Instrux->Operands[i].Info.Register.Reg) = (PND_OPERAND)&Instrux->Operands[i];
                 }
                 break;
             default:
