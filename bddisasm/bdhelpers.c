@@ -100,7 +100,14 @@ NdGetFullAccessMap(
 
                     for (k = 0; k < pOp->Info.Register.Count; k++)
                     {
-                        AccessMap->GprAccess[pOp->Info.Register.Reg + k] |= pOp->Access.Access;
+                        if (pOp->Info.Register.IsHigh8)
+                        {
+                            AccessMap->GprAccess[pOp->Info.Register.Reg - 4 + k] |= pOp->Access.Access;
+                        }
+                        else
+                        {
+                            AccessMap->GprAccess[pOp->Info.Register.Reg + k] |= pOp->Access.Access;
+                        }
                     }
                 }
                 break;
