@@ -1,6 +1,6 @@
 .PHONY: clean
 
-SRC_FILES := crt.c bddisasm.c
+SRC_FILES := crt.c bddisasm.c bdformat.c bdhelpers.c
 
 OBJECTS := $(SRC_FILES:.c=.o)
 
