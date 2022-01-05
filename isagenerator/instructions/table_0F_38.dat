@@ -125,8 +125,8 @@ MOVBE               Mv,Gv                 nil               [            0x0F 0x
 MOVBE               Mv,Gv                 nil               [       0x66 0x0F 0x38 0xF1 /r:mem]     s:MOVBE, t:DATAXFER, w:W|R, a:S66
 CRC32               Gy,Ev                 nil               [       0xF2 0x0F 0x38 0xF1 /r]         s:SSE42, t:SSE, w:RW|R
 CRC32               Gy,Ev                 nil               [  0x66 0xF2 0x0F 0x38 0xF1 /r]         s:SSE42, t:SSE, w:RW|R, a:S66
-WRUSSD              My,Gy                 nil               [       0x66 0x0F 0x38 0xF5 /r:mem]     s:CET_SS, t:CET, c:WRUSS, a:SHS, w:W|R
-WRUSSQ              My,Gy                 nil               [  rexw 0x66 0x0F 0x38 0xF5 /r:mem]     s:CET_SS, t:CET, c:WRUSS, a:SHS, w:W|R
+WRUSSD              My,Gy                 nil               [       0x66 0x0F 0x38 0xF5 /r:mem]     s:CET_SS, t:CET, c:WRUSS, a:SHS, w:W|R, m:KERNEL
+WRUSSQ              My,Gy                 nil               [  rexw 0x66 0x0F 0x38 0xF5 /r:mem]     s:CET_SS, t:CET, c:WRUSS, a:SHS, w:W|R, m:KERNEL
 WRSSD               My,Gy                 nil               [         NP 0x0F 0x38 0xF6 /r:mem]     s:CET_SS, t:CET, c:WRSS, a:SHS, w:W|R
 WRSSQ               My,Gy                 nil               [    rexw NP 0x0F 0x38 0xF6 /r:mem]     s:CET_SS, t:CET, c:WRSS, a:SHS, w:W|R
 ADCX                Gy,Ey                 Fv                [       0x66 0x0F 0x38 0xF6 /r]         s:ADX, t:ARITH, w:RW|R|RW, f:CF=m

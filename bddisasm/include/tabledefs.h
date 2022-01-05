@@ -5,6 +5,8 @@
 #ifndef TABLEDEFS_H
 #define TABLEDEFS_H
 
+#include "../inc/disasmtypes.h"
+
 //
 // Types of tables.
 //
@@ -80,104 +82,104 @@ typedef enum _ND_ILUT_TYPE
 
 typedef struct _ND_TABLE
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[1];
 } ND_TABLE, *PND_TABLE;
 
 typedef struct _ND_TABLE_INSTRUCTION
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Instruction;
 } ND_TABLE_INSTRUCTION, *PND_TABLE_INSTRUCTION;
 
 typedef struct _ND_TABLE_OPCODE
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[256];
 } ND_TABLE_OPCODE, *PND_TABLE_OPCODE;
 
 typedef struct _ND_TABLE_MODRM_MOD
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[2];
 } ND_TABLE_MODRM_MOD, *PND_TABLE_MODRM_MOD;
 
 typedef struct _ND_TABLE_MODRM_REG
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[8];
 } ND_TABLE_MODRM_REG, *PND_TABLE_MODRM_REG;
 
 typedef struct _ND_TABLE_MODRM_RM
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[8];
 } ND_TABLE_MODRM_RM, *PND_TABLE_MODRM_RM;
 
 typedef struct _ND_TABLE_MPREFIX
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[4];
 } ND_TABLE_MPREFIX, *PND_TABLE_MPREFIX;
 
 
 typedef struct _ND_TABLE_AUXILIARY
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[6];
 } ND_TABLE_AUXILIARY, *PND_TABLE_AUXILIARY;
 
 typedef struct _ND_TABLE_VENDOR
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[6];
 } ND_TABLE_VENDOR;
 
 typedef struct _ND_TABLE_FEATURE
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[4];
 } ND_TABLE_FEATURE;
 
 typedef struct _ND_TABLE_DSIZE
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[6];
 } ND_TABLE_DSIZE, *PND_TABLE_DSIZE;
 
 typedef struct _ND_TABLE_ASIZE
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[4];
 } ND_TABLE_ASIZE, *PND_TABLE_ASIZE;
 
 typedef struct _ND_TABLE_MODE
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[4];
 } ND_TABLE_MODE, *PND_TABLE_MODE;
 
 typedef struct _ND_TABLE_VEX_MMMMM
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[32];
 } ND_TABLE_VEX_MMMMM, *PND_TABLE_VEX_MMMMM;
 
 typedef struct _ND_TABLE_VEX_PP
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[4];
 } ND_TABLE_VEX_PP, *PND_TABLE_VEX_PP;
 
 typedef struct _ND_TABLE_VEX_L
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[4];
 } ND_TABLE_VEX_L, *PND_TABLE_VEX_L;
 
 typedef struct _ND_TABLE_VEX_W
 {
-    uint32_t        Type;
+    ND_UINT32       Type;
     const void      *Table[8];
 } ND_TABLE_VEX_W, *PND_TABLE_VEX_W;
 
@@ -194,37 +196,37 @@ __attribute__((aligned(128)))
 #endif
 typedef struct _ND_INSTRUCTION
 {
-    uint16_t        Instruction;    // Instruction identifier. Check ND_INS_CLASS definitions.
-    uint8_t         Category;       // Instruction category. Check ND_INS_TYPE.
-    uint8_t         IsaSet;         // Instruction set. Check ND_INS_SET.
-    uint16_t        Mnemonic;       // Mnemonic (index inside the global mnemonic table).
+    ND_UINT16       Instruction;    // Instruction identifier. Check ND_INS_CLASS definitions.
+    ND_UINT8        Category;       // Instruction category. Check ND_INS_TYPE.
+    ND_UINT8        IsaSet;         // Instruction set. Check ND_INS_SET.
+    ND_UINT16       Mnemonic;       // Mnemonic (index inside the global mnemonic table).
 
-    uint16_t        ValidPrefixes;  // Accepted prefixes.
-    uint32_t        ValidModes;     // Valid operating modes for the instruction.
-    uint8_t         ValidDecorators;// Accepted decorators (valid for EVEX instructions).
+    ND_UINT16       ValidPrefixes;  // Accepted prefixes.
+    ND_UINT32       ValidModes;     // Valid operating modes for the instruction.
+    ND_UINT8        ValidDecorators;// Accepted decorators (valid for EVEX instructions).
 
-    uint8_t         OpsCount;       // Low 4 bits: explicit operands count; high 4 bits: implicit ops count.
+    ND_UINT8        OpsCount;       // Low 4 bits: explicit operands count; high 4 bits: implicit ops count.
 
-    uint8_t         TupleType;      // EVEX tuple type.
-    uint8_t         ExcType : 5;    // SSE/VEX/EVEX/OPMASK/AMX exception type.
-    uint8_t         ExcClass : 3;   // Indicates the exception class (SSE/AVX, EVEX, OPMASK or AMX).
+    ND_UINT8        TupleType;      // EVEX tuple type.
+    ND_UINT8        ExcType : 5;    // SSE/VEX/EVEX/OPMASK/AMX exception type.
+    ND_UINT8        ExcClass : 3;   // Indicates the exception class (SSE/AVX, EVEX, OPMASK or AMX).
     
-    uint8_t         FpuFlags;       // FPU status word C0, C1, C2 & C3 access type.
+    ND_UINT8        FpuFlags;       // FPU status word C0, C1, C2 & C3 access type.
 
-    uint8_t         Reserved2;
-    uint16_t        Reserved3;
+    ND_UINT8        Reserved2;
+    ND_UINT16       Reserved3;
 
-    uint32_t        Attributes;     // Instruction attributes.
-    uint64_t        CpuidFlag;      // Required CPUID feature flag.
+    ND_UINT32       Attributes;     // Instruction attributes.
+    ND_UINT64       CpuidFlag;      // Required CPUID feature flag.
 
     // Per-flag access. Undefined flags will have their bit set in both the "Set" and "Cleared" mask, since a flag
     // cannot be both cleared and set.
-    uint32_t        TestedFlags;    // Tested flags.
-    uint32_t        ModifiedFlags;  // Modified flags.
-    uint32_t        SetFlags;       // Flags that are always set to 1.
-    uint32_t        ClearedFlags;   // Flags that are always cleared.
+    ND_UINT32       TestedFlags;    // Tested flags.
+    ND_UINT32       ModifiedFlags;  // Modified flags.
+    ND_UINT32       SetFlags;       // Flags that are always set to 1.
+    ND_UINT32       ClearedFlags;   // Flags that are always cleared.
 
-    uint64_t        Operands[10];
+    ND_UINT64       Operands[10];
 } ND_INSTRUCTION, *PND_INSTRUCTION;
 #ifdef _MSC_VER
 #pragma warning(pop)
@@ -241,12 +243,12 @@ typedef struct _ND_INSTRUCTION
 // Byte 4: operand decorators
 // Byte 5: operand block addressing mode - 0 if not block addressing
 //
-#define ND_OP(type, size, flags, acc, dec, block)       (((uint64_t)((type) & 0xFF) << 0)   |    \
-                                                         ((uint64_t)((size) & 0xFF) << 8)   |    \
-                                                         ((uint64_t)((flags) & 0xFF) << 16) |    \
-                                                         ((uint64_t)((acc) & 0xFF) << 24)   |    \
-                                                         ((uint64_t)((dec) & 0xFF) << 32)   |    \
-                                                         ((uint64_t)((block) & 0xFF) << 40))
+#define ND_OP(type, size, flags, acc, dec, block)       (((ND_UINT64)((type) & 0xFF) << 0)   |    \
+                                                         ((ND_UINT64)((size) & 0xFF) << 8)   |    \
+                                                         ((ND_UINT64)((flags) & 0xFF) << 16) |    \
+                                                         ((ND_UINT64)((acc) & 0xFF) << 24)   |    \
+                                                         ((ND_UINT64)((dec) & 0xFF) << 32)   |    \
+                                                         ((ND_UINT64)((block) & 0xFF) << 40))
 
 #define OP ND_OP
 

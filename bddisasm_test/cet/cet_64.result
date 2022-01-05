@@ -167,9 +167,9 @@
         ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
+                R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
                 VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no
@@ -184,9 +184,9 @@
         ISA Set: CET_SS, Ins cat: CET, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ecx, bit: 7
         Valid modes
-                R0: yes, R1: yes, R2: yes, R3: yes
+                R0: yes, R1: no, R2: no, R3: no
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
-                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
                 VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
         Valid prefixes
                 REP: no, REPcc: no, LOCK: no

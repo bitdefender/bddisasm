@@ -113,7 +113,7 @@ static const char *gRegTile[] =
 static const char *gConditionCodes[] =
 {
     "EQ", "LT", "LE", "UNORD", "NEQ", "NLT", "NLE", "ORD",
-    "EQ_UQ", "NGE", "NGT", "false", "NEQ_OQ", "GE", "GT", "TRUE",
+    "EQ_UQ", "NGE", "NGT", "ND_FALSE", "NEQ_OQ", "GE", "GT", "TRUE",
     "EQ_OS", "LT_OQ", "LE_OQ", "UNORD_S", "NEQ_US", "NLT_UQ", "NLE_UQ", "ORD_S",
     "EQ_US", "NGE_UQ", "NGT_UQ", "FALSE_OS", "NEQ_OS", "GE_OQ", "GT_OQ", "TRUE_US",
 };
@@ -131,7 +131,7 @@ static const char *gEmbeddedRounding[] =
 static NDSTATUS
 NdSprintf(
     char *Destination,
-    size_t DestinationSize,
+    ND_SIZET DestinationSize,
     const char *Formatstring,
     ...
     )
@@ -142,12 +142,12 @@ NdSprintf(
     int res;
     va_list args;
 
-    if (NULL == Destination)
+    if (ND_NULL == Destination)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (NULL == Formatstring)
+    if (ND_NULL == Formatstring)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
@@ -162,7 +162,7 @@ NdSprintf(
 
     va_end(args);
 
-    if ((res < 0) || ((size_t)res >= DestinationSize - 1))
+    if ((res < 0) || ((ND_SIZET)res >= DestinationSize - 1))
     {
         return ND_STATUS_BUFFER_OVERFLOW;
     }
@@ -177,32 +177,32 @@ NdSprintf(
 NDSTATUS
 NdToText(
     const INSTRUX *Instrux,
-    uint64_t Rip,
-    uint32_t BufferSize,
+    ND_UINT64 Rip,
+    ND_UINT32 BufferSize,
     char *Buffer
     )
 {
     NDSTATUS status;
     char *res, temp[64];
-    uint32_t opIndex, opsStored;
+    ND_UINT32 opIndex, opsStored;
     const ND_OPERAND *pOp;
-    bool alignmentStored;
+    ND_BOOL alignmentStored;
 
     // pre-init
     status = ND_STATUS_SUCCESS;
-    res = NULL;
+    res = (char *)ND_NULL;
     opIndex = 0;
     opsStored = 0;
-    pOp = NULL;
-    alignmentStored = false;
+    pOp = (const ND_OPERAND *)ND_NULL;
+    alignmentStored = ND_FALSE;
 
     // Validate args.
-    if (NULL == Instrux)
+    if (ND_NULL == Instrux)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (NULL == Buffer)
+    if (ND_NULL == Buffer)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
@@ -225,12 +225,12 @@ NdToText(
             if (Instrux->Rep == ND_PREFIX_G1_REPE_REPZ)
             {
                 res = nd_strcat_s(Buffer, BufferSize, "REPZ ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             else if (Instrux->Rep == ND_PREFIX_G1_REPNE_REPNZ)
             {
                 res = nd_strcat_s(Buffer, BufferSize, "REPNZ ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
         }
 
@@ -240,24 +240,24 @@ NdToText(
             if (Instrux->Rep == ND_PREFIX_G1_REPE_REPZ)
             {
                 res = nd_strcat_s(Buffer, BufferSize, "REP ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             else if (Instrux->Rep == ND_PREFIX_G1_REPNE_REPNZ)
             {
                 res = nd_strcat_s(Buffer, BufferSize, "REPNZ ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
         }
 
         if (Instrux->IsXreleaseEnabled)
         {
             res = nd_strcat_s(Buffer, BufferSize, "XRELEASE ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         else if (Instrux->IsXacquireEnabled)
         {
             res = nd_strcat_s(Buffer, BufferSize, "XACQUIRE ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
     }
 
@@ -266,7 +266,7 @@ NdToText(
         if (ND_LOCK_SUPPORT(Instrux))
         {
             res = nd_strcat_s(Buffer, BufferSize, "LOCK ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
     }
 
@@ -275,7 +275,7 @@ NdToText(
         if (ND_BND_SUPPORT(Instrux))
         {
             res = nd_strcat_s(Buffer, BufferSize, "BND ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
     }
 
@@ -285,17 +285,17 @@ NdToText(
         {
         case ND_PREFIX_G2_BR_TAKEN:
             res = nd_strcat_s(Buffer, BufferSize, "BHT ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             break;
 
         case ND_PREFIX_G2_BR_NOT_TAKEN:
             res = nd_strcat_s(Buffer, BufferSize, "BHNT ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             break;
 
         case ND_PREFIX_G2_BR_ALT:
             res = nd_strcat_s(Buffer, BufferSize, "BHALT ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             break;
 
         default:
@@ -308,19 +308,19 @@ NdToText(
         if (!Instrux->IsCetTracked)
         {
             res = nd_strcat_s(Buffer, BufferSize, "DNT ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
     }
 
     // Store the mnemonic.
     res = nd_strcat_s(Buffer, BufferSize, Instrux->Mnemonic);
-    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
 
     // Store condition code, if any.
     if (ND_HAS_SSE_CONDITION(Instrux))
     {
         res = nd_strcat_s(Buffer, BufferSize, gConditionCodes[Instrux->SseCondition]);
-        RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
     }
 
     // If there are no explicit operands, we can leave.
@@ -358,7 +358,7 @@ NdToText(
         // Store alignment.
         if (!alignmentStored)
         {
-            size_t idx = 0;
+            ND_SIZET idx = 0;
 
             while ((idx < BufferSize) && (Buffer[idx]))
             {
@@ -377,14 +377,14 @@ NdToText(
 
             Buffer[idx] = 0;
 
-            alignmentStored = true;
+            alignmentStored = ND_TRUE;
         }
 
         // Store the comma, if this isn't the first operand.
         if (opsStored > 0)
         {
             res = nd_strcat_s(Buffer, BufferSize, ", ");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
 
         opsStored++;
@@ -409,31 +409,31 @@ NdToText(
                     if ((Instrux->EncMode != ND_ENCM_LEGACY) || Instrux->HasRex)
                     {
                         res = nd_strcat_s(Buffer, BufferSize, gReg8Bit64[pOp->Info.Register.Reg]);
-                        RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     }
                     else
                     {
                         res = nd_strcat_s(Buffer, BufferSize, gReg8Bit[pOp->Info.Register.Reg]);
-                        RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     }
                     break;
 
                 case ND_SIZE_16BIT:
                     // 16 bit register.
                     res = nd_strcat_s(Buffer, BufferSize, gReg16Bit[pOp->Info.Register.Reg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
 
                 case ND_SIZE_32BIT:
                     // 32 bit register.
                     res = nd_strcat_s(Buffer, BufferSize, gReg32Bit[pOp->Info.Register.Reg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
 
                 case ND_SIZE_64BIT:
                     // 64 bit register.
                     res = nd_strcat_s(Buffer, BufferSize, gReg64Bit[pOp->Info.Register.Reg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
 
                 default:
@@ -450,7 +450,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegSeg[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -462,7 +462,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegFpu[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -474,7 +474,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegMmx[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -489,15 +489,15 @@ NdToText(
                 {
                 case ND_SIZE_128BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gRegXmm[pOp->Info.Register.Reg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_256BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gRegYmm[pOp->Info.Register.Reg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_512BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gRegZmm[pOp->Info.Register.Reg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
@@ -513,7 +513,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegControl[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -525,7 +525,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegDebug[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -537,7 +537,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegTest[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -550,7 +550,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegBound[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -563,7 +563,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegMask[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -576,7 +576,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, gRegTile[pOp->Info.Register.Reg]);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
             break;
 
@@ -593,7 +593,7 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, temp);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
 
             break;
@@ -612,7 +612,7 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         break;
 
@@ -621,16 +621,16 @@ NdToText(
             switch (pOp->Size)
             {
             case 1:
-                status = NdSprintf(temp, sizeof(temp), "0x%02x", (uint8_t)pOp->Info.Immediate.Imm);
+                status = NdSprintf(temp, sizeof(temp), "0x%02x", (ND_UINT8)pOp->Info.Immediate.Imm);
                 break;
             case 2:
-                status = NdSprintf(temp, sizeof(temp), "0x%04x", (uint16_t)pOp->Info.Immediate.Imm);
+                status = NdSprintf(temp, sizeof(temp), "0x%04x", (ND_UINT16)pOp->Info.Immediate.Imm);
                 break;
             case 4:
-                status = NdSprintf(temp, sizeof(temp), "0x%08x", (uint32_t)pOp->Info.Immediate.Imm);
+                status = NdSprintf(temp, sizeof(temp), "0x%08x", (ND_UINT32)pOp->Info.Immediate.Imm);
                 break;
             case 8:
-                status = NdSprintf(temp, sizeof(temp), "0x%016llx", (uint64_t)pOp->Info.Immediate.Imm);
+                status = NdSprintf(temp, sizeof(temp), "0x%016llx", (ND_UINT64)pOp->Info.Immediate.Imm);
                 break;
             }
             if (!ND_SUCCESS(status))
@@ -639,13 +639,13 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         break;
 
         case ND_OP_OFFS:
         {
-            uint64_t dest = Rip + Instrux->Length + pOp->Info.RelativeOffset.Rel;
+            ND_UINT64 dest = Rip + Instrux->Length + pOp->Info.RelativeOffset.Rel;
 
             // Truncate to the actual word length.
             switch (Instrux->WordLength)
@@ -667,7 +667,7 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         break;
 
@@ -677,15 +677,15 @@ NdToText(
             {
             case 4:
                 status = NdSprintf(temp, sizeof(temp), "0x%04x:0x%04x",
-                    pOp->Info.Address.BaseSeg, (uint16_t)pOp->Info.Address.Offset);
+                    pOp->Info.Address.BaseSeg, (ND_UINT16)pOp->Info.Address.Offset);
                 break;
             case 6:
                 status = NdSprintf(temp, sizeof(temp), "0x%04x:0x%08x",
-                    pOp->Info.Address.BaseSeg, (uint32_t)pOp->Info.Address.Offset);
+                    pOp->Info.Address.BaseSeg, (ND_UINT32)pOp->Info.Address.Offset);
                 break;
             case 10:
                 status = NdSprintf(temp, sizeof(temp), "0x%04x:0x%016llx",
-                    pOp->Info.Address.BaseSeg, (uint64_t)pOp->Info.Address.Offset);
+                    pOp->Info.Address.BaseSeg, (ND_UINT64)pOp->Info.Address.Offset);
                 break;
             default:
                 return ND_STATUS_INVALID_INSTRUX;
@@ -697,7 +697,7 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         break;
 
@@ -710,43 +710,43 @@ NdToText(
             {
             case 1:
                 res = nd_strcat_s(Buffer, BufferSize, "byte ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 2:
                 res = nd_strcat_s(Buffer, BufferSize, "word ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 4:
                 res = nd_strcat_s(Buffer, BufferSize, "dword ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 6:
                 res = nd_strcat_s(Buffer, BufferSize, "fword ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 8:
                 res = nd_strcat_s(Buffer, BufferSize, "qword ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 10:
                 res = nd_strcat_s(Buffer, BufferSize, "tbyte ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 16:
                 res = nd_strcat_s(Buffer, BufferSize, "xmmword ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 32:
                 res = nd_strcat_s(Buffer, BufferSize, "ymmword ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 48:
                 res = nd_strcat_s(Buffer, BufferSize, "m384 ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             case 64:
                 res = nd_strcat_s(Buffer, BufferSize, "zmmword ptr ");
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 break;
             default:
                 break;
@@ -764,16 +764,16 @@ NdToText(
                     (NDR_GS == pOp->Info.Memory.Seg))
                 {
                     res = nd_strcat_s(Buffer, BufferSize, gRegSeg[pOp->Info.Memory.Seg]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
 
                     res = nd_strcat_s(Buffer, BufferSize, ":");
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 }
             }
 
             // Prepend the "["
             res = nd_strcat_s(Buffer, BufferSize, "[");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
 
             // Base, if any.
             if (pOp->Info.Memory.HasBase)
@@ -787,19 +787,19 @@ NdToText(
                 {
                 case ND_SIZE_8BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg8Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_16BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg16Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_32BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg32Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_64BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg64Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
@@ -817,38 +817,38 @@ NdToText(
                 if (pOp->Info.Memory.HasBase)
                 {
                     res = nd_strcat_s(Buffer, BufferSize, "+");
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 }
 
                 switch (pOp->Info.Memory.IndexSize)
                 {
                 case ND_SIZE_8BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg8Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_16BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg16Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_32BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg32Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_64BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gReg64Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_128BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gRegXmm[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_256BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gRegYmm[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 case ND_SIZE_512BIT:
                     res = nd_strcat_s(Buffer, BufferSize, gRegZmm[pOp->Info.Memory.Index]);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
@@ -864,14 +864,14 @@ NdToText(
                     }
 
                     res = nd_strcat_s(Buffer, BufferSize, temp);
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 }
             }
 
             // Handle displacement.
             if (pOp->Info.Memory.HasDisp)
             {
-                uint64_t normDisp, disp;
+                ND_UINT64 normDisp, disp;
 
                 disp = pOp->Info.Memory.Disp;
 
@@ -900,12 +900,12 @@ NdToText(
                         break;
                     }
 
-                    // Handle compressed displacement. It is fine to cast the normDisp to uint32_t, as the
-                    // compressed displacement only works with uint8_t displacements. Also, in this phase,
+                    // Handle compressed displacement. It is fine to cast the normDisp to ND_UINT32, as the
+                    // compressed displacement only works with ND_UINT8 displacements. Also, in this phase,
                     // the normDisp is converted to a positive quantity, so no sign-extension is needed.
                     if (pOp->Info.Memory.HasCompDisp)
                     {
-                        normDisp = (uint64_t)(uint32_t)normDisp * pOp->Info.Memory.CompDispSize;
+                        normDisp = (ND_UINT64)(ND_UINT32)normDisp * pOp->Info.Memory.CompDispSize;
                     }
                 }
 
@@ -914,12 +914,12 @@ NdToText(
                 if (pOp->Info.Memory.HasBase || pOp->Info.Memory.HasIndex)
                 {
                     res = nd_strcat_s(Buffer, BufferSize, Instrux->SignDisp ? "-" : "+");
-                    RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
                 }
 
                 if (pOp->Info.Memory.IsRipRel)
                 {
-                    uint64_t target = disp + Rip + Instrux->Length;
+                    ND_UINT64 target = disp + Rip + Instrux->Length;
 
                     if (Instrux->AddrMode == ND_ADDR_32)
                     {
@@ -930,7 +930,7 @@ NdToText(
                 }
                 else
                 {
-                    uint8_t trimSize;
+                    ND_UINT8 trimSize;
 
                     trimSize = (Instrux->AddrMode == ND_ADDR_16) ? 2 : ((Instrux->AddrMode == ND_ADDR_32) ? 4 : 8);
 
@@ -945,12 +945,12 @@ NdToText(
                 }
 
                 res = nd_strcat_s(Buffer, BufferSize, temp);
-                RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
             }
 
             // And the ending "]"
             res = nd_strcat_s(Buffer, BufferSize, "]");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         break;
 
@@ -968,7 +968,7 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
 
         // Handle masking.
@@ -986,14 +986,14 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
 
         // Handle zeroing. Note that zeroing without masking is ignored.
         if (pOp->Decorator.HasZero && pOp->Decorator.HasMask)
         {
             res = nd_strcat_s(Buffer, BufferSize, "{z}");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
 
         // Append Suppress All Exceptions decorator.
@@ -1001,7 +1001,7 @@ NdToText(
         {
             // ER implies SAE, so if we have ER, we will list that.
             res = nd_strcat_s(Buffer, BufferSize, ", {sae}");
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
 
         // Append Embedded Rounding decorator.
@@ -1019,7 +1019,7 @@ NdToText(
             }
 
             res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, NULL, ND_STATUS_BUFFER_OVERFLOW);
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
     }
 
@@ -1029,18 +1029,18 @@ NdToText(
 NDSTATUS
 NdToText(
     const INSTRUX *Instrux,
-    uint64_t Rip,
-    uint32_t BufferSize,
+    ND_UINT64 Rip,
+    ND_UINT32 BufferSize,
     char *Buffer
     )
 {
     UNREFERENCED_PARAMETER(Instrux);
     UNREFERENCED_PARAMETER(Rip);
 
-    // At least make sure the buffer is NULL-terminated so integrators can use NdToText without checking if the
+    // At least make sure the buffer is ND_NULL-terminated so integrators can use NdToText without checking if the
     // BDDISASM_NO_FORMAT macro is defined. This makes switching between versions with formatting and versions without
     // formatting easier.
-    if (Buffer != NULL && BufferSize >= 1)
+    if (Buffer != ND_NULL && BufferSize >= 1)
     {
         *Buffer = '\0';
     }

@@ -8,7 +8,7 @@
 //
 // Return statuses.
 //
-typedef unsigned int NDSTATUS;
+typedef ND_UINT32 NDSTATUS;
 
 // Success codes are all < 0x80000000.
 #define ND_STATUS_SUCCESS                               0x00000000 // All good.

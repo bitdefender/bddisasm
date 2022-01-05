@@ -27,13 +27,13 @@ typedef void
 // Note that by using the ShemuContext, the integrator knows whether the access is user or supervisor (the Ring field
 // inside ShemuContext), and he knows whether it is 16/32/64 bit mode (Mode field inside ShemuContext).
 // 
-typedef bool
+typedef ND_BOOL
 (*ShemuMemAccess)(
     void *ShemuContext, // Shemu emulation context.
-    uint64_t Gla,       // Linear address to be accessed.
-    size_t Size,        // Number of bytes to access.
-    uint8_t *Buffer,    // Contains the read content (if Store is false), or the value to be stored at Gla.
-    bool Store          // If false, read content at Gla. Otherwise, write content at Gla.
+    ND_UINT64 Gla,      // Linear address to be accessed.
+    ND_SIZET Size,      // Number of bytes to access.
+    ND_UINT8 *Buffer,   // Contains the read content (if Store is false), or the value to be stored at Gla.
+    ND_BOOL Store       // If false, read content at Gla. Otherwise, write content at Gla.
     );
 
 
@@ -51,36 +51,35 @@ typedef bool
 //
 typedef struct _SHEMU_GPR_REGS
 {
-    uint64_t RegRax;
-    uint64_t RegRcx;
-    uint64_t RegRdx;
-    uint64_t RegRbx;
-    uint64_t RegRsp;
-    uint64_t RegRbp;
-    uint64_t RegRsi;
-    uint64_t RegRdi;
-    uint64_t RegR8;
-    uint64_t RegR9;
-    uint64_t RegR10;
-    uint64_t RegR11;
-    uint64_t RegR12;
-    uint64_t RegR13;
-    uint64_t RegR14;
-    uint64_t RegR15;
-    uint64_t RegCr2;
-    uint64_t RegFlags;
-    uint64_t RegDr7;
-    uint64_t RegRip;
-    uint64_t RegCr0;
-    uint64_t RegCr4;
-    uint64_t RegCr3;
-    uint64_t RegCr8;
-    uint64_t RegIdtBase;
-    uint64_t RegIdtLimit;
-    uint64_t RegGdtBase;
-    uint64_t RegGdtLimit;
-
-    uint64_t FpuRip;
+    ND_UINT64   RegRax;
+    ND_UINT64   RegRcx;
+    ND_UINT64   RegRdx;
+    ND_UINT64   RegRbx;
+    ND_UINT64   RegRsp;
+    ND_UINT64   RegRbp;
+    ND_UINT64   RegRsi;
+    ND_UINT64   RegRdi;
+    ND_UINT64   RegR8;
+    ND_UINT64   RegR9;
+    ND_UINT64   RegR10;
+    ND_UINT64   RegR11;
+    ND_UINT64   RegR12;
+    ND_UINT64   RegR13;
+    ND_UINT64   RegR14;
+    ND_UINT64   RegR15;
+    ND_UINT64   RegCr2;
+    ND_UINT64   RegFlags;
+    ND_UINT64   RegDr7;
+    ND_UINT64   RegRip;
+    ND_UINT64   RegCr0;
+    ND_UINT64   RegCr4;
+    ND_UINT64   RegCr3;
+    ND_UINT64   RegCr8;
+    ND_UINT64   RegIdtBase;
+    ND_UINT64   RegIdtLimit;
+    ND_UINT64   RegGdtBase;
+    ND_UINT64   RegGdtLimit;
+    ND_UINT64   FpuRip;
 } SHEMU_GPR_REGS, *PSHEMU_GPR_REGS;
 
 
@@ -89,10 +88,10 @@ typedef struct _SHEMU_GPR_REGS
 //
 typedef struct _SHEMU_SEG
 {
-    uint64_t    Base;
-    uint64_t    Limit;
-    uint64_t    Selector;
-    uint64_t    AccessRights;
+    ND_UINT64   Base;
+    ND_UINT64   Limit;
+    ND_UINT64   Selector;
+    ND_UINT64   AccessRights;
 } SHEMU_SEG, *PSHEMU_SEG;
 
 
@@ -127,85 +126,85 @@ typedef struct _SHEMU_CONTEXT
     SHEMU_SEG_REGS  Segments;
 
     // MMX register state. 8 x 8 bytes = 64 bytes for the MMX registers. Can be provided on input, if needed.
-    uint64_t        MmxRegisters[ND_MAX_MMX_REGS];
+    ND_UINT64       MmxRegisters[ND_MAX_MMX_REGS];
 
     // SSE registers state. 32 x 64 bytes = 2048 bytes for the SSE registers. Can be provided on input, if needed.
-    uint8_t         SseRegisters[ND_MAX_SSE_REGS * ND_MAX_REGISTER_SIZE];
+    ND_UINT8        SseRegisters[ND_MAX_SSE_REGS * ND_MAX_REGISTER_SIZE];
 
     // General purpose registers write bitmap. After the first write, a register will be marked dirty in here. 
     // Should be 0 on input.
-    uint16_t        DirtyGprBitmap;
+    ND_UINT16       DirtyGprBitmap;
 
     // Operating mode (ND_CODE_16, ND_CODE_32 or ND_CODE_64). Must be provided as input.
-    uint8_t         Mode;
+    ND_UINT8        Mode;
 
     // Operating ring (0, 1, 2, 3). Must be provided as input.
-    uint8_t         Ring;
+    ND_UINT8        Ring;
 
     // The suspicious code to be emulated. Must be provided as input.
-    uint8_t         *Shellcode;
+    ND_UINT8        *Shellcode;
 
     // Virtual stack. RSP will point somewhere inside. Must be allocated as input, and it can be initialized with
     // actual stack contents. Can also be 0-filled.
-    uint8_t         *Stack;
+    ND_UINT8        *Stack;
 
     // Internal use. Must be at least the size of the shell + stack. Needs not be initialized, but must be allocated
     // and accessible on input.
-    uint8_t         *Intbuf;
+    ND_UINT8        *Intbuf;
 
     // Shellcode base address (the address the shellcode would see). Must be provided as input.
-    uint64_t        ShellcodeBase;
+    ND_UINT64       ShellcodeBase;
 
     // Stack base address (the RSP the shellcode would see). Must be provided as input.
-    uint64_t        StackBase;
+    ND_UINT64       StackBase;
 
     // Shellcode size. Must be provided as input. Usually just a page in size, but can be larger.
-    uint32_t        ShellcodeSize;
+    ND_UINT32       ShellcodeSize;
 
     // Stack size. Must be provided as input. Minimum two pages.
-    uint32_t        StackSize;
+    ND_UINT32       StackSize;
 
     // Internal buffer size. Must be provided as input. Must be at least the size of the shell + stack.
-    uint32_t        IntbufSize;
+    ND_UINT32       IntbufSize;
 
     // Number of NOPs encountered. Should be 0 on input.
-    uint32_t        NopCount;
+    ND_UINT32       NopCount;
 
     // The length of the string constructed on the stack, if any. Should be 0 on input.
-    uint32_t        StrLength;
+    ND_UINT32       StrLength;
 
     // Number of external memory access (outside stack/shellcode). Should be 0 on input.
-    uint32_t        ExtMemAccess;
+    ND_UINT32       ExtMemAccess;
 
     // Number of emulated instructions. Should be 0 on input. Once InstructionsCount reaches MaxInstructionsCount,
     // emulation will stop.
-    uint32_t        InstructionsCount;
+    ND_UINT32       InstructionsCount;
 
     // Max number of instructions that should be emulated. Once this limit has been reached, emulation will stop. 
     // Lower values will mean faster processing, but less chances of detection. Higher values mean low performance,
     // but very high chances of yielding useful results. Must be provided as input. 
-    uint32_t        MaxInstructionsCount;
+    ND_UINT32       MaxInstructionsCount;
 
     // Base address of the Thread Information Block (the TIB the shellcode would normally see). Must be provided as 
     // input.
-    uint64_t        TibBase;
+    ND_UINT64       TibBase;
 
     // Shellcode Flags (see SHEMU_FLAG_*). Must be provided as input.
-    uint64_t        Flags;
+    ND_UINT64       Flags;
 
     // Emulation options. See SHEMU_OPT_* for possible options. Must be provided as input.
-    uint32_t        Options;
+    ND_UINT32       Options;
 
     // Percent of NOPs (out of total instructions emulated) that trigger NOP sled detection. Must be provided as input. 
-    uint32_t        NopThreshold;
+    ND_UINT32       NopThreshold;
 
     // Stack string length threshold. Stack-constructed strings must be at least this long to trigger stack string
     // detection. Must be provided as input.
-    uint32_t        StrThreshold;
+    ND_UINT32       StrThreshold;
 
     // Number of external mem accesses threshold. No more than this number of external accesses will be issued. Must 
     // be provided as input.
-    uint32_t        MemThreshold;
+    ND_UINT32       MemThreshold;
 
     // Optional auxiliary data, provided by the integrator. Can be NULL, or can point to integrator specific data.
     // Shemu will not use this data in any way, but callbacks that receive a SHEMU_CONTEXT pointer (such as

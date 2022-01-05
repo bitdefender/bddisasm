@@ -5,7 +5,7 @@
 #define ND_CFF_NO_SUBLEAF 0x00FFFFFF
 
 
-#define ND_CFF(leaf, subleaf, reg, bit) ((uint64_t)(leaf) | ((uint64_t)((subleaf) & 0xFFFFFF) << 32) | ((uint64_t)(reg) << 56) | ((uint64_t)(bit) << 59))
+#define ND_CFF(leaf, subleaf, reg, bit) ((ND_UINT64)(leaf) | ((ND_UINT64)((subleaf) & 0xFFFFFF) << 32) | ((ND_UINT64)(reg) << 56) | ((ND_UINT64)(bit) << 59))
 
 #define ND_CFF_FPU                      ND_CFF(0x00000001, 0xFFFFFFFF, NDR_EDX, 0)
 #define ND_CFF_MSR                      ND_CFF(0x00000001, 0xFFFFFFFF, NDR_EDX, 5)

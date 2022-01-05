@@ -10,7 +10,7 @@
 #define ND_PREF_CODE_EX             2
 #define ND_PREF_CODE_REX            3
 
-static const uint8_t gPrefixesMap[256] = 
+static const ND_UINT8 gPrefixesMap[256] = 
 {
 //  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 0

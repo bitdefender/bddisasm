@@ -5,7 +5,7 @@
 //
 // NdIsInstruxRipRelative
 //
-bool
+ND_BOOL
 NdIsInstruxRipRelative(
     const INSTRUX *Instrux
     )
@@ -13,9 +13,9 @@ NdIsInstruxRipRelative(
 // Provided for backwards compatibility with existing code that uses disasm 1.0
 //
 {
-    if (NULL == Instrux)
+    if (ND_NULL == Instrux)
     {
-        return false;
+        return ND_FALSE;
     }
     else
     {
@@ -33,20 +33,20 @@ NdGetFullAccessMap(
     ND_ACCESS_MAP *AccessMap
     )
 {
-    uint32_t i;
+    ND_UINT32 i;
     const ND_OPERAND *pOp;
 
     // pre-init
     i = 0;
-    pOp = NULL;
+    pOp = (const ND_OPERAND *)ND_NULL;
 
     // validate
-    if (NULL == Instrux)
+    if (ND_NULL == Instrux)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (NULL == AccessMap)
+    if (ND_NULL == AccessMap)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
@@ -96,7 +96,7 @@ NdGetFullAccessMap(
             {
             case ND_REG_GPR:
                 {
-                    uint32_t k;
+                    ND_UINT32 k;
 
                     for (k = 0; k < pOp->Info.Register.Count; k++)
                     {
@@ -122,7 +122,7 @@ NdGetFullAccessMap(
                 break;
             case ND_REG_SSE:
                 {
-                    uint32_t k;
+                    ND_UINT32 k;
 
                     for (k = 0; k < pOp->Info.Register.Count; k++)
                     {
@@ -175,7 +175,7 @@ NdGetFullAccessMap(
         }
         else if (ND_OP_BANK == Instrux->Operands[i].Type)
         {
-            uint8_t j;
+            ND_UINT8 j;
 
             // Bank registers access. This needs special handling. Note that LOADALL/LOADALLD is not supported, as
             // it is too old and it's not valid since the good old 486.
@@ -225,12 +225,12 @@ NdGetOperandRlut(
     ND_OPERAND_RLUT *Rlut
     )
 {
-    if (NULL == Instrux)
+    if (ND_NULL == Instrux)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (NULL == Rlut)
+    if (ND_NULL == Rlut)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
@@ -238,16 +238,16 @@ NdGetOperandRlut(
     // Initialize the RLUT. 
     nd_memset(Rlut, 0, sizeof(*Rlut));
 
-    for (uint8_t i = 0; i < Instrux->OperandsCount; i++)
+    for (ND_UINT8 i = 0; i < Instrux->OperandsCount; i++)
     {
         if (!!(Instrux->Operands[i].Access.Access & ND_ACCESS_ANY_WRITE))
         {
             // We only care about the first 2 destination operands.
-            if (Rlut->Dst1 == NULL)
+            if (Rlut->Dst1 == ND_NULL)
             {
                 Rlut->Dst1 = (PND_OPERAND)&Instrux->Operands[i];
             }
-            else if (Rlut->Dst2 == NULL)
+            else if (Rlut->Dst2 == ND_NULL)
             {
                 Rlut->Dst2 = (PND_OPERAND)&Instrux->Operands[i];
             }
@@ -256,19 +256,19 @@ NdGetOperandRlut(
         if (!!(Instrux->Operands[i].Access.Access & ND_ACCESS_ANY_READ))
         {
             // We only care about the first 4 source operands.
-            if (Rlut->Src1 == NULL)
+            if (Rlut->Src1 == ND_NULL)
             {
                 Rlut->Src1 = (PND_OPERAND)&Instrux->Operands[i];
             }
-            else if (Rlut->Src2 == NULL)
+            else if (Rlut->Src2 == ND_NULL)
             {
                 Rlut->Src2 = (PND_OPERAND)&Instrux->Operands[i];
             }
-            else if (Rlut->Src3 == NULL)
+            else if (Rlut->Src3 == ND_NULL)
             {
                 Rlut->Src3 = (PND_OPERAND)&Instrux->Operands[i];
             }
-            else if (Rlut->Src4 == NULL)
+            else if (Rlut->Src4 == ND_NULL)
             {
                 Rlut->Src4 = (PND_OPERAND)&Instrux->Operands[i];
             }
@@ -277,11 +277,11 @@ NdGetOperandRlut(
         if (Instrux->Operands[i].Type == ND_OP_MEM)
         {
             // We only care about the first 2 memory operands.
-            if (Rlut->Mem1 == NULL)
+            if (Rlut->Mem1 == ND_NULL)
             {
                 Rlut->Mem1 = (PND_OPERAND)&Instrux->Operands[i];
             }
-            else if (Rlut->Mem2 == NULL)
+            else if (Rlut->Mem2 == ND_NULL)
             {
                 Rlut->Mem2 = (PND_OPERAND)&Instrux->Operands[i];
             }

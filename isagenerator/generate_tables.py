@@ -1215,7 +1215,7 @@ def dump_translation_tree_c(t, hname, f):
         i = 0
         for p in pointers:
             if not p:
-                res += '        /* %02x */ NULL,\n' % i
+                res += '        /* %02x */ ND_NULL,\n' % i
             else:
                 res += '        /* %02x */ (const void *)&%s,\n' % (i, p)
             i += 1
@@ -1250,7 +1250,7 @@ def generate_features(features, fname):
     f.write('#define ND_CFF_NO_SUBLEAF 0x00FFFFFF\n')
     f.write('\n')
     f.write('\n')
-    f.write('#define ND_CFF(leaf, subleaf, reg, bit) ((uint64_t)(leaf) | ((uint64_t)((subleaf) & 0xFFFFFF) << 32) | ((uint64_t)(reg) << 56) | ((uint64_t)(bit) << 59))\n')
+    f.write('#define ND_CFF(leaf, subleaf, reg, bit) ((ND_UINT64)(leaf) | ((ND_UINT64)((subleaf) & 0xFFFFFF) << 32) | ((ND_UINT64)(reg) << 56) | ((ND_UINT64)(bit) << 59))\n')
     f.write('\n')
 
     for c in features:

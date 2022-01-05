@@ -6,15 +6,15 @@
 // bdshemu.c
 //
 
-
-#include "nd_crt.h"
-#include "bddisasm.h"
 #include "bdshemu.h"
+#include "../bddisasm/include/nd_crt.h"
 
 #ifdef __clang__
 #include <wmmintrin.h>
 #else
+#if defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 #include <immintrin.h>
+#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 #endif // __clang__
 
 //
@@ -24,38 +24,38 @@ typedef struct _SHEMU_VALUE
 {
     union
     {
-        uint8_t         Bytes[ND_MAX_REGISTER_SIZE];
-        uint16_t        Words[ND_MAX_REGISTER_SIZE / sizeof(uint16_t)];
-        uint32_t        Dwords[ND_MAX_REGISTER_SIZE / sizeof(uint32_t)];
-        uint64_t        Qwords[ND_MAX_REGISTER_SIZE / sizeof(uint64_t)];
+        ND_UINT8        Bytes[ND_MAX_REGISTER_SIZE];
+        ND_UINT16       Words[ND_MAX_REGISTER_SIZE / sizeof(ND_UINT16)];
+        ND_UINT32       Dwords[ND_MAX_REGISTER_SIZE / sizeof(ND_UINT32)];
+        ND_UINT64       Qwords[ND_MAX_REGISTER_SIZE / sizeof(ND_UINT64)];
 
         struct
         {
-            uint16_t    FpuControlWord;
-            uint16_t    FpuStatusWord;
-            uint16_t    FpuTagWord;
-            uint16_t    Rsvd;
-            uint32_t    FpuDataPointer;
-            uint32_t    FpuInstructionPointer;
-            uint32_t    FpuLastInstructionOpcode;
+            ND_UINT16   FpuControlWord;
+            ND_UINT16   FpuStatusWord;
+            ND_UINT16   FpuTagWord;
+            ND_UINT16   Rsvd;
+            ND_UINT32   FpuDataPointer;
+            ND_UINT32   FpuInstructionPointer;
+            ND_UINT32   FpuLastInstructionOpcode;
         } FpuEnvironment;
 
         struct
         {
-            uint16_t    FpuControlWord;
-            uint16_t    FpuStatuwsWord;
-            uint16_t    FpuTagWord;
-            uint16_t    FpuOpcode;
-            uint64_t    FpuRip;
-            uint64_t    FpuDataPointer;
-            uint32_t    Mxcsr;
-            uint32_t    MxcsrMask;
+            ND_UINT16   FpuControlWord;
+            ND_UINT16   FpuStatuwsWord;
+            ND_UINT16   FpuTagWord;
+            ND_UINT16   FpuOpcode;
+            ND_UINT64   FpuRip;
+            ND_UINT64   FpuDataPointer;
+            ND_UINT32   Mxcsr;
+            ND_UINT32   MxcsrMask;
         } XsaveArea;
 
         struct
         {
-            uint16_t    Limit;
-            uint64_t    Base;
+            ND_UINT16   Limit;
+            ND_UINT64   Base;
         } Descriptor;
 
     } Value;
@@ -119,7 +119,7 @@ shemu_printf(
     char buff[1024];
     va_list args;
 
-    if (NULL == Context->Log)
+    if (ND_NULL == Context->Log)
     {
         return;
     }
@@ -145,20 +145,20 @@ static void *
 shemu_memcpy(
     void *Dest,
     const void *Source,
-    size_t Size
+    ND_SIZET Size
     )
 {
     void *start = Dest;
-    uint32_t index = 0;
+    ND_UINT32 index = 0;
 
-    if (NULL == Dest)
+    if (ND_NULL == Dest)
     {
-        return NULL;
+        return ND_NULL;
     }
 
-    if (NULL == Source)
+    if (ND_NULL == Source)
     {
-        return NULL;
+        return ND_NULL;
     }
 
     while (Size--)
@@ -175,13 +175,13 @@ shemu_memcpy(
 //
 // ShemuBts
 //
-inline static uint8_t
+inline static ND_UINT8
 ShemuBts(
-    uint8_t *BitMap,
-    uint64_t Position
+    ND_UINT8 *BitMap,
+    ND_UINT64 Position
     )
 {
-    uint8_t old;
+    ND_UINT8 old;
 
     old = (BitMap[Position / 8] >> (Position % 8)) & 1;
 
@@ -194,13 +194,13 @@ ShemuBts(
 //
 // ShemuBtr
 //
-inline static uint8_t
+inline static ND_UINT8
 ShemuBtr(
-    uint8_t *BitMap,
-    uint64_t Position
+    ND_UINT8 *BitMap,
+    ND_UINT64 Position
     )
 {
-    uint8_t old;
+    ND_UINT8 old;
 
     old = (BitMap[Position / 8] >> (Position % 8)) & 1;
 
@@ -213,10 +213,10 @@ ShemuBtr(
 //
 // ShemuBt
 //
-inline static uint8_t
+inline static ND_UINT8
 ShemuBt(
-    uint8_t *BitMap,
-    uint64_t Position
+    ND_UINT8 *BitMap,
+    ND_UINT64 Position
     )
 {
     return (BitMap[Position / 8] >> (Position % 8)) & 1;
@@ -228,82 +228,82 @@ ShemuBt(
 //
 static void
 ShemuSetBits(
-    uint8_t *Bitmap,
-    uint64_t Start,
-    uint64_t Size,
-    bool Val
+    ND_UINT8 *Bitmap,
+    ND_UINT64 Start,
+    ND_UINT64 Size,
+    ND_BOOL Val
     )
 //
 // No size validations here; the caller has to make sure the ranges are all good.
 //
 {
-    uint64_t i;
+    ND_UINT64 i;
 
     for (i = 0; i < Size; i++)
     {
         if (Val)
         {
-            ShemuBts(Bitmap, (uint64_t)(Start + i));
+            ShemuBts(Bitmap, (ND_UINT64)(Start + i));
         }
         else
         {
-            ShemuBtr(Bitmap, (uint64_t)(Start + i));
+            ShemuBtr(Bitmap, (ND_UINT64)(Start + i));
         }
     }
 }
 
 
+////
+//// ShemuAllBitsSet
+////
+//static ND_BOOL
+//ShemuAllBitsSet(
+//    ND_UINT8 *Bitmap,
+//    ND_UINT64 Start,
+//    ND_UINT32 Size
+//    )
+////
+//// No size validations here; the caller has to make sure the ranges are all good.
+////
+//{
+//    ND_UINT32 i;
 //
-// ShemuAllBitsSet
+//    for (i = 0; i < Size; i++)
+//    {
+//        if (!ShemuBt(Bitmap, (ND_UINT64)(Start + i)))
+//        {
+//            return ND_FALSE;
+//        }
+//    }
 //
-static bool
-ShemuAllBitsSet(
-    uint8_t *Bitmap,
-    uint64_t Start,
-    uint32_t Size
-    )
-//
-// No size validations here; the caller has to make sure the ranges are all good.
-//
-{
-    uint32_t i;
-
-    for (i = 0; i < Size; i++)
-    {
-        if (!ShemuBt(Bitmap, (uint64_t)(Start + i)))
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
+//    return ND_TRUE;
+//}
 
 
 //
 // ShemuAnyBitsSet
 //
-static bool
+static ND_BOOL
 ShemuAnyBitsSet(
-    uint8_t *Bitmap,
-    uint64_t Start,
-    uint32_t Size
+    ND_UINT8 *Bitmap,
+    ND_UINT64 Start,
+    ND_UINT32 Size
     )
 //
 // No size validations here; the caller has to make sure the ranges are all good.
 //
 {
-    uint32_t i;
+    ND_UINT32 i;
 
     for (i = 0; i < Size; i++)
     {
-        if (ShemuBt(Bitmap, (uint64_t)(Start + i)))
+        if (ShemuBt(Bitmap, (ND_UINT64)(Start + i)))
         {
-            return true;
+            return ND_TRUE;
         }
     }
 
-    return false;
+    return ND_FALSE;
 }
 
 
@@ -313,14 +313,14 @@ ShemuAnyBitsSet(
 static void
 ShemuSetFlags(
     SHEMU_CONTEXT *Context,
-    uint64_t Dst,
-    uint64_t Src1,
-    uint64_t Src2,
+    ND_UINT64 Dst,
+    ND_UINT64 Src1,
+    ND_UINT64 Src2,
     ND_OPERAND_SIZE Size,
-    uint8_t FlagsMode
+    ND_UINT8 FlagsMode
     )
 {
-    uint8_t pfArr[16] = { 0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4 };
+    ND_UINT8 pfArr[16] = { 0, 1, 1, 2, 1, 2, 2, 3, 1, 2, 2, 3, 2, 3, 3, 4 };
 
     // Mask the operands with their respective size.
     Dst = ND_TRIM(Size, Dst);
@@ -482,10 +482,10 @@ ShemuSetFlags(
 //
 // ShemuEvalCondition
 //
-static bool
+static ND_BOOL
 ShemuEvalCondition(
     SHEMU_CONTEXT *Context,
-    uint8_t ConditionCode
+    ND_UINT8 ConditionCode
     )
 {
     switch (ConditionCode)
@@ -493,104 +493,104 @@ ShemuEvalCondition(
     case ND_COND_OVERFLOW: // O
         if (GET_FLAG(Context, NDR_RFLAG_OF) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_OVERFLOW): // NO
         if (GET_FLAG(Context, NDR_RFLAG_OF) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_CARRY: // C/B/NAE
         if (GET_FLAG(Context, NDR_RFLAG_CF) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_CARRY): // NC/NB/AE
         if (GET_FLAG(Context, NDR_RFLAG_CF) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_ZERO: // E/Z
         if (GET_FLAG(Context, NDR_RFLAG_ZF) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_ZERO): // NE/NZ
         if (GET_FLAG(Context, NDR_RFLAG_ZF) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_BELOW_OR_EQUAL: // BE/NA
         if ((GET_FLAG(Context, NDR_RFLAG_CF) | (GET_FLAG(Context, NDR_RFLAG_ZF))) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_BELOW_OR_EQUAL): // A/NBE
         if ((GET_FLAG(Context, NDR_RFLAG_CF) | (GET_FLAG(Context, NDR_RFLAG_ZF))) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_SIGN: // S
         if (GET_FLAG(Context, NDR_RFLAG_SF) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_SIGN): // NS
         if (GET_FLAG(Context, NDR_RFLAG_SF) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_PARITY: // P
         if (GET_FLAG(Context, NDR_RFLAG_PF) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_PARITY): // NP
         if (GET_FLAG(Context, NDR_RFLAG_PF) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_LESS: // L/NGE
         if ((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_LESS): // NL/GE
         if ((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_LESS_OR_EQUAL: // LE/NG
         if (((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) |
             (GET_FLAG(Context, NDR_RFLAG_ZF))) == 1)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     case ND_COND_NOT(ND_COND_LESS_OR_EQUAL): // NLE/G
         if (((GET_FLAG(Context, NDR_RFLAG_SF) ^ GET_FLAG(Context, NDR_RFLAG_OF)) |
             (GET_FLAG(Context, NDR_RFLAG_ZF))) == 0)
         {
-            return true;
+            return ND_TRUE;
         }
         break;
     }
 
-    return false;
+    return ND_FALSE;
 
 }
 
@@ -598,11 +598,11 @@ ShemuEvalCondition(
 //
 // ShemuIsShellcodePtr
 //
-inline static bool
+inline static ND_BOOL
 ShemuIsShellcodePtr(
     SHEMU_CONTEXT *Context,
-    uint64_t Gla,
-    uint32_t Size
+    ND_UINT64 Gla,
+    ND_UINT32 Size
     )
 {
     return (Gla >= Context->ShellcodeBase && Gla < Context->ShellcodeBase + Context->ShellcodeSize &&
@@ -613,11 +613,11 @@ ShemuIsShellcodePtr(
 //
 // ShemuIsStackPtr
 //
-inline static bool
+inline static ND_BOOL
 ShemuIsStackPtr(
     SHEMU_CONTEXT *Context,
-    uint64_t Gla,
-    uint32_t Size
+    ND_UINT64 Gla,
+    ND_UINT32 Size
 )
 {
     return (Gla >= Context->StackBase && Gla < Context->StackBase + Context->StackSize &&
@@ -628,12 +628,12 @@ ShemuIsStackPtr(
 //
 // ShemuGetGprValue
 //
-static uint64_t
+static ND_UINT64
 ShemuGetGprValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Reg,
-    uint32_t Size,
-    bool High8
+    ND_UINT32 Reg,
+    ND_UINT32 Size,
+    ND_BOOL High8
     )
 {
     switch (Size)
@@ -667,13 +667,13 @@ ShemuGetGprValue(
 static void
 ShemuSetGprValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Reg,
-    uint32_t Size,
-    uint64_t Value,
-    bool High8
+    ND_UINT32 Reg,
+    ND_UINT32 Size,
+    ND_UINT64 Value,
+    ND_BOOL High8
     )
 {
-    uint32_t bit;
+    ND_UINT32 bit;
 
     switch (Size)
     {
@@ -681,20 +681,20 @@ ShemuSetGprValue(
         if (High8)
         {
             // AH, CH, DH or BH accessed.
-            *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) = Value & 0xFF;
+            *((ND_UINT8 *)(&Context->Registers.RegRax + Reg - 4) + 1) = Value & 0xFF;
         }
         else
         {
-            *((uint8_t *)(&Context->Registers.RegRax + Reg)) = Value & 0xff;
+            *((ND_UINT8 *)(&Context->Registers.RegRax + Reg)) = Value & 0xff;
         }
         break;
 
     case 2:
-        *((uint16_t *)(&Context->Registers.RegRax + Reg)) = Value & 0xffff;
+        *((ND_UINT16 *)(&Context->Registers.RegRax + Reg)) = Value & 0xffff;
         break;
 
     case 4:
-        // Higher uint32_t is always set to zero.
+        // Higher ND_UINT32 is always set to zero.
         *(&Context->Registers.RegRax + Reg) = Value & 0xffffffff;
         break;
 
@@ -720,13 +720,13 @@ ShemuSetGprValue(
 //
 // ShemuCmpGprValue
 //
-static bool
+static ND_BOOL
 ShemuCmpGprValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Reg,
-    uint32_t Size,
-    uint64_t Value,
-    bool High8
+    ND_UINT32 Reg,
+    ND_UINT32 Size,
+    ND_UINT64 Value,
+    ND_BOOL High8
     )
 {
     switch (Size)
@@ -735,18 +735,18 @@ ShemuCmpGprValue(
         if (High8)
         {
             // AH, CH, DH or BH.
-            return *((uint8_t *)(&Context->Registers.RegRax + Reg - 4) + 1) == (Value & 0xff);
+            return *((ND_UINT8 *)(&Context->Registers.RegRax + Reg - 4) + 1) == (Value & 0xff);
         }
         else
         {
-            return *((uint8_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xff);
+            return *((ND_UINT8 *)(&Context->Registers.RegRax + Reg)) == (Value & 0xff);
         }
 
     case 2:
-        return *((uint16_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffff);
+        return *((ND_UINT16 *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffff);
 
     case 4:
-        return *((uint32_t *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffffffff);
+        return *((ND_UINT32 *)(&Context->Registers.RegRax + Reg)) == (Value & 0xffffffff);
 
     default:
         return *(&Context->Registers.RegRax + Reg) == Value;
@@ -757,10 +757,10 @@ ShemuCmpGprValue(
 //
 // ShemuGetSegValue
 //
-static uint64_t
+static ND_UINT64
 ShemuGetSegValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Reg
+    ND_UINT32 Reg
     )
 {
     switch (Reg)
@@ -789,8 +789,8 @@ ShemuGetSegValue(
 static void
 ShemuSetSegValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Reg,
-    uint16_t Value
+    ND_UINT32 Reg,
+    ND_UINT16 Value
     )
 {
     switch (Reg)
@@ -820,10 +820,10 @@ ShemuSetSegValue(
 //
 // ShemuGetSegBase
 //
-static uint64_t
+static ND_UINT64
 ShemuGetSegBase(
     SHEMU_CONTEXT *Context,
-    uint32_t Reg
+    ND_UINT32 Reg
     )
 {
     switch (Reg)
@@ -849,22 +849,22 @@ ShemuGetSegBase(
 //
 // ShemuComputeLinearAddress
 //
-static uint64_t
+static ND_UINT64
 ShemuComputeLinearAddress(
     SHEMU_CONTEXT *Context,
     PND_OPERAND Operand
     )
 {
-    uint64_t gla = 0;
+    ND_UINT64 gla = 0;
 
     if (Operand->Info.Memory.HasBase)
     {
-        gla += ShemuGetGprValue(Context, Operand->Info.Memory.Base, Operand->Info.Memory.BaseSize, false);
+        gla += ShemuGetGprValue(Context, Operand->Info.Memory.Base, Operand->Info.Memory.BaseSize, ND_FALSE);
     }
 
     if (Operand->Info.Memory.HasIndex)
     {
-        gla += ShemuGetGprValue(Context, Operand->Info.Memory.Index, Operand->Info.Memory.IndexSize, false) *
+        gla += ShemuGetGprValue(Context, Operand->Info.Memory.Index, Operand->Info.Memory.IndexSize, ND_FALSE) *
                                 Operand->Info.Memory.Scale;
     }
 
@@ -883,12 +883,12 @@ ShemuComputeLinearAddress(
     // Special handling for BT, BTR, BTS, BTC instructions with bitbase addressing.
     if (Operand->Info.Memory.IsBitbase)
     {
-        uint64_t bitbase, op1size, op2size, reg;
+        ND_UINT64 bitbase, op1size, op2size, reg;
 
         op1size = Context->Instruction.Operands[0].Size;
         op2size = Context->Instruction.Operands[1].Size;
 
-        reg = ((uint64_t*)&Context->Registers.RegRax)[Context->Instruction.Operands[1].Info.Register.Reg];
+        reg = ((ND_UINT64*)&Context->Registers.RegRax)[Context->Instruction.Operands[1].Info.Register.Reg];
 
         // Note: only BT* with register source (NOT immediate) support bitbase addressing.
         bitbase = ND_SIGN_EX(op2size, reg);
@@ -948,27 +948,27 @@ ShemuComputeLinearAddress(
 static SHEMU_STATUS
 ShemuGetMemValue(
     SHEMU_CONTEXT *Context,
-    uint64_t Gla,
-    uint32_t Size,
-    uint8_t *Value
+    ND_UINT64 Gla,
+    ND_UINT32 Size,
+    ND_UINT8 *Value
     )
 {
-    uint8_t *addr;
-    uint32_t offset;
+    ND_UINT8 *addr;
+    ND_UINT32 offset;
 
     if (ShemuIsShellcodePtr(Context, Gla, Size))
     {
         addr = Context->Shellcode;
-        offset = (uint32_t)(Gla - Context->ShellcodeBase);
+        offset = (ND_UINT32)(Gla - Context->ShellcodeBase);
     }
     else if (ShemuIsStackPtr(Context, Gla, Size))
     {
         addr = Context->Stack;
-        offset = (uint32_t)(Gla - Context->StackBase);
+        offset = (ND_UINT32)(Gla - Context->StackBase);
     }
     else
     {
-        bool res = false;
+        ND_BOOL res = ND_FALSE;
 
         // We allow a maximum number of external memory accesses, due to performance reasons.
         if (++Context->ExtMemAccess > Context->MemThreshold)
@@ -979,16 +979,16 @@ ShemuGetMemValue(
         // NOTE: The accessed GLA may partially access an internal address (shellcode or stack) and an external address.
         // Since the AccessMemory callback can be provided with the full SHEMU_CONTEXT, the integrator can choose how
         // to handle those accesses; some options are:
-        // - Don't handle them at all, and return error (false);
+        // - Don't handle them at all, and return error (ND_FALSE);
         // - Handle them by reading the actual memory value; this has the disadvantage that if the shellcode/stack 
         //   portion has been modified due to emulation, the AccessMemory function would return the original memory 
         //   value;
         // - Handle them properly, by returning the emulated values for the internal addresses, and the external
         //   values for the external addresses.
         // bdshemu does not care directly about this, and lets the integrator choose his own strategy.
-        if (NULL != Context->AccessMemory)
+        if (ND_NULL != Context->AccessMemory)
         {
-            res = Context->AccessMemory(Context, Gla, Size, Value, false);
+            res = Context->AccessMemory(Context, Gla, Size, Value, ND_FALSE);
         }
 
         if (res)
@@ -1005,13 +1005,13 @@ ShemuGetMemValue(
         *Value = *(addr + offset);
         break;
     case 2:
-        *(uint16_t *)Value = *(uint16_t *)(addr + offset);
+        *(ND_UINT16 *)Value = *(ND_UINT16 *)(addr + offset);
         break;
     case 4:
-        *(uint32_t *)Value = *(uint32_t *)(addr + offset);
+        *(ND_UINT32 *)Value = *(ND_UINT32 *)(addr + offset);
         break;
     case 8:
-        *(uint64_t *)Value = *(uint64_t *)(addr + offset);
+        *(ND_UINT64 *)Value = *(ND_UINT64 *)(addr + offset);
         break;
     default:
         shemu_memcpy(Value, addr + offset, Size);
@@ -1028,18 +1028,18 @@ ShemuGetMemValue(
 static SHEMU_STATUS
 ShemuSetMemValue(
     SHEMU_CONTEXT *Context,
-    uint64_t Gla,
-    uint32_t Size,
-    uint8_t *Value
+    ND_UINT64 Gla,
+    ND_UINT32 Size,
+    ND_UINT8 *Value
     )
 {
-    uint8_t *addr;
-    uint32_t offset;
+    ND_UINT8 *addr;
+    ND_UINT32 offset;
 
     if (ShemuIsShellcodePtr(Context, Gla, Size))
     {
         addr = Context->Shellcode;
-        offset = (uint32_t)(Gla - Context->ShellcodeBase);
+        offset = (ND_UINT32)(Gla - Context->ShellcodeBase);
 
         // Bypass self-writes, if needed to.
         if (!!(Context->Options & SHEMU_OPT_BYPASS_SELF_WRITES))
@@ -1050,11 +1050,11 @@ ShemuSetMemValue(
     else if (ShemuIsStackPtr(Context, Gla, Size))
     {
         addr = Context->Stack;
-        offset = (uint32_t)(Gla - Context->StackBase);
+        offset = (ND_UINT32)(Gla - Context->StackBase);
     }
     else
     {
-        bool res = false;
+        ND_BOOL res = ND_FALSE;
 
         // We allow a maximum number of external memory accesses, due to performance reasons.
         if (++Context->ExtMemAccess > Context->MemThreshold)
@@ -1070,9 +1070,9 @@ ShemuSetMemValue(
         // - Create a store-buffer like structure, where every external store is cached; when a load is issued on
         //   a previously written address, the value from the store-buffer can be returned;
         // For obvious reasons, actually storing the value at the indicated address is a very, very bad idea.
-        if (NULL != Context->AccessMemory)
+        if (ND_NULL != Context->AccessMemory)
         {
-            res = Context->AccessMemory(Context, Gla, Size, Value, true);
+            res = Context->AccessMemory(Context, Gla, Size, Value, ND_TRUE);
         }
 
         if (res)
@@ -1089,13 +1089,13 @@ ShemuSetMemValue(
         *(addr + offset) = *Value & 0xff;
         break;
     case 2:
-        *(uint16_t *)(addr + offset) = *(uint16_t *)Value & 0xffff;
+        *(ND_UINT16 *)(addr + offset) = *(ND_UINT16 *)Value & 0xffff;
         break;
     case 4:
-        *(uint32_t *)(addr + offset) = *(uint32_t *)Value & 0xffffffff;
+        *(ND_UINT32 *)(addr + offset) = *(ND_UINT32 *)Value & 0xffffffff;
         break;
     case 8:
-        *(uint64_t *)(addr + offset) = *(uint64_t *)Value;
+        *(ND_UINT64 *)(addr + offset) = *(ND_UINT64 *)Value;
         break;
     default:
         shemu_memcpy(addr + offset, Value, Size);
@@ -1112,7 +1112,7 @@ ShemuSetMemValue(
 static SHEMU_STATUS
 ShemuGetOperandValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Operand,
+    ND_UINT32 Operand,
     SHEMU_VALUE *Value
     )
 {
@@ -1186,9 +1186,9 @@ ShemuGetOperandValue(
     }
     else if (op->Type == ND_OP_MEM)
     {
-        uint64_t gla = ShemuComputeLinearAddress(Context, op);
-        uint32_t offset;
-        uint8_t seg;
+        ND_UINT64 gla = ShemuComputeLinearAddress(Context, op);
+        ND_UINT32 offset;
+        ND_UINT8 seg;
 
         if (op->Info.Memory.IsAG)
         {
@@ -1211,7 +1211,7 @@ ShemuGetOperandValue(
         }
 
         // Check if this is a TIB/PCR access. Make sure the FS/GS register is used for the access, in order to avoid
-        // false positives where legitimate code accesses a linear TIB directly.
+        // ND_FALSE positives where legitimate code accesses a linear TIB directly.
         // Note that this covers accesses to the PEB field inside the TIB.
         if (gla == Context->TibBase + offset && Context->Instruction.Seg == seg)
         {
@@ -1252,21 +1252,21 @@ ShemuGetOperandValue(
         // If this is a stack access, we need to update the stack pointer.
         if (op->Info.Memory.IsStack)
         {
-            uint64_t regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), false);
+            ND_UINT64 regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), ND_FALSE);
 
             regval += op->Size;
 
-            ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, false);
+            ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, ND_FALSE);
         }
 
         // If this is a string operation, make sure we update RSI/RDI.
         if (op->Info.Memory.IsString)
         {
-            uint64_t regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, false);
+            ND_UINT64 regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, ND_FALSE);
 
             regval = GET_FLAG(Context, NDR_RFLAG_DF) ? regval - op->Size : regval + op->Size;
 
-            ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, false);
+            ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, ND_FALSE);
         }
 
 done_gla:;
@@ -1298,7 +1298,7 @@ done_gla:;
 static SHEMU_STATUS
 ShemuSetOperandValue(
     SHEMU_CONTEXT *Context,
-    uint32_t Operand,
+    ND_UINT32 Operand,
     SHEMU_VALUE *Value
     )
 {
@@ -1391,7 +1391,7 @@ ShemuSetOperandValue(
     else if (op->Type == ND_OP_MEM)
     {
         // Compute the GLA.
-        uint64_t gla = ShemuComputeLinearAddress(Context, op);
+        ND_UINT64 gla = ShemuComputeLinearAddress(Context, op);
 
         // Handle self-write. We store a 1 for each written byte inside the shellcode space. Once the modified bytes
         // are executed, we can trigger the self-write detection.
@@ -1403,8 +1403,8 @@ ShemuSetOperandValue(
         // Handle RIP save on the stack.
         if (ShemuIsStackPtr(Context, gla, MAX(op->Size, Context->Instruction.WordLength)))
         {
-            uint8_t stckstrlen = 0;
-            uint32_t i;
+            ND_UINT8 stckstrlen = 0;
+            ND_UINT32 i;
 
             // Note: only Context->Instruction.WordLength bits are flagged as RIP, as that is the RIP size.
             if (Context->Instruction.Instruction == ND_INS_CALLNR ||
@@ -1458,7 +1458,7 @@ ShemuSetOperandValue(
                 // Make sure the value is not present inside a non-dirty GPR. 
                 for (i = 0; i < 16; i++)
                 {
-                    if (ShemuCmpGprValue(Context, i, Value->Size, Value->Value.Qwords[0], false) &&
+                    if (ShemuCmpGprValue(Context, i, Value->Size, Value->Value.Qwords[0], ND_FALSE) &&
                         (0 == (Context->DirtyGprBitmap & (1 << i))))
                     {
                         // A register is saved on the stack, but that register wasn't written during the emulation.
@@ -1492,21 +1492,21 @@ ShemuSetOperandValue(
         // If this is a stack access, we need to update the stack pointer.
         if (op->Info.Memory.IsStack)
         {
-            uint64_t regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), false);
+            ND_UINT64 regval = ShemuGetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), ND_FALSE);
 
             regval -= op->Size;
 
-            ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, false);
+            ShemuSetGprValue(Context, NDR_RSP, (2 << Context->Instruction.DefStack), regval, ND_FALSE);
         }
 
         // If this is a string operation, make sure we update RSI/RDI.
         if (op->Info.Memory.IsString)
         {
-            uint64_t regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, false);
+            ND_UINT64 regval = ShemuGetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, ND_FALSE);
 
             regval = GET_FLAG(Context, NDR_RFLAG_DF) ? regval - op->Size : regval + op->Size;
 
-            ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, false);
+            ShemuSetGprValue(Context, op->Info.Memory.Base, op->Info.Memory.BaseSize, regval, ND_FALSE);
         }
     }
     else
@@ -1523,23 +1523,23 @@ ShemuSetOperandValue(
 //
 static void
 ShemuMultiply64Unsigned(
-    uint64_t Operand1,
-    uint64_t Operand2,
-    uint64_t *ResHigh,
-    uint64_t *ResLow
+    ND_UINT64 Operand1,
+    ND_UINT64 Operand2,
+    ND_UINT64 *ResHigh,
+    ND_UINT64 *ResLow
     )
 {
-    uint64_t xLow = (uint64_t)(uint32_t)Operand1;
-    uint64_t xHigh = Operand1 >> 32;
-    uint64_t yLow = (uint64_t)(uint32_t)Operand2;
-    uint64_t yHigh = Operand2 >> 32;
+    ND_UINT64 xLow = (ND_UINT64)(ND_UINT32)Operand1;
+    ND_UINT64 xHigh = Operand1 >> 32;
+    ND_UINT64 yLow = (ND_UINT64)(ND_UINT32)Operand2;
+    ND_UINT64 yHigh = Operand2 >> 32;
 
-    uint64_t p0 = xLow * yLow;
-    uint64_t p1 = xLow * yHigh;
-    uint64_t p2 = xHigh * yLow;
-    uint64_t p3 = xHigh * yHigh;
+    ND_UINT64 p0 = xLow * yLow;
+    ND_UINT64 p1 = xLow * yHigh;
+    ND_UINT64 p2 = xHigh * yLow;
+    ND_UINT64 p3 = xHigh * yHigh;
 
-    uint32_t cy = (uint32_t)(((p0 >> 32) + (uint32_t)p1 + (uint32_t)p2) >> 32);
+    ND_UINT32 cy = (ND_UINT32)(((p0 >> 32) + (ND_UINT32)p1 + (ND_UINT32)p2) >> 32);
 
     *ResLow = p0 + (p1 << 32) + (p2 << 32);
     *ResHigh = p3 + (p1 >> 32) + (p2 >> 32) + cy;
@@ -1551,13 +1551,13 @@ ShemuMultiply64Unsigned(
 //
 static void
 ShemuMultiply64Signed(
-    int64_t Operand1,
-    int64_t Operand2,
-    int64_t *ResHigh,
-    int64_t *ResLow
+    ND_SINT64 Operand1,
+    ND_SINT64 Operand2,
+    ND_SINT64 *ResHigh,
+    ND_SINT64 *ResLow
     )
 {
-    ShemuMultiply64Unsigned((uint64_t)Operand1, (uint64_t)Operand2, (uint64_t *)ResHigh, (uint64_t *)ResLow);
+    ShemuMultiply64Unsigned((ND_UINT64)Operand1, (ND_UINT64)Operand2, (ND_UINT64 *)ResHigh, (ND_UINT64 *)ResLow);
     if (Operand1 < 0LL) *ResHigh -= Operand2;
     if (Operand2 < 0LL) *ResHigh -= Operand1;
 }
@@ -1566,19 +1566,19 @@ ShemuMultiply64Signed(
 //
 // ShemuCheckDiv
 //
-static bool
+static ND_BOOL
 ShemuCheckDiv(
-    uint64_t Divident,
-    uint64_t Divider,
-    uint8_t Size            // The size of the Source (Divider). The Divident is twice as large.
+    ND_UINT64 Divident,
+    ND_UINT64 Divider,
+    ND_UINT8 Size            // The size of the Source (Divider). The Divident is twice as large.
     )
 {
-    // Returns true if all checks are OK, and Divident / Divider will not cause #DE.
+    // Returns ND_TRUE if all checks are OK, and Divident / Divider will not cause #DE.
 
     if (Divider == 0)
     {
         // Division by zero.
-        return false;
+        return ND_FALSE;
     }
 
     // If the result won't fit in the destination, a #DE would be generated.
@@ -1587,45 +1587,45 @@ ShemuCheckDiv(
     case 1:
         if (((Divident >> 8) & 0xFF) >= Divider)
         {
-            return false;
+            return ND_FALSE;
         }
         break;
 
     case 2:
         if (((Divident >> 16) & 0xFFFF) >= Divider)
         {
-            return false;
+            return ND_FALSE;
         }
         break;
 
     case 4:
         if (((Divident >> 32) & 0xFFFFFFFF) >= Divider)
         {
-            return false;
+            return ND_FALSE;
         }
         break;
 
     default:
         // 64 bit source division is not supported.
-        return false;
+        return ND_FALSE;
     }
 
-    return true;
+    return ND_TRUE;
 }
 
 
 //
 // ShemuCheckIdiv
 //
-static bool
+static ND_BOOL
 ShemuCheckIdiv(
-    int64_t Divident,
-    int64_t Divider,
-    uint8_t Size            // The size of the Source (Divider).
+    ND_SINT64 Divident,
+    ND_SINT64 Divider,
+    ND_UINT8 Size            // The size of the Source (Divider).
     )
 {
-    bool neg1, neg2;
-    uint64_t quotient, max;
+    ND_BOOL neg1, neg2;
+    ND_UINT64 quotient, max;
 
     neg1 = Divident < 0;
     neg2 = Divider < 0;
@@ -1643,11 +1643,11 @@ ShemuCheckIdiv(
     // Do checks when dividing positive values.
     if (!ShemuCheckDiv(Divident, Divider, Size))
     {
-        return false;
+        return ND_FALSE;
     }
 
     // Get the positive quotient.
-    quotient = (uint64_t)Divident / (uint64_t)Divider;
+    quotient = (ND_UINT64)Divident / (ND_UINT64)Divider;
 
     max = (Size == 1) ? 0x80 : (Size == 2) ? 0x8000 : (Size == 4) ? 0x80000000 : 0x8000000000000000;
 
@@ -1656,7 +1656,7 @@ ShemuCheckIdiv(
         // The Divident and the Divider have different signs, the quotient must be negative. If it's positive => #DE.
         if (ND_GET_SIGN(Size, quotient) && quotient != max)
         {
-            return false;
+            return ND_FALSE;
         }
     }
     else
@@ -1665,17 +1665,18 @@ ShemuCheckIdiv(
         // negative => #DE.
         if (ND_GET_SIGN(Size, quotient))
         {
-            return false;
+            return ND_FALSE;
         }
     }
 
-    return true;
+    return ND_TRUE;
 }
 
 
 //
 // ShemuPrintContext
 //
+#ifndef BDDISASM_NO_FORMAT
 static void
 ShemuPrintContext(
     SHEMU_CONTEXT *Context
@@ -1708,6 +1709,9 @@ ShemuPrintContext(
 
     shemu_printf(Context, "Emulating: 0x%016llx %s\n", Context->Registers.RegRip, text);
 }
+#else
+#define ShemuPrintContext(Context)
+#endif // !BDDISASM_NO_FORMAT 
 
 
 //
@@ -1719,26 +1723,26 @@ ShemuEmulate(
     )
 {
     SHEMU_VALUE res = { 0 }, dst = { 0 }, src = { 0 }, rcx = { 0 }, aux = { 0 };
-    bool stop = false, cf;
-    uint16_t cs = 0;
-    uint64_t tsc = 0x1248fe7a5c30;
+    ND_BOOL stop = ND_FALSE, cf;
+    ND_UINT16 cs = 0;
+    ND_UINT64 tsc = 0x1248fe7a5c30;
 
-    if (NULL == Context)
+    if (ND_NULL == Context)
     {
         return SHEMU_ABORT_INVALID_PARAMETER;
     }
 
-    if (NULL == Context->Shellcode)
+    if (ND_NULL == Context->Shellcode)
     {
         return SHEMU_ABORT_INVALID_PARAMETER;
     }
 
-    if (NULL == Context->Stack)
+    if (ND_NULL == Context->Stack)
     {
         return SHEMU_ABORT_INVALID_PARAMETER;
     }
 
-    if (NULL == Context->Intbuf)
+    if (ND_NULL == Context->Intbuf)
     {
         return SHEMU_ABORT_INVALID_PARAMETER;
     }
@@ -1761,8 +1765,8 @@ ShemuEmulate(
     while (Context->InstructionsCount++ < Context->MaxInstructionsCount)
     {
         NDSTATUS ndstatus;
-        uint64_t rip;
-        uint32_t i;
+        ND_UINT64 rip;
+        ND_UINT32 i;
 
         tsc++;
 
@@ -1798,7 +1802,7 @@ ShemuEmulate(
 
         // Decode the next instruction.
         ndstatus = NdDecodeEx(&Context->Instruction, Context->Shellcode + rip,
-                              Context->ShellcodeSize - (size_t)rip, Context->Mode, Context->Mode);
+                              Context->ShellcodeSize - (ND_SIZET)rip, Context->Mode, Context->Mode);
         if (!ND_SUCCESS(ndstatus))
         {
             if (ND_STATUS_BUFFER_TOO_SMALL == ndstatus)
@@ -1843,7 +1847,7 @@ ShemuEmulate(
         {
         case ND_INS_FNSTENV:
             src.Size = Context->Instruction.Operands[0].Size;
-            src.Value.FpuEnvironment.FpuInstructionPointer = (uint32_t)Context->Registers.FpuRip;
+            src.Value.FpuEnvironment.FpuInstructionPointer = (ND_UINT32)Context->Registers.FpuRip;
             SET_OP(Context, 0, &src);
             break;
 
@@ -2016,14 +2020,14 @@ ShemuEmulate(
         case ND_INS_PUSHA:
         case ND_INS_PUSHAD:
             src.Size = 32;
-            src.Value.Dwords[7] = (uint32_t)Context->Registers.RegRax;
-            src.Value.Dwords[6] = (uint32_t)Context->Registers.RegRcx;
-            src.Value.Dwords[5] = (uint32_t)Context->Registers.RegRdx;
-            src.Value.Dwords[4] = (uint32_t)Context->Registers.RegRbx;
-            src.Value.Dwords[3] = (uint32_t)Context->Registers.RegRsp;
-            src.Value.Dwords[2] = (uint32_t)Context->Registers.RegRbp;
-            src.Value.Dwords[1] = (uint32_t)Context->Registers.RegRsi;
-            src.Value.Dwords[0] = (uint32_t)Context->Registers.RegRdi;
+            src.Value.Dwords[7] = (ND_UINT32)Context->Registers.RegRax;
+            src.Value.Dwords[6] = (ND_UINT32)Context->Registers.RegRcx;
+            src.Value.Dwords[5] = (ND_UINT32)Context->Registers.RegRdx;
+            src.Value.Dwords[4] = (ND_UINT32)Context->Registers.RegRbx;
+            src.Value.Dwords[3] = (ND_UINT32)Context->Registers.RegRsp;
+            src.Value.Dwords[2] = (ND_UINT32)Context->Registers.RegRbp;
+            src.Value.Dwords[1] = (ND_UINT32)Context->Registers.RegRsi;
+            src.Value.Dwords[0] = (ND_UINT32)Context->Registers.RegRdi;
             SET_OP(Context, 1, &src);
             break;
 
@@ -2074,9 +2078,9 @@ ShemuEmulate(
             }
             else
             {
-                int64_t val = ND_SIGN_EX(dst.Size, dst.Value.Qwords[0]);
+                ND_SINT64 val = ND_SIGN_EX(dst.Size, dst.Value.Qwords[0]);
                 val = val >> src.Value.Qwords[0];
-                res.Value.Qwords[0] = (uint64_t)val;
+                res.Value.Qwords[0] = (ND_UINT64)val;
             }
 
             if (src.Value.Qwords[0] != 0)
@@ -2105,13 +2109,13 @@ ShemuEmulate(
         case ND_INS_ROL:
         case ND_INS_ROR:
             {
-                uint32_t cnt, tempcnt, cntmask;
-                uint8_t tempCF = 0;
+                ND_UINT32 cnt, tempcnt, cntmask;
+                ND_UINT8 tempCF = 0;
 
                 GET_OP(Context, 0, &dst);
                 GET_OP(Context, 1, &src);
 
-                cnt = (uint32_t)src.Value.Qwords[0];
+                cnt = (ND_UINT32)src.Value.Qwords[0];
                 tempcnt = 0;
                 cntmask = ((dst.Size == 8) ? 0x3F : 0x1F);
 
@@ -2160,7 +2164,7 @@ ShemuEmulate(
                     {
                         tempCF = ND_LSB(dst.Size, dst.Value.Qwords[0]);
                         dst.Value.Qwords[0] = (dst.Value.Qwords[0] >> 1) + 
-                                              ((uint64_t)GET_FLAG(Context, NDR_RFLAG_CF) << (dst.Size * 8 - 1));
+                                              ((ND_UINT64)GET_FLAG(Context, NDR_RFLAG_CF) << (dst.Size * 8 - 1));
                         SET_FLAG(Context, NDR_RFLAG_CF, tempCF);
                         tempcnt--;
                     }
@@ -2190,7 +2194,7 @@ ShemuEmulate(
                     while (tempcnt != 0)
                     {
                         tempCF = ND_LSB(dst.Size, dst.Value.Qwords[0]);
-                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] >> 1) + ((uint64_t)tempCF << (dst.Size * 8 - 1));
+                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] >> 1) + ((ND_UINT64)tempCF << (dst.Size * 8 - 1));
                         tempcnt--;
                     }
 
@@ -2379,7 +2383,7 @@ ShemuEmulate(
 
         case ND_INS_JMPFD:
         case ND_INS_CALLFD:
-            cs = (uint16_t)Context->Instruction.Operands[0].Info.Address.BaseSeg;
+            cs = (ND_UINT16)Context->Instruction.Operands[0].Info.Address.BaseSeg;
             goto check_far_branch;
 
         case ND_INS_JMPFI:
@@ -2414,13 +2418,13 @@ ShemuEmulate(
             switch (Context->Instruction.WordLength)
             {
             case 2:
-                cs = (uint16_t)src.Value.Words[1];
+                cs = (ND_UINT16)src.Value.Words[1];
                 break;
             case 4:
-                cs = (uint16_t)src.Value.Dwords[1];
+                cs = (ND_UINT16)src.Value.Dwords[1];
                 break;
             case 8:
-                cs = (uint16_t)src.Value.Qwords[1];
+                cs = (ND_UINT16)src.Value.Qwords[1];
                 break;
             default:
                 cs = 0;
@@ -2436,7 +2440,7 @@ check_far_branch:
             // We may, in the future, emulate far branches, but they imply some tricky context switches (including
             // the default TEB), so it may not be as straight forward as it seems. For now, all we wish to achieve 
             // is detection of far branches in long-mode, from Wow 64.
-            stop = true;
+            stop = ND_TRUE;
             break;
 
         case ND_INS_LODS:
@@ -2539,7 +2543,7 @@ check_far_branch:
                 }
                 else
                 {
-                    res.Value.Words[0] = (int8_t)dst.Value.Bytes[0] * (int8_t)src.Value.Bytes[0];
+                    res.Value.Words[0] = (ND_SINT8)dst.Value.Bytes[0] * (ND_SINT8)src.Value.Bytes[0];
                 }
             }
             else if (dst.Size == 2)
@@ -2550,7 +2554,7 @@ check_far_branch:
                 }
                 else
                 {
-                    res.Value.Dwords[0] = (int16_t)dst.Value.Words[0] * (int16_t)src.Value.Words[0];
+                    res.Value.Dwords[0] = (ND_SINT16)dst.Value.Words[0] * (ND_SINT16)src.Value.Words[0];
                 }
             }
             else if (dst.Size == 4)
@@ -2561,7 +2565,7 @@ check_far_branch:
                 }
                 else
                 {
-                    res.Value.Qwords[0] = (int64_t)(int32_t)dst.Value.Dwords[0] * (int64_t)(int32_t)src.Value.Dwords[0];
+                    res.Value.Qwords[0] = (ND_SINT64)(ND_SINT32)dst.Value.Dwords[0] * (ND_SINT64)(ND_SINT32)src.Value.Dwords[0];
                 }
             }
             else
@@ -2574,7 +2578,7 @@ check_far_branch:
                 else
                 {
                     ShemuMultiply64Signed(dst.Value.Qwords[0], src.Value.Qwords[0],
-                                          (int64_t*)&res.Value.Qwords[1], (int64_t*)&res.Value.Qwords[0]);
+                                          (ND_SINT64*)&res.Value.Qwords[1], (ND_SINT64*)&res.Value.Qwords[0]);
                 }
             }
 
@@ -2584,11 +2588,11 @@ check_far_branch:
                 switch (dst.Size)
                 {
                 case 1:
-                    *((uint16_t*)&Context->Registers.RegRax) = res.Value.Words[0];
+                    *((ND_UINT16*)&Context->Registers.RegRax) = res.Value.Words[0];
                     break;
                 case 2:
-                    *((uint16_t*)&Context->Registers.RegRdx) = res.Value.Words[1];
-                    *((uint16_t*)&Context->Registers.RegRax) = res.Value.Words[0];
+                    *((ND_UINT16*)&Context->Registers.RegRdx) = res.Value.Words[1];
+                    *((ND_UINT16*)&Context->Registers.RegRax) = res.Value.Words[0];
                     break;
                 case 4:
                     Context->Registers.RegRdx = res.Value.Dwords[1];
@@ -2608,7 +2612,7 @@ check_far_branch:
 
             if (ND_INS_MUL == Context->Instruction.Instruction)
             {
-                uint8_t cfof = 0;
+                ND_UINT8 cfof = 0;
 
                 // CF and OF are set to 0 if the high part of the result is 0, otherwise they are set to 1.
                 switch (dst.Size)
@@ -2634,7 +2638,7 @@ check_far_branch:
             {
                 // The CF and OF flags are set when the signed integer value of the intermediate product differs from
                 // the sign extended operand - size - truncated product, otherwise the CF and OF flags are cleared.
-                uint8_t cfof = 0, sign = 0;
+                ND_UINT8 cfof = 0, sign = 0;
 
                 sign = ND_MSB(res.Size, res.Value.Qwords[0]);
 
@@ -2642,19 +2646,19 @@ check_far_branch:
                 {
                 case 1:
                     cfof = (0 == res.Value.Bytes[1] && 0 == sign) || 
-                           ((uint8_t)-1 == res.Value.Bytes[1] && 1 == sign) ? 0 : 1;
+                           ((ND_UINT8)-1 == res.Value.Bytes[1] && 1 == sign) ? 0 : 1;
                     break;
                 case 2:
                     cfof = (0 == res.Value.Words[1] && 0 == sign) || 
-                           ((uint16_t)-1 == res.Value.Words[1] && 1 == sign) ? 0 : 1;
+                           ((ND_UINT16)-1 == res.Value.Words[1] && 1 == sign) ? 0 : 1;
                     break;
                 case 4:
                     cfof = (0 == res.Value.Dwords[1] && 0 == sign) || 
-                           ((uint32_t)-1 == res.Value.Dwords[1] && 1 == sign) ? 0 : 1;
+                           ((ND_UINT32)-1 == res.Value.Dwords[1] && 1 == sign) ? 0 : 1;
                     break;
                 case 8:
                     cfof = (0 == res.Value.Qwords[1] && 0 == sign) || 
-                           ((uint64_t)-1 == res.Value.Qwords[1] && 1 == sign) ? 0 : 1;
+                           ((ND_UINT64)-1 == res.Value.Qwords[1] && 1 == sign) ? 0 : 1;
                     break;
                 }
 
@@ -2671,97 +2675,97 @@ check_far_branch:
 
             if (src.Size == 1)
             {
-                uint16_t divident;
+                ND_UINT16 divident;
 
-                divident = (uint16_t)Context->Registers.RegRax;
+                divident = (ND_UINT16)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
                     if (!ShemuCheckDiv(divident, src.Value.Bytes[0], 1))
                     {
-                        stop = true;
+                        stop = ND_TRUE;
                         break;
                     }
 
-                    res.Value.Bytes[0] = (uint8_t)(divident / src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (uint8_t)(divident % src.Value.Bytes[0]);
+                    res.Value.Bytes[0] = (ND_UINT8)(divident / src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (ND_UINT8)(divident % src.Value.Bytes[0]);
                 }
                 else
                 {
-                    if (!ShemuCheckIdiv((int64_t)(int16_t)divident, (int64_t)(int8_t)src.Value.Bytes[0], 1))
+                    if (!ShemuCheckIdiv((ND_SINT64)(ND_SINT16)divident, (ND_SINT64)(ND_SINT8)src.Value.Bytes[0], 1))
                     {
-                        stop = true;
+                        stop = ND_TRUE;
                         break;
                     }
 
-                    res.Value.Bytes[0] = (int8_t)((int16_t)divident / (int8_t)src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (int8_t)((int16_t)divident % (int8_t)src.Value.Bytes[0]);
+                    res.Value.Bytes[0] = (ND_SINT8)((ND_SINT16)divident / (ND_SINT8)src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (ND_SINT8)((ND_SINT16)divident % (ND_SINT8)src.Value.Bytes[0]);
                 }
 
                 // Result in AX (AL - quotient, AH - reminder).
-                *((uint16_t*)&Context->Registers.RegRax) = res.Value.Words[0];
+                *((ND_UINT16*)&Context->Registers.RegRax) = res.Value.Words[0];
             }
             else if (src.Size == 2)
             {
-                uint32_t divident;
+                ND_UINT32 divident;
 
-                divident = ((uint32_t)(uint16_t)Context->Registers.RegRdx << 16) | 
-                            (uint32_t)(uint16_t)Context->Registers.RegRax;
+                divident = ((ND_UINT32)(ND_UINT16)Context->Registers.RegRdx << 16) | 
+                            (ND_UINT32)(ND_UINT16)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
                     if (!ShemuCheckDiv(divident, src.Value.Words[0], 2))
                     {
-                        stop = true;
+                        stop = ND_TRUE;
                         break;
                     }
 
-                    res.Value.Words[0] = (uint16_t)(divident / src.Value.Words[0]);
-                    res.Value.Words[1] = (uint16_t)(divident % src.Value.Words[0]);
+                    res.Value.Words[0] = (ND_UINT16)(divident / src.Value.Words[0]);
+                    res.Value.Words[1] = (ND_UINT16)(divident % src.Value.Words[0]);
                 }
                 else
                 {
-                    if (!ShemuCheckIdiv((int64_t)(int32_t)divident, (int64_t)(int16_t)src.Value.Words[0], 2))
+                    if (!ShemuCheckIdiv((ND_SINT64)(ND_SINT32)divident, (ND_SINT64)(ND_SINT16)src.Value.Words[0], 2))
                     {
-                        stop = true;
+                        stop = ND_TRUE;
                         break;
                     }
 
-                    res.Value.Words[0] = (int16_t)((int32_t)divident / (int16_t)src.Value.Words[0]);
-                    res.Value.Words[1] = (int16_t)((int32_t)divident % (int16_t)src.Value.Words[0]);
+                    res.Value.Words[0] = (ND_SINT16)((ND_SINT32)divident / (ND_SINT16)src.Value.Words[0]);
+                    res.Value.Words[1] = (ND_SINT16)((ND_SINT32)divident % (ND_SINT16)src.Value.Words[0]);
                 }
 
-                *((uint16_t*)&Context->Registers.RegRdx) = res.Value.Words[1];
-                *((uint16_t*)&Context->Registers.RegRax) = res.Value.Words[0];
+                *((ND_UINT16*)&Context->Registers.RegRdx) = res.Value.Words[1];
+                *((ND_UINT16*)&Context->Registers.RegRax) = res.Value.Words[0];
             }
             else if (src.Size == 4)
             {
-                uint64_t divident;
+                ND_UINT64 divident;
 
-                divident = ((uint64_t)(uint32_t)Context->Registers.RegRdx << 32) | 
-                            (uint64_t)(uint32_t)Context->Registers.RegRax;
+                divident = ((ND_UINT64)(ND_UINT32)Context->Registers.RegRdx << 32) | 
+                            (ND_UINT64)(ND_UINT32)Context->Registers.RegRax;
 
                 if (ND_INS_DIV == Context->Instruction.Instruction)
                 {
                     if (!ShemuCheckDiv(divident, src.Value.Dwords[0], 4))
                     {
-                        stop = true;
+                        stop = ND_TRUE;
                         break;
                     }
 
-                    res.Value.Dwords[0] = (uint32_t)(divident / src.Value.Dwords[0]);
-                    res.Value.Dwords[1] = (uint32_t)(divident % src.Value.Dwords[0]);
+                    res.Value.Dwords[0] = (ND_UINT32)(divident / src.Value.Dwords[0]);
+                    res.Value.Dwords[1] = (ND_UINT32)(divident % src.Value.Dwords[0]);
                 }
                 else
                 {
-                    if (!ShemuCheckIdiv((int64_t)divident, (int64_t)(int32_t)src.Value.Dwords[0], 4))
+                    if (!ShemuCheckIdiv((ND_SINT64)divident, (ND_SINT64)(ND_SINT32)src.Value.Dwords[0], 4))
                     {
-                        stop = true;
+                        stop = ND_TRUE;
                         break;
                     }
 
-                    res.Value.Dwords[0] = (int32_t)((int64_t)divident / (int32_t)src.Value.Dwords[0]);
-                    res.Value.Dwords[1] = (int32_t)((int64_t)divident % (int32_t)src.Value.Dwords[0]);
+                    res.Value.Dwords[0] = (ND_SINT32)((ND_SINT64)divident / (ND_SINT32)src.Value.Dwords[0]);
+                    res.Value.Dwords[1] = (ND_SINT32)((ND_SINT64)divident % (ND_SINT32)src.Value.Dwords[0]);
                 }
 
                 Context->Registers.RegRdx = res.Value.Dwords[1];
@@ -2814,29 +2818,29 @@ check_far_branch:
 
         case ND_INS_SAHF:
             {
-                uint8_t ah = (Context->Registers.RegRax >> 8) & 0xFF;
+                ND_UINT8 ah = (Context->Registers.RegRax >> 8) & 0xFF;
                 // Handle reserved bits.
                 ah |= (1 << 1);
                 ah &= ~((1 << 3) | (1 << 5));
-                ((uint8_t *)&Context->Registers.RegFlags)[0] = ah;
+                ((ND_UINT8 *)&Context->Registers.RegFlags)[0] = ah;
             }
             break;
 
         case ND_INS_LAHF:
             {
-                uint8_t ah = ((uint8_t *)&Context->Registers.RegFlags)[0];
-                ((uint8_t *)&Context->Registers.RegRax)[1] = ah;
+                ND_UINT8 ah = ((ND_UINT8 *)&Context->Registers.RegFlags)[0];
+                ((ND_UINT8 *)&Context->Registers.RegRax)[1] = ah;
             }
             break;
 
         case ND_INS_SALC:
             if (GET_FLAG(Context, NDR_RFLAG_CF))
             {
-                *((uint8_t *)&Context->Registers.RegRax) = 0xFF;
+                *((ND_UINT8 *)&Context->Registers.RegRax) = 0xFF;
             }
             else
             {
-                *((uint8_t *)&Context->Registers.RegRax) = 0x0;
+                *((ND_UINT8 *)&Context->Registers.RegRax) = 0x0;
             }
             break;
 
@@ -3021,13 +3025,13 @@ check_far_branch:
                 Context->Flags |= SHEMU_FLAG_SYSCALL;
             }
 
-            stop = true;
+            stop = ND_TRUE;
             break;
 
         case ND_INS_SYSCALL:
         case ND_INS_SYSENTER:
             Context->Flags |= SHEMU_FLAG_SYSCALL;
-            stop = true;
+            stop = ND_TRUE;
             break;
 
         // Some basic privileged instructions supported, specific to kernel-mode shellcodes.
@@ -3038,7 +3042,7 @@ check_far_branch:
             }
 
             Context->Flags |= SHEMU_FLAG_SWAPGS;
-            stop = true;
+            stop = ND_TRUE;
             break;
 
         case ND_INS_RDMSR:
@@ -3053,7 +3057,7 @@ check_far_branch:
                 Context->Flags |= SHEMU_FLAG_SYSCALL_MSR_READ;
             }
 
-            stop = true;
+            stop = ND_TRUE;
             break;
 
         case ND_INS_WRMSR:
@@ -3068,7 +3072,7 @@ check_far_branch:
                 Context->Flags |= SHEMU_FLAG_SYSCALL_MSR_WRITE;
             }
 
-            stop = true;
+            stop = ND_TRUE;
             break;
 
         case ND_INS_SIDT:
@@ -3079,9 +3083,10 @@ check_far_branch:
                 Context->Flags |= SHEMU_FLAG_SIDT;
             }
 
-            stop = true;
+            stop = ND_TRUE;
             break;
 
+#if defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
         case ND_INS_AESIMC:
         case ND_INS_AESDEC:
         case ND_INS_AESDECLAST:
@@ -3091,7 +3096,7 @@ check_far_branch:
             // Make sure AES support is present, and we can emulate AES decryption using AES instructions.
             if (0 == (Context->Options & SHEMU_OPT_SUPPORT_AES))
             {
-                stop = true;
+                stop = ND_TRUE;
                 break;
             }
 
@@ -3119,6 +3124,7 @@ check_far_branch:
             SET_OP(Context, 0, &dst);
             break;
         }
+#endif
 
         case ND_INS_RDTSC:
             src.Size = 4;

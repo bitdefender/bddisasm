@@ -10,12 +10,12 @@
 char *
 nd_strcat_s(
     char *dst,
-    size_t dst_size,
+    ND_SIZET dst_size,
     const char *src
     )
 {
     char *p;
-    size_t available;
+    ND_SIZET available;
 
     p = dst;
     available = dst_size;
@@ -28,7 +28,7 @@ nd_strcat_s(
     if (available == 0)
     {
         nd_memzero(dst, dst_size);
-        return NULL;
+        return (char *)ND_NULL;
     }
 
     while ((*p++ = *src++) != 0 && --available > 0);
@@ -36,7 +36,7 @@ nd_strcat_s(
     if (available == 0)
     {
         nd_memzero(dst, dst_size);
-        return NULL;
+        return (char *)ND_NULL;
     }
 
     return dst;
@@ -45,18 +45,18 @@ nd_strcat_s(
 #if !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_VSNPRINTF)
 #include <stdio.h>
 
-int nd_vsnprintf_s(char *buffer, size_t sizeOfBuffer, size_t count, const char *format, va_list argptr)
+int nd_vsnprintf_s(char *buffer, ND_SIZET sizeOfBuffer, ND_SIZET count, const char *format, va_list argptr)
 {
     UNREFERENCED_PARAMETER(count);
     return vsnprintf(buffer, sizeOfBuffer, format, argptr);
 }
 #endif // !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_VSNPRINTF)
 
-#if !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_MEMSET)
+#if defined(BDDISASM_HAS_MEMSET)
 #include <string.h>
 
-void *nd_memset(void *s, int c, size_t n)
+void *nd_memset(void *s, int c, ND_SIZET n)
 {
     return memset(s, c, n);
 }
-#endif // !defined(BDDISASM_NO_FORMAT) && defined(BDDISASM_HAS_MEMSET)
+#endif // defined(BDDISASM_HAS_MEMSET)
