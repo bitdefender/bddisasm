@@ -12,7 +12,7 @@ documentation = "https://docs.rs/bddisasm-sys"
 description = """
 Bindings to bddisasm instruction decoder library
 """
-categories = ["external-ffi-bindings", "hardware-support", "no_std"]
+categories = ["external-ffi-bindings", "hardware-support", "no-std"]
 keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64"]
 
 [lib]
