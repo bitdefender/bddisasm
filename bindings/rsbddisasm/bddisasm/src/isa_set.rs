@@ -4,10 +4,8 @@
  */
 //! Instruction sets.
 
-extern crate bddisasm_sys as ffi;
-
-use super::decode_error;
-use std::convert::TryFrom;
+use super::decode_error::DecodeError;
+use core::convert::TryFrom;
 
 /// ISA set.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -133,13 +131,11 @@ pub enum IsaSet {
 
 #[doc(hidden)]
 impl TryFrom<ffi::ND_INS_SET> for IsaSet {
-    type Error = decode_error::DecodeError;
+    type Error = DecodeError;
 
     fn try_from(value: ffi::ND_INS_SET) -> Result<Self, Self::Error> {
         match value {
-            ffi::_ND_INS_SET::ND_SET_INVALID => {
-                Err(decode_error::DecodeError::UnknownInstruction(value as u32))
-            }
+            ffi::_ND_INS_SET::ND_SET_INVALID => Err(DecodeError::InternalError(value as u64)),
             ffi::_ND_INS_SET::ND_SET_3DNOW => Ok(IsaSet::I3dnow),
             ffi::_ND_INS_SET::ND_SET_ADX => Ok(IsaSet::Adx),
             ffi::_ND_INS_SET::ND_SET_AES => Ok(IsaSet::Aes),

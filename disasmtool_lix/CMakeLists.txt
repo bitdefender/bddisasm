@@ -12,7 +12,7 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release")
 endif ()
 
-add_executable(disasmtool disasmtool.cpp dumpers.cpp)
+add_executable(disasmtool disasmtool.cpp dumpers.cpp rapidjson.cpp)
 
 target_compile_options(
     disasmtool
@@ -43,15 +43,11 @@ if (NOT TARGET bddisasm)
     find_package(bddisasm REQUIRED)
 endif ()
 
-find_package(RapidJSON QUIET)
+find_package(RapidJSON QUIET REQUIRED)
 
 target_link_libraries(disasmtool PRIVATE bddisasm::bddisasm bddisasm::bdshemu)
-if (RapidJSON_FOUND)
-    # :( https://github.com/satishbabariya/modern-cmake#good-boys-export-their-targets
-    target_include_directories(disasmtool PRIVATE ${RapidJSON_INCLUDE_DIRS})
-    target_sources(disasmtool PRIVATE rapidjson.cpp)
-    target_compile_definitions(disasmtool PRIVATE HAS_RAPIDJSON)
-endif ()
+# :( https://github.com/satishbabariya/modern-cmake#good-boys-export-their-targets
+target_include_directories(disasmtool PRIVATE ${RapidJSON_INCLUDE_DIRS})
 
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     include(CheckIPOSupported)

@@ -4,7 +4,7 @@
  */
 //! Offers information about how an instructions accesses the FPU status registers.
 
-extern crate bddisasm_sys as ffi;
+use super::decode_error::DecodeError;
 
 /// The mode in which a FPU status flag is accessed.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -19,15 +19,16 @@ pub enum FpuFlagsAccess {
     Undefined,
 }
 
-impl From<u8> for FpuFlagsAccess {
-    fn from(value: u8) -> FpuFlagsAccess {
-        let value = value as u32;
+#[doc(hidden)]
+impl FpuFlagsAccess {
+    pub(crate) fn from_raw(value: u8) -> Result<Self, DecodeError> {
+        let value = u32::from(value);
         match value {
-            ffi::ND_FPU_FLAG_SET_0 => FpuFlagsAccess::Cleared,
-            ffi::ND_FPU_FLAG_SET_1 => FpuFlagsAccess::Set,
-            ffi::ND_FPU_FLAG_MODIFIED => FpuFlagsAccess::Modified,
-            ffi::ND_FPU_FLAG_UNDEFINED => FpuFlagsAccess::Undefined,
-            _ => panic!("Unexpected FPU flag access: {}", value),
+            ffi::ND_FPU_FLAG_SET_0 => Ok(FpuFlagsAccess::Cleared),
+            ffi::ND_FPU_FLAG_SET_1 => Ok(FpuFlagsAccess::Set),
+            ffi::ND_FPU_FLAG_MODIFIED => Ok(FpuFlagsAccess::Modified),
+            ffi::ND_FPU_FLAG_UNDEFINED => Ok(FpuFlagsAccess::Undefined),
+            _ => Err(DecodeError::InternalError(value.into())),
         }
     }
 }
@@ -46,13 +47,13 @@ pub struct FpuFlags {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_FPU_FLAGS> for FpuFlags {
-    fn from(flags: ffi::ND_FPU_FLAGS) -> FpuFlags {
-        FpuFlags {
-            c0: FpuFlagsAccess::from(flags.C0()),
-            c1: FpuFlagsAccess::from(flags.C1()),
-            c2: FpuFlagsAccess::from(flags.C2()),
-            c3: FpuFlagsAccess::from(flags.C3()),
-        }
+impl FpuFlags {
+    pub(crate) fn from_raw(flags: ffi::ND_FPU_FLAGS) -> Result<Self, DecodeError> {
+        Ok(Self {
+            c0: FpuFlagsAccess::from_raw(flags.C0())?,
+            c1: FpuFlagsAccess::from_raw(flags.C1())?,
+            c2: FpuFlagsAccess::from_raw(flags.C2())?,
+            c3: FpuFlagsAccess::from_raw(flags.C3())?,
+        })
     }
 }

@@ -496,14 +496,14 @@ void shemu_log(PCHAR msg)
     printf("%s", msg);
 }
 
-bool shemu_access_mem(void * /* Ctx */, uint64_t /* Gla */, size_t Size, uint8_t *Buffer, bool Store)
+ND_BOOL shemu_access_mem(void * /* Ctx */, uint64_t /* Gla */, size_t Size, uint8_t *Buffer, ND_BOOL Store)
 {
     if (!Store)
     {
         memset(Buffer, 0, Size);
     }
 
-    return true;
+    return ND_TRUE;
 }
 
 void shemu(options &opts)

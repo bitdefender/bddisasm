@@ -11,6 +11,7 @@
 //! [bindgen](https://crates.io/crates/bindgen) is used to generate the bindings at build time. Because of this, users
 //! need to have `clang` installed.
 //! Check the [bindgen documentation](https://rust-lang.github.io/rust-bindgen/requirements.html) for more information.
+#![cfg_attr(not(test), no_std)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
 #![allow(non_upper_case_globals)]

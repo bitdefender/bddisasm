@@ -7,10 +7,10 @@
 //! # Examples
 //!
 //! ```
-//! # use std::error::Error;
+//! # use bddisasm::DecodeError;
 //! #
 //! # fn test() -> Option<()> {
-//! use bddisasm::decoded_instruction::{DecodedInstruction, DecodeMode};
+//! use bddisasm::{DecodedInstruction, DecodeMode};
 //!
 //! // `ENCLS`
 //! let ins = DecodedInstruction::decode(&[0x0f, 0x01, 0xcf], DecodeMode::Bits64).ok()?;
@@ -25,9 +25,7 @@
 //! # Some(())
 //! # }
 
-extern crate bddisasm_sys as ffi;
-
-use std::fmt;
+use core::fmt;
 
 /// Describes the CPUID leaf, sub-leaf, register & bit that indicate whether an instruction is supported or not.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]

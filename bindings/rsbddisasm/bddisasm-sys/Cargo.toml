@@ -1,6 +1,6 @@
 [package]
 name = "bddisasm-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Cristi Anichitei <ianichitei@bitdefender.com>"]
 edition = "2018"
 links = "bddisasm"
@@ -12,7 +12,7 @@ documentation = "https://docs.rs/bddisasm-sys"
 description = """
 Bindings to bddisasm instruction decoder library
 """
-categories = ["external-ffi-bindings", "hardware-support"]
+categories = ["external-ffi-bindings", "hardware-support", "no_std"]
 keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64"]
 
 [lib]
@@ -20,6 +20,7 @@ name = "bddisasm_sys"
 path = "src/lib.rs"
 
 [dependencies]
+cty = "0.2.2"
 
 [build-dependencies]
 bindgen = "0.59.1"

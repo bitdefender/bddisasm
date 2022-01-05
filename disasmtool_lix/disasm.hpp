@@ -7,13 +7,8 @@
 #include <ctime>
 #include <cstdint>
 
-#ifdef HAS_RAPIDJSON
 #include <rapidjson/stringbuffer.h>
 using StringBuffer = rapidjson::StringBuffer;
-#else
-#include "external/json.hpp"
-using json = nlohmann::json;
-#endif
 
 
 extern "C"

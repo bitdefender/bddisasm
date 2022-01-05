@@ -4,8 +4,6 @@
  */
 //! Describes the bits in the FLAGS register.
 
-extern crate bddisasm_sys as ffi;
-
 /// Carry flag.
 pub const CF: u32 = ffi::NDR_RFLAG_CF;
 /// Parity flag.

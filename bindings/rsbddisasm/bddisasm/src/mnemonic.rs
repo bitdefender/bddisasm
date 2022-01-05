@@ -4,10 +4,8 @@
  */
 //! Mnemonics.
 
-extern crate bddisasm_sys as ffi;
-
-use super::decode_error;
-use std::convert::TryFrom;
+use super::decode_error::DecodeError;
+use core::convert::TryFrom;
 
 /// Uniquely identifies an instruction.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -1601,13 +1599,11 @@ pub enum Mnemonic {
 
 #[doc(hidden)]
 impl TryFrom<ffi::ND_INS_CLASS> for Mnemonic {
-    type Error = decode_error::DecodeError;
+    type Error = DecodeError;
 
     fn try_from(value: ffi::ND_INS_CLASS) -> Result<Self, Self::Error> {
         match value {
-            ffi::_ND_INS_CLASS::ND_INS_INVALID => {
-                Err(decode_error::DecodeError::UnknownInstruction(value as u32))
-            }
+            ffi::_ND_INS_CLASS::ND_INS_INVALID => Err(DecodeError::InternalError(value as u64)),
             ffi::_ND_INS_CLASS::ND_INS_AAA => Ok(Mnemonic::Aaa),
             ffi::_ND_INS_CLASS::ND_INS_AAD => Ok(Mnemonic::Aad),
             ffi::_ND_INS_CLASS::ND_INS_AAM => Ok(Mnemonic::Aam),

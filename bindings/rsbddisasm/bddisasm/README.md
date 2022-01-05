@@ -1,11 +1,13 @@
-# bddisasm
+# bddisasm x86/x64 instruction decoder
 
-Rust bindings for the [bddisasm](https://github.com/bitdefender/bddisasm) x86/x64 decoder library, built on top
-of [bddisasm-sys](https://crates.io/crates/bddisasm-sys).
+`no_std` Rust bindings for the [bddisasm](https://github.com/bitdefender/bddisasm) x86/x64 decoder library, built
+on top of [bddisasm-sys](https://crates.io/crates/bddisasm-sys).
 
-It supports all existing x86 instruction, offering a wide range of information about each one, including:
+It supports all existing 16-bit, 32-bit and 64-bit instructions, offering a wide range of information about each one,
+including:
 
-- operands (implicit and explicit)
+- implicit operands
+- explicit operands
 - access mode for each operand
 - CPUID feature flags
 - CPU modes in which an instruction is valid
@@ -23,8 +25,11 @@ bddisasm = "0.1.0"
 
 ### Decoding one instruction
 
-```rust
-use bddisasm::decoded_instruction::{DecodedInstruction, DecodeMode, Mnemonic};
+Use [`DecodedInstruction::decode`](https://docs.rs/bddisasm/latest/bddisasm/decoded_instruction/struct.DecodedInstruction.html#method.decode)
+to decode an instruction from a chunk of code.
+
+```Rust
+use bddisasm::{DecodedInstruction, DecodeMode, Mnemonic};
 
 let code = vec![0x31, 0xc0];
 match DecodedInstruction::decode(&code, DecodeMode::Bits32) {
@@ -38,8 +43,11 @@ match DecodedInstruction::decode(&code, DecodeMode::Bits32) {
 
 ### Decoding multiple instructions
 
-```rust
-use bddisasm::decoder::{Decoder, DecodeMode};
+Use [`Decoder`](https://docs.rs/bddisasm/latest/bddisasm/decoder/struct.Decoder.html) to decode multiple instructions
+from a chunk of code.
+
+```Rust
+use bddisasm::{Decoder, DecodeMode};
 
 let code = [
     // ENCLS
@@ -70,21 +78,58 @@ the provided input buffer is too small
 WRMSR
 ```
 
+Use [`Decoder::decode_next_with_info`](https://docs.rs/bddisasm/latest/bddisasm/decoder/struct.Decoder.html#method.decode_next_with_info)
+to get information about the offset inside the code chunk at which an instruction was decoded from.
+
+```Rust
+use bddisasm::{Decoder, DecodeMode};
+
+let code = [
+    // ENCLS
+    0x0f, 0x01, 0xcf,
+    // MOV       rax, qword ptr [rbx+rcx*4+0x1234]
+    0x48, 0x8b, 0x84, 0x8b, 0x34, 0x12, 0x00, 0x00,
+    // Not a valid instruction
+    0x0f,
+    // WRMSR
+    0x0f, 0x30,
+];
+let mut decoder = Decoder::new(&code, DecodeMode::Bits64, 0x1234);
+
+
+// Keep decoding until there's nothing left to decode
+while let Some((result, offset, _)) = decoder.decode_next_with_info() {
+    match result {
+        Ok(ins) => println!("{:#x} {}", offset, ins),
+        Err(e) => println!("Error: `{}` at offset {:#x}", e, offset),
+    }
+}
+```
+
+This will print:
+
+```text
+0x0 ENCLS
+0x3 MOV       rax, qword ptr [rbx+rcx*4+0x1234]
+Error `the provided input buffer is too small` at offset 0xb
+0xc WRMSR
+```
+
 ### Working with instruction operands
 
-Rich informaion is offered for each type of operand. Bellow is a minimal example that looks at a memory operand.
+Instruction operands can be analyzed using the [operand](https://docs.rs/bddisasm/latest/bddisasm/operand/index.html)
+module. Rich informaion is offered for each type of operand. Bellow is a minimal example that looks at a memory operand.
 
-```rust
-# use bddisasm::decode_error::DecodeError;
-# fn test() -> Result<(), DecodeError> {
-use bddisasm::decoded_instruction::{DecodedInstruction, DecodeMode};
-use bddisasm::operand::OpInfo;
+```Rust
+use bddisasm::{DecodedInstruction, DecodeMode, OpInfo};
 
 // ` MOV       rax, qword ptr [rcx+r15*2]`
 let code = b"\x4a\x8b\x04\x79";
 let ins = DecodedInstruction::decode(code, DecodeMode::Bits64).unwrap();
+
 // Get the operands
 let operands = ins.operands();
+
 // Get the second operand which is the source (`[rcx+r15*2]`)
 let src = operands[1];
 
@@ -117,8 +162,6 @@ match src.info {
     },
     _ => unreachable!(),
 }
-# Ok(())
-# }
 ```
 
 Will print:
@@ -131,6 +174,11 @@ Scale: 2
 No displacement
 ```
 
-## Requirements
+## Accessing the raw bindings
 
-Because [bddisasm-sys](https://crates.io/crates/bddisasm-sys) uses [bindgen](https://crates.io/crates/bindgen) to generate the bindings at build time, users need to have `clang` installed. Check the [bindgen documentation](https://rust-lang.github.io/rust-bindgen/requirements.html) for more information.
+The raw `bddisasm_sys` bindings are available via the `ffi` re-export.
+
+## Feature Flags
+
+- `std` - adds a `std` dependency - the only visible difference when doing this is that [`DecodeError`] implements
+the `Error` trait

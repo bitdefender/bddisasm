@@ -7,36 +7,20 @@
 //!
 //! # Notes
 //!
-//! All error codes that can be returned by `bddisasm-sys` are encapsulated in the [DecodeError](DecodeError) enum.
+//! All error codes that can be returned by `bddisasm-sys` are encapsulated in the [`DecodeError`](DecodeError) enum.
 //! However, some of these are unlikely to be encountered when using this crate (for example,
-//! [BufferOverflow](DecodeError::BufferOverflow)) which indicates that a buffer passed to the `bddisasm` C library is
+//! [`BufferOverflow`](DecodeError::BufferOverflow)) which indicates that a buffer passed to the `bddisasm` C library is
 //! not large enough.
-//!
-//! Other errors, such as [UnknownStatus](DecodeError::UnknownStatus) or
-//! [UnknownInstruction](DecodeError::UnknownInstruction) are used to indicate that this crate is out of sync with
-//! `bddisasm-sys`, which also should never happen.
 
-extern crate bddisasm_sys as ffi;
-
-use std::error::Error;
-use std::fmt;
+use core::fmt;
 
 /// Holds all the possible errors that can be encountered by the decoder.
+///
+/// # Notes
+///
+/// If the `std` feature is disabled, [`DecodeError`] does not implement the `Error` trait.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub enum DecodeError {
-    /// The underlying bddisasm status is not known. The inner value holds the status as it was returned by bddisasm.
-    ///
-    /// This usually means that this library is out of sync with bddisasm-sys and is not aware that a new error status
-    /// was added.
-    UnknownStatus(u32),
-
-    /// The instruction class returned by bddisasm is not known. The inner value holds the instruction class as it was
-    /// returned by bddisasm.
-    ///
-    /// This usually means that this library is out of sync with bddisasm-sys and is not aware that a new instruction
-    /// class was added.
-    UnknownInstruction(u32),
-
     /// The provided input buffer is too small and does not contain a valid instruction.
     BufferTooSmall,
 
@@ -134,16 +118,12 @@ pub enum DecodeError {
     BufferOverflow,
 
     /// Internal library error.
-    InternalError,
+    InternalError(u64),
 }
 
 impl fmt::Display for DecodeError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
-            DecodeError::UnknownStatus(value) => write!(f, "unknown status: {:#x}", value),
-            DecodeError::UnknownInstruction(value) => {
-                write!(f, "unknown instruction: {:#x}", value)
-            }
             DecodeError::BufferTooSmall => write!(f, "the provided input buffer is too small"),
             DecodeError::InvalidEncoding => write!(f, "invalid encoding/instruction"),
             DecodeError::InstructionTooLong => {
@@ -156,7 +136,9 @@ impl fmt::Display for DecodeError {
             DecodeError::XopWithPrefix => write!(f, "XOP is present, but also a legacy prefix"),
             DecodeError::VexWithPrefix => write!(f, "VEX is present, but also a legacy prefix"),
             DecodeError::EvexWithPrefix => write!(f, "EVEX is present, but also a legacy prefix"),
-            DecodeError::InvalidEncodingInMode => write!(f, "invalid encoding/instruction"),
+            DecodeError::InvalidEncodingInMode => {
+                write!(f, "invalid encoding/instruction in the given mode")
+            }
             DecodeError::BadLockPrefix => write!(f, "invalid usage of LOCK"),
             DecodeError::CsLoad => write!(f, "an attempt to load the CS register"),
             DecodeError::Prefix66NotAccepted => write!(f, "0x66 prefix is not accepted"),
@@ -199,12 +181,13 @@ impl fmt::Display for DecodeError {
             DecodeError::BufferOverflow => {
                 write!(f, "not enough space is available to format instruction")
             }
-            DecodeError::InternalError => write!(f, "internal error"),
+            DecodeError::InternalError(e) => write!(f, "internal error: {}", e),
         }
     }
 }
 
-impl Error for DecodeError {}
+#[cfg(feature = "std")]
+impl std::error::Error for DecodeError {}
 
 pub(crate) fn status_to_error(status: ffi::NDSTATUS) -> Result<(), DecodeError> {
     if status == ffi::ND_STATUS_SUCCESS || status == ffi::ND_STATUS_HINT_OPERAND_NOT_USED {
@@ -249,8 +232,8 @@ pub(crate) fn status_to_error(status: ffi::NDSTATUS) -> Result<(), DecodeError> 
             ffi::ND_STATUS_INVALID_PARAMETER => Err(DecodeError::InvalidParameter),
             ffi::ND_STATUS_INVALID_INSTRUX => Err(DecodeError::InvalidInstrux),
             ffi::ND_STATUS_BUFFER_OVERFLOW => Err(DecodeError::BufferOverflow),
-            ffi::ND_STATUS_INTERNAL_ERROR => Err(DecodeError::InternalError),
-            _ => Err(DecodeError::UnknownStatus(status)),
+            ffi::ND_STATUS_INTERNAL_ERROR => Err(DecodeError::InternalError(0)),
+            _ => panic!("Unexpected status: {:#x}", status),
         }
     }
 }

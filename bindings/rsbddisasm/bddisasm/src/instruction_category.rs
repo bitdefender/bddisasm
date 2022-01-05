@@ -4,10 +4,8 @@
  */
 //! Instruction categories.
 
-extern crate bddisasm_sys as ffi;
-
-use super::decode_error;
-use std::convert::TryFrom;
+use super::decode_error::DecodeError;
+use core::convert::TryFrom;
 
 /// Instruction category.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -120,13 +118,11 @@ pub enum Category {
 
 #[doc(hidden)]
 impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
-    type Error = decode_error::DecodeError;
+    type Error = DecodeError;
 
     fn try_from(value: ffi::ND_INS_CATEGORY) -> Result<Self, Self::Error> {
         match value {
-            ffi::_ND_INS_TYPE::ND_CAT_INVALID => {
-                Err(decode_error::DecodeError::UnknownInstruction(value as u32))
-            }
+            ffi::_ND_INS_TYPE::ND_CAT_INVALID => Err(DecodeError::InternalError(value as u64)),
             ffi::_ND_INS_TYPE::ND_CAT_3DNOW => Ok(Category::I3dnow),
             ffi::_ND_INS_TYPE::ND_CAT_AES => Ok(Category::Aes),
             ffi::_ND_INS_TYPE::ND_CAT_AESKL => Ok(Category::Aeskl),

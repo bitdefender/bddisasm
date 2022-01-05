@@ -4,12 +4,14 @@
  */
 //! bddisasm x86/x64 instruction decoder
 //!
-//! Rust bindings for the [bddisasm](https://github.com/bitdefender/bddisasm) x86/x64 decoder library, built on top
-//! of [bddisasm-sys](https://crates.io/crates/bddisasm-sys).
+//! `no_std` Rust bindings for the [bddisasm](https://github.com/bitdefender/bddisasm) x86/x64 decoder library, built
+//! on top of [bddisasm-sys](https://crates.io/crates/bddisasm-sys).
 //!
-//! It supports all existing x86 instruction, offering a wide range of information about each one, including:
+//! It supports all existing 16-bit, 32-bit and 64-bit instruction, offering a wide range of information about each one,
+//! including:
 //!
-//! - operands (implicit and explicit)
+//! - implicit operands
+//! - explicit operands
 //! - access mode for each operand
 //! - CPUID feature flags
 //! - CPU modes in which an instruction is valid
@@ -27,11 +29,11 @@
 //!
 //! ## Decoding one instruction
 //!
-//! Use [DecodedInstruction::decode](crate::decoded_instruction::DecodedInstruction::decode) to decode an instruction
+//! Use [`DecodedInstruction::decode`](crate::decoded_instruction::DecodedInstruction::decode) to decode an instruction
 //! from a chunk of code.
 //!
 //! ```
-//! use bddisasm::decoded_instruction::{DecodedInstruction, DecodeMode, Mnemonic};
+//! use bddisasm::{DecodedInstruction, DecodeMode, Mnemonic};
 //!
 //! let code = vec![0x31, 0xc0];
 //! match DecodedInstruction::decode(&code, DecodeMode::Bits32) {
@@ -45,10 +47,10 @@
 //!
 //! ## Decoding multiple instructions
 //!
-//! Use [Decoder](crate::decoder::Decoder) to decode multiple instructions from a chunk of code.
+//! Use [`Decoder`](crate::decoder::Decoder) to decode multiple instructions from a chunk of code.
 //!
 //! ```
-//! use bddisasm::decoder::{Decoder, DecodeMode};
+//! use bddisasm::{Decoder, DecodeMode};
 //!
 //! let code = [
 //!     // ENCLS
@@ -79,11 +81,11 @@
 //! WRMSR
 //! ```
 //!
-//! Use [Decoder::decode_next_with_info](crate::decoder::Decoder::decode_next_with_info) to get information about the
+//! Use [`Decoder::decode_next_with_info`](crate::decoder::Decoder::decode_next_with_info) to get information about the
 //! offset inside the code chunk at which an instruction was decoded from.
 //!
 //! ```
-//! use bddisasm::decoder::{Decoder, DecodeMode};
+//! use bddisasm::{Decoder, DecodeMode};
 //!
 //! let code = [
 //!     // ENCLS
@@ -122,10 +124,9 @@
 //! each type of operand. Bellow is a minimal example that looks at a memory operand.
 //!
 //! ```
-//! # use bddisasm::decode_error::DecodeError;
+//! # use bddisasm::DecodeError;
 //! # fn test() -> Result<(), DecodeError> {
-//! use bddisasm::decoded_instruction::{DecodedInstruction, DecodeMode};
-//! use bddisasm::operand::OpInfo;
+//! use bddisasm::{DecodedInstruction, DecodeMode, OpInfo};
 //!
 //! // ` MOV       rax, qword ptr [rcx+r15*2]`
 //! let code = b"\x4a\x8b\x04\x79";
@@ -177,6 +178,21 @@
 //! Scale: 2
 //! No displacement
 //! ```
+//!
+//! ## Accessing the raw bindings
+//!
+//! The raw `bddisasm_sys` bindings are available via the `ffi` re-export.
+//!
+//! # Feature Flags
+//!
+//! - `std` - adds a `std` dependency - the only visible difference when doing this is that [`DecodeError`] implements
+//! the `Error` trait
+//!
+
+#![cfg_attr(all(not(test), not(feature = "std")), no_std)]
+
+pub extern crate bddisasm_sys as ffi;
+
 pub mod cpu_modes;
 pub mod cpuid;
 pub mod decode_error;
@@ -189,3 +205,13 @@ pub mod mnemonic;
 pub mod operand;
 pub mod rflags;
 pub mod tuple;
+
+pub use crate::decode_error::DecodeError;
+pub use crate::decoded_instruction::{DecodeMode, DecodeResult, DecodedInstruction, OperandSize};
+pub use crate::decoder::Decoder;
+pub use crate::instruction_category::Category;
+pub use crate::isa_set::IsaSet;
+pub use crate::mnemonic::Mnemonic;
+pub use crate::operand::{
+    OpAddr, OpInfo, OpMem, OpReg, OpRegType, OpSize, Operand, OperandsLookup,
+};

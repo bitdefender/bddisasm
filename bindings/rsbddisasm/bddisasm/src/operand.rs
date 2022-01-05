@@ -4,9 +4,10 @@
  */
 //! Operand types and details.
 
-extern crate bddisasm_sys as ffi;
-
-use std::fmt;
+use super::decode_error::{status_to_error, DecodeError};
+use core::fmt;
+use core::marker::PhantomData;
+use core::mem::MaybeUninit;
 
 /// Describes an address operand.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -21,17 +22,14 @@ pub struct OpAddr {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPDESC_ADDRESS> for OpAddr {
-    fn from(op: ffi::ND_OPDESC_ADDRESS) -> OpAddr {
-        OpAddr {
-            base_seg: op.BaseSeg,
-            offset: op.Offset,
+impl OpAddr {
+    pub(crate) fn from_raw(raw: ffi::ND_OPDESC_ADDRESS) -> Self {
+        Self {
+            base_seg: raw.BaseSeg,
+            offset: raw.Offset,
         }
     }
-}
 
-#[doc(hidden)]
-impl OpAddr {
     pub(crate) fn new(base_seg: u16, offset: u64) -> Self {
         Self { base_seg, offset }
     }
@@ -105,31 +103,33 @@ pub enum OpRegType {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPDESC_REGISTER> for OpRegType {
-    fn from(op: ffi::ND_OPDESC_REGISTER) -> OpRegType {
-        match op.Type {
-            ffi::_ND_REG_TYPE::ND_REG_NOT_PRESENT => panic!("Unexpected ND_REG_NOT_PRESENT"),
-            ffi::_ND_REG_TYPE::ND_REG_GPR => OpRegType::Gpr,
-            ffi::_ND_REG_TYPE::ND_REG_SEG => OpRegType::Seg,
-            ffi::_ND_REG_TYPE::ND_REG_FPU => OpRegType::Fpu,
-            ffi::_ND_REG_TYPE::ND_REG_MMX => OpRegType::Mmx,
-            ffi::_ND_REG_TYPE::ND_REG_SSE => OpRegType::Sse,
-            ffi::_ND_REG_TYPE::ND_REG_CR => OpRegType::Cr,
-            ffi::_ND_REG_TYPE::ND_REG_DR => OpRegType::Dr,
-            ffi::_ND_REG_TYPE::ND_REG_TR => OpRegType::Tr,
-            ffi::_ND_REG_TYPE::ND_REG_BND => OpRegType::Bnd,
-            ffi::_ND_REG_TYPE::ND_REG_MSK => OpRegType::Msk,
-            ffi::_ND_REG_TYPE::ND_REG_TILE => OpRegType::Tile,
-            ffi::_ND_REG_TYPE::ND_REG_MSR => OpRegType::Msr,
-            ffi::_ND_REG_TYPE::ND_REG_XCR => OpRegType::Xcr,
-            ffi::_ND_REG_TYPE::ND_REG_SYS => OpRegType::Sys,
-            ffi::_ND_REG_TYPE::ND_REG_X87 => OpRegType::X87,
-            ffi::_ND_REG_TYPE::ND_REG_MXCSR => OpRegType::Mxcsr,
-            ffi::_ND_REG_TYPE::ND_REG_PKRU => OpRegType::Pkru,
-            ffi::_ND_REG_TYPE::ND_REG_SSP => OpRegType::Ssp,
-            ffi::_ND_REG_TYPE::ND_REG_FLG => OpRegType::Flg,
-            ffi::_ND_REG_TYPE::ND_REG_RIP => OpRegType::Rip,
-            ffi::_ND_REG_TYPE::ND_REG_UIF => OpRegType::Uif,
+impl OpRegType {
+    pub(crate) fn from_raw(op_type: ffi::ND_REG_TYPE) -> Result<Self, DecodeError> {
+        match op_type {
+            ffi::_ND_REG_TYPE::ND_REG_NOT_PRESENT => {
+                Err(DecodeError::InternalError(op_type as u64))
+            }
+            ffi::_ND_REG_TYPE::ND_REG_GPR => Ok(OpRegType::Gpr),
+            ffi::_ND_REG_TYPE::ND_REG_SEG => Ok(OpRegType::Seg),
+            ffi::_ND_REG_TYPE::ND_REG_FPU => Ok(OpRegType::Fpu),
+            ffi::_ND_REG_TYPE::ND_REG_MMX => Ok(OpRegType::Mmx),
+            ffi::_ND_REG_TYPE::ND_REG_SSE => Ok(OpRegType::Sse),
+            ffi::_ND_REG_TYPE::ND_REG_CR => Ok(OpRegType::Cr),
+            ffi::_ND_REG_TYPE::ND_REG_DR => Ok(OpRegType::Dr),
+            ffi::_ND_REG_TYPE::ND_REG_TR => Ok(OpRegType::Tr),
+            ffi::_ND_REG_TYPE::ND_REG_BND => Ok(OpRegType::Bnd),
+            ffi::_ND_REG_TYPE::ND_REG_MSK => Ok(OpRegType::Msk),
+            ffi::_ND_REG_TYPE::ND_REG_TILE => Ok(OpRegType::Tile),
+            ffi::_ND_REG_TYPE::ND_REG_MSR => Ok(OpRegType::Msr),
+            ffi::_ND_REG_TYPE::ND_REG_XCR => Ok(OpRegType::Xcr),
+            ffi::_ND_REG_TYPE::ND_REG_SYS => Ok(OpRegType::Sys),
+            ffi::_ND_REG_TYPE::ND_REG_X87 => Ok(OpRegType::X87),
+            ffi::_ND_REG_TYPE::ND_REG_MXCSR => Ok(OpRegType::Mxcsr),
+            ffi::_ND_REG_TYPE::ND_REG_PKRU => Ok(OpRegType::Pkru),
+            ffi::_ND_REG_TYPE::ND_REG_SSP => Ok(OpRegType::Ssp),
+            ffi::_ND_REG_TYPE::ND_REG_FLG => Ok(OpRegType::Flg),
+            ffi::_ND_REG_TYPE::ND_REG_RIP => Ok(OpRegType::Rip),
+            ffi::_ND_REG_TYPE::ND_REG_UIF => Ok(OpRegType::Uif),
         }
     }
 }
@@ -203,30 +203,30 @@ pub struct OpReg {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPDESC_REGISTER> for OpReg {
-    fn from(op: ffi::ND_OPDESC_REGISTER) -> OpReg {
-        let kind = OpRegType::from(op);
-        let is_high8 = op.IsHigh8();
+impl OpReg {
+    pub(crate) fn from_raw(raw: ffi::ND_OPDESC_REGISTER) -> Result<Self, DecodeError> {
+        let kind = OpRegType::from_raw(raw.Type)?;
+        let is_high8 = raw.IsHigh8() != 0;
         let index = match kind {
             OpRegType::Gpr => {
                 if is_high8 {
                     // See `ShemuGetGprValue` in `bdshemu.c`.
-                    op.Reg - 4
+                    raw.Reg - 4
                 } else {
-                    op.Reg
+                    raw.Reg
                 }
             }
-            _ => op.Reg,
+            _ => raw.Reg,
         } as usize;
 
-        OpReg {
+        Ok(Self {
             kind,
-            size: op.Size,
+            size: raw.Size,
             index,
-            count: op.Count,
+            count: raw.Count,
             is_high8,
-            is_block: op.IsBlock(),
-        }
+            is_block: raw.IsBlock() != 0,
+        })
     }
 }
 
@@ -259,34 +259,21 @@ pub enum ShadowStackAccess {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_SHSTK_ACCESS> for ShadowStackAccess {
-    fn from(acc: ffi::ND_SHSTK_ACCESS) -> ShadowStackAccess {
-        match acc {
-            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_NONE => ShadowStackAccess::None,
-            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_EXPLICIT => ShadowStackAccess::Explicit,
-            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_LD_ST => ShadowStackAccess::SspLdSt,
-            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_PUSH_POP => ShadowStackAccess::SspPushPop,
-            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_PL0_SSP => ShadowStackAccess::Pl0Ssp,
-            // NOTE: when updating this take care to also update the `From<u8>` implementation!
-            // TODO: any way of keeping these in sync automagically?
-        }
-    }
-}
-
-impl From<u8> for ShadowStackAccess {
-    fn from(acc: u8) -> ShadowStackAccess {
-        if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_NONE as u8 {
-            ShadowStackAccess::None
-        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_EXPLICIT as u8 {
-            ShadowStackAccess::Explicit
-        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_LD_ST as u8 {
-            ShadowStackAccess::SspLdSt
-        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_PUSH_POP as u8 {
-            ShadowStackAccess::SspPushPop
-        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_PL0_SSP as u8 {
-            ShadowStackAccess::Pl0Ssp
+impl ShadowStackAccess {
+    pub(crate) fn from_raw(value: u8) -> Result<Self, DecodeError> {
+        let acc = u32::from(value);
+        if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_NONE as u32 {
+            Ok(ShadowStackAccess::None)
+        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_EXPLICIT as u32 {
+            Ok(ShadowStackAccess::Explicit)
+        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_LD_ST as u32 {
+            Ok(ShadowStackAccess::SspLdSt)
+        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_PUSH_POP as u32 {
+            Ok(ShadowStackAccess::SspPushPop)
+        } else if acc == ffi::_ND_SHSTK_ACCESS::ND_SHSTK_PL0_SSP as u32 {
+            Ok(ShadowStackAccess::Pl0Ssp)
         } else {
-            panic!("Unexpected shadow stack access type: {}", acc)
+            Err(DecodeError::InternalError(value.into()))
         }
     }
 }
@@ -363,62 +350,66 @@ pub struct OpMem {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPDESC_MEMORY> for OpMem {
-    fn from(op: ffi::ND_OPDESC_MEMORY) -> OpMem {
-        let seg = if op.HasSeg() { Some(op.Seg) } else { None };
-
-        let (base, base_size) = if op.HasBase() {
-            (Some(op.Base), Some(op.BaseSize))
-        } else {
-            (None, None)
-        };
-
-        let (index, index_size, scale) = if op.HasIndex() {
-            (Some(op.Index), Some(op.IndexSize), Some(op.Scale))
-        } else {
-            (None, None, None)
-        };
-
-        let (disp, disp_size) = if op.HasDisp() {
-            (Some(op.Disp), Some(op.DispSize))
-        } else {
-            (None, None)
-        };
-
-        let comp_disp_size = if op.HasCompDisp() {
-            Some(op.CompDispSize)
+impl OpMem {
+    pub(crate) fn from_raw(raw: ffi::ND_OPDESC_MEMORY) -> Result<Self, DecodeError> {
+        let seg = if raw.HasSeg() != 0 {
+            Some(raw.Seg)
         } else {
             None
         };
 
-        let (vsib, index_size) = if op.IsVsib() {
+        let (base, base_size) = if raw.HasBase() != 0 {
+            (Some(raw.Base), Some(raw.BaseSize))
+        } else {
+            (None, None)
+        };
+
+        let (index, index_size, scale) = if raw.HasIndex() != 0 {
+            (Some(raw.Index), Some(raw.IndexSize), Some(raw.Scale))
+        } else {
+            (None, None, None)
+        };
+
+        let (disp, disp_size) = if raw.HasDisp() != 0 {
+            (Some(raw.Disp), Some(raw.DispSize))
+        } else {
+            (None, None)
+        };
+
+        let comp_disp_size = if raw.HasCompDisp() != 0 {
+            Some(raw.CompDispSize)
+        } else {
+            None
+        };
+
+        let (vsib, index_size) = if raw.IsVsib() != 0 {
             (
                 Some(Vsib {
-                    vsib_element_size: op.Vsib.ElemSize,
-                    vsib_element_count: op.Vsib.ElemCount,
+                    vsib_element_size: raw.Vsib.ElemSize,
+                    vsib_element_count: raw.Vsib.ElemCount,
                 }),
-                Some(op.Vsib.IndexSize as u32),
+                Some(raw.Vsib.IndexSize.into()),
             )
         } else {
             (None, index_size)
         };
 
-        let shadow_stack_access = if op.IsShadowStack() {
-            Some(ShadowStackAccess::from(op.ShStkType))
+        let shadow_stack_access = if raw.IsShadowStack() != 0 {
+            Some(ShadowStackAccess::from_raw(raw.ShStkType)?)
         } else {
             None
         };
 
-        OpMem {
-            has_broadcast: op.HasBroadcast(),
-            is_rip_rel: op.IsRipRel(),
-            is_stack: op.IsStack(),
-            is_string: op.IsString(),
-            is_direct: op.IsDirect(),
-            is_bitbase: op.IsBitbase(),
-            is_ag: op.IsAG(),
-            is_mib: op.IsMib(),
-            is_sib_mem: op.IsSibMem(),
+        Ok(Self {
+            has_broadcast: raw.HasBroadcast() != 0,
+            is_rip_rel: raw.IsRipRel() != 0,
+            is_stack: raw.IsStack() != 0,
+            is_string: raw.IsString() != 0,
+            is_direct: raw.IsDirect() != 0,
+            is_bitbase: raw.IsBitbase() != 0,
+            is_ag: raw.IsAG() != 0,
+            is_mib: raw.IsMib() != 0,
+            is_sib_mem: raw.IsSibMem() != 0,
             seg,
             base,
             base_size,
@@ -430,7 +421,7 @@ impl From<ffi::ND_OPDESC_MEMORY> for OpMem {
             disp_size,
             comp_disp_size,
             shadow_stack_access,
-        }
+        })
     }
 }
 
@@ -462,23 +453,120 @@ pub enum OpInfo {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPERAND> for OpInfo {
-    fn from(op: ffi::ND_OPERAND) -> OpInfo {
-        match op.Type {
-            ffi::_ND_OPERAND_TYPE::ND_OP_NOT_PRESENT => OpInfo::None,
+impl Default for OpInfo {
+    fn default() -> Self {
+        Self::None
+    }
+}
+
+impl OpInfo {
+    /// Returns the associated [OpReg](OpReg) for register operands. Returns [`None`] otherwise.
+    pub fn as_reg(&self) -> Option<&OpReg> {
+        if let OpInfo::Reg(o) = self {
+            Some(o)
+        } else {
+            None
+        }
+    }
+
+    /// Returns the associated [OpMem](OpMem) for memory operands. Returns [`None`] otherwise.
+    pub fn as_mem(&self) -> Option<&OpMem> {
+        if let OpInfo::Mem(o) = self {
+            Some(o)
+        } else {
+            None
+        }
+    }
+
+    /// Returns the associated immediate value for immediate operands. Returns [`None`] otherwise.
+    pub fn as_imm(&self) -> Option<u64> {
+        if let OpInfo::Imm(o) = self {
+            Some(*o)
+        } else {
+            None
+        }
+    }
+
+    /// Returns the associated [OpAddr](OpAddr) for absolute address operands. Returns [`None`] otherwise.
+    pub fn as_addr(&self) -> Option<&OpAddr> {
+        if let OpInfo::Addr(o) = self {
+            Some(o)
+        } else {
+            None
+        }
+    }
+
+    /// Returns the associated constant value for constant operands. Returns [`None`] otherwise.
+    pub fn as_const(&self) -> Option<u64> {
+        if let OpInfo::Const(o) = self {
+            Some(*o)
+        } else {
+            None
+        }
+    }
+
+    /// Returns `Some` for bank operands. Returns [`None`] otherwise.
+    pub fn as_bank(&self) -> Option<()> {
+        if let OpInfo::Bank = self {
+            Some(())
+        } else {
+            None
+        }
+    }
+
+    /// Returns `true` for register operands. Returns `false` otherwise.
+    pub fn is_reg(&self) -> bool {
+        self.as_reg().is_some()
+    }
+
+    /// Returns `true` for memory operands. Returns `false` otherwise.
+    pub fn is_mem(&self) -> bool {
+        self.as_mem().is_some()
+    }
+
+    /// Returns `true` for immediate operands. Returns `false` otherwise.
+    pub fn is_imm(&self) -> bool {
+        self.as_imm().is_some()
+    }
+
+    /// Returns `true` for absolute address operands. Returns `false` otherwise.
+    pub fn is_addr(&self) -> bool {
+        self.as_addr().is_some()
+    }
+
+    /// Returns `true` for constant operands. Returns `false` otherwise.
+    pub fn is_const(&self) -> bool {
+        self.as_const().is_some()
+    }
+
+    /// Returns `true` for bank operands. Returns `false` otherwise.
+    pub fn is_bank(&self) -> bool {
+        self.as_bank().is_some()
+    }
+}
+
+#[doc(hidden)]
+impl OpInfo {
+    pub(crate) fn from_raw(raw: ffi::ND_OPERAND) -> Result<Self, DecodeError> {
+        match raw.Type {
+            ffi::_ND_OPERAND_TYPE::ND_OP_NOT_PRESENT => Ok(OpInfo::None),
             ffi::_ND_OPERAND_TYPE::ND_OP_REG => {
-                OpInfo::Reg(OpReg::from(unsafe { op.Info.Register }))
+                Ok(OpInfo::Reg(OpReg::from_raw(unsafe { raw.Info.Register })?))
             }
-            ffi::_ND_OPERAND_TYPE::ND_OP_MEM => OpInfo::Mem(OpMem::from(unsafe { op.Info.Memory })),
-            ffi::_ND_OPERAND_TYPE::ND_OP_IMM => OpInfo::Imm(unsafe { op.Info.Immediate }.Imm),
+            ffi::_ND_OPERAND_TYPE::ND_OP_MEM => {
+                Ok(OpInfo::Mem(OpMem::from_raw(unsafe { raw.Info.Memory })?))
+            }
+            ffi::_ND_OPERAND_TYPE::ND_OP_IMM => Ok(OpInfo::Imm(unsafe { raw.Info.Immediate }.Imm)),
             ffi::_ND_OPERAND_TYPE::ND_OP_OFFS => {
-                OpInfo::Offs(unsafe { op.Info.RelativeOffset }.Rel)
+                Ok(OpInfo::Offs(unsafe { raw.Info.RelativeOffset }.Rel))
             }
             ffi::_ND_OPERAND_TYPE::ND_OP_ADDR => {
-                OpInfo::Addr(OpAddr::from(unsafe { op.Info.Address }))
+                Ok(OpInfo::Addr(OpAddr::from_raw(unsafe { raw.Info.Address })))
             }
-            ffi::_ND_OPERAND_TYPE::ND_OP_CONST => OpInfo::Const(unsafe { op.Info.Constant }.Const),
-            ffi::_ND_OPERAND_TYPE::ND_OP_BANK => OpInfo::Bank,
+            ffi::_ND_OPERAND_TYPE::ND_OP_CONST => {
+                Ok(OpInfo::Const(unsafe { raw.Info.Constant }.Const))
+            }
+            ffi::_ND_OPERAND_TYPE::ND_OP_BANK => Ok(OpInfo::Bank),
         }
     }
 }
@@ -511,6 +599,13 @@ pub enum OpSize {
     Unknown,
 }
 
+#[doc(hidden)]
+impl Default for OpSize {
+    fn default() -> Self {
+        Self::Unknown
+    }
+}
+
 impl fmt::Display for OpSize {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
@@ -522,34 +617,34 @@ impl fmt::Display for OpSize {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPERAND_SIZE> for OpSize {
-    fn from(sz: ffi::ND_OPERAND_SIZE) -> OpSize {
-        match sz {
-            ffi::ND_SIZE_8BIT => OpSize::Bytes(1),
-            ffi::ND_SIZE_16BIT => OpSize::Bytes(2),
-            ffi::ND_SIZE_32BIT => OpSize::Bytes(4),
-            ffi::ND_SIZE_48BIT => OpSize::Bytes(6),
-            ffi::ND_SIZE_64BIT => OpSize::Bytes(8),
-            ffi::ND_SIZE_80BIT => OpSize::Bytes(10),
-            ffi::ND_SIZE_112BIT => OpSize::Bytes(14),
-            ffi::ND_SIZE_128BIT => OpSize::Bytes(16),
-            ffi::ND_SIZE_224BIT => OpSize::Bytes(28),
-            ffi::ND_SIZE_256BIT => OpSize::Bytes(32),
-            ffi::ND_SIZE_384BIT => OpSize::Bytes(48),
-            ffi::ND_SIZE_512BIT => OpSize::Bytes(64),
-            ffi::ND_SIZE_752BIT => OpSize::Bytes(94),
-            ffi::ND_SIZE_864BIT => OpSize::Bytes(108),
-            ffi::ND_SIZE_4096BIT => OpSize::Bytes(512),
-            ffi::ND_SIZE_1KB => OpSize::Bytes(1024),
-            ffi::ND_SIZE_CACHE_LINE => OpSize::CacheLine,
-            ffi::ND_SIZE_UNKNOWN => OpSize::Unknown,
-            _ => panic!("Unespected operand size: {}", sz),
+impl OpSize {
+    pub(crate) fn from_raw(value: ffi::ND_OPERAND_SIZE) -> Result<Self, DecodeError> {
+        match value {
+            ffi::ND_SIZE_8BIT => Ok(OpSize::Bytes(1)),
+            ffi::ND_SIZE_16BIT => Ok(OpSize::Bytes(2)),
+            ffi::ND_SIZE_32BIT => Ok(OpSize::Bytes(4)),
+            ffi::ND_SIZE_48BIT => Ok(OpSize::Bytes(6)),
+            ffi::ND_SIZE_64BIT => Ok(OpSize::Bytes(8)),
+            ffi::ND_SIZE_80BIT => Ok(OpSize::Bytes(10)),
+            ffi::ND_SIZE_112BIT => Ok(OpSize::Bytes(14)),
+            ffi::ND_SIZE_128BIT => Ok(OpSize::Bytes(16)),
+            ffi::ND_SIZE_224BIT => Ok(OpSize::Bytes(28)),
+            ffi::ND_SIZE_256BIT => Ok(OpSize::Bytes(32)),
+            ffi::ND_SIZE_384BIT => Ok(OpSize::Bytes(48)),
+            ffi::ND_SIZE_512BIT => Ok(OpSize::Bytes(64)),
+            ffi::ND_SIZE_752BIT => Ok(OpSize::Bytes(94)),
+            ffi::ND_SIZE_864BIT => Ok(OpSize::Bytes(108)),
+            ffi::ND_SIZE_4096BIT => Ok(OpSize::Bytes(512)),
+            ffi::ND_SIZE_1KB => Ok(OpSize::Bytes(1024)),
+            ffi::ND_SIZE_CACHE_LINE => Ok(OpSize::CacheLine),
+            ffi::ND_SIZE_UNKNOWN => Ok(OpSize::Unknown),
+            _ => Err(DecodeError::InternalError(value.into())),
         }
     }
 }
 
 /// Operand access mode.
-#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
+#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
 pub struct OpAccess {
     /// The operand is read.
     pub read: bool,
@@ -568,11 +663,11 @@ pub struct OpAccess {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPERAND_ACCESS> for OpAccess {
-    fn from(acc: ffi::ND_OPERAND_ACCESS) -> OpAccess {
-        let acc = unsafe { acc.__bindgen_anon_1 };
+impl OpAccess {
+    pub(crate) fn from_raw(raw: ffi::ND_OPERAND_ACCESS) -> Self {
+        let acc = unsafe { raw.__bindgen_anon_1 };
 
-        OpAccess {
+        Self {
             read: acc.Read() != 0,
             write: acc.Write() != 0,
             cond_read: acc.CondRead() != 0,
@@ -593,7 +688,7 @@ pub struct Broadcast {
 }
 
 /// Decorator information.
-#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
+#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
 pub struct Decorator {
     /// If mask is present, holds the ID of the mask register (`K0` - `K7`) used.
     pub mask_register: Option<u8>,
@@ -606,26 +701,26 @@ pub struct Decorator {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPERAND_DECORATOR> for Decorator {
-    fn from(decorator: ffi::ND_OPERAND_DECORATOR) -> Decorator {
-        let mask_register = if decorator.HasMask() {
-            Some(decorator.Mask.Msk)
+impl Decorator {
+    pub(crate) fn from_raw(raw: ffi::ND_OPERAND_DECORATOR) -> Decorator {
+        let mask_register = if raw.HasMask() != 0 {
+            Some(raw.Mask.Msk)
         } else {
             None
         };
 
-        let broadcast = if decorator.HasBroadcast() {
+        let broadcast = if raw.HasBroadcast() != 0 {
             Some(Broadcast {
-                count: decorator.Broadcast.Count,
-                size: decorator.Broadcast.Size,
+                count: raw.Broadcast.Count,
+                size: raw.Broadcast.Size,
             })
         } else {
             None
         };
 
-        Decorator {
+        Self {
             mask_register,
-            has_zero: decorator.HasZero(),
+            has_zero: raw.HasZero() != 0,
             broadcast,
         }
     }
@@ -638,11 +733,10 @@ impl From<ffi::ND_OPERAND_DECORATOR> for Decorator {
 /// # Examples
 ///
 /// ```
-/// # use std::error::Error;
+/// # use bddisasm::DecodeError;
 /// #
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// use bddisasm::decoder::{DecodedInstruction, DecodeMode};
-/// use bddisasm::operand::*;
+/// # fn main() -> Result<(), DecodeError> {
+/// use bddisasm::{DecodedInstruction, DecodeMode, OpRegType, OpSize};
 ///
 /// // `MOV       ah, byte ptr [rcx+rdx*2+0x8]`
 /// let code = vec![0x8a, 0x64, 0x51, 0x08];
@@ -652,23 +746,19 @@ impl From<ffi::ND_OPERAND_DECORATOR> for Decorator {
 /// let dst = operands[0];
 /// let src = operands[1];
 ///
-/// // Get the size of each operand
-/// println!("Destination size: {}", dst.size);
-/// println!("Source size: {}", src.size);
+/// // Check the size of each operand
+/// assert_eq!(dst.size, OpSize::Bytes(1));
+/// assert_eq!(src.size, OpSize::Bytes(1));
 ///
-/// // Get the type of the destination operand
-/// match dst.info {
-///     OpInfo::Reg(reg) => {
-///         println!("Register kind: {} Size: {} Index: {}", reg.kind, reg.size, reg.index)
-///     },
-///     // In this case we know that the destination operand is a register
-///     _ => println!("Unexpected operand info type"),
-/// }
+/// // Check the type of the destination operand
+/// assert!(dst.info.is_reg());
+/// let dst_reg = dst.info.as_reg().unwrap();
+/// assert_eq!(dst_reg.kind, OpRegType::Gpr);
 ///
 /// # Ok(())
 /// # }
 /// ```
-#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
+#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
 pub struct Operand {
     /// Extended operand information.
     pub info: OpInfo,
@@ -704,16 +794,459 @@ pub struct Operand {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_OPERAND> for Operand {
-    fn from(op: ffi::ND_OPERAND) -> Operand {
-        Operand {
-            info: OpInfo::from(op),
-            size: OpSize::from(op.Size),
-            raw_size: OpSize::from(op.RawSize),
-            access: OpAccess::from(op.Access),
-            is_default: unsafe { op.Flags.__bindgen_anon_1 }.IsDefault() != 0,
-            decorator: Decorator::from(op.Decorator),
+impl Operand {
+    pub(crate) fn from_raw(raw: ffi::ND_OPERAND) -> Result<Self, DecodeError> {
+        Ok(Self {
+            info: OpInfo::from_raw(raw)?,
+            size: OpSize::from_raw(raw.Size)?,
+            raw_size: OpSize::from_raw(raw.RawSize)?,
+            access: OpAccess::from_raw(raw.Access),
+            is_default: unsafe { raw.Flags.__bindgen_anon_1 }.IsDefault() != 0,
+            decorator: Decorator::from_raw(raw.Decorator),
+        })
+    }
+}
+
+/// Operands lookup table.
+///
+/// This can be useful when needing to work with a specific operand without needing to iterate over the operands
+/// returned by [operands()](crate::decoded_instruction::DecodedInstruction::operands), and without needing to rely on
+/// the order of the operands.
+///
+/// # Examples
+///
+/// ```rust
+/// # use bddisasm::DecodeError;
+/// #
+/// # fn main() -> Result<(), DecodeError> {
+/// use bddisasm::{DecodedInstruction, DecodeMode, OperandsLookup, OpRegType};
+///
+/// // `PUSH      rbx`
+/// let ins = DecodedInstruction::decode(b"\x53", DecodeMode::Bits64).unwrap();
+/// let operands = ins.operand_lookup();
+///
+/// // The first destination is the stack.
+/// let first_destination = operands.dest(0);
+/// assert!(first_destination.is_some());
+/// let first_destination = first_destination.unwrap();
+///
+/// // And it is the same as the first memory operand.
+/// let first_mem = operands.mem(0);
+/// assert!(first_mem.is_some());
+/// let first_mem = first_mem.unwrap();
+/// assert_eq!(first_destination, first_mem);
+///
+/// // And the same as the stack operand.
+/// let stack = operands.stack();
+/// assert!(stack.is_some());
+/// let stack = stack.unwrap();
+/// assert_eq!(first_destination, stack);
+///
+/// assert!(first_destination.is_default);
+/// assert!(first_destination.info.is_mem());
+/// assert!(first_destination.info.as_mem().unwrap().is_stack);
+///
+/// // Although the source operand is the RBX register, it is not one of the default operands.
+/// let rbx = operands.rbx();
+/// assert!(rbx.is_none());
+///
+/// // There is only one destination operand.
+/// let second_destination = operands.dest(1);
+/// assert!(second_destination.is_none());
+///
+/// // The first source is RBX.
+/// let first_source = operands.src(0);
+/// assert!(first_source.is_some());
+/// let first_source = first_source.unwrap();
+///
+/// assert_eq!(first_source.is_default, false);
+/// assert!(first_source.info.is_reg());
+///
+/// let first_source = first_source.info.as_reg().unwrap();
+/// assert_eq!(first_source.kind, OpRegType::Gpr);
+/// assert_eq!(first_source.index, 3);
+///
+/// // There is only one source operand.
+/// let second_source = operands.src(1);
+/// assert!(second_source.is_none());
+///
+/// // There is no other memory operand.
+/// let second_mem = operands.mem(1);
+/// assert!(second_mem.is_none());
+///
+/// // The FLAGS register is not accessed.
+/// let flags = operands.flags();
+/// assert!(flags.is_none());
+/// # Ok(())
+/// # }
+/// ```
+#[derive(Clone, Debug)]
+pub struct OperandsLookup<'a> {
+    // The C library fills a `ND_OPERAND_RLUT` structure with pointers to `ND_OPERAND` structures taken from the
+    // `INSTRUX` structure. As such, the `INSTRUX` structure must live at least as long as the `ND_OPERAND_RLUT`
+    // structure. This expresses that life-time dependency.
+    _instruction: PhantomData<&'a ffi::INSTRUX>,
+    op_rlut: ffi::ND_OPERAND_RLUT,
+}
+
+impl<'a> OperandsLookup<'a> {
+    #[doc(hidden)]
+    pub(crate) fn from_raw(instruction: &'a ffi::INSTRUX) -> Self {
+        let mut op_rlut: MaybeUninit<ffi::ND_OPERAND_RLUT> = MaybeUninit::uninit();
+        let op_rlut = op_rlut.as_mut_ptr();
+
+        let status = unsafe {
+            ffi::NdGetOperandRlut(
+                instruction as *const ffi::INSTRUX as *mut ffi::INSTRUX,
+                op_rlut,
+            )
+        };
+
+        // It is ok to unwrap here because `NdGetOperandRlut` fails only if the pointers passed to it are `NULL`.
+        status_to_error(status).unwrap();
+        let op_rlut = unsafe { *op_rlut };
+
+        Self {
+            _instruction: PhantomData,
+            op_rlut,
         }
+    }
+
+    /// Get one of the destination operands.
+    ///
+    /// Most instructions have just one destination operand, but some will have two.
+    ///
+    /// # Arguments
+    ///
+    /// * `index` - The index of the destination operand. First destination operand has index 0, the second one has
+    /// index 1, etc.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if the requested destination operand exists.
+    /// * [`None`] if the requested destination operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn dest(&self, index: usize) -> Option<Operand> {
+        let op = match index {
+            0 => unsafe { self.op_rlut.Dst1.as_ref() },
+            1 => unsafe { self.op_rlut.Dst2.as_ref() },
+            _ => None,
+        };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get one of the source operands.
+    ///
+    /// Most instructions have just one souce operand, but some can have up to 4.
+    ///
+    /// # Arguments
+    ///
+    /// * `index` - The index of the source operand. First source operand has index 0, the second one has
+    /// index 1, etc.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if the requested source operand exists.
+    /// * [`None`] if the requested source operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn src(&self, index: usize) -> Option<Operand> {
+        let op = match index {
+            0 => unsafe { self.op_rlut.Src1.as_ref() },
+            1 => unsafe { self.op_rlut.Src2.as_ref() },
+            2 => unsafe { self.op_rlut.Src3.as_ref() },
+            3 => unsafe { self.op_rlut.Src4.as_ref() },
+            _ => None,
+        };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get one of the memory operands.
+    ///
+    /// Most instructions have just one memory operand, but some will have two.
+    ///
+    /// # Arguments
+    ///
+    /// * `index` - The index of the memory operand. First memory operand has index 0, the second one has index 1, etc.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if the requested memory operand exists.
+    /// * [`None`] if the requested memory operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn mem(&self, index: usize) -> Option<Operand> {
+        let op = match index {
+            0 => unsafe { self.op_rlut.Mem1.as_ref() },
+            1 => unsafe { self.op_rlut.Mem2.as_ref() },
+            _ => None,
+        };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the stack operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a stack operand exists.
+    /// * [`None`] if a stack operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn stack(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Stack.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the default flags register operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a flags register operand exists.
+    /// * [`None`] if a flags register operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn flags(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Flags.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the default RIP operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a RIP operand exists.
+    /// * [`None`] if a RIP operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rip(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rip.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit CS operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit CS operand exists.
+    /// * [`None`] if a implicit CS operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn cs(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Cs.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit SS operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit SS operand exists.
+    /// * [`None`] if a implicit SS operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn ss(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Ss.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RAX operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RAX operand exists.
+    /// * [`None`] if a implicit RAX operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rax(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rax.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RCX operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RCX operand exists.
+    /// * [`None`] if a implicit RCX operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rcx(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rcx.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RDX operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RDX operand exists.
+    /// * [`None`] if a implicit RDX operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rdx(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rdx.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RBX operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RBX operand exists.
+    /// * [`None`] if a implicit RBX operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rbx(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rbx.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RSP operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RSP operand exists.
+    /// * [`None`] if a implicit RSP operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rsp(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rsp.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RBP operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RBP operand exists.
+    /// * [`None`] if a implicit RBP operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rbp(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rbp.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RSI operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RSI operand exists.
+    /// * [`None`] if a implicit RSI operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rsi(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rsi.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+
+    /// Get the implicit RDI operand.
+    ///
+    /// # Returns
+    ///
+    /// * [Some(Operand)](Operand) if a implicit RDI operand exists.
+    /// * [`None`] if a implicit RDI operand does not exist.
+    ///
+    /// # Panics
+    ///
+    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
+    /// circumstances.
+    #[inline]
+    pub fn rdi(&self) -> Option<Operand> {
+        let op = unsafe { self.op_rlut.Rdi.as_ref() };
+
+        op.map(|op| Operand::from_raw(*op).unwrap())
+    }
+}
+
+/// A collection of [Operand](Operand)s.
+#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
+pub struct Operands {
+    pub(crate) operands: [Operand; 10],
+    pub(crate) actual_count: usize,
+}
+
+impl core::ops::Deref for Operands {
+    type Target = [Operand];
+
+    fn deref(&self) -> &[Operand] {
+        &self.operands[..self.actual_count]
     }
 }
 
@@ -762,6 +1295,80 @@ mod tests {
             assert_eq!(src_mem.disp_size, Some(1));
         } else {
             unreachable!();
+        }
+    }
+
+    #[test]
+    fn op_lut() {
+        // `PUSH      rbx`
+        let ins = DecodedInstruction::decode(b"\x53", DecodeMode::Bits64).unwrap();
+        let operands = ins.operand_lookup();
+
+        // The first destination is the stack.
+        let first_destination = operands.dest(0);
+        assert!(first_destination.is_some());
+        let first_destination = first_destination.unwrap();
+
+        // And it is the same as the first memory operand.
+        let first_mem = operands.mem(0);
+        assert!(first_mem.is_some());
+        let first_mem = first_mem.unwrap();
+        assert_eq!(first_destination, first_mem);
+
+        // And the same as the stack operand.
+        let stack = operands.stack();
+        assert!(stack.is_some());
+        let stack = stack.unwrap();
+        assert_eq!(first_destination, stack);
+
+        assert!(first_destination.is_default);
+        assert!(first_destination.info.is_mem());
+        assert!(first_destination.info.as_mem().unwrap().is_stack);
+
+        // Although the source operand is the RBX register, it is not one of the default operands.
+        let rbx = operands.rbx();
+        assert!(rbx.is_none());
+
+        // There is only one destination operand.
+        let second_destination = operands.dest(1);
+        assert!(second_destination.is_none());
+
+        // The first source is RBX.
+        let first_source = operands.src(0);
+        assert!(first_source.is_some());
+        let first_source = first_source.unwrap();
+
+        assert_eq!(first_source.is_default, false);
+        assert!(first_source.info.is_reg());
+
+        let first_source = first_source.info.as_reg().unwrap();
+        assert_eq!(first_source.kind, OpRegType::Gpr);
+        assert_eq!(first_source.index, 3);
+
+        // There is only one source operand.
+        let second_source = operands.src(1);
+        assert!(second_source.is_none());
+
+        // There is no other memory operand.
+        let second_mem = operands.mem(1);
+        assert!(second_mem.is_none());
+
+        // The FLAGS register is not accessed.
+        let flags = operands.flags();
+        assert!(flags.is_none());
+    }
+
+    #[test]
+    fn check_all_shstk_access_values() {
+        // This is a really contrieved way of making sure that we check all variants of `ffi::_ND_SHSTK_ACCESS`. If a
+        // new one is added, this will fail to build. We do this because `ShadowStackAccess::from_raw` takes an `u8`.
+        // NOTE: When a new variant is added, `ShadowStackAccess::from_raw` must be updated.
+        match ffi::_ND_SHSTK_ACCESS::ND_SHSTK_NONE {
+            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_NONE => {}
+            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_EXPLICIT => {}
+            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_LD_ST => {}
+            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_SSP_PUSH_POP => {}
+            ffi::_ND_SHSTK_ACCESS::ND_SHSTK_PL0_SSP => {}
         }
     }
 }

@@ -4,14 +4,10 @@
  */
 //! Decodes instructions.
 
-extern crate bddisasm_sys as ffi;
-
-pub use crate::decode_error::DecodeError;
-pub use crate::decoded_instruction::{DecodeMode, DecodeResult, DecodedInstruction};
-pub use crate::mnemonic::Mnemonic;
+use crate::decoded_instruction::{DecodeMode, DecodeResult, DecodedInstruction};
 
 /// Decodes instructions.
-#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
+#[derive(Clone, Eq, PartialEq, Hash, Debug)]
 pub struct Decoder<'a> {
     code: &'a [u8],
     ip: u64,
@@ -61,10 +57,10 @@ impl<'a> Decoder<'a> {
     /// # Examples
     ///
     /// ```
-    /// # use std::error::Error;
+    /// # use bddisasm::DecodeError;
     /// #
-    /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use bddisasm::decoder::{Decoder, DecodeMode};
+    /// # fn main() -> Result<(), DecodeError> {
+    /// use bddisasm::{Decoder, DecodeMode};
     ///
     /// let mut decoder = Decoder::new(&[0x51, 0x53], DecodeMode::Bits32, 0);
     ///
@@ -103,16 +99,16 @@ impl<'a> Decoder<'a> {
 
     /// Attempts to decode the next instruction from the given code chunk.
     ///
-    /// Behaves like [decode_next](Decoder::decode_next), but in addition to the [DecodeResult](DecodeResult) it will
-    /// also return the offset from which decoding was attempted, as well as the corresponding instruction pointer.
+    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`](DecodeResult) it
+    /// will also return the offset from which decoding was attempted, as well as the corresponding instruction pointer.
     ///
     /// # Examples
     ///
     /// ```
-    /// # use std::error::Error;
+    /// # use bddisasm::DecodeError;
     /// #
-    /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use bddisasm::decoder::{Decoder, DecodeMode};
+    /// # fn main() -> Result<(), DecodeError> {
+    /// use bddisasm::{Decoder, DecodeMode};
     ///
     /// let mut decoder = Decoder::new(&[0x51, 0x53], DecodeMode::Bits32, 0x1000);
     ///
@@ -128,11 +124,80 @@ impl<'a> Decoder<'a> {
     /// # Ok(())
     /// # }
     /// ```
+    #[inline]
     pub fn decode_next_with_info(&mut self) -> Option<(DecodeResult, usize, u64)> {
         let offset = self.offset;
         let ip = self.ip;
 
         self.decode_next().map(|res| (res, offset, ip))
+    }
+
+    /// Attempts to decode the next instruction from the given code chunk.
+    ///
+    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`](DecodeResult) it
+    /// will also return the offset from which decoding was attempted.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # use bddisasm::DecodeError;
+    /// #
+    /// # fn main() -> Result<(), DecodeError> {
+    /// use bddisasm::{Decoder, DecodeMode};
+    ///
+    /// let mut decoder = Decoder::new(&[0x51, 0x53], DecodeMode::Bits32, 0x1000);
+    ///
+    /// // As long as we have something to decode
+    /// while let Some((result, offset)) = decoder.decode_next_with_offset() {
+    ///     // Check if the decoding succeeded
+    ///     match result {
+    ///         Ok(instruction) => println!("{} at offset {:#x}", instruction, offset),
+    ///         Err(e) => println!("Unable to decode at offset {:#x}: {}", offset, e),
+    ///     }
+    /// }
+    ///
+    /// # Ok(())
+    /// # }
+    /// ```
+    #[inline]
+    pub fn decode_next_with_offset(&mut self) -> Option<(DecodeResult, usize)> {
+        let offset = self.offset;
+
+        self.decode_next().map(|res| (res, offset))
+    }
+
+    /// Attempts to decode the next instruction from the given code chunk.
+    ///
+    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`](DecodeResult) it
+    /// will also return the corresponding instruction pointer.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # use bddisasm::DecodeError;
+    /// #
+    /// # fn main() -> Result<(), DecodeError> {
+    /// use bddisasm::{Decoder, DecodeMode};
+    ///
+    /// let mut decoder = Decoder::new(&[0x51, 0x53], DecodeMode::Bits32, 0x1000);
+    ///
+    /// // As long as we have something to decode
+    /// while let Some((result, ip)) = decoder.decode_next_with_ip() {
+    ///     // Check if the decoding succeeded
+    ///     match result {
+    ///         Ok(instruction) => println!("{:#x}    {}", ip, instruction),
+    ///         Err(e) => println!("Unable to decode: {}", e),
+    ///     }
+    /// }
+    ///
+    /// # Ok(())
+    /// # }
+    /// ```
+    #[inline]
+    pub fn decode_next_with_ip(&mut self) -> Option<(DecodeResult, u64)> {
+        let ip = self.ip;
+
+        self.decode_next().map(|res| (res, ip))
     }
 }
 
@@ -145,11 +210,12 @@ impl Iterator for Decoder<'_> {
     }
 }
 
-impl std::iter::FusedIterator for Decoder<'_> {}
+impl core::iter::FusedIterator for Decoder<'_> {}
 
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::*;
 
     #[test]
     fn decode_next() {

@@ -7,10 +7,10 @@
 //! # Examples
 //!
 //! ```
-//! # use std::error::Error;
+//! # use bddisasm::DecodeError;
 //! #
-//! # fn main() -> Result<(), Box<dyn Error>> {
-//! use bddisasm::decoded_instruction::{DecodedInstruction, DecodeMode, Mnemonic, OperandSize};
+//! # fn main() -> Result<(), DecodeError> {
+//! use bddisasm::{DecodedInstruction, DecodeMode, Mnemonic};
 //!
 //! // `VMXON     qword ptr [rax]`
 //! let ins = DecodedInstruction::decode(&[0xf3, 0x0f, 0xc7, 0x30], DecodeMode::Bits64)?;
@@ -26,16 +26,21 @@
 //! # Ok(())
 //! # }
 
-extern crate bddisasm_sys as ffi;
-
 // TODO: maybe use something like the `bitflags` crate and have all these as flags?
 
 /// Privilege levels (rings) in which an instruction is supported.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct PrivilegeLevel {
+    /// Instruction is valid in ring 0.
     pub ring0: bool,
+
+    /// Instruction is valid in ring 1.
     pub ring1: bool,
+
+    /// Instruction is valid in ring 2.
     pub ring2: bool,
+
+    /// Instruction is valid in ring 3.
     pub ring3: bool,
 }
 
@@ -109,11 +114,11 @@ pub struct CpuModes {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_VALID_MODES> for CpuModes {
-    fn from(raw: ffi::ND_VALID_MODES) -> CpuModes {
+impl CpuModes {
+    pub(crate) fn from_raw(raw: ffi::ND_VALID_MODES) -> Self {
         let raw = unsafe { raw.__bindgen_anon_1 };
 
-        CpuModes {
+        Self {
             privilege_level: PrivilegeLevel {
                 ring0: raw.Ring0() != 0,
                 ring1: raw.Ring1() != 0,

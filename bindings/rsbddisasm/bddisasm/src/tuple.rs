@@ -4,7 +4,7 @@
  */
 //! Instruction tuple type.
 
-extern crate bddisasm_sys as ffi;
+use super::decode_error::DecodeError;
 
 /// Instruction tuple type.
 ///
@@ -50,73 +50,76 @@ pub enum Tuple {
 }
 
 #[doc(hidden)]
-impl From<ffi::ND_TUPLE> for Tuple {
-    fn from(value: ffi::ND_TUPLE) -> Tuple {
-        match value {
-            ffi::_ND_TUPLE::ND_TUPLE_None => Tuple::None,
-            ffi::_ND_TUPLE::ND_TUPLE_FV => Tuple::Fv,
-            ffi::_ND_TUPLE::ND_TUPLE_HV => Tuple::Hv,
-            ffi::_ND_TUPLE::ND_TUPLE_QV => Tuple::Qv,
-            ffi::_ND_TUPLE::ND_TUPLE_T1S8 => Tuple::T1S8,
-            ffi::_ND_TUPLE::ND_TUPLE_T1S16 => Tuple::T1S16,
-            ffi::_ND_TUPLE::ND_TUPLE_T1S => Tuple::T1S,
-            ffi::_ND_TUPLE::ND_TUPLE_T1F => Tuple::T1F,
-            ffi::_ND_TUPLE::ND_TUPLE_T2 => Tuple::T2,
-            ffi::_ND_TUPLE::ND_TUPLE_T4 => Tuple::T4,
-            ffi::_ND_TUPLE::ND_TUPLE_T8 => Tuple::T8,
-            ffi::_ND_TUPLE::ND_TUPLE_FVM => Tuple::Fvm,
-            ffi::_ND_TUPLE::ND_TUPLE_HVM => Tuple::Hvm,
-            ffi::_ND_TUPLE::ND_TUPLE_QVM => Tuple::Qvm,
-            ffi::_ND_TUPLE::ND_TUPLE_OVM => Tuple::OVm,
-            ffi::_ND_TUPLE::ND_TUPLE_M128 => Tuple::M128,
-            ffi::_ND_TUPLE::ND_TUPLE_DUP => Tuple::Dup,
-            ffi::_ND_TUPLE::ND_TUPLE_T1_4X => Tuple::T14X,
-            // NOTE: when updating this take care to also update the `From<u32>` implementation!
-            // TODO: any way of keeping these in sync automagically?
+impl Tuple {
+    pub(crate) fn from_raw(value: u32) -> Result<Self, DecodeError> {
+        if value == ffi::_ND_TUPLE::ND_TUPLE_None as u32 {
+            Ok(Tuple::None)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_FV as u32 {
+            Ok(Tuple::Fv)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_HV as u32 {
+            Ok(Tuple::Hv)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_QV as u32 {
+            Ok(Tuple::Qv)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1S8 as u32 {
+            Ok(Tuple::T1S8)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1S16 as u32 {
+            Ok(Tuple::T1S16)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1S as u32 {
+            Ok(Tuple::T1S)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1F as u32 {
+            Ok(Tuple::T1F)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T2 as u32 {
+            Ok(Tuple::T2)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T4 as u32 {
+            Ok(Tuple::T4)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T8 as u32 {
+            Ok(Tuple::T8)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_FVM as u32 {
+            Ok(Tuple::Fvm)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_HVM as u32 {
+            Ok(Tuple::Hvm)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_QVM as u32 {
+            Ok(Tuple::Qvm)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_OVM as u32 {
+            Ok(Tuple::OVm)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_M128 as u32 {
+            Ok(Tuple::M128)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_DUP as u32 {
+            Ok(Tuple::Dup)
+        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1_4X as u32 {
+            Ok(Tuple::T14X)
+        } else {
+            Err(DecodeError::InternalError(value.into()))
         }
     }
 }
 
-impl From<u32> for Tuple {
-    fn from(value: u32) -> Tuple {
-        if value == ffi::_ND_TUPLE::ND_TUPLE_None as u32 {
-            Tuple::None
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_FV as u32 {
-            Tuple::Fv
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_HV as u32 {
-            Tuple::Hv
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_QV as u32 {
-            Tuple::Qv
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1S8 as u32 {
-            Tuple::T1S8
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1S16 as u32 {
-            Tuple::T1S16
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1S as u32 {
-            Tuple::T1S
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1F as u32 {
-            Tuple::T1F
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T2 as u32 {
-            Tuple::T2
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T4 as u32 {
-            Tuple::T4
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T8 as u32 {
-            Tuple::T8
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_FVM as u32 {
-            Tuple::Fvm
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_HVM as u32 {
-            Tuple::Hvm
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_QVM as u32 {
-            Tuple::Qvm
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_OVM as u32 {
-            Tuple::OVm
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_M128 as u32 {
-            Tuple::M128
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_DUP as u32 {
-            Tuple::Dup
-        } else if value == ffi::_ND_TUPLE::ND_TUPLE_T1_4X as u32 {
-            Tuple::T14X
-        } else {
-            panic!("Unknown tuple: {}", value)
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn check_all_tuples() {
+        // This is a really contrieved way of making sure that we check all variants of `ffi::_ND_TUPLE`. If a new
+        // one is added, this will fail to build. We do this because `Tuple::from_raw` takes an `u32`.
+        // NOTE: When a new variant is added, `Tuple::from_raw` must be updated.
+        match ffi::_ND_TUPLE::ND_TUPLE_None {
+            ffi::_ND_TUPLE::ND_TUPLE_None => {}
+            ffi::_ND_TUPLE::ND_TUPLE_FV => {}
+            ffi::_ND_TUPLE::ND_TUPLE_HV => {}
+            ffi::_ND_TUPLE::ND_TUPLE_QV => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T1S8 => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T1S16 => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T1S => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T1F => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T2 => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T4 => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T8 => {}
+            ffi::_ND_TUPLE::ND_TUPLE_FVM => {}
+            ffi::_ND_TUPLE::ND_TUPLE_HVM => {}
+            ffi::_ND_TUPLE::ND_TUPLE_QVM => {}
+            ffi::_ND_TUPLE::ND_TUPLE_OVM => {}
+            ffi::_ND_TUPLE::ND_TUPLE_M128 => {}
+            ffi::_ND_TUPLE::ND_TUPLE_DUP => {}
+            ffi::_ND_TUPLE::ND_TUPLE_T1_4X => {}
         }
     }
 }
