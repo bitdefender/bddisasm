@@ -1,6 +1,6 @@
 # bddisasm-sys changelog
 
-## Unreleased
+## 0.2.0
 
 ### Changed
 
