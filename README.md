@@ -114,7 +114,7 @@ With `FetchContent`:
 ```cmake
 FetchContent_Declare(
     bddisasm
-    GIT_REPOSITORY https://github.com/bddisasm/bddisasm
+    GIT_REPOSITORY https://github.com/bitdefender/bddisasm
     GIT_TAG origin/master
 )
 
