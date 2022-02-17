@@ -28,6 +28,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions: read-all
     steps:
     - uses: actions/checkout@v2
     - name: Install rapidjson
@@ -83,6 +84,7 @@ jobs:
 
     runs-on: windows-latest
 
+    permissions: read-all
     steps:
     - uses: actions/checkout@v2
     - name: Add msbuild to PATH
@@ -113,6 +115,7 @@ jobs:
 
     runs-on: windows-latest
 
+    permissions: read-all
     steps:
     - uses: actions/checkout@v2
     - name: Add msbuild to PATH
@@ -131,6 +134,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions: read-all
     steps:
     - uses: actions/checkout@v2
     - name: Install cppcheck
