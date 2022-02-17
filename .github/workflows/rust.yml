@@ -18,6 +18,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
+    permissions: read-all
     steps:
     - uses: actions/checkout@v2
     - name: Set LIBCLANG_PATH
