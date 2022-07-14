@@ -422,8 +422,9 @@ ShemuSetFlags(
     }
     else if (FM_SAR == FlagsMode)
     {
-        // CF is the last bit shifted out of the destination.
-        if (ND_GET_BIT(Src2 - 1, Src1))
+        // CF is the last bit shifted out of the destination. In case of SAR, if the shift ammount exceeds the operand
+        // size, CF will be 1 if the result is -1, or 0 if the result is 0.
+        if (ND_GET_BIT(Src2 - 1, Src1) || ((Src2 >= (ND_UINT64)Size * 8) && Dst != 0))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
@@ -437,11 +438,11 @@ ShemuSetFlags(
     else
     {
         // Set CF.
-        if ((FM_SUB == FlagsMode) && (Src1 < Src2))
+        if ((FM_SUB == FlagsMode) && ((Src1 < Src2) || (Src1 == Src2 && Dst != 0)))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
-        else if ((FM_ADD == FlagsMode) && (Dst < Src1))
+        else if ((FM_ADD == FlagsMode) && ((Dst < Src1) || (Dst == Src1 && Src2 != 0)))
         {
             Context->Registers.RegFlags |= NDR_RFLAG_CF;
         }
@@ -1107,7 +1108,7 @@ ShemuSetMemValue(
 
 
 //
-// IntWinShcSetOperandValue
+// ShemuGetOperandValue
 //
 static SHEMU_STATUS
 ShemuGetOperandValue(
@@ -1293,7 +1294,7 @@ done_gla:;
 
 
 //
-// IntWinShcSetOperandValue
+// ShemuSetOperandValue
 //
 static SHEMU_STATUS
 ShemuSetOperandValue(
@@ -1945,13 +1946,13 @@ ShemuEmulate(
             GET_OP(Context, 0, &dst);
             GET_OP(Context, 1, &src);
 
-            if (ND_INS_ADC == Context->Instruction.Instruction)
-            {
-                src.Value.Qwords[0] += GET_FLAG(Context, NDR_RFLAG_CF);
-            }
-
             res.Size = src.Size;
             res.Value.Qwords[0] = dst.Value.Qwords[0] + src.Value.Qwords[0];
+
+            if (ND_INS_ADC == Context->Instruction.Instruction)
+            {
+                res.Value.Qwords[0] += GET_FLAG(Context, NDR_RFLAG_CF);
+            }
 
             SET_FLAGS(Context, res, dst, src, FM_ADD);
             SET_OP(Context, 0, &res);
@@ -1964,13 +1965,13 @@ ShemuEmulate(
             GET_OP(Context, 0, &dst);
             GET_OP(Context, 1, &src);
 
-            if (ND_INS_SBB == Context->Instruction.Instruction)
-            {
-                src.Value.Qwords[0] += GET_FLAG(Context, NDR_RFLAG_CF);
-            }
-
             res.Size = src.Size;
             res.Value.Qwords[0] = dst.Value.Qwords[0] - src.Value.Qwords[0];
+
+            if (ND_INS_SBB == Context->Instruction.Instruction)
+            {
+                res.Value.Qwords[0] -= GET_FLAG(Context, NDR_RFLAG_CF);
+            }
 
             SET_FLAGS(Context, res, dst, src, FM_SUB);
 
@@ -2521,19 +2522,28 @@ check_far_branch:
 
         case ND_INS_MUL:
         case ND_INS_IMUL:
-            if (Context->Instruction.ExpOperandsCount < 3)
+            if (Context->Instruction.ExpOperandsCount == 1)
             {
-                // MUL or IMUL with a single explicit operand or IMUL with 2 explicit operands.
+                // MUL or IMUL with a single explicit operand.
                 GET_OP(Context, 0, &dst);
                 GET_OP(Context, 1, &src);
+                res.Size = dst.Size * 2;
+            }
+            else if (Context->Instruction.ExpOperandsCount == 2)
+            {
+                // IMUL with 2 explicit operands.
+                GET_OP(Context, 0, &dst);
+                GET_OP(Context, 1, &src);
+                res.Size = dst.Size;
             }
             else
             {
                 // IMUL with 3 operands. The first operand is the write-only destination.
-                GET_OP(Context, 0, &res);
                 GET_OP(Context, 1, &dst);
                 GET_OP(Context, 2, &src);
+                res.Size = dst.Size;
             }
+
 
             if (dst.Size == 1)
             {
@@ -2610,6 +2620,7 @@ check_far_branch:
                 SET_OP(Context, 0, &res);
             }
 
+            // Set the flags.
             if (ND_INS_MUL == Context->Instruction.Instruction)
             {
                 ND_UINT8 cfof = 0;
@@ -2640,7 +2651,7 @@ check_far_branch:
                 // the sign extended operand - size - truncated product, otherwise the CF and OF flags are cleared.
                 ND_UINT8 cfof = 0, sign = 0;
 
-                sign = ND_MSB(res.Size, res.Value.Qwords[0]);
+                sign = ND_MSB(dst.Size, res.Value.Qwords[0]);
 
                 switch (dst.Size)
                 {
