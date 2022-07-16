@@ -1882,10 +1882,17 @@ ShemuEmulate(
             break;
 
         case ND_INS_CMOVcc:
+            GET_OP(Context, 0, &dst);
+            GET_OP(Context, 1, &src);
             if (ShemuEvalCondition(Context, Context->Instruction.Condition))
             {
-                GET_OP(Context, 1, &src);
                 SET_OP(Context, 0, &src);
+            }
+            else
+            {
+                // Write back the same value that was already present in destination. This has the side-effect of 
+                // clearing the upper 32 bit in the 64 bit destination register while in long mode.
+                SET_OP(Context, 0, &dst);
             }
             break;
 
