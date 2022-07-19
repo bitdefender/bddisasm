@@ -1145,7 +1145,7 @@ ShemuGetOperandValue(
 
         case ND_REG_SSE:
             shemu_memcpy(Value->Value.Bytes,
-                         &Context->SseRegisters[op->Info.Register.Reg * ND_MAX_REGISTER_SIZE], 
+                         &Context->SseRegisters[op->Info.Register.Reg], 
                          op->Size);
             break;
 
@@ -1335,7 +1335,10 @@ ShemuSetOperandValue(
             break;
 
         case ND_REG_SSE:
-            shemu_memcpy(&Context->SseRegisters[op->Info.Register.Reg * ND_MAX_REGISTER_SIZE],
+            // Zero the register first.
+            nd_memzero(&Context->SseRegisters[op->Info.Register.Reg], ND_MAX_REGISTER_SIZE);
+            // Copy the value.
+            shemu_memcpy(&Context->SseRegisters[op->Info.Register.Reg],
                          Value->Value.Bytes, 
                          op->Size);
             // Only log these when they're written.
@@ -1935,16 +1938,21 @@ ShemuEmulate(
         case ND_INS_CMPXCHG:
             GET_OP(Context, 2, &src);
             GET_OP(Context, 0, &dst);
+
+            res.Size = src.Size;
+            // Note: The accumulator is compared with the destination, not the other way around.
+            res.Value.Qwords[0] = src.Value.Qwords[0] - dst.Value.Qwords[0];
+
+            SET_FLAGS(Context, res, src, dst, FM_SUB);
+
             if (src.Value.Qwords[0] == dst.Value.Qwords[0])
             {
                 GET_OP(Context, 1, &src);
                 SET_OP(Context, 0, &src);
-                SET_FLAG(Context, NDR_RFLAG_ZF, 1);
             }
             else
             {
                 SET_OP(Context, 2, &dst);
-                SET_FLAG(Context, NDR_RFLAG_ZF, 0);
             }
             break;
 
