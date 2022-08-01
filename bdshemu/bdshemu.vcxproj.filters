@@ -26,5 +26,8 @@
     <ClInclude Include="..\inc\bdshemu.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
+    <ClInclude Include="..\inc\version.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

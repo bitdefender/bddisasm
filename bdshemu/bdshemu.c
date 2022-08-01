@@ -386,7 +386,7 @@ ShemuSetFlags(
 
         if (Src2 == 1)
         {
-            if (ND_GET_BIT(Size * 8ULL - 1, Dst) ^ ND_GET_BIT(Size * 8ULL - Src2, Src1))
+            if (ND_GET_BIT(Size * 8ULL - 1, Src1) ^ ND_GET_BIT(Size * 8ULL - 2, Src1))
             {
                 Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }
@@ -410,7 +410,7 @@ ShemuSetFlags(
 
         if (Src2 == 1)
         {
-            if (ND_GET_BIT(Size * 8 - 1, Dst))
+            if (ND_GET_BIT(Size * 8ULL - 1, Src1))
             {
                 Context->Registers.RegFlags |= NDR_RFLAG_OF;
             }

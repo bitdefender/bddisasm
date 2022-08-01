@@ -115,7 +115,8 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <TargetVersion></TargetVersion>
+    <TargetVersion>
+    </TargetVersion>
     <DriverTargetPlatform>Desktop</DriverTargetPlatform>
     <SupportsPackaging>false</SupportsPackaging>
   </PropertyGroup>
@@ -149,7 +150,8 @@
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <TargetVersion></TargetVersion>
+    <TargetVersion>
+    </TargetVersion>
     <DriverTargetPlatform>Desktop</DriverTargetPlatform>
     <SupportsPackaging>false</SupportsPackaging>
   </PropertyGroup>
@@ -644,6 +646,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\inc\bdshemu.h" />
+    <ClInclude Include="..\inc\version.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
