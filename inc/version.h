@@ -12,6 +12,6 @@
 // bdshemu depends on bddisasm. It cannot be used without it.
 #define SHEMU_VERSION_MAJOR         1
 #define SHEMU_VERSION_MINOR         1
-#define SHEMU_VERSION_REVISION      11
+#define SHEMU_VERSION_REVISION      12
 
 #endif // DISASM_VER_H

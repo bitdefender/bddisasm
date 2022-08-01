@@ -2221,7 +2221,7 @@ ShemuEmulate(
 
                     if ((cnt & cntmask) == 1)
                     {
-                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^ tempCF);
+                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^ ND_GET_BIT(dst.Size * 8ULL - 2, dst.Value.Qwords[0]));
                     }
                 }
 
