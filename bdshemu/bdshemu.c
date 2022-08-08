@@ -1363,6 +1363,9 @@ ShemuSetOperandValue(
 
         case ND_REG_FLG:
             Context->Registers.RegFlags = ND_TRIM(Value->Size, Value->Value.Qwords[0]);
+            // Handle reserved bits.
+            Context->Registers.RegFlags |= (1ULL << 1);
+            Context->Registers.RegFlags &= ~((1ULL << 3) | (1ULL << 5) | (1ULL << 15));
             break;
 
         case ND_REG_CR:
