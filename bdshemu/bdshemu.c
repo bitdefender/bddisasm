@@ -1150,11 +1150,11 @@ ShemuGetOperandValue(
             break;
 
         case ND_REG_RIP:
-            Value->Value.Qwords[0] = ND_TRIM(Value->Size, Context->Registers.RegRip);
+            Value->Value.Qwords[0] = ND_TRIM(op->Size, Context->Registers.RegRip);
             break;
 
         case ND_REG_FLG:
-            Value->Value.Qwords[0] = Context->Registers.RegFlags;
+            Value->Value.Qwords[0] = ND_TRIM(op->Size, Context->Registers.RegFlags);
             break;
 
         case ND_REG_CR:
@@ -1244,7 +1244,7 @@ ShemuGetOperandValue(
         }
 
         // Get the memory value.
-        status = ShemuGetMemValue(Context, gla, Value->Size, Value->Value.Bytes);
+        status = ShemuGetMemValue(Context, gla, MIN(op->Size, Value->Size), Value->Value.Bytes);
         if (SHEMU_SUCCESS != status)
         {
             return status;
@@ -1335,8 +1335,17 @@ ShemuSetOperandValue(
             break;
 
         case ND_REG_SSE:
-            // Zero the register first.
-            nd_memzero(&Context->SseRegisters[op->Info.Register.Reg], ND_MAX_REGISTER_SIZE);
+            if (Context->Instruction.EncMode != ND_ENCM_LEGACY)
+            {
+                // Zero the entire register first, if we have a VEX/EVEX encoded instruction.
+                nd_memzero(&Context->SseRegisters[op->Info.Register.Reg], ND_MAX_REGISTER_SIZE);
+            }
+            else
+            {
+                // Zero upper bits in the 128 bits register, if operand size is less than 16 bytes.
+                // Upper bits in the YMM/ZMM register are preserved.
+                nd_memzero(&Context->SseRegisters[op->Info.Register.Reg], 16);
+            }
             // Copy the value.
             shemu_memcpy(&Context->SseRegisters[op->Info.Register.Reg],
                          Value->Value.Bytes, 
@@ -1358,14 +1367,22 @@ ShemuSetOperandValue(
             break;
 
         case ND_REG_RIP:
-            Context->Registers.RegRip = ND_TRIM(Value->Size, Value->Value.Qwords[0]);
+            Context->Registers.RegRip = ND_TRIM(op->Size, Value->Value.Qwords[0]);
             break;
 
         case ND_REG_FLG:
-            Context->Registers.RegFlags = ND_TRIM(Value->Size, Value->Value.Qwords[0]);
+            if (op->Size == 2)
+            {
+                *((ND_UINT16*)&Context->Registers.RegFlags) = Value->Value.Words[0];
+            }
+            else
+            {
+                Context->Registers.RegFlags = Value->Value.Qwords[0];
+            }
             // Handle reserved bits.
             Context->Registers.RegFlags |= (1ULL << 1);
             Context->Registers.RegFlags &= ~((1ULL << 3) | (1ULL << 5) | (1ULL << 15));
+            Context->Registers.RegFlags &= 0x3FFFFF;
             break;
 
         case ND_REG_CR:
@@ -2972,7 +2989,7 @@ check_far_branch:
                 dst.Value.Bytes[11] = src.Value.Bytes[5];
                 dst.Value.Bytes[10] = dst.Value.Bytes[5];
                 dst.Value.Bytes[9] = src.Value.Bytes[4];
-                dst.Value.Bytes[8] = src.Value.Bytes[4];
+                dst.Value.Bytes[8] = dst.Value.Bytes[4];
                 dst.Value.Bytes[7] = src.Value.Bytes[3];
                 dst.Value.Bytes[6] = dst.Value.Bytes[3];
                 dst.Value.Bytes[5] = src.Value.Bytes[2];
