@@ -2958,9 +2958,6 @@ check_far_branch:
         case ND_INS_MOVQ:
         case ND_INS_MOVDQU:
         case ND_INS_MOVDQA:
-            // memzero the source; if the source size is less than the destination size, the upper bits will be zero.
-            // Note that we don't really care about #GP on unaligned MOVDQA accesses...
-            nd_memzero(src.Value.Bytes, sizeof(src.Value.Bytes));
             GET_OP(Context, 1, &src);
             SET_OP(Context, 0, &src);
             break;
@@ -3016,12 +3013,6 @@ check_far_branch:
         case ND_INS_VMOVQ:
         case ND_INS_VMOVDQU:
         case ND_INS_VMOVDQA:
-            // First clear out the entire register. If less than MAX_VL bits are written, the upper bits are set to 0.
-            nd_memzero(src.Value.Bytes, sizeof(src.Value.Bytes));
-            nd_memzero(dst.Value.Bytes, sizeof(dst.Value.Bytes));
-            dst.Size = ND_MAX_REGISTER_SIZE;
-            SET_OP(Context, 0, &dst);
-            // Fetch the source, and write the destination.
             GET_OP(Context, 1, &src);
             SET_OP(Context, 0, &src);
             break;
