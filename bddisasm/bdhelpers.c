@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020 Bitdefender
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #include "include/nd_crt.h"
 #include "../inc/bddisasm.h"
 

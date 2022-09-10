@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020 Bitdefender
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #ifndef TABLE_XOP_H
 #define TABLE_XOP_H
 

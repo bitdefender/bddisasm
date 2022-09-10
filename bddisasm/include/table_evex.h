@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020 Bitdefender
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #ifndef TABLE_EVEX_H
 #define TABLE_EVEX_H
 

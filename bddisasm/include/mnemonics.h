@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020 Bitdefender
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #ifndef MNEMONICS_H
 #define MNEMONICS_H
 

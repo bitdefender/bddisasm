@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2020 Bitdefender
+ * SPDX-License-Identifier: Apache-2.0
+ */
 #ifndef CPUID_FLAGS_H
 #define CPUID_FLAGS_H
 
