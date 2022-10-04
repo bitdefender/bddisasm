@@ -44,7 +44,7 @@ ifdef AFL_MEMORY
   AFL_ARGS := -m $(AFL_MEMORY)
 endif
  
-CFLAGS     := -std=c11 -fpic -fno-strict-aliasing \
+CFLAGS     := -std=c11 -fpic -fno-strict-aliasing -maes \
            -D_REENTRANT -fstack-protector -ffunction-sections -fdata-sections \
            -DNDEBUG -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1 -Ofast -g3
 
