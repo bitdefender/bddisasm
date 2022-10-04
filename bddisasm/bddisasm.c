@@ -99,6 +99,8 @@ static const ND_UINT16 gOperandMap[] =
     ND_OPE_S,       // ND_OPT_MEM_SHS
     ND_OPE_S,       // ND_OPT_MEM_SHSP
     ND_OPE_S,       // ND_OPT_MEM_SHS0
+    ND_OPE_S,       // ND_OPT_MEM_SMSRT
+    ND_OPE_S,       // ND_OPT_MEM_DMSRT
 
     ND_OPE_L,       // ND_OPT_Im2z
 
@@ -182,12 +184,12 @@ NdGetVersion(
 
     if (ND_NULL != BuildDate)
     {
-        *BuildDate = ND_NULL;
+        *BuildDate = (char *)ND_NULL;
     }
 
     if (ND_NULL != BuildTime)
     {
-        *BuildTime = ND_NULL;
+        *BuildTime = (char *)ND_NULL;
     }
 
 #else
@@ -1585,6 +1587,11 @@ NdParseOperand(
         size = ND_SIZE_512BIT;
         break;
 
+    case ND_OPS_4096:
+        // 64 entries x 64 bit per entry = 4096 bit MSR address/value list.
+        size = ND_SIZE_4096BIT;
+        break;
+
     case ND_OPS_unknown:
         size = ND_SIZE_UNKNOWN;
         break;
@@ -2792,6 +2799,26 @@ memory:
         operand->Info.Memory.ShStkType = ND_SHSTK_PL0_SSP;
         break;
 
+    case ND_OPT_MEM_SMSRT:
+        // Table of MSR addresses, encoded in [RSI].
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.HasBase = ND_TRUE;
+        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
+        operand->Info.Memory.Base = NDR_RSI;            // Always rSI.
+        operand->Info.Memory.HasSeg = ND_FALSE;         // Linear Address directly, only useable in 64 bit mode.
+        break;
+
+    case ND_OPT_MEM_DMSRT:
+        // Table of MSR addresses, encoded in [RDI].
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.HasBase = ND_TRUE;
+        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
+        operand->Info.Memory.Base = NDR_RDI;            // Always rDI.
+        operand->Info.Memory.HasSeg = ND_FALSE;         // Linear Address directly, only useable in 64 bit mode.
+        break;
+
     case ND_OPT_MEM_SHSP:
         // Shadow stack push/pop access.
         Instrux->MemoryAccess |= operand->Access.Access;
@@ -3325,6 +3352,12 @@ NdFindInstruction(
             {
                 nextIndex = ND_ILUT_INDEX_AUX_REP;
             }
+            else if (Instrux->DefCode == ND_CODE_64 && Instrux->HasModRm && 
+                Instrux->ModRm.mod == 0 && Instrux->ModRm.rm == NDR_RBP && 
+                ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_RIPREL])
+            {
+                nextIndex = ND_ILUT_INDEX_AUX_RIPREL;
+            }
             else
             {
                 nextIndex = ND_ILUT_INDEX_AUX_NONE;
@@ -3357,6 +3390,10 @@ NdFindInstruction(
             else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_CLDEMOTE]) && !!(Instrux->FeatMode & ND_FEAT_CLDEMOTE))
             {
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_CLDEMOTE];
+            }
+            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_PITI]) && !!(Instrux->FeatMode & ND_FEAT_PITI))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_PITI];
             }
             else
             {

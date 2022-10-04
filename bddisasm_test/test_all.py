@@ -65,66 +65,77 @@ def test_dir(dir):
     global total_tests
     global failed_tests
     
-    for f in glob.glob('%s\\*' % dir):
-        if -1 == f.find('.'):
-            if 0 < f.find('_16'):
-                mod = '-b16'
-            elif 0 < f.find('_32'):
-                mod = '-b32'
-            else:
-                mod = '-b64'
-            if 0 < f.find('_r0'):
-                mod += ' -k'
-            if 0 < f.find('_skip'):
-                mod += ' -skip16'
-                
-            print('    * Running test case %s...' % f)
-            os.system('disasm -exi %s -f %s >%s.temp' % (mod, f, f))
-            try:
-                res = open('%s.result' % f).read()
-            except:
-                print('    ! No result file provided for test %s!' % f)
-                
-            try:
-                tmp = open('%s.temp' % f).read()
-            except:
-                print('    ! No result produced by test %s!' % f)
+    for f in glob.glob('%s\\*.test' % dir):
+        base, _ = os.path.splitext(f)
+        
+        tst_file = f
+        res_file = base + '.result'
+        tmp_file = base + '.temp'
+        
+        if 0 < f.find('_16'):
+            mod = '-b16'
+        elif 0 < f.find('_32'):
+            mod = '-b32'
+        else:
+            mod = '-b64'
+        if 0 < f.find('_r0'):
+            mod += ' -k'
             
-            total_tests += 1
-            if not compare_results(res, tmp):
-                print('    **** FAILED! ****')
-                failed_tests += 1
-            else:
-                print('    * Passed.')
-                
-    for f in glob.glob('%s\\*_decoded.bin' % dir):
-        os.remove(f)
-    for f in glob.glob('%s\\*.temp' % dir):
-        os.remove(f)
+        if 0 < f.find('_skip'):
+            mod += ' -skip16'
+            
+        print('    * Running test case %s...' % f)
+        os.system('disasm -exi %s -f %s >%s' % (mod, tst_file, tmp_file))
+        try:
+            res = open(res_file).read()
+        except:
+            print('    ! No result file provided for test %s!' % tst_file)
+            
+        try:
+            tmp = open(tmp_file).read()
+        except:
+            print('    ! No result produced by test %s!' % tst_file)
+        
+        total_tests += 1
+        if not compare_results(res, tmp):
+            print('    **** FAILED! ****')
+            failed_tests += 1
+        else:
+            print('    * Passed.')
+
+        # Cleanup.
+        os.remove(tmp_file)
         
 def regenerate(dir): 
-    for f in glob.glob('%s\\*' % dir):
-        if -1 == f.find('.'):
-            if 0 < f.find('_16'):
-                mod = '-b16'
-            elif 0 < f.find('_32'):
-                mod = '-b32'
-            else:
-                mod = '-b64'
-            if 0 < f.find('_r0'):
-                mod += ' -k'
-            if 0 < f.find('_skip'):
-                mod += ' -skip16'
+    for f in glob.glob('%s\\*.test' % dir):
+        base, _ = os.path.splitext(f)
+        
+        tst_file = f
+        res_file = base + '.result'
+        
+        if 0 < f.find('_16'):
+            mod = '-b16'
+        elif 0 < f.find('_32'):
+            mod = '-b32'
+        else:
+            mod = '-b64'
+        if 0 < f.find('_r0'):
+            mod += ' -k'
+        if 0 < f.find('_skip'):
+            mod += ' -skip16'
                 
-            print('    * Regenerating test case %s...' % f)
-            os.system('disasm -exi %s -f %s >%s.result' % (mod, f, f))
-                            
-    for f in glob.glob('%s\\*_decoded.bin' % dir):
-        os.remove(f)
+        print('    * Regenerating test case %s...' % tst_file)
+        os.system('disasm -exi %s -f %s >%s' % (mod, tst_file, res_file))
 
-for dn in glob.glob("*"):
-    if not os.path.isdir(dn):
-        continue
-    print('Testing %s...' % dn)
-    test_dir(dn)
-print("Ran %d tests, %d failed" % (total_tests, failed_tests))
+if __name__ == "__main__":
+    for dn in glob.glob("x86\\*"):
+        if not os.path.isdir(dn):
+            continue
+        if "regenerate" in sys.argv:
+            print('Regenerating %s...' % dn)
+            regenerate(dn)
+        else:
+            print('Testing %s...' % dn)
+            test_dir(dn)
+            
+    print("Ran %d tests, %d failed" % (total_tests, failed_tests))

@@ -1,0 +1,408 @@
+0000000000000000 0f38fc00                        AADD      dword ptr [rax], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000004 0f38fc4000                      AADD      dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000009 0f38fc8000000000                AADD      dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000011 480f38fc00                      AADD      qword ptr [rax], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000016 480f38fc4000                    AADD      qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000001C 480f38fc8000000000              AADD      qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000025 660f38fc00                      AAND      dword ptr [rax], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000002A 660f38fc4000                    AAND      dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000030 660f38fc8000000000              AAND      dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000039 66480f38fc00                    AAND      qword ptr [rax], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000003F 66480f38fc4000                  AAND      qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000046 66480f38fc8000000000            AAND      qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000050 f20f38fc00                      AOR       dword ptr [rax], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000055 f20f38fc4000                    AOR       dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000005B f20f38fc8000000000              AOR       dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000064 f2480f38fc00                    AOR       qword ptr [rax], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000006A f2480f38fc4000                  AOR       qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000071 f2480f38fc8000000000            AOR       qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000007B f30f38fc00                      AXOR      dword ptr [rax], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000080 f30f38fc4000                    AXOR      dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000086 f30f38fc8000000000              AXOR      dword ptr [rax+0x0], eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000008F f3480f38fc00                    AXOR      qword ptr [rax], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000095 f3480f38fc4000                  AXOR      qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000009C f3480f38fc8000000000            AXOR      qword ptr [rax+0x0], rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: RAOINT, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 0, Displacement: 0x0000000000000000, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+

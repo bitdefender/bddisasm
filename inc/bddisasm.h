@@ -39,6 +39,7 @@
 #define ND_FEAT_MPX                 0x01    // MPX support enabled.
 #define ND_FEAT_CET                 0x02    // CET support enabled.
 #define ND_FEAT_CLDEMOTE            0x04    // CLDEMOTE support enabled.
+#define ND_FEAT_PITI                0x08    // PREFETCHITI support enabled.
 #define ND_FEAT_ALL                 0xFF    // Decode as if all features are enabled. This is default.
 
 //
@@ -632,6 +633,7 @@ typedef enum _ND_EX_TYPE_SSE_AVX
     ND_EXT_11,
     ND_EXT_12,
     ND_EXT_13,
+    ND_EXT_14,
 } ND_EX_TYPE_SSE_AVX;
 
 

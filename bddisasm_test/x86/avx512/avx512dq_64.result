@@ -22975,8 +22975,8 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, Compressed displacement: yes, 
                 Segment: 3, Base: 3, Index: 11 * 8, Displacement: 0xfffffffffffffffc, 
 
-0000000000001D20 c4e37916d10a                    VPEXTRD   ecx, xmm2, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+0000000000001D20 c4e37916d10a                    VPEXTRD   rcx, xmm2, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX, Ins cat: AVX, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 28
         Exception class: SSE/VEX, exception type: 5
@@ -22989,12 +22989,12 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D26 c4e37916d10a                    VPEXTRD   ecx, xmm2, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+0000000000001D26 c4e37916d10a                    VPEXTRD   rcx, xmm2, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX, Ins cat: AVX, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 28
         Exception class: SSE/VEX, exception type: 5
@@ -23007,7 +23007,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 1, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 2, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 

@@ -277,3 +277,21 @@
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 7, RegCount: 1
 
+0000000000000062 c4e27b5cf4                      TDPFP16PS tmm6, tmm4, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-FP16, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 21
+        Exception class: AMX, exception type: AMX-E4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 6, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 4, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+

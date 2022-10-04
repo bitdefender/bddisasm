@@ -119,8 +119,8 @@ KTESTQ              rKq,mKq               nil               [vex m:1 p:0 l:0 w:1
 KTESTD              rKd,mKd               nil               [vex m:1 p:1 l:0 w:1 0x99 /r:reg]       s:AVX512BW, t:KMASK, c:KTEST, w:W|R, e:K20
 
 # 0x50 - 0x5F
-VMOVMSKPS           Gy,Ux                 nil               [vex m:1 p:0 l:x w:i 0x50 /r:reg]       s:AVX, t:DATAXFER, w:W|R, e:7
-VMOVMSKPD           Gy,Ux                 nil               [vex m:1 p:1 l:x w:i 0x50 /r:reg]       s:AVX, t:DATAXFER, w:W|R, e:7
+VMOVMSKPS           Gy,Ux                 nil               [vex m:1 p:0 l:x w:i 0x50 /r:reg]       s:AVX, t:DATAXFER, w:W|R, e:7, a:D64
+VMOVMSKPD           Gy,Ux                 nil               [vex m:1 p:1 l:x w:i 0x50 /r:reg]       s:AVX, t:DATAXFER, w:W|R, e:7, a:D64
 VSQRTPS             Vx,Wx                 nil               [vex m:1 p:0 l:x w:i 0x51 /r]           s:AVX, t:AVX, w:W|R, e:2
 VSQRTPD             Vx,Wx                 nil               [vex m:1 p:1 l:x w:i 0x51 /r]           s:AVX, t:AVX, w:W|R, e:2
 VSQRTSS             Vss,Hss,Wss           nil               [vex m:1 p:2 l:i w:i 0x51 /r]           s:AVX, t:AVX, w:W|R|R, e:3
@@ -244,7 +244,7 @@ VCMPSS              Vss,Hss,Wss,Ib        nil               [vex m:1 p:2 l:i w:i
 VCMPSD              Vsd,Hsd,Wsd,Ib        nil               [vex m:1 p:3 l:i w:i 0xC2 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:3
 VPINSRW             Vdq,Hdq,Mw,Ib         nil               [vex m:1 p:1 l:0 w:i 0xC4 /r:mem ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
 VPINSRW             Vdq,Hdq,Rd,Ib         nil               [vex m:1 p:1 l:0 w:i 0xC4 /r:reg ib]    s:AVX, t:AVX, w:W|R|R|R, e:5
-VPEXTRW             Gy,Udq,Ib             nil               [vex m:1 p:1 l:0 w:i 0xC5 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5
+VPEXTRW             Gy,Udq,Ib             nil               [vex m:1 p:1 l:0 w:i 0xC5 /r:reg ib]    s:AVX, t:AVX, w:W|R|R, e:5, a:D64
 VSHUFPS             Vps,Hps,Wps,Ib        nil               [vex m:1 p:0 l:x w:i 0xC6 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:4
 VSHUFPD             Vpd,Hpd,Wpd,Ib        nil               [vex m:1 p:1 l:x w:i 0xC6 /r ib]        s:AVX, t:AVX, w:W|R|R|R, e:4
 
@@ -257,7 +257,7 @@ VPSRLQ              Vx,Hx,Wdq             nil               [vex m:1 p:1 l:x w:i
 VPADDQ              Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0xD4 /r]           s:AVX, t:AVX, w:W|R|R, e:4
 VPMULLW             Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0xD5 /r]           s:AVX, t:AVX, w:W|R|R, e:4
 VMOVQ               Wq,Vdq                nil               [vex m:1 p:1 l:0 w:i 0xD6 /r]           s:AVX, t:DATAXFER, w:W|R, e:5
-VPMOVMSKB           Gy,Ux                 nil               [vex m:1 p:1 l:x w:i 0xD7 /r:reg]       s:AVX, t:DATAXFER, w:W|R, e:7
+VPMOVMSKB           Gy,Ux                 nil               [vex m:1 p:1 l:x w:i 0xD7 /r:reg]       s:AVX, t:DATAXFER, w:W|R, e:7, a:D64
 VPSUBUSB            Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0xD8 /r]           s:AVX, t:AVX, w:W|R|R, e:4
 VPSUBUSW            Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0xD9 /r]           s:AVX, t:AVX, w:W|R|R, e:4
 VPMINUB             Vx,Hx,Wx              nil               [vex m:1 p:1 l:x w:i 0xDA /r]           s:AVX, t:AVX, w:W|R|R, e:4

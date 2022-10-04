@@ -163,6 +163,8 @@ optype = {
     'SHS'      : 'ND_OPT_MEM_SHS',
     'SHS0'     : 'ND_OPT_MEM_SHS0',
     'SHSP'     : 'ND_OPT_MEM_SHSP',
+    'SMT'      : 'ND_OPT_MEM_SMSRT',
+    'DMT'      : 'ND_OPT_MEM_DMSRT',
 
     # Special immediates.
     'm2zI'     : 'ND_OPT_Im2z',
@@ -259,6 +261,7 @@ opsize = {
     't'        : 'ND_OPS_t',
     '384'      : 'ND_OPS_384',
     '512'      : 'ND_OPS_512',
+    '4096'     : 'ND_OPS_4096',
 }
 
 opdecorators = {
@@ -322,6 +325,7 @@ extype = {
     '11'    : 'ND_EXT_11',
     '12'    : 'ND_EXT_12',
     '13'    : 'ND_EXT_13',
+    '14'    : 'ND_EXT_14',
     
     # EVEX
     'E1'    : 'ND_EXT_E1',
@@ -399,13 +403,13 @@ indexes = {
     "F3"    : 2,
     "F2"    : 3,
 
-    # other prefixes
+    # other prefixes/redirection conditions
     "rexb"  : 1,
     "rexw"  : 2,
     "64"    : 3,
     "aF3"   : 4,
     "rep"   : 5,
-    "sib"   : 6,
+    "riprel": 6,
     
     # Mode
     "m16"   : 1,
@@ -435,6 +439,7 @@ indexes = {
     "mpx"   : 1,
     "cet"   : 2,
     "cldm"  : 3,
+    "piti"  : 4,
 }
 
 ilut = {
@@ -449,9 +454,9 @@ ilut = {
     "mode" :            ("ND_ILUT_MODE",            4,      "ND_TABLE_MODE"),
     "dsize" :           ("ND_ILUT_DSIZE",           6,      "ND_TABLE_DSIZE"),
     "asize" :           ("ND_ILUT_ASIZE",           4,      "ND_TABLE_ASIZE"),
-    "auxiliary" :       ("ND_ILUT_AUXILIARY",       6,      "ND_TABLE_AUXILIARY"),
+    "auxiliary" :       ("ND_ILUT_AUXILIARY",       8,      "ND_TABLE_AUXILIARY"),
     "vendor" :          ("ND_ILUT_VENDOR",          6,      "ND_TABLE_VENDOR"),
-    "feature" :         ("ND_ILUT_FEATURE",         4,      "ND_TABLE_FEATURE"),
+    "feature" :         ("ND_ILUT_FEATURE",         8,      "ND_TABLE_FEATURE"),
     "mmmmm" :           ("ND_ILUT_VEX_MMMMM",       32,     "ND_TABLE_VEX_MMMMM"),
     "pp" :              ("ND_ILUT_VEX_PP",          4,      "ND_TABLE_VEX_PP"),
     "l" :               ("ND_ILUT_VEX_L",           4,      "ND_TABLE_VEX_L"),

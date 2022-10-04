@@ -1,0 +1,122 @@
+0000000000000000 0f18f8                          NOP       eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PPRO, Ins cat: WIDENOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000003 0f1838                          NOP       dword ptr [rax]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PPRO, Ins cat: WIDENOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+
+0000000000000006 0f183d90909090                  PREFETCHIT0 byte ptr [rel 0xffffffff9090909d]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PREFETCHITI, Ins cat: PREFETCH, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 14
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, RIP relative: yes, 
+                Segment: 3, Displacement: 0xffffffff90909090, 
+
+000000000000000D 670f183d90909090                PREFETCHIT0 byte ptr [rel 0x909090a5]
+        DSIZE: 32, ASIZE: 32, VLEN: -
+        ISA Set: PREFETCHITI, Ins cat: PREFETCH, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 14
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, RIP relative: yes, 
+                Segment: 3, Displacement: 0xffffffff90909090, 
+
+0000000000000015 0f18f0                          NOP       eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PPRO, Ins cat: WIDENOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000018 0f1830                          NOP       dword ptr [rax]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PPRO, Ins cat: WIDENOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+
+000000000000001B 0f183590909090                  PREFETCHIT1 byte ptr [rel 0xffffffff909090b2]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: PREFETCHITI, Ins cat: PREFETCH, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 14
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, RIP relative: yes, 
+                Segment: 3, Displacement: 0xffffffff90909090, 
+
+0000000000000022 670f183590909090                PREFETCHIT1 byte ptr [rel 0x909090ba]
+        DSIZE: 32, ASIZE: 32, VLEN: -
+        ISA Set: PREFETCHITI, Ins cat: PREFETCH, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 14
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  1, RawSize:  1, Encoding: M, RIP relative: yes, 
+                Segment: 3, Displacement: 0xffffffff90909090, 
+

@@ -209,6 +209,7 @@ valid_opsize = [
 
     '384',          # 384 bits representing a Key Locker handle.
     '512',          # 512 bits representing a Key Locker handle.
+    '4096',         # 4096 bits representing an MSR address/value table.
 ]
 
 # Implicit/fixed operands. Self explanatory.
@@ -292,6 +293,8 @@ valid_impops = {# register      size
     'MXCSR'    : ('MXCSR',      'd'),   # MXCSR register.
     'PKRU'     : ('PKRU',       'd'),   # PKRU register.
     'SSP'      : ('SSP',        'yf'),  # Shadow stack pointer. 32 bit in protected/compat mode, 64 in long mode.
+    'SMT'      : ('SMT',        '4096'),# Source MSR table, encododed in [RSI], up to 4096 bits long (64 entries x 64 bits per entry).
+    'DMT'      : ('DMT',        '4096'),# Value MSR table, encododed in [RDI], up to 4096 bits long (64 entries x 64 bits per entry).
 
     # Implicit memory operands.
     'pAXb'     : ('pAX',        'b'),   # Implicit byte [rAX], used by MONITOR and MONITORX. Can be overriden.
@@ -670,8 +673,8 @@ class Instruction():
         self.RedDs16 = self.RedDs32 = self.RedDs64 = self.RedDDs64 = self.RedFDs64 = False
         # Sixth redirection class: default address size
         self.RedAs16 = self.RedAs32 = self.RedAs64 = False
-        # Seventh redirecton class: rex, rex.w, rep, repz
-        self.RedRexB = self.RedRexW = self.RedRep = self.Red64 = self.RedF3 = False
+        # Seventh redirecton class: rex, rex.w, rep, repz, rip rel
+        self.RedRexB = self.RedRexW = self.RedRep = self.Red64 = self.RedF3 = self.RedRipRel = False
         # Misc - vendor
         self.Vendor = None
         # Misc - feature.
@@ -705,6 +708,8 @@ class Instruction():
                 self.RedRexB = True
             elif 'rep' == t: 
                 self.RedRep = True
+            elif 'riprel' == t:
+                self.RedRipRel = True
             elif 'ds16' == t: 
                 self.RedDs16 = True
             elif 'ds32' == t: 
@@ -811,7 +816,7 @@ class Instruction():
                 self.Opcodes.append(int(t, 16))
             elif t in ['intel', 'amd', 'via', 'cyrix']:
                 self.Vendor = t
-            elif t in ['mpx', 'cet', 'cldm']:
+            elif t in ['mpx', 'cet', 'cldm', 'piti']:
                 self.Feature = t
             elif 'vsib' == t:
                 self.HasVsib = True
@@ -1037,6 +1042,8 @@ class Instruction():
             oprefixes.append('aF3')
         if self.RedRep: 
             oprefixes.append('rep')
+        if self.RedRipRel:
+            oprefixes.append('riprel')
         # Vendor redirection, if any.
         return (opcodes, modrm, mprefixes, mode, dsize, asize, oprefixes, self.Vendor, self.Feature)
 
@@ -1404,7 +1411,7 @@ if __name__ == "__main__":
     # Parse the instruction file and extract the instructions
     instructions = []
     for fn in glob.glob('%s/table*.dat' % sys.argv[1]):
-        instructions += parse_ins_file(fn, flags, features)
+        instructions += parse_ins_file(fn, flags, features, modes)
 
     # Sort the instructions.
     instructions = sorted(instructions, key = lambda x: x.Mnemonic)

@@ -778,8 +778,8 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-000000000000010C 660f3a14fa0a                    PEXTRB    edx, xmm7, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+000000000000010C 660f3a14fa0a                    PEXTRB    rdx, xmm7, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 5
@@ -792,7 +792,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
@@ -815,8 +815,8 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000000118 660fc5d70a                      PEXTRW    edx, xmm7, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+0000000000000118 660fc5d70a                      PEXTRW    rdx, xmm7, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: SSE2, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 26
         Exception class: SSE/VEX, exception type: 5
@@ -829,12 +829,12 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-000000000000011D 660f3a16fa0a                    PEXTRD    edx, xmm7, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+000000000000011D 660f3a16fa0a                    PEXTRD    rdx, xmm7, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 5
@@ -847,7 +847,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
@@ -1960,8 +1960,8 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-000000000000026E 660f3a14fa0a                    PEXTRB    edx, xmm7, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+000000000000026E 660f3a14fa0a                    PEXTRB    rdx, xmm7, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 5
@@ -1974,7 +1974,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
@@ -1997,8 +1997,8 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-000000000000027A 660fc5d70a                      PEXTRW    edx, xmm7, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+000000000000027A 660fc5d70a                      PEXTRW    rdx, xmm7, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: SSE2, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 26
         Exception class: SSE/VEX, exception type: 5
@@ -2011,12 +2011,12 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-000000000000027F 660f3a16fa0a                    PEXTRD    edx, xmm7, 0x0a
-        DSIZE: 32, ASIZE: 64, VLEN: 128
+000000000000027F 660f3a16fa0a                    PEXTRD    rdx, xmm7, 0x0a
+        DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 5
@@ -2029,7 +2029,7 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 2, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: R, RegType:           Vector, RegSize: 16, RegId: 7, RegCount: 1
         Operand: 2, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 

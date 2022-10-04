@@ -33,6 +33,7 @@ AVX                     : 0x00000001, 0xFFFFFFFF, ECX, 28
 F16C                    : 0x00000001, 0xFFFFFFFF, ECX, 29
 RDRAND                  : 0x00000001, 0xFFFFFFFF, ECX, 30
 
+
 RDWRFSGS                : 0x00000007, 0x00000000, EBX, 0
 SGX                     : 0x00000007, 0x00000000, EBX, 2
 BMI1                    : 0x00000007, 0x00000000, EBX, 3
@@ -88,17 +89,31 @@ AVX512FP16              : 0x00000007, 0x00000000, EDX, 23
 AMXTILE                 : 0x00000007, 0x00000000, EDX, 24
 AMXINT8                 : 0x00000007, 0x00000000, EDX, 25
 
+
+RAOINT                  : 0x00000007, 0x00000001, EAX, 3
 AVXVNNI                 : 0x00000007, 0x00000001, EAX, 4
 AVX512BF16              : 0x00000007, 0x00000001, EAX, 5
+CMPCCXADD               : 0x00000007, 0x00000001, EAX, 7
 FRED                    : 0x00000007, 0x00000001, EAX, 17
 LKGS                    : 0x00000007, 0x00000001, EAX, 18
+WRMSRNS                 : 0x00000007, 0x00000001, EAX, 19
+AMXFP16                 : 0x00000007, 0x00000001, EAX, 21
 HRESET                  : 0x00000007, 0x00000001, EAX, 22
+AVXIFMA                 : 0x00000007, 0x00000001, EAX, 23
+MSRLIST                 : 0x00000007, 0x00000001, EAX, 27
+
+AVXVNNIINT8             : 0x00000007, 0x00000001, EDX, 4
+AVXNECONVERT            : 0x00000007, 0x00000001, EDX, 5
+PREFETCHITI             : 0x00000007, 0x00000001, EDX, 14
+
 
 XSAVEOPT                : 0x0000000D, 0x00000001, EAX, 0
 XSAVEC                  : 0x0000000D, 0x00000001, EAX, 1
 XSAVES                  : 0x0000000D, 0x00000001, EAX, 3
 
+
 PTWRITE                 : 0x00000014, 0x00000000, EBX, 4
+
 
 SVM                     : 0x80000001, 0xFFFFFFFF, ECX, 2
 LZCNT                   : 0x80000001, 0xFFFFFFFF, ECX, 5
@@ -113,8 +128,10 @@ INVLPGB                 : 0x80000001, 0xFFFFFFFF, EDX, 24
 RDTSCP                  : 0x80000001, 0xFFFFFFFF, ECX, 27
 3DNOW                   : 0x80000001, 0xFFFFFFFF, EDX, 31
 
+
 WBNOINVD                : 0x80000008, 0xFFFFFFFF, EBX, 9
 RDPRU                   : 0x80000008, 0xFFFFFFFF, EBX, 4
 MCOMMIT                 : 0x80000008, 0xFFFFFFFF, EBX, 8
+
 
 SNP                     : 0x8000001F, 0xFFFFFFFF, EAX, 4

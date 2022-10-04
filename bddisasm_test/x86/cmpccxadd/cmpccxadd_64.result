@@ -1,0 +1,704 @@
+0000000000000000 c40279e000                      CMPOXADD  dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000005 c402f9e000                      CMPOXADD  qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000000A c40279e100                      CMPNOXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000000F c402f9e100                      CMPNOXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000014 c40279e200                      CMPCXADD  dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000019 c402f9e200                      CMPCXADD  qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000001E c40279e300                      CMPNCXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000023 c402f9e300                      CMPNCXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000028 c40279e400                      CMPZXADD  dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000002D c402f9e400                      CMPZXADD  qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000032 c40279e500                      CMPNZXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000037 c402f9e500                      CMPNZXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000003C c40279e600                      CMPBEXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000041 c402f9e600                      CMPBEXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000046 c40279e700                      CMPNBEXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000004B c402f9e700                      CMPNBEXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000050 c40279e800                      CMPSXADD  dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000055 c402f9e800                      CMPSXADD  qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000005A c40279e900                      CMPNSXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000005F c402f9e900                      CMPNSXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000064 c40279ea00                      CMPPXADD  dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000069 c402f9ea00                      CMPPXADD  qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000006E c40279eb00                      CMPNPXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000073 c402f9eb00                      CMPNPXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000078 c40279ec00                      CMPLXADD  dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000007D c402f9ec00                      CMPLXADD  qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000082 c40279ed00                      CMPNLXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000087 c402f9ed00                      CMPNLXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+000000000000008C c40279ee00                      CMPLEXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+0000000000000091 c402f9ee00                      CMPLEXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+
+0000000000000096 c40279ef00                      CMPNLEXADD dword ptr [r8], r8d, eax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: V, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+
+000000000000009B c402f9ef00                      CMPNLEXADD qword ptr [r8], r8, rax
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
+        Exception class: EVEX, exception type: E6NF
+        FLAGS access
+                CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 8, 
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 8, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: V, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
+

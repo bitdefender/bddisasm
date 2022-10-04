@@ -94,8 +94,14 @@ TILERELEASE         nil                   nil               [vex m:2 p:0 l:0 w:0
 TILEZERO            rTt                   nil               [vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0]  s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E5
 
 # 0x50 - 0x5F
+VPDPBUUD            Vx,Hx,Wx              nil               [vex m:2 p:0 l:x w:0 0x50 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
 VPDPBUSD            Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x50 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPBSUD            Vx,Hx,Wx              nil               [vex m:2 p:2 l:x w:0 0x50 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBSSD            Vx,Hx,Wx              nil               [vex m:2 p:3 l:x w:0 0x50 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBUUDS           Vx,Hx,Wx              nil               [vex m:2 p:0 l:x w:0 0x51 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
 VPDPBUSDS           Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x51 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPBSUDS           Vx,Hx,Wx              nil               [vex m:2 p:2 l:x w:0 0x51 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBSSDS           Vx,Hx,Wx              nil               [vex m:2 p:3 l:x w:0 0x51 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
 VPDPWSSD            Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x52 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
 VPDPWSSDS           Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0x53 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
 
@@ -104,6 +110,7 @@ VPBROADCASTQ        Vx,Wq                 nil               [vex m:2 p:1 l:x w:0
 VBROADCASTI128      Vqq,Mdq               nil               [vex m:2 p:1 l:1 w:0 0x5A /r:mem]       s:AVX2, t:BROADCAST, w:W|R, e:6
 
 TDPBF16PS           rTt,mTt,vTt           nil               [vex m:2 p:2 l:0 w:0 0x5C /r:reg]       s:AMXBF16, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPFP16PS           rTt,mTt,vTt           nil               [vex m:2 p:3 l:0 w:0 0x5C /r:reg]       s:AMXFP16, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 TDPBUUD             rTt,mTt,vTt           nil               [vex m:2 p:0 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 TDPBUSD             rTt,mTt,vTt           nil               [vex m:2 p:1 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 TDPBSUD             rTt,mTt,vTt           nil               [vex m:2 p:2 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
@@ -112,6 +119,7 @@ TDPBSSD             rTt,mTt,vTt           nil               [vex m:2 p:3 l:0 w:0
 # 0x60 - 0x6F
 
 # 0x70 - 0x7F
+VCVTNEPS2BF16       Vx,Wx                 nil               [vex m:2 p:2 l:x w:0 0x72 /r]           s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
 VPBROADCASTB        Vx,Wb                 nil               [vex m:2 p:1 l:x w:0 0x78 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
 VPBROADCASTW        Vx,Ww                 nil               [vex m:2 p:1 l:x w:0 0x79 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
 
@@ -175,6 +183,16 @@ VFNMSUB213SS        Vdq,Hdq,Wss           nil               [vex m:2 p:1 l:i w:0
 VFNMSUB213SD        Vdq,Hdq,Wsd           nil               [vex m:2 p:1 l:i w:1 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
 
 # 0xB0 - 0xBF
+VCVTNEOPH2PS        Vx,Mx                 nil               [vex m:2 p:0 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VCVTNEEPH2PS        Vx,Mx                 nil               [vex m:2 p:1 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VCVTNEEBF162PS      Vx,Mx                 nil               [vex m:2 p:2 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VCVTNEOBF162PS      Vx,Mx                 nil               [vex m:2 p:3 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VBCSTNESH2PS        Vx,Mw                 nil               [vex m:2 p:1 l:x w:0 0xB1 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:5
+VBCSTNEBF162PS      Vx,Mw                 nil               [vex m:2 p:2 l:x w:0 0xB1 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:5
+
+VPMADD52LUQ         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xB4 /r]           s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
+VPMADD52HUQ         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xB5 /r]           s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
+
 VFMADDSUB231PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xB6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMADDSUB231PD      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:1 0xB6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
 VFMSUBADD231PS      Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:0 0xB7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
@@ -201,6 +219,24 @@ VAESENC             Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:i
 VAESENCLAST         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:i 0xDD /r]           s:AES, t:AES, w:W|R|R, e:4
 VAESDEC             Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:i 0xDE /r]           s:AES, t:AES, w:W|R|R, e:4
 VAESDECLAST         Vx,Hx,Wx              nil               [vex m:2 p:1 l:x w:i 0xDF /r]           s:AES, t:AES, w:W|R|R, e:4
+
+# 0xE0 - 0xEF
+CMPOXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE0 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNOXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE1 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPCXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE2 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNCXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE3 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPZXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE4 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNZXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE5 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPBEXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE6 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNBEXADD          My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE7 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPSXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE8 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNSXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE9 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPPXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEA /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNPXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEB /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPLXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEC /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNLXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xED /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPLEXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEE /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNLEXADD          My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEF /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
 
 # 0xF0 - 0xFF
 ANDN                Gy,By,Ey              Fv                [vex m:2 p:0 l:0 w:x 0xF2 /r]           s:BMI1, t:BMI1, w:W|R|R|W, f:CF=0|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13

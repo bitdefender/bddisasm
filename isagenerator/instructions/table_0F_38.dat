@@ -138,3 +138,8 @@ MOVDIRI             My,Gy                 nil               [         NP 0x0F 0x
 
 ENCODEKEY128        Gd,Rd                 XMM0,XMM0-2,XMM4-6,Fv [   0xF3 0x0F 0x38 0xFA /r:reg]     s:KL, t:AESKL, w:W|R|R|W|W|W, f:ZERO
 ENCODEKEY256        Gd,Rd                 XMM0-1,XMM2-6,Fv  [       0xF3 0x0F 0x38 0xFB /r:reg]     s:KL, t:AESKL, w:W|R|RW|W|W, f:ZERO
+
+AADD                My,Gy                 nil               [         NP 0x0F 0x38 0xFC /r:mem]     s:RAOINT, t:RAOINT, w:RW|R
+AAND                My,Gy                 nil               [       0x66 0x0F 0x38 0xFC /r:mem]     s:RAOINT, t:RAOINT, w:RW|R
+AOR                 My,Gy                 nil               [       0xF2 0x0F 0x38 0xFC /r:mem]     s:RAOINT, t:RAOINT, w:RW|R
+AXOR                My,Gy                 nil               [       0xF3 0x0F 0x38 0xFC /r:mem]     s:RAOINT, t:RAOINT, w:RW|R

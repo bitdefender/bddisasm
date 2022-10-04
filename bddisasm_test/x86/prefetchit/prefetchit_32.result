@@ -1,0 +1,30 @@
+0000000000000000 0f1838                          NOP       dword ptr [eax]
+        DSIZE: 32, ASIZE: 32, VLEN: -
+        ISA Set: PPRO, Ins cat: WIDENOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 0, 
+
+0000000000000003 0f183d90909090                  NOP       dword ptr [0x90909090]
+        DSIZE: 32, ASIZE: 32, VLEN: -
+        ISA Set: PPRO, Ins cat: WIDENOP, CET tracked: no
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  --,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Displacement: 0xffffffff90909090, 
+

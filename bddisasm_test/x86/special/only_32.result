@@ -79,7 +79,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:          Segment, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
+        Operand: 1, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
 
 0000000000000008 16                              PUSH      ss

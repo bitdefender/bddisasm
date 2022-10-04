@@ -27,6 +27,9 @@ VMLAUNCH       nil           Fv                        [         NP 0x0F 0x01 /0
 VMRESUME       nil           Fv                        [         NP 0x0F 0x01 /0xC3]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 VMXOFF         nil           Fv                        [         NP 0x0F 0x01 /0xC4]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 PCONFIG        nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC5]           s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW, m:NOV86
+WRMSRNS        nil           EAX,EDX,ECX,MSR           [         NP 0x0F 0x01 /0xC6]           s:WRMSRNS, t:SYSTEM, w:R|R|R|W, m:KERNEL
+WRMSRLIST      nil           SMT,DMT,ECX               [       0xF3 0x0F 0x01 /0xC6]           s:MSRLIST, t:SYSTEM, w:R|R|RW, m:KERNEL|O64
+RDMSRLIST      nil           SMT,DMT,ECX               [       0xF2 0x0F 0x01 /0xC6]           s:MSRLIST, t:SYSTEM, w:R|W|RW, m:KERNEL|O64
 MONITOR        nil           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
 MWAIT          nil           EAX,ECX                   [         NP 0x0F 0x01 /0xC9]           s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
 CLAC           nil           Fv                        [         NP 0x0F 0x01 /0xCA]           s:SMAP, t:SMAP, w:W, f:AC=0, m:KERNEL|NOV86
@@ -138,6 +141,8 @@ MOVHPD         Vq,Mq         nil                       [       0x66 0x0F 0x16 /r
 MOVSHDUP       Vx,Wx         nil                       [       0xF3 0x0F 0x16 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
 MOVHPS         Mq,Vq         nil                       [         NP 0x0F 0x17 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
 MOVHPD         Mq,Vq         nil                       [       0x66 0x0F 0x17 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
+
+# Default wide-nops/PREFETCH instructions.
 PREFETCHNTA    Mb            nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
 NOP            Ev            nil                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
 PREFETCHT0     Mb            nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
@@ -151,6 +156,26 @@ NOP            Ev            nil                       [            0x0F 0x18 /5
 NOP            Ev            nil                       [            0x0F 0x18 /6]              s:PPRO, t:WIDENOP, w:N
 NOP            Ev            nil                       [            0x0F 0x18 /7]              s:PPRO, t:WIDENOP, w:N
 NOP            Ev            nil                       [            0x0F 0x19 /r]              s:PPRO, t:WIDENOP, w:N
+
+# PREFETCHITI instructions. Most of them duplicates of the above, since they are also present when the PREFETCHIT feature
+# is enabled (which applies to the entire opcode).
+PREFETCHNTA    Mb            nil                       [       piti 0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            nil                       [       piti 0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT0     Mb            nil                       [       piti 0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            nil                       [       piti 0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT1     Mb            nil                       [       piti 0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            nil                       [       piti 0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT2     Mb            nil                       [       piti 0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            nil                       [       piti 0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [       piti 0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [       piti 0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:N
+PREFETCHIT1    Mb            nil                       [piti riprel 0x0F 0x18 /6:mem]          s:PREFETCHITI, t:PREFETCH, w:N, m:O64
+NOP            Ev            nil                       [       piti 0x0F 0x18 /6:mem]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [       piti 0x0F 0x18 /6:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHIT0    Mb            nil                       [piti riprel 0x0F 0x18 /7:mem]          s:PREFETCHITI, t:PREFETCH, w:N, m:O64
+NOP            Ev            nil                       [       piti 0x0F 0x18 /7:mem]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            nil                       [       piti 0x0F 0x18 /7:reg]          s:PPRO, t:WIDENOP, w:N
+
 
 # MPX instructions. According to the SDM, MPX instructions have 64 bit op & address size in 64 bit mode, no matter 
 # if 0x66 or 0x67 prefixes are used. 16 bit addressing cause #UD. However, these checks are not handled here (note
@@ -284,8 +309,8 @@ CMOVNLE        Gv,Ev         Fv                        [            0x0F 0x4F /r
 
 # 0x50 - 0x5F
 # Note: for MOVMSKPS & MOVMSKPD, the Intel doc says the destination reg is y (32 or 64 bit) but XED says it must be d (only 32 bits).
-MOVMSKPS       Gd,Ups        nil                       [         NP 0x0F 0x50 /r:reg]          s:SSE, t:DATAXFER, w:W|R, e:7
-MOVMSKPD       Gd,Upd        nil                       [       0x66 0x0F 0x50 /r:reg]          s:SSE2, t:DATAXFER, w:W|R, e:7
+MOVMSKPS       Gy,Ups        nil                       [         NP 0x0F 0x50 /r:reg]          s:SSE, t:DATAXFER, w:W|R, e:7, a:D64
+MOVMSKPD       Gy,Upd        nil                       [       0x66 0x0F 0x50 /r:reg]          s:SSE2, t:DATAXFER, w:W|R, e:7, a:D64
 SQRTPS         Vps,Wps       nil                       [         NP 0x0F 0x51 /r]              s:SSE, t:SSE, w:W|R, e:2
 SQRTPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x51 /r]              s:SSE2, t:SSE, w:W|R, e:2
 SQRTSS         Vss,Wss       nil                       [       0xF3 0x0F 0x51 /r]              s:SSE, t:SSE, w:W|R, e:3
@@ -562,8 +587,8 @@ PINSRW         Pq,Rd,Ib      nil                       [         NP 0x0F 0xC4 /r
 PINSRW         Pq,Mw,Ib      nil                       [         NP 0x0F 0xC4 /r:mem ib]       s:MMX, t:MMX, w:RW|R|R
 PINSRW         Vdq,Rd,Ib     nil                       [       0x66 0x0F 0xC4 /r:reg ib]       s:SSE2, t:SSE, w:RW|R|R, e:5
 PINSRW         Vdq,Mw,Ib     nil                       [       0x66 0x0F 0xC4 /r:mem ib]       s:SSE2, t:SSE, w:RW|R|R, e:5
-PEXTRW         Gy,Nq,Ib      nil                       [         NP 0x0F 0xC5 /r:reg ib]       s:MMX, t:MMX, w:W|R|R
-PEXTRW         Gy,Udq,Ib     nil                       [       0x66 0x0F 0xC5 /r:reg ib]       s:SSE2, t:SSE, w:W|R|R, e:5
+PEXTRW         Gy,Nq,Ib      nil                       [         NP 0x0F 0xC5 /r:reg ib]       s:MMX, t:MMX, w:W|R|R, a:D64
+PEXTRW         Gy,Udq,Ib     nil                       [       0x66 0x0F 0xC5 /r:reg ib]       s:SSE2, t:SSE, w:W|R|R, e:5, a:D64
 SHUFPS         Vps,Wps,Ib    nil                       [         NP 0x0F 0xC6 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:4
 SHUFPD         Vpd,Wpd,Ib    nil                       [       0x66 0x0F 0xC6 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:4
 CMPXCHG8B      Mq            EDX,EAX,ECX,EBX,Fv        [            0x0F 0xC7 /1:mem]          s:PENTIUMREAL, t:SEMAPHORE, w:RCW|RCW|RCW|R|R|W, i:CX8, f:ZF=m, p:LOCK|HLE
@@ -610,8 +635,8 @@ PMULLW         Vx,Wx         nil                       [       0x66 0x0F 0xD5 /r
 MOVQ           Wq,Vq         nil                       [       0x66 0x0F 0xD6 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
 MOVQ2DQ        Vdq,Nq        nil                       [       0xF3 0x0F 0xD6 /r:reg]          s:SSE2, t:DATAXFER, w:W|R
 MOVDQ2Q        Pq,Uq         nil                       [       0xF2 0x0F 0xD6 /r:reg]          s:SSE2, t:DATAXFER, w:W|R
-PMOVMSKB       Gd,Nq         nil                       [         NP 0x0F 0xD7 /r:reg]          s:SSE, t:MMX, w:W|R, e:7
-PMOVMSKB       Gd,Ux         nil                       [       0x66 0x0F 0xD7 /r:reg]          s:SSE2, t:SSE, w:W|R, e:7
+PMOVMSKB       Gy,Nq         nil                       [         NP 0x0F 0xD7 /r:reg]          s:SSE, t:MMX, w:W|R, e:7, a:D64
+PMOVMSKB       Gy,Ux         nil                       [       0x66 0x0F 0xD7 /r:reg]          s:SSE2, t:SSE, w:W|R, e:7, a:D64
 PSUBUSB        Pq,Qq         nil                       [         NP 0x0F 0xD8 /r]              s:MMX, t:MMX, w:RW|R
 PSUBUSB        Vx,Wx         nil                       [       0x66 0x0F 0xD8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
 PSUBUSW        Pq,Qq         nil                       [         NP 0x0F 0xD9 /r]              s:MMX, t:MMX, w:RW|R

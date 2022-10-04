@@ -101,6 +101,7 @@ const char* set_to_string(
     case ND_SET_AES:                   return "AES";
     case ND_SET_AMD:                   return "AMD";
     case ND_SET_AMXBF16:               return "AMX-BF16";
+    case ND_SET_AMXFP16:               return "AMX-FP16";
     case ND_SET_AMXINT8:               return "AMX-INT8";
     case ND_SET_AMXTILE:               return "AMX-TILE";
     case ND_SET_AVX:                   return "AVX";
@@ -123,7 +124,10 @@ const char* set_to_string(
     case ND_SET_AVX512VP2INTERSECT:    return "AVX512VP2INTERSECT";
     case ND_SET_AVX512VPOPCNTDQ:       return "AVX512VPOPCNTDQ";
     case ND_SET_AVX512FP16:            return "AVX512FP16";
+    case ND_SET_AVXIFMA:               return "AVXIFMA";
+    case ND_SET_AVXNECONVERT:          return "AVXNECONVERT";
     case ND_SET_AVXVNNI:               return "AVXVNNI";
+    case ND_SET_AVXVNNIINT8:           return "AVXVNNIINT8";
     case ND_SET_BMI1:                  return "BMI1";
     case ND_SET_BMI2:                  return "BMI2";
     case ND_SET_CET_SS:                return "CET_SS";
@@ -133,6 +137,7 @@ const char* set_to_string(
     case ND_SET_CLFSHOPT:              return "CLFSHOPT";
     case ND_SET_CLWB:                  return "CLWB";
     case ND_SET_CLZERO:                return "CLZERO";
+    case ND_SET_CMPCCXADD:             return "CMPCCXADD";
     case ND_SET_CMPXCHG16B:            return "CMPXCHG16B";
     case ND_SET_CYRIX:                 return "CYRIX";
     case ND_SET_CYRIX_SMM:             return "CYRIX_SMM";
@@ -165,6 +170,7 @@ const char* set_to_string(
     case ND_SET_MOVDIR64B:             return "MOVDIR64B";
     case ND_SET_MOVDIRI:               return "MOVDIRI";
     case ND_SET_MPX:                   return "MPX";
+    case ND_SET_MSRLIST:               return "MSRLIST";
     case ND_SET_MWAITT:                return "MWAITT";
     case ND_SET_PAUSE:                 return "PAUSE";
     case ND_SET_PCLMULQDQ:             return "PCLMULQDQ";
@@ -173,8 +179,10 @@ const char* set_to_string(
     case ND_SET_PKU:                   return "PKU";
     case ND_SET_POPCNT:                return "POPCNT";
     case ND_SET_PPRO:                  return "PPRO";
+    case ND_SET_PREFETCHITI:           return "PREFETCHITI";
     case ND_SET_PREFETCH_NOP:          return "PREFETCH_NOP";
     case ND_SET_PTWRITE:               return "PTWRITE";
+    case ND_SET_RAOINT:                return "RAOINT";
     case ND_SET_RDPID:                 return "RDPID";
     case ND_SET_RDPMC:                 return "RDPMC";
     case ND_SET_RDPRU:                 return "RDPRU";
@@ -208,6 +216,7 @@ const char* set_to_string(
     case ND_SET_VTX:                   return "VTX";
     case ND_SET_WAITPKG:               return "WAITPKG";
     case ND_SET_WBNOINVD:              return "WBNOINVD";
+    case ND_SET_WRMSRNS:               return "WRMSRNS";
     case ND_SET_X87:                   return "X87";
     case ND_SET_XOP:                   return "XOP";
     case ND_SET_XSAVE:                 return "XSAVE";
@@ -240,7 +249,10 @@ const char* category_to_string(
     case ND_CAT_AVX512VBMI:           return "AVX512VBMI";
     case ND_CAT_AVX512VP2INTERSECT:   return "AVX512VP2INTERSECT";
     case ND_CAT_AVX512FP16:           return "AVX512FP16";
+    case ND_CAT_AVXIFMA:              return "AVXIFMA";
     case ND_CAT_AVXVNNI:              return "AVXVNNI";
+    case ND_CAT_AVXVNNIINT8:          return "AVXVNNIINT8";
+    case ND_CAT_AVXNECONVERT:         return "AVXNECONVERT";
     case ND_CAT_BITBYTE:              return "BITBYTE";
     case ND_CAT_BLEND:                return "BLEND";
     case ND_CAT_BMI1:                 return "BMI1";
@@ -250,6 +262,7 @@ const char* category_to_string(
     case ND_CAT_CET:                  return "CET";
     case ND_CAT_CLDEMOTE:             return "CLDEMOTE";
     case ND_CAT_CMOV:                 return "CMOV";
+    case ND_CAT_CMPCCXADD:            return "CMPCCXADD";
     case ND_CAT_COMPRESS:             return "COMPRESS";
     case ND_CAT_COND_BR:              return "COND_BR";
     case ND_CAT_CONFLICT:             return "CONFLICT";
@@ -290,6 +303,7 @@ const char* category_to_string(
     case ND_CAT_PREFETCH:             return "PREFETCH";
     case ND_CAT_PTWRITE:              return "PTWRITE";
     case ND_CAT_PUSH:                 return "PUSH";
+    case ND_CAT_RAOINT:               return "RAO-INT";
     case ND_CAT_RDPID:                return "RDPID";
     case ND_CAT_RDRAND:               return "RDRAND";
     case ND_CAT_RDSEED:               return "RDSEED";
@@ -1790,7 +1804,7 @@ int main(
         printf("        -r rip           use the provided RIP\n");
         printf("        -b[16|32|64]     set decoding mode; default is 16\n");
         printf("        -v[intel|amd|cyrix|mpx|any] set preferred vendor\n");
-        printf("        -t[none|all|mpx|cet|cldm] set preferred feature mode; default is all\n");
+        printf("        -t[none|all|mpx|cet|cldm|piti] set preferred feature mode; default is all\n");
         printf("        -s \"ins\"       search for the given instructions\n");
         printf("        -nv              don't print disassembly\n");
         printf("        -iv              display statistics\n");
@@ -1960,6 +1974,15 @@ int main(
             }
 
             feat |= ND_FEAT_CLDEMOTE;
+        }
+        else if (0 == strcmp(argv[i], "-tpiti"))
+        {
+            if (feat == ND_FEAT_ALL)
+            {
+                feat = 0;
+            }
+
+            feat |= ND_FEAT_PITI;
         }
         else if (0 == strcmp(argv[i], "-tnone"))
         {

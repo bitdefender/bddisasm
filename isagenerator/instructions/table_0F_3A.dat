@@ -14,11 +14,13 @@ PALIGNR             Vx,Wx,Ib              nil               [       0x66 0x0F 0x
 # 0x10 - 0x1F
 # TODO: for PEXTRx, a smaller size is accessed, in fact.
 PEXTRB              Mb,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x14 /r:mem ib]  s:SSE4, t:SSE, w:W|R|R, e:5
-PEXTRB              Rd,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x14 /r:reg ib]  s:SSE4, t:SSE, w:W|R|R, e:5
+PEXTRB              Ry,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x14 /r:reg ib]  s:SSE4, t:SSE, w:W|R|R, e:5, a:D64
 PEXTRW              Mw,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x15 /r:mem ib]  s:SSE4, t:SSE, w:W|R|R, e:5
-PEXTRW              Rd,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x15 /r:reg ib]  s:SSE4, t:SSE, w:W|R|R, e:5
-PEXTRD              Ey,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x16 /r ib]      s:SSE4, t:SSE, w:W|R|R, e:5
-PEXTRQ              Ey,Vdq,Ib             nil               [  rexw 0x66 0x0F 0x3A 0x16 /r ib]      s:SSE4, t:SSE, w:W|R|R, e:5
+PEXTRW              Ry,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x15 /r:reg ib]  s:SSE4, t:SSE, w:W|R|R, e:5, a:D64
+PEXTRD              Md,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x16 /r:mem ib]  s:SSE4, t:SSE, w:W|R|R, e:5
+PEXTRD              Ry,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x16 /r:reg ib]  s:SSE4, t:SSE, w:W|R|R, e:5, a:D64
+PEXTRQ              Mq,Vdq,Ib             nil               [  rexw 0x66 0x0F 0x3A 0x16 /r:mem ib]  s:SSE4, t:SSE, w:W|R|R, e:5
+PEXTRQ              Ry,Vdq,Ib             nil               [  rexw 0x66 0x0F 0x3A 0x16 /r:reg ib]  s:SSE4, t:SSE, w:W|R|R, e:5
 EXTRACTPS           Ed,Vdq,Ib             nil               [       0x66 0x0F 0x3A 0x17 /r ib]      s:SSE4, t:SSE, w:W|R|R, e:5
 
 # 0x20 - 0x2F

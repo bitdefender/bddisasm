@@ -1547,6 +1547,44 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_TESTUI: return "testui";
     case ND_INS_UIRET: return "uiret";
     case ND_INS_SENDUIPI: return "senduipi";
+    case ND_INS_AADD: return "aadd";
+    case ND_INS_AAND: return "aand";
+    case ND_INS_AOR: return "aor";
+    case ND_INS_AXOR: return "axor";
+    case ND_INS_CMPBEXADD: return "cmpbexadd";
+    case ND_INS_CMPCXADD: return "cmpcxadd";
+    case ND_INS_CMPLEXADD: return "cmplexadd";
+    case ND_INS_CMPLXADD: return "cmplxadd";
+    case ND_INS_CMPNBEXADD: return "cmpnbexadd";
+    case ND_INS_CMPNCXADD: return "cmpncxadd";
+    case ND_INS_CMPNLEXADD: return "cmpnlexadd";
+    case ND_INS_CMPNLXADD: return "cmpnlxadd";
+    case ND_INS_CMPNOXADD: return "cmpnoxadd";
+    case ND_INS_CMPNPXADD: return "cmpnpxadd";
+    case ND_INS_CMPNSXADD: return "cmpnsxadd";
+    case ND_INS_CMPNZXADD: return "cmpnzxadd";
+    case ND_INS_CMPOXADD: return  "cmpoxadd";
+    case ND_INS_CMPPXADD: return "cmppxadd";
+    case ND_INS_CMPSXADD: return "cmpsxadd";
+    case ND_INS_CMPZXADD: return "cmpzxadd";
+    case ND_INS_PREFETCHIT0: return "prefetchit0";
+    case ND_INS_PREFETCHIT1: return "prefetchit1";
+    case ND_INS_RDMSRLIST: return "rdmsrlist";
+    case ND_INS_TDPFP16PS: return "tdpfp16ps";
+    case ND_INS_VBCSTNEBF162PS: return "vbcstnebf162ps";
+    case ND_INS_VBCSTNESH2PS: return "vbcstnesh2ps";
+    case ND_INS_VCVTNEEBF162PS: return "vcvtneebf162ps";
+    case ND_INS_VCVTNEEPH2PS: return "vcvtneeph2ps";
+    case ND_INS_VCVTNEOBF162PS: return "vcvtneobf162ps";
+    case ND_INS_VCVTNEOPH2PS: return "vcvtneoph2ps";
+    case ND_INS_VPDPBSSD:  return "vpdpbssd";
+    case ND_INS_VPDPBSSDS: return "vpdpbssds";
+    case ND_INS_VPDPBSUD:  return "vpdpbsud";
+    case ND_INS_VPDPBSUDS: return "vpdpbsuds";
+    case ND_INS_VPDPBUUD:  return "vpdpbuud";
+    case ND_INS_VPDPBUUDS: return "vpdpbuuds";
+    case ND_INS_WRMSRLIST: return "wrmsrlist";
+    case ND_INS_WRMSRNS: return "wrmsrns";
     default: return "unhandled!";
     }
 
@@ -1661,6 +1699,11 @@ std::string ins_cat_to_str(ND_INS_CATEGORY category)
     case ND_CAT_X87_ALU: return "x87_alu";
     case ND_CAT_XOP: return "xop";
     case ND_CAT_XSAVE: return "xsave";
+    case ND_CAT_AVXIFMA: return "avxifma";
+    case ND_CAT_AVXVNNIINT8: return "avxvnniint8";
+    case ND_CAT_AVXNECONVERT: return "avxneconvert";
+    case ND_CAT_CMPCCXADD: return "cmpccxass";
+    case ND_CAT_RAOINT: return "rao-int";
     }
 
     return "<unknown>";
@@ -1788,6 +1831,15 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_XSAVE: return "xsave";
     case ND_SET_XSAVEC: return "xsavec";
     case ND_SET_XSAVES: return "xsaves";
+    case ND_SET_AMXFP16: return "AMX-FP16";
+    case ND_SET_AVXIFMA: return "avxifma";
+    case ND_SET_AVXNECONVERT: return "avxneconvert";
+    case ND_SET_AVXVNNIINT8: return "avxvnniint8";
+    case ND_SET_CMPCCXADD: return "cmpccxadd";
+    case ND_SET_MSRLIST: return "msrlist";
+    case ND_SET_PREFETCHITI: return "prefetchiti";
+    case ND_SET_RAOINT: return "raoint";
+    case ND_SET_WRMSRNS: return "wrmsrns";
     }
 
     return "<unknown>";

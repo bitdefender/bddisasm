@@ -15,7 +15,7 @@ OR             Gb,Eb         Fv                [            0x0A /r]       s:I86
 OR             Gv,Ev         Fv                [            0x0B /r]       s:I86, t:LOGIC, w:RW|R|W, f:LOGIC
 OR             AL,Ib         Fv                [            0x0C ib]       s:I86, t:LOGIC, w:RW|R|W, f:LOGIC
 OR             rAX,Iz        Fv                [            0x0D iz]       s:I86, t:LOGIC, w:RW|R|W, f:LOGIC, a:OP2SEXO1
-PUSH           CS            Kv                [            0x0E]          s:I86, t:PUSH, w:R|R, m:NO64|NOSGX
+PUSH           CS            Kv                [            0x0E]          s:I86, t:PUSH, w:R|W, m:NO64|NOSGX
 
 # 0x10 - 0x1F
 ADC            Eb,Gb         Fv                [            0x10 /r]       s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, p:HLE|LOCK

@@ -42,16 +42,19 @@ typedef enum _ND_ILUT_TYPE
 #define ND_ILUT_INDEX_MOD_MEM           0
 #define ND_ILUT_INDEX_MOD_REG           1
 
+// Mandatory prefixes.
 #define ND_ILUT_INDEX_MAN_PREF_NONE     0
 #define ND_ILUT_INDEX_MAN_PREF_66       1
 #define ND_ILUT_INDEX_MAN_PREF_F3       2
 #define ND_ILUT_INDEX_MAN_PREF_F2       3
 
+// Operating mode.
 #define ND_ILUT_INDEX_MODE_NONE         0
 #define ND_ILUT_INDEX_MODE_16           1
 #define ND_ILUT_INDEX_MODE_32           2
 #define ND_ILUT_INDEX_MODE_64           3
 
+// Operand size.
 #define ND_ILUT_INDEX_DSIZE_NONE        0
 #define ND_ILUT_INDEX_DSIZE_16          1
 #define ND_ILUT_INDEX_DSIZE_32          2
@@ -59,22 +62,27 @@ typedef enum _ND_ILUT_TYPE
 #define ND_ILUT_INDEX_DSIZE_DEF64       4
 #define ND_ILUT_INDEX_DSIZE_F64         5
 
+// Address size.
 #define ND_ILUT_INDEX_ASIZE_NONE        0
 #define ND_ILUT_INDEX_ASIZE_16          1
 #define ND_ILUT_INDEX_ASIZE_32          2
 #define ND_ILUT_INDEX_ASIZE_64          3
 
+// Misc conditions.
 #define ND_ILUT_INDEX_AUX_NONE          0
 #define ND_ILUT_INDEX_AUX_REXB          1
 #define ND_ILUT_INDEX_AUX_REXW          2
 #define ND_ILUT_INDEX_AUX_O64           3
 #define ND_ILUT_INDEX_AUX_F3            4
 #define ND_ILUT_INDEX_AUX_REP           5
+#define ND_ILUT_INDEX_AUX_RIPREL        6
 
+// Specific features for instructions that map on the wide NOP space.
 #define ND_ILUT_FEATURE_NONE            0
 #define ND_ILUT_FEATURE_MPX             1
 #define ND_ILUT_FEATURE_CET             2
 #define ND_ILUT_FEATURE_CLDEMOTE        3
+#define ND_ILUT_FEATURE_PITI            4
 
 
 
@@ -126,7 +134,7 @@ typedef struct _ND_TABLE_MPREFIX
 typedef struct _ND_TABLE_AUXILIARY
 {
     ND_UINT32       Type;
-    const void      *Table[6];
+    const void      *Table[8];
 } ND_TABLE_AUXILIARY, *PND_TABLE_AUXILIARY;
 
 typedef struct _ND_TABLE_VENDOR
@@ -138,7 +146,7 @@ typedef struct _ND_TABLE_VENDOR
 typedef struct _ND_TABLE_FEATURE
 {
     ND_UINT32       Type;
-    const void      *Table[4];
+    const void      *Table[8];
 } ND_TABLE_FEATURE;
 
 typedef struct _ND_TABLE_DSIZE
@@ -319,6 +327,7 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_t,       // Tile register size, can be up to 1K.
     ND_OPS_384,     // 384 bit Key Locker handle.
     ND_OPS_512,     // 512 bit Key Locker handle.
+    ND_OPS_4096,    // 4096 bit MSR address/value table, used by RDMSRLIST/WRMSRLIST.
     // Stack sizes - indicates number of words. Also, hybrid sizes - sizes where from a large register (say 32 bit GPR)
     // only a smaller amount of data is used (for example, 8 bit).
     ND_OPS_v2,
@@ -443,13 +452,15 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_SSE_XMM7,
 
     // Implicit memory operands.
-    ND_OPT_MEM_rAX,
-    ND_OPT_MEM_rCX,
-    ND_OPT_MEM_rBX_AL,
-    ND_OPT_MEM_rDI,
-    ND_OPT_MEM_SHS,
-    ND_OPT_MEM_SHSP,
+    ND_OPT_MEM_rAX,     // [rAX]
+    ND_OPT_MEM_rCX,     // [rCX]
+    ND_OPT_MEM_rBX_AL,  // [rBX + AL]
+    ND_OPT_MEM_rDI,     // [rDI]
+    ND_OPT_MEM_SHS,     // Shadow stack.
+    ND_OPT_MEM_SHSP,    // Shadow stack pointed by the SSP.
     ND_OPT_MEM_SHS0,
+    ND_OPT_MEM_SMSRT,   // Source MSR table, encoded in [RSI].
+    ND_OPT_MEM_DMSRT,   // Destination MSR table, encoded in [RDI].
 
     // Special immediates.
     ND_OPT_Im2z,
