@@ -1,5 +1,11 @@
 # bddisasm changelog
 
+## 0.2.1
+
+### Added
+
+- support for new Intel instructions, per Intel ISA extensions document #319433-046 (September 2022): `PREFETCHITI`, `RAO-INT`, `CMPCCXADD`, `WRMSRNS`, `MSRLIST`, `AMX-FP16`, `AVX-IFMA`, `AVX-NE-CONVERT`, `AVX-VNNI-INT8`
+
 ## 0.2.0
 
 ### Added
