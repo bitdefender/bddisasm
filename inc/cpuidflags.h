@@ -128,5 +128,6 @@
 #define ND_CFF_RDPRU                    ND_CFF(0x80000008, 0xFFFFFFFF, NDR_EBX, 4)
 #define ND_CFF_MCOMMIT                  ND_CFF(0x80000008, 0xFFFFFFFF, NDR_EBX, 8)
 #define ND_CFF_SNP                      ND_CFF(0x8000001F, 0xFFFFFFFF, NDR_EAX, 4)
+#define ND_CFF_RMPQUERY                 ND_CFF(0x8000001F, 0xFFFFFFFF, NDR_EAX, 6)
 
 #endif // CPUID_FLAGS_H

@@ -4,3 +4,4 @@
     rmpupdate
     psmash
     pvalidate
+    rmpquery

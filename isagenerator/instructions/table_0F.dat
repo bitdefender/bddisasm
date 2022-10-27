@@ -76,6 +76,7 @@ MCOMMIT        nil           Fv                        [       0xF3 0x0F 0x01 /0
 MWAITX         nil           EAX,ECX,EBX               [         NP 0x0F 0x01 /0xFB]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
 CLZERO         nil           rAX                       [            0x0F 0x01 /0xFC]           s:CLZERO, t:MISC, w:R
 RDPRU          nil           EAX,EDX,ECX,Fv            [            0x0F 0x01 /0xFD]           s:RDPRU, t:MISC, w:W|W|R|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
+RMPQUERY       nil           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFD]           s:SNP, t:SYSTEM, w:R|RW|W|RW|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL, i:RMPQUERY
 INVLPGB        nil           rAX,ECX,EDX               [            0x0F 0x01 /0xFE]           s:INVLPGB, t:SYSTEM, w:R|R|R, m:NOREAL|KERNEL
 RMPADJUST      nil           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:R|RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
 RMPUPDATE      nil           RAX,pCXdq,Fv              [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL

@@ -1585,6 +1585,7 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_VPDPBUUDS: return "vpdpbuuds";
     case ND_INS_WRMSRLIST: return "wrmsrlist";
     case ND_INS_WRMSRNS: return "wrmsrns";
+    case ND_INS_RMPQUERY: return "rmpquery";
     default: return "unhandled!";
     }
 
