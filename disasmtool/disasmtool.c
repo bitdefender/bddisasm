@@ -594,7 +594,7 @@ INT32 regstr_to_idx(
         "r8",  "r9",  "r10", "r11", "r12", "r13", "r14", "r15"
     };
 
-    for (INT32 i = 0; i < ARRAYSIZE(reg64); i++)
+    for (INT32 i = 0; i < (INT32)ARRAYSIZE(reg64); i++)
     {
         if (!_stricmp(Reg, reg64[i]))
         {
@@ -1417,7 +1417,7 @@ void set_shemuctx_file(
 
         // first element is the register
         regIdx = regstr_to_idx(regStr);
-        if (regIdx < 0 || regIdx >= ARRAYSIZE(Options->ShemuRegs))
+        if (regIdx < 0 || regIdx >= (INT32)ARRAYSIZE(Options->ShemuRegs))
         {
             if (!_stricmp(regStr, "rip"))
             {
