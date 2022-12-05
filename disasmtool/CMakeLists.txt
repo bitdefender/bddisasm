@@ -27,21 +27,14 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     endif ()
 endif ()
 
-if (MSVC OR "${CMAKE_C_COMPILER_FRONTEND_VARIANT}" STREQUAL "MSVC")
-    target_compile_options(disasmtool PRIVATE /W4 /WX)
-
-    if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
-        target_compile_options(disasmtool PRIVATE -Wno-format)
-    endif ()
-else ()
+if (NOT MSVC)
     target_compile_options(
         disasmtool
         PRIVATE -Wall
                 -Wno-unknown-pragmas
                 -Wextra
                 -Wshadow
-                -Wno-format
-                -Wno-cast-function-type
+                -Wformat-security
                 -Wstrict-overflow=2
                 -Wstrict-prototypes
                 -Wwrite-strings
@@ -53,6 +46,7 @@ else ()
                 -Wno-discarded-qualifiers
                 -Wnull-dereference
                 -Wduplicated-cond
+                -Werror=format-security
                 -Werror=implicit-function-declaration
                 -pipe
                 -fwrapv
@@ -65,4 +59,6 @@ else ()
                 -gdwarf-4
                 -grecord-gcc-switches
                 -march=westmere)
+else ()
+    target_compile_options(disasmtool PRIVATE /W4 /WX)
 endif ()

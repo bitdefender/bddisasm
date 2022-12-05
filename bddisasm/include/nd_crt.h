@@ -11,6 +11,10 @@
 #define UNREFERENCED_PARAMETER(P)       ((void)(P))
 #endif
 
+#if !defined(_MSC_VER)
+# define __forceinline       inline __attribute__((always_inline))
+#endif // _MSC_VER
+
 // By default, an integrator is expected to provide nd_vsnprintf_s and nd_strcat_s.
 // bddisasm needs both for NdToText, while bdshemu needs nd_vsnprintf_s for emulation tracing.
 // If BDDISASM_NO_FORMAT is defined at compile time these requirements are removed. Instruction formatting will no

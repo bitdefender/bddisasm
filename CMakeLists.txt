@@ -35,9 +35,7 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif ()
 
 # These are shared by bddisasm and bdshemu.
-if (MSVC OR "${CMAKE_C_COMPILER_FRONTEND_VARIANT}" STREQUAL "MSVC")
-    set(BDDISASM_COMMON_COMPILE_OPTIONS /W4 /WX)
-else ()
+if (NOT MSVC)
     set(BDDISASM_COMMON_COMPILE_OPTIONS
         "$<$<CONFIG:Release>:-U_FORTIFY_SOURCE>"
         "$<$<CONFIG:Release>:-D_FORTIFY_SOURCE=2>"
@@ -70,6 +68,8 @@ else ()
         -gdwarf-4
         -grecord-gcc-switches
         -march=westmere)
+else ()
+    set(BDDISASM_COMMON_COMPILE_OPTIONS /W4 /WX)
 endif ()
 
 set(BDDISASM_PUBLIC_HEADERS
@@ -91,7 +91,6 @@ set(BDDISASM_INSTALL_INCLUDE_DIR
 
 include(CheckFunctionExists)
 include(CheckSymbolExists)
-include(CheckCCompilerFlag)
 
 add_library(
     bddisasm STATIC
@@ -172,9 +171,7 @@ target_include_directories(bddisasm PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOU
 target_link_libraries(bdshemu PUBLIC bddisasm)
 
 target_compile_options(bdshemu PRIVATE ${BDDISASM_COMMON_COMPILE_OPTIONS})
-
-check_c_compiler_flag(-maes HAS_MAES)
-if (HAS_MAES)
+if (NOT MSVC)
     target_compile_options(bdshemu PRIVATE -maes)
 endif ()
 
