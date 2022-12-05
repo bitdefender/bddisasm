@@ -3550,7 +3550,7 @@ cleanup_and_exit:
 //
 // NdGetVectorLength
 //
-static __forceinline NDSTATUS
+static inline NDSTATUS
 NdGetVectorLength(
     INSTRUX *Instrux
     )
@@ -3605,7 +3605,7 @@ NdGetVectorLength(
 //
 // NdGetAddrAndOpMode
 //
-static __forceinline NDSTATUS
+static inline NDSTATUS
 NdGetAddrAndOpMode(
     INSTRUX *Instrux
     )
@@ -3636,7 +3636,7 @@ NdGetAddrAndOpMode(
 //
 // NdGetEffectiveOpMode
 //
-static __forceinline NDSTATUS
+static inline NDSTATUS
 NdGetEffectiveOpMode(
     INSTRUX *Instrux
     )
@@ -3792,7 +3792,7 @@ NdPostProcessEvex(
 //
 // NdValidateInstruction
 //
-static __forceinline NDSTATUS
+static inline NDSTATUS
 NdValidateInstruction(
     INSTRUX *Instrux
     )
