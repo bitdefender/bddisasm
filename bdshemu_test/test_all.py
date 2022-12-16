@@ -73,7 +73,7 @@ cleanup_files = []
 print("Extracting test archive...\n")
 with ZipFile('bdshemu_test.zip') as zf:
     cleanup_files = zf.namelist()
-    zf.extractall(pwd=b'infected')
+    zf.extractall()
 print("Done!\n")    
 
 for dn in glob.glob("*"):
