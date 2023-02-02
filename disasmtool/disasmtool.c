@@ -495,6 +495,7 @@ hex_to_bin(
     __in char HexByte
     )
 {
+    // Transforms one hex-digit to a number.
     if ((HexByte >= '0') && (HexByte <= '9'))
     {
         return HexByte - '0';
@@ -542,6 +543,7 @@ match_gpr(
     __out DWORD* Index
     )
 {
+    // Check if the provided argument is a register.
     if (Arg[0] == '-')
     {
         INT32 idx = regstr_to_idx(Arg + 1); // this will be the name of the register or the NULL terminator
@@ -1218,6 +1220,7 @@ handle_shemu(
     memcpy((BYTE *)ctx.Shellcode, (BYTE *)buffer, fsize);
     memset(ctx.Intbuf, 0, shellSize + STACK_SIZE);
 
+    // Use the provided RIP, if any. Otherwise, use a hard-coded value.
     ctx.ShellcodeBase = (rip != 0 ? rip & PAGE_MASK : 0x200000);
     ctx.ShellcodeSize = (DWORD)shellSize;
     ctx.StackBase = (ctx.ShellcodeBase & PAGE_MASK) - STACK_SIZE - 0x1000;
@@ -1369,6 +1372,8 @@ handle_shemu(
 
     if (fNameDecoded != NULL)
     {
+        // If a decoded file name is present, dump the code, as it look after emulation, on disk.
+        // If the shellcode decrypted itself, the decoded file will contain the plain-text version.
         hFile = CreateFileA(fNameDecoded, GENERIC_WRITE, FILE_SHARE_READ, NULL, 
             CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
         if (INVALID_HANDLE_VALUE == hFile)
@@ -1581,17 +1586,22 @@ parse_input(
             return FALSE;
         }
         
+        // Since we expect a hex string, the buffer must be even-sized.
         if (Options->Size % 2 == 1)
         {
             printf("Even-sized hex buffer expected!\n");
             return FALSE;
         }
 
+        // If the buffer starts with \x, assume it's escaped format. Note that we only check
+        // the first two characters for \x - afterwards, we will only look after the hex-digits
+        // at offsets 2 & 3 inside each 4-characters chunk.
         if (Options->FileName[0] == '\\' && Options->FileName[1] == 'x')
         {
             sx = 1;
         }
 
+        // If escaped format is used, buffer must be at least 4 characters long (1 byte).
         if (sx && Options->Size < 4)
         {
             printf("Min 1-byte buffer needed!\n");
@@ -1609,12 +1619,14 @@ parse_input(
             of = 0;
         }
 
+        // Check for maximum size.
         if (Options->Size / mx > sizeof(hexbuf))
         {
             printf("Max %zu bytes buffer accepted!\n", sizeof(hexbuf));
             return FALSE;
         }
 
+        // Extract each byte from the provided hex input.
         for (idx = 0; idx < Options->Size / mx; idx++)
         {
             hexbuf[idx] = ((hex_to_bin(Options->FileName[idx * mx + of]) << 4) | 
@@ -1626,6 +1638,7 @@ parse_input(
         Options->Buffer = hexbuf;
     }
 
+    // Make sure the offset is valid & points within the buffer.
     if (Options->Offset >= Options->Size)
     {
         printf("The offset exceeds the buffer size!\n");
@@ -1670,6 +1683,7 @@ parse_arguments(
 
         if (match_gpr(argv[i], &gprIdx))
         {
+            // Register value (used by shemu).
             if (i + 1 >= argc)
             {
                 printf("No value given for %s!\n", argv[i]);
@@ -1683,10 +1697,12 @@ parse_arguments(
         }
         else if (strcmp(argv[i], "shemu") == 0)
         {
+            // shemu command - will emulate.
             Options->Command = commandShemu;
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'f' && argv[i][2] == 0)
         {
+            // File input mode.
             if (i + 1 < argc)
             {
                 Options->InputMode = inputFile;
@@ -1696,6 +1712,7 @@ parse_arguments(
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'h' && argv[i][2] == 0)
         {
+            // Hex-string input mode.
             if (i + 1 < argc)
             {
                 Options->InputMode = inputHex;
@@ -1705,6 +1722,7 @@ parse_arguments(
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'o' && argv[i][2] == 0)
         {
+            // Offset inside the provided buffer.
             if (i + 1 < argc)
             {
                 sscanf_s(argv[i + 1], "%zx", &Options->Offset);
@@ -1713,6 +1731,7 @@ parse_arguments(
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'r' && argv[i][2] == 0)
         {
+            // Rip. Can be any value, as it's used only for disassembly.
             if (i + 1 < argc)
             {
                 sscanf_s(argv[i + 1], "%zx", &Options->Rip);
@@ -1721,50 +1740,62 @@ parse_arguments(
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'k' && argv[i][2] == 0)
         {
+            // Kernel-mode for shemu.
             Options->Ring = 0;
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'b' && argv[i][2] == 'w' && argv[i][3] == 0)
         {
+            // Bypass self writes in shemu.
             Options->BypassSelfWrites = TRUE;
         }
         else if (0 == strcmp(argv[i], "-b16"))
         {
+            // 16-bit mode.
             Options->Mode = ND_CODE_16;
         } 
         else if (0 == strcmp(argv[i], "-b32"))
         {
+            // 32-bit mode.
             Options->Mode = ND_CODE_32;
         } 
         else if (0 == strcmp(argv[i], "-b64"))
         {
+            // 64-bit mode.
             Options->Mode = ND_CODE_64;
         }
         else if (0 == strcmp(argv[i], "-v intel"))
         {
+            // Prefer Intel instructions.
             Options->Vendor = ND_VEND_INTEL;
         }
         else if (0 == strcmp(argv[i], "-v amd"))
         {
+            // Prefer AMD instructions.
             Options->Vendor = ND_VEND_AMD;
         }
         else if (0 == strcmp(argv[i], "-v geode"))
         {
+            // Prefer Geode instructions.
             Options->Vendor = ND_VEND_GEODE;
         }
         else if (0 == strcmp(argv[i], "-v cyrix"))
         {
+            // Prefer Cyrix instructions.
             Options->Vendor = ND_VEND_CYRIX;
         }
         else if (0 == strcmp(argv[i], "-v any"))
         {
+            // Try to decode everything.
             Options->Vendor = ND_VEND_ANY;
         }
         else if (0 == strcmp(argv[i], "-t all"))
         {
+            // Enable all features.
             Options->Feature = ND_FEAT_ALL;
         }
         else if (0 == strcmp(argv[i], "-t mpx"))
         {
+            // Enable MPX. 
             if (Options->Feature == ND_FEAT_ALL)
             {
                 Options->Feature = 0;
@@ -1774,6 +1805,7 @@ parse_arguments(
         }
         else if (0 == strcmp(argv[i], "-t cet"))
         {
+            // Enable CET.
             if (Options->Feature == ND_FEAT_ALL)
             {
                 Options->Feature = 0;
@@ -1783,6 +1815,7 @@ parse_arguments(
         }
         else if (0 == strcmp(argv[i], "-t cldm"))
         {
+            // Enable Cache Line Demote.
             if (Options->Feature == ND_FEAT_ALL)
             {
                 Options->Feature = 0;
@@ -1792,6 +1825,7 @@ parse_arguments(
         }
         else if (0 == strcmp(argv[i], "-t piti"))
         {
+            // Enable Prefetch for instruction fetch.
             if (Options->Feature == ND_FEAT_ALL)
             {
                 Options->Feature = 0;
@@ -1801,30 +1835,37 @@ parse_arguments(
         }
         else if (0 == strcmp(argv[i], "-t none"))
         {
+            // No feature support.
             Options->Feature = ND_FEAT_NONE;
         }
         else if (0 == strcmp(argv[i], "-nv"))
         {
+            // Do not print anything.
             Options->Print = FALSE;
         } 
         else if (0 == strcmp(argv[i], "-hl"))
         {
+            // Highlight instruction components.
             Options->Highlight = TRUE;
         }
         else if (0 == strcmp(argv[i], "-iv"))
         {
+            // Print statistics.
             Options->Stats = TRUE;
         }
         else if (0 == strcmp(argv[i], "-exi"))
         {
+            // Print extended instruction information.
             Options->ExtendedInfo = TRUE;
         }
         else if (0 == strcmp(argv[i], "-bits"))
         {
+            // Print instruction bitfields.
             Options->BitFields = TRUE;
         }
         else if (0 == strcmp(argv[i], "-skip16"))
         {
+            // Skip 16 bytes after each decoded instruction.
             Options->Skip16 = TRUE;
         }
         else
@@ -1835,6 +1876,7 @@ parse_arguments(
         i++;
     }
 
+    // Parse the input.
     if (!parse_input(Options))
     {
         printf("Could not find a valid input!\n");
@@ -1853,11 +1895,13 @@ main(
 {
     DISASM_OPTIONS options = { 0 };
 
+    // Parse arguments & extract relevant options.
     if (!parse_arguments(argc, argv, &options))
     {
         return -1;
     }
 
+    // Handle the indicated command.
     if (options.Command == commandShemu)
     {
         handle_shemu(&options);
@@ -1867,6 +1911,7 @@ main(
         handle_disasm(&options);
     }
 
+    // Will free any memory allocated during argument parsing, and will close any handles.
     cleanup_context(&options);
 
     return 0;
