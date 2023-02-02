@@ -27,7 +27,7 @@ def test_dir(dir):
                 mod += ' -k'
                 
             print('    * Running test case %s...' % f)
-            os.system('disasm -shemu %s -f %s >%s.temp' % (mod, f, f))
+            os.system('disasm shemu %s -f %s >%s.temp' % (mod, f, f))
             try:
                 res = open('%s.result' % f).read()
             except:
@@ -63,7 +63,7 @@ def regenerate(dir):
                 mod += ' -k'
                 
             print('    * Regenerating test case %s...' % f)
-            os.system('disasm -exi -shemu %s -f %s >%s.result' % (mod, f, f))
+            os.system('disasm -exi shemu %s -f %s >%s.result' % (mod, f, f))
                             
     for f in glob.glob('%s\\*_decoded.bin' % dir):
         os.remove(f)    

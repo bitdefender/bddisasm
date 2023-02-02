@@ -307,6 +307,9 @@
       <Project>{3c9b2ca7-cf4f-471b-bb72-6490c476cdca}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="disasmtool.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

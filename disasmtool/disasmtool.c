@@ -9,41 +9,14 @@
 #include <time.h>
 #include <Intrin.h>
 
-typedef uint64_t    QWORD, *PQWORD;
-
 // Main disasm header file.
 #include "bdshemu.h"
 #include "bddisasm.h"
 
+#include "disasmtool.h"
 
-#define PAGE_SIZE 0x1000
-#define PAGE_MASK 0xFFFFFFFFFFFFF000
 
-typedef struct _DISASM_OPTIONS
-{
-    uint8_t     *Buffer;        // The buffer containing the instructions.
-    size_t      Size;           // Buffer size.
-    size_t      Offset;         // Offset inside the buffer.
-    size_t      Rip;            // Virtual RIP.
-    char        *Target;        // If in search mode, this indicates the instruction to be searched for.
-    BOOLEAN     Highlight;      // Highlight instruction components, if true.
-    BOOLEAN     ExtendedInfo;   // Display extended instruction info, if true.
-    BOOLEAN     BitFields;      // Display the various bitfields inside the instruction, if true.
-    BOOLEAN     Skip16;         // Automatically jump over 16 bytes after each instruction.
-    BOOLEAN     Stats;          // Display disassembly stats (clocks / instruction, instructions / second), if true.
-    BOOLEAN     Search;         // Search for the Target instruction in the provided buffer.
-    BOOLEAN     Print;          // Print instruction disassembly, if true.
-    uint8_t     Mode;           // Mode - 16, 32 or 64 bit mode.
-    uint8_t     Ring;           // Ring - 0, 1, 2 or 3.
-    uint8_t     Vendor;         // Preffered vendor.
-    uint8_t     Feature;        // Used features.
-    char        *FileName;      // Input file, if any.
-    size_t      ShemuRegs[NDR_R15 + 1];
-    BOOLEAN     UseShemuRegs;
-    BOOLEAN     BypassSelfWrites; // If true, shemu emulation will ignore self-modifications made by the shellcode.
-} DISASM_OPTIONS, *PDISASM_OPTIONS;
-
-char *gSpaces[16] = 
+const char *gSpaces[16] = 
 {
     "",
     "  ",
@@ -68,7 +41,8 @@ char *gSpaces[16] =
 //
 // nd_vsnprintf
 //
-int nd_vsnprintf_s(
+int
+nd_vsnprintf_s(
     char *buffer,
     size_t sizeOfBuffer,
     size_t count,
@@ -81,16 +55,49 @@ int nd_vsnprintf_s(
 #endif // !defined(BDDISASM_HAS_VSNPRINTF)
 
 #if !defined(BDDISASM_HAS_MEMSET)
-void* nd_memset(void *s, int c, size_t n)
+void* 
+nd_memset(void *s, int c, size_t n)
 {
     return memset(s, c, n);
 }
 #endif // !defined(BDDISASM_HAS_MEMSET)
 
-//
-// set_to_string
-//
-const char* set_to_string(
+void 
+ShemuLog(
+    __in PCHAR Data
+    )
+{
+    printf("%s", Data);
+}
+
+bool 
+ShemuAccessMem(
+    __in PSHEMU_CONTEXT Ctx, 
+    __in uint64_t Gla, 
+    __in size_t Size, 
+    __inout uint8_t *Buffer, 
+    __in bool Store
+    )
+{
+    UNREFERENCED_PARAMETER(Ctx);
+    UNREFERENCED_PARAMETER(Gla);
+
+    if (!Store)
+    {
+        // On loads, always return 0.
+        memset(Buffer, 0, Size);
+    }
+    else
+    {
+        // On stores, do nothing.
+    }
+
+    return true;
+}
+
+
+const char* 
+set_to_string(
     __in ND_INS_SET Set
     )
 {
@@ -227,10 +234,8 @@ const char* set_to_string(
 }
 
 
-//
-// category_to_string
-//
-const char* category_to_string(
+const char* 
+category_to_string(
     __in ND_INS_CATEGORY Category
     )
 {
@@ -349,10 +354,8 @@ const char* category_to_string(
 }
 
 
-//
-// optype_to_string
-//
-const char* optype_to_string(
+const char* 
+optype_to_string(
     __in ND_OPERAND_TYPE OpType
     )
 {
@@ -370,10 +373,8 @@ const char* optype_to_string(
 }
 
 
-//
-// regtype_to_string
-//
-const char* regtype_to_string(
+const char* 
+regtype_to_string(
     __in ND_REG_TYPE RegType
     )
 {
@@ -404,10 +405,8 @@ const char* regtype_to_string(
 }
 
 
-//
-// encoding_to_string
-//
-const char* encoding_to_string(
+const char* 
+encoding_to_string(
     __in ND_OPERAND_ENCODING Encoding
     )
 {
@@ -430,10 +429,8 @@ const char* encoding_to_string(
 }
 
 
-//
-// tuple_to_string
-//
-const char *tuple_to_string(
+const char*
+tuple_to_string(
     __in ND_TUPLE Tuple
     )
 {
@@ -460,10 +457,8 @@ const char *tuple_to_string(
 }
 
 
-//
-// exception_to_string
-//
-const char *exception_evex_to_string(
+const char*
+exception_evex_to_string(
     __in ND_EX_TYPE_EVEX ExClass
     )
 {
@@ -495,10 +490,8 @@ const char *exception_evex_to_string(
 }
 
 
-//
-// hex_to_bin
-//
-BYTE hex_to_bin(
+BYTE
+hex_to_bin(
     __in char HexByte
     )
 {
@@ -519,72 +512,8 @@ BYTE hex_to_bin(
 }
 
 
-//
-// str_strip
-// Copies the InputString in OutputString, while eliminating the characters specified in Tokens
-//
-VOID str_strip(
-    __in char* InString,
-    __in DWORD LenInString,
-    __in char* Tokens,
-    __in DWORD LenTokString,
-    __out char* OutString,
-    __in DWORD CapOutString // capacity of out string including null character
-)
-{
-    DWORD lenInStr, lenOutStr, lenTokStr;
-    DWORD itInStr, itTokStr;
-    lenTokStr = 0;
-    lenOutStr = 0;
-
-    if ((NULL == InString) || (NULL == Tokens) || (NULL == OutString))
-    {
-        return;
-    }
-    
-    lenInStr = (DWORD)strnlen_s(InString, ND_MIN_BUF_SIZE);
-    lenTokStr = (DWORD)strnlen_s(Tokens, ND_MIN_BUF_SIZE);
-
-    lenInStr = (lenInStr > LenInString) ? LenInString : lenInStr;
-    lenTokStr = (lenTokStr > LenTokString) ? LenTokString : lenTokStr;
-    
-
-    if ((0 == lenInStr) || (0 == lenTokStr))
-    {
-        return;
-    }
-
-    for (itInStr = 0; itInStr < lenInStr; itInStr++)
-    {
-        BOOLEAN found = FALSE;
-        for (itTokStr = 0; itTokStr < lenTokStr; itTokStr++)
-        {
-            if (InString[itInStr] == Tokens[itTokStr])
-            {
-                found = TRUE;
-                break;
-            }
-        }
-
-        if (!found)
-        {
-            // not enough space, bail out
-            if (lenOutStr >= CapOutString - 1)
-            {
-                return;
-            }
-
-            OutString[lenOutStr] = InString[itInStr];
-            lenOutStr++;
-        }
-    }
-}
-
-
-//
-// regstr_to_idx
-//
-INT32 regstr_to_idx(
+INT32
+regstr_to_idx(
     __in const char* Reg
     )
 {
@@ -606,13 +535,11 @@ INT32 regstr_to_idx(
 }
 
 
-//
-// match_gpr
-//
+_Success_(return)
 BOOLEAN
 match_gpr(
     __in const char* Arg,
-    __in DWORD* Index
+    __out DWORD* Index
     )
 {
     if (Arg[0] == '-')
@@ -628,9 +555,7 @@ match_gpr(
     return FALSE;
 }
 
-//
-// print_instruction
-//
+
 void
 print_instruction(
     __in SIZE_T Rip,
@@ -716,7 +641,7 @@ print_instruction(
         printf("%02x", Instrux->InstructionBytes[k]);
     }
 
-    printf("%s", gSpaces[16 - Instrux->Length]);
+    printf("%s", gSpaces[16 - (Instrux->Length & 0xF)]);
 
     NdToText(Instrux, Rip, ND_MIN_BUF_SIZE, instruxText);
 
@@ -1056,7 +981,7 @@ print_instruction(
         printf("\n");
     }
 
-    if (Options->BitFields)
+    if (Options->BitFields && Instrux->HasModRm)
     {
         printf("        Instruction bit fields:\n");
 
@@ -1114,145 +1039,6 @@ print_instruction(
 }
 
 
-//
-// handle_search
-//
-void
-handle_search(
-    __in PDISASM_OPTIONS Options
-    )
-{
-    NDSTATUS status;
-    INSTRUX instrux;
-    ND_CONTEXT ctx;
-    SIZE_T rip = 0, i;
-    char text[ND_MIN_BUF_SIZE], target[ND_MIN_BUF_SIZE];
-    char *token1, *token2, *ctx1, *ctx2;
-    BOOLEAN match;
-
-    NdInitContext(&ctx);
-
-    ctx.DefCode = Options->Mode;
-    ctx.DefData = Options->Mode;
-    ctx.DefStack = Options->Mode;
-    ctx.VendMode = Options->Vendor;
-    ctx.FeatMode = Options->Feature;
-
-    // Disassemble
-    rip = 0;
-    while (rip < Options->Size)
-    {
-        status = NdDecodeWithContext(&instrux, Options->Buffer + rip, Options->Size - rip, &ctx);
-        if (!ND_SUCCESS(status))
-        {
-            goto _continue;
-        }
-
-        NdToText(&instrux, rip, ND_MIN_BUF_SIZE, text);
-
-        // Copy the target.
-        memcpy(target, Options->Target, ND_MIN_BUF_SIZE);
-        for (i = 0; i < ND_MIN_BUF_SIZE; i++)
-        {
-            if (target[i] == ',')
-            {
-                target[i] = ' ';
-            }
-
-            if (text[i] == ',')
-            {
-                text[i] = ' ';
-            }
-        }
-
-        _strlwr_s(target, ND_MIN_BUF_SIZE);
-        _strlwr_s(text, ND_MIN_BUF_SIZE);
-
-        // Try to match.
-        token1 = strtok_s(target, " ", &ctx1);
-        token2 = strtok_s(text, " ", &ctx2);
-
-        match = TRUE;
-
-        while (token1 && token2)
-        {
-            if (0 == strcmp(token1, "*"))
-            {
-                goto _continue_match;
-            }
-
-            if (strlen(token1) != strlen(token2))
-            {
-                match = FALSE;
-                break;
-            }
-
-            for (i = 0; i < strlen(token1); i++)
-            {
-                if ((token1[i] != '?') && (token1[i] != token2[i]))
-                {
-                    match = FALSE;
-                    break;
-                }
-            }
-
-            if (!match)
-            {
-                break;
-            }
-
-_continue_match:
-            token1 = strtok_s(NULL, " ", &ctx1);
-            token2 = strtok_s(NULL, " ", &ctx2);
-        }
-
-        // Unfinished token - leave.
-        if (token1 || token2)
-        {
-            goto _continue;
-        }
-
-        if (match)
-        {
-            SIZE_T rip2 = rip, count = 0;
-
-            print_instruction(rip, &instrux, Options);
-            rip2 += instrux.Length;
-
-            instrux.DefCode = Options->Mode;
-            instrux.DefData = Options->Mode;
-            instrux.DefStack = Options->Mode;
-            instrux.VendMode = Options->Vendor;
-            instrux.FeatMode = Options->Feature;
-
-            while (rip2 < Options->Size && count++ < 8)
-            {
-                status = NdDecodeWithContext(&instrux, Options->Buffer + rip2, Options->Size - rip2, &ctx);
-                if (!ND_SUCCESS(status))
-                {
-                    printf("%p ERROR\n", (void*)rip2);
-                    rip2++;
-                }
-                else
-                {
-                    print_instruction(rip2, &instrux, Options);
-                    rip2 += instrux.Length;
-                }
-            }
-
-            printf("-----------------------------------------------------------------------\n");
-        }
-
-_continue:
-        rip++;
-    }
-}
-
-
-
-//
-// handle_disasm
-//
 void
 handle_disasm(
     __in PDISASM_OPTIONS Options
@@ -1260,7 +1046,7 @@ handle_disasm(
 {
     INSTRUX instrux;
     ND_CONTEXT ctx = { 0 };
-    unsigned long long icount = 0, istart, iend, start, end, itotal = 0;
+    unsigned long long icount = 0, istart, iend, start, end, itotal = 0, tilen = 0, ticount = 0;
     SIZE_T rip, fsize = Options->Size;
     PBYTE buffer = Options->Buffer;
 
@@ -1282,9 +1068,19 @@ handle_disasm(
 
         icount++;
 
+#if defined(ND_ARCH_X86) || defined(ND_ARCH_X64)
         istart = __rdtsc();
+#else
+        istart = 0;
+#endif
+
         status = NdDecodeWithContext(&instrux, buffer + rip, fsize - rip, &ctx);
+
+#if defined(ND_ARCH_X86) || defined(ND_ARCH_X64)
         iend = __rdtsc();
+#else
+        iend = 1;
+#endif
 
         itotal += iend - istart;
         if (!ND_SUCCESS(status))
@@ -1311,6 +1107,9 @@ handle_disasm(
         }
         else
         {
+            tilen += instrux.Length;
+            ticount++;
+
             if (Options->Print)
             {
                 print_instruction(rip + Options->Rip, &instrux, Options);
@@ -1331,169 +1130,12 @@ handle_disasm(
 
     if (Options->Stats)
     {
-        printf("Disassembled %llu instructions in %llums, %4.4f instructions/second, %4.6f clocks/instruction\n",
-            icount, end - start, icount / (double)(end - start) * 1000, itotal / (double)icount);
+        printf("Disassembled %llu instructions in %llums, %4.4f instructions/second, %4.6f clocks/instruction, average ilen %4.6f bytes\n",
+            icount, end - start, icount / (double)(end - start) * 1000, itotal / (double)icount, tilen / (double)ticount);
     }
 }
 
 
-//
-// set_shemuctx_file
-//
-void set_shemuctx_file(
-    __in const char *FileName,
-    __in DISASM_OPTIONS *Options
-    )
-{
-    HANDLE hFile;
-    DWORD fileSize;
-    BOOL readFileSuccess;
-    PCHAR fileBuf = NULL;
-    DWORD bytesRead;
-
-    PCHAR lineStart, lineToken, ctx, lineBufCtx;
-    char lineBuf[ND_MIN_BUF_SIZE] = { 0 };
-    INT32 regIdx;
-    QWORD regVal;
-
-    // pre-init
-    hFile = INVALID_HANDLE_VALUE;
-    fileSize = 0;
-    regIdx = 0;
-    regVal = 0;
-    ctx = lineBufCtx = NULL;
-
-    if ((NULL == FileName) || (NULL == Options))
-    {
-        goto cleanup_and_exit;
-    }
-
-    hFile = CreateFileA(FileName, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-    if (INVALID_HANDLE_VALUE == hFile)
-    {
-        goto cleanup_and_exit;
-    }
-
-    fileSize = GetFileSize(hFile, NULL);
-    if (INVALID_FILE_SIZE == fileSize)
-    {
-        goto cleanup_and_exit;
-    }
-
-    fileBuf = (PCHAR)VirtualAlloc(NULL, fileSize + 3ull, MEM_RESERVE | MEM_COMMIT, PAGE_READWRITE);
-    if (NULL == fileBuf)
-    {
-        goto cleanup_and_exit;
-    }
-
-    readFileSuccess = ReadFile(hFile, fileBuf, fileSize, &bytesRead, NULL);
-    if (!readFileSuccess)
-    {
-        printf("ReadFile failed: GLA: %x\n", GetLastError());
-        goto cleanup_and_exit;
-    }
-
-    lineStart = strtok_s(fileBuf, "\r\n", &ctx);
-    while (lineStart)
-    {
-        char regStr[ND_MIN_BUF_SIZE] = { 0 };
-        char valStr[ND_MIN_BUF_SIZE] = { 0 };
-        BOOLEAN isRip = FALSE;
-
-        if (0 == strnlen_s(lineStart, ND_MIN_BUF_SIZE))
-        {
-            goto next_line;
-        }
-        strcpy_s(lineBuf, ND_MIN_BUF_SIZE, lineStart);
-        
-        lineToken = strtok_s(lineBuf, ":", &lineBufCtx);
-        if (NULL == lineToken)
-        {
-            goto next_line;
-        }
-        
-        str_strip(lineToken, (DWORD)strnlen_s(lineToken, ND_MIN_BUF_SIZE), " ,\"", 
-            (DWORD)strnlen_s(" ,\"", ND_MIN_BUF_SIZE), regStr, ND_MIN_BUF_SIZE);
-
-        // first element is the register
-        regIdx = regstr_to_idx(regStr);
-        if (regIdx < 0 || regIdx >= (INT32)ARRAYSIZE(Options->ShemuRegs))
-        {
-            if (!_stricmp(regStr, "rip"))
-            {
-                isRip = TRUE;
-            }
-            else
-            {
-                printf("Corrupt line: %s\n", lineStart);
-                goto next_line;
-            }
-        }
-
-        // second element is the value
-        lineToken = strtok_s(NULL, ":", &lineBufCtx);
-        if ((NULL == lineToken))
-        {
-            printf("Corrupt line: %s\n", lineStart);
-            goto next_line;
-        }
-
-        str_strip(lineToken, (DWORD)strnlen_s(lineToken, ND_MIN_BUF_SIZE), " ,\"", 
-            (DWORD)strnlen_s(" ,\"", ND_MIN_BUF_SIZE), valStr, ND_MIN_BUF_SIZE);
-        regVal = strtoull(valStr, NULL, 0);
-
-        if (!isRip)
-        {
-            Options->ShemuRegs[regIdx] = (size_t)regVal;
-        }
-        else
-        {
-            Options->Rip = (size_t)regVal;
-        }
-
-    next_line:
-        lineStart = strtok_s(NULL, "\r\n", &ctx);
-        memset(lineBuf, 0, ND_MIN_BUF_SIZE);
-    }
-
-cleanup_and_exit:
-    if (INVALID_HANDLE_VALUE != hFile)
-    {
-        CloseHandle(hFile);
-    }
-    if (NULL != fileBuf)
-    {
-        VirtualFree(fileBuf, 0, MEM_RELEASE);
-    }
-
-}
-
-void ShemuLog(PCHAR data)
-{
-    printf("%s", data);
-}
-
-bool ShemuAccessMem(PSHEMU_CONTEXT Ctx, uint64_t Gla, size_t Size, uint8_t *Buffer, bool Store)
-{
-    UNREFERENCED_PARAMETER(Ctx);
-    UNREFERENCED_PARAMETER(Gla);
-
-    if (!Store)
-    {
-        // On loads, always return 0.
-        memset(Buffer, 0, Size);
-    }
-    else
-    {
-        // On stores, do nothing.
-    }
-
-    return true;
-}
-
-//
-// handle_shemu
-//
 void
 handle_shemu(
     PDISASM_OPTIONS Options
@@ -1521,8 +1163,8 @@ handle_shemu(
     {
         decFileNameLength = strlen(fileName) + sizeof("_decoded.bin");
         fNameDecoded = (char *)malloc(sizeof(char) * decFileNameLength);
-
     }
+
     if (NULL == fNameDecoded)
     {
         printf("Could not allocate file name.\n");
@@ -1552,8 +1194,7 @@ handle_shemu(
     if (NULL == ctx.Shellcode)
     {
         printf("Memory error: couldn't allocated %zu bytes!\n", fsize);
-        free(fNameDecoded);
-        return;
+        goto cleanup_and_exit;
     }
 
 #define STACK_SIZE 0x2000
@@ -1562,16 +1203,14 @@ handle_shemu(
     if (NULL == ctx.Stack)
     {
         printf("Memory error: couldn't allocated %zu bytes!\n", fsize);
-        free(fNameDecoded);
-        return;
+        goto cleanup_and_exit;
     }
 
     ctx.Intbuf = (uint8_t *)malloc(shellSize + STACK_SIZE);
     if (NULL == ctx.Intbuf)
     {
         printf("Memory error: couldn't allocated %zu bytes!\n", fsize);
-        free(fNameDecoded);
-        return;
+        goto cleanup_and_exit;
     }
 
     memset(ctx.Shellcode, 0, shellSize);
@@ -1581,56 +1220,46 @@ handle_shemu(
 
     ctx.ShellcodeBase = (rip != 0 ? rip & PAGE_MASK : 0x200000);
     ctx.ShellcodeSize = (DWORD)shellSize;
-    ctx.StackBase = 0x100000;
+    ctx.StackBase = (ctx.ShellcodeBase & PAGE_MASK) - STACK_SIZE - 0x1000;
     ctx.StackSize = STACK_SIZE;
-    ctx.Registers.RegRsp = 0x101000;
+    
     ctx.IntbufSize = (DWORD)shellSize + STACK_SIZE;
+
+    ctx.Mode = Options->Mode;
+    ctx.Ring = Options->Ring;
 
     ctx.Registers.RegFlags = NDR_RFLAG_IF | 2;
     ctx.Registers.RegRip = ctx.ShellcodeBase + offset;
+    ctx.Registers.RegRsp = ctx.StackBase + STACK_SIZE / 2;
 
-    ctx.Segments.Cs.Selector = 0x10;
-    ctx.Segments.Ds.Selector = 0x28;
-    ctx.Segments.Es.Selector = 0x28;
-    ctx.Segments.Ss.Selector = 0x28;
-    ctx.Segments.Fs.Selector = 0x30;
-    ctx.Segments.Fs.Base = 0x7FFF0000;
-    ctx.Segments.Gs.Selector = 0x30;
-    ctx.Segments.Gs.Base = 0x7FFF0000;
+    if (ctx.Mode == ND_CODE_64)
+    {
+        ctx.Segments.Cs.Selector = (ctx.Ring == 3) ? 0x33 : 0x10;
+        ctx.Segments.Ds.Selector = (ctx.Ring == 3) ? 0x2b : 0x18;
+        ctx.Segments.Es.Selector = (ctx.Ring == 3) ? 0x2b : 0x18;
+        ctx.Segments.Ss.Selector = (ctx.Ring == 3) ? 0x2b : 0x18;
+        ctx.Segments.Fs.Selector = (ctx.Ring == 3) ? 0x2b : 0x00;
+        ctx.Segments.Gs.Selector = (ctx.Ring == 3) ? 0x53 : 0x00;
+
+        ctx.Segments.Fs.Base = 0;
+        ctx.Segments.Gs.Base = 0x7FFF0000;
+    }
+    else
+    {
+        ctx.Segments.Cs.Selector = (ctx.Ring == 3) ? 0x1b : 0x08;
+        ctx.Segments.Ds.Selector = (ctx.Ring == 3) ? 0x23 : 0x10;
+        ctx.Segments.Es.Selector = (ctx.Ring == 3) ? 0x23 : 0x10;
+        ctx.Segments.Ss.Selector = (ctx.Ring == 3) ? 0x23 : 0x10;
+        ctx.Segments.Fs.Selector = (ctx.Ring == 3) ? 0x3b : 0x30;
+        ctx.Segments.Gs.Selector = (ctx.Ring == 3) ? 0x23 : 0x00;
+
+        ctx.Segments.Fs.Base = 0x7FFF0000;
+        ctx.Segments.Gs.Base = 0;
+    }
 
     // Dummy values, to resemble regular CR0/CR4 values.
     ctx.Registers.RegCr0 = 0x0000000080050031;
     ctx.Registers.RegCr4 = 0x0000000000170678;
-
-    ctx.Mode = Options->Mode;
-    ctx.Ring = Options->Ring;
-    ctx.TibBase = Options->Mode == ND_CODE_32 ? ctx.Segments.Fs.Base : ctx.Segments.Gs.Base;
-    ctx.MaxInstructionsCount = 4096;
-    ctx.Flags = 0;
-    ctx.Options = SHEMU_OPT_TRACE_EMULATION;
-    ctx.Log = &ShemuLog;
-    ctx.AccessMemory = (ShemuMemAccess)&ShemuAccessMem;
-
-    // Configurable thresholds.
-    ctx.NopThreshold = SHEMU_DEFAULT_NOP_THRESHOLD;
-    ctx.StrThreshold = SHEMU_DEFAULT_STR_THRESHOLD;
-    ctx.MemThreshold = SHEMU_DEFAULT_MEM_THRESHOLD;
-
-    // Check for AES support.
-    int regs[4] = { 0 };
-
-    __cpuid(regs, 1);
-
-    // CPUID leaf function 1, register ECX, bit 25 indicates AES-NI support.
-    if (!!(regs[2] & (1UL << 25)))
-    {
-        ctx.Options |= SHEMU_OPT_SUPPORT_AES;
-    }
-
-    if (Options->BypassSelfWrites)
-    {
-        ctx.Options |= SHEMU_OPT_BYPASS_SELF_WRITES;
-    }
 
     if (Options->UseShemuRegs)
     {
@@ -1646,10 +1275,41 @@ handle_shemu(
         }
     }
 
+
+    ctx.TibBase = 0x7FFF0000;
+    ctx.MaxInstructionsCount = 4096;
+    ctx.Flags = 0;
+    ctx.Options = SHEMU_OPT_TRACE_EMULATION;
+    ctx.Log = &ShemuLog;
+    ctx.AccessMemory = (ShemuMemAccess)&ShemuAccessMem;
+
+    // Configurable thresholds.
+    ctx.NopThreshold = SHEMU_DEFAULT_NOP_THRESHOLD;
+    ctx.StrThreshold = SHEMU_DEFAULT_STR_THRESHOLD;
+    ctx.MemThreshold = SHEMU_DEFAULT_MEM_THRESHOLD;
+
+    // Check for AES support.
+    int regs[4] = { 0 };
+
+#if defined(ND_ARCH_X86) || defined(ND_ARCH_X64)
+    __cpuid(regs, 1);
+#endif
+
+    // CPUID leaf function 1, register ECX, bit 25 indicates AES-NI support.
+    if (!!(regs[2] & (1UL << 25)))
+    {
+        ctx.Options |= SHEMU_OPT_SUPPORT_AES;
+    }
+
+    if (Options->BypassSelfWrites)
+    {
+        ctx.Options |= SHEMU_OPT_BYPASS_SELF_WRITES;
+    }
+
     shstatus = ShemuEmulate(&ctx);
 
-    printf("Emulation terminated with status 0x%08x, flags: 0x%llx, %u NOPs\n", 
-           shstatus, (unsigned long long)ctx.Flags, ctx.NopCount);
+    printf("Emulation terminated with status 0x%08x, flags: 0x%llx, %u NOPs, %u total instructions\n", 
+           shstatus, (unsigned long long)ctx.Flags, ctx.NopCount, ctx.InstructionsCount);
     if (ctx.Flags & SHEMU_FLAG_NOP_SLED)
     {
         printf("        SHEMU_FLAG_NOP_SLED\n");
@@ -1661,10 +1321,6 @@ handle_shemu(
     if (ctx.Flags & SHEMU_FLAG_WRITE_SELF)
     {
         printf("        SHEMU_FLAG_WRITE_SELF\n");
-    }
-    if (ctx.Flags & SHEMU_FLAG_TIB_ACCESS)
-    {
-        printf("        SHEMU_FLAG_TIB_ACCESS\n");
     }
     if (ctx.Flags & SHEMU_FLAG_SYSCALL)
     {
@@ -1718,7 +1374,7 @@ handle_shemu(
         if (INVALID_HANDLE_VALUE == hFile)
         {
             printf("Could not open the file %s : 0x%08x\n", fNameDecoded, GetLastError());
-            return;
+            goto cleanup_and_exit;
         }
 
         WriteFile(hFile, (BYTE *)ctx.Shellcode, (DWORD)fsize, &outSize, NULL);
@@ -1728,114 +1384,284 @@ handle_shemu(
         }
 
         CloseHandle(hFile);
+    }
+
+cleanup_and_exit:
+    if (NULL != fNameDecoded)
+    {
         free(fNameDecoded);
     }
 
-    free(ctx.Shellcode);
-    free(ctx.Stack);
-    free(ctx.Intbuf);
+    if (NULL != ctx.Shellcode)
+    {
+        free(ctx.Shellcode);
+    }
+
+    if (NULL != ctx.Stack)
+    {
+        free(ctx.Stack);
+    }
+
+    if (NULL != ctx.Intbuf)
+    {
+        free(ctx.Intbuf);
+    }
 }
 
 
-//
-// _tmain
-//
-int main(
-    __in int argc, 
-    __in char* argv[]
+void print_help()
+{
+    uint32_t major, minor, revision;
+    char *date, *time;
+
+    NdGetVersion(&major, &minor, &revision, &date, &time);
+
+    printf("bddisasm version %u.%u.%u, built on %s %s\n", major, minor, revision, date, time);
+    printf("\n");
+    printf("IMPORTANT:\n");
+    printf("    This tool is only meant to exemplify bddisasm integration.\n");
+    printf("\n");
+    printf("USAGE:\n");
+    printf("    disasm COMMAND INPUT MODE [OPTIONS]\n");
+    printf("\n");
+
+    printf("COMMAND can be one of:\n");
+    printf("    decode      - Will decode the input, and print each instruction (default).\n");
+    printf("    shemu       - Will run the shellcode-emulator on the input, and print the emulation trace.\n");
+    printf("\n");
+
+    printf("INPUT is mandatory and can be one of:\n");
+    printf("    -f file     - Specify input `file` name.\n");
+    printf("    -h hex      - Specify input `hex` string. Accepted formats are:\n");
+    printf("        Plain   hex string; example: 33C090CCC3\n");
+    printf("        Escaped hex string; example: \\x33\\xC0\\x90\\xCC\\xC3\n");
+
+    printf("\n");
+
+    printf("MODE sets the decode mode:\n");
+    printf("    -b16        - Decode in 16-bit mode.\n");
+    printf("    -b32        - Decode in 32-bit mode.\n");
+    printf("    -b64        - Decode in 64-bit mode (default).\n");
+    printf("\n");
+
+    printf("OPTIONS which are common among different modes:\n");
+    printf("    -o offset   - Start processing from the indicated `offset` (default is 0).\n");
+    printf("    -r rip      - Use the indicated `rip` for disassembly (default is 0).\n");
+    printf("    -v vendor   - Set prefered vendor (default is any). The following are valid `vendor` values:\n");
+    printf("       intel, amd, cyrix, mpx, any\n");
+    printf("    -t feature  - Set prefered feature mode (default is all). The following are valid `feature` values (multiple can be used):\n");
+    printf("       none, all, mpx, cet, cldm, piti\n");
+    printf("\n");
+
+    printf("OPTIONS valid only with decode command:\n");
+    printf("    -hl         - Highlight instruction parts. The colors used are:\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
+        FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED|FOREGROUND_INTENSITY);
+    printf("        light white      prefixes\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN|FOREGROUND_INTENSITY);
+    printf("        light green      opcodes\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN|FOREGROUND_RED|FOREGROUND_INTENSITY);
+    printf("        light yellow     modrm and sib\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE|FOREGROUND_INTENSITY);
+    printf("        light blue       displacement\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED|FOREGROUND_INTENSITY);
+    printf("        light red        relative offset, immediate, address\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED);
+    printf("    -nv         - Don't print disassembly. Use this only for performance tests.\n");
+    printf("    -iv         - Print performance statistics.\n");
+    printf("    -exi        - Print extended info about instructions.\n");
+    printf("    -bits       - Print the instruction bit fields.\n");
+    printf("    -skip16     - Skip 16 bytes after each decoded instruction. Useful when decoding invalid instructions.\n");
+    printf("\n");
+    printf("OPTIONS valid only with shemu command:\n");
+    printf("    -reg val    - Set register `reg` to value `val` for emulation. `reg` must be the plain 64-bit register name (ie: rax).\n");
+    printf("    -k          - Specify kernel mode for shemu emulation (default is user-mode).\n");
+    printf("    -bw         - Bypass self-modifications in shemu.\n");
+    printf("\n");
+    printf("\n");
+    printf("EXAMPLES:\n");
+    printf("    Decode 64-bit code from file test.bin:\n");
+    printf("        disasm -f test.bin\n");
+    printf("        disasm -b64 -f test.bin\n");
+    printf("        disasm decode -b64 -f test.bin\n");
+    printf("    Decode 64-bit from a hex-buffer, and display extended instruction information:\n");
+    printf("        disasm -b64 -h 909033C0 -exi\n");
+    printf("    Decode from hex-string, highlight instruction components & display instruction bitfields:\n");
+    printf("        disasm -h 90505833C0E80000000058CC -hl -bits\n");
+    printf("    Emulate a potential 32-bit shellcode from test file shell.bin:\n");
+    printf("        disasm shemu -b32 -f shell.bin\n");
+    printf("    Emulate a potential 32-bit shellcode from test file shell.bin, and specify some input registers:\n");
+    printf("        disasm shemu -b32 -f shell.bin -rax 0x100 -rcx 0xABCD -rsp 0x1000\n");
+    printf("    Run a quick benchmark on file test.bin:\n");
+    printf("        disasm -f test.bin -nv -iv\n");
+    printf("\n");
+}
+
+
+void
+cleanup_context(
+    __inout DISASM_OPTIONS *Options
     )
 {
-    HANDLE hFile, hMapping;
-    DWORD fsize, offset;
-    SIZE_T rip;
-    char text[ND_MIN_BUF_SIZE], *fname, *target, *shemuCtxFname;
-    BYTE mode, print, highlight, fmode, hmode, stats, exi, vend, feat, search, isShemu, isShemuCtxf, isKernel, bitfields;
-    BYTE bypassw, skip16;
-    INT ret, i;
-    BYTE hexbuf[256], *buffer;
-    DISASM_OPTIONS options;
-    
-    // preinit
-    buffer = NULL;
-    memset(text, 0, sizeof(text));
-    memset(&options, 0, sizeof(options));
-    print = 1;
-    highlight = 0;
-    fmode = 0;
-    hmode = 0;
-    stats = 0;
-    exi = 0;
-    offset = 0;
-    search = 0;
-    feat = ND_FEAT_ALL;
-    vend = ND_VEND_ANY;
-    fname = NULL;
-    mode = ND_CODE_16;
-    hFile = NULL;
-    hMapping = NULL;
-    target = NULL;
-    shemuCtxFname = NULL;
-    rip = 0;
-    isShemu = 0;
-    isShemuCtxf = 0;
-    isKernel = 0;
-    bitfields = 0;
-    bypassw = 0;
-    skip16 = 0;
-
-    if (NULL == argv)
+    if (Options->InputMode == inputFile)
     {
-        return -1;
+        if (NULL != Options->Buffer)
+        {
+            UnmapViewOfFile(Options->Buffer);
+        }
+
+        if (NULL != Options->HandleMapping && INVALID_HANDLE_VALUE != Options->HandleMapping)
+        {
+            CloseHandle(Options->HandleMapping);
+        }
+
+        if (NULL != Options->HandleFile && INVALID_HANDLE_VALUE != Options->HandleFile)
+        {
+            CloseHandle(Options->HandleFile);
+        }
+    }
+}
+
+
+_Success_(return)
+BOOLEAN
+parse_input(
+    __inout DISASM_OPTIONS* Options
+    )
+{
+    static BYTE hexbuf[4096];
+
+    if (inputNone == Options->InputMode)
+    {
+        printf("Expecting an input mode: either -f or -h!\n");
+        return FALSE;
     }
 
-    if (argc < 3)
+    if (inputFile == Options->InputMode)
     {
-        uint32_t major, minor, revision;
-        char *date, *time;
+        // Open the file.
+        Options->HandleFile = CreateFileA(Options->FileName, GENERIC_READ|GENERIC_WRITE, FILE_SHARE_READ|FILE_SHARE_WRITE, NULL, 
+                            OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        if (INVALID_HANDLE_VALUE == Options->HandleFile)
+        {
+            printf("Couldn't open file '%s': 0x%08x\n", Options->FileName, GetLastError());
+            cleanup_context(Options);
+            return FALSE;
+        }
 
-        NdGetVersion(&major, &minor, &revision, &date, &time);
+        // Create a file mapping.
+        Options->HandleMapping = CreateFileMappingA(Options->HandleFile, NULL, PAGE_READWRITE, 0, 0, "DisasmFile");
+        if (NULL == Options->HandleMapping)
+        {
+            printf("Couldn't create file mapping for '%s': 0x%08x\n", Options->FileName, GetLastError());
+            cleanup_context(Options);
+            return FALSE;
+        }
 
-        printf("Napoca Disassembler version %u.%u.%u, built on %s %s\n", major, minor, revision, date, time);
-        printf("Usage: disasm -f file|-h hex-string -b[16|32|64] [-nv] [-iv] [-hl] [-s] [-c] [-shctxf contextfile] "
-            "[-reg_name reg_val]\n");
-        printf("        -f file          specify input file\n");
-        printf("        -h hexstring     specify hex string with instructions\n");
-        printf("        -o offset        start disasm at specified offset\n");
-        printf("        -r rip           use the provided RIP\n");
-        printf("        -b[16|32|64]     set decoding mode; default is 16\n");
-        printf("        -v[intel|amd|cyrix|mpx|any] set preferred vendor\n");
-        printf("        -t[none|all|mpx|cet|cldm|piti] set preferred feature mode; default is all\n");
-        printf("        -s \"ins\"       search for the given instructions\n");
-        printf("        -nv              don't print disassembly\n");
-        printf("        -iv              display statistics\n");
-        printf("        -exi             print extended info about instructions\n");
-        printf("        -shemu           emulate the file/hex-string\n");
-        printf("        -shctxf contextfile specify file that contains the context for shemu. "
-            "Ignored if shemu is not used. Overrides registers specified in command line\n");
-        printf("            File format: each row contains the format: [regname]:[regvalue]\n");
-        printf("        -regname regval specify registers to be set for the shemu context. Ignored if shemu is not used\n");
-        printf("            Examples of valid command line register naming: \"RegRax\" ; \"rax\" ; \"reg_rax\"\n");
-        printf("        -k               specify kernel mode for shemu emulation. Ignore if shemu is not specified.\n");
-        printf("        -bw              bypass self-modifications for shemu emulation.\n");
-        printf("        -hl              highlight instruction parts:\n");
-        printf("        -bits            display the instruction bit fields");
-        printf("        -skip16          skip 16 bytes after each decoded instruction");
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 
-            FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED|FOREGROUND_INTENSITY);
-        printf("            light white      prefixes\n");
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN|FOREGROUND_INTENSITY);
-        printf("            light green      opcodes\n");
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_GREEN|FOREGROUND_RED|FOREGROUND_INTENSITY);
-        printf("            light yellow     modrm and sib\n");
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE|FOREGROUND_INTENSITY);
-        printf("            light blue       displacement\n");
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_RED|FOREGROUND_INTENSITY);
-        printf("            light red        relative offset, immediate, address\n");
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_BLUE|FOREGROUND_GREEN|FOREGROUND_RED);
-        printf("Instrux size: 0x%zx bytes\n", sizeof(INSTRUX));
-        ret = -1;
-        goto cleanup_and_exit;
+        // Map the file.
+        Options->Buffer = (BYTE *)MapViewOfFile(Options->HandleMapping, FILE_MAP_ALL_ACCESS, 0, 0, 0);
+        if (NULL == Options->Buffer)
+        {
+            printf("Couldn't map the view for '%s': 0x%08x\n", Options->FileName, GetLastError());
+            cleanup_context(Options);
+            return FALSE;
+        }
+
+        Options->Size = GetFileSize(Options->HandleFile, NULL);
     }
+    else
+    {
+        DWORD idx, sx = 0, mx, of;
+
+        Options->Size = (DWORD)strlen(Options->FileName);
+
+        if (Options->Size < 2)
+        {
+            printf("Min 1-byte buffer needed!\n");
+            return FALSE;
+        }
+        
+        if (Options->Size % 2 == 1)
+        {
+            printf("Even-sized hex buffer expected!\n");
+            return FALSE;
+        }
+
+        if (Options->FileName[0] == '\\' && Options->FileName[1] == 'x')
+        {
+            sx = 1;
+        }
+
+        if (sx && Options->Size < 4)
+        {
+            printf("Min 1-byte buffer needed!\n");
+            return FALSE;
+        }
+
+        if (sx)
+        {
+            mx = 4;
+            of = 2;
+        }
+        else
+        {
+            mx = 2;
+            of = 0;
+        }
+
+        if (Options->Size / mx > sizeof(hexbuf))
+        {
+            printf("Max %zu bytes buffer accepted!\n", sizeof(hexbuf));
+            return FALSE;
+        }
+
+        for (idx = 0; idx < Options->Size / mx; idx++)
+        {
+            hexbuf[idx] = ((hex_to_bin(Options->FileName[idx * mx + of]) << 4) | 
+                           (hex_to_bin(Options->FileName[idx * mx + of + 1]))) & 0xFF;
+        }
+
+        Options->FileName = NULL;
+        Options->Size /= sx ? 4 : 2;
+        Options->Buffer = hexbuf;
+    }
+
+    if (Options->Offset >= Options->Size)
+    {
+        printf("The offset exceeds the buffer size!\n");
+        cleanup_context(Options);
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+
+_Success_(return)
+BOOLEAN
+parse_arguments(
+    __in int argc,
+    __in char* argv[],
+    __out DISASM_OPTIONS *Options
+    )
+{
+    int i;
+
+    if (argc < 2 || NULL == argv)
+    {
+        print_help();
+        return FALSE;
+    }
+
+    memset(Options, 0, sizeof(*Options));
+
+    // Initialize default options.
+    Options->Command = commandDecode;
+    Options->Mode = ND_CODE_64;
+    Options->Ring = 3;
+    Options->Print = TRUE;
+    Options->Vendor = ND_VEND_ANY;
+    Options->Feature = ND_FEAT_ALL;
 
     i = 1;
     while (i < argc)
@@ -1850,32 +1676,21 @@ int main(
             }
             else
             {
-                options.ShemuRegs[gprIdx] = (size_t)strtoull(argv[i + 1], NULL, 0);
-                options.UseShemuRegs = TRUE;
+                Options->ShemuRegs[gprIdx] = (size_t)strtoull(argv[i + 1], NULL, 0);
+                Options->UseShemuRegs = TRUE;
                 i++;
             }
         }
-        else if (strcmp(argv[i], "-shctxf") == 0)
+        else if (strcmp(argv[i], "shemu") == 0)
         {
-            if (i + 1 < argc)
-            {
-                isShemuCtxf = 1;
-                options.UseShemuRegs = TRUE;
-
-                shemuCtxFname = argv[i + 1];
-                i++;
-            }
-        }
-        else if (strcmp(argv[i], "-shemu") == 0)
-        {
-            isShemu = 1;
+            Options->Command = commandShemu;
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'f' && argv[i][2] == 0)
         {
             if (i + 1 < argc)
             {
-                fmode = 1;
-                fname = argv[i + 1];
+                Options->InputMode = inputFile;
+                Options->FileName = argv[i + 1];
                 i++;
             }
         }
@@ -1883,8 +1698,8 @@ int main(
         {
             if (i + 1 < argc)
             {
-                hmode = 1;
-                fname = argv[i + 1];
+                Options->InputMode = inputHex;
+                Options->FileName = argv[i + 1];
                 i++;
             }
         }
@@ -1892,7 +1707,7 @@ int main(
         {
             if (i + 1 < argc)
             {
-                sscanf_s(argv[i + 1], "%x", &offset);
+                sscanf_s(argv[i + 1], "%zx", &Options->Offset);
                 i++;
             }
         }
@@ -1900,135 +1715,117 @@ int main(
         {
             if (i + 1 < argc)
             {
-                sscanf_s(argv[i + 1], "%zx", &rip);
+                sscanf_s(argv[i + 1], "%zx", &Options->Rip);
                 i++;
             }
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'k' && argv[i][2] == 0)
         {
-            isKernel = 1;
+            Options->Ring = 0;
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'b' && argv[i][2] == 'w' && argv[i][3] == 0)
         {
-            bypassw = 1;
+            Options->BypassSelfWrites = TRUE;
         }
         else if (0 == strcmp(argv[i], "-b16"))
         {
-            mode = ND_CODE_16;
+            Options->Mode = ND_CODE_16;
         } 
         else if (0 == strcmp(argv[i], "-b32"))
         {
-            mode = ND_CODE_32;
+            Options->Mode = ND_CODE_32;
         } 
         else if (0 == strcmp(argv[i], "-b64"))
         {
-            mode = ND_CODE_64;
+            Options->Mode = ND_CODE_64;
         }
-        else if (0 == strcmp(argv[i], "-vintel"))
+        else if (0 == strcmp(argv[i], "-v intel"))
         {
-            vend = ND_VEND_INTEL;
+            Options->Vendor = ND_VEND_INTEL;
         }
-        else if (0 == strcmp(argv[i], "-vamd"))
+        else if (0 == strcmp(argv[i], "-v amd"))
         {
-            vend = ND_VEND_AMD;
+            Options->Vendor = ND_VEND_AMD;
         }
-        else if (0 == strcmp(argv[i], "-vgeode"))
+        else if (0 == strcmp(argv[i], "-v geode"))
         {
-            vend = ND_VEND_GEODE;
+            Options->Vendor = ND_VEND_GEODE;
         }
-        else if (0 == strcmp(argv[i], "-vcyrix"))
+        else if (0 == strcmp(argv[i], "-v cyrix"))
         {
-            vend = ND_VEND_CYRIX;
+            Options->Vendor = ND_VEND_CYRIX;
         }
-        else if (0 == strcmp(argv[i], "-vany"))
+        else if (0 == strcmp(argv[i], "-v any"))
         {
-            vend = ND_VEND_ANY;
+            Options->Vendor = ND_VEND_ANY;
         }
-        else if (0 == strcmp(argv[i], "-tall"))
+        else if (0 == strcmp(argv[i], "-t all"))
         {
-            feat = ND_FEAT_ALL;
+            Options->Feature = ND_FEAT_ALL;
         }
-        else if (0 == strcmp(argv[i], "-tmpx"))
+        else if (0 == strcmp(argv[i], "-t mpx"))
         {
-            if (feat == ND_FEAT_ALL)
+            if (Options->Feature == ND_FEAT_ALL)
             {
-                feat = 0;
+                Options->Feature = 0;
             }
 
-            feat |= ND_FEAT_MPX;
+            Options->Feature |= ND_FEAT_MPX;
         }
-        else if (0 == strcmp(argv[i], "-tcet"))
+        else if (0 == strcmp(argv[i], "-t cet"))
         {
-            if (feat == ND_FEAT_ALL)
+            if (Options->Feature == ND_FEAT_ALL)
             {
-                feat = 0;
+                Options->Feature = 0;
             }
 
-            feat |= ND_FEAT_CET;
+            Options->Feature |= ND_FEAT_CET;
         }
-        else if (0 == strcmp(argv[i], "-tcldm"))
+        else if (0 == strcmp(argv[i], "-t cldm"))
         {
-            if (feat == ND_FEAT_ALL)
+            if (Options->Feature == ND_FEAT_ALL)
             {
-                feat = 0;
+                Options->Feature = 0;
             }
 
-            feat |= ND_FEAT_CLDEMOTE;
+            Options->Feature |= ND_FEAT_CLDEMOTE;
         }
-        else if (0 == strcmp(argv[i], "-tpiti"))
+        else if (0 == strcmp(argv[i], "-t piti"))
         {
-            if (feat == ND_FEAT_ALL)
+            if (Options->Feature == ND_FEAT_ALL)
             {
-                feat = 0;
+                Options->Feature = 0;
             }
 
-            feat |= ND_FEAT_PITI;
+            Options->Feature |= ND_FEAT_PITI;
         }
-        else if (0 == strcmp(argv[i], "-tnone"))
+        else if (0 == strcmp(argv[i], "-t none"))
         {
-            feat = ND_FEAT_NONE;
+            Options->Feature = ND_FEAT_NONE;
         }
         else if (0 == strcmp(argv[i], "-nv"))
         {
-            print = 0;
+            Options->Print = FALSE;
         } 
         else if (0 == strcmp(argv[i], "-hl"))
         {
-            highlight = 1;
+            Options->Highlight = TRUE;
         }
         else if (0 == strcmp(argv[i], "-iv"))
         {
-            stats = 1;
+            Options->Stats = TRUE;
         }
         else if (0 == strcmp(argv[i], "-exi"))
         {
-            exi = 1;
-        }
-        else if (0 == strcmp(argv[i], "-s"))
-        {
-            search = 1;
-
-            if (i + 1 == argc)
-            {
-                printf("-s requires an argument!\n");
-                return -1;
-            }
-
-            target = argv[++i];
-
-            if (strlen(target) >= ND_MIN_BUF_SIZE)
-            {
-                printf("Target instruction too long! Max is %d bytes!\n", ND_MIN_BUF_SIZE);
-                return -1;
-            }
+            Options->ExtendedInfo = TRUE;
         }
         else if (0 == strcmp(argv[i], "-bits"))
         {
-            bitfields = 1;
+            Options->BitFields = TRUE;
         }
         else if (0 == strcmp(argv[i], "-skip16"))
         {
-            skip16 = 1;
+            Options->Skip16 = TRUE;
         }
         else
         {
@@ -2038,145 +1835,39 @@ int main(
         i++;
     }
 
-    if (0 == fmode && 0 == hmode)
+    if (!parse_input(Options))
     {
-        printf("Expecting -f or -h option!\n");
+        printf("Could not find a valid input!\n");
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+
+int 
+main(
+    __in int argc, 
+    __in char* argv[]
+    )
+{
+    DISASM_OPTIONS options = { 0 };
+
+    if (!parse_arguments(argc, argv, &options))
+    {
         return -1;
     }
 
-    if (fmode)
+    if (options.Command == commandShemu)
     {
-        // Open the file.
-        hFile = CreateFileA(fname, GENERIC_READ|GENERIC_WRITE, FILE_SHARE_READ|FILE_SHARE_WRITE, NULL, 
-                            OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-        if (INVALID_HANDLE_VALUE == hFile)
-        {
-            printf("Couldn't open file '%s': 0x%08x\n", fname, GetLastError());
-            ret = -1;
-            goto cleanup_and_exit;
-        }
-
-        // Create a file mapping.
-        hMapping = CreateFileMappingA(hFile, NULL, PAGE_READWRITE, 0, 0, "DisasmFile");
-        if (NULL == hMapping)
-        {
-            printf("Couldn't create file mapping for '%s': 0x%08x\n", argv[1], GetLastError());
-            ret = -1;
-            goto cleanup_and_exit;
-        }
-
-        // Map the file.
-        buffer = (BYTE *)MapViewOfFile(hMapping, FILE_MAP_ALL_ACCESS, 0, 0, 0);
-        if (NULL == buffer)
-        {
-            printf("Couldn't map the view for '%s': 0x%08x\n", argv[1], GetLastError());
-            ret = -1;
-            goto cleanup_and_exit;
-        }
-
-        fsize = GetFileSize(hFile, NULL);
-    }
-    else
-    {
-        DWORD idx;
-
-        memset(hexbuf, 0, sizeof(hexbuf));
-
-        fsize = (DWORD)strlen(fname);
-
-        if (fsize > 512)
-        {
-            printf("Max 256-bytes buffer accepted!\n");
-            return -1;
-        }
-        
-        if (fsize % 2 == 1)
-        {
-            printf("Even-sized hex buffer expected!\n");
-            return -1;
-        }
-
-        for (idx = 0; idx < fsize / 2; idx++)
-        {
-            hexbuf[idx] = ((hex_to_bin(fname[idx * 2]) << 4) | (hex_to_bin(fname[idx * 2 + 1]))) & 0xFF;
-        }
-
-        fname = NULL;
-        fsize /= 2;
-        buffer = hexbuf;
-    }
-
-    if (offset >= fsize)
-    {
-        printf("The offset exceeds the buffer size!\n");
-        ret = -1;
-        goto cleanup_and_exit;
-    }
-
-    options.FileName = fname;
-    options.Buffer = buffer;
-    options.Size = fsize;
-    options.ExtendedInfo = exi;
-    options.BitFields = bitfields;
-    options.Skip16 = skip16;
-    options.Highlight = highlight;
-    options.Mode = mode;
-    options.Ring = isKernel ? 0 : 3;
-    options.Offset = offset;
-    options.Stats = stats;
-    options.Search = search;
-    options.Target = target;
-    options.Print = print;
-    options.Vendor = vend;
-    options.Feature = feat;
-    options.Rip = rip;
-    options.BypassSelfWrites = bypassw;
-
-    if (isShemu)
-    {
-        if (isShemuCtxf)
-        {
-            set_shemuctx_file(shemuCtxFname, &options);
-        }
-
         handle_shemu(&options);
-    }
-    else if (search)
-    {
-        handle_search(&options);
     }
     else
     {
         handle_disasm(&options);
     }
 
-    // All should be good.
-    ret = 0;
+    cleanup_context(&options);
 
-cleanup_and_exit:
-    if (fmode)
-    {
-        if (NULL != buffer)
-        {
-            UnmapViewOfFile(buffer);
-
-            buffer = NULL;
-        }
-
-        if (NULL != hMapping)
-        {
-            CloseHandle(hMapping);
-
-            hMapping = NULL;
-        }
-
-        if ((NULL != hFile) && (INVALID_HANDLE_VALUE != hFile))
-        {
-            CloseHandle(hFile);
-
-            hFile = NULL;
-        }
-    }
-
-    return ret;
+    return 0;
 }
