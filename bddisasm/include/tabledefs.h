@@ -318,12 +318,12 @@ typedef enum _ND_OPERAND_SIZE_SPEC
     ND_OPS_ps,
     ND_OPS_pd,
     ND_OPS_ph,
-    ND_OPS_e,
-    ND_OPS_f,
-    ND_OPS_h,
+    ND_OPS_ev,
+    ND_OPS_qv,
+    ND_OPS_hv,
     ND_OPS_x,
-    ND_OPS_n,
-    ND_OPS_u,
+    ND_OPS_uv,
+    ND_OPS_fv,
     ND_OPS_t,       // Tile register size, can be up to 1K.
     ND_OPS_384,     // 384 bit Key Locker handle.
     ND_OPS_512,     // 512 bit Key Locker handle.

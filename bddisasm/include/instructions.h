@@ -23144,7 +23144,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1401 Instruction:"VADDPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x58 /r"/"RAVM"
+    // Pos:1401 Instruction:"VADDPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x58 /r"/"RAVM"
     {
         ND_INS_VADDPD, ND_CAT_AVX512, ND_SET_AVX512F, 846, 
         0, 
@@ -23155,10 +23155,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -23179,7 +23179,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1403 Instruction:"VADDPH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x58 /r"/"RAVM"
+    // Pos:1403 Instruction:"VADDPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x58 /r"/"RAVM"
     {
         ND_INS_VADDPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 847, 
         0, 
@@ -23190,14 +23190,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1404 Instruction:"VADDPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x58 /r"/"RAVM"
+    // Pos:1404 Instruction:"VADDPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x58 /r"/"RAVM"
     {
         ND_INS_VADDPS, ND_CAT_AVX512, ND_SET_AVX512F, 848, 
         0, 
@@ -23208,10 +23208,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -23354,7 +23354,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1413 Instruction:"VAESDEC Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDE /r"/"RVM"
+    // Pos:1413 Instruction:"VAESDEC Vfv,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0xDE /r"/"RVM"
     {
         ND_INS_VAESDEC, ND_CAT_VAES, ND_SET_VAES, 854, 
         0, 
@@ -23365,9 +23365,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -23388,7 +23388,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1415 Instruction:"VAESDECLAST Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDF /r"/"RVM"
+    // Pos:1415 Instruction:"VAESDECLAST Vfv,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0xDF /r"/"RVM"
     {
         ND_INS_VAESDECLAST, ND_CAT_VAES, ND_SET_VAES, 855, 
         0, 
@@ -23399,9 +23399,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -23422,7 +23422,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1417 Instruction:"VAESENC Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDC /r"/"RVM"
+    // Pos:1417 Instruction:"VAESENC Vfv,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0xDC /r"/"RVM"
     {
         ND_INS_VAESENC, ND_CAT_VAES, ND_SET_VAES, 856, 
         0, 
@@ -23433,9 +23433,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -23456,7 +23456,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1419 Instruction:"VAESENCLAST Vn,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0xDD /r"/"RVM"
+    // Pos:1419 Instruction:"VAESENCLAST Vfv,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0xDD /r"/"RVM"
     {
         ND_INS_VAESENCLAST, ND_CAT_VAES, ND_SET_VAES, 857, 
         0, 
@@ -23467,9 +23467,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -23523,7 +23523,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1423 Instruction:"VALIGND Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x03 /r ib"/"RAVMI"
+    // Pos:1423 Instruction:"VALIGND Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x03 /r ib"/"RAVMI"
     {
         ND_INS_VALIGND, ND_CAT_AVX512, ND_SET_AVX512F, 860, 
         0, 
@@ -23534,15 +23534,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1424 Instruction:"VALIGNQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x03 /r ib"/"RAVMI"
+    // Pos:1424 Instruction:"VALIGNQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x03 /r ib"/"RAVMI"
     {
         ND_INS_VALIGNQ, ND_CAT_AVX512, ND_SET_AVX512F, 861, 
         0, 
@@ -23553,15 +23553,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1425 Instruction:"VANDNPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x55 /r"/"RAVM"
+    // Pos:1425 Instruction:"VANDNPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x55 /r"/"RAVM"
     {
         ND_INS_VANDNPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 862, 
         0, 
@@ -23572,10 +23572,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -23596,7 +23596,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1427 Instruction:"VANDNPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x55 /r"/"RAVM"
+    // Pos:1427 Instruction:"VANDNPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:0 l:x w:0 0x55 /r"/"RAVM"
     {
         ND_INS_VANDNPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 863, 
         0, 
@@ -23607,10 +23607,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -23631,7 +23631,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1429 Instruction:"VANDPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x54 /r"/"RAVM"
+    // Pos:1429 Instruction:"VANDPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x54 /r"/"RAVM"
     {
         ND_INS_VANDPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 864, 
         0, 
@@ -23642,10 +23642,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -23666,7 +23666,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1431 Instruction:"VANDPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x54 /r"/"RAVM"
+    // Pos:1431 Instruction:"VANDPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:0 l:x w:0 0x54 /r"/"RAVM"
     {
         ND_INS_VANDPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 865, 
         0, 
@@ -23677,10 +23677,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -23733,7 +23733,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1435 Instruction:"VBLENDMPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x65 /r"/"RAVM"
+    // Pos:1435 Instruction:"VBLENDMPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x65 /r"/"RAVM"
     {
         ND_INS_VBLENDMPD, ND_CAT_BLEND, ND_SET_AVX512F, 868, 
         0, 
@@ -23744,14 +23744,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1436 Instruction:"VBLENDMPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x65 /r"/"RAVM"
+    // Pos:1436 Instruction:"VBLENDMPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x65 /r"/"RAVM"
     {
         ND_INS_VBLENDMPS, ND_CAT_BLEND, ND_SET_AVX512F, 869, 
         0, 
@@ -23762,10 +23762,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -23857,7 +23857,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1442 Instruction:"VBROADCASTF32X2 Vu{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x19 /r"/"RAM"
+    // Pos:1442 Instruction:"VBROADCASTF32X2 Vuv{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x19 /r"/"RAM"
     {
         ND_INS_VBROADCASTF32X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 875, 
         0, 
@@ -23868,13 +23868,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1443 Instruction:"VBROADCASTF32X4 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x1A /r:mem"/"RAM"
+    // Pos:1443 Instruction:"VBROADCASTF32X4 Vuv{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x1A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTF32X4, ND_CAT_BROADCAST, ND_SET_AVX512F, 876, 
         0, 
@@ -23885,7 +23885,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
@@ -23908,7 +23908,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1445 Instruction:"VBROADCASTF64X2 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x1A /r:mem"/"RAM"
+    // Pos:1445 Instruction:"VBROADCASTF64X2 Vuv{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x1A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTF64X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 878, 
         0, 
@@ -23919,7 +23919,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
@@ -23958,7 +23958,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1448 Instruction:"VBROADCASTI32X2 Vn{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x59 /r"/"RAM"
+    // Pos:1448 Instruction:"VBROADCASTI32X2 Vfv{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:0 0x59 /r"/"RAM"
     {
         ND_INS_VBROADCASTI32X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 881, 
         0, 
@@ -23969,13 +23969,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1449 Instruction:"VBROADCASTI32X4 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x5A /r:mem"/"RAM"
+    // Pos:1449 Instruction:"VBROADCASTI32X4 Vuv{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:0 0x5A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTI32X4, ND_CAT_BROADCAST, ND_SET_AVX512F, 882, 
         0, 
@@ -23986,7 +23986,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
@@ -24009,7 +24009,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1451 Instruction:"VBROADCASTI64X2 Vu{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x5A /r:mem"/"RAM"
+    // Pos:1451 Instruction:"VBROADCASTI64X2 Vuv{K}{z},aKq,Mdq" Encoding:"evex m:2 p:1 l:x w:1 0x5A /r:mem"/"RAM"
     {
         ND_INS_VBROADCASTI64X2, ND_CAT_BROADCAST, ND_SET_AVX512DQ, 884, 
         0, 
@@ -24020,7 +24020,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
@@ -24043,7 +24043,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1453 Instruction:"VBROADCASTSD Vu{K}{z},aKq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x19 /r"/"RAM"
+    // Pos:1453 Instruction:"VBROADCASTSD Vuv{K}{z},aKq,Wsd" Encoding:"evex m:2 p:1 l:x w:1 0x19 /r"/"RAM"
     {
         ND_INS_VBROADCASTSD, ND_CAT_BROADCAST, ND_SET_AVX512F, 886, 
         0, 
@@ -24054,7 +24054,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_sd, 0, ND_OPA_R, 0, 0), 
         },
@@ -24076,7 +24076,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1455 Instruction:"VBROADCASTSS Vn{K}{z},aKq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x18 /r"/"RAM"
+    // Pos:1455 Instruction:"VBROADCASTSS Vfv{K}{z},aKq,Wss" Encoding:"evex m:2 p:1 l:x w:0 0x18 /r"/"RAM"
     {
         ND_INS_VBROADCASTSS, ND_CAT_BROADCAST, ND_SET_AVX512F, 887, 
         0, 
@@ -24087,7 +24087,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_ss, 0, ND_OPA_R, 0, 0), 
         },
@@ -24109,7 +24109,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1457 Instruction:"VCMPPD rKq{K},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC2 /r ib"/"RAVMI"
+    // Pos:1457 Instruction:"VCMPPD rKq{K},aKq,Hfv,Wfv|B64{sae},Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPPD, ND_CAT_AVX512, ND_SET_AVX512F, 888, 
         0, 
@@ -24122,8 +24122,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -24146,7 +24146,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1459 Instruction:"VCMPPH rK{K},aKq,Hn,Wn|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0xC2 /r ib"/"RAVMI"
+    // Pos:1459 Instruction:"VCMPPH rK{K},aKq,Hfv,Wfv|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 889, 
         0, 
@@ -24159,13 +24159,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1460 Instruction:"VCMPPS rKq{K},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC2 /r ib"/"RAVMI"
+    // Pos:1460 Instruction:"VCMPPS rKq{K},aKq,Hfv,Wfv|B32{sae},Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPPS, ND_CAT_AVX512, ND_SET_AVX512F, 890, 
         0, 
@@ -24178,8 +24178,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -24239,7 +24239,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1464 Instruction:"VCMPSH rK{K},aKq,Hn,Wsh{sae},Ib" Encoding:"evex m:3 p:2 l:i w:0 0xC2 /r ib"/"RAVMI"
+    // Pos:1464 Instruction:"VCMPSH rK{K},aKq,Hfv,Wsh{sae},Ib" Encoding:"evex m:3 p:2 l:i w:0 0xC2 /r ib"/"RAVMI"
     {
         ND_INS_VCMPSH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 892, 
         0, 
@@ -24252,7 +24252,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_sh, 0, ND_OPA_R, ND_OPD_SAE, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
@@ -24380,7 +24380,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1472 Instruction:"VCOMPRESSPD Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x8A /r"/"MAR"
+    // Pos:1472 Instruction:"VCOMPRESSPD Wfv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0x8A /r"/"MAR"
     {
         ND_INS_VCOMPRESSPD, ND_CAT_COMPRESS, ND_SET_AVX512F, 897, 
         0, 
@@ -24391,13 +24391,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1473 Instruction:"VCOMPRESSPS Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x8A /r"/"MAR"
+    // Pos:1473 Instruction:"VCOMPRESSPS Wfv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:0 0x8A /r"/"MAR"
     {
         ND_INS_VCOMPRESSPS, ND_CAT_COMPRESS, ND_SET_AVX512F, 898, 
         0, 
@@ -24408,13 +24408,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1474 Instruction:"VCVTDQ2PD Vn{K}{z},aKq,Wh|B32" Encoding:"evex m:1 p:2 l:x w:0 0xE6 /r"/"RAM"
+    // Pos:1474 Instruction:"VCVTDQ2PD Vfv{K}{z},aKq,Whv|B32" Encoding:"evex m:1 p:2 l:x w:0 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTDQ2PD, ND_CAT_CONVERT, ND_SET_AVX512F, 899, 
         0, 
@@ -24425,9 +24425,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -24463,7 +24463,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1477 Instruction:"VCVTDQ2PH Vh{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:5 p:0 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1477 Instruction:"VCVTDQ2PH Vhv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:5 p:0 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTDQ2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 900, 
         0, 
@@ -24474,13 +24474,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1478 Instruction:"VCVTDQ2PS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1478 Instruction:"VCVTDQ2PS Vfv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTDQ2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 901, 
         0, 
@@ -24491,9 +24491,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -24513,7 +24513,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1480 Instruction:"VCVTNE2PS2BF16 Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:3 l:x w:0 0x72 /r"/"RAVM"
+    // Pos:1480 Instruction:"VCVTNE2PS2BF16 Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:3 l:x w:0 0x72 /r"/"RAVM"
     {
         ND_INS_VCVTNE2PS2BF16, ND_CAT_AVX512BF16, ND_SET_AVX512BF16, 902, 
         0, 
@@ -24524,10 +24524,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -24595,7 +24595,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1485 Instruction:"VCVTNEPS2BF16 Vh{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x72 /r"/"RAM"
+    // Pos:1485 Instruction:"VCVTNEPS2BF16 Vhv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:2 l:x w:0 0x72 /r"/"RAM"
     {
         ND_INS_VCVTNEPS2BF16, ND_CAT_AVX512BF16, ND_SET_AVX512BF16, 907, 
         0, 
@@ -24606,9 +24606,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -24628,7 +24628,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1487 Instruction:"VCVTPD2DQ Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0xE6 /r"/"RAM"
+    // Pos:1487 Instruction:"VCVTPD2DQ Vhv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTPD2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 908, 
         0, 
@@ -24639,9 +24639,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -24661,7 +24661,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1489 Instruction:"VCVTPD2PH Vdq{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:5 p:1 l:x w:1 0x5A /r"/"RAM"
+    // Pos:1489 Instruction:"VCVTPD2PH Vdq{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:5 p:1 l:x w:1 0x5A /r"/"RAM"
     {
         ND_INS_VCVTPD2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 909, 
         0, 
@@ -24674,11 +24674,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_V, ND_OPS_dq, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1490 Instruction:"VCVTPD2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5A /r"/"RAM"
+    // Pos:1490 Instruction:"VCVTPD2PS Vhv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5A /r"/"RAM"
     {
         ND_INS_VCVTPD2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 910, 
         0, 
@@ -24689,9 +24689,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -24727,7 +24727,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1493 Instruction:"VCVTPD2QQ Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x7B /r"/"RAM"
+    // Pos:1493 Instruction:"VCVTPD2QQ Vfv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x7B /r"/"RAM"
     {
         ND_INS_VCVTPD2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 911, 
         0, 
@@ -24738,13 +24738,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1494 Instruction:"VCVTPD2UDQ Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x79 /r"/"RAM"
+    // Pos:1494 Instruction:"VCVTPD2UDQ Vhv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPD2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 912, 
         0, 
@@ -24755,13 +24755,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1495 Instruction:"VCVTPD2UQQ Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x79 /r"/"RAM"
+    // Pos:1495 Instruction:"VCVTPD2UQQ Vfv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPD2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 913, 
         0, 
@@ -24772,13 +24772,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1496 Instruction:"VCVTPH2DQ Vn{K}{z},aKq,Wh|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1496 Instruction:"VCVTPH2DQ Vfv{K}{z},aKq,Whv|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTPH2DQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 914, 
         0, 
@@ -24789,13 +24789,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1497 Instruction:"VCVTPH2PD Vn{K}{z},aKq,Wf|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5A /r"/"RAM"
+    // Pos:1497 Instruction:"VCVTPH2PD Vfv{K}{z},aKq,Wqv|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5A /r"/"RAM"
     {
         ND_INS_VCVTPH2PD, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 915, 
         0, 
@@ -24806,13 +24806,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1498 Instruction:"VCVTPH2PS Vn{K}{z},aKq,Wh{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x13 /r"/"RAM"
+    // Pos:1498 Instruction:"VCVTPH2PS Vfv{K}{z},aKq,Whv{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x13 /r"/"RAM"
     {
         ND_INS_VCVTPH2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 916, 
         0, 
@@ -24823,9 +24823,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE, 0), 
         },
     }, 
 
@@ -24861,7 +24861,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1501 Instruction:"VCVTPH2PSX Vn{K}{z},aKq,Wh|B16{sae}" Encoding:"evex m:6 p:1 l:x w:0 0x13 /r"/"RAM"
+    // Pos:1501 Instruction:"VCVTPH2PSX Vfv{K}{z},aKq,Whv|B16{sae}" Encoding:"evex m:6 p:1 l:x w:0 0x13 /r"/"RAM"
     {
         ND_INS_VCVTPH2PSX, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 917, 
         0, 
@@ -24872,13 +24872,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1502 Instruction:"VCVTPH2QQ Vn{K}{z},aKq,Wf|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x7B /r"/"RAM"
+    // Pos:1502 Instruction:"VCVTPH2QQ Vfv{K}{z},aKq,Wqv|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x7B /r"/"RAM"
     {
         ND_INS_VCVTPH2QQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 918, 
         0, 
@@ -24889,13 +24889,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1503 Instruction:"VCVTPH2UDQ Vn{K}{z},aKq,Wh|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1503 Instruction:"VCVTPH2UDQ Vfv{K}{z},aKq,Whv|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPH2UDQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 919, 
         0, 
@@ -24906,13 +24906,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1504 Instruction:"VCVTPH2UQQ Vn{K}{z},aKq,Wf|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1504 Instruction:"VCVTPH2UQQ Vfv{K}{z},aKq,Wqv|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPH2UQQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 920, 
         0, 
@@ -24923,13 +24923,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1505 Instruction:"VCVTPH2UW Vn{K}{z},aKq,Wn|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x7D /r"/"RAM"
+    // Pos:1505 Instruction:"VCVTPH2UW Vfv{K}{z},aKq,Wfv|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x7D /r"/"RAM"
     {
         ND_INS_VCVTPH2UW, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 921, 
         0, 
@@ -24940,13 +24940,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1506 Instruction:"VCVTPH2W Vn{K}{z},aKq,Wn|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x7D /r"/"RAM"
+    // Pos:1506 Instruction:"VCVTPH2W Vfv{K}{z},aKq,Wfv|B16{er}" Encoding:"evex m:5 p:1 l:x w:0 0x7D /r"/"RAM"
     {
         ND_INS_VCVTPH2W, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 922, 
         0, 
@@ -24957,13 +24957,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1507 Instruction:"VCVTPS2DQ Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1507 Instruction:"VCVTPS2DQ Vfv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTPS2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 923, 
         0, 
@@ -24974,9 +24974,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -24996,7 +24996,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1509 Instruction:"VCVTPS2PD Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5A /r"/"RAM"
+    // Pos:1509 Instruction:"VCVTPS2PD Vfv{K}{z},aKq,Whv|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5A /r"/"RAM"
     {
         ND_INS_VCVTPS2PD, ND_CAT_CONVERT, ND_SET_AVX512F, 924, 
         0, 
@@ -25007,9 +25007,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -25045,7 +25045,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1512 Instruction:"VCVTPS2PH Wh{K}{z},aKq,Vn{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1D /r ib"/"MARI"
+    // Pos:1512 Instruction:"VCVTPS2PH Whv{K}{z},aKq,Vfv{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1D /r ib"/"MARI"
     {
         ND_INS_VCVTPS2PH, ND_CAT_CONVERT, ND_SET_AVX512F, 925, 
         0, 
@@ -25056,9 +25056,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -25097,7 +25097,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1515 Instruction:"VCVTPS2PHX Vh{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:5 p:1 l:x w:0 0x1D /r"/"RAM"
+    // Pos:1515 Instruction:"VCVTPS2PHX Vhv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:5 p:1 l:x w:0 0x1D /r"/"RAM"
     {
         ND_INS_VCVTPS2PHX, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 926, 
         0, 
@@ -25108,13 +25108,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1516 Instruction:"VCVTPS2QQ Vn{K}{z},aKq,Wh|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x7B /r"/"RAM"
+    // Pos:1516 Instruction:"VCVTPS2QQ Vfv{K}{z},aKq,Whv|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x7B /r"/"RAM"
     {
         ND_INS_VCVTPS2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 927, 
         0, 
@@ -25125,13 +25125,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1517 Instruction:"VCVTPS2UDQ Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1517 Instruction:"VCVTPS2UDQ Vfv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPS2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 928, 
         0, 
@@ -25142,13 +25142,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1518 Instruction:"VCVTPS2UQQ Vn{K}{z},aKq,Wh|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x79 /r"/"RAM"
+    // Pos:1518 Instruction:"VCVTPS2UQQ Vfv{K}{z},aKq,Whv|B32{er}" Encoding:"evex m:1 p:1 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VCVTPS2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 929, 
         0, 
@@ -25159,13 +25159,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1519 Instruction:"VCVTQQ2PD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0xE6 /r"/"RAM"
+    // Pos:1519 Instruction:"VCVTQQ2PD Vfv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTQQ2PD, ND_CAT_CONVERT, ND_SET_AVX512DQ, 930, 
         0, 
@@ -25176,13 +25176,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1520 Instruction:"VCVTQQ2PH Vdq{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:5 p:0 l:x w:1 0x5B /r"/"RAM"
+    // Pos:1520 Instruction:"VCVTQQ2PH Vdq{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:5 p:0 l:x w:1 0x5B /r"/"RAM"
     {
         ND_INS_VCVTQQ2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 931, 
         0, 
@@ -25195,11 +25195,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_V, ND_OPS_dq, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1521 Instruction:"VCVTQQ2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x5B /r"/"RAM"
+    // Pos:1521 Instruction:"VCVTQQ2PS Vhv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:0 l:x w:1 0x5B /r"/"RAM"
     {
         ND_INS_VCVTQQ2PS, ND_CAT_CONVERT, ND_SET_AVX512DQ, 932, 
         0, 
@@ -25210,9 +25210,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -25588,7 +25588,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1544 Instruction:"VCVTTPD2DQ Vh{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0xE6 /r"/"RAM"
+    // Pos:1544 Instruction:"VCVTTPD2DQ Vhv{K}{z},aKq,Wfv|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0xE6 /r"/"RAM"
     {
         ND_INS_VCVTTPD2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 948, 
         0, 
@@ -25599,9 +25599,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -25621,7 +25621,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1546 Instruction:"VCVTTPD2QQ Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1546 Instruction:"VCVTTPD2QQ Vfv{K}{z},aKq,Wfv|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTTPD2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 949, 
         0, 
@@ -25632,13 +25632,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1547 Instruction:"VCVTTPD2UDQ Vh{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:0 l:x w:1 0x78 /r"/"RAM"
+    // Pos:1547 Instruction:"VCVTTPD2UDQ Vhv{K}{z},aKq,Wfv|B64{sae}" Encoding:"evex m:1 p:0 l:x w:1 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPD2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 950, 
         0, 
@@ -25649,13 +25649,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1548 Instruction:"VCVTTPD2UQQ Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x78 /r"/"RAM"
+    // Pos:1548 Instruction:"VCVTTPD2UQQ Vfv{K}{z},aKq,Wfv|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPD2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 951, 
         0, 
@@ -25666,13 +25666,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1549 Instruction:"VCVTTPH2DQ Vn{K}{z},aKq,Wh|B16{sae}" Encoding:"evex m:5 p:2 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1549 Instruction:"VCVTTPH2DQ Vfv{K}{z},aKq,Whv|B16{sae}" Encoding:"evex m:5 p:2 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTTPH2DQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 952, 
         0, 
@@ -25683,13 +25683,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1550 Instruction:"VCVTTPH2QQ Vn{K}{z},aKq,Wf|B16{sae}" Encoding:"evex m:5 p:1 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1550 Instruction:"VCVTTPH2QQ Vfv{K}{z},aKq,Wqv|B16{sae}" Encoding:"evex m:5 p:1 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTTPH2QQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 953, 
         0, 
@@ -25700,13 +25700,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1551 Instruction:"VCVTTPH2UDQ Vn{K}{z},aKq,Wh|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1551 Instruction:"VCVTTPH2UDQ Vfv{K}{z},aKq,Whv|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPH2UDQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 954, 
         0, 
@@ -25717,13 +25717,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1552 Instruction:"VCVTTPH2UQQ Vn{K}{z},aKq,Wf|B16{sae}" Encoding:"evex m:5 p:1 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1552 Instruction:"VCVTTPH2UQQ Vfv{K}{z},aKq,Wqv|B16{sae}" Encoding:"evex m:5 p:1 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPH2UQQ, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 955, 
         0, 
@@ -25734,13 +25734,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1553 Instruction:"VCVTTPH2UW Vn{K}{z},aKq,Wn|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x7C /r"/"RAM"
+    // Pos:1553 Instruction:"VCVTTPH2UW Vfv{K}{z},aKq,Wfv|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x7C /r"/"RAM"
     {
         ND_INS_VCVTTPH2UW, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 956, 
         0, 
@@ -25751,13 +25751,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1554 Instruction:"VCVTTPH2W Vn{K}{z},aKq,Wn|B16{sae}" Encoding:"evex m:5 p:1 l:x w:0 0x7C /r"/"RAM"
+    // Pos:1554 Instruction:"VCVTTPH2W Vfv{K}{z},aKq,Wfv|B16{sae}" Encoding:"evex m:5 p:1 l:x w:0 0x7C /r"/"RAM"
     {
         ND_INS_VCVTTPH2W, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 957, 
         0, 
@@ -25768,13 +25768,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1555 Instruction:"VCVTTPS2DQ Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:1 p:2 l:x w:0 0x5B /r"/"RAM"
+    // Pos:1555 Instruction:"VCVTTPS2DQ Vfv{K}{z},aKq,Wfv|B32{sae}" Encoding:"evex m:1 p:2 l:x w:0 0x5B /r"/"RAM"
     {
         ND_INS_VCVTTPS2DQ, ND_CAT_CONVERT, ND_SET_AVX512F, 958, 
         0, 
@@ -25785,9 +25785,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -25807,7 +25807,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1557 Instruction:"VCVTTPS2QQ Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1557 Instruction:"VCVTTPS2QQ Vfv{K}{z},aKq,Whv|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTTPS2QQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 959, 
         0, 
@@ -25818,13 +25818,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1558 Instruction:"VCVTTPS2UDQ Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1558 Instruction:"VCVTTPS2UDQ Vfv{K}{z},aKq,Wfv|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPS2UDQ, ND_CAT_CONVERT, ND_SET_AVX512F, 960, 
         0, 
@@ -25835,13 +25835,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1559 Instruction:"VCVTTPS2UQQ Vn{K}{z},aKq,Wh|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x78 /r"/"RAM"
+    // Pos:1559 Instruction:"VCVTTPS2UQQ Vfv{K}{z},aKq,Whv|B32{sae}" Encoding:"evex m:1 p:1 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VCVTTPS2UQQ, ND_CAT_CONVERT, ND_SET_AVX512DQ, 961, 
         0, 
@@ -25852,9 +25852,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -25986,7 +25986,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1568 Instruction:"VCVTUDQ2PD Vn{K}{z},aKq,Wh|B32" Encoding:"evex m:1 p:2 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1568 Instruction:"VCVTUDQ2PD Vfv{K}{z},aKq,Whv|B32" Encoding:"evex m:1 p:2 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUDQ2PD, ND_CAT_CONVERT, ND_SET_AVX512F, 968, 
         0, 
@@ -25997,13 +25997,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1569 Instruction:"VCVTUDQ2PH Vh{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:5 p:3 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1569 Instruction:"VCVTUDQ2PH Vhv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:5 p:3 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUDQ2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 969, 
         0, 
@@ -26014,13 +26014,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1570 Instruction:"VCVTUDQ2PS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:3 l:x w:0 0x7A /r"/"RAM"
+    // Pos:1570 Instruction:"VCVTUDQ2PS Vfv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:1 p:3 l:x w:0 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUDQ2PS, ND_CAT_CONVERT, ND_SET_AVX512F, 970, 
         0, 
@@ -26031,13 +26031,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:1571 Instruction:"VCVTUQQ2PD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1571 Instruction:"VCVTUQQ2PD Vfv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:2 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUQQ2PD, ND_CAT_CONVERT, ND_SET_AVX512DQ, 971, 
         0, 
@@ -26048,13 +26048,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1572 Instruction:"VCVTUQQ2PH Vf{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:5 p:3 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1572 Instruction:"VCVTUQQ2PH Vqv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:5 p:3 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUQQ2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 972, 
         0, 
@@ -26065,13 +26065,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1573 Instruction:"VCVTUQQ2PS Vh{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0x7A /r"/"RAM"
+    // Pos:1573 Instruction:"VCVTUQQ2PS Vhv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:3 l:x w:1 0x7A /r"/"RAM"
     {
         ND_INS_VCVTUQQ2PS, ND_CAT_CONVERT, ND_SET_AVX512DQ, 973, 
         0, 
@@ -26082,9 +26082,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -26156,7 +26156,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1578 Instruction:"VCVTUW2PH Vn{K}{z},aKq,Wn|B16{er}" Encoding:"evex m:5 p:3 l:x w:0 0x7D /r"/"RAM"
+    // Pos:1578 Instruction:"VCVTUW2PH Vfv{K}{z},aKq,Wfv|B16{er}" Encoding:"evex m:5 p:3 l:x w:0 0x7D /r"/"RAM"
     {
         ND_INS_VCVTUW2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 977, 
         0, 
@@ -26167,13 +26167,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1579 Instruction:"VCVTW2PH Vn{K}{z},aKq,Wn|B16{er}" Encoding:"evex m:5 p:2 l:x w:0 0x7D /r"/"RAM"
+    // Pos:1579 Instruction:"VCVTW2PH Vfv{K}{z},aKq,Wfv|B16{er}" Encoding:"evex m:5 p:2 l:x w:0 0x7D /r"/"RAM"
     {
         ND_INS_VCVTW2PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 978, 
         0, 
@@ -26184,13 +26184,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1580 Instruction:"VDBPSADBW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x42 /r ib"/"RAVMI"
+    // Pos:1580 Instruction:"VDBPSADBW Vfv{K}{z},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x42 /r ib"/"RAVMI"
     {
         ND_INS_VDBPSADBW, ND_CAT_AVX512, ND_SET_AVX512BW, 979, 
         0, 
@@ -26201,15 +26201,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1581 Instruction:"VDIVPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5E /r"/"RAVM"
+    // Pos:1581 Instruction:"VDIVPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVPD, ND_CAT_AVX512, ND_SET_AVX512F, 980, 
         0, 
@@ -26220,10 +26220,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -26244,7 +26244,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1583 Instruction:"VDIVPH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x5E /r"/"RAVM"
+    // Pos:1583 Instruction:"VDIVPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 981, 
         0, 
@@ -26255,14 +26255,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1584 Instruction:"VDIVPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5E /r"/"RAVM"
+    // Pos:1584 Instruction:"VDIVPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5E /r"/"RAVM"
     {
         ND_INS_VDIVPS, ND_CAT_AVX512, ND_SET_AVX512F, 982, 
         0, 
@@ -26273,10 +26273,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -26385,7 +26385,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1591 Instruction:"VDPBF16PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x52 /r"/"RAVM"
+    // Pos:1591 Instruction:"VDPBF16PS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:2 l:x w:0 0x52 /r"/"RAVM"
     {
         ND_INS_VDPBF16PS, ND_CAT_AVX512BF16, ND_SET_AVX512BF16, 986, 
         0, 
@@ -26396,10 +26396,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -26505,7 +26505,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1598 Instruction:"VEXPANDPD Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x88 /r"/"RAM"
+    // Pos:1598 Instruction:"VEXPANDPD Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x88 /r"/"RAM"
     {
         ND_INS_VEXPANDPD, ND_CAT_EXPAND, ND_SET_AVX512F, 993, 
         0, 
@@ -26516,13 +26516,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1599 Instruction:"VEXPANDPS Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x88 /r"/"RAM"
+    // Pos:1599 Instruction:"VEXPANDPS Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x88 /r"/"RAM"
     {
         ND_INS_VEXPANDPS, ND_CAT_EXPAND, ND_SET_AVX512F, 994, 
         0, 
@@ -26533,9 +26533,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -26556,7 +26556,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1601 Instruction:"VEXTRACTF32X4 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x19 /r ib"/"MARI"
+    // Pos:1601 Instruction:"VEXTRACTF32X4 Wdq{K}{z},aKq,Vuv,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x19 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTF32X4, ND_CAT_AVX512, ND_SET_AVX512F, 996, 
         0, 
@@ -26569,7 +26569,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -26592,7 +26592,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1603 Instruction:"VEXTRACTF64X2 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x19 /r ib"/"MARI"
+    // Pos:1603 Instruction:"VEXTRACTF64X2 Wdq{K}{z},aKq,Vuv,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x19 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTF64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 998, 
         0, 
@@ -26605,7 +26605,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -26645,7 +26645,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1606 Instruction:"VEXTRACTI32X4 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x39 /r ib"/"MARI"
+    // Pos:1606 Instruction:"VEXTRACTI32X4 Wdq{K}{z},aKq,Vuv,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x39 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTI32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1001, 
         0, 
@@ -26658,7 +26658,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -26681,7 +26681,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1608 Instruction:"VEXTRACTI64X2 Wdq{K}{z},aKq,Vu,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x39 /r ib"/"MARI"
+    // Pos:1608 Instruction:"VEXTRACTI64X2 Wdq{K}{z},aKq,Vuv,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x39 /r ib"/"MARI"
     {
         ND_INS_VEXTRACTI64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 1003, 
         0, 
@@ -26694,7 +26694,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -26785,7 +26785,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1614 Instruction:"VFCMADDCPH Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:6 p:3 l:x w:0 0x56 /r"/"RAVM"
+    // Pos:1614 Instruction:"VFCMADDCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:6 p:3 l:x w:0 0x56 /r"/"RAVM"
     {
         ND_INS_VFCMADDCPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1006, 
         0, 
@@ -26796,10 +26796,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -26821,7 +26821,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1616 Instruction:"VFCMULCPH Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:6 p:3 l:x w:0 0xD6 /r"/"RAVM"
+    // Pos:1616 Instruction:"VFCMULCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:6 p:3 l:x w:0 0xD6 /r"/"RAVM"
     {
         ND_INS_VFCMULCPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1008, 
         0, 
@@ -26832,10 +26832,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -26857,7 +26857,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1618 Instruction:"VFIXUPIMMPD Vn{K}{z},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x54 /r ib"/"RAVMI"
+    // Pos:1618 Instruction:"VFIXUPIMMPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x54 /r ib"/"RAVMI"
     {
         ND_INS_VFIXUPIMMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1010, 
         0, 
@@ -26868,15 +26868,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1619 Instruction:"VFIXUPIMMPS Vn{K}{z},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x54 /r ib"/"RAVMI"
+    // Pos:1619 Instruction:"VFIXUPIMMPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x54 /r ib"/"RAVMI"
     {
         ND_INS_VFIXUPIMMPS, ND_CAT_AVX512, ND_SET_AVX512F, 1011, 
         0, 
@@ -26887,10 +26887,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -26933,7 +26933,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1622 Instruction:"VFMADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x98 /r"/"RAVM"
+    // Pos:1622 Instruction:"VFMADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x98 /r"/"RAVM"
     {
         ND_INS_VFMADD132PD, ND_CAT_VFMA, ND_SET_AVX512F, 1014, 
         0, 
@@ -26944,10 +26944,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -26968,7 +26968,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1624 Instruction:"VFMADD132PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x98 /r"/"RAVM"
+    // Pos:1624 Instruction:"VFMADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x98 /r"/"RAVM"
     {
         ND_INS_VFMADD132PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1015, 
         0, 
@@ -26979,14 +26979,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1625 Instruction:"VFMADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x98 /r"/"RAVM"
+    // Pos:1625 Instruction:"VFMADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x98 /r"/"RAVM"
     {
         ND_INS_VFMADD132PS, ND_CAT_VFMA, ND_SET_AVX512F, 1016, 
         0, 
@@ -26997,10 +26997,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27109,7 +27109,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1632 Instruction:"VFMADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA8 /r"/"RAVM"
+    // Pos:1632 Instruction:"VFMADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA8 /r"/"RAVM"
     {
         ND_INS_VFMADD213PD, ND_CAT_VFMA, ND_SET_AVX512F, 1020, 
         0, 
@@ -27120,10 +27120,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -27144,7 +27144,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1634 Instruction:"VFMADD213PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xA8 /r"/"RAVM"
+    // Pos:1634 Instruction:"VFMADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xA8 /r"/"RAVM"
     {
         ND_INS_VFMADD213PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1021, 
         0, 
@@ -27155,14 +27155,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1635 Instruction:"VFMADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA8 /r"/"RAVM"
+    // Pos:1635 Instruction:"VFMADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA8 /r"/"RAVM"
     {
         ND_INS_VFMADD213PS, ND_CAT_VFMA, ND_SET_AVX512F, 1022, 
         0, 
@@ -27173,10 +27173,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27285,7 +27285,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1642 Instruction:"VFMADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB8 /r"/"RAVM"
+    // Pos:1642 Instruction:"VFMADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB8 /r"/"RAVM"
     {
         ND_INS_VFMADD231PD, ND_CAT_VFMA, ND_SET_AVX512F, 1026, 
         0, 
@@ -27296,10 +27296,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -27320,7 +27320,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1644 Instruction:"VFMADD231PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xB8 /r"/"RAVM"
+    // Pos:1644 Instruction:"VFMADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xB8 /r"/"RAVM"
     {
         ND_INS_VFMADD231PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1027, 
         0, 
@@ -27331,14 +27331,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1645 Instruction:"VFMADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB8 /r"/"RAVM"
+    // Pos:1645 Instruction:"VFMADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB8 /r"/"RAVM"
     {
         ND_INS_VFMADD231PS, ND_CAT_VFMA, ND_SET_AVX512F, 1028, 
         0, 
@@ -27349,10 +27349,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27461,7 +27461,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1652 Instruction:"VFMADDCPH Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:6 p:2 l:x w:0 0x56 /r"/"RAVM"
+    // Pos:1652 Instruction:"VFMADDCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:6 p:2 l:x w:0 0x56 /r"/"RAVM"
     {
         ND_INS_VFMADDCPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1032, 
         0, 
@@ -27472,10 +27472,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27641,7 +27641,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1662 Instruction:"VFMADDSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x96 /r"/"RAVM"
+    // Pos:1662 Instruction:"VFMADDSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x96 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB132PD, ND_CAT_VFMA, ND_SET_AVX512F, 1038, 
         0, 
@@ -27652,10 +27652,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -27676,7 +27676,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1664 Instruction:"VFMADDSUB132PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x96 /r"/"RAVM"
+    // Pos:1664 Instruction:"VFMADDSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x96 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB132PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1039, 
         0, 
@@ -27687,14 +27687,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1665 Instruction:"VFMADDSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x96 /r"/"RAVM"
+    // Pos:1665 Instruction:"VFMADDSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x96 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB132PS, ND_CAT_VFMA, ND_SET_AVX512F, 1040, 
         0, 
@@ -27705,10 +27705,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27729,7 +27729,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1667 Instruction:"VFMADDSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA6 /r"/"RAVM"
+    // Pos:1667 Instruction:"VFMADDSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB213PD, ND_CAT_VFMA, ND_SET_AVX512F, 1041, 
         0, 
@@ -27740,10 +27740,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -27764,7 +27764,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1669 Instruction:"VFMADDSUB213PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xA6 /r"/"RAVM"
+    // Pos:1669 Instruction:"VFMADDSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xA6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB213PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1042, 
         0, 
@@ -27775,14 +27775,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1670 Instruction:"VFMADDSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA6 /r"/"RAVM"
+    // Pos:1670 Instruction:"VFMADDSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB213PS, ND_CAT_VFMA, ND_SET_AVX512F, 1043, 
         0, 
@@ -27793,10 +27793,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27817,7 +27817,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1672 Instruction:"VFMADDSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB6 /r"/"RAVM"
+    // Pos:1672 Instruction:"VFMADDSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB231PD, ND_CAT_VFMA, ND_SET_AVX512F, 1044, 
         0, 
@@ -27828,10 +27828,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -27852,7 +27852,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1674 Instruction:"VFMADDSUB231PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xB6 /r"/"RAVM"
+    // Pos:1674 Instruction:"VFMADDSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xB6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB231PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1045, 
         0, 
@@ -27863,14 +27863,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1675 Instruction:"VFMADDSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB6 /r"/"RAVM"
+    // Pos:1675 Instruction:"VFMADDSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB6 /r"/"RAVM"
     {
         ND_INS_VFMADDSUB231PS, ND_CAT_VFMA, ND_SET_AVX512F, 1046, 
         0, 
@@ -27881,10 +27881,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -27977,7 +27977,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1681 Instruction:"VFMSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9A /r"/"RAVM"
+    // Pos:1681 Instruction:"VFMSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9A /r"/"RAVM"
     {
         ND_INS_VFMSUB132PD, ND_CAT_VFMA, ND_SET_AVX512F, 1049, 
         0, 
@@ -27988,10 +27988,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -28012,7 +28012,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1683 Instruction:"VFMSUB132PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x9A /r"/"RAVM"
+    // Pos:1683 Instruction:"VFMSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x9A /r"/"RAVM"
     {
         ND_INS_VFMSUB132PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1050, 
         0, 
@@ -28023,14 +28023,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1684 Instruction:"VFMSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9A /r"/"RAVM"
+    // Pos:1684 Instruction:"VFMSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9A /r"/"RAVM"
     {
         ND_INS_VFMSUB132PS, ND_CAT_VFMA, ND_SET_AVX512F, 1051, 
         0, 
@@ -28041,10 +28041,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -28153,7 +28153,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1691 Instruction:"VFMSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAA /r"/"RAVM"
+    // Pos:1691 Instruction:"VFMSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAA /r"/"RAVM"
     {
         ND_INS_VFMSUB213PD, ND_CAT_VFMA, ND_SET_AVX512F, 1055, 
         0, 
@@ -28164,10 +28164,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -28188,7 +28188,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1693 Instruction:"VFMSUB213PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xAA /r"/"RAVM"
+    // Pos:1693 Instruction:"VFMSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xAA /r"/"RAVM"
     {
         ND_INS_VFMSUB213PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1056, 
         0, 
@@ -28199,14 +28199,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1694 Instruction:"VFMSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAA /r"/"RAVM"
+    // Pos:1694 Instruction:"VFMSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAA /r"/"RAVM"
     {
         ND_INS_VFMSUB213PS, ND_CAT_VFMA, ND_SET_AVX512F, 1057, 
         0, 
@@ -28217,10 +28217,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -28329,7 +28329,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1701 Instruction:"VFMSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBA /r"/"RAVM"
+    // Pos:1701 Instruction:"VFMSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBA /r"/"RAVM"
     {
         ND_INS_VFMSUB231PD, ND_CAT_VFMA, ND_SET_AVX512F, 1061, 
         0, 
@@ -28340,10 +28340,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -28364,7 +28364,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1703 Instruction:"VFMSUB231PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xBA /r"/"RAVM"
+    // Pos:1703 Instruction:"VFMSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xBA /r"/"RAVM"
     {
         ND_INS_VFMSUB231PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1062, 
         0, 
@@ -28375,14 +28375,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1704 Instruction:"VFMSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBA /r"/"RAVM"
+    // Pos:1704 Instruction:"VFMSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBA /r"/"RAVM"
     {
         ND_INS_VFMSUB231PS, ND_CAT_VFMA, ND_SET_AVX512F, 1063, 
         0, 
@@ -28393,10 +28393,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -28505,7 +28505,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1711 Instruction:"VFMSUBADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x97 /r"/"RAVM"
+    // Pos:1711 Instruction:"VFMSUBADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x97 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD132PD, ND_CAT_VFMA, ND_SET_AVX512F, 1067, 
         0, 
@@ -28516,10 +28516,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -28540,7 +28540,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1713 Instruction:"VFMSUBADD132PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x97 /r"/"RAVM"
+    // Pos:1713 Instruction:"VFMSUBADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x97 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD132PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1068, 
         0, 
@@ -28551,14 +28551,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1714 Instruction:"VFMSUBADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x97 /r"/"RAVM"
+    // Pos:1714 Instruction:"VFMSUBADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x97 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD132PS, ND_CAT_VFMA, ND_SET_AVX512F, 1069, 
         0, 
@@ -28569,10 +28569,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -28593,7 +28593,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1716 Instruction:"VFMSUBADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA7 /r"/"RAVM"
+    // Pos:1716 Instruction:"VFMSUBADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xA7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD213PD, ND_CAT_VFMA, ND_SET_AVX512F, 1070, 
         0, 
@@ -28604,10 +28604,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -28628,7 +28628,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1718 Instruction:"VFMSUBADD213PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xA7 /r"/"RAVM"
+    // Pos:1718 Instruction:"VFMSUBADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xA7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD213PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1071, 
         0, 
@@ -28639,14 +28639,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1719 Instruction:"VFMSUBADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA7 /r"/"RAVM"
+    // Pos:1719 Instruction:"VFMSUBADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xA7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD213PS, ND_CAT_VFMA, ND_SET_AVX512F, 1072, 
         0, 
@@ -28657,10 +28657,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -28681,7 +28681,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1721 Instruction:"VFMSUBADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB7 /r"/"RAVM"
+    // Pos:1721 Instruction:"VFMSUBADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xB7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD231PD, ND_CAT_VFMA, ND_SET_AVX512F, 1073, 
         0, 
@@ -28692,10 +28692,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -28716,7 +28716,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1723 Instruction:"VFMSUBADD231PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xB7 /r"/"RAVM"
+    // Pos:1723 Instruction:"VFMSUBADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xB7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD231PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1074, 
         0, 
@@ -28727,14 +28727,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1724 Instruction:"VFMSUBADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB7 /r"/"RAVM"
+    // Pos:1724 Instruction:"VFMSUBADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xB7 /r"/"RAVM"
     {
         ND_INS_VFMSUBADD231PS, ND_CAT_VFMA, ND_SET_AVX512F, 1075, 
         0, 
@@ -28745,10 +28745,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -28985,7 +28985,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1738 Instruction:"VFMULCPH Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:6 p:2 l:x w:0 0xD6 /r"/"RAVM"
+    // Pos:1738 Instruction:"VFMULCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:6 p:2 l:x w:0 0xD6 /r"/"RAVM"
     {
         ND_INS_VFMULCPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1082, 
         0, 
@@ -28996,10 +28996,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -29021,7 +29021,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1740 Instruction:"VFNMADD132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9C /r"/"RAVM"
+    // Pos:1740 Instruction:"VFNMADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9C /r"/"RAVM"
     {
         ND_INS_VFNMADD132PD, ND_CAT_VFMA, ND_SET_AVX512F, 1084, 
         0, 
@@ -29032,10 +29032,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -29056,7 +29056,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1742 Instruction:"VFNMADD132PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x9C /r"/"RAVM"
+    // Pos:1742 Instruction:"VFNMADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x9C /r"/"RAVM"
     {
         ND_INS_VFNMADD132PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1085, 
         0, 
@@ -29067,14 +29067,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1743 Instruction:"VFNMADD132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9C /r"/"RAVM"
+    // Pos:1743 Instruction:"VFNMADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9C /r"/"RAVM"
     {
         ND_INS_VFNMADD132PS, ND_CAT_VFMA, ND_SET_AVX512F, 1086, 
         0, 
@@ -29085,10 +29085,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -29197,7 +29197,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1750 Instruction:"VFNMADD213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAC /r"/"RAVM"
+    // Pos:1750 Instruction:"VFNMADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAC /r"/"RAVM"
     {
         ND_INS_VFNMADD213PD, ND_CAT_VFMA, ND_SET_AVX512F, 1090, 
         0, 
@@ -29208,10 +29208,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -29232,7 +29232,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1752 Instruction:"VFNMADD213PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xAC /r"/"RAVM"
+    // Pos:1752 Instruction:"VFNMADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xAC /r"/"RAVM"
     {
         ND_INS_VFNMADD213PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1091, 
         0, 
@@ -29243,14 +29243,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1753 Instruction:"VFNMADD213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAC /r"/"RAVM"
+    // Pos:1753 Instruction:"VFNMADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAC /r"/"RAVM"
     {
         ND_INS_VFNMADD213PS, ND_CAT_VFMA, ND_SET_AVX512F, 1092, 
         0, 
@@ -29261,10 +29261,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -29373,7 +29373,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1760 Instruction:"VFNMADD231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBC /r"/"RAVM"
+    // Pos:1760 Instruction:"VFNMADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBC /r"/"RAVM"
     {
         ND_INS_VFNMADD231PD, ND_CAT_VFMA, ND_SET_AVX512F, 1096, 
         0, 
@@ -29384,10 +29384,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -29408,7 +29408,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1762 Instruction:"VFNMADD231PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xBC /r"/"RAVM"
+    // Pos:1762 Instruction:"VFNMADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xBC /r"/"RAVM"
     {
         ND_INS_VFNMADD231PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1097, 
         0, 
@@ -29419,14 +29419,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1763 Instruction:"VFNMADD231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBC /r"/"RAVM"
+    // Pos:1763 Instruction:"VFNMADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBC /r"/"RAVM"
     {
         ND_INS_VFNMADD231PS, ND_CAT_VFMA, ND_SET_AVX512F, 1098, 
         0, 
@@ -29437,10 +29437,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -29693,7 +29693,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1778 Instruction:"VFNMSUB132PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9E /r"/"RAVM"
+    // Pos:1778 Instruction:"VFNMSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x9E /r"/"RAVM"
     {
         ND_INS_VFNMSUB132PD, ND_CAT_VFMA, ND_SET_AVX512F, 1106, 
         0, 
@@ -29704,10 +29704,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -29728,7 +29728,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1780 Instruction:"VFNMSUB132PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x9E /r"/"RAVM"
+    // Pos:1780 Instruction:"VFNMSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x9E /r"/"RAVM"
     {
         ND_INS_VFNMSUB132PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1107, 
         0, 
@@ -29739,14 +29739,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1781 Instruction:"VFNMSUB132PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9E /r"/"RAVM"
+    // Pos:1781 Instruction:"VFNMSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x9E /r"/"RAVM"
     {
         ND_INS_VFNMSUB132PS, ND_CAT_VFMA, ND_SET_AVX512F, 1108, 
         0, 
@@ -29757,10 +29757,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -29869,7 +29869,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1788 Instruction:"VFNMSUB213PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAE /r"/"RAVM"
+    // Pos:1788 Instruction:"VFNMSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xAE /r"/"RAVM"
     {
         ND_INS_VFNMSUB213PD, ND_CAT_VFMA, ND_SET_AVX512F, 1112, 
         0, 
@@ -29880,10 +29880,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -29904,7 +29904,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1790 Instruction:"VFNMSUB213PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xAE /r"/"RAVM"
+    // Pos:1790 Instruction:"VFNMSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xAE /r"/"RAVM"
     {
         ND_INS_VFNMSUB213PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1113, 
         0, 
@@ -29915,14 +29915,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1791 Instruction:"VFNMSUB213PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAE /r"/"RAVM"
+    // Pos:1791 Instruction:"VFNMSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xAE /r"/"RAVM"
     {
         ND_INS_VFNMSUB213PS, ND_CAT_VFMA, ND_SET_AVX512F, 1114, 
         0, 
@@ -29933,10 +29933,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -30045,7 +30045,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1798 Instruction:"VFNMSUB231PD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBE /r"/"RAVM"
+    // Pos:1798 Instruction:"VFNMSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0xBE /r"/"RAVM"
     {
         ND_INS_VFNMSUB231PD, ND_CAT_VFMA, ND_SET_AVX512F, 1118, 
         0, 
@@ -30056,10 +30056,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -30080,7 +30080,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1800 Instruction:"VFNMSUB231PH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xBE /r"/"RAVM"
+    // Pos:1800 Instruction:"VFNMSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0xBE /r"/"RAVM"
     {
         ND_INS_VFNMSUB231PH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1119, 
         0, 
@@ -30091,14 +30091,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1801 Instruction:"VFNMSUB231PS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBE /r"/"RAVM"
+    // Pos:1801 Instruction:"VFNMSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0xBE /r"/"RAVM"
     {
         ND_INS_VFNMSUB231PS, ND_CAT_VFMA, ND_SET_AVX512F, 1120, 
         0, 
@@ -30109,10 +30109,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -30365,7 +30365,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1816 Instruction:"VFPCLASSPD rKq{K},aKq,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x66 /r ib"/"RAMI"
+    // Pos:1816 Instruction:"VFPCLASSPD rKq{K},aKq,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x66 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSPD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1128, 
         0, 
@@ -30378,12 +30378,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1817 Instruction:"VFPCLASSPH rKq{K},aKq,Wn|B16,Ib" Encoding:"evex m:3 p:0 l:x w:0 0x66 /r ib"/"RAMI"
+    // Pos:1817 Instruction:"VFPCLASSPH rKq{K},aKq,Wfv|B16,Ib" Encoding:"evex m:3 p:0 l:x w:0 0x66 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1129, 
         0, 
@@ -30396,12 +30396,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B16, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1818 Instruction:"VFPCLASSPS rKq{K},aKq,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x66 /r ib"/"RAMI"
+    // Pos:1818 Instruction:"VFPCLASSPS rKq{K},aKq,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x66 /r ib"/"RAMI"
     {
         ND_INS_VFPCLASSPS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1130, 
         0, 
@@ -30414,7 +30414,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -30537,7 +30537,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1826 Instruction:"VGATHERDPD Vn{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x92 /r:mem vsib"/"RAM"
+    // Pos:1826 Instruction:"VGATHERDPD Vfv{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x92 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERDPD, ND_CAT_GATHER, ND_SET_AVX512F, 1138, 
         0, 
@@ -30548,7 +30548,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm32h, 0, ND_OPA_RW, 0, 0), 
         },
@@ -30571,7 +30571,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1828 Instruction:"VGATHERDPS Vn{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x92 /r:mem vsib"/"RAM"
+    // Pos:1828 Instruction:"VGATHERDPS Vfv{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x92 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERDPS, ND_CAT_GATHER, ND_SET_AVX512F, 1139, 
         0, 
@@ -30582,7 +30582,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm32n, 0, ND_OPA_RW, 0, 0), 
         },
@@ -30733,7 +30733,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1838 Instruction:"VGATHERQPD Vn{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x93 /r:mem vsib"/"RAM"
+    // Pos:1838 Instruction:"VGATHERQPD Vfv{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x93 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERQPD, ND_CAT_GATHER, ND_SET_AVX512F, 1148, 
         0, 
@@ -30744,7 +30744,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_RW, 0, 0), 
         },
@@ -30767,7 +30767,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1840 Instruction:"VGATHERQPS Vh{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x93 /r:mem vsib"/"RAM"
+    // Pos:1840 Instruction:"VGATHERQPS Vhv{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x93 /r:mem vsib"/"RAM"
     {
         ND_INS_VGATHERQPS, ND_CAT_GATHER, ND_SET_AVX512F, 1149, 
         0, 
@@ -30778,7 +30778,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_RW, 0, 0), 
         },
@@ -30801,7 +30801,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1842 Instruction:"VGETEXPPD Vn{K}{z},aKq,Wn|B64{sae}" Encoding:"evex m:2 p:1 l:x w:1 0x42 /r"/"RAM"
+    // Pos:1842 Instruction:"VGETEXPPD Vfv{K}{z},aKq,Wfv|B64{sae}" Encoding:"evex m:2 p:1 l:x w:1 0x42 /r"/"RAM"
     {
         ND_INS_VGETEXPPD, ND_CAT_AVX512, ND_SET_AVX512F, 1150, 
         0, 
@@ -30812,13 +30812,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:1843 Instruction:"VGETEXPPH Vn{K}{z},aKq,Wn|B16{sae}" Encoding:"evex m:6 p:1 l:x w:0 0x42 /r"/"RAM"
+    // Pos:1843 Instruction:"VGETEXPPH Vfv{K}{z},aKq,Wfv|B16{sae}" Encoding:"evex m:6 p:1 l:x w:0 0x42 /r"/"RAM"
     {
         ND_INS_VGETEXPPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1151, 
         0, 
@@ -30829,13 +30829,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1844 Instruction:"VGETEXPPS Vn{K}{z},aKq,Wn|B32{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x42 /r"/"RAM"
+    // Pos:1844 Instruction:"VGETEXPPS Vfv{K}{z},aKq,Wfv|B32{sae}" Encoding:"evex m:2 p:1 l:x w:0 0x42 /r"/"RAM"
     {
         ND_INS_VGETEXPPS, ND_CAT_AVX512, ND_SET_AVX512F, 1152, 
         0, 
@@ -30846,9 +30846,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -30906,7 +30906,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1848 Instruction:"VGETMANTPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x26 /r ib"/"RAMI"
+    // Pos:1848 Instruction:"VGETMANTPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x26 /r ib"/"RAMI"
     {
         ND_INS_VGETMANTPD, ND_CAT_AVX512, ND_SET_AVX512F, 1156, 
         0, 
@@ -30917,14 +30917,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1849 Instruction:"VGETMANTPH Vn{K}{z},aKq,Wn|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0x26 /r ib"/"RAMI"
+    // Pos:1849 Instruction:"VGETMANTPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0x26 /r ib"/"RAMI"
     {
         ND_INS_VGETMANTPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1157, 
         0, 
@@ -30935,14 +30935,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1850 Instruction:"VGETMANTPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x26 /r ib"/"RAMI"
+    // Pos:1850 Instruction:"VGETMANTPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x26 /r ib"/"RAMI"
     {
         ND_INS_VGETMANTPS, ND_CAT_AVX512, ND_SET_AVX512F, 1158, 
         0, 
@@ -30953,9 +30953,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -31017,7 +31017,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1854 Instruction:"VGF2P8AFFINEINVQB Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCF /r ib"/"RAVMI"
+    // Pos:1854 Instruction:"VGF2P8AFFINEINVQB Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCF /r ib"/"RAVMI"
     {
         ND_INS_VGF2P8AFFINEINVQB, ND_CAT_GFNI, ND_SET_GFNI, 1162, 
         0, 
@@ -31028,10 +31028,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -31054,7 +31054,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1856 Instruction:"VGF2P8AFFINEQB Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCE /r ib"/"RAVMI"
+    // Pos:1856 Instruction:"VGF2P8AFFINEQB Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0xCE /r ib"/"RAVMI"
     {
         ND_INS_VGF2P8AFFINEQB, ND_CAT_GFNI, ND_SET_GFNI, 1163, 
         0, 
@@ -31065,10 +31065,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -31091,7 +31091,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1858 Instruction:"VGF2P8MULB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0xCF /r"/"RAVM"
+    // Pos:1858 Instruction:"VGF2P8MULB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0xCF /r"/"RAVM"
     {
         ND_INS_VGF2P8MULB, ND_CAT_GFNI, ND_SET_GFNI, 1164, 
         0, 
@@ -31102,10 +31102,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -31212,7 +31212,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1865 Instruction:"VINSERTF32X4 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x18 /r ib"/"RAVMI"
+    // Pos:1865 Instruction:"VINSERTF32X4 Vuv{K}{z},aKq,Huv,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x18 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTF32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1170, 
         0, 
@@ -31223,9 +31223,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
@@ -31250,7 +31250,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1867 Instruction:"VINSERTF64X2 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x18 /r ib"/"RAVMI"
+    // Pos:1867 Instruction:"VINSERTF64X2 Vuv{K}{z},aKq,Huv,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x18 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTF64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 1172, 
         0, 
@@ -31261,9 +31261,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
@@ -31306,7 +31306,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1870 Instruction:"VINSERTI32X4 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x38 /r ib"/"RAVMI"
+    // Pos:1870 Instruction:"VINSERTI32X4 Vuv{K}{z},aKq,Huv,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x38 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTI32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1175, 
         0, 
@@ -31317,9 +31317,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
@@ -31344,7 +31344,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1872 Instruction:"VINSERTI64X2 Vu{K}{z},aKq,Hu,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x38 /r ib"/"RAVMI"
+    // Pos:1872 Instruction:"VINSERTI64X2 Vuv{K}{z},aKq,Huv,Wdq,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x38 /r ib"/"RAVMI"
     {
         ND_INS_VINSERTI64X2, ND_CAT_AVX512, ND_SET_AVX512DQ, 1177, 
         0, 
@@ -31355,9 +31355,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
@@ -31571,7 +31571,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1885 Instruction:"VMAXPD Vn{K}{z},aKq,Hn,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5F /r"/"RAVM"
+    // Pos:1885 Instruction:"VMAXPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXPD, ND_CAT_AVX512, ND_SET_AVX512F, 1185, 
         0, 
@@ -31582,10 +31582,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -31606,7 +31606,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1887 Instruction:"VMAXPH Vn{K}{z},aKq,Hn,Wn|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5F /r"/"RAVM"
+    // Pos:1887 Instruction:"VMAXPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1186, 
         0, 
@@ -31617,14 +31617,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1888 Instruction:"VMAXPS Vn{K}{z},aKq,Hn,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5F /r"/"RAVM"
+    // Pos:1888 Instruction:"VMAXPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5F /r"/"RAVM"
     {
         ND_INS_VMAXPS, ND_CAT_AVX512, ND_SET_AVX512F, 1187, 
         0, 
@@ -31635,10 +31635,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -31823,7 +31823,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1900 Instruction:"VMINPD Vn{K}{z},aKq,Hn,Wn|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5D /r"/"RAVM"
+    // Pos:1900 Instruction:"VMINPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae}" Encoding:"evex m:1 p:1 l:x w:1 0x5D /r"/"RAVM"
     {
         ND_INS_VMINPD, ND_CAT_AVX512, ND_SET_AVX512F, 1195, 
         0, 
@@ -31834,10 +31834,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -31858,7 +31858,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1902 Instruction:"VMINPH Vn{K}{z},aKq,Hn,Wn|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5D /r"/"RAVM"
+    // Pos:1902 Instruction:"VMINPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5D /r"/"RAVM"
     {
         ND_INS_VMINPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1196, 
         0, 
@@ -31869,14 +31869,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:1903 Instruction:"VMINPS Vn{K}{z},aKq,Hn,Wn|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5D /r"/"RAVM"
+    // Pos:1903 Instruction:"VMINPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae}" Encoding:"evex m:1 p:0 l:x w:0 0x5D /r"/"RAVM"
     {
         ND_INS_VMINPS, ND_CAT_AVX512, ND_SET_AVX512F, 1197, 
         0, 
@@ -31887,10 +31887,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -32059,7 +32059,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1914 Instruction:"VMOVAPD Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x28 /r"/"RAM"
+    // Pos:1914 Instruction:"VMOVAPD Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:1 l:x w:1 0x28 /r"/"RAM"
     {
         ND_INS_VMOVAPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1204, 
         0, 
@@ -32070,13 +32070,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1915 Instruction:"VMOVAPD Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x29 /r"/"MAR"
+    // Pos:1915 Instruction:"VMOVAPD Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:1 l:x w:1 0x29 /r"/"MAR"
     {
         ND_INS_VMOVAPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1204, 
         0, 
@@ -32087,9 +32087,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -32125,7 +32125,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1918 Instruction:"VMOVAPS Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:0 l:x w:0 0x28 /r"/"RAM"
+    // Pos:1918 Instruction:"VMOVAPS Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:0 l:x w:0 0x28 /r"/"RAM"
     {
         ND_INS_VMOVAPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1205, 
         0, 
@@ -32136,13 +32136,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1919 Instruction:"VMOVAPS Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x29 /r"/"MAR"
+    // Pos:1919 Instruction:"VMOVAPS Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:0 l:x w:0 0x29 /r"/"MAR"
     {
         ND_INS_VMOVAPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1205, 
         0, 
@@ -32153,9 +32153,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -32370,7 +32370,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1933 Instruction:"VMOVDQA32 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:0 0x6F /r"/"RAM"
+    // Pos:1933 Instruction:"VMOVDQA32 Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:1 l:x w:0 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQA32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1209, 
         0, 
@@ -32381,13 +32381,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1934 Instruction:"VMOVDQA32 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:0 0x7F /r"/"MAR"
+    // Pos:1934 Instruction:"VMOVDQA32 Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:1 l:x w:0 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQA32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1209, 
         0, 
@@ -32398,13 +32398,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1935 Instruction:"VMOVDQA64 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x6F /r"/"RAM"
+    // Pos:1935 Instruction:"VMOVDQA64 Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:1 l:x w:1 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQA64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1210, 
         0, 
@@ -32415,13 +32415,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1936 Instruction:"VMOVDQA64 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x7F /r"/"MAR"
+    // Pos:1936 Instruction:"VMOVDQA64 Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:1 l:x w:1 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQA64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1210, 
         0, 
@@ -32432,9 +32432,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -32470,7 +32470,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1939 Instruction:"VMOVDQU16 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:3 l:x w:1 0x6F /r"/"RAM"
+    // Pos:1939 Instruction:"VMOVDQU16 Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:3 l:x w:1 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU16, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1212, 
         0, 
@@ -32481,13 +32481,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1940 Instruction:"VMOVDQU16 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:3 l:x w:1 0x7F /r"/"MAR"
+    // Pos:1940 Instruction:"VMOVDQU16 Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:3 l:x w:1 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU16, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1212, 
         0, 
@@ -32498,13 +32498,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1941 Instruction:"VMOVDQU32 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x6F /r"/"RAM"
+    // Pos:1941 Instruction:"VMOVDQU32 Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:2 l:x w:0 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1213, 
         0, 
@@ -32515,13 +32515,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1942 Instruction:"VMOVDQU32 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:2 l:x w:0 0x7F /r"/"MAR"
+    // Pos:1942 Instruction:"VMOVDQU32 Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:2 l:x w:0 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU32, ND_CAT_DATAXFER, ND_SET_AVX512F, 1213, 
         0, 
@@ -32532,13 +32532,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1943 Instruction:"VMOVDQU64 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:1 0x6F /r"/"RAM"
+    // Pos:1943 Instruction:"VMOVDQU64 Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:2 l:x w:1 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1214, 
         0, 
@@ -32549,13 +32549,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1944 Instruction:"VMOVDQU64 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:2 l:x w:1 0x7F /r"/"MAR"
+    // Pos:1944 Instruction:"VMOVDQU64 Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:2 l:x w:1 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU64, ND_CAT_DATAXFER, ND_SET_AVX512F, 1214, 
         0, 
@@ -32566,13 +32566,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1945 Instruction:"VMOVDQU8 Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:3 l:x w:0 0x6F /r"/"RAM"
+    // Pos:1945 Instruction:"VMOVDQU8 Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:3 l:x w:0 0x6F /r"/"RAM"
     {
         ND_INS_VMOVDQU8, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1215, 
         0, 
@@ -32583,13 +32583,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:1946 Instruction:"VMOVDQU8 Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:3 l:x w:0 0x7F /r"/"MAR"
+    // Pos:1946 Instruction:"VMOVDQU8 Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:3 l:x w:0 0x7F /r"/"MAR"
     {
         ND_INS_VMOVDQU8, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1215, 
         0, 
@@ -32600,9 +32600,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -32970,7 +32970,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1969 Instruction:"VMOVNTDQ Mn,Vn" Encoding:"evex m:1 p:1 l:x w:0 0xE7 /r:mem"/"MR"
+    // Pos:1969 Instruction:"VMOVNTDQ Mfv,Vfv" Encoding:"evex m:1 p:1 l:x w:0 0xE7 /r:mem"/"MR"
     {
         ND_INS_VMOVNTDQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1224, 
         0, 
@@ -32981,8 +32981,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_M, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_M, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33002,7 +33002,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1971 Instruction:"VMOVNTDQA Vn,Mn" Encoding:"evex m:2 p:1 l:x w:0 0x2A /r:mem"/"RM"
+    // Pos:1971 Instruction:"VMOVNTDQA Vfv,Mfv" Encoding:"evex m:2 p:1 l:x w:0 0x2A /r:mem"/"RM"
     {
         ND_INS_VMOVNTDQA, ND_CAT_DATAXFER, ND_SET_AVX512F, 1225, 
         0, 
@@ -33013,8 +33013,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_M, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_M, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33034,7 +33034,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1973 Instruction:"VMOVNTPD Mn,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x2B /r:mem"/"MR"
+    // Pos:1973 Instruction:"VMOVNTPD Mfv,Vfv" Encoding:"evex m:1 p:1 l:x w:1 0x2B /r:mem"/"MR"
     {
         ND_INS_VMOVNTPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1226, 
         0, 
@@ -33045,8 +33045,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_M, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_M, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33066,7 +33066,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1975 Instruction:"VMOVNTPS Mn,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x2B /r:mem"/"MR"
+    // Pos:1975 Instruction:"VMOVNTPS Mfv,Vfv" Encoding:"evex m:1 p:0 l:x w:0 0x2B /r:mem"/"MR"
     {
         ND_INS_VMOVNTPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1227, 
         0, 
@@ -33077,8 +33077,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_M, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_M, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33432,7 +33432,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1997 Instruction:"VMOVSHDUP Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x16 /r"/"RAM"
+    // Pos:1997 Instruction:"VMOVSHDUP Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:2 l:x w:0 0x16 /r"/"RAM"
     {
         ND_INS_VMOVSHDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1231, 
         0, 
@@ -33443,9 +33443,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33465,7 +33465,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:1999 Instruction:"VMOVSLDUP Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:2 l:x w:0 0x12 /r"/"RAM"
+    // Pos:1999 Instruction:"VMOVSLDUP Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:2 l:x w:0 0x12 /r"/"RAM"
     {
         ND_INS_VMOVSLDUP, ND_CAT_DATAXFER, ND_SET_AVX512F, 1232, 
         0, 
@@ -33476,9 +33476,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33634,7 +33634,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2009 Instruction:"VMOVUPD Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:1 l:x w:1 0x10 /r"/"RAM"
+    // Pos:2009 Instruction:"VMOVUPD Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:1 l:x w:1 0x10 /r"/"RAM"
     {
         ND_INS_VMOVUPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1234, 
         0, 
@@ -33645,13 +33645,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2010 Instruction:"VMOVUPD Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:1 l:x w:1 0x11 /r"/"MAR"
+    // Pos:2010 Instruction:"VMOVUPD Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:1 l:x w:1 0x11 /r"/"MAR"
     {
         ND_INS_VMOVUPD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1234, 
         0, 
@@ -33662,9 +33662,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33700,7 +33700,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2013 Instruction:"VMOVUPS Vn{K}{z},aKq,Wn" Encoding:"evex m:1 p:0 l:x w:0 0x10 /r"/"RAM"
+    // Pos:2013 Instruction:"VMOVUPS Vfv{K}{z},aKq,Wfv" Encoding:"evex m:1 p:0 l:x w:0 0x10 /r"/"RAM"
     {
         ND_INS_VMOVUPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1235, 
         0, 
@@ -33711,13 +33711,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2014 Instruction:"VMOVUPS Wn{K}{z},aKq,Vn" Encoding:"evex m:1 p:0 l:x w:0 0x11 /r"/"MAR"
+    // Pos:2014 Instruction:"VMOVUPS Wfv{K}{z},aKq,Vfv" Encoding:"evex m:1 p:0 l:x w:0 0x11 /r"/"MAR"
     {
         ND_INS_VMOVUPS, ND_CAT_DATAXFER, ND_SET_AVX512F, 1235, 
         0, 
@@ -33728,9 +33728,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -33942,7 +33942,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2028 Instruction:"VMULPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x59 /r"/"RAVM"
+    // Pos:2028 Instruction:"VMULPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x59 /r"/"RAVM"
     {
         ND_INS_VMULPD, ND_CAT_AVX512, ND_SET_AVX512F, 1244, 
         0, 
@@ -33953,10 +33953,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -33977,7 +33977,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2030 Instruction:"VMULPH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x59 /r"/"RAVM"
+    // Pos:2030 Instruction:"VMULPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x59 /r"/"RAVM"
     {
         ND_INS_VMULPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1245, 
         0, 
@@ -33988,14 +33988,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:2031 Instruction:"VMULPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x59 /r"/"RAVM"
+    // Pos:2031 Instruction:"VMULPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x59 /r"/"RAVM"
     {
         ND_INS_VMULPS, ND_CAT_AVX512, ND_SET_AVX512F, 1246, 
         0, 
@@ -34006,10 +34006,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34166,7 +34166,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2041 Instruction:"VORPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x56 /r"/"RAVM"
+    // Pos:2041 Instruction:"VORPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x56 /r"/"RAVM"
     {
         ND_INS_VORPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1253, 
         0, 
@@ -34177,10 +34177,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -34201,7 +34201,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2043 Instruction:"VORPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x56 /r"/"RAVM"
+    // Pos:2043 Instruction:"VORPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:0 l:x w:0 0x56 /r"/"RAVM"
     {
         ND_INS_VORPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1254, 
         0, 
@@ -34212,10 +34212,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34236,7 +34236,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2045 Instruction:"VP2INTERSECTD rKq+1,Hn,Wn|B32" Encoding:"evex m:2 p:3 l:x w:0 0x68 /r"/"RVM"
+    // Pos:2045 Instruction:"VP2INTERSECTD rKq+1,Hfv,Wfv|B32" Encoding:"evex m:2 p:3 l:x w:0 0x68 /r"/"RVM"
     {
         ND_INS_VP2INTERSECTD, ND_CAT_AVX512VP2INTERSECT, ND_SET_AVX512VP2INTERSECT, 1255, 
         0, 
@@ -34248,12 +34248,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, 0, 2), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2046 Instruction:"VP2INTERSECTQ rKq+1,Hn,Wn|B64" Encoding:"evex m:2 p:3 l:x w:1 0x68 /r"/"RVM"
+    // Pos:2046 Instruction:"VP2INTERSECTQ rKq+1,Hfv,Wfv|B64" Encoding:"evex m:2 p:3 l:x w:1 0x68 /r"/"RVM"
     {
         ND_INS_VP2INTERSECTQ, ND_CAT_AVX512VP2INTERSECT, ND_SET_AVX512VP2INTERSECT, 1256, 
         0, 
@@ -34265,8 +34265,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, 0, 2), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -34306,7 +34306,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2049 Instruction:"VPABSB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:x 0x1C /r"/"RAM"
+    // Pos:2049 Instruction:"VPABSB Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:x 0x1C /r"/"RAM"
     {
         ND_INS_VPABSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1259, 
         0, 
@@ -34317,9 +34317,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34339,7 +34339,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2051 Instruction:"VPABSD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x1E /r"/"RAM"
+    // Pos:2051 Instruction:"VPABSD Vfv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x1E /r"/"RAM"
     {
         ND_INS_VPABSD, ND_CAT_AVX512, ND_SET_AVX512F, 1260, 
         0, 
@@ -34350,9 +34350,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34372,7 +34372,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2053 Instruction:"VPABSQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x1F /r"/"RAM"
+    // Pos:2053 Instruction:"VPABSQ Vfv{K}{z},aKq,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x1F /r"/"RAM"
     {
         ND_INS_VPABSQ, ND_CAT_AVX512, ND_SET_AVX512F, 1261, 
         0, 
@@ -34383,13 +34383,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2054 Instruction:"VPABSW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:x 0x1D /r"/"RAM"
+    // Pos:2054 Instruction:"VPABSW Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:x 0x1D /r"/"RAM"
     {
         ND_INS_VPABSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1262, 
         0, 
@@ -34400,9 +34400,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34422,7 +34422,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2056 Instruction:"VPACKSSDW Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6B /r"/"RAVM"
+    // Pos:2056 Instruction:"VPACKSSDW Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6B /r"/"RAVM"
     {
         ND_INS_VPACKSSDW, ND_CAT_AVX512, ND_SET_AVX512BW, 1263, 
         0, 
@@ -34433,10 +34433,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34457,7 +34457,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2058 Instruction:"VPACKSSWB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x63 /r"/"RAVM"
+    // Pos:2058 Instruction:"VPACKSSWB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x63 /r"/"RAVM"
     {
         ND_INS_VPACKSSWB, ND_CAT_AVX512, ND_SET_AVX512BW, 1264, 
         0, 
@@ -34468,10 +34468,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34492,7 +34492,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2060 Instruction:"VPACKUSDW Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x2B /r"/"RAVM"
+    // Pos:2060 Instruction:"VPACKUSDW Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x2B /r"/"RAVM"
     {
         ND_INS_VPACKUSDW, ND_CAT_AVX512, ND_SET_AVX512BW, 1265, 
         0, 
@@ -34503,10 +34503,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34527,7 +34527,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2062 Instruction:"VPACKUSWB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x67 /r"/"RAVM"
+    // Pos:2062 Instruction:"VPACKUSWB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x67 /r"/"RAVM"
     {
         ND_INS_VPACKUSWB, ND_CAT_AVX512, ND_SET_AVX512BW, 1266, 
         0, 
@@ -34538,10 +34538,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34562,7 +34562,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2064 Instruction:"VPADDB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xFC /r"/"RAVM"
+    // Pos:2064 Instruction:"VPADDB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xFC /r"/"RAVM"
     {
         ND_INS_VPADDB, ND_CAT_AVX512, ND_SET_AVX512BW, 1267, 
         0, 
@@ -34573,10 +34573,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34597,7 +34597,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2066 Instruction:"VPADDD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFE /r"/"RAVM"
+    // Pos:2066 Instruction:"VPADDD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFE /r"/"RAVM"
     {
         ND_INS_VPADDD, ND_CAT_AVX512, ND_SET_AVX512F, 1268, 
         0, 
@@ -34608,10 +34608,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34632,7 +34632,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2068 Instruction:"VPADDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xD4 /r"/"RAVM"
+    // Pos:2068 Instruction:"VPADDQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xD4 /r"/"RAVM"
     {
         ND_INS_VPADDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1269, 
         0, 
@@ -34643,10 +34643,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -34667,7 +34667,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2070 Instruction:"VPADDSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEC /r"/"RAVM"
+    // Pos:2070 Instruction:"VPADDSB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xEC /r"/"RAVM"
     {
         ND_INS_VPADDSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1270, 
         0, 
@@ -34678,10 +34678,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34702,7 +34702,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2072 Instruction:"VPADDSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xED /r"/"RAVM"
+    // Pos:2072 Instruction:"VPADDSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xED /r"/"RAVM"
     {
         ND_INS_VPADDSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1271, 
         0, 
@@ -34713,10 +34713,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34737,7 +34737,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2074 Instruction:"VPADDUSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDC /r"/"RAVM"
+    // Pos:2074 Instruction:"VPADDUSB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xDC /r"/"RAVM"
     {
         ND_INS_VPADDUSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1272, 
         0, 
@@ -34748,10 +34748,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34772,7 +34772,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2076 Instruction:"VPADDUSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDD /r"/"RAVM"
+    // Pos:2076 Instruction:"VPADDUSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xDD /r"/"RAVM"
     {
         ND_INS_VPADDUSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1273, 
         0, 
@@ -34783,10 +34783,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34807,7 +34807,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2078 Instruction:"VPADDW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xFD /r"/"RAVM"
+    // Pos:2078 Instruction:"VPADDW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xFD /r"/"RAVM"
     {
         ND_INS_VPADDW, ND_CAT_AVX512, ND_SET_AVX512BW, 1274, 
         0, 
@@ -34818,10 +34818,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -34842,7 +34842,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2080 Instruction:"VPALIGNR Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x0F /r ib"/"RAVMI"
+    // Pos:2080 Instruction:"VPALIGNR Vfv{K}{z},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x0F /r ib"/"RAVMI"
     {
         ND_INS_VPALIGNR, ND_CAT_AVX512, ND_SET_AVX512BW, 1275, 
         0, 
@@ -34853,10 +34853,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -34896,7 +34896,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2083 Instruction:"VPANDD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDB /r"/"RAVM"
+    // Pos:2083 Instruction:"VPANDD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDB /r"/"RAVM"
     {
         ND_INS_VPANDD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1277, 
         0, 
@@ -34907,10 +34907,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -34931,7 +34931,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2085 Instruction:"VPANDND Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDF /r"/"RAVM"
+    // Pos:2085 Instruction:"VPANDND Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0xDF /r"/"RAVM"
     {
         ND_INS_VPANDND, ND_CAT_LOGICAL, ND_SET_AVX512F, 1279, 
         0, 
@@ -34942,14 +34942,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2086 Instruction:"VPANDNQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDF /r"/"RAVM"
+    // Pos:2086 Instruction:"VPANDNQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDF /r"/"RAVM"
     {
         ND_INS_VPANDNQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1280, 
         0, 
@@ -34960,14 +34960,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2087 Instruction:"VPANDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDB /r"/"RAVM"
+    // Pos:2087 Instruction:"VPANDQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xDB /r"/"RAVM"
     {
         ND_INS_VPANDQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1281, 
         0, 
@@ -34978,14 +34978,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2088 Instruction:"VPAVGB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE0 /r"/"RAVM"
+    // Pos:2088 Instruction:"VPAVGB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xE0 /r"/"RAVM"
     {
         ND_INS_VPAVGB, ND_CAT_AVX512, ND_SET_AVX512BW, 1282, 
         0, 
@@ -34996,10 +34996,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35020,7 +35020,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2090 Instruction:"VPAVGW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE3 /r"/"RAVM"
+    // Pos:2090 Instruction:"VPAVGW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xE3 /r"/"RAVM"
     {
         ND_INS_VPAVGW, ND_CAT_AVX512, ND_SET_AVX512BW, 1283, 
         0, 
@@ -35031,10 +35031,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35073,7 +35073,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2093 Instruction:"VPBLENDMB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x66 /r"/"RAVM"
+    // Pos:2093 Instruction:"VPBLENDMB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x66 /r"/"RAVM"
     {
         ND_INS_VPBLENDMB, ND_CAT_BLEND, ND_SET_AVX512BW, 1285, 
         0, 
@@ -35084,14 +35084,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2094 Instruction:"VPBLENDMD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x64 /r"/"RAVM"
+    // Pos:2094 Instruction:"VPBLENDMD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x64 /r"/"RAVM"
     {
         ND_INS_VPBLENDMD, ND_CAT_BLEND, ND_SET_AVX512F, 1286, 
         0, 
@@ -35102,14 +35102,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2095 Instruction:"VPBLENDMQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x64 /r"/"RAVM"
+    // Pos:2095 Instruction:"VPBLENDMQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x64 /r"/"RAVM"
     {
         ND_INS_VPBLENDMQ, ND_CAT_BLEND, ND_SET_AVX512F, 1287, 
         0, 
@@ -35120,14 +35120,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2096 Instruction:"VPBLENDMW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x66 /r"/"RAVM"
+    // Pos:2096 Instruction:"VPBLENDMW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x66 /r"/"RAVM"
     {
         ND_INS_VPBLENDMW, ND_CAT_BLEND, ND_SET_AVX512BW, 1288, 
         0, 
@@ -35138,10 +35138,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35181,7 +35181,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2099 Instruction:"VPBROADCASTB Vn{K}{z},aKq,Wb" Encoding:"evex m:2 p:1 l:x w:0 0x78 /r"/"RAM"
+    // Pos:2099 Instruction:"VPBROADCASTB Vfv{K}{z},aKq,Wb" Encoding:"evex m:2 p:1 l:x w:0 0x78 /r"/"RAM"
     {
         ND_INS_VPBROADCASTB, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1291, 
         0, 
@@ -35192,13 +35192,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2100 Instruction:"VPBROADCASTB Vn{K}{z},aKq,Rb" Encoding:"evex m:2 p:1 l:x w:0 0x7A /r:reg"/"RAM"
+    // Pos:2100 Instruction:"VPBROADCASTB Vfv{K}{z},aKq,Rb" Encoding:"evex m:2 p:1 l:x w:0 0x7A /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTB, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1291, 
         0, 
@@ -35209,7 +35209,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_R, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
@@ -35231,7 +35231,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2102 Instruction:"VPBROADCASTD Vn{K}{z},aKq,Wd" Encoding:"evex m:2 p:1 l:x w:0 0x58 /r"/"RAM"
+    // Pos:2102 Instruction:"VPBROADCASTD Vfv{K}{z},aKq,Wd" Encoding:"evex m:2 p:1 l:x w:0 0x58 /r"/"RAM"
     {
         ND_INS_VPBROADCASTD, ND_CAT_BROADCAST, ND_SET_AVX512F, 1292, 
         0, 
@@ -35242,13 +35242,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_d, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2103 Instruction:"VPBROADCASTD Vn{K}{z},aKq,Rd" Encoding:"evex m:2 p:1 l:x w:0 0x7C /r:reg"/"RAM"
+    // Pos:2103 Instruction:"VPBROADCASTD Vfv{K}{z},aKq,Rd" Encoding:"evex m:2 p:1 l:x w:0 0x7C /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTD, ND_CAT_BROADCAST, ND_SET_AVX512F, 1292, 
         0, 
@@ -35259,7 +35259,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_R, ND_OPS_d, 0, ND_OPA_R, 0, 0), 
         },
@@ -35281,7 +35281,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2105 Instruction:"VPBROADCASTMB2Q Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x2A /r:reg"/"RM"
+    // Pos:2105 Instruction:"VPBROADCASTMB2Q Vfv,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x2A /r:reg"/"RM"
     {
         ND_INS_VPBROADCASTMB2Q, ND_CAT_BROADCAST, ND_SET_AVX512CD, 1293, 
         0, 
@@ -35292,12 +35292,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
             OP(ND_OPT_mK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2106 Instruction:"VPBROADCASTMW2D Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x3A /r:reg"/"RM"
+    // Pos:2106 Instruction:"VPBROADCASTMW2D Vfv,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x3A /r:reg"/"RM"
     {
         ND_INS_VPBROADCASTMW2D, ND_CAT_BROADCAST, ND_SET_AVX512CD, 1294, 
         0, 
@@ -35308,12 +35308,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
             OP(ND_OPT_mK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2107 Instruction:"VPBROADCASTQ Vn{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:1 0x59 /r"/"RAM"
+    // Pos:2107 Instruction:"VPBROADCASTQ Vfv{K}{z},aKq,Wq" Encoding:"evex m:2 p:1 l:x w:1 0x59 /r"/"RAM"
     {
         ND_INS_VPBROADCASTQ, ND_CAT_BROADCAST, ND_SET_AVX512F, 1295, 
         0, 
@@ -35324,13 +35324,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2108 Instruction:"VPBROADCASTQ Vn{K}{z},aKq,Rq" Encoding:"evex m:2 p:1 l:x w:1 0x7C /r:reg"/"RAM"
+    // Pos:2108 Instruction:"VPBROADCASTQ Vfv{K}{z},aKq,Rq" Encoding:"evex m:2 p:1 l:x w:1 0x7C /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTQ, ND_CAT_BROADCAST, ND_SET_AVX512F, 1295, 
         0, 
@@ -35341,7 +35341,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_R, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
@@ -35363,7 +35363,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2110 Instruction:"VPBROADCASTW Vn{K}{z},aKq,Ww" Encoding:"evex m:2 p:1 l:x w:0 0x79 /r"/"RAM"
+    // Pos:2110 Instruction:"VPBROADCASTW Vfv{K}{z},aKq,Ww" Encoding:"evex m:2 p:1 l:x w:0 0x79 /r"/"RAM"
     {
         ND_INS_VPBROADCASTW, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1296, 
         0, 
@@ -35374,13 +35374,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_w, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2111 Instruction:"VPBROADCASTW Vn{K}{z},aKq,Rw" Encoding:"evex m:2 p:1 l:x w:0 0x7B /r:reg"/"RAM"
+    // Pos:2111 Instruction:"VPBROADCASTW Vfv{K}{z},aKq,Rw" Encoding:"evex m:2 p:1 l:x w:0 0x7B /r:reg"/"RAM"
     {
         ND_INS_VPBROADCASTW, ND_CAT_BROADCAST, ND_SET_AVX512BW, 1296, 
         0, 
@@ -35391,7 +35391,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_R, ND_OPS_w, 0, ND_OPA_R, 0, 0), 
         },
@@ -35413,7 +35413,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2113 Instruction:"VPCLMULQDQ Vn,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x44 /r ib"/"RVMI"
+    // Pos:2113 Instruction:"VPCLMULQDQ Vfv,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:i 0x44 /r ib"/"RVMI"
     {
         ND_INS_VPCLMULQDQ, ND_CAT_VPCLMULQDQ, ND_SET_VPCLMULQDQ, 1297, 
         0, 
@@ -35424,9 +35424,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -35485,7 +35485,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2117 Instruction:"VPCMPB rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3F /r ib"/"RAVMI"
+    // Pos:2117 Instruction:"VPCMPB rKq{K},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPB, ND_CAT_AVX512, ND_SET_AVX512BW, 1299, 
         0, 
@@ -35498,13 +35498,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2118 Instruction:"VPCMPD rKq{K},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1F /r ib"/"RAVMI"
+    // Pos:2118 Instruction:"VPCMPD rKq{K},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1300, 
         0, 
@@ -35517,13 +35517,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2119 Instruction:"VPCMPEQB rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x74 /r"/"RAVM"
+    // Pos:2119 Instruction:"VPCMPEQB rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x74 /r"/"RAVM"
     {
         ND_INS_VPCMPEQB, ND_CAT_AVX512, ND_SET_AVX512BW, 1301, 
         0, 
@@ -35536,8 +35536,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35558,7 +35558,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2121 Instruction:"VPCMPEQD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:i 0x76 /r"/"RAVM"
+    // Pos:2121 Instruction:"VPCMPEQD rKq{K},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:i 0x76 /r"/"RAVM"
     {
         ND_INS_VPCMPEQD, ND_CAT_AVX512, ND_SET_AVX512F, 1302, 
         0, 
@@ -35571,8 +35571,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -35593,7 +35593,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2123 Instruction:"VPCMPEQQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x29 /r"/"RAVM"
+    // Pos:2123 Instruction:"VPCMPEQQ rKq{K},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x29 /r"/"RAVM"
     {
         ND_INS_VPCMPEQQ, ND_CAT_AVX512, ND_SET_AVX512F, 1303, 
         0, 
@@ -35606,8 +35606,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -35628,7 +35628,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2125 Instruction:"VPCMPEQW rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x75 /r"/"RAVM"
+    // Pos:2125 Instruction:"VPCMPEQW rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x75 /r"/"RAVM"
     {
         ND_INS_VPCMPEQW, ND_CAT_AVX512, ND_SET_AVX512BW, 1304, 
         0, 
@@ -35641,8 +35641,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35705,7 +35705,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2129 Instruction:"VPCMPGTB rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x64 /r"/"RAVM"
+    // Pos:2129 Instruction:"VPCMPGTB rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x64 /r"/"RAVM"
     {
         ND_INS_VPCMPGTB, ND_CAT_AVX512, ND_SET_AVX512BW, 1307, 
         0, 
@@ -35718,8 +35718,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35740,7 +35740,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2131 Instruction:"VPCMPGTD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x66 /r"/"RAVM"
+    // Pos:2131 Instruction:"VPCMPGTD rKq{K},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0x66 /r"/"RAVM"
     {
         ND_INS_VPCMPGTD, ND_CAT_AVX512, ND_SET_AVX512F, 1308, 
         0, 
@@ -35753,8 +35753,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -35775,7 +35775,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2133 Instruction:"VPCMPGTQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x37 /r"/"RAVM"
+    // Pos:2133 Instruction:"VPCMPGTQ rKq{K},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x37 /r"/"RAVM"
     {
         ND_INS_VPCMPGTQ, ND_CAT_AVX512, ND_SET_AVX512F, 1309, 
         0, 
@@ -35788,8 +35788,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -35810,7 +35810,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2135 Instruction:"VPCMPGTW rKq{K},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x65 /r"/"RAVM"
+    // Pos:2135 Instruction:"VPCMPGTW rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x65 /r"/"RAVM"
     {
         ND_INS_VPCMPGTW, ND_CAT_AVX512, ND_SET_AVX512BW, 1310, 
         0, 
@@ -35823,8 +35823,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -35883,7 +35883,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2139 Instruction:"VPCMPQ rKq{K},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1F /r ib"/"RAVMI"
+    // Pos:2139 Instruction:"VPCMPQ rKq{K},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPQ, ND_CAT_AVX512, ND_SET_AVX512F, 1313, 
         0, 
@@ -35896,13 +35896,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2140 Instruction:"VPCMPUB rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3E /r ib"/"RAVMI"
+    // Pos:2140 Instruction:"VPCMPUB rKq{K},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x3E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUB, ND_CAT_AVX512, ND_SET_AVX512BW, 1314, 
         0, 
@@ -35915,13 +35915,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2141 Instruction:"VPCMPUD rKq{K},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1E /r ib"/"RAVMI"
+    // Pos:2141 Instruction:"VPCMPUD rKq{K},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x1E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUD, ND_CAT_AVX512, ND_SET_AVX512F, 1315, 
         0, 
@@ -35934,13 +35934,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2142 Instruction:"VPCMPUQ rKq{K},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1E /r ib"/"RAVMI"
+    // Pos:2142 Instruction:"VPCMPUQ rKq{K},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x1E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUQ, ND_CAT_AVX512, ND_SET_AVX512F, 1316, 
         0, 
@@ -35953,13 +35953,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2143 Instruction:"VPCMPUW rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3E /r ib"/"RAVMI"
+    // Pos:2143 Instruction:"VPCMPUW rKq{K},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3E /r ib"/"RAVMI"
     {
         ND_INS_VPCMPUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1317, 
         0, 
@@ -35972,13 +35972,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2144 Instruction:"VPCMPW rKq{K},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3F /r ib"/"RAVMI"
+    // Pos:2144 Instruction:"VPCMPW rKq{K},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x3F /r ib"/"RAVMI"
     {
         ND_INS_VPCMPW, ND_CAT_AVX512, ND_SET_AVX512BW, 1318, 
         0, 
@@ -35991,8 +35991,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -36033,7 +36033,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2147 Instruction:"VPCOMPRESSB Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x63 /r"/"MAR"
+    // Pos:2147 Instruction:"VPCOMPRESSB Wfv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:0 0x63 /r"/"MAR"
     {
         ND_INS_VPCOMPRESSB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1321, 
         0, 
@@ -36044,13 +36044,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2148 Instruction:"VPCOMPRESSD Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0x8B /r"/"MAR"
+    // Pos:2148 Instruction:"VPCOMPRESSD Wfv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:0 0x8B /r"/"MAR"
     {
         ND_INS_VPCOMPRESSD, ND_CAT_COMPRESS, ND_SET_AVX512F, 1322, 
         0, 
@@ -36061,13 +36061,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2149 Instruction:"VPCOMPRESSQ Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x8B /r"/"MAR"
+    // Pos:2149 Instruction:"VPCOMPRESSQ Wfv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0x8B /r"/"MAR"
     {
         ND_INS_VPCOMPRESSQ, ND_CAT_COMPRESS, ND_SET_AVX512F, 1323, 
         0, 
@@ -36078,13 +36078,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2150 Instruction:"VPCOMPRESSW Wn{K}{z},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0x63 /r"/"MAR"
+    // Pos:2150 Instruction:"VPCOMPRESSW Wfv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0x63 /r"/"MAR"
     {
         ND_INS_VPCOMPRESSW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1324, 
         0, 
@@ -36095,9 +36095,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -36209,7 +36209,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2157 Instruction:"VPCONFLICTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0xC4 /r"/"RAM"
+    // Pos:2157 Instruction:"VPCONFLICTD Vfv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0xC4 /r"/"RAM"
     {
         ND_INS_VPCONFLICTD, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1331, 
         0, 
@@ -36220,13 +36220,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2158 Instruction:"VPCONFLICTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xC4 /r"/"RAM"
+    // Pos:2158 Instruction:"VPCONFLICTQ Vfv{K}{z},aKq,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0xC4 /r"/"RAM"
     {
         ND_INS_VPCONFLICTQ, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1332, 
         0, 
@@ -36237,9 +36237,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -36311,7 +36311,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2163 Instruction:"VPDPBUSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x50 /r"/"RAVM"
+    // Pos:2163 Instruction:"VPDPBUSD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x50 /r"/"RAVM"
     {
         ND_INS_VPDPBUSD, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1337, 
         0, 
@@ -36322,10 +36322,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -36346,7 +36346,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2165 Instruction:"VPDPBUSDS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x51 /r"/"RAVM"
+    // Pos:2165 Instruction:"VPDPBUSDS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x51 /r"/"RAVM"
     {
         ND_INS_VPDPBUSDS, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1338, 
         0, 
@@ -36357,10 +36357,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -36415,7 +36415,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2169 Instruction:"VPDPWSSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x52 /r"/"RAVM"
+    // Pos:2169 Instruction:"VPDPWSSD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x52 /r"/"RAVM"
     {
         ND_INS_VPDPWSSD, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1341, 
         0, 
@@ -36426,10 +36426,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -36450,7 +36450,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2171 Instruction:"VPDPWSSDS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x53 /r"/"RAVM"
+    // Pos:2171 Instruction:"VPDPWSSDS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x53 /r"/"RAVM"
     {
         ND_INS_VPDPWSSDS, ND_CAT_VNNI, ND_SET_AVX512VNNI, 1342, 
         0, 
@@ -36461,10 +36461,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -36521,7 +36521,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2175 Instruction:"VPERMB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x8D /r"/"RAVM"
+    // Pos:2175 Instruction:"VPERMB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x8D /r"/"RAVM"
     {
         ND_INS_VPERMB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1345, 
         0, 
@@ -36532,14 +36532,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2176 Instruction:"VPERMD Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:x w:0 0x36 /r"/"RAVM"
+    // Pos:2176 Instruction:"VPERMD Vuv{K}{z},aKq,Huv,Wuv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x36 /r"/"RAVM"
     {
         ND_INS_VPERMD, ND_CAT_AVX512, ND_SET_AVX512F, 1346, 
         0, 
@@ -36550,10 +36550,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -36574,7 +36574,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2178 Instruction:"VPERMI2B Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x75 /r"/"RAVM"
+    // Pos:2178 Instruction:"VPERMI2B Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x75 /r"/"RAVM"
     {
         ND_INS_VPERMI2B, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1347, 
         0, 
@@ -36585,14 +36585,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2179 Instruction:"VPERMI2D Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x76 /r"/"RAVM"
+    // Pos:2179 Instruction:"VPERMI2D Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x76 /r"/"RAVM"
     {
         ND_INS_VPERMI2D, ND_CAT_AVX512, ND_SET_AVX512F, 1348, 
         0, 
@@ -36603,14 +36603,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2180 Instruction:"VPERMI2PD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x77 /r"/"RAVM"
+    // Pos:2180 Instruction:"VPERMI2PD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x77 /r"/"RAVM"
     {
         ND_INS_VPERMI2PD, ND_CAT_AVX512, ND_SET_AVX512F, 1349, 
         0, 
@@ -36621,14 +36621,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2181 Instruction:"VPERMI2PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x77 /r"/"RAVM"
+    // Pos:2181 Instruction:"VPERMI2PS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x77 /r"/"RAVM"
     {
         ND_INS_VPERMI2PS, ND_CAT_AVX512, ND_SET_AVX512F, 1350, 
         0, 
@@ -36639,14 +36639,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2182 Instruction:"VPERMI2Q Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x76 /r"/"RAVM"
+    // Pos:2182 Instruction:"VPERMI2Q Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x76 /r"/"RAVM"
     {
         ND_INS_VPERMI2Q, ND_CAT_AVX512, ND_SET_AVX512F, 1351, 
         0, 
@@ -36657,14 +36657,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2183 Instruction:"VPERMI2W Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x75 /r"/"RAVM"
+    // Pos:2183 Instruction:"VPERMI2W Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x75 /r"/"RAVM"
     {
         ND_INS_VPERMI2W, ND_CAT_AVX512, ND_SET_AVX512BW, 1352, 
         0, 
@@ -36675,10 +36675,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -36758,7 +36758,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2188 Instruction:"VPERMILPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x0D /r"/"RAVM"
+    // Pos:2188 Instruction:"VPERMILPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x0D /r"/"RAVM"
     {
         ND_INS_VPERMILPD, ND_CAT_AVX512, ND_SET_AVX512F, 1355, 
         0, 
@@ -36769,14 +36769,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2189 Instruction:"VPERMILPD Vn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x05 /r ib"/"RAMI"
+    // Pos:2189 Instruction:"VPERMILPD Vfv{K}{z},aKq,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x05 /r ib"/"RAMI"
     {
         ND_INS_VPERMILPD, ND_CAT_AVX512, ND_SET_AVX512F, 1355, 
         0, 
@@ -36787,9 +36787,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -36828,7 +36828,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2192 Instruction:"VPERMILPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x0C /r"/"RAVM"
+    // Pos:2192 Instruction:"VPERMILPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x0C /r"/"RAVM"
     {
         ND_INS_VPERMILPS, ND_CAT_AVX512, ND_SET_AVX512F, 1356, 
         0, 
@@ -36839,14 +36839,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2193 Instruction:"VPERMILPS Vn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x04 /r ib"/"RAMI"
+    // Pos:2193 Instruction:"VPERMILPS Vfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x04 /r ib"/"RAMI"
     {
         ND_INS_VPERMILPS, ND_CAT_AVX512, ND_SET_AVX512F, 1356, 
         0, 
@@ -36857,9 +36857,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -36898,7 +36898,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2196 Instruction:"VPERMPD Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:1 w:1 0x16 /r"/"RAVM"
+    // Pos:2196 Instruction:"VPERMPD Vuv{K}{z},aKq,Huv,Wuv|B64" Encoding:"evex m:2 p:1 l:1 w:1 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1357, 
         0, 
@@ -36909,14 +36909,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2197 Instruction:"VPERMPD Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:2 w:1 0x16 /r"/"RAVM"
+    // Pos:2197 Instruction:"VPERMPD Vuv{K}{z},aKq,Huv,Wuv|B64" Encoding:"evex m:2 p:1 l:2 w:1 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1357, 
         0, 
@@ -36927,14 +36927,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2198 Instruction:"VPERMPD Vu{K}{z},aKq,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x01 /r ib"/"RAMI"
+    // Pos:2198 Instruction:"VPERMPD Vuv{K}{z},aKq,Wuv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x01 /r ib"/"RAMI"
     {
         ND_INS_VPERMPD, ND_CAT_AVX512, ND_SET_AVX512F, 1357, 
         0, 
@@ -36945,9 +36945,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -36969,7 +36969,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2200 Instruction:"VPERMPS Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:1 w:0 0x16 /r"/"RAVM"
+    // Pos:2200 Instruction:"VPERMPS Vuv{K}{z},aKq,Huv,Wuv|B32" Encoding:"evex m:2 p:1 l:1 w:0 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPS, ND_CAT_AVX512, ND_SET_AVX512F, 1358, 
         0, 
@@ -36980,14 +36980,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2201 Instruction:"VPERMPS Vu{K}{z},aKq,Hu,Wu|B32" Encoding:"evex m:2 p:1 l:2 w:0 0x16 /r"/"RAVM"
+    // Pos:2201 Instruction:"VPERMPS Vuv{K}{z},aKq,Huv,Wuv|B32" Encoding:"evex m:2 p:1 l:2 w:0 0x16 /r"/"RAVM"
     {
         ND_INS_VPERMPS, ND_CAT_AVX512, ND_SET_AVX512F, 1358, 
         0, 
@@ -36998,10 +36998,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -37022,7 +37022,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2203 Instruction:"VPERMQ Vu{K}{z},aKq,Hu,Wu|B64" Encoding:"evex m:2 p:1 l:x w:1 0x36 /r"/"RAVM"
+    // Pos:2203 Instruction:"VPERMQ Vuv{K}{z},aKq,Huv,Wuv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x36 /r"/"RAVM"
     {
         ND_INS_VPERMQ, ND_CAT_AVX512, ND_SET_AVX512F, 1359, 
         0, 
@@ -37033,14 +37033,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2204 Instruction:"VPERMQ Vu{K}{z},aKq,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x00 /r ib"/"RAMI"
+    // Pos:2204 Instruction:"VPERMQ Vuv{K}{z},aKq,Wuv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x00 /r ib"/"RAMI"
     {
         ND_INS_VPERMQ, ND_CAT_AVX512, ND_SET_AVX512F, 1359, 
         0, 
@@ -37051,9 +37051,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -37075,7 +37075,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2206 Instruction:"VPERMT2B Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x7D /r"/"RAVM"
+    // Pos:2206 Instruction:"VPERMT2B Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x7D /r"/"RAVM"
     {
         ND_INS_VPERMT2B, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1360, 
         0, 
@@ -37086,14 +37086,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2207 Instruction:"VPERMT2D Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7E /r"/"RAVM"
+    // Pos:2207 Instruction:"VPERMT2D Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7E /r"/"RAVM"
     {
         ND_INS_VPERMT2D, ND_CAT_AVX512, ND_SET_AVX512F, 1361, 
         0, 
@@ -37104,14 +37104,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2208 Instruction:"VPERMT2PD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7F /r"/"RAVM"
+    // Pos:2208 Instruction:"VPERMT2PD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7F /r"/"RAVM"
     {
         ND_INS_VPERMT2PD, ND_CAT_AVX512, ND_SET_AVX512F, 1362, 
         0, 
@@ -37122,14 +37122,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2209 Instruction:"VPERMT2PS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7F /r"/"RAVM"
+    // Pos:2209 Instruction:"VPERMT2PS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x7F /r"/"RAVM"
     {
         ND_INS_VPERMT2PS, ND_CAT_AVX512, ND_SET_AVX512F, 1363, 
         0, 
@@ -37140,14 +37140,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2210 Instruction:"VPERMT2Q Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7E /r"/"RAVM"
+    // Pos:2210 Instruction:"VPERMT2Q Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x7E /r"/"RAVM"
     {
         ND_INS_VPERMT2Q, ND_CAT_AVX512, ND_SET_AVX512F, 1364, 
         0, 
@@ -37158,14 +37158,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2211 Instruction:"VPERMT2W Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x7D /r"/"RAVM"
+    // Pos:2211 Instruction:"VPERMT2W Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x7D /r"/"RAVM"
     {
         ND_INS_VPERMT2W, ND_CAT_AVX512, ND_SET_AVX512BW, 1365, 
         0, 
@@ -37176,14 +37176,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2212 Instruction:"VPERMW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x8D /r"/"RAVM"
+    // Pos:2212 Instruction:"VPERMW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x8D /r"/"RAVM"
     {
         ND_INS_VPERMW, ND_CAT_AVX512, ND_SET_AVX512BW, 1366, 
         0, 
@@ -37194,14 +37194,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2213 Instruction:"VPEXPANDB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x62 /r"/"RAM"
+    // Pos:2213 Instruction:"VPEXPANDB Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x62 /r"/"RAM"
     {
         ND_INS_VPEXPANDB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1367, 
         0, 
@@ -37212,13 +37212,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2214 Instruction:"VPEXPANDD Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x89 /r"/"RAM"
+    // Pos:2214 Instruction:"VPEXPANDD Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x89 /r"/"RAM"
     {
         ND_INS_VPEXPANDD, ND_CAT_EXPAND, ND_SET_AVX512F, 1368, 
         0, 
@@ -37229,13 +37229,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2215 Instruction:"VPEXPANDQ Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x89 /r"/"RAM"
+    // Pos:2215 Instruction:"VPEXPANDQ Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x89 /r"/"RAM"
     {
         ND_INS_VPEXPANDQ, ND_CAT_EXPAND, ND_SET_AVX512F, 1369, 
         0, 
@@ -37246,13 +37246,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2216 Instruction:"VPEXPANDW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x62 /r"/"RAM"
+    // Pos:2216 Instruction:"VPEXPANDW Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x62 /r"/"RAM"
     {
         ND_INS_VPEXPANDW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1370, 
         0, 
@@ -37263,9 +37263,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -37575,7 +37575,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2235 Instruction:"VPGATHERDD Vn{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x90 /r:mem vsib"/"RAM"
+    // Pos:2235 Instruction:"VPGATHERDD Vfv{K},aKq,Mvm32n" Encoding:"evex m:2 p:1 l:x w:0 0x90 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERDD, ND_CAT_GATHER, ND_SET_AVX512F, 1375, 
         0, 
@@ -37586,7 +37586,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm32n, 0, ND_OPA_RW, 0, 0), 
         },
@@ -37609,7 +37609,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2237 Instruction:"VPGATHERDQ Vn{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x90 /r:mem vsib"/"RAM"
+    // Pos:2237 Instruction:"VPGATHERDQ Vfv{K},aKq,Mvm32h" Encoding:"evex m:2 p:1 l:x w:1 0x90 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERDQ, ND_CAT_GATHER, ND_SET_AVX512F, 1376, 
         0, 
@@ -37620,7 +37620,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm32h, 0, ND_OPA_RW, 0, 0), 
         },
@@ -37643,7 +37643,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2239 Instruction:"VPGATHERQD Vh{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x91 /r:mem vsib"/"RAM"
+    // Pos:2239 Instruction:"VPGATHERQD Vhv{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:0 0x91 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERQD, ND_CAT_GATHER, ND_SET_AVX512F, 1377, 
         0, 
@@ -37654,7 +37654,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_RW, 0, 0), 
         },
@@ -37677,7 +37677,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2241 Instruction:"VPGATHERQQ Vn{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x91 /r:mem vsib"/"RAM"
+    // Pos:2241 Instruction:"VPGATHERQQ Vfv{K},aKq,Mvm64n" Encoding:"evex m:2 p:1 l:x w:1 0x91 /r:mem vsib"/"RAM"
     {
         ND_INS_VPGATHERQQ, ND_CAT_GATHER, ND_SET_AVX512F, 1378, 
         0, 
@@ -37688,7 +37688,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_RW, 0, 0), 
         },
@@ -38285,7 +38285,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2277 Instruction:"VPLZCNTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x44 /r"/"RAM"
+    // Pos:2277 Instruction:"VPLZCNTD Vfv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x44 /r"/"RAM"
     {
         ND_INS_VPLZCNTD, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1405, 
         0, 
@@ -38296,13 +38296,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2278 Instruction:"VPLZCNTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x44 /r"/"RAM"
+    // Pos:2278 Instruction:"VPLZCNTQ Vfv{K}{z},aKq,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x44 /r"/"RAM"
     {
         ND_INS_VPLZCNTQ, ND_CAT_CONFLICT, ND_SET_AVX512CD, 1406, 
         0, 
@@ -38313,9 +38313,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -38535,7 +38535,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2291 Instruction:"VPMADD52HUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB5 /r"/"RAVM"
+    // Pos:2291 Instruction:"VPMADD52HUQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB5 /r"/"RAVM"
     {
         ND_INS_VPMADD52HUQ, ND_CAT_IFMA, ND_SET_AVX512IFMA, 1419, 
         0, 
@@ -38546,10 +38546,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -38570,7 +38570,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2293 Instruction:"VPMADD52LUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB4 /r"/"RAVM"
+    // Pos:2293 Instruction:"VPMADD52LUQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0xB4 /r"/"RAVM"
     {
         ND_INS_VPMADD52LUQ, ND_CAT_IFMA, ND_SET_AVX512IFMA, 1420, 
         0, 
@@ -38581,10 +38581,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -38605,7 +38605,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2295 Instruction:"VPMADDUBSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x04 /r"/"RAVM"
+    // Pos:2295 Instruction:"VPMADDUBSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x04 /r"/"RAVM"
     {
         ND_INS_VPMADDUBSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1421, 
         0, 
@@ -38616,10 +38616,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -38640,7 +38640,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2297 Instruction:"VPMADDWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF5 /r"/"RAVM"
+    // Pos:2297 Instruction:"VPMADDWD Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xF5 /r"/"RAVM"
     {
         ND_INS_VPMADDWD, ND_CAT_AVX512, ND_SET_AVX512BW, 1422, 
         0, 
@@ -38651,10 +38651,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -38743,7 +38743,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2303 Instruction:"VPMAXSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3C /r"/"RAVM"
+    // Pos:2303 Instruction:"VPMAXSB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x3C /r"/"RAVM"
     {
         ND_INS_VPMAXSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1425, 
         0, 
@@ -38754,10 +38754,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -38778,7 +38778,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2305 Instruction:"VPMAXSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3D /r"/"RAVM"
+    // Pos:2305 Instruction:"VPMAXSD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3D /r"/"RAVM"
     {
         ND_INS_VPMAXSD, ND_CAT_AVX512, ND_SET_AVX512F, 1426, 
         0, 
@@ -38789,10 +38789,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -38813,7 +38813,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2307 Instruction:"VPMAXSQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3D /r"/"RAVM"
+    // Pos:2307 Instruction:"VPMAXSQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3D /r"/"RAVM"
     {
         ND_INS_VPMAXSQ, ND_CAT_AVX512, ND_SET_AVX512F, 1427, 
         0, 
@@ -38824,14 +38824,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2308 Instruction:"VPMAXSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEE /r"/"RAVM"
+    // Pos:2308 Instruction:"VPMAXSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xEE /r"/"RAVM"
     {
         ND_INS_VPMAXSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1428, 
         0, 
@@ -38842,10 +38842,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -38866,7 +38866,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2310 Instruction:"VPMAXUB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDE /r"/"RAVM"
+    // Pos:2310 Instruction:"VPMAXUB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xDE /r"/"RAVM"
     {
         ND_INS_VPMAXUB, ND_CAT_AVX512, ND_SET_AVX512BW, 1429, 
         0, 
@@ -38877,10 +38877,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -38901,7 +38901,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2312 Instruction:"VPMAXUD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3F /r"/"RAVM"
+    // Pos:2312 Instruction:"VPMAXUD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3F /r"/"RAVM"
     {
         ND_INS_VPMAXUD, ND_CAT_AVX512, ND_SET_AVX512F, 1430, 
         0, 
@@ -38912,10 +38912,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -38936,7 +38936,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2314 Instruction:"VPMAXUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3F /r"/"RAVM"
+    // Pos:2314 Instruction:"VPMAXUQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3F /r"/"RAVM"
     {
         ND_INS_VPMAXUQ, ND_CAT_AVX512, ND_SET_AVX512F, 1431, 
         0, 
@@ -38947,14 +38947,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2315 Instruction:"VPMAXUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3E /r"/"RAVM"
+    // Pos:2315 Instruction:"VPMAXUW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x3E /r"/"RAVM"
     {
         ND_INS_VPMAXUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1432, 
         0, 
@@ -38965,10 +38965,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -38989,7 +38989,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2317 Instruction:"VPMINSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x38 /r"/"RAVM"
+    // Pos:2317 Instruction:"VPMINSB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x38 /r"/"RAVM"
     {
         ND_INS_VPMINSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1433, 
         0, 
@@ -39000,10 +39000,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39024,7 +39024,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2319 Instruction:"VPMINSD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x39 /r"/"RAVM"
+    // Pos:2319 Instruction:"VPMINSD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x39 /r"/"RAVM"
     {
         ND_INS_VPMINSD, ND_CAT_AVX512, ND_SET_AVX512F, 1434, 
         0, 
@@ -39035,10 +39035,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -39059,7 +39059,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2321 Instruction:"VPMINSQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x39 /r"/"RAVM"
+    // Pos:2321 Instruction:"VPMINSQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x39 /r"/"RAVM"
     {
         ND_INS_VPMINSQ, ND_CAT_AVX512, ND_SET_AVX512F, 1435, 
         0, 
@@ -39070,14 +39070,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2322 Instruction:"VPMINSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xEA /r"/"RAVM"
+    // Pos:2322 Instruction:"VPMINSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xEA /r"/"RAVM"
     {
         ND_INS_VPMINSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1436, 
         0, 
@@ -39088,10 +39088,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39112,7 +39112,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2324 Instruction:"VPMINUB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xDA /r"/"RAVM"
+    // Pos:2324 Instruction:"VPMINUB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xDA /r"/"RAVM"
     {
         ND_INS_VPMINUB, ND_CAT_AVX512, ND_SET_AVX512BW, 1437, 
         0, 
@@ -39123,10 +39123,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39147,7 +39147,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2326 Instruction:"VPMINUD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3B /r"/"RAVM"
+    // Pos:2326 Instruction:"VPMINUD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x3B /r"/"RAVM"
     {
         ND_INS_VPMINUD, ND_CAT_AVX512, ND_SET_AVX512F, 1438, 
         0, 
@@ -39158,10 +39158,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -39182,7 +39182,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2328 Instruction:"VPMINUQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3B /r"/"RAVM"
+    // Pos:2328 Instruction:"VPMINUQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x3B /r"/"RAVM"
     {
         ND_INS_VPMINUQ, ND_CAT_AVX512, ND_SET_AVX512F, 1439, 
         0, 
@@ -39193,14 +39193,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2329 Instruction:"VPMINUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x3A /r"/"RAVM"
+    // Pos:2329 Instruction:"VPMINUW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x3A /r"/"RAVM"
     {
         ND_INS_VPMINUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1440, 
         0, 
@@ -39211,10 +39211,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39235,7 +39235,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2331 Instruction:"VPMOVB2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:0 0x29 /r:reg"/"RM"
+    // Pos:2331 Instruction:"VPMOVB2M rKq,Ufv" Encoding:"evex m:2 p:2 l:x w:0 0x29 /r:reg"/"RM"
     {
         ND_INS_VPMOVB2M, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1441, 
         0, 
@@ -39247,11 +39247,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_U, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_U, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2332 Instruction:"VPMOVD2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:0 0x39 /r:reg"/"RM"
+    // Pos:2332 Instruction:"VPMOVD2M rKq,Ufv" Encoding:"evex m:2 p:2 l:x w:0 0x39 /r:reg"/"RM"
     {
         ND_INS_VPMOVD2M, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1442, 
         0, 
@@ -39263,11 +39263,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_U, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_U, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2333 Instruction:"VPMOVDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x31 /r"/"MAR"
+    // Pos:2333 Instruction:"VPMOVDB Wqv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x31 /r"/"MAR"
     {
         ND_INS_VPMOVDB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1443, 
         0, 
@@ -39278,13 +39278,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2334 Instruction:"VPMOVDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x33 /r"/"MAR"
+    // Pos:2334 Instruction:"VPMOVDW Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x33 /r"/"MAR"
     {
         ND_INS_VPMOVDW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1444, 
         0, 
@@ -39295,13 +39295,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2335 Instruction:"VPMOVM2B Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x28 /r:reg"/"RM"
+    // Pos:2335 Instruction:"VPMOVM2B Vfv,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x28 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2B, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1445, 
         0, 
@@ -39312,12 +39312,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
             OP(ND_OPT_mK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2336 Instruction:"VPMOVM2D Vn,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x38 /r:reg"/"RM"
+    // Pos:2336 Instruction:"VPMOVM2D Vfv,mKq" Encoding:"evex m:2 p:2 l:x w:0 0x38 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2D, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1446, 
         0, 
@@ -39328,12 +39328,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
             OP(ND_OPT_mK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2337 Instruction:"VPMOVM2Q Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x38 /r:reg"/"RM"
+    // Pos:2337 Instruction:"VPMOVM2Q Vfv,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x38 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2Q, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1447, 
         0, 
@@ -39344,12 +39344,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
             OP(ND_OPT_mK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2338 Instruction:"VPMOVM2W Vn,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x28 /r:reg"/"RM"
+    // Pos:2338 Instruction:"VPMOVM2W Vfv,mKq" Encoding:"evex m:2 p:2 l:x w:1 0x28 /r:reg"/"RM"
     {
         ND_INS_VPMOVM2W, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1448, 
         0, 
@@ -39360,7 +39360,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
             OP(ND_OPT_mK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -39381,7 +39381,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2340 Instruction:"VPMOVQ2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:1 0x39 /r:reg"/"RM"
+    // Pos:2340 Instruction:"VPMOVQ2M rKq,Ufv" Encoding:"evex m:2 p:2 l:x w:1 0x39 /r:reg"/"RM"
     {
         ND_INS_VPMOVQ2M, ND_CAT_DATAXFER, ND_SET_AVX512DQ, 1450, 
         0, 
@@ -39393,11 +39393,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_U, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_U, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2341 Instruction:"VPMOVQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x32 /r"/"MAR"
+    // Pos:2341 Instruction:"VPMOVQB Wev{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x32 /r"/"MAR"
     {
         ND_INS_VPMOVQB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1451, 
         0, 
@@ -39408,13 +39408,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_e, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_ev, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2342 Instruction:"VPMOVQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x35 /r"/"MAR"
+    // Pos:2342 Instruction:"VPMOVQD Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x35 /r"/"MAR"
     {
         ND_INS_VPMOVQD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1452, 
         0, 
@@ -39425,13 +39425,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2343 Instruction:"VPMOVQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x34 /r"/"MAR"
+    // Pos:2343 Instruction:"VPMOVQW Wqv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x34 /r"/"MAR"
     {
         ND_INS_VPMOVQW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1453, 
         0, 
@@ -39442,13 +39442,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2344 Instruction:"VPMOVSDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x21 /r"/"MAR"
+    // Pos:2344 Instruction:"VPMOVSDB Wqv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x21 /r"/"MAR"
     {
         ND_INS_VPMOVSDB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1454, 
         0, 
@@ -39459,13 +39459,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2345 Instruction:"VPMOVSDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x23 /r"/"MAR"
+    // Pos:2345 Instruction:"VPMOVSDW Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x23 /r"/"MAR"
     {
         ND_INS_VPMOVSDW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1455, 
         0, 
@@ -39476,13 +39476,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2346 Instruction:"VPMOVSQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x22 /r"/"MAR"
+    // Pos:2346 Instruction:"VPMOVSQB Wev{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x22 /r"/"MAR"
     {
         ND_INS_VPMOVSQB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1456, 
         0, 
@@ -39493,13 +39493,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_e, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_ev, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2347 Instruction:"VPMOVSQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x25 /r"/"MAR"
+    // Pos:2347 Instruction:"VPMOVSQD Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x25 /r"/"MAR"
     {
         ND_INS_VPMOVSQD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1457, 
         0, 
@@ -39510,13 +39510,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2348 Instruction:"VPMOVSQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x24 /r"/"MAR"
+    // Pos:2348 Instruction:"VPMOVSQW Wqv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x24 /r"/"MAR"
     {
         ND_INS_VPMOVSQW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1458, 
         0, 
@@ -39527,13 +39527,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2349 Instruction:"VPMOVSWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x20 /r"/"MAR"
+    // Pos:2349 Instruction:"VPMOVSWB Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x20 /r"/"MAR"
     {
         ND_INS_VPMOVSWB, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1459, 
         0, 
@@ -39544,13 +39544,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2350 Instruction:"VPMOVSXBD Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x21 /r"/"RAM"
+    // Pos:2350 Instruction:"VPMOVSXBD Vfv{K}{z},aKq,Wqv" Encoding:"evex m:2 p:1 l:x w:i 0x21 /r"/"RAM"
     {
         ND_INS_VPMOVSXBD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1460, 
         0, 
@@ -39561,9 +39561,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39599,7 +39599,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2353 Instruction:"VPMOVSXBQ Vn{K}{z},aKq,We" Encoding:"evex m:2 p:1 l:x w:i 0x22 /r"/"RAM"
+    // Pos:2353 Instruction:"VPMOVSXBQ Vfv{K}{z},aKq,Wev" Encoding:"evex m:2 p:1 l:x w:i 0x22 /r"/"RAM"
     {
         ND_INS_VPMOVSXBQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1461, 
         0, 
@@ -39610,9 +39610,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_e, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_ev, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39648,7 +39648,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2356 Instruction:"VPMOVSXBW Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x20 /r"/"RAM"
+    // Pos:2356 Instruction:"VPMOVSXBW Vfv{K}{z},aKq,Whv" Encoding:"evex m:2 p:1 l:x w:i 0x20 /r"/"RAM"
     {
         ND_INS_VPMOVSXBW, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1462, 
         0, 
@@ -39659,9 +39659,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39697,7 +39697,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2359 Instruction:"VPMOVSXDQ Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:0 0x25 /r"/"RAM"
+    // Pos:2359 Instruction:"VPMOVSXDQ Vfv{K}{z},aKq,Whv" Encoding:"evex m:2 p:1 l:x w:0 0x25 /r"/"RAM"
     {
         ND_INS_VPMOVSXDQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1463, 
         0, 
@@ -39708,9 +39708,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39746,7 +39746,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2362 Instruction:"VPMOVSXWD Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x23 /r"/"RAM"
+    // Pos:2362 Instruction:"VPMOVSXWD Vfv{K}{z},aKq,Whv" Encoding:"evex m:2 p:1 l:x w:i 0x23 /r"/"RAM"
     {
         ND_INS_VPMOVSXWD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1464, 
         0, 
@@ -39757,9 +39757,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39795,7 +39795,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2365 Instruction:"VPMOVSXWQ Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x24 /r"/"RAM"
+    // Pos:2365 Instruction:"VPMOVSXWQ Vfv{K}{z},aKq,Wqv" Encoding:"evex m:2 p:1 l:x w:i 0x24 /r"/"RAM"
     {
         ND_INS_VPMOVSXWQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1465, 
         0, 
@@ -39806,9 +39806,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -39844,7 +39844,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2368 Instruction:"VPMOVUSDB Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x11 /r"/"MAR"
+    // Pos:2368 Instruction:"VPMOVUSDB Wqv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x11 /r"/"MAR"
     {
         ND_INS_VPMOVUSDB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1466, 
         0, 
@@ -39855,13 +39855,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2369 Instruction:"VPMOVUSDW Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x13 /r"/"MAR"
+    // Pos:2369 Instruction:"VPMOVUSDW Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x13 /r"/"MAR"
     {
         ND_INS_VPMOVUSDW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1467, 
         0, 
@@ -39872,13 +39872,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2370 Instruction:"VPMOVUSQB We{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x12 /r"/"MAR"
+    // Pos:2370 Instruction:"VPMOVUSQB Wev{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x12 /r"/"MAR"
     {
         ND_INS_VPMOVUSQB, ND_CAT_DATAXFER, ND_SET_AVX512F, 1468, 
         0, 
@@ -39889,13 +39889,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_e, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_ev, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2371 Instruction:"VPMOVUSQD Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x15 /r"/"MAR"
+    // Pos:2371 Instruction:"VPMOVUSQD Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x15 /r"/"MAR"
     {
         ND_INS_VPMOVUSQD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1469, 
         0, 
@@ -39906,13 +39906,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2372 Instruction:"VPMOVUSQW Wf{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x14 /r"/"MAR"
+    // Pos:2372 Instruction:"VPMOVUSQW Wqv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x14 /r"/"MAR"
     {
         ND_INS_VPMOVUSQW, ND_CAT_DATAXFER, ND_SET_AVX512F, 1470, 
         0, 
@@ -39923,13 +39923,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2373 Instruction:"VPMOVUSWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x10 /r"/"MAR"
+    // Pos:2373 Instruction:"VPMOVUSWB Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x10 /r"/"MAR"
     {
         ND_INS_VPMOVUSWB, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1471, 
         0, 
@@ -39940,13 +39940,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2374 Instruction:"VPMOVW2M rKq,Un" Encoding:"evex m:2 p:2 l:x w:1 0x29 /r:reg"/"RM"
+    // Pos:2374 Instruction:"VPMOVW2M rKq,Ufv" Encoding:"evex m:2 p:2 l:x w:1 0x29 /r:reg"/"RM"
     {
         ND_INS_VPMOVW2M, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1472, 
         0, 
@@ -39958,11 +39958,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_U, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_U, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2375 Instruction:"VPMOVWB Wh{K}{z},aKq,Vn" Encoding:"evex m:2 p:2 l:x w:0 0x30 /r"/"MAR"
+    // Pos:2375 Instruction:"VPMOVWB Whv{K}{z},aKq,Vfv" Encoding:"evex m:2 p:2 l:x w:0 0x30 /r"/"MAR"
     {
         ND_INS_VPMOVWB, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1473, 
         0, 
@@ -39973,13 +39973,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2376 Instruction:"VPMOVZXBD Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x31 /r"/"RAM"
+    // Pos:2376 Instruction:"VPMOVZXBD Vfv{K}{z},aKq,Wqv" Encoding:"evex m:2 p:1 l:x w:i 0x31 /r"/"RAM"
     {
         ND_INS_VPMOVZXBD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1474, 
         0, 
@@ -39990,9 +39990,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40028,7 +40028,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2379 Instruction:"VPMOVZXBQ Vn{K}{z},aKq,We" Encoding:"evex m:2 p:1 l:x w:i 0x32 /r"/"RAM"
+    // Pos:2379 Instruction:"VPMOVZXBQ Vfv{K}{z},aKq,Wev" Encoding:"evex m:2 p:1 l:x w:i 0x32 /r"/"RAM"
     {
         ND_INS_VPMOVZXBQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1475, 
         0, 
@@ -40039,9 +40039,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_e, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_ev, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40077,7 +40077,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2382 Instruction:"VPMOVZXBW Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x30 /r"/"RAM"
+    // Pos:2382 Instruction:"VPMOVZXBW Vfv{K}{z},aKq,Whv" Encoding:"evex m:2 p:1 l:x w:i 0x30 /r"/"RAM"
     {
         ND_INS_VPMOVZXBW, ND_CAT_DATAXFER, ND_SET_AVX512BW, 1476, 
         0, 
@@ -40088,9 +40088,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40126,7 +40126,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2385 Instruction:"VPMOVZXDQ Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:0 0x35 /r"/"RAM"
+    // Pos:2385 Instruction:"VPMOVZXDQ Vfv{K}{z},aKq,Whv" Encoding:"evex m:2 p:1 l:x w:0 0x35 /r"/"RAM"
     {
         ND_INS_VPMOVZXDQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1477, 
         0, 
@@ -40137,9 +40137,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40175,7 +40175,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2388 Instruction:"VPMOVZXWD Vn{K}{z},aKq,Wh" Encoding:"evex m:2 p:1 l:x w:i 0x33 /r"/"RAM"
+    // Pos:2388 Instruction:"VPMOVZXWD Vfv{K}{z},aKq,Whv" Encoding:"evex m:2 p:1 l:x w:i 0x33 /r"/"RAM"
     {
         ND_INS_VPMOVZXWD, ND_CAT_DATAXFER, ND_SET_AVX512F, 1478, 
         0, 
@@ -40186,9 +40186,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_h, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_hv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40224,7 +40224,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2391 Instruction:"VPMOVZXWQ Vn{K}{z},aKq,Wf" Encoding:"evex m:2 p:1 l:x w:i 0x34 /r"/"RAM"
+    // Pos:2391 Instruction:"VPMOVZXWQ Vfv{K}{z},aKq,Wqv" Encoding:"evex m:2 p:1 l:x w:i 0x34 /r"/"RAM"
     {
         ND_INS_VPMOVZXWQ, ND_CAT_DATAXFER, ND_SET_AVX512F, 1479, 
         0, 
@@ -40235,9 +40235,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_f, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_qv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40273,7 +40273,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2394 Instruction:"VPMULDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x28 /r"/"RAVM"
+    // Pos:2394 Instruction:"VPMULDQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x28 /r"/"RAVM"
     {
         ND_INS_VPMULDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1480, 
         0, 
@@ -40284,10 +40284,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -40308,7 +40308,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2396 Instruction:"VPMULHRSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x0B /r"/"RAVM"
+    // Pos:2396 Instruction:"VPMULHRSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x0B /r"/"RAVM"
     {
         ND_INS_VPMULHRSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1481, 
         0, 
@@ -40319,10 +40319,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40343,7 +40343,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2398 Instruction:"VPMULHUW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE4 /r"/"RAVM"
+    // Pos:2398 Instruction:"VPMULHUW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xE4 /r"/"RAVM"
     {
         ND_INS_VPMULHUW, ND_CAT_AVX512, ND_SET_AVX512BW, 1482, 
         0, 
@@ -40354,10 +40354,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40378,7 +40378,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2400 Instruction:"VPMULHW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE5 /r"/"RAVM"
+    // Pos:2400 Instruction:"VPMULHW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xE5 /r"/"RAVM"
     {
         ND_INS_VPMULHW, ND_CAT_AVX512, ND_SET_AVX512BW, 1483, 
         0, 
@@ -40389,10 +40389,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40413,7 +40413,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2402 Instruction:"VPMULLD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x40 /r"/"RAVM"
+    // Pos:2402 Instruction:"VPMULLD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x40 /r"/"RAVM"
     {
         ND_INS_VPMULLD, ND_CAT_AVX512, ND_SET_AVX512F, 1484, 
         0, 
@@ -40424,10 +40424,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -40448,7 +40448,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2404 Instruction:"VPMULLQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x40 /r"/"RAVM"
+    // Pos:2404 Instruction:"VPMULLQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x40 /r"/"RAVM"
     {
         ND_INS_VPMULLQ, ND_CAT_AVX512, ND_SET_AVX512DQ, 1485, 
         0, 
@@ -40459,14 +40459,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2405 Instruction:"VPMULLW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD5 /r"/"RAVM"
+    // Pos:2405 Instruction:"VPMULLW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xD5 /r"/"RAVM"
     {
         ND_INS_VPMULLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1486, 
         0, 
@@ -40477,10 +40477,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40501,7 +40501,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2407 Instruction:"VPMULTISHIFTQB Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x83 /r"/"RAVM"
+    // Pos:2407 Instruction:"VPMULTISHIFTQB Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x83 /r"/"RAVM"
     {
         ND_INS_VPMULTISHIFTQB, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI, 1487, 
         0, 
@@ -40512,14 +40512,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2408 Instruction:"VPMULUDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xF4 /r"/"RAVM"
+    // Pos:2408 Instruction:"VPMULUDQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xF4 /r"/"RAVM"
     {
         ND_INS_VPMULUDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1488, 
         0, 
@@ -40530,10 +40530,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -40554,7 +40554,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2410 Instruction:"VPOPCNTB Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x54 /r"/"RAM"
+    // Pos:2410 Instruction:"VPOPCNTB Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x54 /r"/"RAM"
     {
         ND_INS_VPOPCNTB, ND_CAT_VPOPCNT, ND_SET_AVX512BITALG, 1489, 
         0, 
@@ -40565,13 +40565,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2411 Instruction:"VPOPCNTD Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x55 /r"/"RAM"
+    // Pos:2411 Instruction:"VPOPCNTD Vfv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x55 /r"/"RAM"
     {
         ND_INS_VPOPCNTD, ND_CAT_VPOPCNT, ND_SET_AVX512VPOPCNTDQ, 1490, 
         0, 
@@ -40582,13 +40582,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2412 Instruction:"VPOPCNTQ Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x55 /r"/"RAM"
+    // Pos:2412 Instruction:"VPOPCNTQ Vfv{K}{z},aKq,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x55 /r"/"RAM"
     {
         ND_INS_VPOPCNTQ, ND_CAT_VPOPCNT, ND_SET_AVX512VPOPCNTDQ, 1491, 
         0, 
@@ -40599,13 +40599,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2413 Instruction:"VPOPCNTW Vn{K}{z},aKq,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x54 /r"/"RAM"
+    // Pos:2413 Instruction:"VPOPCNTW Vfv{K}{z},aKq,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x54 /r"/"RAM"
     {
         ND_INS_VPOPCNTW, ND_CAT_VPOPCNT, ND_SET_AVX512BITALG, 1492, 
         0, 
@@ -40616,9 +40616,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -40639,7 +40639,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2415 Instruction:"VPORD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEB /r"/"RAVM"
+    // Pos:2415 Instruction:"VPORD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEB /r"/"RAVM"
     {
         ND_INS_VPORD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1494, 
         0, 
@@ -40650,14 +40650,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2416 Instruction:"VPORQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEB /r"/"RAVM"
+    // Pos:2416 Instruction:"VPORQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEB /r"/"RAVM"
     {
         ND_INS_VPORQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1495, 
         0, 
@@ -40668,10 +40668,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -40711,7 +40711,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2419 Instruction:"VPROLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /1 ib"/"VAMI"
+    // Pos:2419 Instruction:"VPROLD Hfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /1 ib"/"VAMI"
     {
         ND_INS_VPROLD, ND_CAT_AVX512, ND_SET_AVX512F, 1497, 
         0, 
@@ -40722,14 +40722,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2420 Instruction:"VPROLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /1 ib"/"VAMI"
+    // Pos:2420 Instruction:"VPROLQ Hfv{K}{z},aKq,Wfv|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /1 ib"/"VAMI"
     {
         ND_INS_VPROLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1498, 
         0, 
@@ -40740,14 +40740,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2421 Instruction:"VPROLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x15 /r"/"RAVM"
+    // Pos:2421 Instruction:"VPROLVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x15 /r"/"RAVM"
     {
         ND_INS_VPROLVD, ND_CAT_AVX512, ND_SET_AVX512F, 1499, 
         0, 
@@ -40758,14 +40758,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2422 Instruction:"VPROLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x15 /r"/"RAVM"
+    // Pos:2422 Instruction:"VPROLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x15 /r"/"RAVM"
     {
         ND_INS_VPROLVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1500, 
         0, 
@@ -40776,14 +40776,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2423 Instruction:"VPRORD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /0 ib"/"VAMI"
+    // Pos:2423 Instruction:"VPRORD Hfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /0 ib"/"VAMI"
     {
         ND_INS_VPRORD, ND_CAT_AVX512, ND_SET_AVX512F, 1501, 
         0, 
@@ -40794,14 +40794,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2424 Instruction:"VPRORQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /0 ib"/"VAMI"
+    // Pos:2424 Instruction:"VPRORQ Hfv{K}{z},aKq,Wfv|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /0 ib"/"VAMI"
     {
         ND_INS_VPRORQ, ND_CAT_AVX512, ND_SET_AVX512F, 1502, 
         0, 
@@ -40812,14 +40812,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2425 Instruction:"VPRORVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x14 /r"/"RAVM"
+    // Pos:2425 Instruction:"VPRORVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x14 /r"/"RAVM"
     {
         ND_INS_VPRORVD, ND_CAT_AVX512, ND_SET_AVX512F, 1503, 
         0, 
@@ -40830,14 +40830,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2426 Instruction:"VPRORVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x14 /r"/"RAVM"
+    // Pos:2426 Instruction:"VPRORVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x14 /r"/"RAVM"
     {
         ND_INS_VPRORVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1504, 
         0, 
@@ -40848,10 +40848,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -41059,7 +41059,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2439 Instruction:"VPSADBW Vn,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF6 /r"/"RVM"
+    // Pos:2439 Instruction:"VPSADBW Vfv,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xF6 /r"/"RVM"
     {
         ND_INS_VPSADBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1509, 
         0, 
@@ -41070,9 +41070,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -41093,7 +41093,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2441 Instruction:"VPSCATTERDD Mvm32n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0xA0 /r:mem vsib"/"MAR"
+    // Pos:2441 Instruction:"VPSCATTERDD Mvm32n{K},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:0 0xA0 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERDD, ND_CAT_SCATTER, ND_SET_AVX512F, 1510, 
         0, 
@@ -41106,11 +41106,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm32n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2442 Instruction:"VPSCATTERDQ Mvm32h{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA0 /r:mem vsib"/"MAR"
+    // Pos:2442 Instruction:"VPSCATTERDQ Mvm32h{K},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0xA0 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERDQ, ND_CAT_SCATTER, ND_SET_AVX512F, 1511, 
         0, 
@@ -41123,11 +41123,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm32h, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2443 Instruction:"VPSCATTERQD Mvm64n{K},aKq,Vh" Encoding:"evex m:2 p:1 l:x w:0 0xA1 /r:mem vsib"/"MAR"
+    // Pos:2443 Instruction:"VPSCATTERQD Mvm64n{K},aKq,Vhv" Encoding:"evex m:2 p:1 l:x w:0 0xA1 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERQD, ND_CAT_SCATTER, ND_SET_AVX512F, 1512, 
         0, 
@@ -41140,11 +41140,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2444 Instruction:"VPSCATTERQQ Mvm64n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA1 /r:mem vsib"/"MAR"
+    // Pos:2444 Instruction:"VPSCATTERQQ Mvm64n{K},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0xA1 /r:mem vsib"/"MAR"
     {
         ND_INS_VPSCATTERQQ, ND_CAT_SCATTER, ND_SET_AVX512F, 1513, 
         0, 
@@ -41157,7 +41157,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
@@ -41382,7 +41382,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2458 Instruction:"VPSHLDD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x71 /r ib"/"RAVMI"
+    // Pos:2458 Instruction:"VPSHLDD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x71 /r ib"/"RAVMI"
     {
         ND_INS_VPSHLDD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1520, 
         0, 
@@ -41393,15 +41393,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2459 Instruction:"VPSHLDQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x71 /r ib"/"RAVMI"
+    // Pos:2459 Instruction:"VPSHLDQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x71 /r ib"/"RAVMI"
     {
         ND_INS_VPSHLDQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1521, 
         0, 
@@ -41412,15 +41412,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2460 Instruction:"VPSHLDVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x71 /r"/"RAVM"
+    // Pos:2460 Instruction:"VPSHLDVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x71 /r"/"RAVM"
     {
         ND_INS_VPSHLDVD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1522, 
         0, 
@@ -41431,14 +41431,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2461 Instruction:"VPSHLDVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x71 /r"/"RAVM"
+    // Pos:2461 Instruction:"VPSHLDVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x71 /r"/"RAVM"
     {
         ND_INS_VPSHLDVQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1523, 
         0, 
@@ -41449,14 +41449,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2462 Instruction:"VPSHLDVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x70 /r"/"RAVM"
+    // Pos:2462 Instruction:"VPSHLDVW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x70 /r"/"RAVM"
     {
         ND_INS_VPSHLDVW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1524, 
         0, 
@@ -41467,14 +41467,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2463 Instruction:"VPSHLDW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x70 /r ib"/"RAVMI"
+    // Pos:2463 Instruction:"VPSHLDW Vfv{K}{z},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x70 /r ib"/"RAVMI"
     {
         ND_INS_VPSHLDW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1525, 
         0, 
@@ -41485,10 +41485,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -41544,7 +41544,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2467 Instruction:"VPSHRDD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x73 /r ib"/"RAVMI"
+    // Pos:2467 Instruction:"VPSHRDD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x73 /r ib"/"RAVMI"
     {
         ND_INS_VPSHRDD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1528, 
         0, 
@@ -41555,15 +41555,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2468 Instruction:"VPSHRDQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x73 /r ib"/"RAVMI"
+    // Pos:2468 Instruction:"VPSHRDQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x73 /r ib"/"RAVMI"
     {
         ND_INS_VPSHRDQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1529, 
         0, 
@@ -41574,15 +41574,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2469 Instruction:"VPSHRDVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x73 /r"/"RAVM"
+    // Pos:2469 Instruction:"VPSHRDVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x73 /r"/"RAVM"
     {
         ND_INS_VPSHRDVD, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1530, 
         0, 
@@ -41593,14 +41593,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2470 Instruction:"VPSHRDVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x73 /r"/"RAVM"
+    // Pos:2470 Instruction:"VPSHRDVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x73 /r"/"RAVM"
     {
         ND_INS_VPSHRDVQ, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1531, 
         0, 
@@ -41611,14 +41611,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2471 Instruction:"VPSHRDVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x72 /r"/"RAVM"
+    // Pos:2471 Instruction:"VPSHRDVW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x72 /r"/"RAVM"
     {
         ND_INS_VPSHRDVW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1532, 
         0, 
@@ -41629,14 +41629,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2472 Instruction:"VPSHRDW Vn{K}{z},aKq,Hn,Wn,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x72 /r ib"/"RAVMI"
+    // Pos:2472 Instruction:"VPSHRDW Vfv{K}{z},aKq,Hfv,Wfv,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x72 /r ib"/"RAVMI"
     {
         ND_INS_VPSHRDW, ND_CAT_AVX512VBMI, ND_SET_AVX512VBMI2, 1533, 
         0, 
@@ -41647,15 +41647,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2473 Instruction:"VPSHUFB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:i 0x00 /r"/"RAVM"
+    // Pos:2473 Instruction:"VPSHUFB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:i 0x00 /r"/"RAVM"
     {
         ND_INS_VPSHUFB, ND_CAT_AVX512, ND_SET_AVX512BW, 1534, 
         0, 
@@ -41666,10 +41666,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -41690,7 +41690,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2475 Instruction:"VPSHUFBITQMB rK{K},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x8F /r"/"RAVM"
+    // Pos:2475 Instruction:"VPSHUFBITQMB rK{K},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x8F /r"/"RAVM"
     {
         ND_INS_VPSHUFBITQMB, ND_CAT_AVX512VBMI, ND_SET_AVX512BITALG, 1535, 
         0, 
@@ -41703,12 +41703,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2476 Instruction:"VPSHUFD Vn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x70 /r ib"/"RAMI"
+    // Pos:2476 Instruction:"VPSHUFD Vfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x70 /r ib"/"RAMI"
     {
         ND_INS_VPSHUFD, ND_CAT_AVX512, ND_SET_AVX512F, 1536, 
         0, 
@@ -41719,9 +41719,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -41743,7 +41743,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2478 Instruction:"VPSHUFHW Vn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:2 l:x w:i 0x70 /r ib"/"RAMI"
+    // Pos:2478 Instruction:"VPSHUFHW Vfv{K}{z},aKq,Wfv,Ib" Encoding:"evex m:1 p:2 l:x w:i 0x70 /r ib"/"RAMI"
     {
         ND_INS_VPSHUFHW, ND_CAT_AVX512, ND_SET_AVX512BW, 1537, 
         0, 
@@ -41754,9 +41754,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -41778,7 +41778,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2480 Instruction:"VPSHUFLW Vn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:3 l:x w:i 0x70 /r ib"/"RAMI"
+    // Pos:2480 Instruction:"VPSHUFLW Vfv{K}{z},aKq,Wfv,Ib" Encoding:"evex m:1 p:3 l:x w:i 0x70 /r ib"/"RAMI"
     {
         ND_INS_VPSHUFLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1538, 
         0, 
@@ -41789,9 +41789,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -41864,7 +41864,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2485 Instruction:"VPSLLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /6 ib"/"VAMI"
+    // Pos:2485 Instruction:"VPSLLD Hfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /6 ib"/"VAMI"
     {
         ND_INS_VPSLLD, ND_CAT_AVX512, ND_SET_AVX512F, 1542, 
         0, 
@@ -41875,14 +41875,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2486 Instruction:"VPSLLD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xF2 /r"/"RAVM"
+    // Pos:2486 Instruction:"VPSLLD Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xF2 /r"/"RAVM"
     {
         ND_INS_VPSLLD, ND_CAT_AVX512, ND_SET_AVX512F, 1542, 
         0, 
@@ -41893,9 +41893,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -41934,7 +41934,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2489 Instruction:"VPSLLDQ Hn,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /7 ib"/"VMI"
+    // Pos:2489 Instruction:"VPSLLDQ Hfv,Wfv,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /7 ib"/"VMI"
     {
         ND_INS_VPSLLDQ, ND_CAT_AVX512, ND_SET_AVX512BW, 1543, 
         0, 
@@ -41945,8 +41945,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -41968,7 +41968,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2491 Instruction:"VPSLLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /6 ib"/"VAMI"
+    // Pos:2491 Instruction:"VPSLLQ Hfv{K}{z},aKq,Wfv|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /6 ib"/"VAMI"
     {
         ND_INS_VPSLLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1544, 
         0, 
@@ -41979,14 +41979,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2492 Instruction:"VPSLLQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xF3 /r"/"RAVM"
+    // Pos:2492 Instruction:"VPSLLQ Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xF3 /r"/"RAVM"
     {
         ND_INS_VPSLLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1544, 
         0, 
@@ -41997,9 +41997,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42038,7 +42038,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2495 Instruction:"VPSLLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x47 /r"/"RAVM"
+    // Pos:2495 Instruction:"VPSLLVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x47 /r"/"RAVM"
     {
         ND_INS_VPSLLVD, ND_CAT_AVX512, ND_SET_AVX512F, 1545, 
         0, 
@@ -42049,10 +42049,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -42073,7 +42073,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2497 Instruction:"VPSLLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x47 /r"/"RAVM"
+    // Pos:2497 Instruction:"VPSLLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x47 /r"/"RAVM"
     {
         ND_INS_VPSLLVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1546, 
         0, 
@@ -42084,10 +42084,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -42108,7 +42108,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2499 Instruction:"VPSLLVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x12 /r"/"RAVM"
+    // Pos:2499 Instruction:"VPSLLVW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x12 /r"/"RAVM"
     {
         ND_INS_VPSLLVW, ND_CAT_AVX512, ND_SET_AVX512BW, 1547, 
         0, 
@@ -42119,14 +42119,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2500 Instruction:"VPSLLW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /6 ib"/"VAMI"
+    // Pos:2500 Instruction:"VPSLLW Hfv{K}{z},aKq,Wfv,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /6 ib"/"VAMI"
     {
         ND_INS_VPSLLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1548, 
         0, 
@@ -42137,14 +42137,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2501 Instruction:"VPSLLW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xF1 /r"/"RAVM"
+    // Pos:2501 Instruction:"VPSLLW Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xF1 /r"/"RAVM"
     {
         ND_INS_VPSLLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1548, 
         0, 
@@ -42155,9 +42155,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42196,7 +42196,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2504 Instruction:"VPSRAD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /4 ib"/"VAMI"
+    // Pos:2504 Instruction:"VPSRAD Hfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /4 ib"/"VAMI"
     {
         ND_INS_VPSRAD, ND_CAT_AVX512, ND_SET_AVX512F, 1549, 
         0, 
@@ -42207,14 +42207,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2505 Instruction:"VPSRAD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xE2 /r"/"RAVM"
+    // Pos:2505 Instruction:"VPSRAD Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xE2 /r"/"RAVM"
     {
         ND_INS_VPSRAD, ND_CAT_AVX512, ND_SET_AVX512F, 1549, 
         0, 
@@ -42225,9 +42225,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42266,7 +42266,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2508 Instruction:"VPSRAQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /4 ib"/"VAMI"
+    // Pos:2508 Instruction:"VPSRAQ Hfv{K}{z},aKq,Wfv|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x72 /4 ib"/"VAMI"
     {
         ND_INS_VPSRAQ, ND_CAT_AVX512, ND_SET_AVX512F, 1550, 
         0, 
@@ -42277,14 +42277,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2509 Instruction:"VPSRAQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xE2 /r"/"RAVM"
+    // Pos:2509 Instruction:"VPSRAQ Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xE2 /r"/"RAVM"
     {
         ND_INS_VPSRAQ, ND_CAT_AVX512, ND_SET_AVX512F, 1550, 
         0, 
@@ -42295,14 +42295,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2510 Instruction:"VPSRAVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x46 /r"/"RAVM"
+    // Pos:2510 Instruction:"VPSRAVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x46 /r"/"RAVM"
     {
         ND_INS_VPSRAVD, ND_CAT_AVX512, ND_SET_AVX512F, 1551, 
         0, 
@@ -42313,10 +42313,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -42337,7 +42337,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2512 Instruction:"VPSRAVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x46 /r"/"RAVM"
+    // Pos:2512 Instruction:"VPSRAVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x46 /r"/"RAVM"
     {
         ND_INS_VPSRAVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1552, 
         0, 
@@ -42348,14 +42348,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2513 Instruction:"VPSRAVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x11 /r"/"RAVM"
+    // Pos:2513 Instruction:"VPSRAVW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x11 /r"/"RAVM"
     {
         ND_INS_VPSRAVW, ND_CAT_AVX512, ND_SET_AVX512BW, 1553, 
         0, 
@@ -42366,14 +42366,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2514 Instruction:"VPSRAW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /4 ib"/"VAMI"
+    // Pos:2514 Instruction:"VPSRAW Hfv{K}{z},aKq,Wfv,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /4 ib"/"VAMI"
     {
         ND_INS_VPSRAW, ND_CAT_AVX512, ND_SET_AVX512BW, 1554, 
         0, 
@@ -42384,14 +42384,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2515 Instruction:"VPSRAW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xE1 /r"/"RAVM"
+    // Pos:2515 Instruction:"VPSRAW Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xE1 /r"/"RAVM"
     {
         ND_INS_VPSRAW, ND_CAT_AVX512, ND_SET_AVX512BW, 1554, 
         0, 
@@ -42402,9 +42402,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42443,7 +42443,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2518 Instruction:"VPSRLD Hn{K}{z},aKq,Wn|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /2 ib"/"VAMI"
+    // Pos:2518 Instruction:"VPSRLD Hfv{K}{z},aKq,Wfv|B32,Ib" Encoding:"evex m:1 p:1 l:x w:0 0x72 /2 ib"/"VAMI"
     {
         ND_INS_VPSRLD, ND_CAT_AVX512, ND_SET_AVX512F, 1555, 
         0, 
@@ -42454,14 +42454,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2519 Instruction:"VPSRLD Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xD2 /r"/"RAVM"
+    // Pos:2519 Instruction:"VPSRLD Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:0 0xD2 /r"/"RAVM"
     {
         ND_INS_VPSRLD, ND_CAT_AVX512, ND_SET_AVX512F, 1555, 
         0, 
@@ -42472,9 +42472,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42513,7 +42513,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2522 Instruction:"VPSRLDQ Hn,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /3 ib"/"VMI"
+    // Pos:2522 Instruction:"VPSRLDQ Hfv,Wfv,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x73 /3 ib"/"VMI"
     {
         ND_INS_VPSRLDQ, ND_CAT_AVX512, ND_SET_AVX512BW, 1556, 
         0, 
@@ -42524,8 +42524,8 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42547,7 +42547,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2524 Instruction:"VPSRLQ Hn{K}{z},aKq,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /2 ib"/"VAMI"
+    // Pos:2524 Instruction:"VPSRLQ Hfv{K}{z},aKq,Wfv|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0x73 /2 ib"/"VAMI"
     {
         ND_INS_VPSRLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1557, 
         0, 
@@ -42558,14 +42558,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2525 Instruction:"VPSRLQ Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xD3 /r"/"RAVM"
+    // Pos:2525 Instruction:"VPSRLQ Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:1 0xD3 /r"/"RAVM"
     {
         ND_INS_VPSRLQ, ND_CAT_AVX512, ND_SET_AVX512F, 1557, 
         0, 
@@ -42576,9 +42576,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42617,7 +42617,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2528 Instruction:"VPSRLVD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x45 /r"/"RAVM"
+    // Pos:2528 Instruction:"VPSRLVD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x45 /r"/"RAVM"
     {
         ND_INS_VPSRLVD, ND_CAT_AVX512, ND_SET_AVX512F, 1558, 
         0, 
@@ -42628,10 +42628,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -42652,7 +42652,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2530 Instruction:"VPSRLVQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x45 /r"/"RAVM"
+    // Pos:2530 Instruction:"VPSRLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x45 /r"/"RAVM"
     {
         ND_INS_VPSRLVQ, ND_CAT_AVX512, ND_SET_AVX512F, 1559, 
         0, 
@@ -42663,10 +42663,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -42687,7 +42687,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2532 Instruction:"VPSRLVW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x10 /r"/"RAVM"
+    // Pos:2532 Instruction:"VPSRLVW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x10 /r"/"RAVM"
     {
         ND_INS_VPSRLVW, ND_CAT_AVX512, ND_SET_AVX512BW, 1560, 
         0, 
@@ -42698,14 +42698,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2533 Instruction:"VPSRLW Hn{K}{z},aKq,Wn,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /2 ib"/"VAMI"
+    // Pos:2533 Instruction:"VPSRLW Hfv{K}{z},aKq,Wfv,Ib" Encoding:"evex m:1 p:1 l:x w:i 0x71 /2 ib"/"VAMI"
     {
         ND_INS_VPSRLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1561, 
         0, 
@@ -42716,14 +42716,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2534 Instruction:"VPSRLW Vn{K}{z},aKq,Hn,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xD1 /r"/"RAVM"
+    // Pos:2534 Instruction:"VPSRLW Vfv{K}{z},aKq,Hfv,Wdq" Encoding:"evex m:1 p:1 l:x w:i 0xD1 /r"/"RAVM"
     {
         ND_INS_VPSRLW, ND_CAT_AVX512, ND_SET_AVX512BW, 1561, 
         0, 
@@ -42734,9 +42734,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
             OP(ND_OPT_W, ND_OPS_dq, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -42775,7 +42775,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2537 Instruction:"VPSUBB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF8 /r"/"RAVM"
+    // Pos:2537 Instruction:"VPSUBB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xF8 /r"/"RAVM"
     {
         ND_INS_VPSUBB, ND_CAT_AVX512, ND_SET_AVX512BW, 1562, 
         0, 
@@ -42786,10 +42786,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -42810,7 +42810,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2539 Instruction:"VPSUBD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFA /r"/"RAVM"
+    // Pos:2539 Instruction:"VPSUBD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0xFA /r"/"RAVM"
     {
         ND_INS_VPSUBD, ND_CAT_AVX512, ND_SET_AVX512F, 1563, 
         0, 
@@ -42821,10 +42821,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -42845,7 +42845,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2541 Instruction:"VPSUBQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xFB /r"/"RAVM"
+    // Pos:2541 Instruction:"VPSUBQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xFB /r"/"RAVM"
     {
         ND_INS_VPSUBQ, ND_CAT_AVX512, ND_SET_AVX512F, 1564, 
         0, 
@@ -42856,10 +42856,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -42880,7 +42880,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2543 Instruction:"VPSUBSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE8 /r"/"RAVM"
+    // Pos:2543 Instruction:"VPSUBSB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xE8 /r"/"RAVM"
     {
         ND_INS_VPSUBSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1565, 
         0, 
@@ -42891,10 +42891,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -42915,7 +42915,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2545 Instruction:"VPSUBSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xE9 /r"/"RAVM"
+    // Pos:2545 Instruction:"VPSUBSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xE9 /r"/"RAVM"
     {
         ND_INS_VPSUBSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1566, 
         0, 
@@ -42926,10 +42926,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -42950,7 +42950,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2547 Instruction:"VPSUBUSB Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD8 /r"/"RAVM"
+    // Pos:2547 Instruction:"VPSUBUSB Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xD8 /r"/"RAVM"
     {
         ND_INS_VPSUBUSB, ND_CAT_AVX512, ND_SET_AVX512BW, 1567, 
         0, 
@@ -42961,10 +42961,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -42985,7 +42985,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2549 Instruction:"VPSUBUSW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xD9 /r"/"RAVM"
+    // Pos:2549 Instruction:"VPSUBUSW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xD9 /r"/"RAVM"
     {
         ND_INS_VPSUBUSW, ND_CAT_AVX512, ND_SET_AVX512BW, 1568, 
         0, 
@@ -42996,10 +42996,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -43020,7 +43020,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2551 Instruction:"VPSUBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0xF9 /r"/"RAVM"
+    // Pos:2551 Instruction:"VPSUBW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0xF9 /r"/"RAVM"
     {
         ND_INS_VPSUBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1569, 
         0, 
@@ -43031,10 +43031,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -43055,7 +43055,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2553 Instruction:"VPTERNLOGD Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x25 /r ib"/"RAVMI"
+    // Pos:2553 Instruction:"VPTERNLOGD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x25 /r ib"/"RAVMI"
     {
         ND_INS_VPTERNLOGD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1570, 
         0, 
@@ -43066,15 +43066,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2554 Instruction:"VPTERNLOGQ Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x25 /r ib"/"RAVMI"
+    // Pos:2554 Instruction:"VPTERNLOGQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x25 /r ib"/"RAVMI"
     {
         ND_INS_VPTERNLOGQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1571, 
         0, 
@@ -43085,10 +43085,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -43110,7 +43110,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2556 Instruction:"VPTESTMB rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:0 0x26 /r"/"RAVM"
+    // Pos:2556 Instruction:"VPTESTMB rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:0 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTMB, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1573, 
         0, 
@@ -43123,12 +43123,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2557 Instruction:"VPTESTMD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x27 /r"/"RAVM"
+    // Pos:2557 Instruction:"VPTESTMD rKq{K},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTMD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1574, 
         0, 
@@ -43141,12 +43141,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2558 Instruction:"VPTESTMQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x27 /r"/"RAVM"
+    // Pos:2558 Instruction:"VPTESTMQ rKq{K},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTMQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1575, 
         0, 
@@ -43159,12 +43159,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2559 Instruction:"VPTESTMW rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:1 l:x w:1 0x26 /r"/"RAVM"
+    // Pos:2559 Instruction:"VPTESTMW rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:2 p:1 l:x w:1 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTMW, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1576, 
         0, 
@@ -43177,12 +43177,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2560 Instruction:"VPTESTNMB rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:2 l:x w:0 0x26 /r"/"RAVM"
+    // Pos:2560 Instruction:"VPTESTNMB rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:2 p:2 l:x w:0 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTNMB, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1577, 
         0, 
@@ -43195,12 +43195,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2561 Instruction:"VPTESTNMD rKq{K},aKq,Hn,Wn|B32" Encoding:"evex m:2 p:2 l:x w:0 0x27 /r"/"RAVM"
+    // Pos:2561 Instruction:"VPTESTNMD rKq{K},aKq,Hfv,Wfv|B32" Encoding:"evex m:2 p:2 l:x w:0 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTNMD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1578, 
         0, 
@@ -43213,12 +43213,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2562 Instruction:"VPTESTNMQ rKq{K},aKq,Hn,Wn|B64" Encoding:"evex m:2 p:2 l:x w:1 0x27 /r"/"RAVM"
+    // Pos:2562 Instruction:"VPTESTNMQ rKq{K},aKq,Hfv,Wfv|B64" Encoding:"evex m:2 p:2 l:x w:1 0x27 /r"/"RAVM"
     {
         ND_INS_VPTESTNMQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1579, 
         0, 
@@ -43231,12 +43231,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2563 Instruction:"VPTESTNMW rKq{K},aKq,Hn,Wn" Encoding:"evex m:2 p:2 l:x w:1 0x26 /r"/"RAVM"
+    // Pos:2563 Instruction:"VPTESTNMW rKq{K},aKq,Hfv,Wfv" Encoding:"evex m:2 p:2 l:x w:1 0x26 /r"/"RAVM"
     {
         ND_INS_VPTESTNMW, ND_CAT_LOGICAL, ND_SET_AVX512BW, 1580, 
         0, 
@@ -43249,12 +43249,12 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_rK, ND_OPS_q, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2564 Instruction:"VPUNPCKHBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x68 /r"/"RAVM"
+    // Pos:2564 Instruction:"VPUNPCKHBW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x68 /r"/"RAVM"
     {
         ND_INS_VPUNPCKHBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1581, 
         0, 
@@ -43265,10 +43265,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -43289,7 +43289,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2566 Instruction:"VPUNPCKHDQ Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6A /r"/"RAVM"
+    // Pos:2566 Instruction:"VPUNPCKHDQ Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0x6A /r"/"RAVM"
     {
         ND_INS_VPUNPCKHDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1582, 
         0, 
@@ -43300,10 +43300,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -43324,7 +43324,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2568 Instruction:"VPUNPCKHQDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6D /r"/"RAVM"
+    // Pos:2568 Instruction:"VPUNPCKHQDQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6D /r"/"RAVM"
     {
         ND_INS_VPUNPCKHQDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1583, 
         0, 
@@ -43335,10 +43335,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -43359,7 +43359,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2570 Instruction:"VPUNPCKHWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:i 0x69 /r"/"RAVM"
+    // Pos:2570 Instruction:"VPUNPCKHWD Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:i 0x69 /r"/"RAVM"
     {
         ND_INS_VPUNPCKHWD, ND_CAT_AVX512, ND_SET_AVX512BW, 1584, 
         0, 
@@ -43370,10 +43370,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -43394,7 +43394,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2572 Instruction:"VPUNPCKLBW Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:x 0x60 /r"/"RAVM"
+    // Pos:2572 Instruction:"VPUNPCKLBW Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:x 0x60 /r"/"RAVM"
     {
         ND_INS_VPUNPCKLBW, ND_CAT_AVX512, ND_SET_AVX512BW, 1585, 
         0, 
@@ -43405,10 +43405,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -43429,7 +43429,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2574 Instruction:"VPUNPCKLDQ Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0x62 /r"/"RAVM"
+    // Pos:2574 Instruction:"VPUNPCKLDQ Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0x62 /r"/"RAVM"
     {
         ND_INS_VPUNPCKLDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1586, 
         0, 
@@ -43440,10 +43440,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -43464,7 +43464,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2576 Instruction:"VPUNPCKLQDQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6C /r"/"RAVM"
+    // Pos:2576 Instruction:"VPUNPCKLQDQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x6C /r"/"RAVM"
     {
         ND_INS_VPUNPCKLQDQ, ND_CAT_AVX512, ND_SET_AVX512F, 1587, 
         0, 
@@ -43475,10 +43475,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -43499,7 +43499,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2578 Instruction:"VPUNPCKLWD Vn{K}{z},aKq,Hn,Wn" Encoding:"evex m:1 p:1 l:x w:x 0x61 /r"/"RAVM"
+    // Pos:2578 Instruction:"VPUNPCKLWD Vfv{K}{z},aKq,Hfv,Wfv" Encoding:"evex m:1 p:1 l:x w:x 0x61 /r"/"RAVM"
     {
         ND_INS_VPUNPCKLWD, ND_CAT_AVX512, ND_SET_AVX512BW, 1588, 
         0, 
@@ -43510,10 +43510,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
@@ -43551,7 +43551,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2581 Instruction:"VPXORD Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEF /r"/"RAVM"
+    // Pos:2581 Instruction:"VPXORD Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:1 l:x w:0 0xEF /r"/"RAVM"
     {
         ND_INS_VPXORD, ND_CAT_LOGICAL, ND_SET_AVX512F, 1590, 
         0, 
@@ -43562,14 +43562,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
-    // Pos:2582 Instruction:"VPXORQ Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEF /r"/"RAVM"
+    // Pos:2582 Instruction:"VPXORQ Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0xEF /r"/"RAVM"
     {
         ND_INS_VPXORQ, ND_CAT_LOGICAL, ND_SET_AVX512F, 1591, 
         0, 
@@ -43580,14 +43580,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2583 Instruction:"VRANGEPD Vn{K}{z},aKq,Hn,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x50 /r ib"/"RAVMI"
+    // Pos:2583 Instruction:"VRANGEPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x50 /r ib"/"RAVMI"
     {
         ND_INS_VRANGEPD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1592, 
         0, 
@@ -43598,15 +43598,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2584 Instruction:"VRANGEPS Vn{K}{z},aKq,Hn,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x50 /r ib"/"RAVMI"
+    // Pos:2584 Instruction:"VRANGEPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x50 /r ib"/"RAVMI"
     {
         ND_INS_VRANGEPS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1593, 
         0, 
@@ -43617,10 +43617,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -43663,7 +43663,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2587 Instruction:"VRCP14PD Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4C /r"/"RAM"
+    // Pos:2587 Instruction:"VRCP14PD Vfv{K}{z},aKq,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4C /r"/"RAM"
     {
         ND_INS_VRCP14PD, ND_CAT_AVX512, ND_SET_AVX512F, 1596, 
         0, 
@@ -43674,13 +43674,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2588 Instruction:"VRCP14PS Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4C /r"/"RAM"
+    // Pos:2588 Instruction:"VRCP14PS Vfv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4C /r"/"RAM"
     {
         ND_INS_VRCP14PS, ND_CAT_AVX512, ND_SET_AVX512F, 1597, 
         0, 
@@ -43691,9 +43691,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -43803,7 +43803,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2595 Instruction:"VRCPPH Vn{K}{z},aKq,Wn|B16" Encoding:"evex m:6 p:1 l:x w:0 0x4C /r"/"RAM"
+    // Pos:2595 Instruction:"VRCPPH Vfv{K}{z},aKq,Wfv|B16" Encoding:"evex m:6 p:1 l:x w:0 0x4C /r"/"RAM"
     {
         ND_INS_VRCPPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1604, 
         0, 
@@ -43814,9 +43814,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B16, 0), 
         },
     }, 
 
@@ -43871,7 +43871,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2599 Instruction:"VREDUCEPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x56 /r ib"/"RAMI"
+    // Pos:2599 Instruction:"VREDUCEPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x56 /r ib"/"RAMI"
     {
         ND_INS_VREDUCEPD, ND_CAT_AVX512, ND_SET_AVX512DQ, 1608, 
         0, 
@@ -43882,14 +43882,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2600 Instruction:"VREDUCEPH Vn{K}{z},aKq,Wn|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0x56 /r ib"/"RAMI"
+    // Pos:2600 Instruction:"VREDUCEPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0x56 /r ib"/"RAMI"
     {
         ND_INS_VREDUCEPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1609, 
         0, 
@@ -43900,14 +43900,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2601 Instruction:"VREDUCEPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x56 /r ib"/"RAMI"
+    // Pos:2601 Instruction:"VREDUCEPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x56 /r ib"/"RAMI"
     {
         ND_INS_VREDUCEPS, ND_CAT_AVX512, ND_SET_AVX512DQ, 1610, 
         0, 
@@ -43918,9 +43918,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -43982,7 +43982,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2605 Instruction:"VRNDSCALEPD Vn{K}{z},aKq,Wn|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x09 /r ib"/"RAMI"
+    // Pos:2605 Instruction:"VRNDSCALEPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib" Encoding:"evex m:3 p:1 l:x w:1 0x09 /r ib"/"RAMI"
     {
         ND_INS_VRNDSCALEPD, ND_CAT_AVX512, ND_SET_AVX512F, 1614, 
         0, 
@@ -43993,14 +43993,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2606 Instruction:"VRNDSCALEPH Vn{K}{z},aKq,Wn|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0x08 /r ib"/"RAMI"
+    // Pos:2606 Instruction:"VRNDSCALEPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib" Encoding:"evex m:3 p:0 l:x w:0 0x08 /r ib"/"RAMI"
     {
         ND_INS_VRNDSCALEPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1615, 
         0, 
@@ -44011,14 +44011,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2607 Instruction:"VRNDSCALEPS Vn{K}{z},aKq,Wn|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x08 /r ib"/"RAMI"
+    // Pos:2607 Instruction:"VRNDSCALEPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib" Encoding:"evex m:3 p:1 l:x w:0 0x08 /r ib"/"RAMI"
     {
         ND_INS_VRNDSCALEPS, ND_CAT_AVX512, ND_SET_AVX512F, 1616, 
         0, 
@@ -44029,9 +44029,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -44163,7 +44163,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2615 Instruction:"VRSQRT14PD Vn{K}{z},aKq,Wn|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4E /r"/"RAM"
+    // Pos:2615 Instruction:"VRSQRT14PD Vfv{K}{z},aKq,Wfv|B64" Encoding:"evex m:2 p:1 l:x w:1 0x4E /r"/"RAM"
     {
         ND_INS_VRSQRT14PD, ND_CAT_AVX512, ND_SET_AVX512F, 1624, 
         0, 
@@ -44174,13 +44174,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2616 Instruction:"VRSQRT14PS Vn{K}{z},aKq,Wn|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4E /r"/"RAM"
+    // Pos:2616 Instruction:"VRSQRT14PS Vfv{K}{z},aKq,Wfv|B32" Encoding:"evex m:2 p:1 l:x w:0 0x4E /r"/"RAM"
     {
         ND_INS_VRSQRT14PS, ND_CAT_AVX512, ND_SET_AVX512F, 1625, 
         0, 
@@ -44191,9 +44191,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -44303,7 +44303,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2623 Instruction:"VRSQRTPH Vn{K}{z},aKq,Wn|B16" Encoding:"evex m:6 p:1 l:x w:0 0x4E /r"/"RAM"
+    // Pos:2623 Instruction:"VRSQRTPH Vfv{K}{z},aKq,Wfv|B16" Encoding:"evex m:6 p:1 l:x w:0 0x4E /r"/"RAM"
     {
         ND_INS_VRSQRTPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1632, 
         0, 
@@ -44314,9 +44314,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B16, 0), 
         },
     }, 
 
@@ -44371,7 +44371,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2627 Instruction:"VSCALEFPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x2C /r"/"RAVM"
+    // Pos:2627 Instruction:"VSCALEFPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:2 p:1 l:x w:1 0x2C /r"/"RAVM"
     {
         ND_INS_VSCALEFPD, ND_CAT_AVX512, ND_SET_AVX512F, 1636, 
         0, 
@@ -44382,14 +44382,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
-    // Pos:2628 Instruction:"VSCALEFPH Vn{K}{z},aKq,Hn,Wn|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x2C /r"/"RAVM"
+    // Pos:2628 Instruction:"VSCALEFPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}" Encoding:"evex m:6 p:1 l:x w:0 0x2C /r"/"RAVM"
     {
         ND_INS_VSCALEFPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1637, 
         0, 
@@ -44400,14 +44400,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:2629 Instruction:"VSCALEFPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x2C /r"/"RAVM"
+    // Pos:2629 Instruction:"VSCALEFPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:2 p:1 l:x w:0 0x2C /r"/"RAVM"
     {
         ND_INS_VSCALEFPS, ND_CAT_AVX512, ND_SET_AVX512F, 1638, 
         0, 
@@ -44418,10 +44418,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -44479,7 +44479,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2633 Instruction:"VSCATTERDPD Mvm32h{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA2 /r:mem vsib"/"MAR"
+    // Pos:2633 Instruction:"VSCATTERDPD Mvm32h{K},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0xA2 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERDPD, ND_CAT_SCATTER, ND_SET_AVX512F, 1642, 
         0, 
@@ -44492,11 +44492,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm32h, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2634 Instruction:"VSCATTERDPS Mvm32n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:0 0xA2 /r:mem vsib"/"MAR"
+    // Pos:2634 Instruction:"VSCATTERDPS Mvm32n{K},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:0 0xA2 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERDPS, ND_CAT_SCATTER, ND_SET_AVX512F, 1643, 
         0, 
@@ -44509,7 +44509,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm32n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
@@ -44641,7 +44641,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2643 Instruction:"VSCATTERQPD Mvm64n{K},aKq,Vn" Encoding:"evex m:2 p:1 l:x w:1 0xA3 /r:mem vsib"/"MAR"
+    // Pos:2643 Instruction:"VSCATTERQPD Mvm64n{K},aKq,Vfv" Encoding:"evex m:2 p:1 l:x w:1 0xA3 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERQPD, ND_CAT_SCATTER, ND_SET_AVX512F, 1652, 
         0, 
@@ -44654,11 +44654,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2644 Instruction:"VSCATTERQPS Mvm64n{K},aKq,Vh" Encoding:"evex m:2 p:1 l:x w:0 0xA3 /r:mem vsib"/"MAR"
+    // Pos:2644 Instruction:"VSCATTERQPS Mvm64n{K},aKq,Vhv" Encoding:"evex m:2 p:1 l:x w:0 0xA3 /r:mem vsib"/"MAR"
     {
         ND_INS_VSCATTERQPS, ND_CAT_SCATTER, ND_SET_AVX512F, 1653, 
         0, 
@@ -44671,11 +44671,11 @@ const ND_INSTRUCTION gInstructions[2763] =
         {
             OP(ND_OPT_M, ND_OPS_vm64n, 0, ND_OPA_W, ND_OPD_MASK, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_V, ND_OPS_h, 0, ND_OPA_RW, 0, 0), 
+            OP(ND_OPT_V, ND_OPS_hv, 0, ND_OPA_RW, 0, 0), 
         },
     }, 
 
-    // Pos:2645 Instruction:"VSHUFF32X4 Vu{K}{z},aKq,Hu,Wu|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x23 /r ib"/"RAVMI"
+    // Pos:2645 Instruction:"VSHUFF32X4 Vuv{K}{z},aKq,Huv,Wuv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x23 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFF32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1654, 
         0, 
@@ -44686,15 +44686,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2646 Instruction:"VSHUFF64X2 Vu{K}{z},aKq,Hu,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x23 /r ib"/"RAVMI"
+    // Pos:2646 Instruction:"VSHUFF64X2 Vuv{K}{z},aKq,Huv,Wuv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x23 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFF64X2, ND_CAT_AVX512, ND_SET_AVX512F, 1655, 
         0, 
@@ -44705,15 +44705,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2647 Instruction:"VSHUFI32X4 Vu{K}{z},aKq,Hu,Wu|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x43 /r ib"/"RAVMI"
+    // Pos:2647 Instruction:"VSHUFI32X4 Vuv{K}{z},aKq,Huv,Wuv|B32,Ib" Encoding:"evex m:3 p:1 l:x w:0 0x43 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFI32X4, ND_CAT_AVX512, ND_SET_AVX512F, 1656, 
         0, 
@@ -44724,15 +44724,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2648 Instruction:"VSHUFI64X2 Vu{K}{z},aKq,Hu,Wu|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x43 /r ib"/"RAVMI"
+    // Pos:2648 Instruction:"VSHUFI64X2 Vuv{K}{z},aKq,Huv,Wuv|B64,Ib" Encoding:"evex m:3 p:1 l:x w:1 0x43 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFI64X2, ND_CAT_AVX512, ND_SET_AVX512F, 1657, 
         0, 
@@ -44743,15 +44743,15 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_u, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_uv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_u, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_u, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_uv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_uv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
 
-    // Pos:2649 Instruction:"VSHUFPD Vn{K}{z},aKq,Hn,Wn|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC6 /r ib"/"RAVMI"
+    // Pos:2649 Instruction:"VSHUFPD Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib" Encoding:"evex m:1 p:1 l:x w:1 0xC6 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFPD, ND_CAT_AVX512, ND_SET_AVX512F, 1658, 
         0, 
@@ -44762,10 +44762,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -44788,7 +44788,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2651 Instruction:"VSHUFPS Vn{K}{z},aKq,Hn,Wn|B32,Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC6 /r ib"/"RAVMI"
+    // Pos:2651 Instruction:"VSHUFPS Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib" Encoding:"evex m:1 p:0 l:x w:0 0xC6 /r ib"/"RAVMI"
     {
         ND_INS_VSHUFPS, ND_CAT_AVX512, ND_SET_AVX512F, 1659, 
         0, 
@@ -44799,10 +44799,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
             OP(ND_OPT_I, ND_OPS_b, 0, ND_OPA_R, 0, 0), 
         },
     }, 
@@ -44825,7 +44825,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2653 Instruction:"VSQRTPD Vn{K}{z},aKq,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x51 /r"/"RAM"
+    // Pos:2653 Instruction:"VSQRTPD Vfv{K}{z},aKq,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x51 /r"/"RAM"
     {
         ND_INS_VSQRTPD, ND_CAT_AVX512, ND_SET_AVX512F, 1660, 
         0, 
@@ -44836,9 +44836,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -44858,7 +44858,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2655 Instruction:"VSQRTPH Vn{K}{z},aKq,Wn|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x51 /r"/"RAM"
+    // Pos:2655 Instruction:"VSQRTPH Vfv{K}{z},aKq,Wfv|B16{er}" Encoding:"evex m:5 p:0 l:x w:0 0x51 /r"/"RAM"
     {
         ND_INS_VSQRTPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1661, 
         0, 
@@ -44869,13 +44869,13 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:2656 Instruction:"VSQRTPS Vn{K}{z},aKq,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x51 /r"/"RAM"
+    // Pos:2656 Instruction:"VSQRTPS Vfv{K}{z},aKq,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x51 /r"/"RAM"
     {
         ND_INS_VSQRTPS, ND_CAT_AVX512, ND_SET_AVX512F, 1662, 
         0, 
@@ -44886,9 +44886,9 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -45012,7 +45012,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2664 Instruction:"VSUBPD Vn{K}{z},aKq,Hn,Wn|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5C /r"/"RAVM"
+    // Pos:2664 Instruction:"VSUBPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}" Encoding:"evex m:1 p:1 l:x w:1 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBPD, ND_CAT_AVX512, ND_SET_AVX512F, 1667, 
         0, 
@@ -45023,10 +45023,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B64, 0), 
         },
     }, 
 
@@ -45047,7 +45047,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2666 Instruction:"VSUBPH Vn{K}{z},aKq,Hn,Wn|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5C /r"/"RAVM"
+    // Pos:2666 Instruction:"VSUBPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}" Encoding:"evex m:5 p:0 l:x w:0 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBPH, ND_CAT_AVX512FP16, ND_SET_AVX512FP16, 1668, 
         0, 
@@ -45058,14 +45058,14 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_SAE|ND_OPD_B16, 0), 
         },
     }, 
 
-    // Pos:2667 Instruction:"VSUBPS Vn{K}{z},aKq,Hn,Wn|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5C /r"/"RAVM"
+    // Pos:2667 Instruction:"VSUBPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}" Encoding:"evex m:1 p:0 l:x w:0 0x5C /r"/"RAVM"
     {
         ND_INS_VSUBPS, ND_CAT_AVX512, ND_SET_AVX512F, 1669, 
         0, 
@@ -45076,10 +45076,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_ER|ND_OPD_B32, 0), 
         },
     }, 
 
@@ -45307,7 +45307,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2681 Instruction:"VUNPCKHPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x15 /r"/"RAVM"
+    // Pos:2681 Instruction:"VUNPCKHPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x15 /r"/"RAVM"
     {
         ND_INS_VUNPCKHPD, ND_CAT_AVX512, ND_SET_AVX512F, 1678, 
         0, 
@@ -45318,10 +45318,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -45342,7 +45342,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2683 Instruction:"VUNPCKHPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x15 /r"/"RAVM"
+    // Pos:2683 Instruction:"VUNPCKHPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:0 l:x w:0 0x15 /r"/"RAVM"
     {
         ND_INS_VUNPCKHPS, ND_CAT_AVX512, ND_SET_AVX512F, 1679, 
         0, 
@@ -45353,10 +45353,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -45377,7 +45377,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2685 Instruction:"VUNPCKLPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x14 /r"/"RAVM"
+    // Pos:2685 Instruction:"VUNPCKLPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x14 /r"/"RAVM"
     {
         ND_INS_VUNPCKLPD, ND_CAT_AVX512, ND_SET_AVX512F, 1680, 
         0, 
@@ -45388,10 +45388,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -45412,7 +45412,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2687 Instruction:"VUNPCKLPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x14 /r"/"RAVM"
+    // Pos:2687 Instruction:"VUNPCKLPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:0 l:x w:0 0x14 /r"/"RAVM"
     {
         ND_INS_VUNPCKLPS, ND_CAT_AVX512, ND_SET_AVX512F, 1681, 
         0, 
@@ -45423,10 +45423,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 
@@ -45447,7 +45447,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2689 Instruction:"VXORPD Vn{K}{z},aKq,Hn,Wn|B64" Encoding:"evex m:1 p:1 l:x w:1 0x57 /r"/"RAVM"
+    // Pos:2689 Instruction:"VXORPD Vfv{K}{z},aKq,Hfv,Wfv|B64" Encoding:"evex m:1 p:1 l:x w:1 0x57 /r"/"RAVM"
     {
         ND_INS_VXORPD, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1682, 
         0, 
@@ -45458,10 +45458,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B64, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B64, 0), 
         },
     }, 
 
@@ -45482,7 +45482,7 @@ const ND_INSTRUCTION gInstructions[2763] =
         },
     }, 
 
-    // Pos:2691 Instruction:"VXORPS Vn{K}{z},aKq,Hn,Wn|B32" Encoding:"evex m:1 p:0 l:x w:0 0x57 /r"/"RAVM"
+    // Pos:2691 Instruction:"VXORPS Vfv{K}{z},aKq,Hfv,Wfv|B32" Encoding:"evex m:1 p:0 l:x w:0 0x57 /r"/"RAVM"
     {
         ND_INS_VXORPS, ND_CAT_LOGICAL_FP, ND_SET_AVX512DQ, 1683, 
         0, 
@@ -45493,10 +45493,10 @@ const ND_INSTRUCTION gInstructions[2763] =
         0,
         0,
         {
-            OP(ND_OPT_V, ND_OPS_n, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
+            OP(ND_OPT_V, ND_OPS_fv, 0, ND_OPA_W, ND_OPD_MASK|ND_OPD_Z, 0), 
             OP(ND_OPT_aK, ND_OPS_q, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_H, ND_OPS_n, 0, ND_OPA_R, 0, 0), 
-            OP(ND_OPT_W, ND_OPS_n, 0, ND_OPA_R, ND_OPD_B32, 0), 
+            OP(ND_OPT_H, ND_OPS_fv, 0, ND_OPA_R, 0, 0), 
+            OP(ND_OPT_W, ND_OPS_fv, 0, ND_OPA_R, ND_OPD_B32, 0), 
         },
     }, 
 

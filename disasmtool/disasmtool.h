@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Bitdefender
+ * Copyright (c) 2020 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
 #ifndef DISASMTOOL_H

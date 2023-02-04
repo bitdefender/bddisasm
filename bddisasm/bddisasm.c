@@ -1218,37 +1218,37 @@ NdParseOperand(
         break;
 
     case ND_OPS_b:
-        // Byte, regardless of operand-size attribute.
+        // 8 bits.
         size = ND_SIZE_8BIT;
         break;
 
     case ND_OPS_w:
-        // Word, regardless of operand-size attribute.
+        // 16 bits.
         size = ND_SIZE_16BIT;
         break;
 
     case ND_OPS_d:
-        // Dword, regardless of operand-size attribute.
+        // 32 bits.
         size = ND_SIZE_32BIT;
         break;
 
     case ND_OPS_q:
-        // Qword, regardless of operand-size attribute.
+        // 64 bits.
         size = ND_SIZE_64BIT;
         break;
 
     case ND_OPS_dq:
-        // Double-Qword, regardless of operand-size attribute.
+        // 128 bits. 
         size = ND_SIZE_128BIT;
         break;
 
     case ND_OPS_qq:
-        // Quad-Quadword (256-bits), regardless of operand-size attribute.
+        // 256 bits.
         size = ND_SIZE_256BIT;
         break;
 
     case ND_OPS_oq:
-        // Octo-Quadword (512-bits), regardless of operand-size attribute.
+        // 512 bits.
         size = ND_SIZE_512BIT;
         break;
 
@@ -1263,17 +1263,17 @@ NdParseOperand(
         break;
 
     case ND_OPS_fd:
-        // 32 bit real number.
+        // 32 bits real number.
         size = ND_SIZE_32BIT;
         break;
 
     case ND_OPS_fq:
-        // 64 bit real number.
+        // 64 bits real number.
         size = ND_SIZE_64BIT;
         break;
 
     case ND_OPS_ft:
-        // 80 bit real number.
+        // 80 bits real number.
         size = ND_SIZE_80BIT;
         break;
 
@@ -1298,7 +1298,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_v:
-        // Word, doubleword or quadword (in 64-bit mode), depending on operand-size attribute.
+        // 16, 32 or 64 bits.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
 
@@ -1307,7 +1307,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_y:
-        // Doubleword or quadword (in 64-bit mode), depending on operand-size attribute.
+        // 64 bits (64-bit opsize), 32 bits othwerwise.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
 
@@ -1316,7 +1316,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_yf:
-        // Always ND_UINT64 in 64 bit mode and ND_UINT32 in 16/32 bit mode.
+        // 64 bits (64-bit mode), 32 bits (16, 32-bit opsize).
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
 
@@ -1325,7 +1325,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_z:
-        // Word for 16-bit operand-size or double word for 32 or 64-bit operand-size.
+        // 16 bits (16-bit opsize) or 32 bits (32 or 64-bit opsize).
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_32BIT };
 
@@ -1334,8 +1334,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_a:
-        // Two one-word operands in memory or two double-word operands in memory,
-        // depending on operand-size attribute (used only by the BOUND instruction).
+        // 2 x 16 bits (16-bit opsize) or 2 x 32 bits (32-bit opsize).
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT * 2, ND_SIZE_32BIT * 2, 0 };
 
@@ -1349,7 +1348,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_c:
-        // Byte or word, depending on operand-size attribute.
+        // 8 bits (16-bit opsize) or 16 bits (32-bit opsize).
         switch (Instrux->DefCode)
         {
         case ND_CODE_16:
@@ -1367,7 +1366,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_p:
-        // 32-bit, 48-bit, or 80-bit pointer, depending on operand-size attribute.
+        // 32, 48 or 80 bits pointer.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_48BIT, ND_SIZE_80BIT };
 
@@ -1376,7 +1375,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_s:
-        // 6-byte or 10-byte pseudo-descriptor.
+        // 48 or 80 bits descriptor.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_48BIT, ND_SIZE_48BIT, ND_SIZE_80BIT };
 
@@ -1385,7 +1384,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_l:
-        // 64 bit in 16 or 32 bit mode, 128 bit in long mode. Used by BNDMOV instruction.
+        // 64 (16 or 32-bit opsize) or 128 bits (64-bit opsize).
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_64BIT, ND_SIZE_64BIT, ND_SIZE_128BIT };
 
@@ -1394,7 +1393,7 @@ NdParseOperand(
         break;
 
     case ND_OPS_x:
-        // dq, qq or oq based on the operand-size attribute.
+        // lower vector = 128 (128-bit vlen) or 256 bits (256-bit vlen).
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
 
@@ -1402,8 +1401,8 @@ NdParseOperand(
         }
         break;
 
-    case ND_OPS_n:
-        // 128, 256 or 512 bit, depending on vector length.
+    case ND_OPS_fv:
+        // full vector = 128, 256 or 512 bits.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
 
@@ -1411,8 +1410,8 @@ NdParseOperand(
         }
         break;
 
-    case ND_OPS_u:
-        // 256 or 512 bit, depending on vector length.
+    case ND_OPS_uv:
+        // upper vector = 256 bits (256-bit vlen) or 512 bits (512-bit vlen)
         {
             static const ND_UINT8 szLut[3] = { 0, ND_SIZE_256BIT, ND_SIZE_512BIT };
 
@@ -1425,8 +1424,8 @@ NdParseOperand(
         }
         break;
 
-    case ND_OPS_e:
-        // eighth = word or dword or qword
+    case ND_OPS_ev:
+        // eighth vector = 16, 32 or 64 bits.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
 
@@ -1434,8 +1433,8 @@ NdParseOperand(
         }
         break;
 
-    case ND_OPS_f:
-        // fourth = dword or qword or oword
+    case ND_OPS_qv:
+        // quarter vector = 32, 64 or 128 bits.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_64BIT, ND_SIZE_128BIT };
 
@@ -1443,8 +1442,8 @@ NdParseOperand(
         }
         break;
 
-    case ND_OPS_h:
-        // half = qword or oword or yword
+    case ND_OPS_hv:
+        // half vector = 64, 128 or 256 bits.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_64BIT, ND_SIZE_128BIT, ND_SIZE_256BIT };
 
@@ -1455,7 +1454,7 @@ NdParseOperand(
     case ND_OPS_pd:
     case ND_OPS_ps:
     case ND_OPS_ph:
-        // packed double or packed single or packed FP16 values.
+        // 128 or 256 bits.
         {
             static const ND_UINT8 szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
 
@@ -1464,22 +1463,22 @@ NdParseOperand(
         break;
 
     case ND_OPS_sd:
-        // Scalar double.
+        // 128 bits scalar element (double precision).
         size = ND_SIZE_64BIT;
         break;
 
     case ND_OPS_ss:
-        // Scalar single.
+        // 128 bits scalar element (single precision).
         size = ND_SIZE_32BIT;
         break;
 
     case ND_OPS_sh:
-        // Scalar FP16.
+        // FP16 Scalar element.
         size = ND_SIZE_16BIT;
         break;
 
     case ND_OPS_mib:
-        // MIB addressing, used by MPX instructions.
+        // MIB addressing, the base & the index are used to form a pointer.
         size = 0;
         break;
 

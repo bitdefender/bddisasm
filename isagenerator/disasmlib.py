@@ -52,104 +52,103 @@ valid_attributes = {
 # Explicit operands types.
 #
 valid_optype = [
-    'A',            # Direct address: the instruction has no ModR/M byte; the address of the 
-                    # operand is encoded in the instruction. No base register, index register, 
-                    # or scaling factor can be applied (for example, far JMP (EA)).
-    'B',            # The VEX.vvvv field of the VEX prefix selects a general purpose register.
-    'C',            # The reg field of the ModR/M byte selects a control register (for example,
-                    # MOV (0F20, 0F22)).
-    'D',            # The reg field of the ModR/M byte selects a debug register (for example,
-                    # MOV (0F21,0F23)).
-    'E',            # A ModR/M byte follows the opcode and specifies the operand. The operand 
-                    # is either a general-purpose register or a memory address. If it is a
-                    # memory address, the address is computed from a segment register and any
-                    # of the following values: a base register, an index register, a scaling 
-                    # factor, a displacement.
-    'F',            # EFLAGS/RFLAGS Register.
-    'G',            # The reg field of the ModR/M byte selects a general register (for example,
-                    # AX (000)).
-    'H',            # The VEX.vvvv field of the VEX prefix selects a 128-bit XMM register or a 
-                    # 256-bit YMM register, determined by operand type. For legacy SSE 
-                    # encodings this operand does not exist, changing the instruction to
-                    # destructive form. Addition: 512 bit ZMM register may also be selected in 
-                    # EVEX encodings.
-    'I',            # Immediate data: the operand value is encoded in subsequent bytes of the 
-                    # instruction.
-    'J',            # The instruction contains a relative offset to be added to the instruction 
-                    # pointer register (for example, JMP (0E9), LOOP).
+    'A',            # Direct addressing. Used by far branches.
+    'B',            # The vvvv field inside VEX/EVEX encodes a general purpose registr.
+    'C',            # The reg  field inside Mod R/M encodes a control register.
+    'D',            # The reg  field inside Mod R/M encodes a debug register.
+    'E',            # The rm   field inside Mod R/M encodes a general purpose register or memory.
+    'F',            # Implicit flags register.
+    'G',            # The reg  field inside Mod R/M encodes a general purpose register.
+    'H',            # The vvvv field inside VEX/EVEX encodes a SIMD register.
+    'I',            # Immediate encoded in instruction bytes.
+    'J',            # Relative offset encoded in instruction bytes.
     'K',            # The operand is the stack.
-    'L',            # The upper 4 bits of the 8-bit immediate selects a 128-bit XMM register 
-                    # or a 256-bit YMM register, determined by operand type. (the MSB is 
-                    # ignored in 32-bit mode). Addition: a 512 bit ZMM register may also be 
-                    # selected using EVEX encoding.
-    'M',            # The ModR/M byte may refer only to memory (for example, BOUND, LES, LDS, 
-                    # LSS, LFS, LGS, CMPXCHG8B).
-    'N',            # The R/M field of the ModR/M byte selects a packed-quadword, MMX 
-                    # technology register. 
-    'O',            # The instruction has no ModR/M byte. The offset of the operand is coded 
-                    # as a word or double word (depending on address size attribute) in the 
-                    # instruction. No base register, index register, or scaling factor can be 
-                    # applied (for example, MOV (A0-A3)).
-    'P',            # The reg field of the ModR/M byte selects a packed quadword MMX technology
-                    # register.
-    'Q',            # A ModR/M byte follows the opcode and specifies the operand. The operand 
-                    # is either an MMX technology register or a memory address. If it is a 
-                    # memory address, the address is computed from a segment register and any 
-                    # of the following values: a base register, an index register, a scaling 
-                    # factor, and a displacement.
-    'R',            # The R/M field of the ModR/M byte may refer only to a general register 
-                    # (for example, MOV (0F20-0F23)).
-    'S',            # The reg field of the ModR/M byte selects a segment register (for example, MOV (8C,8E)).
-    'T',            # The reg field of the ModR/M byte selects a test register (for example, MOV (0F24, 0F26)).
-    'U',            # The R/M field of the ModR/M byte selects a 128-bit XMM register or a 256-bit YMM register, 
-                    # determined by operand type. Addition: a 512-bit ZMM register may also be selected using EVEX 
-                    # encodings.
-    'V',            # The reg field of the ModR/M byte selects a 128-bit XMM register or a 256-bit YMM register, 
-                    # determined by operand type. Addition: a 512-bit ZMM register may also be selected using 
-                    # EVEX encodings.
-    'W',            # A ModR/M byte follows the opcode and specifies the operand. The operand is either a 128-bit 
-                    # XMM register, a 256-bit YMM register (determined by operand type), or a memory address. If it is 
-                    # a memory address, the address is computed from a segment register and any of the following values:
-                    # a base register, an index register, a scaling factor, and a displacement. Addition:a 512-bit ZMM 
-                    # register may also be selected # using EVEX encodings.
-    'X',            # Memory addressed by the DS:rSI register pair (for example, MOVS, CMPS, OUTS, or LODS).
-    'Y',            # Memory addressed by the ES:rDI register pair (for example, MOVS, CMPS, INS, STOS, or SCAS).
-    'Z',            # The low 3 bits inside the opcode select a general purpose register. R field inside REX may
-                    # extend it.
-    'rB',           # The reg field selects a BND register.
-    'mB',           # The rm field selects A BND register or a memory location.
-    'rK',           # The reg field selects a mask register.
-    'vK',           # The vvvv field of the VEX prefix selects a mask register.
-    'mK',           # The rm field selects e mask register.
-    'aK',           # The aaa field inside evex selects a mask register which is used for masking of a destination 
-                    # operand.
-    'rM',           # The reg field inside modrm encodes the base address of a memory operand. Default segment is ES.
-    'mM',           # The rm  field inside modrm encodes the base address of a memory operand, iregardless of the mod 
-                    # fields. Default segment is DS.
-    'rT',           # The reg field inside modrm encodes a TMM register (AMX extension).
-    'mT',           # The rm field inside modrm encodes a TMM register (AMX extension).
-    'vT',           # The v field inside vex encodes a TMM register (AMX extension).
-    'm2zI',         # Bits [1,0] of the immediate byte which selects the fourth register.
+    'L',            # The upper 4-bit of an immediate encode a SIMD register.
+    'M',            # The rm   field inside Mod R/M encodes memory.
+    'N',            # The rm   field inside Mod R/M encodes a MMX register.
+    'O',            # Moffset addressing.
+    'P',            # The reg  field inside Mod R/M encodes a MMX register.
+    'Q',            # The rm   field inside Mod R/M encodes a MMX register or memory.
+    'R',            # The rm   field inside Mod R/M encodes a general purpose register.
+    'S',            # The reg  field inside Mod R/M emcodes a segment register.
+    'T',            # The reg  field inside Mod R/M encodes a test register.
+    'U',            # The rm   field inside Mod R/M encodes a SIMD register.
+    'V',            # The reg  field inside Mod R/M encodes a SIMD register.
+    'W',            # The rm   field inside Mod R/M enocdes a SIMD register or memory.
+    'X',            # DS:rSI addressing.
+    'Y',            # ES:rDI addressing.
+    'Z',            # The low 3 bits inside the opcode encode a general purpose register. 
+    'rB',           # The reg  field inside Mod R/M enocdes a bound register.
+    'mB',           # The rm   field inside Mod R/M enocdes a bound register or memory.
+    'rK',           # The reg  field inside Mod R/M enocdes a mask register.
+    'vK',           # The vvvv field inside VEX/EVEX encodes a mask register.
+    'mK',           # The rm   field inside Mod R/M encodes a mask register.
+    'aK',           # The aaa  field inside EVEX encodes a mask register.
+    'rM',           # The reg  field inside Mod R/M encodes the base address of a memory operand. 
+                    # Default segment is ES.
+    'mM',           # The rm   field inside Mod R/M encodes the base address of a memory operand.
+                    # Default segment is DS.
+    'rT',           # The reg  field inside Mod R/M encodes a tile register (AMX extension).
+    'mT',           # The rm   field inside Mod R/M encodes a tile register (AMX extension).
+    'vT',           # The vvvv field inside VEX/EVEX encodes a tile register (AMX extension).
+    'm2zI',         # Bits [1,0] of the immediate byte which encodes the fourth register.
 ]
 
 # Operand sizes.
+# Unless otherwise stated, where multiple sizes are given, the correct size is selected by the
+# operand size or vector length as follows: 
+# - the first size if operand size is 16-bit or vector length is 128-bit
+# - the second size if operand size is 32-bit or vector length is 256-bit
+# - the third size of the operand size is 64-bit or vector length is 512-bit. 
+# If only two sizes are given, only 16-bit and 32-bit operand sizes are considered, unles otherwise
+# indicated.
+# If only a size is given, that is available in all modes and with all operand sizes.
 valid_opsize = [
-    'a',            # Two one-word operands in memory or two double-word operands in memory, 
-                    # depending on operand-size attribute (used only by the BOUND instruction).
-    'b',            # Byte, regardless of operand-size attribute.
-    'c',            # Byte or word, depending on operand-size attribute.
-    'd',            # Doubleword, regardless of operand-size attribute.
-    
-    'dq',           # Double-quadword, regardless of operand-size attribute (XMM register or 
-                    # 128 bit memory location). A smaller quantity from the 128 bit register may be accessed.
+    'a',            # 2 x 16 bits (16-bit opsize) or 2 x 32 bits (32-bit opsize).
 
-    'e',            # eighth = word or dword or qword.
-    'f',            # fourth = dword or qword or oword.
-    'h',            # half = qword or oword or yword.
-    'n',            # normal = 128, 256 or 512 bits, depending on vector length.
-    'u',            # 256 or 512 bit, depending on vector length.
+    # Fixed integer sizes.
+    'b',            # 8 bits.
+    'w',            # 16 bits.
+    'd',            # 32 bits.
+    'q',            # 64 bits.
 
-    # VSIB addressing
+    # Variable integer sizes.
+    'z',            # 16 bits (16-bit opsize) or 32 bits (32 or 64-bit opsize).
+    'v',            # 16, 32 or 64 bits.
+    'y',            # 64 bits (64-bit opsize), 32 bits othwerwise.
+    'yf',           # 64 bits (64-bit mode), 32 bits (16, 32-bit opsize).
+    's',            # 48 or 80 bits descriptor.
+    'p',            # 32, 48 or 80 bits pointer.
+    'l',            # 64 (16 or 32-bit opsize) or 128 bits (64-bit opsize).
+
+    # FPU sizes.
+    'fa',           # 80 bits packed BCD.
+    'fw',           # 16 bits real number.
+    'fd',           # 32 bits real number.
+    'fq',           # 64 bits real number.
+    'ft',           # 80 bits real number.
+    'fe',           # 14 bytes or 28 bytes FPU environment.
+    'fs',           # 94 bytes or 108 bytes FPU state.
+
+    # SIMD sizes.
+    'dq',           # 128 bits.
+    'qq',           # 256 bits.
+    'oq',           # 512 bits.
+    'ev',           # 1/8 of vlen: 16, 32 or 64 bits.
+    'qv',           # 1/4 of vlen: 32, 64 or 128 bits.
+    'hv',           # 1/2 of vlen: 64, 128 or 256 bits.
+    'x',            # 128 bits (128-bit vlen) or 256 bits (256-bit vlen).
+    'uv',           # 256 bits (256-bit vlen) or 512 bits (512-bit vlen).
+    'fv',           # 128, 256 or 512 bits.
+
+    'pd',           # 128 or 256 bits.
+    'ps',           # 128 or 256 bits.
+    'ph',           # Packed FP16 values.
+    'sd',           # 128 bits scalar element (double precision).
+    'ss',           # 128 bits scalar element (single precision).
+    'sh',           # FP16 Scalar element.
+
+    # VSIB addressing.
     'vm32x',        # VSIB addressing, using DWORD indices in XMM register, select 32/64 bit.
     'vm32y',        # VSIB addressing, using DWORD indices in YMM register, select 32/64 bit.
     'vm32z',        # VSIB addressing, using DWORD indices in ZMM register, select 32/64 bit.
@@ -161,52 +160,25 @@ valid_opsize = [
     'vm64h',        # VSIB addressing, using QWORD indices in half register, select 32/64 bit.
     'vm64n',        # VSIB addressing, using QWORD indices in normal register, select 32/64 bit.
     
-    # MIB addressing
+    # MIB addressing.
     'mib',          # MIB addressing, the base & the index are used to form a pointer.
     
-    # Stack sizes and partial access
+    # Stack sizes and partial access.
     'v2',           # Two stack words.
     'v3',           # Three stack words.
     'v4',           # Four stack words.
     'v5',           # Five stack words.
     'v8',           # Eight stack words.
 
-    # These are aliased over 'dq.*' encodings.
-    'o',            # Always 128 bits/2 QWORDs. Same as 'dq'.
-    'oq',           # 512 bit regardless the operand size/vector length.
-    'p',            # 32, 48 or 80 bits pointer, depending on operand size.
-    'pd',           # 128 bit or 256 bit double-precision fp data.
-    'ps',           # 128 bit or 256 bit single-precision fp data.
-    'ph',           # Packed FP16 values.
-    'q',            # Always 1 QWORD.
-    'qq',           # Always 4 QWORDs.
-    's',            # 6-byte or 10-byte pseudo-descriptor.
-    'sd',           # Scalar element of 128 bit double-precision fp data.
-    'ss',           # Scalar element of 128 bit single-precision fp data.
-    'sh',           # Scalar element of FP16.
-    'v',            # WORD, DWORD or QWORD, depending on operand size.
-    'w',            # Always WORD.
-    'x',            # 128 bit, 256 bit, depending on operand size.
-    'y',            # DWORD or QWORD, depending on operand size.
-    'yf',           # Always QWORD in 64 bit mode and DWORD in 16/32 bit mode.
-    'z',            # WORD for 16 bit op size, DWORD for 32 & 64 bit operand size.
+    # Misc and special sizes.
     '?',            # Unknown operand size. Depends on many factors (for example, XSAVE).
     '0',            # Used for instructions that do not actually access any memory.
     'asz',          # The size of the operand is given by the current addressing mode.
     'ssz',          # The size of the operand is given by the current stack mode.
-    'fa',           # FPU integer binary coded decimal.
-    'fw',           # FPU real word.
-    'fd',           # FPU real dword.
-    'fq',           # FPU real qword.
-    'ft',           # FPU real extended.
-    'fe',           # FPU environment.
-    'fs',           # FPU state.
-    'l',            # Either a 64 bit or a 128 bit operand size (used by BNDMOV).
     'rx',           # 512 bytes extended state.
     'cl',           # 32/64/128 bytes - the size of one cache line.
     '12',           # 4 bytes (0) + 8 bytes (old SSP), used by SAVEPREVSSP.
-    't',            # A tile register. The size varies dependning on execution environment, but can be as high as 1K.
-
+    't',            # A tile register. The size varies depending on execution environment, but can be as high as 1K.
     '384',          # 384 bits representing a Key Locker handle.
     '512',          # 512 bits representing a Key Locker handle.
     '4096',         # 4096 bits representing an MSR address/value table.
