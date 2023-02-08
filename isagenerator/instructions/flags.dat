@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Flags access templates; many instructions have the same flag usage, so define them here.
 # Syntax: NAME: FLAG=modifier|FLAG=modifier|.... See the definitions for some examples.
 # Accepted flags: CF, PF, AF, ZF, TF, IF, OF, DF, AC, IOPL, RF, NT, VIF, VIP, VM

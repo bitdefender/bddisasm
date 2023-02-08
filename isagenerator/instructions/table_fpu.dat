@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Mnemonic     Explicit      Implicit Operands           Encoding              Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0xD8 FPU instructions, mod mem
@@ -27,34 +32,34 @@ FLDCW          Mw            X87CONTROL,X87STATUS        [0xD9 /5:mem]         s
 FNSTENV        Mfe           X87STATUS                   [0xD9 /6:mem]         s:X87, t:X87_ALU, w:W|W, u:C0=u|C1=u|C2=u|C3=u
 FNSTCW         Mw            X87CONTROL,X87STATUS        [0xD9 /7:mem]         s:X87, t:X87_ALU, w:W|R|W, u:C0=u|C1=u|C2=u|C3=u
 
-FNOP           nil           nil                         [0xD9 /0xD0]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u
-FCHS           nil           X87STATUS                   [0xD9 /0xE0]          s:X87, t:X87_ALU, w:W, u:C1=0
-FABS           nil           X87STATUS                   [0xD9 /0xE1]          s:X87, t:X87_ALU, w:W, u:C1=0
-FTST           nil           X87STATUS                   [0xD9 /0xE4]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=0|C2=m|C3=m
-FXAM           nil           X87STATUS                   [0xD9 /0xE5]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
-FLD1           nil           X87STATUS                   [0xD9 /0xE8]          s:X87, t:X87_ALU, w:W, u:C1=m
-FLDL2T         nil           X87STATUS                   [0xD9 /0xE9]          s:X87, t:X87_ALU, w:W, u:C1=m
-FLDL2E         nil           X87STATUS                   [0xD9 /0xEA]          s:X87, t:X87_ALU, w:W, u:C1=m
-FLDPI          nil           X87STATUS                   [0xD9 /0xEB]          s:X87, t:X87_ALU, w:W, u:C1=m
-FLDLG2         nil           X87STATUS                   [0xD9 /0xEC]          s:X87, t:X87_ALU, w:W, u:C1=m
-FLDLN2         nil           X87STATUS                   [0xD9 /0xED]          s:X87, t:X87_ALU, w:W, u:C1=m
-FLDZ           nil           X87STATUS                   [0xD9 /0xEE]          s:X87, t:X87_ALU, w:W, u:C1=m
-F2XM1          nil           X87STATUS                   [0xD9 /0xF0]          s:X87, t:X87_ALU, w:W, u:C1=m
-FYL2X          nil           X87STATUS                   [0xD9 /0xF1]          s:X87, t:X87_ALU, w:W, u:C1=m
-FPTAN          nil           X87STATUS                   [0xD9 /0xF2]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
-FPATAN         nil           X87STATUS                   [0xD9 /0xF3]          s:X87, t:X87_ALU, w:W, u:C1=m
-FXTRACT        nil           X87STATUS                   [0xD9 /0xF4]          s:X87, t:X87_ALU, w:W, u:C1=m
-FPREM1         nil           X87STATUS                   [0xD9 /0xF5]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
-FDECSTP        nil           X87STATUS                   [0xD9 /0xF6]          s:X87, t:X87_ALU, w:W, u:C1=0
-FINCSTP        nil           X87STATUS                   [0xD9 /0xF7]          s:X87, t:X87_ALU, w:W, u:C1=0
-FPREM          nil           X87STATUS                   [0xD9 /0xF8]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
-FYL2XP1        nil           X87STATUS                   [0xD9 /0xF9]          s:X87, t:X87_ALU, w:W, u:C1=m
-FSQRT          nil           X87STATUS                   [0xD9 /0xFA]          s:X87, t:X87_ALU, w:W, u:C1=m
-FSINCOS        nil           X87STATUS                   [0xD9 /0xFB]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
-FRNDINT        nil           X87STATUS                   [0xD9 /0xFC]          s:X87, t:X87_ALU, w:W, u:C1=m
-FSCALE         nil           X87STATUS                   [0xD9 /0xFD]          s:X87, t:X87_ALU, w:W, u:C1=m
-FSIN           nil           X87STATUS                   [0xD9 /0xFE]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
-FCOS           nil           X87STATUS                   [0xD9 /0xFF]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
+FNOP           n/a           n/a                         [0xD9 /0xD0]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u
+FCHS           n/a           X87STATUS                   [0xD9 /0xE0]          s:X87, t:X87_ALU, w:W, u:C1=0
+FABS           n/a           X87STATUS                   [0xD9 /0xE1]          s:X87, t:X87_ALU, w:W, u:C1=0
+FTST           n/a           X87STATUS                   [0xD9 /0xE4]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=0|C2=m|C3=m
+FXAM           n/a           X87STATUS                   [0xD9 /0xE5]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
+FLD1           n/a           X87STATUS                   [0xD9 /0xE8]          s:X87, t:X87_ALU, w:W, u:C1=m
+FLDL2T         n/a           X87STATUS                   [0xD9 /0xE9]          s:X87, t:X87_ALU, w:W, u:C1=m
+FLDL2E         n/a           X87STATUS                   [0xD9 /0xEA]          s:X87, t:X87_ALU, w:W, u:C1=m
+FLDPI          n/a           X87STATUS                   [0xD9 /0xEB]          s:X87, t:X87_ALU, w:W, u:C1=m
+FLDLG2         n/a           X87STATUS                   [0xD9 /0xEC]          s:X87, t:X87_ALU, w:W, u:C1=m
+FLDLN2         n/a           X87STATUS                   [0xD9 /0xED]          s:X87, t:X87_ALU, w:W, u:C1=m
+FLDZ           n/a           X87STATUS                   [0xD9 /0xEE]          s:X87, t:X87_ALU, w:W, u:C1=m
+F2XM1          n/a           X87STATUS                   [0xD9 /0xF0]          s:X87, t:X87_ALU, w:W, u:C1=m
+FYL2X          n/a           X87STATUS                   [0xD9 /0xF1]          s:X87, t:X87_ALU, w:W, u:C1=m
+FPTAN          n/a           X87STATUS                   [0xD9 /0xF2]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
+FPATAN         n/a           X87STATUS                   [0xD9 /0xF3]          s:X87, t:X87_ALU, w:W, u:C1=m
+FXTRACT        n/a           X87STATUS                   [0xD9 /0xF4]          s:X87, t:X87_ALU, w:W, u:C1=m
+FPREM1         n/a           X87STATUS                   [0xD9 /0xF5]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
+FDECSTP        n/a           X87STATUS                   [0xD9 /0xF6]          s:X87, t:X87_ALU, w:W, u:C1=0
+FINCSTP        n/a           X87STATUS                   [0xD9 /0xF7]          s:X87, t:X87_ALU, w:W, u:C1=0
+FPREM          n/a           X87STATUS                   [0xD9 /0xF8]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
+FYL2XP1        n/a           X87STATUS                   [0xD9 /0xF9]          s:X87, t:X87_ALU, w:W, u:C1=m
+FSQRT          n/a           X87STATUS                   [0xD9 /0xFA]          s:X87, t:X87_ALU, w:W, u:C1=m
+FSINCOS        n/a           X87STATUS                   [0xD9 /0xFB]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
+FRNDINT        n/a           X87STATUS                   [0xD9 /0xFC]          s:X87, t:X87_ALU, w:W, u:C1=m
+FSCALE         n/a           X87STATUS                   [0xD9 /0xFD]          s:X87, t:X87_ALU, w:W, u:C1=m
+FSIN           n/a           X87STATUS                   [0xD9 /0xFE]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
+FCOS           n/a           X87STATUS                   [0xD9 /0xFF]          s:X87, t:X87_ALU, w:W, u:C1=m|C2=m
 FLD            ST(0),ST(i)   X87STATUS                   [0xD9 /0:reg]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
 FXCH           ST(0),ST(i)   X87STATUS                   [0xD9 /1:reg]         s:X87, t:X87_ALU, w:RW|RW|W, u:C1=0
 FSTPNCE        ST(i),ST(0)   X87STATUS                   [0xD9 /3:reg]         s:X87, t:X87_ALU, w:W|R|W
@@ -70,7 +75,7 @@ FIDIV          ST(0),Md      X87STATUS                   [0xDA /6:mem]         s
 FIDIVR         ST(0),Md      X87STATUS                   [0xDA /7:mem]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 
 
-FUCOMPP        nil           X87STATUS                   [0xDA /0xE9]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
+FUCOMPP        n/a           X87STATUS                   [0xDA /0xE9]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=m|C2=m|C3=m
 FCMOVB         ST(0),ST(i)   X87STATUS,Fv                [0xDA /0:reg]         s:X87, t:X87_ALU, w:CW|R|RW|W, f:CF=t, u:C1=m
 FCMOVE         ST(0),ST(i)   X87STATUS,Fv                [0xDA /1:reg]         s:X87, t:X87_ALU, w:CW|R|RW|W, f:ZF=t, u:C1=m
 FCMOVBE        ST(0),ST(i)   X87STATUS,Fv                [0xDA /2:reg]         s:X87, t:X87_ALU, w:CW|R|RW|W, f:CF=t|ZF=t, u:C1=m
@@ -84,11 +89,11 @@ FIST           Md,ST(0)      X87STATUS                   [0xDB /2:mem]         s
 FISTP          Md,ST(0)      X87STATUS                   [0xDB /3:mem]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
 FLD            ST(0),Mft     X87STATUS                   [0xDB /5:mem]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
 FSTP           Mft,ST(0)     X87STATUS                   [0xDB /7:mem]         s:X87, t:X87_ALU, w:W|R|W, u:C1=m
-FNOP           nil           nil                         [0xDB /0xE0]          s:X87, t:X87_ALU, u:C0=u|C1=u|C2=u|C3=u
-FNDISI         nil           nil                         [0xDB /0xE1]          s:X87, t:X87_ALU, w:W
-FNCLEX         nil           X87STATUS                   [0xDB /0xE2]          s:X87, t:X87_ALU, w:W
-FNINIT         nil           X87CONTROL,X87TAG,X87STATUS [0xDB /0xE3]          s:X87, t:X87_ALU, w:W|W|W, u:C0=0|C1=0|C2=0|C3=0
-FNOP           nil           nil                         [0xDB /0xE4]          s:X87, t:X87_ALU, u:C0=u|C1=u|C2=u|C3=u
+FNOP           n/a           n/a                         [0xDB /0xE0]          s:X87, t:X87_ALU, u:C0=u|C1=u|C2=u|C3=u
+FNDISI         n/a           n/a                         [0xDB /0xE1]          s:X87, t:X87_ALU, w:W
+FNCLEX         n/a           X87STATUS                   [0xDB /0xE2]          s:X87, t:X87_ALU, w:W
+FNINIT         n/a           X87CONTROL,X87TAG,X87STATUS [0xDB /0xE3]          s:X87, t:X87_ALU, w:W|W|W, u:C0=0|C1=0|C2=0|C3=0
+FNOP           n/a           n/a                         [0xDB /0xE4]          s:X87, t:X87_ALU, u:C0=u|C1=u|C2=u|C3=u
 FCMOVNB        ST(0),ST(i)   X87STATUS,Fv                [0xDB /0:reg]         s:X87, t:X87_ALU, w:CW|R|RW|W, f:CF=t, u:C1=m
 FCMOVNE        ST(0),ST(i)   X87STATUS,Fv                [0xDB /1:reg]         s:X87, t:X87_ALU, w:CW|R|RW|W, f:ZF=t, u:C1=m
 FCMOVNBE       ST(0),ST(i)   X87STATUS,Fv                [0xDB /2:reg]         s:X87, t:X87_ALU, w:CW|R|RW|W, f:CF=t|ZF=t, u:C1=m
@@ -142,7 +147,7 @@ FISUBR         ST(0),Mw      X87STATUS                   [0xDE /5:mem]         s
 FIDIV          ST(0),Mw      X87STATUS                   [0xDE /6:mem]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FIDIVR         ST(0),Mw      X87STATUS                   [0xDE /7:mem]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 
-FCOMPP         nil           X87STATUS                   [0xDE /0xD9]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=0|C2=m|C3=m
+FCOMPP         n/a           X87STATUS                   [0xDE /0xD9]          s:X87, t:X87_ALU, w:W, u:C0=m|C1=0|C2=m|C3=m
 FADDP          ST(i),ST(0)   X87STATUS                   [0xDE /0:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FMULP          ST(i),ST(0)   X87STATUS                   [0xDE /1:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C1=m
 FCOMP          ST(0),ST(i)   X87STATUS                   [0xDE /2:reg]         s:X87, t:X87_ALU, w:RW|R|W, u:C0=m|C1=0|C2=m|C3=m
@@ -168,8 +173,8 @@ FXCH           ST(0),ST(i)   X87TAG                      [0xDF /1:reg]         s
 FSTP           ST(i),ST(0)   X87STATUS                   [0xDF /2:reg]         s:X87, t:X87_ALU, w:R|W|W, u:C1=m
 FSTP           ST(i),ST(0)   X87STATUS                   [0xDF /3:reg]         s:X87, t:X87_ALU, w:R|W|W, u:C1=m
 FNSTSW         AX            X87STATUS                   [0xDF /0xE0]          s:X87, t:X87_ALU, w:W|W, u:C0=u|C1=u|C2=u|C3=u
-FSTDW          AX            nil                         [0xDF /0xE1]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u, m:NO64
-FSTSG          AX            nil                         [0xDF /0xE2]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u
+FSTDW          AX            n/a                         [0xDF /0xE1]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u, m:NO64
+FSTSG          AX            n/a                         [0xDF /0xE2]          s:X87, t:X87_ALU, w:W, u:C0=u|C1=u|C2=u|C3=u
 FUCOMIP        ST(0),ST(i)   X87STATUS,Fv                [0xDF /5:reg]         s:X87, t:X87_ALU, w:R|R|W|W, f:CF=m|PF=m|ZF=m|OF=0, u:C0=m|C1=0|C2=m|C3=m
 FCOMIP         ST(0),ST(i)   X87STATUS,Fv                [0xDF /6:reg]         s:X87, t:X87_ALU, w:R|R|W|W, f:CF=m|PF=m|ZF=m|OF=0, u:C0=m|C1=0|C2=m|C3=m
-FRINEAR        nil           nil                         [0xDF /0xFC]          s:X87, t:X87_ALU
+FRINEAR        n/a           n/a                         [0xDF /0xFC]          s:X87, t:X87_ALU

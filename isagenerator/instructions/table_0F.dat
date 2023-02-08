@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Mnemonic     Explicit      Implicit                  Encoding                                Flags, Prefixes, Set, Category, Class, RW map, Additional ops
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x00 - 0x0F
@@ -19,163 +24,163 @@ LIDT           Ms            IDTR                      [            0x0F 0x01 /3
 SMSW           Mw            CR0                       [            0x0F 0x01 /4:mem]          s:I286REAL, t:SYSTEM, w:W|R, m:NOSGX
 SMSW           Rv            CR0                       [            0x0F 0x01 /4:reg]          s:I286REAL, t:SYSTEM, w:W|R, m:NOSGX
 LMSW           Ew            CR0                       [            0x0F 0x01 /6]              s:I286REAL, t:SYSTEM, w:R|W, a:SERIAL, m:KERNEL
-INVLPG         Mb            nil                       [            0x0F 0x01 /7:mem]          s:I486REAL, t:SYSTEM, w:R, a:AG, m:KERNEL|NOV86
+INVLPG         Mb            n/a                       [            0x0F 0x01 /7:mem]          s:I486REAL, t:SYSTEM, w:R, a:AG, m:KERNEL|NOV86
 RSTORSSP       Mq            SSP                       [       0xF3 0x0F 0x01 /5:mem]          s:CET_SS, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
-ENCLV          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC0]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:KERNEL|NOSMM|NOTSX|VMX
-VMCALL         nil           nil                       [         NP 0x0F 0x01 /0xC1]           s:VTX, t:VTX, m:VMX|NOTSX|NOSGX
-VMLAUNCH       nil           Fv                        [         NP 0x0F 0x01 /0xC2]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
-VMRESUME       nil           Fv                        [         NP 0x0F 0x01 /0xC3]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
-VMXOFF         nil           Fv                        [         NP 0x0F 0x01 /0xC4]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
-PCONFIG        nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC5]           s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW, m:NOV86
-WRMSRNS        nil           EAX,EDX,ECX,MSR           [         NP 0x0F 0x01 /0xC6]           s:WRMSRNS, t:SYSTEM, w:R|R|R|W, m:KERNEL
-WRMSRLIST      nil           SMT,DMT,ECX               [       0xF3 0x0F 0x01 /0xC6]           s:MSRLIST, t:SYSTEM, w:R|R|RW, m:KERNEL|O64
-RDMSRLIST      nil           SMT,DMT,ECX               [       0xF2 0x0F 0x01 /0xC6]           s:MSRLIST, t:SYSTEM, w:R|W|RW, m:KERNEL|O64
-MONITOR        nil           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
-MWAIT          nil           EAX,ECX                   [         NP 0x0F 0x01 /0xC9]           s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
-CLAC           nil           Fv                        [         NP 0x0F 0x01 /0xCA]           s:SMAP, t:SMAP, w:W, f:AC=0, m:KERNEL|NOV86
-ERETU          nil           rIP,Fv,rSP,CS,SS,Kv5,SSP,GSBASE,KGSBASE [0xF3 0x0F 0x01 /0xCA]    s:FRED, t:RET, w:W|W|W|W|W|R|CRCW|RW|RW, m:KERNEL|O64|NOTSX, a:F64
-ERETS          nil           rIP,Fv,rSP,Kv5,SSP        [       0xF2 0x0F 0x01 /0xCA]           s:FRED, t:RET, w:W|W|W|R|CRCW, m:KERNEL|O64|NOTSX, a:F64
-STAC           nil           Fv                        [         NP 0x0F 0x01 /0xCB]           s:SMAP, t:SMAP, w:W, f:AC=1, m:KERNEL|NOV86
-TDCALL         nil           nil                       [       0x66 0x0F 0x01 /0xCC]           s:TDX, t:TDX, m:KERNEL|VMXNROOT
-SEAMRET        nil           nil                       [       0x66 0x0F 0x01 /0xCD]           s:TDX, t:TDX, f:VMX, m:SEAMR
-SEAMOPS        nil           RAX,RCX,RDX,R8,R9         [       0x66 0x0F 0x01 /0xCE]           s:TDX, t:TDX, w:RW|R|R|R|R, m:SEAMR
-SEAMCALL       nil           RAX                       [       0x66 0x0F 0x01 /0xCF]           s:TDX, t:TDX, w:R, f:VMX, m:SEAMN
-ENCLS          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xCF]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:KERNEL|NOSMM|NOTSX
-XGETBV         nil           ECX,EDX,EAX,XCR           [         NP 0x0F 0x01 /0xD0]           s:XSAVE, t:XSAVE, w:R|W|W|R
-XSETBV         nil           ECX,EDX,EAX,XCR           [         NP 0x0F 0x01 /0xD1]           s:XSAVE, t:XSAVE, w:R|R|R|W, m:KERNEL
-VMFUNC         nil           nil                       [         NP 0x0F 0x01 /0xD4]           s:VTX, t:VTX, m:VMX|NOSGX
-XEND           nil           yIP                       [         NP 0x0F 0x01 /0xD5]           s:TSX, t:COND_BR, w:CW, i:RTM
-XTEST          nil           Fv                        [         NP 0x0F 0x01 /0xD6]           s:TSX, t:LOGIC, w:W, i:RTM, f:CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
-ENCLU          nil           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xD7]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:USER|NOSMM|NOTSX
-VMRUN          nil           rAX                       [            0x0F 0x01 /0xD8]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
-VMMCALL        nil           nil                       [            0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
-VMMCALL        nil           nil                       [       0x66 0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
-VMGEXIT        nil           nil                       [       0xF3 0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
-VMGEXIT        nil           nil                       [       0xF2 0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
-VMLOAD         nil           rAX                       [            0x0F 0x01 /0xDA]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
-VMSAVE         nil           nil                       [            0x0F 0x01 /0xDB]           s:SVM, t:SYSTEM, m:VMXROOT
-STGI           nil           nil                       [            0x0F 0x01 /0xDC]           s:SVM, t:SYSTEM, m:VMXROOT
-CLGI           nil           nil                       [            0x0F 0x01 /0xDD]           s:SVM, t:SYSTEM, m:VMXROOT
-SKINIT         nil           EAX                       [            0x0F 0x01 /0xDE]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
-INVLPGA        nil           rAX,ECX                   [            0x0F 0x01 /0xDF]           s:SVM, t:SYSTEM, w:R|R, m:VMXROOT
-SERIALIZE      nil           nil                       [         NP 0x0F 0x01 /0xE8]           s:SERIALIZE, t:MISC, a:SERIAL
-SETSSBSY       nil           SHS0,SSP                  [       0xF3 0x0F 0x01 /0xE8]           s:CET_SS, t:CET, a:SHS, w:RW|RW
-XSUSLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE8]           s:TSXLDTRK, t:MISC
-XRESLDTRK      nil           nil                       [       0xF2 0x0F 0x01 /0xE9]           s:TSXLDTRK, t:MISC
-SAVEPREVSSP    nil           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET_SS, t:CET, w:RW|R, f:CF=t
-UIRET          nil           rIP,Fv,sSP,UIF,Kv3,SHS1   [       0xF3 0x0F 0x01 /0xEC]           s:UINTR, t:RET, a:F64, w:W|W|W|W|R|R, m:O64|NOTSX|NOSGX
-TESTUI         nil           UIF,Fv                    [       0xF3 0x0F 0x01 /0xED]           s:UINTR, t:UINTR, w:R|W, f:UINTR, m:O64|NOSGX
-RDPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEE]           s:PKU, t:MISC, w:W|W|R|R
-CLUI           nil           UIF                       [       0xF3 0x0F 0x01 /0xEE]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
-WRPKRU         nil           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEF]           s:PKU, t:MISC, w:R|R|R|W
-STUI           nil           UIF                       [       0xF3 0x0F 0x01 /0xEF]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
-SWAPGS         nil           GSBASE,KGSBASE            [            0x0F 0x01 /0xF8]           s:LONGMODE, t:SYSTEM, w:RW|RW, m:KERNEL|O64
-RDTSCP         nil           EAX,EDX,ECX,TSC,TSCAUX    [            0x0F 0x01 /0xF9]           s:RDTSCP, t:SYSTEM, w:W|W|W|R|R
-MONITORX       nil           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xFA]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
-MCOMMIT        nil           Fv                        [       0xF3 0x0F 0x01 /0xFA]           s:MCOMMIT, t:MISC, w:W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
-MWAITX         nil           EAX,ECX,EBX               [         NP 0x0F 0x01 /0xFB]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
-CLZERO         nil           rAX                       [            0x0F 0x01 /0xFC]           s:CLZERO, t:MISC, w:R
-RDPRU          nil           EAX,EDX,ECX,Fv            [            0x0F 0x01 /0xFD]           s:RDPRU, t:MISC, w:W|W|R|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
-RMPQUERY       nil           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFD]           s:SNP, t:SYSTEM, w:R|RW|W|RW|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL, i:RMPQUERY
-INVLPGB        nil           rAX,ECX,EDX               [            0x0F 0x01 /0xFE]           s:INVLPGB, t:SYSTEM, w:R|R|R, m:NOREAL|KERNEL
-RMPADJUST      nil           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:R|RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
-RMPUPDATE      nil           RAX,pCXdq,Fv              [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
-TLBSYNC        nil           nil                       [            0x0F 0x01 /0xFF]           s:INVLPGB, t:SYSTEM, m:NOREAL|KERNEL
-PSMASH         nil           RAX,Fv                    [       0xF3 0x0F 0x01 /0xFF]           s:SNP, t:SYSTEM, w:RW|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
-PVALIDATE      nil           rAX,ECX,EDX,Fv            [       0xF2 0x0F 0x01 /0xFF]           s:SNP, t:SYSTEM, w:RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m|CF=m, m:KERNEL
+ENCLV          n/a           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC0]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:KERNEL|NOSMM|NOTSX|VMX
+VMCALL         n/a           n/a                       [         NP 0x0F 0x01 /0xC1]           s:VTX, t:VTX, m:VMX|NOTSX|NOSGX
+VMLAUNCH       n/a           Fv                        [         NP 0x0F 0x01 /0xC2]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
+VMRESUME       n/a           Fv                        [         NP 0x0F 0x01 /0xC3]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
+VMXOFF         n/a           Fv                        [         NP 0x0F 0x01 /0xC4]           s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
+PCONFIG        n/a           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xC5]           s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW, m:NOV86
+WRMSRNS        n/a           EAX,EDX,ECX,MSR           [         NP 0x0F 0x01 /0xC6]           s:WRMSRNS, t:SYSTEM, w:R|R|R|W, m:KERNEL
+WRMSRLIST      n/a           SMT,DMT,ECX               [       0xF3 0x0F 0x01 /0xC6]           s:MSRLIST, t:SYSTEM, w:R|R|RW, m:KERNEL|O64
+RDMSRLIST      n/a           SMT,DMT,ECX               [       0xF2 0x0F 0x01 /0xC6]           s:MSRLIST, t:SYSTEM, w:R|W|RW, m:KERNEL|O64
+MONITOR        n/a           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xC8]           s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
+MWAIT          n/a           EAX,ECX                   [         NP 0x0F 0x01 /0xC9]           s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
+CLAC           n/a           Fv                        [         NP 0x0F 0x01 /0xCA]           s:SMAP, t:SMAP, w:W, f:AC=0, m:KERNEL|NOV86
+ERETU          n/a           rIP,Fv,rSP,CS,SS,Kv5,SSP,GSBASE,KGSBASE [0xF3 0x0F 0x01 /0xCA]    s:FRED, t:RET, w:W|W|W|W|W|R|CRCW|RW|RW, m:KERNEL|O64|NOTSX, a:F64
+ERETS          n/a           rIP,Fv,rSP,Kv5,SSP        [       0xF2 0x0F 0x01 /0xCA]           s:FRED, t:RET, w:W|W|W|R|CRCW, m:KERNEL|O64|NOTSX, a:F64
+STAC           n/a           Fv                        [         NP 0x0F 0x01 /0xCB]           s:SMAP, t:SMAP, w:W, f:AC=1, m:KERNEL|NOV86
+TDCALL         n/a           n/a                       [       0x66 0x0F 0x01 /0xCC]           s:TDX, t:TDX, m:KERNEL|VMXNROOT
+SEAMRET        n/a           n/a                       [       0x66 0x0F 0x01 /0xCD]           s:TDX, t:TDX, f:VMX, m:SEAMR
+SEAMOPS        n/a           RAX,RCX,RDX,R8,R9         [       0x66 0x0F 0x01 /0xCE]           s:TDX, t:TDX, w:RW|R|R|R|R, m:SEAMR
+SEAMCALL       n/a           RAX                       [       0x66 0x0F 0x01 /0xCF]           s:TDX, t:TDX, w:R, f:VMX, m:SEAMN
+ENCLS          n/a           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xCF]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:KERNEL|NOSMM|NOTSX
+XGETBV         n/a           ECX,EDX,EAX,XCR           [         NP 0x0F 0x01 /0xD0]           s:XSAVE, t:XSAVE, w:R|W|W|R
+XSETBV         n/a           ECX,EDX,EAX,XCR           [         NP 0x0F 0x01 /0xD1]           s:XSAVE, t:XSAVE, w:R|R|R|W, m:KERNEL
+VMFUNC         n/a           n/a                       [         NP 0x0F 0x01 /0xD4]           s:VTX, t:VTX, m:VMX|NOSGX
+XEND           n/a           yIP                       [         NP 0x0F 0x01 /0xD5]           s:TSX, t:COND_BR, w:CW, i:RTM
+XTEST          n/a           Fv                        [         NP 0x0F 0x01 /0xD6]           s:TSX, t:LOGIC, w:W, i:RTM, f:CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
+ENCLU          n/a           EAX,RBX,RCX,RDX           [         NP 0x0F 0x01 /0xD7]           s:SGX, t:SGX, w:R|CRW|CRW|CRW, m:USER|NOSMM|NOTSX
+VMRUN          n/a           rAX                       [            0x0F 0x01 /0xD8]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
+VMMCALL        n/a           n/a                       [            0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
+VMMCALL        n/a           n/a                       [       0x66 0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
+VMGEXIT        n/a           n/a                       [       0xF3 0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
+VMGEXIT        n/a           n/a                       [       0xF2 0x0F 0x01 /0xD9]           s:SVM, t:SYSTEM, m:VMX
+VMLOAD         n/a           rAX                       [            0x0F 0x01 /0xDA]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
+VMSAVE         n/a           n/a                       [            0x0F 0x01 /0xDB]           s:SVM, t:SYSTEM, m:VMXROOT
+STGI           n/a           n/a                       [            0x0F 0x01 /0xDC]           s:SVM, t:SYSTEM, m:VMXROOT
+CLGI           n/a           n/a                       [            0x0F 0x01 /0xDD]           s:SVM, t:SYSTEM, m:VMXROOT
+SKINIT         n/a           EAX                       [            0x0F 0x01 /0xDE]           s:SVM, t:SYSTEM, w:R, m:VMXROOT
+INVLPGA        n/a           rAX,ECX                   [            0x0F 0x01 /0xDF]           s:SVM, t:SYSTEM, w:R|R, m:VMXROOT
+SERIALIZE      n/a           n/a                       [         NP 0x0F 0x01 /0xE8]           s:SERIALIZE, t:MISC, a:SERIAL
+SETSSBSY       n/a           SHS0,SSP                  [       0xF3 0x0F 0x01 /0xE8]           s:CET_SS, t:CET, a:SHS, w:RW|RW
+XSUSLDTRK      n/a           n/a                       [       0xF2 0x0F 0x01 /0xE8]           s:TSXLDTRK, t:MISC
+XRESLDTRK      n/a           n/a                       [       0xF2 0x0F 0x01 /0xE9]           s:TSXLDTRK, t:MISC
+SAVEPREVSSP    n/a           SHSS,SSP                  [       0xF3 0x0F 0x01 /0xEA]           s:CET_SS, t:CET, w:RW|R, f:CF=t
+UIRET          n/a           rIP,Fv,sSP,UIF,Kv3,SHS1   [       0xF3 0x0F 0x01 /0xEC]           s:UINTR, t:RET, a:F64, w:W|W|W|W|R|R, m:O64|NOTSX|NOSGX
+TESTUI         n/a           UIF,Fv                    [       0xF3 0x0F 0x01 /0xED]           s:UINTR, t:UINTR, w:R|W, f:UINTR, m:O64|NOSGX
+RDPKRU         n/a           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEE]           s:PKU, t:MISC, w:W|W|R|R
+CLUI           n/a           UIF                       [       0xF3 0x0F 0x01 /0xEE]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
+WRPKRU         n/a           EDX,EAX,ECX,PKRU          [         NP 0x0F 0x01 /0xEF]           s:PKU, t:MISC, w:R|R|R|W
+STUI           n/a           UIF                       [       0xF3 0x0F 0x01 /0xEF]           s:UINTR, t:UINTR, w:W, m:O64|NOTSX|NOSGX
+SWAPGS         n/a           GSBASE,KGSBASE            [            0x0F 0x01 /0xF8]           s:LONGMODE, t:SYSTEM, w:RW|RW, m:KERNEL|O64
+RDTSCP         n/a           EAX,EDX,ECX,TSC,TSCAUX    [            0x0F 0x01 /0xF9]           s:RDTSCP, t:SYSTEM, w:W|W|W|R|R
+MONITORX       n/a           pAXb,ECX,EDX              [         NP 0x0F 0x01 /0xFA]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
+MCOMMIT        n/a           Fv                        [       0xF3 0x0F 0x01 /0xFA]           s:MCOMMIT, t:MISC, w:W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
+MWAITX         n/a           EAX,ECX,EBX               [         NP 0x0F 0x01 /0xFB]           s:MWAITT, t:SYSTEM, w:R|R|R, m:KERNEL|NOV86
+CLZERO         n/a           rAX                       [            0x0F 0x01 /0xFC]           s:CLZERO, t:MISC, w:R
+RDPRU          n/a           EAX,EDX,ECX,Fv            [            0x0F 0x01 /0xFD]           s:RDPRU, t:MISC, w:W|W|R|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
+RMPQUERY       n/a           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFD]           s:SNP, t:SYSTEM, w:R|RW|W|RW|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL, i:RMPQUERY
+INVLPGB        n/a           rAX,ECX,EDX               [            0x0F 0x01 /0xFE]           s:INVLPGB, t:SYSTEM, w:R|R|R, m:NOREAL|KERNEL
+RMPADJUST      n/a           pAXb,EAX,RCX,RDX,Fv       [       0xF3 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:R|RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
+RMPUPDATE      n/a           RAX,pCXdq,Fv              [       0xF2 0x0F 0x01 /0xFE]           s:SNP, t:SYSTEM, w:RW|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, a:I67, m:O64|KERNEL
+TLBSYNC        n/a           n/a                       [            0x0F 0x01 /0xFF]           s:INVLPGB, t:SYSTEM, m:NOREAL|KERNEL
+PSMASH         n/a           RAX,Fv                    [       0xF3 0x0F 0x01 /0xFF]           s:SNP, t:SYSTEM, w:RW|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m, m:O64|KERNEL
+PVALIDATE      n/a           rAX,ECX,EDX,Fv            [       0xF2 0x0F 0x01 /0xFF]           s:SNP, t:SYSTEM, w:RW|R|R|W, f:OF=m|ZF=m|AF=m|PF=m|SF=m|CF=m, m:KERNEL
 LAR            Gv,Mw         Fv                        [            0x0F 0x02 /r:mem]          s:I286PROT, t:SYSTEM, w:CW|R|W, f:ZF=m, m:NOREAL
 LAR            Gv,Rz         Fv                        [            0x0F 0x02 /r:reg]          s:I286PROT, t:SYSTEM, w:CW|R|W, f:ZF=m, m:NOREAL
 LSL            Gv,Mw         Fv                        [            0x0F 0x03 /r:mem]          s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 LSL            Gv,Rz         Fv                        [            0x0F 0x03 /r:reg]          s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
-#LOADALL        nil           BANK                      [            0x0F 0x05]                s:I486REAL, t:UNDOC, w:R
-SYSCALL        nil           STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP [        0x0F 0x05]     s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW|RW, a:F64|CETT, i:FSC, m:NOSGX
-CLTS           nil           CR0                       [            0x0F 0x06]                 s:I286REAL, t:SYSTEM, w:W, m:KERNEL|NOV86
-#LOADALLD       nil           BANK                      [            0x0F 0x07]                s:I486REAL, t:UNDOC, w:R
-SYSRET         nil           STAR,SS,rCX,R11,CS,rIP,Fv,SSP [        0x0F 0x07]                 s:AMD, t:SYSRET, w:R|W|R|R|W|W|W|W, i:FSC, m:KERNEL
-INVD           nil           nil                       [            0x0F 0x08]                 s:I486REAL, t:SYSTEM, a:SERIAL, m:KERNEL|NOV86
-WBINVD         nil           nil                       [            0x0F 0x09]                 s:I486REAL, t:SYSTEM, a:SERIAL, m:KERNEL|NOV86
-WBNOINVD       nil           nil                       [      a0xF3 0x0F 0x09]                 s:WBNOINVD, t:WBNOINVD, m:KERNEL|NOV86
+#LOADALL        n/a           BANK                      [            0x0F 0x05]                s:I486REAL, t:UNDOC, w:R
+SYSCALL        n/a           STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP [        0x0F 0x05]     s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW|RW, a:F64|CETT, i:FSC, m:NOSGX
+CLTS           n/a           CR0                       [            0x0F 0x06]                 s:I286REAL, t:SYSTEM, w:W, m:KERNEL|NOV86
+#LOADALLD       n/a           BANK                      [            0x0F 0x07]                s:I486REAL, t:UNDOC, w:R
+SYSRET         n/a           STAR,SS,rCX,R11,CS,rIP,Fv,SSP [        0x0F 0x07]                 s:AMD, t:SYSRET, w:R|W|R|R|W|W|W|W, i:FSC, m:KERNEL
+INVD           n/a           n/a                       [            0x0F 0x08]                 s:I486REAL, t:SYSTEM, a:SERIAL, m:KERNEL|NOV86
+WBINVD         n/a           n/a                       [            0x0F 0x09]                 s:I486REAL, t:SYSTEM, a:SERIAL, m:KERNEL|NOV86
+WBNOINVD       n/a           n/a                       [      a0xF3 0x0F 0x09]                 s:WBNOINVD, t:WBNOINVD, m:KERNEL|NOV86
 # Not supported by regulat x86 CPUs.
-#CL1INVMB       nil           nil                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM, m:NO64
-UD2            nil           nil                       [            0x0F 0x0B]                 s:PPRO, t:MISC
-PREFETCHE      Mb            nil                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCHW      Mb            nil                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /1:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCHWT1    Mb            nil                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /2:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCHM      Mb            nil                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /3:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCH       Mb            nil                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /4:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCH       Mb            nil                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /5:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCH       Mb            nil                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /6:reg]          s:PPRO, t:NOP, w:N|N
-PREFETCH       Mb            nil                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
-NOP            Ev,Gv         nil                       [            0x0F 0x0D /7:reg]          s:PPRO, t:NOP, w:N|N
+#CL1INVMB       n/a           n/a                       [            0x0F 0x0A]                 s:SCC, t:SYSTEM, m:NO64
+UD2            n/a           n/a                       [            0x0F 0x0B]                 s:PPRO, t:MISC
+PREFETCHE      Mb            n/a                       [            0x0F 0x0D /0:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /0:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCHW      Mb            n/a                       [            0x0F 0x0D /1:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /1:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCHWT1    Mb            n/a                       [            0x0F 0x0D /2:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /2:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCHM      Mb            n/a                       [            0x0F 0x0D /3:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /3:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCH       Mb            n/a                       [            0x0F 0x0D /4:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /4:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCH       Mb            n/a                       [            0x0F 0x0D /5:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /5:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCH       Mb            n/a                       [            0x0F 0x0D /6:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /6:reg]          s:PPRO, t:NOP, w:N|N
+PREFETCH       Mb            n/a                       [            0x0F 0x0D /7:mem]          s:PREFETCH_NOP, t:PREFETCH, w:P
+NOP            Ev,Gv         n/a                       [            0x0F 0x0D /7:reg]          s:PPRO, t:NOP, w:N|N
 
-FEMMS          nil           nil                       [            0x0F 0x0E]                 s:3DNOW, t:MMX, c:FEMMS
+FEMMS          n/a           n/a                       [            0x0F 0x0E]                 s:3DNOW, t:MMX, c:FEMMS
 
 # 0x10 - 0x1F
-MOVUPS         Vps,Wps       nil                       [         NP 0x0F 0x10 /r]              s:SSE, t:DATAXFER, w:W|R, e:4
-MOVUPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x10 /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
-MOVSS          Vss,Wss       nil                       [       0xF3 0x0F 0x10 /r]              s:SSE, t:DATAXFER, w:W|R, e:5
-MOVSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x10 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVUPS         Wps,Vps       nil                       [         NP 0x0F 0x11 /r]              s:SSE, t:DATAXFER, w:W|R, e:4
-MOVUPD         Wpd,Vpd       nil                       [       0x66 0x0F 0x11 /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
-MOVSS          Wss,Vss       nil                       [       0xF3 0x0F 0x11 /r]              s:SSE, t:DATAXFER, w:W|R, e:5
-MOVSD          Wsd,Vsd       nil                       [       0xF2 0x0F 0x11 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVHLPS        Vq,Wq         nil                       [         NP 0x0F 0x12 /r]              s:SSE, t:DATAXFER, w:W|R, e:5
-MOVLPD         Vsd,Mq        nil                       [       0x66 0x0F 0x12 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVSLDUP       Vx,Wx         nil                       [       0xF3 0x0F 0x12 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
-MOVDDUP        Vdq,Wq        nil                       [       0xF2 0x0F 0x12 /r]              s:SSE3, t:DATAXFER, w:W|R, e:5
-MOVLPS         Mq,Vps        nil                       [         NP 0x0F 0x13 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
-MOVLPD         Mq,Vpd        nil                       [       0x66 0x0F 0x13 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
-UNPCKLPS       Vx,Wx         nil                       [         NP 0x0F 0x14 /r]              s:SSE, t:SSE, w:RW|R, e:4
-UNPCKLPD       Vx,Wx         nil                       [       0x66 0x0F 0x14 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-UNPCKHPS       Vx,Wx         nil                       [         NP 0x0F 0x15 /r]              s:SSE, t:SSE, w:RW|R, e:4
-UNPCKHPD       Vx,Wx         nil                       [       0x66 0x0F 0x15 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-MOVHPS         Vq,Mq         nil                       [         NP 0x0F 0x16 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
-MOVLHPS        Vq,Uq         nil                       [         NP 0x0F 0x16 /r:reg]          s:SSE, t:DATAXFER, w:W|R, e:7
-MOVHPD         Vq,Mq         nil                       [       0x66 0x0F 0x16 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVSHDUP       Vx,Wx         nil                       [       0xF3 0x0F 0x16 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
-MOVHPS         Mq,Vq         nil                       [         NP 0x0F 0x17 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
-MOVHPD         Mq,Vq         nil                       [       0x66 0x0F 0x17 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVUPS         Vps,Wps       n/a                       [         NP 0x0F 0x10 /r]              s:SSE, t:DATAXFER, w:W|R, e:4
+MOVUPD         Vpd,Wpd       n/a                       [       0x66 0x0F 0x10 /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
+MOVSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x10 /r]              s:SSE, t:DATAXFER, w:W|R, e:5
+MOVSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x10 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVUPS         Wps,Vps       n/a                       [         NP 0x0F 0x11 /r]              s:SSE, t:DATAXFER, w:W|R, e:4
+MOVUPD         Wpd,Vpd       n/a                       [       0x66 0x0F 0x11 /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
+MOVSS          Wss,Vss       n/a                       [       0xF3 0x0F 0x11 /r]              s:SSE, t:DATAXFER, w:W|R, e:5
+MOVSD          Wsd,Vsd       n/a                       [       0xF2 0x0F 0x11 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVHLPS        Vq,Wq         n/a                       [         NP 0x0F 0x12 /r]              s:SSE, t:DATAXFER, w:W|R, e:5
+MOVLPD         Vsd,Mq        n/a                       [       0x66 0x0F 0x12 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVSLDUP       Vx,Wx         n/a                       [       0xF3 0x0F 0x12 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
+MOVDDUP        Vdq,Wq        n/a                       [       0xF2 0x0F 0x12 /r]              s:SSE3, t:DATAXFER, w:W|R, e:5
+MOVLPS         Mq,Vps        n/a                       [         NP 0x0F 0x13 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
+MOVLPD         Mq,Vpd        n/a                       [       0x66 0x0F 0x13 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
+UNPCKLPS       Vx,Wx         n/a                       [         NP 0x0F 0x14 /r]              s:SSE, t:SSE, w:RW|R, e:4
+UNPCKLPD       Vx,Wx         n/a                       [       0x66 0x0F 0x14 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+UNPCKHPS       Vx,Wx         n/a                       [         NP 0x0F 0x15 /r]              s:SSE, t:SSE, w:RW|R, e:4
+UNPCKHPD       Vx,Wx         n/a                       [       0x66 0x0F 0x15 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+MOVHPS         Vq,Mq         n/a                       [         NP 0x0F 0x16 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
+MOVLHPS        Vq,Uq         n/a                       [         NP 0x0F 0x16 /r:reg]          s:SSE, t:DATAXFER, w:W|R, e:7
+MOVHPD         Vq,Mq         n/a                       [       0x66 0x0F 0x16 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVSHDUP       Vx,Wx         n/a                       [       0xF3 0x0F 0x16 /r]              s:SSE3, t:DATAXFER, w:W|R, e:4
+MOVHPS         Mq,Vq         n/a                       [         NP 0x0F 0x17 /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:5
+MOVHPD         Mq,Vq         n/a                       [       0x66 0x0F 0x17 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:5
 
 # Default wide-nops/PREFETCH instructions.
-PREFETCHNTA    Mb            nil                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHT0     Mb            nil                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHT1     Mb            nil                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHT2     Mb            nil                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [            0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [            0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [            0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [            0x0F 0x18 /6]              s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [            0x0F 0x18 /7]              s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [            0x0F 0x19 /r]              s:PPRO, t:WIDENOP, w:N
+PREFETCHNTA    Mb            n/a                       [            0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [            0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT0     Mb            n/a                       [            0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [            0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT1     Mb            n/a                       [            0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [            0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT2     Mb            n/a                       [            0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [            0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [            0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [            0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [            0x0F 0x18 /6]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [            0x0F 0x18 /7]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [            0x0F 0x19 /r]              s:PPRO, t:WIDENOP, w:N
 
 # PREFETCHITI instructions. Most of them duplicates of the above, since they are also present when the PREFETCHIT feature
 # is enabled (which applies to the entire opcode).
-PREFETCHNTA    Mb            nil                       [       piti 0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [       piti 0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHT0     Mb            nil                       [       piti 0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [       piti 0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHT1     Mb            nil                       [       piti 0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [       piti 0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHT2     Mb            nil                       [       piti 0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
-NOP            Ev            nil                       [       piti 0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [       piti 0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [       piti 0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:N
-PREFETCHIT1    Mb            nil                       [piti riprel 0x0F 0x18 /6:mem]          s:PREFETCHITI, t:PREFETCH, w:N, m:O64
-NOP            Ev            nil                       [       piti 0x0F 0x18 /6:mem]          s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [       piti 0x0F 0x18 /6:reg]          s:PPRO, t:WIDENOP, w:N
-PREFETCHIT0    Mb            nil                       [piti riprel 0x0F 0x18 /7:mem]          s:PREFETCHITI, t:PREFETCH, w:N, m:O64
-NOP            Ev            nil                       [       piti 0x0F 0x18 /7:mem]          s:PPRO, t:WIDENOP, w:N
-NOP            Ev            nil                       [       piti 0x0F 0x18 /7:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHNTA    Mb            n/a                       [       piti 0x0F 0x18 /0:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /0:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT0     Mb            n/a                       [       piti 0x0F 0x18 /1:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /1:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT1     Mb            n/a                       [       piti 0x0F 0x18 /2:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /2:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHT2     Mb            n/a                       [       piti 0x0F 0x18 /3:mem]          s:SSE, t:PREFETCH, w:P
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /3:reg]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /4]              s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /5]              s:PPRO, t:WIDENOP, w:N
+PREFETCHIT1    Mb            n/a                       [piti riprel 0x0F 0x18 /6:mem]          s:PREFETCHITI, t:PREFETCH, w:N, m:O64
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /6:mem]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /6:reg]          s:PPRO, t:WIDENOP, w:N
+PREFETCHIT0    Mb            n/a                       [piti riprel 0x0F 0x18 /7:mem]          s:PREFETCHITI, t:PREFETCH, w:N, m:O64
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /7:mem]          s:PPRO, t:WIDENOP, w:N
+NOP            Ev            n/a                       [       piti 0x0F 0x18 /7:reg]          s:PPRO, t:WIDENOP, w:N
 
 
 # MPX instructions. According to the SDM, MPX instructions have 64 bit op & address size in 64 bit mode, no matter 
@@ -183,112 +188,112 @@ NOP            Ev            nil                       [       piti 0x0F 0x18 /7
 # that Xed doesn't do those checks either).
 
 # MPX not used, these guys are wide NOPs.
-NOP            Ev,Gv         nil                       [            0x0F 0x1A /r]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Gv,Ev         nil                       [            0x0F 0x1B /r]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [            0x0F 0x1C /r]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [            0x0F 0x1D /r]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [            0x0F 0x1E /r]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [            0x0F 0x1F /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [            0x0F 0x1A /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Gv,Ev         n/a                       [            0x0F 0x1B /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [            0x0F 0x1C /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [            0x0F 0x1D /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [            0x0F 0x1E /r]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [            0x0F 0x1F /r]              s:PPRO, t:WIDENOP, w:N|N
 
 # Features that are mapped onto wide NOPs.
 
 # MPX
-BNDLDX         rBl,Mmib      nil                       [        mpx 0x0F 0x1A /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
-NOP            Gv,Ev         nil                       [        mpx 0x0F 0x1A /r:reg]          s:PPRO, t:WIDENOP, w:N|N
-BNDMOV         rBl,mBl       nil                       [   mpx 0x66 0x0F 0x1A /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
-BNDCL          rBl,Ey        nil                       [   mpx 0xF3 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
-BNDCU          rBl,Ey        nil                       [   mpx 0xF2 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
-BNDSTX         Mmib,rBl      nil                       [        mpx 0x0F 0x1B /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
-NOP            Gv,Ev         nil                       [        mpx 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:N|N
-BNDMOV         mBl,rBl       nil                       [   mpx 0x66 0x0F 0x1B /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
-BNDMK          rBl,My        nil                       [   mpx 0xF3 0x0F 0x1B /r:mem]          s:MPX, t:MPX, w:W|R, a:F64|NOA16|NORIPREL|I67
-NOP            Gv,Ev         nil                       [   mpx 0xF3 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:N|N
-BNDCN          rBl,Ey        nil                       [   mpx 0xF2 0x0F 0x1B /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
+BNDLDX         rBl,Mmib      n/a                       [        mpx 0x0F 0x1A /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
+NOP            Gv,Ev         n/a                       [        mpx 0x0F 0x1A /r:reg]          s:PPRO, t:WIDENOP, w:N|N
+BNDMOV         rBl,mBl       n/a                       [   mpx 0x66 0x0F 0x1A /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
+BNDCL          rBl,Ey        n/a                       [   mpx 0xF3 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
+BNDCU          rBl,Ey        n/a                       [   mpx 0xF2 0x0F 0x1A /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
+BNDSTX         Mmib,rBl      n/a                       [        mpx 0x0F 0x1B /r:mem mib]      s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67
+NOP            Gv,Ev         n/a                       [        mpx 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:N|N
+BNDMOV         mBl,rBl       n/a                       [   mpx 0x66 0x0F 0x1B /r]              s:MPX, t:MPX, w:W|R, a:NOA16|I67
+BNDMK          rBl,My        n/a                       [   mpx 0xF3 0x0F 0x1B /r:mem]          s:MPX, t:MPX, w:W|R, a:F64|NOA16|NORIPREL|I67
+NOP            Gv,Ev         n/a                       [   mpx 0xF3 0x0F 0x1B /r:reg]          s:PPRO, t:WIDENOP, w:N|N
+BNDCN          rBl,Ey        n/a                       [   mpx 0xF2 0x0F 0x1B /r]              s:MPX, t:MPX, w:R|R, a:AG|F64|I67
 
 # CLDEMOTE
-CLDEMOTE       Mb            nil                       [    cldm NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:P
-NOP            Ev,Gv         nil                       [  cldm 0x66 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [  cldm 0xF3 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [  cldm 0xF2 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /0:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /1]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /2]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /3]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /4]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /5]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /6]              s:PPRO, t:WIDENOP, w:N|N
-NOP            Ev,Gv         nil                       [       cldm 0x0F 0x1C /7]              s:PPRO, t:WIDENOP, w:N|N
+CLDEMOTE       Mb            n/a                       [    cldm NP 0x0F 0x1C /0:mem]          s:CLDEMOTE, t:CLDEMOTE, w:P
+NOP            Ev,Gv         n/a                       [  cldm 0x66 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [  cldm 0xF3 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [  cldm 0xF2 0x0F 0x1C /0:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /0:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /1]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /2]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /3]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /4]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /5]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /6]              s:PPRO, t:WIDENOP, w:N|N
+NOP            Ev,Gv         n/a                       [       cldm 0x0F 0x1C /7]              s:PPRO, t:WIDENOP, w:N|N
 
 # CET
-NOP            Mv,Gv         nil                       [        cet 0x0F 0x1E /r:mem]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [   cet rexw 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Mv,Gv         n/a                       [        cet 0x0F 0x1E /r:mem]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [   cet rexw 0x0F 0x1E /1:reg]          s:PPRO, t:WIDENOP, w:N|N
 RDSSPD         Rd            SSP                       [  cet a0xF3 0x0F 0x1E /1:reg]          s:CET_SS, t:CET, c:RSSSP, w:W|R
 RDSSPQ         Rq            SSP                       [ cet a0xF3 rexw 0x0F 0x1E /1:reg]      s:CET_SS, t:CET, c:RSSSP, w:W|R
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /2:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /3:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /4:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /5:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /6:reg]          s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xF8]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xF9]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFA]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFB]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFC]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFD]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFE]           s:PPRO, t:WIDENOP, w:N|N
-NOP            Rv,Gv         nil                       [        cet 0x0F 0x1E /0xFF]           s:PPRO, t:WIDENOP, w:N|N
-ENDBR64        nil           nil                       [  cet a0xF3 0x0F 0x1E /0xFA]           s:CET_IBT, t:CET, c:ENDBR
-ENDBR32        nil           nil                       [  cet a0xF3 0x0F 0x1E /0xFB]           s:CET_IBT, t:CET, c:ENDBR
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /2:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /3:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /4:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /5:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /6:reg]          s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xF8]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xF9]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xFA]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xFB]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xFC]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xFD]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xFE]           s:PPRO, t:WIDENOP, w:N|N
+NOP            Rv,Gv         n/a                       [        cet 0x0F 0x1E /0xFF]           s:PPRO, t:WIDENOP, w:N|N
+ENDBR64        n/a           n/a                       [  cet a0xF3 0x0F 0x1E /0xFA]           s:CET_IBT, t:CET, c:ENDBR
+ENDBR32        n/a           n/a                       [  cet a0xF3 0x0F 0x1E /0xFB]           s:CET_IBT, t:CET, c:ENDBR
 
 
 # 0x20 - 0x2F
-MOV            Ry,Cy         nil                       [            0x0F 0x20 /r]              s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64, m:KERNEL|NOV86
-MOV            Ry,Dy         nil                       [            0x0F 0x21 /r]              s:I86, t:DATAXFER, c:MOV_DR, w:W|R, a:MFR|F64, m:KERNEL|NOV86
-MOV            Cy,Ry         nil                       [            0x0F 0x22 /r]              s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64|SERIAL, m:KERNEL|NOV86
-MOV            Dy,Ry         nil                       [            0x0F 0x23 /r]              s:I86, t:DATAXFER, c:MOV_DR, w:W|R, a:MFR|F64|SERIAL, m:KERNEL|NOV86
-MOV            Ry,Ty         nil                       [            0x0F 0x24 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86|NO64
-MOV            Ty,Ry         nil                       [            0x0F 0x26 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86|NO64
-MOVAPS         Vps,Wps       nil                       [         NP 0x0F 0x28 /r]              s:SSE, t:DATAXFER, w:W|R, e:1
-MOVAPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x28 /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
-MOVAPS         Wps,Vps       nil                       [         NP 0x0F 0x29 /r]              s:SSE, t:DATAXFER, w:W|R, e:1
-MOVAPD         Wpd,Vpd       nil                       [       0x66 0x0F 0x29 /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
-CVTPI2PS       Vq,Qq         nil                       [         NP 0x0F 0x2A /r]              s:SSE, t:CONVERT, w:W|R
-CVTPI2PD       Vpd,Qq        nil                       [       0x66 0x0F 0x2A /r]              s:SSE2, t:CONVERT, w:W|R
-CVTSI2SS       Vss,Ey        nil                       [       0xF3 0x0F 0x2A /r]              s:SSE, t:CONVERT, w:W|R, e:3
-CVTSI2SD       Vsd,Ey        nil                       [       0xF2 0x0F 0x2A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
-MOVNTPS        Mps,Vps       nil                       [         NP 0x0F 0x2B /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:1
-MOVNTPD        Mpd,Vpd       nil                       [       0x66 0x0F 0x2B /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:1
-MOVNTSS        Mss,Vss       nil                       [       0xF3 0x0F 0x2B /r:mem]          s:SSE4A, t:DATAXFER, w:W|R
-MOVNTSD        Msd,Vsd       nil                       [       0xF2 0x0F 0x2B /r:mem]          s:SSE4A, t:DATAXFER, w:W|R
-CVTTPS2PI      Pq,Wq         nil                       [         NP 0x0F 0x2C /r]              s:SSE, t:CONVERT, w:W|R
-CVTTPD2PI      Pq,Wpd        nil                       [       0x66 0x0F 0x2C /r]              s:SSE2, t:CONVERT, w:W|R
-CVTTSS2SI      Gy,Wss        nil                       [       0xF3 0x0F 0x2C /r]              s:SSE, t:CONVERT, w:W|R, e:3
-CVTTSD2SI      Gy,Wsd        nil                       [       0xF2 0x0F 0x2C /r]              s:SSE2, t:CONVERT, w:W|R, e:3
-CVTPS2PI       Pq,Wq         nil                       [         NP 0x0F 0x2D /r]              s:SSE, t:CONVERT, w:W|R
-CVTPD2PI       Pq,Wpd        nil                       [       0x66 0x0F 0x2D /r]              s:SSE2, t:CONVERT, w:W|R
-CVTSS2SI       Gy,Wss        nil                       [       0xF3 0x0F 0x2D /r]              s:SSE, t:CONVERT, w:W|R, e:3
-CVTSD2SI       Gy,Wsd        nil                       [       0xF2 0x0F 0x2D /r]              s:SSE2, t:CONVERT, w:W|R, e:3
+MOV            Ry,Cy         n/a                       [            0x0F 0x20 /r]              s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64, m:KERNEL|NOV86
+MOV            Ry,Dy         n/a                       [            0x0F 0x21 /r]              s:I86, t:DATAXFER, c:MOV_DR, w:W|R, a:MFR|F64, m:KERNEL|NOV86
+MOV            Cy,Ry         n/a                       [            0x0F 0x22 /r]              s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64|SERIAL, m:KERNEL|NOV86
+MOV            Dy,Ry         n/a                       [            0x0F 0x23 /r]              s:I86, t:DATAXFER, c:MOV_DR, w:W|R, a:MFR|F64|SERIAL, m:KERNEL|NOV86
+MOV            Ry,Ty         n/a                       [            0x0F 0x24 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86|NO64
+MOV            Ty,Ry         n/a                       [            0x0F 0x26 /r]              s:I86, t:DATAXFER, c:MOV_TR, w:W|R, a:MFR|F64, m:KERNEL|NOV86|NO64
+MOVAPS         Vps,Wps       n/a                       [         NP 0x0F 0x28 /r]              s:SSE, t:DATAXFER, w:W|R, e:1
+MOVAPD         Vpd,Wpd       n/a                       [       0x66 0x0F 0x28 /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
+MOVAPS         Wps,Vps       n/a                       [         NP 0x0F 0x29 /r]              s:SSE, t:DATAXFER, w:W|R, e:1
+MOVAPD         Wpd,Vpd       n/a                       [       0x66 0x0F 0x29 /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
+CVTPI2PS       Vq,Qq         n/a                       [         NP 0x0F 0x2A /r]              s:SSE, t:CONVERT, w:W|R
+CVTPI2PD       Vpd,Qq        n/a                       [       0x66 0x0F 0x2A /r]              s:SSE2, t:CONVERT, w:W|R
+CVTSI2SS       Vss,Ey        n/a                       [       0xF3 0x0F 0x2A /r]              s:SSE, t:CONVERT, w:W|R, e:3
+CVTSI2SD       Vsd,Ey        n/a                       [       0xF2 0x0F 0x2A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
+MOVNTPS        Mps,Vps       n/a                       [         NP 0x0F 0x2B /r:mem]          s:SSE, t:DATAXFER, w:W|R, e:1
+MOVNTPD        Mpd,Vpd       n/a                       [       0x66 0x0F 0x2B /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:1
+MOVNTSS        Mss,Vss       n/a                       [       0xF3 0x0F 0x2B /r:mem]          s:SSE4A, t:DATAXFER, w:W|R
+MOVNTSD        Msd,Vsd       n/a                       [       0xF2 0x0F 0x2B /r:mem]          s:SSE4A, t:DATAXFER, w:W|R
+CVTTPS2PI      Pq,Wq         n/a                       [         NP 0x0F 0x2C /r]              s:SSE, t:CONVERT, w:W|R
+CVTTPD2PI      Pq,Wpd        n/a                       [       0x66 0x0F 0x2C /r]              s:SSE2, t:CONVERT, w:W|R
+CVTTSS2SI      Gy,Wss        n/a                       [       0xF3 0x0F 0x2C /r]              s:SSE, t:CONVERT, w:W|R, e:3
+CVTTSD2SI      Gy,Wsd        n/a                       [       0xF2 0x0F 0x2C /r]              s:SSE2, t:CONVERT, w:W|R, e:3
+CVTPS2PI       Pq,Wq         n/a                       [         NP 0x0F 0x2D /r]              s:SSE, t:CONVERT, w:W|R
+CVTPD2PI       Pq,Wpd        n/a                       [       0x66 0x0F 0x2D /r]              s:SSE2, t:CONVERT, w:W|R
+CVTSS2SI       Gy,Wss        n/a                       [       0xF3 0x0F 0x2D /r]              s:SSE, t:CONVERT, w:W|R, e:3
+CVTSD2SI       Gy,Wsd        n/a                       [       0xF2 0x0F 0x2D /r]              s:SSE2, t:CONVERT, w:W|R, e:3
 UCOMISS        Vss,Wss       Fv                        [         NP 0x0F 0x2E /r]              s:SSE, t:SSE, w:R|R|W, f:COMIS
 UCOMISD        Vsd,Wsd       Fv                        [       0x66 0x0F 0x2E /r]              s:SSE2, t:SSE2, w:R|R|W, f:COMIS, e:3
 COMISS         Vss,Wss       Fv                        [         NP 0x0F 0x2F /r]              s:SSE, t:SSE, w:R|R|W, f:COMIS, e:3
 COMISD         Vsd,Wsd       Fv                        [       0x66 0x0F 0x2F /r]              s:SSE2, t:SSE2, w:R|R|W, f:COMIS, e:3
 
 # 0x30 - 0x3F
-WRMSR          nil           EAX,EDX,ECX,MSR           [            0x0F 0x30]                 s:PENTIUMREAL, t:SYSTEM, w:R|R|R|W, a:SERIAL, m:KERNEL|NOV86, i:MSR
-RDTSC          nil           EAX,EDX,TSC               [            0x0F 0x31]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R
-RDMSR          nil           EAX,EDX,ECX,MSR           [            0x0F 0x32]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R|R, m:KERNEL|NOV86, i:MSR
-RDPMC          nil           EAX,EDX,ECX,MSR           [            0x0F 0x33]                 s:RDPMC, t:SYSTEM, w:W|W|R|R, m:NOSGX
-SYSENTER       nil           SCS,SESP,SEIP,SS,sSP,CS,rIP,Fv,SSP [   0x0F 0x34]                 s:PPRO, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW, a:CETT, i:SEP, f:IF=0, m:NOREAL|NOSGX
-SYSEXIT        nil           SS,sSP,CS,rIP,SSP         [            0x0F 0x35]                 s:PPRO, t:SYSRET, w:W|W|W|W|W|W, a:F64, i:SEP, m:KERNEL|NOREAL
-RDSHR          Ed            nil                       [      cyrix 0x0F 0x36 /r]              s:CYRIX, t:SYSTEM, w:R
-GETSEC         nil           EAX,EBX                   [         NP 0x0F 0x37]                 s:SMX, t:SYSTEM, w:RCW|R, m:KERNEL|NOREAL|NOSGX
-WRSHR          Ed            nil                       [      cyrix 0x0F 0x37 /r]              s:CYRIX, t:SYSTEM, w:W
-DMINT          nil           nil                       [            0x0F 0x39]                 s:CYRIX, t:SYSTEM, m:NO64
-CPU_WRITE      nil           nil                       [            0x0F 0x3C]                 s:CYRIX, t:SYSTEM
-CPU_READ       nil           nil                       [            0x0F 0x3D]                 s:CYRIX, t:SYSTEM
-ALTINST        nil           nil                       [            0x0F 0x3F]                 s:CYRIX, t:SYSTEM
+WRMSR          n/a           EAX,EDX,ECX,MSR           [            0x0F 0x30]                 s:PENTIUMREAL, t:SYSTEM, w:R|R|R|W, a:SERIAL, m:KERNEL|NOV86, i:MSR
+RDTSC          n/a           EAX,EDX,TSC               [            0x0F 0x31]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R
+RDMSR          n/a           EAX,EDX,ECX,MSR           [            0x0F 0x32]                 s:PENTIUMREAL, t:SYSTEM, w:W|W|R|R, m:KERNEL|NOV86, i:MSR
+RDPMC          n/a           EAX,EDX,ECX,MSR           [            0x0F 0x33]                 s:RDPMC, t:SYSTEM, w:W|W|R|R, m:NOSGX
+SYSENTER       n/a           SCS,SESP,SEIP,SS,sSP,CS,rIP,Fv,SSP [   0x0F 0x34]                 s:PPRO, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW, a:CETT, i:SEP, f:IF=0, m:NOREAL|NOSGX
+SYSEXIT        n/a           SS,sSP,CS,rIP,SSP         [            0x0F 0x35]                 s:PPRO, t:SYSRET, w:W|W|W|W|W|W, a:F64, i:SEP, m:KERNEL|NOREAL
+RDSHR          Ed            n/a                       [      cyrix 0x0F 0x36 /r]              s:CYRIX, t:SYSTEM, w:R
+GETSEC         n/a           EAX,EBX                   [         NP 0x0F 0x37]                 s:SMX, t:SYSTEM, w:RCW|R, m:KERNEL|NOREAL|NOSGX
+WRSHR          Ed            n/a                       [      cyrix 0x0F 0x37 /r]              s:CYRIX, t:SYSTEM, w:W
+DMINT          n/a           n/a                       [            0x0F 0x39]                 s:CYRIX, t:SYSTEM, m:NO64
+CPU_WRITE      n/a           n/a                       [            0x0F 0x3C]                 s:CYRIX, t:SYSTEM
+CPU_READ       n/a           n/a                       [            0x0F 0x3D]                 s:CYRIX, t:SYSTEM
+ALTINST        n/a           n/a                       [            0x0F 0x3F]                 s:CYRIX, t:SYSTEM
 
 # 0x40 - 0x4F
 CMOVO          Gv,Ev         Fv                        [            0x0F 0x40 /r]              s:PPRO, t:CMOV, c:CMOVcc, w:CW|R|R, i:CMOV, f:CO,   a:COND
@@ -310,148 +315,148 @@ CMOVNLE        Gv,Ev         Fv                        [            0x0F 0x4F /r
 
 # 0x50 - 0x5F
 # Note: for MOVMSKPS & MOVMSKPD, the Intel doc says the destination reg is y (32 or 64 bit) but XED says it must be d (only 32 bits).
-MOVMSKPS       Gy,Ups        nil                       [         NP 0x0F 0x50 /r:reg]          s:SSE, t:DATAXFER, w:W|R, e:7, a:D64
-MOVMSKPD       Gy,Upd        nil                       [       0x66 0x0F 0x50 /r:reg]          s:SSE2, t:DATAXFER, w:W|R, e:7, a:D64
-SQRTPS         Vps,Wps       nil                       [         NP 0x0F 0x51 /r]              s:SSE, t:SSE, w:W|R, e:2
-SQRTPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x51 /r]              s:SSE2, t:SSE, w:W|R, e:2
-SQRTSS         Vss,Wss       nil                       [       0xF3 0x0F 0x51 /r]              s:SSE, t:SSE, w:W|R, e:3
-SQRTSD         Vsd,Wsd       nil                       [       0xF2 0x0F 0x51 /r]              s:SSE2, t:SSE, w:W|R, e:3
-RSQRTPS        Vps,Wps       nil                       [         NP 0x0F 0x52 /r]              s:SSE, t:SSE, w:W|R, e:4
-RSQRTSS        Vss,Wss       nil                       [       0xF3 0x0F 0x52 /r]              s:SSE, t:SSE, w:W|R, e:5
-RCPPS          Vps,Wps       nil                       [         NP 0x0F 0x53 /r]              s:SSE, t:SSE, w:W|R, e:4
-RCPSS          Vss,Wss       nil                       [       0xF3 0x0F 0x53 /r]              s:SSE, t:SSE, w:W|R, e:5
-ANDPS          Vps,Wps       nil                       [         NP 0x0F 0x54 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
-ANDPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x54 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
-ANDNPS         Vps,Wps       nil                       [         NP 0x0F 0x55 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
-ANDNPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x55 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
-ORPS           Vps,Wps       nil                       [         NP 0x0F 0x56 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
-ORPD           Vpd,Wpd       nil                       [       0x66 0x0F 0x56 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
-XORPS          Vps,Wps       nil                       [         NP 0x0F 0x57 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
-XORPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x57 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
-ADDPS          Vps,Wps       nil                       [         NP 0x0F 0x58 /r]              s:SSE, t:SSE, w:RW|R, e:2
-ADDPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x58 /r]              s:SSE2, t:SSE, w:RW|R, e:2
-ADDSS          Vss,Wss       nil                       [       0xF3 0x0F 0x58 /r]              s:SSE, t:SSE, w:RW|R, e:3
-ADDSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x58 /r]              s:SSE2, t:SSE, w:RW|R, e:3
-MULPS          Vps,Wps       nil                       [         NP 0x0F 0x59 /r]              s:SSE, t:SSE, w:RW|R, e:2
-MULPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x59 /r]              s:SSE2, t:SSE, w:RW|R, e:2
-MULSS          Vss,Wss       nil                       [       0xF3 0x0F 0x59 /r]              s:SSE, t:SSE, w:RW|R, e:3
-MULSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x59 /r]              s:SSE2, t:SSE, w:RW|R, e:3
-CVTPS2PD       Vpd,Wq        nil                       [         NP 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
-CVTPD2PS       Vps,Wpd       nil                       [       0x66 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:2
-CVTSS2SD       Vsd,Wss       nil                       [       0xF3 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
-CVTSD2SS       Vss,Wsd       nil                       [       0xF2 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
-CVTDQ2PS       Vps,Wdq       nil                       [         NP 0x0F 0x5B /r]              s:SSE2, t:CONVERT, w:W|R, e:2
-CVTPS2DQ       Vdq,Wps       nil                       [       0x66 0x0F 0x5B /r]              s:SSE2, t:CONVERT, w:W|R, e:2
-CVTTPS2DQ      Vdq,Wps       nil                       [       0xF3 0x0F 0x5B /r]              s:SSE2, t:CONVERT, w:W|R, e:2
-SUBPS          Vps,Wps       nil                       [         NP 0x0F 0x5C /r]              s:SSE, t:SSE, w:RW|R, e:2
-SUBPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x5C /r]              s:SSE2, t:SSE, w:RW|R, e:2
-SUBSS          Vss,Wss       nil                       [       0xF3 0x0F 0x5C /r]              s:SSE, t:SSE, w:RW|R, e:3
-SUBSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x5C /r]              s:SSE2, t:SSE, w:RW|R, e:3
-MINPS          Vps,Wps       nil                       [         NP 0x0F 0x5D /r]              s:SSE, t:SSE, w:RW|R, e:2
-MINPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x5D /r]              s:SSE2, t:SSE, w:RW|R, e:2
-MINSS          Vss,Wss       nil                       [       0xF3 0x0F 0x5D /r]              s:SSE, t:SSE, w:RW|R, e:3
-MINSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x5D /r]              s:SSE2, t:SSE, w:RW|R, e:3
-DIVPS          Vps,Wps       nil                       [         NP 0x0F 0x5E /r]              s:SSE, t:SSE, w:RW|R, e:2
-DIVPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x5E /r]              s:SSE2, t:SSE, w:RW|R, e:2
-DIVSS          Vss,Wss       nil                       [       0xF3 0x0F 0x5E /r]              s:SSE, t:SSE, w:RW|R, e:3
-DIVSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x5E /r]              s:SSE2, t:SSE, w:RW|R, e:3
-MAXPS          Vps,Wps       nil                       [         NP 0x0F 0x5F /r]              s:SSE, t:SSE, w:RW|R, e:2
-MAXPD          Vpd,Wpd       nil                       [       0x66 0x0F 0x5F /r]              s:SSE2, t:SSE, w:RW|R, e:2
-MAXSS          Vss,Wss       nil                       [       0xF3 0x0F 0x5F /r]              s:SSE, t:SSE, w:RW|R, e:3
-MAXSD          Vsd,Wsd       nil                       [       0xF2 0x0F 0x5F /r]              s:SSE2, t:SSE, w:RW|R, e:3
+MOVMSKPS       Gy,Ups        n/a                       [         NP 0x0F 0x50 /r:reg]          s:SSE, t:DATAXFER, w:W|R, e:7, a:D64
+MOVMSKPD       Gy,Upd        n/a                       [       0x66 0x0F 0x50 /r:reg]          s:SSE2, t:DATAXFER, w:W|R, e:7, a:D64
+SQRTPS         Vps,Wps       n/a                       [         NP 0x0F 0x51 /r]              s:SSE, t:SSE, w:W|R, e:2
+SQRTPD         Vpd,Wpd       n/a                       [       0x66 0x0F 0x51 /r]              s:SSE2, t:SSE, w:W|R, e:2
+SQRTSS         Vss,Wss       n/a                       [       0xF3 0x0F 0x51 /r]              s:SSE, t:SSE, w:W|R, e:3
+SQRTSD         Vsd,Wsd       n/a                       [       0xF2 0x0F 0x51 /r]              s:SSE2, t:SSE, w:W|R, e:3
+RSQRTPS        Vps,Wps       n/a                       [         NP 0x0F 0x52 /r]              s:SSE, t:SSE, w:W|R, e:4
+RSQRTSS        Vss,Wss       n/a                       [       0xF3 0x0F 0x52 /r]              s:SSE, t:SSE, w:W|R, e:5
+RCPPS          Vps,Wps       n/a                       [         NP 0x0F 0x53 /r]              s:SSE, t:SSE, w:W|R, e:4
+RCPSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x53 /r]              s:SSE, t:SSE, w:W|R, e:5
+ANDPS          Vps,Wps       n/a                       [         NP 0x0F 0x54 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
+ANDPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x54 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
+ANDNPS         Vps,Wps       n/a                       [         NP 0x0F 0x55 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
+ANDNPD         Vpd,Wpd       n/a                       [       0x66 0x0F 0x55 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
+ORPS           Vps,Wps       n/a                       [         NP 0x0F 0x56 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
+ORPD           Vpd,Wpd       n/a                       [       0x66 0x0F 0x56 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
+XORPS          Vps,Wps       n/a                       [         NP 0x0F 0x57 /r]              s:SSE, t:LOGICAL_FP, w:RW|R, e:4
+XORPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x57 /r]              s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
+ADDPS          Vps,Wps       n/a                       [         NP 0x0F 0x58 /r]              s:SSE, t:SSE, w:RW|R, e:2
+ADDPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x58 /r]              s:SSE2, t:SSE, w:RW|R, e:2
+ADDSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x58 /r]              s:SSE, t:SSE, w:RW|R, e:3
+ADDSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x58 /r]              s:SSE2, t:SSE, w:RW|R, e:3
+MULPS          Vps,Wps       n/a                       [         NP 0x0F 0x59 /r]              s:SSE, t:SSE, w:RW|R, e:2
+MULPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x59 /r]              s:SSE2, t:SSE, w:RW|R, e:2
+MULSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x59 /r]              s:SSE, t:SSE, w:RW|R, e:3
+MULSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x59 /r]              s:SSE2, t:SSE, w:RW|R, e:3
+CVTPS2PD       Vpd,Wq        n/a                       [         NP 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
+CVTPD2PS       Vps,Wpd       n/a                       [       0x66 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:2
+CVTSS2SD       Vsd,Wss       n/a                       [       0xF3 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
+CVTSD2SS       Vss,Wsd       n/a                       [       0xF2 0x0F 0x5A /r]              s:SSE2, t:CONVERT, w:W|R, e:3
+CVTDQ2PS       Vps,Wdq       n/a                       [         NP 0x0F 0x5B /r]              s:SSE2, t:CONVERT, w:W|R, e:2
+CVTPS2DQ       Vdq,Wps       n/a                       [       0x66 0x0F 0x5B /r]              s:SSE2, t:CONVERT, w:W|R, e:2
+CVTTPS2DQ      Vdq,Wps       n/a                       [       0xF3 0x0F 0x5B /r]              s:SSE2, t:CONVERT, w:W|R, e:2
+SUBPS          Vps,Wps       n/a                       [         NP 0x0F 0x5C /r]              s:SSE, t:SSE, w:RW|R, e:2
+SUBPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x5C /r]              s:SSE2, t:SSE, w:RW|R, e:2
+SUBSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x5C /r]              s:SSE, t:SSE, w:RW|R, e:3
+SUBSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x5C /r]              s:SSE2, t:SSE, w:RW|R, e:3
+MINPS          Vps,Wps       n/a                       [         NP 0x0F 0x5D /r]              s:SSE, t:SSE, w:RW|R, e:2
+MINPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x5D /r]              s:SSE2, t:SSE, w:RW|R, e:2
+MINSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x5D /r]              s:SSE, t:SSE, w:RW|R, e:3
+MINSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x5D /r]              s:SSE2, t:SSE, w:RW|R, e:3
+DIVPS          Vps,Wps       n/a                       [         NP 0x0F 0x5E /r]              s:SSE, t:SSE, w:RW|R, e:2
+DIVPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x5E /r]              s:SSE2, t:SSE, w:RW|R, e:2
+DIVSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x5E /r]              s:SSE, t:SSE, w:RW|R, e:3
+DIVSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x5E /r]              s:SSE2, t:SSE, w:RW|R, e:3
+MAXPS          Vps,Wps       n/a                       [         NP 0x0F 0x5F /r]              s:SSE, t:SSE, w:RW|R, e:2
+MAXPD          Vpd,Wpd       n/a                       [       0x66 0x0F 0x5F /r]              s:SSE2, t:SSE, w:RW|R, e:2
+MAXSS          Vss,Wss       n/a                       [       0xF3 0x0F 0x5F /r]              s:SSE, t:SSE, w:RW|R, e:3
+MAXSD          Vsd,Wsd       n/a                       [       0xF2 0x0F 0x5F /r]              s:SSE2, t:SSE, w:RW|R, e:3
 
 # 0x60 - 0x6F
-PUNPCKLBW      Pq,Qd         nil                       [         NP 0x0F 0x60 /r]              s:MMX, t:MMX, w:RW|R
-PUNPCKLBW      Vx,Wx         nil                       [       0x66 0x0F 0x60 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKLWD      Pq,Qd         nil                       [         NP 0x0F 0x61 /r]              s:MMX, t:MMX, w:RW|R
-PUNPCKLWD      Vx,Wx         nil                       [       0x66 0x0F 0x61 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKLDQ      Pq,Qd         nil                       [         NP 0x0F 0x62 /r]              s:MMX, t:MMX, w:RW|R
-PUNPCKLDQ      Vx,Wx         nil                       [       0x66 0x0F 0x62 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PACKSSWB       Pq,Qq         nil                       [         NP 0x0F 0x63 /r]              s:MMX, t:MMX, w:RW|R
-PACKSSWB       Vx,Wx         nil                       [       0x66 0x0F 0x63 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PCMPGTB        Pq,Qq         nil                       [         NP 0x0F 0x64 /r]              s:MMX, t:MMX, w:RW|R
-PCMPGTB        Vx,Wx         nil                       [       0x66 0x0F 0x64 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PCMPGTW        Pq,Qq         nil                       [         NP 0x0F 0x65 /r]              s:MMX, t:MMX, w:RW|R
-PCMPGTW        Vx,Wx         nil                       [       0x66 0x0F 0x65 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PCMPGTD        Pq,Qq         nil                       [         NP 0x0F 0x66 /r]              s:MMX, t:MMX, w:RW|R
-PCMPGTD        Vx,Wx         nil                       [       0x66 0x0F 0x66 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PACKUSWB       Pq,Qq         nil                       [         NP 0x0F 0x67 /r]              s:MMX, t:MMX, w:RW|R
-PACKUSWB       Vx,Wx         nil                       [       0x66 0x0F 0x67 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKHBW      Pq,Qq         nil                       [         NP 0x0F 0x68 /r]              s:MMX, t:MMX, w:RW|R
-PUNPCKHBW      Vx,Wx         nil                       [       0x66 0x0F 0x68 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKHWD      Pq,Qq         nil                       [         NP 0x0F 0x69 /r]              s:MMX, t:MMX, w:RW|R
-PUNPCKHWD      Vx,Wx         nil                       [       0x66 0x0F 0x69 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKHDQ      Pq,Qq         nil                       [         NP 0x0F 0x6A /r]              s:MMX, t:MMX, w:RW|R
-PUNPCKHDQ      Vx,Wx         nil                       [       0x66 0x0F 0x6A /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PACKSSDW       Pq,Qq         nil                       [         NP 0x0F 0x6B /r]              s:MMX, t:MMX, w:RW|R
-PACKSSDW       Vx,Wx         nil                       [       0x66 0x0F 0x6B /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKLQDQ     Vx,Wx         nil                       [       0x66 0x0F 0x6C /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PUNPCKHQDQ     Vx,Wx         nil                       [       0x66 0x0F 0x6D /r]              s:SSE2, t:SSE, w:RW|R, e:4
-MOVD           Pq,Ey         nil                       [         NP 0x0F 0x6E /r]              s:MMX, t:DATAXFER, w:W|R
-MOVQ           Pq,Ey         nil                       [    rexw NP 0x0F 0x6E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVD           Vdq,Ey        nil                       [       0x66 0x0F 0x6E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVQ           Vdq,Ey        nil                       [  0x66 rexw 0x0F 0x6E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVQ           Pq,Qq         nil                       [         NP 0x0F 0x6F /r]              s:MMX, t:DATAXFER, w:W|R
-MOVDQA         Vx,Wx         nil                       [       0x66 0x0F 0x6F /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
-MOVDQU         Vx,Wx         nil                       [       0xF3 0x0F 0x6F /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
+PUNPCKLBW      Pq,Qd         n/a                       [         NP 0x0F 0x60 /r]              s:MMX, t:MMX, w:RW|R
+PUNPCKLBW      Vx,Wx         n/a                       [       0x66 0x0F 0x60 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKLWD      Pq,Qd         n/a                       [         NP 0x0F 0x61 /r]              s:MMX, t:MMX, w:RW|R
+PUNPCKLWD      Vx,Wx         n/a                       [       0x66 0x0F 0x61 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKLDQ      Pq,Qd         n/a                       [         NP 0x0F 0x62 /r]              s:MMX, t:MMX, w:RW|R
+PUNPCKLDQ      Vx,Wx         n/a                       [       0x66 0x0F 0x62 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PACKSSWB       Pq,Qq         n/a                       [         NP 0x0F 0x63 /r]              s:MMX, t:MMX, w:RW|R
+PACKSSWB       Vx,Wx         n/a                       [       0x66 0x0F 0x63 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PCMPGTB        Pq,Qq         n/a                       [         NP 0x0F 0x64 /r]              s:MMX, t:MMX, w:RW|R
+PCMPGTB        Vx,Wx         n/a                       [       0x66 0x0F 0x64 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PCMPGTW        Pq,Qq         n/a                       [         NP 0x0F 0x65 /r]              s:MMX, t:MMX, w:RW|R
+PCMPGTW        Vx,Wx         n/a                       [       0x66 0x0F 0x65 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PCMPGTD        Pq,Qq         n/a                       [         NP 0x0F 0x66 /r]              s:MMX, t:MMX, w:RW|R
+PCMPGTD        Vx,Wx         n/a                       [       0x66 0x0F 0x66 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PACKUSWB       Pq,Qq         n/a                       [         NP 0x0F 0x67 /r]              s:MMX, t:MMX, w:RW|R
+PACKUSWB       Vx,Wx         n/a                       [       0x66 0x0F 0x67 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKHBW      Pq,Qq         n/a                       [         NP 0x0F 0x68 /r]              s:MMX, t:MMX, w:RW|R
+PUNPCKHBW      Vx,Wx         n/a                       [       0x66 0x0F 0x68 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKHWD      Pq,Qq         n/a                       [         NP 0x0F 0x69 /r]              s:MMX, t:MMX, w:RW|R
+PUNPCKHWD      Vx,Wx         n/a                       [       0x66 0x0F 0x69 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKHDQ      Pq,Qq         n/a                       [         NP 0x0F 0x6A /r]              s:MMX, t:MMX, w:RW|R
+PUNPCKHDQ      Vx,Wx         n/a                       [       0x66 0x0F 0x6A /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PACKSSDW       Pq,Qq         n/a                       [         NP 0x0F 0x6B /r]              s:MMX, t:MMX, w:RW|R
+PACKSSDW       Vx,Wx         n/a                       [       0x66 0x0F 0x6B /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKLQDQ     Vx,Wx         n/a                       [       0x66 0x0F 0x6C /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PUNPCKHQDQ     Vx,Wx         n/a                       [       0x66 0x0F 0x6D /r]              s:SSE2, t:SSE, w:RW|R, e:4
+MOVD           Pq,Ey         n/a                       [         NP 0x0F 0x6E /r]              s:MMX, t:DATAXFER, w:W|R
+MOVQ           Pq,Ey         n/a                       [    rexw NP 0x0F 0x6E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVD           Vdq,Ey        n/a                       [       0x66 0x0F 0x6E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVQ           Vdq,Ey        n/a                       [  0x66 rexw 0x0F 0x6E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVQ           Pq,Qq         n/a                       [         NP 0x0F 0x6F /r]              s:MMX, t:DATAXFER, w:W|R
+MOVDQA         Vx,Wx         n/a                       [       0x66 0x0F 0x6F /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
+MOVDQU         Vx,Wx         n/a                       [       0xF3 0x0F 0x6F /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
 
 # 0x70 - 0x7F
-PSHUFW         Pq,Qq,Ib      nil                       [         NP 0x0F 0x70 /r ib]           s:MMX, t:MMX, w:W|R|R
-PSHUFD         Vx,Wx,Ib      nil                       [       0x66 0x0F 0x70 /r ib]           s:SSE2, t:SSE, w:W|R|R, e:4
-PSHUFHW        Vx,Wx,Ib      nil                       [       0xF3 0x0F 0x70 /r ib]           s:SSE2, t:SSE, w:W|R|R, e:4
-PSHUFLW        Vx,Wx,Ib      nil                       [       0xF2 0x0F 0x70 /r ib]           s:SSE2, t:SSE, w:W|R|R, e:4
-PSRLW          Nq,Ib         nil                       [         NP 0x0F 0x71 /2:reg ib]       s:MMX, t:MMX, w:RW|R
-PSRLW          Ux,Ib         nil                       [       0x66 0x0F 0x71 /2:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSRAW          Nq,Ib         nil                       [         NP 0x0F 0x71 /4:reg ib]       s:MMX, t:MMX, w:RW|R
-PSRAW          Ux,Ib         nil                       [       0x66 0x0F 0x71 /4:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSLLW          Nq,Ib         nil                       [         NP 0x0F 0x71 /6:reg ib]       s:MMX, t:MMX, w:RW|R
-PSLLW          Ux,Ib         nil                       [       0x66 0x0F 0x71 /6:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSRLD          Nq,Ib         nil                       [         NP 0x0F 0x72 /2:reg ib]       s:MMX, t:MMX, w:RW|R
-PSRLD          Ux,Ib         nil                       [       0x66 0x0F 0x72 /2:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSRAD          Nq,Ib         nil                       [         NP 0x0F 0x72 /4:reg ib]       s:MMX, t:MMX, w:RW|R
-PSRAD          Ux,Ib         nil                       [       0x66 0x0F 0x72 /4:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSLLD          Nq,Ib         nil                       [         NP 0x0F 0x72 /6:reg ib]       s:MMX, t:MMX, w:RW|R
-PSLLD          Ux,Ib         nil                       [       0x66 0x0F 0x72 /6:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSRLQ          Nq,Ib         nil                       [         NP 0x0F 0x73 /2:reg ib]       s:MMX, t:MMX, w:RW|R
-PSRLQ          Ux,Ib         nil                       [       0x66 0x0F 0x73 /2:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSRLDQ         Ux,Ib         nil                       [       0x66 0x0F 0x73 /3:reg ib]       s:SSE2, t:SSE, w:RW|R, e:7
-PSLLQ          Nq,Ib         nil                       [         NP 0x0F 0x73 /6:reg ib]       s:MMX, t:MMX, w:RW|R
-PSLLQ          Ux,Ib         nil                       [       0x66 0x0F 0x73 /6:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
-PSLLDQ         Ux,Ib         nil                       [       0x66 0x0F 0x73 /7:reg ib]       s:SSE2, t:SSE, w:RW|R, e:7
-PCMPEQB        Pq,Qq         nil                       [         NP 0x0F 0x74 /r]              s:MMX, t:MMX, w:RW|R
-PCMPEQB        Vx,Wx         nil                       [       0x66 0x0F 0x74 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PCMPEQW        Pq,Qq         nil                       [         NP 0x0F 0x75 /r]              s:MMX, t:MMX, w:RW|R
-PCMPEQW        Vx,Wx         nil                       [       0x66 0x0F 0x75 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PCMPEQD        Pq,Qq         nil                       [         NP 0x0F 0x76 /r]              s:MMX, t:MMX, w:RW|R
-PCMPEQD        Vx,Wx         nil                       [       0x66 0x0F 0x76 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-EMMS           nil           nil                       [         NP 0x0F 0x77]                 s:MMX, t:MMX
+PSHUFW         Pq,Qq,Ib      n/a                       [         NP 0x0F 0x70 /r ib]           s:MMX, t:MMX, w:W|R|R
+PSHUFD         Vx,Wx,Ib      n/a                       [       0x66 0x0F 0x70 /r ib]           s:SSE2, t:SSE, w:W|R|R, e:4
+PSHUFHW        Vx,Wx,Ib      n/a                       [       0xF3 0x0F 0x70 /r ib]           s:SSE2, t:SSE, w:W|R|R, e:4
+PSHUFLW        Vx,Wx,Ib      n/a                       [       0xF2 0x0F 0x70 /r ib]           s:SSE2, t:SSE, w:W|R|R, e:4
+PSRLW          Nq,Ib         n/a                       [         NP 0x0F 0x71 /2:reg ib]       s:MMX, t:MMX, w:RW|R
+PSRLW          Ux,Ib         n/a                       [       0x66 0x0F 0x71 /2:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSRAW          Nq,Ib         n/a                       [         NP 0x0F 0x71 /4:reg ib]       s:MMX, t:MMX, w:RW|R
+PSRAW          Ux,Ib         n/a                       [       0x66 0x0F 0x71 /4:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSLLW          Nq,Ib         n/a                       [         NP 0x0F 0x71 /6:reg ib]       s:MMX, t:MMX, w:RW|R
+PSLLW          Ux,Ib         n/a                       [       0x66 0x0F 0x71 /6:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSRLD          Nq,Ib         n/a                       [         NP 0x0F 0x72 /2:reg ib]       s:MMX, t:MMX, w:RW|R
+PSRLD          Ux,Ib         n/a                       [       0x66 0x0F 0x72 /2:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSRAD          Nq,Ib         n/a                       [         NP 0x0F 0x72 /4:reg ib]       s:MMX, t:MMX, w:RW|R
+PSRAD          Ux,Ib         n/a                       [       0x66 0x0F 0x72 /4:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSLLD          Nq,Ib         n/a                       [         NP 0x0F 0x72 /6:reg ib]       s:MMX, t:MMX, w:RW|R
+PSLLD          Ux,Ib         n/a                       [       0x66 0x0F 0x72 /6:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSRLQ          Nq,Ib         n/a                       [         NP 0x0F 0x73 /2:reg ib]       s:MMX, t:MMX, w:RW|R
+PSRLQ          Ux,Ib         n/a                       [       0x66 0x0F 0x73 /2:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSRLDQ         Ux,Ib         n/a                       [       0x66 0x0F 0x73 /3:reg ib]       s:SSE2, t:SSE, w:RW|R, e:7
+PSLLQ          Nq,Ib         n/a                       [         NP 0x0F 0x73 /6:reg ib]       s:MMX, t:MMX, w:RW|R
+PSLLQ          Ux,Ib         n/a                       [       0x66 0x0F 0x73 /6:reg ib]       s:SSE2, t:SSE, w:RW|R, e:4
+PSLLDQ         Ux,Ib         n/a                       [       0x66 0x0F 0x73 /7:reg ib]       s:SSE2, t:SSE, w:RW|R, e:7
+PCMPEQB        Pq,Qq         n/a                       [         NP 0x0F 0x74 /r]              s:MMX, t:MMX, w:RW|R
+PCMPEQB        Vx,Wx         n/a                       [       0x66 0x0F 0x74 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PCMPEQW        Pq,Qq         n/a                       [         NP 0x0F 0x75 /r]              s:MMX, t:MMX, w:RW|R
+PCMPEQW        Vx,Wx         n/a                       [       0x66 0x0F 0x75 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PCMPEQD        Pq,Qq         n/a                       [         NP 0x0F 0x76 /r]              s:MMX, t:MMX, w:RW|R
+PCMPEQD        Vx,Wx         n/a                       [       0x66 0x0F 0x76 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+EMMS           n/a           n/a                       [         NP 0x0F 0x77]                 s:MMX, t:MMX
 VMREAD         Ey,Gy         Fv                        [         NP 0x0F 0x78 /r]              s:VTX, t:VTX, w:RW|R|W, f:VMX, a:F64, m:VMXROOT
-INSERTQ        Vdq,Udq,Ib,Ib nil                       [       0xF2 0x0F 0x78 /r ib ib]        s:SSE4A, t:BITBYTE, w:W|R|R|R
-EXTRQ          Uq,Ib,Ib      nil                       [       0x66 0x0F 0x78 /0 modrmpmp ib ib] s:SSE4A, t:BITBYTE, w:W|R|R
+INSERTQ        Vdq,Udq,Ib,Ib n/a                       [       0xF2 0x0F 0x78 /r ib ib]        s:SSE4A, t:BITBYTE, w:W|R|R|R
+EXTRQ          Uq,Ib,Ib      n/a                       [       0x66 0x0F 0x78 /0 modrmpmp ib ib] s:SSE4A, t:BITBYTE, w:W|R|R
 VMWRITE        Gy,Ey         Fv                        [         NP 0x0F 0x79 /r]              s:VTX, t:VTX, w:R|R|W, f:VMX, a:F64, m:VMXROOT
-EXTRQ          Vdq,Uq        nil                       [       0x66 0x0F 0x79 /r:reg]          s:SSE4A, t:BITBYTE, w:W|R
-INSERTQ        Vdq,Udq       nil                       [       0xF2 0x0F 0x79 /r:reg]          s:SSE4A, t:BITBYTE, w:W|R
-HADDPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x7C /r]              s:SSE3, t:SSE, w:RW|R, e:2
-HADDPS         Vps,Wps       nil                       [       0xF2 0x0F 0x7C /r]              s:SSE3, t:SSE, w:RW|R, e:2
-HSUBPD         Vpd,Wpd       nil                       [       0x66 0x0F 0x7D /r]              s:SSE3, t:SSE, w:RW|R, e:2
-HSUBPS         Vps,Wps       nil                       [       0xF2 0x0F 0x7D /r]              s:SSE3, t:SSE, w:RW|R, e:2
-MOVD           Ey,Pd         nil                       [         NP 0x0F 0x7E /r]              s:MMX, t:DATAXFER, w:W|R
-MOVQ           Ey,Pq         nil                       [    rexw NP 0x0F 0x7E /r]              s:MMX, t:DATAXFER, w:W|R
-MOVD           Ey,Vdq        nil                       [       0x66 0x0F 0x7E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVQ           Ey,Vdq        nil                       [  0x66 rexw 0x0F 0x7E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVQ           Vdq,Wq        nil                       [       0xF3 0x0F 0x7E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVQ           Qq,Pq         nil                       [         NP 0x0F 0x7F /r]              s:MMX, t:DATAXFER, w:W|R
-MOVDQA         Wx,Vx         nil                       [       0x66 0x0F 0x7F /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
-MOVDQU         Wx,Vx         nil                       [       0xF3 0x0F 0x7F /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
+EXTRQ          Vdq,Uq        n/a                       [       0x66 0x0F 0x79 /r:reg]          s:SSE4A, t:BITBYTE, w:W|R
+INSERTQ        Vdq,Udq       n/a                       [       0xF2 0x0F 0x79 /r:reg]          s:SSE4A, t:BITBYTE, w:W|R
+HADDPD         Vpd,Wpd       n/a                       [       0x66 0x0F 0x7C /r]              s:SSE3, t:SSE, w:RW|R, e:2
+HADDPS         Vps,Wps       n/a                       [       0xF2 0x0F 0x7C /r]              s:SSE3, t:SSE, w:RW|R, e:2
+HSUBPD         Vpd,Wpd       n/a                       [       0x66 0x0F 0x7D /r]              s:SSE3, t:SSE, w:RW|R, e:2
+HSUBPS         Vps,Wps       n/a                       [       0xF2 0x0F 0x7D /r]              s:SSE3, t:SSE, w:RW|R, e:2
+MOVD           Ey,Pd         n/a                       [         NP 0x0F 0x7E /r]              s:MMX, t:DATAXFER, w:W|R
+MOVQ           Ey,Pq         n/a                       [    rexw NP 0x0F 0x7E /r]              s:MMX, t:DATAXFER, w:W|R
+MOVD           Ey,Vdq        n/a                       [       0x66 0x0F 0x7E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVQ           Ey,Vdq        n/a                       [  0x66 rexw 0x0F 0x7E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVQ           Vdq,Wq        n/a                       [       0xF3 0x0F 0x7E /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVQ           Qq,Pq         n/a                       [         NP 0x0F 0x7F /r]              s:MMX, t:DATAXFER, w:W|R
+MOVDQA         Wx,Vx         n/a                       [       0x66 0x0F 0x7F /r]              s:SSE2, t:DATAXFER, w:W|R, e:1
+MOVDQU         Wx,Vx         n/a                       [       0xF3 0x0F 0x7F /r]              s:SSE2, t:DATAXFER, w:W|R, e:4
 
 # SMM instructions on Cyrix CPUs.
-SVDC           Ms,Sw         nil                       [      cyrix 0x0F 0x78 /r:mem]          s:CYRIX_SMM, t:SEGOP, w:W|R
-RSDC           Sw,Ms         nil                       [      cyrix 0x0F 0x79 /r:mem]          s:CYRIX_SMM, t:SEGOP, w:R|R
-SVLDT          Ms            nil                       [      cyrix 0x0F 0x7A /r:mem]          s:CYRIX_SMM, t:SEGOP, w:W
-RSLDT          Ms            nil                       [      cyrix 0x0F 0x7B /r:mem]          s:CYRIX_SMM, t:SEGOP, w:R
-SVTS           Ms            nil                       [      cyrix 0x0F 0x7C /r:mem]          s:CYRIX_SMM, t:SEGOP, w:W
-RSTS           Ms            nil                       [      cyrix 0x0F 0x7D /r:mem]          s:CYRIX_SMM, t:SEGOP, w:R
-SMINT          nil           nil                       [      cyrix 0x0F 0x7E]                 s:CYRIX_SMM, t:SEGOP
+SVDC           Ms,Sw         n/a                       [      cyrix 0x0F 0x78 /r:mem]          s:CYRIX_SMM, t:SEGOP, w:W|R
+RSDC           Sw,Ms         n/a                       [      cyrix 0x0F 0x79 /r:mem]          s:CYRIX_SMM, t:SEGOP, w:R|R
+SVLDT          Ms            n/a                       [      cyrix 0x0F 0x7A /r:mem]          s:CYRIX_SMM, t:SEGOP, w:W
+RSLDT          Ms            n/a                       [      cyrix 0x0F 0x7B /r:mem]          s:CYRIX_SMM, t:SEGOP, w:R
+SVTS           Ms            n/a                       [      cyrix 0x0F 0x7C /r:mem]          s:CYRIX_SMM, t:SEGOP, w:W
+RSTS           Ms            n/a                       [      cyrix 0x0F 0x7D /r:mem]          s:CYRIX_SMM, t:SEGOP, w:R
+SMINT          n/a           n/a                       [      cyrix 0x0F 0x7E]                 s:CYRIX_SMM, t:SEGOP
 
 # 0x80 - 0x8F
 JO             Jz            rIP,Fv                    [            0x0F 0x80 cz]              s:I86, t:COND_BR, c:Jcc, w:R|CRCW|R, f:CO,    a:F64|COND, p:BND|BH
@@ -492,26 +497,26 @@ SETNLE         Eb            Fv                        [            0x0F 0x9F /r
 # 0xA0 - 0xAF
 PUSH           FS            Kv                        [            0x0F 0xA0]                 s:I86, t:PUSH, w:R|W, a:D64, m:NOSGX
 POP            FS            Kv                        [            0x0F 0xA1]                 s:I86, t:POP, w:W|R, a:D64, m:NOSGX
-CPUID          nil           EAX,EBX,ECX,EDX           [            0x0F 0xA2]                 s:I486REAL, t:MISC, w:RW|W|CRW|W, a:SERIAL, m:NOSGX|NOTSX
+CPUID          n/a           EAX,EBX,ECX,EDX           [            0x0F 0xA2]                 s:I486REAL, t:MISC, w:RW|W|CRW|W, a:SERIAL, m:NOSGX|NOTSX
 BT             Ev,Gv         Fv                        [            0x0F 0xA3 /r bitbase]      s:I386, t:BITBYTE, w:R|R|W, f:BT
 SHLD           Ev,Gv,Ib      Fv                        [            0x0F 0xA4 /r ib]           s:I386, t:SHIFT, w:RCW|R|R|W, f:SHIFTD
 SHLD           Ev,Gv,CL      Fv                        [            0x0F 0xA5 /r]              s:I386, t:SHIFT, w:RCW|R|R|W, f:SHIFTD
 
-# Cyrix 'security' instructions.
-MONTMUL        nil           nil                       [       0xF3 0x0F 0xA6 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
-XSHA1          nil           nil                       [       0xF3 0x0F 0xA6 /0xC8]           s:CYRIX, t:PADLOCK, p:REP
-XSHA256        nil           nil                       [       0xF3 0x0F 0xA6 /0xD0]           s:CYRIX, t:PADLOCK, p:REP
-XSTORE         nil           nil                       [            0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK
-XSTORE         nil           nil                       [       0xF3 0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
-XCRYPTECB      nil           nil                       [       0xF3 0x0F 0xA7 /0xC8]           s:CYRIX, t:PADLOCK, p:REP
-XCRYPTCBC      nil           nil                       [       0xF3 0x0F 0xA7 /0xD0]           s:CYRIX, t:PADLOCK, p:REP
-XCRYPTCTR      nil           nil                       [       0xF3 0x0F 0xA7 /0xD8]           s:CYRIX, t:PADLOCK, p:REP
-XCRYPTCFB      nil           nil                       [       0xF3 0x0F 0xA7 /0xE0]           s:CYRIX, t:PADLOCK, p:REP
-XCRYPTOFB      nil           nil                       [       0xF3 0x0F 0xA7 /0xE8]           s:CYRIX, t:PADLOCK, p:REP
+# Cyrix security instructions.
+MONTMUL        n/a           n/a                       [       0xF3 0x0F 0xA6 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
+XSHA1          n/a           n/a                       [       0xF3 0x0F 0xA6 /0xC8]           s:CYRIX, t:PADLOCK, p:REP
+XSHA256        n/a           n/a                       [       0xF3 0x0F 0xA6 /0xD0]           s:CYRIX, t:PADLOCK, p:REP
+XSTORE         n/a           n/a                       [            0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK
+XSTORE         n/a           n/a                       [       0xF3 0x0F 0xA7 /0xC0]           s:CYRIX, t:PADLOCK, p:REP
+XCRYPTECB      n/a           n/a                       [       0xF3 0x0F 0xA7 /0xC8]           s:CYRIX, t:PADLOCK, p:REP
+XCRYPTCBC      n/a           n/a                       [       0xF3 0x0F 0xA7 /0xD0]           s:CYRIX, t:PADLOCK, p:REP
+XCRYPTCTR      n/a           n/a                       [       0xF3 0x0F 0xA7 /0xD8]           s:CYRIX, t:PADLOCK, p:REP
+XCRYPTCFB      n/a           n/a                       [       0xF3 0x0F 0xA7 /0xE0]           s:CYRIX, t:PADLOCK, p:REP
+XCRYPTOFB      n/a           n/a                       [       0xF3 0x0F 0xA7 /0xE8]           s:CYRIX, t:PADLOCK, p:REP
 
 PUSH           GS            Kv                        [            0x0F 0xA8]                 s:I86, t:PUSH, w:R|W, a:D64, m:NOSGX
 POP            GS            Kv                        [            0x0F 0xA9]                 s:I86, t:POP, w:W|R, a:D64, m:NOSGX
-RSM            nil           CS,rIP,Fv                 [            0x0F 0xAA]                 s:I486, t:SYSRET, w:W|W|W, a:SERIAL, m:SMM
+RSM            n/a           CS,rIP,Fv                 [            0x0F 0xAA]                 s:I486, t:SYSRET, w:W|W|W, a:SERIAL, m:SMM
 BTS            Ev,Gv         Fv                        [            0x0F 0xAB /r bitbase]      s:I386, t:BITBYTE, w:RW|R|W, f:BT, p:HLE|LOCK
 SHRD           Ev,Gv,Ib      Fv                        [            0x0F 0xAC /r ib]           s:I386, t:SHIFT, w:RCW|R|R|W, f:SHIFTD
 SHRD           Ev,Gv,CL      Fv                        [            0x0F 0xAD /r]              s:I386, t:SHIFT, w:RCW|R|R|W, f:SHIFTD
@@ -528,12 +533,12 @@ XRSTOR         M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xAE /5
 XRSTOR64       M?            EDX,EAX,XCR0,BANK         [    rexw NP 0x0F 0xAE /5:mem]          s:XSAVE, t:XSAVE, c:XRSTOR, w:R|R|R|R|W
 XSAVEOPT       M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xAE /6:mem]          s:XSAVE, t:XSAVE, c:XSAVEOPT, w:W|R|R|R|R
 XSAVEOPT64     M?            EDX,EAX,XCR0,BANK         [    rexw NP 0x0F 0xAE /6:mem]          s:XSAVE, t:XSAVE, c:XSAVEOPT, w:W|R|R|R|R
-CLWB           Mb            nil                       [       0x66 0x0F 0xAE /6:mem]          s:CLWB, t:MISC, w:R
+CLWB           Mb            n/a                       [       0x66 0x0F 0xAE /6:mem]          s:CLWB, t:MISC, w:R
 CLRSSBSY       Mq            SSP                       [       0xF3 0x0F 0xAE /6:mem]          s:CET_SS, t:CET, a:SHS, w:RW|RW, f:CF=m|ZF=0|PF=0|AF=0|OF=0|SF=0
-CLFLUSH        Mb            nil                       [         NP 0x0F 0xAE /7:mem]          s:CLFSH, t:MISC, w:R
-CLFLUSHOPT     Mb            nil                       [       0x66 0x0F 0xAE /7:mem]          s:CLFSHOPT, t:MISC, w:R
+CLFLUSH        Mb            n/a                       [         NP 0x0F 0xAE /7:mem]          s:CLFSH, t:MISC, w:R
+CLFLUSHOPT     Mb            n/a                       [       0x66 0x0F 0xAE /7:mem]          s:CLFSHOPT, t:MISC, w:R
 
-PTWRITE        Ey            nil                       [       0xF3 0x0F 0xAE /4]              s:PTWRITE, t:PTWRITE, w:R, a:NO66
+PTWRITE        Ey            n/a                       [       0xF3 0x0F 0xAE /4]              s:PTWRITE, t:PTWRITE, w:R, a:NO66
 
 RDFSBASE       Ry            FSBASE                    [   o64 0xF3 0x0F 0xAE /0:reg]          s:RDWRFSGS, t:RDWRFSGS, w:W|R, m:O64
 RDGSBASE       Ry            GSBASE                    [   o64 0xF3 0x0F 0xAE /1:reg]          s:RDWRFSGS, t:RDWRFSGS, w:W|R, m:O64
@@ -541,14 +546,14 @@ WRFSBASE       Ry            FSBASE                    [   o64 0xF3 0x0F 0xAE /2
 WRGSBASE       Ry            GSBASE                    [   o64 0xF3 0x0F 0xAE /3:reg]          s:RDWRFSGS, t:RDWRFSGS, w:R|W, m:O64
 INCSSPD        Rd            SHSI,SSP                  [       0xF3 0x0F 0xAE /5:reg]          s:CET_SS, t:CET, c:INCSSP, w:R|R|RW
 INCSSPQ        Rq            SHSI,SSP                  [  0xF3 rexw 0x0F 0xAE /5:reg]          s:CET_SS, t:CET, c:INCSSP, w:R|R|RW
-LFENCE         nil           nil                       [         NP 0x0F 0xAE /5:reg]          s:SSE2, t:MISC
+LFENCE         n/a           n/a                       [         NP 0x0F 0xAE /5:reg]          s:SSE2, t:MISC
 UMONITOR       mMb           Fv                        [       0xF3 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|W, f:WAITPKG, m:NOTSX
 UMWAIT         Ry            EDX,EAX                   [       0xF2 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|R|R, m:NOTSX
 TPAUSE         Ry            EDX,EAX,Fv                [       0x66 0x0F 0xAE /6:reg]          s:WAITPKG, t:WAITPKG, w:R|R|R|W, f:WAITPKG
-MFENCE         nil           nil                       [         NP 0x0F 0xAE /6:reg]          s:SSE2, t:MISC
-SFENCE         nil           nil                       [         NP 0x0F 0xAE /7:reg]          s:SSE2, t:MISC
+MFENCE         n/a           n/a                       [         NP 0x0F 0xAE /6:reg]          s:SSE2, t:MISC
+SFENCE         n/a           n/a                       [         NP 0x0F 0xAE /7:reg]          s:SSE2, t:MISC
 # Intel dropped support for the PCOMMIT instruction before it was shipped in any CPU. The following instruction wil ALWAYS cause a #UD from now on.
-#PCOMMIT        nil           nil                       [       0x66 0x0F 0xAE /7:reg]          s:PCOMMIT, t:MISC
+#PCOMMIT        n/a           n/a                       [       0x66 0x0F 0xAE /7:reg]          s:PCOMMIT, t:MISC
 
 IMUL           Gv,Ev         Fv                        [            0x0F 0xAF /r]              s:I86, t:ARITH, w:RW|R|W, f:MUL
 
@@ -559,11 +564,11 @@ LSS            Gv,Mp         SS                        [            0x0F 0xB2 /r
 BTR            Ev,Gv         Fv                        [            0x0F 0xB3 /r bitbase]      s:I386, t:BITBYTE, w:RW|R|W, f:BT, p:LOCK|HLE
 LFS            Gv,Mp         FS                        [            0x0F 0xB4 /r:mem]          s:I386, t:SEGOP, w:W|R|W, m:NOSGX
 LGS            Gv,Mp         GS                        [            0x0F 0xB5 /r:mem]          s:I386, t:SEGOP, w:W|R|W, m:NOSGX
-MOVZX          Gv,Eb         nil                       [            0x0F 0xB6 /r]              s:I386, t:DATAXFER, w:W|R
-MOVZX          Gv,Ew         nil                       [            0x0F 0xB7 /r]              s:I386, t:DATAXFER, w:W|R
+MOVZX          Gv,Eb         n/a                       [            0x0F 0xB6 /r]              s:I386, t:DATAXFER, w:W|R
+MOVZX          Gv,Ew         n/a                       [            0x0F 0xB7 /r]              s:I386, t:DATAXFER, w:W|R
 JMPE           Jz            rIP                       [            0x0F 0xB8 cz]              s:I64, t:UNCOND_BR, w:R|W, m:NO64
 POPCNT         Gv,Ev         Fv                        [      a0xF3 0x0F 0xB8 /r]              s:POPCNT, t:SSE, w:W|R|W, f:CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
-UD1            Gd,Ed         nil                       [            0x0F 0xB9 /r]              s:UD, t:UD, w:R|R
+UD1            Gd,Ed         n/a                       [            0x0F 0xB9 /r]              s:UD, t:UD, w:R|R
 BT             Ev,Ib         Fv                        [            0x0F 0xBA /4 ib]           s:I386, t:BITBYTE, w:R|R|W, f:BT
 BTS            Ev,Ib         Fv                        [            0x0F 0xBA /5 ib]           s:I386, t:BITBYTE, w:RW|R|W, f:BT, p:LOCK|HLE
 BTR            Ev,Ib         Fv                        [            0x0F 0xBA /6 ib]           s:I386, t:BITBYTE, w:RW|R|W, f:BT, p:LOCK|HLE
@@ -573,25 +578,25 @@ BSF            Gv,Ev         Fv                        [            0x0F 0xBC /r
 TZCNT          Gv,Ev         Fv                        [      a0xF3 0x0F 0xBC /r]              s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=u|OF=u
 BSR            Gv,Ev         Fv                        [            0x0F 0xBD /r]              s:I386, t:BITBYTE, w:CW|R|W, f:CF=u|PF=u|AF=u|ZF=m|SF=u|OF=u
 LZCNT          Gv,Ev         Fv                        [      a0xF3 0x0F 0xBD /r]              s:LZCNT, t:LZCNT, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=u|OF=u
-MOVSX          Gv,Eb         nil                       [            0x0F 0xBE /r]              s:I386, t:DATAXFER, w:W|R
-MOVSX          Gv,Ew         nil                       [            0x0F 0xBF /r]              s:I386, t:DATAXFER, w:W|R
+MOVSX          Gv,Eb         n/a                       [            0x0F 0xBE /r]              s:I386, t:DATAXFER, w:W|R
+MOVSX          Gv,Ew         n/a                       [            0x0F 0xBF /r]              s:I386, t:DATAXFER, w:W|R
 
 # 0xC0 - 0xCF
 XADD           Eb,Gb         Fv                        [            0x0F 0xC0 /r]              s:I486REAL, t:SEMAPHORE, w:RW|RW|W, f:ARITH, p:LOCK|HLE
 XADD           Ev,Gv         Fv                        [            0x0F 0xC1 /r]              s:I486REAL, t:SEMAPHORE, w:RW|RW|W, f:ARITH, p:LOCK|HLE
-CMPPS          Vps,Wps,Ib    nil                       [         NP 0x0F 0xC2 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:2
-CMPPD          Vpd,Wpd,Ib    nil                       [       0x66 0x0F 0xC2 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:2
-CMPSS          Vss,Wss,Ib    nil                       [       0xF3 0x0F 0xC2 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:3
-CMPSD          Vsd,Wsd,Ib    nil                       [       0xF2 0x0F 0xC2 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:3
-MOVNTI         My,Gy         nil                       [         NP 0x0F 0xC3 /r:mem]          s:SSE2, t:DATAXFER, w:W|R
-PINSRW         Pq,Rd,Ib      nil                       [         NP 0x0F 0xC4 /r:reg ib]       s:MMX, t:MMX, w:RW|R|R
-PINSRW         Pq,Mw,Ib      nil                       [         NP 0x0F 0xC4 /r:mem ib]       s:MMX, t:MMX, w:RW|R|R
-PINSRW         Vdq,Rd,Ib     nil                       [       0x66 0x0F 0xC4 /r:reg ib]       s:SSE2, t:SSE, w:RW|R|R, e:5
-PINSRW         Vdq,Mw,Ib     nil                       [       0x66 0x0F 0xC4 /r:mem ib]       s:SSE2, t:SSE, w:RW|R|R, e:5
-PEXTRW         Gy,Nq,Ib      nil                       [         NP 0x0F 0xC5 /r:reg ib]       s:MMX, t:MMX, w:W|R|R, a:D64
-PEXTRW         Gy,Udq,Ib     nil                       [       0x66 0x0F 0xC5 /r:reg ib]       s:SSE2, t:SSE, w:W|R|R, e:5, a:D64
-SHUFPS         Vps,Wps,Ib    nil                       [         NP 0x0F 0xC6 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:4
-SHUFPD         Vpd,Wpd,Ib    nil                       [       0x66 0x0F 0xC6 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:4
+CMPPS          Vps,Wps,Ib    n/a                       [         NP 0x0F 0xC2 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:2
+CMPPD          Vpd,Wpd,Ib    n/a                       [       0x66 0x0F 0xC2 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:2
+CMPSS          Vss,Wss,Ib    n/a                       [       0xF3 0x0F 0xC2 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:3
+CMPSD          Vsd,Wsd,Ib    n/a                       [       0xF2 0x0F 0xC2 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:3
+MOVNTI         My,Gy         n/a                       [         NP 0x0F 0xC3 /r:mem]          s:SSE2, t:DATAXFER, w:W|R
+PINSRW         Pq,Rd,Ib      n/a                       [         NP 0x0F 0xC4 /r:reg ib]       s:MMX, t:MMX, w:RW|R|R
+PINSRW         Pq,Mw,Ib      n/a                       [         NP 0x0F 0xC4 /r:mem ib]       s:MMX, t:MMX, w:RW|R|R
+PINSRW         Vdq,Rd,Ib     n/a                       [       0x66 0x0F 0xC4 /r:reg ib]       s:SSE2, t:SSE, w:RW|R|R, e:5
+PINSRW         Vdq,Mw,Ib     n/a                       [       0x66 0x0F 0xC4 /r:mem ib]       s:SSE2, t:SSE, w:RW|R|R, e:5
+PEXTRW         Gy,Nq,Ib      n/a                       [         NP 0x0F 0xC5 /r:reg ib]       s:MMX, t:MMX, w:W|R|R, a:D64
+PEXTRW         Gy,Udq,Ib     n/a                       [       0x66 0x0F 0xC5 /r:reg ib]       s:SSE2, t:SSE, w:W|R|R, e:5, a:D64
+SHUFPS         Vps,Wps,Ib    n/a                       [         NP 0x0F 0xC6 /r ib]           s:SSE, t:SSE, w:RW|R|R, e:4
+SHUFPD         Vpd,Wpd,Ib    n/a                       [       0x66 0x0F 0xC6 /r ib]           s:SSE2, t:SSE, w:RW|R|R, e:4
 CMPXCHG8B      Mq            EDX,EAX,ECX,EBX,Fv        [            0x0F 0xC7 /1:mem]          s:PENTIUMREAL, t:SEMAPHORE, w:RCW|RCW|RCW|R|R|W, i:CX8, f:ZF=m, p:LOCK|HLE
 CMPXCHG16B     Mdq           RDX,RAX,RCX,RBX,Fv        [       rexw 0x0F 0xC7 /1:mem]          s:CMPXCHG16B, t:SEMAPHORE, w:RCW|RCW|RCW|R|R|W, i:CX8, f:ZF=m, p:LOCK|HLE
 XRSTORS        M?            EDX,EAX,XCR0,BANK         [         NP 0x0F 0xC7 /3:mem]          s:XSAVES, t:XSAVE, c:XRSTORS, w:R|R|R|R|W
@@ -606,118 +611,118 @@ VMXON          Mq            Fv                        [       0xF3 0x0F 0xC7 /6
 VMPTRST        Mq            Fv                        [         NP 0x0F 0xC7 /7:mem]          s:VTX, t:VTX, w:W|W, f:VMX, m:VMXROOT
 RDRAND         Rv            Fv                        [            0x0F 0xC7 /6:reg]          s:RDRAND, t:RDRAND, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 RDRAND         Rv            Fv                        [       0x66 0x0F 0xC7 /6:reg]          s:RDRAND, t:RDRAND, a:S66, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
-SENDUIPI       Rq            nil                       [       0xF3 0x0F 0xC7 /6:reg]          s:UINTR, t:UINTR, w:RW, m:O64|NOTSX|NOSGX
+SENDUIPI       Rq            n/a                       [       0xF3 0x0F 0xC7 /6:reg]          s:UINTR, t:UINTR, w:RW, m:O64|NOTSX|NOSGX
 RDSEED         Rv            Fv                        [            0x0F 0xC7 /7:reg]          s:RDSEED, t:RDSEED, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 RDSEED         Rv            Fv                        [       0x66 0x0F 0xC7 /7:reg]          s:RDSEED, t:RDSEED, a:S66, w:W|W, f:CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
 RDPID          Ryf           TSCAUX                    [       0xF3 0x0F 0xC7 /7:reg]          s:RDPID, t:RDPID, w:W|R
 
-BSWAP          Zv            nil                       [            0x0F 0xC8]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xC9]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xCA]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xCB]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xCC]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xCD]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xCE]                 s:I486REAL, t:DATAXFER, w:RW
-BSWAP          Zv            nil                       [            0x0F 0xCF]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xC8]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xC9]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xCA]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xCB]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xCC]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xCD]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xCE]                 s:I486REAL, t:DATAXFER, w:RW
+BSWAP          Zv            n/a                       [            0x0F 0xCF]                 s:I486REAL, t:DATAXFER, w:RW
 
 # 0xD0 - 0xDF
-ADDSUBPD       Vpd,Wpd       nil                       [       0x66 0x0F 0xD0 /r]              s:SSE3, t:SSE, w:RW|R, e:2
-ADDSUBPS       Vps,Wps       nil                       [       0xF2 0x0F 0xD0 /r]              s:SSE3, t:SSE, w:RW|R, e:2
-PSRLW          Pq,Qq         nil                       [         NP 0x0F 0xD1 /r]              s:MMX, t:MMX, w:RW|R
-PSRLW          Vx,Wx         nil                       [       0x66 0x0F 0xD1 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSRLD          Pq,Qq         nil                       [         NP 0x0F 0xD2 /r]              s:MMX, t:MMX, w:RW|R
-PSRLD          Vx,Wx         nil                       [       0x66 0x0F 0xD2 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSRLQ          Pq,Qq         nil                       [         NP 0x0F 0xD3 /r]              s:MMX, t:MMX, w:RW|R
-PSRLQ          Vx,Wx         nil                       [       0x66 0x0F 0xD3 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PADDQ          Pq,Qq         nil                       [         NP 0x0F 0xD4 /r]              s:SSE2, t:MMX, w:RW|R, e:4
-PADDQ          Vx,Wx         nil                       [       0x66 0x0F 0xD4 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMULLW         Pq,Qq         nil                       [         NP 0x0F 0xD5 /r]              s:MMX, t:MMX, w:RW|R
-PMULLW         Vx,Wx         nil                       [       0x66 0x0F 0xD5 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-MOVQ           Wq,Vq         nil                       [       0x66 0x0F 0xD6 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
-MOVQ2DQ        Vdq,Nq        nil                       [       0xF3 0x0F 0xD6 /r:reg]          s:SSE2, t:DATAXFER, w:W|R
-MOVDQ2Q        Pq,Uq         nil                       [       0xF2 0x0F 0xD6 /r:reg]          s:SSE2, t:DATAXFER, w:W|R
-PMOVMSKB       Gy,Nq         nil                       [         NP 0x0F 0xD7 /r:reg]          s:SSE, t:MMX, w:W|R, e:7, a:D64
-PMOVMSKB       Gy,Ux         nil                       [       0x66 0x0F 0xD7 /r:reg]          s:SSE2, t:SSE, w:W|R, e:7, a:D64
-PSUBUSB        Pq,Qq         nil                       [         NP 0x0F 0xD8 /r]              s:MMX, t:MMX, w:RW|R
-PSUBUSB        Vx,Wx         nil                       [       0x66 0x0F 0xD8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSUBUSW        Pq,Qq         nil                       [         NP 0x0F 0xD9 /r]              s:MMX, t:MMX, w:RW|R
-PSUBUSW        Vx,Wx         nil                       [       0x66 0x0F 0xD9 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMINUB         Pq,Qq         nil                       [         NP 0x0F 0xDA /r]              s:MMX, t:MMX, w:RW|R
-PMINUB         Vx,Wx         nil                       [       0x66 0x0F 0xDA /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PAND           Pq,Qq         nil                       [         NP 0x0F 0xDB /r]              s:MMX, t:LOGICAL, w:RW|R
-PAND           Vx,Wx         nil                       [       0x66 0x0F 0xDB /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
-PADDUSB        Pq,Qq         nil                       [         NP 0x0F 0xDC /r]              s:MMX, t:MMX, w:RW|R
-PADDUSB        Vx,Wx         nil                       [       0x66 0x0F 0xDC /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PADDUSW        Pq,Qq         nil                       [         NP 0x0F 0xDD /r]              s:MMX, t:MMX, w:RW|R
-PADDUSW        Vx,Wx         nil                       [       0x66 0x0F 0xDD /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMAXUB         Pq,Qq         nil                       [         NP 0x0F 0xDE /r]              s:MMX, t:MMX, w:RW|R
-PMAXUB         Vx,Wx         nil                       [       0x66 0x0F 0xDE /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PANDN          Pq,Qq         nil                       [         NP 0x0F 0xDF /r]              s:MMX, t:LOGICAL, w:RW|R
-PANDN          Vx,Wx         nil                       [       0x66 0x0F 0xDF /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
+ADDSUBPD       Vpd,Wpd       n/a                       [       0x66 0x0F 0xD0 /r]              s:SSE3, t:SSE, w:RW|R, e:2
+ADDSUBPS       Vps,Wps       n/a                       [       0xF2 0x0F 0xD0 /r]              s:SSE3, t:SSE, w:RW|R, e:2
+PSRLW          Pq,Qq         n/a                       [         NP 0x0F 0xD1 /r]              s:MMX, t:MMX, w:RW|R
+PSRLW          Vx,Wx         n/a                       [       0x66 0x0F 0xD1 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSRLD          Pq,Qq         n/a                       [         NP 0x0F 0xD2 /r]              s:MMX, t:MMX, w:RW|R
+PSRLD          Vx,Wx         n/a                       [       0x66 0x0F 0xD2 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSRLQ          Pq,Qq         n/a                       [         NP 0x0F 0xD3 /r]              s:MMX, t:MMX, w:RW|R
+PSRLQ          Vx,Wx         n/a                       [       0x66 0x0F 0xD3 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PADDQ          Pq,Qq         n/a                       [         NP 0x0F 0xD4 /r]              s:SSE2, t:MMX, w:RW|R, e:4
+PADDQ          Vx,Wx         n/a                       [       0x66 0x0F 0xD4 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMULLW         Pq,Qq         n/a                       [         NP 0x0F 0xD5 /r]              s:MMX, t:MMX, w:RW|R
+PMULLW         Vx,Wx         n/a                       [       0x66 0x0F 0xD5 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+MOVQ           Wq,Vq         n/a                       [       0x66 0x0F 0xD6 /r]              s:SSE2, t:DATAXFER, w:W|R, e:5
+MOVQ2DQ        Vdq,Nq        n/a                       [       0xF3 0x0F 0xD6 /r:reg]          s:SSE2, t:DATAXFER, w:W|R
+MOVDQ2Q        Pq,Uq         n/a                       [       0xF2 0x0F 0xD6 /r:reg]          s:SSE2, t:DATAXFER, w:W|R
+PMOVMSKB       Gy,Nq         n/a                       [         NP 0x0F 0xD7 /r:reg]          s:SSE, t:MMX, w:W|R, e:7, a:D64
+PMOVMSKB       Gy,Ux         n/a                       [       0x66 0x0F 0xD7 /r:reg]          s:SSE2, t:SSE, w:W|R, e:7, a:D64
+PSUBUSB        Pq,Qq         n/a                       [         NP 0x0F 0xD8 /r]              s:MMX, t:MMX, w:RW|R
+PSUBUSB        Vx,Wx         n/a                       [       0x66 0x0F 0xD8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSUBUSW        Pq,Qq         n/a                       [         NP 0x0F 0xD9 /r]              s:MMX, t:MMX, w:RW|R
+PSUBUSW        Vx,Wx         n/a                       [       0x66 0x0F 0xD9 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMINUB         Pq,Qq         n/a                       [         NP 0x0F 0xDA /r]              s:MMX, t:MMX, w:RW|R
+PMINUB         Vx,Wx         n/a                       [       0x66 0x0F 0xDA /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PAND           Pq,Qq         n/a                       [         NP 0x0F 0xDB /r]              s:MMX, t:LOGICAL, w:RW|R
+PAND           Vx,Wx         n/a                       [       0x66 0x0F 0xDB /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
+PADDUSB        Pq,Qq         n/a                       [         NP 0x0F 0xDC /r]              s:MMX, t:MMX, w:RW|R
+PADDUSB        Vx,Wx         n/a                       [       0x66 0x0F 0xDC /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PADDUSW        Pq,Qq         n/a                       [         NP 0x0F 0xDD /r]              s:MMX, t:MMX, w:RW|R
+PADDUSW        Vx,Wx         n/a                       [       0x66 0x0F 0xDD /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMAXUB         Pq,Qq         n/a                       [         NP 0x0F 0xDE /r]              s:MMX, t:MMX, w:RW|R
+PMAXUB         Vx,Wx         n/a                       [       0x66 0x0F 0xDE /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PANDN          Pq,Qq         n/a                       [         NP 0x0F 0xDF /r]              s:MMX, t:LOGICAL, w:RW|R
+PANDN          Vx,Wx         n/a                       [       0x66 0x0F 0xDF /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
 
 # 0xE0 - 0xEF
-PAVGB          Pq,Qq         nil                       [         NP 0x0F 0xE0 /r]              s:MMX, t:MMX, w:RW|R
-PAVGB          Vx,Wx         nil                       [       0x66 0x0F 0xE0 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSRAW          Pq,Qq         nil                       [         NP 0x0F 0xE1 /r]              s:MMX, t:MMX, w:RW|R
-PSRAW          Vx,Wx         nil                       [       0x66 0x0F 0xE1 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSRAD          Pq,Qq         nil                       [         NP 0x0F 0xE2 /r]              s:MMX, t:MMX, w:RW|R
-PSRAD          Vx,Wx         nil                       [       0x66 0x0F 0xE2 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PAVGW          Pq,Qq         nil                       [         NP 0x0F 0xE3 /r]              s:MMX, t:MMX, w:RW|R
-PAVGW          Vx,Wx         nil                       [       0x66 0x0F 0xE3 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMULHUW        Pq,Qq         nil                       [         NP 0x0F 0xE4 /r]              s:MMX, t:MMX, w:RW|R
-PMULHUW        Vx,Wx         nil                       [       0x66 0x0F 0xE4 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMULHW         Pq,Qq         nil                       [         NP 0x0F 0xE5 /r]              s:MMX, t:MMX, w:RW|R
-PMULHW         Vx,Wx         nil                       [       0x66 0x0F 0xE5 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-CVTTPD2DQ      Vx,Wpd        nil                       [       0x66 0x0F 0xE6 /r]              s:SSE2, t:CONVERT, w:W|R, e:2
-CVTDQ2PD       Vx,Wq         nil                       [       0xF3 0x0F 0xE6 /r]              s:SSE2, t:CONVERT, w:W|R, e:5
-CVTPD2DQ       Vx,Wpd        nil                       [       0xF2 0x0F 0xE6 /r]              s:SSE2, t:CONVERT, w:W|R, e:2
-MOVNTQ         Mq,Pq         nil                       [         NP 0x0F 0xE7 /r:mem]          s:MMX, t:DATAXFER, w:W|R
-MOVNTDQ        Mx,Vx         nil                       [       0x66 0x0F 0xE7 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:1
-PSUBSB         Pq,Qq         nil                       [         NP 0x0F 0xE8 /r]              s:MMX, t:MMX, w:RW|R
-PSUBSB         Vx,Wx         nil                       [       0x66 0x0F 0xE8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSUBSW         Pq,Qq         nil                       [         NP 0x0F 0xE9 /r]              s:MMX, t:MMX, w:RW|R
-PSUBSW         Vx,Wx         nil                       [       0x66 0x0F 0xE9 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMINSW         Pq,Qq         nil                       [         NP 0x0F 0xEA /r]              s:MMX, t:MMX, w:RW|R
-PMINSW         Vx,Wx         nil                       [       0x66 0x0F 0xEA /r]              s:SSE2, t:SSE, w:RW|R, e:4
-POR            Pq,Qq         nil                       [         NP 0x0F 0xEB /r]              s:MMX, t:LOGICAL, w:RW|R
-POR            Vx,Wx         nil                       [       0x66 0x0F 0xEB /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
-PADDSB         Pq,Qq         nil                       [         NP 0x0F 0xEC /r]              s:MMX, t:MMX, w:RW|R
-PADDSB         Vx,Wx         nil                       [       0x66 0x0F 0xEC /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PADDSW         Pq,Qq         nil                       [         NP 0x0F 0xED /r]              s:MMX, t:MMX, w:RW|R
-PADDSW         Vx,Wx         nil                       [       0x66 0x0F 0xED /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMAXSW         Pq,Qq         nil                       [         NP 0x0F 0xEE /r]              s:MMX, t:MMX, w:RW|R
-PMAXSW         Vx,Wx         nil                       [       0x66 0x0F 0xEE /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PXOR           Pq,Qq         nil                       [         NP 0x0F 0xEF /r]              s:MMX, t:LOGICAL, w:RW|R
-PXOR           Vx,Wx         nil                       [       0x66 0x0F 0xEF /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
+PAVGB          Pq,Qq         n/a                       [         NP 0x0F 0xE0 /r]              s:MMX, t:MMX, w:RW|R
+PAVGB          Vx,Wx         n/a                       [       0x66 0x0F 0xE0 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSRAW          Pq,Qq         n/a                       [         NP 0x0F 0xE1 /r]              s:MMX, t:MMX, w:RW|R
+PSRAW          Vx,Wx         n/a                       [       0x66 0x0F 0xE1 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSRAD          Pq,Qq         n/a                       [         NP 0x0F 0xE2 /r]              s:MMX, t:MMX, w:RW|R
+PSRAD          Vx,Wx         n/a                       [       0x66 0x0F 0xE2 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PAVGW          Pq,Qq         n/a                       [         NP 0x0F 0xE3 /r]              s:MMX, t:MMX, w:RW|R
+PAVGW          Vx,Wx         n/a                       [       0x66 0x0F 0xE3 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMULHUW        Pq,Qq         n/a                       [         NP 0x0F 0xE4 /r]              s:MMX, t:MMX, w:RW|R
+PMULHUW        Vx,Wx         n/a                       [       0x66 0x0F 0xE4 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMULHW         Pq,Qq         n/a                       [         NP 0x0F 0xE5 /r]              s:MMX, t:MMX, w:RW|R
+PMULHW         Vx,Wx         n/a                       [       0x66 0x0F 0xE5 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+CVTTPD2DQ      Vx,Wpd        n/a                       [       0x66 0x0F 0xE6 /r]              s:SSE2, t:CONVERT, w:W|R, e:2
+CVTDQ2PD       Vx,Wq         n/a                       [       0xF3 0x0F 0xE6 /r]              s:SSE2, t:CONVERT, w:W|R, e:5
+CVTPD2DQ       Vx,Wpd        n/a                       [       0xF2 0x0F 0xE6 /r]              s:SSE2, t:CONVERT, w:W|R, e:2
+MOVNTQ         Mq,Pq         n/a                       [         NP 0x0F 0xE7 /r:mem]          s:MMX, t:DATAXFER, w:W|R
+MOVNTDQ        Mx,Vx         n/a                       [       0x66 0x0F 0xE7 /r:mem]          s:SSE2, t:DATAXFER, w:W|R, e:1
+PSUBSB         Pq,Qq         n/a                       [         NP 0x0F 0xE8 /r]              s:MMX, t:MMX, w:RW|R
+PSUBSB         Vx,Wx         n/a                       [       0x66 0x0F 0xE8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSUBSW         Pq,Qq         n/a                       [         NP 0x0F 0xE9 /r]              s:MMX, t:MMX, w:RW|R
+PSUBSW         Vx,Wx         n/a                       [       0x66 0x0F 0xE9 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMINSW         Pq,Qq         n/a                       [         NP 0x0F 0xEA /r]              s:MMX, t:MMX, w:RW|R
+PMINSW         Vx,Wx         n/a                       [       0x66 0x0F 0xEA /r]              s:SSE2, t:SSE, w:RW|R, e:4
+POR            Pq,Qq         n/a                       [         NP 0x0F 0xEB /r]              s:MMX, t:LOGICAL, w:RW|R
+POR            Vx,Wx         n/a                       [       0x66 0x0F 0xEB /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
+PADDSB         Pq,Qq         n/a                       [         NP 0x0F 0xEC /r]              s:MMX, t:MMX, w:RW|R
+PADDSB         Vx,Wx         n/a                       [       0x66 0x0F 0xEC /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PADDSW         Pq,Qq         n/a                       [         NP 0x0F 0xED /r]              s:MMX, t:MMX, w:RW|R
+PADDSW         Vx,Wx         n/a                       [       0x66 0x0F 0xED /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMAXSW         Pq,Qq         n/a                       [         NP 0x0F 0xEE /r]              s:MMX, t:MMX, w:RW|R
+PMAXSW         Vx,Wx         n/a                       [       0x66 0x0F 0xEE /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PXOR           Pq,Qq         n/a                       [         NP 0x0F 0xEF /r]              s:MMX, t:LOGICAL, w:RW|R
+PXOR           Vx,Wx         n/a                       [       0x66 0x0F 0xEF /r]              s:SSE2, t:LOGICAL, w:RW|R, e:4
 
 # 0xF0 - 0xFF
-LDDQU          Vx,Mx         nil                       [       0xF2 0x0F 0xF0 /r:mem]          s:SSE3, t:SSE, w:W|R, e:4
-PSLLW          Pq,Qq         nil                       [         NP 0x0F 0xF1 /r]              s:MMX, t:MMX, w:RW|R
-PSLLW          Vx,Wx         nil                       [       0x66 0x0F 0xF1 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSLLD          Pq,Qq         nil                       [         NP 0x0F 0xF2 /r]              s:MMX, t:MMX, w:RW|R
-PSLLD          Vx,Wx         nil                       [       0x66 0x0F 0xF2 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSLLQ          Pq,Qq         nil                       [         NP 0x0F 0xF3 /r]              s:MMX, t:MMX, w:RW|R
-PSLLQ          Vx,Wx         nil                       [       0x66 0x0F 0xF3 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMULUDQ        Pq,Qq         nil                       [         NP 0x0F 0xF4 /r]              s:SSE2, t:MMX, w:RW|R, e:4
-PMULUDQ        Vx,Wx         nil                       [       0x66 0x0F 0xF4 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PMADDWD        Pq,Qq         nil                       [         NP 0x0F 0xF5 /r]              s:MMX, t:MMX, w:RW|R
-PMADDWD        Vx,Wx         nil                       [       0x66 0x0F 0xF5 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSADBW         Pq,Qq         nil                       [         NP 0x0F 0xF6 /r]              s:MMX, t:MMX, w:RW|R
-PSADBW         Vx,Wx         nil                       [       0x66 0x0F 0xF6 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+LDDQU          Vx,Mx         n/a                       [       0xF2 0x0F 0xF0 /r:mem]          s:SSE3, t:SSE, w:W|R, e:4
+PSLLW          Pq,Qq         n/a                       [         NP 0x0F 0xF1 /r]              s:MMX, t:MMX, w:RW|R
+PSLLW          Vx,Wx         n/a                       [       0x66 0x0F 0xF1 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSLLD          Pq,Qq         n/a                       [         NP 0x0F 0xF2 /r]              s:MMX, t:MMX, w:RW|R
+PSLLD          Vx,Wx         n/a                       [       0x66 0x0F 0xF2 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSLLQ          Pq,Qq         n/a                       [         NP 0x0F 0xF3 /r]              s:MMX, t:MMX, w:RW|R
+PSLLQ          Vx,Wx         n/a                       [       0x66 0x0F 0xF3 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMULUDQ        Pq,Qq         n/a                       [         NP 0x0F 0xF4 /r]              s:SSE2, t:MMX, w:RW|R, e:4
+PMULUDQ        Vx,Wx         n/a                       [       0x66 0x0F 0xF4 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PMADDWD        Pq,Qq         n/a                       [         NP 0x0F 0xF5 /r]              s:MMX, t:MMX, w:RW|R
+PMADDWD        Vx,Wx         n/a                       [       0x66 0x0F 0xF5 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSADBW         Pq,Qq         n/a                       [         NP 0x0F 0xF6 /r]              s:MMX, t:MMX, w:RW|R
+PSADBW         Vx,Wx         n/a                       [       0x66 0x0F 0xF6 /r]              s:SSE2, t:SSE, w:RW|R, e:4
 MASKMOVQ       Pq,Nq         pDIq                      [         NP 0x0F 0xF7 /r:reg]          s:MMX, t:DATAXFER, w:R|R|W
 MASKMOVDQU     Vdq,Udq       pDIdq                     [       0x66 0x0F 0xF7 /r:reg]          s:SSE2, t:DATAXFER, w:R|R|W, e:4
-PSUBB          Pq,Qq         nil                       [         NP 0x0F 0xF8 /r]              s:MMX, t:MMX, w:RW|R
-PSUBB          Vx,Wx         nil                       [       0x66 0x0F 0xF8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSUBW          Pq,Qq         nil                       [         NP 0x0F 0xF9 /r]              s:MMX, t:MMX, w:RW|R
-PSUBW          Vx,Wx         nil                       [       0x66 0x0F 0xF9 /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSUBD          Pq,Qq         nil                       [         NP 0x0F 0xFA /r]              s:MMX, t:MMX, w:RW|R
-PSUBD          Vx,Wx         nil                       [       0x66 0x0F 0xFA /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PSUBQ          Pq,Qq         nil                       [         NP 0x0F 0xFB /r]              s:MMX, t:MMX, w:RW|R
-PSUBQ          Vx,Wx         nil                       [       0x66 0x0F 0xFB /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PADDB          Pq,Qq         nil                       [         NP 0x0F 0xFC /r]              s:MMX, t:MMX, w:RW|R
-PADDB          Vx,Wx         nil                       [       0x66 0x0F 0xFC /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PADDW          Pq,Qq         nil                       [         NP 0x0F 0xFD /r]              s:MMX, t:MMX, w:RW|R
-PADDW          Vx,Wx         nil                       [       0x66 0x0F 0xFD /r]              s:SSE2, t:SSE, w:RW|R, e:4
-PADDD          Pq,Qq         nil                       [         NP 0x0F 0xFE /r]              s:MMX, t:MMX, w:RW|R
-PADDD          Vx,Wx         nil                       [       0x66 0x0F 0xFE /r]              s:SSE2, t:SSE, w:RW|R, e:4
-UD0            Gd,Ed         nil                       [            0x0F 0xFF /r]              s:UD, t:UD, w:R|R
+PSUBB          Pq,Qq         n/a                       [         NP 0x0F 0xF8 /r]              s:MMX, t:MMX, w:RW|R
+PSUBB          Vx,Wx         n/a                       [       0x66 0x0F 0xF8 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSUBW          Pq,Qq         n/a                       [         NP 0x0F 0xF9 /r]              s:MMX, t:MMX, w:RW|R
+PSUBW          Vx,Wx         n/a                       [       0x66 0x0F 0xF9 /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSUBD          Pq,Qq         n/a                       [         NP 0x0F 0xFA /r]              s:MMX, t:MMX, w:RW|R
+PSUBD          Vx,Wx         n/a                       [       0x66 0x0F 0xFA /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PSUBQ          Pq,Qq         n/a                       [         NP 0x0F 0xFB /r]              s:MMX, t:MMX, w:RW|R
+PSUBQ          Vx,Wx         n/a                       [       0x66 0x0F 0xFB /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PADDB          Pq,Qq         n/a                       [         NP 0x0F 0xFC /r]              s:MMX, t:MMX, w:RW|R
+PADDB          Vx,Wx         n/a                       [       0x66 0x0F 0xFC /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PADDW          Pq,Qq         n/a                       [         NP 0x0F 0xFD /r]              s:MMX, t:MMX, w:RW|R
+PADDW          Vx,Wx         n/a                       [       0x66 0x0F 0xFD /r]              s:SSE2, t:SSE, w:RW|R, e:4
+PADDD          Pq,Qq         n/a                       [         NP 0x0F 0xFE /r]              s:MMX, t:MMX, w:RW|R
+PADDD          Vx,Wx         n/a                       [       0x66 0x0F 0xFE /r]              s:SSE2, t:SSE, w:RW|R, e:4
+UD0            Gd,Ed         n/a                       [            0x0F 0xFF /r]              s:UD, t:UD, w:R|R

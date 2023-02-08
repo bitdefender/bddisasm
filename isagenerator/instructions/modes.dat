@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Valid operating modes for instructions. Please use these templates and not inline definitions. If a template does
 # not exist already, create a new one.
 # Syntax: NAME : group1:mode11[+mode12[|group2:!mode21+!mode22]] etc.

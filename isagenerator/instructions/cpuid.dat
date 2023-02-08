@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # CPUID feature flags.
 # Syntax: NAME : leaf, subleaf, register, bit
 # NAME can be anything, but it should match an ISA extension type.

@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Segment overrides
 es                   [0x26]
 cs                   [0x2E]  

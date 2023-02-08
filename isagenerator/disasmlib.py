@@ -479,6 +479,8 @@ valid_tuples = [
     't1_4x',
 ]
 
+absent_op = ['n/a', 'nil']
+
 class InvalidEncodingException(Exception):
     def __init__(self, value):
         self.value = value
@@ -916,7 +918,7 @@ class Instruction():
         p = 1
         res = []
         for op in ops:
-            if op == "nil":
+            if op in absent_op:
                 break
             flags = []
             if not imp:
@@ -1052,12 +1054,12 @@ def parse_entry(entry, template_flags = {}, template_cpuid = {}, template_modes 
         # Extract the explicit operands
         x = x[x.find(' '):].strip()
         expops = x[:x.find(' ')].split(',')
-        if len(expops) == 1 and expops[0] == 'nil': expops = []
+        if len(expops) == 1 and expops[0] in absent_op: expops = []
             
         # Extract the implicit operands
         x = x[x.find(' '):].strip()
         impops = x[:x.find(' ')].split(',')
-        if len(impops) == 1 and impops[0] == 'nil': impops = []
+        if len(impops) == 1 and impops[0] in absent_op: impops = []
 
         # Extract the encoding
         x = x[x.find('[')+1:]
