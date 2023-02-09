@@ -3,256 +3,254 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Mnemonic          Explicit Operands     Implicit Operands Encoding                                Flags, Prefixes, Set, Category, Class, RW map, Additional ops
-#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # 0x00 - 0x0F
-VPSHUFB             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x00 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHADDW             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x01 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHADDD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x02 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHADDSW            Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x03 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMADDUBSW          Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x04 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHSUBW             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x05 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHSUBD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x06 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHSUBSW            Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x07 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPSIGNB             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x08 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPSIGNW             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x09 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPSIGND             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x0A /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMULHRSW           Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x0B /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPERMILPS           Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x0C /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPERMILPD           Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x0D /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VTESTPS             Vx,Wx                 Fv                [vex m:2 p:1 l:x w:0 0x0E /r]           s:AVX, t:LOGICAL_FP, w:R|R|W, f:VPTEST, e:4
-VTESTPD             Vx,Wx                 Fv                [vex m:2 p:1 l:x w:0 0x0F /r]           s:AVX, t:LOGICAL_FP, w:R|R|W, f:VPTEST, e:4
+VPSHUFB           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x00 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHADDW           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x01 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHADDD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x02 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHADDSW          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x03 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMADDUBSW        ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x04 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHSUBW           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x05 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHSUBD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x06 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHSUBSW          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x07 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSIGNB           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x08 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSIGNW           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x09 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSIGND           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x0A /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMULHRSW         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x0B /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPERMILPS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x0C /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPERMILPD         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x0D /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VTESTPS           ; Vx,Wx               ; Fv              ;  vex m:2 p:1 l:x w:0 0x0E /r          ; s:AVX, t:LOGICAL_FP, w:R|R|W, f:VPTEST, e:4
+VTESTPD           ; Vx,Wx               ; Fv              ;  vex m:2 p:1 l:x w:0 0x0F /r          ; s:AVX, t:LOGICAL_FP, w:R|R|W, f:VPTEST, e:4
 
 # 0x10 - 0x1F
-VCVTPH2PS           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:0 0x13 /r]           s:F16C, t:CONVERT, w:W|R, e:11
-VCVTPH2PS           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:0 0x13 /r]           s:F16C, t:CONVERT, w:W|R, e:11
-VPERMPS             Vqq,Hqq,Wqq           n/a               [vex m:2 p:1 l:1 w:0 0x16 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
-VPTEST              Vx,Wx                 Fv                [vex m:2 p:1 l:x w:i 0x17 /r]           s:AVX, t:LOGICAL, w:R|R|W, f:VPTEST, e:4
-VBROADCASTSS        Vx,Wss                n/a               [vex m:2 p:1 l:x w:0 0x18 /r]           s:AVX, t:BROADCAST, w:W|R, e:6
-VBROADCASTSD        Vqq,Wsd               n/a               [vex m:2 p:1 l:x w:0 0x19 /r]           s:AVX, t:BROADCAST, w:W|R, e:6
-VBROADCASTF128      Vqq,Mdq               n/a               [vex m:2 p:1 l:1 w:0 0x1A /r:mem]       s:AVX, t:BROADCAST, w:W|R, e:6
-VPABSB              Vx,Wx                 n/a               [vex m:2 p:1 l:x w:i 0x1C /r]           s:AVX, t:AVX, w:W|R, e:4
-VPABSW              Vx,Wx                 n/a               [vex m:2 p:1 l:x w:i 0x1D /r]           s:AVX, t:AVX, w:W|R, e:4
-VPABSD              Vx,Wx                 n/a               [vex m:2 p:1 l:x w:i 0x1E /r]           s:AVX, t:AVX, w:W|R, e:4
+VCVTPH2PS         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:0 0x13 /r          ; s:F16C, t:CONVERT, w:W|R, e:11
+VCVTPH2PS         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:0 0x13 /r          ; s:F16C, t:CONVERT, w:W|R, e:11
+VPERMPS           ; Vqq,Hqq,Wqq         ; n/a             ;  vex m:2 p:1 l:1 w:0 0x16 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
+VPTEST            ; Vx,Wx               ; Fv              ;  vex m:2 p:1 l:x w:i 0x17 /r          ; s:AVX, t:LOGICAL, w:R|R|W, f:VPTEST, e:4
+VBROADCASTSS      ; Vx,Wss              ; n/a             ;  vex m:2 p:1 l:x w:0 0x18 /r          ; s:AVX, t:BROADCAST, w:W|R, e:6
+VBROADCASTSD      ; Vqq,Wsd             ; n/a             ;  vex m:2 p:1 l:x w:0 0x19 /r          ; s:AVX, t:BROADCAST, w:W|R, e:6
+VBROADCASTF128    ; Vqq,Mdq             ; n/a             ;  vex m:2 p:1 l:1 w:0 0x1A /r:mem      ; s:AVX, t:BROADCAST, w:W|R, e:6
+VPABSB            ; Vx,Wx               ; n/a             ;  vex m:2 p:1 l:x w:i 0x1C /r          ; s:AVX, t:AVX, w:W|R, e:4
+VPABSW            ; Vx,Wx               ; n/a             ;  vex m:2 p:1 l:x w:i 0x1D /r          ; s:AVX, t:AVX, w:W|R, e:4
+VPABSD            ; Vx,Wx               ; n/a             ;  vex m:2 p:1 l:x w:i 0x1E /r          ; s:AVX, t:AVX, w:W|R, e:4
 
 # 0x20 - 0x2F
-VPMOVSXBW           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:i 0x20 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVSXBW           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:i 0x20 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVSXBD           Vdq,Wd                n/a               [vex m:2 p:1 l:0 w:i 0x21 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVSXBD           Vqq,Wq                n/a               [vex m:2 p:1 l:1 w:i 0x21 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVSXBQ           Vdq,Ww                n/a               [vex m:2 p:1 l:0 w:i 0x22 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVSXBQ           Vqq,Wd                n/a               [vex m:2 p:1 l:1 w:i 0x22 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVSXWD           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:i 0x23 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVSXWD           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:i 0x23 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVSXWQ           Vdq,Wd                n/a               [vex m:2 p:1 l:0 w:i 0x24 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVSXWQ           Vqq,Wq                n/a               [vex m:2 p:1 l:1 w:i 0x24 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVSXDQ           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:i 0x25 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVSXDQ           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:i 0x25 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMULDQ             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x28 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPCMPEQQ            Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x29 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VMOVNTDQA           Vx,Mx                 n/a               [vex m:2 p:1 l:x w:i 0x2A /r:mem]       s:AVX, t:AVX, w:W|R, e:1
-VPACKUSDW           Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x2B /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VMASKMOVPS          Vx,Hx,Mx              n/a               [vex m:2 p:1 l:x w:0 0x2C /r:mem]       s:AVX, t:AVX, w:W|R|R, e:6
-VMASKMOVPD          Vx,Hx,Mx              n/a               [vex m:2 p:1 l:x w:0 0x2D /r:mem]       s:AVX, t:AVX, w:W|R|R, e:6
-VMASKMOVPS          Mx,Hx,Vx              n/a               [vex m:2 p:1 l:x w:0 0x2E /r:mem]       s:AVX, t:AVX, w:W|R|R, e:6
-VMASKMOVPD          Mx,Hx,Vx              n/a               [vex m:2 p:1 l:x w:0 0x2F /r:mem]       s:AVX, t:AVX, w:W|R|R, e:6
+VPMOVSXBW         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x20 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVSXBW         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:i 0x20 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVSXBD         ; Vdq,Wd              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x21 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVSXBD         ; Vqq,Wq              ; n/a             ;  vex m:2 p:1 l:1 w:i 0x21 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVSXBQ         ; Vdq,Ww              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x22 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVSXBQ         ; Vqq,Wd              ; n/a             ;  vex m:2 p:1 l:1 w:i 0x22 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVSXWD         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x23 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVSXWD         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:i 0x23 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVSXWQ         ; Vdq,Wd              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x24 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVSXWQ         ; Vqq,Wq              ; n/a             ;  vex m:2 p:1 l:1 w:i 0x24 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVSXDQ         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x25 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVSXDQ         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:i 0x25 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMULDQ           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x28 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPEQQ          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x29 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VMOVNTDQA         ; Vx,Mx               ; n/a             ;  vex m:2 p:1 l:x w:i 0x2A /r:mem      ; s:AVX, t:AVX, w:W|R, e:1
+VPACKUSDW         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x2B /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VMASKMOVPS        ; Vx,Hx,Mx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x2C /r:mem      ; s:AVX, t:AVX, w:W|R|R, e:6
+VMASKMOVPD        ; Vx,Hx,Mx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x2D /r:mem      ; s:AVX, t:AVX, w:W|R|R, e:6
+VMASKMOVPS        ; Mx,Hx,Vx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x2E /r:mem      ; s:AVX, t:AVX, w:W|R|R, e:6
+VMASKMOVPD        ; Mx,Hx,Vx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x2F /r:mem      ; s:AVX, t:AVX, w:W|R|R, e:6
 
 # 0x30 - 0x3F
-VPMOVZXBW           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:i 0x30 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVZXBW           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:i 0x30 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVZXBD           Vdq,Wd                n/a               [vex m:2 p:1 l:0 w:i 0x31 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVZXBD           Vqq,Wq                n/a               [vex m:2 p:1 l:1 w:i 0x31 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVZXBQ           Vdq,Ww                n/a               [vex m:2 p:1 l:0 w:i 0x32 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVZXBQ           Vqq,Wd                n/a               [vex m:2 p:1 l:1 w:i 0x32 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVZXWD           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:i 0x33 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVZXWD           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:i 0x33 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVZXWQ           Vdq,Wd                n/a               [vex m:2 p:1 l:0 w:i 0x34 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVZXWQ           Vqq,Wq                n/a               [vex m:2 p:1 l:1 w:i 0x34 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPMOVZXDQ           Vdq,Wq                n/a               [vex m:2 p:1 l:0 w:i 0x35 /r]           s:AVX, t:AVX, w:W|R, e:5
-VPMOVZXDQ           Vqq,Wdq               n/a               [vex m:2 p:1 l:1 w:i 0x35 /r]           s:AVX2, t:AVX2, w:W|R, e:5
-VPERMD              Vqq,Hqq,Wqq           n/a               [vex m:2 p:1 l:1 w:0 0x36 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
-VPCMPGTQ            Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x37 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMINSB             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x38 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMINSD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x39 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMINUW             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x3A /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMINUD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x3B /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMAXSB             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x3C /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMAXSD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x3D /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMAXUW             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x3E /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPMAXUD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x3F /r]           s:AVX, t:AVX, w:W|R|R, e:4
+VPMOVZXBW         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x30 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVZXBW         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:i 0x30 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVZXBD         ; Vdq,Wd              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x31 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVZXBD         ; Vqq,Wq              ; n/a             ;  vex m:2 p:1 l:1 w:i 0x31 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVZXBQ         ; Vdq,Ww              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x32 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVZXBQ         ; Vqq,Wd              ; n/a             ;  vex m:2 p:1 l:1 w:i 0x32 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVZXWD         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x33 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVZXWD         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:i 0x33 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVZXWQ         ; Vdq,Wd              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x34 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVZXWQ         ; Vqq,Wq              ; n/a             ;  vex m:2 p:1 l:1 w:i 0x34 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPMOVZXDQ         ; Vdq,Wq              ; n/a             ;  vex m:2 p:1 l:0 w:i 0x35 /r          ; s:AVX, t:AVX, w:W|R, e:5
+VPMOVZXDQ         ; Vqq,Wdq             ; n/a             ;  vex m:2 p:1 l:1 w:i 0x35 /r          ; s:AVX2, t:AVX2, w:W|R, e:5
+VPERMD            ; Vqq,Hqq,Wqq         ; n/a             ;  vex m:2 p:1 l:1 w:0 0x36 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
+VPCMPGTQ          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x37 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMINSB           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x38 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMINSD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x39 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMINUW           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x3A /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMINUD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x3B /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMAXSB           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x3C /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMAXSD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x3D /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMAXUW           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x3E /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMAXUD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x3F /r          ; s:AVX, t:AVX, w:W|R|R, e:4
 
 # 0x40 - 0x4F
-VPMULLD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0x40 /r]           s:AVX, t:AVX, w:W|R|R, e:4
-VPHMINPOSUW         Vdq,Wdq               n/a               [vex m:2 p:1 l:0 w:i 0x41 /r]           s:AVX, t:AVX, w:W|R, e:4
-VPSRLVD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x45 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
-VPSRLVQ             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x45 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
-VPSRAVD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x46 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
-VPSLLVD             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x47 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
-VPSLLVQ             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x47 /r]           s:AVX2, t:AVX2, w:W|R|R, e:4
+VPMULLD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0x40 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPHMINPOSUW       ; Vdq,Wdq             ; n/a             ;  vex m:2 p:1 l:0 w:i 0x41 /r          ; s:AVX, t:AVX, w:W|R, e:4
+VPSRLVD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x45 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
+VPSRLVQ           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x45 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
+VPSRAVD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x46 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
+VPSLLVD           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x47 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
+VPSLLVQ           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x47 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
 
-LDTILECFG           Moq                   n/a               [vex m:2 p:0 l:0 w:0 0x49 /0:mem]       s:AMXTILE, t:AMX, w:R, m:NOTSX|O64, e:AMX_E1
-STTILECFG           Moq                   n/a               [vex m:2 p:1 l:0 w:0 0x49 /0:mem]       s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E2
-TILELOADD           rTt,Mt                n/a               [vex m:2 p:3 l:0 w:0 0x4B /r:mem sibmem] s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
-TILESTORED          Mt,rTt                n/a               [vex m:2 p:2 l:0 w:0 0x4B /r:mem sibmem] s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
-TILELOADDT1         rTt,Mt                n/a               [vex m:2 p:1 l:0 w:0 0x4B /r:mem sibmem] s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
-TILERELEASE         n/a                   n/a               [vex m:2 p:0 l:0 w:0 0x49 /0xC0]        s:AMXTILE, t:AMX, m:NOTSX|O64, e:AMX_E6
-TILEZERO            rTt                   n/a               [vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0]  s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E5
+LDTILECFG         ; Moq                 ; n/a             ;  vex m:2 p:0 l:0 w:0 0x49 /0:mem      ; s:AMXTILE, t:AMX, w:R, m:NOTSX|O64, e:AMX_E1
+STTILECFG         ; Moq                 ; n/a             ;  vex m:2 p:1 l:0 w:0 0x49 /0:mem      ; s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E2
+TILELOADD         ; rTt,Mt              ; n/a             ;  vex m:2 p:3 l:0 w:0 0x4B /r:mem sibmem ;s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
+TILESTORED        ; Mt,rTt              ; n/a             ;  vex m:2 p:2 l:0 w:0 0x4B /r:mem sibmem ;s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
+TILELOADDT1       ; rTt,Mt              ; n/a             ;  vex m:2 p:1 l:0 w:0 0x4B /r:mem sibmem ;s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
+TILERELEASE       ; n/a                 ; n/a             ;  vex m:2 p:0 l:0 w:0 0x49 /0xC0       ; s:AMXTILE, t:AMX, m:NOTSX|O64, e:AMX_E6
+TILEZERO          ; rTt                 ; n/a             ;  vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0 ; s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E5
 
 # 0x50 - 0x5F
-VPDPBUUD            Vx,Hx,Wx              n/a               [vex m:2 p:0 l:x w:0 0x50 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
-VPDPBUSD            Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x50 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
-VPDPBSUD            Vx,Hx,Wx              n/a               [vex m:2 p:2 l:x w:0 0x50 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
-VPDPBSSD            Vx,Hx,Wx              n/a               [vex m:2 p:3 l:x w:0 0x50 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
-VPDPBUUDS           Vx,Hx,Wx              n/a               [vex m:2 p:0 l:x w:0 0x51 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
-VPDPBUSDS           Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x51 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
-VPDPBSUDS           Vx,Hx,Wx              n/a               [vex m:2 p:2 l:x w:0 0x51 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
-VPDPBSSDS           Vx,Hx,Wx              n/a               [vex m:2 p:3 l:x w:0 0x51 /r]           s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
-VPDPWSSD            Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x52 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
-VPDPWSSDS           Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x53 /r]           s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPBUUD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:0 l:x w:0 0x50 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBUSD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x50 /r          ; s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPBSUD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:2 l:x w:0 0x50 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBSSD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:3 l:x w:0 0x50 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBUUDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:0 l:x w:0 0x51 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBUSDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x51 /r          ; s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPBSUDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:2 l:x w:0 0x51 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPBSSDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:3 l:x w:0 0x51 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
+VPDPWSSD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x52 /r          ; s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
+VPDPWSSDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x53 /r          ; s:AVXVNNI, t:AVXVNNI, w:RW|R|R, e:4
 
-VPBROADCASTD        Vx,Wd                 n/a               [vex m:2 p:1 l:x w:0 0x58 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
-VPBROADCASTQ        Vx,Wq                 n/a               [vex m:2 p:1 l:x w:0 0x59 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
-VBROADCASTI128      Vqq,Mdq               n/a               [vex m:2 p:1 l:1 w:0 0x5A /r:mem]       s:AVX2, t:BROADCAST, w:W|R, e:6
+VPBROADCASTD      ; Vx,Wd               ; n/a             ;  vex m:2 p:1 l:x w:0 0x58 /r          ; s:AVX2, t:BROADCAST, w:W|R, e:6
+VPBROADCASTQ      ; Vx,Wq               ; n/a             ;  vex m:2 p:1 l:x w:0 0x59 /r          ; s:AVX2, t:BROADCAST, w:W|R, e:6
+VBROADCASTI128    ; Vqq,Mdq             ; n/a             ;  vex m:2 p:1 l:1 w:0 0x5A /r:mem      ; s:AVX2, t:BROADCAST, w:W|R, e:6
 
-TDPBF16PS           rTt,mTt,vTt           n/a               [vex m:2 p:2 l:0 w:0 0x5C /r:reg]       s:AMXBF16, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
-TDPFP16PS           rTt,mTt,vTt           n/a               [vex m:2 p:3 l:0 w:0 0x5C /r:reg]       s:AMXFP16, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
-TDPBUUD             rTt,mTt,vTt           n/a               [vex m:2 p:0 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
-TDPBUSD             rTt,mTt,vTt           n/a               [vex m:2 p:1 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
-TDPBSUD             rTt,mTt,vTt           n/a               [vex m:2 p:2 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
-TDPBSSD             rTt,mTt,vTt           n/a               [vex m:2 p:3 l:0 w:0 0x5E /r:reg]       s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPBF16PS         ; rTt,mTt,vTt         ; n/a             ;  vex m:2 p:2 l:0 w:0 0x5C /r:reg      ; s:AMXBF16, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPFP16PS         ; rTt,mTt,vTt         ; n/a             ;  vex m:2 p:3 l:0 w:0 0x5C /r:reg      ; s:AMXFP16, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPBUUD           ; rTt,mTt,vTt         ; n/a             ;  vex m:2 p:0 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPBUSD           ; rTt,mTt,vTt         ; n/a             ;  vex m:2 p:1 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPBSUD           ; rTt,mTt,vTt         ; n/a             ;  vex m:2 p:2 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPBSSD           ; rTt,mTt,vTt         ; n/a             ;  vex m:2 p:3 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 
 # 0x60 - 0x6F
 
 # 0x70 - 0x7F
-VCVTNEPS2BF16       Vx,Wx                 n/a               [vex m:2 p:2 l:x w:0 0x72 /r]           s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
-VPBROADCASTB        Vx,Wb                 n/a               [vex m:2 p:1 l:x w:0 0x78 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
-VPBROADCASTW        Vx,Ww                 n/a               [vex m:2 p:1 l:x w:0 0x79 /r]           s:AVX2, t:BROADCAST, w:W|R, e:6
+VCVTNEPS2BF16     ; Vx,Wx               ; n/a             ;  vex m:2 p:2 l:x w:0 0x72 /r          ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VPBROADCASTB      ; Vx,Wb               ; n/a             ;  vex m:2 p:1 l:x w:0 0x78 /r          ; s:AVX2, t:BROADCAST, w:W|R, e:6
+VPBROADCASTW      ; Vx,Ww               ; n/a             ;  vex m:2 p:1 l:x w:0 0x79 /r          ; s:AVX2, t:BROADCAST, w:W|R, e:6
 
 # 0x80 - 0x8F
-VPMASKMOVD          Vx,Hx,Mx              n/a               [vex m:2 p:1 l:x w:0 0x8C /r:mem]       s:AVX2, t:AVX2, w:W|R|R, e:6
-VPMASKMOVQ          Vx,Hx,Mx              n/a               [vex m:2 p:1 l:x w:1 0x8C /r:mem]       s:AVX2, t:AVX2, w:W|R|R, e:6
-VPMASKMOVD          Mx,Hx,Vx              n/a               [vex m:2 p:1 l:x w:0 0x8E /r:mem]       s:AVX2, t:AVX2, w:W|R|R, e:6
-VPMASKMOVQ          Mx,Hx,Vx              n/a               [vex m:2 p:1 l:x w:1 0x8E /r:mem]       s:AVX2, t:AVX2, w:W|R|R, e:6
+VPMASKMOVD        ; Vx,Hx,Mx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x8C /r:mem      ; s:AVX2, t:AVX2, w:W|R|R, e:6
+VPMASKMOVQ        ; Vx,Hx,Mx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x8C /r:mem      ; s:AVX2, t:AVX2, w:W|R|R, e:6
+VPMASKMOVD        ; Mx,Hx,Vx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x8E /r:mem      ; s:AVX2, t:AVX2, w:W|R|R, e:6
+VPMASKMOVQ        ; Mx,Hx,Vx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x8E /r:mem      ; s:AVX2, t:AVX2, w:W|R|R, e:6
 
 # 0x90 - 0x9F
-VPGATHERDD          Vx,Mvm32n,Hx          n/a               [vex m:2 p:1 l:x w:0 0x90 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VPGATHERDQ          Vx,Mvm32h,Hx          n/a               [vex m:2 p:1 l:x w:1 0x90 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VPGATHERQD          Vdq,Mvm64n,Hdq        n/a               [vex m:2 p:1 l:x w:0 0x91 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VPGATHERQQ          Vx,Mvm64n,Hx          n/a               [vex m:2 p:1 l:x w:1 0x91 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VGATHERDPS          Vx,Mvm32n,Hx          n/a               [vex m:2 p:1 l:x w:0 0x92 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VGATHERDPD          Vx,Mvm32h,Hx          n/a               [vex m:2 p:1 l:x w:1 0x92 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VGATHERQPS          Vdq,Mvm64n,Hdq        n/a               [vex m:2 p:1 l:x w:0 0x93 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
-VGATHERQPD          Vx,Mvm64n,Hx          n/a               [vex m:2 p:1 l:x w:1 0x93 /r:mem vsib]  s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VPGATHERDD        ; Vx,Mvm32n,Hx        ; n/a             ;  vex m:2 p:1 l:x w:0 0x90 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VPGATHERDQ        ; Vx,Mvm32h,Hx        ; n/a             ;  vex m:2 p:1 l:x w:1 0x90 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VPGATHERQD        ; Vdq,Mvm64n,Hdq      ; n/a             ;  vex m:2 p:1 l:x w:0 0x91 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VPGATHERQQ        ; Vx,Mvm64n,Hx        ; n/a             ;  vex m:2 p:1 l:x w:1 0x91 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VGATHERDPS        ; Vx,Mvm32n,Hx        ; n/a             ;  vex m:2 p:1 l:x w:0 0x92 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VGATHERDPD        ; Vx,Mvm32h,Hx        ; n/a             ;  vex m:2 p:1 l:x w:1 0x92 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VGATHERQPS        ; Vdq,Mvm64n,Hdq      ; n/a             ;  vex m:2 p:1 l:x w:0 0x93 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
+VGATHERQPD        ; Vx,Mvm64n,Hx        ; n/a             ;  vex m:2 p:1 l:x w:1 0x93 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
 
-VFMADDSUB132PS      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x96 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADDSUB132PD      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x96 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD132PS      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x97 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD132PD      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x97 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132PS         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x98 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132PD         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x98 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132SS         Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0x99 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD132SD         Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0x99 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB132PS         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x9A /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB132PD         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x9A /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB132SS         Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0x9B /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB132SD         Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0x9B /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD132PS        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x9C /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD132PD        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x9C /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD132SS        Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0x9D /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD132SD        Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0x9D /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB132PS        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0x9E /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB132PD        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0x9E /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB132SS        Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0x9F /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB132SD        Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0x9F /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADDSUB132PS    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x96 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADDSUB132PD    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x96 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUBADD132PS    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x97 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUBADD132PD    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x97 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD132PS       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x98 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD132PD       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x98 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD132SS       ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0x99 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD132SD       ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0x99 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB132PS       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x9A /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUB132PD       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x9A /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUB132SS       ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0x9B /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB132SD       ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0x9B /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD132PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x9C /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMADD132PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x9C /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMADD132SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0x9D /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD132SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0x9D /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB132PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0x9E /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMSUB132PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0x9E /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMSUB132SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0x9F /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB132SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0x9F /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
 
 # 0xA0 - 0xAF
-VFMADDSUB213PS      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xA6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADDSUB213PD      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xA6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD213PS      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xA7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD213PD      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xA7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213PS         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xA8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213PD         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xA8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213SS         Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xA9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD213SD         Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xA9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB213PS         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xAA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB213PD         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xAA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB213SS         Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xAB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB213SD         Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xAB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD213PS        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xAC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD213PD        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xAC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD213SS        Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xAD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD213SD        Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xAD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB213PS        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xAE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB213PD        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xAE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB213SS        Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB213SD        Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xAF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADDSUB213PS    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xA6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADDSUB213PD    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xA6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUBADD213PS    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xA7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUBADD213PD    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xA7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD213PS       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xA8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD213PD       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xA8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD213SS       ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xA9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD213SD       ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xA9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB213PS       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xAA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUB213PD       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xAA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUB213SS       ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xAB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB213SD       ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xAB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD213PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xAC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMADD213PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xAC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMADD213SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xAD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD213SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xAD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB213PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xAE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMSUB213PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xAE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMSUB213SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xAF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB213SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xAF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
 
 # 0xB0 - 0xBF
-VCVTNEOPH2PS        Vx,Mx                 n/a               [vex m:2 p:0 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
-VCVTNEEPH2PS        Vx,Mx                 n/a               [vex m:2 p:1 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
-VCVTNEEBF162PS      Vx,Mx                 n/a               [vex m:2 p:2 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
-VCVTNEOBF162PS      Vx,Mx                 n/a               [vex m:2 p:3 l:x w:0 0xB0 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
-VBCSTNESH2PS        Vx,Mw                 n/a               [vex m:2 p:1 l:x w:0 0xB1 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:5
-VBCSTNEBF162PS      Vx,Mw                 n/a               [vex m:2 p:2 l:x w:0 0xB1 /r:mem]       s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:5
+VCVTNEOPH2PS      ; Vx,Mx               ; n/a             ;  vex m:2 p:0 l:x w:0 0xB0 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VCVTNEEPH2PS      ; Vx,Mx               ; n/a             ;  vex m:2 p:1 l:x w:0 0xB0 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VCVTNEEBF162PS    ; Vx,Mx               ; n/a             ;  vex m:2 p:2 l:x w:0 0xB0 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VCVTNEOBF162PS    ; Vx,Mx               ; n/a             ;  vex m:2 p:3 l:x w:0 0xB0 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
+VBCSTNESH2PS      ; Vx,Mw               ; n/a             ;  vex m:2 p:1 l:x w:0 0xB1 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:5
+VBCSTNEBF162PS    ; Vx,Mw               ; n/a             ;  vex m:2 p:2 l:x w:0 0xB1 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:5
 
-VPMADD52LUQ         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xB4 /r]           s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
-VPMADD52HUQ         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xB5 /r]           s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
+VPMADD52LUQ       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xB4 /r          ; s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
+VPMADD52HUQ       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xB5 /r          ; s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
 
-VFMADDSUB231PS      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xB6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADDSUB231PD      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xB6 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD231PS      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xB7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD231PD      Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xB7 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231PS         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xB8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231PD         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xB8 /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231SS         Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xB9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD231SD         Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xB9 /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB231PS         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xBA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB231PD         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xBA /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB231SS         Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xBB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB231SD         Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xBB /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD231PS        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xBC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD231PD        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xBC /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD231SS        Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xBD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD231SD        Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xBD /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB231PS        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xBE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB231PD        Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:1 0xBE /r]           s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB231SS        Vdq,Hdq,Wss           n/a               [vex m:2 p:1 l:i w:0 0xBF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB231SD        Vdq,Hdq,Wsd           n/a               [vex m:2 p:1 l:i w:1 0xBF /r]           s:FMA, t:VFMA, w:RW|R|R, e:3
-VGF2P8MULB          Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:0 0xCF /r]           s:GFNI, t:GFNI, w:W|R|R
-VAESIMC             Vdq,Wdq               n/a               [vex m:2 p:1 l:0 w:i 0xDB /r]           s:AES, t:AES, w:W|R, e:4
-VAESENC             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0xDC /r]           s:AES, t:AES, w:W|R|R, e:4
-VAESENCLAST         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0xDD /r]           s:AES, t:AES, w:W|R|R, e:4
-VAESDEC             Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0xDE /r]           s:AES, t:AES, w:W|R|R, e:4
-VAESDECLAST         Vx,Hx,Wx              n/a               [vex m:2 p:1 l:x w:i 0xDF /r]           s:AES, t:AES, w:W|R|R, e:4
+VFMADDSUB231PS    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xB6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADDSUB231PD    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xB6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUBADD231PS    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xB7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUBADD231PD    ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xB7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD231PS       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xB8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD231PD       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xB8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMADD231SS       ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xB9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADD231SD       ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xB9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB231PS       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xBA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUB231PD       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xBA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFMSUB231SS       ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xBB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMSUB231SD       ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xBB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD231PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xBC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMADD231PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xBC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMADD231SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xBD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMADD231SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xBD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB231PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMSUB231PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
+VFNMSUB231SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFNMSUB231SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VGF2P8MULB        ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xCF /r          ; s:GFNI, t:GFNI, w:W|R|R
+VAESIMC           ; Vdq,Wdq             ; n/a             ;  vex m:2 p:1 l:0 w:i 0xDB /r          ; s:AES, t:AES, w:W|R, e:4
+VAESENC           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0xDC /r          ; s:AES, t:AES, w:W|R|R, e:4
+VAESENCLAST       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0xDD /r          ; s:AES, t:AES, w:W|R|R, e:4
+VAESDEC           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0xDE /r          ; s:AES, t:AES, w:W|R|R, e:4
+VAESDECLAST       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0xDF /r          ; s:AES, t:AES, w:W|R|R, e:4
 
 # 0xE0 - 0xEF
-CMPOXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE0 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNOXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE1 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPCXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE2 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNCXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE3 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPZXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE4 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNZXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE5 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPBEXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE6 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNBEXADD          My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE7 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPSXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE8 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNSXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xE9 /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPPXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEA /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNPXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEB /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPLXADD            My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEC /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNLXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xED /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPLEXADD           My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEE /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
-CMPNLEXADD          My,Gy,By              Fv                [vex m:2 p:1 l:0 w:x 0xEF /r:mem]       s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPOXADD          ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE0 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNOXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE1 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPCXADD          ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE2 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNCXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE3 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPZXADD          ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE4 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNZXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE5 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPBEXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE6 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNBEXADD        ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE7 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPSXADD          ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE8 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNSXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xE9 /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPPXADD          ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xEA /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNPXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xEB /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPLXADD          ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xEC /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNLXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xED /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPLEXADD         ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xEE /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
+CMPNLEXADD        ; My,Gy,By            ; Fv              ;  vex m:2 p:1 l:0 w:x 0xEF /r:mem      ; s:CMPCCXADD, t:CMPCCXADD, w:RW|RW|R|W, a:COND, f:ARITH, e:14
 
 # 0xF0 - 0xFF
-ANDN                Gy,By,Ey              Fv                [vex m:2 p:0 l:0 w:x 0xF2 /r]           s:BMI1, t:BMI1, w:W|R|R|W, f:CF=0|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
-BLSR                By,Ey                 Fv                [vex m:2 p:0 l:0 w:x 0xF3 /1]           s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
-BLSMSK              By,Ey                 Fv                [vex m:2 p:0 l:0 w:x 0xF3 /2]           s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=0|SF=m|OF=0, e:13
-BLSI                By,Ey                 Fv                [vex m:2 p:0 l:0 w:x 0xF3 /3]           s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
-BZHI                Gy,Ey,By              Fv                [vex m:2 p:0 l:0 w:x 0xF5 /r]           s:BMI2, t:BMI2, w:W|R|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
-PEXT                Gy,By,Ey              n/a               [vex m:2 p:2 l:0 w:x 0xF5 /r]           s:BMI2, t:BMI2, w:W|R|R|W, e:13
-PDEP                Gy,By,Ey              n/a               [vex m:2 p:3 l:0 w:x 0xF5 /r]           s:BMI2, t:BMI2, w:W|R|R|W, e:13
-MULX                Gy,By,Ey              yDX               [vex m:2 p:3 l:0 w:x 0xF6 /r]           s:BMI2, t:BMI2, w:W|W|R|R, e:13
-BEXTR               Gy,Ey,By              Fv                [vex m:2 p:0 l:0 w:x 0xF7 /r]           s:BMI1, t:BMI1, w:W|R|R|W, f:CF=0|PF=u|AF=u|ZF=m|SF=u|OF=0, e:13
-SHLX                Gy,Ey,By              n/a               [vex m:2 p:1 l:0 w:x 0xF7 /r]           s:BMI2, t:BMI2, w:W|R|R, e:13
-SARX                Gy,Ey,By              n/a               [vex m:2 p:2 l:0 w:x 0xF7 /r]           s:BMI2, t:BMI2, w:W|R|R, e:13
-SHRX                Gy,Ey,By              n/a               [vex m:2 p:3 l:0 w:x 0xF7 /r]           s:BMI2, t:BMI2, w:W|R|R, e:13
+ANDN              ; Gy,By,Ey            ; Fv              ;  vex m:2 p:0 l:0 w:x 0xF2 /r          ; s:BMI1, t:BMI1, w:W|R|R|W, f:CF=0|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
+BLSR              ; By,Ey               ; Fv              ;  vex m:2 p:0 l:0 w:x 0xF3 /1          ; s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
+BLSMSK            ; By,Ey               ; Fv              ;  vex m:2 p:0 l:0 w:x 0xF3 /2          ; s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=0|SF=m|OF=0, e:13
+BLSI              ; By,Ey               ; Fv              ;  vex m:2 p:0 l:0 w:x 0xF3 /3          ; s:BMI1, t:BMI1, w:W|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
+BZHI              ; Gy,Ey,By            ; Fv              ;  vex m:2 p:0 l:0 w:x 0xF5 /r          ; s:BMI2, t:BMI2, w:W|R|R|W, f:CF=m|PF=u|AF=u|ZF=m|SF=m|OF=0, e:13
+PEXT              ; Gy,By,Ey            ; n/a             ;  vex m:2 p:2 l:0 w:x 0xF5 /r          ; s:BMI2, t:BMI2, w:W|R|R|W, e:13
+PDEP              ; Gy,By,Ey            ; n/a             ;  vex m:2 p:3 l:0 w:x 0xF5 /r          ; s:BMI2, t:BMI2, w:W|R|R|W, e:13
+MULX              ; Gy,By,Ey            ; yDX             ;  vex m:2 p:3 l:0 w:x 0xF6 /r          ; s:BMI2, t:BMI2, w:W|W|R|R, e:13
+BEXTR             ; Gy,Ey,By            ; Fv              ;  vex m:2 p:0 l:0 w:x 0xF7 /r          ; s:BMI1, t:BMI1, w:W|R|R|W, f:CF=0|PF=u|AF=u|ZF=m|SF=u|OF=0, e:13
+SHLX              ; Gy,Ey,By            ; n/a             ;  vex m:2 p:1 l:0 w:x 0xF7 /r          ; s:BMI2, t:BMI2, w:W|R|R, e:13
+SARX              ; Gy,Ey,By            ; n/a             ;  vex m:2 p:2 l:0 w:x 0xF7 /r          ; s:BMI2, t:BMI2, w:W|R|R, e:13
+SHRX              ; Gy,Ey,By            ; n/a             ;  vex m:2 p:3 l:0 w:x 0xF7 /r          ; s:BMI2, t:BMI2, w:W|R|R, e:13

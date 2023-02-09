@@ -313,12 +313,5 @@ const char *gMnemonics[1734] =
 };
 
 
-const char *gPrefixes[18] = 
-{
-    "BHALT", "BHNT", "BHT", "BND", "DNT", "LOCK", "REPNZ", "REPZ", 
-    "XACQUIRE", "XRELEASE", "addr", "cs", "ds", "es", "fs", "gs", 
-    "size", "ss", 
-};
-
 #endif
 

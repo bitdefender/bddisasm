@@ -9,7 +9,8 @@ There are two scripts in the project: the disasmlib.py, which is a library used 
 
 ## Instruction specification syntax
 Instruction specifiers have the following format:
-mnemonic|explicit operands|implicit operands|encoding|flags
+mnemonic; explicit operands; implicit operands; encoding; flags
+
 NOTE: Everything is case sensitive, except for the mnemonic.
 
 ### Mnemonic
@@ -159,7 +160,7 @@ Mnemonic        Op1,Op2      Op3        [encoding]       s:SET, t:TYPE, c:CLASS,
 
 Anatomy of an instruction specifier:
 Mnemonic       Explicit ops  Implicit ops   Encoding                                Attributes
-CMPXCHG        Eb,Gb         AL,Fv          [            0x0F 0xB0 /r]              s:I486REAL, t:SEMAPHORE, w:RCW|R|RCW|W, f:ARITH, p:LOCK|HLE
+CMPXCHG      ; Eb,Gb       ; AL,Fv          ;            0x0F 0xB0 /r             ; s:I486REAL, t:SEMAPHORE, w:RCW|R|RCW|W, f:ARITH, p:LOCK|HLE
    A           A  A          A  A                        A    A    A                A           A            A              A        A
    |           |  |          |  |                        |    |    |                |           |            |              |        |
    |           |  |          |  |                        |    |    |                |           |            |              |        |

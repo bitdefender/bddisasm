@@ -1117,18 +1117,7 @@ def dump_mnemonics(mnemonics, prefixes, fname):
 
     f.write('\n};\n\n\n')
 
-    f.write('const char *gPrefixes[%d] = \n' % len(prefixes))
-    f.write('{\n')
-    f.write('    ')
-
-    i = 0
-    for p in prefixes:
-        f.write('"%s", ' % p)
-        i += 1
-        if i % 8 == 0:
-            f.write('\n    ')
-
-    f.write('\n};\n\n#endif\n\n')
+    f.write('#endif\n\n')
     f.close()
 
 def dump_constants(constants, prefixes, constants_sets, constants_types, fname):
@@ -1294,10 +1283,6 @@ if __name__ == "__main__":
     # Extact the CPUID features.
     print('Loading CPUID feature flags templates...')
     features = disasmlib.parse_cff_file('%s/cpuid.dat' % sys.argv[1])
-
-    # Extract the prefixes.
-    print('Loading prefixes...')
-    prefixes = disasmlib.parse_pre_file('%s/prefixes.dat' % sys.argv[1])
 
     # Extract the valid modes.
     print('Loading CPU operating modes templates...')

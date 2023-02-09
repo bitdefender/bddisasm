@@ -857,9 +857,9 @@ class Instruction():
                     elif t2 in ['NDS', 'NDD', 'DDS']:
                         pass
                     else:
-                        raise InvalidEncodingException('Unknwon new evex token: %s/%s' % (t, t2))
+                        raise InvalidEncodingException('Invalid encoding: unknown evex token: %s/%s' % (t, t2))
             else:
-                raise InvalidEncodingException('Unknown token: %s' % t)
+                raise InvalidEncodingException('Invalid encoding: Unknown token: %s' % t)
 
         # Pre-process the explicit operands. The mask register is contained as a decorator, but put it as a direct
         # operand as well. The access flag is already present in rwm.
@@ -1035,51 +1035,43 @@ class Instruction():
 
 
 def parse_entry(entry, template_flags = {}, template_cpuid = {}, template_modes = {}):
-    # make sure this is not a comment. Skip comments.
-    if entry.startswith('#') or len(entry) < 4: return None
+    # Make sure this is not a comment. Skip comments.
+    if entry.startswith('#') or len(entry) < 4: 
+        return None
 
-    try:
         # Preprocess: remove comments, CR/LF
-        com = entry.find('#')
-        x = entry.replace('\x0D', '').replace('\x0A', '')
-        if -1 != com: x = entry[:com]
+    entry = entry.replace('\x0D', '').replace('\x0A', '')
+    com = entry.find('#')
+    if -1 != com: x = entry[:com]
                 
+    try:
         # Space can't be the first character.
-        if x[0] == ' ': 
+        if entry[0] == ' ': 
             raise ParseLineException('Space cannot be the first character!')
     
-        # Extract the mnemonic
-        mnemonic = x[0:x.find(' ')].strip()
+        components = entry.split(';')
+        if len(components) != 5:
+            raise ParseLineException('Expected 5 components per line, but found %d (missing semicolon?)!' % len(components))
 
-        # Extract the explicit operands
-        x = x[x.find(' '):].strip()
-        expops = x[:x.find(' ')].split(',')
-        if len(expops) == 1 and expops[0] in absent_op: expops = []
-            
-        # Extract the implicit operands
-        x = x[x.find(' '):].strip()
-        impops = x[:x.find(' ')].split(',')
-        if len(impops) == 1 and impops[0] in absent_op: impops = []
+        mnemonic = components[0].strip()
+        expops   = components[1].strip().split(',')
+        impops   = components[2].strip().split(',')
+        encoding = components[3].strip()
+        misc     = components[4].strip().split(',')
 
-        # Extract the encoding
-        x = x[x.find('[')+1:]
-        encoding = x[:x.find(']')].strip()
+        if len(expops) == 1 and expops[0] in absent_op: 
+            expops = []
+
+        if len(impops) == 1 and impops[0] in absent_op: 
+            impops = []
 
         # Extract the flags, class, set, category, encoding, prefmap
         attributes = prefmap = isaset = category = iclass = adop = rwm = None
         cff = tuple = flgaccess = modes = exclass = fpuflg = None
 
-        x = x[x.find(']')+1:].strip()
-
-        while x:
-            start = x.find(':')
-            end   = x.find(',')
-            if start == -1: 
-                break
-            if end == -1: 
-                end = len(x)
-            token = x[:start].strip()
-            value = x[start+1:end].strip()
+        for y in misc:
+            y = y.strip()
+            token, value = y.split(':')
 
             # parse token
             if token == 'a':                    # Instruction attributes.
@@ -1162,12 +1154,6 @@ def parse_entry(entry, template_flags = {}, template_cpuid = {}, template_modes 
             else:
                 raise ParseLineException('Unknown token specified: %s' % token)
 
-            # Advance
-            if -1 == x.find(','):
-                x = ''
-            else:
-                x = x[x.find(',')+1:].strip()
-
         if attributes is None:
             attributes = []
         if prefmap is None:
@@ -1200,11 +1186,11 @@ def parse_entry(entry, template_flags = {}, template_cpuid = {}, template_modes 
 
         # The read/write map must have the same size as the number of operands.
         if len(rwm) < len(expops) + len(impops):
-            raise ParseLineException('Invalid number of operand access specifiers: provided %d, expecting at least %d' % 
+            raise ParseLineException('Invalid number of operand access specifiers: provided %d, expecting %d' % 
                                      (len(rwm), len(expops) + len(impops)))
         for r in rwm:
             if r not in valid_access:
-                raise ParseLineException('Unknown access specifier "%s", expecting one of [%s]' % 
+                raise ParseLineException('Unknown operand access specifier "%s", expecting one of [%s]' % 
                                          (r, ','.join(valid_access)))
         # The CPUID can be anything, even if it doesn't match something specified in cpuid.dat.
 
@@ -1373,9 +1359,6 @@ if __name__ == "__main__":
     # Parse the flags file.
     flags = parse_flags_file('%s/flags.dat' % sys.argv[1])
 
-    # Parse the prefixes
-    prefixes = parse_pre_file('%s/prefixes.dat' % sys.argv[1])
-
     # Parse the cpuid feature flags and extract each feature
     features = parse_cff_file('%s/cpuid.dat' % sys.argv[1])
 
@@ -1391,9 +1374,6 @@ if __name__ == "__main__":
     instructions = sorted(instructions, key = lambda x: x.Mnemonic)
     for i in range(0, len(instructions)):
         print(instructions[i])
-
-    for i in range(0, len(prefixes)):
-        print(prefixes[i])
 
     features = sorted(features, key = lambda x: x.Name)
     for i in range(0, len(features)):
