@@ -182,8 +182,7 @@ NOP          ; Ev          ; n/a                     ;       piti 0x0F 0x18 /7:r
 
 
 # MPX instructions. According to the SDM, MPX instructions have 64 bit op & address size in 64 bit mode, no matter 
-# if 0x66 or 0x67 prefixes are used. 16 bit addressing cause #UD. However, these checks are not handled here (note
-# that Xed doesn't do those checks either).
+# if 0x66 or 0x67 prefixes are used. 16 bit addressing cause #UD. However, these checks are not handled here.
 
 # MPX not used, these guys are wide NOPs.
 NOP          ; Ev,Gv       ; n/a                     ;            0x0F 0x1A /r            ; s:PPRO, t:WIDENOP, w:N|N
@@ -312,7 +311,7 @@ CMOVLE       ; Gv,Ev       ; Fv                      ;            0x0F 0x4E /r  
 CMOVNLE      ; Gv,Ev       ; Fv                      ;            0x0F 0x4F /r            ; s:PPRO, t:CMOV, c:CMOVcc, w:CW|R|R, i:CMOV, f:CNLE, a:COND
 
 # 0x50 - 0x5F
-# Note: for MOVMSKPS & MOVMSKPD, the Intel doc says the destination reg is y (32 or 64 bit) but XED says it must be d (only 32 bits).
+# Note: for MOVMSKPS & MOVMSKPD, the Intel doc says the destination reg is y (32 or 64 bit).
 MOVMSKPS     ; Gy,Ups      ; n/a                     ;         NP 0x0F 0x50 /r:reg        ; s:SSE, t:DATAXFER, w:W|R, e:7, a:D64
 MOVMSKPD     ; Gy,Upd      ; n/a                     ;       0x66 0x0F 0x50 /r:reg        ; s:SSE2, t:DATAXFER, w:W|R, e:7, a:D64
 SQRTPS       ; Vps,Wps     ; n/a                     ;         NP 0x0F 0x51 /r            ; s:SSE, t:SSE, w:W|R, e:2

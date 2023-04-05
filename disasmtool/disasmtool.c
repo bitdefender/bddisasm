@@ -111,6 +111,7 @@ set_to_string(
     case ND_SET_AMXFP16:               return "AMX-FP16";
     case ND_SET_AMXINT8:               return "AMX-INT8";
     case ND_SET_AMXTILE:               return "AMX-TILE";
+    case ND_SET_AMXCOMPLEX:            return "AMX-COMPLEX";
     case ND_SET_AVX:                   return "AVX";
     case ND_SET_AVX2:                  return "AVX2";
     case ND_SET_AVX2GATHER:            return "AVX2GATHER";

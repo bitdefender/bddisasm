@@ -81,13 +81,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_38_f6_mem_F3_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_38_f6_mem_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2705]
+    (const void *)&gInstructions[2707]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_38_f6_mem_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2706]
+    (const void *)&gInstructions[2708]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_38_f6_mem_NP_auxiliary = 
@@ -1834,13 +1834,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_38_cb_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_38_f5_mem_66_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2707]
+    (const void *)&gInstructions[2709]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_38_f5_mem_66_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2708]
+    (const void *)&gInstructions[2710]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_38_f5_mem_66_auxiliary = 
@@ -3437,7 +3437,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_bc_None_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_bc_aF3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1383]
+    (const void *)&gInstructions[1385]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_bc_auxiliary = 
@@ -3733,7 +3733,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_01_03_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_01_04_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1360]
+    (const void *)&gInstructions[1362]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_01_04_mprefix = 
@@ -3789,25 +3789,25 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_04_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_01_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1898]
+    (const void *)&gInstructions[1900]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_01_F2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1899]
+    (const void *)&gInstructions[1901]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_01_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1912]
+    (const void *)&gInstructions[1914]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_01_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1913]
+    (const void *)&gInstructions[1915]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_03_01_mprefix = 
@@ -3824,19 +3824,19 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_03_01_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1911]
+    (const void *)&gInstructions[1913]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2026]
+    (const void *)&gInstructions[2028]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_03_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2027]
+    (const void *)&gInstructions[2029]
 };
 
 const ND_TABLE_MODRM_RM gRootTable_root_0f_01_reg_03_modrmrm = 
@@ -3909,7 +3909,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_00_F3_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_00_F2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2761]
+    (const void *)&gInstructions[2763]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_00_mprefix = 
@@ -3932,7 +3932,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_07_F3_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_07_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2703]
+    (const void *)&gInstructions[2705]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_07_mprefix = 
@@ -3949,7 +3949,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_07_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_05_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1375]
+    (const void *)&gInstructions[1377]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_05_mprefix = 
@@ -3966,7 +3966,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_05_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_04_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1390]
+    (const void *)&gInstructions[1392]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_04_mprefix = 
@@ -3983,7 +3983,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_04_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_05_01_F2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2743]
+    (const void *)&gInstructions[2745]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_05_01_mprefix = 
@@ -4102,7 +4102,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_07_07_F2_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_07_07_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1381]
+    (const void *)&gInstructions[1383]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_07_07_mprefix = 
@@ -4186,7 +4186,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_07_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_02_04_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1897]
+    (const void *)&gInstructions[1899]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_04_mprefix = 
@@ -4203,7 +4203,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_04_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_02_05_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2728]
+    (const void *)&gInstructions[2730]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_05_mprefix = 
@@ -4220,7 +4220,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_05_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_02_00_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2729]
+    (const void *)&gInstructions[2731]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_00_mprefix = 
@@ -4237,7 +4237,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_00_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_02_01_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2756]
+    (const void *)&gInstructions[2758]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_01_mprefix = 
@@ -4254,7 +4254,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_01_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_02_06_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2762]
+    (const void *)&gInstructions[2764]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_02_06_mprefix = 
@@ -4326,13 +4326,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_06_F2_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_06_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2701]
+    (const void *)&gInstructions[2703]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_06_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2702]
+    (const void *)&gInstructions[2704]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_06_mprefix = 
@@ -4349,7 +4349,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_06_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_01_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1895]
+    (const void *)&gInstructions[1897]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_01_mprefix = 
@@ -4366,7 +4366,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_01_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_02_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1910]
+    (const void *)&gInstructions[1912]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_02_mprefix = 
@@ -4383,7 +4383,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_02_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_03_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2025]
+    (const void *)&gInstructions[2027]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_03_mprefix = 
@@ -4400,7 +4400,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_03_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_01_reg_00_04_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2039]
+    (const void *)&gInstructions[2041]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_01_reg_00_04_mprefix = 
@@ -4762,13 +4762,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_06_66_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_06_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2752]
+    (const void *)&gInstructions[2754]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_06_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2753]
+    (const void *)&gInstructions[2755]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_ae_mem_06_NP_auxiliary = 
@@ -4899,13 +4899,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_04_F3_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_04_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2748]
+    (const void *)&gInstructions[2750]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_04_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2749]
+    (const void *)&gInstructions[2751]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_ae_mem_04_NP_auxiliary = 
@@ -4954,13 +4954,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_ae_mem_03_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_05_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2744]
+    (const void *)&gInstructions[2746]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_mem_05_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2745]
+    (const void *)&gInstructions[2747]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_ae_mem_05_NP_auxiliary = 
@@ -5057,19 +5057,19 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_reg_06_NP_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_reg_06_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1382]
+    (const void *)&gInstructions[1384]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_reg_06_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1391]
+    (const void *)&gInstructions[1393]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_reg_06_F2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1392]
+    (const void *)&gInstructions[1394]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_ae_reg_06_mprefix = 
@@ -5184,7 +5184,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_ae_reg_07_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_reg_02_F3_64_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2698]
+    (const void *)&gInstructions[2700]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_ae_reg_02_F3_auxiliary = 
@@ -5216,7 +5216,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_ae_reg_02_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ae_reg_03_F3_64_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2699]
+    (const void *)&gInstructions[2701]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_ae_reg_03_F3_auxiliary = 
@@ -5448,19 +5448,19 @@ const ND_TABLE_AUXILIARY gRootTable_root_0f_c7_mem_01_auxiliary =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_06_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1896]
+    (const void *)&gInstructions[1898]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_06_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2022]
+    (const void *)&gInstructions[2024]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_06_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2040]
+    (const void *)&gInstructions[2042]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_c7_mem_06_mprefix = 
@@ -5477,7 +5477,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_c7_mem_06_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_07_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2023]
+    (const void *)&gInstructions[2025]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_c7_mem_07_mprefix = 
@@ -5494,13 +5494,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_c7_mem_07_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_03_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2746]
+    (const void *)&gInstructions[2748]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_03_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2747]
+    (const void *)&gInstructions[2749]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_c7_mem_03_NP_auxiliary = 
@@ -5532,13 +5532,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_c7_mem_03_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_04_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2750]
+    (const void *)&gInstructions[2752]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_04_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2751]
+    (const void *)&gInstructions[2753]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_c7_mem_04_NP_auxiliary = 
@@ -5570,13 +5570,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_c7_mem_04_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_05_NP_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2754]
+    (const void *)&gInstructions[2756]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c7_mem_05_NP_rexw_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2755]
+    (const void *)&gInstructions[2757]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_c7_mem_05_NP_auxiliary = 
@@ -6275,7 +6275,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_78_None_F2_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_78_None_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2024]
+    (const void *)&gInstructions[2026]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_78_None_mprefix = 
@@ -6332,7 +6332,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_79_None_reg_F2_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_79_None_reg_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2038]
+    (const void *)&gInstructions[2040]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_79_None_reg_mprefix = 
@@ -6349,7 +6349,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_79_None_reg_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_79_None_mem_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2038]
+    (const void *)&gInstructions[2040]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_79_None_mem_mprefix = 
@@ -6426,7 +6426,7 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_37_None_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_37_cyrix_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2704]
+    (const void *)&gInstructions[2706]
 };
 
 const ND_TABLE_VENDOR gRootTable_root_0f_37_vendor = 
@@ -6630,13 +6630,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_00_mem_01_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_00_mem_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1594]
+    (const void *)&gInstructions[1596]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_00_mem_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1595]
+    (const void *)&gInstructions[1597]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_0f_00_mem_modrmreg = 
@@ -6704,13 +6704,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_00_reg_01_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_00_reg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1594]
+    (const void *)&gInstructions[1596]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_00_reg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1595]
+    (const void *)&gInstructions[1597]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_0f_00_reg_modrmreg = 
@@ -7086,7 +7086,7 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a6_reg_00_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a6_reg_01_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2757]
+    (const void *)&gInstructions[2759]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a6_reg_01_00_mprefix = 
@@ -7118,7 +7118,7 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a6_reg_01_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a6_reg_02_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2758]
+    (const void *)&gInstructions[2760]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a6_reg_02_00_mprefix = 
@@ -11056,13 +11056,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_0f_07_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_2e_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1385]
+    (const void *)&gInstructions[1387]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_2e_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1386]
+    (const void *)&gInstructions[1388]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_2e_mprefix = 
@@ -11079,31 +11079,31 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_2e_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_ff_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1387]
+    (const void *)&gInstructions[1389]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_b9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1388]
+    (const void *)&gInstructions[1390]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_0b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1389]
+    (const void *)&gInstructions[1391]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_15_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1393]
+    (const void *)&gInstructions[1395]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_15_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1394]
+    (const void *)&gInstructions[1396]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_15_mprefix = 
@@ -11120,13 +11120,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_15_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_14_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1395]
+    (const void *)&gInstructions[1397]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_14_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1396]
+    (const void *)&gInstructions[1398]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_14_mprefix = 
@@ -11143,13 +11143,13 @@ const ND_TABLE_MPREFIX gRootTable_root_0f_14_mprefix =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_09_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2696]
+    (const void *)&gInstructions[2698]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_09_aF3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2697]
+    (const void *)&gInstructions[2699]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_0f_09_auxiliary = 
@@ -11170,25 +11170,25 @@ const ND_TABLE_AUXILIARY gRootTable_root_0f_09_auxiliary =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_30_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2700]
+    (const void *)&gInstructions[2702]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2710]
+    (const void *)&gInstructions[2712]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_c1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2711]
+    (const void *)&gInstructions[2713]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_02_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2723]
+    (const void *)&gInstructions[2725]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a7_reg_02_00_mprefix = 
@@ -11220,7 +11220,7 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a7_reg_02_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_04_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2724]
+    (const void *)&gInstructions[2726]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a7_reg_04_00_mprefix = 
@@ -11252,7 +11252,7 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a7_reg_04_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_03_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2725]
+    (const void *)&gInstructions[2727]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a7_reg_03_00_mprefix = 
@@ -11284,7 +11284,7 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a7_reg_03_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_01_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2726]
+    (const void *)&gInstructions[2728]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a7_reg_01_00_mprefix = 
@@ -11316,7 +11316,7 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a7_reg_01_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_05_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2727]
+    (const void *)&gInstructions[2729]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a7_reg_05_00_mprefix = 
@@ -11348,13 +11348,13 @@ const ND_TABLE_MODRM_RM gRootTable_root_0f_a7_reg_05_modrmrm =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_00_00_None_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2759]
+    (const void *)&gInstructions[2761]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_a7_reg_00_00_F3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2760]
+    (const void *)&gInstructions[2762]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_a7_reg_00_00_mprefix = 
@@ -11410,13 +11410,13 @@ const ND_TABLE_MODRM_MOD gRootTable_root_0f_a7_modrmmod =
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_57_66_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2741]
+    (const void *)&gInstructions[2743]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_0f_57_NP_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2742]
+    (const void *)&gInstructions[2744]
 };
 
 const ND_TABLE_MPREFIX gRootTable_root_0f_57_mprefix = 
@@ -11786,7 +11786,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_80_05_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_80_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2737]
+    (const void *)&gInstructions[2739]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_80_modrmreg = 
@@ -11849,7 +11849,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_81_05_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_81_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2738]
+    (const void *)&gInstructions[2740]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_81_modrmreg = 
@@ -11912,7 +11912,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_82_05_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_82_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2739]
+    (const void *)&gInstructions[2741]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_82_modrmreg = 
@@ -11975,7 +11975,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_83_05_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_83_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2740]
+    (const void *)&gInstructions[2742]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_83_modrmreg = 
@@ -12599,13 +12599,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_f6_02_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_f6_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1371]
+    (const void *)&gInstructions[1373]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_f6_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1372]
+    (const void *)&gInstructions[1374]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_f6_modrmreg = 
@@ -12662,13 +12662,13 @@ const ND_TABLE_INSTRUCTION gRootTable_root_f7_02_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_f7_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1373]
+    (const void *)&gInstructions[1375]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_f7_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1374]
+    (const void *)&gInstructions[1376]
 };
 
 const ND_TABLE_MODRM_REG gRootTable_root_f7_modrmreg = 
@@ -14830,7 +14830,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_c6_reg_00_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_c6_reg_07_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2709]
+    (const void *)&gInstructions[2711]
 };
 
 const ND_TABLE_MODRM_RM gRootTable_root_c6_reg_07_modrmrm = 
@@ -14902,7 +14902,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_c7_reg_00_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_c7_reg_07_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2712]
+    (const void *)&gInstructions[2714]
 };
 
 const ND_TABLE_MODRM_RM gRootTable_root_c7_reg_07_modrmrm = 
@@ -15080,7 +15080,7 @@ const ND_TABLE_INSTRUCTION gRootTable_root_90_aF3_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_90_rexb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2715]
+    (const void *)&gInstructions[2717]
 };
 
 const ND_TABLE_AUXILIARY gRootTable_root_90_auxiliary = 
@@ -16284,127 +16284,127 @@ const ND_TABLE_INSTRUCTION gRootTable_root_2d_leaf =
 const ND_TABLE_INSTRUCTION gRootTable_root_84_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1367]
+    (const void *)&gInstructions[1369]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_85_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1368]
+    (const void *)&gInstructions[1370]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_a8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1369]
+    (const void *)&gInstructions[1371]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_a9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[1370]
+    (const void *)&gInstructions[1372]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_9b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2695]
+    (const void *)&gInstructions[2697]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_86_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2713]
+    (const void *)&gInstructions[2715]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_87_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2714]
+    (const void *)&gInstructions[2716]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_91_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2716]
+    (const void *)&gInstructions[2718]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_92_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2717]
+    (const void *)&gInstructions[2719]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_93_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2718]
+    (const void *)&gInstructions[2720]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_94_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2719]
+    (const void *)&gInstructions[2721]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_95_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2720]
+    (const void *)&gInstructions[2722]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_96_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2721]
+    (const void *)&gInstructions[2723]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_97_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2722]
+    (const void *)&gInstructions[2724]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_d7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2730]
+    (const void *)&gInstructions[2732]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_30_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2731]
+    (const void *)&gInstructions[2733]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_31_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2732]
+    (const void *)&gInstructions[2734]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_32_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2733]
+    (const void *)&gInstructions[2735]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_33_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2734]
+    (const void *)&gInstructions[2736]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_34_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2735]
+    (const void *)&gInstructions[2737]
 };
 
 const ND_TABLE_INSTRUCTION gRootTable_root_35_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[2736]
+    (const void *)&gInstructions[2738]
 };
 
 const ND_TABLE_OPCODE gRootTable_root_opcode = 

@@ -1586,6 +1586,8 @@ std::string ins_class_to_str(const ND_INS_CLASS cls)
     case ND_INS_WRMSRLIST: return "wrmsrlist";
     case ND_INS_WRMSRNS: return "wrmsrns";
     case ND_INS_RMPQUERY: return "rmpquery";
+    case ND_INS_TCMMRLFP16PS: return "tcmmrlfp16ps";
+    case ND_INS_TCMMIMFP16PS: return "tcmmimfp16ps";
     default: return "unhandled!";
     }
 
@@ -1722,6 +1724,7 @@ std::string ins_set_to_str(ND_INS_SET ins_set)
     case ND_SET_AMXBF16: return "amxbf16";
     case ND_SET_AMXINT8: return "amxint8";
     case ND_SET_AMXTILE: return "amxtile";
+    case ND_SET_AMXCOMPLEX: return "amxcomplex";
     case ND_SET_AVX: return "avx";
     case ND_SET_AVX2: return "avx2";
     case ND_SET_AVX2GATHER: return "avx2gather";
