@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 option(BDD_INCLUDE_TOOL "Include the disasmtool executable" ON)
 option(BDD_INCLUDE_ISAGENERATOR "Include the isagenerator target (if a python interpreter is found)" ON)
+option(BDD_INCLUDE_FUZZERS "Include the bdshemu fuzzer" OFF)
 option(BDD_USE_EXTERNAL_VSNPRINTF "Expect nd_vsnprintf_s implementation from the integrator" OFF)
 option(BDD_USE_EXTERNAL_MEMSET "Expect nd_memset implementation from the integrator" OFF)
 
@@ -54,9 +55,7 @@ else ()
         -Wno-unused-function
         -Wno-multichar
         -Wno-incompatible-pointer-types
-        -Wno-discarded-qualifiers
         -Wnull-dereference
-        -Wduplicated-cond
         -Werror=format-security
         -Werror=implicit-function-declaration
         -pipe
@@ -70,6 +69,12 @@ else ()
         -gdwarf-4
         -grecord-gcc-switches
         -march=westmere)
+
+    if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
+        list(APPEND BDDISASM_COMMON_COMPILE_OPTIONS
+            -Wduplicated-cond
+            -Wno-discarded-qualifiers)
+    endif ()
 endif ()
 
 set(BDDISASM_PUBLIC_HEADERS
@@ -198,6 +203,11 @@ endif ()
 # If this is the master project (and if the user requested it) add isagenerator.
 if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) AND BDD_INCLUDE_ISAGENERATOR)
     add_subdirectory(isagenerator)
+endif ()
+
+# If this is the master project (and if the user requested it) add the fuzzer.
+if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) AND BDD_INCLUDE_FUZZERS)
+    add_subdirectory(bdshemu_fuzz)
 endif ()
 
 # If this is the master project add install and package targets.
