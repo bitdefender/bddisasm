@@ -2145,93 +2145,107 @@ ShemuEmulate(
         case ND_INS_ROL:
         case ND_INS_ROR:
             {
-                ND_UINT32 cnt, tempcnt, cntmask;
+                ND_UINT32 cnt, tempcnt, cntmask, bitwidth;
                 ND_UINT8 tempCF = 0;
 
                 GET_OP(Context, 0, &dst);
                 GET_OP(Context, 1, &src);
 
                 cnt = (ND_UINT32)src.Value.Qwords[0];
-                tempcnt = 0;
                 cntmask = ((dst.Size == 8) ? 0x3F : 0x1F);
+                tempcnt = (cnt & cntmask);
+                bitwidth = (ND_UINT32)dst.Size * 8;
 
                 if (ND_INS_RCL == Context->Instruction.Instruction || 
                     ND_INS_RCR == Context->Instruction.Instruction)
                 {
-                    switch (dst.Size)
+                    if (dst.Size == 1)
                     {
-                    case 1: tempcnt = (cnt & 0x1F) % 9; break;
-                    case 2: tempcnt = (cnt & 0x1F) % 17; break;
-                    case 4: tempcnt = (cnt & 0x1F); break;
-                    case 8: tempcnt = (cnt & 0x3F); break;
-                    default: break;
+                        tempcnt %= 9;
+                    }
+                    else if (dst.Size == 2)
+                    {
+                        tempcnt %= 17;
                     }
                 }
                 else
                 {
-                    tempcnt = (cnt & cntmask) % (dst.Size * 8);
+                    tempcnt %= (dst.Size * 8);
                 }
 
                 if (ND_INS_RCL == Context->Instruction.Instruction)
                 {
-                    while (tempcnt != 0)
+                    tempCF = GET_FLAG(Context, NDR_RFLAG_CF);
+
+                    if (tempcnt != 0)
                     {
-                        tempCF = ND_MSB(dst.Size, dst.Value.Qwords[0]);
-                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] << 1) + GET_FLAG(Context, NDR_RFLAG_CF);
-                        SET_FLAG(Context, NDR_RFLAG_CF, tempCF);
-                        tempcnt--;
+                        // tempcnt is in range [1, dst bit width].
+                        ND_UINT64 left = (tempcnt == bitwidth) ? 0 : (dst.Value.Qwords[0] << tempcnt);
+                        ND_UINT64 right = (tempcnt == 1) ? 0 : (dst.Value.Qwords[0] >> (bitwidth - tempcnt + 1));
+
+                        SET_FLAG(Context, NDR_RFLAG_CF, ND_GET_BIT(bitwidth - tempcnt, dst.Value.Qwords[0]));
+
+                        dst.Value.Qwords[0] = left | ((ND_UINT64)tempCF << (tempcnt - 1)) | right;
                     }
 
                     if ((cnt & cntmask) == 1)
                     {
                         SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
-                                                            GET_FLAG(Context, NDR_RFLAG_CF));
+                                                        GET_FLAG(Context, NDR_RFLAG_CF));
                     }
                 }
                 else if (ND_INS_RCR == Context->Instruction.Instruction)
                 {
+                    tempCF = GET_FLAG(Context, NDR_RFLAG_CF);
+
                     if ((cnt & cntmask) == 1)
                     {
                         SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
-                                                            GET_FLAG(Context, NDR_RFLAG_CF));
+                                                        GET_FLAG(Context, NDR_RFLAG_CF));
                     }
 
-                    while (tempcnt != 0)
+                    if (tempcnt != 0)
                     {
-                        tempCF = ND_LSB(dst.Size, dst.Value.Qwords[0]);
-                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] >> 1) + 
-                                              ((ND_UINT64)GET_FLAG(Context, NDR_RFLAG_CF) << (dst.Size * 8 - 1));
-                        SET_FLAG(Context, NDR_RFLAG_CF, tempCF);
-                        tempcnt--;
+                        // tempcnt is in range [1, dst bit width].
+                        ND_UINT64 left = (tempcnt == bitwidth) ? 0 : (dst.Value.Qwords[0] >> tempcnt);
+                        ND_UINT64 right = (tempcnt == 1) ? 0 : (dst.Value.Qwords[0] << (bitwidth - tempcnt + 1));
+
+                        SET_FLAG(Context, NDR_RFLAG_CF, ND_GET_BIT(tempcnt - 1, dst.Value.Qwords[0]));
+
+                        dst.Value.Qwords[0] = left | ((ND_UINT64)tempCF << (bitwidth - tempcnt)) | right;
                     }
                 }
                 else if (ND_INS_ROL == Context->Instruction.Instruction)
                 {
-                    while (tempcnt != 0)
+                    if (tempcnt != 0)
                     {
-                        tempCF = ND_MSB(dst.Size, dst.Value.Qwords[0]);
-                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] << 1) + tempCF;
-                        tempcnt--;
+                        // tempcnt is in range [1, dst bit width - 1].
+                        ND_UINT64 left = dst.Value.Qwords[0] << tempcnt;
+                        ND_UINT64 right = dst.Value.Qwords[0] >> (bitwidth - tempcnt);
+
+                        dst.Value.Qwords[0] = left | right;
                     }
 
                     if ((cnt & cntmask) != 0)
                     {
-                        SET_FLAG(Context, NDR_RFLAG_CF, dst.Value.Qwords[0] & 1);
+                        SET_FLAG(Context, NDR_RFLAG_CF, ND_LSB(dst.Size, dst.Value.Qwords[0]));
                     }
 
                     if ((cnt & cntmask) == 1)
                     {
                         SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^
-                                                            GET_FLAG(Context, NDR_RFLAG_CF));
+                                                        GET_FLAG(Context, NDR_RFLAG_CF));
                     }
                 }
                 else // ND_INS_ROR
                 {
-                    while (tempcnt != 0)
+                    if (tempcnt != 0)
                     {
-                        tempCF = ND_LSB(dst.Size, dst.Value.Qwords[0]);
-                        dst.Value.Qwords[0] = (dst.Value.Qwords[0] >> 1) + ((ND_UINT64)tempCF << (dst.Size * 8 - 1));
-                        tempcnt--;
+                        // tempcnt is in range [1, dst bit width - 1].
+                        ND_UINT64 left = (dst.Value.Qwords[0] >> tempcnt);
+                        ND_UINT64 right = (dst.Value.Qwords[0] << (bitwidth - tempcnt));
+
+                        dst.Value.Qwords[0] = left | right;
                     }
 
                     if ((cnt & cntmask) != 0)
@@ -2241,7 +2255,8 @@ ShemuEmulate(
 
                     if ((cnt & cntmask) == 1)
                     {
-                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^ ND_GET_BIT(dst.Size * 8ULL - 2, dst.Value.Qwords[0]));
+                        SET_FLAG(Context, NDR_RFLAG_OF, ND_MSB(dst.Size, dst.Value.Qwords[0]) ^ 
+                                                        ND_GET_BIT(dst.Size * 8ULL - 2, dst.Value.Qwords[0]));
                     }
                 }
 
