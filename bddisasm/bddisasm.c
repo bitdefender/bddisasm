@@ -2314,9 +2314,7 @@ NdParseOperand(
         break;
 
     case ND_OPT_Q:
-        // A ModR/M byte follows the opcode and specifies the operand. The operand is either an MMX technology
-        // register or a memory address. If it is a memory address, the address is computed from a segment register
-        // and any of the following values: a base register, an index register, a scaling factor, and a displacement
+        // The rm field inside Mod R/M encodes a MMX register or memory.
         if (Instrux->ModRm.mod == 3)
         {
             operand->Type = ND_OP_REG;
