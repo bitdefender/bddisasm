@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (c) 2020 Bitdefender
+# Copyright (c) 2023 Bitdefender
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -11,16 +11,32 @@ import re
 from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
-VERSION = (0, 1, 3)
+VERSION = (0, 3, 0)
 LIBRARY_VERSION = (1, 37, 0)
-LIBRARY_INSTRUX_SIZE = 856
+DIR_INCLUDE = '../../inc'
 
-packages = ['pybddisasm']
-requires = ['setuptools']
 here = os.path.abspath(os.path.dirname(__file__))
 
-def _check_library_version():
-    version_header = '../../inc/version.h'
+__swig_opts = ['-I%s' % (DIR_INCLUDE)]
+__extra_compile_args = ['-march=westmere']
+__sources = ['pybddisasm/pybddisasm.c', 'pybddisasm/pybddisasm.i']
+__libraries = ['bddisasm']
+__library_dirs = ['../../build', '../../bin/x64/Release']
+__packages = ['pybddisasm']
+__requires = ['setuptools']
+
+
+class BinaryDistribution(Distribution):
+    def has_ext_modules(arg):
+        return True
+
+    def is_pure(self):
+        return False
+
+
+def __fn_validate_compatibility():
+    print(os.getcwd())
+    version_header = '%s/version.h' % (DIR_INCLUDE)
     with open(version_header, 'r') as file:
         data = file.read()
 
@@ -46,20 +62,14 @@ def _check_library_version():
     if int(major) != LIBRARY_VERSION[0] or int(minor) != LIBRARY_VERSION[1] or int(revision) != LIBRARY_VERSION[2]:
         print('error: The version of the library is not compatible with the pybddisasm!')
         print('error: Library : %s.%s.%s - pybddisasm : %d.%d.%d' % (major, minor, revision, LIBRARY_VERSION[0],
-               LIBRARY_VERSION[1], LIBRARY_VERSION[2]))
+            LIBRARY_VERSION[1], LIBRARY_VERSION[2]))
         sys.exit(1)
 
-_check_library_version()
+
+__fn_validate_compatibility()
 
 with open('README.md', 'r', 'utf-8') as f:
     readme = f.read()
-
-class BinaryDistribution(Distribution):
-    def has_ext_modules(arg):
-        return True
-
-    def is_pure(self):
-        return False
 
 setup(
     name="pybddisasm",
@@ -69,31 +79,34 @@ setup(
     long_description = readme,
     long_description_content_type = "text/markdown",
     url = "https://github.com/bitdefender/bddisasm",
-    packages=packages,
     license="Apache Software License",
-    package_data={'': ['LICENSE', 'NOTICE'], 'pybddisasm': ['*.pem']},
+    package_data={'': ['LICENSE', 'NOTICE'], 'pybddisasm': ['pybddisasm/pybddisasm.py']},
     package_dir={'pybddisasm': 'pybddisasm'},
     platforms = ["Windows", "Linux"],
+    packages=__packages,
     include_package_data=True,
+    py_modules = ["pybddisasm"],
     python_requires=">=3.5",
     setup_requires=['wheel'],
-    install_requires=requires,
+    install_requires=__requires,
     zip_safe=False,
     classifiers=[
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: POSIX :: Linux'
     ],
     ext_modules = [Extension("_pybddisasm",
-                      extra_compile_args = ["-march=westmere"], 
-                      sources = ["_pybddisasm/_pybddisasm.c", "_pybddisasm/pybddisasm.c"],
-                      define_macros = [('AMD64', None), ('LIBRARY_INSTRUX_SIZE', LIBRARY_INSTRUX_SIZE)],
-                      include_dirs = ['../../inc'],
-                      libraries = ['bddisasm'],
-                      library_dirs = ['/usr/local/lib', '../../build', '../../bin/x64/Release'])],
+                      swig_opts = __swig_opts,
+                      extra_compile_args = __extra_compile_args,
+                      sources = __sources,
+                      define_macros = [('AMD64', None)],
+                      include_dirs = [DIR_INCLUDE],
+                      libraries = __libraries,
+                      library_dirs = __library_dirs)],
     distclass=BinaryDistribution
 )

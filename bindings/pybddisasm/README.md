@@ -11,30 +11,30 @@ python3 setup.py install
 
 ## Usage
 
-Use it by importing the pybddisasm.disasm module:
+Use it by importing the pybddisasm module:
 
 ```python
-from pybddisasm.bddisasm import *
+import pybddisasm
 
-instr = nd_decode_ex2(buff, arch, arch, arch, vendor, current_rip)
+ret, instr = pybddisasm.nd_decode_ex(code, def_code, def_data, def_stack)
 ```
 
 ## Example
 
 ```python
-from pybddisasm.bddisasm import *
-from sys import *
+import pybddisasm
 
-buff = b"\x55\x48\x8b\x05\xb8\x13\x00\x00"
+code = b"\x55\x48\x8b\x05\xb8\x13\x00\x00"
 offset = 0
 
-while offset < getsizeof(buff):
-    instr = nd_decode_ex2(buff[offset:], 64, 64, 64)
+while offset < len(code):
+    _, instr = pybddisasm.nd_decode_ex(code[offset:], len(code[offset:]), pybddisasm.ND_CODE_64, pybddisasm.ND_DATA_64)
 
     if instr is None:
         break
 
-    print(instr.Text)
+    _, text = pybddisasm.nd_to_text(instr, 0x0)
+    print(text)
 
     offset += instr.Length
 ```
