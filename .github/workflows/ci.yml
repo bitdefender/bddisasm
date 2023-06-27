@@ -74,7 +74,7 @@ jobs:
         cd -
     - name: Release
       if: ${{ github.event_name == 'release' }}
-      uses: AButler/upload-release-assets@v2.0
+      uses: AButler/upload-release-assets@v2.0.2
       with:
         files: 'build/*.deb'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -108,7 +108,7 @@ jobs:
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
     - name: Release
       if: ${{ github.event_name == 'release' }}
-      uses: AButler/upload-release-assets@v2.0
+      uses: AButler/upload-release-assets@v2.0.2
       with:
         files: 'x64-windows-release.zip;x86-windows-release.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
