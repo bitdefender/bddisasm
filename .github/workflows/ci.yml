@@ -29,9 +29,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install rapidjson
-      uses: actions/checkout@master
+      uses: actions/checkout@v3
       with:
         repository: Tencent/rapidjson
         path: rapidjson
@@ -74,7 +74,7 @@ jobs:
         cd -
     - name: Release
       if: ${{ github.event_name == 'release' }}
-      uses: AButler/upload-release-assets@v2.0
+      uses: AButler/upload-release-assets@v2.0.2
       with:
         files: 'build/*.deb'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -84,9 +84,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v1.3
     - name: Setup Windows SDK
       uses: fbactions/setup-winsdk@v1
       with:
@@ -108,7 +108,7 @@ jobs:
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
     - name: Release
       if: ${{ github.event_name == 'release' }}
-      uses: AButler/upload-release-assets@v2.0
+      uses: AButler/upload-release-assets@v2.0.2
       with:
         files: 'x64-windows-release.zip;x86-windows-release.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -119,9 +119,9 @@ jobs:
 
     permissions: read-all
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v1.3
     - uses: ilammy/msvc-dev-cmd@v1
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build all
@@ -138,7 +138,7 @@ jobs:
 
     permissions: read-all
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install cppcheck
       run: sudo apt install -y cppcheck
     - name: Run cppcheck
