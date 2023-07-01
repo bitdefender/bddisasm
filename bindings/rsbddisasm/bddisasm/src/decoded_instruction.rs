@@ -1633,6 +1633,9 @@ mod tests {
                 evex_rounding += 1;
             }
         }
+
+        // There is no `ND_SIZE_*` macro for 0, but the size 0 is valid, so test it here.
+        assert_eq!(operand::OpSize::from_raw(0), Ok(operand::OpSize::Bytes(0)));
     }
 
     #[test]

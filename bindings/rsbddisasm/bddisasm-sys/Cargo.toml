@@ -1,6 +1,6 @@
 [package]
 name = "bddisasm-sys"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Cristi Anichitei <ianichitei@bitdefender.com>"]
 edition = "2018"
 links = "bddisasm"

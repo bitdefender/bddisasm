@@ -1,6 +1,6 @@
 [package]
 name = "bddisasm"
-version = "0.2.2"
+version = "0.3.0"
 authors = ["Cristi Anichitei <ianichitei@bitdefender.com>"]
 edition = "2018"
 license = "Apache-2.0"
@@ -14,7 +14,7 @@ categories = ["api-bindings", "hardware-support"]
 keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64"]
 
 [dependencies]
-bddisasm-sys = { version = "0.2.1", path = "../bddisasm-sys" }
+bddisasm-sys = { version = "0.3.0", path = "../bddisasm-sys" }
 
 [features]
 std = []

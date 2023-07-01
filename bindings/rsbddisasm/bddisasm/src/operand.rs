@@ -620,6 +620,7 @@ impl fmt::Display for OpSize {
 impl OpSize {
     pub(crate) fn from_raw(value: ffi::ND_OPERAND_SIZE) -> Result<Self, DecodeError> {
         match value {
+            0 => Ok(OpSize::Bytes(0)),
             ffi::ND_SIZE_8BIT => Ok(OpSize::Bytes(1)),
             ffi::ND_SIZE_16BIT => Ok(OpSize::Bytes(2)),
             ffi::ND_SIZE_32BIT => Ok(OpSize::Bytes(4)),
