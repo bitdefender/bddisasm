@@ -1,5 +1,11 @@
 # bddisasm changelog
 
+## 0.3.0
+
+### Fixed
+
+- #84: handle 0 sizes in `OpSize::from_raw`
+
 ## 0.2.1
 
 ### Added
