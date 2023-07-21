@@ -218,7 +218,23 @@ VFNMSUB231PS      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0
 VFNMSUB231PD      ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:1 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
 VFNMSUB231SS      ; Vdq,Hdq,Wss         ; n/a             ;  vex m:2 p:1 l:i w:0 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
 VFNMSUB231SD      ; Vdq,Hdq,Wsd         ; n/a             ;  vex m:2 p:1 l:i w:1 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+
+VSHA512RNDS2      ; Vqq,Hqq,Udq         ; n/a             ;  vex m:2 p:3 l:1 w:0 0xCB /r:reg      ; s:SHA512, t:SHA512, w:RW|R|R, e:6
+VSHA512MSG1       ; Vqq,Udq             ; n/a             ;  vex m:2 p:3 l:1 w:0 0xCC /r:reg      ; s:SHA512, t:SHA512, w:RW|R, e:6
+VSHA512MSG2       ; Vqq,Uqq             ; n/a             ;  vex m:2 p:3 l:1 w:0 0xCD /r:reg      ; s:SHA512, t:SHA512, w:RW|R, e:6
 VGF2P8MULB        ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xCF /r          ; s:GFNI, t:GFNI, w:W|R|R
+
+VPDPWUUD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:0 l:x w:0 0xD2 /r          ; s:AVXVNNIINT16, t:AVXVNNIINT16, w:RW|R|R, e:4
+VPDPWUSD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xD2 /r          ; s:AVXVNNIINT16, t:AVXVNNIINT16, w:RW|R|R, e:4
+VPDPWSUD          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:2 l:x w:0 0xD2 /r          ; s:AVXVNNIINT16, t:AVXVNNIINT16, w:RW|R|R, e:4
+VPDPWUUDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:0 l:x w:0 0xD3 /r          ; s:AVXVNNIINT16, t:AVXVNNIINT16, w:RW|R|R, e:4
+VPDPWUSDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:0 0xD3 /r          ; s:AVXVNNIINT16, t:AVXVNNIINT16, w:RW|R|R, e:4
+VPDPWSUDS         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:2 l:x w:0 0xD3 /r          ; s:AVXVNNIINT16, t:AVXVNNIINT16, w:RW|R|R, e:4
+
+VSM3MSG1          ; Vdq,Hdq,Wdq         ; n/a             ;  vex m:2 p:0 l:0 w:0 0xDA /r          ; s:SM3, t:SM3, w:RW|R|R, e:4
+VSM3MSG2          ; Vdq,Hdq,Wdq         ; n/a             ;  vex m:2 p:1 l:0 w:0 0xDA /r          ; s:SM3, t:SM3, w:RW|R|R, e:4
+VSM4KEY4          ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:2 l:x w:0 0xDA /r          ; s:SM4, t:SM4, w:W|R|R, e:6
+VSM4RNDS4         ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:3 l:x w:0 0xDA /r          ; s:SM4, t:SM4, w:W|R|R, e:6
 VAESIMC           ; Vdq,Wdq             ; n/a             ;  vex m:2 p:1 l:0 w:i 0xDB /r          ; s:AES, t:AES, w:W|R, e:4
 VAESENC           ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0xDC /r          ; s:AES, t:AES, w:W|R|R, e:4
 VAESENCLAST       ; Vx,Hx,Wx            ; n/a             ;  vex m:2 p:1 l:x w:i 0xDD /r          ; s:AES, t:AES, w:W|R|R, e:4

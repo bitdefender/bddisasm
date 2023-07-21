@@ -1,0 +1,3 @@
+    bits 64
+    
+    db 0x0f, 0x01, 0xc7         ; PBNDKB

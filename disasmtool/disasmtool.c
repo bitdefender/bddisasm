@@ -136,6 +136,7 @@ set_to_string(
     case ND_SET_AVXNECONVERT:          return "AVXNECONVERT";
     case ND_SET_AVXVNNI:               return "AVXVNNI";
     case ND_SET_AVXVNNIINT8:           return "AVXVNNIINT8";
+    case ND_SET_AVXVNNIINT16:          return "AVXVNNIINT16";
     case ND_SET_BMI1:                  return "BMI1";
     case ND_SET_BMI2:                  return "BMI2";
     case ND_SET_CET_SS:                return "CET_SS";
@@ -201,6 +202,9 @@ set_to_string(
     case ND_SET_SERIALIZE:             return "SERIALIZE";
     case ND_SET_SGX:                   return "SGX";
     case ND_SET_SHA:                   return "SHA";
+    case ND_SET_SHA512:                return "SHA512";
+    case ND_SET_SM3:                   return "SM3";
+    case ND_SET_SM4:                   return "SM4";
     case ND_SET_SMAP:                  return "SMAP";
     case ND_SET_SMX:                   return "SMX";
     case ND_SET_SNP:                   return "SNP";
@@ -214,6 +218,7 @@ set_to_string(
     case ND_SET_SVM:                   return "SVM";
     case ND_SET_TBM:                   return "TBM";
     case ND_SET_TDX:                   return "TDX";
+    case ND_SET_TSE:                   return "TSE";
     case ND_SET_TSX:                   return "TSX";
     case ND_SET_TSXLDTRK:              return "TSXLDTRK";
     case ND_SET_UD:                    return "UD";
@@ -258,6 +263,7 @@ category_to_string(
     case ND_CAT_AVXIFMA:              return "AVXIFMA";
     case ND_CAT_AVXVNNI:              return "AVXVNNI";
     case ND_CAT_AVXVNNIINT8:          return "AVXVNNIINT8";
+    case ND_CAT_AVXVNNIINT16:         return "AVXVNNIINT16";
     case ND_CAT_AVXNECONVERT:         return "AVXNECONVERT";
     case ND_CAT_BITBYTE:              return "BITBYTE";
     case ND_CAT_BLEND:                return "BLEND";
@@ -321,7 +327,10 @@ category_to_string(
     case ND_CAT_SEMAPHORE:            return "SEMAPHORE";
     case ND_CAT_SGX:                  return "SGX";
     case ND_CAT_SHA:                  return "SHA";
+    case ND_CAT_SHA512:               return "SHA512";
     case ND_CAT_SHIFT:                return "SHIFT";
+    case ND_CAT_SM3:                  return "SM3";
+    case ND_CAT_SM4:                  return "SM4";
     case ND_CAT_SMAP:                 return "SMAP";
     case ND_CAT_SSE:                  return "SSE";
     case ND_CAT_SSE2:                 return "SSE2";

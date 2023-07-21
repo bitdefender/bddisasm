@@ -124,6 +124,7 @@ VGF2P8AFFINEQB    ; Vx,Hx,Wx,Ib         ; n/a             ;  vex m:3 p:1 l:x w:1
 VGF2P8AFFINEINVQB ; Vx,Hx,Wx,Ib         ; n/a             ;  vex m:3 p:1 l:x w:1 0xCF /r ib       ; s:GFNI, t:GFNI, w:W|R|R|R, e:4
 
 # 0xD0 - 0xDF
+VSM3RNDS2         ; Vdq,Hdq,Wdq,Ib      ; n/a             ;  vex m:3 p:1 l:0 w:0 0xDE /r ib       ; s:SM3, t:SM3, w:RW|R|R|R, e:4
 VAESKEYGENASSIST  ; Vdq,Wdq,Ib          ; n/a             ;  vex m:3 p:1 l:0 w:i 0xDF /r ib       ; s:AES, t:AES, w:W|R|R, e:4
 
 # 0xF0 - 0xFF

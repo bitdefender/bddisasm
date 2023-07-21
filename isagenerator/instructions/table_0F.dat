@@ -29,10 +29,11 @@ VMCALL       ; n/a         ; n/a                     ;         NP 0x0F 0x01 /0xC
 VMLAUNCH     ; n/a         ; Fv                      ;         NP 0x0F 0x01 /0xC2         ; s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 VMRESUME     ; n/a         ; Fv                      ;         NP 0x0F 0x01 /0xC3         ; s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
 VMXOFF       ; n/a         ; Fv                      ;         NP 0x0F 0x01 /0xC4         ; s:VTX, t:VTX, w:W, f:VMX, m:VMXROOT
-PCONFIG      ; n/a         ; EAX,RBX,RCX,RDX         ;         NP 0x0F 0x01 /0xC5         ; s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW, m:NOV86
+PCONFIG      ; n/a         ; EAX,RBX,RCX,RDX,Fv      ;         NP 0x0F 0x01 /0xC5         ; s:PCONFIG, t:PCONFIG, w:R|RW|RW|RW|W, m:KERNEL, f:CF=0|ZF=m|PF=0|AF=0|OF=0|SF=0
 WRMSRNS      ; n/a         ; EAX,EDX,ECX,MSR         ;         NP 0x0F 0x01 /0xC6         ; s:WRMSRNS, t:SYSTEM, w:R|R|R|W, m:KERNEL
 WRMSRLIST    ; n/a         ; SMT,DMT,ECX             ;       0xF3 0x0F 0x01 /0xC6         ; s:MSRLIST, t:SYSTEM, w:R|R|RW, m:KERNEL|O64
 RDMSRLIST    ; n/a         ; SMT,DMT,ECX             ;       0xF2 0x0F 0x01 /0xC6         ; s:MSRLIST, t:SYSTEM, w:R|W|RW, m:KERNEL|O64
+PBNDKB       ; n/a         ; EAX,RBX,RCX,Fv          ;         NP 0x0F 0x01 /0xC7         ; s:TSE, t:SYSTEM, w:W|R|R|W, m:KERNEL|O64, f:CF=0|ZF=m|PF=0|AF=0|OF=0|SF=0
 MONITOR      ; n/a         ; pAXb,ECX,EDX            ;         NP 0x0F 0x01 /0xC8         ; s:SSE3, t:MISC, w:R|R|R, i:MONITOR, m:KERNEL|NOV86
 MWAIT        ; n/a         ; EAX,ECX                 ;         NP 0x0F 0x01 /0xC9         ; s:SSE3, t:MISC, w:RW|R, i:MONITOR, m:KERNEL|NOV86
 CLAC         ; n/a         ; Fv                      ;         NP 0x0F 0x01 /0xCA         ; s:SMAP, t:SMAP, w:W, f:AC=0, m:KERNEL|NOV86
