@@ -26,14 +26,14 @@ impl Context {
         let operands = ins.operands();
 
         match ins.mnemonic() {
-            Mnemonic::Mov => {
+            Mnemonic::MOV => {
                 self.set_operand_value(&operands[0], self.get_operand_value(&operands[1])?)?
             }
-            Mnemonic::Inc => self.set_operand_value(
+            Mnemonic::INC => self.set_operand_value(
                 &operands[0],
                 self.get_operand_value(&operands[0])?.wrapping_add(1),
             )?,
-            Mnemonic::Dec => self.set_operand_value(
+            Mnemonic::DEC => self.set_operand_value(
                 &operands[0],
                 self.get_operand_value(&operands[0])?.wrapping_sub(1),
             )?,

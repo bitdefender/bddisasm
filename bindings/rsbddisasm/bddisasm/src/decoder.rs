@@ -223,11 +223,11 @@ mod tests {
         let mut decoder = Decoder::new(&code, DecodeMode::Bits64, 0x1000);
         let expected: Vec<Result<(Mnemonic, &str, &[u8]), DecodeError>> = vec![
             Ok((
-                Mnemonic::Mov,
+                Mnemonic::MOV,
                 "MOV       eax, 0x00000000",
                 &[0xb8, 0x00, 0x00, 0x00, 0x00],
             )),
-            Ok((Mnemonic::Mov, "MOV       rdi, rcx", &[0x48, 0x8b, 0xf9])),
+            Ok((Mnemonic::MOV, "MOV       rdi, rcx", &[0x48, 0x8b, 0xf9])),
             Err(DecodeError::InvalidEncoding),
             Err(DecodeError::BufferTooSmall),
         ];
@@ -255,11 +255,11 @@ mod tests {
         let decoder = Decoder::new(&code, DecodeMode::Bits64, 0x1000);
         let expected: Vec<Result<(Mnemonic, &str, &[u8]), DecodeError>> = vec![
             Ok((
-                Mnemonic::Mov,
+                Mnemonic::MOV,
                 "MOV       eax, 0x00000000",
                 &[0xb8, 0x00, 0x00, 0x00, 0x00],
             )),
-            Ok((Mnemonic::Mov, "MOV       rdi, rcx", &[0x48, 0x8b, 0xf9])),
+            Ok((Mnemonic::MOV, "MOV       rdi, rcx", &[0x48, 0x8b, 0xf9])),
             Err(DecodeError::InvalidEncoding),
             Err(DecodeError::BufferTooSmall),
         ];

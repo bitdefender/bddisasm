@@ -38,7 +38,7 @@
 //! let code = vec![0x31, 0xc0];
 //! match DecodedInstruction::decode(&code, DecodeMode::Bits32) {
 //!     Ok(ins) => {
-//!         assert_eq!(ins.mnemonic(), Mnemonic::Xor);
+//!         assert_eq!(ins.mnemonic(), Mnemonic::XOR);
 //!         println!("{}", ins);
 //!     },
 //!     Err(err) => println!("Unable to decode: {}", err),
