@@ -12,7 +12,7 @@ from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
 VERSION = (0, 3, 0)
-LIBRARY_VERSION = (1, 38, 0)
+LIBRARY_VERSION = (2, 1, 0)
 DIR_INCLUDE = '../../inc'
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -25,7 +25,6 @@ __library_dirs = ['../../build', '../../bin/x64/Release']
 __packages = ['pybddisasm']
 __requires = ['setuptools']
 
-
 class BinaryDistribution(Distribution):
     def has_ext_modules(arg):
         return True
@@ -33,10 +32,8 @@ class BinaryDistribution(Distribution):
     def is_pure(self):
         return False
 
-
 def __fn_validate_compatibility():
-    print(os.getcwd())
-    version_header = '%s/version.h' % (DIR_INCLUDE)
+    version_header = '%s/bddisasm_version.h' % (DIR_INCLUDE)
     with open(version_header, 'r') as file:
         data = file.read()
 
@@ -62,9 +59,8 @@ def __fn_validate_compatibility():
     if int(major) != LIBRARY_VERSION[0] or int(minor) != LIBRARY_VERSION[1] or int(revision) != LIBRARY_VERSION[2]:
         print('error: The version of the library is not compatible with the pybddisasm!')
         print('error: Library : %s.%s.%s - pybddisasm : %d.%d.%d' % (major, minor, revision, LIBRARY_VERSION[0],
-            LIBRARY_VERSION[1], LIBRARY_VERSION[2]))
+               LIBRARY_VERSION[1], LIBRARY_VERSION[2]))
         sys.exit(1)
-
 
 __fn_validate_compatibility()
 
@@ -91,11 +87,12 @@ setup(
     install_requires=__requires,
     zip_safe=False,
     classifiers=[
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
-        'Programming Language :: Python :: 3.11',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: Microsoft :: Windows',
         'Operating System :: POSIX :: Linux'

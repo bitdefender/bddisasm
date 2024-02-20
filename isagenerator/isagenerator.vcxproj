@@ -30,6 +30,7 @@
     <ProjectGuid>{0E9D2957-34FA-40EE-B4B2-0D008D2FE317}</ProjectGuid>
     <RootNamespace>isagenerator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ProjectName>isagenerator_x86</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -199,29 +200,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="disasmlib.py" />
+    <None Include="generate_encodings.py" />
     <None Include="generate_tables.py" />
     <None Include="instructions\cpuid.dat" />
     <None Include="instructions\flags.dat" />
     <None Include="instructions\modes.dat" />
-    <None Include="instructions\prefixes.dat" />
-    <None Include="instructions\table_0F.dat" />
-    <None Include="instructions\table_0F_38.dat" />
-    <None Include="instructions\table_0F_3A.dat" />
+    <None Include="instructions\table_evex_4.dat" />
+    <None Include="instructions\table_evex_7.dat" />
+    <None Include="instructions\table_legacy_1.dat" />
+    <None Include="instructions\table_legacy_2.dat" />
+    <None Include="instructions\table_legacy_3.dat" />
     <None Include="instructions\table_3dnow.dat" />
-    <None Include="instructions\table_base.dat" />
-    <None Include="instructions\table_evex1.dat" />
-    <None Include="instructions\table_evex2.dat" />
-    <None Include="instructions\table_evex3.dat" />
-    <None Include="instructions\table_evex5.dat" />
-    <None Include="instructions\table_evex6.dat" />
-    <None Include="instructions\table_fpu.dat" />
-    <None Include="instructions\table_vex1.dat" />
-    <None Include="instructions\table_vex2.dat" />
-    <None Include="instructions\table_vex3.dat" />
+    <None Include="instructions\table_legacy_0.dat" />
+    <None Include="instructions\table_evex_1.dat" />
+    <None Include="instructions\table_evex_2.dat" />
+    <None Include="instructions\table_evex_3.dat" />
+    <None Include="instructions\table_evex_5.dat" />
+    <None Include="instructions\table_evex_6.dat" />
+    <None Include="instructions\table_legacy_fpu.dat" />
+    <None Include="instructions\table_vex_1.dat" />
+    <None Include="instructions\table_vex_2.dat" />
+    <None Include="instructions\table_vex_3.dat" />
+    <None Include="instructions\table_vex_7.dat" />
     <None Include="instructions\table_xop.dat" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="instructions\help.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

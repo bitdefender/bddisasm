@@ -1,0 +1,7 @@
+#
+# Copyright (c) 2024 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
+UWRMSR            ; Id,Rq               ; MSR             ;  vex m:7 p:2 l:0 w:0 0xF8 /0:reg id   ; s:USER_MSR, t:USER_MSR, w:R|R|W, m:O64
+URDMSR            ; Rq,Id               ; MSR             ;  vex m:7 p:3 l:0 w:0 0xF8 /0:reg id   ; s:USER_MSR, t:USER_MSR, w:W|R|R, m:O64

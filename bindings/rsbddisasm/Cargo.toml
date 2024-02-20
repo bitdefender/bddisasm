@@ -4,3 +4,6 @@ members = [
     "bddisasm-sys",
     "bddisasm",
 ]
+
+[workspace.package]
+version = "0.2.3"

@@ -16,18 +16,36 @@
     <Filter Include="Header Files\public">
       <UniqueIdentifier>{e9031566-ae16-49a2-807a-b33729f7b1d4}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="bdshemu.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="Header Files\public\x86">
+      <UniqueIdentifier>{d95202e3-5db7-4437-aaee-b42dd317eb1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\x86">
+      <UniqueIdentifier>{b37ad850-b053-4c49-a61c-81abc50c144e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\private">
+      <UniqueIdentifier>{ca0d8798-3c56-489f-8cc5-fe315397c76a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\inc\bdshemu.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\version.h">
+    <ClInclude Include="..\inc\bdshemu_x86.h">
+      <Filter>Header Files\public\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdshemu_common.h">
+      <Filter>Header Files\private</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\bddisasm_version.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bdshemu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bdshemu_x86.c">
+      <Filter>Source Files\x86</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

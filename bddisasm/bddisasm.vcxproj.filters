@@ -19,69 +19,87 @@
     <Filter Include="Other">
       <UniqueIdentifier>{5e26c505-e8f5-4e6c-9d54-f20e36b637b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\x86">
+      <UniqueIdentifier>{39065bbd-3fd0-42b0-ba8e-d7395674b7ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\public\x86">
+      <UniqueIdentifier>{032f0e51-6265-4031-b702-5eb620d95964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\private">
+      <UniqueIdentifier>{5eb8f135-5960-4e0e-a5a8-5214a7a9edcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\private\x86">
+      <UniqueIdentifier>{db15a655-cc99-4e12-a8c3-55a485ee713c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\private\x86\tables">
+      <UniqueIdentifier>{b9961460-d06f-4288-9708-44ca965c4a0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="crt.c">
+    <ClCompile Include="bddisasm_crt.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bddisasm.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="bdx86_decoder.c">
+      <Filter>Source Files\x86</Filter>
     </ClCompile>
-    <ClCompile Include="bdformat.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="bdx86_formatter.c">
+      <Filter>Source Files\x86</Filter>
     </ClCompile>
-    <ClCompile Include="bdhelpers.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="bdx86_helpers.c">
+      <Filter>Source Files\x86</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\instructions.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\inc\bddisasm_version.h">
+      <Filter>Header Files\public</Filter>
     </ClInclude>
-    <ClInclude Include="include\mnemonics.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\inc\bdx86_constants.h">
+      <Filter>Header Files\public\x86</Filter>
     </ClInclude>
-    <ClInclude Include="include\prefixes.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\inc\bdx86_cpuidflags.h">
+      <Filter>Header Files\public\x86</Filter>
     </ClInclude>
-    <ClInclude Include="include\table_evex.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\inc\bddisasm_types.h">
+      <Filter>Header Files\public</Filter>
     </ClInclude>
-    <ClInclude Include="include\table_root.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\inc\bdx86_registers.h">
+      <Filter>Header Files\public\x86</Filter>
     </ClInclude>
-    <ClInclude Include="include\table_vex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\table_xop.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\tabledefs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\inc\constants.h">
+    <ClInclude Include="..\inc\bddisasm_status.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\inc\bddisasm.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\disasmstatus.h">
-      <Filter>Header Files\public</Filter>
+    <ClInclude Include="..\inc\bdx86_core.h">
+      <Filter>Header Files\public\x86</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\disasmtypes.h">
-      <Filter>Header Files\public</Filter>
+    <ClInclude Include="include\bdx86_instructions.h">
+      <Filter>Header Files\private\x86</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\registers.h">
-      <Filter>Header Files\public</Filter>
+    <ClInclude Include="include\bdx86_mnemonics.h">
+      <Filter>Header Files\private\x86</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\version.h">
-      <Filter>Header Files\public</Filter>
+    <ClInclude Include="include\bdx86_prefixes.h">
+      <Filter>Header Files\private\x86</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\cpuidflags.h">
-      <Filter>Header Files\public</Filter>
+    <ClInclude Include="include\bdx86_tabledefs.h">
+      <Filter>Header Files\private\x86</Filter>
     </ClInclude>
-    <ClInclude Include="include\nd_crt.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="include\bddisasm_crt.h">
+      <Filter>Header Files\private</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_table_evex.h">
+      <Filter>Header Files\private\x86\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_table_root.h">
+      <Filter>Header Files\private\x86\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_table_vex.h">
+      <Filter>Header Files\private\x86\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_table_xop.h">
+      <Filter>Header Files\private\x86\tables</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

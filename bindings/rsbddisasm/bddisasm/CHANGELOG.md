@@ -2,19 +2,13 @@
 
 ## 0.3.1
 
-### Added
+### Removed
 
-- support for new Intel ISA, per Intel Architecture Instruction Set Extensions and Future Features document #319433-049 (June 2023): AVX-NNI-INT16, SHA512, SM3, SM4, TSE.
-
-### Changed
-
-- `Mnemonic`, `IsaSet`, and `Category` use all caps for the enum variants
-
-## 0.3.0
-
-### Fixed
-
-- #84: handle 0 sizes in `OpSize::from_raw`
+- the `ExceptionClass` enum
+- `sse_cond`, `has_mvex`, `has_drex`, `has_imm3`, `immediate3`, `sign_disp`, `imm3_length`, `imm3_offset`, `bhint`  from `DecodedInstruction`
+- multiple variants from `Category`, `IsaSet`, `Mnemonic` in accordance with the changes in `bddisasm`
+- `raw_size`, `decorator` from `Operand`
+- the `Operand` struct
 
 ## 0.2.1
 

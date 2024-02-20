@@ -16,14 +16,23 @@
     <Filter Include="data">
       <UniqueIdentifier>{8eaf791a-1023-446d-b655-528b2e53c283}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data\table 3dnow">
+      <UniqueIdentifier>{bd1ad80f-3298-4629-b5f8-82534060f84d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\table legacy">
+      <UniqueIdentifier>{889c4ba1-29f0-474b-a5f6-4e927dbb45c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\table xop">
+      <UniqueIdentifier>{6e4531e2-861d-4a6e-955b-384333e3e3e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\table vex">
+      <UniqueIdentifier>{50d53c2f-9192-4b67-955a-56dc137a364b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data\table evex">
+      <UniqueIdentifier>{b2f84880-170b-4fb3-b8c0-408dc88f9598}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="disasmlib.py">
-      <Filter>Source Files</Filter>
-    </None>
-    <None Include="generate_tables.py">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="instructions\cpuid.dat">
       <Filter>data</Filter>
     </None>
@@ -33,58 +42,68 @@
     <None Include="instructions\modes.dat">
       <Filter>data</Filter>
     </None>
-    <None Include="instructions\prefixes.dat">
-      <Filter>data</Filter>
+    <None Include="disasmlib.py">
+      <Filter>Source Files</Filter>
     </None>
-    <None Include="instructions\table_0F.dat">
-      <Filter>data</Filter>
+    <None Include="generate_tables.py">
+      <Filter>Source Files</Filter>
     </None>
-    <None Include="instructions\table_0F_3A.dat">
-      <Filter>data</Filter>
+    <None Include="instructions\table_legacy_0.dat">
+      <Filter>data\table legacy</Filter>
     </None>
-    <None Include="instructions\table_0F_38.dat">
-      <Filter>data</Filter>
+    <None Include="instructions\table_legacy_1.dat">
+      <Filter>data\table legacy</Filter>
+    </None>
+    <None Include="instructions\table_legacy_2.dat">
+      <Filter>data\table legacy</Filter>
+    </None>
+    <None Include="instructions\table_legacy_3.dat">
+      <Filter>data\table legacy</Filter>
+    </None>
+    <None Include="instructions\table_legacy_fpu.dat">
+      <Filter>data\table legacy</Filter>
     </None>
     <None Include="instructions\table_3dnow.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_base.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_evex1.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_evex2.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_evex3.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_fpu.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_vex1.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_vex2.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\table_vex3.dat">
-      <Filter>data</Filter>
+      <Filter>data\table 3dnow</Filter>
     </None>
     <None Include="instructions\table_xop.dat">
-      <Filter>data</Filter>
+      <Filter>data\table xop</Filter>
     </None>
-    <None Include="instructions\table_evex5.dat">
-      <Filter>data</Filter>
+    <None Include="instructions\table_vex_1.dat">
+      <Filter>data\table vex</Filter>
     </None>
-    <None Include="instructions\table_evex6.dat">
-      <Filter>data</Filter>
+    <None Include="instructions\table_vex_2.dat">
+      <Filter>data\table vex</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="instructions\help.txt">
-      <Filter>data</Filter>
-    </Text>
+    <None Include="instructions\table_vex_3.dat">
+      <Filter>data\table vex</Filter>
+    </None>
+    <None Include="instructions\table_evex_1.dat">
+      <Filter>data\table evex</Filter>
+    </None>
+    <None Include="instructions\table_evex_2.dat">
+      <Filter>data\table evex</Filter>
+    </None>
+    <None Include="instructions\table_evex_3.dat">
+      <Filter>data\table evex</Filter>
+    </None>
+    <None Include="instructions\table_evex_5.dat">
+      <Filter>data\table evex</Filter>
+    </None>
+    <None Include="instructions\table_evex_6.dat">
+      <Filter>data\table evex</Filter>
+    </None>
+    <None Include="instructions\table_evex_4.dat">
+      <Filter>data\table evex</Filter>
+    </None>
+    <None Include="generate_encodings.py">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="instructions\table_vex_7.dat">
+      <Filter>data\table vex</Filter>
+    </None>
+    <None Include="instructions\table_evex_7.dat">
+      <Filter>data\table evex</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@ pub enum Category {
     AES,
     AESKL,
     AMX,
+    APX,
     ARITH,
     AVX,
     AVX2,
@@ -72,7 +73,6 @@ pub enum Category {
     MOVDIRI,
     MPX,
     NOP,
-    PADLOCK,
     PCLMULQDQ,
     PCONFIG,
     POP,
@@ -108,6 +108,7 @@ pub enum Category {
     UINTR,
     UNCOND_BR,
     UNKNOWN,
+    USER_MSR,
     VAES,
     VFMA,
     VFMAPS,
@@ -129,6 +130,7 @@ pub enum Category {
 impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
     type Error = DecodeError;
 
+    #[allow(clippy::too_many_lines)]
     fn try_from(value: ffi::ND_INS_CATEGORY) -> Result<Self, Self::Error> {
         match value {
             ffi::_ND_INS_TYPE::ND_CAT_INVALID => Err(DecodeError::InternalError(value as u64)),
@@ -136,6 +138,7 @@ impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
             ffi::_ND_INS_TYPE::ND_CAT_AES => Ok(Category::AES),
             ffi::_ND_INS_TYPE::ND_CAT_AESKL => Ok(Category::AESKL),
             ffi::_ND_INS_TYPE::ND_CAT_AMX => Ok(Category::AMX),
+            ffi::_ND_INS_TYPE::ND_CAT_APX => Ok(Category::APX),
             ffi::_ND_INS_TYPE::ND_CAT_ARITH => Ok(Category::ARITH),
             ffi::_ND_INS_TYPE::ND_CAT_AVX => Ok(Category::AVX),
             ffi::_ND_INS_TYPE::ND_CAT_AVX2 => Ok(Category::AVX2),
@@ -193,7 +196,6 @@ impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
             ffi::_ND_INS_TYPE::ND_CAT_MOVDIRI => Ok(Category::MOVDIRI),
             ffi::_ND_INS_TYPE::ND_CAT_MPX => Ok(Category::MPX),
             ffi::_ND_INS_TYPE::ND_CAT_NOP => Ok(Category::NOP),
-            ffi::_ND_INS_TYPE::ND_CAT_PADLOCK => Ok(Category::PADLOCK),
             ffi::_ND_INS_TYPE::ND_CAT_PCLMULQDQ => Ok(Category::PCLMULQDQ),
             ffi::_ND_INS_TYPE::ND_CAT_PCONFIG => Ok(Category::PCONFIG),
             ffi::_ND_INS_TYPE::ND_CAT_POP => Ok(Category::POP),
@@ -229,6 +231,7 @@ impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
             ffi::_ND_INS_TYPE::ND_CAT_UINTR => Ok(Category::UINTR),
             ffi::_ND_INS_TYPE::ND_CAT_UNCOND_BR => Ok(Category::UNCOND_BR),
             ffi::_ND_INS_TYPE::ND_CAT_UNKNOWN => Ok(Category::UNKNOWN),
+            ffi::_ND_INS_TYPE::ND_CAT_USER_MSR => Ok(Category::USER_MSR),
             ffi::_ND_INS_TYPE::ND_CAT_VAES => Ok(Category::VAES),
             ffi::_ND_INS_TYPE::ND_CAT_VFMA => Ok(Category::VFMA),
             ffi::_ND_INS_TYPE::ND_CAT_VFMAPS => Ok(Category::VFMAPS),

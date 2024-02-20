@@ -2,7 +2,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -24,7 +24,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -46,7 +46,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -68,7 +68,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -90,7 +90,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -112,7 +112,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -134,7 +134,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -156,7 +156,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -178,7 +178,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -200,7 +200,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -222,7 +222,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -244,7 +244,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -266,7 +266,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -288,7 +288,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -310,7 +310,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -332,7 +332,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -354,7 +354,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -376,7 +376,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -398,7 +398,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -420,7 +420,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -442,7 +442,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -464,7 +464,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -486,7 +486,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -508,7 +508,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -530,7 +530,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -552,7 +552,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -574,7 +574,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -596,7 +596,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -618,7 +618,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -640,7 +640,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -662,7 +662,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes
@@ -684,7 +684,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: CMPCCXADD, Ins cat: CMPCCXADD, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: eax, bit: 7
-        Exception class: EVEX, exception type: E6NF
+        Exception class: SSE/VEX, exception type: 14
         FLAGS access
                 CF: m, PF: m, AF: m, ZF: m, SF: m, OF: m, 
         Valid modes

@@ -9,10 +9,10 @@ fn main() {
     println!("cargo:rerun-if-changed=csrc");
 
     cc::Build::new()
-        .file("csrc/bddisasm/bddisasm.c")
-        .file("csrc/bddisasm/bdformat.c")
-        .file("csrc/bddisasm/bdhelpers.c")
-        .file("csrc/bddisasm/crt.c")
+        .file("csrc/bddisasm/bddisasm_crt.c")
+        .file("csrc/bddisasm/bdx86_decoder.c")
+        .file("csrc/bddisasm/bdx86_formatter.c")
+        .file("csrc/bddisasm/bdx86_helpers.c")
         .include("csrc/bddisasm/include")
         .include("csrc/inc")
         .define("BDDISASM_HAS_VSNPRINTF", Some("1"))

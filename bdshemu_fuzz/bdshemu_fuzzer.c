@@ -25,11 +25,37 @@
 #define LOG(fmt, ...)
 #endif // ENABLE_LOGGING
 
-void ShemuLog(char *data)
+#define DEFAULT_OPTIONS (SHEMU_OPT_TRACE_EMULATION  |\
+                        SHEMU_OPT_SUPPORT_AES       |\
+                        SHEMU_OPT_SUPPORT_APX)
+
+void ShemuLog(char *data, void *ctx)
 {
+    (void)(ctx);
     LOG("%s", data);
 }
 
+ND_BOOL
+access_shellcode(void *Ctx, ND_UINT64 Gla, ND_SIZET Size, ND_UINT8 *Buffer, ND_BOOL Store)
+{
+    SHEMU_CONTEXT *ctx = Ctx;
+    ND_UINT32 offset;
+
+    offset = (ND_UINT32)(Gla - ctx->ShellcodeBase);
+
+    if (Store)
+    {
+        memcpy(ctx->Shellcode + offset, Buffer, Size);
+    }
+    else
+    {
+        memcpy(Buffer, ctx->Shellcode + offset, Size);
+    }
+
+    return true;
+}
+
+#if defined(FUZZ_X86) || defined(FUZZ_X64)
 #ifdef FUZZ_X86
 #define DEF_CODE    ND_CODE_32
 #define FUZZER_TYPE "x86"
@@ -44,6 +70,13 @@ void run_shemu(uint8_t *Data, size_t Size)
 
     SHEMU_CONTEXT ctx = { 0 };
     SHEMU_STATUS shs;
+
+#if defined(DIRECT_MAP)
+    ctx.AccessShellcode = access_shellcode;
+    ctx.Options |= SHEMU_OPT_DIRECT_MAPPED_SHELL;
+#endif
+
+    ctx.ArchType = SHEMU_ARCH_TYPE_X86;
 
     ctx.Shellcode = Data;
 
@@ -65,28 +98,28 @@ void run_shemu(uint8_t *Data, size_t Size)
     ctx.ShellcodeSize = (uint32_t)Size;
     ctx.StackBase = 0x100000;
     ctx.StackSize = 0x2000;
-    ctx.Registers.RegRsp = 0x101000;
+    ctx.Arch.X86.Registers.RegRsp = 0x101000;
     ctx.IntbufSize = (uint32_t)Size + 0x2000;
 
-    ctx.Registers.RegFlags = NDR_RFLAG_IF | 2;
-    ctx.Registers.RegRip = ctx.ShellcodeBase;
+    ctx.Arch.X86.Registers.RegFlags = NDR_RFLAG_IF | 2;
+    ctx.Arch.X86.Registers.RegRip = ctx.ShellcodeBase;
 
-    ctx.Segments.Cs.Selector = 0x10;
-    ctx.Segments.Ds.Selector = 0x28;
-    ctx.Segments.Es.Selector = 0x28;
-    ctx.Segments.Ss.Selector = 0x28;
-    ctx.Segments.Fs.Selector = 0x30;
-    ctx.Segments.Fs.Base = 0x7FFF0000;
-    ctx.Segments.Gs.Selector = 0x30;
-    ctx.Segments.Gs.Base = 0x7FFF0000;
+    ctx.Arch.X86.Segments.Cs.Selector = 0x10;
+    ctx.Arch.X86.Segments.Ds.Selector = 0x28;
+    ctx.Arch.X86.Segments.Es.Selector = 0x28;
+    ctx.Arch.X86.Segments.Ss.Selector = 0x28;
+    ctx.Arch.X86.Segments.Fs.Selector = 0x30;
+    ctx.Arch.X86.Segments.Fs.Base = 0x7FFF0000;
+    ctx.Arch.X86.Segments.Gs.Selector = 0x30;
+    ctx.Arch.X86.Segments.Gs.Base = 0x7FFF0000;
 
-    ctx.Mode = DEF_CODE;
-    ctx.Ring = 3;
-    ctx.TibBase = ctx.Mode == ND_CODE_32 ? ctx.Segments.Fs.Base : ctx.Segments.Gs.Base;
+    ctx.Arch.X86.Mode = DEF_CODE;
+    ctx.Arch.X86.Ring = 3;
+    ctx.TibBase = ctx.Arch.X86.Mode == ND_CODE_32 ? ctx.Arch.X86.Segments.Fs.Base : ctx.Arch.X86.Segments.Gs.Base;
     ctx.MaxInstructionsCount = 4096;
     ctx.Log = &ShemuLog;
     ctx.Flags = 0;
-    ctx.Options = SHEMU_OPT_TRACE_EMULATION;
+    ctx.Options |= DEFAULT_OPTIONS;
 
     shs = ShemuEmulate(&ctx);
     LOG("[+] Shemu returned: 0x%08x\n", shs);
@@ -94,10 +127,11 @@ void run_shemu(uint8_t *Data, size_t Size)
     free(ctx.Intbuf);
     free(ctx.Stack);
 }
+#else
+#error "Do not know what to fuzz, define one of FUZZ_X86, FUZZ_X64"
+#endif
 
 #if defined(__AFL_FUZZ_TESTCASE_LEN)
-#include <unistd.h>
-
 // See https://github.com/AFLplusplus/AFLplusplus/blob/stable/instrumentation/README.persistent_mode.md
 __AFL_FUZZ_INIT();
 

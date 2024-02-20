@@ -29,10 +29,6 @@ impl OpAddr {
             offset: raw.Offset,
         }
     }
-
-    pub(crate) fn new(base_seg: u16, offset: u64) -> Self {
-        Self { base_seg, offset }
-    }
 }
 
 /// The type of a register.
@@ -188,7 +184,7 @@ pub struct OpReg {
     ///
     /// # Remarks
     ///
-    /// If [kind](OpReg::kind) is [OpRegType::Gpr](OpRegType::Gpr), the high and low part of 16-bit registers will have
+    /// If [kind](OpReg::kind) is [`OpRegType::Gpr`], the high and low part of 16-bit registers will have
     /// the same index (for example, `AH` and `AL`). To differentiate between them use [is_high8](OpReg::is_high8).
     pub index: usize,
 
@@ -223,7 +219,7 @@ impl OpReg {
             kind,
             size: raw.Size,
             index,
-            count: raw.Count,
+            count: raw.Count as u32,
             is_high8,
             is_block: raw.IsBlock() != 0,
         })
@@ -279,6 +275,7 @@ impl ShadowStackAccess {
 }
 
 /// Describes a memory operand.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct OpMem {
     /// `true` if the memory operand is a broadcast operand.
@@ -353,19 +350,23 @@ pub struct OpMem {
 impl OpMem {
     pub(crate) fn from_raw(raw: ffi::ND_OPDESC_MEMORY) -> Result<Self, DecodeError> {
         let seg = if raw.HasSeg() != 0 {
-            Some(raw.Seg)
+            Some(raw.Seg())
         } else {
             None
         };
 
         let (base, base_size) = if raw.HasBase() != 0 {
-            (Some(raw.Base), Some(raw.BaseSize))
+            (Some(raw.Base()), Some(raw.BaseSize as u32))
         } else {
             (None, None)
         };
 
         let (index, index_size, scale) = if raw.HasIndex() != 0 {
-            (Some(raw.Index), Some(raw.IndexSize), Some(raw.Scale))
+            (
+                Some(raw.Index),
+                Some(raw.IndexSize as u32),
+                Some(raw.Scale()),
+            )
         } else {
             (None, None, None)
         };
@@ -385,10 +386,10 @@ impl OpMem {
         let (vsib, index_size) = if raw.IsVsib() != 0 {
             (
                 Some(Vsib {
-                    vsib_element_size: raw.Vsib.ElemSize,
-                    vsib_element_count: raw.Vsib.ElemCount,
+                    vsib_element_size: unsafe { raw.__bindgen_anon_1.Vsib.ElemSize },
+                    vsib_element_count: unsafe { raw.__bindgen_anon_1.Vsib.ElemCount },
                 }),
-                Some(raw.Vsib.IndexSize.into()),
+                Some(unsafe { raw.__bindgen_anon_1.Vsib.IndexSize.into() }),
             )
         } else {
             (None, index_size)
@@ -460,7 +461,9 @@ impl Default for OpInfo {
 }
 
 impl OpInfo {
-    /// Returns the associated [OpReg](OpReg) for register operands. Returns [`None`] otherwise.
+    /// Returns the associated [`OpReg`] for register operands. Returns [`None`] otherwise.
+    #[inline]
+    #[must_use]
     pub fn as_reg(&self) -> Option<&OpReg> {
         if let OpInfo::Reg(o) = self {
             Some(o)
@@ -469,7 +472,9 @@ impl OpInfo {
         }
     }
 
-    /// Returns the associated [OpMem](OpMem) for memory operands. Returns [`None`] otherwise.
+    /// Returns the associated [`OpMem`] for memory operands. Returns [`None`] otherwise.
+    #[inline]
+    #[must_use]
     pub fn as_mem(&self) -> Option<&OpMem> {
         if let OpInfo::Mem(o) = self {
             Some(o)
@@ -479,6 +484,8 @@ impl OpInfo {
     }
 
     /// Returns the associated immediate value for immediate operands. Returns [`None`] otherwise.
+    #[inline]
+    #[must_use]
     pub fn as_imm(&self) -> Option<u64> {
         if let OpInfo::Imm(o) = self {
             Some(*o)
@@ -487,7 +494,9 @@ impl OpInfo {
         }
     }
 
-    /// Returns the associated [OpAddr](OpAddr) for absolute address operands. Returns [`None`] otherwise.
+    /// Returns the associated [`OpAddr`] for absolute address operands. Returns [`None`] otherwise.
+    #[inline]
+    #[must_use]
     pub fn as_addr(&self) -> Option<&OpAddr> {
         if let OpInfo::Addr(o) = self {
             Some(o)
@@ -497,6 +506,8 @@ impl OpInfo {
     }
 
     /// Returns the associated constant value for constant operands. Returns [`None`] otherwise.
+    #[inline]
+    #[must_use]
     pub fn as_const(&self) -> Option<u64> {
         if let OpInfo::Const(o) = self {
             Some(*o)
@@ -506,6 +517,8 @@ impl OpInfo {
     }
 
     /// Returns `Some` for bank operands. Returns [`None`] otherwise.
+    #[inline]
+    #[must_use]
     pub fn as_bank(&self) -> Option<()> {
         if let OpInfo::Bank = self {
             Some(())
@@ -515,31 +528,43 @@ impl OpInfo {
     }
 
     /// Returns `true` for register operands. Returns `false` otherwise.
+    #[inline]
+    #[must_use]
     pub fn is_reg(&self) -> bool {
         self.as_reg().is_some()
     }
 
     /// Returns `true` for memory operands. Returns `false` otherwise.
+    #[inline]
+    #[must_use]
     pub fn is_mem(&self) -> bool {
         self.as_mem().is_some()
     }
 
     /// Returns `true` for immediate operands. Returns `false` otherwise.
+    #[inline]
+    #[must_use]
     pub fn is_imm(&self) -> bool {
         self.as_imm().is_some()
     }
 
     /// Returns `true` for absolute address operands. Returns `false` otherwise.
+    #[inline]
+    #[must_use]
     pub fn is_addr(&self) -> bool {
         self.as_addr().is_some()
     }
 
     /// Returns `true` for constant operands. Returns `false` otherwise.
+    #[inline]
+    #[must_use]
     pub fn is_const(&self) -> bool {
         self.as_const().is_some()
     }
 
     /// Returns `true` for bank operands. Returns `false` otherwise.
+    #[inline]
+    #[must_use]
     pub fn is_bank(&self) -> bool {
         self.as_bank().is_some()
     }
@@ -548,25 +573,26 @@ impl OpInfo {
 #[doc(hidden)]
 impl OpInfo {
     pub(crate) fn from_raw(raw: ffi::ND_OPERAND) -> Result<Self, DecodeError> {
-        match raw.Type {
-            ffi::_ND_OPERAND_TYPE::ND_OP_NOT_PRESENT => Ok(OpInfo::None),
-            ffi::_ND_OPERAND_TYPE::ND_OP_REG => {
-                Ok(OpInfo::Reg(OpReg::from_raw(unsafe { raw.Info.Register })?))
-            }
-            ffi::_ND_OPERAND_TYPE::ND_OP_MEM => {
-                Ok(OpInfo::Mem(OpMem::from_raw(unsafe { raw.Info.Memory })?))
-            }
-            ffi::_ND_OPERAND_TYPE::ND_OP_IMM => Ok(OpInfo::Imm(unsafe { raw.Info.Immediate }.Imm)),
-            ffi::_ND_OPERAND_TYPE::ND_OP_OFFS => {
-                Ok(OpInfo::Offs(unsafe { raw.Info.RelativeOffset }.Rel))
-            }
-            ffi::_ND_OPERAND_TYPE::ND_OP_ADDR => {
-                Ok(OpInfo::Addr(OpAddr::from_raw(unsafe { raw.Info.Address })))
-            }
-            ffi::_ND_OPERAND_TYPE::ND_OP_CONST => {
-                Ok(OpInfo::Const(unsafe { raw.Info.Constant }.Const))
-            }
-            ffi::_ND_OPERAND_TYPE::ND_OP_BANK => Ok(OpInfo::Bank),
+        let typ = raw.Type() as i32;
+
+        if typ == ffi::_ND_OPERAND_TYPE::ND_OP_NOT_PRESENT as i32 {
+            Ok(OpInfo::None)
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_REG as i32 {
+            Ok(OpInfo::Reg(OpReg::from_raw(unsafe { raw.Info.Register })?))
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_MEM as i32 {
+            Ok(OpInfo::Mem(OpMem::from_raw(unsafe { raw.Info.Memory })?))
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_IMM as i32 {
+            Ok(OpInfo::Imm(unsafe { raw.Info.Immediate }.Imm))
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_OFFS as i32 {
+            Ok(OpInfo::Offs(unsafe { raw.Info.RelativeOffset }.Rel))
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_ADDR as i32 {
+            Ok(OpInfo::Addr(OpAddr::from_raw(unsafe { raw.Info.Address })))
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_CONST as i32 {
+            Ok(OpInfo::Const(unsafe { raw.Info.Constant }.Const))
+        } else if typ == ffi::_ND_OPERAND_TYPE::ND_OP_BANK as i32 {
+            Ok(OpInfo::Bank)
+        } else {
+            Err(DecodeError::InternalError(0))
         }
     }
 }
@@ -620,7 +646,6 @@ impl fmt::Display for OpSize {
 impl OpSize {
     pub(crate) fn from_raw(value: ffi::ND_OPERAND_SIZE) -> Result<Self, DecodeError> {
         match value {
-            0 => Ok(OpSize::Bytes(0)),
             ffi::ND_SIZE_8BIT => Ok(OpSize::Bytes(1)),
             ffi::ND_SIZE_16BIT => Ok(OpSize::Bytes(2)),
             ffi::ND_SIZE_32BIT => Ok(OpSize::Bytes(4)),
@@ -645,6 +670,7 @@ impl OpSize {
 }
 
 /// Operand access mode.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
 pub struct OpAccess {
     /// The operand is read.
@@ -701,32 +727,6 @@ pub struct Decorator {
     pub broadcast: Option<Broadcast>,
 }
 
-#[doc(hidden)]
-impl Decorator {
-    pub(crate) fn from_raw(raw: ffi::ND_OPERAND_DECORATOR) -> Decorator {
-        let mask_register = if raw.HasMask() != 0 {
-            Some(raw.Mask.Msk)
-        } else {
-            None
-        };
-
-        let broadcast = if raw.HasBroadcast() != 0 {
-            Some(Broadcast {
-                count: raw.Broadcast.Count,
-                size: raw.Broadcast.Size,
-            })
-        } else {
-            None
-        };
-
-        Self {
-            mask_register,
-            has_zero: raw.HasZero() != 0,
-            broadcast,
-        }
-    }
-}
-
 /// Describes an instruction operand.
 ///
 /// Each operand type encodes different information. See [`OpInfo`] for details.
@@ -775,23 +775,11 @@ pub struct Operand {
     /// cases.
     pub size: OpSize,
 
-    /// Raw size inside the instruction.
-    ///
-    /// This will usually be identical to [size](Operand::size), however, some instructions force the actual size of
-    /// their operands to 64 bit (`PUSH`/`POP` or branches are good examples).
-    ///
-    /// Although the raw size of the relative offset or the immediate will be [raw_size](Operand::raw_size), internally,
-    /// the CPU will use [size](Operand::size) (usually sign-extended).
-    pub raw_size: OpSize,
-
     ///  Access mode.
     pub access: OpAccess,
 
     /// `true` if the operand is default. This also applies to implicit operands.
     pub is_default: bool,
-
-    /// Decorator information.
-    pub decorator: Decorator,
 }
 
 #[doc(hidden)]
@@ -800,10 +788,8 @@ impl Operand {
         Ok(Self {
             info: OpInfo::from_raw(raw)?,
             size: OpSize::from_raw(raw.Size)?,
-            raw_size: OpSize::from_raw(raw.RawSize)?,
             access: OpAccess::from_raw(raw.Access),
             is_default: unsafe { raw.Flags.__bindgen_anon_1 }.IsDefault() != 0,
-            decorator: Decorator::from_raw(raw.Decorator),
         })
     }
 }
@@ -932,6 +918,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn dest(&self, index: usize) -> Option<Operand> {
         let op = match index {
             0 => unsafe { self.op_rlut.Dst1.as_ref() },
@@ -961,6 +948,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn src(&self, index: usize) -> Option<Operand> {
         let op = match index {
             0 => unsafe { self.op_rlut.Src1.as_ref() },
@@ -991,6 +979,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn mem(&self, index: usize) -> Option<Operand> {
         let op = match index {
             0 => unsafe { self.op_rlut.Mem1.as_ref() },
@@ -1013,6 +1002,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn stack(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Stack.as_ref() };
 
@@ -1031,6 +1021,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn flags(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Flags.as_ref() };
 
@@ -1049,6 +1040,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rip(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rip.as_ref() };
 
@@ -1067,6 +1059,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn cs(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Cs.as_ref() };
 
@@ -1085,6 +1078,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn ss(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Ss.as_ref() };
 
@@ -1103,6 +1097,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rax(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rax.as_ref() };
 
@@ -1121,6 +1116,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rcx(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rcx.as_ref() };
 
@@ -1139,6 +1135,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rdx(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rdx.as_ref() };
 
@@ -1157,6 +1154,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rbx(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rbx.as_ref() };
 
@@ -1175,6 +1173,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rsp(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rsp.as_ref() };
 
@@ -1193,6 +1192,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rbp(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rbp.as_ref() };
 
@@ -1211,6 +1211,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rsi(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rsi.as_ref() };
 
@@ -1229,6 +1230,7 @@ impl<'a> OperandsLookup<'a> {
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn rdi(&self) -> Option<Operand> {
         let op = unsafe { self.op_rlut.Rdi.as_ref() };
 
@@ -1236,7 +1238,7 @@ impl<'a> OperandsLookup<'a> {
     }
 }
 
-/// A collection of [Operand](Operand)s.
+/// A collection of [`Operand`]s.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug, Default)]
 pub struct Operands {
     pub(crate) operands: [Operand; 10],
@@ -1266,7 +1268,6 @@ mod tests {
 
         let dest = operands[0];
         assert_eq!(dest.size, OpSize::Bytes(1));
-        assert_eq!(dest.raw_size, OpSize::Bytes(1));
         assert_eq!(dest.is_default, false);
         assert!(dest.access.write);
 
@@ -1281,7 +1282,6 @@ mod tests {
 
         let src = operands[1];
         assert_eq!(src.size, OpSize::Bytes(1));
-        assert_eq!(src.raw_size, OpSize::Bytes(1));
         assert_eq!(src.is_default, false);
         assert!(src.access.read);
 

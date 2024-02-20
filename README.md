@@ -5,12 +5,10 @@ The Bitdefender disassembler (bddisasm) is a lightweight, x86/x64 only instructi
 ## Projects
 
 1. [bddisasm](https://github.com/bitdefender/bddisasm/tree/master/bddisasm) - this is the main disassembler project. In order to use the Bitdefender disassembler, all you have to do is build this project, and link with the output library. The only headers you need are located inside the `inc` folder.
-2. [bdshemu](https://github.com/bitdefender/bddisasm/tree/master/bdshemu) - this project makes use of the main bddisasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can
-emulate raw binary files, and see their output. Note that this simple emulator supports basic x86/x64 instructions, and does not support emulating any kind of API call. In addition, the only supported memory accesses are inside the shellcode itself, and on the emulated stack.
-3. [isagenerator](https://github.com/bitdefender/bddisasm/tree/master/isagenerator) - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files. You will need Python 3 to run the generation scripts.
+2. [bdshemu](https://github.com/bitdefender/bddisasm/tree/master/bdshemu) - this project makes use of the main bddisasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can emulate raw binary files, and see their output. Note that this simple emulator supports basic x86/x64 instructions, and does not support emulating any kind of API call. In addition, the only supported memory accesses are inside the shellcode itself, and on the emulated stack.
+3. [isagenerator_x86](https://github.com/bitdefender/bddisasm/tree/master/isagenerator) - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files. You will need Python 3 to run the generation scripts.
 4. [disasmtool](https://github.com/bitdefender/bddisasm/tree/master/disasmtool) - this project is a command line disassembler tool, used mainly as an example of how to integrate the bddisasm and bdshemu libraries.
-5. [disasmtool_lix](https://github.com/bitdefender/bddisasm/tree/master/disasmtool_lix) - like disasmtool, but for Linux.
-6. [bindings](https://github.com/bitdefender/bddisasm/tree/master/bindings) - bindings for [python](https://github.com/bitdefender/bddisasm/tree/master/bindings/pybddisasm), and [Rust](https://github.com/bitdefender/bddisasm/tree/master/bindings/rsbddisasm).
+5. [bindings](https://github.com/bitdefender/bddisasm/tree/master/bindings) - bindings for [python](https://github.com/bitdefender/bddisasm/tree/master/bindings/pybddisasm), and [Rust](https://github.com/bitdefender/bddisasm/tree/master/bindings/rsbddisasm).
 
 ## Objectives
 
@@ -161,13 +159,13 @@ The results will be in the bin directory in the root of the repository.
 
 [nd_vsnprintf_s and nd_memset](#nd_vsnprintf_s-and-nd_memset) will not be defined by `bddisasm`, integrators must provide these functions.
 
-## Decoding instructions
+## Decoding x86 instructions
 
 ### Decoding API
 
 There are 4 decoding functions, but internally, they all do the same, albeit some of them with implicit arguments:
 
-- `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer; 
+- `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer;
 - `NDSTATUS NdDecodeEx(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData);` - decode instruction from a buffer with maximum length `Size`;
 - `NDSTATUS NdDecodeEx2(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData, uint8_t DefStack, uint8_t PreferedVendor);` - decode instructions with a preferred vendor;
 - `NDSTATUS NdDecodeWithContext(INSTRUX *Instrux, const uint8_t *Code, size_t Size, ND_CONTEXT *Context);` - base decode API; the input parameters - `DefCode`, `DefData`, `DefStack`, `VendMode` and `FeatMode` must all be filled in the `Context` structure before calling this function. The Context structure should also be initialized using `NdInitContext` before the first decode call.
@@ -277,10 +275,10 @@ Working with the extended API is also trivial:
     INSTRUX ix;
     ND_CONTEXT ctx;
     uint8_t code[] = { 0x48, 0x8B, 0x48, 0x28 };
-    
+
     // This has to be done only once.
     NdInitContext(&ctx);
-    
+
     ctx.DefCode = ND_CODE_64;
     ctx.DefData = ND_DATA_64;
     ctx.DefStack = ND_STACK_64;

@@ -15,7 +15,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bdshemu", "bdshemu\bdshemu.
 		{3653AA19-048B-410E-B5C4-FF78E1D84C12} = {3653AA19-048B-410E-B5C4-FF78E1D84C12}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isagenerator", "isagenerator\isagenerator.vcxproj", "{0E9D2957-34FA-40EE-B4B2-0D008D2FE317}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isagenerator_x86", "isagenerator\isagenerator.vcxproj", "{0E9D2957-34FA-40EE-B4B2-0D008D2FE317}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{3114F0D4-BEBA-4574-A349-D03477C64C60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{1F8BBB39-7787-4A50-8170-27EB5FA104D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +88,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94F1B65D-3305-4CCB-9DF1-50B56900D867} = {1F8BBB39-7787-4A50-8170-27EB5FA104D0}
+		{3653AA19-048B-410E-B5C4-FF78E1D84C12} = {3114F0D4-BEBA-4574-A349-D03477C64C60}
+		{3C9B2CA7-CF4F-471B-BB72-6490C476CDCA} = {3114F0D4-BEBA-4574-A349-D03477C64C60}
+		{0E9D2957-34FA-40EE-B4B2-0D008D2FE317} = {3114F0D4-BEBA-4574-A349-D03477C64C60}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E950FA16-07C1-4613-8328-906BC10C7C02}

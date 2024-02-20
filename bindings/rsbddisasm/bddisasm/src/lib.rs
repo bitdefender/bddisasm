@@ -22,7 +22,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! bddisasm = "0.1.0"
+//! bddisasm = "0.2"
 //! ```
 //!
 //! # Examples
@@ -47,7 +47,7 @@
 //!
 //! ## Decoding multiple instructions
 //!
-//! Use [`Decoder`](crate::decoder::Decoder) to decode multiple instructions from a chunk of code.
+//! Use [`Decoder`] to decode multiple instructions from a chunk of code.
 //!
 //! ```
 //! use bddisasm::{Decoder, DecodeMode};
@@ -120,7 +120,7 @@
 //!
 //! ## Working with instruction operands
 //!
-//! Instruction operands can be analyzed using the [operand](crate::operand) module. Rich informaion is offered for
+//! Instruction operands can be analyzed using the [`operand`] module. Rich informaion is offered for
 //! each type of operand. Bellow is a minimal example that looks at a memory operand.
 //!
 //! ```
@@ -190,6 +190,7 @@
 //!
 
 #![cfg_attr(all(not(test), not(feature = "std")), no_std)]
+#![allow(clippy::if_not_else)]
 
 pub extern crate bddisasm_sys as ffi;
 

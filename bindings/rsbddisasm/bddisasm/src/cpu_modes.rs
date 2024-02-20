@@ -29,6 +29,7 @@
 // TODO: maybe use something like the `bitflags` crate and have all these as flags?
 
 /// Privilege levels (rings) in which an instruction is supported.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct PrivilegeLevel {
     /// Instruction is valid in ring 0.
@@ -45,6 +46,7 @@ pub struct PrivilegeLevel {
 }
 
 /// Operating modes in which an instruction is supported.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct OperatingMode {
     /// The instruction is valid in real mode.
@@ -64,6 +66,7 @@ pub struct OperatingMode {
 }
 
 /// Special modes - these may be active inside other modes (example: `TSX` in `Long mode`).
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct SpecialModes {
     /// The instruction is valid in System Management Mode.
@@ -86,6 +89,7 @@ pub struct SpecialModes {
 }
 
 /// VMX mode - they engulf all the other modes.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct VmxMode {
     /// The instruction is valid in VMX root mode.

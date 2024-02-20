@@ -20,10 +20,11 @@ impl<'a> Decoder<'a> {
     ///
     /// # Arguments
     ///
-    /// * `code` - An [u8](u8) slice that holds the code to be decoded.
+    /// * `code` - An [`u8`] slice that holds the code to be decoded.
     /// * `mode` - The mode in which to decode the instruction.
     /// * `ip` - The instruction pointer value to use when formatting the decoded instruction. Does not affect the
     /// decoding process in any way.
+    #[must_use]
     pub fn new(code: &'a [u8], mode: DecodeMode, ip: u64) -> Self {
         Self {
             code,
@@ -82,15 +83,12 @@ impl<'a> Decoder<'a> {
         } else {
             let result =
                 DecodedInstruction::decode_with_ip(&self.code[self.offset..], self.mode, self.ip);
-            match result {
-                Ok(ins) => {
-                    self.offset += ins.length() as usize;
-                    self.ip += ins.length() as u64;
-                }
-                Err(_) => {
-                    self.offset += 1;
-                    self.ip += 1;
-                }
+            if let Ok(ins) = result {
+                self.offset += ins.length();
+                self.ip += ins.length() as u64;
+            } else {
+                self.offset += 1;
+                self.ip += 1;
             };
 
             Some(result)
@@ -99,7 +97,7 @@ impl<'a> Decoder<'a> {
 
     /// Attempts to decode the next instruction from the given code chunk.
     ///
-    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`](DecodeResult) it
+    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`] it
     /// will also return the offset from which decoding was attempted, as well as the corresponding instruction pointer.
     ///
     /// # Examples
@@ -134,7 +132,7 @@ impl<'a> Decoder<'a> {
 
     /// Attempts to decode the next instruction from the given code chunk.
     ///
-    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`](DecodeResult) it
+    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`] it
     /// will also return the offset from which decoding was attempted.
     ///
     /// # Examples
@@ -168,7 +166,7 @@ impl<'a> Decoder<'a> {
 
     /// Attempts to decode the next instruction from the given code chunk.
     ///
-    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`](DecodeResult) it
+    /// Behaves like [`decode_next`](Decoder::decode_next), but in addition to the [`DecodeResult`] it
     /// will also return the corresponding instruction pointer.
     ///
     /// # Examples

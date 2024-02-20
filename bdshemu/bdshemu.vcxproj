@@ -643,10 +643,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bdshemu.c" />
+    <ClCompile Include="bdshemu_x86.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\inc\bddisasm_version.h" />
     <ClInclude Include="..\inc\bdshemu.h" />
-    <ClInclude Include="..\inc\version.h" />
+    <ClInclude Include="..\inc\bdshemu_x86.h" />
+    <ClInclude Include="include\bdshemu_common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

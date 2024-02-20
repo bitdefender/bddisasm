@@ -1,0 +1,118 @@
+FROM ubuntu:22.04 as build
+
+WORKDIR /bddfuzz
+
+# Install everything we need to build AFL++ and honggfuzz and bdshemu
+# We install both clang-13 and clang-15 because honggfuzz does not support newer versions of clang, but AFL++ wants
+# the latest version so it is what it is
+RUN apt-get update && apt-get install -y \
+    cmake make git \
+    binutils-dev \
+    libunwind-dev \
+    libblocksruntime-dev \
+    clang-13 \
+    clang-15 \
+    llvm-15 llvm-15-dev llvm-15-linker-tools llvm-15-runtime llvm-15-tools lld-15
+
+# Cleanup
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /bddfuzz/fuzzers
+
+# Build and install AFL++
+RUN cd /bddfuzz/fuzzers && git clone https://github.com/AFLplusplus/AFLplusplus.git
+RUN cd /bddfuzz/fuzzers/AFLplusplus && \
+    CC=clang-15 CXX=clang++-15 make source-only install LLVM_CONFIG=llvm-config-15 NO_NYX=1
+
+# Build and install honggfuzz
+RUN cd /bddfuzz/fuzzers && git clone --depth 1 --branch 2.5 https://github.com/google/honggfuzz.git
+RUN cd /bddfuzz/fuzzers/honggfuzz && make install
+
+# Remove the fuzzer source files as we no longer need them
+RUN cd /bddfuzz/fuzzers/AFLplusplus && git clean -dxf && git clean -dXf && rm -rf /bddfuzz/fuzzers/AFLplusplus
+RUN rm -rf /bddfuzz/fuzzers/honggfuzz
+RUN rm -rf /bddfuzz/fuzzers/
+
+ENV SRC /bddfuzz/src/
+
+# Copy the relevant bddisasm sources
+RUN mkdir "${SRC}"
+
+COPY CMakeLists.txt "${SRC}"/CMakeLists.txt
+COPY bddisasm.pc.in "${SRC}"/bddisasm.pc.in
+COPY bddisasmConfig.cmake "${SRC}"/bddisasmConfig.cmake
+COPY bddisasm "${SRC}"/bddisasm
+COPY bdshemu "${SRC}"/bdshemu
+COPY bdshemu_fuzz "${SRC}"/bdshemu_fuzz
+COPY inc "${SRC}"/inc
+
+# Now build all the variants
+RUN mkdir build
+
+# Build for AFL++ with afl-clang-lto
+RUN mkdir /bddfuzz/build/afllto && cd /bddfuzz/build/afllto && \
+    cmake "${SRC}" -DCMAKE_C_COMPILER=afl-clang-lto -DCMAKE_CXX_COMPILER=afl-clang-lto++ \
+        -DCMAKE_BUILD_TYPE=Releaase \
+        -DBDD_INCLUDE_TOOL=OFF -DBDD_INCLUDE_ISAGENERATOR_X86=OFF \
+        -DBDD_INCLUDE_FUZZERS=ON && \
+    make shfuzz
+
+# Build for honggfuzz
+RUN mkdir /bddfuzz/build/hfuzz && cd /bddfuzz/build/hfuzz && \
+    cmake "${SRC}" -DCMAKE_C_COMPILER=hfuzz-clang -DCMAKE_CXX_COMPILER=hfuzz-clang++ \
+        -DCMAKE_BUILD_TYPE=Releaase \
+        -DBDD_INCLUDE_TOOL=OFF -DBDD_INCLUDE_ISAGENERATOR_X86=OFF \
+        -DBDD_INCLUDE_FUZZERS=ON && \
+    make shfuzz
+
+# Build for libfuzzer with ASAN and UBSAN
+RUN mkdir /bddfuzz/build/san && cd /bddfuzz/build/san && \
+    cmake "${SRC}" -DCMAKE_C_COMPILER=clang-15 -DCMAKE_CXX_COMPILER=clang-15++ \
+        -DCMAKE_BUILD_TYPE=Releaase \
+        -DBDD_INCLUDE_TOOL=OFF -DBDD_INCLUDE_ISAGENERATOR_X86=OFF \
+        -DBDD_INCLUDE_FUZZERS=ON -DBDD_FUZZ_WITH_LOGS=ON \
+        -DBDD_ASAN=ON -DBDD_UBSAN=ON && \
+    make shfuzz
+
+RUN rm -rf "${SRC}"
+
+# Save the fuzzers
+RUN mkdir /bddfuzz/shf && cd /bddfuzz/shf && \
+    for d in /bddfuzz/build/*; do \
+        mkdir ./`basename "${d}"` && \
+        cp -v "${d}"/bdshemu_fuzz/shfuzz* ./`basename "${d}"`; \
+    done
+
+# Remove the build directory
+RUN rm -rf build
+
+FROM ubuntu:22.04 as run
+
+WORKDIR /bddfuzz
+
+# Copy the fuzzers from the build stage
+COPY --from=build /bddfuzz/shf /bddfuzz/shf
+
+# Copy AFL++ and honggfuzz binaries
+COPY --from=build /usr/local/bin/afl-* /usr/local/bin/
+COPY --from=build /usr/local/bin/hfuzz-* /usr/local/bin/
+COPY --from=build /usr/local/bin/honggfuzz /usr/local/bin/
+
+RUN mkdir /bddfuzz/inputs
+COPY bdshemu_fuzz/in-32 /bddfuzz/inputs/in-32
+COPY bdshemu_fuzz/in-64 /bddfuzz/inputs/in-64
+
+# Runtime dependencies for honggfuzz
+RUN apt-get update && apt-get install -y binutils-dev libunwind-dev libblocksruntime-dev
+
+# Cleanup
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# So we can share files between the host and the container (we don't want to loose the results when we stop the
+# container).
+ENV SHARE_DIR share
+
+COPY bdshemu_fuzz/fuzzing_image_entrypoint.sh /bddfuzz/fuzzing_image_entrypoint.sh
+RUN chmod +x /bddfuzz/fuzzing_image_entrypoint.sh
+
+ENTRYPOINT ["/bddfuzz/fuzzing_image_entrypoint.sh"]

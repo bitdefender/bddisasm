@@ -50,9 +50,7 @@ else ()
                 -Wno-unused-function
                 -Wno-multichar
                 -Wno-incompatible-pointer-types
-                -Wno-discarded-qualifiers
                 -Wnull-dereference
-                -Wduplicated-cond
                 -Werror=implicit-function-declaration
                 -pipe
                 -fwrapv
@@ -65,4 +63,10 @@ else ()
                 -gdwarf-4
                 -grecord-gcc-switches
                 -march=westmere)
+    if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
+        target_compile_options(
+            disasmtool
+            PRIVATE -Wno-discarded-qualifiers
+                    -Wduplicated-cond)
+    endif ()
 endif ()

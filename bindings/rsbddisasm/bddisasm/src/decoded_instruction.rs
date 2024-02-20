@@ -12,7 +12,7 @@ use crate::instruction_category::Category;
 use crate::isa_set::IsaSet;
 use crate::mnemonic::Mnemonic;
 use crate::operand;
-use crate::operand::{OpAccess, OpAddr, Operands, OperandsLookup};
+use crate::operand::{OpAccess, Operands, OperandsLookup};
 use crate::rflags::flags_raw;
 use crate::tuple::Tuple;
 
@@ -168,45 +168,6 @@ impl VectorSize {
     }
 }
 
-/// Exception classes.
-///
-/// Different instruction sets or encodings are covered by different exception classes.
-#[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
-pub enum ExceptionClass {
-    None,
-
-    /// SSE/AVX exception class (for legacy encoded SSE instructions and VEX instructions).
-    SseAvx,
-
-    /// EVEX exception class (for EVEX encoded AVX* instructions).
-    Evex,
-
-    /// Opmask instructions exception class.
-    Opmask,
-
-    /// AMX exception class type (for VEX encoded AMX instructions).
-    Amx,
-}
-
-#[doc(hidden)]
-impl ExceptionClass {
-    pub(crate) fn from_raw(value: u8) -> Result<Self, DecodeError> {
-        if value == ffi::_ND_EX_CLASS::ND_EXC_None as u8 {
-            Ok(ExceptionClass::None)
-        } else if value == ffi::_ND_EX_CLASS::ND_EXC_SSE_AVX as u8 {
-            Ok(ExceptionClass::SseAvx)
-        } else if value == ffi::_ND_EX_CLASS::ND_EXC_EVEX as u8 {
-            Ok(ExceptionClass::Evex)
-        } else if value == ffi::_ND_EX_CLASS::ND_EXC_OPMASK as u8 {
-            Ok(ExceptionClass::Opmask)
-        } else if value == ffi::_ND_EX_CLASS::ND_EXC_AMX as u8 {
-            Ok(ExceptionClass::Amx)
-        } else {
-            Err(DecodeError::InternalError(value.into()))
-        }
-    }
-}
-
 /// Describes the way an instruction accesses the flags register.
 ///
 /// Individual bits can be checked using the [rflags](crate::rflags) module.
@@ -262,6 +223,7 @@ impl EvexRounding {
 }
 
 /// Indicates which prefixes are valid for an instruction.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct ValidPrefixes {
     /// The instruction supports REP prefix.
@@ -306,6 +268,7 @@ impl ValidPrefixes {
 }
 
 /// Indicates which decorators are valid for an instruction.
+#[allow(clippy::struct_excessive_bools)]
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
 pub struct ValidDecorators {
     /// The instruction supports embedded rounding mode.
@@ -348,7 +311,7 @@ impl DecodedInstruction {
     ///
     /// # Arguments
     ///
-    /// * `code` - An [u8](u8) slice that holds the code to be decoded. Note that decoding is attempted only from offset
+    /// * `code` - An [`u8`] slice that holds the code to be decoded. Note that decoding is attempted only from offset
     /// 0 inside this code chunk.
     /// * `mode` - The mode in which to decode the instruction.
     /// * `ip` - The instruction pointer value to use when formatting the decoded instruction. Does not affect the
@@ -403,8 +366,7 @@ impl DecodedInstruction {
         Ok(DecodedInstruction {
             inner: instrux,
             ip,
-            instruction: Mnemonic::try_from(unsafe { instrux.__bindgen_anon_2.Instruction })
-                .unwrap(),
+            instruction: Mnemonic::try_from(instrux.Instruction).unwrap(),
             length: instrux.Length as usize,
         })
     }
@@ -428,6 +390,7 @@ impl DecodedInstruction {
 
     /// Get the mnemonic of the instruction.
     #[inline]
+    #[must_use]
     pub fn mnemonic(&self) -> Mnemonic {
         self.instruction
     }
@@ -436,6 +399,7 @@ impl DecodedInstruction {
     ///
     /// It is guaranteed that no instruction will exceed a length of 15 bytes.
     #[inline]
+    #[must_use]
     pub fn length(&self) -> usize {
         self.length
     }
@@ -476,22 +440,24 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the operand returned by the C library is invalid. This can not happen under normal
     /// circumstances.
+    #[must_use]
     pub fn operands(&self) -> Operands {
         let mut operands = Operands::default();
 
-        for op_index in 0..self.inner.OperandsCount {
+        let op_count = self.inner.OperandsCount();
+        for op_index in 0..op_count {
             operands.operands[op_index as usize] =
                 operand::Operand::from_raw(self.inner.Operands[op_index as usize]).unwrap();
         }
 
-        operands.actual_count = self.inner.OperandsCount as usize;
+        operands.actual_count = op_count as usize;
 
         operands
     }
 
     /// Returns the CPUID support flag.
     ///
-    /// If [None](None), the instruction is supported on any CPU, and no CPUID flag exists.
+    /// If [`None`], the instruction is supported on any CPU, and no CPUID flag exists.
     ///
     /// # Examples
     ///
@@ -517,6 +483,7 @@ impl DecodedInstruction {
     /// # Ok(())
     /// # }
     /// ```
+    #[must_use]
     pub fn cpuid(&self) -> Option<Cpuid> {
         let cpuid = unsafe { self.inner.CpuidFlag.__bindgen_anon_1 };
         let leaf = cpuid.Leaf;
@@ -548,6 +515,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the encoding mode is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn encoding_mode(&self) -> EncodingMode {
         EncodingMode::from_raw(u32::from(self.inner.EncMode())).unwrap()
     }
@@ -558,6 +526,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the VEX mode is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn vex_mode(&self) -> Option<VexMode> {
         if self.has_vex() {
             Some(VexMode::from_raw(u32::from(self.inner.VexMode())).unwrap())
@@ -572,13 +541,14 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the addressing mode is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn addr_mode(&self) -> AddressingMode {
         AddressingMode::from_raw(u32::from(self.inner.AddrMode())).unwrap()
     }
 
     /// Get the operand mode/size.
     ///
-    /// This is computed based on the passed-in [DecodeMode](DecodeMode) and instruction prefixes.
+    /// This is computed based on the passed-in [`DecodeMode`] and instruction prefixes.
     ///
     /// # Remarks
     ///
@@ -586,7 +556,7 @@ impl DecodedInstruction {
     ///
     /// # Examples
     ///
-    /// Using [DecodeMode::Bits64](DecodeMode::Bits64), `0x50` encodes a `PUSH rax` instruction with an operand size of
+    /// Using [`DecodeMode::Bits64`], `0x50` encodes a `PUSH rax` instruction with an operand size of
     /// 32 because it has no prefix that promotes it, but the effective size is 64 because the instruction always
     /// operates on 64 bits.
     ///
@@ -615,6 +585,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the operand size is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn op_mode(&self) -> OperandSize {
         OperandSize::from_raw(u32::from(self.inner.OpMode())).unwrap()
     }
@@ -627,13 +598,14 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the operand size is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn effective_op_mode(&self) -> OperandSize {
         OperandSize::from_raw(u32::from(self.inner.EfOpMode())).unwrap()
     }
 
     /// Get the Vector mode/size, if any.
     ///
-    /// This is computed based on the passed-in [DecodeMode](DecodeMode) and instruction prefixes.
+    /// This is computed based on the passed-in [`DecodeMode`] and instruction prefixes.
     ///
     /// # Remarks
     ///
@@ -643,6 +615,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the vector mode is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn vec_mode(&self) -> Option<VectorSize> {
         if self.has_vector() {
             Some(VectorSize::from_raw(u32::from(self.inner.VecMode())).unwrap())
@@ -659,6 +632,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the vector mode is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn effective_vec_mode(&self) -> Option<VectorSize> {
         if self.has_vector() {
             Some(VectorSize::from_raw(u32::from(self.inner.EfVecMode())).unwrap())
@@ -669,234 +643,245 @@ impl DecodedInstruction {
 
     /// `true` if REX is present.
     #[inline]
+    #[must_use]
     pub fn has_rex(&self) -> bool {
         self.inner.HasRex() != 0
     }
 
     /// `true` if VEX is present.
     #[inline]
+    #[must_use]
     pub fn has_vex(&self) -> bool {
         self.inner.HasVex() != 0
     }
 
     /// `true` if XOP is present.
     #[inline]
+    #[must_use]
     pub fn has_xop(&self) -> bool {
         self.inner.HasXop() != 0
     }
 
     /// `true` if EVEX is present.
     #[inline]
+    #[must_use]
     pub fn has_evex(&self) -> bool {
         self.inner.HasEvex() != 0
     }
 
-    /// `true` if MVEX is present.
-    #[inline]
-    pub fn has_mvex(&self) -> bool {
-        self.inner.HasMvex() != 0
-    }
-
     /// `true` if 0x66 is present.
     #[inline]
+    #[must_use]
     pub fn has_op_size(&self) -> bool {
         self.inner.HasOpSize() != 0
     }
 
     /// `true` if 0x67 is present.
     #[inline]
+    #[must_use]
     pub fn has_addr_size(&self) -> bool {
         self.inner.HasAddrSize() != 0
     }
 
     /// `true` if 0xF0 is present.
     #[inline]
+    #[must_use]
     pub fn has_lock(&self) -> bool {
         self.inner.HasLock() != 0
     }
 
     /// `true` if 0xF2 is present.
     #[inline]
+    #[must_use]
     pub fn has_repnz_xacquire_bnd(&self) -> bool {
         self.inner.HasRepnzXacquireBnd() != 0
     }
 
     /// `true` if 0xF3 is present.
     #[inline]
+    #[must_use]
     pub fn has_rep_repz_xrelease(&self) -> bool {
         self.inner.HasRepRepzXrelease() != 0
     }
 
     /// `true` if segment override is present.
     #[inline]
+    #[must_use]
     pub fn has_seg(&self) -> bool {
         self.inner.HasSeg() != 0
     }
 
     /// `true` if the instruction is repeated up to `RCX` times.
     #[inline]
+    #[must_use]
     pub fn is_repeated(&self) -> bool {
         self.inner.IsRepeated() != 0
     }
 
     /// `true` if the instruction is XACQUIRE enabled.
     #[inline]
+    #[must_use]
     pub fn is_xacquire_enabled(&self) -> bool {
         self.inner.IsXacquireEnabled() != 0
     }
 
     /// `true` if the instruction is XRELEASE enabled.
     #[inline]
+    #[must_use]
     pub fn is_xrelease_enabled(&self) -> bool {
         self.inner.IsXreleaseEnabled() != 0
     }
 
     /// `true` if the instruction uses RIP relative addressing.
     #[inline]
+    #[must_use]
     pub fn is_rip_relative(&self) -> bool {
         self.inner.IsRipRelative() != 0
     }
 
     /// `true` if this is an indirect CALL/JMP that is CET tracked.
     #[inline]
+    #[must_use]
     pub fn is_cet_tracked(&self) -> bool {
         self.inner.IsCetTracked() != 0
     }
 
     /// `true` if we have valid MODRM.
     #[inline]
+    #[must_use]
     pub fn has_mod_rm(&self) -> bool {
         self.inner.HasModRm() != 0
     }
 
     /// `true` if we have valid SIB.
     #[inline]
+    #[must_use]
     pub fn has_sib(&self) -> bool {
         self.inner.HasSib() != 0
     }
 
-    /// `true` if we have valid DREX.
-    #[inline]
-    pub fn has_drex(&self) -> bool {
-        self.inner.HasDrex() != 0
-    }
-
     /// `true` if the instruction has displacement.
     #[inline]
+    #[must_use]
     pub fn has_disp(&self) -> bool {
         self.inner.HasDisp() != 0
     }
 
     /// `true` if the instruction contains a direct address (ie, `CALL far 0x9A`).
     #[inline]
+    #[must_use]
     pub fn has_addr(&self) -> bool {
         self.inner.HasAddr() != 0
     }
 
     /// `true` if the instruction contains a moffset (ie, `MOV al, [mem], 0xA0`).
     #[inline]
+    #[must_use]
     pub fn has_moffset(&self) -> bool {
         self.inner.HasMoffset() != 0
     }
 
     /// `true` if immediate is present.
     #[inline]
+    #[must_use]
     pub fn has_imm1(&self) -> bool {
         self.inner.HasImm1() != 0
     }
 
     /// `true` if second immediate is present.
     #[inline]
+    #[must_use]
     pub fn has_imm2(&self) -> bool {
         self.inner.HasImm2() != 0
     }
 
-    /// `true` if third immediate is present.
-    #[inline]
-    pub fn has_imm3(&self) -> bool {
-        self.inner.HasImm3() != 0
-    }
-
     /// `true` if the instruction contains a relative offset (ie, `Jcc 0x7x`).
     #[inline]
+    #[must_use]
     pub fn has_rel_offs(&self) -> bool {
         self.inner.HasRelOffs() != 0
     }
 
     /// `true` if SSE immediate that encodes additional registers is present.
     #[inline]
+    #[must_use]
     pub fn has_sse_imm(&self) -> bool {
         self.inner.HasSseImm() != 0
     }
 
     /// `true` if the instruction uses compressed displacement.
     #[inline]
+    #[must_use]
     pub fn has_comp_disp(&self) -> bool {
         self.inner.HasCompDisp() != 0
     }
 
     /// `true` if the instruction uses broadcast addressing.
     #[inline]
+    #[must_use]
     pub fn has_broadcast(&self) -> bool {
         self.inner.HasBroadcast() != 0
     }
 
     /// `true` if the instruction has mask.
     #[inline]
+    #[must_use]
     pub fn has_mask(&self) -> bool {
         self.inner.HasMask() != 0
     }
 
     /// `true` if the instruction uses zeroing.
     #[inline]
+    #[must_use]
     pub fn has_zero(&self) -> bool {
         self.inner.HasZero() != 0
     }
 
     /// `true` if the instruction has embedded rounding.
     #[inline]
+    #[must_use]
     pub fn has_er(&self) -> bool {
         self.inner.HasEr() != 0
     }
 
     /// `true` if the instruction has SAE.
     #[inline]
+    #[must_use]
     pub fn has_sae(&self) -> bool {
         self.inner.HasSae() != 0
     }
 
     /// `true` if the instruction ignores embedded rounding.
     #[inline]
+    #[must_use]
     pub fn has_ign_er(&self) -> bool {
         self.inner.HasIgnEr() != 0
     }
 
-    /// Displacement sign. `false` if positive, `true` if negative.
-    #[inline]
-    pub fn sign_disp(&self) -> bool {
-        self.inner.SignDisp() != 0
-    }
-
     /// `true` if changing prefix.
     #[inline]
+    #[must_use]
     pub fn has_mandatory_66(&self) -> bool {
         self.inner.HasMandatory66() != 0
     }
 
     /// 0x66 is mandatory prefix. Does not behave as REP prefix.
     #[inline]
+    #[must_use]
     pub fn has_mandatory_f2(&self) -> bool {
         self.inner.HasMandatoryF2() != 0
     }
 
     /// 0x66 is mandatory prefix. Does not behave as REP prefix.
     #[inline]
+    #[must_use]
     pub fn has_mandatory_f3(&self) -> bool {
         self.inner.HasMandatoryF3() != 0
     }
 
     /// The length of the instruction word. 2, 4 or 8.
     #[inline]
+    #[must_use]
     pub fn word_length(&self) -> usize {
         self.inner.WordLength() as usize
     }
@@ -905,72 +890,77 @@ impl DecodedInstruction {
     ///
     /// This will also be the offset to the first opcode. The primary opcode will always be the last one.
     #[inline]
+    #[must_use]
     pub fn pref_length(&self) -> usize {
         self.inner.PrefLength() as usize
     }
 
     /// Number of opcode bytes. Max 3.
     #[inline]
+    #[must_use]
     pub fn op_length(&self) -> usize {
         self.inner.OpLength() as usize
     }
 
     /// Displacement length, in bytes. Maximum 4.
     #[inline]
+    #[must_use]
     pub fn disp_length(&self) -> usize {
         self.inner.DispLength() as usize
     }
 
     /// Absolute address length, in bytes. Maximum 8 bytes.
     #[inline]
+    #[must_use]
     pub fn addr_length(&self) -> usize {
         self.inner.AddrLength() as usize
     }
 
     /// Memory offset length, in bytes. Maximum 8 bytes.
     #[inline]
+    #[must_use]
     pub fn moffset_length(&self) -> usize {
         self.inner.MoffsetLength() as usize
     }
 
     /// First immediate length, in bytes. Maximum 8 bytes.
     #[inline]
+    #[must_use]
     pub fn imm1_length(&self) -> usize {
         self.inner.Imm1Length() as usize
     }
 
     /// Second immediate length, in bytes. Maximum 8 bytes.
     #[inline]
+    #[must_use]
     pub fn imm2_length(&self) -> usize {
         self.inner.Imm2Length() as usize
     }
 
-    /// Third immediate length, in bytes. Maximum 8 bytes.
-    #[inline]
-    pub fn imm3_length(&self) -> usize {
-        self.inner.Imm3Length() as usize
-    }
-
     /// Relative offset length, in bytes. Maximum 4 bytes.
     #[inline]
+    #[must_use]
     pub fn rel_offs_length(&self) -> usize {
         self.inner.RelOffsLength() as usize
     }
 
     /// The offset of the first opcode, inside the instruction.
     #[inline]
+    #[must_use]
     pub fn op_offset(&self) -> usize {
         self.inner.OpOffset() as usize
     }
 
     /// The offset of the nominal opcode, inside the instruction.
     #[inline]
+    #[must_use]
     pub fn main_op_offset(&self) -> usize {
         self.inner.MainOpOffset() as usize
     }
 
-    #[inline]
     /// The offset of the displacement, inside the instruction.
+    #[inline]
+    #[must_use]
     pub fn disp_offset(&self) -> Option<usize> {
         let value = self.inner.DispOffset() as usize;
         if value == 0 {
@@ -980,8 +970,9 @@ impl DecodedInstruction {
         }
     }
 
-    #[inline]
     /// The offset of the hard-coded address.
+    #[inline]
+    #[must_use]
     pub fn addr_offset(&self) -> Option<usize> {
         let value = self.inner.AddrOffset() as usize;
         if value == 0 {
@@ -993,6 +984,7 @@ impl DecodedInstruction {
 
     /// The offset of the absolute address, inside the instruction.
     #[inline]
+    #[must_use]
     pub fn moffset_offset(&self) -> Option<usize> {
         let value = self.inner.MoffsetOffset() as usize;
         if value == 0 {
@@ -1004,6 +996,7 @@ impl DecodedInstruction {
 
     /// The offset of the immediate, inside the instruction.
     #[inline]
+    #[must_use]
     pub fn imm1_offset(&self) -> Option<usize> {
         let value = self.inner.Imm1Offset() as usize;
         if value == 0 {
@@ -1015,6 +1008,7 @@ impl DecodedInstruction {
 
     /// The offset of the second immediate, if any, inside the instruction.
     #[inline]
+    #[must_use]
     pub fn imm2_offset(&self) -> Option<usize> {
         let value = self.inner.Imm2Offset() as usize;
         if value == 0 {
@@ -1024,19 +1018,9 @@ impl DecodedInstruction {
         }
     }
 
-    /// The offset of the third immediate, if any, inside the instruction.
-    #[inline]
-    pub fn imm3_offset(&self) -> Option<usize> {
-        let value = self.inner.Imm3Offset() as usize;
-        if value == 0 {
-            None
-        } else {
-            Some(value)
-        }
-    }
-
     /// The offset of the relative offset used in instruction.
     #[inline]
+    #[must_use]
     pub fn rel_offs_offset(&self) -> Option<usize> {
         let value = self.inner.RelOffsOffset() as usize;
         if value == 0 {
@@ -1048,6 +1032,7 @@ impl DecodedInstruction {
 
     /// The offset of the SSE immediate, if any, inside the instruction.
     #[inline]
+    #[must_use]
     pub fn sse_imm_offset(&self) -> Option<usize> {
         let value = self.inner.SseImmOffset() as usize;
         if value == 0 {
@@ -1059,6 +1044,7 @@ impl DecodedInstruction {
 
     /// The offset of the mod rm byte inside the instruction, if any.
     #[inline]
+    #[must_use]
     pub fn mod_rm_offset(&self) -> Option<usize> {
         let value = self.inner.ModRmOffset() as usize;
         if value == 0 {
@@ -1070,12 +1056,14 @@ impl DecodedInstruction {
 
     /// Number of words accessed on/from the stack.
     #[inline]
+    #[must_use]
     pub fn stack_words(&self) -> usize {
-        self.inner.StackWords as usize
+        self.inner.StackWords() as usize
     }
 
     /// The last rep/repz/repnz prefix. if any.
     #[inline]
+    #[must_use]
     pub fn rep(&self) -> Option<u8> {
         let value = self.inner.Rep;
         if value == 0 {
@@ -1087,6 +1075,7 @@ impl DecodedInstruction {
 
     /// The last segment override prefix. if none. `FS`/`GS` if 64 bit.
     #[inline]
+    #[must_use]
     pub fn seg(&self) -> Option<u8> {
         let value = self.inner.Seg;
         if value == 0 {
@@ -1096,24 +1085,9 @@ impl DecodedInstruction {
         }
     }
 
-    /// The last segment override indicating a branch hint.
-    #[inline]
-    pub fn bhint(&self) -> u8 {
-        self.inner.Bhint
-    }
-
-    /// Get the REX prefix.
-    #[inline]
-    pub fn rex(&self) -> Option<u8> {
-        if self.has_rex() {
-            Some(unsafe { self.inner.Rex.Rex })
-        } else {
-            None
-        }
-    }
-
     /// Get the `ModRM` byte.
     #[inline]
+    #[must_use]
     pub fn mod_rm(&self) -> Option<u8> {
         if self.has_mod_rm() {
             Some(unsafe { self.inner.ModRm.ModRm })
@@ -1124,6 +1098,7 @@ impl DecodedInstruction {
 
     /// Get the `SIB` byte.
     #[inline]
+    #[must_use]
     pub fn sib(&self) -> Option<u8> {
         if self.has_sib() {
             Some(unsafe { self.inner.Sib.Sib })
@@ -1134,6 +1109,7 @@ impl DecodedInstruction {
 
     /// Get the 2-bytes `VEX` prefix.
     #[inline]
+    #[must_use]
     pub fn vex2(&self) -> Option<(u8, u8)> {
         if matches!(self.vex_mode(), Some(VexMode::Vex2b)) {
             let vex2 = self.inner.__bindgen_anon_1;
@@ -1147,6 +1123,7 @@ impl DecodedInstruction {
 
     /// Get the 3-bytes `VEX` prefix.
     #[inline]
+    #[must_use]
     pub fn vex3(&self) -> Option<(u8, u8, u8)> {
         if matches!(self.vex_mode(), Some(VexMode::Vex3b)) {
             let vex3 = self.inner.__bindgen_anon_1;
@@ -1160,6 +1137,7 @@ impl DecodedInstruction {
 
     /// Get the `XOP` bytes.
     #[inline]
+    #[must_use]
     pub fn xop(&self) -> Option<(u8, u8, u8)> {
         if self.has_xop() {
             let xop = self.inner.__bindgen_anon_1;
@@ -1173,6 +1151,7 @@ impl DecodedInstruction {
 
     /// Get the `EVEX` bytes.
     #[inline]
+    #[must_use]
     pub fn evex(&self) -> Option<(u8, u8, u8, u8)> {
         if self.has_evex() {
             let evex = self.inner.__bindgen_anon_1;
@@ -1184,24 +1163,12 @@ impl DecodedInstruction {
         }
     }
 
-    /// Get the `segment:offset` address accessed by the instruction, if any.
-    #[inline]
-    pub fn address(&self) -> Option<OpAddr> {
-        if self.has_addr() {
-            let raw = self.inner.Address;
-            let raw = unsafe { raw.__bindgen_anon_1 };
-
-            Some(OpAddr::new(raw.Cs, u64::from(raw.Ip)))
-        } else {
-            None
-        }
-    }
-
     /// Get the absolute offset, if any.
     #[inline]
+    #[must_use]
     pub fn moffset(&self) -> Option<u64> {
         if self.has_moffset() {
-            Some(self.inner.Moffset)
+            Some(unsafe { self.inner.__bindgen_anon_2.Moffset })
         } else {
             None
         }
@@ -1209,9 +1176,10 @@ impl DecodedInstruction {
 
     /// Get the displacement. Max 4 bytes. Used in `ModRM` instructions.
     #[inline]
+    #[must_use]
     pub fn disp(&self) -> Option<u32> {
         if self.has_disp() {
-            Some(self.inner.Displacement)
+            Some(unsafe { self.inner.__bindgen_anon_2.Displacement })
         } else {
             None
         }
@@ -1219,9 +1187,10 @@ impl DecodedInstruction {
 
     /// Get the relative offset, used for branches. Max 4 bytes.
     #[inline]
+    #[must_use]
     pub fn rel_offset(&self) -> Option<u32> {
         if self.has_rel_offs() {
-            Some(self.inner.RelativeOffset)
+            Some(unsafe { self.inner.__bindgen_anon_2.RelativeOffset })
         } else {
             None
         }
@@ -1229,6 +1198,7 @@ impl DecodedInstruction {
 
     /// Get the first immediate.
     #[inline]
+    #[must_use]
     pub fn immediate1(&self) -> Option<u64> {
         if self.has_imm1() {
             Some(self.inner.Immediate1)
@@ -1237,21 +1207,12 @@ impl DecodedInstruction {
         }
     }
 
-    /// Get the second immediate. Used mainly for [`Mnemonic::ENTER`](Mnemonic::ENTER).
+    /// Get the second immediate. Used mainly for [`Mnemonic::ENTER`].
     #[inline]
+    #[must_use]
     pub fn immediate2(&self) -> Option<u8> {
         if self.has_imm2() {
-            Some(self.inner.Immediate2)
-        } else {
-            None
-        }
-    }
-
-    /// Get the third additional immediate.
-    #[inline]
-    pub fn immediate3(&self) -> Option<u8> {
-        if self.has_imm3() {
-            Some(self.inner.Immediate3)
+            Some(unsafe { self.inner.__bindgen_anon_3.Immediate2 })
         } else {
             None
         }
@@ -1259,19 +1220,10 @@ impl DecodedInstruction {
 
     /// Get the SSE immediate. It is used to select a register.
     #[inline]
+    #[must_use]
     pub fn sse_immediate(&self) -> Option<u8> {
         if self.has_sse_imm() {
-            Some(self.inner.SseImmediate)
-        } else {
-            None
-        }
-    }
-
-    /// Get the `SSE` condition byte.
-    #[inline]
-    pub fn sse_cond(&self) -> Option<u8> {
-        if (self.inner.Attributes & ffi::ND_FLAG_SSE_CONDB) != 0 {
-            Some(self.inner.SseCondition)
+            Some(unsafe { self.inner.__bindgen_anon_3.SseImmediate })
         } else {
             None
         }
@@ -1279,9 +1231,10 @@ impl DecodedInstruction {
 
     /// Get the condition byte.
     #[inline]
+    #[must_use]
     pub fn cond(&self) -> Option<u8> {
-        if (self.inner.Attributes & ffi::ND_FLAG_COND) != 0 {
-            Some(self.inner.Condition)
+        if (self.inner.Attributes & ffi::ND_FLAG_COND as u64) != 0 {
+            Some(self.inner.__bindgen_anon_4.Condition())
         } else {
             None
         }
@@ -1291,26 +1244,30 @@ impl DecodedInstruction {
     ///
     /// The opcode is the last byte.
     #[inline]
+    #[must_use]
     pub fn is_3d_now(&self) -> bool {
-        (self.inner.Attributes & ffi::ND_FLAG_3DNOW) != 0
+        (self.inner.Attributes & ffi::ND_FLAG_3DNOW as u64) != 0
     }
 
     /// Get the number of operands.
     #[inline]
+    #[must_use]
     pub fn operands_count(&self) -> usize {
-        self.inner.OperandsCount as usize
+        self.inner.OperandsCount() as usize
     }
 
     /// Number of explicit operands.
     ///
     /// Use this if you want to ignore implicit operands such as stack, flags, etc.
     #[inline]
+    #[must_use]
     pub fn exp_operands_count(&self) -> usize {
-        self.inner.ExpOperandsCount as usize
+        self.inner.ExpOperandsCount() as usize
     }
 
     /// Get the `CS` access mode.
     #[inline]
+    #[must_use]
     pub fn cs_access(&self) -> OpAccess {
         OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
             Access: self.inner.CsAccess,
@@ -1319,6 +1276,7 @@ impl DecodedInstruction {
 
     /// Get the `RIP` access mode.
     #[inline]
+    #[must_use]
     pub fn rip_access(&self) -> OpAccess {
         OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
             Access: self.inner.RipAccess,
@@ -1327,6 +1285,7 @@ impl DecodedInstruction {
 
     /// Get the stack access mode.
     #[inline]
+    #[must_use]
     pub fn stack_access(&self) -> OpAccess {
         OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
             Access: self.inner.StackAccess,
@@ -1337,6 +1296,7 @@ impl DecodedInstruction {
     ///
     /// This includes the stack or shadow stack access.
     #[inline]
+    #[must_use]
     pub fn memory_access(&self) -> OpAccess {
         OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
             Access: self.inner.MemoryAccess,
@@ -1345,34 +1305,39 @@ impl DecodedInstruction {
 
     /// `true` if the instruction is a branch.
     #[inline]
+    #[must_use]
     pub fn is_branch(&self) -> bool {
         self.inner.BranchInfo.IsBranch() != 0
     }
 
     /// `true` if the instruction is a conditional branch.
     #[inline]
+    #[must_use]
     pub fn is_conditional_branch(&self) -> bool {
         self.inner.BranchInfo.IsConditional() != 0
     }
 
     /// `true` if the instruction is a indirect branch.
     #[inline]
+    #[must_use]
     pub fn is_indirect_branch(&self) -> bool {
         self.inner.BranchInfo.IsIndirect() != 0
     }
 
     /// `true` if the instruction is a far branch.
     #[inline]
+    #[must_use]
     pub fn is_far_branch(&self) -> bool {
         self.inner.BranchInfo.IsFar() != 0
     }
 
     /// Get the rflags access.
+    #[must_use]
     pub fn flags_access(&self) -> FlagsAccess {
         let facc = self.inner.FlagsAccess;
 
         let mode = OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
-            Access: facc.RegAccess,
+            Access: self.inner.RflAccess,
         });
 
         FlagsAccess {
@@ -1391,18 +1356,9 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the access mode is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn fpu_flags_access(&self) -> FpuFlags {
         FpuFlags::from_raw(self.inner.FpuFlagsAccess).unwrap()
-    }
-
-    /// The exception class.
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the exception class is unrecognized. This can not happen under normal circumstances.
-    #[inline]
-    pub fn exception_class(&self) -> ExceptionClass {
-        ExceptionClass::from_raw(self.inner.ExceptionClass).unwrap()
     }
 
     /// `EVEX` tuple type.
@@ -1411,6 +1367,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the EVEX tuple type is unrecognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn evex_tuple(&self) -> Option<Tuple> {
         if self.has_evex() {
             Some(Tuple::from_raw(u32::from(self.inner.TupleType)).unwrap())
@@ -1426,9 +1383,10 @@ impl DecodedInstruction {
     /// This function will panic if the EVEX rounding mode is unrecognized. This can not happen under normal
     /// circumstances.
     #[inline]
+    #[must_use]
     pub fn evex_rounding(&self) -> Option<EvexRounding> {
         if self.has_er() {
-            Some(EvexRounding::from_raw(self.inner.RoundingMode).unwrap())
+            Some(EvexRounding::from_raw(self.inner.RoundingMode()).unwrap())
         } else {
             None
         }
@@ -1440,6 +1398,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the cateogory not recognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn category(&self) -> Category {
         Category::try_from(self.inner.Category).unwrap()
     }
@@ -1450,6 +1409,7 @@ impl DecodedInstruction {
     ///
     /// This function will panic if the ISA set not recognized. This can not happen under normal circumstances.
     #[inline]
+    #[must_use]
     pub fn isa_set(&self) -> IsaSet {
         IsaSet::try_from(self.inner.IsaSet).unwrap()
     }
@@ -1460,44 +1420,51 @@ impl DecodedInstruction {
     ///
     /// See [`cpu_modes`](crate::cpu_modes) for examples.
     #[inline]
+    #[must_use]
     pub fn valid_cpu_modes(&self) -> CpuModes {
         CpuModes::from_raw(self.inner.ValidModes)
     }
 
     /// Get the valid prefixes for this instruction.
     #[inline]
+    #[must_use]
     pub fn valid_prefixes(&self) -> ValidPrefixes {
         ValidPrefixes::from_raw(self.inner.ValidPrefixes)
     }
 
     /// Get the decorators accepted by the instruction.
     #[inline]
+    #[must_use]
     pub fn valid_decorators(&self) -> ValidDecorators {
         ValidDecorators::from_raw(self.inner.ValidDecorators)
     }
 
     /// Get the main/nominal opcode.
     #[inline]
+    #[must_use]
     pub fn primary_op_code(&self) -> u8 {
-        self.inner.PrimaryOpCode
+        unsafe { self.inner.__bindgen_anon_4.PrimaryOpCode }
     }
 
     /// `true` if the instruction is a SIMD instruction that operates on vector regs.
     #[inline]
+    #[must_use]
     pub fn has_vector(&self) -> bool {
-        self.inner.Attributes & ffi::ND_FLAG_VECTOR != 0
+        self.inner.Attributes & ffi::ND_FLAG_VECTOR as u64 != 0
     }
 }
 
 impl<'a> DecodedInstruction {
     /// Get the instruction bytes.
     #[inline]
+    #[must_use]
     pub fn bytes(&'a self) -> &'a [u8] {
         &self.inner.InstructionBytes[..self.inner.Length as usize]
     }
 
     /// Get the opcode bytes (escape codes and main op code).
     #[inline]
+    #[must_use]
     pub fn op_code_bytes(&'a self) -> &'a [u8] {
         &self.inner.OpCodeBytes[..self.op_length()]
     }
@@ -1510,12 +1477,14 @@ impl<'a> DecodedInstruction {
     ///
     /// # Examples
     ///
-    /// See [`OperandsLookup`](OperandsLookup) for examples.
+    /// See [`OperandsLookup`] for examples.
     ///
     /// # Panics
     ///
     /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
     /// circumstances.
+    #[inline]
+    #[must_use]
     pub fn operand_lookup(&'a self) -> OperandsLookup {
         OperandsLookup::from_raw(&self.inner)
     }
@@ -1586,7 +1555,6 @@ mod tests {
         // implementations at every build, but these tests should be enough to catch the unlikely situation in which
         // a new constant is added.
         let bindings = include_str!("../../bddisasm-sys/csrc/inc/bddisasm.h");
-        let mut exc_count: u8 = 0;
         let mut shadow_stack_count: u8 = 0;
         let mut tuple_count: u32 = 0;
         let mut evex_rounding: u8 = 0;
@@ -1601,9 +1569,6 @@ mod tests {
                 assert!(OperandSize::from_raw(get_tokens(line, 2)).is_ok());
             } else if line.starts_with("#define ND_VECM_") {
                 assert!(VectorSize::from_raw(get_tokens(line, 2)).is_ok());
-            } else if line.starts_with("    ND_EXC_") {
-                assert!(ExceptionClass::from_raw(exc_count).is_ok());
-                exc_count += 1;
             } else if line.starts_with("#define ND_SIZE_")
                 && !line.starts_with("#define ND_SIZE_TO_MASK(sz)")
             {
@@ -1633,14 +1598,11 @@ mod tests {
                 evex_rounding += 1;
             }
         }
-
-        // There is no `ND_SIZE_*` macro for 0, but the size 0 is valid, so test it here.
-        assert_eq!(operand::OpSize::from_raw(0), Ok(operand::OpSize::Bytes(0)));
     }
 
     #[test]
     fn status() {
-        let status = include_str!("../../bddisasm-sys/csrc/inc/disasmstatus.h");
+        let status = include_str!("../../bddisasm-sys/csrc/inc/bddisasm_status.h");
         for line in status.lines() {
             if line.starts_with("#define ND_STATUS_SUCCESS")
                 || line.starts_with("#define ND_STATUS_HINT_OPERAND_NOT_USED")
@@ -1649,20 +1611,6 @@ mod tests {
             } else if line.starts_with("#define ND_STATUS_") {
                 assert!(status_to_error(get_tokens(line, 2)).is_err());
             }
-        }
-    }
-
-    #[test]
-    fn check_all_exception_classes() {
-        // This is a really contrieved way of making sure that we check all variants of `ffi::_ND_EX_CLASS`. If a new
-        // one is added, this will fail to build. We do this because `ExceptionClass::from_raw` takes an `u8`.
-        // NOTE: When a new variant is added, `ExceptionClass::from_raw` must be updated.
-        match ffi::_ND_EX_CLASS::ND_EXC_None {
-            ffi::_ND_EX_CLASS::ND_EXC_None => {}
-            ffi::_ND_EX_CLASS::ND_EXC_SSE_AVX => {}
-            ffi::_ND_EX_CLASS::ND_EXC_EVEX => {}
-            ffi::_ND_EX_CLASS::ND_EXC_OPMASK => {}
-            ffi::_ND_EX_CLASS::ND_EXC_AMX => {}
         }
     }
 

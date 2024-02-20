@@ -4,6 +4,8 @@
  */
 //! Offers information about how an instructions accesses the FPU status registers.
 
+#![allow(clippy::module_name_repetitions)]
+
 use super::decode_error::DecodeError;
 
 /// The mode in which a FPU status flag is accessed.

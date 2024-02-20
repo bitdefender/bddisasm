@@ -1,0 +1,309 @@
+#
+# Copyright (c) 2020 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# 0x00 - 0x0F
+
+# 0x10 - 0x1F
+VMOVUPS           ; Vx,Wx               ;                 ;  vex m:1 p:0 l:x w:i 0x10 /r          ; s:AVX, t:DATAXFER, w:W|R, e:4
+VMOVUPD           ; Vx,Wx               ;                 ;  vex m:1 p:1 l:x w:i 0x10 /r          ; s:AVX, t:DATAXFER, w:W|R, e:4
+VMOVSS            ; Vdq,Hdq,Uss         ;                 ;  vex m:1 p:2 l:i w:i 0x10 /r:reg      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVSS            ; Vdq,Md              ;                 ;  vex m:1 p:2 l:i w:i 0x10 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVSD            ; Vdq,Hdq,Usd         ;                 ;  vex m:1 p:3 l:i w:i 0x10 /r:reg      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVSD            ; Vdq,Mq              ;                 ;  vex m:1 p:3 l:i w:i 0x10 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVUPS           ; Wx,Vx               ;                 ;  vex m:1 p:0 l:x w:i 0x11 /r          ; s:AVX, t:DATAXFER, w:W|R, e:4
+VMOVUPD           ; Wx,Vx               ;                 ;  vex m:1 p:1 l:x w:i 0x11 /r          ; s:AVX, t:DATAXFER, w:W|R, e:4
+VMOVSS            ; Uss,Hss,Vss         ;                 ;  vex m:1 p:2 l:i w:i 0x11 /r:reg      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVSS            ; Md,Vss              ;                 ;  vex m:1 p:2 l:i w:i 0x11 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVSD            ; Usd,Hsd,Vsd         ;                 ;  vex m:1 p:3 l:i w:i 0x11 /r:reg      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVSD            ; Mq,Vsd              ;                 ;  vex m:1 p:3 l:i w:i 0x11 /r:mem      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVLPS           ; Vdq,Hdq,Mq          ;                 ;  vex m:1 p:0 l:0 w:i 0x12 /r:mem      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVHLPS          ; Vdq,Hdq,Udq         ;                 ;  vex m:1 p:0 l:0 w:i 0x12 /r:reg      ; s:AVX, t:AVX, w:W|R|R, e:7
+VMOVLPD           ; Vdq,Hdq,Mq          ;                 ;  vex m:1 p:1 l:0 w:i 0x12 /r:mem      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVSLDUP         ; Vx,Wx               ;                 ;  vex m:1 p:2 l:x w:i 0x12 /r          ; s:AVX, t:AVX, w:W|R, e:4
+VMOVDDUP          ; Vdq,Wq              ;                 ;  vex m:1 p:3 l:0 w:i 0x12 /r          ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVDDUP          ; Vqq,Wqq             ;                 ;  vex m:1 p:3 l:1 w:i 0x12 /r          ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVLPS           ; Mq,Vdq              ;                 ;  vex m:1 p:0 l:0 w:i 0x13 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVLPD           ; Mq,Vdq              ;                 ;  vex m:1 p:1 l:0 w:i 0x13 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+VUNPCKLPS         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:0 l:x w:i 0x14 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VUNPCKLPD         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x14 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VUNPCKHPS         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:0 l:x w:i 0x15 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VUNPCKHPD         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x15 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VMOVHPS           ; Vdq,Hdq,Mq          ;                 ;  vex m:1 p:0 l:0 w:i 0x16 /r:mem      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVLHPS          ; Vdq,Hdq,Udq         ;                 ;  vex m:1 p:0 l:0 w:i 0x16 /r:reg      ; s:AVX, t:AVX, w:W|R|R, e:7
+VMOVHPD           ; Vdq,Hdq,Mq          ;                 ;  vex m:1 p:1 l:0 w:i 0x16 /r:mem      ; s:AVX, t:DATAXFER, w:W|R|R, e:5
+VMOVSHDUP         ; Vx,Wx               ;                 ;  vex m:1 p:2 l:x w:i 0x16 /r          ; s:AVX, t:AVX, w:W|R, e:4
+VMOVHPS           ; Mq,Vdq              ;                 ;  vex m:1 p:0 l:0 w:i 0x17 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVHPD           ; Mq,Vdq              ;                 ;  vex m:1 p:1 l:0 w:i 0x17 /r:mem      ; s:AVX, t:DATAXFER, w:W|R, e:5
+
+# 0x20 - 0x2F
+VMOVAPS           ; Vx,Wx               ;                 ;  vex m:1 p:0 l:x w:i 0x28 /r          ; s:AVX, t:DATAXFER, w:W|R, e:1
+VMOVAPD           ; Vx,Wx               ;                 ;  vex m:1 p:1 l:x w:i 0x28 /r          ; s:AVX, t:DATAXFER, w:W|R, e:1
+VMOVAPS           ; Wx,Vx               ;                 ;  vex m:1 p:0 l:x w:i 0x29 /r          ; s:AVX, t:DATAXFER, w:W|R, e:1
+VMOVAPD           ; Wx,Vx               ;                 ;  vex m:1 p:1 l:x w:i 0x29 /r          ; s:AVX, t:DATAXFER, w:W|R, e:1
+VCVTSI2SS         ; Vss,Hss,Ey          ;                 ;  vex m:1 p:2 l:i w:x 0x2A /r          ; s:AVX, t:CONVERT, w:W|R|R, e:3, a:IWO64
+VCVTSI2SD         ; Vsd,Hsd,Ey          ;                 ;  vex m:1 p:3 l:i w:x 0x2A /r          ; s:AVX, t:CONVERT, w:W|R|R, e:3, a:IWO64
+VMOVNTPS          ; Mx,Vx               ;                 ;  vex m:1 p:0 l:x w:i 0x2B /r:mem      ; s:AVX, t:AVX, w:W|R, e:1
+VMOVNTPD          ; Mx,Vx               ;                 ;  vex m:1 p:1 l:x w:i 0x2B /r:mem      ; s:AVX, t:AVX, w:W|R, e:1
+VCVTTSS2SI        ; Gy,Wss              ;                 ;  vex m:1 p:2 l:i w:x 0x2C /r          ; s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VCVTTSD2SI        ; Gy,Wsd              ;                 ;  vex m:1 p:3 l:i w:x 0x2C /r          ; s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VCVTSS2SI         ; Gy,Wss              ;                 ;  vex m:1 p:2 l:i w:x 0x2D /r          ; s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VCVTSD2SI         ; Gy,Wsd              ;                 ;  vex m:1 p:3 l:i w:x 0x2D /r          ; s:AVX, t:CONVERT, w:W|R, e:3, a:IWO64
+VUCOMISS          ; Vss,Wss             ; Fv              ;  vex m:1 p:0 l:i w:i 0x2E /r          ; s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
+VUCOMISD          ; Vsd,Wsd             ; Fv              ;  vex m:1 p:1 l:i w:i 0x2E /r          ; s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
+VCOMISS           ; Vss,Wss             ; Fv              ;  vex m:1 p:0 l:i w:i 0x2F /r          ; s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
+VCOMISD           ; Vsd,Wsd             ; Fv              ;  vex m:1 p:1 l:i w:i 0x2F /r          ; s:AVX, t:AVX, w:R|R|W, f:COMIS, e:3
+
+# 0x30 - 0x3F
+
+# 0x40 - 0x4F
+# Note: ALL these instructions will zero-extend the result into the destination, up to the max length of the mask reg.
+KANDW             ; rKw,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x41 /r:reg      ; s:AVX512F, t:KMASK, c:KAND, w:W|R|R, e:K20
+KANDB             ; rKb,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x41 /r:reg      ; s:AVX512DQ, t:KMASK, c:KAND, w:W|R|R, e:K20
+KANDQ             ; rKq,vKq,mKq         ;                 ;  vex m:1 p:0 l:1 w:1 0x41 /r:reg      ; s:AVX512BW, t:KMASK, c:KAND, w:W|R|R, e:K20
+KANDD             ; rKd,vKd,mKd         ;                 ;  vex m:1 p:1 l:1 w:1 0x41 /r:reg      ; s:AVX512BW, t:KMASK, c:KAND, w:W|R|R, e:K20
+KANDNW            ; rKw,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x42 /r:reg      ; s:AVX512F, t:KMASK, c:KANDN, w:W|R|R, e:K20
+KANDNB            ; rKb,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x42 /r:reg      ; s:AVX512DQ, t:KMASK, c:KANDN, w:W|R|R, e:K20
+KANDNQ            ; rKq,vKq,mKq         ;                 ;  vex m:1 p:0 l:1 w:1 0x42 /r:reg      ; s:AVX512BW, t:KMASK, c:KANDN, w:W|R|R, e:K20
+KANDND            ; rKd,vKd,mKd         ;                 ;  vex m:1 p:1 l:1 w:1 0x42 /r:reg      ; s:AVX512BW, t:KMASK, c:KANDN, w:W|R|R, e:K20
+KORW              ; rKw,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x45 /r:reg      ; s:AVX512F, t:KMASK, c:KOR, w:W|R|R, e:K20
+KORB              ; rKb,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x45 /r:reg      ; s:AVX512DQ, t:KMASK, c:KOR, w:W|R|R, e:K20
+KORQ              ; rKq,vKq,mKq         ;                 ;  vex m:1 p:0 l:1 w:1 0x45 /r:reg      ; s:AVX512BW, t:KMASK, c:KOR, w:W|R|R, e:K20
+KORD              ; rKd,vKd,mKd         ;                 ;  vex m:1 p:1 l:1 w:1 0x45 /r:reg      ; s:AVX512BW, t:KMASK, c:KOR, w:W|R|R, e:K20
+KXNORW            ; rKw,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x46 /r:reg      ; s:AVX512F, t:KMASK, c:KXNOR, w:W|R|R, e:K20
+KXNORB            ; rKb,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x46 /r:reg      ; s:AVX512DQ, t:KMASK, c:KXNOR, w:W|R|R, e:K20
+KXNORQ            ; rKq,vKq,mKq         ;                 ;  vex m:1 p:0 l:1 w:1 0x46 /r:reg      ; s:AVX512BW, t:KMASK, c:KXNOR, w:W|R|R, e:K20
+KXNORD            ; rKd,vKd,mKd         ;                 ;  vex m:1 p:1 l:1 w:1 0x46 /r:reg      ; s:AVX512BW, t:KMASK, c:KXNOR, w:W|R|R, e:K20
+KXORW             ; rKw,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x47 /r:reg      ; s:AVX512F, t:KMASK, c:KXOR, w:W|R|R, e:K20
+KXORB             ; rKb,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x47 /r:reg      ; s:AVX512DQ, t:KMASK, c:KXOR, w:W|R|R, e:K20
+KXORQ             ; rKq,vKq,mKq         ;                 ;  vex m:1 p:0 l:1 w:1 0x47 /r:reg      ; s:AVX512BW, t:KMASK, c:KXOR, w:W|R|R, e:K20
+KXORD             ; rKd,vKd,mKd         ;                 ;  vex m:1 p:1 l:1 w:1 0x47 /r:reg      ; s:AVX512BW, t:KMASK, c:KXOR, w:W|R|R, e:K20
+KADDW             ; rKw,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x4A /r:reg      ; s:AVX512DQ, t:KMASK, c:KADD, w:W|R|R, e:K20
+KADDB             ; rKb,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x4A /r:reg      ; s:AVX512DQ, t:KMASK, c:KADD, w:W|R|R, e:K20
+KADDQ             ; rKq,vKq,mKq         ;                 ;  vex m:1 p:0 l:1 w:1 0x4A /r:reg      ; s:AVX512BW, t:KMASK, c:KADD, w:W|R|R, e:K20
+KADDD             ; rKd,vKd,mKd         ;                 ;  vex m:1 p:1 l:1 w:1 0x4A /r:reg      ; s:AVX512BW, t:KMASK, c:KADD, w:W|R|R, e:K20
+KMOVW             ; rKw,Mw              ;                 ;  vex m:1 p:0 l:0 w:0 0x90 /r:mem      ; s:AVX512F, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVB             ; rKb,Mb              ;                 ;  vex m:1 p:1 l:0 w:0 0x90 /r:mem      ; s:AVX512DQ, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVQ             ; rKq,Mq              ;                 ;  vex m:1 p:0 l:0 w:1 0x90 /r:mem      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVD             ; rKd,Md              ;                 ;  vex m:1 p:1 l:0 w:1 0x90 /r:mem      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVW             ; rKw,mKw             ;                 ;  vex m:1 p:0 l:0 w:0 0x90 /r:reg      ; s:AVX512F, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVB             ; rKb,mKb             ;                 ;  vex m:1 p:1 l:0 w:0 0x90 /r:reg      ; s:AVX512DQ, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVQ             ; rKq,mKq             ;                 ;  vex m:1 p:0 l:0 w:1 0x90 /r:reg      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVD             ; rKd,mKd             ;                 ;  vex m:1 p:1 l:0 w:1 0x90 /r:reg      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVW             ; Mw,rKw              ;                 ;  vex m:1 p:0 l:0 w:0 0x91 /r:mem      ; s:AVX512F, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVB             ; Mb,rKb              ;                 ;  vex m:1 p:1 l:0 w:0 0x91 /r:mem      ; s:AVX512DQ, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVQ             ; Mq,rKq              ;                 ;  vex m:1 p:0 l:0 w:1 0x91 /r:mem      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVD             ; Md,rKd              ;                 ;  vex m:1 p:1 l:0 w:1 0x91 /r:mem      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K21
+KMOVW             ; rKw,Ry              ;                 ;  vex m:1 p:0 l:0 w:0 0x92 /r:reg      ; s:AVX512F, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVB             ; rKb,Ry              ;                 ;  vex m:1 p:1 l:0 w:0 0x92 /r:reg      ; s:AVX512DQ, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVQ             ; rKq,Ry              ;                 ;  vex m:1 p:3 l:0 w:1 0x92 /r:reg      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVD             ; rKd,Ry              ;                 ;  vex m:1 p:3 l:0 w:0 0x92 /r:reg      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVW             ; Gy,mKw              ;                 ;  vex m:1 p:0 l:0 w:0 0x93 /r:reg      ; s:AVX512F, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVB             ; Gy,mKb              ;                 ;  vex m:1 p:1 l:0 w:0 0x93 /r:reg      ; s:AVX512DQ, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVQ             ; Gy,mKq              ;                 ;  vex m:1 p:3 l:0 w:1 0x93 /r:reg      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K20
+KMOVD             ; Gy,mKd              ;                 ;  vex m:1 p:3 l:0 w:0 0x93 /r:reg      ; s:AVX512BW, t:KMASK, c:KMOV, w:W|R, e:K20
+KMERGE2L1H        ; rKw,mKw             ;                 ;  vex m:1 p:0 l:0 w:0 0x48 /r:reg      ; s:UNKNOWN, t:UNKNOWN, c:KMERGE2L1H, w:W|R, e:K20
+KMERGE2L1L        ; rKw,mKw             ;                 ;  vex m:1 p:0 l:0 w:0 0x49 /r:reg      ; s:UNKNOWN, t:UNKNOWN, c:KMERGE2L1L, w:W|R, e:K20
+KUNPCKBW          ; rKw,vKb,mKb         ;                 ;  vex m:1 p:1 l:1 w:0 0x4B /r:reg      ; s:AVX512F, t:KMASK, c:KUNPCKBW, w:W|R|R, e:K20
+KUNPCKWD          ; rKd,vKw,mKw         ;                 ;  vex m:1 p:0 l:1 w:0 0x4B /r:reg      ; s:AVX512BW, t:KMASK, c:KUNPCKWD, w:W|R|R, e:K20
+KUNPCKDQ          ; rKq,vKd,mKd         ;                 ;  vex m:1 p:0 l:1 w:1 0x4B /r:reg      ; s:AVX512BW, t:KMASK, c:KUNPCKDQ, w:W|R|R, e:K20
+KNOTW             ; rKw,mKw             ;                 ;  vex m:1 p:0 l:0 w:0 0x44 /r:reg      ; s:AVX512F, t:KMASK, c:KNOT, w:W|R, e:K20
+KNOTB             ; rKb,mKb             ;                 ;  vex m:1 p:1 l:0 w:0 0x44 /r:reg      ; s:AVX512DQ, t:KMASK, c:KNOT, w:W|R, e:K20
+KNOTQ             ; rKq,mKq             ;                 ;  vex m:1 p:0 l:0 w:1 0x44 /r:reg      ; s:AVX512BW, t:KMASK, c:KNOT, w:W|R, e:K20
+KNOTD             ; rKd,mKd             ;                 ;  vex m:1 p:1 l:0 w:1 0x44 /r:reg      ; s:AVX512BW, t:KMASK, c:KNOT, w:W|R, e:K20
+KORTESTW          ; rKw,mKw             ; Fv              ;  vex m:1 p:0 l:0 w:0 0x98 /r:reg      ; s:AVX512F, t:KMASK, c:KORTEST, w:R|R|W, f:KORTEST, e:K20
+KORTESTB          ; rKb,mKb             ; Fv              ;  vex m:1 p:1 l:0 w:0 0x98 /r:reg      ; s:AVX512DQ, t:KMASK, c:KORTEST, w:R|R|W, f:KORTEST, e:K20
+KORTESTQ          ; rKq,mKq             ; Fv              ;  vex m:1 p:0 l:0 w:1 0x98 /r:reg      ; s:AVX512BW, t:KMASK, c:KORTEST, w:R|R|W, f:KORTEST, e:K20
+KORTESTD          ; rKd,mKd             ; Fv              ;  vex m:1 p:1 l:0 w:1 0x98 /r:reg      ; s:AVX512BW, t:KMASK, c:KORTEST, w:R|R|W, f:KORTEST, e:K20
+KTESTW            ; rKw,mKw             ;                 ;  vex m:1 p:0 l:0 w:0 0x99 /r:reg      ; s:AVX512DQ, t:KMASK, c:KTEST, w:W|R, e:K20
+KTESTB            ; rKb,mKb             ;                 ;  vex m:1 p:1 l:0 w:0 0x99 /r:reg      ; s:AVX512DQ, t:KMASK, c:KTEST, w:W|R, e:K20
+KTESTQ            ; rKq,mKq             ;                 ;  vex m:1 p:0 l:0 w:1 0x99 /r:reg      ; s:AVX512BW, t:KMASK, c:KTEST, w:W|R, e:K20
+KTESTD            ; rKd,mKd             ;                 ;  vex m:1 p:1 l:0 w:1 0x99 /r:reg      ; s:AVX512BW, t:KMASK, c:KTEST, w:W|R, e:K20
+
+# 0x50 - 0x5F
+VMOVMSKPS         ; Gy,Ux               ;                 ;  vex m:1 p:0 l:x w:i 0x50 /r:reg      ; s:AVX, t:DATAXFER, w:W|R, e:7, a:D64
+VMOVMSKPD         ; Gy,Ux               ;                 ;  vex m:1 p:1 l:x w:i 0x50 /r:reg      ; s:AVX, t:DATAXFER, w:W|R, e:7, a:D64
+VSQRTPS           ; Vx,Wx               ;                 ;  vex m:1 p:0 l:x w:i 0x51 /r          ; s:AVX, t:AVX, w:W|R, e:2
+VSQRTPD           ; Vx,Wx               ;                 ;  vex m:1 p:1 l:x w:i 0x51 /r          ; s:AVX, t:AVX, w:W|R, e:2
+VSQRTSS           ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x51 /r          ; s:AVX, t:AVX, w:W|R|R, e:3
+VSQRTSD           ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x51 /r          ; s:AVX, t:AVX, w:W|R|R, e:3
+VRSQRTPS          ; Vx,Wx               ;                 ;  vex m:1 p:0 l:x w:i 0x52 /r          ; s:AVX, t:AVX, w:W|R, e:4
+VRSQRTSS          ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x52 /r          ; s:AVX, t:AVX, w:W|R|R, e:5
+VRCPPS            ; Vps,Wps             ;                 ;  vex m:1 p:0 l:x w:i 0x53 /r          ; s:AVX, t:AVX, w:W|R, e:4
+VRCPSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x53 /r          ; s:AVX, t:AVX, w:W|R|R, e:5
+VANDPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x54 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VANDPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x54 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VANDNPS           ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x55 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VANDNPD           ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x55 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VORPS             ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x56 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VORPD             ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x56 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VXORPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x57 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VXORPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x57 /r          ; s:AVX, t:LOGICAL_FP, w:W|R|R, e:4
+VADDPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x58 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VADDPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x58 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VADDSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x58 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VADDSD            ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x58 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMULPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x59 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMULPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x59 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMULSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x59 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMULSD            ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x59 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VCVTPS2PD         ; Vpd,Wq              ;                 ;  vex m:1 p:0 l:0 w:i 0x5A /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTPS2PD         ; Vqq,Wdq             ;                 ;  vex m:1 p:0 l:1 w:i 0x5A /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTPD2PS         ; Vdq,Wdq             ;                 ;  vex m:1 p:1 l:0 w:i 0x5A /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTPD2PS         ; Vdq,Wqq             ;                 ;  vex m:1 p:1 l:1 w:i 0x5A /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTSS2SD         ; Vsd,Hx,Wss          ;                 ;  vex m:1 p:2 l:i w:i 0x5A /r          ; s:AVX, t:CONVERT, w:W|R|R, e:3
+VCVTSD2SS         ; Vss,Hx,Wsd          ;                 ;  vex m:1 p:3 l:i w:i 0x5A /r          ; s:AVX, t:CONVERT, w:W|R|R, e:3
+VCVTDQ2PS         ; Vps,Wps             ;                 ;  vex m:1 p:0 l:x w:i 0x5B /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTPS2DQ         ; Vps,Wps             ;                 ;  vex m:1 p:1 l:x w:i 0x5B /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTTPS2DQ        ; Vps,Wps             ;                 ;  vex m:1 p:2 l:x w:i 0x5B /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VSUBPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x5C /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VSUBPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x5C /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VSUBSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x5C /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VSUBSD            ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x5C /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMINPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x5D /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMINPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x5D /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMINSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x5D /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMINSD            ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x5D /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VDIVPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x5E /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VDIVPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x5E /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VDIVSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x5E /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VDIVSD            ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x5E /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMAXPS            ; Vps,Hps,Wps         ;                 ;  vex m:1 p:0 l:x w:i 0x5F /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMAXPD            ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x5F /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMAXSS            ; Vss,Hss,Wss         ;                 ;  vex m:1 p:2 l:i w:i 0x5F /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMAXSD            ; Vsd,Hsd,Wsd         ;                 ;  vex m:1 p:3 l:i w:i 0x5F /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+
+
+# 0x60 - 0x6F
+VPUNPCKLBW        ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x60 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKLWD        ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x61 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKLDQ        ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x62 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPACKSSWB         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x63 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPGTB          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x64 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPGTW          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x65 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPGTD          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x66 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPACKUSWB         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x67 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKHBW        ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x68 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKHWD        ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x69 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKHDQ        ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x6A /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPACKSSDW         ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x6B /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKLQDQ       ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x6C /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPUNPCKHQDQ       ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x6D /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VMOVD             ; Vdq,Ey              ;                 ;  vex m:1 p:1 l:0 w:0 0x6E /r          ; s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
+VMOVQ             ; Vdq,Ey              ;                 ;  vex m:1 p:1 l:0 w:1 0x6E /r          ; s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
+VMOVDQA           ; Vx,Wx               ;                 ;  vex m:1 p:1 l:x w:i 0x6F /r          ; s:AVX, t:DATAXFER, w:W|R, e:1
+VMOVDQU           ; Vx,Wx               ;                 ;  vex m:1 p:2 l:x w:i 0x6F /r          ; s:AVX, t:DATAXFER, w:W|R, e:4
+
+
+
+# 0x70 - 0x7F
+VPSHUFD           ; Vx,Wx,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x70 /r ib       ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSHUFHW          ; Vx,Wx,Ib            ;                 ;  vex m:1 p:2 l:x w:i 0x70 /r ib       ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSHUFLW          ; Vx,Wx,Ib            ;                 ;  vex m:1 p:3 l:x w:i 0x70 /r ib       ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPEQB          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x74 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPEQW          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x75 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPCMPEQD          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0x76 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VZEROUPPER        ;                     ; BANK            ;  vex m:1 p:0 l:0 0x77                 ; s:AVX, t:AVX, w:W, e:8
+VZEROALL          ;                     ; BANK            ;  vex m:1 p:0 l:1 0x77                 ; s:AVX, t:AVX, w:W, e:8
+VHADDPD           ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x7C /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VHADDPS           ; Vps,Hps,Wps         ;                 ;  vex m:1 p:3 l:x w:i 0x7C /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VHSUBPD           ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0x7D /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VHSUBPS           ; Vps,Hps,Wps         ;                 ;  vex m:1 p:3 l:x w:i 0x7D /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VMOVD             ; Ey,Vd               ;                 ;  vex m:1 p:1 l:0 w:0 0x7E /r          ; s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
+VMOVQ             ; Ey,Vq               ;                 ;  vex m:1 p:1 l:0 w:1 0x7E /r          ; s:AVX, t:DATAXFER, w:W|R, e:5, a:IWO64
+VMOVQ             ; Vdq,Wq              ;                 ;  vex m:1 p:2 l:0 w:i 0x7E /r          ; s:AVX, t:DATAXFER, w:W|R, e:5
+VMOVDQA           ; Wx,Vx               ;                 ;  vex m:1 p:1 l:x w:i 0x7F /r          ; s:AVX, t:DATAXFER, w:W|R, e:1
+VMOVDQU           ; Wx,Vx               ;                 ;  vex m:1 p:2 l:x w:i 0x7F /r          ; s:AVX, t:DATAXFER, w:W|R, e:4
+VPSRLW            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x71 /2:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSRAW            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x71 /4:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSLLW            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x71 /6:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSRLD            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x72 /2:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSRAD            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x72 /4:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSLLD            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x72 /6:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSRLQ            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x73 /2:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSRLDQ           ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x73 /3:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSLLQ            ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x73 /6:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+VPSLLDQ           ; Hx,Ux,Ib            ;                 ;  vex m:1 p:1 l:x w:i 0x73 /7:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:7
+
+# 0x80 - 0x8F
+
+# 0x90 - 0x9F
+
+# 0xA0 - 0xAF
+VLDMXCSR          ; Md                  ; MXCSR           ;  vex m:1 p:0 0xAE /2:mem              ; s:AVX, t:AVX, w:R|W, e:5
+VSTMXCSR          ; Md                  ; MXCSR           ;  vex m:1 p:0 0xAE /3:mem              ; s:AVX, t:AVX, w:W|R, e:5
+SPFLT             ; Ry                  ;                 ;  vex m:1 p:3 0xAE /6:reg              ; s:UNKNOWN, t:UNKNOWN, w:R
+DELAY             ; Ry                  ;                 ;  vex m:1 p:2 0xAE /6:reg              ; s:UNKNOWN, t:UNKNOWN, w:R
+CLEVICT0          ; M?                  ;                 ;  vex m:1 p:3 0xAE /7:mem              ; s:UNKNOWN, t:UNKNOWN, w:N
+CLEVICT1          ; M?                  ;                 ;  vex m:1 p:2 0xAE /7:mem              ; s:UNKNOWN, t:UNKNOWN, w:N
+
+# 0xB0 - 0xBF
+
+# 0xC0 - 0xCF
+VCMPPS            ; Vss,Hss,Wss,Ib      ;                 ;  vex m:1 p:0 l:i w:i 0xC2 /r ib       ; s:AVX, t:AVX, w:W|R|R|R, e:3
+VCMPPD            ; Vpd,Hpd,Wpd,Ib      ;                 ;  vex m:1 p:1 l:x w:i 0xC2 /r ib       ; s:AVX, t:AVX, w:W|R|R|R, e:3
+VCMPSS            ; Vss,Hss,Wss,Ib      ;                 ;  vex m:1 p:2 l:i w:i 0xC2 /r ib       ; s:AVX, t:AVX, w:W|R|R|R, e:3
+VCMPSD            ; Vsd,Hsd,Wsd,Ib      ;                 ;  vex m:1 p:3 l:i w:i 0xC2 /r ib       ; s:AVX, t:AVX, w:W|R|R|R, e:3
+VPINSRW           ; Vdq,Hdq,Mw,Ib       ;                 ;  vex m:1 p:1 l:0 w:i 0xC4 /r:mem ib   ; s:AVX, t:AVX, w:W|R|R|R, e:5
+VPINSRW           ; Vdq,Hdq,Rd,Ib       ;                 ;  vex m:1 p:1 l:0 w:i 0xC4 /r:reg ib   ; s:AVX, t:AVX, w:W|R|R|R, e:5
+VPEXTRW           ; Gy,Udq,Ib           ;                 ;  vex m:1 p:1 l:0 w:i 0xC5 /r:reg ib   ; s:AVX, t:AVX, w:W|R|R, e:5, a:D64
+VSHUFPS           ; Vps,Hps,Wps,Ib      ;                 ;  vex m:1 p:0 l:x w:i 0xC6 /r ib       ; s:AVX, t:AVX, w:W|R|R|R, e:4
+VSHUFPD           ; Vpd,Hpd,Wpd,Ib      ;                 ;  vex m:1 p:1 l:x w:i 0xC6 /r ib       ; s:AVX, t:AVX, w:W|R|R|R, e:4
+
+# 0xD0 - 0xDF
+VADDSUBPD         ; Vpd,Hpd,Wpd         ;                 ;  vex m:1 p:1 l:x w:i 0xD0 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VADDSUBPS         ; Vps,Hps,Wps         ;                 ;  vex m:1 p:3 l:x w:i 0xD0 /r          ; s:AVX, t:AVX, w:W|R|R, e:2
+VPSRLW            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xD1 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSRLD            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xD2 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSRLQ            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xD3 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPADDQ            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xD4 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMULLW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xD5 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VMOVQ             ; Wq,Vdq              ;                 ;  vex m:1 p:1 l:0 w:i 0xD6 /r          ; s:AVX, t:DATAXFER, w:W|R, e:5
+VPMOVMSKB         ; Gy,Ux               ;                 ;  vex m:1 p:1 l:x w:i 0xD7 /r:reg      ; s:AVX, t:DATAXFER, w:W|R, e:7, a:D64
+VPSUBUSB          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xD8 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSUBUSW          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xD9 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMINUB           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xDA /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPAND             ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xDB /r          ; s:AVX, t:LOGICAL, w:W|R|R, e:4
+VPADDUSB          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xDC /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPADDUSW          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xDD /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMAXUB           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xDE /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPANDN            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xDF /r          ; s:AVX, t:LOGICAL, w:W|R|R, e:4
+
+# 0xE0 - 0xEF
+VPAVGB            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xE0 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSRAW            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xE1 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSRAD            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xE2 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPAVGW            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xE3 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMULHUW          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xE4 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMULHW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xE5 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VCVTTPD2DQ        ; Vdq,Wx              ;                 ;  vex m:1 p:1 l:x w:i 0xE6 /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VCVTDQ2PD         ; Vdq,Wq              ;                 ;  vex m:1 p:2 l:0 w:i 0xE6 /r          ; s:AVX, t:CONVERT, w:W|R, e:5
+VCVTDQ2PD         ; Vqq,Wdq             ;                 ;  vex m:1 p:2 l:1 w:i 0xE6 /r          ; s:AVX, t:CONVERT, w:W|R, e:5
+VCVTPD2DQ         ; Vdq,Wx              ;                 ;  vex m:1 p:3 l:x w:i 0xE6 /r          ; s:AVX, t:CONVERT, w:W|R, e:2
+VMOVNTDQ          ; Mx,Vx               ;                 ;  vex m:1 p:1 l:x w:i 0xE7 /r:mem      ; s:AVX, t:AVX, w:W|R, e:1
+VPSUBSB           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xE8 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSUBSW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xE9 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMINSW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xEA /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPOR              ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xEB /r          ; s:AVX, t:LOGICAL, w:W|R|R, e:4
+VPADDSB           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xEC /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPADDSW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xED /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMAXSW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xEE /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPXOR             ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xEF /r          ; s:AVX, t:LOGICAL, w:W|R|R, e:4
+
+# 0xF0 - 0xFF
+VLDDQU            ; Vx,Mx               ;                 ;  vex m:1 p:3 l:x w:i 0xF0 /r:mem      ; s:AVX, t:AVX, w:W|R, e:4
+VPSLLW            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xF1 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSLLD            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xF2 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSLLQ            ; Vx,Hx,Wdq           ;                 ;  vex m:1 p:1 l:x w:i 0xF3 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMULUDQ          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xF4 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPMADDWD          ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xF5 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSADBW           ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xF6 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VMASKMOVDQU       ; Vdq,Udq             ; pDIdq           ;  vex m:1 p:1 l:0 w:i 0xF7 /r:reg      ; s:AVX, t:AVX, w:R|R|W, e:4
+VPSUBB            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xF8 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSUBW            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xF9 /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSUBD            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xFA /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPSUBQ            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xFB /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPADDB            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xFC /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPADDW            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xFD /r          ; s:AVX, t:AVX, w:W|R|R, e:4
+VPADDD            ; Vx,Hx,Wx            ;                 ;  vex m:1 p:1 l:x w:i 0xFE /r          ; s:AVX, t:AVX, w:W|R|R, e:4

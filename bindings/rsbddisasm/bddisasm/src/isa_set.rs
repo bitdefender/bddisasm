@@ -20,6 +20,7 @@ pub enum IsaSet {
     AMXFP16,
     AMXINT8,
     AMXTILE,
+    APX_F,
     AVX,
     AVX2,
     AVX2GATHER,
@@ -56,8 +57,6 @@ pub enum IsaSet {
     CLZERO,
     CMPCCXADD,
     CMPXCHG16B,
-    CYRIX,
-    CYRIX_SMM,
     ENQCMD,
     F16C,
     FMA,
@@ -132,6 +131,7 @@ pub enum IsaSet {
     UD,
     UINTR,
     UNKNOWN,
+    USER_MSR,
     VAES,
     VPCLMULQDQ,
     VTX,
@@ -149,6 +149,7 @@ pub enum IsaSet {
 impl TryFrom<ffi::ND_INS_SET> for IsaSet {
     type Error = DecodeError;
 
+    #[allow(clippy::too_many_lines)]
     fn try_from(value: ffi::ND_INS_SET) -> Result<Self, Self::Error> {
         match value {
             ffi::_ND_INS_SET::ND_SET_INVALID => Err(DecodeError::InternalError(value as u64)),
@@ -161,6 +162,7 @@ impl TryFrom<ffi::ND_INS_SET> for IsaSet {
             ffi::_ND_INS_SET::ND_SET_AMXFP16 => Ok(IsaSet::AMXFP16),
             ffi::_ND_INS_SET::ND_SET_AMXINT8 => Ok(IsaSet::AMXINT8),
             ffi::_ND_INS_SET::ND_SET_AMXTILE => Ok(IsaSet::AMXTILE),
+            ffi::_ND_INS_SET::ND_SET_APX_F => Ok(IsaSet::APX_F),
             ffi::_ND_INS_SET::ND_SET_AVX => Ok(IsaSet::AVX),
             ffi::_ND_INS_SET::ND_SET_AVX2 => Ok(IsaSet::AVX2),
             ffi::_ND_INS_SET::ND_SET_AVX2GATHER => Ok(IsaSet::AVX2GATHER),
@@ -197,8 +199,6 @@ impl TryFrom<ffi::ND_INS_SET> for IsaSet {
             ffi::_ND_INS_SET::ND_SET_CLZERO => Ok(IsaSet::CLZERO),
             ffi::_ND_INS_SET::ND_SET_CMPCCXADD => Ok(IsaSet::CMPCCXADD),
             ffi::_ND_INS_SET::ND_SET_CMPXCHG16B => Ok(IsaSet::CMPXCHG16B),
-            ffi::_ND_INS_SET::ND_SET_CYRIX => Ok(IsaSet::CYRIX),
-            ffi::_ND_INS_SET::ND_SET_CYRIX_SMM => Ok(IsaSet::CYRIX_SMM),
             ffi::_ND_INS_SET::ND_SET_ENQCMD => Ok(IsaSet::ENQCMD),
             ffi::_ND_INS_SET::ND_SET_F16C => Ok(IsaSet::F16C),
             ffi::_ND_INS_SET::ND_SET_FMA => Ok(IsaSet::FMA),
@@ -273,6 +273,7 @@ impl TryFrom<ffi::ND_INS_SET> for IsaSet {
             ffi::_ND_INS_SET::ND_SET_UD => Ok(IsaSet::UD),
             ffi::_ND_INS_SET::ND_SET_UINTR => Ok(IsaSet::UINTR),
             ffi::_ND_INS_SET::ND_SET_UNKNOWN => Ok(IsaSet::UNKNOWN),
+            ffi::_ND_INS_SET::ND_SET_USER_MSR => Ok(IsaSet::USER_MSR),
             ffi::_ND_INS_SET::ND_SET_VAES => Ok(IsaSet::VAES),
             ffi::_ND_INS_SET::ND_SET_VPCLMULQDQ => Ok(IsaSet::VPCLMULQDQ),
             ffi::_ND_INS_SET::ND_SET_VTX => Ok(IsaSet::VTX),

@@ -1,7 +1,7 @@
 # Disassembler Tests
 
 These tests are used to validate bddisasm. Each test consists of up to three files:
-* The binary test file. The name format for this type of file is `name_16|32|64`. No extension must be provided; 16/32/64 indicates disassembly mode
+* The binary test file. The name format for this type of file is `name_16|32|64.test`. 16/32/64 indicates disassembly mode
 * The output result file. Must be named the same as the binary test file, but with the extension .result
 * Optional assembly file, used to generate the binary test file
 

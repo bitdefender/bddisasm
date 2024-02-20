@@ -115,7 +115,8 @@
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <TargetVersion></TargetVersion>
+    <TargetVersion>
+    </TargetVersion>
     <DriverTargetPlatform>Desktop</DriverTargetPlatform>
     <SupportsPackaging>false</SupportsPackaging>
     <ALLOW_DATE_TIME>1</ALLOW_DATE_TIME>
@@ -143,7 +144,8 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <TargetVersion></TargetVersion>
+    <TargetVersion>
+    </TargetVersion>
     <DriverTargetPlatform>Desktop</DriverTargetPlatform>
     <SupportsPackaging>false</SupportsPackaging>
     <ALLOW_DATE_TIME>1</ALLOW_DATE_TIME>
@@ -643,10 +645,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="bdformat.c" />
-    <ClCompile Include="bdhelpers.c" />
-    <ClCompile Include="crt.c" />
-    <ClCompile Include="bddisasm.c">
+    <ClCompile Include="bdx86_formatter.c" />
+    <ClCompile Include="bdx86_helpers.c" />
+    <ClCompile Include="bddisasm_crt.c" />
+    <ClCompile Include="bdx86_decoder.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseKernel|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseKernel|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseKernel|ARM64'">NotUsing</PrecompiledHeader>
@@ -665,22 +667,23 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\inc\constants.h" />
-    <ClInclude Include="..\inc\cpuidflags.h" />
+    <ClInclude Include="..\inc\bdx86_core.h" />
+    <ClInclude Include="..\inc\bdx86_constants.h" />
+    <ClInclude Include="..\inc\bdx86_cpuidflags.h" />
     <ClInclude Include="..\inc\bddisasm.h" />
-    <ClInclude Include="..\inc\disasmstatus.h" />
-    <ClInclude Include="..\inc\disasmtypes.h" />
-    <ClInclude Include="..\inc\registers.h" />
-    <ClInclude Include="..\inc\version.h" />
-    <ClInclude Include="include\instructions.h" />
-    <ClInclude Include="include\mnemonics.h" />
-    <ClInclude Include="include\nd_crt.h" />
-    <ClInclude Include="include\prefixes.h" />
-    <ClInclude Include="include\tabledefs.h" />
-    <ClInclude Include="include\table_evex.h" />
-    <ClInclude Include="include\table_root.h" />
-    <ClInclude Include="include\table_vex.h" />
-    <ClInclude Include="include\table_xop.h" />
+    <ClInclude Include="..\inc\bddisasm_status.h" />
+    <ClInclude Include="..\inc\bddisasm_types.h" />
+    <ClInclude Include="..\inc\bdx86_registers.h" />
+    <ClInclude Include="..\inc\bddisasm_version.h" />
+    <ClInclude Include="include\bdx86_instructions.h" />
+    <ClInclude Include="include\bdx86_mnemonics.h" />
+    <ClInclude Include="include\bddisasm_crt.h" />
+    <ClInclude Include="include\bdx86_prefixes.h" />
+    <ClInclude Include="include\bdx86_tabledefs.h" />
+    <ClInclude Include="include\bdx86_table_evex.h" />
+    <ClInclude Include="include\bdx86_table_root.h" />
+    <ClInclude Include="include\bdx86_table_vex.h" />
+    <ClInclude Include="include\bdx86_table_xop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,8 +30,8 @@ mod tests {
         let mut major: u32 = 0;
         let mut minor: u32 = 0;
         let mut revision: u32 = 0;
-        let mut build_date: *mut c_char = std::ptr::null_mut();
-        let mut build_time: *mut c_char = std::ptr::null_mut();
+        let mut build_date: *const c_char = std::ptr::null();
+        let mut build_time: *const c_char = std::ptr::null();
 
         unsafe {
             NdGetVersion(
@@ -53,7 +53,7 @@ mod tests {
 
         // There are no other asserts in this test. Enforcing a known minor version is not worth it, we mainly want to
         // see that `NdGetVersion` works.
-        assert_eq!(major, 1);
+        assert_eq!(major, 2);
     }
 
     fn do_decode(code: &[u8]) -> (INSTRUX, NDSTATUS) {
@@ -79,10 +79,7 @@ mod tests {
         let (instrux, status) = do_decode(&code);
 
         assert_eq!(status, 0, "Failed to decode instruction {:#x?}", code);
-        assert_eq!(
-            unsafe { instrux.__bindgen_anon_2.Instruction },
-            _ND_INS_CLASS::ND_INS_NOP
-        );
+        assert_eq!(instrux.Instruction, _ND_INS_CLASS::ND_INS_NOP);
     }
 
     #[test]

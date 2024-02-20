@@ -57,7 +57,9 @@ compile_commands.json
 pydis/.eggs
 bdshemu_fuzz/out
 bdshemu_fuzz/shfuzz
+bdshemu_fuzz/in-32
 bdshemu_fuzz/out-32
+bdshemu_fuzz/in-64
 bdshemu_fuzz/out-64
 docs/build
 libbddisasm.pc
@@ -67,3 +69,9 @@ disasmtool_lix/_build
 bindings/rsbddisasm/target
 bindings/rsbddisasm/Cargo.lock
 bindings/pybddisasm/pybddisasm.egg-info
+bindings/rsbddisasm/bddisasm/target
+bindings/pybddisasm/pybddisasm/pybddisasm.py
+bindings/pybddisasm/pybddisasm/pybddisasm_wrap.c
+
+bddfuzz.tar
+bindings/pybddisasm/.eggs

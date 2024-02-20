@@ -3,29 +3,29 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PI2FW        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x0C    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PI2FD        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x0D    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PF2IW        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x1C    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PF2ID        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x1D    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRCPV       ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x86    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW, m:NO64
-PFRSQRTV     ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x87    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW, m:NO64
-PFNACC       ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x8A    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFPNACC      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x8E    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFCMPGE      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x90    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFMIN        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x94    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRCP        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x96    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRSQRT      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x97    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFSUB        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x9A    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFADD        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0x9E    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFCMPGT      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xA0    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFMAX        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xA4    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRCPIT1     ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xA6    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRSQIT1     ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xA7    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFSUBR       ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xAA    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFACC        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xAE    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFCMPEQ      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xB0    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFMUL        ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xB4    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PFRCPIT2     ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xB6    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PMULHRW      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xB7    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PSWAPD       ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xBB    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
-PAVGUSB      ; Pq,Qq    ; n/a    ; 0x0F 0x0F /r 0xBF    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PI2FW        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x0C    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PI2FD        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x0D    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PF2IW        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x1C    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PF2ID        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x1D    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRCPV       ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x86    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW, m:NO64
+PFRSQRTV     ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x87    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW, m:NO64
+PFNACC       ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x8A    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFPNACC      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x8E    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFCMPGE      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x90    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFMIN        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x94    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRCP        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x96    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRSQRT      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x97    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFSUB        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x9A    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFADD        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0x9E    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFCMPGT      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xA0    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFMAX        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xA4    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRCPIT1     ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xA6    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRSQIT1     ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xA7    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFSUBR       ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xAA    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFACC        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xAE    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFCMPEQ      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xB0    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFMUL        ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xB4    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PFRCPIT2     ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xB6    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PMULHRW      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xB7    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PSWAPD       ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xBB    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW
+PAVGUSB      ; Pq,Qq    ;          ; 0x0F 0x0F /r 0xBF    ; s:3DNOW, t:3DNOW, w:RW|R, a:3DNOW

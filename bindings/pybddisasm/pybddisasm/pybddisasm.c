@@ -15,7 +15,7 @@
 
 #define ARRAY_SIZE(x) (sizeof(x) / sizeof(*(x)))
 
-#if _MSC_VER
+#ifdef _MSC_VER
 int nd_vsnprintf_s(char *buffer, size_t size, size_t count, const char *format, va_list argptr)
 {
     return vsnprintf(buffer, size, format, argptr);

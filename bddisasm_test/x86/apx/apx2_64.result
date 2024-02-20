@@ -1,0 +1,224 @@
+0000000000000000 626c7808fc1e                    AADD      dword ptr [r22], r27d
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 27, RegCount: 1
+
+0000000000000006 626cf808fc1e                    AADD      qword ptr [r22], r27
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 27, RegCount: 1
+
+000000000000000C 626c7908fc1e                    AAND      dword ptr [r22], r27d
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 27, RegCount: 1
+
+0000000000000012 626cf908fc1e                    AAND      qword ptr [r22], r27
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 27, RegCount: 1
+
+0000000000000018 626c7b08fc1e                    AOR       dword ptr [r22], r27d
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 27, RegCount: 1
+
+000000000000001E 626cfb08fc1e                    AOR       qword ptr [r22], r27
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 27, RegCount: 1
+
+0000000000000024 626c7a08fc1e                    AXOR      dword ptr [r22], r27d
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 27, RegCount: 1
+
+000000000000002A 626cfa08fc1e                    AXOR      qword ptr [r22], r27
+        DSIZE: 64, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: RAO-INT, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-RAO-INT
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:     Memory, Size:  8, RawSize:  8, Encoding: M, 
+                Segment: 3, Base: 22, 
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 27, RegCount: 1
+
+0000000000000030 626c7b08f8de                    URDMSR    r22, r27
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: USER_MSR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-USER-MSR
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 22, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 27, RegCount: 1
+
+0000000000000036 62ff7b08f8c6bdbdbdbd            URDMSR    r22, 0xbdbdbdbd
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: USER_MSR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 22, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
+
+0000000000000040 626c7a08f8de                    UWRMSR    r27, r22
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: USER_MSR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Exception class: APX, exception type: APX-EVEX-USER-MSR
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 27, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 22, RegCount: 1
+
+0000000000000046 62ff7a08f8c6bdbdbdbd            UWRMSR    0xbdbdbdbd, r22
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: USER_MSR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 22, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
+

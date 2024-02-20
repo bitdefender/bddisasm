@@ -1,6 +1,6 @@
 .PHONY: clean
 
-SRC_FILES := bdshemu.c
+SRC_FILES := bdshemu.c bdshemu_x86.c
 
 OBJECTS := $(SRC_FILES:.c=.o)
 
@@ -121,3 +121,4 @@ install: all
 	install -m 644 $(OUT_DIR)/$(LIB_NAME) $(DESTDIR)$(PREFIX)/lib/
 	install -d $(DESTDIR)$(PREFIX)/include/bddisasm/
 	cp -r ../inc/bdshemu.h $(DESTDIR)$(PREFIX)/include/bddisasm/
+	cp -r ../inc/bdshemu_x86.h $(DESTDIR)$(PREFIX)/include/bddisasm/

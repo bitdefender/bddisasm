@@ -165,13 +165,10 @@
 %define __x86_64__
 %enddef
 
-
 %include "bddisasm.h"
-%include "constants.h"
-%include "cpuidflags.h"
-%include "disasmstatus.h"
-%include "disasmtypes.h"
-%include "registers.h"
-%include "version.h"
-
-%include "pybddisasm.h"
+%include "bdx86_constants.h"
+%include "bdx86_cpuidflags.h"
+%include "bddisasm_status.h"
+%include "bddisasm_types.h"
+%include "bdx86_registers.h"
+%include "bdx86_core.h"
