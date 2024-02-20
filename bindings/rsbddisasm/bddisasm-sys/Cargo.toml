@@ -23,5 +23,5 @@ path = "src/lib.rs"
 cty = "0.2.2"
 
 [build-dependencies]
-bindgen = "0.59.1"
+bindgen = "0.62.0"
 cc = "1.0.70"
