@@ -7,7 +7,7 @@
 
 #include "bddisasm.h"
 
-void nd_get_version(ND_UINT32 *major, ND_UINT32 *minor, ND_UINT32 *revision, char **build_date, char **build_time);
+void nd_get_version(ND_UINT32 *major, ND_UINT32 *minor, ND_UINT32 *revision, const char **build_date, const char **build_time);
 NDSTATUS nd_decode(INSTRUX *__output_instr, const ND_UINT8 *code, ND_UINT8 def_code, ND_UINT8 def_data);
 NDSTATUS nd_decode_ex(INSTRUX *__output_instr, const ND_UINT8 *code, ND_SIZET size, ND_UINT8 def_code, ND_UINT8 def_data);
 NDSTATUS nd_decode_ex2(INSTRUX *__output_instr, const ND_UINT8 *code, ND_SIZET size, ND_UINT8 def_code, ND_UINT8 def_data,

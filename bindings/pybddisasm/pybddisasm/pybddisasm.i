@@ -9,13 +9,6 @@
     #include "pybddisasm.h"
 
     #include "bddisasm.h"
-    #include "constants.h"
-    #include "cpuidflags.h"
-    #include "disasmstatus.h"
-    #include "disasmtypes.h"
-    #include "registers.h"
-    #include "version.h"
-
 %}
 
 %include "typemaps.i"
