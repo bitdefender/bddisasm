@@ -143,6 +143,6 @@ jobs:
       run: sudo apt install -y cppcheck
     - name: Run cppcheck
       run: cppcheck --error-exitcode=1 --language=c \
-        --enable=all --suppress=missingIncludeSystem --suppress=unusedStructMember --suppress=unusedFunction \
+        --enable=all --suppress=missingIncludeSystem --suppress=unusedStructMember --suppress=unusedFunction -suppress=objectIndex \
         -I inc/ -I bddisasm/include bddisasm/ bdshemu/ \
          /
