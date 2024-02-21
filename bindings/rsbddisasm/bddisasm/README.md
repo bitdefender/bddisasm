@@ -18,7 +18,7 @@ Add `bddisasm` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bddisasm = "0.1.0"
+bddisasm = "0.4"
 ```
 
 ## Examples
