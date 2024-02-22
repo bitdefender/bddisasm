@@ -164,9 +164,4 @@ ShemuDisplayMemValue(
     ND_BOOL Load
     );
 
-ND_BOOL
-ShemuIsImmMetasploitHash(
-    ND_UINT64 Value
-    );
-
 #endif // BDSHEMU_COMMON_H_
