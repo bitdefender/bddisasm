@@ -30,21 +30,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install rapidjson
-      uses: actions/checkout@v3
-      with:
-        repository: Tencent/rapidjson
-        path: rapidjson
-    - name: Build dependencies
-      run: |
-        cd rapidjson
-        mkdir build
-        cd build
-        cmake ..
-        make -j$(nproc)
-        sudo make install
-        cd ..
-        cd ..
     - name: Build all
       run: |
         mkdir build
