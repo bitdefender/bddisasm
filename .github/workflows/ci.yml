@@ -3,7 +3,7 @@ name: C/C++ CI
 on:
   push:
     branches: [ master ]
-    paths-ignore: 
+    paths-ignore:
       - '*.md'
       - 'docs/**'
       - 'isagenerator/**'
@@ -12,7 +12,7 @@ on:
       - 'LICENSE'
   pull_request:
     branches: [ master ]
-    paths-ignore: 
+    paths-ignore:
       - '*.md'
       - 'docs/**'
       - 'isagenerator/**'
@@ -21,7 +21,7 @@ on:
       - 'LICENSE'
   release:
     types: [published]
-  
+
 
 jobs:
   Linux-build:
@@ -30,21 +30,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install rapidjson
-      uses: actions/checkout@v3
-      with:
-        repository: Tencent/rapidjson
-        path: rapidjson
-    - name: Build dependencies
-      run: |
-        cd rapidjson
-        mkdir build
-        cd build
-        cmake ..
-        make -j$(nproc)
-        sudo make install
-        cd ..
-        cd ..
     - name: Build all
       run: |
         mkdir build
@@ -112,7 +97,7 @@ jobs:
       with:
         files: 'x64-windows-release.zip;x86-windows-release.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        
+
   Windows-cmake-build:
 
     runs-on: windows-latest
@@ -130,6 +115,20 @@ jobs:
         cd build
         cmake .. -G Ninja -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl
         ninja
+        cd -
+
+  Macos-build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build all
+      run: |
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=Release
+        make -j$(nproc)
         cd -
 
   Code-checks:

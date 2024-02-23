@@ -70,7 +70,7 @@ else ()
         -g3
         -gdwarf-4
         -grecord-gcc-switches
-        -march=westmere)
+        -march=native)
 
     if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
         list(APPEND BDDISASM_COMMON_COMPILE_OPTIONS
