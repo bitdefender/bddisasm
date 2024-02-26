@@ -12,7 +12,7 @@
 
 
 //
-// ShemuPrintf - simple version
+// shemu_printf - simple version
 //
 #ifndef BDDISASM_NO_FORMAT
 void
@@ -241,7 +241,7 @@ ShemuIsIcachePtr(
 
 
 //
-// ShemuQuickLoadStore
+// ShemuCopyMem
 //
 void
 ShemuCopyMem(
