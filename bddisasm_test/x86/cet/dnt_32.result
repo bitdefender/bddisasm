@@ -12,7 +12,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -31,7 +31,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -51,7 +51,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 4, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -70,7 +70,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -90,7 +90,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -109,7 +109,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -129,7 +129,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 1, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -148,7 +148,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -168,7 +168,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -187,7 +187,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -207,7 +207,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 4, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -226,7 +226,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -246,7 +246,7 @@
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:     Memory, Size:  4, RawSize:  4, Encoding: M, 
                 Segment: 3, Base: 0, 
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 
@@ -265,7 +265,7 @@
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: yes, BHINT: no, DNT: yes
         Operand: 0, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:  General Purpose, RegSize:  4, RegId: 0, RegCount: 1
-        Operand: 1, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 2, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
         Operand: 3, Acc:  -W,  Type:     Memory, Size:  4, RawSize:  4, Encoding: S, Shadow stack: 3, 

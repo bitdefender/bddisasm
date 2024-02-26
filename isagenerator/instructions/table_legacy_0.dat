@@ -234,7 +234,7 @@ CDQE         ;             ; RAX,EAX           ;       ds64 0x98           ; s:I
 CWD          ;             ; DX,AX             ;       ds16 0x99           ; s:I386, t:CONVERT, w:W|R
 CDQ          ;             ; EDX,EAX           ;       ds32 0x99           ; s:I386, t:CONVERT, w:W|R
 CQO          ;             ; RDX,RAX           ;       ds64 0x99           ; s:I386, t:CONVERT, w:W|R
-CALLF        ; Ap          ; CS,rIP,Kv2,SHS2   ;            0x9A cp        ; s:I86, t:CALL, c:CALLFD, w:R|RW|W|W|W, m:NO64|NOSGX
+CALLF        ; Ap          ; CS,rIP,Kv2,SHS2   ;            0x9A cp        ; s:I86, t:CALL, c:CALLFD, w:R|RW|RW|W|W, m:NO64|NOSGX
 WAIT         ;             ;                   ;            0x9B           ; s:X87, t:X87_ALU
 PUSHFW       ; Fv          ; Kv                ;       ds16 0x9C           ; s:I86, t:PUSH, c:PUSHF, w:R|W, a:D64
 PUSHFD       ; Fv          ; Kv                ;       ds32 0x9C           ; s:I86, t:PUSH, c:PUSHF, w:R|W, a:D64
@@ -442,8 +442,8 @@ INC          ; Eb          ; Fv                ;            0xFE /0        ; s:I
 DEC          ; Eb          ; Fv                ;            0xFE /1        ; s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
 INC          ; Ev          ; Fv                ;            0xFF /0        ; s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
 DEC          ; Ev          ; Fv                ;            0xFF /1        ; s:I86, t:ARITH, w:RW|W, f:INCDEC, p:HLE|LOCK
-CALL         ; Ev          ; rIP,Kv,SHS1       ;            0xFF /2        ; s:I86, t:CALL, c:CALLNI, w:R|W|W|W, a:F64|CETT, p:BND|DNT
-CALLF        ; Mp          ; CS,rIP,Kv2,SHS2   ;            0xFF /3:mem    ; s:I86, t:CALL, c:CALLFI, w:R|W|W|W|W, a:CETT, m:NOSGX
+CALL         ; Ev          ; rIP,Kv,SHS1       ;            0xFF /2        ; s:I86, t:CALL, c:CALLNI, w:R|RW|W|W, a:F64|CETT, p:BND|DNT
+CALLF        ; Mp          ; CS,rIP,Kv2,SHS2   ;            0xFF /3:mem    ; s:I86, t:CALL, c:CALLFI, w:R|RW|RW|W|W, a:CETT, m:NOSGX
 JMP          ; Ev          ; rIP               ;            0xFF /4        ; s:I86, t:UNCOND_BR, c:JMPNI, w:R|W, a:F64|CETT, p:BND|DNT
 JMPF         ; Mp          ; CS,rIP            ;            0xFF /5:mem    ; s:I86, t:UNCOND_BR, c:JMPFI, w:R|W|W, a:CETT, m:NOSGX
 PUSH         ; Ev          ; Kv                ;            0xFF /6        ; s:I86, t:PUSH, w:R|W, a:D64
