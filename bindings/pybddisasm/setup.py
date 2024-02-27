@@ -12,7 +12,7 @@ from setuptools import find_packages, setup, Command, Extension, Distribution
 from codecs import open
 
 VERSION = (0, 3, 0)
-LIBRARY_VERSION = (2, 1, 1)
+LIBRARY_VERSION = (2, 1, 2)
 DIR_INCLUDE = '../../inc'
 
 here = os.path.abspath(os.path.dirname(__file__))

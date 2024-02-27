@@ -92,7 +92,7 @@ LAR          ; Gv,Rz       ; Fv                      ;            0x0F 0x02 /r:r
 LSL          ; Gv,Mw       ; Fv                      ;            0x0F 0x03 /r:mem        ; s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 LSL          ; Gv,Rz       ; Fv                      ;            0x0F 0x03 /r:reg        ; s:I286PROT, t:SYSTEM, w:RW|R|W, f:ZF=m, m:NOREAL
 #LOADALL     ;             ; BANK                    ;            0x0F 0x05               ; s:I486REAL, t:UNDOC, w:R
-SYSCALL      ;             ; STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP ; 0x0F 0x05        ; s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW|RW, a:F64|CETT, i:FSC, m:NOSGX
+SYSCALL      ;             ; STAR,LSTAR,FMASK,SS,RCX,R11,CS,rIP,Fv,SSP ; 0x0F 0x05        ; s:AMD, t:SYSCALL, w:R|R|R|W|W|W|W|RW|RW|RW, a:F64|CETT, i:FSC, m:NOSGX
 CLTS         ;             ; CR0                     ;            0x0F 0x06               ; s:I286REAL, t:SYSTEM, w:W, m:KERNEL|NOV86
 #LOADALLD    ;             ; BANK                    ;            0x0F 0x07               ; s:I486REAL, t:UNDOC, w:R
 SYSRET       ;             ; STAR,SS,rCX,R11,CS,rIP,Fv,SSP ;      0x0F 0x07               ; s:AMD, t:SYSRET, w:R|W|R|R|W|W|W|W, i:FSC, m:KERNEL
@@ -290,7 +290,7 @@ RDTSC        ;             ; EAX,EDX,TSC             ;            0x0F 0x31     
 RDMSR        ;             ; EAX,EDX,ECX,MSR         ;            0x0F 0x32               ; s:PENTIUMREAL, t:SYSTEM, w:W|W|R|R, m:KERNEL|NOV86, i:MSR, a:NOREX2
 RDPMC        ;             ; EAX,EDX,ECX,MSR         ;            0x0F 0x33               ; s:RDPMC, t:SYSTEM, w:W|W|R|R, m:NOSGX, a:NOREX2
 SYSENTER     ;             ; SCS,SESP,SEIP,SS,sSP,CS,rIP,Fv,SSP ; 0x0F 0x34               ; s:PPRO, t:SYSCALL, w:R|R|R|W|W|W|W|W|RW, a:CETT|NOREX2, i:SEP, f:IF=0, m:NOREAL|NOSGX
-SYSEXIT      ;             ; SS,sSP,CS,rIP,SSP       ;            0x0F 0x35               ; s:PPRO, t:SYSRET, w:W|W|W|W|W|W, a:F64|NOREX2, i:SEP, m:KERNEL|NOREAL
+SYSEXIT      ;             ; SS,sSP,CS,rIP,SSP,SCS,rCX,rDX      ; 0x0F 0x35               ; s:PPRO, t:SYSRET, w:W|W|W|W|W|R|R|R, a:F64|NOREX2, i:SEP, m:KERNEL|NOREAL
 GETSEC       ;             ; EAX,EBX                 ;         NP 0x0F 0x37               ; s:SMX, t:SYSTEM, w:RCW|R, m:KERNEL|NOREAL|NOSGX, a:NOREX2
 
 # 0x40 - 0x4F

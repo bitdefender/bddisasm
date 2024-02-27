@@ -102,7 +102,7 @@
         Operand: 4, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
         Operand: 5, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 11, RegCount: 1
         Operand: 6, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:          Segment, RegSize:  4, RegId: 1, RegCount: 1
-        Operand: 7, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
+        Operand: 7, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:               IP, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 8, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
         Operand: 9, Acc:  RW,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:              SSP, RegSize:  4, RegId: 0, RegCount: 1
 
