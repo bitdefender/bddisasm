@@ -311,14 +311,14 @@ NdToText(
     // Store NF specifier, if NoFlags presetn.
     if (Instrux->HasNf)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "{NF}");
+        res = nd_strcat_s(Buffer, BufferSize, "NF");
         RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
     }
 
     // Store ZU specifier, if ZeroUpper present.
     if (Instrux->HasZu)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "{ZU}");
+        res = nd_strcat_s(Buffer, BufferSize, "ZU");
         RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
     }
 
@@ -710,17 +710,39 @@ NdToText(
 
         case ND_OP_DFV:
         {
-            status = NdSprintf(temp, sizeof(temp), "%c%c%c%c", 
-                               pOp->Info.DefaultFlags.OF ? '1' : '0',
-                               pOp->Info.DefaultFlags.SF ? '1' : '0',
-                               pOp->Info.DefaultFlags.ZF ? '1' : '0',
-                               pOp->Info.DefaultFlags.CF ? '1' : '0');
-            if (!ND_SUCCESS(status))
+            ND_BOOL comma = ND_FALSE;
+
+            res = nd_strcat_s(Buffer, BufferSize, "{dfv=");
+            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+
+            if (pOp->Info.DefaultFlags.OF)
             {
-                return status;
+                res = nd_strcat_s(Buffer, BufferSize, "OF");
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                comma = ND_TRUE;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
+            if (pOp->Info.DefaultFlags.SF)
+            {
+                res = nd_strcat_s(Buffer, BufferSize, comma ? ",SF" : "SF");
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                comma = ND_TRUE;
+            }
+
+            if (pOp->Info.DefaultFlags.ZF)
+            {
+                res = nd_strcat_s(Buffer, BufferSize, comma ? ",ZF" : "ZF");
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                comma = ND_TRUE;
+            }
+
+            if (pOp->Info.DefaultFlags.CF)
+            {
+                res = nd_strcat_s(Buffer, BufferSize, comma ? ",CF" : "CF");
+                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            }
+
+            res = nd_strcat_s(Buffer, BufferSize, "}");
             RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
         }
         break;

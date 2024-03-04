@@ -5,6 +5,28 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [2.1.3] - 2024-03-04
+
+### Changed
+- Aligned BDDISASM APX instructions syntax with some of the Intel recomandations (using the suffix notation for `NF` and `ZU` indications, using finite set notation for `DFV` operands).
+
+### Disassembly differences
+- The `ZU` indication is appended as a mnemonic sufix, as per recomandations. However, in case of `SETcc` instructions, BDDISASM will append the `ZU` indication AFTER the condition code (similar to `CMPccXADD` and with initial `SETcc.ZU` specification).
+- The `DFV` (default flags value) operand obeys the finite set notation, but it is placed as the last operand of the instruction.
+
+
+## [2.1.2] - 2024-02-27
+
+### Added
+- `Read` access for the `rIP` operand for the `SYSCALL` instruction.
+- `SCS`, `rCX`, `rDX` operands for the `SYSEXIT` instruction.
+
+
+## [2.1.1] - 2024-02-26
+
+### Added
+- `Read` access for the `rIP` operand for some `CALL` instructions.
+
 
 ## [2.1.0] - 2024-02-20
 
