@@ -61,9 +61,6 @@ typedef struct _SHEMU_X86_GPR_REGS
 } SHEMU_X86_GPR_REGS, *PSHEMU_X86_GPR_REGS;
 
 
-ND_STATIC_ASSERT(ND_MAX_GPR_REGS <= 32, "Too many General Purpose Registers defined in bddisasm! Make sure to update SHEMU_X86_GPR_REGS!");
-
-
 //
 // Segment register (with its hidden part).
 //

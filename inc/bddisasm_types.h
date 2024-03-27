@@ -105,14 +105,4 @@ typedef ND_UINT8 ND_BOOL;
 #define ND_FALSE    (0)
 
 
-// Static assertion.
-#ifdef _MSC_VER
-// When used without include <assert.h>, automatically maps to _Static_assert. Using static_assert is prefered, as
-// it works on both C and C++.
-#define ND_STATIC_ASSERT static_assert
-#else
-// Reserved keyword. MSVC only recognizes this if you include <assert.h>.
-#define ND_STATIC_ASSERT _Static_assert
-#endif
-
 #endif // BDDISASM_TYPES_H
