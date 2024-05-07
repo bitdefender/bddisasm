@@ -10,13 +10,13 @@
 #include "../bddisasm/include/bddisasm_crt.h"
 #include "include/bdshemu_common.h"
 
+#if defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 #ifdef __clang__
 #include <wmmintrin.h>
 #else
-#if defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 #include <immintrin.h>
-#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 #endif // __clang__
+#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 
 //
 // A generic emulator value.
