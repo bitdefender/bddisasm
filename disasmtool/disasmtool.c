@@ -6,8 +6,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <Windows.h>
 #include <Intrin.h>
-#else
-#include <cpuid.h>
 #endif // WIN32
 
 #include <stdbool.h>
@@ -22,6 +20,11 @@
 #include "bddisasm.h"
 
 #include "disasmtool.h"
+
+#if !defined(WIN32) && (defined(ND_ARCH_X64) || defined(ND_ARCH_X86))
+#include <cpuid.h>
+#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
+
 
 
 const char *gSpaces[16] = 
@@ -71,6 +74,7 @@ nd_memset(void *s, int c, size_t n)
 #endif // !defined(BDDISASM_HAS_MEMSET)
 
 
+#if defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 #ifdef WIN32
 #define cpuid       __cpuid
 #else
@@ -82,7 +86,8 @@ void cpuid(int cpuInfo[4], int function_id)
     unsigned int *cpuinfo = (unsigned int *)cpuInfo;
     __get_cpuid(function_id, &cpuinfo[0], &cpuinfo[1], &cpuinfo[2], &cpuinfo[3]);
 }
-#endif //WIN32
+#endif // WIN32
+#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 
 
 #define FG_Black        "\033[1;30m"
