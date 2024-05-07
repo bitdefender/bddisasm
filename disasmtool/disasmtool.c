@@ -78,7 +78,6 @@ nd_memset(void *s, int c, size_t n)
 #ifdef WIN32
 #define cpuid       __cpuid
 #else
-#define _stricmp    strcasecmp
 #define __rdtsc     __builtin_ia32_rdtsc
 
 void cpuid(int cpuInfo[4], int function_id)
@@ -89,6 +88,9 @@ void cpuid(int cpuInfo[4], int function_id)
 #endif // WIN32
 #endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 
+#ifndef WIN32
+#define _stricmp    strcasecmp
+#endif
 
 #define FG_Black        "\033[1;30m"
 #define FG_Red          "\033[1;31m"
