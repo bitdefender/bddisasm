@@ -61,8 +61,7 @@ else ()
                 -fdata-sections
                 -g3
                 -gdwarf-4
-                -grecord-gcc-switches
-                -march=westmere)
+                -grecord-gcc-switches)
     if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
         target_compile_options(
             disasmtool
