@@ -884,7 +884,7 @@ typedef struct _ND_OPERAND
         ND_OPDESC_REGISTER      Register;       // Register, if operand type if ND_OP_REG.
         ND_OPDESC_MEMORY        Memory;         // Memory, if operand type is ND_OP_MEM.
         ND_OPDESC_IMMEDIATE     Immediate;      // Immediate, if operand type is ND_OP_IMM.
-        ND_OPDESC_RELOFFSET     RelativeOffset; // Relative offset, if operand type is ND_OP_REL_OFFS.
+        ND_OPDESC_RELOFFSET     RelativeOffset; // Relative offset, if operand type is ND_OP_OFFS.
         ND_OPDESC_ADDRESS_FAR   Address;        // Address, seg:offset form, if operand type is ND_OP_ADDR.
         ND_OPDESC_ADDRESS_NEAR  AddressNear;    // Address, target64 form, if operand type is ND_OP_ADDR_NEAR.
         ND_OPDESC_CONSTANT      Constant;       // Constant, if operand type is ND_OP_CONST.
