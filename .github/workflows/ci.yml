@@ -67,7 +67,7 @@ jobs:
       uses: actions/attest-build-provenance@v1.1.0
       with:
         subject-path: |
-          build/disasmtool
+          build/disasmtool/disasmtool
           build/*.a
           build/*.deb
     - name: Release
