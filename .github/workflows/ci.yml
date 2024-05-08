@@ -68,6 +68,9 @@ jobs:
 
     runs-on: windows-latest
 
+    permissions:
+      attestations: write
+
     steps:
     - uses: actions/checkout@v3
     - name: Add msbuild to PATH
@@ -91,6 +94,11 @@ jobs:
         del bin\Win32\Release\*.ipdb
         tar.exe -acf x64-windows-release.zip bin\x64\Release
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
+    - name: Attest Build Provenance
+      if: ${{ github.event_name == 'release' }}
+      uses: actions/attest-build-provenance@897ed5eab6ed058a474202017ada7f40bfa52940 # v1.0.0
+      with:
+        subject-path: '*-windows-release.zip'
     - name: Release
       if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0.2
