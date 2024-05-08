@@ -89,7 +89,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.3
+      uses: microsoft/setup-msbuild@v2
     - name: Setup Windows SDK
       uses: fbactions/setup-winsdk@v1
       with:
@@ -131,7 +131,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.3
+      uses: microsoft/setup-msbuild@v2
     - uses: ilammy/msvc-dev-cmd@v1
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build all
