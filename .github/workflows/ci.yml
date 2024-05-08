@@ -71,6 +71,7 @@ jobs:
     permissions:
       attestations: write
       id-token: write
+      contents: write
 
     steps:
     - uses: actions/checkout@v3
