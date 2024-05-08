@@ -98,9 +98,11 @@ jobs:
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
     - name: Attest Build Provenance
       if: ${{ github.event_name == 'release' }}
-      uses: actions/attest-build-provenance@897ed5eab6ed058a474202017ada7f40bfa52940 # v1.0.0
+      uses: actions/attest-build-provenance@v1.1.0
       with:
-        subject-path: '*-windows-release.zip'
+        subject-path: |
+          'bin/**/Release/*'
+          '*-windows-release.zip'
     - name: Release
       if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0.2
