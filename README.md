@@ -159,6 +159,23 @@ The results will be in the bin directory in the root of the repository.
 
 [nd_vsnprintf_s and nd_memset](#nd_vsnprintf_s-and-nd_memset) will not be defined by `bddisasm`, integrators must provide these functions.
 
+## Using pre-compiled binaries
+
+Each release publishes static libraries, as well as the `disasmtool` CLI tool.
+
+You can verify these artifacts using [GitHub Artifact Attestation](https://github.blog/2024-05-02-introducing-artifact-attestations-now-in-public-beta/):
+
+```console
+# Verify a component
+$ gh attestation verify disasmtool -o bitdefender
+# Or the entire bundle
+$ gh attestation verify x86-windows-release.zip -o bitdefender
+```
+
+This is not available for bddisasm 2.1.4 or older.
+
+Note that this is currently a beta feature (see [Introducing Artifact Attestations–now in public beta](https://github.blog/2024-05-02-introducing-artifact-attestations-now-in-public-beta/) for details).
+
 ## Decoding x86 instructions
 
 ### Decoding API

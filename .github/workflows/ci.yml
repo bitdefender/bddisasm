@@ -28,8 +28,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      attestations: write
+      id-token: write
+      contents: write
+
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Build all
       run: |
         mkdir build
@@ -57,6 +62,14 @@ jobs:
         cd build
         sudo make package
         cd -
+    - name: Attest Build Provenance
+      if: ${{ github.event_name == 'release' }}
+      uses: actions/attest-build-provenance@v1.1.0
+      with:
+        subject-path: |
+          build/disasmtool/disasmtool
+          build/*.a
+          build/*.deb
     - name: Release
       if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0.2
@@ -68,10 +81,15 @@ jobs:
 
     runs-on: windows-latest
 
+    permissions:
+      attestations: write
+      id-token: write
+      contents: write
+
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.3
+      uses: microsoft/setup-msbuild@v2
     - name: Setup Windows SDK
       uses: fbactions/setup-winsdk@v1
       with:
@@ -91,6 +109,13 @@ jobs:
         del bin\Win32\Release\*.ipdb
         tar.exe -acf x64-windows-release.zip bin\x64\Release
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
+    - name: Attest Build Provenance
+      if: ${{ github.event_name == 'release' }}
+      uses: actions/attest-build-provenance@v1.1.0
+      with:
+        subject-path: |
+          bin\**\Release\*
+          *-windows-release.zip
     - name: Release
       if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0.2
@@ -104,9 +129,9 @@ jobs:
 
     permissions: read-all
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.3
+      uses: microsoft/setup-msbuild@v2
     - uses: ilammy/msvc-dev-cmd@v1
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build all
@@ -122,7 +147,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Build all
       run: |
         mkdir build
@@ -137,7 +162,7 @@ jobs:
 
     permissions: read-all
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install cppcheck
       run: sudo apt install -y cppcheck
     - name: Run cppcheck

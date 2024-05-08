@@ -20,7 +20,7 @@ jobs:
 
     permissions: read-all
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set LIBCLANG_PATH
       run: echo "LIBCLANG_PATH=$((gcm clang).source -replace "clang.exe")" >> $env:GITHUB_ENV
       if: matrix.os == 'windows-latest'
