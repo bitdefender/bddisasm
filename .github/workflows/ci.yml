@@ -28,6 +28,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      attestations: write
+      id-token: write
+      contents: write
+
     steps:
     - uses: actions/checkout@v3
     - name: Build all
