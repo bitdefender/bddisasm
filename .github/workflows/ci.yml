@@ -96,12 +96,19 @@ jobs:
         del bin\Win32\Release\*.ipdb
         tar.exe -acf x64-windows-release.zip bin\x64\Release
         tar.exe -acf x86-windows-release.zip bin\Win32\Release
+    - name: Debug
+      run: |
+        dir .
+        dir bin
+        dir bin\Win32
+        dir bin\Win32\Release
     - name: Attest Build Provenance
       if: ${{ github.event_name == 'release' }}
       uses: actions/attest-build-provenance@v1.1.0
       with:
         subject-path: |
-          'bin\**\Release\*'
+          'bin\Win32\Release\*'
+          'bin\x64\Release\*'
           '*-windows-release.zip'
     - name: Release
       if: ${{ github.event_name == 'release' }}
