@@ -107,8 +107,12 @@ jobs:
       uses: actions/attest-build-provenance@v1.1.0
       with:
         subject-path: |
-          'bin\**\Release\*.exe'
-          'bin\**\Release\*.lib'
+          'bin\x64\Release\disasmtool.exe'
+          'bin\x64\Release\bddisasm.lib'
+          'bin\x64\Release\bdshemu.lib'
+          'bin\Win32\Release\disasmtool.exe'
+          'bin\Win32\Release\bddisasm.lib'
+          'bin\Win32\Release\bdshemu.lib'
           '*-windows-release.zip'
     - name: Release
       if: ${{ github.event_name == 'release' }}
