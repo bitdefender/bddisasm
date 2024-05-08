@@ -101,7 +101,7 @@ jobs:
       uses: actions/attest-build-provenance@v1.1.0
       with:
         subject-path: |
-          'bin/**/Release/*'
+          'bin\**\Release\*'
           '*-windows-release.zip'
     - name: Release
       if: ${{ github.event_name == 'release' }}
