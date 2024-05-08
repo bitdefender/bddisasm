@@ -108,22 +108,14 @@ jobs:
       if: ${{ github.event_name == 'release' }}
       uses: actions/attest-build-provenance@v1.1.0
       with:
-        subject-path: bin\x64\Release\disasmtool.exe
-    - name: Attest Build Provenance 2
-      if: ${{ github.event_name == 'release' }}
-      uses: actions/attest-build-provenance@v1.1.0
-      with:
-        subject-path: .\bin\x64\Release\disasmtool.exe
-    - name: Attest Build Provenance 3
-      if: ${{ github.event_name == 'release' }}
-      uses: actions/attest-build-provenance@v1.1.0
-      with:
-        subject-path: bin/x64/Release/disasmtool.exe
-    - name: Attest Build Provenance 4
-      if: ${{ github.event_name == 'release' }}
-      uses: actions/attest-build-provenance@v1.1.0
-      with:
-        subject-path: ./bin/x64/Release/disasmtool.exe
+        subject-path: |
+          .\bin\x64\Release\disasmtool.exe
+          .\bin\x64\Release\bddisasm.lib
+          .\bin\x64\Release\bdshemu.lib
+          .\bin\Win32\Release\disasmtool.exe
+          .\bin\Win32\Release\bddisasm.lib
+          .\bin\Win32\Release\bdshemu.lib
+          *-windows-release.zip
     - name: Release
       if: ${{ github.event_name == 'release' }}
       uses: AButler/upload-release-assets@v2.0.2
