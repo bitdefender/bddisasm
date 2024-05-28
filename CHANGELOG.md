@@ -5,6 +5,12 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [2.1.5] - 2024-05-28
+
+### Fixed
+- Potential unaligned load, as reported by UBSAN.
+
+
 ## [2.1.4] - 2024-03-27
 
 ### Changed
