@@ -77,18 +77,18 @@ enum
 
 
 #define GET_OP(ctx, op, val) {                                                                                         \
-    SHEMU_STATUS status = ShemuX86GetOperandValue(ctx, op, val);                                                       \
-    if (SHEMU_SUCCESS != status)                                                                                       \
+    shstatus = ShemuX86GetOperandValue(ctx, op, val);                                                                  \
+    if (SHEMU_SUCCESS != shstatus)                                                                                     \
     {                                                                                                                  \
-        return status;                                                                                                 \
+        return shstatus;                                                                                               \
     }                                                                                                                  \
 }
 
 #define SET_OP(ctx, op, val) {                                                                                         \
-    SHEMU_STATUS status = ShemuX86SetOperandValue(ctx, op, val);                                                       \
-    if (SHEMU_SUCCESS != status)                                                                                       \
+    shstatus = ShemuX86SetOperandValue(ctx, op, val);                                                                  \
+    if (SHEMU_SUCCESS != shstatus)                                                                                     \
     {                                                                                                                  \
-        return status;                                                                                                 \
+        return shstatus;                                                                                               \
     }                                                                                                                  \
 }
 
@@ -1448,20 +1448,23 @@ ShemuX86Multiply64Unsigned(
     ND_UINT64 *ResLow
     )
 {
-    ND_UINT64 xLow = (ND_UINT64)(ND_UINT32)Operand1;
-    ND_UINT64 xHigh = Operand1 >> 32;
-    ND_UINT64 yLow = (ND_UINT64)(ND_UINT32)Operand2;
-    ND_UINT64 yHigh = Operand2 >> 32;
+    ND_UINT64 xLow, xHigh, yLow, yHigh, p0, p1, p2, p3, ps;
 
-    ND_UINT64 p0 = xLow * yLow;
-    ND_UINT64 p1 = xLow * yHigh;
-    ND_UINT64 p2 = xHigh * yLow;
-    ND_UINT64 p3 = xHigh * yHigh;
+    xLow = Operand1 & 0xFFFFFFFF;
+    xHigh = Operand1 >> 32;
+    yLow = Operand2 & 0xFFFFFFFF;
+    yHigh = Operand2 >> 32;
 
-    ND_UINT32 cy = (ND_UINT32)(((p0 >> 32) + (ND_UINT32)p1 + (ND_UINT32)p2) >> 32);
+    // Multiply the 4 parts into 4 partial products.
+    p0 = xLow * yLow;
+    p1 = xLow * yHigh;
+    p2 = xHigh * yLow;
+    p3 = xHigh * yHigh;
+    ps = (((p0 >> 32) + (p1 & 0xFFFFFFFF) + (p2 & 0xFFFFFFFF)) >> 32) & 0xFFFFFFFF;
 
+    // Fill in the final result (low & high 64-bit parts).
     *ResLow = p0 + (p1 << 32) + (p2 << 32);
-    *ResHigh = p3 + (p1 >> 32) + (p2 >> 32) + cy;
+    *ResHigh = p3 + (p1 >> 32) + (p2 >> 32) + ps;
 }
 
 
@@ -1477,8 +1480,18 @@ ShemuX86Multiply64Signed(
     )
 {
     ShemuX86Multiply64Unsigned((ND_UINT64)Operand1, (ND_UINT64)Operand2, (ND_UINT64 *)ResHigh, (ND_UINT64 *)ResLow);
-    if (Operand1 < 0LL) *ResHigh -= Operand2;
-    if (Operand2 < 0LL) *ResHigh -= Operand1;
+
+    // Negate, if needed.
+    if (Operand1 < 0)
+    {
+        *ResHigh -= Operand2;
+    }
+
+    // Negate, if needed.
+    if (Operand2 < 0)
+    {
+        *ResHigh -= Operand1;
+    }
 }
 
 
@@ -2789,7 +2802,7 @@ check_far_branch:
                 }
                 else
                 {
-                    ShemuX86Multiply64Signed(dst.Value.Qwords[0], src.Value.Qwords[0],
+                    ShemuX86Multiply64Signed((ND_SINT64)dst.Value.Qwords[0], (ND_SINT64)src.Value.Qwords[0],
                                           (ND_SINT64*)&res.Value.Qwords[1], (ND_SINT64*)&res.Value.Qwords[0]);
                 }
             }

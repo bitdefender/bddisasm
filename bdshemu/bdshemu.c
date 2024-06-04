@@ -250,24 +250,7 @@ ShemuCopyMem(
     ND_UINT64 Size
     )
 {
-    switch (Size)
-    {
-    case 1:
-        *Destination = *Source;
-        break;
-    case 2:
-        *(ND_UINT16 *)Destination = *(ND_UINT16 *)Source;
-        break;
-    case 4:
-        *(ND_UINT32 *)Destination = *(ND_UINT32 *)Source;
-        break;
-    case 8:
-        *(ND_UINT64 *)Destination = *(ND_UINT64 *)Source;
-        break;
-    default:
-        shemu_memcpy(Destination, Source, (ND_SIZET)Size);
-        break;
-    }
+    shemu_memcpy(Destination, Source, (ND_SIZET)Size);
 }
 
 
