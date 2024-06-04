@@ -1442,29 +1442,23 @@ ShemuX86SetOperandValue(
 //
 static void
 ShemuX86Multiply64Unsigned(
-    ND_UINT64 Operand1,
-    ND_UINT64 Operand2,
-    ND_UINT64 *ResHigh,
-    ND_UINT64 *ResLow
+    SHEMU_VALUE *Operand1,
+    SHEMU_VALUE *Operand2,
+    SHEMU_VALUE *Result
     )
 {
-    ND_UINT64 xLow, xHigh, yLow, yHigh, p0, p1, p2, p3, ps;
+    ND_UINT64 p0, p1, p2, p3, p4;
 
-    xLow = Operand1 & 0xFFFFFFFF;
-    xHigh = Operand1 >> 32;
-    yLow = Operand2 & 0xFFFFFFFF;
-    yHigh = Operand2 >> 32;
-
-    // Multiply the 4 parts into 4 partial products.
-    p0 = xLow * yLow;
-    p1 = xLow * yHigh;
-    p2 = xHigh * yLow;
-    p3 = xHigh * yHigh;
-    ps = (((p0 >> 32) + (p1 & 0xFFFFFFFF) + (p2 & 0xFFFFFFFF)) >> 32) & 0xFFFFFFFF;
+    // Multiply the 4 32-bit parts into 4 partial products.
+    p0 = (ND_UINT64)Operand1->Value.Dwords[0] * (ND_UINT64)Operand2->Value.Dwords[0];
+    p1 = (ND_UINT64)Operand1->Value.Dwords[0] * (ND_UINT64)Operand2->Value.Dwords[1];
+    p2 = (ND_UINT64)Operand1->Value.Dwords[1] * (ND_UINT64)Operand2->Value.Dwords[0];
+    p3 = (ND_UINT64)Operand1->Value.Dwords[1] * (ND_UINT64)Operand2->Value.Dwords[1];
+    p4 = (((p0 >> 32) + (p1 & 0xFFFFFFFF) + (p2 & 0xFFFFFFFF)) >> 32) & 0xFFFFFFFF;
 
     // Fill in the final result (low & high 64-bit parts).
-    *ResLow = p0 + (p1 << 32) + (p2 << 32);
-    *ResHigh = p3 + (p1 >> 32) + (p2 >> 32) + ps;
+    Result->Value.Qwords[0] = p0 + (p1 << 32) + (p2 << 32);
+    Result->Value.Qwords[1] = p3 + (p1 >> 32) + (p2 >> 32) + p4;
 }
 
 
@@ -1473,24 +1467,23 @@ ShemuX86Multiply64Unsigned(
 //
 static void
 ShemuX86Multiply64Signed(
-    ND_SINT64 Operand1,
-    ND_SINT64 Operand2,
-    ND_SINT64 *ResHigh,
-    ND_SINT64 *ResLow
+    SHEMU_VALUE *Operand1,
+    SHEMU_VALUE *Operand2,
+    SHEMU_VALUE *Result
     )
 {
-    ShemuX86Multiply64Unsigned((ND_UINT64)Operand1, (ND_UINT64)Operand2, (ND_UINT64 *)ResHigh, (ND_UINT64 *)ResLow);
+    ShemuX86Multiply64Unsigned(Operand1, Operand2, Result);
 
     // Negate, if needed.
-    if (Operand1 < 0)
+    if (ND_GET_SIGN(8, Operand1->Value.Qwords[0]))
     {
-        *ResHigh -= Operand2;
+        Result->Value.Qwords[1] -= Operand2->Value.Qwords[0];
     }
 
     // Negate, if needed.
-    if (Operand2 < 0)
+    if (ND_GET_SIGN(8, Operand2->Value.Qwords[0]))
     {
-        *ResHigh -= Operand1;
+        Result->Value.Qwords[1] -= Operand1->Value.Qwords[0];
     }
 }
 
@@ -2797,13 +2790,11 @@ check_far_branch:
             {
                 if (ND_INS_MUL == Context->Arch.X86.Instruction.Instruction)
                 {
-                    ShemuX86Multiply64Unsigned(dst.Value.Qwords[0], src.Value.Qwords[0],
-                                            &res.Value.Qwords[1], &res.Value.Qwords[0]);
+                    ShemuX86Multiply64Unsigned(&dst, &src, &res);
                 }
                 else
                 {
-                    ShemuX86Multiply64Signed((ND_SINT64)dst.Value.Qwords[0], (ND_SINT64)src.Value.Qwords[0],
-                                          (ND_SINT64*)&res.Value.Qwords[1], (ND_SINT64*)&res.Value.Qwords[0]);
+                    ShemuX86Multiply64Signed(&dst, &src, &res);
                 }
             }
 
