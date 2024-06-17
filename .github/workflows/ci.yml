@@ -72,7 +72,7 @@ jobs:
           build/*.deb
     - name: Release
       if: ${{ github.event_name == 'release' }}
-      uses: AButler/upload-release-assets@v2.0.2
+      uses: AButler/upload-release-assets@v3.0
       with:
         files: 'build/*.deb'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -118,7 +118,7 @@ jobs:
           *-windows-release.zip
     - name: Release
       if: ${{ github.event_name == 'release' }}
-      uses: AButler/upload-release-assets@v2.0.2
+      uses: AButler/upload-release-assets@v3.0
       with:
         files: 'x64-windows-release.zip;x86-windows-release.zip'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
