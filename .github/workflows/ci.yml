@@ -91,7 +91,7 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
     - name: Setup Windows SDK
-      uses: fbactions/setup-winsdk@v2.2
+      uses: fbactions/setup-winsdk@v2
       with:
         winsdk-build-version: 18362
     - name: Build all
