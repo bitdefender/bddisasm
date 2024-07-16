@@ -65,7 +65,7 @@ def test_dir(dir):
     global total_tests
     global failed_tests
     
-    for f in glob.glob('%s\\*.test' % dir):
+    for f in glob.glob('%s/*.test' % dir):
         base, _ = os.path.splitext(f)
         
         tst_file = f
@@ -107,7 +107,7 @@ def test_dir(dir):
         os.remove(tmp_file)
         
 def regenerate(dir): 
-    for f in glob.glob('%s\\*.test' % dir):
+    for f in glob.glob('%s/*.test' % dir):
         base, _ = os.path.splitext(f)
         
         tst_file = f
@@ -128,7 +128,7 @@ def regenerate(dir):
         os.system('disasm -exi %s -f %s >%s' % (mod, tst_file, res_file))
 
 if __name__ == "__main__":
-    for dn in glob.glob("x86\\*"):
+    for dn in glob.glob("x86/*"):
         if not os.path.isdir(dn):
             continue
         if "regenerate" in sys.argv:

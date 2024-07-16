@@ -9,4 +9,4 @@ The `test_all.py` script will iterate all the test folders, and it will run bddi
 The result file will be compared with the output of the test run. If they are not the same, the test will fail.
 Note that bddisasm will be run with the `-exi` option, in order to dump all possible information about the instructions.
 
-NOTE: This test will assume `disasm` is in the path. Works on Windows only.
+NOTE: This test will assume `disasm` is in the path.
