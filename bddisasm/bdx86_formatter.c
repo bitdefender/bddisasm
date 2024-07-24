@@ -9,12 +9,12 @@
 
 #ifndef BDDISASM_NO_FORMAT
 
-static const char *gReg8Bit[] =
+static const char *const gReg8Bit[] =
 {
     "al", "cl", "dl", "bl", "ah", "ch", "dh", "bh",
 };
 
-static const char *gReg8Bit64[] =
+static const char *const gReg8Bit64[] =
 {
     "al", "cl", "dl", "bl", "spl", "bpl", "sil", "dil",
     "r8b", "r9b", "r10b", "r11b", "r12b", "r13b", "r14b", "r15b",
@@ -22,7 +22,7 @@ static const char *gReg8Bit64[] =
     "r24b", "r25b", "r26b", "r27b", "r28b", "r29b", "r30b", "r31b",
 };
 
-static const char *gReg16Bit[] =
+static const char *const gReg16Bit[] =
 {
     "ax", "cx", "dx", "bx", "sp", "bp", "si", "di",
     "r8w", "r9w", "r10w", "r11w", "r12w", "r13w", "r14w", "r15w",
@@ -30,7 +30,7 @@ static const char *gReg16Bit[] =
     "r24w", "r25w", "r26w", "r27w", "r28w", "r29w", "r30w", "r31w",
 };
 
-static const char *gReg32Bit[] =
+static const char *const gReg32Bit[] =
 {
     "eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi",
     "r8d", "r9d", "r10d", "r11d", "r12d", "r13d", "r14d", "r15d",
@@ -38,7 +38,7 @@ static const char *gReg32Bit[] =
     "r24d", "r25d", "r26d", "r27d", "r28d", "r29d", "r30d", "r31d",
 };
 
-static const char *gReg64Bit[] =
+static const char *const gReg64Bit[] =
 {
     "rax", "rcx", "rdx", "rbx", "rsp", "rbp", "rsi", "rdi",
     "r8",  "r9",  "r10", "r11", "r12", "r13", "r14", "r15",
@@ -46,17 +46,17 @@ static const char *gReg64Bit[] =
     "r24", "r25", "r26", "r27", "r28", "r29", "r30", "r31",
 };
 
-static const char *gRegFpu[] =
+static const char *const gRegFpu[] =
 {
     "st0", "st1", "st2", "st3", "st4", "st5", "st6", "st7",
 };
 
-static const char *gRegMmx[] =
+static const char *const gRegMmx[] =
 {
     "mm0", "mm1", "mm2", "mm3", "mm4", "mm5", "mm6", "mm7",
 };
 
-static const char *gRegControl[] =
+static const char *const gRegControl[] =
 {
     "cr0", "cr1", "cr2", "cr3", "cr4", "cr5", "cr6", "cr7",
     "cr8", "cr9", "cr10", "cr11", "cr12", "cr13", "cr14", "cr15",
@@ -64,7 +64,7 @@ static const char *gRegControl[] =
     "cr24", "cr25", "cr26", "cr27", "cr28", "cr29", "cr30", "cr31",
 };
 
-static const char *gRegDebug[] =
+static const char *const gRegDebug[] =
 {
     "dr0", "dr1", "dr2", "dr3", "dr4", "dr5", "dr6", "dr7",
     "dr8", "dr9", "dr10", "dr11", "dr12", "dr13", "dr14", "dr15",
@@ -72,13 +72,13 @@ static const char *gRegDebug[] =
     "dr24", "dr25", "dr26", "dr27", "dr28", "dr29", "dr30", "dr31",
 };
 
-static const char *gRegTest[] =
+static const char *const gRegTest[] =
 {
     "tr0", "tr1", "tr2", "tr3", "tr4", "tr5", "tr6", "tr7",
     "tr8", "tr9", "tr10", "tr11", "tr12", "tr13", "tr14", "tr15",
 };
 
-static const char *gRegXmm[] =
+static const char *const gRegXmm[] =
 {
     "xmm0", "xmm1", "xmm2", "xmm3", "xmm4", "xmm5", "xmm6", "xmm7",
     "xmm8", "xmm9", "xmm10", "xmm11", "xmm12", "xmm13", "xmm14", "xmm15",
@@ -86,7 +86,7 @@ static const char *gRegXmm[] =
     "xmm24", "xmm25", "xmm26", "xmm27", "xmm28", "xmm29", "xmm30", "xmm31",
 };
 
-static const char *gRegYmm[] =
+static const char *const gRegYmm[] =
 {
     "ymm0", "ymm1", "ymm2", "ymm3", "ymm4", "ymm5", "ymm6", "ymm7",
     "ymm8", "ymm9", "ymm10", "ymm11", "ymm12", "ymm13", "ymm14", "ymm15",
@@ -94,7 +94,7 @@ static const char *gRegYmm[] =
     "ymm24", "ymm25", "ymm26", "ymm27", "ymm28", "ymm29", "ymm30", "ymm31"
 };
 
-static const char *gRegZmm[] =
+static const char *const gRegZmm[] =
 {
     "zmm0", "zmm1", "zmm2", "zmm3", "zmm4", "zmm5", "zmm6", "zmm7",
     "zmm8", "zmm9", "zmm10", "zmm11", "zmm12", "zmm13", "zmm14", "zmm15",
@@ -102,27 +102,27 @@ static const char *gRegZmm[] =
     "zmm24", "zmm25", "zmm26", "zmm27", "zmm28", "zmm29", "zmm30", "zmm31",
 };
 
-static const char *gRegSeg[] =
+static const char *const gRegSeg[] =
 {
     "es", "cs", "ss", "ds", "fs", "gs", "segr6", "segr7",
 };
 
-static const char *gRegBound[] =
+static const char *const gRegBound[] =
 {
     "bnd0", "bnd1", "bnd2", "bnd3",
 };
 
-static const char *gRegMask[] =
+static const char *const gRegMask[] =
 {
     "k0", "k1", "k2", "k3", "k4", "k5", "k6", "k7",
 };
 
-static const char *gRegTile[] =
+static const char *const gRegTile[] =
 {
     "tmm0", "tmm1", "tmm2", "tmm3", "tmm4", "tmm5", "tmm6", "tmm7",
 };
 
-static const char *gEmbeddedRounding[] =
+static const char *const gEmbeddedRounding[] =
 {
     "rn", "rd", "ru", "rz",
 };
@@ -191,6 +191,12 @@ NdToText(
     const ND_OPERAND *pOp;
     ND_BOOL alignmentStored;
 
+#define NDTOTEXT_APPEND(str)                         \
+{                                                    \
+    res = nd_strcat_s(Buffer, BufferSize, (str));    \
+    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW); \
+}
+
     // pre-init
     status = ND_STATUS_SUCCESS;
     res = (char *)ND_NULL;
@@ -226,13 +232,11 @@ NdToText(
     {
         if (Instrux->Rep == ND_PREFIX_G1_REPE_REPZ)
         {
-            res = nd_strcat_s(Buffer, BufferSize, "REPZ ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("REPZ ");
         }
         else if (Instrux->Rep == ND_PREFIX_G1_REPNE_REPNZ)
         {
-            res = nd_strcat_s(Buffer, BufferSize, "REPNZ ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("REPNZ ");
         }
     }
 
@@ -241,37 +245,31 @@ NdToText(
     {
         if (Instrux->Rep == ND_PREFIX_G1_REPE_REPZ)
         {
-            res = nd_strcat_s(Buffer, BufferSize, "REP ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("REP ");
         }
         else if (Instrux->Rep == ND_PREFIX_G1_REPNE_REPNZ)
         {
-            res = nd_strcat_s(Buffer, BufferSize, "REPNZ ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("REPNZ ");
         }
     }
 
     if (Instrux->IsXreleaseEnabled)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "XRELEASE ");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("XRELEASE ");
     }
     else if (Instrux->IsXacquireEnabled)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "XACQUIRE ");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("XACQUIRE ");
     }
 
     if (Instrux->IsLockEnabled)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "LOCK ");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("LOCK ");
     }
 
     if (Instrux->IsBndEnabled)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "BND ");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("BND ");
     }
 
     if (Instrux->IsBhintEnabled)
@@ -279,18 +277,15 @@ NdToText(
         switch (Instrux->Seg)
         {
         case ND_PREFIX_G2_BR_TAKEN:
-            res = nd_strcat_s(Buffer, BufferSize, "BHT ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("BHT ");
             break;
 
         case ND_PREFIX_G2_BR_NOT_TAKEN:
-            res = nd_strcat_s(Buffer, BufferSize, "BHNT ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("BHNT ");
             break;
 
         case ND_PREFIX_G2_BR_ALT:
-            res = nd_strcat_s(Buffer, BufferSize, "BHALT ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("BHALT ");
             break;
 
         default:
@@ -300,26 +295,22 @@ NdToText(
 
     if (Instrux->IsDntEnabled)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "DNT ");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("DNT ");
     }
 
     // Store the mnemonic.
-    res = nd_strcat_s(Buffer, BufferSize, Instrux->Mnemonic);
-    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+    NDTOTEXT_APPEND(Instrux->Mnemonic);
 
     // Store NF specifier, if NoFlags presetn.
     if (Instrux->HasNf)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "NF");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("NF");
     }
 
     // Store ZU specifier, if ZeroUpper present.
     if (Instrux->HasZu)
     {
-        res = nd_strcat_s(Buffer, BufferSize, "ZU");
-        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+        NDTOTEXT_APPEND("ZU");
     }
 
     // If there are no explicit operands, we can leave.
@@ -382,8 +373,7 @@ NdToText(
         // Store the comma, if this isn't the first operand.
         if (opsStored > 0)
         {
-            res = nd_strcat_s(Buffer, BufferSize, ", ");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(", ");
         }
 
         opsStored++;
@@ -407,32 +397,27 @@ NdToText(
                     // 8 bit register.
                     if ((Instrux->EncMode != ND_ENCM_LEGACY) || Instrux->HasRex || Instrux->HasRex2)
                     {
-                        res = nd_strcat_s(Buffer, BufferSize, gReg8Bit64[pOp->Info.Register.Reg]);
-                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        NDTOTEXT_APPEND(gReg8Bit64[pOp->Info.Register.Reg]);
                     }
                     else
                     {
-                        res = nd_strcat_s(Buffer, BufferSize, gReg8Bit[pOp->Info.Register.Reg]);
-                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        NDTOTEXT_APPEND(gReg8Bit[pOp->Info.Register.Reg]);
                     }
                     break;
 
                 case ND_SIZE_16BIT:
                     // 16 bit register.
-                    res = nd_strcat_s(Buffer, BufferSize, gReg16Bit[pOp->Info.Register.Reg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg16Bit[pOp->Info.Register.Reg]);
                     break;
 
                 case ND_SIZE_32BIT:
                     // 32 bit register.
-                    res = nd_strcat_s(Buffer, BufferSize, gReg32Bit[pOp->Info.Register.Reg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg32Bit[pOp->Info.Register.Reg]);
                     break;
 
                 case ND_SIZE_64BIT:
                     // 64 bit register.
-                    res = nd_strcat_s(Buffer, BufferSize, gReg64Bit[pOp->Info.Register.Reg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg64Bit[pOp->Info.Register.Reg]);
                     break;
 
                 default:
@@ -443,8 +428,7 @@ NdToText(
 
             case ND_REG_SEG:
             {
-                res = nd_strcat_s(Buffer, BufferSize, gRegSeg[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegSeg[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -455,8 +439,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegFpu[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegFpu[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -467,8 +450,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegMmx[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegMmx[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -482,16 +464,13 @@ NdToText(
                 switch (pOp->Info.Register.Size)
                 {
                 case ND_SIZE_128BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gRegXmm[pOp->Info.Register.Reg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegXmm[pOp->Info.Register.Reg]);
                     break;
                 case ND_SIZE_256BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gRegYmm[pOp->Info.Register.Reg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegYmm[pOp->Info.Register.Reg]);
                     break;
                 case ND_SIZE_512BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gRegZmm[pOp->Info.Register.Reg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegZmm[pOp->Info.Register.Reg]);
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
@@ -506,8 +485,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegControl[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegControl[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -518,8 +496,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegDebug[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegDebug[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -530,8 +507,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegTest[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegTest[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -543,8 +519,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegBound[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegBound[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -556,8 +531,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegMask[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegMask[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -569,8 +543,7 @@ NdToText(
                     return ND_STATUS_INVALID_INSTRUX;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, gRegTile[pOp->Info.Register.Reg]);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(gRegTile[pOp->Info.Register.Reg]);
             }
             break;
 
@@ -586,8 +559,7 @@ NdToText(
                     return status;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, temp);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(temp);
             }
 
             break;
@@ -605,8 +577,7 @@ NdToText(
                 return status;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(temp);
         }
         break;
 
@@ -632,8 +603,7 @@ NdToText(
                 return status;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(temp);
         }
         break;
 
@@ -660,8 +630,7 @@ NdToText(
                 return status;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(temp);
         }
         break;
 
@@ -690,8 +659,7 @@ NdToText(
                 return status;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(temp);
         }
         break;
 
@@ -703,8 +671,7 @@ NdToText(
                 return status;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(temp);
         }
         break;
 
@@ -712,38 +679,32 @@ NdToText(
         {
             ND_BOOL comma = ND_FALSE;
 
-            res = nd_strcat_s(Buffer, BufferSize, "{dfv=");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("{dfv=");
 
             if (pOp->Info.DefaultFlags.OF)
             {
-                res = nd_strcat_s(Buffer, BufferSize, "OF");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("OF");
                 comma = ND_TRUE;
             }
 
             if (pOp->Info.DefaultFlags.SF)
             {
-                res = nd_strcat_s(Buffer, BufferSize, comma ? ",SF" : "SF");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(comma ? ",SF" : "SF");
                 comma = ND_TRUE;
             }
 
             if (pOp->Info.DefaultFlags.ZF)
             {
-                res = nd_strcat_s(Buffer, BufferSize, comma ? ",ZF" : "ZF");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(comma ? ",ZF" : "ZF");
                 comma = ND_TRUE;
             }
 
             if (pOp->Info.DefaultFlags.CF)
             {
-                res = nd_strcat_s(Buffer, BufferSize, comma ? ",CF" : "CF");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(comma ? ",CF" : "CF");
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, "}");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("}");
         }
         break;
 
@@ -755,44 +716,34 @@ NdToText(
             switch (size)
             {
             case 1:
-                res = nd_strcat_s(Buffer, BufferSize, "byte ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("byte ptr ");
                 break;
             case 2:
-                res = nd_strcat_s(Buffer, BufferSize, "word ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("word ptr ");
                 break;
             case 4:
-                res = nd_strcat_s(Buffer, BufferSize, "dword ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("dword ptr ");
                 break;
             case 6:
-                res = nd_strcat_s(Buffer, BufferSize, "fword ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("fword ptr ");
                 break;
             case 8:
-                res = nd_strcat_s(Buffer, BufferSize, "qword ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("qword ptr ");
                 break;
             case 10:
-                res = nd_strcat_s(Buffer, BufferSize, "tbyte ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("tbyte ptr ");
                 break;
             case 16:
-                res = nd_strcat_s(Buffer, BufferSize, "xmmword ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("xmmword ptr ");
                 break;
             case 32:
-                res = nd_strcat_s(Buffer, BufferSize, "ymmword ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("ymmword ptr ");
                 break;
             case 48:
-                res = nd_strcat_s(Buffer, BufferSize, "m384 ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("m384 ptr ");
                 break;
             case 64:
-                res = nd_strcat_s(Buffer, BufferSize, "zmmword ptr ");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND("zmmword ptr ");
                 break;
             default:
                 break;
@@ -804,17 +755,14 @@ NdToText(
                 if ((ND_CODE_64 != Instrux->DefCode) || (NDR_FS == pOp->Info.Memory.Seg) ||
                     (NDR_GS == pOp->Info.Memory.Seg))
                 {
-                    res = nd_strcat_s(Buffer, BufferSize, gRegSeg[pOp->Info.Memory.Seg]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegSeg[pOp->Info.Memory.Seg]);
 
-                    res = nd_strcat_s(Buffer, BufferSize, ":");
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(":");
                 }
             }
 
             // Prepend the "["
-            res = nd_strcat_s(Buffer, BufferSize, "[");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("[");
 
             // Base, if any.
             if (pOp->Info.Memory.HasBase)
@@ -824,27 +772,22 @@ NdToText(
                 case ND_SIZE_8BIT:
                     if ((Instrux->EncMode != ND_ENCM_LEGACY) || Instrux->HasRex || Instrux->HasRex2)
                     {
-                        res = nd_strcat_s(Buffer, BufferSize, gReg8Bit64[pOp->Info.Memory.Base]);
-                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        NDTOTEXT_APPEND(gReg8Bit64[pOp->Info.Memory.Base]);
 
                     }
                     else
                     {
-                        res = nd_strcat_s(Buffer, BufferSize, gReg8Bit[pOp->Info.Memory.Base]);
-                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        NDTOTEXT_APPEND(gReg8Bit[pOp->Info.Memory.Base]);
                     }
                     break;
                 case ND_SIZE_16BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gReg16Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg16Bit[pOp->Info.Memory.Base]);
                     break;
                 case ND_SIZE_32BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gReg32Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg32Bit[pOp->Info.Memory.Base]);
                     break;
                 case ND_SIZE_64BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gReg64Bit[pOp->Info.Memory.Base]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg64Bit[pOp->Info.Memory.Base]);
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
@@ -861,8 +804,7 @@ NdToText(
 
                 if (pOp->Info.Memory.HasBase)
                 {
-                    res = nd_strcat_s(Buffer, BufferSize, "+");
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND("+");
                 }
 
                 switch (pOp->Info.Memory.IndexSize)
@@ -870,38 +812,30 @@ NdToText(
                 case ND_SIZE_8BIT:
                     if ((Instrux->EncMode != ND_ENCM_LEGACY) || Instrux->HasRex || Instrux->HasRex2)
                     {
-                        res = nd_strcat_s(Buffer, BufferSize, gReg8Bit64[pOp->Info.Memory.Index]);
-                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        NDTOTEXT_APPEND(gReg8Bit64[pOp->Info.Memory.Index]);
                     }
                     else
                     {
-                        res = nd_strcat_s(Buffer, BufferSize, gReg8Bit[pOp->Info.Memory.Index]);
-                        RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                        NDTOTEXT_APPEND(gReg8Bit[pOp->Info.Memory.Index]);
                     }
                     break;
                 case ND_SIZE_16BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gReg16Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg16Bit[pOp->Info.Memory.Index]);
                     break;
                 case ND_SIZE_32BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gReg32Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg32Bit[pOp->Info.Memory.Index]);
                     break;
                 case ND_SIZE_64BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gReg64Bit[pOp->Info.Memory.Index]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gReg64Bit[pOp->Info.Memory.Index]);
                     break;
                 case ND_SIZE_128BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gRegXmm[pOp->Info.Memory.Index]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegXmm[pOp->Info.Memory.Index]);
                     break;
                 case ND_SIZE_256BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gRegYmm[pOp->Info.Memory.Index]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegYmm[pOp->Info.Memory.Index]);
                     break;
                 case ND_SIZE_512BIT:
-                    res = nd_strcat_s(Buffer, BufferSize, gRegZmm[pOp->Info.Memory.Index]);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(gRegZmm[pOp->Info.Memory.Index]);
                     break;
                 default:
                     return ND_STATUS_INVALID_INSTRUX;
@@ -916,8 +850,7 @@ NdToText(
                         return status;
                     }
 
-                    res = nd_strcat_s(Buffer, BufferSize, temp);
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(temp);
                 }
             }
 
@@ -977,8 +910,7 @@ NdToText(
                         sign = ND_FALSE;
                     }
 
-                    res = nd_strcat_s(Buffer, BufferSize, sign ? "-" : "+");
-                    RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                    NDTOTEXT_APPEND(sign ? "-" : "+");
                 }
 
                 if (pOp->Info.Memory.IsRipRel)
@@ -1008,13 +940,11 @@ NdToText(
                     return status;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, temp);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(temp);
             }
 
             // And the ending "]"
-            res = nd_strcat_s(Buffer, BufferSize, "]");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("]");
 
             // Handle memory broadcast.
             if (pOp->Info.Memory.HasBroadcast)
@@ -1025,8 +955,7 @@ NdToText(
                     return status;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, temp);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(temp);
             }
         }
         break;
@@ -1044,15 +973,13 @@ NdToText(
                 return status;
             }
 
-            res = nd_strcat_s(Buffer, BufferSize, temp);
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND(temp);
         }
 
         // Handle zeroing. Note that zeroing without masking is ignored.
         if (pOp->Decorator.HasZero && pOp->Decorator.HasMask)
         {
-            res = nd_strcat_s(Buffer, BufferSize, "{z}");
-            RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+            NDTOTEXT_APPEND("{z}");
         }
 
         // If this is the last reg/mem operand, display {sae} and {er} decorators.
@@ -1063,8 +990,7 @@ NdToText(
             if (Instrux->HasSae && !Instrux->HasEr)
             {
                 // ER implies SAE, so if we have ER, we will list that.
-                res = nd_strcat_s(Buffer, BufferSize, ", {sae}");
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(", {sae}");
             }
 
             // Append Embedded Rounding decorator.
@@ -1076,11 +1002,12 @@ NdToText(
                     return status;
                 }
 
-                res = nd_strcat_s(Buffer, BufferSize, temp);
-                RET_EQ(res, ND_NULL, ND_STATUS_BUFFER_OVERFLOW);
+                NDTOTEXT_APPEND(temp);
             }
         }
     }
+
+#undef NDTOTEXT_APPEND
 
     return ND_STATUS_SUCCESS;
 }
