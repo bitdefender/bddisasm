@@ -279,7 +279,7 @@ typedef struct _ND_IDBE
 
 
 //
-// Operand sizes descriptors. These are internal and stored inside the specifier. They must be interpreted
+// Operand size descriptors. These are internal and stored inside the specifier. They must be interpreted
 // accordingly to extract the actual size used in the instruction. These should not be used by anyone using
 // the disassembler. Use the "Size" and "RawSize" fields inside the operand instead.
 //
@@ -418,7 +418,7 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_SSP,
     ND_OPT_UIF,
 
-    // General Purpose REgisters.
+    // General Purpose Registers.
     ND_OPT_AH,
     ND_OPT_rAX,
     ND_OPT_rCX,
