@@ -1894,7 +1894,7 @@ NdParseOperand(
         // Fill in branch information.
         Instrux->BranchInfo.IsBranch = 1;
         Instrux->BranchInfo.IsConditional = Instrux->Category == ND_CAT_COND_BR;
-        // Indirect branches are those which get their target address from a register or memory, including RET familly.
+        // Indirect branches are those which get their target address from a register or memory, including RET family.
         Instrux->BranchInfo.IsIndirect = ((!Instrux->Operands[0].Flags.IsDefault) && 
             ((Instrux->Operands[0].Type == ND_OP_REG) || (Instrux->Operands[0].Type == ND_OP_MEM))) || 
             (Instrux->Category == ND_CAT_RET);
