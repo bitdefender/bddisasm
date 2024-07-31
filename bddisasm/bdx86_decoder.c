@@ -88,7 +88,6 @@ NdGetVersion(
 
 }
 
-
 //
 // NdFetchData
 //
@@ -98,11 +97,19 @@ NdFetchData(
     ND_UINT8 Size
     )
 {
-    return (4 == Size) ? ND_FETCH_32(Buffer) :
-           (1 == Size) ? ND_FETCH_8(Buffer) :
-           (8 == Size) ? ND_FETCH_64(Buffer) :
-           (2 == Size) ? ND_FETCH_16(Buffer) :
-           0;
+    switch (Size) 
+    {
+    case 1:
+        return ND_FETCH_8(Buffer);
+    case 2:
+        return ND_FETCH_16(Buffer);
+    case 4:
+        return ND_FETCH_32(Buffer);
+    case 8:
+        return ND_FETCH_64(Buffer);
+    default:
+        return 0;
+    }
 }
 
 
