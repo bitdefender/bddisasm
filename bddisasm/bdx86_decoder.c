@@ -2242,7 +2242,7 @@ NdParseOperand(
         break;
 
     case ND_OPT_LSTAR:
-        // The operand is implicit and is the IA32_STAR.
+        // The operand is implicit and is the IA32_LSTAR.
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
