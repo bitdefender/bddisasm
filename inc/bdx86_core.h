@@ -347,15 +347,11 @@ typedef ND_UINT32 ND_REG_SIZE;
 // Misc macros.
 //
 
-// Sign extend 8 bit to 64 bit.
-#define ND_SIGN_EX_8(x)             (((x) & 0x00000080) ? (0xFFFFFFFFFFFFFF00 | (x)) : ((x) & 0xFF))
-// Sign extend 16 bit to 64 bit.
-#define ND_SIGN_EX_16(x)            (((x) & 0x00008000) ? (0xFFFFFFFFFFFF0000 | (x)) : ((x) & 0xFFFF))
-// Sign extend 32 bit to 64 bit.
-#define ND_SIGN_EX_32(x)            (((x) & 0x80000000) ? (0xFFFFFFFF00000000 | (x)) : ((x) & 0xFFFFFFFF))
-// Wrapper for for ND_SIGN_EX_8/ND_SIGN_EX_16/ND_SIGN_EX_32. Sign extend sz bytes to 64 bits.
-#define ND_SIGN_EX(sz, x)           ((sz) == 1 ? ND_SIGN_EX_8(x) : (sz) == 2 ? ND_SIGN_EX_16(x) :                   \
-                                     (sz) == 4 ? ND_SIGN_EX_32(x) : (x))
+// Sign extend to 64 bit, with minimal branches
+#define ND_SIGN_EX(sz, x)           ( ( (x) & (0x00000080 << ((sz - 1) * 8)) ) \
+	? ((~( (1ULL << (sz * 8)) - 1) ) | (x)) \
+	: ((x) & ( (1ULL << (sz * 8)) - 1) ) )
+
 // Trim 64 bits to sz bytes.
 #define ND_TRIM(sz, x)              ((sz) == 1 ? (x) & 0xFF : (sz) == 2 ? (x) & 0xFFFF :                            \
                                      (sz) == 4 ? (x) & 0xFFFFFFFF : (x))

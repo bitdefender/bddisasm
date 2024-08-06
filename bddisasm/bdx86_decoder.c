@@ -1441,14 +1441,14 @@ NdParseOperand(
     ND_UINT8 opt, ops, opf, opa, opd, opb;
     ND_REG_SIZE vsibRegSize;
     ND_UINT8 vsibIndexSize, vsibIndexCount;
-    ND_OPERAND_SIZE size, bcstSize;
+    ND_OPERAND_SIZE size;
     ND_BOOL width;
 
     // pre-init
     status = ND_STATUS_SUCCESS;
     vsibRegSize = 0;
     vsibIndexSize = vsibIndexCount = 0;
-    size = bcstSize = 0;
+    size = 0;
 
     // Get actual width.
     width = Instrux->Exs.w && !(Instrux->Attributes & ND_FLAG_WIG);
@@ -1877,7 +1877,7 @@ NdParseOperand(
     }
 
     // Store operand info.
-    operand->Size = bcstSize = size;
+    operand->Size = size;
 
     //
     // Fill in the operand type.
@@ -2242,7 +2242,7 @@ NdParseOperand(
         break;
 
     case ND_OPT_LSTAR:
-        // The operand is implicit and is the IA32_STAR.
+        // The operand is implicit and is the IA32_LSTAR.
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
@@ -2778,6 +2778,7 @@ memory:
         // bcstSize / rawSize.
         if (Instrux->HasBroadcast)
         {
+            ND_OPERAND_SIZE bcstSize = size;
             operand->Info.Memory.HasBroadcast = ND_TRUE;
 
             if (opd & ND_OPD_B32)
@@ -3340,13 +3341,12 @@ NdFindInstruction(
     NDSTATUS status;
     const ND_TABLE *pTable;
     ND_IDBE *pIns;
-    ND_BOOL stop, redf2, redf3;
+    ND_BOOL redf2, redf3;
     ND_UINT32 nextOpcode;
 
     // pre-init
     status = ND_STATUS_SUCCESS;
     pIns = (ND_IDBE *)ND_NULL;
-    stop = ND_FALSE;
     nextOpcode = 0;
     redf2 = redf3 = ND_FALSE;
 
@@ -3378,14 +3378,14 @@ NdFindInstruction(
         break;
     }
 
-    while ((!stop) && (ND_NULL != pTable))
+    while (ND_NULL != pTable)
     {
         switch (pTable->Type)
         {
         case ND_ILUT_INSTRUCTION:
             // We've found the leaf entry, which is an instruction - we can leave.
             pIns = (ND_IDBE *)(((ND_TABLE_INSTRUCTION *)pTable)->Instruction);
-            stop = ND_TRUE;
+            goto success;
             break;
 
         case ND_ILUT_OPCODE:
@@ -3393,7 +3393,7 @@ NdFindInstruction(
             status = NdFetchOpcode(Instrux, Code, Instrux->Length, Size);
             if (!ND_SUCCESS(status))
             {
-                stop = ND_TRUE;
+                goto cleanup_and_exit;
                 break;
             }
 
@@ -3408,7 +3408,7 @@ NdFindInstruction(
                 status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
                 if (!ND_SUCCESS(status))
                 {
-                    stop = ND_TRUE;
+                    goto cleanup_and_exit;
                     break;
                 }
             }
@@ -3417,7 +3417,7 @@ NdFindInstruction(
             status = NdFetchOpcode(Instrux, Code, Instrux->Length, Size);
             if (!ND_SUCCESS(status))
             {
-                stop = ND_TRUE;
+                goto cleanup_and_exit;
                 break;
             }
 
@@ -3432,7 +3432,7 @@ NdFindInstruction(
                 status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
                 if (!ND_SUCCESS(status))
                 {
-                    stop = ND_TRUE;
+                    goto cleanup_and_exit;
                     break;
                 }
             }
@@ -3449,7 +3449,7 @@ NdFindInstruction(
                 status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
                 if (!ND_SUCCESS(status))
                 {
-                    stop = ND_TRUE;
+                    goto cleanup_and_exit;
                     break;
                 }
             }
@@ -3466,7 +3466,7 @@ NdFindInstruction(
                 status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
                 if (!ND_SUCCESS(status))
                 {
-                    stop = ND_TRUE;
+                    goto cleanup_and_exit;
                     break;
                 }
             }
@@ -3657,7 +3657,7 @@ NdFindInstruction(
                     status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
                     if (!ND_SUCCESS(status))
                     {
-                        stop = ND_TRUE;
+                        goto cleanup_and_exit;
                         break;
                     }
                 }
@@ -3716,16 +3716,12 @@ NdFindInstruction(
 
         default:
             status = ND_STATUS_INTERNAL_ERROR;
-            stop = ND_TRUE;
+            goto cleanup_and_exit;
             break;
         }
     }
 
-    // Error - leave now.
-    if (!ND_SUCCESS(status))
-    {
-        goto cleanup_and_exit;
-    }
+success:
 
     // No encoding found - leave now.
     if (ND_NULL == pIns)
