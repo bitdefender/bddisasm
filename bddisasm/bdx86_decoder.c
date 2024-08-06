@@ -1441,14 +1441,14 @@ NdParseOperand(
     ND_UINT8 opt, ops, opf, opa, opd, opb;
     ND_REG_SIZE vsibRegSize;
     ND_UINT8 vsibIndexSize, vsibIndexCount;
-    ND_OPERAND_SIZE size, bcstSize;
+    ND_OPERAND_SIZE size;
     ND_BOOL width;
 
     // pre-init
     status = ND_STATUS_SUCCESS;
     vsibRegSize = 0;
     vsibIndexSize = vsibIndexCount = 0;
-    size = bcstSize = 0;
+    size = 0;
 
     // Get actual width.
     width = Instrux->Exs.w && !(Instrux->Attributes & ND_FLAG_WIG);
@@ -1877,7 +1877,7 @@ NdParseOperand(
     }
 
     // Store operand info.
-    operand->Size = bcstSize = size;
+    operand->Size = size;
 
     //
     // Fill in the operand type.
@@ -2778,6 +2778,7 @@ memory:
         // bcstSize / rawSize.
         if (Instrux->HasBroadcast)
         {
+            ND_OPERAND_SIZE bcstSize = size;
             operand->Info.Memory.HasBroadcast = ND_TRUE;
 
             if (opd & ND_OPD_B32)
