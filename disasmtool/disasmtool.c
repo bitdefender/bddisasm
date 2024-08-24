@@ -1286,7 +1286,7 @@ handle_disasm(
     if (Options->Stats)
     {
         printf("Disassembled %llu instructions in %llums, %4.4f instructions/second, %4.6f clocks/instruction, average ilen %4.6f bytes\n",
-            icount, end - start, icount / (double)(end - start) * 1000, itotal / (double)icount, tilen / (double)ticount);
+            icount, (end - start) * 1000 / CLOCKS_PER_SEC, icount / ((double)(end - start) / CLOCKS_PER_SEC), itotal / (double)icount, tilen / (double)ticount);
     }
 }
 
