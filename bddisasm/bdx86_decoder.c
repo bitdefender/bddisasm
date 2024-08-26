@@ -1298,7 +1298,7 @@ NdParseMemoryOperand16(
     // Store the displacement.
     Operand->Info.Memory.HasDisp = !!Instrux->HasDisp;
     Operand->Info.Memory.DispSize = Instrux->DispLength;
-    Operand->Info.Memory.Disp = ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement);
+    Operand->Info.Memory.Disp = Instrux->HasDisp ? ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement) : 0;
 
     return ND_STATUS_SUCCESS;
 }
@@ -1416,7 +1416,7 @@ NdParseMemoryOperand3264(
 
     Operand->Info.Memory.HasDisp = Instrux->HasDisp;
     Operand->Info.Memory.DispSize = Instrux->DispLength;
-    Operand->Info.Memory.Disp = ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement);
+    Operand->Info.Memory.Disp = Instrux->HasDisp ? ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement) : 0;
 
     return ND_STATUS_SUCCESS;
 }
