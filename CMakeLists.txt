@@ -5,6 +5,7 @@ option(BDD_INCLUDE_ISAGENERATOR_X86 "Include the x86 isagenerator target (if a p
 option(BDD_INCLUDE_FUZZERS "Include the bdshemu fuzzer" OFF)
 option(BDD_USE_EXTERNAL_VSNPRINTF "Expect nd_vsnprintf_s implementation from the integrator" OFF)
 option(BDD_USE_EXTERNAL_MEMSET "Expect nd_memset implementation from the integrator" OFF)
+option(BDD_NO_MNEMONIC "Exclude mnemonics - this option involves setting the BDDISASM_NO_FORMAT flag" OFF)
 option(BDD_ASAN "Build with ASAN" OFF)
 option(BDD_UBSAN "Build with UBSAN" OFF)
 
@@ -142,6 +143,11 @@ if (NOT BDD_USE_EXTERNAL_MEMSET)
         target_compile_definitions(bddisasm PUBLIC -DBDDISASM_HAS_MEMSET)
     endif ()
 endif ()
+
+if (BDD_NO_MNEMONIC)
+    target_compile_definitions(bddisasm PUBLIC -DBDDISASM_NO_MNEMONIC)
+    target_compile_definitions(bddisasm PUBLIC -DBDDISASM_NO_FORMAT)
+endif()
 
 set_target_properties(
     bddisasm

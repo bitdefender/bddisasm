@@ -10,6 +10,8 @@
 #ifndef BDX86_MNEMONICS_H
 #define BDX86_MNEMONICS_H
 
+#ifndef BDDISASM_NO_MNEMONIC
+
 const char *gMnemonics[1786] = 
 {
     "AAA", "AAD", "AADD", "AAM", "AAND", "AAS", "ADC", "ADCX", "ADD", 
@@ -319,6 +321,8 @@ const char *gMnemonics[1786] =
     "XSAVE", "XSAVE64", "XSAVEC", "XSAVEC64", "XSAVEOPT", "XSAVEOPT64", 
     "XSAVES", "XSAVES64", "XSETBV", "XSUSLDTRK", "XTEST", 
 };
+
+#endif // !BDDISASM_NO_MNEMONIC
 
 
 #endif

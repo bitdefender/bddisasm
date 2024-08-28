@@ -6,8 +6,7 @@
 #include "../inc/bddisasm.h"
 
 
-
-#ifndef BDDISASM_NO_FORMAT
+#if !defined(BDDISASM_NO_MNEMONIC) && !defined(BDDISASM_NO_FORMAT)
 
 static const char *const gReg8Bit[] =
 {
@@ -1033,4 +1032,4 @@ NdToText(
 
     return ND_STATUS_SUCCESS;
 }
-#endif // !BDDISASM_NO_FORMAT
+#endif // !defined(BDDISASM_NO_MNEMONIC) && !defined(BDDISASM_NO_FORMAT)
