@@ -801,6 +801,8 @@ def dump_mnemonics(mnemonics, prefixes, fname):
         f.write('#ifndef BDX86_MNEMONICS_H\n')
         f.write('#define BDX86_MNEMONICS_H\n')
         f.write('\n')
+        f.write('#ifndef BDDISASM_NO_MNEMONIC\n')
+        f.write('\n')
         f.write('const char *gMnemonics[%d] = \n' % len(mnemonics))
         f.write('{\n')
         f.write('    ')
@@ -815,7 +817,13 @@ def dump_mnemonics(mnemonics, prefixes, fname):
                 ln = 0
                 f.write('\n    ')
 
-        f.write('\n};\n\n\n')
+
+        f.write('\n};\n')
+
+        f.write('\n')
+        f.write('#endif // !BDDISASM_NO_MNEMONIC\n')
+
+        f.write('\n\n')
 
         f.write('#endif\n\n')
 

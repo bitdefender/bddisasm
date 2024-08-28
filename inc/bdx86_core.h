@@ -1439,7 +1439,9 @@ typedef struct _INSTRUX
                                                     // Aliased over low 4 bits inside the main opcode.
     };
 
+#ifndef BDDISASM_NO_MNEMONIC
     const char          *Mnemonic;                  // Instruction mnemonic.
+#endif // !BDDISASM_NO_MNEMONIC
     ND_UINT8            InstructionBytes[16];       // The entire instruction.
     ND_UINT8            OpCodeBytes[3];             // Opcode bytes - escape codes and main opcode.
 

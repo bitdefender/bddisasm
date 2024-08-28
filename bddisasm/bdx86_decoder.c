@@ -4308,7 +4308,9 @@ NdCopyInstructionInfo(
     ND_IDBE *Idbe
     )
 {
+#ifndef BDDISASM_NO_MNEMONIC
     Instrux->Mnemonic = gMnemonics[Idbe->Mnemonic];
+#endif // !BDDISASM_NO_MNEMONIC
     Instrux->Attributes = Idbe->Attributes;
     Instrux->Instruction = (ND_INS_CLASS)Idbe->Instruction;
     Instrux->Category = (ND_INS_CATEGORY)Idbe->Category;
