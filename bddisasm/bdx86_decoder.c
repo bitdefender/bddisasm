@@ -1298,7 +1298,7 @@ NdParseMemoryOperand16(
     // Store the displacement.
     Operand->Info.Memory.HasDisp = !!Instrux->HasDisp;
     Operand->Info.Memory.DispSize = Instrux->DispLength;
-    Operand->Info.Memory.Disp = ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement);
+    Operand->Info.Memory.Disp = Instrux->HasDisp ? ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement) : 0;
 
     return ND_STATUS_SUCCESS;
 }
@@ -1416,7 +1416,7 @@ NdParseMemoryOperand3264(
 
     Operand->Info.Memory.HasDisp = Instrux->HasDisp;
     Operand->Info.Memory.DispSize = Instrux->DispLength;
-    Operand->Info.Memory.Disp = ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement);
+    Operand->Info.Memory.Disp = Instrux->HasDisp ? ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement) : 0;
 
     return ND_STATUS_SUCCESS;
 }
@@ -1441,14 +1441,14 @@ NdParseOperand(
     ND_UINT8 opt, ops, opf, opa, opd, opb;
     ND_REG_SIZE vsibRegSize;
     ND_UINT8 vsibIndexSize, vsibIndexCount;
-    ND_OPERAND_SIZE size, bcstSize;
+    ND_OPERAND_SIZE size;
     ND_BOOL width;
 
     // pre-init
     status = ND_STATUS_SUCCESS;
     vsibRegSize = 0;
     vsibIndexSize = vsibIndexCount = 0;
-    size = bcstSize = 0;
+    size = 0;
 
     // Get actual width.
     width = Instrux->Exs.w && !(Instrux->Attributes & ND_FLAG_WIG);
@@ -1877,7 +1877,7 @@ NdParseOperand(
     }
 
     // Store operand info.
-    operand->Size = bcstSize = size;
+    operand->Size = size;
 
     //
     // Fill in the operand type.
@@ -2242,7 +2242,7 @@ NdParseOperand(
         break;
 
     case ND_OPT_LSTAR:
-        // The operand is implicit and is the IA32_STAR.
+        // The operand is implicit and is the IA32_LSTAR.
         operand->Type = ND_OP_REG;
         operand->Info.Register.Type = ND_REG_MSR;
         operand->Info.Register.Size = ND_SIZE_64BIT;
@@ -2778,6 +2778,7 @@ memory:
         // bcstSize / rawSize.
         if (Instrux->HasBroadcast)
         {
+            ND_OPERAND_SIZE bcstSize = size;
             operand->Info.Memory.HasBroadcast = ND_TRUE;
 
             if (opd & ND_OPD_B32)

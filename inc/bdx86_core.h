@@ -353,15 +353,14 @@ typedef ND_UINT32 ND_REG_SIZE;
 #define ND_SIGN_EX_16(x)            (((x) & 0x00008000) ? (0xFFFFFFFFFFFF0000 | (x)) : ((x) & 0xFFFF))
 // Sign extend 32 bit to 64 bit.
 #define ND_SIGN_EX_32(x)            (((x) & 0x80000000) ? (0xFFFFFFFF00000000 | (x)) : ((x) & 0xFFFFFFFF))
-// Wrapper for for ND_SIGN_EX_8/ND_SIGN_EX_16/ND_SIGN_EX_32. Sign extend sz bytes to 64 bits.
-#define ND_SIGN_EX(sz, x)           ((sz) == 1 ? ND_SIGN_EX_8(x) : (sz) == 2 ? ND_SIGN_EX_16(x) :                   \
-                                     (sz) == 4 ? ND_SIGN_EX_32(x) : (x))
+// Sign extend to 64 bit, with minimal branches
+#define ND_SIGN_EX(sz, x)           (((x) & ND_SIZE_TO_MASK(sz)) | (~ND_SIZE_TO_MASK(sz) * ND_GET_SIGN(sz, x)))
+
 // Trim 64 bits to sz bytes.
 #define ND_TRIM(sz, x)              ((sz) == 1 ? (x) & 0xFF : (sz) == 2 ? (x) & 0xFFFF :                            \
                                      (sz) == 4 ? (x) & 0xFFFFFFFF : (x))
 // Returns most significant bit, given size in bytes sz.
-#define ND_MSB(sz, x)               ((sz) == 1 ? ((x) >> 7) & 1 : (sz) == 2 ? ((x) >> 15) & 1 :                     \
-                                     (sz) == 4 ? ((x) >> 31) & 1 : ((x) >> 63) & 1)
+#define ND_MSB(sz, x)               (((x) >> ( (sz) * 8 - 1)) & 1)
 // Returns least significant bit.
 #define ND_LSB(sz, x)               ((x) & 1)
 // Convert a size in bytes to a bitmask.
