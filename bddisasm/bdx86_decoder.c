@@ -1422,6 +1422,74 @@ NdParseMemoryOperand3264(
 }
 
 
+static const ND_OPERAND_SIZE operandSizes[] =
+{
+    0, // none
+    0, // 0
+    0, // asz
+    0, // ssz
+    0, // a
+    0, // c
+    ND_SIZE_8BIT,  // b, 8 bits
+    ND_SIZE_16BIT, // w, 16 bits
+    ND_SIZE_32BIT, // d, 32 bits
+    ND_SIZE_64BIT, // q, 64 bits
+    ND_SIZE_128BIT, // dq, 128 bits
+    ND_SIZE_256BIT, // qq, 256 bits
+    ND_SIZE_512BIT, // oq, 512 bits
+    0, // v
+    0, // y
+    0, // yf
+    0, // z
+    0, // s
+    0, // p
+    ND_SIZE_80BIT, // fa, 80 bits packed BCD
+    ND_SIZE_16BIT, // fw, 16 bits real number
+    ND_SIZE_32BIT, // fd, 32 bits real number
+    ND_SIZE_64BIT, // fq, 64 bits real number
+    ND_SIZE_80BIT, // ft, 80 bits real number
+    0, // fe
+    0, // fs
+    0, // l
+    ND_SIZE_4096BIT, // rx, 512 bytes extended state
+    ND_SIZE_CACHE_LINE, // cl, The size of one cache line
+    ND_SIZE_64BIT, // sd, 128 bits scalar element (double precision)
+    ND_SIZE_32BIT, // ss, 128 bits scalar element (single precision)
+    ND_SIZE_16BIT, // sh, FP16 Scalar element
+    0, // ps
+    0, // pd
+    0, // ph
+    0, // ev
+    0, // qv
+    0, // hv
+    0, // x
+    0, // uv
+    0, // fv
+    ND_SIZE_1KB, // t, Tile register. The actual size depends on how the TILECFG register has been programmed,
+                 //    but it can be up to 1K in size
+    ND_SIZE_384BIT, // 384, 384 bit Key Locker handle
+    ND_SIZE_512BIT, // 512, 512 bit Key Locker handle
+    ND_SIZE_4096BIT, // 4096, 64 entries x 64 bit per entry = 4096 bit MSR address/value list
+    0, // v2
+    0, // v3
+    0, // v4
+    0, // v5
+    0, // v8
+    12, // 12, SAVPREVSSP instruction reads/writes 4 + 8 bytes from the shadow stack
+    0, // mib, MIB addressing, the base & the index are used to form a pointer
+    0, // vm32x
+    0, // vm32y
+    0, // vm32z
+    0, // vm32h
+    0, // vm32n
+    0, // vm64x
+    0, // vm64y
+    0, // vm64z
+    0, // vm64h
+    0, // vm64n
+    ND_SIZE_UNKNOWN  // unknown
+};
+
 
 //
 // NdParseOperand
@@ -1473,10 +1541,11 @@ NdParseOperand(
     // Implicit operand access, by default.
     operand->Encoding = ND_OPE_S;
 
-
     //
     // Fill in operand size.
     //
+    // Regular cases come from a table.
+    size = operandSizes[ops];
     switch (ops)
     {
     case ND_OPS_asz:
@@ -1490,68 +1559,30 @@ NdParseOperand(
         break;
 
     case ND_OPS_0:
-        // No memory access. 0 operand size.
-        size = 0;
-        break;
-
     case ND_OPS_b:
-        // 8 bits.
-        size = ND_SIZE_8BIT;
-        break;
-
     case ND_OPS_w:
-        // 16 bits.
-        size = ND_SIZE_16BIT;
-        break;
-
     case ND_OPS_d:
-        // 32 bits.
-        size = ND_SIZE_32BIT;
-        break;
-
     case ND_OPS_q:
-        // 64 bits.
-        size = ND_SIZE_64BIT;
-        break;
-
     case ND_OPS_dq:
-        // 128 bits. 
-        size = ND_SIZE_128BIT;
-        break;
-
     case ND_OPS_qq:
-        // 256 bits.
-        size = ND_SIZE_256BIT;
-        break;
-
     case ND_OPS_oq:
-        // 512 bits.
-        size = ND_SIZE_512BIT;
-        break;
-
     case ND_OPS_fa:
-        // 80 bits packed BCD.
-        size = ND_SIZE_80BIT;
-        break;
-
     case ND_OPS_fw:
-        // 16 bits real number.
-        size = ND_SIZE_16BIT;
-        break;
-
     case ND_OPS_fd:
-        // 32 bits real number.
-        size = ND_SIZE_32BIT;
-        break;
-
     case ND_OPS_fq:
-        // 64 bits real number.
-        size = ND_SIZE_64BIT;
-        break;
-
     case ND_OPS_ft:
-        // 80 bits real number.
-        size = ND_SIZE_80BIT;
+    case ND_OPS_rx:
+    case ND_OPS_cl:
+    case ND_OPS_sd:
+    case ND_OPS_ss:
+    case ND_OPS_sh:
+    case ND_OPS_mib:
+    case ND_OPS_12:
+    case ND_OPS_t:
+    case ND_OPS_384:
+    case ND_OPS_512:
+    case ND_OPS_4096:
+    case ND_OPS_unknown:
         break;
 
     case ND_OPS_fe:
@@ -1562,16 +1593,6 @@ NdParseOperand(
     case ND_OPS_fs:
         // 94 bytes or 108 bytes FPU state.
         size = (Instrux->EfOpMode == ND_OPSZ_16) ? ND_SIZE_752BIT : ND_SIZE_864BIT;
-        break;
-
-    case ND_OPS_rx:
-        // 512 bytes extended state.
-        size = ND_SIZE_4096BIT;
-        break;
-
-    case ND_OPS_cl:
-        // The size of one cache line.
-        size = ND_SIZE_CACHE_LINE;
         break;
 
     case ND_OPS_v:
@@ -1739,26 +1760,6 @@ NdParseOperand(
         }
         break;
 
-    case ND_OPS_sd:
-        // 128 bits scalar element (double precision).
-        size = ND_SIZE_64BIT;
-        break;
-
-    case ND_OPS_ss:
-        // 128 bits scalar element (single precision).
-        size = ND_SIZE_32BIT;
-        break;
-
-    case ND_OPS_sh:
-        // FP16 Scalar element.
-        size = ND_SIZE_16BIT;
-        break;
-
-    case ND_OPS_mib:
-        // MIB addressing, the base & the index are used to form a pointer.
-        size = 0;
-        break;
-
     case ND_OPS_vm32x:
     case ND_OPS_vm32y:
     case ND_OPS_vm32z:
@@ -1840,36 +1841,6 @@ NdParseOperand(
 
             size =  scale * szLut[Instrux->EfOpMode];
         }
-        break;
-
-    case ND_OPS_12:
-        // SAVPREVSSP instruction reads/writes 4 + 8 bytes from the shadow stack.
-        size = 12;
-        break;
-
-    case ND_OPS_t:
-        // Tile register. The actual size depends on how the TILECFG register has been programmed, but it can be 
-        // up to 1K in size.
-        size = ND_SIZE_1KB;
-        break;
-
-    case ND_OPS_384:
-        // 384 bit Key Locker handle.
-        size = ND_SIZE_384BIT;
-        break;
-
-    case ND_OPS_512:
-        // 512 bit Key Locker handle.
-        size = ND_SIZE_512BIT;
-        break;
-
-    case ND_OPS_4096:
-        // 64 entries x 64 bit per entry = 4096 bit MSR address/value list.
-        size = ND_SIZE_4096BIT;
-        break;
-
-    case ND_OPS_unknown:
-        size = ND_SIZE_UNKNOWN;
         break;
 
     default:
