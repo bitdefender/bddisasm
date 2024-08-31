@@ -3813,22 +3813,27 @@ NdGetEffectiveAddrAndOpMode(
     static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
     ND_BOOL w64, f64, d64, has66;
 
-    if ((ND_CODE_64 != Instrux->DefCode) && !!(Instrux->Attributes & ND_FLAG_IWO64))
+    // Branchless form of (ND_CODE_64 != Instrux->DefCode) && !!(Instrux->Attributes & ND_FLAG_IWO64)
+    if (((ND_CODE_64 ^ Instrux->DefCode) * (Instrux->Attributes & ND_FLAG_IWO64)) != 0)
     {
         // Some instructions ignore VEX/EVEX.W field outside 64 bit mode, and treat it as 0.
         Instrux->Exs.w = 0;
     }
 
     // Extract the flags.
-    w64 = (0 != Instrux->Exs.w) && !(Instrux->Attributes & ND_FLAG_WIG);
+    // Branchless form of (0 != Instrux->Exs.w) && !(Instrux->Attributes & ND_FLAG_WIG)
+    w64 = (0 != Instrux->Exs.w) * !(Instrux->Attributes & ND_FLAG_WIG);
 
     // In 64 bit mode, the operand is forced to 64 bit. Size-changing prefixes are ignored.
-    f64 = 0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD != Instrux->VendMode);
+    // Branchless form of 0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD != Instrux->VendMode)
+    f64 = 0 != ((Instrux->Attributes & ND_FLAG_F64) * (ND_VEND_AMD ^ Instrux->VendMode));
 
     // In 64 bit mode, the operand defaults to 64 bit. No 32 bit form of the instruction exists. Note that on AMD,
     // only default 64 bit operands exist, even for branches - no operand is forced to 64 bit.
-    d64 = (0 != (Instrux->Attributes & ND_FLAG_D64)) ||
-          (0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD == Instrux->VendMode));
+    // Branchless form of (0 != (Instrux->Attributes & ND_FLAG_D64)) ||
+    //                    (0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD == Instrux->VendMode));
+    d64 = (Instrux->Attributes & ND_FLAG_D64) +
+          ((Instrux->Attributes & ND_FLAG_F64) * (ND_VEND_AMD == Instrux->VendMode));
 
     // Check if 0x66 is indeed interpreted as a size changing prefix. Note that if 0x66 is a mandatory prefix,
     // then it won't be interpreted as a size changing prefix. However, there is an exception: MOVBE and CRC32
