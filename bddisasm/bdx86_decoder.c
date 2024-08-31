@@ -4427,11 +4427,19 @@ NdDecodeWithContext(
     Instrux->EncMode = ND_ENCM_LEGACY;  // Assume legacy encoding by default.
 
     // Fetch the instruction bytes.
-    for (opIndex = 0; 
-         opIndex < ((Size < ND_MAX_INSTRUCTION_LENGTH) ? Size : ND_MAX_INSTRUCTION_LENGTH); 
-         opIndex++)
+    if (Size < ND_MAX_INSTRUCTION_LENGTH)
     {
-        Instrux->InstructionBytes[opIndex] = Code[opIndex];
+        for (opIndex = 0; opIndex < Size; opIndex++)
+        {
+            Instrux->InstructionBytes[opIndex] = Code[opIndex];
+        }
+    }
+    else
+    {
+        for (opIndex = 0; opIndex < ND_MAX_INSTRUCTION_LENGTH; opIndex++)
+        {
+            Instrux->InstructionBytes[opIndex] = Code[opIndex];
+        }
     }
 
     if (gPrefixesMap[Instrux->InstructionBytes[0]] != ND_PREF_CODE_NONE)
