@@ -1491,6 +1491,134 @@ static const ND_OPERAND_SIZE operandSizes[] =
 };
 
 
+static const ND_OPERAND operandTypes[] = {
+    { 0 }, // ND_OPT_A,
+    { 0 }, // ND_OPT_B,
+    { 0 }, // ND_OPT_C,
+    { 0 }, // ND_OPT_D,
+    { 0 }, // ND_OPT_E,
+    { 0 }, // ND_OPT_F,
+    { 0 }, // ND_OPT_G,
+    { 0 }, // ND_OPT_H,
+    { 0 }, // ND_OPT_I,
+    { 0 }, // ND_OPT_J,
+    { 0 }, // ND_OPT_K,
+    { 0 }, // ND_OPT_L,
+    { 0 }, // ND_OPT_M,
+    { 0 }, // ND_OPT_N,
+    { 0 }, // ND_OPT_O,
+    { 0 }, // ND_OPT_P,
+    { 0 }, // ND_OPT_Q,
+    { 0 }, // ND_OPT_R,
+    { 0 }, // ND_OPT_S,
+    { 0 }, // ND_OPT_T,
+    { 0 }, // ND_OPT_U,
+    { 0 }, // ND_OPT_V,
+    { 0 }, // ND_OPT_W,
+    { 0 }, // ND_OPT_X,
+    { 0 }, // ND_OPT_Y,
+    { 0 }, // ND_OPT_Z,
+    { 0 }, // ND_OPT_rB,
+    { 0 }, // ND_OPT_mB,
+    { 0 }, // ND_OPT_rK,
+    { 0 }, // ND_OPT_vK,
+    { 0 }, // ND_OPT_mK,
+    { 0 }, // ND_OPT_aK,
+    { 0 }, // ND_OPT_rM,
+    { 0 }, // ND_OPT_mM,
+    { 0 }, // ND_OPT_rT,
+    { 0 }, // ND_OPT_mT,
+    { 0 }, // ND_OPT_vT,
+    { 0 }, // ND_OPT_dfv,
+    { .Type = ND_OP_CONST, .Encoding = ND_OPE_1, .Info = { .Constant = { .Const = 1 } } }, // ND_OPT_1  operand is an implicit constant (used by shift/rotate instruction).
+
+    // These are implicit arguments inside instructions.
+
+    // Special registers.
+    { 0 }, // ND_OPT_rIP,
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MXCSR, .Size = ND_SIZE_32BIT, .Reg = 0 } } }, // ND_OPT_MXCSR  The operand is implicit and is the MXCSR.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_PKRU, .Size = ND_SIZE_32BIT, .Reg = 0 } } }, // ND_OPT_PKRU  The operand is the PKRU register.
+    { 0 }, // ND_OPT_SSP,
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_UIF, .Size = ND_SIZE_8BIT, .Reg = 0 } } }, // ND_OPT_UIF  The operand is the User Interrupt Flag.
+
+
+    // General Purpose Registers.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_GPR, .Size = ND_SIZE_8BIT, .Reg = NDR_AH, .IsHigh8 = ND_TRUE } } }, // ND_OPT_AH  Operand is the accumulator.
+    { 0 }, // ND_OPT_rAX,
+    { 0 }, // ND_OPT_rCX,
+    { 0 }, // ND_OPT_rDX,
+    { 0 }, // ND_OPT_rBX,
+    { 0 }, // ND_OPT_rSP,
+    { 0 }, // ND_OPT_rBP,
+    { 0 }, // ND_OPT_rSI,
+    { 0 }, // ND_OPT_rDI,
+    { 0 }, // ND_OPT_rR8,
+    { 0 }, // ND_OPT_rR9,
+    { 0 }, // ND_OPT_rR11,
+
+    // Segment registers.
+    { 0 }, // ND_OPT_CS,
+    { 0 }, // ND_OPT_SS,
+    { 0 }, // ND_OPT_DS,
+    { 0 }, // ND_OPT_ES,
+    { 0 }, // ND_OPT_FS,
+    { 0 }, // ND_OPT_GS,
+
+    // FPU registers.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_FPU, .Size = ND_SIZE_80BIT, .Reg = 0 } } }, // ND_OPT_ST0  Operand is the ST(0) register.
+    { 0 }, // ND_OPT_STi,
+
+    // SSE registers.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 0 } } }, // ND_OPT_XMM0  Operand is a hard-coded XMM register.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 1 } } }, // ND_OPT_XMM1
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 2 } } }, // ND_OPT_XMM2
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 3 } } }, // ND_OPT_XMM3
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 4 } } }, // ND_OPT_XMM4
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 5 } } }, // ND_OPT_XMM5
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 6 } } }, // ND_OPT_XMM6
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SSE, .Size = ND_SIZE_128BIT, .Reg = 7 } } }, // ND_OPT_XMM7
+
+    // Implicit memory operands.
+    { 0 }, // ND_OPT_pAX,         // [rAX]
+    { 0 }, // ND_OPT_pCX,         // [rCX]
+    { 0 }, // ND_OPT_pBXAL,       // [rBX + AL]
+    { 0 }, // ND_OPT_pDI,         // [rDI]
+    { 0 }, // ND_OPT_SHS,         // Shadow stack.
+    { 0 }, // ND_OPT_SHSP,        // Shadow stack pointed by the SSP.
+    { 0 }, // ND_OPT_SHS0,        // Shadow stack pointed by the SSP.
+    { 0 }, // ND_OPT_SMT,         // Source MSR table, encoded in [RSI].
+    { 0 }, // ND_OPT_DMT,         // Destination MSR table, encoded in [RDI].
+
+    // Special immediates.
+    { 0 }, // ND_OPT_m2zI,
+
+    // Misc CR/XCR/MSR/SYS registers.
+    { 0 }, // ND_OPT_CR0,
+    { 0 }, // ND_OPT_IDTR,
+    { 0 }, // ND_OPT_GDTR,
+    { 0 }, // ND_OPT_LDTR,
+    { 0 }, // ND_OPT_TR,
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SYS, .Size = ND_SIZE_16BIT, .Reg = NDR_X87_CONTROL } } }, // ND_OPT_X87CONTROL  The operand is implicit and is the x87 control word.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SYS, .Size = ND_SIZE_16BIT, .Reg = NDR_X87_TAG } } }, // ND_OPT_X87TAG  The operand is implicit and is the x87 tag word.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_SYS, .Size = ND_SIZE_16BIT, .Reg = NDR_X87_STATUS } } }, // ND_OPT_X87STATUS  The operand is implicit and is the x87 status word.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_E, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = 0xFFFFFFFF } } }, // ND_OPT_MSR  The operand is implicit and is a MSR (usually selected by the ECX register).
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_E, .Info = { .Register = { .Type = ND_REG_XCR, .Size = ND_SIZE_64BIT, .Reg = 0xFF } } }, // ND_OPT_XCR,
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_TSC } } }, // ND_OPT_TSC  The operand is implicit and is the IA32_TSC.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_TSC_AUX } } }, // ND_OPT_TSCAUX  The operand is implicit and is the IA32_TSCAUX.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_SYSENTER_EIP } } }, // ND_OPT_SEIP  The operand is implicit and is the IA32_SYSENTER_EIP.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_SYSENTER_ESP } } }, // ND_OPT_SESP  The operand is implicit and is the IA32_SYSENTER_ESP.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_SYSENTER_CS } } }, // ND_OPT_SCS,
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_STAR } } }, // ND_OPT_STAR  The operand is implicit and is the IA32_STAR.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_LSTAR } } }, // ND_OPT_LSTAR  The operand is implicit and is the IA32_LSTAR.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_FMASK } } }, // ND_OPT_FMASK  The operand is implicit and is the IA32_FMASK.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_FS_BASE } } }, // ND_OPT_FSBASE  The operand is implicit and is the IA32_FS_BASE MSR.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_GS_BASE } } }, // ND_OPT_GSBASE  The operand is implicit and is the IA32_GS_BASE MSR.
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_MSR, .Size = ND_SIZE_64BIT, .Reg = NDR_IA32_KERNEL_GS_BASE } } }, // ND_OPT_KGSBASE,
+    { .Type = ND_OP_REG, .Encoding = ND_OPE_S, .Info = { .Register = { .Type = ND_REG_XCR, .Size = ND_SIZE_64BIT, .Reg = 0 } } }, // ND_OPT_XCR0  The operand is implicit and is XCR0.
+    { 0 }  // ND_OPT_BANK,
+};
+
+
 //
 // NdParseOperand
 //
@@ -1855,13 +1983,6 @@ NdParseOperand(
     //
     switch (opt)
     {
-    case ND_OPT_1:
-        // operand is an implicit constant (used by shift/rotate instruction).
-        operand->Type = ND_OP_CONST;
-        operand->Encoding = ND_OPE_1;
-        operand->Info.Constant.Const = 1;
-        break;
-
     case ND_OPT_rIP:
         // The operand is the instruction pointer.
         operand->Type = ND_OP_REG;
@@ -1886,15 +2007,6 @@ NdParseOperand(
         operand->Info.Register.Type = ND_REG_GPR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
         operand->Info.Register.Reg = NDR_RAX;
-        break;
-
-    case ND_OPT_AH:
-        // Operand is the accumulator.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = ND_SIZE_8BIT;
-        operand->Info.Register.Reg = NDR_AH;
-        operand->Info.Register.IsHigh8 = ND_TRUE;
         break;
 
     case ND_OPT_rCX:
@@ -2026,14 +2138,6 @@ NdParseOperand(
         operand->Info.Register.Reg = NDR_GS;
         break;
 
-    case ND_OPT_ST0:
-        // Operand is the ST(0) register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_FPU;
-        operand->Info.Register.Size = ND_SIZE_80BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
     case ND_OPT_STi:
         // Operand is the ST(i) register.
         operand->Type = ND_OP_REG;
@@ -2041,21 +2145,6 @@ NdParseOperand(
         operand->Info.Register.Type = ND_REG_FPU;
         operand->Info.Register.Size = ND_SIZE_80BIT;
         operand->Info.Register.Reg = Instrux->ModRm.rm;
-        break;
-
-    case ND_OPT_XMM0:
-    case ND_OPT_XMM1:
-    case ND_OPT_XMM2:
-    case ND_OPT_XMM3:
-    case ND_OPT_XMM4:
-    case ND_OPT_XMM5:
-    case ND_OPT_XMM6:
-    case ND_OPT_XMM7:
-        // Operand is a hard-coded XMM register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = ND_SIZE_128BIT;
-        operand->Info.Register.Reg = opt - ND_OPT_XMM0;
         break;
 
     // Special operands. These are always implicit, and can't be encoded inside the instruction.
@@ -2099,46 +2188,6 @@ NdParseOperand(
         operand->Info.Register.Reg = NDR_TR;
         break;
 
-    case ND_OPT_X87CONTROL:
-        // The operand is implicit and is the x87 control word.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = NDR_X87_CONTROL;
-        break;
-
-    case ND_OPT_X87TAG:
-        // The operand is implicit and is the x87 tag word.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = NDR_X87_TAG;
-        break;
-
-    case ND_OPT_X87STATUS:
-        // The operand is implicit and is the x87 status word.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = NDR_X87_STATUS;
-        break;
-
-    case ND_OPT_MXCSR:
-        // The operand is implicit and is the MXCSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MXCSR;
-        operand->Info.Register.Size = ND_SIZE_32BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_PKRU:
-        // The operand is the PKRU register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_PKRU;
-        operand->Info.Register.Size = ND_SIZE_32BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
     case ND_OPT_SSP:
         // The operand is the SSP register.
         operand->Type = ND_OP_REG;
@@ -2147,126 +2196,40 @@ NdParseOperand(
         operand->Info.Register.Reg = 0;
         break;
 
+    case ND_OPT_1:
+    case ND_OPT_AH:
+    case ND_OPT_ST0:
+    case ND_OPT_XMM0:
+    case ND_OPT_XMM1:
+    case ND_OPT_XMM2:
+    case ND_OPT_XMM3:
+    case ND_OPT_XMM4:
+    case ND_OPT_XMM5:
+    case ND_OPT_XMM6:
+    case ND_OPT_XMM7:
+    case ND_OPT_X87CONTROL:
+    case ND_OPT_X87TAG:
+    case ND_OPT_X87STATUS:
+    case ND_OPT_MXCSR:
+    case ND_OPT_PKRU:
     case ND_OPT_UIF:
-        // The operand is the User Interrupt Flag.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_UIF;
-        operand->Info.Register.Size = ND_SIZE_8BIT; // 1 bit, in fact, but there is no size defined for one bit.
-        operand->Info.Register.Reg = 0;
-        break;
-
     case ND_OPT_MSR:
-        // The operand is implicit and is a MSR (usually selected by the ECX register).
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_E;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = 0xFFFFFFFF;
-        break;
-
     case ND_OPT_TSC:
-        // The operand is implicit and is the IA32_TSC.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_TSC;
-        break;
-
     case ND_OPT_TSCAUX:
-        // The operand is implicit and is the IA32_TSCAUX.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_TSC_AUX;
-        break;
-
     case ND_OPT_SCS:
-        // The operand is implicit and is the IA32_SYSENTER_CS.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_SYSENTER_CS;
-        break;
-
     case ND_OPT_SESP:
-        // The operand is implicit and is the IA32_SYSENTER_ESP.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_SYSENTER_ESP;
-        break;
-
     case ND_OPT_SEIP:
-        // The operand is implicit and is the IA32_SYSENTER_EIP.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_SYSENTER_EIP;
-        break;
-
     case ND_OPT_STAR:
-        // The operand is implicit and is the IA32_STAR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_STAR;
-        break;
-
     case ND_OPT_LSTAR:
-        // The operand is implicit and is the IA32_LSTAR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_LSTAR;
-        break;
-
     case ND_OPT_FMASK:
-        // The operand is implicit and is the IA32_FMASK.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_FMASK;
-        break;
-
     case ND_OPT_FSBASE:
-        // The operand is implicit and is the IA32_FS_BASE MSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_FS_BASE;
-        break;
-
     case ND_OPT_GSBASE:
-        // The operand is implicit and is the IA32_GS_BASE MSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_GS_BASE;
-        break;
-
     case ND_OPT_KGSBASE:
-        // The operand is implicit and is the IA32_KERNEL_GS_BASE MSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_KERNEL_GS_BASE;
-        break;
-
     case ND_OPT_XCR:
-        // The operand is implicit and is an extended control register (usually selected by ECX register).
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_E;
-        operand->Info.Register.Type = ND_REG_XCR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = 0xFF;
-        break;
-
     case ND_OPT_XCR0:
-        // The operand is implicit and is XCR0.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_XCR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = 0;
+        operand->Type     = operandTypes[opt].Type;
+        operand->Encoding = operandTypes[opt].Encoding;
+        operand->Info     = operandTypes[opt].Info;
         break;
 
     case ND_OPT_BANK:
