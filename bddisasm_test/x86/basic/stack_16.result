@@ -248,6 +248,9 @@
         Operand: 3, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:  General Purpose, RegSize:  2, RegId: 4, RegCount: 1
         Operand: 4, Acc:  -W,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, Stack: yes, 
                 Segment: 2, Base: 4, 
+        Operand: 5, Acc:  RW,  Type:   Register, Size:  2, RawSize:  2, Encoding: S, RegType:  General Purpose, RegSize:  2, RegId: 5, RegCount: 1
+        Operand: 6, Acc:  R-,  Type:     Memory, Size:  2, RawSize:  2, Encoding: S, 
+                Segment: 2, Base: 5, 
 
 000000000000002A c9                              LEAVE
         DSIZE: 16, ASIZE: 16, VLEN: -

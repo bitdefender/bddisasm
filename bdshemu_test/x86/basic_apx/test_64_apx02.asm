@@ -1,0 +1,17 @@
+    
+    bits 64
+
+_start:
+    mov     rax, 0xBDBDBDBDBDBDBDBD
+    
+    ; pushp rax
+    db 0xD5, 0x08, 0x50
+    ; popp r16
+    db 0xD5, 0x18, 0x58
+    
+    ; pushp r16
+    db 0xD5, 0x18, 0x50
+    ; popp r31
+    db 0xD5, 0x19, 0x5F
+    
+    int3

@@ -100,3 +100,23 @@
         Operand: 3, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 2, RegCount: 1
         Operand: 4, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
+0000000000000014 f20f01fd                        RMPREAD
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: SNP, Ins cat: SYSTEM, CET tracked: no
+        CPUID leaf: 0x8000001f, reg: eax, bit: 21
+        FLAGS access
+                PF: m, AF: m, ZF: m, SF: m, OF: m, 
+        Valid modes
+                R0: yes, R1: no, R2: no, R3: no
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: no, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  -W,  Type:     Memory, Size: 16, RawSize: 16, Encoding: S, 
+                Segment: 3, Base: 1, 
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
+

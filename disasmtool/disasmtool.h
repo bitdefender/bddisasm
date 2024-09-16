@@ -62,6 +62,7 @@ typedef struct _DISASM_OPTIONS
     size_t          ShemuRegs[ND_MAX_GPR_REGS];
     bool            UseShemuRegs;       // If truue, the registers in ShemuRegs will be used for shemu input.
     bool            BypassSelfWrites;   // If true, shemu emulation will ignore self-modifications made by the shellcode.
+    bool            SkipWriteDecoded;   // If true, shemu emulation will no longer write the decoded file.
 
     // Internal.
     INPUT_MODE      InputMode;

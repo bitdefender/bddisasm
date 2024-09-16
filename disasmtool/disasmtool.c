@@ -1315,23 +1315,27 @@ handle_shemu(
     rip = Options->Rip;
     fileName = Options->FileName;
 
-    if (fileName == NULL)
+    if (!Options->SkipWriteDecoded)
     {
-        fNameDecoded = "hex_string_decoded.bin";
+        if (fileName == NULL)
+        {
+            fNameDecoded = "hex_string_decoded.bin";
+        }
+        else
+        {
+            decFileNameLength = strlen(fileName) + sizeof("_decoded.bin");
+            fNameDecoded = malloc(sizeof(char) * decFileNameLength);
+        
+            // This is safe, we allocated enough space.
+            sprintf(fNameDecoded, "%s_decoded.bin", fileName);
+        }
     }
     else
     {
-        decFileNameLength = strlen(fileName) + sizeof("_decoded.bin");
-        fNameDecoded = malloc(sizeof(char) * decFileNameLength);
-        
-        // This is safe, we allocated enough space.
-        sprintf(fNameDecoded, "%s_decoded.bin", fileName);
+        fNameDecoded = NULL;
     }
-   
-    if (Options->Offset < PAGE_SIZE)
-    {
-        offset = Options->Offset;
-    }
+
+    offset = Options->Offset;
 
     // A little extra space, since shellcodes tend to do accesses after their code...
     shellSize = fsize + 0x100;
@@ -1592,6 +1596,7 @@ void print_help(void)
     printf("    -reg val    - Set register `reg` to value `val` for emulation. `reg` must be the plain 64-bit register name (ie: rax).\n");
     printf("    -k          - Specify kernel mode for shemu emulation (default is user-mode).\n");
     printf("    -bw         - Bypass self-modifications in shemu.\n");
+    printf("    -skipdecoded    - The decoded file will not be written to disk.\n");
     printf("\n");
     printf("\n");
     printf("EXAMPLES:\n");
@@ -1787,6 +1792,7 @@ parse_arguments(
     Options->Print = true;
     Options->Vendor = ND_VEND_ANY;
     Options->Feature = ND_FEAT_ALL;
+    Options->SkipWriteDecoded = false;
 
     i = 1;
     while (i < argc)
@@ -1811,6 +1817,11 @@ parse_arguments(
         {
             // shemu command - will emulate.
             Options->Command = commandShemu;
+        }
+        else if (strcmp(argv[i], "decode") == 0)
+        {
+            // decode command.
+            Options->Command = commandDecode;
         }
         else if (argv[i][0] == '-' && argv[i][1] == 'f' && argv[i][2] == 0)
         {
@@ -1974,6 +1985,10 @@ parse_arguments(
         {
             // Skip a single byte after each decoded instruction.
             Options->Skip1 = true;
+        }
+        else if (0 == strcmp(argv[i], "-skipdecoded"))
+        {
+            Options->SkipWriteDecoded = true;
         }
         else
         {

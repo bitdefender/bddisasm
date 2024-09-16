@@ -1,0 +1,709 @@
+[
+    {
+        "f_source": "x86/amx/amx1_64.asm",
+        "f_result": "x86/amx/amx1_64.result",
+        "f_test": "x86/amx/amx1_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx3_64.asm",
+        "f_result": "x86/apx/apx3_64.result",
+        "f_test": "x86/apx/apx3_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/rex2_bad_64_skip.asm",
+        "f_result": "x86/apx/rex2_bad_64_skip.result",
+        "f_test": "x86/apx/rex2_bad_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/rex2_valid_64.asm",
+        "f_result": "x86/apx/rex2_valid_64.result",
+        "f_test": "x86/apx/rex2_valid_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx1_64.asm",
+        "f_result": "x86/apx/apx1_64.result",
+        "f_test": "x86/apx/apx1_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx2_64.asm",
+        "f_result": "x86/apx/apx2_64.result",
+        "f_test": "x86/apx/apx2_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/evex_bad_64_skip.asm",
+        "f_result": "x86/apx/evex_bad_64_skip.result",
+        "f_test": "x86/apx/evex_bad_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avx2_64.asm",
+        "f_result": "x86/avx/avx2_64.result",
+        "f_test": "x86/avx/avx2_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avx2gather_64.asm",
+        "f_result": "x86/avx/avx2gather_64.result",
+        "f_test": "x86/avx/avx2gather_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avx_64.asm",
+        "f_result": "x86/avx/avx_64.result",
+        "f_test": "x86/avx/avx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avxifma_64.asm",
+        "f_result": "x86/avx/avxifma_64.result",
+        "f_test": "x86/avx/avxifma_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avxneconvert_64.asm",
+        "f_result": "x86/avx/avxneconvert_64.result",
+        "f_test": "x86/avx/avxneconvert_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avxvnni_64.asm",
+        "f_result": "x86/avx/avxvnni_64.result",
+        "f_test": "x86/avx/avxvnni_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avxvnniint16_64.asm",
+        "f_result": "x86/avx/avxvnniint16_64.result",
+        "f_test": "x86/avx/avxvnniint16_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/avxvnniint8_64.asm",
+        "f_result": "x86/avx/avxvnniint8_64.result",
+        "f_test": "x86/avx/avxvnniint8_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/f16c_64.asm",
+        "f_result": "x86/avx/f16c_64.result",
+        "f_test": "x86/avx/f16c_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/fma4_64.asm",
+        "f_result": "x86/avx/fma4_64.result",
+        "f_test": "x86/avx/fma4_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx/fma_64.asm",
+        "f_result": "x86/avx/fma_64.result",
+        "f_test": "x86/avx/fma_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512bitalg_64.asm",
+        "f_result": "x86/avx512/avx512bitalg_64.result",
+        "f_test": "x86/avx512/avx512bitalg_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512bw_64.asm",
+        "f_result": "x86/avx512/avx512bw_64.result",
+        "f_test": "x86/avx512/avx512bw_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512cd_64.asm",
+        "f_result": "x86/avx512/avx512cd_64.result",
+        "f_test": "x86/avx512/avx512cd_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512dq_64.asm",
+        "f_result": "x86/avx512/avx512dq_64.result",
+        "f_test": "x86/avx512/avx512dq_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512er_64.asm",
+        "f_result": "x86/avx512/avx512er_64.result",
+        "f_test": "x86/avx512/avx512er_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512f_64.asm",
+        "f_result": "x86/avx512/avx512f_64.result",
+        "f_test": "x86/avx512/avx512f_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512fma_64.asm",
+        "f_result": "x86/avx512/avx512fma_64.result",
+        "f_test": "x86/avx512/avx512fma_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512fp16_32.asm",
+        "f_result": "x86/avx512/avx512fp16_32.result",
+        "f_test": "x86/avx512/avx512fp16_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512fp16_64.asm",
+        "f_result": "x86/avx512/avx512fp16_64.result",
+        "f_test": "x86/avx512/avx512fp16_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512pf_64.asm",
+        "f_result": "x86/avx512/avx512pf_64.result",
+        "f_test": "x86/avx512/avx512pf_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512vbmi_64.asm",
+        "f_result": "x86/avx512/avx512vbmi_64.result",
+        "f_test": "x86/avx512/avx512vbmi_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx512/avx512vnni_64.asm",
+        "f_result": "x86/avx512/avx512vnni_64.result",
+        "f_test": "x86/avx512/avx512vnni_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/address_16.asm",
+        "f_result": "x86/basic/address_16.result",
+        "f_test": "x86/basic/address_16.test",
+        "options": "-b16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/address_32.asm",
+        "f_result": "x86/basic/address_32.result",
+        "f_test": "x86/basic/address_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/address_64.asm",
+        "f_result": "x86/basic/address_64.result",
+        "f_test": "x86/basic/address_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/aes_64.asm",
+        "f_result": "x86/basic/aes_64.result",
+        "f_test": "x86/basic/aes_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/basic1_64.asm",
+        "f_result": "x86/basic/basic1_64.result",
+        "f_test": "x86/basic/basic1_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/basic2_64.asm",
+        "f_result": "x86/basic/basic2_64.result",
+        "f_test": "x86/basic/basic2_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/bmi_64.asm",
+        "f_result": "x86/basic/bmi_64.result",
+        "f_test": "x86/basic/bmi_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/branch_16.asm",
+        "f_result": "x86/basic/branch_16.result",
+        "f_test": "x86/basic/branch_16.test",
+        "options": "-b16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/branch_32.asm",
+        "f_result": "x86/basic/branch_32.result",
+        "f_test": "x86/basic/branch_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/branch_64.asm",
+        "f_result": "x86/basic/branch_64.result",
+        "f_test": "x86/basic/branch_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/cet_64.asm",
+        "f_result": "x86/basic/cet_64.result",
+        "f_test": "x86/basic/cet_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/enqcmd_64.asm",
+        "f_result": "x86/basic/enqcmd_64.result",
+        "f_test": "x86/basic/enqcmd_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/fpu_64.asm",
+        "f_result": "x86/basic/fpu_64.result",
+        "f_test": "x86/basic/fpu_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/gfni_64.asm",
+        "f_result": "x86/basic/gfni_64.result",
+        "f_test": "x86/basic/gfni_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/invlpgb_64.asm",
+        "f_result": "x86/basic/invlpgb_64.result",
+        "f_test": "x86/basic/invlpgb_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/misc_16.asm",
+        "f_result": "x86/basic/misc_16.result",
+        "f_test": "x86/basic/misc_16.test",
+        "options": "-b16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/misc_32.asm",
+        "f_result": "x86/basic/misc_32.result",
+        "f_test": "x86/basic/misc_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/misc_64.asm",
+        "f_result": "x86/basic/misc_64.result",
+        "f_test": "x86/basic/misc_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/mpx_64.asm",
+        "f_result": "x86/basic/mpx_64.result",
+        "f_test": "x86/basic/mpx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/prefixes_64.asm",
+        "f_result": "x86/basic/prefixes_64.result",
+        "f_test": "x86/basic/prefixes_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/sha_64.asm",
+        "f_result": "x86/basic/sha_64.result",
+        "f_test": "x86/basic/sha_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/stack_16.asm",
+        "f_result": "x86/basic/stack_16.result",
+        "f_test": "x86/basic/stack_16.test",
+        "options": "-b16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/stack_32.asm",
+        "f_result": "x86/basic/stack_32.result",
+        "f_test": "x86/basic/stack_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/stack_64.asm",
+        "f_result": "x86/basic/stack_64.result",
+        "f_test": "x86/basic/stack_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/svm_64.asm",
+        "f_result": "x86/basic/svm_64.result",
+        "f_test": "x86/basic/svm_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/system_16.asm",
+        "f_result": "x86/basic/system_16.result",
+        "f_test": "x86/basic/system_16.test",
+        "options": "-b16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/system_32.asm",
+        "f_result": "x86/basic/system_32.result",
+        "f_test": "x86/basic/system_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/system_64.asm",
+        "f_result": "x86/basic/system_64.result",
+        "f_test": "x86/basic/system_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/tsx_64.asm",
+        "f_result": "x86/basic/tsx_64.result",
+        "f_test": "x86/basic/tsx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/vmx_64.asm",
+        "f_result": "x86/basic/vmx_64.result",
+        "f_test": "x86/basic/vmx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/basic/snp_64.asm",
+        "f_result": "x86/basic/snp_64.result",
+        "f_test": "x86/basic/snp_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/cet/cet_32.asm",
+        "f_result": "x86/cet/cet_32.result",
+        "f_test": "x86/cet/cet_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/cet/cet_64.asm",
+        "f_result": "x86/cet/cet_64.result",
+        "f_test": "x86/cet/cet_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/cet/dnt_32.asm",
+        "f_result": "x86/cet/dnt_32.result",
+        "f_test": "x86/cet/dnt_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/cet/dnt_64.asm",
+        "f_result": "x86/cet/dnt_64.result",
+        "f_test": "x86/cet/dnt_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/cmpccxadd/cmpccxadd_64.asm",
+        "f_result": "x86/cmpccxadd/cmpccxadd_64.result",
+        "f_test": "x86/cmpccxadd/cmpccxadd_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/fred/fred_64.asm",
+        "f_result": "x86/fred/fred_64.result",
+        "f_test": "x86/fred/fred_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/kl/kl_64.asm",
+        "f_result": "x86/kl/kl_64.result",
+        "f_test": "x86/kl/kl_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/msr/msr_64.asm",
+        "f_result": "x86/msr/msr_64.result",
+        "f_test": "x86/msr/msr_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/prefetchit/prefetchit_32.asm",
+        "f_result": "x86/prefetchit/prefetchit_32.result",
+        "f_test": "x86/prefetchit/prefetchit_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/prefetchit/prefetchit_64.asm",
+        "f_result": "x86/prefetchit/prefetchit_64.result",
+        "f_test": "x86/prefetchit/prefetchit_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/rao-int/raoint_64.asm",
+        "f_result": "x86/rao-int/raoint_64.result",
+        "f_test": "x86/rao-int/raoint_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/sha512/sha512_64.asm",
+        "f_result": "x86/sha512/sha512_64.result",
+        "f_test": "x86/sha512/sha512_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/simd/3dnow_64.asm",
+        "f_result": "x86/simd/3dnow_64.result",
+        "f_test": "x86/simd/3dnow_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/simd/mmx_64.asm",
+        "f_result": "x86/simd/mmx_64.result",
+        "f_test": "x86/simd/mmx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/simd/sse2_64.asm",
+        "f_result": "x86/simd/sse2_64.result",
+        "f_test": "x86/simd/sse2_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/simd/sse3_64.asm",
+        "f_result": "x86/simd/sse3_64.result",
+        "f_test": "x86/simd/sse3_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/simd/sse4_64.asm",
+        "f_result": "x86/simd/sse4_64.result",
+        "f_test": "x86/simd/sse4_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/sm/sm_64.asm",
+        "f_result": "x86/sm/sm_64.result",
+        "f_test": "x86/sm/sm_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/amx_64_skip.asm",
+        "f_result": "x86/special/amx_64_skip.result",
+        "f_test": "x86/special/amx_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/avx2gather_1_64_skip.asm",
+        "f_result": "x86/special/avx2gather_1_64_skip.result",
+        "f_test": "x86/special/avx2gather_1_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/avx2gather_2_64_skip.asm",
+        "f_result": "x86/special/avx2gather_2_64_skip.result",
+        "f_test": "x86/special/avx2gather_2_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/avx2gather_3_64_skip.asm",
+        "f_result": "x86/special/avx2gather_3_64_skip.result",
+        "f_test": "x86/special/avx2gather_3_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/cr8_32.asm",
+        "f_result": "x86/special/cr8_32.result",
+        "f_test": "x86/special/cr8_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/ignorew_evex_32.asm",
+        "f_result": "x86/special/ignorew_evex_32.result",
+        "f_test": "x86/special/ignorew_evex_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/ignorew_evex_64.asm",
+        "f_result": "x86/special/ignorew_evex_64.result",
+        "f_test": "x86/special/ignorew_evex_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/invalid_32_skip.asm",
+        "f_result": "x86/special/invalid_32_skip.result",
+        "f_test": "x86/special/invalid_32_skip.test",
+        "options": "-b32 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/invalid_64_skip.asm",
+        "f_result": "x86/special/invalid_64_skip.result",
+        "f_test": "x86/special/invalid_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/long_64.asm",
+        "f_result": "x86/special/long_64.result",
+        "f_test": "x86/special/long_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/movcrdr_64.asm",
+        "f_result": "x86/special/movcrdr_64.result",
+        "f_test": "x86/special/movcrdr_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/only_32.asm",
+        "f_result": "x86/special/only_32.result",
+        "f_test": "x86/special/only_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/only_64.asm",
+        "f_result": "x86/special/only_64.result",
+        "f_test": "x86/special/only_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/regressions_32.asm",
+        "f_result": "x86/special/regressions_32.result",
+        "f_test": "x86/special/regressions_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/regressions_64.asm",
+        "f_result": "x86/special/regressions_64.result",
+        "f_test": "x86/special/regressions_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/special/invalid_evex_64_skip.asm",
+        "f_result": "x86/special/invalid_evex_64_skip.result",
+        "f_test": "x86/special/invalid_evex_64_skip.test",
+        "options": "-b64 -skip16",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/tdx/tdx_64.asm",
+        "f_result": "x86/tdx/tdx_64.result",
+        "f_test": "x86/tdx/tdx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/tse/tse_64.asm",
+        "f_result": "x86/tse/tse_64.result",
+        "f_test": "x86/tse/tse_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/uintr/uintr_64.asm",
+        "f_result": "x86/uintr/uintr_64.result",
+        "f_test": "x86/uintr/uintr_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/usermsr/rex2_valid_64.asm",
+        "f_result": "x86/usermsr/rex2_valid_64.result",
+        "f_test": "x86/usermsr/rex2_valid_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx10/avx101_64.asm",
+        "f_result": "x86/avx10/avx101_64.result",
+        "f_test": "x86/avx10/avx101_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/avx10/avx102_64.asm",
+        "f_result": "x86/avx10/avx102_64.result",
+        "f_test": "x86/avx10/avx102_64.test",
+        "options": "-b64",
+        "command": "decode"
+    }
+]

@@ -1,0 +1,709 @@
+[
+    {
+        "f_source": "x86/basic/test_32_callf1.asm",
+        "f_result": "x86/basic/test_32_callf1.result",
+        "f_test": "x86/basic/test_32_callf1.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_callf2.asm",
+        "f_result": "x86/basic/test_32_callf2.result",
+        "f_test": "x86/basic/test_32_callf2.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_iret.asm",
+        "f_result": "x86/basic/test_32_iret.result",
+        "f_test": "x86/basic/test_32_iret.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_jmpf1.asm",
+        "f_result": "x86/basic/test_32_jmpf1.result",
+        "f_test": "x86/basic/test_32_jmpf1.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_jmpf2.asm",
+        "f_result": "x86/basic/test_32_jmpf2.result",
+        "f_test": "x86/basic/test_32_jmpf2.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_loadrip01.asm",
+        "f_result": "x86/basic/test_32_loadrip01.result",
+        "f_test": "x86/basic/test_32_loadrip01.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_loadrip02.asm",
+        "f_result": "x86/basic/test_32_loadrip02.result",
+        "f_test": "x86/basic/test_32_loadrip02.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_loadseg01.asm",
+        "f_result": "x86/basic/test_32_loadseg01.result",
+        "f_test": "x86/basic/test_32_loadseg01.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_loadseg02.asm",
+        "f_result": "x86/basic/test_32_loadseg02.result",
+        "f_test": "x86/basic/test_32_loadseg02.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_loadseg03.asm",
+        "f_result": "x86/basic/test_32_loadseg03.result",
+        "f_test": "x86/basic/test_32_loadseg03.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_neg.asm",
+        "f_result": "x86/basic/test_32_neg.result",
+        "f_test": "x86/basic/test_32_neg.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_retf.asm",
+        "f_result": "x86/basic/test_32_retf.result",
+        "f_test": "x86/basic/test_32_retf.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_stack_pivot1.asm",
+        "f_result": "x86/basic/test_32_stack_pivot1.result",
+        "f_test": "x86/basic/test_32_stack_pivot1.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_stack_pivot2.asm",
+        "f_result": "x86/basic/test_32_stack_pivot2.result",
+        "f_test": "x86/basic/test_32_stack_pivot2.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_stack_pivot3.asm",
+        "f_result": "x86/basic/test_32_stack_pivot3.result",
+        "f_test": "x86/basic/test_32_stack_pivot3.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_stack_pivot4.asm",
+        "f_result": "x86/basic/test_32_stack_pivot4.result",
+        "f_test": "x86/basic/test_32_stack_pivot4.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_str01.asm",
+        "f_result": "x86/basic/test_32_str01.result",
+        "f_test": "x86/basic/test_32_str01.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_str02.asm",
+        "f_result": "x86/basic/test_32_str02.result",
+        "f_test": "x86/basic/test_32_str02.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_str03.asm",
+        "f_result": "x86/basic/test_32_str03.result",
+        "f_test": "x86/basic/test_32_str03.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_str04.asm",
+        "f_result": "x86/basic/test_32_str04.result",
+        "f_test": "x86/basic/test_32_str04.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_str05.asm",
+        "f_result": "x86/basic/test_32_str05.result",
+        "f_test": "x86/basic/test_32_str05.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_sud01.asm",
+        "f_result": "x86/basic/test_32_sud01.result",
+        "f_test": "x86/basic/test_32_sud01.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_sud02.asm",
+        "f_result": "x86/basic/test_32_sud02.result",
+        "f_test": "x86/basic/test_32_sud02.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_32_sys01.asm",
+        "f_result": "x86/basic/test_32_sys01.result",
+        "f_test": "x86/basic/test_32_sys01.test",
+        "options": "-b32 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_adc01.asm",
+        "f_result": "x86/basic/test_64_adc01.result",
+        "f_test": "x86/basic/test_64_adc01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic01.asm",
+        "f_result": "x86/basic/test_64_basic01.result",
+        "f_test": "x86/basic/test_64_basic01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic02.asm",
+        "f_result": "x86/basic/test_64_basic02.result",
+        "f_test": "x86/basic/test_64_basic02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic03.asm",
+        "f_result": "x86/basic/test_64_basic03.result",
+        "f_test": "x86/basic/test_64_basic03.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic04.asm",
+        "f_result": "x86/basic/test_64_basic04.result",
+        "f_test": "x86/basic/test_64_basic04.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic05.asm",
+        "f_result": "x86/basic/test_64_basic05.result",
+        "f_test": "x86/basic/test_64_basic05.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic06.asm",
+        "f_result": "x86/basic/test_64_basic06.result",
+        "f_test": "x86/basic/test_64_basic06.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic07.asm",
+        "f_result": "x86/basic/test_64_basic07.result",
+        "f_test": "x86/basic/test_64_basic07.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic08.asm",
+        "f_result": "x86/basic/test_64_basic08.result",
+        "f_test": "x86/basic/test_64_basic08.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_basic09.asm",
+        "f_result": "x86/basic/test_64_basic09.result",
+        "f_test": "x86/basic/test_64_basic09.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_bitscan01.asm",
+        "f_result": "x86/basic/test_64_bitscan01.result",
+        "f_test": "x86/basic/test_64_bitscan01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_branch1.asm",
+        "f_result": "x86/basic/test_64_branch1.result",
+        "f_test": "x86/basic/test_64_branch1.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_branch2.asm",
+        "f_result": "x86/basic/test_64_branch2.result",
+        "f_test": "x86/basic/test_64_branch2.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_branch3.asm",
+        "f_result": "x86/basic/test_64_branch3.result",
+        "f_test": "x86/basic/test_64_branch3.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_branch4.asm",
+        "f_result": "x86/basic/test_64_branch4.result",
+        "f_test": "x86/basic/test_64_branch4.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_branch_boundary01.asm",
+        "f_result": "x86/basic/test_64_branch_boundary01.result",
+        "f_test": "x86/basic/test_64_branch_boundary01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_branch_boundary02.asm",
+        "f_result": "x86/basic/test_64_branch_boundary02.result",
+        "f_test": "x86/basic/test_64_branch_boundary02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_bswap01.asm",
+        "f_result": "x86/basic/test_64_bswap01.result",
+        "f_test": "x86/basic/test_64_bswap01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_cmov.asm",
+        "f_result": "x86/basic/test_64_cmov.result",
+        "f_test": "x86/basic/test_64_cmov.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_cmpxchg01.asm",
+        "f_result": "x86/basic/test_64_cmpxchg01.result",
+        "f_test": "x86/basic/test_64_cmpxchg01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_div.asm",
+        "f_result": "x86/basic/test_64_div.result",
+        "f_test": "x86/basic/test_64_div.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_div2.asm",
+        "f_result": "x86/basic/test_64_div2.result",
+        "f_test": "x86/basic/test_64_div2.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_eicar.asm",
+        "f_result": "x86/basic/test_64_eicar.result",
+        "f_test": "x86/basic/test_64_eicar.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_flags.asm",
+        "f_result": "x86/basic/test_64_flags.result",
+        "f_test": "x86/basic/test_64_flags.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_flags2.asm",
+        "f_result": "x86/basic/test_64_flags2.result",
+        "f_test": "x86/basic/test_64_flags2.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_flags3.asm",
+        "f_result": "x86/basic/test_64_flags3.result",
+        "f_test": "x86/basic/test_64_flags3.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_imul01.asm",
+        "f_result": "x86/basic/test_64_imul01.result",
+        "f_test": "x86/basic/test_64_imul01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_imul02.asm",
+        "f_result": "x86/basic/test_64_imul02.result",
+        "f_test": "x86/basic/test_64_imul02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_incdec.asm",
+        "f_result": "x86/basic/test_64_incdec.result",
+        "f_test": "x86/basic/test_64_incdec.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip01.asm",
+        "f_result": "x86/basic/test_64_loadrip01.result",
+        "f_test": "x86/basic/test_64_loadrip01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip02.asm",
+        "f_result": "x86/basic/test_64_loadrip02.result",
+        "f_test": "x86/basic/test_64_loadrip02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip03.asm",
+        "f_result": "x86/basic/test_64_loadrip03.result",
+        "f_test": "x86/basic/test_64_loadrip03.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip04.asm",
+        "f_result": "x86/basic/test_64_loadrip04.result",
+        "f_test": "x86/basic/test_64_loadrip04.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip05.asm",
+        "f_result": "x86/basic/test_64_loadrip05.result",
+        "f_test": "x86/basic/test_64_loadrip05.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip06.asm",
+        "f_result": "x86/basic/test_64_loadrip06.result",
+        "f_test": "x86/basic/test_64_loadrip06.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip07.asm",
+        "f_result": "x86/basic/test_64_loadrip07.result",
+        "f_test": "x86/basic/test_64_loadrip07.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip08.asm",
+        "f_result": "x86/basic/test_64_loadrip08.result",
+        "f_test": "x86/basic/test_64_loadrip08.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadrip09.asm",
+        "f_result": "x86/basic/test_64_loadrip09.result",
+        "f_test": "x86/basic/test_64_loadrip09.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_loadseg01.asm",
+        "f_result": "x86/basic/test_64_loadseg01.result",
+        "f_test": "x86/basic/test_64_loadseg01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_moffset.asm",
+        "f_result": "x86/basic/test_64_moffset.result",
+        "f_test": "x86/basic/test_64_moffset.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_mov.asm",
+        "f_result": "x86/basic/test_64_mov.result",
+        "f_test": "x86/basic/test_64_mov.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_movszx.asm",
+        "f_result": "x86/basic/test_64_movszx.result",
+        "f_test": "x86/basic/test_64_movszx.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_nopsled01.asm",
+        "f_result": "x86/basic/test_64_nopsled01.result",
+        "f_test": "x86/basic/test_64_nopsled01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_nopsled02.asm",
+        "f_result": "x86/basic/test_64_nopsled02.result",
+        "f_test": "x86/basic/test_64_nopsled02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_nopsled03.asm",
+        "f_result": "x86/basic/test_64_nopsled03.result",
+        "f_test": "x86/basic/test_64_nopsled03.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_popcnt01.asm",
+        "f_result": "x86/basic/test_64_popcnt01.result",
+        "f_test": "x86/basic/test_64_popcnt01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_r0_sidt.asm",
+        "f_result": "x86/basic/test_64_r0_sidt.result",
+        "f_test": "x86/basic/test_64_r0_sidt.test",
+        "options": "-b64 -k -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_rcl01.asm",
+        "f_result": "x86/basic/test_64_rcl01.result",
+        "f_test": "x86/basic/test_64_rcl01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_rcr01.asm",
+        "f_result": "x86/basic/test_64_rcr01.result",
+        "f_test": "x86/basic/test_64_rcr01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_rdtsc.asm",
+        "f_result": "x86/basic/test_64_rdtsc.result",
+        "f_test": "x86/basic/test_64_rdtsc.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_rol01.asm",
+        "f_result": "x86/basic/test_64_rol01.result",
+        "f_test": "x86/basic/test_64_rol01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_ror01.asm",
+        "f_result": "x86/basic/test_64_ror01.result",
+        "f_test": "x86/basic/test_64_ror01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sar01.asm",
+        "f_result": "x86/basic/test_64_sar01.result",
+        "f_test": "x86/basic/test_64_sar01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sbb01.asm",
+        "f_result": "x86/basic/test_64_sbb01.result",
+        "f_test": "x86/basic/test_64_sbb01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_selfwrite01.asm",
+        "f_result": "x86/basic/test_64_selfwrite01.result",
+        "f_test": "x86/basic/test_64_selfwrite01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_selfwrite02.asm",
+        "f_result": "x86/basic/test_64_selfwrite02.result",
+        "f_test": "x86/basic/test_64_selfwrite02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_selfwrite03.asm",
+        "f_result": "x86/basic/test_64_selfwrite03.result",
+        "f_test": "x86/basic/test_64_selfwrite03.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_shl01.asm",
+        "f_result": "x86/basic/test_64_shl01.result",
+        "f_test": "x86/basic/test_64_shl01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_shld01.asm",
+        "f_result": "x86/basic/test_64_shld01.result",
+        "f_test": "x86/basic/test_64_shld01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_shld02.asm",
+        "f_result": "x86/basic/test_64_shld02.result",
+        "f_test": "x86/basic/test_64_shld02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_shr01.asm",
+        "f_result": "x86/basic/test_64_shr01.result",
+        "f_test": "x86/basic/test_64_shr01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_shrd01.asm",
+        "f_result": "x86/basic/test_64_shrd01.result",
+        "f_test": "x86/basic/test_64_shrd01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_shrd02.asm",
+        "f_result": "x86/basic/test_64_shrd02.result",
+        "f_test": "x86/basic/test_64_shrd02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sidt.asm",
+        "f_result": "x86/basic/test_64_sidt.result",
+        "f_test": "x86/basic/test_64_sidt.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_stack_pivot1.asm",
+        "f_result": "x86/basic/test_64_stack_pivot1.result",
+        "f_test": "x86/basic/test_64_stack_pivot1.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_stack_pivot2.asm",
+        "f_result": "x86/basic/test_64_stack_pivot2.result",
+        "f_test": "x86/basic/test_64_stack_pivot2.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_stack_pivot3.asm",
+        "f_result": "x86/basic/test_64_stack_pivot3.result",
+        "f_test": "x86/basic/test_64_stack_pivot3.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_stack_pivot4.asm",
+        "f_result": "x86/basic/test_64_stack_pivot4.result",
+        "f_test": "x86/basic/test_64_stack_pivot4.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_string.asm",
+        "f_result": "x86/basic/test_64_string.result",
+        "f_test": "x86/basic/test_64_string.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sys01.asm",
+        "f_result": "x86/basic/test_64_sys01.result",
+        "f_test": "x86/basic/test_64_sys01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sys02.asm",
+        "f_result": "x86/basic/test_64_sys02.result",
+        "f_test": "x86/basic/test_64_sys02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sys03.asm",
+        "f_result": "x86/basic/test_64_sys03.result",
+        "f_test": "x86/basic/test_64_sys03.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_zcnt01.asm",
+        "f_result": "x86/basic/test_64_zcnt01.result",
+        "f_test": "x86/basic/test_64_zcnt01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic_apx/test_64_apx01.asm",
+        "f_result": "x86/basic_apx/test_64_apx01.result",
+        "f_test": "x86/basic_apx/test_64_apx01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic_apx/test_64_apx02.asm",
+        "f_result": "x86/basic_apx/test_64_apx02.result",
+        "f_test": "x86/basic_apx/test_64_apx02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic_apx/test_64_apx03.asm",
+        "f_result": "x86/basic_apx/test_64_apx03.result",
+        "f_test": "x86/basic_apx/test_64_apx03.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic_apx/test_64_apx04.asm",
+        "f_result": "x86/basic_apx/test_64_apx04.result",
+        "f_test": "x86/basic_apx/test_64_apx04.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    }
+]

@@ -1,0 +1,301 @@
+        RAX = 0x0000000000000000 RCX = 0x0000000000000000 RDX = 0x0000000000000000 RBX = 0x0000000000000000
+        RSP = 0x00000000001fe000 RBP = 0x0000000000000000 RSI = 0x0000000000000000 RDI = 0x0000000000000000
+        R8  = 0x0000000000000000 R9  = 0x0000000000000000 R10 = 0x0000000000000000 R11 = 0x0000000000000000
+        R12 = 0x0000000000000000 R13 = 0x0000000000000000 R14 = 0x0000000000000000 R15 = 0x0000000000000000
+        R16 = 0x0000000000000000 R17 = 0x0000000000000000 R18 = 0x0000000000000000 R19 = 0x0000000000000000
+        R20 = 0x0000000000000000 R21 = 0x0000000000000000 R22 = 0x0000000000000000 R23 = 0x0000000000000000
+        R24 = 0x0000000000000000 R25 = 0x0000000000000000 R26 = 0x0000000000000000 R27 = 0x0000000000000000
+        R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
+        RIP = 0x0000000000200000 RFLAGS = 0x0000000000000202   CF:0 PF:0 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
+IP: 0x0000000000200000  488D35F9FFFFFF                  LEA       rsi, [rel 0x200000]
+        RAX = 0x0000000000000000 RCX = 0x0000000000000000 RDX = 0x0000000000000000 RBX = 0x0000000000000000
+        RSP = 0x00000000001fe000 RBP = 0x0000000000000000 RSI = 0x0000000000200000 RDI = 0x0000000000000000
+        R8  = 0x0000000000000000 R9  = 0x0000000000000000 R10 = 0x0000000000000000 R11 = 0x0000000000000000
+        R12 = 0x0000000000000000 R13 = 0x0000000000000000 R14 = 0x0000000000000000 R15 = 0x0000000000000000
+        R16 = 0x0000000000000000 R17 = 0x0000000000000000 R18 = 0x0000000000000000 R19 = 0x0000000000000000
+        R20 = 0x0000000000000000 R21 = 0x0000000000000000 R22 = 0x0000000000000000 R23 = 0x0000000000000000
+        R24 = 0x0000000000000000 R25 = 0x0000000000000000 R26 = 0x0000000000000000 R27 = 0x0000000000000000
+        R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
+        RIP = 0x0000000000200007 RFLAGS = 0x0000000000000202   CF:0 PF:0 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
+IP: 0x0000000000200007  B9FFFFFFFF                      MOV       ecx, 0xffffffff
+        RAX = 0x0000000000000000 RCX = 0x00000000ffffffff RDX = 0x0000000000000000 RBX = 0x0000000000000000
+        RSP = 0x00000000001fe000 RBP = 0x0000000000000000 RSI = 0x0000000000200000 RDI = 0x0000000000000000
+        R8  = 0x0000000000000000 R9  = 0x0000000000000000 R10 = 0x0000000000000000 R11 = 0x0000000000000000
+        R12 = 0x0000000000000000 R13 = 0x0000000000000000 R14 = 0x0000000000000000 R15 = 0x0000000000000000
+        R16 = 0x0000000000000000 R17 = 0x0000000000000000 R18 = 0x0000000000000000 R19 = 0x0000000000000000
+        R20 = 0x0000000000000000 R21 = 0x0000000000000000 R22 = 0x0000000000000000 R23 = 0x0000000000000000
+        R24 = 0x0000000000000000 R25 = 0x0000000000000000 R26 = 0x0000000000000000 R27 = 0x0000000000000000
+        R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
+        RIP = 0x000000000020000c RFLAGS = 0x0000000000000202   CF:0 PF:0 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
+IP: 0x000000000020000c  F3AC                            REP LODSB
+        Memory LOAD, address 0x0000000000200000, size 1, value 48
+        Memory LOAD, address 0x0000000000200001, size 1, value 8D
+        Memory LOAD, address 0x0000000000200002, size 1, value 35
+        Memory LOAD, address 0x0000000000200003, size 1, value F9
+        Memory LOAD, address 0x0000000000200004, size 1, value FF
+        Memory LOAD, address 0x0000000000200005, size 1, value FF
+        Memory LOAD, address 0x0000000000200006, size 1, value FF
+        Memory LOAD, address 0x0000000000200007, size 1, value B9
+        Memory LOAD, address 0x0000000000200008, size 1, value FF
+        Memory LOAD, address 0x0000000000200009, size 1, value FF
+        Memory LOAD, address 0x000000000020000a, size 1, value FF
+        Memory LOAD, address 0x000000000020000b, size 1, value FF
+        Memory LOAD, address 0x000000000020000c, size 1, value F3
+        Memory LOAD, address 0x000000000020000d, size 1, value AC
+        Memory LOAD, address 0x000000000020000e, size 1, value 00
+        Memory LOAD, address 0x000000000020000f, size 1, value 00
+        Memory LOAD, address 0x0000000000200010, size 1, value 00
+        Memory LOAD, address 0x0000000000200011, size 1, value 00
+        Memory LOAD, address 0x0000000000200012, size 1, value 00
+        Memory LOAD, address 0x0000000000200013, size 1, value 00
+        Memory LOAD, address 0x0000000000200014, size 1, value 00
+        Memory LOAD, address 0x0000000000200015, size 1, value 00
+        Memory LOAD, address 0x0000000000200016, size 1, value 00
+        Memory LOAD, address 0x0000000000200017, size 1, value 00
+        Memory LOAD, address 0x0000000000200018, size 1, value 00
+        Memory LOAD, address 0x0000000000200019, size 1, value 00
+        Memory LOAD, address 0x000000000020001a, size 1, value 00
+        Memory LOAD, address 0x000000000020001b, size 1, value 00
+        Memory LOAD, address 0x000000000020001c, size 1, value 00
+        Memory LOAD, address 0x000000000020001d, size 1, value 00
+        Memory LOAD, address 0x000000000020001e, size 1, value 00
+        Memory LOAD, address 0x000000000020001f, size 1, value 00
+        Memory LOAD, address 0x0000000000200020, size 1, value 00
+        Memory LOAD, address 0x0000000000200021, size 1, value 00
+        Memory LOAD, address 0x0000000000200022, size 1, value 00
+        Memory LOAD, address 0x0000000000200023, size 1, value 00
+        Memory LOAD, address 0x0000000000200024, size 1, value 00
+        Memory LOAD, address 0x0000000000200025, size 1, value 00
+        Memory LOAD, address 0x0000000000200026, size 1, value 00
+        Memory LOAD, address 0x0000000000200027, size 1, value 00
+        Memory LOAD, address 0x0000000000200028, size 1, value 00
+        Memory LOAD, address 0x0000000000200029, size 1, value 00
+        Memory LOAD, address 0x000000000020002a, size 1, value 00
+        Memory LOAD, address 0x000000000020002b, size 1, value 00
+        Memory LOAD, address 0x000000000020002c, size 1, value 00
+        Memory LOAD, address 0x000000000020002d, size 1, value 00
+        Memory LOAD, address 0x000000000020002e, size 1, value 00
+        Memory LOAD, address 0x000000000020002f, size 1, value 00
+        Memory LOAD, address 0x0000000000200030, size 1, value 00
+        Memory LOAD, address 0x0000000000200031, size 1, value 00
+        Memory LOAD, address 0x0000000000200032, size 1, value 00
+        Memory LOAD, address 0x0000000000200033, size 1, value 00
+        Memory LOAD, address 0x0000000000200034, size 1, value 00
+        Memory LOAD, address 0x0000000000200035, size 1, value 00
+        Memory LOAD, address 0x0000000000200036, size 1, value 00
+        Memory LOAD, address 0x0000000000200037, size 1, value 00
+        Memory LOAD, address 0x0000000000200038, size 1, value 00
+        Memory LOAD, address 0x0000000000200039, size 1, value 00
+        Memory LOAD, address 0x000000000020003a, size 1, value 00
+        Memory LOAD, address 0x000000000020003b, size 1, value 00
+        Memory LOAD, address 0x000000000020003c, size 1, value 00
+        Memory LOAD, address 0x000000000020003d, size 1, value 00
+        Memory LOAD, address 0x000000000020003e, size 1, value 00
+        Memory LOAD, address 0x000000000020003f, size 1, value 00
+        Memory LOAD, address 0x0000000000200040, size 1, value 00
+        Memory LOAD, address 0x0000000000200041, size 1, value 00
+        Memory LOAD, address 0x0000000000200042, size 1, value 00
+        Memory LOAD, address 0x0000000000200043, size 1, value 00
+        Memory LOAD, address 0x0000000000200044, size 1, value 00
+        Memory LOAD, address 0x0000000000200045, size 1, value 00
+        Memory LOAD, address 0x0000000000200046, size 1, value 00
+        Memory LOAD, address 0x0000000000200047, size 1, value 00
+        Memory LOAD, address 0x0000000000200048, size 1, value 00
+        Memory LOAD, address 0x0000000000200049, size 1, value 00
+        Memory LOAD, address 0x000000000020004a, size 1, value 00
+        Memory LOAD, address 0x000000000020004b, size 1, value 00
+        Memory LOAD, address 0x000000000020004c, size 1, value 00
+        Memory LOAD, address 0x000000000020004d, size 1, value 00
+        Memory LOAD, address 0x000000000020004e, size 1, value 00
+        Memory LOAD, address 0x000000000020004f, size 1, value 00
+        Memory LOAD, address 0x0000000000200050, size 1, value 00
+        Memory LOAD, address 0x0000000000200051, size 1, value 00
+        Memory LOAD, address 0x0000000000200052, size 1, value 00
+        Memory LOAD, address 0x0000000000200053, size 1, value 00
+        Memory LOAD, address 0x0000000000200054, size 1, value 00
+        Memory LOAD, address 0x0000000000200055, size 1, value 00
+        Memory LOAD, address 0x0000000000200056, size 1, value 00
+        Memory LOAD, address 0x0000000000200057, size 1, value 00
+        Memory LOAD, address 0x0000000000200058, size 1, value 00
+        Memory LOAD, address 0x0000000000200059, size 1, value 00
+        Memory LOAD, address 0x000000000020005a, size 1, value 00
+        Memory LOAD, address 0x000000000020005b, size 1, value 00
+        Memory LOAD, address 0x000000000020005c, size 1, value 00
+        Memory LOAD, address 0x000000000020005d, size 1, value 00
+        Memory LOAD, address 0x000000000020005e, size 1, value 00
+        Memory LOAD, address 0x000000000020005f, size 1, value 00
+        Memory LOAD, address 0x0000000000200060, size 1, value 00
+        Memory LOAD, address 0x0000000000200061, size 1, value 00
+        Memory LOAD, address 0x0000000000200062, size 1, value 00
+        Memory LOAD, address 0x0000000000200063, size 1, value 00
+        Memory LOAD, address 0x0000000000200064, size 1, value 00
+        Memory LOAD, address 0x0000000000200065, size 1, value 00
+        Memory LOAD, address 0x0000000000200066, size 1, value 00
+        Memory LOAD, address 0x0000000000200067, size 1, value 00
+        Memory LOAD, address 0x0000000000200068, size 1, value 00
+        Memory LOAD, address 0x0000000000200069, size 1, value 00
+        Memory LOAD, address 0x000000000020006a, size 1, value 00
+        Memory LOAD, address 0x000000000020006b, size 1, value 00
+        Memory LOAD, address 0x000000000020006c, size 1, value 00
+        Memory LOAD, address 0x000000000020006d, size 1, value 00
+        Memory LOAD, address 0x000000000020006e, size 1, value 00
+        Memory LOAD, address 0x000000000020006f, size 1, value 00
+        Memory LOAD, address 0x0000000000200070, size 1, value 00
+        Memory LOAD, address 0x0000000000200071, size 1, value 00
+        Memory LOAD, address 0x0000000000200072, size 1, value 00
+        Memory LOAD, address 0x0000000000200073, size 1, value 00
+        Memory LOAD, address 0x0000000000200074, size 1, value 00
+        Memory LOAD, address 0x0000000000200075, size 1, value 00
+        Memory LOAD, address 0x0000000000200076, size 1, value 00
+        Memory LOAD, address 0x0000000000200077, size 1, value 00
+        Memory LOAD, address 0x0000000000200078, size 1, value 00
+        Memory LOAD, address 0x0000000000200079, size 1, value 00
+        Memory LOAD, address 0x000000000020007a, size 1, value 00
+        Memory LOAD, address 0x000000000020007b, size 1, value 00
+        Memory LOAD, address 0x000000000020007c, size 1, value 00
+        Memory LOAD, address 0x000000000020007d, size 1, value 00
+        Memory LOAD, address 0x000000000020007e, size 1, value 00
+        Memory LOAD, address 0x000000000020007f, size 1, value 00
+        Memory LOAD, address 0x0000000000200080, size 1, value 00
+        Memory LOAD, address 0x0000000000200081, size 1, value 00
+        Memory LOAD, address 0x0000000000200082, size 1, value 00
+        Memory LOAD, address 0x0000000000200083, size 1, value 00
+        Memory LOAD, address 0x0000000000200084, size 1, value 00
+        Memory LOAD, address 0x0000000000200085, size 1, value 00
+        Memory LOAD, address 0x0000000000200086, size 1, value 00
+        Memory LOAD, address 0x0000000000200087, size 1, value 00
+        Memory LOAD, address 0x0000000000200088, size 1, value 00
+        Memory LOAD, address 0x0000000000200089, size 1, value 00
+        Memory LOAD, address 0x000000000020008a, size 1, value 00
+        Memory LOAD, address 0x000000000020008b, size 1, value 00
+        Memory LOAD, address 0x000000000020008c, size 1, value 00
+        Memory LOAD, address 0x000000000020008d, size 1, value 00
+        Memory LOAD, address 0x000000000020008e, size 1, value 00
+        Memory LOAD, address 0x000000000020008f, size 1, value 00
+        Memory LOAD, address 0x0000000000200090, size 1, value 00
+        Memory LOAD, address 0x0000000000200091, size 1, value 00
+        Memory LOAD, address 0x0000000000200092, size 1, value 00
+        Memory LOAD, address 0x0000000000200093, size 1, value 00
+        Memory LOAD, address 0x0000000000200094, size 1, value 00
+        Memory LOAD, address 0x0000000000200095, size 1, value 00
+        Memory LOAD, address 0x0000000000200096, size 1, value 00
+        Memory LOAD, address 0x0000000000200097, size 1, value 00
+        Memory LOAD, address 0x0000000000200098, size 1, value 00
+        Memory LOAD, address 0x0000000000200099, size 1, value 00
+        Memory LOAD, address 0x000000000020009a, size 1, value 00
+        Memory LOAD, address 0x000000000020009b, size 1, value 00
+        Memory LOAD, address 0x000000000020009c, size 1, value 00
+        Memory LOAD, address 0x000000000020009d, size 1, value 00
+        Memory LOAD, address 0x000000000020009e, size 1, value 00
+        Memory LOAD, address 0x000000000020009f, size 1, value 00
+        Memory LOAD, address 0x00000000002000a0, size 1, value 00
+        Memory LOAD, address 0x00000000002000a1, size 1, value 00
+        Memory LOAD, address 0x00000000002000a2, size 1, value 00
+        Memory LOAD, address 0x00000000002000a3, size 1, value 00
+        Memory LOAD, address 0x00000000002000a4, size 1, value 00
+        Memory LOAD, address 0x00000000002000a5, size 1, value 00
+        Memory LOAD, address 0x00000000002000a6, size 1, value 00
+        Memory LOAD, address 0x00000000002000a7, size 1, value 00
+        Memory LOAD, address 0x00000000002000a8, size 1, value 00
+        Memory LOAD, address 0x00000000002000a9, size 1, value 00
+        Memory LOAD, address 0x00000000002000aa, size 1, value 00
+        Memory LOAD, address 0x00000000002000ab, size 1, value 00
+        Memory LOAD, address 0x00000000002000ac, size 1, value 00
+        Memory LOAD, address 0x00000000002000ad, size 1, value 00
+        Memory LOAD, address 0x00000000002000ae, size 1, value 00
+        Memory LOAD, address 0x00000000002000af, size 1, value 00
+        Memory LOAD, address 0x00000000002000b0, size 1, value 00
+        Memory LOAD, address 0x00000000002000b1, size 1, value 00
+        Memory LOAD, address 0x00000000002000b2, size 1, value 00
+        Memory LOAD, address 0x00000000002000b3, size 1, value 00
+        Memory LOAD, address 0x00000000002000b4, size 1, value 00
+        Memory LOAD, address 0x00000000002000b5, size 1, value 00
+        Memory LOAD, address 0x00000000002000b6, size 1, value 00
+        Memory LOAD, address 0x00000000002000b7, size 1, value 00
+        Memory LOAD, address 0x00000000002000b8, size 1, value 00
+        Memory LOAD, address 0x00000000002000b9, size 1, value 00
+        Memory LOAD, address 0x00000000002000ba, size 1, value 00
+        Memory LOAD, address 0x00000000002000bb, size 1, value 00
+        Memory LOAD, address 0x00000000002000bc, size 1, value 00
+        Memory LOAD, address 0x00000000002000bd, size 1, value 00
+        Memory LOAD, address 0x00000000002000be, size 1, value 00
+        Memory LOAD, address 0x00000000002000bf, size 1, value 00
+        Memory LOAD, address 0x00000000002000c0, size 1, value 00
+        Memory LOAD, address 0x00000000002000c1, size 1, value 00
+        Memory LOAD, address 0x00000000002000c2, size 1, value 00
+        Memory LOAD, address 0x00000000002000c3, size 1, value 00
+        Memory LOAD, address 0x00000000002000c4, size 1, value 00
+        Memory LOAD, address 0x00000000002000c5, size 1, value 00
+        Memory LOAD, address 0x00000000002000c6, size 1, value 00
+        Memory LOAD, address 0x00000000002000c7, size 1, value 00
+        Memory LOAD, address 0x00000000002000c8, size 1, value 00
+        Memory LOAD, address 0x00000000002000c9, size 1, value 00
+        Memory LOAD, address 0x00000000002000ca, size 1, value 00
+        Memory LOAD, address 0x00000000002000cb, size 1, value 00
+        Memory LOAD, address 0x00000000002000cc, size 1, value 00
+        Memory LOAD, address 0x00000000002000cd, size 1, value 00
+        Memory LOAD, address 0x00000000002000ce, size 1, value 00
+        Memory LOAD, address 0x00000000002000cf, size 1, value 00
+        Memory LOAD, address 0x00000000002000d0, size 1, value 00
+        Memory LOAD, address 0x00000000002000d1, size 1, value 00
+        Memory LOAD, address 0x00000000002000d2, size 1, value 00
+        Memory LOAD, address 0x00000000002000d3, size 1, value 00
+        Memory LOAD, address 0x00000000002000d4, size 1, value 00
+        Memory LOAD, address 0x00000000002000d5, size 1, value 00
+        Memory LOAD, address 0x00000000002000d6, size 1, value 00
+        Memory LOAD, address 0x00000000002000d7, size 1, value 00
+        Memory LOAD, address 0x00000000002000d8, size 1, value 00
+        Memory LOAD, address 0x00000000002000d9, size 1, value 00
+        Memory LOAD, address 0x00000000002000da, size 1, value 00
+        Memory LOAD, address 0x00000000002000db, size 1, value 00
+        Memory LOAD, address 0x00000000002000dc, size 1, value 00
+        Memory LOAD, address 0x00000000002000dd, size 1, value 00
+        Memory LOAD, address 0x00000000002000de, size 1, value 00
+        Memory LOAD, address 0x00000000002000df, size 1, value 00
+        Memory LOAD, address 0x00000000002000e0, size 1, value 00
+        Memory LOAD, address 0x00000000002000e1, size 1, value 00
+        Memory LOAD, address 0x00000000002000e2, size 1, value 00
+        Memory LOAD, address 0x00000000002000e3, size 1, value 00
+        Memory LOAD, address 0x00000000002000e4, size 1, value 00
+        Memory LOAD, address 0x00000000002000e5, size 1, value 00
+        Memory LOAD, address 0x00000000002000e6, size 1, value 00
+        Memory LOAD, address 0x00000000002000e7, size 1, value 00
+        Memory LOAD, address 0x00000000002000e8, size 1, value 00
+        Memory LOAD, address 0x00000000002000e9, size 1, value 00
+        Memory LOAD, address 0x00000000002000ea, size 1, value 00
+        Memory LOAD, address 0x00000000002000eb, size 1, value 00
+        Memory LOAD, address 0x00000000002000ec, size 1, value 00
+        Memory LOAD, address 0x00000000002000ed, size 1, value 00
+        Memory LOAD, address 0x00000000002000ee, size 1, value 00
+        Memory LOAD, address 0x00000000002000ef, size 1, value 00
+        Memory LOAD, address 0x00000000002000f0, size 1, value 00
+        Memory LOAD, address 0x00000000002000f1, size 1, value 00
+        Memory LOAD, address 0x00000000002000f2, size 1, value 00
+        Memory LOAD, address 0x00000000002000f3, size 1, value 00
+        Memory LOAD, address 0x00000000002000f4, size 1, value 00
+        Memory LOAD, address 0x00000000002000f5, size 1, value 00
+        Memory LOAD, address 0x00000000002000f6, size 1, value 00
+        Memory LOAD, address 0x00000000002000f7, size 1, value 00
+        Memory LOAD, address 0x00000000002000f8, size 1, value 00
+        Memory LOAD, address 0x00000000002000f9, size 1, value 00
+        Memory LOAD, address 0x00000000002000fa, size 1, value 00
+        Memory LOAD, address 0x00000000002000fb, size 1, value 00
+        Memory LOAD, address 0x00000000002000fc, size 1, value 00
+        Memory LOAD, address 0x00000000002000fd, size 1, value 00
+        Memory LOAD, address 0x00000000002000fe, size 1, value 00
+        Memory LOAD, address 0x00000000002000ff, size 1, value 00
+        Memory LOAD, address 0x0000000000200100, size 1, value 00
+        Memory LOAD, address 0x0000000000200101, size 1, value 00
+        Memory LOAD, address 0x0000000000200102, size 1, value 00
+        Memory LOAD, address 0x0000000000200103, size 1, value 00
+        Memory LOAD, address 0x0000000000200104, size 1, value 00
+        Memory LOAD, address 0x0000000000200105, size 1, value 00
+        Memory LOAD, address 0x0000000000200106, size 1, value 00
+        Memory LOAD, address 0x0000000000200107, size 1, value 00
+        Memory LOAD, address 0x0000000000200108, size 1, value 00
+        Memory LOAD, address 0x0000000000200109, size 1, value 00
+        Memory LOAD, address 0x000000000020010a, size 1, value 00
+        Memory LOAD, address 0x000000000020010b, size 1, value 00
+        Memory LOAD, address 0x000000000020010c, size 1, value 00
+        Memory LOAD, address 0x000000000020010d, size 1, value 00
+Emulation terminated with status 0x00000001, flags: 0x0, 0 NOPs, 0 NULLs, 273 total instructions, 3 unique instructions
