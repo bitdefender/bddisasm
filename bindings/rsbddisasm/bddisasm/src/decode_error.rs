@@ -120,6 +120,9 @@ pub enum DecodeError {
     /// EVEX payload byte 3 is invalid.
     InvalidEvexByte3,
 
+    /// EVEX.U field is invalid.
+    BadEvexU,
+
     /// Internal library error.
     InternalError(u64),
 }
@@ -187,6 +190,9 @@ impl fmt::Display for DecodeError {
             DecodeError::InvalidEvexByte3 => {
                 write!(f, "EVEX payload byte 3 is invalid.")
             }
+            DecodeError::BadEvexU => {
+                write!(f, "EVEX.U field is invalid.")
+            }
             DecodeError::InternalError(e) => write!(f, "internal error: {}", e),
         }
     }
@@ -239,6 +245,7 @@ pub(crate) fn status_to_error(status: ffi::NDSTATUS) -> Result<(), DecodeError> 
             ffi::ND_STATUS_INVALID_INSTRUX => Err(DecodeError::InvalidInstrux),
             ffi::ND_STATUS_BUFFER_OVERFLOW => Err(DecodeError::BufferOverflow),
             ffi::ND_STATUS_INVALID_EVEX_BYTE3 => Err(DecodeError::InvalidEvexByte3),
+            ffi::ND_STATUS_BAD_EVEX_U => Err(DecodeError::BadEvexU),
             ffi::ND_STATUS_INTERNAL_ERROR => Err(DecodeError::InternalError(0)),
             _ => panic!("Unexpected status: {:#x}", status),
         }

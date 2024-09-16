@@ -22,7 +22,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! bddisasm = "0.2"
+//! bddisasm = "0.5.0"
 //! ```
 //!
 //! # Examples
