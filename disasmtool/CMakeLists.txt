@@ -23,7 +23,7 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     include(CheckIPOSupported)
     check_ipo_supported(RESULT USE_IPO)
     if (USE_IPO)
-        set_target_properties(bddisasm PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
+        set_target_properties(disasmtool PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
     endif ()
 endif ()
 
@@ -67,5 +67,27 @@ else ()
             disasmtool
             PRIVATE -Wno-discarded-qualifiers
                     -Wduplicated-cond)
+    endif ()
+endif ()
+
+if (BDD_ASAN)
+    target_compile_options(disasmtool PUBLIC "-fsanitize=address")
+    target_link_libraries(disasmtool PUBLIC "-fsanitize=address")
+endif ()
+
+if (BDD_UBSAN)
+    target_compile_options(disasmtool PUBLIC
+        "-fsanitize=undefined"
+        "-fno-sanitize=alignment")
+    target_link_libraries(disasmtool PUBLIC
+        "-fsanitize=undefined"
+        "-fno-sanitize=alignment")
+endif ()
+
+if (BDD_LTO)
+    include(CheckIPOSupported)
+    check_ipo_supported(RESULT USE_IPO)
+    if (USE_IPO)
+        set_target_properties(disasmtool PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
     endif ()
 endif ()

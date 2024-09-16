@@ -8,6 +8,7 @@ option(BDD_USE_EXTERNAL_MEMSET "Expect nd_memset implementation from the integra
 option(BDD_NO_MNEMONIC "Exclude mnemonics - this option involves setting the BDDISASM_NO_FORMAT flag" OFF)
 option(BDD_ASAN "Build with ASAN" OFF)
 option(BDD_UBSAN "Build with UBSAN" OFF)
+option(BDD_LTO "Enable LTO" OFF)
 
 set(BDD_VER_FILE ${CMAKE_CURRENT_LIST_DIR}/inc/bddisasm_version.h)
 
@@ -219,6 +220,15 @@ set_target_properties(
                SOVERSION ${CMAKE_PROJECT_VERSION_MAJOR})
 
 add_library(bddisasm::bdshemu ALIAS bdshemu)
+
+if (BDD_LTO)
+    include(CheckIPOSupported)
+    check_ipo_supported(RESULT USE_IPO)
+    if (USE_IPO)
+        set_target_properties(bddisasm PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
+        set_target_properties(bdshemu PROPERTIES INTERPROCEDURAL_OPTIMIZATION True)
+    endif ()
+endif ()
 
 # If this is the master project (and if the user requested it) add disasmtool.
 if ((${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME}) AND BDD_INCLUDE_TOOL)
