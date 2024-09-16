@@ -5,6 +5,24 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [2.2.0] - 2024-09-16
+
+### Added
+- Support in bddisasm for AMD `RMPREAD` instruction.
+- Support in bddisasm for Intel AVX 10.2 instructions.
+
+### Fixed
+- `LEAVE` instruction: size attribute for the `RSP` operand is stack address size, not operand size.
+- `ENTER` instruction: size attribute for the `RSP` operand is operand size, not stack address size. 
+- `ENTER` instruction: added missing operands - `RBP` (stack address size), `[RBP]` (operand size).
+- `EVEX` instructions in maps 5 & 6 may not be decoded if `ND_FEAT_APX` feature is not enabled.
+
+### Changed
+- Proper handling of the `EVEX.U` bit, depending on the instruction type.
+- Removed APX encodings for SHA & KEYLOCKER instruction.
+- Implemented new test scripts.
+
+
 ## [2.1.5] - 2024-05-28
 
 ### Fixed
