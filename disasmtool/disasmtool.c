@@ -192,6 +192,7 @@ set_to_string(
     case ND_SET_AMXTILE:               return "AMX-TILE";
     case ND_SET_AMXCOMPLEX:            return "AMX-COMPLEX";
     case ND_SET_AVX:                   return "AVX";
+    case ND_SET_AVX102:                return "AVX10_2";
     case ND_SET_AVX2:                  return "AVX2";
     case ND_SET_AVX2GATHER:            return "AVX2GATHER";
     case ND_SET_AVX5124FMAPS:          return "AVX5124FMAPS";
@@ -332,6 +333,13 @@ category_to_string(
     case ND_CAT_AMX:                  return "AMX";
     case ND_CAT_APX:                  return "APX";
     case ND_CAT_AVX:                  return "AVX";
+    case ND_CAT_AVX10BF16:            return "AVX10BF16";
+    case ND_CAT_AVX10CMPSFP:          return "AVX10CMPSFP";
+    case ND_CAT_AVX10CONVERT:         return "AVX10CONVERT";
+    case ND_CAT_AVX10INT:             return "AVX10INT";
+    case ND_CAT_AVX10MINMAX:          return "AVX10MINMAX";
+    case ND_CAT_AVX10PARTCOPY:        return "AVX10PARTCOPY";
+    case ND_CAT_AVX10SCONVERT:        return "AVX10SCONVERT";
     case ND_CAT_AVX2:                 return "AVX2";
     case ND_CAT_AVX2GATHER:           return "AVX2GATHER";
     case ND_CAT_AVX512:               return "AVX512";

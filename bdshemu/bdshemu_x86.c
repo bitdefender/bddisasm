@@ -2240,7 +2240,7 @@ ShemuX86Emulate(
             }
             else
             {
-                ND_SINT64 val = ND_SIGN_EX(dst.Size, dst.Value.Qwords[0]);
+                ND_SINT64 val = (ND_SINT64)ND_SIGN_EX(dst.Size, dst.Value.Qwords[0]);
                 val = val >> src.Value.Qwords[0];
                 res.Value.Qwords[0] = (ND_UINT64)val;
             }
@@ -2761,7 +2761,7 @@ check_far_branch:
                 }
                 else
                 {
-                    res.Value.Words[0] = (ND_SINT8)dst.Value.Bytes[0] * (ND_SINT8)src.Value.Bytes[0];
+                    res.Value.Words[0] = (ND_UINT16)((ND_SINT8)dst.Value.Bytes[0] * (ND_SINT8)src.Value.Bytes[0]);
                 }
             }
             else if (dst.Size == 2)
@@ -2772,7 +2772,7 @@ check_far_branch:
                 }
                 else
                 {
-                    res.Value.Dwords[0] = (ND_SINT16)dst.Value.Words[0] * (ND_SINT16)src.Value.Words[0];
+                    res.Value.Dwords[0] = (ND_UINT32)((ND_SINT16)dst.Value.Words[0] * (ND_SINT16)src.Value.Words[0]);
                 }
             }
             else if (dst.Size == 4)
@@ -2783,7 +2783,7 @@ check_far_branch:
                 }
                 else
                 {
-                    res.Value.Qwords[0] = (ND_SINT64)(ND_SINT32)dst.Value.Dwords[0] * (ND_SINT64)(ND_SINT32)src.Value.Dwords[0];
+                    res.Value.Qwords[0] = (ND_UINT64)((ND_SINT64)(ND_SINT32)dst.Value.Dwords[0] * (ND_SINT64)(ND_SINT32)src.Value.Dwords[0]);
                 }
             }
             else
@@ -2916,8 +2916,8 @@ check_far_branch:
                         break;
                     }
 
-                    res.Value.Bytes[0] = (ND_SINT8)((ND_SINT16)divident / (ND_SINT8)src.Value.Bytes[0]);
-                    res.Value.Bytes[1] = (ND_SINT8)((ND_SINT16)divident % (ND_SINT8)src.Value.Bytes[0]);
+                    res.Value.Bytes[0] = (ND_UINT8)(ND_SINT8)((ND_SINT16)divident / (ND_SINT8)src.Value.Bytes[0]);
+                    res.Value.Bytes[1] = (ND_UINT8)(ND_SINT8)((ND_SINT16)divident % (ND_SINT8)src.Value.Bytes[0]);
                 }
 
                 // Result in AX (AL - quotient, AH - reminder).
@@ -2949,8 +2949,8 @@ check_far_branch:
                         break;
                     }
 
-                    res.Value.Words[0] = (ND_SINT16)((ND_SINT32)divident / (ND_SINT16)src.Value.Words[0]);
-                    res.Value.Words[1] = (ND_SINT16)((ND_SINT32)divident % (ND_SINT16)src.Value.Words[0]);
+                    res.Value.Words[0] = (ND_UINT16)(ND_SINT16)((ND_SINT32)divident / (ND_SINT16)src.Value.Words[0]);
+                    res.Value.Words[1] = (ND_UINT16)(ND_SINT16)((ND_SINT32)divident % (ND_SINT16)src.Value.Words[0]);
                 }
 
                 ShemuX86SetGprValue(Context, NDR_DX, 2, res.Value.Words[1], ND_FALSE);
@@ -2982,8 +2982,8 @@ check_far_branch:
                         break;
                     }
 
-                    res.Value.Dwords[0] = (ND_SINT32)((ND_SINT64)divident / (ND_SINT32)src.Value.Dwords[0]);
-                    res.Value.Dwords[1] = (ND_SINT32)((ND_SINT64)divident % (ND_SINT32)src.Value.Dwords[0]);
+                    res.Value.Dwords[0] = (ND_UINT32)(ND_SINT32)((ND_SINT64)divident / (ND_SINT32)src.Value.Dwords[0]);
+                    res.Value.Dwords[1] = (ND_UINT32)(ND_SINT32)((ND_SINT64)divident % (ND_SINT32)src.Value.Dwords[0]);
                 }
 
                 ShemuX86SetGprValue(Context, NDR_EDX, 4, res.Value.Dwords[1], ND_FALSE);

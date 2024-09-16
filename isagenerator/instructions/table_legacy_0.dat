@@ -343,8 +343,8 @@ MOV          ; Eb,Ib       ;                   ;            0xC6 /0 ib     ; s:I
 XABORT       ; Ib          ; yIP,EAX           ;            0xC6 /0xF8 ib  ; s:TSX, t:UNCOND_BR, w:R|W|RCW, i:RTM
 MOV          ; Ev,Iz       ;                   ;            0xC7 /0 iz     ; s:I86, t:DATAXFER, w:W|R, a:OP2SIGNEXO1, p:XRELEASE|HLEWOL
 XBEGIN       ; Jz          ; yIP,EAX           ;            0xC7 /0xF8 cz  ; s:TSX, t:COND_BR, w:R|RCW|CW, i:RTM
-ENTER        ; Iw,Ib       ; rBP,sSP,Kv        ;            0xC8 iw ib     ; s:I186, t:MISC, w:R|R|RW|RW|W, a:D64
-LEAVE        ;             ; sBP,rBP,rSP,Kv    ;            0xC9           ; s:I186, t:MISC, w:R|RW|RW|R, a:D64
+ENTER        ; Iw,Ib       ; rBP,rSP,Kv,sBP,pBP;            0xC8 iw ib     ; s:I186, t:MISC, w:R|R|RW|RW|W|RW|R, a:D64
+LEAVE        ;             ; sBP,rBP,sSP,Kv    ;            0xC9           ; s:I186, t:MISC, w:R|RW|RW|R, a:D64
 RETF         ; Iw          ; CS,rIP,Kv2,SHS2   ;            0xCA iw        ; s:I86, t:RET, w:R|W|W|R|R
 RETF         ;             ; CS,rIP,Kv2,SHS2   ;            0xCB           ; s:I86, t:RET, w:W|W|R|R
 INT3         ;             ; CS,rIP,Kv3,Fv,SHS3 ;           0xCC           ; s:I86, t:INTERRUPT, w:RW|RW|RW|W|W, a:CETT, f:INT, m:NOSGX

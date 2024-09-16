@@ -150,3 +150,4 @@ MCOMMIT                 : 0x80000008, 0xFFFFFFFF, EBX, 8
 
 SNP                     : 0x8000001F, 0xFFFFFFFF, EAX, 4
 RMPQUERY                : 0x8000001F, 0xFFFFFFFF, EAX, 6
+RMPREAD                 : 0x8000001F, 0xFFFFFFFF, EAX, 21

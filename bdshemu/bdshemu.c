@@ -63,9 +63,6 @@ shemu_memcpy(
     ND_SIZET Size
     )
 {
-    void *start = Dest;
-    ND_UINT32 index = 0;
-
     if (ND_NULL == Dest)
     {
         return ND_NULL;
@@ -76,14 +73,12 @@ shemu_memcpy(
         return ND_NULL;
     }
 
-    while (Size--)
+    for (ND_SIZET index = 0; index < Size; index++)
     {
-        *(char *)Dest = *((char *)Source + index);
-        Dest = (char *)Dest + 1;
-        index++;
+        ((char *)Dest)[index] = ((const char *)Source)[index];
     }
 
-    return start;
+    return Dest;
 }
 
 
@@ -206,7 +201,8 @@ ShemuIsShellcodePtr(
     )
 {
     return (Gla >= Context->ShellcodeBase && Gla < Context->ShellcodeBase + Context->ShellcodeSize &&
-            Gla + Size > Context->ShellcodeBase && Gla + Size <= Context->ShellcodeBase + Context->ShellcodeSize);
+            Gla + Size > Context->ShellcodeBase && Gla + Size <= Context->ShellcodeBase + Context->ShellcodeSize &&
+            Size <= Context->ShellcodeSize);
 }
 
 
@@ -221,7 +217,8 @@ ShemuIsStackPtr(
     )
 {
     return (Gla >= Context->StackBase && Gla < Context->StackBase + Context->StackSize &&
-            Gla + Size > Context->StackBase && Gla + Size <= Context->StackBase + Context->StackSize);
+            Gla + Size > Context->StackBase && Gla + Size <= Context->StackBase + Context->StackSize &&
+            Size <= Context->StackSize);
 }
 
 
@@ -236,7 +233,8 @@ ShemuIsIcachePtr(
     )
 {
     return (Gla >= Context->Icache.Address && Gla < Context->Icache.Address + Context->Icache.Size &&
-            Gla + Size > Context->Icache.Address && Gla + Size <= Context->Icache.Address + Context->Icache.Size);
+            Gla + Size > Context->Icache.Address && Gla + Size <= Context->Icache.Address + Context->Icache.Size &&
+            Size <= Context->Icache.Size);
 }
 
 

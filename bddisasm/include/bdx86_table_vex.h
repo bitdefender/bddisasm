@@ -13,7 +13,7 @@
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_07_opcode_f8_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2652]  // URDMSR Rq,Id
+    (const void *)&gInstructions[ 2636]  // URDMSR Rq,Id
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_07_opcode_f8_pp_03_modrmreg_00_modrmmod_01_l_00_w = 
@@ -63,7 +63,7 @@ const ND_TABLE_MODRM_REG gVexMap_mmmmm_07_opcode_f8_pp_03_modrmreg =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_07_opcode_f8_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2656]  // UWRMSR Id,Rq
+    (const void *)&gInstructions[ 2640]  // UWRMSR Id,Rq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_07_opcode_f8_pp_02_modrmreg_00_modrmmod_01_l_00_w = 
@@ -387,7 +387,7 @@ const ND_TABLE_OPCODE gVexMap_mmmmm_07_opcode =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_f0_pp_03_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2190]  // RORX Gy,Ey,Ib
+    (const void *)&gInstructions[ 2181]  // RORX Gy,Ey,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_f0_pp_03_l = 
@@ -415,7 +415,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_f0_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_df_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2682]  // VAESKEYGENASSIST Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 2667]  // VAESKEYGENASSIST Vdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_df_pp_01_l = 
@@ -443,7 +443,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_df_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_de_pp_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3924]  // VSM3RNDS2 Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 4001]  // VSM3RNDS2 Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_de_pp_01_l_00_w = 
@@ -480,7 +480,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_de_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_cf_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3115]  // VGF2P8AFFINEINVQB Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3160]  // VGF2P8AFFINEINVQB Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_cf_pp_01_w = 
@@ -506,7 +506,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_cf_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_ce_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3117]  // VGF2P8AFFINEQB Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3162]  // VGF2P8AFFINEQB Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_ce_pp_01_w = 
@@ -532,13 +532,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_ce_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3073]  // VFNMSUBSD Vdq,Hdq,Ldq,Wsd
+    (const void *)&gInstructions[ 3115]  // VFNMSUBSD Vdq,Hdq,Ldq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3072]  // VFNMSUBSD Vdq,Hdq,Wsd,Ldq
+    (const void *)&gInstructions[ 3114]  // VFNMSUBSD Vdq,Hdq,Wsd,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_7f_pp_01_w = 
@@ -564,13 +564,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_7f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3075]  // VFNMSUBSS Vdq,Hdq,Ldq,Wss
+    (const void *)&gInstructions[ 3117]  // VFNMSUBSS Vdq,Hdq,Ldq,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3074]  // VFNMSUBSS Vdq,Hdq,Wss,Ldq
+    (const void *)&gInstructions[ 3116]  // VFNMSUBSS Vdq,Hdq,Wss,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_7e_pp_01_w = 
@@ -596,13 +596,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_7e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3069]  // VFNMSUBPD Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3111]  // VFNMSUBPD Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3068]  // VFNMSUBPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3110]  // VFNMSUBPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_7d_pp_01_w = 
@@ -628,13 +628,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_7d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3071]  // VFNMSUBPS Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3113]  // VFNMSUBPS Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3070]  // VFNMSUBPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3112]  // VFNMSUBPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_7c_pp_01_w = 
@@ -660,13 +660,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_7c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3035]  // VFNMADDSD Vdq,Hdq,Ldq,Wsd
+    (const void *)&gInstructions[ 3074]  // VFNMADDSD Vdq,Hdq,Ldq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3034]  // VFNMADDSD Vdq,Hdq,Wsd,Ldq
+    (const void *)&gInstructions[ 3073]  // VFNMADDSD Vdq,Hdq,Wsd,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_7b_pp_01_w = 
@@ -692,13 +692,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_7b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3037]  // VFNMADDSS Vdq,Hdq,Ldq,Wss
+    (const void *)&gInstructions[ 3076]  // VFNMADDSS Vdq,Hdq,Ldq,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_7a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3036]  // VFNMADDSS Vdq,Hdq,Wss,Ldq
+    (const void *)&gInstructions[ 3075]  // VFNMADDSS Vdq,Hdq,Wss,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_7a_pp_01_w = 
@@ -724,13 +724,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_7a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_79_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3031]  // VFNMADDPD Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3070]  // VFNMADDPD Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_79_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3030]  // VFNMADDPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3069]  // VFNMADDPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_79_pp_01_w = 
@@ -756,13 +756,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_79_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_78_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3033]  // VFNMADDPS Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3072]  // VFNMADDPS Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_78_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3032]  // VFNMADDPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3071]  // VFNMADDPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_78_pp_01_w = 
@@ -788,13 +788,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_78_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2995]  // VFMSUBSD Vdq,Hdq,Ldq,Wsd
+    (const void *)&gInstructions[ 3031]  // VFMSUBSD Vdq,Hdq,Ldq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2994]  // VFMSUBSD Vdq,Hdq,Wsd,Ldq
+    (const void *)&gInstructions[ 3030]  // VFMSUBSD Vdq,Hdq,Wsd,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_6f_pp_01_w = 
@@ -820,13 +820,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_6f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2997]  // VFMSUBSS Vdq,Hdq,Ldq,Wss
+    (const void *)&gInstructions[ 3033]  // VFMSUBSS Vdq,Hdq,Ldq,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2996]  // VFMSUBSS Vdq,Hdq,Wss,Ldq
+    (const void *)&gInstructions[ 3032]  // VFMSUBSS Vdq,Hdq,Wss,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_6e_pp_01_w = 
@@ -852,13 +852,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_6e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2991]  // VFMSUBPD Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3027]  // VFMSUBPD Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2990]  // VFMSUBPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3026]  // VFMSUBPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_6d_pp_01_w = 
@@ -884,13 +884,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_6d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2993]  // VFMSUBPS Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3029]  // VFMSUBPS Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2992]  // VFMSUBPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3028]  // VFMSUBPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_6c_pp_01_w = 
@@ -916,13 +916,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_6c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2919]  // VFMADDSD Vdq,Hdq,Ldq,Wsd
+    (const void *)&gInstructions[ 2952]  // VFMADDSD Vdq,Hdq,Ldq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2918]  // VFMADDSD Vdq,Hdq,Wsd,Ldq
+    (const void *)&gInstructions[ 2951]  // VFMADDSD Vdq,Hdq,Wsd,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_6b_pp_01_w = 
@@ -948,13 +948,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_6b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2921]  // VFMADDSS Vdq,Hdq,Ldq,Wss
+    (const void *)&gInstructions[ 2954]  // VFMADDSS Vdq,Hdq,Ldq,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_6a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2920]  // VFMADDSS Vdq,Hdq,Wss,Ldq
+    (const void *)&gInstructions[ 2953]  // VFMADDSS Vdq,Hdq,Wss,Ldq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_6a_pp_01_w = 
@@ -980,13 +980,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_6a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_69_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2915]  // VFMADDPD Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 2948]  // VFMADDPD Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_69_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2914]  // VFMADDPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 2947]  // VFMADDPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_69_pp_01_w = 
@@ -1012,13 +1012,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_69_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_68_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2917]  // VFMADDPS Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 2950]  // VFMADDPS Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_68_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2916]  // VFMADDPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 2949]  // VFMADDPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_68_pp_01_w = 
@@ -1044,7 +1044,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_68_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_63_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3397]  // VPCMPISTRI Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3457]  // VPCMPISTRI Vdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_63_pp_01_l = 
@@ -1072,7 +1072,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_63_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_62_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3398]  // VPCMPISTRM Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3458]  // VPCMPISTRM Vdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_62_pp_01_l = 
@@ -1100,7 +1100,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_62_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_61_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3387]  // VPCMPESTRI Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3447]  // VPCMPESTRI Vdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_61_pp_01_l = 
@@ -1128,7 +1128,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_61_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_60_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3388]  // VPCMPESTRM Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3448]  // VPCMPESTRM Vdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_60_pp_01_l = 
@@ -1156,13 +1156,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_60_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2987]  // VFMSUBADDPD Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3023]  // VFMSUBADDPD Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2986]  // VFMSUBADDPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3022]  // VFMSUBADDPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_5f_pp_01_w = 
@@ -1188,13 +1188,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_5f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2989]  // VFMSUBADDPS Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3025]  // VFMSUBADDPS Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2988]  // VFMSUBADDPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3024]  // VFMSUBADDPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_5e_pp_01_w = 
@@ -1220,13 +1220,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_5e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2938]  // VFMADDSUBPD Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 2971]  // VFMADDSUBPD Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2937]  // VFMADDSUBPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 2970]  // VFMADDSUBPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_5d_pp_01_w = 
@@ -1252,13 +1252,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_5d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2940]  // VFMADDSUBPS Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 2973]  // VFMADDSUBPS Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_5c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2939]  // VFMADDSUBPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 2972]  // VFMADDSUBPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_5c_pp_01_w = 
@@ -1284,7 +1284,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_5c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_4c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3357]  // VPBLENDVB Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3417]  // VPBLENDVB Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_4c_pp_01_w = 
@@ -1310,7 +1310,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_4c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_4b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2699]  // VBLENDVPD Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 2684]  // VBLENDVPD Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_4b_pp_01_w = 
@@ -1336,7 +1336,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_4b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_4a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2700]  // VBLENDVPS Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 2685]  // VBLENDVPS Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_4a_pp_01_w = 
@@ -1362,13 +1362,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_4a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_49_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3451]  // VPERMIL2PD Vx,Hx,Lx,Wx,m2zIb
+    (const void *)&gInstructions[ 3523]  // VPERMIL2PD Vx,Hx,Lx,Wx,m2zIb
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_49_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3450]  // VPERMIL2PD Vx,Hx,Wx,Lx,m2zIb
+    (const void *)&gInstructions[ 3522]  // VPERMIL2PD Vx,Hx,Wx,Lx,m2zIb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_49_pp_01_w = 
@@ -1394,13 +1394,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_49_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_48_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3453]  // VPERMIL2PS Vx,Hx,Lx,Wx,m2zIb
+    (const void *)&gInstructions[ 3525]  // VPERMIL2PS Vx,Hx,Lx,Wx,m2zIb
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_48_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3452]  // VPERMIL2PS Vx,Hx,Wx,Lx,m2zIb
+    (const void *)&gInstructions[ 3524]  // VPERMIL2PS Vx,Hx,Wx,Lx,m2zIb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_48_pp_01_w = 
@@ -1426,7 +1426,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_48_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_46_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3440]  // VPERM2I128 Vqq,Hqq,Wqq,Ib
+    (const void *)&gInstructions[ 3512]  // VPERM2I128 Vqq,Hqq,Wqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_46_pp_01_l_01_w = 
@@ -1463,7 +1463,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_46_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_44_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3374]  // VPCLMULQDQ Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3434]  // VPCLMULQDQ Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_44_pp = 
@@ -1480,7 +1480,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_44_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_42_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3281]  // VMPSADBW Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3340]  // VMPSADBW Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_42_pp = 
@@ -1497,7 +1497,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_42_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_41_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2852]  // VDPPD Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 2881]  // VDPPD Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_41_pp_01_l = 
@@ -1525,7 +1525,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_41_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_40_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2853]  // VDPPS Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 2883]  // VDPPS Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_40_pp = 
@@ -1542,7 +1542,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_40_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_39_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2865]  // VEXTRACTI128 Wdq,Vqq,Ib
+    (const void *)&gInstructions[ 2895]  // VEXTRACTI128 Wdq,Vqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_39_pp_01_l_01_w = 
@@ -1579,7 +1579,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_39_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_38_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3129]  // VINSERTI128 Vqq,Hqq,Wdq,Ib
+    (const void *)&gInstructions[ 3174]  // VINSERTI128 Vqq,Hqq,Wdq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_38_pp_01_l_01_w = 
@@ -1616,13 +1616,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_38_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_33_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1288]  // KSHIFTLQ rKq,mKq,Ib
+    (const void *)&gInstructions[ 1278]  // KSHIFTLQ rKq,mKq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_33_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1287]  // KSHIFTLD rKd,mKd,Ib
+    (const void *)&gInstructions[ 1277]  // KSHIFTLD rKd,mKd,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_33_pp_01_modrmmod_01_l_00_w = 
@@ -1668,13 +1668,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_33_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_32_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1289]  // KSHIFTLW rKw,mKw,Ib
+    (const void *)&gInstructions[ 1279]  // KSHIFTLW rKw,mKw,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_32_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1286]  // KSHIFTLB rKb,mKb,Ib
+    (const void *)&gInstructions[ 1276]  // KSHIFTLB rKb,mKb,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_32_pp_01_modrmmod_01_l_00_w = 
@@ -1720,13 +1720,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_32_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_31_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1292]  // KSHIFTRQ rKq,mKq,Ib
+    (const void *)&gInstructions[ 1282]  // KSHIFTRQ rKq,mKq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_31_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1291]  // KSHIFTRD rKd,mKd,Ib
+    (const void *)&gInstructions[ 1281]  // KSHIFTRD rKd,mKd,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_31_pp_01_modrmmod_01_l_00_w = 
@@ -1772,13 +1772,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_31_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_30_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1293]  // KSHIFTRW rKw,mKw,Ib
+    (const void *)&gInstructions[ 1283]  // KSHIFTRW rKw,mKw,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_30_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1290]  // KSHIFTRB rKb,mKb,Ib
+    (const void *)&gInstructions[ 1280]  // KSHIFTRB rKb,mKb,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_30_pp_01_modrmmod_01_l_00_w = 
@@ -1824,13 +1824,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_30_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_22_pp_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3538]  // VPINSRQ Vdq,Hdq,Ey,Ib
+    (const void *)&gInstructions[ 3610]  // VPINSRQ Vdq,Hdq,Ey,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_22_pp_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3536]  // VPINSRD Vdq,Hdq,Ey,Ib
+    (const void *)&gInstructions[ 3608]  // VPINSRD Vdq,Hdq,Ey,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_22_pp_01_l_00_wi = 
@@ -1867,7 +1867,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_22_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_21_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3137]  // VINSERTPS Vdq,Hdq,Udq,Ib
+    (const void *)&gInstructions[ 3182]  // VINSERTPS Vdq,Hdq,Udq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_21_pp_01_modrmmod_01_l = 
@@ -1884,7 +1884,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_21_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_21_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3136]  // VINSERTPS Vdq,Hdq,Md,Ib
+    (const void *)&gInstructions[ 3181]  // VINSERTPS Vdq,Hdq,Md,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_21_pp_01_modrmmod_00_l = 
@@ -1921,7 +1921,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_21_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_20_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3534]  // VPINSRB Vdq,Hdq,Rd,Ib
+    (const void *)&gInstructions[ 3606]  // VPINSRB Vdq,Hdq,Rd,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_20_pp_01_modrmmod_01_l = 
@@ -1938,7 +1938,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_20_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_20_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3533]  // VPINSRB Vdq,Hdq,Mb,Ib
+    (const void *)&gInstructions[ 3605]  // VPINSRB Vdq,Hdq,Mb,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_20_pp_01_modrmmod_00_l = 
@@ -1975,7 +1975,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_20_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_1d_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2774]  // VCVTPS2PH Wdq,Vqq,Ib
+    (const void *)&gInstructions[ 2784]  // VCVTPS2PH Wdq,Vqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_1d_pp_01_l_01_w = 
@@ -1990,7 +1990,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_1d_pp_01_l_01_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_1d_pp_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2773]  // VCVTPS2PH Wq,Vdq,Ib
+    (const void *)&gInstructions[ 2783]  // VCVTPS2PH Wq,Vdq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_1d_pp_01_l_00_w = 
@@ -2027,7 +2027,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_1d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_19_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2860]  // VEXTRACTF128 Wdq,Vqq,Ib
+    (const void *)&gInstructions[ 2890]  // VEXTRACTF128 Wdq,Vqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_19_pp_01_l_01_w = 
@@ -2064,7 +2064,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_19_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_18_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3124]  // VINSERTF128 Vqq,Hqq,Wdq,Ib
+    (const void *)&gInstructions[ 3169]  // VINSERTF128 Vqq,Hqq,Wdq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_18_pp_01_l_01_w = 
@@ -2101,7 +2101,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_18_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_17_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2873]  // VEXTRACTPS Ry,Vdq,Ib
+    (const void *)&gInstructions[ 2903]  // VEXTRACTPS Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_17_pp_01_modrmmod_01_l = 
@@ -2118,7 +2118,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_17_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_17_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2872]  // VEXTRACTPS Md,Vdq,Ib
+    (const void *)&gInstructions[ 2902]  // VEXTRACTPS Md,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_17_pp_01_modrmmod_00_l = 
@@ -2155,13 +2155,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_17_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3494]  // VPEXTRQ Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3566]  // VPEXTRQ Ry,Vdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3490]  // VPEXTRD Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3562]  // VPEXTRD Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l_00_wi = 
@@ -2187,13 +2187,13 @@ const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_00_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3493]  // VPEXTRQ Mq,Vdq,Ib
+    (const void *)&gInstructions[ 3565]  // VPEXTRQ Mq,Vdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_00_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3489]  // VPEXTRD Md,Vdq,Ib
+    (const void *)&gInstructions[ 3561]  // VPEXTRD Md,Vdq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_16_pp_01_modrmmod_00_l_00_wi = 
@@ -2239,7 +2239,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_16_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_15_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3500]  // VPEXTRW Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3572]  // VPEXTRW Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_15_pp_01_modrmmod_01_l = 
@@ -2256,7 +2256,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_15_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_15_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3499]  // VPEXTRW Mw,Vdq,Ib
+    (const void *)&gInstructions[ 3571]  // VPEXTRW Mw,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_15_pp_01_modrmmod_00_l = 
@@ -2293,7 +2293,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_15_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_14_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3486]  // VPEXTRB Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3558]  // VPEXTRB Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_14_pp_01_modrmmod_01_l = 
@@ -2310,7 +2310,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_14_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_14_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3485]  // VPEXTRB Mb,Vdq,Ib
+    (const void *)&gInstructions[ 3557]  // VPEXTRB Mb,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_03_opcode_14_pp_01_modrmmod_00_l = 
@@ -2347,7 +2347,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_14_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_0f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3341]  // VPALIGNR Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3401]  // VPALIGNR Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0f_pp = 
@@ -2364,7 +2364,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_0e_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3358]  // VPBLENDW Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3418]  // VPBLENDW Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0e_pp = 
@@ -2381,7 +2381,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_0d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2697]  // VBLENDPD Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 2682]  // VBLENDPD Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0d_pp = 
@@ -2398,7 +2398,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_0c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2698]  // VBLENDPS Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 2683]  // VBLENDPS Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0c_pp = 
@@ -2415,7 +2415,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_0b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3879]  // VROUNDSD Vsd,Hsd,Wsd,Ib
+    (const void *)&gInstructions[ 3954]  // VROUNDSD Vsd,Hsd,Wsd,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0b_pp = 
@@ -2432,7 +2432,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_0a_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3880]  // VROUNDSS Vss,Hss,Wss,Ib
+    (const void *)&gInstructions[ 3955]  // VROUNDSS Vss,Hss,Wss,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0a_pp = 
@@ -2449,7 +2449,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_0a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_09_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3877]  // VROUNDPD Vx,Wx,Ib
+    (const void *)&gInstructions[ 3952]  // VROUNDPD Vx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_09_pp = 
@@ -2466,7 +2466,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_09_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_08_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3878]  // VROUNDPS Vx,Wx,Ib
+    (const void *)&gInstructions[ 3953]  // VROUNDPS Vx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_08_pp = 
@@ -2483,7 +2483,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_08_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_06_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3439]  // VPERM2F128 Vqq,Hqq,Wqq,Ib
+    (const void *)&gInstructions[ 3511]  // VPERM2F128 Vqq,Hqq,Wqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_06_pp_01_l_01_w = 
@@ -2520,7 +2520,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_06_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_05_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3457]  // VPERMILPD Vx,Wx,Ib
+    (const void *)&gInstructions[ 3529]  // VPERMILPD Vx,Wx,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_05_pp_01_w = 
@@ -2546,7 +2546,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_05_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_04_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3461]  // VPERMILPS Vx,Wx,Ib
+    (const void *)&gInstructions[ 3533]  // VPERMILPS Vx,Wx,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_04_pp_01_w = 
@@ -2572,7 +2572,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_04_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_02_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3352]  // VPBLENDD Vx,Hx,Wx,Ib
+    (const void *)&gInstructions[ 3412]  // VPBLENDD Vx,Hx,Wx,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_02_pp_01_w = 
@@ -2598,7 +2598,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_02_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_01_pp_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3465]  // VPERMPD Vqq,Wqq,Ib
+    (const void *)&gInstructions[ 3537]  // VPERMPD Vqq,Wqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_01_pp_01_l_01_w = 
@@ -2635,7 +2635,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_03_opcode_01_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_03_opcode_00_pp_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3471]  // VPERMQ Vqq,Wqq,Ib
+    (const void *)&gInstructions[ 3543]  // VPERMQ Vqq,Wqq,Ib
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_03_opcode_00_pp_01_l_01_w = 
@@ -2935,7 +2935,7 @@ const ND_TABLE_OPCODE gVexMap_mmmmm_03_opcode =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f7_pp_03_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2505]  // SHRX Gy,Ey,By
+    (const void *)&gInstructions[ 2489]  // SHRX Gy,Ey,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_03_l = 
@@ -2952,7 +2952,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_03_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f7_pp_02_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2286]  // SARX Gy,Ey,By
+    (const void *)&gInstructions[ 2277]  // SARX Gy,Ey,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_02_l = 
@@ -2969,7 +2969,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_02_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f7_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2443]  // SHLX Gy,Ey,By
+    (const void *)&gInstructions[ 2427]  // SHLX Gy,Ey,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_01_l = 
@@ -2986,7 +2986,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f7_pp_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 196]  // BEXTR Gy,Ey,By
+    (const void *)&gInstructions[ 188]  // BEXTR Gy,Ey,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f7_pp_00_l = 
@@ -3014,7 +3014,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_f7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f6_pp_03_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1494]  // MULX Gy,By,Ey
+    (const void *)&gInstructions[ 1484]  // MULX Gy,By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f6_pp_03_l = 
@@ -3042,7 +3042,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_f6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f5_pp_03_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1721]  // PDEP Gy,By,Ey
+    (const void *)&gInstructions[ 1711]  // PDEP Gy,By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f5_pp_03_l = 
@@ -3059,7 +3059,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f5_pp_03_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f5_pp_02_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1723]  // PEXT Gy,By,Ey
+    (const void *)&gInstructions[ 1713]  // PEXT Gy,By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f5_pp_02_l = 
@@ -3076,7 +3076,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f5_pp_02_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f5_pp_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 247]  // BZHI Gy,Ey,By
+    (const void *)&gInstructions[ 239]  // BZHI Gy,Ey,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f5_pp_00_l = 
@@ -3104,7 +3104,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_f5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_03_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 210]  // BLSI By,Ey
+    (const void *)&gInstructions[ 202]  // BLSI By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_03_l = 
@@ -3121,7 +3121,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_02_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 214]  // BLSMSK By,Ey
+    (const void *)&gInstructions[ 206]  // BLSMSK By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_02_l = 
@@ -3138,7 +3138,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 217]  // BLSR By,Ey
+    (const void *)&gInstructions[ 209]  // BLSR By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f3_pp_00_modrmreg_01_l = 
@@ -3181,7 +3181,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_f3_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_f2_pp_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 184]  // ANDN Gy,By,Ey
+    (const void *)&gInstructions[ 176]  // ANDN Gy,By,Ey
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_f2_pp_00_l = 
@@ -3209,7 +3209,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_f2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ef_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 646]  // CMPNLEXADD My,Gy,By
+    (const void *)&gInstructions[ 638]  // CMPNLEXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_ef_pp_01_modrmmod_00_l = 
@@ -3246,7 +3246,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ef_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ee_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 638]  // CMPLEXADD My,Gy,By
+    (const void *)&gInstructions[ 630]  // CMPLEXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_ee_pp_01_modrmmod_00_l = 
@@ -3283,7 +3283,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ee_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ed_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 648]  // CMPNLXADD My,Gy,By
+    (const void *)&gInstructions[ 640]  // CMPNLXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_ed_pp_01_modrmmod_00_l = 
@@ -3320,7 +3320,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ed_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ec_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 640]  // CMPLXADD My,Gy,By
+    (const void *)&gInstructions[ 632]  // CMPLXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_ec_pp_01_modrmmod_00_l = 
@@ -3357,7 +3357,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ec_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_eb_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 652]  // CMPNPXADD My,Gy,By
+    (const void *)&gInstructions[ 644]  // CMPNPXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_eb_pp_01_modrmmod_00_l = 
@@ -3394,7 +3394,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_eb_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ea_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 662]  // CMPPXADD My,Gy,By
+    (const void *)&gInstructions[ 654]  // CMPPXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_ea_pp_01_modrmmod_00_l = 
@@ -3431,7 +3431,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ea_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e9_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 654]  // CMPNSXADD My,Gy,By
+    (const void *)&gInstructions[ 646]  // CMPNSXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e9_pp_01_modrmmod_00_l = 
@@ -3468,7 +3468,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e9_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e8_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 674]  // CMPSXADD My,Gy,By
+    (const void *)&gInstructions[ 666]  // CMPSXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e8_pp_01_modrmmod_00_l = 
@@ -3505,7 +3505,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e8_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e7_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 642]  // CMPNBEXADD My,Gy,By
+    (const void *)&gInstructions[ 634]  // CMPNBEXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e7_pp_01_modrmmod_00_l = 
@@ -3542,7 +3542,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e6_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 634]  // CMPBEXADD My,Gy,By
+    (const void *)&gInstructions[ 626]  // CMPBEXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e6_pp_01_modrmmod_00_l = 
@@ -3579,7 +3579,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e5_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 656]  // CMPNZXADD My,Gy,By
+    (const void *)&gInstructions[ 648]  // CMPNZXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e5_pp_01_modrmmod_00_l = 
@@ -3616,7 +3616,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e4_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 680]  // CMPZXADD My,Gy,By
+    (const void *)&gInstructions[ 672]  // CMPZXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e4_pp_01_modrmmod_00_l = 
@@ -3653,7 +3653,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e4_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e3_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 644]  // CMPNCXADD My,Gy,By
+    (const void *)&gInstructions[ 636]  // CMPNCXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e3_pp_01_modrmmod_00_l = 
@@ -3690,7 +3690,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e3_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e2_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 636]  // CMPCXADD My,Gy,By
+    (const void *)&gInstructions[ 628]  // CMPCXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e2_pp_01_modrmmod_00_l = 
@@ -3727,7 +3727,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e1_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 650]  // CMPNOXADD My,Gy,By
+    (const void *)&gInstructions[ 642]  // CMPNOXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e1_pp_01_modrmmod_00_l = 
@@ -3764,7 +3764,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e1_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_e0_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 658]  // CMPOXADD My,Gy,By
+    (const void *)&gInstructions[ 650]  // CMPOXADD My,Gy,By
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_e0_pp_01_modrmmod_00_l = 
@@ -3801,7 +3801,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_e0_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_df_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2676]  // VAESDECLAST Vx,Hx,Wx
+    (const void *)&gInstructions[ 2661]  // VAESDECLAST Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_df_pp = 
@@ -3818,7 +3818,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_df_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_de_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2674]  // VAESDEC Vx,Hx,Wx
+    (const void *)&gInstructions[ 2659]  // VAESDEC Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_de_pp = 
@@ -3835,7 +3835,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_de_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_dd_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2680]  // VAESENCLAST Vx,Hx,Wx
+    (const void *)&gInstructions[ 2665]  // VAESENCLAST Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_dd_pp = 
@@ -3852,7 +3852,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_dd_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_dc_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2678]  // VAESENC Vx,Hx,Wx
+    (const void *)&gInstructions[ 2663]  // VAESENC Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_dc_pp = 
@@ -3869,7 +3869,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_dc_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_db_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2681]  // VAESIMC Vdq,Wdq
+    (const void *)&gInstructions[ 2666]  // VAESIMC Vdq,Wdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_db_pp_01_l = 
@@ -3897,7 +3897,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_db_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_da_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3926]  // VSM4RNDS4 Vx,Hx,Wx
+    (const void *)&gInstructions[ 4003]  // VSM4RNDS4 Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_da_pp_03_w = 
@@ -3912,7 +3912,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_da_pp_03_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_da_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3925]  // VSM4KEY4 Vx,Hx,Wx
+    (const void *)&gInstructions[ 4002]  // VSM4KEY4 Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_da_pp_02_w = 
@@ -3927,7 +3927,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_da_pp_02_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_da_pp_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3923]  // VSM3MSG2 Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 4000]  // VSM3MSG2 Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_da_pp_01_l_00_w = 
@@ -3953,7 +3953,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_da_pp_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_da_pp_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3922]  // VSM3MSG1 Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3999]  // VSM3MSG1 Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_da_pp_00_l_00_w = 
@@ -3990,7 +3990,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_da_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_d3_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3434]  // VPDPWSUDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3502]  // VPDPWSUDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d3_pp_02_w = 
@@ -4005,7 +4005,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d3_pp_02_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_d3_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3436]  // VPDPWUSDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3506]  // VPDPWUSDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d3_pp_01_w = 
@@ -4020,7 +4020,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d3_pp_01_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_d3_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3438]  // VPDPWUUDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3510]  // VPDPWUUDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d3_pp_00_w = 
@@ -4046,7 +4046,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_d3_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_d2_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3433]  // VPDPWSUD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3500]  // VPDPWSUD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d2_pp_02_w = 
@@ -4061,7 +4061,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d2_pp_02_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_d2_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3435]  // VPDPWUSD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3504]  // VPDPWUSD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d2_pp_01_w = 
@@ -4076,7 +4076,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d2_pp_01_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_d2_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3437]  // VPDPWUUD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3508]  // VPDPWUUD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_d2_pp_00_w = 
@@ -4102,7 +4102,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_d2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_cf_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3119]  // VGF2P8MULB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3164]  // VGF2P8MULB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_cf_pp_01_w = 
@@ -4128,7 +4128,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_cf_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_cd_pp_03_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3912]  // VSHA512MSG2 Vqq,Uqq
+    (const void *)&gInstructions[ 3989]  // VSHA512MSG2 Vqq,Uqq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_cd_pp_03_modrmmod_01_l_01_w = 
@@ -4174,7 +4174,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_cd_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_cc_pp_03_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3911]  // VSHA512MSG1 Vqq,Udq
+    (const void *)&gInstructions[ 3988]  // VSHA512MSG1 Vqq,Udq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_cc_pp_03_modrmmod_01_l_01_w = 
@@ -4220,7 +4220,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_cc_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_cb_pp_03_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3913]  // VSHA512RNDS2 Vqq,Hqq,Udq
+    (const void *)&gInstructions[ 3990]  // VSHA512RNDS2 Vqq,Hqq,Udq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_cb_pp_03_modrmmod_01_l_01_w = 
@@ -4266,13 +4266,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_cb_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bf_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3064]  // VFNMSUB231SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3106]  // VFNMSUB231SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bf_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3067]  // VFNMSUB231SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3109]  // VFNMSUB231SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_bf_pp_01_w = 
@@ -4298,13 +4298,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_bf_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_be_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3059]  // VFNMSUB231PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3101]  // VFNMSUB231PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_be_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3062]  // VFNMSUB231PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3104]  // VFNMSUB231PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_be_pp_01_w = 
@@ -4330,13 +4330,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_be_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bd_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3026]  // VFNMADD231SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3065]  // VFNMADD231SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bd_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3029]  // VFNMADD231SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3068]  // VFNMADD231SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_bd_pp_01_w = 
@@ -4362,13 +4362,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_bd_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bc_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3021]  // VFNMADD231PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3060]  // VFNMADD231PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bc_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3024]  // VFNMADD231PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3063]  // VFNMADD231PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_bc_pp_01_w = 
@@ -4394,13 +4394,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_bc_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bb_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2967]  // VFMSUB231SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3003]  // VFMSUB231SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_bb_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2970]  // VFMSUB231SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3006]  // VFMSUB231SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_bb_pp_01_w = 
@@ -4426,13 +4426,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_bb_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ba_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2962]  // VFMSUB231PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2998]  // VFMSUB231PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ba_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2965]  // VFMSUB231PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3001]  // VFMSUB231PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_ba_pp_01_w = 
@@ -4458,13 +4458,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ba_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b9_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2908]  // VFMADD231SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 2941]  // VFMADD231SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b9_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2911]  // VFMADD231SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 2944]  // VFMADD231SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b9_pp_01_w = 
@@ -4490,13 +4490,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b9_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b8_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2903]  // VFMADD231PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2936]  // VFMADD231PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b8_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2906]  // VFMADD231PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2939]  // VFMADD231PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b8_pp_01_w = 
@@ -4522,13 +4522,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b8_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b7_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2982]  // VFMSUBADD231PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3018]  // VFMSUBADD231PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b7_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2985]  // VFMSUBADD231PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3021]  // VFMSUBADD231PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b7_pp_01_w = 
@@ -4554,13 +4554,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b6_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2933]  // VFMADDSUB231PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2966]  // VFMADDSUB231PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b6_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2936]  // VFMADDSUB231PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2969]  // VFMADDSUB231PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b6_pp_01_w = 
@@ -4586,7 +4586,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b5_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3558]  // VPMADD52HUQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3630]  // VPMADD52HUQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b5_pp_01_w = 
@@ -4612,7 +4612,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b4_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3560]  // VPMADD52LUQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3632]  // VPMADD52LUQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b4_pp_01_w = 
@@ -4638,7 +4638,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b4_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b1_pp_02_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2693]  // VBCSTNEBF162PS Vx,Mw
+    (const void *)&gInstructions[ 2678]  // VBCSTNEBF162PS Vx,Mw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b1_pp_02_modrmmod_00_w = 
@@ -4662,7 +4662,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_b1_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b1_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2694]  // VBCSTNESH2PS Vx,Mw
+    (const void *)&gInstructions[ 2679]  // VBCSTNESH2PS Vx,Mw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b1_pp_01_modrmmod_00_w = 
@@ -4697,7 +4697,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b1_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b0_pp_03_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2743]  // VCVTNEOBF162PS Vx,Mx
+    (const void *)&gInstructions[ 2745]  // VCVTNEOBF162PS Vx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b0_pp_03_modrmmod_00_w = 
@@ -4721,7 +4721,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_b0_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b0_pp_02_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2741]  // VCVTNEEBF162PS Vx,Mx
+    (const void *)&gInstructions[ 2743]  // VCVTNEEBF162PS Vx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b0_pp_02_modrmmod_00_w = 
@@ -4745,7 +4745,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_b0_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b0_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2742]  // VCVTNEEPH2PS Vx,Mx
+    (const void *)&gInstructions[ 2744]  // VCVTNEEPH2PS Vx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b0_pp_01_modrmmod_00_w = 
@@ -4769,7 +4769,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_b0_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_b0_pp_00_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2744]  // VCVTNEOPH2PS Vx,Mx
+    (const void *)&gInstructions[ 2746]  // VCVTNEOPH2PS Vx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_b0_pp_00_modrmmod_00_w = 
@@ -4804,13 +4804,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_b0_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_af_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3054]  // VFNMSUB213SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3095]  // VFNMSUB213SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_af_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3057]  // VFNMSUB213SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3098]  // VFNMSUB213SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_af_pp_01_w = 
@@ -4836,13 +4836,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_af_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ae_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3049]  // VFNMSUB213PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3090]  // VFNMSUB213PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ae_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3052]  // VFNMSUB213PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3093]  // VFNMSUB213PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_ae_pp_01_w = 
@@ -4868,13 +4868,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ae_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ad_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3016]  // VFNMADD213SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3054]  // VFNMADD213SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ad_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3019]  // VFNMADD213SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3057]  // VFNMADD213SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_ad_pp_01_w = 
@@ -4900,13 +4900,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ad_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ac_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3011]  // VFNMADD213PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3049]  // VFNMADD213PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ac_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3014]  // VFNMADD213PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3052]  // VFNMADD213PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_ac_pp_01_w = 
@@ -4932,13 +4932,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ac_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ab_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2957]  // VFMSUB213SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 2992]  // VFMSUB213SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_ab_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2960]  // VFMSUB213SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 2995]  // VFMSUB213SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_ab_pp_01_w = 
@@ -4964,13 +4964,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_ab_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_aa_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2952]  // VFMSUB213PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2987]  // VFMSUB213PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_aa_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2955]  // VFMSUB213PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2990]  // VFMSUB213PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_aa_pp_01_w = 
@@ -4996,13 +4996,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_aa_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a9_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2898]  // VFMADD213SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 2930]  // VFMADD213SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a9_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2901]  // VFMADD213SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 2933]  // VFMADD213SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_a9_pp_01_w = 
@@ -5028,13 +5028,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_a9_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a8_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2893]  // VFMADD213PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2925]  // VFMADD213PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a8_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2896]  // VFMADD213PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2928]  // VFMADD213PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_a8_pp_01_w = 
@@ -5060,13 +5060,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_a8_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a7_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2977]  // VFMSUBADD213PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3013]  // VFMSUBADD213PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a7_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2980]  // VFMSUBADD213PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3016]  // VFMSUBADD213PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_a7_pp_01_w = 
@@ -5092,13 +5092,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_a7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a6_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2928]  // VFMADDSUB213PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2961]  // VFMADDSUB213PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_a6_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2931]  // VFMADDSUB213PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2964]  // VFMADDSUB213PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_a6_pp_01_w = 
@@ -5124,13 +5124,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_a6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3044]  // VFNMSUB132SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3084]  // VFNMSUB132SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3047]  // VFNMSUB132SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3087]  // VFNMSUB132SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_9f_pp_01_w = 
@@ -5156,13 +5156,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_9f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3039]  // VFNMSUB132PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3079]  // VFNMSUB132PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3042]  // VFNMSUB132PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3082]  // VFNMSUB132PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_9e_pp_01_w = 
@@ -5188,13 +5188,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_9e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3006]  // VFNMADD132SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 3043]  // VFNMADD132SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3009]  // VFNMADD132SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 3046]  // VFNMADD132SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_9d_pp_01_w = 
@@ -5220,13 +5220,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_9d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3001]  // VFNMADD132PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3038]  // VFNMADD132PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3004]  // VFNMADD132PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3041]  // VFNMADD132PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_9c_pp_01_w = 
@@ -5252,13 +5252,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_9c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2947]  // VFMSUB132SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 2981]  // VFMSUB132SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2950]  // VFMSUB132SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 2984]  // VFMSUB132SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_9b_pp_01_w = 
@@ -5284,13 +5284,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_9b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2942]  // VFMSUB132PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2976]  // VFMSUB132PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_9a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2945]  // VFMSUB132PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2979]  // VFMSUB132PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_9a_pp_01_w = 
@@ -5316,13 +5316,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_9a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_99_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2888]  // VFMADD132SD Vdq,Hdq,Wsd
+    (const void *)&gInstructions[ 2919]  // VFMADD132SD Vdq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_99_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2891]  // VFMADD132SS Vdq,Hdq,Wss
+    (const void *)&gInstructions[ 2922]  // VFMADD132SS Vdq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_99_pp_01_w = 
@@ -5348,13 +5348,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_99_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_98_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2883]  // VFMADD132PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2914]  // VFMADD132PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_98_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2886]  // VFMADD132PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2917]  // VFMADD132PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_98_pp_01_w = 
@@ -5380,13 +5380,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_98_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_97_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2972]  // VFMSUBADD132PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3008]  // VFMSUBADD132PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_97_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2975]  // VFMSUBADD132PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3011]  // VFMSUBADD132PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_97_pp_01_w = 
@@ -5412,13 +5412,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_97_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_96_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2923]  // VFMADDSUB132PD Vx,Hx,Wx
+    (const void *)&gInstructions[ 2956]  // VFMADDSUB132PD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_96_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2926]  // VFMADDSUB132PS Vx,Hx,Wx
+    (const void *)&gInstructions[ 2959]  // VFMADDSUB132PS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_96_pp_01_w = 
@@ -5444,13 +5444,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_96_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_93_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3099]  // VGATHERQPD Vx,Mvm64n,Hx
+    (const void *)&gInstructions[ 3142]  // VGATHERQPD Vx,Mvm64n,Hx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_93_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3101]  // VGATHERQPS Vdq,Mvm64n,Hdq
+    (const void *)&gInstructions[ 3144]  // VGATHERQPS Vdq,Mvm64n,Hdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_93_pp_01_modrmmod_00_w = 
@@ -5485,13 +5485,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_93_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_92_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3087]  // VGATHERDPD Vx,Mvm32h,Hx
+    (const void *)&gInstructions[ 3130]  // VGATHERDPD Vx,Mvm32h,Hx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_92_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3089]  // VGATHERDPS Vx,Mvm32n,Hx
+    (const void *)&gInstructions[ 3132]  // VGATHERDPS Vx,Mvm32n,Hx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_92_pp_01_modrmmod_00_w = 
@@ -5526,13 +5526,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_92_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_91_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3508]  // VPGATHERQQ Vx,Mvm64n,Hx
+    (const void *)&gInstructions[ 3580]  // VPGATHERQQ Vx,Mvm64n,Hx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_91_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3506]  // VPGATHERQD Vdq,Mvm64n,Hdq
+    (const void *)&gInstructions[ 3578]  // VPGATHERQD Vdq,Mvm64n,Hdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_91_pp_01_modrmmod_00_w = 
@@ -5567,13 +5567,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_91_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_90_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3504]  // VPGATHERDQ Vx,Mvm32h,Hx
+    (const void *)&gInstructions[ 3576]  // VPGATHERDQ Vx,Mvm32h,Hx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_90_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3502]  // VPGATHERDD Vx,Mvm32n,Hx
+    (const void *)&gInstructions[ 3574]  // VPGATHERDD Vx,Mvm32n,Hx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_90_pp_01_modrmmod_00_w = 
@@ -5608,13 +5608,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_90_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_8e_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3568]  // VPMASKMOVQ Mx,Hx,Vx
+    (const void *)&gInstructions[ 3640]  // VPMASKMOVQ Mx,Hx,Vx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_8e_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3566]  // VPMASKMOVD Mx,Hx,Vx
+    (const void *)&gInstructions[ 3638]  // VPMASKMOVD Mx,Hx,Vx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_8e_pp_01_modrmmod_00_w = 
@@ -5649,13 +5649,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_8e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_8c_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3567]  // VPMASKMOVQ Vx,Hx,Mx
+    (const void *)&gInstructions[ 3639]  // VPMASKMOVQ Vx,Hx,Mx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_8c_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3565]  // VPMASKMOVD Vx,Hx,Mx
+    (const void *)&gInstructions[ 3637]  // VPMASKMOVD Vx,Hx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_8c_pp_01_modrmmod_00_w = 
@@ -5690,7 +5690,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_8c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_79_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3372]  // VPBROADCASTW Vx,Ww
+    (const void *)&gInstructions[ 3432]  // VPBROADCASTW Vx,Ww
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_79_pp_01_w = 
@@ -5716,7 +5716,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_79_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_78_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3361]  // VPBROADCASTB Vx,Wb
+    (const void *)&gInstructions[ 3421]  // VPBROADCASTB Vx,Wb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_78_pp_01_w = 
@@ -5742,7 +5742,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_78_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_72_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2746]  // VCVTNEPS2BF16 Vx,Wx
+    (const void *)&gInstructions[ 2752]  // VCVTNEPS2BF16 Vx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_72_pp_02_w = 
@@ -5768,7 +5768,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_72_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_6c_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2603]  // TCMMIMFP16PS rTt,mTt,vTt
+    (const void *)&gInstructions[ 2587]  // TCMMIMFP16PS rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_6c_pp_01_modrmmod_01_l_00_w = 
@@ -5803,7 +5803,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_6c_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_6c_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2604]  // TCMMRLFP16PS rTt,mTt,vTt
+    (const void *)&gInstructions[ 2588]  // TCMMRLFP16PS rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_6c_pp_00_modrmmod_01_l_00_w = 
@@ -5849,7 +5849,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_6c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5e_pp_03_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2607]  // TDPBSSD rTt,mTt,vTt
+    (const void *)&gInstructions[ 2591]  // TDPBSSD rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5e_pp_03_modrmmod_01_l_00_w = 
@@ -5884,7 +5884,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_5e_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5e_pp_02_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2608]  // TDPBSUD rTt,mTt,vTt
+    (const void *)&gInstructions[ 2592]  // TDPBSUD rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5e_pp_02_modrmmod_01_l_00_w = 
@@ -5919,7 +5919,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_5e_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5e_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2609]  // TDPBUSD rTt,mTt,vTt
+    (const void *)&gInstructions[ 2593]  // TDPBUSD rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5e_pp_01_modrmmod_01_l_00_w = 
@@ -5954,7 +5954,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_5e_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5e_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2610]  // TDPBUUD rTt,mTt,vTt
+    (const void *)&gInstructions[ 2594]  // TDPBUUD rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5e_pp_00_modrmmod_01_l_00_w = 
@@ -6000,7 +6000,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_5e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5c_pp_03_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2611]  // TDPFP16PS rTt,mTt,vTt
+    (const void *)&gInstructions[ 2595]  // TDPFP16PS rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5c_pp_03_modrmmod_01_l_00_w = 
@@ -6035,7 +6035,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_5c_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5c_pp_02_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2606]  // TDPBF16PS rTt,mTt,vTt
+    (const void *)&gInstructions[ 2590]  // TDPBF16PS rTt,mTt,vTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5c_pp_02_modrmmod_01_l_00_w = 
@@ -6081,7 +6081,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_5c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_5a_pp_01_modrmmod_00_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2707]  // VBROADCASTI128 Vqq,Mdq
+    (const void *)&gInstructions[ 2692]  // VBROADCASTI128 Vqq,Mdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_5a_pp_01_modrmmod_00_l_01_w = 
@@ -6127,7 +6127,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_5a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_59_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3369]  // VPBROADCASTQ Vx,Wq
+    (const void *)&gInstructions[ 3429]  // VPBROADCASTQ Vx,Wq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_59_pp_01_w = 
@@ -6153,7 +6153,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_59_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_58_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3364]  // VPBROADCASTD Vx,Wd
+    (const void *)&gInstructions[ 3424]  // VPBROADCASTD Vx,Wd
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_58_pp_01_w = 
@@ -6179,7 +6179,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_58_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_53_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3432]  // VPDPWSSDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3498]  // VPDPWSSDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_53_pp_01_w = 
@@ -6205,7 +6205,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_53_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_52_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3430]  // VPDPWSSD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3496]  // VPDPWSSD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_52_pp_01_w = 
@@ -6231,7 +6231,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_52_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_51_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3420]  // VPDPBSSDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3482]  // VPDPBSSDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_03_w = 
@@ -6246,7 +6246,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_03_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_51_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3422]  // VPDPBSUDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3486]  // VPDPBSUDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_02_w = 
@@ -6261,7 +6261,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_02_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_51_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3426]  // VPDPBUSDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3490]  // VPDPBUSDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_01_w = 
@@ -6276,7 +6276,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_01_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_51_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3428]  // VPDPBUUDS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3494]  // VPDPBUUDS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_51_pp_00_w = 
@@ -6302,7 +6302,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_51_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_50_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3419]  // VPDPBSSD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3480]  // VPDPBSSD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_03_w = 
@@ -6317,7 +6317,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_03_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_50_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3421]  // VPDPBSUD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3484]  // VPDPBSUD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_02_w = 
@@ -6332,7 +6332,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_02_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_50_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3424]  // VPDPBUSD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3488]  // VPDPBUSD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_01_w = 
@@ -6347,7 +6347,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_01_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_50_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3427]  // VPDPBUUD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3492]  // VPDPBUUD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_50_pp_00_w = 
@@ -6373,7 +6373,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_50_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_4b_pp_03_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2622]  // TILELOADD rTt,Mt
+    (const void *)&gInstructions[ 2606]  // TILELOADD rTt,Mt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_4b_pp_03_modrmmod_00_l_00_w = 
@@ -6408,7 +6408,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_4b_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_4b_pp_02_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2627]  // TILESTORED Mt,rTt
+    (const void *)&gInstructions[ 2611]  // TILESTORED Mt,rTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_4b_pp_02_modrmmod_00_l_00_w = 
@@ -6443,7 +6443,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_4b_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_4b_pp_01_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2624]  // TILELOADDT1 rTt,Mt
+    (const void *)&gInstructions[ 2608]  // TILELOADDT1 rTt,Mt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_4b_pp_01_modrmmod_00_l_00_w = 
@@ -6489,7 +6489,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_4b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_49_pp_03_modrmmod_01_modrmrm_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2628]  // TILEZERO rTt
+    (const void *)&gInstructions[ 2612]  // TILEZERO rTt
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_49_pp_03_modrmmod_01_modrmrm_00_l_00_w = 
@@ -6539,7 +6539,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_49_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_49_pp_01_modrmreg_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2537]  // STTILECFG Moq
+    (const void *)&gInstructions[ 2521]  // STTILECFG Moq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_49_pp_01_modrmreg_00_modrmmod_00_l_00_w = 
@@ -6589,7 +6589,7 @@ const ND_TABLE_MODRM_REG gVexMap_mmmmm_02_opcode_49_pp_01_modrmreg =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_49_pp_00_modrmreg_00_modrmmod_01_modrmrm_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2625]  // TILERELEASE
+    (const void *)&gInstructions[ 2609]  // TILERELEASE
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_49_pp_00_modrmreg_00_modrmmod_01_modrmrm_00_l_00_w = 
@@ -6630,7 +6630,7 @@ const ND_TABLE_MODRM_RM gVexMap_mmmmm_02_opcode_49_pp_00_modrmreg_00_modrmmod_01
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_49_pp_00_modrmreg_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1316]  // LDTILECFG Moq
+    (const void *)&gInstructions[ 1306]  // LDTILECFG Moq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_49_pp_00_modrmreg_00_modrmmod_00_l_00_w = 
@@ -6691,13 +6691,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_49_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_47_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3764]  // VPSLLVQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3836]  // VPSLLVQ Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_47_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3762]  // VPSLLVD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3834]  // VPSLLVD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_47_pp_01_w = 
@@ -6723,7 +6723,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_47_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_46_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3777]  // VPSRAVD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3849]  // VPSRAVD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_46_pp_01_w = 
@@ -6749,13 +6749,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_46_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_45_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3797]  // VPSRLVQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3869]  // VPSRLVQ Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_45_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3795]  // VPSRLVD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3867]  // VPSRLVD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_45_pp_01_w = 
@@ -6781,7 +6781,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_45_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_41_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3524]  // VPHMINPOSUW Vdq,Wdq
+    (const void *)&gInstructions[ 3596]  // VPHMINPOSUW Vdq,Wdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_41_pp_01_l = 
@@ -6809,7 +6809,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_41_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_40_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3669]  // VPMULLD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3741]  // VPMULLD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_40_pp = 
@@ -6826,7 +6826,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_40_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_3f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3579]  // VPMAXUD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3651]  // VPMAXUD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3f_pp = 
@@ -6843,7 +6843,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_3e_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3582]  // VPMAXUW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3654]  // VPMAXUW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3e_pp = 
@@ -6860,7 +6860,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_3d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3572]  // VPMAXSD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3644]  // VPMAXSD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3d_pp = 
@@ -6877,7 +6877,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_3c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3570]  // VPMAXSB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3642]  // VPMAXSB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3c_pp = 
@@ -6894,7 +6894,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_3b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3593]  // VPMINUD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3665]  // VPMINUD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3b_pp = 
@@ -6911,7 +6911,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_3a_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3596]  // VPMINUW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3668]  // VPMINUW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3a_pp = 
@@ -6928,7 +6928,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_3a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_39_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3586]  // VPMINSD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3658]  // VPMINSD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_39_pp = 
@@ -6945,7 +6945,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_39_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_38_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3584]  // VPMINSB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3656]  // VPMINSB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_38_pp = 
@@ -6962,7 +6962,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_38_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_37_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3394]  // VPCMPGTQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3454]  // VPCMPGTQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_37_pp = 
@@ -6979,7 +6979,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_37_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_36_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3443]  // VPERMD Vqq,Hqq,Wqq
+    (const void *)&gInstructions[ 3515]  // VPERMD Vqq,Hqq,Wqq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_36_pp_01_l_01_w = 
@@ -7016,13 +7016,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_36_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_35_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3653]  // VPMOVZXDQ Vqq,Wdq
+    (const void *)&gInstructions[ 3725]  // VPMOVZXDQ Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_35_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3652]  // VPMOVZXDQ Vdq,Wq
+    (const void *)&gInstructions[ 3724]  // VPMOVZXDQ Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_35_pp_01_l = 
@@ -7050,13 +7050,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_35_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_34_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3659]  // VPMOVZXWQ Vqq,Wq
+    (const void *)&gInstructions[ 3731]  // VPMOVZXWQ Vqq,Wq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_34_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3658]  // VPMOVZXWQ Vdq,Wd
+    (const void *)&gInstructions[ 3730]  // VPMOVZXWQ Vdq,Wd
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_34_pp_01_l = 
@@ -7084,13 +7084,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_34_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_33_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3656]  // VPMOVZXWD Vqq,Wdq
+    (const void *)&gInstructions[ 3728]  // VPMOVZXWD Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_33_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3655]  // VPMOVZXWD Vdq,Wq
+    (const void *)&gInstructions[ 3727]  // VPMOVZXWD Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_33_pp_01_l = 
@@ -7118,13 +7118,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_33_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_32_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3647]  // VPMOVZXBQ Vqq,Wd
+    (const void *)&gInstructions[ 3719]  // VPMOVZXBQ Vqq,Wd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_32_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3646]  // VPMOVZXBQ Vdq,Ww
+    (const void *)&gInstructions[ 3718]  // VPMOVZXBQ Vdq,Ww
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_32_pp_01_l = 
@@ -7152,13 +7152,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_32_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_31_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3644]  // VPMOVZXBD Vqq,Wq
+    (const void *)&gInstructions[ 3716]  // VPMOVZXBD Vqq,Wq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_31_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3643]  // VPMOVZXBD Vdq,Wd
+    (const void *)&gInstructions[ 3715]  // VPMOVZXBD Vdq,Wd
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_31_pp_01_l = 
@@ -7186,13 +7186,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_31_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_30_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3650]  // VPMOVZXBW Vqq,Wdq
+    (const void *)&gInstructions[ 3722]  // VPMOVZXBW Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_30_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3649]  // VPMOVZXBW Vdq,Wq
+    (const void *)&gInstructions[ 3721]  // VPMOVZXBW Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_30_pp_01_l = 
@@ -7220,7 +7220,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_30_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_2f_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3142]  // VMASKMOVPD Mx,Hx,Vx
+    (const void *)&gInstructions[ 3187]  // VMASKMOVPD Mx,Hx,Vx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_2f_pp_01_modrmmod_00_w = 
@@ -7255,7 +7255,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_2e_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3144]  // VMASKMOVPS Mx,Hx,Vx
+    (const void *)&gInstructions[ 3189]  // VMASKMOVPS Mx,Hx,Vx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_2e_pp_01_modrmmod_00_w = 
@@ -7290,7 +7290,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_2d_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3141]  // VMASKMOVPD Vx,Hx,Mx
+    (const void *)&gInstructions[ 3186]  // VMASKMOVPD Vx,Hx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_2d_pp_01_modrmmod_00_w = 
@@ -7325,7 +7325,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_2c_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3143]  // VMASKMOVPS Vx,Hx,Mx
+    (const void *)&gInstructions[ 3188]  // VMASKMOVPS Vx,Hx,Mx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_2c_pp_01_modrmmod_00_w = 
@@ -7360,7 +7360,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_2b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3321]  // VPACKUSDW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3381]  // VPACKUSDW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2b_pp = 
@@ -7377,7 +7377,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_2a_pp_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3232]  // VMOVNTDQA Vx,Mx
+    (const void *)&gInstructions[ 3288]  // VMOVNTDQA Vx,Mx
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_02_opcode_2a_pp_01_modrmmod = 
@@ -7403,7 +7403,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_2a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_29_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3384]  // VPCMPEQQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3444]  // VPCMPEQQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_29_pp = 
@@ -7420,7 +7420,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_29_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_28_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3661]  // VPMULDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3733]  // VPMULDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_28_pp = 
@@ -7437,13 +7437,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_28_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_25_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3627]  // VPMOVSXDQ Vqq,Wdq
+    (const void *)&gInstructions[ 3699]  // VPMOVSXDQ Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_25_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3626]  // VPMOVSXDQ Vdq,Wq
+    (const void *)&gInstructions[ 3698]  // VPMOVSXDQ Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_25_pp_01_l = 
@@ -7471,13 +7471,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_25_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_24_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3633]  // VPMOVSXWQ Vqq,Wq
+    (const void *)&gInstructions[ 3705]  // VPMOVSXWQ Vqq,Wq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_24_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3632]  // VPMOVSXWQ Vdq,Wd
+    (const void *)&gInstructions[ 3704]  // VPMOVSXWQ Vdq,Wd
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_24_pp_01_l = 
@@ -7505,13 +7505,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_24_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_23_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3630]  // VPMOVSXWD Vqq,Wdq
+    (const void *)&gInstructions[ 3702]  // VPMOVSXWD Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_23_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3629]  // VPMOVSXWD Vdq,Wq
+    (const void *)&gInstructions[ 3701]  // VPMOVSXWD Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_23_pp_01_l = 
@@ -7539,13 +7539,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_23_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_22_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3621]  // VPMOVSXBQ Vqq,Wd
+    (const void *)&gInstructions[ 3693]  // VPMOVSXBQ Vqq,Wd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_22_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3620]  // VPMOVSXBQ Vdq,Ww
+    (const void *)&gInstructions[ 3692]  // VPMOVSXBQ Vdq,Ww
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_22_pp_01_l = 
@@ -7573,13 +7573,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_22_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_21_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3618]  // VPMOVSXBD Vqq,Wq
+    (const void *)&gInstructions[ 3690]  // VPMOVSXBD Vqq,Wq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_21_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3617]  // VPMOVSXBD Vdq,Wd
+    (const void *)&gInstructions[ 3689]  // VPMOVSXBD Vdq,Wd
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_21_pp_01_l = 
@@ -7607,13 +7607,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_21_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_20_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3624]  // VPMOVSXBW Vqq,Wdq
+    (const void *)&gInstructions[ 3696]  // VPMOVSXBW Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_20_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3623]  // VPMOVSXBW Vdq,Wq
+    (const void *)&gInstructions[ 3695]  // VPMOVSXBW Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_02_opcode_20_pp_01_l = 
@@ -7641,7 +7641,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_20_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_1e_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3312]  // VPABSD Vx,Wx
+    (const void *)&gInstructions[ 3372]  // VPABSD Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1e_pp = 
@@ -7658,7 +7658,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_1d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3315]  // VPABSW Vx,Wx
+    (const void *)&gInstructions[ 3375]  // VPABSW Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1d_pp = 
@@ -7675,7 +7675,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_1c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3310]  // VPABSB Vx,Wx
+    (const void *)&gInstructions[ 3370]  // VPABSB Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1c_pp = 
@@ -7692,7 +7692,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_1a_pp_01_modrmmod_00_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2701]  // VBROADCASTF128 Vqq,Mdq
+    (const void *)&gInstructions[ 2686]  // VBROADCASTF128 Vqq,Mdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_1a_pp_01_modrmmod_00_l_01_w = 
@@ -7738,7 +7738,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_1a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_19_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2714]  // VBROADCASTSD Vqq,Wsd
+    (const void *)&gInstructions[ 2699]  // VBROADCASTSD Vqq,Wsd
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_19_pp_01_w = 
@@ -7764,7 +7764,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_19_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_18_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2716]  // VBROADCASTSS Vx,Wss
+    (const void *)&gInstructions[ 2701]  // VBROADCASTSS Vx,Wss
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_18_pp_01_w = 
@@ -7790,7 +7790,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_18_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_17_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3821]  // VPTEST Vx,Wx
+    (const void *)&gInstructions[ 3893]  // VPTEST Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_17_pp = 
@@ -7807,7 +7807,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_17_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_16_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3468]  // VPERMPS Vqq,Hqq,Wqq
+    (const void *)&gInstructions[ 3540]  // VPERMPS Vqq,Hqq,Wqq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_16_pp_01_l_01_w = 
@@ -7844,7 +7844,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_16_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_13_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2760]  // VCVTPH2PS Vqq,Wdq
+    (const void *)&gInstructions[ 2768]  // VCVTPH2PS Vqq,Wdq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_13_pp_01_l_01_w = 
@@ -7859,7 +7859,7 @@ const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_13_pp_01_l_01_w =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_13_pp_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2759]  // VCVTPH2PS Vdq,Wq
+    (const void *)&gInstructions[ 2767]  // VCVTPH2PS Vdq,Wq
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_13_pp_01_l_00_w = 
@@ -7896,7 +7896,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_13_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_0f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3948]  // VTESTPD Vx,Wx
+    (const void *)&gInstructions[ 4027]  // VTESTPD Vx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_0f_pp_01_w = 
@@ -7922,7 +7922,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_0e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3949]  // VTESTPS Vx,Wx
+    (const void *)&gInstructions[ 4028]  // VTESTPS Vx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_0e_pp_01_w = 
@@ -7948,7 +7948,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_0d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3456]  // VPERMILPD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3528]  // VPERMILPD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_0d_pp_01_w = 
@@ -7974,7 +7974,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_0c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3460]  // VPERMILPS Vx,Hx,Wx
+    (const void *)&gInstructions[ 3532]  // VPERMILPS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_02_opcode_0c_pp_01_w = 
@@ -8000,7 +8000,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_0b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3663]  // VPMULHRSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3735]  // VPMULHRSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0b_pp = 
@@ -8017,7 +8017,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_0a_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3749]  // VPSIGND Vx,Hx,Wx
+    (const void *)&gInstructions[ 3821]  // VPSIGND Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0a_pp = 
@@ -8034,7 +8034,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_0a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_09_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3750]  // VPSIGNW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3822]  // VPSIGNW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_09_pp = 
@@ -8051,7 +8051,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_09_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_08_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3748]  // VPSIGNB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3820]  // VPSIGNB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_08_pp = 
@@ -8068,7 +8068,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_08_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_07_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3528]  // VPHSUBSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3600]  // VPHSUBSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_07_pp = 
@@ -8085,7 +8085,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_07_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_06_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3526]  // VPHSUBD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3598]  // VPHSUBD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_06_pp = 
@@ -8102,7 +8102,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_06_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_05_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3529]  // VPHSUBW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3601]  // VPHSUBW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_05_pp = 
@@ -8119,7 +8119,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_05_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_04_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3562]  // VPMADDUBSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3634]  // VPMADDUBSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_04_pp = 
@@ -8136,7 +8136,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_04_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_03_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3514]  // VPHADDSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3586]  // VPHADDSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_03_pp = 
@@ -8153,7 +8153,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_03_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_02_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3512]  // VPHADDD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3584]  // VPHADDD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_02_pp = 
@@ -8170,7 +8170,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_02_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_01_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3521]  // VPHADDW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3593]  // VPHADDW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_01_pp = 
@@ -8187,7 +8187,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_01_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_02_opcode_00_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3740]  // VPSHUFB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3812]  // VPSHUFB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_02_opcode_00_pp = 
@@ -8467,7 +8467,7 @@ const ND_TABLE_OPCODE gVexMap_mmmmm_02_opcode =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_fe_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3327]  // VPADDD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3387]  // VPADDD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fe_pp = 
@@ -8484,7 +8484,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fe_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_fd_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3339]  // VPADDW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3399]  // VPADDW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fd_pp = 
@@ -8501,7 +8501,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fd_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_fc_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3325]  // VPADDB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3385]  // VPADDB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fc_pp = 
@@ -8518,7 +8518,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fc_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_fb_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3808]  // VPSUBQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3880]  // VPSUBQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fb_pp = 
@@ -8535,7 +8535,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fb_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_fa_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3806]  // VPSUBD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3878]  // VPSUBD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fa_pp = 
@@ -8552,7 +8552,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_fa_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f9_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3818]  // VPSUBW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3890]  // VPSUBW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f9_pp = 
@@ -8569,7 +8569,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f9_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f8_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3804]  // VPSUBB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3876]  // VPSUBB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f8_pp = 
@@ -8586,7 +8586,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f8_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f7_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3140]  // VMASKMOVDQU Vdq,Udq
+    (const void *)&gInstructions[ 3185]  // VMASKMOVDQU Vdq,Udq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_f7_pp_01_modrmmod_01_l = 
@@ -8623,7 +8623,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f6_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3706]  // VPSADBW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3778]  // VPSADBW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f6_pp = 
@@ -8640,7 +8640,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f5_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3564]  // VPMADDWD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3636]  // VPMADDWD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f5_pp = 
@@ -8657,7 +8657,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f4_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3675]  // VPMULUDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3747]  // VPMULUDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f4_pp = 
@@ -8674,7 +8674,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f4_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f3_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3760]  // VPSLLQ Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3832]  // VPSLLQ Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f3_pp = 
@@ -8691,7 +8691,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f3_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f2_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3754]  // VPSLLD Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3826]  // VPSLLD Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f2_pp = 
@@ -8708,7 +8708,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f1_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3769]  // VPSLLW Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3841]  // VPSLLW Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f1_pp = 
@@ -8725,7 +8725,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f1_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_f0_pp_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3138]  // VLDDQU Vx,Mx
+    (const void *)&gInstructions[ 3183]  // VLDDQU Vx,Mx
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_f0_pp_03_modrmmod = 
@@ -8751,7 +8751,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_f0_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ef_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3846]  // VPXOR Vx,Hx,Wx
+    (const void *)&gInstructions[ 3918]  // VPXOR Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ef_pp = 
@@ -8768,7 +8768,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ef_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ee_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3575]  // VPMAXSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3647]  // VPMAXSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ee_pp = 
@@ -8785,7 +8785,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ee_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ed_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3333]  // VPADDSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3393]  // VPADDSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ed_pp = 
@@ -8802,7 +8802,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ed_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ec_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3331]  // VPADDSB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3391]  // VPADDSB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ec_pp = 
@@ -8819,7 +8819,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ec_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_eb_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3680]  // VPOR Vx,Hx,Wx
+    (const void *)&gInstructions[ 3752]  // VPOR Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_eb_pp = 
@@ -8836,7 +8836,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_eb_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ea_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3589]  // VPMINSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3661]  // VPMINSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ea_pp = 
@@ -8853,7 +8853,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ea_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e9_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3812]  // VPSUBSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3884]  // VPSUBSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e9_pp = 
@@ -8870,7 +8870,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e9_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e8_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3810]  // VPSUBSB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3882]  // VPSUBSB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e8_pp = 
@@ -8887,7 +8887,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e8_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e7_pp_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3230]  // VMOVNTDQ Mx,Vx
+    (const void *)&gInstructions[ 3286]  // VMOVNTDQ Mx,Vx
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_e7_pp_01_modrmmod = 
@@ -8913,19 +8913,19 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e6_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2748]  // VCVTPD2DQ Vdq,Wx
+    (const void *)&gInstructions[ 2754]  // VCVTPD2DQ Vdq,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e6_pp_02_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2736]  // VCVTDQ2PD Vqq,Wdq
+    (const void *)&gInstructions[ 2731]  // VCVTDQ2PD Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e6_pp_02_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2735]  // VCVTDQ2PD Vdq,Wq
+    (const void *)&gInstructions[ 2730]  // VCVTDQ2PD Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_e6_pp_02_l = 
@@ -8942,7 +8942,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_e6_pp_02_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e6_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2805]  // VCVTTPD2DQ Vdq,Wx
+    (const void *)&gInstructions[ 2817]  // VCVTTPD2DQ Vdq,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e6_pp = 
@@ -8959,7 +8959,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e5_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3667]  // VPMULHW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3739]  // VPMULHW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e5_pp = 
@@ -8976,7 +8976,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e4_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3665]  // VPMULHUW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3737]  // VPMULHUW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e4_pp = 
@@ -8993,7 +8993,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e4_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e3_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3351]  // VPAVGW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3411]  // VPAVGW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e3_pp = 
@@ -9010,7 +9010,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e3_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e2_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3773]  // VPSRAD Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3845]  // VPSRAD Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e2_pp = 
@@ -9027,7 +9027,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e1_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3783]  // VPSRAW Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3855]  // VPSRAW Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e1_pp = 
@@ -9044,7 +9044,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e1_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_e0_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3349]  // VPAVGB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3409]  // VPAVGB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e0_pp = 
@@ -9061,7 +9061,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_e0_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_df_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3344]  // VPANDN Vx,Hx,Wx
+    (const void *)&gInstructions[ 3404]  // VPANDN Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_df_pp = 
@@ -9078,7 +9078,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_df_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_de_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3577]  // VPMAXUB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3649]  // VPMAXUB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_de_pp = 
@@ -9095,7 +9095,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_de_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_dd_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3337]  // VPADDUSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3397]  // VPADDUSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_dd_pp = 
@@ -9112,7 +9112,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_dd_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_dc_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3335]  // VPADDUSB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3395]  // VPADDUSB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_dc_pp = 
@@ -9129,7 +9129,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_dc_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_db_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3342]  // VPAND Vx,Hx,Wx
+    (const void *)&gInstructions[ 3402]  // VPAND Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_db_pp = 
@@ -9146,7 +9146,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_db_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_da_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3591]  // VPMINUB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3663]  // VPMINUB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_da_pp = 
@@ -9163,7 +9163,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_da_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d9_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3816]  // VPSUBUSW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3888]  // VPSUBUSW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d9_pp = 
@@ -9180,7 +9180,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d9_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d8_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3814]  // VPSUBUSB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3886]  // VPSUBUSB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d8_pp = 
@@ -9197,7 +9197,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d8_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d7_pp_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3605]  // VPMOVMSKB Gy,Ux
+    (const void *)&gInstructions[ 3677]  // VPMOVMSKB Gy,Ux
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_d7_pp_01_modrmmod = 
@@ -9223,7 +9223,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d7_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d6_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3244]  // VMOVQ Wq,Vdq
+    (const void *)&gInstructions[ 3300]  // VMOVQ Wq,Vdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_d6_pp_01_l = 
@@ -9251,7 +9251,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d5_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3672]  // VPMULLW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3744]  // VPMULLW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d5_pp = 
@@ -9268,7 +9268,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d4_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3329]  // VPADDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3389]  // VPADDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d4_pp = 
@@ -9285,7 +9285,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d4_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d3_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3793]  // VPSRLQ Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3865]  // VPSRLQ Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d3_pp = 
@@ -9302,7 +9302,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d3_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d2_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3787]  // VPSRLD Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3859]  // VPSRLD Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d2_pp = 
@@ -9319,7 +9319,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d1_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3802]  // VPSRLW Vx,Hx,Wdq
+    (const void *)&gInstructions[ 3874]  // VPSRLW Vx,Hx,Wdq
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d1_pp = 
@@ -9336,13 +9336,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d1_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d0_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2672]  // VADDSUBPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 2657]  // VADDSUBPS Vps,Hps,Wps
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_d0_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2671]  // VADDSUBPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 2656]  // VADDSUBPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d0_pp = 
@@ -9359,13 +9359,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_d0_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c6_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3919]  // VSHUFPD Vpd,Hpd,Wpd,Ib
+    (const void *)&gInstructions[ 3996]  // VSHUFPD Vpd,Hpd,Wpd,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c6_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3921]  // VSHUFPS Vps,Hps,Wps,Ib
+    (const void *)&gInstructions[ 3998]  // VSHUFPS Vps,Hps,Wps,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_c6_pp = 
@@ -9382,7 +9382,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_c6_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c5_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3498]  // VPEXTRW Gy,Udq,Ib
+    (const void *)&gInstructions[ 3570]  // VPEXTRW Gy,Udq,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_c5_pp_01_modrmmod_01_l = 
@@ -9419,7 +9419,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_c5_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3542]  // VPINSRW Vdq,Hdq,Rd,Ib
+    (const void *)&gInstructions[ 3614]  // VPINSRW Vdq,Hdq,Rd,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_01_l = 
@@ -9436,7 +9436,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3541]  // VPINSRW Vdq,Hdq,Mw,Ib
+    (const void *)&gInstructions[ 3613]  // VPINSRW Vdq,Hdq,Mw,Ib
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_00_l = 
@@ -9473,25 +9473,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_c4_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c2_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2723]  // VCMPSD Vsd,Hsd,Wsd,Ib
+    (const void *)&gInstructions[ 2709]  // VCMPSD Vsd,Hsd,Wsd,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c2_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2726]  // VCMPSS Vss,Hss,Wss,Ib
+    (const void *)&gInstructions[ 2712]  // VCMPSS Vss,Hss,Wss,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c2_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2718]  // VCMPPD Vpd,Hpd,Wpd,Ib
+    (const void *)&gInstructions[ 2704]  // VCMPPD Vpd,Hpd,Wpd,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_c2_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2721]  // VCMPPS Vss,Hss,Wss,Ib
+    (const void *)&gInstructions[ 2707]  // VCMPPS Vss,Hss,Wss,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_c2_pp = 
@@ -9508,7 +9508,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_c2_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ae_pp_03_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 563]  // CLEVICT0 M?
+    (const void *)&gInstructions[ 555]  // CLEVICT0 M?
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_03_modrmreg_07_modrmmod = 
@@ -9523,7 +9523,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_03_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ae_pp_03_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2515]  // SPFLT Ry
+    (const void *)&gInstructions[ 2499]  // SPFLT Ry
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_03_modrmreg_06_modrmmod = 
@@ -9553,7 +9553,7 @@ const ND_TABLE_MODRM_REG gVexMap_mmmmm_01_opcode_ae_pp_03_modrmreg =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ae_pp_02_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 564]  // CLEVICT1 M?
+    (const void *)&gInstructions[ 556]  // CLEVICT1 M?
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_02_modrmreg_07_modrmmod = 
@@ -9568,7 +9568,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_02_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ae_pp_02_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 882]  // DELAY Ry
+    (const void *)&gInstructions[ 874]  // DELAY Ry
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_02_modrmreg_06_modrmmod = 
@@ -9598,7 +9598,7 @@ const ND_TABLE_MODRM_REG gVexMap_mmmmm_01_opcode_ae_pp_02_modrmreg =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ae_pp_00_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3937]  // VSTMXCSR Md
+    (const void *)&gInstructions[ 4015]  // VSTMXCSR Md
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_00_modrmreg_03_modrmmod = 
@@ -9613,7 +9613,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_00_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_ae_pp_00_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3139]  // VLDMXCSR Md
+    (const void *)&gInstructions[ 3184]  // VLDMXCSR Md
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_ae_pp_00_modrmreg_02_modrmmod = 
@@ -9654,13 +9654,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_ae_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_99_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1295]  // KTESTD rKd,mKd
+    (const void *)&gInstructions[ 1285]  // KTESTD rKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_99_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1294]  // KTESTB rKb,mKb
+    (const void *)&gInstructions[ 1284]  // KTESTB rKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_99_pp_01_modrmmod_01_l_00_w = 
@@ -9695,13 +9695,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_99_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_99_pp_00_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1296]  // KTESTQ rKq,mKq
+    (const void *)&gInstructions[ 1286]  // KTESTQ rKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_99_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1297]  // KTESTW rKw,mKw
+    (const void *)&gInstructions[ 1287]  // KTESTW rKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_99_pp_00_modrmmod_01_l_00_w = 
@@ -9747,13 +9747,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_99_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_98_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1282]  // KORTESTD rKd,mKd
+    (const void *)&gInstructions[ 1272]  // KORTESTD rKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_98_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1281]  // KORTESTB rKb,mKb
+    (const void *)&gInstructions[ 1271]  // KORTESTB rKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_98_pp_01_modrmmod_01_l_00_w = 
@@ -9788,13 +9788,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_98_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_98_pp_00_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1283]  // KORTESTQ rKq,mKq
+    (const void *)&gInstructions[ 1273]  // KORTESTQ rKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_98_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1284]  // KORTESTW rKw,mKw
+    (const void *)&gInstructions[ 1274]  // KORTESTW rKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_98_pp_00_modrmmod_01_l_00_w = 
@@ -9840,13 +9840,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_98_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_93_pp_03_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1263]  // KMOVQ Gy,mKq
+    (const void *)&gInstructions[ 1253]  // KMOVQ Gy,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_93_pp_03_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1253]  // KMOVD Gy,mKd
+    (const void *)&gInstructions[ 1243]  // KMOVD Gy,mKd
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_93_pp_03_modrmmod_01_l_00_w = 
@@ -9881,7 +9881,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_93_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_93_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1243]  // KMOVB Gy,mKb
+    (const void *)&gInstructions[ 1233]  // KMOVB Gy,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_93_pp_01_modrmmod_01_l_00_w = 
@@ -9916,7 +9916,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_93_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_93_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1273]  // KMOVW Gy,mKw
+    (const void *)&gInstructions[ 1263]  // KMOVW Gy,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_93_pp_00_modrmmod_01_l_00_w = 
@@ -9962,13 +9962,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_93_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_92_pp_03_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1262]  // KMOVQ rKq,Ry
+    (const void *)&gInstructions[ 1252]  // KMOVQ rKq,Ry
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_92_pp_03_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1252]  // KMOVD rKd,Ry
+    (const void *)&gInstructions[ 1242]  // KMOVD rKd,Ry
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_92_pp_03_modrmmod_01_l_00_w = 
@@ -10003,7 +10003,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_92_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_92_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1242]  // KMOVB rKb,Ry
+    (const void *)&gInstructions[ 1232]  // KMOVB rKb,Ry
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_92_pp_01_modrmmod_01_l_00_w = 
@@ -10038,7 +10038,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_92_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_92_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1272]  // KMOVW rKw,Ry
+    (const void *)&gInstructions[ 1262]  // KMOVW rKw,Ry
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_92_pp_00_modrmmod_01_l_00_w = 
@@ -10084,13 +10084,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_92_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_91_pp_01_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1251]  // KMOVD Md,rKd
+    (const void *)&gInstructions[ 1241]  // KMOVD Md,rKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_91_pp_01_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1241]  // KMOVB Mb,rKb
+    (const void *)&gInstructions[ 1231]  // KMOVB Mb,rKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_91_pp_01_modrmmod_00_l_00_w = 
@@ -10125,13 +10125,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_91_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_91_pp_00_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1261]  // KMOVQ Mq,rKq
+    (const void *)&gInstructions[ 1251]  // KMOVQ Mq,rKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_91_pp_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1271]  // KMOVW Mw,rKw
+    (const void *)&gInstructions[ 1261]  // KMOVW Mw,rKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_91_pp_00_modrmmod_00_l_00_w = 
@@ -10177,13 +10177,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_91_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1250]  // KMOVD rKd,mKd
+    (const void *)&gInstructions[ 1240]  // KMOVD rKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1240]  // KMOVB rKb,mKb
+    (const void *)&gInstructions[ 1230]  // KMOVB rKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_01_l_00_w = 
@@ -10209,13 +10209,13 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1249]  // KMOVD rKd,Md
+    (const void *)&gInstructions[ 1239]  // KMOVD rKd,Md
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1239]  // KMOVB rKb,Mb
+    (const void *)&gInstructions[ 1229]  // KMOVB rKb,Mb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod_00_l_00_w = 
@@ -10250,13 +10250,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_90_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1260]  // KMOVQ rKq,mKq
+    (const void *)&gInstructions[ 1250]  // KMOVQ rKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1270]  // KMOVW rKw,mKw
+    (const void *)&gInstructions[ 1260]  // KMOVW rKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_01_l_00_w = 
@@ -10282,13 +10282,13 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1259]  // KMOVQ rKq,Mq
+    (const void *)&gInstructions[ 1249]  // KMOVQ rKq,Mq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1269]  // KMOVW rKw,Mw
+    (const void *)&gInstructions[ 1259]  // KMOVW rKw,Mw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_90_pp_00_modrmmod_00_l_00_w = 
@@ -10334,13 +10334,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_90_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7f_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3198]  // VMOVDQU Wx,Vx
+    (const void *)&gInstructions[ 3254]  // VMOVDQU Wx,Vx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3192]  // VMOVDQA Wx,Vx
+    (const void *)&gInstructions[ 3248]  // VMOVDQA Wx,Vx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7f_pp = 
@@ -10357,7 +10357,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7e_pp_02_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3243]  // VMOVQ Vdq,Wq
+    (const void *)&gInstructions[ 3299]  // VMOVQ Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_7e_pp_02_l = 
@@ -10374,13 +10374,13 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_7e_pp_02_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7e_pp_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3242]  // VMOVQ Ey,Vq
+    (const void *)&gInstructions[ 3298]  // VMOVQ Ey,Vq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7e_pp_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3185]  // VMOVD Ey,Vd
+    (const void *)&gInstructions[ 3241]  // VMOVD Ey,Vd
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_7e_pp_01_l_00_wi = 
@@ -10417,13 +10417,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7d_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3123]  // VHSUBPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 3168]  // VHSUBPS Vps,Hps,Wps
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3122]  // VHSUBPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 3167]  // VHSUBPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7d_pp = 
@@ -10440,13 +10440,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7c_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3121]  // VHADDPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 3166]  // VHADDPS Vps,Hps,Wps
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_7c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3120]  // VHADDPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 3165]  // VHADDPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7c_pp = 
@@ -10463,13 +10463,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_7c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_77_pp_00_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3967]  // VZEROALL
+    (const void *)&gInstructions[ 4049]  // VZEROALL
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_77_pp_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3968]  // VZEROUPPER
+    (const void *)&gInstructions[ 4050]  // VZEROUPPER
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_77_pp_00_l = 
@@ -10497,7 +10497,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_77_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_76_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3382]  // VPCMPEQD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3442]  // VPCMPEQD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_76_pp = 
@@ -10514,7 +10514,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_76_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_75_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3386]  // VPCMPEQW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3446]  // VPCMPEQW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_75_pp = 
@@ -10531,7 +10531,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_75_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_74_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3380]  // VPCMPEQB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3440]  // VPCMPEQB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_74_pp = 
@@ -10548,7 +10548,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_74_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3756]  // VPSLLDQ Hx,Ux,Ib
+    (const void *)&gInstructions[ 3828]  // VPSLLDQ Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_07_modrmmod = 
@@ -10563,7 +10563,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3759]  // VPSLLQ Hx,Ux,Ib
+    (const void *)&gInstructions[ 3831]  // VPSLLQ Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_06_modrmmod = 
@@ -10578,7 +10578,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3789]  // VPSRLDQ Hx,Ux,Ib
+    (const void *)&gInstructions[ 3861]  // VPSRLDQ Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_03_modrmmod = 
@@ -10593,7 +10593,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3792]  // VPSRLQ Hx,Ux,Ib
+    (const void *)&gInstructions[ 3864]  // VPSRLQ Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_73_pp_01_modrmreg_02_modrmmod = 
@@ -10634,7 +10634,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_73_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3753]  // VPSLLD Hx,Ux,Ib
+    (const void *)&gInstructions[ 3825]  // VPSLLD Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_06_modrmmod = 
@@ -10649,7 +10649,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3772]  // VPSRAD Hx,Ux,Ib
+    (const void *)&gInstructions[ 3844]  // VPSRAD Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_modrmmod = 
@@ -10664,7 +10664,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3786]  // VPSRLD Hx,Ux,Ib
+    (const void *)&gInstructions[ 3858]  // VPSRLD Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_72_pp_01_modrmreg_02_modrmmod = 
@@ -10705,7 +10705,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_72_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3768]  // VPSLLW Hx,Ux,Ib
+    (const void *)&gInstructions[ 3840]  // VPSLLW Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_06_modrmmod = 
@@ -10720,7 +10720,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3782]  // VPSRAW Hx,Ux,Ib
+    (const void *)&gInstructions[ 3854]  // VPSRAW Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_04_modrmmod = 
@@ -10735,7 +10735,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3801]  // VPSRLW Hx,Ux,Ib
+    (const void *)&gInstructions[ 3873]  // VPSRLW Hx,Ux,Ib
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_71_pp_01_modrmreg_02_modrmmod = 
@@ -10776,19 +10776,19 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_71_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_70_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3747]  // VPSHUFLW Vx,Wx,Ib
+    (const void *)&gInstructions[ 3819]  // VPSHUFLW Vx,Wx,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_70_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3745]  // VPSHUFHW Vx,Wx,Ib
+    (const void *)&gInstructions[ 3817]  // VPSHUFHW Vx,Wx,Ib
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_70_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3743]  // VPSHUFD Vx,Wx,Ib
+    (const void *)&gInstructions[ 3815]  // VPSHUFD Vx,Wx,Ib
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_70_pp = 
@@ -10805,13 +10805,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_70_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6f_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3197]  // VMOVDQU Vx,Wx
+    (const void *)&gInstructions[ 3253]  // VMOVDQU Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3191]  // VMOVDQA Vx,Wx
+    (const void *)&gInstructions[ 3247]  // VMOVDQA Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6f_pp = 
@@ -10828,13 +10828,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6e_pp_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3241]  // VMOVQ Vdq,Ey
+    (const void *)&gInstructions[ 3297]  // VMOVQ Vdq,Ey
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6e_pp_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3184]  // VMOVD Vdq,Ey
+    (const void *)&gInstructions[ 3240]  // VMOVD Vdq,Ey
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_6e_pp_01_l_00_wi = 
@@ -10871,7 +10871,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3835]  // VPUNPCKHQDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3907]  // VPUNPCKHQDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6d_pp = 
@@ -10888,7 +10888,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3843]  // VPUNPCKLQDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3915]  // VPUNPCKLQDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6c_pp = 
@@ -10905,7 +10905,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3317]  // VPACKSSDW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3377]  // VPACKSSDW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6b_pp = 
@@ -10922,7 +10922,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_6a_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3833]  // VPUNPCKHDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3905]  // VPUNPCKHDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6a_pp = 
@@ -10939,7 +10939,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_6a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_69_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3837]  // VPUNPCKHWD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3909]  // VPUNPCKHWD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_69_pp = 
@@ -10956,7 +10956,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_69_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_68_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3831]  // VPUNPCKHBW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3903]  // VPUNPCKHBW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_68_pp = 
@@ -10973,7 +10973,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_68_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_67_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3323]  // VPACKUSWB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3383]  // VPACKUSWB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_67_pp = 
@@ -10990,7 +10990,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_67_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_66_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3392]  // VPCMPGTD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3452]  // VPCMPGTD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_66_pp = 
@@ -11007,7 +11007,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_66_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_65_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3396]  // VPCMPGTW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3456]  // VPCMPGTW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_65_pp = 
@@ -11024,7 +11024,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_65_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_64_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3390]  // VPCMPGTB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3450]  // VPCMPGTB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_64_pp = 
@@ -11041,7 +11041,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_64_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_63_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3319]  // VPACKSSWB Vx,Hx,Wx
+    (const void *)&gInstructions[ 3379]  // VPACKSSWB Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_63_pp = 
@@ -11058,7 +11058,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_63_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_62_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3841]  // VPUNPCKLDQ Vx,Hx,Wx
+    (const void *)&gInstructions[ 3913]  // VPUNPCKLDQ Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_62_pp = 
@@ -11075,7 +11075,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_62_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_61_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3845]  // VPUNPCKLWD Vx,Hx,Wx
+    (const void *)&gInstructions[ 3917]  // VPUNPCKLWD Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_61_pp = 
@@ -11092,7 +11092,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_61_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_60_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3839]  // VPUNPCKLBW Vx,Hx,Wx
+    (const void *)&gInstructions[ 3911]  // VPUNPCKLBW Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_60_pp = 
@@ -11109,25 +11109,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_60_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5f_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3151]  // VMAXSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 3197]  // VMAXSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5f_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3154]  // VMAXSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 3200]  // VMAXSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3146]  // VMAXPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 3192]  // VMAXPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5f_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3149]  // VMAXPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 3195]  // VMAXPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5f_pp = 
@@ -11144,25 +11144,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5e_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2847]  // VDIVSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 2876]  // VDIVSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5e_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2850]  // VDIVSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 2879]  // VDIVSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5e_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2842]  // VDIVPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 2871]  // VDIVPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5e_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2845]  // VDIVPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 2874]  // VDIVPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5e_pp = 
@@ -11179,25 +11179,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5d_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3166]  // VMINSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 3220]  // VMINSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5d_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3169]  // VMINSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 3223]  // VMINSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3161]  // VMINPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 3215]  // VMINPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5d_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3164]  // VMINPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 3218]  // VMINPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5d_pp = 
@@ -11214,25 +11214,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5c_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3944]  // VSUBSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 4023]  // VSUBSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5c_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3947]  // VSUBSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 4026]  // VSUBSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3939]  // VSUBPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 4018]  // VSUBPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5c_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3942]  // VSUBPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 4021]  // VSUBPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5c_pp = 
@@ -11249,19 +11249,19 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5b_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2816]  // VCVTTPS2DQ Vps,Wps
+    (const void *)&gInstructions[ 2834]  // VCVTTPS2DQ Vps,Wps
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2768]  // VCVTPS2DQ Vps,Wps
+    (const void *)&gInstructions[ 2776]  // VCVTPS2DQ Vps,Wps
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5b_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2739]  // VCVTDQ2PS Vps,Wps
+    (const void *)&gInstructions[ 2734]  // VCVTDQ2PS Vps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5b_pp = 
@@ -11278,25 +11278,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5a_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2786]  // VCVTSD2SS Vss,Hx,Wsd
+    (const void *)&gInstructions[ 2796]  // VCVTSD2SS Vss,Hx,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5a_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2799]  // VCVTSS2SD Vsd,Hx,Wss
+    (const void *)&gInstructions[ 2809]  // VCVTSS2SD Vsd,Hx,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5a_pp_01_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2752]  // VCVTPD2PS Vdq,Wqq
+    (const void *)&gInstructions[ 2758]  // VCVTPD2PS Vdq,Wqq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5a_pp_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2751]  // VCVTPD2PS Vdq,Wdq
+    (const void *)&gInstructions[ 2757]  // VCVTPD2PS Vdq,Wdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_5a_pp_01_l = 
@@ -11313,13 +11313,13 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_5a_pp_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5a_pp_00_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2771]  // VCVTPS2PD Vqq,Wdq
+    (const void *)&gInstructions[ 2781]  // VCVTPS2PD Vqq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_5a_pp_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2770]  // VCVTPS2PD Vpd,Wq
+    (const void *)&gInstructions[ 2780]  // VCVTPS2PD Vpd,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_5a_pp_00_l = 
@@ -11347,25 +11347,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_5a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_59_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3294]  // VMULSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 3354]  // VMULSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_59_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3297]  // VMULSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 3357]  // VMULSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_59_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3289]  // VMULPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 3349]  // VMULPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_59_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3292]  // VMULPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 3352]  // VMULPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_59_pp = 
@@ -11382,25 +11382,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_59_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_58_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2667]  // VADDSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 2652]  // VADDSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_58_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2670]  // VADDSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 2655]  // VADDSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_58_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2662]  // VADDPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 2647]  // VADDPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_58_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2665]  // VADDPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 2650]  // VADDPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_58_pp = 
@@ -11417,13 +11417,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_58_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_57_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3964]  // VXORPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 4046]  // VXORPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_57_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3966]  // VXORPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 4048]  // VXORPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_57_pp = 
@@ -11440,13 +11440,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_57_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_56_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3302]  // VORPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 3362]  // VORPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_56_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3304]  // VORPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 3364]  // VORPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_56_pp = 
@@ -11463,13 +11463,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_56_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_55_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2686]  // VANDNPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 2671]  // VANDNPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_55_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2688]  // VANDNPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 2673]  // VANDNPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_55_pp = 
@@ -11486,13 +11486,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_55_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_54_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2690]  // VANDPD Vpd,Hpd,Wpd
+    (const void *)&gInstructions[ 2675]  // VANDPD Vpd,Hpd,Wpd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_54_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2692]  // VANDPS Vps,Hps,Wps
+    (const void *)&gInstructions[ 2677]  // VANDPS Vps,Hps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_54_pp = 
@@ -11509,13 +11509,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_54_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_53_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3864]  // VRCPSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 3937]  // VRCPSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_53_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3862]  // VRCPPS Vps,Wps
+    (const void *)&gInstructions[ 3935]  // VRCPPS Vps,Wps
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_53_pp = 
@@ -11532,13 +11532,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_53_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_52_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3892]  // VRSQRTSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 3968]  // VRSQRTSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_52_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3890]  // VRSQRTPS Vx,Wx
+    (const void *)&gInstructions[ 3966]  // VRSQRTPS Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_52_pp = 
@@ -11555,25 +11555,25 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_52_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_51_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3933]  // VSQRTSD Vsd,Hsd,Wsd
+    (const void *)&gInstructions[ 4011]  // VSQRTSD Vsd,Hsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_51_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3936]  // VSQRTSS Vss,Hss,Wss
+    (const void *)&gInstructions[ 4014]  // VSQRTSS Vss,Hss,Wss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_51_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3928]  // VSQRTPD Vx,Wx
+    (const void *)&gInstructions[ 4006]  // VSQRTPD Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_51_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3931]  // VSQRTPS Vx,Wx
+    (const void *)&gInstructions[ 4009]  // VSQRTPS Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_51_pp = 
@@ -11590,7 +11590,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_51_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_50_pp_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3227]  // VMOVMSKPD Gy,Ux
+    (const void *)&gInstructions[ 3283]  // VMOVMSKPD Gy,Ux
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_50_pp_01_modrmmod = 
@@ -11605,7 +11605,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_50_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_50_pp_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3228]  // VMOVMSKPS Gy,Ux
+    (const void *)&gInstructions[ 3284]  // VMOVMSKPS Gy,Ux
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_50_pp_00_modrmmod = 
@@ -11631,7 +11631,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_50_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4b_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1298]  // KUNPCKBW rKw,vKb,mKb
+    (const void *)&gInstructions[ 1288]  // KUNPCKBW rKw,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_4b_pp_01_modrmmod_01_l_01_w = 
@@ -11666,13 +11666,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_4b_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4b_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1299]  // KUNPCKDQ rKq,vKd,mKd
+    (const void *)&gInstructions[ 1289]  // KUNPCKDQ rKq,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4b_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1300]  // KUNPCKWD rKd,vKw,mKw
+    (const void *)&gInstructions[ 1290]  // KUNPCKWD rKd,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_4b_pp_00_modrmmod_01_l_01_w = 
@@ -11718,13 +11718,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_4b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4a_pp_01_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1221]  // KADDD rKd,vKd,mKd
+    (const void *)&gInstructions[ 1211]  // KADDD rKd,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4a_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1220]  // KADDB rKb,vKb,mKb
+    (const void *)&gInstructions[ 1210]  // KADDB rKb,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_4a_pp_01_modrmmod_01_l_01_w = 
@@ -11759,13 +11759,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_4a_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4a_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1222]  // KADDQ rKq,vKq,mKq
+    (const void *)&gInstructions[ 1212]  // KADDQ rKq,vKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_4a_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1223]  // KADDW rKw,vKw,mKw
+    (const void *)&gInstructions[ 1213]  // KADDW rKw,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_4a_pp_00_modrmmod_01_l_01_w = 
@@ -11811,7 +11811,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_4a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_49_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1233]  // KMERGE2L1L rKw,mKw
+    (const void *)&gInstructions[ 1223]  // KMERGE2L1L rKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_49_pp_00_modrmmod_01_l_00_w = 
@@ -11857,7 +11857,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_49_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_48_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1232]  // KMERGE2L1H rKw,mKw
+    (const void *)&gInstructions[ 1222]  // KMERGE2L1H rKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_48_pp_00_modrmmod_01_l_00_w = 
@@ -11903,13 +11903,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_48_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_47_pp_01_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1306]  // KXORD rKd,vKd,mKd
+    (const void *)&gInstructions[ 1296]  // KXORD rKd,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_47_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1305]  // KXORB rKb,vKb,mKb
+    (const void *)&gInstructions[ 1295]  // KXORB rKb,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_47_pp_01_modrmmod_01_l_01_w = 
@@ -11944,13 +11944,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_47_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_47_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1307]  // KXORQ rKq,vKq,mKq
+    (const void *)&gInstructions[ 1297]  // KXORQ rKq,vKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_47_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1308]  // KXORW rKw,vKw,mKw
+    (const void *)&gInstructions[ 1298]  // KXORW rKw,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_47_pp_00_modrmmod_01_l_01_w = 
@@ -11996,13 +11996,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_47_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_46_pp_01_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1302]  // KXNORD rKd,vKd,mKd
+    (const void *)&gInstructions[ 1292]  // KXNORD rKd,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_46_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1301]  // KXNORB rKb,vKb,mKb
+    (const void *)&gInstructions[ 1291]  // KXNORB rKb,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_46_pp_01_modrmmod_01_l_01_w = 
@@ -12037,13 +12037,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_46_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_46_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1303]  // KXNORQ rKq,vKq,mKq
+    (const void *)&gInstructions[ 1293]  // KXNORQ rKq,vKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_46_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1304]  // KXNORW rKw,vKw,mKw
+    (const void *)&gInstructions[ 1294]  // KXNORW rKw,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_46_pp_00_modrmmod_01_l_01_w = 
@@ -12089,13 +12089,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_46_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_45_pp_01_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1279]  // KORD rKd,vKd,mKd
+    (const void *)&gInstructions[ 1269]  // KORD rKd,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_45_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1278]  // KORB rKb,vKb,mKb
+    (const void *)&gInstructions[ 1268]  // KORB rKb,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_45_pp_01_modrmmod_01_l_01_w = 
@@ -12130,13 +12130,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_45_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_45_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1280]  // KORQ rKq,vKq,mKq
+    (const void *)&gInstructions[ 1270]  // KORQ rKq,vKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_45_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1285]  // KORW rKw,vKw,mKw
+    (const void *)&gInstructions[ 1275]  // KORW rKw,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_45_pp_00_modrmmod_01_l_01_w = 
@@ -12182,13 +12182,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_45_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_44_pp_01_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1275]  // KNOTD rKd,mKd
+    (const void *)&gInstructions[ 1265]  // KNOTD rKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_44_pp_01_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1274]  // KNOTB rKb,mKb
+    (const void *)&gInstructions[ 1264]  // KNOTB rKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_44_pp_01_modrmmod_01_l_00_w = 
@@ -12223,13 +12223,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_44_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_44_pp_00_modrmmod_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1276]  // KNOTQ rKq,mKq
+    (const void *)&gInstructions[ 1266]  // KNOTQ rKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_44_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1277]  // KNOTW rKw,mKw
+    (const void *)&gInstructions[ 1267]  // KNOTW rKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_44_pp_00_modrmmod_01_l_00_w = 
@@ -12275,13 +12275,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_44_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_42_pp_01_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1227]  // KANDND rKd,vKd,mKd
+    (const void *)&gInstructions[ 1217]  // KANDND rKd,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_42_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1226]  // KANDNB rKb,vKb,mKb
+    (const void *)&gInstructions[ 1216]  // KANDNB rKb,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_42_pp_01_modrmmod_01_l_01_w = 
@@ -12316,13 +12316,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_42_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_42_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1228]  // KANDNQ rKq,vKq,mKq
+    (const void *)&gInstructions[ 1218]  // KANDNQ rKq,vKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_42_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1229]  // KANDNW rKw,vKw,mKw
+    (const void *)&gInstructions[ 1219]  // KANDNW rKw,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_42_pp_00_modrmmod_01_l_01_w = 
@@ -12368,13 +12368,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_42_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_41_pp_01_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1225]  // KANDD rKd,vKd,mKd
+    (const void *)&gInstructions[ 1215]  // KANDD rKd,vKd,mKd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_41_pp_01_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1224]  // KANDB rKb,vKb,mKb
+    (const void *)&gInstructions[ 1214]  // KANDB rKb,vKb,mKb
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_41_pp_01_modrmmod_01_l_01_w = 
@@ -12409,13 +12409,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_41_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_41_pp_00_modrmmod_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1230]  // KANDQ rKq,vKq,mKq
+    (const void *)&gInstructions[ 1220]  // KANDQ rKq,vKq,mKq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_41_pp_00_modrmmod_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1231]  // KANDW rKw,vKw,mKw
+    (const void *)&gInstructions[ 1221]  // KANDW rKw,vKw,mKw
 };
 
 const ND_TABLE_EX_W gVexMap_mmmmm_01_opcode_41_pp_00_modrmmod_01_l_01_w = 
@@ -12461,13 +12461,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_41_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2728]  // VCOMISD Vsd,Wsd
+    (const void *)&gInstructions[ 2714]  // VCOMISD Vsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2f_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2731]  // VCOMISS Vss,Wss
+    (const void *)&gInstructions[ 2717]  // VCOMISS Vss,Wss
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2f_pp = 
@@ -12484,13 +12484,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2f_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2e_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3951]  // VUCOMISD Vsd,Wsd
+    (const void *)&gInstructions[ 4030]  // VUCOMISD Vsd,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2e_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3954]  // VUCOMISS Vss,Wss
+    (const void *)&gInstructions[ 4033]  // VUCOMISS Vss,Wss
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2e_pp = 
@@ -12507,13 +12507,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2e_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2d_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2784]  // VCVTSD2SI Gy,Wsd
+    (const void *)&gInstructions[ 2794]  // VCVTSD2SI Gy,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2d_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2802]  // VCVTSS2SI Gy,Wss
+    (const void *)&gInstructions[ 2812]  // VCVTSS2SI Gy,Wss
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2d_pp = 
@@ -12530,13 +12530,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2d_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2c_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2821]  // VCVTTSD2SI Gy,Wsd
+    (const void *)&gInstructions[ 2845]  // VCVTTSD2SI Gy,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2c_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2826]  // VCVTTSS2SI Gy,Wss
+    (const void *)&gInstructions[ 2852]  // VCVTTSS2SI Gy,Wss
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2c_pp = 
@@ -12553,7 +12553,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2b_pp_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3234]  // VMOVNTPD Mx,Vx
+    (const void *)&gInstructions[ 3290]  // VMOVNTPD Mx,Vx
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_2b_pp_01_modrmmod = 
@@ -12568,7 +12568,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_2b_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2b_pp_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3236]  // VMOVNTPS Mx,Vx
+    (const void *)&gInstructions[ 3292]  // VMOVNTPS Mx,Vx
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_2b_pp_00_modrmmod = 
@@ -12594,13 +12594,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2b_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2a_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2794]  // VCVTSI2SD Vsd,Hsd,Ey
+    (const void *)&gInstructions[ 2804]  // VCVTSI2SD Vsd,Hsd,Ey
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_2a_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2797]  // VCVTSI2SS Vss,Hss,Ey
+    (const void *)&gInstructions[ 2807]  // VCVTSI2SS Vss,Hss,Ey
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2a_pp = 
@@ -12617,13 +12617,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_2a_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_29_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3177]  // VMOVAPD Wx,Vx
+    (const void *)&gInstructions[ 3231]  // VMOVAPD Wx,Vx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_29_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3181]  // VMOVAPS Wx,Vx
+    (const void *)&gInstructions[ 3235]  // VMOVAPS Wx,Vx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_29_pp = 
@@ -12640,13 +12640,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_29_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_28_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3176]  // VMOVAPD Vx,Wx
+    (const void *)&gInstructions[ 3230]  // VMOVAPD Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_28_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3180]  // VMOVAPS Vx,Wx
+    (const void *)&gInstructions[ 3234]  // VMOVAPS Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_28_pp = 
@@ -12663,7 +12663,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_28_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_17_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3212]  // VMOVHPD Mq,Vdq
+    (const void *)&gInstructions[ 3268]  // VMOVHPD Mq,Vdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_17_pp_01_modrmmod_00_l = 
@@ -12689,7 +12689,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_17_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_17_pp_00_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3216]  // VMOVHPS Mq,Vdq
+    (const void *)&gInstructions[ 3272]  // VMOVHPS Mq,Vdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_17_pp_00_modrmmod_00_l = 
@@ -12726,13 +12726,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_17_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_16_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3258]  // VMOVSHDUP Vx,Wx
+    (const void *)&gInstructions[ 3314]  // VMOVSHDUP Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_16_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3211]  // VMOVHPD Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3267]  // VMOVHPD Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_16_pp_01_modrmmod_00_l = 
@@ -12758,7 +12758,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_16_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_16_pp_00_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3218]  // VMOVLHPS Vdq,Hdq,Udq
+    (const void *)&gInstructions[ 3274]  // VMOVLHPS Vdq,Hdq,Udq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_16_pp_00_modrmmod_01_l = 
@@ -12775,7 +12775,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_16_pp_00_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_16_pp_00_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3215]  // VMOVHPS Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3271]  // VMOVHPS Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_16_pp_00_modrmmod_00_l = 
@@ -12812,13 +12812,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_16_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_15_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3956]  // VUNPCKHPD Vx,Hx,Wx
+    (const void *)&gInstructions[ 4038]  // VUNPCKHPD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_15_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3958]  // VUNPCKHPS Vx,Hx,Wx
+    (const void *)&gInstructions[ 4040]  // VUNPCKHPS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_15_pp = 
@@ -12835,13 +12835,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_15_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_14_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3960]  // VUNPCKLPD Vx,Hx,Wx
+    (const void *)&gInstructions[ 4042]  // VUNPCKLPD Vx,Hx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_14_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3962]  // VUNPCKLPS Vx,Hx,Wx
+    (const void *)&gInstructions[ 4044]  // VUNPCKLPS Vx,Hx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_14_pp = 
@@ -12858,7 +12858,7 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_14_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_13_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3222]  // VMOVLPD Mq,Vdq
+    (const void *)&gInstructions[ 3278]  // VMOVLPD Mq,Vdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_13_pp_01_modrmmod_00_l = 
@@ -12884,7 +12884,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_13_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_13_pp_00_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3226]  // VMOVLPS Mq,Vdq
+    (const void *)&gInstructions[ 3282]  // VMOVLPS Mq,Vdq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_13_pp_00_modrmmod_00_l = 
@@ -12921,13 +12921,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_13_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_12_pp_03_l_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3190]  // VMOVDDUP Vqq,Wqq
+    (const void *)&gInstructions[ 3246]  // VMOVDDUP Vqq,Wqq
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_12_pp_03_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3189]  // VMOVDDUP Vdq,Wq
+    (const void *)&gInstructions[ 3245]  // VMOVDDUP Vdq,Wq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_12_pp_03_l = 
@@ -12944,13 +12944,13 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_12_pp_03_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_12_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3260]  // VMOVSLDUP Vx,Wx
+    (const void *)&gInstructions[ 3316]  // VMOVSLDUP Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_12_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3221]  // VMOVLPD Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3277]  // VMOVLPD Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_12_pp_01_modrmmod_00_l = 
@@ -12976,7 +12976,7 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_12_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_12_pp_00_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3208]  // VMOVHLPS Vdq,Hdq,Udq
+    (const void *)&gInstructions[ 3264]  // VMOVHLPS Vdq,Hdq,Udq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_12_pp_00_modrmmod_01_l = 
@@ -12993,7 +12993,7 @@ const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_12_pp_00_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_12_pp_00_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3225]  // VMOVLPS Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3281]  // VMOVLPS Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_L gVexMap_mmmmm_01_opcode_12_pp_00_modrmmod_00_l = 
@@ -13030,13 +13030,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_12_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_11_pp_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3251]  // VMOVSD Usd,Hsd,Vsd
+    (const void *)&gInstructions[ 3307]  // VMOVSD Usd,Hsd,Vsd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_11_pp_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3252]  // VMOVSD Mq,Vsd
+    (const void *)&gInstructions[ 3308]  // VMOVSD Mq,Vsd
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_11_pp_03_modrmmod = 
@@ -13051,13 +13051,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_11_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_11_pp_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3267]  // VMOVSS Uss,Hss,Vss
+    (const void *)&gInstructions[ 3323]  // VMOVSS Uss,Hss,Vss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_11_pp_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3268]  // VMOVSS Md,Vss
+    (const void *)&gInstructions[ 3324]  // VMOVSS Md,Vss
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_11_pp_02_modrmmod = 
@@ -13072,13 +13072,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_11_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_11_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3272]  // VMOVUPD Wx,Vx
+    (const void *)&gInstructions[ 3328]  // VMOVUPD Wx,Vx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_11_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3276]  // VMOVUPS Wx,Vx
+    (const void *)&gInstructions[ 3332]  // VMOVUPS Wx,Vx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_11_pp = 
@@ -13095,13 +13095,13 @@ const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_11_pp =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_10_pp_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3249]  // VMOVSD Vdq,Hdq,Usd
+    (const void *)&gInstructions[ 3305]  // VMOVSD Vdq,Hdq,Usd
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_10_pp_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3250]  // VMOVSD Vdq,Mq
+    (const void *)&gInstructions[ 3306]  // VMOVSD Vdq,Mq
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_10_pp_03_modrmmod = 
@@ -13116,13 +13116,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_10_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_10_pp_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3265]  // VMOVSS Vdq,Hdq,Uss
+    (const void *)&gInstructions[ 3321]  // VMOVSS Vdq,Hdq,Uss
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_10_pp_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3266]  // VMOVSS Vdq,Md
+    (const void *)&gInstructions[ 3322]  // VMOVSS Vdq,Md
 };
 
 const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_10_pp_02_modrmmod = 
@@ -13137,13 +13137,13 @@ const ND_TABLE_MODRM_MOD gVexMap_mmmmm_01_opcode_10_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_10_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3271]  // VMOVUPD Vx,Wx
+    (const void *)&gInstructions[ 3327]  // VMOVUPD Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gVexMap_mmmmm_01_opcode_10_pp_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3275]  // VMOVUPS Vx,Wx
+    (const void *)&gInstructions[ 3331]  // VMOVUPS Vx,Wx
 };
 
 const ND_TABLE_EX_PP gVexMap_mmmmm_01_opcode_10_pp = 

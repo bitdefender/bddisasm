@@ -151,11 +151,11 @@ NdFetchXop(
         Instrux->Xop.Xop[2] = Code[Offset + 2];
 
         Instrux->Exs.w = Instrux->Xop.w;
-        Instrux->Exs.r = ~Instrux->Xop.r;
-        Instrux->Exs.x = ~Instrux->Xop.x;
-        Instrux->Exs.b = ~Instrux->Xop.b;
+        Instrux->Exs.r = (ND_UINT32)~Instrux->Xop.r;
+        Instrux->Exs.x = (ND_UINT32)~Instrux->Xop.x;
+        Instrux->Exs.b = (ND_UINT32)~Instrux->Xop.b;
         Instrux->Exs.l = Instrux->Xop.l;
-        Instrux->Exs.v = ~Instrux->Xop.v;
+        Instrux->Exs.v = (ND_UINT32)~Instrux->Xop.v;
         Instrux->Exs.m = Instrux->Xop.m;
         Instrux->Exs.p = Instrux->Xop.p;
 
@@ -226,8 +226,8 @@ NdFetchVex2(
         Instrux->Vex2.Vex[1] = Code[Offset + 1];
 
         Instrux->Exs.m = 1; // For VEX2 instructions, always use the second table.
-        Instrux->Exs.r = ~Instrux->Vex2.r;
-        Instrux->Exs.v = ~Instrux->Vex2.v;
+        Instrux->Exs.r = (ND_UINT32)~Instrux->Vex2.r;
+        Instrux->Exs.v = (ND_UINT32)~Instrux->Vex2.v;
         Instrux->Exs.l = Instrux->Vex2.l;
         Instrux->Exs.p = Instrux->Vex2.p;
 
@@ -282,12 +282,12 @@ NdFetchVex3(
         Instrux->Vex3.Vex[1] = Code[Offset + 1];
         Instrux->Vex3.Vex[2] = Code[Offset + 2];
 
-        Instrux->Exs.r = ~Instrux->Vex3.r;
-        Instrux->Exs.x = ~Instrux->Vex3.x;
-        Instrux->Exs.b = ~Instrux->Vex3.b;
+        Instrux->Exs.r = (ND_UINT32)~Instrux->Vex3.r;
+        Instrux->Exs.x = (ND_UINT32)~Instrux->Vex3.x;
+        Instrux->Exs.b = (ND_UINT32)~Instrux->Vex3.b;
         Instrux->Exs.m = Instrux->Vex3.m;
         Instrux->Exs.w = Instrux->Vex3.w;
-        Instrux->Exs.v = ~Instrux->Vex3.v;
+        Instrux->Exs.v = (ND_UINT32)~Instrux->Vex3.v;
         Instrux->Exs.l = Instrux->Vex3.l;
         Instrux->Exs.p = Instrux->Vex3.p;
 
@@ -363,29 +363,29 @@ NdFetchEvex(
         return ND_STATUS_INVALID_ENCODING;
     }
 
-    // APX not enabled, legacy EVEX prefix.
-    if (!(Instrux->FeatMode & ND_FEAT_APX))
+    // Check map. Maps 4 & 7 are allowed only if APX is enabled.
+    if (Instrux->Evex.m == 4 || Instrux->Evex.m == 7)
     {
-        // Map > 3 is for APX instructions. B4 must be 0, and X4 must be 1 if APX is not enabled.
-        if (Instrux->Evex.m > 3 || Instrux->Evex.b4 != 0 || Instrux->Evex.x4 != 1)
+        if (!(Instrux->FeatMode & ND_FEAT_APX))
         {
             return ND_STATUS_INVALID_ENCODING;
         }
     }
 
+
     // Fill in the generic extension bits. We initially optimistically fill in all possible values.
     // Once we determine the opcode and, subsequently, the EVEX extension mode, we will do further 
     // validations, and reset unused fields to 0.
-    Instrux->Exs.r = ~Instrux->Evex.r;
-    Instrux->Exs.x = ~Instrux->Evex.x;
-    Instrux->Exs.b = ~Instrux->Evex.b;
-    Instrux->Exs.rp = ~Instrux->Evex.rp;
+    Instrux->Exs.r = (ND_UINT32)~Instrux->Evex.r;
+    Instrux->Exs.x = (ND_UINT32)~Instrux->Evex.x;
+    Instrux->Exs.b = (ND_UINT32)~Instrux->Evex.b;
+    Instrux->Exs.rp = (ND_UINT32)~Instrux->Evex.rp;
+    Instrux->Exs.x4 = (ND_UINT32)~Instrux->Evex.u;
     Instrux->Exs.b4 = Instrux->Evex.b4;
-    Instrux->Exs.x4 = ~Instrux->Evex.x4;
     Instrux->Exs.m = Instrux->Evex.m;
     Instrux->Exs.w = Instrux->Evex.w;
-    Instrux->Exs.v = ~Instrux->Evex.v;
-    Instrux->Exs.vp = ~Instrux->Evex.vp;
+    Instrux->Exs.v = (ND_UINT32)~Instrux->Evex.v;
+    Instrux->Exs.vp = (ND_UINT32)~Instrux->Evex.vp;
     Instrux->Exs.p = Instrux->Evex.p;
 
     Instrux->Exs.z = Instrux->Evex.z;
@@ -393,7 +393,7 @@ NdFetchEvex(
     Instrux->Exs.bm = Instrux->Evex.bm;
     Instrux->Exs.k = Instrux->Evex.a;
 
-    // EVEX extensions.
+    // EVEX extensions. The fields are undefined if the encoding does not use them.
     Instrux->Exs.nf = (Instrux->Evex.Evex[3] >> 2) & 1;
     Instrux->Exs.nd = (Instrux->Evex.Evex[3] >> 4) & 1;
     Instrux->Exs.sc = (Instrux->Evex.Evex[3] & 0xF);
@@ -1333,10 +1333,17 @@ NdParseMemoryOperand3264(
             Operand->Info.Memory.BaseSize = defsize;
             Operand->Info.Memory.Base = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->Sib.base;
 
-            // If APX is present, extend the base.
-            if (Instrux->FeatMode & ND_FEAT_APX)
+            if (Instrux->Exs.b4 != 0)
             {
-                Operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
+                // If APX is present, extend the base.
+                if (Instrux->FeatMode & ND_FEAT_APX)
+                {
+                    Operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
+                }
+                else
+                {
+                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+                }
             }
 
             if ((Operand->Info.Memory.Base == NDR_RSP) || (Operand->Info.Memory.Base == NDR_RBP))
@@ -1361,10 +1368,17 @@ NdParseMemoryOperand3264(
             // Regular SIB, index RSP is ignored. Bit 4 of the 32-bit index register is given by the X4 field.
             Operand->Info.Memory.Index = (ND_UINT8)(Instrux->Exs.x << 3) | Instrux->Sib.index;
 
-            // If APX is present, extend the index.
-            if (Instrux->FeatMode & ND_FEAT_APX)
+            if (Instrux->Exs.x4 != 0)
             {
-                Operand->Info.Memory.Index |= Instrux->Exs.x4 << 4;
+                // If APX is present, extend the index.
+                if (Instrux->FeatMode & ND_FEAT_APX)
+                {
+                    Operand->Info.Memory.Index |= Instrux->Exs.x4 << 4;
+                }
+                else
+                {
+                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+                }
             }
 
             if (Operand->Info.Memory.Index != NDR_RSP)
@@ -1401,10 +1415,17 @@ NdParseMemoryOperand3264(
             Operand->Info.Memory.BaseSize = defsize;
             Operand->Info.Memory.Base = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->ModRm.rm;
 
-            // If APX is present, extend the base register.
-            if (Instrux->FeatMode & ND_FEAT_APX)
+            if (Instrux->Exs.b4 != 0)
             {
-                Operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
+                // If APX is present, extend the base register.
+                if (Instrux->FeatMode & ND_FEAT_APX)
+                {
+                    Operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
+                }
+                else
+                {
+                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+                }
             }
 
             if ((Operand->Info.Memory.Base == NDR_RSP) || (Operand->Info.Memory.Base == NDR_RBP))
@@ -2378,13 +2399,7 @@ NdParseOperand(
         operand->Encoding = ND_OPE_R;
         operand->Info.Register.Type = ND_REG_CR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.r << 3) | Instrux->ModRm.reg;
-
-        // If APX is present, use R4 as well.
-        if (Instrux->FeatMode & ND_FEAT_APX)
-        {
-            operand->Info.Register.Reg |= Instrux->Exs.rp << 4;
-        }
+        operand->Info.Register.Reg = (Instrux->Exs.rp << 4) | (Instrux->Exs.r << 3) | Instrux->ModRm.reg;
 
         // On some AMD processors, the presence of the LOCK prefix before MOV to/from control registers allows accessing
         // higher 8 control registers.
@@ -2411,13 +2426,7 @@ NdParseOperand(
         operand->Encoding = ND_OPE_R;
         operand->Info.Register.Type = ND_REG_DR;
         operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.r << 3) | Instrux->ModRm.reg;
-
-        // If APX is present, use R4 as well.
-        if (Instrux->FeatMode & ND_FEAT_APX)
-        {
-            operand->Info.Register.Reg |= Instrux->Exs.rp << 4;
-        }
+        operand->Info.Register.Reg = (Instrux->Exs.rp << 4) | (Instrux->Exs.r << 3) | Instrux->ModRm.reg;
 
         // Only DR0-DR7 valid.
         if (operand->Info.Register.Reg >= 8)
@@ -2481,9 +2490,16 @@ NdParseOperand(
         operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->ModRm.rm;
 
         // If APX is present, use B4 as well.
-        if (Instrux->FeatMode & ND_FEAT_APX)
+        if (Instrux->Exs.b4 != 0)
         {
-            operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
+            if (Instrux->FeatMode & ND_FEAT_APX)
+            {
+                operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
         }
 
         operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
@@ -2560,10 +2576,17 @@ NdParseOperand(
         operand->Info.Register.Size = (ND_REG_SIZE)size;
         operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->ModRm.rm;
 
-        // If APX is present, use B4 as well.
-        if (Instrux->FeatMode & ND_FEAT_APX)
+        if (Instrux->Exs.b4 != 0)
         {
-            operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
+            // If APX is present, use B4 as well.
+            if (Instrux->FeatMode & ND_FEAT_APX)
+            {
+                operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
         }
 
         operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
@@ -2985,6 +3008,18 @@ memory:
         operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
         break;
 
+    case ND_OPT_pBP:
+        // [sBP], used implicitly by ENTER, when nesting level is > 1.
+        // Operand size bytes accessed from memory. Base reg size determined by stack address size attribute.
+        Instrux->MemoryAccess |= operand->Access.Access;
+        operand->Type = ND_OP_MEM;
+        operand->Info.Memory.HasBase = ND_TRUE;
+        operand->Info.Memory.BaseSize = 2 << Instrux->DefStack;
+        operand->Info.Memory.Base = NDR_RBP;            // Always rBP.
+        operand->Info.Memory.HasSeg = ND_TRUE;
+        operand->Info.Memory.Seg = NDR_SS;
+        break;
+
     case ND_OPT_SHS:
         // Shadow stack access using the current SSP.
         Instrux->MemoryAccess |= operand->Access.Access;
@@ -3037,10 +3072,17 @@ memory:
         operand->Info.Register.Size = (ND_REG_SIZE)size;
         operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.b << 3) | (Instrux->PrimaryOpCode & 0x7);
 
-        // If APX is present, extend the register.
-        if (Instrux->FeatMode & ND_FEAT_APX)
+        if (Instrux->Exs.b4 != 0)
         {
-            operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
+            // If APX is present, extend the register.
+            if (Instrux->FeatMode & ND_FEAT_APX)
+            {
+                operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
         }
 
         operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
@@ -3150,10 +3192,17 @@ memory:
         operand->Info.Memory.HasBase = ND_TRUE;
         operand->Info.Memory.Base = (ND_UINT8)((Instrux->Exs.r << 3) | Instrux->ModRm.reg);
 
-        // If APX is present, extend the base register.
-        if (Instrux->FeatMode & ND_FEAT_APX)
+        if (Instrux->Exs.rp != 0)
         {
-            operand->Info.Memory.Base |= Instrux->Exs.rp << 4;
+            // If APX is present, extend the base register.
+            if (Instrux->FeatMode & ND_FEAT_APX)
+            {
+                operand->Info.Memory.Base |= Instrux->Exs.rp << 4;
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
         }
 
         operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
@@ -3168,10 +3217,17 @@ memory:
         operand->Info.Memory.HasBase = ND_TRUE;
         operand->Info.Memory.Base = (ND_UINT8)((Instrux->Exs.b << 3) | Instrux->ModRm.rm);
 
-        // If APX is present, extend the base register.
-        if (Instrux->FeatMode & ND_FEAT_APX)
+        if (Instrux->Exs.b4 != 0)
         {
-            operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
+            // If APX is present, extend the base register.
+            if (Instrux->FeatMode & ND_FEAT_APX)
+            {
+                operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
         }
 
         operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
@@ -3188,18 +3244,9 @@ memory:
         operand->Info.Register.Reg = Instrux->ModRm.reg;
 
         // #UD if a tile register > 7 is encoded.
-        if (Instrux->Exs.r != 0)
+        if (Instrux->Exs.r != 0 || Instrux->Exs.rp != 0)
         {
             return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        // #UD of R4 is not 0.
-        if (Instrux->FeatMode & ND_FEAT_APX)
-        {
-            if (Instrux->Exs.rp != 0)
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
         }
 
         break;
@@ -3213,18 +3260,9 @@ memory:
         operand->Info.Register.Reg = Instrux->ModRm.rm;
 
         // #UD if a tile register > 7 is encoded.
-        if (Instrux->Exs.b != 0)
+        if (Instrux->Exs.b != 0 || Instrux->Exs.b4 != 0)
         {
             return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        // #UD of B4 is not 0.
-        if (Instrux->FeatMode & ND_FEAT_APX)
-        {
-            if (Instrux->Exs.b4 != 0)
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
         }
 
         break;
@@ -3238,18 +3276,9 @@ memory:
         operand->Info.Register.Reg = Instrux->Exs.v;
 
         // #UD if a tile register > 7 is encoded.
-        if (operand->Info.Register.Reg > 7)
+        if (operand->Info.Register.Reg > 7 || Instrux->Exs.vp != 0)
         {
             return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        // #UD of V4 is not 0.
-        if (Instrux->FeatMode & ND_FEAT_APX)
-        {
-            if (Instrux->Exs.vp != 0)
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
         }
 
         break;
@@ -3278,7 +3307,7 @@ memory:
         if (opb != 0)
         {
             operand->Info.Register.Count = opb;
-            operand->Info.Register.Reg &= ~(opb - 1);
+            operand->Info.Register.Reg &= (ND_UINT32)~(opb - 1);
             operand->Info.Register.IsBlock = ND_TRUE;
         }
         else
@@ -3894,10 +3923,18 @@ NdGetVectorLength(
             (Instrux->TupleType == ND_TUPLE_T1S16) ||
             (Instrux->TupleType == ND_TUPLE_T1F))
         {
+            // Scalar instruction, vector length is 128 bits.
             Instrux->VecMode = Instrux->EfVecMode = ND_VECM_128;
+        }
+        else if (Instrux->Evex.u == 0)
+        {
+            // AVX 10 allows SAE/ER for 256-bit vector length, if EVEX.U is 0.
+            // It is unclear whether the EVEX.U bit is ignored or reserved for scalar instructions.
+            Instrux->VecMode = Instrux->EfVecMode = ND_VECM_256;
         }
         else
         {
+            // Legacy or AVX 10 instruction with U bit set, vector length is 512 bits.
             Instrux->VecMode = Instrux->EfVecMode = ND_VECM_512;
         }
 
@@ -4055,6 +4092,12 @@ NdGetEvexFields(
     // Validate the EVEX prefix, depending on the EVEX extension mode.
     if (Instrux->EvexMode == ND_EVEXM_EVEX)
     {
+        // EVEX.U field must be 1 if the Modrm.Mod is not reg-reg OR if EVEX.b is 0.
+        if (Instrux->Evex.u != 1 && (Instrux->ModRm.mod != 3 || Instrux->Exs.bm == 0))
+        {
+            return ND_STATUS_BAD_EVEX_U;
+        }
+
         // Handle embedded broadcast/rounding-control.
         if (Instrux->Exs.bm == 1)
         {
@@ -4171,6 +4214,12 @@ NdGetEvexFields(
         if (0 != (Instrux->Evex.Evex[3] & b3mask[Instrux->EvexMode]))
         {
             return ND_STATUS_INVALID_EVEX_BYTE3;
+        }
+
+        // EVEX.U field must be 1 if mod is reg-reg.
+        if (Instrux->Evex.u != 1 && Instrux->ModRm.mod == 3)
+        {
+            return ND_STATUS_BAD_EVEX_U;
         }
 
         if (Instrux->ValidDecorators.Nd)

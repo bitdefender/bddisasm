@@ -291,6 +291,7 @@ valid_impops = {# register      size
     'pBXALb'   : ('pBXAL',      'b'),   # Implicit [RBX + AL], as used by XLAT.
     'pDIq'     : ('pDI',        'q'),   # Implicit qword [RDI].
     'pDIdq'    : ('pDI',        'dq'),  # Implicit xmmword [RDI].
+    'pBP'      : ('pBP',        'v'),   # Implicit operand size loaded from [RBP]. RBP is subject to stack address size.
 
     # Implicit shadow stack accesses.
     'SHS'      : ('SHS',        'q'),   # Shadow stack (SSP) implicit access, 1 qword (use by CET instructions).

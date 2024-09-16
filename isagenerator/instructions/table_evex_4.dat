@@ -776,27 +776,27 @@ PUSH2            ; Bv,Rv        ; Kv2           ; evex m:4 l:0 nd:1 nf:0 p:0 w:0
 PUSH2P           ; Bv,Rv        ; Kv2           ; evex m:4 l:0 nd:1 nf:0 p:0 w:1 0xFF /6:reg    ; s:APX_F, t:PUSH, w:R|R|W, v:legacy, e:APX_EVEX_PP2, a:D64
 
 
-# AES instructions.
-ENCODEKEY128        ; Gd,Rd       ; XMM0,XMM0-2,XMM4-6,Fv ; evex m:4 l:0 p:2 nd:0 nf:0 0xDA /r:reg    ; s:APX_F, t:AESKL, w:W|R|R|W|W|W, f:ZERO, e:APX_EVEX_KEYLOCKER, v:legacy
-ENCODEKEY256        ; Gd,Rd       ; XMM0-1,XMM2-6,Fv      ; evex m:4 l:0 p:2 nd:0 nf:0 0xDB /r:reg    ; s:APX_F, t:AESKL, w:W|R|RW|W|W,  f:ZERO, e:APX_EVEX_KEYLOCKER, v:legacy
-AESDEC128KL         ; Vdq,M384    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDD /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESDEC256KL         ; Vdq,M512    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDF /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESENCWIDE128KL     ; M384        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /0:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESDECWIDE128KL     ; M384        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /1:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESENCWIDE256KL     ; M512        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /2:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESDECWIDE256KL     ; M512        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /3:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESENC128KL         ; Vdq,M384    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDC /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
-AESENC256KL         ; Vdq,M512    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDE /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+# AES instructions. Were included in initial APX revisions, later removed in revision 4.0.
+#ENCODEKEY128        ; Gd,Rd       ; XMM0,XMM0-2,XMM4-6,Fv ; evex m:4 l:0 p:2 nd:0 nf:0 0xDA /r:reg    ; s:APX_F, t:AESKL, w:W|R|R|W|W|W, f:ZERO, e:APX_EVEX_KEYLOCKER, v:legacy
+#ENCODEKEY256        ; Gd,Rd       ; XMM0-1,XMM2-6,Fv      ; evex m:4 l:0 p:2 nd:0 nf:0 0xDB /r:reg    ; s:APX_F, t:AESKL, w:W|R|RW|W|W,  f:ZERO, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESDEC128KL         ; Vdq,M384    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDD /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESDEC256KL         ; Vdq,M512    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDF /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESENCWIDE128KL     ; M384        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /0:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESDECWIDE128KL     ; M384        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /1:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESENCWIDE256KL     ; M512        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /2:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESDECWIDE256KL     ; M512        ; XMM0-7,Fv   ; evex m:4 l:0 p:2 nd:0 nf:0 0xD8 /3:mem        ; s:APX_F, t:WIDE_KL, w:R|RW|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESENC128KL         ; Vdq,M384    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDC /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
+#AESENC256KL         ; Vdq,M512    ; Fv          ; evex m:4 l:0 p:2 nd:0 nf:0 0xDE /r:mem        ; s:APX_F, t:AESKL,   w:RW|R|W, f:AESKL, e:APX_EVEX_KEYLOCKER, v:legacy
 
 
-# SHA instructions.
-SHA1RNDS4           ; Vdq,Wdq,Ib  ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xD4 /r ib         ; s:APX_F, t:SHA, w:RW|R|R, e:APX_EVEX_SHA, v:legacy
-SHA1NEXTE           ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xD8 /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
-SHA1MSG1            ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xD9 /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
-SHA1MSG2            ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xDA /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
-SHA256MSG1          ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xDC /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
-SHA256MSG2          ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xDD /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
-SHA256RNDS2         ; Vdq,Wdq     ; XMM0        ; evex m:4 l:0 p:0 nd:0 nf:0 0xDB /r            ; s:APX_F, t:SHA, w:RW|R|R, e:APX_EVEX_SHA, v:legacy
+# SHA instructions. Were included in initial APX revisions, later removed in revision 4.0.
+#SHA1RNDS4           ; Vdq,Wdq,Ib  ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xD4 /r ib         ; s:APX_F, t:SHA, w:RW|R|R, e:APX_EVEX_SHA, v:legacy
+#SHA1NEXTE           ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xD8 /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
+#SHA1MSG1            ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xD9 /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
+#SHA1MSG2            ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xDA /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
+#SHA256MSG1          ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xDC /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
+#SHA256MSG2          ; Vdq,Wdq     ;             ; evex m:4 l:0 p:0 nd:0 nf:0 0xDD /r            ; s:APX_F, t:SHA, w:RW|R,   e:APX_EVEX_SHA, v:legacy
+#SHA256RNDS2         ; Vdq,Wdq     ; XMM0        ; evex m:4 l:0 p:0 nd:0 nf:0 0xDB /r            ; s:APX_F, t:SHA, w:RW|R|R, e:APX_EVEX_SHA, v:legacy
 
 
 # INVEPT, INVPCID, INVVPID

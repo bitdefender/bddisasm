@@ -49,6 +49,7 @@ typedef ND_UINT32 NDSTATUS;
 #define ND_STATUS_INVALID_TILE_REGS                     0x80000043 // Tile registers are not unique.
 #define ND_STATUS_INVALID_DEST_REGS                     0x80000044 // Destination register is not unique (used as src).
 #define ND_STATUS_INVALID_EVEX_BYTE3                    0x80000045 // EVEX payload byte 3 is invalid.
+#define ND_STATUS_BAD_EVEX_U                            0x80000046 // EVEX.U field is invalid.
 
 
 // Not encoding specific.

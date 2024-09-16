@@ -347,24 +347,25 @@ typedef ND_UINT32 ND_REG_SIZE;
 // Misc macros.
 //
 
+// NOTE: Macros that accept a size (in bytes) are undefined if the size is not in the interval [1, 8].
+
 // Sign extend 8 bit to 64 bit.
-#define ND_SIGN_EX_8(x)             (((x) & 0x00000080) ? (0xFFFFFFFFFFFFFF00 | (x)) : ((x) & 0xFF))
+#define ND_SIGN_EX_8(x)             ND_SIGN_EX(1, x)
 // Sign extend 16 bit to 64 bit.
-#define ND_SIGN_EX_16(x)            (((x) & 0x00008000) ? (0xFFFFFFFFFFFF0000 | (x)) : ((x) & 0xFFFF))
+#define ND_SIGN_EX_16(x)            ND_SIGN_EX(2, x)
 // Sign extend 32 bit to 64 bit.
-#define ND_SIGN_EX_32(x)            (((x) & 0x80000000) ? (0xFFFFFFFF00000000 | (x)) : ((x) & 0xFFFFFFFF))
-// Sign extend to 64 bit, with minimal branches
-#define ND_SIGN_EX(sz, x)           (((x) & ND_SIZE_TO_MASK(sz)) | (~ND_SIZE_TO_MASK(sz) * ND_GET_SIGN(sz, x)))
+#define ND_SIGN_EX_32(x)            ND_SIGN_EX(4, x)
+// Sign extend sz bytes to 64 bits.
+#define ND_SIGN_EX(sz, x)           ((((ND_UINT64)(x)) & ND_SIZE_TO_MASK(sz)) | (~ND_SIZE_TO_MASK(sz) * ND_GET_SIGN(sz, x)))
 
 // Trim 64 bits to sz bytes.
-#define ND_TRIM(sz, x)              ((sz) == 1 ? (x) & 0xFF : (sz) == 2 ? (x) & 0xFFFF :                            \
-                                     (sz) == 4 ? (x) & 0xFFFFFFFF : (x))
+#define ND_TRIM(sz, x)              ((ND_UINT64)(x) & ND_SIZE_TO_MASK(sz))
 // Returns most significant bit, given size in bytes sz.
-#define ND_MSB(sz, x)               (((x) >> ( (sz) * 8 - 1)) & 1)
+#define ND_MSB(sz, x)               ((((x)) >> (((sz) * 8) - 1)) & 1)
 // Returns least significant bit.
 #define ND_LSB(sz, x)               ((x) & 1)
 // Convert a size in bytes to a bitmask.
-#define ND_SIZE_TO_MASK(sz)         (((sz) < 8) ? ((1ULL << ((sz) * 8)) - 1) : (0xFFFFFFFFFFFFFFFF))
+#define ND_SIZE_TO_MASK(sz)         (0xFFFFFFFFFFFFFFFFull >> ((8 - (sz)) * 8))
 // Get bit at position bit from x.
 #define ND_GET_BIT(bit, x)          (((x) >> (bit)) & 1)
 // Return the sign of sz bytes long value x.
@@ -373,12 +374,12 @@ typedef ND_UINT32 ND_REG_SIZE;
 #define ND_SET_SIGN(sz, x)          ND_SIGN_EX(sz, x)
 
 
-#define ND_FETCH_64(b)              (((ND_UINT64)ND_FETCH_32((const ND_UINT8 *)(b))) | \
-                                    (((ND_UINT64)ND_FETCH_32((const ND_UINT8 *)(b) + 4) << 32)))
-#define ND_FETCH_32(b)              (((ND_UINT32)ND_FETCH_16((const ND_UINT8 *)(b))) | \
-                                    (((ND_UINT32)ND_FETCH_16((const ND_UINT8 *)(b) + 2) << 16)))
-#define ND_FETCH_16(b)              (((ND_UINT16)ND_FETCH_8 ((const ND_UINT8 *)(b))) | \
-                                    (((ND_UINT16)ND_FETCH_8 ((const ND_UINT8 *)(b) + 1) << 8)))
+#define ND_FETCH_64(b)              ((ND_UINT64)(((ND_UINT64)ND_FETCH_32((const ND_UINT8 *)(b))) | \
+                                    (((ND_UINT64)ND_FETCH_32((const ND_UINT8 *)(b) + 4) << 32))))
+#define ND_FETCH_32(b)              ((ND_UINT32)(((ND_UINT32)ND_FETCH_16((const ND_UINT8 *)(b))) | \
+                                    (((ND_UINT32)ND_FETCH_16((const ND_UINT8 *)(b) + 2) << 16))))
+#define ND_FETCH_16(b)              ((ND_UINT16)(((ND_UINT16)ND_FETCH_8 ((const ND_UINT8 *)(b))) | \
+                                    (((ND_UINT16)ND_FETCH_8 ((const ND_UINT8 *)(b) + 1) << 8))))
 #define ND_FETCH_8(b)               (*((const ND_UINT8 *)(b)))
 
 
@@ -956,7 +957,7 @@ typedef union _ND_SIB
 } ND_SIB;
 
 //
-// 2-bytes VEX. Exactly as Intel defined it.
+// 2-bytes VEX prefix.
 //
 typedef union _ND_VEX2
 {
@@ -972,9 +973,8 @@ typedef union _ND_VEX2
     };
 } ND_VEX2;
 
-
 //
-// 3-bytes VEX. Exactly as Intel defined it.
+// 3-bytes VEX prefix.
 //
 typedef union _ND_VEX3
 {
@@ -995,9 +995,8 @@ typedef union _ND_VEX3
     };
 } ND_VEX3;
 
-
 //
-// XOP. Exactly as AMD defined it.
+// XOP prefix.
 //
 typedef union _ND_XOP
 {
@@ -1018,9 +1017,8 @@ typedef union _ND_XOP
     };
 } ND_XOP;
 
-
 //
-// EVEX prefix. Exactly as Intel defined it.
+// EVEX prefix.
 //
 typedef union _ND_EVEX
 {
@@ -1037,7 +1035,7 @@ typedef union _ND_EVEX
         ND_UINT8    r : 1;      // ~R or ~R3
 
         ND_UINT8    p : 2;      // p0, p1
-        ND_UINT8    x4 : 1;     // ~X4 (repurposed from a hard-coded 1 bit).
+        ND_UINT8    u : 1;      // ~U (repurposed from a hard-coded 1 bit).
         ND_UINT8    v : 4;      // ~v0, ~v1, ~v2, ~v3
         ND_UINT8    w : 1;      // W
 

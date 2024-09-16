@@ -113,3 +113,6 @@ ZERO        : CF=0|PF=0|AF=0|ZF=0|SF=0|OF=0
 
 # UINTR flags access, as done by TESTUI.
 UINTR       : CF=m|PF=0|AF=0|ZF=0|SF=0|OF=0
+
+# AVX 10.2 Compare Scalar FP With Enhanced EFLAGS
+CMPSFP      : CF=m|PF=m|AF=0|ZF=m|SF=m|OF=m

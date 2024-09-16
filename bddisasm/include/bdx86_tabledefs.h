@@ -459,6 +459,7 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_pCX,         // [rCX]
     ND_OPT_pBXAL,       // [rBX + AL]
     ND_OPT_pDI,         // [rDI]
+    ND_OPT_pBP,         // [rBP]
     ND_OPT_SHS,         // Shadow stack.
     ND_OPT_SHSP,        // Shadow stack pointed by the SSP.
     ND_OPT_SHS0,        // Shadow stack pointed by the SSP.
