@@ -51,7 +51,10 @@ jobs:
       run: python3 ./tests/main.py --disasm ./build/${{ matrix.preset }}/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
     - name: Install
       if: ${{ matrix.preset == 'release' }}
-      run: make -f ./build/${{ matrix.preset }} install
+      run: |
+        cd ./build/${{ matrix.preset }}
+        make install
+        cd -
     - name: Build pybddisasm
       if: ${{ matrix.preset == 'release' }}
       run: |
