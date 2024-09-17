@@ -38,7 +38,10 @@ jobs:
     - name: Configure CMake
       run: cmake --preset ${{ matrix.preset }} -DCMAKE_INSTALL_PREFIX=/usr
     - name: Build
-      run: make -f ./build/${{ matrix.preset }} -j$(nproc)
+      run: |
+        cd ./build/${{ matrix.preset }}
+        make -j$(nproc) 
+        cd -
     - name: Test bddisasm
       run: python3 ./tests/main.py --disasm ./build/${{ matrix.preset }}/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
     - name: Test bdshemu
@@ -56,20 +59,23 @@ jobs:
         cd -
     - name: Create package
       if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
-      run: make -f ./build/${{ matrix.preset }} package
+      run: |
+        cd ./build/${{ matrix.preset }}
+        make package
+        cd -
     - name: Attest Build Provenance
       if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       uses: actions/attest-build-provenance@v1.1.0
       with:
         subject-path: |
-          build/release/disasmtool/disasmtool
-          build/release/*.a
-          build/release/*.deb
+          build/${{ matrix.preset }}/disasmtool/disasmtool
+          build/${{ matrix.preset }}/*.a
+          build/${{ matrix.preset }}/*.deb
     - name: Release
       if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       uses: AButler/upload-release-assets@v3.0
       with:
-        files: 'build/release/*.deb'
+        files: 'build/${{ matrix.preset }}/*.deb'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   Windows-msbuild:
