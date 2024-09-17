@@ -25,7 +25,8 @@ class Diff(object):
                     ]
                     self._diff.append(result)
             else:
-                result = [" - KEY %s : " % (key), " + KEY %s : " % (key)]
+                result = [" - KEY %s : %s" % (key, dict1[key]), " + KEY %s : " % (key)]
+                self._diff.append(result)
 
     def diffobj(self, actual: object, expected: object) -> list:
         """
@@ -33,11 +34,11 @@ class Diff(object):
         """
         self._diff.clear()
         if len(actual) != len(expected):
-            self._diff.append("invalid dimensions")
-            return None
-
-        for it in range(0, len(actual)):
-            self.diff(actual[it]._data, expected[it]._data)
+            result = [" - ACTUAL DIM = %d" % (len(actual)), "+ EXPECTED DIM = %d" % (len(expected))]
+            self._diff.append(result)
+        else:
+            for it in range(0, len(actual)):
+                self.diff(actual[it]._data, expected[it]._data)
 
         if self._diff:
             for elem in self._diff:

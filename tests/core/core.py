@@ -150,7 +150,10 @@ class Core(object):
         ldiff = list()
         diffobj = diff.Diff()
         for it in range(0, len(outresult)):
-            ldiff.append(diffobj.diffobj(outresult[it], outtest[it]))
+            td = diffobj.diffobj(outresult[it], outtest[it])
+            ldiff.append(td[:])
+            td = diffobj.diffobj(outtest[it], outresult[it])
+            ldiff.append(td[:])
 
         result = result.replace("\r", "")
         subprocess = subresult.replace("\r", "")
