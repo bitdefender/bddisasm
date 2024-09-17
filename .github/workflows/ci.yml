@@ -53,7 +53,7 @@ jobs:
       if: ${{ matrix.preset == 'release' }}
       run: |
         cd ./build/${{ matrix.preset }}
-        make install
+        sudo make install
         cd -
     - name: Build pybddisasm
       if: ${{ matrix.preset == 'release' }}
