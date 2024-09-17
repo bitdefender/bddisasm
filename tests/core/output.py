@@ -100,7 +100,7 @@ class OutputShemu(OutputParser):
         for line in data.split("\n"):
             if line.startswith("Emulation ") or "SHEMU" in line:
                 continue
-            if re.search("^PC:", line) or re.search("^IP:", line):
+            if re.search(r"^\s*\wAX =", line) or re.search("^\s*X0\s*= ", line):
                 if local:
                     local = local.replace("\r", "")
                     ostr.append(local)
