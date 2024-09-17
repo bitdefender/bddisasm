@@ -39,7 +39,7 @@ jobs:
       run: |
         mkdir build_sanitizers
         cd build_sanitizers
-        cmke .. -DCMAKE_BUILD_TYPE=Debug -DBDD_ASAN=ON -DBDD_UBSAN=ON
+        camke .. -DCMAKE_BUILD_TYPE=Debug -DBDD_ASAN=ON -DBDD_UBSAN=ON
         make -j$(nproc)
         cd -
     - name: Test disasm
