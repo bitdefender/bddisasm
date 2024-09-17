@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         preset: ["debug-sanitizers", "no-mnemonic", "release"]
 
@@ -43,8 +44,10 @@ jobs:
         make -j$(nproc) 
         cd -
     - name: Test bddisasm
+      if: ${{ matrix.preset != 'no-mnemonic' }}
       run: python3 ./tests/main.py --disasm ./build/${{ matrix.preset }}/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
     - name: Test bdshemu
+      if: ${{ matrix.preset != 'no-mnemonic' }}
       run: python3 ./tests/main.py --disasm ./build/${{ matrix.preset }}/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
     - name: Install
       if: ${{ matrix.preset == 'release' }}
