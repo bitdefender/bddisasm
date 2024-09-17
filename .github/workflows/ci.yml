@@ -173,13 +173,13 @@ jobs:
       run: |
         mkdir build
         cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Release
+        cmake .. -DCMAKE_BUILD_TYPE=Release -DBDD_ASAN=ON -DBDD_UBSAN=ON
         make -j$(nproc)
         cd -
     - name: Test bddisasm
-      run: python3 ./tests/main.py --disasm ./build_sanitizers/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
+      run: python3 ./tests/main.py --disasm ./build/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
     - name: Test bdshemu
-      run: python3 ./tests/main.py --disasm ./build_sanitizers/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
+      run: python3 ./tests/main.py --disasm ./build/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
 
   Code-checks:
 
