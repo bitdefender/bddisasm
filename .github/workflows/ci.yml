@@ -67,7 +67,7 @@ jobs:
       if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       run: |
         cd ./build/${{ matrix.preset }}
-        make package
+        sudo make package
         cd -
     - name: Attest Build Provenance
       if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
