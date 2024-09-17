@@ -7,8 +7,6 @@ on:
       - '*.md'
       - 'docs/**'
       - 'isagenerator/**'
-      - 'bddisasm_test/**'
-      - 'bdshemu_test/**'
       - 'LICENSE'
   pull_request:
     branches: [ master ]
@@ -16,8 +14,6 @@ on:
       - '*.md'
       - 'docs/**'
       - 'isagenerator/**'
-      - 'bddisasm_test/**'
-      - 'bdshemu_test/**'
       - 'LICENSE'
   release:
     types: [published]
@@ -28,6 +24,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: ["debug-sanitizers", "no-mnemonic", "release"]
+
     permissions:
       attestations: write
       id-token: write
@@ -35,46 +36,52 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build all
+    - name: Configure CMake
+      run: cmake --preset ${{ matrix.preset }} -DCMAKE_INSTALL_PREFIX=/usr
+    - name: Build
       run: |
-        mkdir build
-        cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-        make -j$(nproc)
+        cd ./build/${{ matrix.preset }}
+        make -j$(nproc) 
         cd -
+    - name: Test bddisasm
+      if: ${{ matrix.preset != 'no-mnemonic' }}
+      run: python3 ./tests/main.py --disasm ./build/${{ matrix.preset }}/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
+    - name: Test bdshemu
+      if: ${{ matrix.preset != 'no-mnemonic' }}
+      run: python3 ./tests/main.py --disasm ./build/${{ matrix.preset }}/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
     - name: Install
+      if: ${{ matrix.preset == 'release' }}
       run: |
-        cd build
+        cd ./build/${{ matrix.preset }}
         sudo make install
         cd -
-    - name: Install setuptools
+    - name: Build pybddisasm
+      if: ${{ matrix.preset == 'release' }}
       run: |
         python3 -m pip install --upgrade pip
         python3 -m pip install setuptools
-    - name: Build pybddisasm
-      run: |
         cd bindings/pybddisasm
         python3 setup.py build
         cd -
     - name: Create package
-      if: ${{ github.event_name == 'release' }}
+      if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       run: |
-        cd build
+        cd ./build/${{ matrix.preset }}
         sudo make package
         cd -
     - name: Attest Build Provenance
-      if: ${{ github.event_name == 'release' }}
+      if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       uses: actions/attest-build-provenance@v1.1.0
       with:
         subject-path: |
-          build/disasmtool/disasmtool
-          build/*.a
-          build/*.deb
+          build/${{ matrix.preset }}/disasmtool/disasmtool
+          build/${{ matrix.preset }}/*.a
+          build/${{ matrix.preset }}/*.deb
     - name: Release
-      if: ${{ github.event_name == 'release' }}
+      if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       uses: AButler/upload-release-assets@v3.0
       with:
-        files: 'build/*.deb'
+        files: 'build/${{ matrix.preset }}/*.deb'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   Windows-msbuild:
@@ -88,6 +95,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
     - name: Setup Windows SDK
@@ -98,6 +106,14 @@ jobs:
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
+    - name: Test bddisasm Win32
+      run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
+    - name: Test bdshemu Win32
+      run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
+    - name: Test bddisasm x64
+      run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
+    - name: Test bdshemu x64
+      run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
     - name: Zip binaries
       if: ${{ github.event_name == 'release' }}
       run: |
@@ -148,13 +164,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
     - name: Build all
       run: |
         mkdir build
         cd build
-        cmake .. -DCMAKE_BUILD_TYPE=Release
+        cmake .. -DCMAKE_BUILD_TYPE=Release -DBDD_ASAN=ON -DBDD_UBSAN=ON
         make -j$(nproc)
         cd -
+    - name: Test bddisasm
+      run: python3 ./tests/main.py --disasm ./build/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
+    - name: Test bdshemu
+      run: python3 ./tests/main.py --disasm ./build/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
 
   Code-checks:
 
