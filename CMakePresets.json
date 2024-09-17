@@ -1,0 +1,82 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "common-options",
+            "hidden": true,
+            "description": "Common options shared by all configurations",
+            "binaryDir": "${sourceDir}/build/${presetName}"
+        },
+        {
+            "name": "asan",
+            "inherits": "common-options",
+            "description": "Enables ASAN",
+            "cacheVariables": {
+                "BDD_ASAN": {
+                    "type": "BOOL",
+                    "value": "ON"
+                }
+            }
+        },
+        {
+            "name": "ubsan",
+            "inherits": "common-options",
+            "description": "Enables UBSAN",
+            "cacheVariables": {
+                "BDD_UBSAN": {
+                    "type": "BOOL",
+                    "value": "ON"
+                }
+            }
+        },
+        {
+            "name": "debug-sanitizers",
+            "inherits": ["asan", "ubsan"],
+            "description": "Debug build with ASAN and UBSAN",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "no-mnemonic",
+            "inherits": "common-options",
+            "description": "Excludes mnemonics",
+            "cacheVariables": {
+                "BDD_NO_MNEMONIC": {
+                    "type": "BOOL",
+                    "value": "ON"
+                }
+            }
+        },
+
+        {
+            "name": "debug",
+            "inherits": "common-options",
+            "description": "Debug build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "inherits": "common-options",
+            "description": "Release build with LTO",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "BDD_LTO": {
+                    "type": "BOOL",
+                    "value": "ON"
+                }
+            }
+        }
+    ],
+    "buildPresets": [
+    ],
+    "testPresets": [
+    ]
+}
