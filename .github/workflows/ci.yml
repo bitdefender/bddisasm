@@ -111,13 +111,13 @@ jobs:
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
     - name: Test bddisasm Win32
-    - run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
+      run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
     - name: Test bdshemu Win32
-    - run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
+      run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
     - name: Test bddisasm x64
-    - run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
+      run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
     - name: Test bdshemu x64
-    - run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
+      run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
     - name: Zip binaries
       if: ${{ github.event_name == 'release' }}
       run: |
