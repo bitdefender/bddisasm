@@ -42,9 +42,9 @@ jobs:
         cmake .. -DCMAKE_BUILD_TYPE=Debug -DBDD_ASAN=ON -DBDD_UBSAN=ON
         make -j$(nproc)
         cd -
-    - name: Test disasm
+    - name: Test bddisasm
       run: python3 ./tests/main.py --disasm ./build_sanitizers/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
-    - name: Test shemu
+    - name: Test bdshemu
       run: python3 ./tests/main.py --disasm ./build_sanitizers/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
     - name: Build all
       run: |
@@ -99,6 +99,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
     - name: Setup Windows SDK
@@ -109,6 +110,14 @@ jobs:
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=x64 bddisasm.sln
     - name: Build bddisasm and bdshemu for Win32
       run: MSBuild /t:Rebuild /p:Configuration=Release /p:Platform=Win32 bddisasm.sln
+    - name: Test bddisasm Win32
+    - run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
+    - name: Test bdshemu Win32
+    - run: python3 tests\main.py --disasm bin\Win32\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
+    - name: Test bddisasm x64
+    - run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bddisasm_test\conf-x86.json
+    - name: Test bdshemu x64
+    - run: python3 tests\main.py --disasm bin\x64\Release\disasmtool.exe --conf bdshemu_test\conf-x86.json
     - name: Zip binaries
       if: ${{ github.event_name == 'release' }}
       run: |
@@ -159,6 +168,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
     - name: Build all
       run: |
         mkdir build
@@ -166,6 +176,10 @@ jobs:
         cmake .. -DCMAKE_BUILD_TYPE=Release
         make -j$(nproc)
         cd -
+    - name: Test bddisasm
+      run: python3 ./tests/main.py --disasm ./build_sanitizers/disasmtool/disasmtool --conf ./bddisasm_test/conf-x86.json
+    - name: Test bdshemu
+      run: python3 ./tests/main.py --disasm ./build_sanitizers/disasmtool/disasmtool --conf ./bdshemu_test/conf-x86.json
 
   Code-checks:
 
