@@ -88,7 +88,7 @@ void run_shemu(uint8_t *Data, size_t Size)
     }
 
     ctx.Intbuf = calloc(1, Size + 0x2000);
-    if (ctx.Stack == NULL)
+    if (ctx.Intbuf == NULL)
     {
         LOG("[-] Failed to allocate Intbuf!\n");
         abort();
