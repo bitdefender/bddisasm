@@ -36,19 +36,18 @@ Note that bddisasm will be run with the `-exi` option, in order to dump all poss
 # Configuration File
 The configuration file contains a list of entries that each describe a test.
 Each entry in the configuration file has the following structure:
-    ```
-    [
-    ...
-    {
-        "f_source": "path/to/file.asm",     # the path to .asm file
-        "f_result": "path/to/file.result",  # the path to .result file
-        "f_test": "path/to/file.test",      # the path to .test file
-        "options": "disasmtool option",     # options for disasmtool
-        "command": "disasmtool command"     # command for disasmtool (decode/shemu)
-    }
-    ...
-    ]
-
-    ```
+```
+[
+...
+{
+    "f_source": "path/to/file.asm",     # the path to .asm file
+    "f_result": "path/to/file.result",  # the path to .result file
+    "f_test": "path/to/file.test",      # the path to .test file
+    "options": "disasmtool option",     # options for disasmtool
+    "command": "disasmtool command"     # command for disasmtool (decode/shemu)
+}
+...
+]
+```
 
 NOTE: The paths in the configuration file are relative to it.
