@@ -1793,13 +1793,6 @@ ShemuX86Emulate(
         nd_memzero(&dst, sizeof(dst));
         nd_memzero(&src, sizeof(src));
 
-        // The stop flag has been set, this means we've reached a valid instruction, but that instruction cannot be
-        // emulated (for example, SYSCALL, INT, system instructions, etc).
-        if (stop)
-        {
-            return SHEMU_ABORT_CANT_EMULATE;
-        }
-
         // If we already have a detection and we wish to stop on detections, do so now.
         if ((0 != Context->Flags) && (0 != (Context->Options & SHEMU_OPT_STOP_ON_EXPLOIT)))
         {
@@ -1942,7 +1935,7 @@ ShemuX86Emulate(
                 }
             }
 
-            continue;
+            goto post_emulate;
         }
 
         // This flag can only be set for APX instructions.
@@ -3556,6 +3549,14 @@ check_far_branch:
             return SHEMU_ABORT_INSTRUX_NOT_SUPPORTED;
 
             break;
+        }
+
+post_emulate:
+        // The stop flag has been set, this means we've reached a valid instruction, but that instruction cannot be
+        // emulated (for example, SYSCALL, INT, system instructions, etc).
+        if (stop)
+        {
+            return SHEMU_ABORT_CANT_EMULATE;
         }
     }
 
