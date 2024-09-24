@@ -40,5 +40,5 @@ IP: 0x0000000000200007  48032C24                        ADD       rbp, qword ptr
         R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
         RIP = 0x000000000020000b RFLAGS = 0x0000000000000206   CF:0 PF:1 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
 IP: 0x000000000020000b  CC                              INT3
-Emulation terminated with status 0x0000000a, flags: 0x2, 0 NOPs, 0 NULLs, 5 total instructions, 4 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x2, 0 NOPs, 0 NULLs, 4 total instructions, 4 unique instructions
         SHEMU_FLAG_LOAD_RIP

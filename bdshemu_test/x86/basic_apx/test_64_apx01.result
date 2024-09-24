@@ -89,4 +89,4 @@ IP: 0x000000000020002d  D5668A34FA                      MOV       r30b, byte ptr
         R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x00000000000000bd R31 = 0x0000000000000001
         RIP = 0x0000000000200032 RFLAGS = 0x0000000000000202   CF:0 PF:0 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
 IP: 0x0000000000200032  CC                              INT3
-Emulation terminated with status 0x0000000a, flags: 0x0, 0 NOPs, 0 NULLs, 10 total instructions, 9 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x0, 0 NOPs, 0 NULLs, 9 total instructions, 9 unique instructions

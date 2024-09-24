@@ -68,4 +68,4 @@ IP: 0x000000000020000d  89C8                            MOV       eax, ecx
         R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
         RIP = 0x000000000020000f RFLAGS = 0x0000000000000247   CF:1 PF:1 AF:0 ZF:1 SF:0 TF:0 IF:1 DF:0 OF:0
 IP: 0x000000000020000f  CC                              INT3
-Emulation terminated with status 0x0000000a, flags: 0x0, 0 NOPs, 0 NULLs, 8 total instructions, 7 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x0, 0 NOPs, 0 NULLs, 7 total instructions, 7 unique instructions

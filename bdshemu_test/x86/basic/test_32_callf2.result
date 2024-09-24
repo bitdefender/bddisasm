@@ -62,6 +62,6 @@ IP: 0x000000000020000f  89851C000000                    MOV       dword ptr [ebp
         RIP = 0x0000000000200015 RFLAGS = 0x0000000000000206   CF:0 PF:1 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
 IP: 0x0000000000200015  FF9D1C000000                    CALLF     fword ptr [ebp+0x1c]
         Memory LOAD, address 0x000000000020001c, size 6, value 1B0020003300
-Emulation terminated with status 0x0000000a, flags: 0x82, 0 NOPs, 0 NULLs, 7 total instructions, 6 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x82, 0 NOPs, 0 NULLs, 6 total instructions, 6 unique instructions
         SHEMU_FLAG_LOAD_RIP
         SHEMU_FLAG_HEAVENS_GATE

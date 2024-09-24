@@ -158,4 +158,4 @@ IP: 0x0000000000200015  14FE                            ADC       al, 0xfe
         R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
         RIP = 0x0000000000200017 RFLAGS = 0x0000000000000247   CF:1 PF:1 AF:0 ZF:1 SF:0 TF:0 IF:1 DF:0 OF:0
 IP: 0x0000000000200017  CC                              INT3
-Emulation terminated with status 0x0000000a, flags: 0x0, 0 NOPs, 0 NULLs, 17 total instructions, 16 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x0, 0 NOPs, 0 NULLs, 16 total instructions, 16 unique instructions

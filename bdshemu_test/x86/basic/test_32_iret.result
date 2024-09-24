@@ -54,5 +54,5 @@ IP: 0x0000000000200008  83042405                        ADD       dword ptr [esp
         RIP = 0x000000000020000c RFLAGS = 0x0000000000000202   CF:0 PF:0 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:0
 IP: 0x000000000020000c  CF                              IRETD
         Memory LOAD, address 0x00000000001fdff4, size 12, value 0D0020003300000002020000
-Emulation terminated with status 0x0000000a, flags: 0x80, 0 NOPs, 0 NULLs, 6 total instructions, 5 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x80, 0 NOPs, 0 NULLs, 5 total instructions, 5 unique instructions
         SHEMU_FLAG_HEAVENS_GATE
