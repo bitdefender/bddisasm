@@ -118,4 +118,4 @@ IP: 0x0000000000200021  69C200000001                    IMUL      eax, edx, 0x01
         R28 = 0x0000000000000000 R29 = 0x0000000000000000 R30 = 0x0000000000000000 R31 = 0x0000000000000000
         RIP = 0x0000000000200027 RFLAGS = 0x0000000000000a03   CF:1 PF:0 AF:0 ZF:0 SF:0 TF:0 IF:1 DF:0 OF:1
 IP: 0x0000000000200027  CC                              INT3
-Emulation terminated with status 0x0000000a, flags: 0x0, 1 NOPs, 0 NULLs, 13 total instructions, 12 unique instructions
+Emulation terminated with status 0x0000000a, flags: 0x0, 1 NOPs, 0 NULLs, 12 total instructions, 12 unique instructions
