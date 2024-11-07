@@ -22,7 +22,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! bddisasm = "0.5.0"
+//! bddisasm = "0.5.1"
 //! ```
 //!
 //! # Examples
@@ -186,7 +186,7 @@
 //! # Feature Flags
 //!
 //! - `std` - adds a `std` dependency - the only visible difference when doing this is that [`DecodeError`] implements
-//! the `Error` trait
+//!     the `Error` trait
 //!
 
 #![cfg_attr(all(not(test), not(feature = "std")), no_std)]
@@ -205,6 +205,7 @@ pub mod isa_set;
 pub mod mnemonic;
 pub mod operand;
 pub mod rflags;
+pub mod simd_exceptions;
 pub mod tuple;
 
 pub use crate::decode_error::DecodeError;
