@@ -3,8 +3,6 @@
 members = [
     "bddisasm-sys",
     "bddisasm",
-    "bdshemu-sys",
-    "bdshemu",
 ]
 
 [workspace.package]
