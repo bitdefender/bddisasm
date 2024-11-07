@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2024 Bitdefender
+# SPDX-License-Identifier: Apache-2.0
+#
+
+T2RPNTLVWZ0RS     ; rTt+1,Mt            ;                 ;  vex m:5 p:0 l:0 w:0 0xF8 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+T2RPNTLVWZ1RS     ; rTt+1,Mt            ;                 ;  vex m:5 p:1 l:0 w:0 0xF8 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+T2RPNTLVWZ0RST1   ; rTt+1,Mt            ;                 ;  vex m:5 p:0 l:0 w:0 0xF9 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+T2RPNTLVWZ1RST1   ; rTt+1,Mt            ;                 ;  vex m:5 p:1 l:0 w:0 0xF9 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+
+TDPBF8PS          ; rTt,mTt,vTt         ;                 ;  vex m:5 p:0 l:0 w:0 0xFD /r:reg        ; s:AMXFP8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPHF8PS          ; rTt,mTt,vTt         ;                 ;  vex m:5 p:1 l:0 w:0 0xFD /r:reg        ; s:AMXFP8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPHBF8PS         ; rTt,mTt,vTt         ;                 ;  vex m:5 p:2 l:0 w:0 0xFD /r:reg        ; s:AMXFP8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TDPBHF8PS         ; rTt,mTt,vTt         ;                 ;  vex m:5 p:3 l:0 w:0 0xFD /r:reg        ; s:AMXFP8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4

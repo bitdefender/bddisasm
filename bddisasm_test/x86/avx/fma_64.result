@@ -3,6 +3,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -21,6 +22,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -39,6 +41,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -57,6 +60,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -75,6 +79,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -93,6 +98,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -111,6 +117,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -129,6 +136,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -147,6 +155,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -165,6 +174,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -183,6 +193,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -201,6 +212,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -219,6 +231,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -237,6 +250,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -255,6 +269,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -273,6 +288,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -291,6 +307,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -309,6 +326,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -327,6 +345,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -345,6 +364,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -363,6 +383,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -381,6 +402,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -399,6 +421,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -417,6 +440,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -435,6 +459,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -453,6 +478,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -471,6 +497,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -489,6 +516,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -507,6 +535,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -525,6 +554,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -543,6 +573,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -561,6 +592,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -579,6 +611,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -597,6 +630,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -615,6 +649,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -633,6 +668,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -651,6 +687,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -669,6 +706,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -687,6 +725,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -705,6 +744,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -723,6 +763,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -741,6 +782,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -759,6 +801,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -777,6 +820,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -795,6 +839,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -813,6 +858,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -831,6 +877,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -849,6 +896,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -867,6 +915,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -885,6 +934,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -903,6 +953,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -921,6 +972,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -939,6 +991,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -957,6 +1010,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -975,6 +1029,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -993,6 +1048,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1011,6 +1067,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1029,6 +1086,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1047,6 +1105,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1065,6 +1124,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1083,6 +1143,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1102,6 +1163,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1121,6 +1183,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1140,6 +1203,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1159,6 +1223,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1178,6 +1243,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1197,6 +1263,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1216,6 +1283,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1235,6 +1303,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1254,6 +1323,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1273,6 +1343,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1292,6 +1363,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1311,6 +1383,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1330,6 +1403,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1349,6 +1423,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1368,6 +1443,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1387,6 +1463,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1406,6 +1483,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1425,6 +1503,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1444,6 +1523,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1463,6 +1543,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1482,6 +1563,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1501,6 +1583,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1520,6 +1603,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1539,6 +1623,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1558,6 +1643,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1577,6 +1663,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1596,6 +1683,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1615,6 +1703,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1634,6 +1723,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1653,6 +1743,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1672,6 +1763,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1691,6 +1783,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1710,6 +1803,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1729,6 +1823,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1748,6 +1843,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1767,6 +1863,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1786,6 +1883,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1805,6 +1903,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1824,6 +1923,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1843,6 +1943,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1862,6 +1963,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1881,6 +1983,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1900,6 +2003,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1919,6 +2023,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1938,6 +2043,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1957,6 +2063,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1976,6 +2083,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1995,6 +2103,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2014,6 +2123,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2033,6 +2143,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2052,6 +2163,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2071,6 +2183,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2090,6 +2203,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2109,6 +2223,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2128,6 +2243,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2147,6 +2263,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2166,6 +2283,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2185,6 +2303,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2204,6 +2323,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2223,6 +2343,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2241,6 +2362,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2259,6 +2381,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2277,6 +2400,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2295,6 +2419,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2313,6 +2438,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2331,6 +2457,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2349,6 +2476,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2367,6 +2495,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2385,6 +2514,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2403,6 +2533,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2421,6 +2552,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2439,6 +2571,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2457,6 +2590,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2475,6 +2609,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2493,6 +2628,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2511,6 +2647,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2529,6 +2666,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2547,6 +2685,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2565,6 +2704,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2583,6 +2723,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2601,6 +2742,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2619,6 +2761,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2637,6 +2780,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2655,6 +2799,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2673,6 +2818,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2691,6 +2837,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2709,6 +2856,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2727,6 +2875,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2745,6 +2894,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2763,6 +2913,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2781,6 +2932,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2799,6 +2951,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2817,6 +2970,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2835,6 +2989,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2853,6 +3008,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2871,6 +3027,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2890,6 +3047,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2909,6 +3067,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2928,6 +3087,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2947,6 +3107,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2966,6 +3127,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2985,6 +3147,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3004,6 +3167,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3023,6 +3187,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3042,6 +3207,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3061,6 +3227,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3080,6 +3247,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3099,6 +3267,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3118,6 +3287,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3137,6 +3307,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3156,6 +3327,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3175,6 +3347,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3194,6 +3367,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3213,6 +3387,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3232,6 +3407,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3251,6 +3427,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3270,6 +3447,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3289,6 +3467,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3308,6 +3487,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3327,6 +3507,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3346,6 +3527,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3365,6 +3547,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3384,6 +3567,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3403,6 +3587,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3422,6 +3607,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3441,6 +3627,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3460,6 +3647,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3479,6 +3667,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3498,6 +3687,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3517,6 +3707,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -3536,6 +3727,7 @@
         ISA Set: FMA, Ins cat: VFMA, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 12
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes

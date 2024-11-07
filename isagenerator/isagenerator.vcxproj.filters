@@ -96,14 +96,14 @@
     <None Include="instructions\table_evex_4.dat">
       <Filter>data\table evex</Filter>
     </None>
-    <None Include="generate_encodings.py">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="instructions\table_vex_7.dat">
       <Filter>data\table vex</Filter>
     </None>
     <None Include="instructions\table_evex_7.dat">
       <Filter>data\table evex</Filter>
+    </None>
+    <None Include="instructions\table_vex_5.dat">
+      <Filter>data\table vex</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -906,7 +906,7 @@ impl<'a> OperandsLookup<'a> {
     /// # Arguments
     ///
     /// * `index` - The index of the destination operand. First destination operand has index 0, the second one has
-    /// index 1, etc.
+    ///     index 1, etc.
     ///
     /// # Returns
     ///
@@ -936,7 +936,7 @@ impl<'a> OperandsLookup<'a> {
     /// # Arguments
     ///
     /// * `index` - The index of the source operand. First source operand has index 0, the second one has
-    /// index 1, etc.
+    ///     index 1, etc.
     ///
     /// # Returns
     ///

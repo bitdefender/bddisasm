@@ -705,5 +705,33 @@
         "f_test": "x86/avx10/avx102_64.test",
         "options": "-b64",
         "command": "decode"
+    },
+    {
+        "f_source": "x86/movrs/movrs_64.asm",
+        "f_result": "x86/movrs/movrs_64.result",
+        "f_test": "x86/movrs/movrs_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/movrs/vmovrs_64.asm",
+        "f_result": "x86/movrs/vmovrs_64.result",
+        "f_test": "x86/movrs/vmovrs_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/sm/sm4_evex_64.asm",
+        "f_result": "x86/sm/sm4_evex_64.result",
+        "f_test": "x86/sm/sm4_evex_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/amx/amx_evex_64.asm",
+        "f_result": "x86/amx/amx_evex_64.result",
+        "f_test": "x86/amx/amx_evex_64.test",
+        "options": "-b64",
+        "command": "decode"
     }
 ]

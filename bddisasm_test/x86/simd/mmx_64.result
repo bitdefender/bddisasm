@@ -2,6 +2,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -18,6 +19,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE2, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 26
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -34,6 +36,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -50,6 +53,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE2, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 26
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1132,6 +1136,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1148,6 +1153,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE2, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 26
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1164,6 +1170,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 25
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1180,6 +1187,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: SSE2, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000001, reg: edx, bit: 26
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes

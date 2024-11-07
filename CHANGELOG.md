@@ -5,6 +5,13 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [2.3.0] - 2024-11-07
+
+### Added
+- Support for SIMD Exceptions reporting (for instructions that generate SIMD exceptions; this is equivalent to also setting or testing the associated bits in the `MXCSR`).
+- Support for the following new x86 ISAs: MOVRS, MSR_IMM, AMX-FP8, AMX-TRANSPOSE, AMX-TF32, AMX-AVX512, AMX-MOVRS and EVEX-encoded SM4 instructions.
+
+
 ## [2.2.0] - 2024-09-16
 
 ### Added

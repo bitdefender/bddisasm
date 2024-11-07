@@ -638,6 +638,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -656,6 +657,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -674,6 +676,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -692,6 +695,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1002,6 +1006,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1020,6 +1025,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1813,6 +1819,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1832,6 +1839,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1851,6 +1859,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -1870,6 +1879,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 3
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -2184,6 +2194,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes
@@ -2203,6 +2214,7 @@
         ISA Set: SSE4, Ins cat: SSE, CET tracked: no
         CPUID leaf: 0x00000001, reg: ecx, bit: 19
         Exception class: SSE/VEX, exception type: 2
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: yes, V8086: yes, Prot: yes, Compat: yes, Long: yes

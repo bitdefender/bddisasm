@@ -10,13 +10,19 @@ VALIGND           ; Vfv{K}{z},Hfv,Wfv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0
 VALIGNQ           ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x03 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R|R
 VPERMILPS         ; Vfv{K}{z},Wfv|B32,Ib        ;         ; evex m:3 p:1 l:x w:0 0x04 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
 VPERMILPD         ; Vfv{K}{z},Wfv|B64,Ib        ;         ; evex m:3 p:1 l:x w:1 0x05 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
-VRNDSCALEPH       ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x08 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R
-VRNDSCALEPS       ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x08 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
+
+TCVTROWPS2PHH     ; Voq,mTt,Ib                  ;         ; evex m:3 p:0 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+TILEMOVROW        ; Voq,mTt,Ib                  ;         ; evex m:3 p:1 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+TCVTROWD2PS       ; Voq,mTt,Ib                  ;         ; evex m:3 p:2 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+TCVTROWPS2PBF16H  ; Voq,mTt,Ib                  ;         ; evex m:3 p:3 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+
+VRNDSCALEPH       ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x08 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R, x:IE|PE|UE
+VRNDSCALEPS       ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x08 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|PE
 VRNDSCALENEPBF16  ; Vfv{K}{z},Wfv|B16,Ib        ;         ; evex m:3 p:3 l:x w:0 0x08 /r ib         ; s:AVX102,  t:AVX10BF16, l:fv, e:E4, w:W|R|R|R
-VRNDSCALEPD       ; Vfv{K}{z},Wfv|B64{sae},Ib   ;         ; evex m:3 p:1 l:x w:1 0x09 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
-VRNDSCALESH       ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x0A /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R
-VRNDSCALESS       ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x0A /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
-VRNDSCALESD       ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x0B /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VRNDSCALEPD       ; Vfv{K}{z},Wfv|B64{sae},Ib   ;         ; evex m:3 p:1 l:x w:1 0x09 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|PE
+VRNDSCALESH       ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x0A /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R, x:IE|UE|PE
+VRNDSCALESS       ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x0A /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R, x:IE|PE
+VRNDSCALESD       ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x0B /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R, x:IE|PE
 VPALIGNR          ; Vfv{K}{z},Hfv,Wfv,Ib        ;         ; evex m:3 p:1 l:x w:i 0x0F /r ib         ; s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R|R|R
 
 # 0x10 - 0x1F
@@ -38,7 +44,7 @@ VINSERTF32X8      ; Voq{K}{z},Hoq,Wqq,Ib        ;         ; evex m:3 p:1 l:2 w:0
 VINSERTF64X4      ; Voq{K}{z},Hoq,Wqq,Ib        ;         ; evex m:3 p:1 l:2 w:1 0x1A /r ib         ; s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R|R
 VEXTRACTF32X8     ; Wqq{K}{z},Voq,Ib            ;         ; evex m:3 p:1 l:2 w:0 0x1B /r ib         ; s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R
 VEXTRACTF64X4     ; Wqq{K}{z},Voq,Ib            ;         ; evex m:3 p:1 l:2 w:1 0x1B /r ib         ; s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R
-VCVTPS2PH         ; Whv{K}{z},Vfv{sae},Ib       ;         ; evex m:3 p:1 l:x w:0 0x1D /r ib         ; s:AVX512F, t:CONVERT, l:hvm, e:E11, w:W|R|R|R
+VCVTPS2PH         ; Whv{K}{z},Vfv{sae},Ib       ;         ; evex m:3 p:1 l:x w:0 0x1D /r ib         ; s:AVX512F, t:CONVERT, l:hvm, e:E11, w:W|R|R|R, x:IE|OE|UE|PE|DE
 VPCMPUD           ; rKq{K},Hfv,Wfv|B32,Ib       ;         ; evex m:3 p:1 l:x w:0 0x1E /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
 VPCMPUQ           ; rKq{K},Hfv,Wfv|B64,Ib       ;         ; evex m:3 p:1 l:x w:1 0x1E /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
 VPCMPD            ; rKq{K},Hfv,Wfv|B32,Ib       ;         ; evex m:3 p:1 l:x w:0 0x1F /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R|R
@@ -55,13 +61,13 @@ VSHUFF32X4        ; Vuv{K}{z},Huv,Wuv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0
 VSHUFF64X2        ; Vuv{K}{z},Huv,Wuv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x23 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
 VPTERNLOGD        ; Vfv{K}{z},Hfv,Wfv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x25 /r ib         ; s:AVX512F, t:LOGICAL, l:fv, e:E4, w:RW|R|R|R|R
 VPTERNLOGQ        ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x25 /r ib         ; s:AVX512F, t:LOGICAL, l:fv, e:E4, w:RW|R|R|R|R
-VGETMANTPH        ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x26 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R
-VGETMANTPS        ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x26 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
-VGETMANTPD        ; Vfv{K}{z},Wfv|B64{sae},Ib   ;         ; evex m:3 p:1 l:x w:1 0x26 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VGETMANTPH        ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x26 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R, x:IE|DE
+VGETMANTPS        ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x26 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|DE
+VGETMANTPD        ; Vfv{K}{z},Wfv|B64{sae},Ib   ;         ; evex m:3 p:1 l:x w:1 0x26 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|DE
 VGETMANTPBF16     ; Vfv{K}{z},Wfv|B16,Ib        ;         ; evex m:3 p:3 l:x w:0 0x26 /r ib         ; s:AVX102,  t:AVX10BF16, l:fv, e:E4, w:W|R|R|R
-VGETMANTSH        ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x27 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R  
-VGETMANTSS        ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x27 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R
-VGETMANTSD        ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x27 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R
+VGETMANTSH        ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x27 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R, x:IE|DE
+VGETMANTSS        ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x27 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R, x:IE|DE
+VGETMANTSD        ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x27 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R, x:IE|DE
 
 # 0x30 - 0x3F
 VINSERTI32X4      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:x w:0 0x38 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
@@ -85,28 +91,28 @@ VSHUFI64X2        ; Vuv{K}{z},Huv,Wuv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1
 VPCLMULQDQ        ; Vfv,Hfv,Wfv,Ib              ;         ; evex m:3 p:1 l:x w:i 0x44 /r ib         ; s:VPCLMULQDQ, t:VPCLMULQDQ, l:fvm, e:E4NF, w:W|R|R|R
 
 # 0x50 - 0x5F
-VRANGEPS          ; Vfv{K}{z},Hfv,Wfv|B32{sae},Ib ;       ; evex m:3 p:1 l:x w:0 0x50 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R|R
-VRANGEPD          ; Vfv{K}{z},Hfv,Wfv|B64{sae},Ib ;       ; evex m:3 p:1 l:x w:1 0x50 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R|R
-VRANGESS          ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x51 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
-VRANGESD          ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x51 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
-VMINMAXPH         ; Vfv{K}{z},Hfv,Wfv|B16{sae},Ib ;       ; evex m:3 p:0 l:x w:0 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E2, w:W|R|R|R|R
-VMINMAXPS         ; Vfv{K}{z},Hfv,Wfv|B32{sae},Ib ;       ; evex m:3 p:1 l:x w:0 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E2, w:W|R|R|R|R
-VMINMAXPD         ; Vfv{K}{z},Hfv,Wfv|B64{sae},Ib ;       ; evex m:3 p:1 l:x w:1 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E2, w:W|R|R|R|R
+VRANGEPS          ; Vfv{K}{z},Hfv,Wfv|B32{sae},Ib ;       ; evex m:3 p:1 l:x w:0 0x50 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R|R, x:IE|DE
+VRANGEPD          ; Vfv{K}{z},Hfv,Wfv|B64{sae},Ib ;       ; evex m:3 p:1 l:x w:1 0x50 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R|R, x:IE|DE
+VRANGESS          ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x51 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R, x:IE|DE
+VRANGESD          ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x51 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R, x:IE|DE
+VMINMAXPH         ; Vfv{K}{z},Hfv,Wfv|B16{sae},Ib ;       ; evex m:3 p:0 l:x w:0 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E2, w:W|R|R|R|R, x:IE|DE
+VMINMAXPS         ; Vfv{K}{z},Hfv,Wfv|B32{sae},Ib ;       ; evex m:3 p:1 l:x w:0 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E2, w:W|R|R|R|R, x:IE|DE
+VMINMAXPD         ; Vfv{K}{z},Hfv,Wfv|B64{sae},Ib ;       ; evex m:3 p:1 l:x w:1 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E2, w:W|R|R|R|R, x:IE|DE
 VMINMAXNEPBF16    ; Vfv{K}{z},Hfv,Wfv|B16,Ib    ;         ; evex m:3 p:3 l:x w:0 0x52 /r ib         ; s:AVX102, t:AVX10MINMAX, l:fv, e:E4, w:W|R|R|R|R
-VMINMAXSH         ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x53 /r ib         ; s:AVX102, t:AVX10MINMAX, l:t1s, e:E3, w:W|R|R|R|R
-VMINMAXSS         ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x53 /r ib         ; s:AVX102, t:AVX10MINMAX, l:t1s, e:E3, w:W|R|R|R|R
-VMINMAXSD         ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x53 /r ib         ; s:AVX102, t:AVX10MINMAX, l:t1s, e:E3, w:W|R|R|R|R
-VFIXUPIMMPS       ; Vfv{K}{z},Hfv,Wfv|B32{sae},Ib ;       ; evex m:3 p:1 l:x w:0 0x54 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:RW|R|R|R|R
-VFIXUPIMMPD       ; Vfv{K}{z},Hfv,Wfv|B64{sae},Ib ;       ; evex m:3 p:1 l:x w:1 0x54 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:RW|R|R|R|R
-VFIXUPIMMSS       ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x55 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:RW|R|R|R|R
-VFIXUPIMMSD       ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x55 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:RW|R|R|R|R
-VREDUCEPH         ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x56 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R
-VREDUCEPS         ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x56 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R
-VREDUCEPD         ; Vfv{K}{z},Wfv|B64{sae},Ib   ;         ; evex m:3 p:1 l:x w:1 0x56 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R
+VMINMAXSH         ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x53 /r ib         ; s:AVX102, t:AVX10MINMAX, l:t1s, e:E3, w:W|R|R|R|R, x:IE|DE
+VMINMAXSS         ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x53 /r ib         ; s:AVX102, t:AVX10MINMAX, l:t1s, e:E3, w:W|R|R|R|R, x:IE|DE
+VMINMAXSD         ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x53 /r ib         ; s:AVX102, t:AVX10MINMAX, l:t1s, e:E3, w:W|R|R|R|R, x:IE|DE
+VFIXUPIMMPS       ; Vfv{K}{z},Hfv,Wfv|B32{sae},Ib ;       ; evex m:3 p:1 l:x w:0 0x54 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:RW|R|R|R|R, x:IE|ZE
+VFIXUPIMMPD       ; Vfv{K}{z},Hfv,Wfv|B64{sae},Ib ;       ; evex m:3 p:1 l:x w:1 0x54 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:RW|R|R|R|R, x:IE|ZE
+VFIXUPIMMSS       ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x55 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:RW|R|R|R|R, x:IE|ZE
+VFIXUPIMMSD       ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x55 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E3, w:RW|R|R|R|R, x:IE|ZE
+VREDUCEPH         ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x56 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R, x:IE|PE
+VREDUCEPS         ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x56 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|PE
+VREDUCEPD         ; Vfv{K}{z},Wfv|B64{sae},Ib   ;         ; evex m:3 p:1 l:x w:1 0x56 /r ib         ; s:AVX512DQ, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|PE
 VREDUCENEPBF16    ; Vfv{K}{z},Wfv|B16,Ib        ;         ; evex m:3 p:3 l:x w:0 0x56 /r ib         ; s:AVX102,   t:AVX10BF16, l:fv, e:E4, w:W|R|R|R
-VREDUCESH         ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x57 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R
-VREDUCESS         ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x57 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
-VREDUCESD         ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x57 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R
+VREDUCESH         ; Vdq{K}{z},Hdq,Wsh{sae},Ib   ;         ; evex m:3 p:0 l:i w:0 0x57 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R, x:IE|PE
+VREDUCESS         ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0 0x57 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R, x:IE|PE
+VREDUCESD         ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x57 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E3, w:W|R|R|R|R, x:IE|PE
 
 # 0x60 - 0x6F
 VFPCLASSPH        ; rKq{K},Wfv|B16,Ib           ;         ; evex m:3 p:0 l:x w:0 0x66 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E4, w:W|R|R|R
@@ -125,6 +131,9 @@ VPSHRDW           ; Vfv{K}{z},Hfv,Wfv,Ib        ;         ; evex m:3 p:1 l:x w:1
 VPSHRDD           ; Vfv{K}{z},Hfv,Wfv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x73 /r ib         ; s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
 VPSHRDQ           ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x73 /r ib         ; s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
 
+TCVTROWPS2PBF16L  ; Voq,mTt,Ib                  ;         ; evex m:3 p:2 l:2 w:0 0x77 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+TCVTROWPS2PHL     ; Voq,mTt,Ib                  ;         ; evex m:3 p:3 l:2 w:0 0x77 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+
 # 0x80 - 0x8F
 
 # 0x90 - 0x9F
@@ -134,12 +143,12 @@ VPSHRDQ           ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1
 # 0xB0 - 0xBF
 
 # 0xC0 - 0xCF
-VCMPPH            ; rK{K},Hfv,Wfv|B16{sae},Ib   ;         ;  evex m:3 p:0 l:x w:0 0xC2 /r ib        ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R|R
-VCMPSH            ; rK{K},Hfv,Wsh{sae},Ib       ;         ;  evex m:3 p:2 l:i w:0 0xC2 /r ib        ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R
+VCMPPH            ; rK{K},Hfv,Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0xC2 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R|R, x:IE|DE
+VCMPSH            ; rK{K},Hfv,Wsh{sae},Ib       ;         ; evex m:3 p:2 l:i w:0 0xC2 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3, w:W|R|R|R|R, x:IE|DE
 VCMPPBF16         ; rK{K},Hfv,Wfv|B16,Ib        ;         ; evex m:3 p:3 l:x w:0 0xC2 /r ib         ; s:AVX102,     t:AVX10BF16,  l:fv, e:E4, w:W|R|R|R|R
 
-VGF2P8AFFINEQB    ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ;  evex m:3 p:1 l:x w:1 0xCE /r ib        ; s:GFNI, t:GFNI, l:fv, e:E4NF, w:W|R|R|R|R
-VGF2P8AFFINEINVQB ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ;  evex m:3 p:1 l:x w:1 0xCF /r ib        ; s:GFNI, t:GFNI, l:fv, e:E4NF, w:W|R|R|R|R
+VGF2P8AFFINEQB    ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0xCE /r ib         ; s:GFNI, t:GFNI, l:fv, e:E4NF, w:W|R|R|R|R
+VGF2P8AFFINEINVQB ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0xCF /r ib         ; s:GFNI, t:GFNI, l:fv, e:E4NF, w:W|R|R|R|R
 
 # 0xD0 - 0xDF
 

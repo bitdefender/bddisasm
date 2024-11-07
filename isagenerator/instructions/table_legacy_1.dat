@@ -157,7 +157,8 @@ PREFETCHT1   ; Mb          ;                         ;            0x0F 0x18 /2:m
 NOP          ; Ev          ;                         ;            0x0F 0x18 /2:reg        ; s:PPRO, t:WIDENOP, w:N
 PREFETCHT2   ; Mb          ;                         ;            0x0F 0x18 /3:mem        ; s:SSE, t:PREFETCH, w:P
 NOP          ; Ev          ;                         ;            0x0F 0x18 /3:reg        ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;            0x0F 0x18 /4            ; s:PPRO, t:WIDENOP, w:N
+PREFETCHRST2 ; Mb          ;                         ;            0x0F 0x18 /4:mem        ; s:MOVRS, t:PREFETCH, w:P
+NOP          ; Ev          ;                         ;            0x0F 0x18 /4:reg        ; s:PPRO, t:WIDENOP, w:N
 NOP          ; Ev          ;                         ;            0x0F 0x18 /5            ; s:PPRO, t:WIDENOP, w:N
 NOP          ; Ev          ;                         ;            0x0F 0x18 /6            ; s:PPRO, t:WIDENOP, w:N
 NOP          ; Ev          ;                         ;            0x0F 0x18 /7            ; s:PPRO, t:WIDENOP, w:N
@@ -173,7 +174,8 @@ PREFETCHT1   ; Mb          ;                         ;       piti 0x0F 0x18 /2:m
 NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /2:reg        ; s:PPRO, t:WIDENOP, w:N
 PREFETCHT2   ; Mb          ;                         ;       piti 0x0F 0x18 /3:mem        ; s:SSE, t:PREFETCH, w:P
 NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /3:reg        ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /4            ; s:PPRO, t:WIDENOP, w:N
+PREFETCHRST2 ; Mb          ;                         ;       piti 0x0F 0x18 /4:mem        ; s:MOVRS, t:PREFETCH, w:P
+NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /4:reg        ; s:PPRO, t:WIDENOP, w:N
 NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /5            ; s:PPRO, t:WIDENOP, w:N
 PREFETCHIT1  ; Mb          ;                         ;piti riprel 0x0F 0x18 /6:mem        ; s:PREFETCHITI, t:PREFETCH, w:N, m:O64
 NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /6:mem        ; s:PPRO, t:WIDENOP, w:N
@@ -264,26 +266,26 @@ MOVAPS       ; Vps,Wps     ;                         ;         NP 0x0F 0x28 /r  
 MOVAPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x28 /r            ; s:SSE2, t:DATAXFER, w:W|R, e:1
 MOVAPS       ; Wps,Vps     ;                         ;         NP 0x0F 0x29 /r            ; s:SSE, t:DATAXFER, w:W|R, e:1
 MOVAPD       ; Wpd,Vpd     ;                         ;       0x66 0x0F 0x29 /r            ; s:SSE2, t:DATAXFER, w:W|R, e:1
-CVTPI2PS     ; Vq,Qq       ;                         ;         NP 0x0F 0x2A /r            ; s:SSE, t:CONVERT, w:W|R
-CVTPI2PD     ; Vpd,Qq      ;                         ;       0x66 0x0F 0x2A /r            ; s:SSE2, t:CONVERT, w:W|R
-CVTSI2SS     ; Vss,Ey      ;                         ;       0xF3 0x0F 0x2A /r            ; s:SSE, t:CONVERT, w:W|R, e:3
-CVTSI2SD     ; Vsd,Ey      ;                         ;       0xF2 0x0F 0x2A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3
+CVTPI2PS     ; Vq,Qq       ;                         ;         NP 0x0F 0x2A /r            ; s:SSE, t:CONVERT, w:W|R, x:PE
+CVTPI2PD     ; Vpd,Qq      ;                         ;       0x66 0x0F 0x2A /r            ; s:SSE2, t:CONVERT, w:W|R, x:PE
+CVTSI2SS     ; Vss,Ey      ;                         ;       0xF3 0x0F 0x2A /r            ; s:SSE, t:CONVERT, w:W|R, e:3, x:PE
+CVTSI2SD     ; Vsd,Ey      ;                         ;       0xF2 0x0F 0x2A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3, x:PE
 MOVNTPS      ; Mps,Vps     ;                         ;         NP 0x0F 0x2B /r:mem        ; s:SSE, t:DATAXFER, w:W|R, e:1
 MOVNTPD      ; Mpd,Vpd     ;                         ;       0x66 0x0F 0x2B /r:mem        ; s:SSE2, t:DATAXFER, w:W|R, e:1
 MOVNTSS      ; Mss,Vss     ;                         ;       0xF3 0x0F 0x2B /r:mem        ; s:SSE4A, t:DATAXFER, w:W|R
 MOVNTSD      ; Msd,Vsd     ;                         ;       0xF2 0x0F 0x2B /r:mem        ; s:SSE4A, t:DATAXFER, w:W|R
-CVTTPS2PI    ; Pq,Wq       ;                         ;         NP 0x0F 0x2C /r            ; s:SSE, t:CONVERT, w:W|R
-CVTTPD2PI    ; Pq,Wpd      ;                         ;       0x66 0x0F 0x2C /r            ; s:SSE2, t:CONVERT, w:W|R
-CVTTSS2SI    ; Gy,Wss      ;                         ;       0xF3 0x0F 0x2C /r            ; s:SSE, t:CONVERT, w:W|R, e:3
-CVTTSD2SI    ; Gy,Wsd      ;                         ;       0xF2 0x0F 0x2C /r            ; s:SSE2, t:CONVERT, w:W|R, e:3
-CVTPS2PI     ; Pq,Wq       ;                         ;         NP 0x0F 0x2D /r            ; s:SSE, t:CONVERT, w:W|R
-CVTPD2PI     ; Pq,Wpd      ;                         ;       0x66 0x0F 0x2D /r            ; s:SSE2, t:CONVERT, w:W|R
-CVTSS2SI     ; Gy,Wss      ;                         ;       0xF3 0x0F 0x2D /r            ; s:SSE, t:CONVERT, w:W|R, e:3
-CVTSD2SI     ; Gy,Wsd      ;                         ;       0xF2 0x0F 0x2D /r            ; s:SSE2, t:CONVERT, w:W|R, e:3
-UCOMISS      ; Vss,Wss     ; Fv                      ;         NP 0x0F 0x2E /r            ; s:SSE, t:SSE, w:R|R|W, f:COMIS
-UCOMISD      ; Vsd,Wsd     ; Fv                      ;       0x66 0x0F 0x2E /r            ; s:SSE2, t:SSE2, w:R|R|W, f:COMIS, e:3
-COMISS       ; Vss,Wss     ; Fv                      ;         NP 0x0F 0x2F /r            ; s:SSE, t:SSE, w:R|R|W, f:COMIS, e:3
-COMISD       ; Vsd,Wsd     ; Fv                      ;       0x66 0x0F 0x2F /r            ; s:SSE2, t:SSE2, w:R|R|W, f:COMIS, e:3
+CVTTPS2PI    ; Pq,Wq       ;                         ;         NP 0x0F 0x2C /r            ; s:SSE, t:CONVERT, w:W|R, x:IE|PE
+CVTTPD2PI    ; Pq,Wpd      ;                         ;       0x66 0x0F 0x2C /r            ; s:SSE2, t:CONVERT, w:W|R, x:IE|PE
+CVTTSS2SI    ; Gy,Wss      ;                         ;       0xF3 0x0F 0x2C /r            ; s:SSE, t:CONVERT, w:W|R, e:3, x:IE|PE
+CVTTSD2SI    ; Gy,Wsd      ;                         ;       0xF2 0x0F 0x2C /r            ; s:SSE2, t:CONVERT, w:W|R, e:3, x:IE|PE
+CVTPS2PI     ; Pq,Wq       ;                         ;         NP 0x0F 0x2D /r            ; s:SSE, t:CONVERT, w:W|R, x:IE|PE
+CVTPD2PI     ; Pq,Wpd      ;                         ;       0x66 0x0F 0x2D /r            ; s:SSE2, t:CONVERT, w:W|R, x:IE|PE
+CVTSS2SI     ; Gy,Wss      ;                         ;       0xF3 0x0F 0x2D /r            ; s:SSE, t:CONVERT, w:W|R, e:3, x:IE|PE
+CVTSD2SI     ; Gy,Wsd      ;                         ;       0xF2 0x0F 0x2D /r            ; s:SSE2, t:CONVERT, w:W|R, e:3, x:IE|PE
+UCOMISS      ; Vss,Wss     ; Fv                      ;         NP 0x0F 0x2E /r            ; s:SSE, t:SSE, w:R|R|W, f:COMIS, e:3, x:IE|DE
+UCOMISD      ; Vsd,Wsd     ; Fv                      ;       0x66 0x0F 0x2E /r            ; s:SSE2, t:SSE2, w:R|R|W, f:COMIS, e:3, x:IE|DE
+COMISS       ; Vss,Wss     ; Fv                      ;         NP 0x0F 0x2F /r            ; s:SSE, t:SSE, w:R|R|W, f:COMIS, e:3, x:IE|DE
+COMISD       ; Vsd,Wsd     ; Fv                      ;       0x66 0x0F 0x2F /r            ; s:SSE2, t:SSE2, w:R|R|W, f:COMIS, e:3, x:IE|DE
 
 # 0x30 - 0x3F
 WRMSR        ;             ; EAX,EDX,ECX,MSR         ;            0x0F 0x30               ; s:PENTIUMREAL, t:SYSTEM, w:R|R|R|W, a:SERIAL|NOREX2, m:KERNEL|NOV86, i:MSR
@@ -316,10 +318,10 @@ CMOVNLE      ; Gv,Ev       ; Fv                      ;            0x0F 0x4F /r  
 # Note: for MOVMSKPS & MOVMSKPD, the Intel doc says the destination reg is y (32 or 64 bit).
 MOVMSKPS     ; Gy,Ups      ;                         ;         NP 0x0F 0x50 /r:reg        ; s:SSE, t:DATAXFER, w:W|R, e:7, a:D64
 MOVMSKPD     ; Gy,Upd      ;                         ;       0x66 0x0F 0x50 /r:reg        ; s:SSE2, t:DATAXFER, w:W|R, e:7, a:D64
-SQRTPS       ; Vps,Wps     ;                         ;         NP 0x0F 0x51 /r            ; s:SSE, t:SSE, w:W|R, e:2
-SQRTPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x51 /r            ; s:SSE2, t:SSE, w:W|R, e:2
-SQRTSS       ; Vss,Wss     ;                         ;       0xF3 0x0F 0x51 /r            ; s:SSE, t:SSE, w:W|R, e:3
-SQRTSD       ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x51 /r            ; s:SSE2, t:SSE, w:W|R, e:3
+SQRTPS       ; Vps,Wps     ;                         ;         NP 0x0F 0x51 /r            ; s:SSE, t:SSE, w:W|R, e:2, x:IE|PE|DE
+SQRTPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x51 /r            ; s:SSE2, t:SSE, w:W|R, e:2, x:IE|PE|DE
+SQRTSS       ; Vss,Wss     ;                         ;       0xF3 0x0F 0x51 /r            ; s:SSE, t:SSE, w:W|R, e:3, x:IE|PE|DE
+SQRTSD       ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x51 /r            ; s:SSE2, t:SSE, w:W|R, e:3, x:IE|PE|DE
 RSQRTPS      ; Vps,Wps     ;                         ;         NP 0x0F 0x52 /r            ; s:SSE, t:SSE, w:W|R, e:4
 RSQRTSS      ; Vss,Wss     ;                         ;       0xF3 0x0F 0x52 /r            ; s:SSE, t:SSE, w:W|R, e:5
 RCPPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x53 /r            ; s:SSE, t:SSE, w:W|R, e:4
@@ -332,37 +334,37 @@ ORPS         ; Vps,Wps     ;                         ;         NP 0x0F 0x56 /r  
 ORPD         ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x56 /r            ; s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
 XORPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x57 /r            ; s:SSE, t:LOGICAL_FP, w:RW|R, e:4
 XORPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x57 /r            ; s:SSE2, t:LOGICAL_FP, w:RW|R, e:4
-ADDPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x58 /r            ; s:SSE, t:SSE, w:RW|R, e:2
-ADDPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x58 /r            ; s:SSE2, t:SSE, w:RW|R, e:2
-ADDSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x58 /r            ; s:SSE, t:SSE, w:RW|R, e:3
-ADDSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x58 /r            ; s:SSE2, t:SSE, w:RW|R, e:3
-MULPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x59 /r            ; s:SSE, t:SSE, w:RW|R, e:2
-MULPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x59 /r            ; s:SSE2, t:SSE, w:RW|R, e:2
-MULSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x59 /r            ; s:SSE, t:SSE, w:RW|R, e:3
-MULSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x59 /r            ; s:SSE2, t:SSE, w:RW|R, e:3
-CVTPS2PD     ; Vpd,Wq      ;                         ;         NP 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3
-CVTPD2PS     ; Vps,Wpd     ;                         ;       0x66 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:2
-CVTSS2SD     ; Vsd,Wss     ;                         ;       0xF3 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3
-CVTSD2SS     ; Vss,Wsd     ;                         ;       0xF2 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3
-CVTDQ2PS     ; Vps,Wdq     ;                         ;         NP 0x0F 0x5B /r            ; s:SSE2, t:CONVERT, w:W|R, e:2
-CVTPS2DQ     ; Vdq,Wps     ;                         ;       0x66 0x0F 0x5B /r            ; s:SSE2, t:CONVERT, w:W|R, e:2
-CVTTPS2DQ    ; Vdq,Wps     ;                         ;       0xF3 0x0F 0x5B /r            ; s:SSE2, t:CONVERT, w:W|R, e:2
-SUBPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5C /r            ; s:SSE, t:SSE, w:RW|R, e:2
-SUBPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5C /r            ; s:SSE2, t:SSE, w:RW|R, e:2
-SUBSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5C /r            ; s:SSE, t:SSE, w:RW|R, e:3
-SUBSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5C /r            ; s:SSE2, t:SSE, w:RW|R, e:3
-MINPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5D /r            ; s:SSE, t:SSE, w:RW|R, e:2
-MINPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5D /r            ; s:SSE2, t:SSE, w:RW|R, e:2
-MINSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5D /r            ; s:SSE, t:SSE, w:RW|R, e:3
-MINSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5D /r            ; s:SSE2, t:SSE, w:RW|R, e:3
-DIVPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5E /r            ; s:SSE, t:SSE, w:RW|R, e:2
-DIVPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5E /r            ; s:SSE2, t:SSE, w:RW|R, e:2
-DIVSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5E /r            ; s:SSE, t:SSE, w:RW|R, e:3
-DIVSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5E /r            ; s:SSE2, t:SSE, w:RW|R, e:3
-MAXPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5F /r            ; s:SSE, t:SSE, w:RW|R, e:2
-MAXPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5F /r            ; s:SSE2, t:SSE, w:RW|R, e:2
-MAXSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5F /r            ; s:SSE, t:SSE, w:RW|R, e:3
-MAXSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5F /r            ; s:SSE2, t:SSE, w:RW|R, e:3
+ADDPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x58 /r            ; s:SSE, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+ADDPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x58 /r            ; s:SSE2, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+ADDSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x58 /r            ; s:SSE, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE
+ADDSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x58 /r            ; s:SSE2, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE
+MULPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x59 /r            ; s:SSE, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+MULPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x59 /r            ; s:SSE2, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+MULSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x59 /r            ; s:SSE, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE
+MULSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x59 /r            ; s:SSE2, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE
+CVTPS2PD     ; Vpd,Wq      ;                         ;         NP 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3, x:IE|DE
+CVTPD2PS     ; Vps,Wpd     ;                         ;       0x66 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:2, x:IE|OE|UE|PE|DE
+CVTSS2SD     ; Vsd,Wss     ;                         ;       0xF3 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3, x:IE|DE
+CVTSD2SS     ; Vss,Wsd     ;                         ;       0xF2 0x0F 0x5A /r            ; s:SSE2, t:CONVERT, w:W|R, e:3, x:IE|OE|UE|PE|DE
+CVTDQ2PS     ; Vps,Wdq     ;                         ;         NP 0x0F 0x5B /r            ; s:SSE2, t:CONVERT, w:W|R, e:2, x:PE
+CVTPS2DQ     ; Vdq,Wps     ;                         ;       0x66 0x0F 0x5B /r            ; s:SSE2, t:CONVERT, w:W|R, e:2, x:IE|PE
+CVTTPS2DQ    ; Vdq,Wps     ;                         ;       0xF3 0x0F 0x5B /r            ; s:SSE2, t:CONVERT, w:W|R, e:2, x:IE|PE
+SUBPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5C /r            ; s:SSE, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+SUBPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5C /r            ; s:SSE2, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+SUBSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5C /r            ; s:SSE, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE
+SUBSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5C /r            ; s:SSE2, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE
+MINPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5D /r            ; s:SSE, t:SSE, w:RW|R, e:2, x:IE|DE
+MINPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5D /r            ; s:SSE2, t:SSE, w:RW|R, e:2, x:IE|DE
+MINSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5D /r            ; s:SSE, t:SSE, w:RW|R, e:3, x:IE|DE
+MINSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5D /r            ; s:SSE2, t:SSE, w:RW|R, e:3, x:IE|DE
+DIVPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5E /r            ; s:SSE, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE|ZE
+DIVPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5E /r            ; s:SSE2, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE|ZE
+DIVSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5E /r            ; s:SSE, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE|ZE
+DIVSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5E /r            ; s:SSE2, t:SSE, w:RW|R, e:3, x:IE|OE|UE|PE|DE|ZE
+MAXPS        ; Vps,Wps     ;                         ;         NP 0x0F 0x5F /r            ; s:SSE, t:SSE, w:RW|R, e:2, x:IE|DE
+MAXPD        ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x5F /r            ; s:SSE2, t:SSE, w:RW|R, e:2, x:IE|DE
+MAXSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x5F /r            ; s:SSE, t:SSE, w:RW|R, e:3, x:IE|DE
+MAXSD        ; Vsd,Wsd     ;                         ;       0xF2 0x0F 0x5F /r            ; s:SSE2, t:SSE, w:RW|R, e:3, x:IE|DE
 
 # 0x60 - 0x6F
 PUNPCKLBW    ; Pq,Qd       ;                         ;         NP 0x0F 0x60 /r            ; s:MMX, t:MMX, w:RW|R
@@ -435,10 +437,10 @@ EXTRQ        ; Uq,Ib,Ib    ;                         ;       0x66 0x0F 0x78 /0 i
 VMWRITE      ; Gy,Ey       ; Fv                      ;         NP 0x0F 0x79 /r            ; s:VTX, t:VTX, w:R|R|W, f:VMX, a:F64, m:VMXROOT
 EXTRQ        ; Vdq,Uq      ;                         ;       0x66 0x0F 0x79 /r:reg        ; s:SSE4A, t:BITBYTE, w:W|R
 INSERTQ      ; Vdq,Udq     ;                         ;       0xF2 0x0F 0x79 /r:reg        ; s:SSE4A, t:BITBYTE, w:W|R
-HADDPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x7C /r            ; s:SSE3, t:SSE, w:RW|R, e:2
-HADDPS       ; Vps,Wps     ;                         ;       0xF2 0x0F 0x7C /r            ; s:SSE3, t:SSE, w:RW|R, e:2
-HSUBPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x7D /r            ; s:SSE3, t:SSE, w:RW|R, e:2
-HSUBPS       ; Vps,Wps     ;                         ;       0xF2 0x0F 0x7D /r            ; s:SSE3, t:SSE, w:RW|R, e:2
+HADDPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x7C /r            ; s:SSE3, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+HADDPS       ; Vps,Wps     ;                         ;       0xF2 0x0F 0x7C /r            ; s:SSE3, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+HSUBPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x7D /r            ; s:SSE3, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+HSUBPS       ; Vps,Wps     ;                         ;       0xF2 0x0F 0x7D /r            ; s:SSE3, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
 MOVD         ; Ey,Pd       ;                         ;         NP 0x0F 0x7E /r            ; s:MMX, t:DATAXFER, w:W|R
 MOVQ         ; Ey,Pq       ;                         ;    rexw NP 0x0F 0x7E /r            ; s:MMX, t:DATAXFER, w:W|R
 MOVD         ; Ey,Vdq      ;                         ;       0x66 0x0F 0x7E /r            ; s:SSE2, t:DATAXFER, w:W|R, e:5
@@ -562,10 +564,10 @@ MOVSX        ; Gv,Ew       ;                         ;            0x0F 0xBF /r  
 # 0xC0 - 0xCF
 XADD         ; Eb,Gb       ; Fv                      ;            0x0F 0xC0 /r            ; s:I486REAL, t:SEMAPHORE, w:RW|RW|W, f:ARITH, p:LOCK|HLE
 XADD         ; Ev,Gv       ; Fv                      ;            0x0F 0xC1 /r            ; s:I486REAL, t:SEMAPHORE, w:RW|RW|W, f:ARITH, p:LOCK|HLE
-CMPPS        ; Vps,Wps,Ib  ;                         ;         NP 0x0F 0xC2 /r ib         ; s:SSE, t:SSE, w:RW|R|R, e:2
-CMPPD        ; Vpd,Wpd,Ib  ;                         ;       0x66 0x0F 0xC2 /r ib         ; s:SSE2, t:SSE, w:RW|R|R, e:2
-CMPSS        ; Vss,Wss,Ib  ;                         ;       0xF3 0x0F 0xC2 /r ib         ; s:SSE, t:SSE, w:RW|R|R, e:3
-CMPSD        ; Vsd,Wsd,Ib  ;                         ;       0xF2 0x0F 0xC2 /r ib         ; s:SSE2, t:SSE, w:RW|R|R, e:3
+CMPPS        ; Vps,Wps,Ib  ;                         ;         NP 0x0F 0xC2 /r ib         ; s:SSE, t:SSE, w:RW|R|R, e:2, x:IE|DE
+CMPPD        ; Vpd,Wpd,Ib  ;                         ;       0x66 0x0F 0xC2 /r ib         ; s:SSE2, t:SSE, w:RW|R|R, e:2, x:IE|DE
+CMPSS        ; Vss,Wss,Ib  ;                         ;       0xF3 0x0F 0xC2 /r ib         ; s:SSE, t:SSE, w:RW|R|R, e:3, x:IE|DE
+CMPSD        ; Vsd,Wsd,Ib  ;                         ;       0xF2 0x0F 0xC2 /r ib         ; s:SSE2, t:SSE, w:RW|R|R, e:3, x:IE|DE
 MOVNTI       ; My,Gy       ;                         ;         NP 0x0F 0xC3 /r:mem        ; s:SSE2, t:DATAXFER, w:W|R
 PINSRW       ; Pq,Rd,Ib    ;                         ;         NP 0x0F 0xC4 /r:reg ib     ; s:MMX, t:MMX, w:RW|R|R
 PINSRW       ; Pq,Mw,Ib    ;                         ;         NP 0x0F 0xC4 /r:mem ib     ; s:MMX, t:MMX, w:RW|R|R
@@ -604,8 +606,8 @@ BSWAP        ; Zv          ;                         ;            0x0F 0xCE     
 BSWAP        ; Zv          ;                         ;            0x0F 0xCF               ; s:I486REAL, t:DATAXFER, w:RW
 
 # 0xD0 - 0xDF
-ADDSUBPD     ; Vpd,Wpd     ;                         ;       0x66 0x0F 0xD0 /r            ; s:SSE3, t:SSE, w:RW|R, e:2
-ADDSUBPS     ; Vps,Wps     ;                         ;       0xF2 0x0F 0xD0 /r            ; s:SSE3, t:SSE, w:RW|R, e:2
+ADDSUBPD     ; Vpd,Wpd     ;                         ;       0x66 0x0F 0xD0 /r            ; s:SSE3, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
+ADDSUBPS     ; Vps,Wps     ;                         ;       0xF2 0x0F 0xD0 /r            ; s:SSE3, t:SSE, w:RW|R, e:2, x:IE|OE|UE|PE|DE
 PSRLW        ; Pq,Qq       ;                         ;         NP 0x0F 0xD1 /r            ; s:MMX, t:MMX, w:RW|R
 PSRLW        ; Vx,Wx       ;                         ;       0x66 0x0F 0xD1 /r            ; s:SSE2, t:SSE, w:RW|R, e:4
 PSRLD        ; Pq,Qq       ;                         ;         NP 0x0F 0xD2 /r            ; s:MMX, t:MMX, w:RW|R
@@ -651,9 +653,9 @@ PMULHUW      ; Pq,Qq       ;                         ;         NP 0x0F 0xE4 /r  
 PMULHUW      ; Vx,Wx       ;                         ;       0x66 0x0F 0xE4 /r            ; s:SSE2, t:SSE, w:RW|R, e:4
 PMULHW       ; Pq,Qq       ;                         ;         NP 0x0F 0xE5 /r            ; s:MMX, t:MMX, w:RW|R
 PMULHW       ; Vx,Wx       ;                         ;       0x66 0x0F 0xE5 /r            ; s:SSE2, t:SSE, w:RW|R, e:4
-CVTTPD2DQ    ; Vx,Wpd      ;                         ;       0x66 0x0F 0xE6 /r            ; s:SSE2, t:CONVERT, w:W|R, e:2
+CVTTPD2DQ    ; Vx,Wpd      ;                         ;       0x66 0x0F 0xE6 /r            ; s:SSE2, t:CONVERT, w:W|R, e:2, x:IE|PE
 CVTDQ2PD     ; Vx,Wq       ;                         ;       0xF3 0x0F 0xE6 /r            ; s:SSE2, t:CONVERT, w:W|R, e:5
-CVTPD2DQ     ; Vx,Wpd      ;                         ;       0xF2 0x0F 0xE6 /r            ; s:SSE2, t:CONVERT, w:W|R, e:2
+CVTPD2DQ     ; Vx,Wpd      ;                         ;       0xF2 0x0F 0xE6 /r            ; s:SSE2, t:CONVERT, w:W|R, e:2, x:IE|PE
 MOVNTQ       ; Mq,Pq       ;                         ;         NP 0x0F 0xE7 /r:mem        ; s:MMX, t:DATAXFER, w:W|R
 MOVNTDQ      ; Mx,Vx       ;                         ;       0x66 0x0F 0xE7 /r:mem        ; s:SSE2, t:DATAXFER, w:W|R, e:1
 PSUBSB       ; Pq,Qq       ;                         ;         NP 0x0F 0xE8 /r            ; s:MMX, t:MMX, w:RW|R

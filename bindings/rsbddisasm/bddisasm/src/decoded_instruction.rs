@@ -14,6 +14,7 @@ use crate::mnemonic::Mnemonic;
 use crate::operand;
 use crate::operand::{OpAccess, Operands, OperandsLookup};
 use crate::rflags::flags_raw;
+use crate::simd_exceptions::SimdExceptions;
 use crate::tuple::Tuple;
 
 use core::convert::TryFrom;
@@ -312,10 +313,10 @@ impl DecodedInstruction {
     /// # Arguments
     ///
     /// * `code` - An [`u8`] slice that holds the code to be decoded. Note that decoding is attempted only from offset
-    /// 0 inside this code chunk.
+    ///     0 inside this code chunk.
     /// * `mode` - The mode in which to decode the instruction.
     /// * `ip` - The instruction pointer value to use when formatting the decoded instruction. Does not affect the
-    /// decoding process in any way. If not needed, use [decode](DecodedInstruction::decode) instead.
+    ///     decoding process in any way. If not needed, use [decode](DecodedInstruction::decode) instead.
     ///
     /// # Errors
     ///
@@ -1359,6 +1360,13 @@ impl DecodedInstruction {
     #[must_use]
     pub fn fpu_flags_access(&self) -> FpuFlags {
         FpuFlags::from_raw(self.inner.FpuFlagsAccess).unwrap()
+    }
+
+    /// SIMD Floating-Point Exceptions.
+    #[inline]
+    #[must_use]
+    pub fn simd_exceptions(&self) -> SimdExceptions {
+        SimdExceptions::from_raw(unsafe { self.inner.SimdExceptions.Raw })
     }
 
     /// `EVEX` tuple type.

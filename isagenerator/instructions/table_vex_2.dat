@@ -22,8 +22,8 @@ VTESTPS           ; Vx,Wx               ; Fv              ;  vex m:2 p:1 l:x w:0
 VTESTPD           ; Vx,Wx               ; Fv              ;  vex m:2 p:1 l:x w:0 0x0F /r          ; s:AVX, t:LOGICAL_FP, w:R|R|W, f:VPTEST, e:4
 
 # 0x10 - 0x1F
-VCVTPH2PS         ; Vdq,Wq              ;                 ;  vex m:2 p:1 l:0 w:0 0x13 /r          ; s:F16C, t:CONVERT, w:W|R, e:11
-VCVTPH2PS         ; Vqq,Wdq             ;                 ;  vex m:2 p:1 l:1 w:0 0x13 /r          ; s:F16C, t:CONVERT, w:W|R, e:11
+VCVTPH2PS         ; Vdq,Wq              ;                 ;  vex m:2 p:1 l:0 w:0 0x13 /r          ; s:F16C, t:CONVERT, w:W|R, e:11, x:IE
+VCVTPH2PS         ; Vqq,Wdq             ;                 ;  vex m:2 p:1 l:1 w:0 0x13 /r          ; s:F16C, t:CONVERT, w:W|R, e:11, x:IE
 VPERMPS           ; Vqq,Hqq,Wqq         ;                 ;  vex m:2 p:1 l:1 w:0 0x16 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
 VPTEST            ; Vx,Wx               ; Fv              ;  vex m:2 p:1 l:x w:i 0x17 /r          ; s:AVX, t:LOGICAL, w:R|R|W, f:VPTEST, e:4
 VBROADCASTSS      ; Vx,Wss              ;                 ;  vex m:2 p:1 l:x w:0 0x18 /r          ; s:AVX, t:BROADCAST, w:W|R, e:6
@@ -88,6 +88,8 @@ VPSRAVD           ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0
 VPSLLVD           ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x47 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
 VPSLLVQ           ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x47 /r          ; s:AVX2, t:AVX2, w:W|R|R, e:4
 
+TTMMULTF32PS      ; rTt,mTt,vTt         ;                 ;  vex m:2 p:0 l:0 w:0 0x48 /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E10
+TMMULTF32PS       ; rTt,mTt,vTt         ;                 ;  vex m:2 p:1 l:0 w:0 0x48 /r:reg      ; s:AMXTF32, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 LDTILECFG         ; Moq                 ;                 ;  vex m:2 p:0 l:0 w:0 0x49 /0:mem      ; s:AMXTILE, t:AMX, w:R, m:NOTSX|O64, e:AMX_E1
 STTILECFG         ; Moq                 ;                 ;  vex m:2 p:1 l:0 w:0 0x49 /0:mem      ; s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E2
 TILELOADD         ; rTt,Mt              ;                 ;  vex m:2 p:3 l:0 w:0 0x4B /r:mem sibmem ;s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
@@ -95,6 +97,8 @@ TILESTORED        ; Mt,rTt              ;                 ;  vex m:2 p:2 l:0 w:0
 TILELOADDT1       ; rTt,Mt              ;                 ;  vex m:2 p:1 l:0 w:0 0x4B /r:mem sibmem ;s:AMXTILE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
 TILERELEASE       ;                     ;                 ;  vex m:2 p:0 l:0 w:0 0x49 /0xC0       ; s:AMXTILE, t:AMX, m:NOTSX|O64, e:AMX_E6
 TILEZERO          ; rTt                 ;                 ;  vex m:2 p:3 l:0 w:0 0x49 /r:reg rm:0 ; s:AMXTILE, t:AMX, w:W, m:NOTSX|O64, e:AMX_E5
+TILELOADDRST1     ; rTt,Mt              ;                 ;  vex m:2 p:1 l:0 w:0 0x4A /r:mem sibmem ; s:AMXMOVRS, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
+TILELOADDRS       ; rTt,Mt              ;                 ;  vex m:2 p:3 l:0 w:0 0x4A /r:mem sibmem ; s:AMXMOVRS, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E3
 
 # 0x50 - 0x5F
 VPDPBUUD          ; Vx,Hx,Wx            ;                 ;  vex m:2 p:0 l:x w:0 0x50 /r          ; s:AVXVNNIINT8, t:AVXVNNIINT8, w:RW|R|R, e:4
@@ -118,10 +122,22 @@ TDPBUUD           ; rTt,mTt,vTt         ;                 ;  vex m:2 p:0 l:0 w:0
 TDPBUSD           ; rTt,mTt,vTt         ;                 ;  vex m:2 p:1 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 TDPBSUD           ; rTt,mTt,vTt         ;                 ;  vex m:2 p:2 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 TDPBSSD           ; rTt,mTt,vTt         ;                 ;  vex m:2 p:3 l:0 w:0 0x5E /r:reg      ; s:AMXINT8, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TTRANSPOSED       ; rTt,mTt             ;                 ;  vex m:2 p:2 l:0 w:0 0x5F /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E9
 
 # 0x60 - 0x6F
+TCONJTCMMIMFP16PS ; rTt,mTt,vTt         ;                 ;  vex m:2 p:0 l:0 w:0 0x6B /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E10
+TCONJTFP16        ; rTt,mTt             ;                 ;  vex m:2 p:1 l:0 w:0 0x6B /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:W|R,    m:NOTSX|O64, e:AMX_E9
+TTCMMRLFP16PS     ; rTt,mTt,vTt         ;                 ;  vex m:2 p:2 l:0 w:0 0x6B /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E10
+TTCMMIMFP16PS     ; rTt,mTt,vTt         ;                 ;  vex m:2 p:3 l:0 w:0 0x6B /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E10
 TCMMRLFP16PS      ; rTt,mTt,vTt         ;                 ;  vex m:2 p:0 l:0 w:0 0x6C /r:reg      ; s:AMXCOMPLEX, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
 TCMMIMFP16PS      ; rTt,mTt,vTt         ;                 ;  vex m:2 p:1 l:0 w:0 0x6C /r:reg      ; s:AMXCOMPLEX, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E4
+TTDPBF16PS        ; rTt,mTt,vTt         ;                 ;  vex m:2 p:2 l:0 w:0 0x6C /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E10
+TTDPFP16PS        ; rTt,mTt,vTt         ;                 ;  vex m:2 p:3 l:0 w:0 0x6C /r:reg      ; s:AMXTRANSPOSE, t:AMX, w:RW|R|R, m:NOTSX|O64, e:AMX_E10
+T2RPNTLVWZ0       ; rTt+1,Mt            ;                 ;  vex m:2 p:0 l:0 w:0 0x6E /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+T2RPNTLVWZ1       ; rTt+1,Mt            ;                 ;  vex m:2 p:1 l:0 w:0 0x6E /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+T2RPNTLVWZ0T1     ; rTt+1,Mt            ;                 ;  vex m:2 p:0 l:0 w:0 0x6F /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+T2RPNTLVWZ1T1     ; rTt+1,Mt            ;                 ;  vex m:2 p:1 l:0 w:0 0x6F /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_E11
+
 
 # 0x70 - 0x7F
 VCVTNEPS2BF16     ; Vx,Wx               ;                 ;  vex m:2 p:2 l:x w:0 0x72 /r          ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
@@ -144,48 +160,48 @@ VGATHERDPD        ; Vx,Mvm32h,Hx        ;                 ;  vex m:2 p:1 l:x w:1
 VGATHERQPS        ; Vdq,Mvm64n,Hdq      ;                 ;  vex m:2 p:1 l:x w:0 0x93 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
 VGATHERQPD        ; Vx,Mvm64n,Hx        ;                 ;  vex m:2 p:1 l:x w:1 0x93 /r:mem vsib ; s:AVX2GATHER, t:AVX2GATHER, w:CRW|R|RW, e:12
 
-VFMADDSUB132PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x96 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADDSUB132PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x96 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD132PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x97 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD132PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x97 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x98 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x98 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD132SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x99 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD132SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x99 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB132PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x9A /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB132PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x9A /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB132SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x9B /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB132SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x9B /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD132PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x9C /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD132PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x9C /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD132SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x9D /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD132SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x9D /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB132PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x9E /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB132PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x9E /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB132SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x9F /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB132SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x9F /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADDSUB132PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x96 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADDSUB132PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x96 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUBADD132PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x97 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUBADD132PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x97 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD132PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x98 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD132PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x98 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD132SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x99 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMADD132SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x99 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMSUB132PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x9A /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUB132PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x9A /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUB132SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x9B /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMSUB132SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x9B /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMADD132PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x9C /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMADD132PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x9C /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMADD132SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x9D /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMADD132SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x9D /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMSUB132PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0x9E /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMSUB132PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0x9E /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMSUB132SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0x9F /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMSUB132SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0x9F /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
 
 # 0xA0 - 0xAF
-VFMADDSUB213PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xA6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADDSUB213PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xA6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD213PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xA7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD213PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xA7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xA8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xA8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD213SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xA9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD213SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xA9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB213PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xAA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB213PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xAA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB213SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xAB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB213SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xAB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD213PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xAC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD213PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xAC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD213SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xAD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD213SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xAD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB213PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xAE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB213PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xAE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB213SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xAF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB213SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xAF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADDSUB213PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xA6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADDSUB213PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xA6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUBADD213PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xA7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUBADD213PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xA7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD213PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xA8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD213PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xA8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD213SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xA9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMADD213SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xA9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMSUB213PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xAA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUB213PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xAA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUB213SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xAB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMSUB213SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xAB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMADD213PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xAC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMADD213PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xAC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMADD213SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xAD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMADD213SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xAD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMSUB213PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xAE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMSUB213PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xAE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMSUB213SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xAF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMSUB213SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xAF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
 
 # 0xB0 - 0xBF
 VCVTNEOPH2PS      ; Vx,Mx               ;                 ;  vex m:2 p:0 l:x w:0 0xB0 /r:mem      ; s:AVXNECONVERT, t:AVXNECONVERT, w:W|R, e:4
@@ -198,26 +214,26 @@ VBCSTNEBF162PS    ; Vx,Mw               ;                 ;  vex m:2 p:2 l:x w:0
 VPMADD52LUQ       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB4 /r          ; s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
 VPMADD52HUQ       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB5 /r          ; s:AVXIFMA, t:AVXIFMA, w:RW|R|R, e:4
 
-VFMADDSUB231PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xB6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADDSUB231PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD231PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xB7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUBADD231PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xB8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMADD231SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xB9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMADD231SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xB9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB231PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xBA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB231PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xBA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFMSUB231SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xBB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFMSUB231SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xBB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD231PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xBC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD231PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xBC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMADD231SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xBD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMADD231SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xBD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB231PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB231PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2
-VFNMSUB231SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
-VFNMSUB231SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3
+VFMADDSUB231PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xB6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADDSUB231PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB6 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUBADD231PS    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xB7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUBADD231PD    ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB7 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD231PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xB8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD231PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xB8 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMADD231SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xB9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMADD231SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xB9 /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMSUB231PS       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xBA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUB231PD       ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xBA /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFMSUB231SS       ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xBB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFMSUB231SD       ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xBB /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMADD231PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xBC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMADD231PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xBC /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMADD231SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xBD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMADD231SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xBD /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMSUB231PS      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:0 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMSUB231PD      ; Vx,Hx,Wx            ;                 ;  vex m:2 p:1 l:x w:1 0xBE /r          ; s:FMA, t:VFMA, w:RW|R|R, e:2, x:IE|OE|UE|PE|DE
+VFNMSUB231SS      ; Vdq,Hdq,Wss         ;                 ;  vex m:2 p:1 l:i w:0 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
+VFNMSUB231SD      ; Vdq,Hdq,Wsd         ;                 ;  vex m:2 p:1 l:i w:1 0xBF /r          ; s:FMA, t:VFMA, w:RW|R|R, e:3, x:IE|OE|UE|PE|DE
 
 VSHA512RNDS2      ; Vqq,Hqq,Udq         ;                 ;  vex m:2 p:3 l:1 w:0 0xCB /r:reg      ; s:SHA512, t:SHA512, w:RW|R|R, e:6
 VSHA512MSG1       ; Vqq,Udq             ;                 ;  vex m:2 p:3 l:1 w:0 0xCC /r:reg      ; s:SHA512, t:SHA512, w:RW|R, e:6

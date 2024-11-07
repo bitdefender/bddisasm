@@ -86,6 +86,9 @@ INVEPT            ; Gy,Mdq              ; Fv              ;         0x66 0x0F 0x
 INVVPID           ; Gy,Mdq              ; Fv              ;         0x66 0x0F 0x38 0x81 /r:mem    ; s:VTX, t:VTX, w:R|R|W, f:VMX, a:F64|SERIAL|NOREX2, m:VMXROOT
 INVPCID           ; Gy,Mdq              ;                 ;         0x66 0x0F 0x38 0x82 /r:mem    ; s:INVPCID, t:MISC, w:R|R, a:F64|NOREX2, m:KERNEL|NOV86
 
+MOVRS             ; Gb,Mb               ;                 ;              0x0F 0x38 0x8A /r:mem    ; s:MOVRS, t:DATAXFER, w:W|R, a:NOREP, m:O64
+MOVRS             ; Gv,Mv               ;                 ;              0x0F 0x38 0x8B /r:mem    ; s:MOVRS, t:DATAXFER, w:W|R, a:NOREP, m:O64
+
 # 0x90 - 0x9F
 
 # 0xA0 - 0xAF
