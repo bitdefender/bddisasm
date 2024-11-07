@@ -13,7 +13,7 @@
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_07_opcode_f8_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2634]  // URDMSR Rq,Id
+    (const void *)&gInstructions[ 2675]  // URDMSR Rq,Id
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_07_opcode_f8_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_nf = 
@@ -72,7 +72,7 @@ const ND_TABLE_MODRM_REG gEvexMap_mmmmm_07_opcode_f8_pp_03_modrmreg =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_07_opcode_f8_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2638]  // UWRMSR Id,Rq
+    (const void *)&gInstructions[ 2679]  // UWRMSR Id,Rq
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_07_opcode_f8_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_nf = 
@@ -136,6 +136,135 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_07_opcode_f8_pp =
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)&gEvexMap_mmmmm_07_opcode_f8_pp_02_modrmreg,
         /* 03 */ (const void *)&gEvexMap_mmmmm_07_opcode_f8_pp_03_modrmreg,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_nf_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2078]  // RDMSR Rq,Id
+};
+
+const ND_TABLE_EX_NF gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_nf = 
+{
+    ND_ILUT_EX_NF,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_nf_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l_00_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l_00_w_00_nf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l_00_w,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_MODRM_REG gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg = 
+{
+    ND_ILUT_MODRM_REG,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg_00_modrmmod,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_nf_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 4105]  // WRMSRNS Id,Rq
+};
+
+const ND_TABLE_EX_NF gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_nf = 
+{
+    ND_ILUT_EX_NF,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_nf_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l_00_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l_00_w_00_nf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l_00_w,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_MODRM_REG gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg = 
+{
+    ND_ILUT_MODRM_REG,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg_00_modrmmod,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_07_opcode_f6_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_02_modrmreg,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp_03_modrmreg,
     }
 };
 
@@ -389,7 +518,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_07_opcode =
         /* f3 */ (const void *)ND_NULL,
         /* f4 */ (const void *)ND_NULL,
         /* f5 */ (const void *)ND_NULL,
-        /* f6 */ (const void *)ND_NULL,
+        /* f6 */ (const void *)&gEvexMap_mmmmm_07_opcode_f6_pp,
         /* f7 */ (const void *)ND_NULL,
         /* f8 */ (const void *)&gEvexMap_mmmmm_07_opcode_f8_pp,
         /* f9 */ (const void *)ND_NULL,
@@ -405,7 +534,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_07_opcode =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_d7_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2907]  // VFCMULCSH Vdq{K}{z},aKq,Hdq,Wd{er}
+    (const void *)&gInstructions[ 2948]  // VFCMULCSH Vdq{K}{z},aKq,Hdq,Wd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_d7_pp_03_w = 
@@ -420,7 +549,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_d7_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_d7_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3035]  // VFMULCSH Vdq{K}{z},aKq,Hdq,Wd{er}
+    (const void *)&gInstructions[ 3076]  // VFMULCSH Vdq{K}{z},aKq,Hdq,Wd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_d7_pp_02_w = 
@@ -446,7 +575,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_d7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_d6_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2906]  // VFCMULCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2947]  // VFCMULCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_d6_pp_03_w = 
@@ -461,7 +590,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_d6_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_d6_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3034]  // VFMULCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3075]  // VFMULCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_d6_pp_02_w = 
@@ -487,7 +616,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_d6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_bf_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3107]  // VFNMSUB231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3148]  // VFNMSUB231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_bf_pp_01_w = 
@@ -513,7 +642,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_bf_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_be_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3102]  // VFNMSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3143]  // VFNMSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_be_pp_01_w = 
@@ -528,7 +657,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_be_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_be_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3099]  // VFNMSUB231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3140]  // VFNMSUB231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_be_pp_00_w = 
@@ -554,7 +683,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_be_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_bd_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3066]  // VFNMADD231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3107]  // VFNMADD231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_bd_pp_01_w = 
@@ -580,7 +709,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_bd_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_bc_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3061]  // VFNMADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3102]  // VFNMADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_bc_pp_01_w = 
@@ -595,7 +724,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_bc_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_bc_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3058]  // VFNMADD231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3099]  // VFNMADD231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_bc_pp_00_w = 
@@ -621,7 +750,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_bc_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_bb_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3004]  // VFMSUB231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3045]  // VFMSUB231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_bb_pp_01_w = 
@@ -647,7 +776,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_bb_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ba_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2999]  // VFMSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3040]  // VFMSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ba_pp_01_w = 
@@ -662,7 +791,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ba_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ba_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2996]  // VFMSUB231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3037]  // VFMSUB231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ba_pp_00_w = 
@@ -688,7 +817,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_ba_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_b9_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2942]  // VFMADD231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 2983]  // VFMADD231SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_b9_pp_01_w = 
@@ -714,7 +843,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_b9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_b8_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2937]  // VFMADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 2978]  // VFMADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_b8_pp_01_w = 
@@ -729,7 +858,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_b8_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_b8_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2934]  // VFMADD231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2975]  // VFMADD231NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_b8_pp_00_w = 
@@ -755,7 +884,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_b8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_b7_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3019]  // VFMSUBADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3060]  // VFMSUBADD231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_b7_pp_01_w = 
@@ -781,7 +910,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_b7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_b6_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2967]  // VFMADDSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3008]  // VFMADDSUB231PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_b6_pp_01_w = 
@@ -807,7 +936,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_b6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_af_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3096]  // VFNMSUB213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3137]  // VFNMSUB213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_af_pp_01_w = 
@@ -833,7 +962,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_af_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ae_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3091]  // VFNMSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3132]  // VFNMSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ae_pp_01_w = 
@@ -848,7 +977,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ae_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ae_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3088]  // VFNMSUB213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3129]  // VFNMSUB213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ae_pp_00_w = 
@@ -874,7 +1003,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_ae_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ad_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3055]  // VFNMADD213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3096]  // VFNMADD213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ad_pp_01_w = 
@@ -900,7 +1029,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_ad_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ac_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3050]  // VFNMADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3091]  // VFNMADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ac_pp_01_w = 
@@ -915,7 +1044,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ac_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ac_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3047]  // VFNMADD213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3088]  // VFNMADD213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ac_pp_00_w = 
@@ -941,7 +1070,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_ac_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_ab_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2993]  // VFMSUB213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3034]  // VFMSUB213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_ab_pp_01_w = 
@@ -967,7 +1096,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_ab_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_aa_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2988]  // VFMSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3029]  // VFMSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_aa_pp_01_w = 
@@ -982,7 +1111,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_aa_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_aa_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2985]  // VFMSUB213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3026]  // VFMSUB213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_aa_pp_00_w = 
@@ -1008,7 +1137,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_aa_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_a9_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2931]  // VFMADD213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 2972]  // VFMADD213SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_a9_pp_01_w = 
@@ -1034,7 +1163,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_a9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_a8_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2926]  // VFMADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 2967]  // VFMADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_a8_pp_01_w = 
@@ -1049,7 +1178,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_a8_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_a8_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2923]  // VFMADD213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2964]  // VFMADD213NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_a8_pp_00_w = 
@@ -1075,7 +1204,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_a8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_a7_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3014]  // VFMSUBADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3055]  // VFMSUBADD213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_a7_pp_01_w = 
@@ -1101,7 +1230,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_a7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_a6_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2962]  // VFMADDSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3003]  // VFMADDSUB213PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_a6_pp_01_w = 
@@ -1127,7 +1256,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_a6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3085]  // VFNMSUB132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3126]  // VFNMSUB132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9f_pp_01_w = 
@@ -1153,7 +1282,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_9f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3080]  // VFNMSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3121]  // VFNMSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9e_pp_01_w = 
@@ -1168,7 +1297,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9e_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9e_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3077]  // VFNMSUB132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3118]  // VFNMSUB132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9e_pp_00_w = 
@@ -1194,7 +1323,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_9e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3044]  // VFNMADD132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3085]  // VFNMADD132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9d_pp_01_w = 
@@ -1220,7 +1349,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_9d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3039]  // VFNMADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3080]  // VFNMADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9c_pp_01_w = 
@@ -1235,7 +1364,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3036]  // VFNMADD132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3077]  // VFNMADD132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9c_pp_00_w = 
@@ -1261,7 +1390,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_9c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2982]  // VFMSUB132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3023]  // VFMSUB132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9b_pp_01_w = 
@@ -1287,7 +1416,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_9b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2977]  // VFMSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3018]  // VFMSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9a_pp_01_w = 
@@ -1302,7 +1431,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9a_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_9a_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2974]  // VFMSUB132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3015]  // VFMSUB132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_9a_pp_00_w = 
@@ -1328,7 +1457,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_9a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_99_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2920]  // VFMADD132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 2961]  // VFMADD132SH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_99_pp_01_w = 
@@ -1354,7 +1483,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_99_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_98_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2915]  // VFMADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 2956]  // VFMADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_98_pp_01_w = 
@@ -1369,7 +1498,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_98_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_98_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2912]  // VFMADD132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2953]  // VFMADD132NEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_98_pp_00_w = 
@@ -1395,7 +1524,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_98_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_97_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3009]  // VFMSUBADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3050]  // VFMSUBADD132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_97_pp_01_w = 
@@ -1421,7 +1550,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_97_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_96_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2957]  // VFMADDSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 2998]  // VFMADDSUB132PH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_96_pp_01_w = 
@@ -1447,7 +1576,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_96_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_57_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2905]  // VFCMADDCSH Vdq{K}{z},aKq,Hdq,Wd{er}
+    (const void *)&gInstructions[ 2946]  // VFCMADDCSH Vdq{K}{z},aKq,Hdq,Wd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_57_pp_03_w = 
@@ -1462,7 +1591,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_57_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_57_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2946]  // VFMADDCSH Vdq{K}{z},aKq,Hdq,Wd{er}
+    (const void *)&gInstructions[ 2987]  // VFMADDCSH Vdq{K}{z},aKq,Hdq,Wd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_57_pp_02_w = 
@@ -1488,7 +1617,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_57_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_56_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2904]  // VFCMADDCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2945]  // VFCMADDCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_56_pp_03_w = 
@@ -1503,7 +1632,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_56_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_56_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2945]  // VFMADDCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2986]  // VFMADDCPH Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_56_pp_02_w = 
@@ -1529,7 +1658,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_56_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_4f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3967]  // VRSQRTSH Vdq{K}{z},aKq,Hdq,Wsh
+    (const void *)&gInstructions[ 4012]  // VRSQRTSH Vdq{K}{z},aKq,Hdq,Wsh
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4f_pp_01_w = 
@@ -1555,7 +1684,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_4f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_4e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3965]  // VRSQRTPH Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 4010]  // VRSQRTPH Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4e_pp_01_w = 
@@ -1570,7 +1699,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4e_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_4e_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3964]  // VRSQRTPBF16 Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 4009]  // VRSQRTPBF16 Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4e_pp_00_w = 
@@ -1596,7 +1725,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_4e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_4d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3936]  // VRCPSH Vdq{K}{z},aKq,Hdq,Wsh
+    (const void *)&gInstructions[ 3981]  // VRCPSH Vdq{K}{z},aKq,Hdq,Wsh
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4d_pp_01_w = 
@@ -1622,7 +1751,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_4d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_4c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3934]  // VRCPPH Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 3979]  // VRCPPH Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4c_pp_01_w = 
@@ -1637,7 +1766,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_4c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3933]  // VRCPPBF16 Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 3978]  // VRCPPBF16 Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_4c_pp_00_w = 
@@ -1663,7 +1792,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_4c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_43_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3150]  // VGETEXPSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
+    (const void *)&gInstructions[ 3191]  // VGETEXPSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_43_pp_01_w = 
@@ -1689,7 +1818,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_43_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_42_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3147]  // VGETEXPPH Vfv{K}{z},aKq,Wfv|B16{sae}
+    (const void *)&gInstructions[ 3188]  // VGETEXPPH Vfv{K}{z},aKq,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_42_pp_01_w = 
@@ -1701,11 +1830,26 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_42_pp_01_w =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_42_pp_00_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 3186]  // VGETEXPPBF16 Vfv{K}{z},aKq,Wfv|B16
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_42_pp_00_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_06_opcode_42_pp_00_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
 const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_42_pp = 
 {
     ND_ILUT_EX_PP,
     {
-        /* 00 */ (const void *)ND_NULL,
+        /* 00 */ (const void *)&gEvexMap_mmmmm_06_opcode_42_pp_00_w,
         /* 01 */ (const void *)&gEvexMap_mmmmm_06_opcode_42_pp_01_w,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
@@ -1715,7 +1859,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_42_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_2d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3974]  // VSCALEFSH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 4019]  // VSCALEFSH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_2d_pp_01_w = 
@@ -1741,7 +1885,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_2d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_2c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3971]  // VSCALEFPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 4016]  // VSCALEFPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_2c_pp_01_w = 
@@ -1756,7 +1900,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_2c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_2c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3969]  // VSCALEFPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 4014]  // VSCALEFPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_2c_pp_00_w = 
@@ -1782,7 +1926,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_06_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_13_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2769]  // VCVTPH2PSX Vfv{K}{z},aKq,Whv|B16{sae}
+    (const void *)&gInstructions[ 2810]  // VCVTPH2PSX Vfv{K}{z},aKq,Whv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_13_pp_01_w = 
@@ -1797,7 +1941,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_13_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_06_opcode_13_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2800]  // VCVTSH2SS Vdq{K}{z},aKq,Hdq,Wsh{sae}
+    (const void *)&gInstructions[ 2841]  // VCVTSH2SS Vdq{K}{z},aKq,Hdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_06_opcode_13_pp_00_w = 
@@ -2086,7 +2230,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_06_opcode =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7e_pp_02_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3338]  // VMOVW Ww,Vdq
+    (const void *)&gInstructions[ 3383]  // VMOVW Ww,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7e_pp_02_l_00_w = 
@@ -2112,7 +2256,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_7e_pp_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7e_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3337]  // VMOVW Rd,Vdq
+    (const void *)&gInstructions[ 3382]  // VMOVW Rd,Vdq
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_7e_pp_01_modrmmod_01_l = 
@@ -2129,7 +2273,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_7e_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7e_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3336]  // VMOVW Mw,Vdq
+    (const void *)&gInstructions[ 3381]  // VMOVW Mw,Vdq
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_7e_pp_01_modrmmod_00_l = 
@@ -2166,7 +2310,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_7e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7d_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2866]  // VCVTUW2PH Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 2907]  // VCVTUW2PH Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_03_w = 
@@ -2181,7 +2325,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7d_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2867]  // VCVTW2PH Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 2908]  // VCVTW2PH Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_02_w = 
@@ -2196,7 +2340,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2774]  // VCVTPH2W Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 2815]  // VCVTPH2W Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_01_w = 
@@ -2211,7 +2355,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7d_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2773]  // VCVTPH2UW Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 2814]  // VCVTPH2UW Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7d_pp_00_w = 
@@ -2237,7 +2381,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_7d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2832]  // VCVTTPH2W Vfv{K}{z},aKq,Wfv|B16{sae}
+    (const void *)&gInstructions[ 2873]  // VCVTTPH2W Vfv{K}{z},aKq,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7c_pp_01_w = 
@@ -2252,7 +2396,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2831]  // VCVTTPH2UW Vfv{K}{z},aKq,Wfv|B16{sae}
+    (const void *)&gInstructions[ 2872]  // VCVTTPH2UW Vfv{K}{z},aKq,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7c_pp_00_w = 
@@ -2278,13 +2422,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_7c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7b_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2864]  // VCVTUSI2SH Vdq,Hdq,Ey{er}
+    (const void *)&gInstructions[ 2905]  // VCVTUSI2SH Vdq,Hdq,Ey{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2770]  // VCVTPH2QQ Vfv{K}{z},aKq,Wqv|B16{er}
+    (const void *)&gInstructions[ 2811]  // VCVTPH2QQ Vfv{K}{z},aKq,Wqv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7b_pp_01_w = 
@@ -2310,13 +2454,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_7b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7a_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2860]  // VCVTUQQ2PH Vqv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2901]  // VCVTUQQ2PH Vqv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7a_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2857]  // VCVTUDQ2PH Vhv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2898]  // VCVTUDQ2PH Vhv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7a_pp_03_w = 
@@ -2331,7 +2475,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7a_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_7a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2828]  // VCVTTPH2QQ Vfv{K}{z},aKq,Wqv|B16{sae}
+    (const void *)&gInstructions[ 2869]  // VCVTTPH2QQ Vfv{K}{z},aKq,Wqv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_7a_pp_01_w = 
@@ -2357,13 +2501,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_7a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_79_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2801]  // VCVTSH2USI Gy,Wsh{er}
+    (const void *)&gInstructions[ 2842]  // VCVTSH2USI Gy,Wsh{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_79_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2772]  // VCVTPH2UQQ Vfv{K}{z},aKq,Wqv|B16{er}
+    (const void *)&gInstructions[ 2813]  // VCVTPH2UQQ Vfv{K}{z},aKq,Wqv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_79_pp_01_w = 
@@ -2378,7 +2522,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_79_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_79_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2771]  // VCVTPH2UDQ Vfv{K}{z},aKq,Whv|B16{er}
+    (const void *)&gInstructions[ 2812]  // VCVTPH2UDQ Vfv{K}{z},aKq,Whv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_79_pp_00_w = 
@@ -2404,7 +2548,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_79_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_78_pp_02_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2850]  // VCVTTSH2USI Gy,Wsh{sae}
+    (const void *)&gInstructions[ 2891]  // VCVTTSH2USI Gy,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_78_pp_02_wi = 
@@ -2419,7 +2563,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_78_pp_02_wi =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_78_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2830]  // VCVTTPH2UQQ Vfv{K}{z},aKq,Wqv|B16{sae}
+    (const void *)&gInstructions[ 2871]  // VCVTTPH2UQQ Vfv{K}{z},aKq,Wqv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_78_pp_01_w = 
@@ -2434,7 +2578,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_78_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_78_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2829]  // VCVTTPH2UDQ Vfv{K}{z},aKq,Whv|B16{sae}
+    (const void *)&gInstructions[ 2870]  // VCVTTPH2UDQ Vfv{K}{z},aKq,Whv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_78_pp_00_w = 
@@ -2460,7 +2604,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_78_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_74_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2737]  // VCVTNE2PH2BF8S Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2778]  // VCVTNE2PH2BF8S Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_74_pp_03_w = 
@@ -2475,7 +2619,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_74_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_74_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2748]  // VCVTNEPH2BF8S Vhv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2789]  // VCVTNEPH2BF8S Vhv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_74_pp_02_w = 
@@ -2490,7 +2634,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_74_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_74_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2726]  // VCVTBIASPH2BF8S Vhv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2767]  // VCVTBIASPH2BF8S Vhv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_74_pp_00_w = 
@@ -2513,10 +2657,81 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_74_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod_00_w_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 3345]  // VMOVRSW Vfv{K}{z},aKq,Wfv
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod_00_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 3342]  // VMOVRSB Vfv{K}{z},aKq,Wfv
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod_00_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod_00_w_00_leaf,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod_00_w_01_leaf,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod_00_w,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod_00_w_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 3344]  // VMOVRSQ Vfv{K}{z},aKq,Wfv
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod_00_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 3343]  // VMOVRSD Vfv{K}{z},aKq,Wfv
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod_00_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod_00_w_00_leaf,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod_00_w_01_leaf,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod_00_w,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_6f_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_02_modrmmod,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp_03_modrmmod,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6e_pp_02_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3335]  // VMOVW Vdq,Ww
+    (const void *)&gInstructions[ 3380]  // VMOVW Vdq,Ww
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6e_pp_02_l_00_w = 
@@ -2542,7 +2757,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_6e_pp_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6e_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3334]  // VMOVW Vdq,Rd
+    (const void *)&gInstructions[ 3379]  // VMOVW Vdq,Rd
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_6e_pp_01_modrmmod_01_l = 
@@ -2559,7 +2774,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_6e_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6e_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3333]  // VMOVW Vdq,Mw
+    (const void *)&gInstructions[ 3378]  // VMOVW Vdq,Mw
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_6e_pp_01_modrmmod_00_l = 
@@ -2596,25 +2811,25 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_6e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6d_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2846]  // VCVTTSD2SIS Gy,Wsd{sae}
+    (const void *)&gInstructions[ 2887]  // VCVTTSD2SIS Gy,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6d_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2853]  // VCVTTSS2SIS Gy,Wss{sae}
+    (const void *)&gInstructions[ 2894]  // VCVTTSS2SIS Gy,Wss{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2820]  // VCVTTPD2QQS Vfv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2861]  // VCVTTPD2QQS Vfv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2839]  // VCVTTPS2QQS Vfv{K}{z},aKq,Whv|B32{sae}
+    (const void *)&gInstructions[ 2880]  // VCVTTPS2QQS Vfv{K}{z},aKq,Whv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6d_pp_01_w = 
@@ -2629,13 +2844,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6d_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6d_pp_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2818]  // VCVTTPD2DQS Vhv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2859]  // VCVTTPD2DQS Vhv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6d_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2835]  // VCVTTPS2DQS Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 2876]  // VCVTTPS2DQS Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6d_pp_00_w = 
@@ -2661,25 +2876,25 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_6d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6c_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2848]  // VCVTTSD2USIS Gy,Wsd{sae}
+    (const void *)&gInstructions[ 2889]  // VCVTTSD2USIS Gy,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6c_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2855]  // VCVTTSS2USIS Gy,Wss{sae}
+    (const void *)&gInstructions[ 2896]  // VCVTTSS2USIS Gy,Wss{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2824]  // VCVTTPD2UQQS Vfv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2865]  // VCVTTPD2UQQS Vfv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2843]  // VCVTTPS2UQQS Vfv{K}{z},aKq,Whv|B32{sae}
+    (const void *)&gInstructions[ 2884]  // VCVTTPS2UQQS Vfv{K}{z},aKq,Whv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6c_pp_01_w = 
@@ -2694,13 +2909,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6c_pp_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2822]  // VCVTTPD2UDQS Vhv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2863]  // VCVTTPD2UDQS Vhv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2841]  // VCVTTPS2UDQS Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 2882]  // VCVTTPS2UDQS Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6c_pp_00_w = 
@@ -2726,7 +2941,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_6c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6b_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2742]  // VCVTNEBF162IUBS Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2783]  // VCVTNEBF162IUBS Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6b_pp_03_w = 
@@ -2741,7 +2956,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6b_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2778]  // VCVTPS2IUBS Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2819]  // VCVTPS2IUBS Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6b_pp_01_w = 
@@ -2756,7 +2971,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6b_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6b_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2764]  // VCVTPH2IUBS Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 2805]  // VCVTPH2IUBS Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6b_pp_00_w = 
@@ -2782,7 +2997,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_6b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6a_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2815]  // VCVTTNEBF162IUBS Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2856]  // VCVTTNEBF162IUBS Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6a_pp_03_w = 
@@ -2797,7 +3012,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6a_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2837]  // VCVTTPS2IUBS Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 2878]  // VCVTTPS2IUBS Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6a_pp_01_w = 
@@ -2812,7 +3027,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6a_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_6a_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2827]  // VCVTTPH2IUBS Vfv{K}{z},aKq,Wfv|B16{sae}
+    (const void *)&gInstructions[ 2868]  // VCVTTPH2IUBS Vfv{K}{z},aKq,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_6a_pp_00_w = 
@@ -2838,7 +3053,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_6a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_69_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2741]  // VCVTNEBF162IBS Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2782]  // VCVTNEBF162IBS Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_69_pp_03_w = 
@@ -2853,7 +3068,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_69_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_69_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2777]  // VCVTPS2IBS Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2818]  // VCVTPS2IBS Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_69_pp_01_w = 
@@ -2868,7 +3083,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_69_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_69_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2763]  // VCVTPH2IBS Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 2804]  // VCVTPH2IBS Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_69_pp_00_w = 
@@ -2894,7 +3109,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_69_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_68_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2814]  // VCVTTNEBF162IBS Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2855]  // VCVTTNEBF162IBS Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_68_pp_03_w = 
@@ -2909,7 +3124,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_68_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_68_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2836]  // VCVTTPS2IBS Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 2877]  // VCVTTPS2IBS Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_68_pp_01_w = 
@@ -2924,7 +3139,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_68_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_68_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2826]  // VCVTTPH2IBS Vfv{K}{z},aKq,Wfv|B16{sae}
+    (const void *)&gInstructions[ 2867]  // VCVTTPH2IBS Vfv{K}{z},aKq,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_68_pp_00_w = 
@@ -2950,7 +3165,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_68_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5f_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3198]  // VMAXSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
+    (const void *)&gInstructions[ 3239]  // VMAXSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5f_pp_02_w = 
@@ -2965,7 +3180,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5f_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3190]  // VMAXPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3231]  // VMAXPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5f_pp_01_w = 
@@ -2980,7 +3195,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5f_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5f_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3193]  // VMAXPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}
+    (const void *)&gInstructions[ 3234]  // VMAXPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5f_pp_00_w = 
@@ -3006,7 +3221,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_5f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5e_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2877]  // VDIVSH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 2918]  // VDIVSH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5e_pp_02_w = 
@@ -3021,7 +3236,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5e_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2869]  // VDIVNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2910]  // VDIVNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5e_pp_01_w = 
@@ -3036,7 +3251,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5e_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5e_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2872]  // VDIVPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 2913]  // VDIVPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5e_pp_00_w = 
@@ -3062,7 +3277,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_5e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5d_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3221]  // VMINSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
+    (const void *)&gInstructions[ 3262]  // VMINSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5d_pp_02_w = 
@@ -3077,7 +3292,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5d_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3213]  // VMINPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3254]  // VMINPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5d_pp_01_w = 
@@ -3092,7 +3307,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5d_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5d_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3216]  // VMINPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}
+    (const void *)&gInstructions[ 3257]  // VMINPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5d_pp_00_w = 
@@ -3118,7 +3333,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_5d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5c_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4024]  // VSUBSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
+    (const void *)&gInstructions[ 4071]  // VSUBSH Vdq{K}{z},aKq,Hdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5c_pp_02_w = 
@@ -3133,7 +3348,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5c_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4016]  // VSUBNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 4063]  // VSUBNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5c_pp_01_w = 
@@ -3148,7 +3363,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4019]  // VSUBPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}
+    (const void *)&gInstructions[ 4066]  // VSUBPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5c_pp_00_w = 
@@ -3174,7 +3389,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_5c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5b_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2825]  // VCVTTPH2DQ Vfv{K}{z},aKq,Whv|B16{sae}
+    (const void *)&gInstructions[ 2866]  // VCVTTPH2DQ Vfv{K}{z},aKq,Whv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5b_pp_02_w = 
@@ -3189,7 +3404,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5b_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2762]  // VCVTPH2DQ Vfv{K}{z},aKq,Whv|B16{er}
+    (const void *)&gInstructions[ 2803]  // VCVTPH2DQ Vfv{K}{z},aKq,Whv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5b_pp_01_w = 
@@ -3204,13 +3419,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5b_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5b_pp_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2790]  // VCVTQQ2PH Vdq{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2831]  // VCVTQQ2PH Vdq{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5b_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2732]  // VCVTDQ2PH Vhv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2773]  // VCVTDQ2PH Vhv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5b_pp_00_w = 
@@ -3236,7 +3451,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_5b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5a_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2792]  // VCVTSD2SH Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2833]  // VCVTSD2SH Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_03_w = 
@@ -3251,7 +3466,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5a_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2798]  // VCVTSH2SD Vdq{K}{z},aKq,Hdq,Wsh{sae}
+    (const void *)&gInstructions[ 2839]  // VCVTSH2SD Vdq{K}{z},aKq,Hdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_02_w = 
@@ -3266,7 +3481,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2755]  // VCVTPD2PH Vdq{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2796]  // VCVTPD2PH Vdq{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_01_w = 
@@ -3281,7 +3496,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_5a_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2765]  // VCVTPH2PD Vfv{K}{z},aKq,Wqv|B16{sae}
+    (const void *)&gInstructions[ 2806]  // VCVTPH2PD Vfv{K}{z},aKq,Wqv|B16{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_5a_pp_00_w = 
@@ -3307,7 +3522,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_5a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_59_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3355]  // VMULSH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 3400]  // VMULSH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_59_pp_02_w = 
@@ -3322,7 +3537,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_59_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_59_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3347]  // VMULNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 3392]  // VMULNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_59_pp_01_w = 
@@ -3337,7 +3552,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_59_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_59_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3350]  // VMULPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 3395]  // VMULPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_59_pp_00_w = 
@@ -3363,7 +3578,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_59_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_58_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2653]  // VADDSH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 2694]  // VADDSH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_58_pp_02_w = 
@@ -3378,7 +3593,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_58_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_58_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2645]  // VADDNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2686]  // VADDNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_58_pp_01_w = 
@@ -3393,7 +3608,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_58_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_58_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2648]  // VADDPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
+    (const void *)&gInstructions[ 2689]  // VADDPH Vfv{K}{z},aKq,Hfv,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_58_pp_00_w = 
@@ -3419,7 +3634,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_58_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_51_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4012]  // VSQRTSH Vdq{K}{z},aKq,Hdq,Wsh{er}
+    (const void *)&gInstructions[ 4059]  // VSQRTSH Vdq{K}{z},aKq,Hdq,Wsh{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_51_pp_02_w = 
@@ -3434,7 +3649,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_51_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_51_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4004]  // VSQRTNEPBF16 Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 4051]  // VSQRTNEPBF16 Vfv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_51_pp_01_w = 
@@ -3449,7 +3664,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_51_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_51_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4007]  // VSQRTPH Vfv{K}{z},aKq,Wfv|B16{er}
+    (const void *)&gInstructions[ 4054]  // VSQRTPH Vfv{K}{z},aKq,Wfv|B16{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_51_pp_00_w = 
@@ -3472,62 +3687,25 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_51_pp =
     }
 };
 
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_42_pp_01_w_00_leaf = 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2f_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3145]  // VGETEXPPBF16 Vfv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2763]  // VCOMXSH Vdq,Wsh{sae}
 };
 
-const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_42_pp_01_w = 
+const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2f_pp_02_w = 
 {
     ND_ILUT_EX_W,
     {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_42_pp_01_w_00_leaf,
+        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_02_w_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_42_pp = 
-{
-    ND_ILUT_EX_PP,
-    {
-        /* 00 */ (const void *)ND_NULL,
-        /* 01 */ (const void *)&gEvexMap_mmmmm_05_opcode_42_pp_01_w,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2f_pp_03_l_00_w_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2722]  // VCOMXSH Vdq,Wsh{sae}
-};
-
-const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2f_pp_03_l_00_w = 
-{
-    ND_ILUT_EX_W,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_03_l_00_w_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_2f_pp_03_l = 
-{
-    ND_ILUT_EX_L,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_03_l_00_w,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2720]  // VCOMSBF16 Vdq,Wsh
+    (const void *)&gInstructions[ 2761]  // VCOMSBF16 Vdq,Wsh
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2f_pp_01_w = 
@@ -3542,7 +3720,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2f_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2f_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2715]  // VCOMISH Vdq,Wsh{sae}
+    (const void *)&gInstructions[ 2756]  // VCOMISH Vdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2f_pp_00_w = 
@@ -3560,41 +3738,30 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2f_pp =
     {
         /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_00_w,
         /* 01 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_01_w,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_03_l,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_05_opcode_2f_pp_02_w,
+        /* 03 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2e_pp_03_l_00_w_00_leaf = 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2e_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4035]  // VUCOMXSH Vdq,Wsh{sae}
+    (const void *)&gInstructions[ 4082]  // VUCOMXSH Vdq,Wsh{sae}
 };
 
-const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2e_pp_03_l_00_w = 
+const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2e_pp_02_w = 
 {
     ND_ILUT_EX_W,
     {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2e_pp_03_l_00_w_00_leaf,
+        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2e_pp_02_w_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_EX_L gEvexMap_mmmmm_05_opcode_2e_pp_03_l = 
-{
-    ND_ILUT_EX_L,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2e_pp_03_l_00_w,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2e_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4031]  // VUCOMISH Vdq,Wsh{sae}
+    (const void *)&gInstructions[ 4078]  // VUCOMISH Vdq,Wsh{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_2e_pp_00_w = 
@@ -3612,15 +3779,15 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2e_pp =
     {
         /* 00 */ (const void *)&gEvexMap_mmmmm_05_opcode_2e_pp_00_w,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gEvexMap_mmmmm_05_opcode_2e_pp_03_l,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_05_opcode_2e_pp_02_w,
+        /* 03 */ (const void *)ND_NULL,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2d_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2799]  // VCVTSH2SI Gy,Wsh{er}
+    (const void *)&gInstructions[ 2840]  // VCVTSH2SI Gy,Wsh{er}
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2d_pp = 
@@ -3637,7 +3804,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2c_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2849]  // VCVTTSH2SI Gy,Wsh{sae}
+    (const void *)&gInstructions[ 2890]  // VCVTTSH2SI Gy,Wsh{sae}
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2c_pp = 
@@ -3654,7 +3821,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_2a_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2805]  // VCVTSI2SH Vdq,Hdq,Ey
+    (const void *)&gInstructions[ 2846]  // VCVTSI2SH Vdq,Hdq,Ey
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2a_pp = 
@@ -3671,7 +3838,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_2a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_1e_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2735]  // VCVTHF82PH Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 2776]  // VCVTHF82PH Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1e_pp_03_w = 
@@ -3697,7 +3864,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_1e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_1d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2785]  // VCVTPS2PHX Vhv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2826]  // VCVTPS2PHX Vhv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1d_pp_01_w = 
@@ -3712,7 +3879,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1d_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_1d_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2810]  // VCVTSS2SH Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 2851]  // VCVTSS2SH Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1d_pp_00_w = 
@@ -3738,7 +3905,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_1d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_1b_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2739]  // VCVTNE2PH2HF8S Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2780]  // VCVTNE2PH2HF8S Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1b_pp_03_w = 
@@ -3753,7 +3920,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1b_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_1b_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2750]  // VCVTNEPH2HF8S Vhv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2791]  // VCVTNEPH2HF8S Vhv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1b_pp_02_w = 
@@ -3768,7 +3935,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1b_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_1b_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2728]  // VCVTBIASPH2HF8S Vhv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2769]  // VCVTBIASPH2HF8S Vhv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_1b_pp_00_w = 
@@ -3794,7 +3961,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_1b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_18_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2738]  // VCVTNE2PH2HF8 Vfv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2779]  // VCVTNE2PH2HF8 Vfv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_18_pp_03_w = 
@@ -3809,7 +3976,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_18_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_18_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2749]  // VCVTNEPH2HF8 Vhv{K}{z},aKq,Wfv|B16
+    (const void *)&gInstructions[ 2790]  // VCVTNEPH2HF8 Vhv{K}{z},aKq,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_18_pp_02_w = 
@@ -3824,7 +3991,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_18_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_18_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2727]  // VCVTBIASPH2HF8 Vhv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2768]  // VCVTBIASPH2HF8 Vhv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_18_pp_00_w = 
@@ -3850,7 +4017,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_18_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_11_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3312]  // VMOVSH Wsh{K}{z},aKq,Hdq,Vdq
+    (const void *)&gInstructions[ 3357]  // VMOVSH Wsh{K}{z},aKq,Hdq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_11_pp_02_modrmmod_01_w = 
@@ -3865,7 +4032,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_11_pp_02_modrmmod_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_11_pp_02_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3311]  // VMOVSH Wsh{K},aKq,Vdq
+    (const void *)&gInstructions[ 3356]  // VMOVSH Wsh{K},aKq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_11_pp_02_modrmmod_00_w = 
@@ -3900,7 +4067,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_05_opcode_11_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_10_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3310]  // VMOVSH Vdq{K}{z},aKq,Hdq,Wsh
+    (const void *)&gInstructions[ 3355]  // VMOVSH Vdq{K}{z},aKq,Hdq,Wsh
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_10_pp_02_modrmmod_01_w = 
@@ -3915,7 +4082,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_10_pp_02_modrmmod_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_05_opcode_10_pp_02_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3309]  // VMOVSH Vdq{K}{z},aKq,Wsh
+    (const void *)&gInstructions[ 3354]  // VMOVSH Vdq{K}{z},aKq,Wsh
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_05_opcode_10_pp_02_modrmmod_00_w = 
@@ -4017,7 +4184,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_05_opcode =
         /* 3f */ (const void *)ND_NULL,
         /* 40 */ (const void *)ND_NULL,
         /* 41 */ (const void *)ND_NULL,
-        /* 42 */ (const void *)&gEvexMap_mmmmm_05_opcode_42_pp,
+        /* 42 */ (const void *)ND_NULL,
         /* 43 */ (const void *)ND_NULL,
         /* 44 */ (const void *)ND_NULL,
         /* 45 */ (const void *)ND_NULL,
@@ -4062,7 +4229,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_05_opcode =
         /* 6c */ (const void *)&gEvexMap_mmmmm_05_opcode_6c_pp,
         /* 6d */ (const void *)&gEvexMap_mmmmm_05_opcode_6d_pp,
         /* 6e */ (const void *)&gEvexMap_mmmmm_05_opcode_6e_pp,
-        /* 6f */ (const void *)ND_NULL,
+        /* 6f */ (const void *)&gEvexMap_mmmmm_05_opcode_6f_pp,
         /* 70 */ (const void *)ND_NULL,
         /* 71 */ (const void *)ND_NULL,
         /* 72 */ (const void *)ND_NULL,
@@ -4352,7 +4519,7 @@ const ND_TABLE_MODRM_REG gEvexMap_mmmmm_04_opcode_ff_pp_01_modrmreg =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ff_pp_00_modrmreg_06_modrmmod_01_l_00_w_01_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1969]  // PUSH2P Bv,Rv
+    (const void *)&gInstructions[ 1973]  // PUSH2P Bv,Rv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ff_pp_00_modrmreg_06_modrmmod_01_l_00_w_01_nd_01_nf = 
@@ -4376,7 +4543,7 @@ const ND_TABLE_EX_ND gEvexMap_mmmmm_04_opcode_ff_pp_00_modrmreg_06_modrmmod_01_l
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ff_pp_00_modrmreg_06_modrmmod_01_l_00_w_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1968]  // PUSH2 Bv,Rv
+    (const void *)&gInstructions[ 1972]  // PUSH2 Bv,Rv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ff_pp_00_modrmreg_06_modrmmod_01_l_00_w_00_nd_01_nf = 
@@ -4971,7 +5138,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_f9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f8_pp_03_modrmmod_01_l_00_w_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2633]  // URDMSR Eq,Gq
+    (const void *)&gInstructions[ 2674]  // URDMSR Eq,Gq
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f8_pp_03_modrmmod_01_l_00_w_00_nd_00_nf = 
@@ -5059,7 +5226,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_04_opcode_f8_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f8_pp_02_modrmmod_01_l_00_w_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2637]  // UWRMSR Gq,Eq
+    (const void *)&gInstructions[ 2678]  // UWRMSR Gq,Eq
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f8_pp_02_modrmmod_01_l_00_w_00_nd_00_nf = 
@@ -5325,13 +5492,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1476]  // MUL Ev
+    (const void *)&gInstructions[ 1478]  // MUL Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1473]  // MUL Ev
+    (const void *)&gInstructions[ 1475]  // MUL Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_04_l_00_nd_00_nf = 
@@ -5366,13 +5533,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1498]  // NEG Bv,Ev
+    (const void *)&gInstructions[ 1500]  // NEG Bv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1495]  // NEG Bv,Ev
+    (const void *)&gInstructions[ 1497]  // NEG Bv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_01_nf = 
@@ -5387,13 +5554,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1492]  // NEG Ev
+    (const void *)&gInstructions[ 1494]  // NEG Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1489]  // NEG Ev
+    (const void *)&gInstructions[ 1491]  // NEG Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l_00_nd_00_nf = 
@@ -5428,7 +5595,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1577]  // NOT Bv,Ev
+    (const void *)&gInstructions[ 1579]  // NOT Bv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_02_l_00_nd_01_nf = 
@@ -5443,7 +5610,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1574]  // NOT Ev
+    (const void *)&gInstructions[ 1576]  // NOT Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_01_modrmreg_02_l_00_nd_00_nf = 
@@ -5894,13 +6061,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1475]  // MUL Ev
+    (const void *)&gInstructions[ 1477]  // MUL Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1472]  // MUL Ev
+    (const void *)&gInstructions[ 1474]  // MUL Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -5935,13 +6102,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1497]  // NEG Bv,Ev
+    (const void *)&gInstructions[ 1499]  // NEG Bv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1494]  // NEG Bv,Ev
+    (const void *)&gInstructions[ 1496]  // NEG Bv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -5956,13 +6123,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1491]  // NEG Ev
+    (const void *)&gInstructions[ 1493]  // NEG Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1488]  // NEG Ev
+    (const void *)&gInstructions[ 1490]  // NEG Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -5997,7 +6164,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1576]  // NOT Bv,Ev
+    (const void *)&gInstructions[ 1578]  // NOT Bv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -6012,7 +6179,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1573]  // NOT Ev
+    (const void *)&gInstructions[ 1575]  // NOT Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f7_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -6474,13 +6641,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1474]  // MUL Eb
+    (const void *)&gInstructions[ 1476]  // MUL Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1471]  // MUL Eb
+    (const void *)&gInstructions[ 1473]  // MUL Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -6515,13 +6682,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1496]  // NEG Bb,Eb
+    (const void *)&gInstructions[ 1498]  // NEG Bb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1493]  // NEG Bb,Eb
+    (const void *)&gInstructions[ 1495]  // NEG Bb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -6536,13 +6703,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1490]  // NEG Eb
+    (const void *)&gInstructions[ 1492]  // NEG Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1487]  // NEG Eb
+    (const void *)&gInstructions[ 1489]  // NEG Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -6577,7 +6744,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1575]  // NOT Bb,Eb
+    (const void *)&gInstructions[ 1577]  // NOT Bb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -6592,7 +6759,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1572]  // NOT Eb
+    (const void *)&gInstructions[ 1574]  // NOT Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f6_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -7024,13 +7191,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_f5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f4_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2618]  // TZCNT Gv,Ev
+    (const void *)&gInstructions[ 2659]  // TZCNT Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f4_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2616]  // TZCNT Gv,Ev
+    (const void *)&gInstructions[ 2657]  // TZCNT Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f4_pp_01_l_00_nd_00_nf = 
@@ -7065,13 +7232,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_f4_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f4_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2617]  // TZCNT Gv,Ev
+    (const void *)&gInstructions[ 2658]  // TZCNT Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_f4_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2615]  // TZCNT Gv,Ev
+    (const void *)&gInstructions[ 2656]  // TZCNT Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_f4_pp_00_l_00_nd_00_nf = 
@@ -7387,13 +7554,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_f0_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2269]  // SAR Bv,Ev,CL
+    (const void *)&gInstructions[ 2275]  // SAR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2260]  // SAR Bv,Ev,CL
+    (const void *)&gInstructions[ 2266]  // SAR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_01_nf = 
@@ -7408,13 +7575,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2251]  // SAR Ev,CL
+    (const void *)&gInstructions[ 2257]  // SAR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2242]  // SAR Ev,CL
+    (const void *)&gInstructions[ 2248]  // SAR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l_00_nd_00_nf = 
@@ -7449,13 +7616,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2226]  // SAL Bv,Ev,CL
+    (const void *)&gInstructions[ 2232]  // SAL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2217]  // SAL Bv,Ev,CL
+    (const void *)&gInstructions[ 2223]  // SAL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_01_nf = 
@@ -7470,13 +7637,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2208]  // SAL Ev,CL
+    (const void *)&gInstructions[ 2214]  // SAL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2199]  // SAL Ev,CL
+    (const void *)&gInstructions[ 2205]  // SAL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l_00_nd_00_nf = 
@@ -7511,13 +7678,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2463]  // SHR Bv,Ev,CL
+    (const void *)&gInstructions[ 2469]  // SHR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2454]  // SHR Bv,Ev,CL
+    (const void *)&gInstructions[ 2460]  // SHR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_01_nf = 
@@ -7532,13 +7699,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2445]  // SHR Ev,CL
+    (const void *)&gInstructions[ 2451]  // SHR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2436]  // SHR Ev,CL
+    (const void *)&gInstructions[ 2442]  // SHR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l_00_nd_00_nf = 
@@ -7573,13 +7740,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2401]  // SHL Bv,Ev,CL
+    (const void *)&gInstructions[ 2407]  // SHL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2392]  // SHL Bv,Ev,CL
+    (const void *)&gInstructions[ 2398]  // SHL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_01_nf = 
@@ -7594,13 +7761,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2383]  // SHL Ev,CL
+    (const void *)&gInstructions[ 2389]  // SHL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2374]  // SHL Ev,CL
+    (const void *)&gInstructions[ 2380]  // SHL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l_00_nd_00_nf = 
@@ -7635,13 +7802,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2065]  // RCR Bv,Ev,CL
+    (const void *)&gInstructions[ 2069]  // RCR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2056]  // RCR Bv,Ev,CL
+    (const void *)&gInstructions[ 2060]  // RCR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_01_nf = 
@@ -7656,13 +7823,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2047]  // RCR Ev,CL
+    (const void *)&gInstructions[ 2051]  // RCR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2038]  // RCR Ev,CL
+    (const void *)&gInstructions[ 2042]  // RCR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l_00_nd_00_nf = 
@@ -7697,13 +7864,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2021]  // RCL Bv,Ev,CL
+    (const void *)&gInstructions[ 2025]  // RCL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2012]  // RCL Bv,Ev,CL
+    (const void *)&gInstructions[ 2016]  // RCL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_01_nf = 
@@ -7718,13 +7885,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2003]  // RCL Ev,CL
+    (const void *)&gInstructions[ 2007]  // RCL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1994]  // RCL Ev,CL
+    (const void *)&gInstructions[ 1998]  // RCL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l_00_nd_00_nf = 
@@ -7759,13 +7926,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2173]  // ROR Bv,Ev,CL
+    (const void *)&gInstructions[ 2179]  // ROR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2164]  // ROR Bv,Ev,CL
+    (const void *)&gInstructions[ 2170]  // ROR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_01_nf = 
@@ -7780,13 +7947,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2155]  // ROR Ev,CL
+    (const void *)&gInstructions[ 2161]  // ROR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2146]  // ROR Ev,CL
+    (const void *)&gInstructions[ 2152]  // ROR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l_00_nd_00_nf = 
@@ -7821,13 +7988,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2131]  // ROL Bv,Ev,CL
+    (const void *)&gInstructions[ 2137]  // ROL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2122]  // ROL Bv,Ev,CL
+    (const void *)&gInstructions[ 2128]  // ROL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_01_nf = 
@@ -7842,13 +8009,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2113]  // ROL Ev,CL
+    (const void *)&gInstructions[ 2119]  // ROL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2104]  // ROL Ev,CL
+    (const void *)&gInstructions[ 2110]  // ROL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg_00_l_00_nd_00_nf = 
@@ -7898,13 +8065,13 @@ const ND_TABLE_MODRM_REG gEvexMap_mmmmm_04_opcode_d3_pp_01_modrmreg =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2268]  // SAR Bv,Ev,CL
+    (const void *)&gInstructions[ 2274]  // SAR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2259]  // SAR Bv,Ev,CL
+    (const void *)&gInstructions[ 2265]  // SAR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_01_nf = 
@@ -7919,13 +8086,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2250]  // SAR Ev,CL
+    (const void *)&gInstructions[ 2256]  // SAR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2241]  // SAR Ev,CL
+    (const void *)&gInstructions[ 2247]  // SAR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l_00_nd_00_nf = 
@@ -7960,13 +8127,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2225]  // SAL Bv,Ev,CL
+    (const void *)&gInstructions[ 2231]  // SAL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2216]  // SAL Bv,Ev,CL
+    (const void *)&gInstructions[ 2222]  // SAL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -7981,13 +8148,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2207]  // SAL Ev,CL
+    (const void *)&gInstructions[ 2213]  // SAL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2198]  // SAL Ev,CL
+    (const void *)&gInstructions[ 2204]  // SAL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -8022,13 +8189,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2462]  // SHR Bv,Ev,CL
+    (const void *)&gInstructions[ 2468]  // SHR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2453]  // SHR Bv,Ev,CL
+    (const void *)&gInstructions[ 2459]  // SHR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -8043,13 +8210,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2444]  // SHR Ev,CL
+    (const void *)&gInstructions[ 2450]  // SHR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2435]  // SHR Ev,CL
+    (const void *)&gInstructions[ 2441]  // SHR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -8084,13 +8251,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2400]  // SHL Bv,Ev,CL
+    (const void *)&gInstructions[ 2406]  // SHL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2391]  // SHL Bv,Ev,CL
+    (const void *)&gInstructions[ 2397]  // SHL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_01_nf = 
@@ -8105,13 +8272,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2382]  // SHL Ev,CL
+    (const void *)&gInstructions[ 2388]  // SHL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2373]  // SHL Ev,CL
+    (const void *)&gInstructions[ 2379]  // SHL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -8146,13 +8313,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2064]  // RCR Bv,Ev,CL
+    (const void *)&gInstructions[ 2068]  // RCR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2055]  // RCR Bv,Ev,CL
+    (const void *)&gInstructions[ 2059]  // RCR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -8167,13 +8334,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2046]  // RCR Ev,CL
+    (const void *)&gInstructions[ 2050]  // RCR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2037]  // RCR Ev,CL
+    (const void *)&gInstructions[ 2041]  // RCR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -8208,13 +8375,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2020]  // RCL Bv,Ev,CL
+    (const void *)&gInstructions[ 2024]  // RCL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2011]  // RCL Bv,Ev,CL
+    (const void *)&gInstructions[ 2015]  // RCL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -8229,13 +8396,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2002]  // RCL Ev,CL
+    (const void *)&gInstructions[ 2006]  // RCL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1993]  // RCL Ev,CL
+    (const void *)&gInstructions[ 1997]  // RCL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -8270,13 +8437,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2172]  // ROR Bv,Ev,CL
+    (const void *)&gInstructions[ 2178]  // ROR Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2163]  // ROR Bv,Ev,CL
+    (const void *)&gInstructions[ 2169]  // ROR Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -8291,13 +8458,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2154]  // ROR Ev,CL
+    (const void *)&gInstructions[ 2160]  // ROR Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2145]  // ROR Ev,CL
+    (const void *)&gInstructions[ 2151]  // ROR Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -8332,13 +8499,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2130]  // ROL Bv,Ev,CL
+    (const void *)&gInstructions[ 2136]  // ROL Bv,Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2121]  // ROL Bv,Ev,CL
+    (const void *)&gInstructions[ 2127]  // ROL Bv,Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_01_nf = 
@@ -8353,13 +8520,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2112]  // ROL Ev,CL
+    (const void *)&gInstructions[ 2118]  // ROL Ev,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2103]  // ROL Ev,CL
+    (const void *)&gInstructions[ 2109]  // ROL Ev,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d3_pp_00_modrmreg_00_l_00_nd_00_nf = 
@@ -8420,13 +8587,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_d3_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2267]  // SAR Bb,Eb,CL
+    (const void *)&gInstructions[ 2273]  // SAR Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2258]  // SAR Bb,Eb,CL
+    (const void *)&gInstructions[ 2264]  // SAR Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_01_nf = 
@@ -8441,13 +8608,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2249]  // SAR Eb,CL
+    (const void *)&gInstructions[ 2255]  // SAR Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2240]  // SAR Eb,CL
+    (const void *)&gInstructions[ 2246]  // SAR Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l_00_nd_00_nf = 
@@ -8482,13 +8649,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2224]  // SAL Bb,Eb,CL
+    (const void *)&gInstructions[ 2230]  // SAL Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2215]  // SAL Bb,Eb,CL
+    (const void *)&gInstructions[ 2221]  // SAL Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -8503,13 +8670,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2206]  // SAL Eb,CL
+    (const void *)&gInstructions[ 2212]  // SAL Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2197]  // SAL Eb,CL
+    (const void *)&gInstructions[ 2203]  // SAL Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -8544,13 +8711,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2461]  // SHR Bb,Eb,CL
+    (const void *)&gInstructions[ 2467]  // SHR Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2452]  // SHR Bb,Eb,CL
+    (const void *)&gInstructions[ 2458]  // SHR Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -8565,13 +8732,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2443]  // SHR Eb,CL
+    (const void *)&gInstructions[ 2449]  // SHR Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2434]  // SHR Eb,CL
+    (const void *)&gInstructions[ 2440]  // SHR Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -8606,13 +8773,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2399]  // SHL Bb,Eb,CL
+    (const void *)&gInstructions[ 2405]  // SHL Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2390]  // SHL Bb,Eb,CL
+    (const void *)&gInstructions[ 2396]  // SHL Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_01_nf = 
@@ -8627,13 +8794,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2381]  // SHL Eb,CL
+    (const void *)&gInstructions[ 2387]  // SHL Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2372]  // SHL Eb,CL
+    (const void *)&gInstructions[ 2378]  // SHL Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -8668,13 +8835,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2063]  // RCR Bb,Eb,CL
+    (const void *)&gInstructions[ 2067]  // RCR Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2054]  // RCR Bb,Eb,CL
+    (const void *)&gInstructions[ 2058]  // RCR Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -8689,13 +8856,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2045]  // RCR Eb,CL
+    (const void *)&gInstructions[ 2049]  // RCR Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2036]  // RCR Eb,CL
+    (const void *)&gInstructions[ 2040]  // RCR Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -8730,13 +8897,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2019]  // RCL Bb,Eb,CL
+    (const void *)&gInstructions[ 2023]  // RCL Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2010]  // RCL Bb,Eb,CL
+    (const void *)&gInstructions[ 2014]  // RCL Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -8751,13 +8918,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2001]  // RCL Eb,CL
+    (const void *)&gInstructions[ 2005]  // RCL Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1992]  // RCL Eb,CL
+    (const void *)&gInstructions[ 1996]  // RCL Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -8792,13 +8959,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2171]  // ROR Bb,Eb,CL
+    (const void *)&gInstructions[ 2177]  // ROR Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2162]  // ROR Bb,Eb,CL
+    (const void *)&gInstructions[ 2168]  // ROR Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -8813,13 +8980,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2153]  // ROR Eb,CL
+    (const void *)&gInstructions[ 2159]  // ROR Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2144]  // ROR Eb,CL
+    (const void *)&gInstructions[ 2150]  // ROR Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -8854,13 +9021,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2129]  // ROL Bb,Eb,CL
+    (const void *)&gInstructions[ 2135]  // ROL Bb,Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2120]  // ROL Bb,Eb,CL
+    (const void *)&gInstructions[ 2126]  // ROL Bb,Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_01_nf = 
@@ -8875,13 +9042,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2111]  // ROL Eb,CL
+    (const void *)&gInstructions[ 2117]  // ROL Eb,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2102]  // ROL Eb,CL
+    (const void *)&gInstructions[ 2108]  // ROL Eb,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d2_pp_00_modrmreg_00_l_00_nd_00_nf = 
@@ -8942,13 +9109,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_d2_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2266]  // SAR Bv,Ev,1
+    (const void *)&gInstructions[ 2272]  // SAR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2257]  // SAR Bv,Ev,1
+    (const void *)&gInstructions[ 2263]  // SAR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_01_nf = 
@@ -8963,13 +9130,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2248]  // SAR Ev,1
+    (const void *)&gInstructions[ 2254]  // SAR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2239]  // SAR Ev,1
+    (const void *)&gInstructions[ 2245]  // SAR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l_00_nd_00_nf = 
@@ -9004,13 +9171,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2223]  // SAL Bv,Ev,1
+    (const void *)&gInstructions[ 2229]  // SAL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2214]  // SAL Bv,Ev,1
+    (const void *)&gInstructions[ 2220]  // SAL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_01_nf = 
@@ -9025,13 +9192,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2205]  // SAL Ev,1
+    (const void *)&gInstructions[ 2211]  // SAL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2196]  // SAL Ev,1
+    (const void *)&gInstructions[ 2202]  // SAL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l_00_nd_00_nf = 
@@ -9066,13 +9233,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2460]  // SHR Bv,Ev,1
+    (const void *)&gInstructions[ 2466]  // SHR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2451]  // SHR Bv,Ev,1
+    (const void *)&gInstructions[ 2457]  // SHR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_01_nf = 
@@ -9087,13 +9254,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2442]  // SHR Ev,1
+    (const void *)&gInstructions[ 2448]  // SHR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2433]  // SHR Ev,1
+    (const void *)&gInstructions[ 2439]  // SHR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l_00_nd_00_nf = 
@@ -9128,13 +9295,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2398]  // SHL Bv,Ev,1
+    (const void *)&gInstructions[ 2404]  // SHL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2389]  // SHL Bv,Ev,1
+    (const void *)&gInstructions[ 2395]  // SHL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_01_nf = 
@@ -9149,13 +9316,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2380]  // SHL Ev,1
+    (const void *)&gInstructions[ 2386]  // SHL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2371]  // SHL Ev,1
+    (const void *)&gInstructions[ 2377]  // SHL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l_00_nd_00_nf = 
@@ -9190,13 +9357,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2062]  // RCR Bv,Ev,1
+    (const void *)&gInstructions[ 2066]  // RCR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2053]  // RCR Bv,Ev,1
+    (const void *)&gInstructions[ 2057]  // RCR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_01_nf = 
@@ -9211,13 +9378,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2044]  // RCR Ev,1
+    (const void *)&gInstructions[ 2048]  // RCR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2035]  // RCR Ev,1
+    (const void *)&gInstructions[ 2039]  // RCR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l_00_nd_00_nf = 
@@ -9252,13 +9419,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2018]  // RCL Bv,Ev,1
+    (const void *)&gInstructions[ 2022]  // RCL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2009]  // RCL Bv,Ev,1
+    (const void *)&gInstructions[ 2013]  // RCL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_01_nf = 
@@ -9273,13 +9440,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2000]  // RCL Ev,1
+    (const void *)&gInstructions[ 2004]  // RCL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1991]  // RCL Ev,1
+    (const void *)&gInstructions[ 1995]  // RCL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l_00_nd_00_nf = 
@@ -9314,13 +9481,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2170]  // ROR Bv,Ev,1
+    (const void *)&gInstructions[ 2176]  // ROR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2161]  // ROR Bv,Ev,1
+    (const void *)&gInstructions[ 2167]  // ROR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_01_nf = 
@@ -9335,13 +9502,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2152]  // ROR Ev,1
+    (const void *)&gInstructions[ 2158]  // ROR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2143]  // ROR Ev,1
+    (const void *)&gInstructions[ 2149]  // ROR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l_00_nd_00_nf = 
@@ -9376,13 +9543,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2128]  // ROL Bv,Ev,1
+    (const void *)&gInstructions[ 2134]  // ROL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2119]  // ROL Bv,Ev,1
+    (const void *)&gInstructions[ 2125]  // ROL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_01_nf = 
@@ -9397,13 +9564,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2110]  // ROL Ev,1
+    (const void *)&gInstructions[ 2116]  // ROL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2101]  // ROL Ev,1
+    (const void *)&gInstructions[ 2107]  // ROL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg_00_l_00_nd_00_nf = 
@@ -9453,13 +9620,13 @@ const ND_TABLE_MODRM_REG gEvexMap_mmmmm_04_opcode_d1_pp_01_modrmreg =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2265]  // SAR Bv,Ev,1
+    (const void *)&gInstructions[ 2271]  // SAR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2256]  // SAR Bv,Ev,1
+    (const void *)&gInstructions[ 2262]  // SAR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_01_nf = 
@@ -9474,13 +9641,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2247]  // SAR Ev,1
+    (const void *)&gInstructions[ 2253]  // SAR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2238]  // SAR Ev,1
+    (const void *)&gInstructions[ 2244]  // SAR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l_00_nd_00_nf = 
@@ -9515,13 +9682,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2222]  // SAL Bv,Ev,1
+    (const void *)&gInstructions[ 2228]  // SAL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2213]  // SAL Bv,Ev,1
+    (const void *)&gInstructions[ 2219]  // SAL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -9536,13 +9703,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2204]  // SAL Ev,1
+    (const void *)&gInstructions[ 2210]  // SAL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2195]  // SAL Ev,1
+    (const void *)&gInstructions[ 2201]  // SAL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -9577,13 +9744,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2459]  // SHR Bv,Ev,1
+    (const void *)&gInstructions[ 2465]  // SHR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2450]  // SHR Bv,Ev,1
+    (const void *)&gInstructions[ 2456]  // SHR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -9598,13 +9765,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2441]  // SHR Ev,1
+    (const void *)&gInstructions[ 2447]  // SHR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2432]  // SHR Ev,1
+    (const void *)&gInstructions[ 2438]  // SHR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -9639,13 +9806,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2397]  // SHL Bv,Ev,1
+    (const void *)&gInstructions[ 2403]  // SHL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2388]  // SHL Bv,Ev,1
+    (const void *)&gInstructions[ 2394]  // SHL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_01_nf = 
@@ -9660,13 +9827,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2379]  // SHL Ev,1
+    (const void *)&gInstructions[ 2385]  // SHL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2370]  // SHL Ev,1
+    (const void *)&gInstructions[ 2376]  // SHL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -9701,13 +9868,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2061]  // RCR Bv,Ev,1
+    (const void *)&gInstructions[ 2065]  // RCR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2052]  // RCR Bv,Ev,1
+    (const void *)&gInstructions[ 2056]  // RCR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -9722,13 +9889,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2043]  // RCR Ev,1
+    (const void *)&gInstructions[ 2047]  // RCR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2034]  // RCR Ev,1
+    (const void *)&gInstructions[ 2038]  // RCR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -9763,13 +9930,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2017]  // RCL Bv,Ev,1
+    (const void *)&gInstructions[ 2021]  // RCL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2008]  // RCL Bv,Ev,1
+    (const void *)&gInstructions[ 2012]  // RCL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -9784,13 +9951,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1999]  // RCL Ev,1
+    (const void *)&gInstructions[ 2003]  // RCL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1990]  // RCL Ev,1
+    (const void *)&gInstructions[ 1994]  // RCL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -9825,13 +9992,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2169]  // ROR Bv,Ev,1
+    (const void *)&gInstructions[ 2175]  // ROR Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2160]  // ROR Bv,Ev,1
+    (const void *)&gInstructions[ 2166]  // ROR Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -9846,13 +10013,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2151]  // ROR Ev,1
+    (const void *)&gInstructions[ 2157]  // ROR Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2142]  // ROR Ev,1
+    (const void *)&gInstructions[ 2148]  // ROR Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -9887,13 +10054,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2127]  // ROL Bv,Ev,1
+    (const void *)&gInstructions[ 2133]  // ROL Bv,Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2118]  // ROL Bv,Ev,1
+    (const void *)&gInstructions[ 2124]  // ROL Bv,Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_01_nf = 
@@ -9908,13 +10075,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2109]  // ROL Ev,1
+    (const void *)&gInstructions[ 2115]  // ROL Ev,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2100]  // ROL Ev,1
+    (const void *)&gInstructions[ 2106]  // ROL Ev,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d1_pp_00_modrmreg_00_l_00_nd_00_nf = 
@@ -9975,13 +10142,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_d1_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2264]  // SAR Bb,Eb,1
+    (const void *)&gInstructions[ 2270]  // SAR Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2255]  // SAR Bb,Eb,1
+    (const void *)&gInstructions[ 2261]  // SAR Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_01_nf = 
@@ -9996,13 +10163,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2246]  // SAR Eb,1
+    (const void *)&gInstructions[ 2252]  // SAR Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2237]  // SAR Eb,1
+    (const void *)&gInstructions[ 2243]  // SAR Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l_00_nd_00_nf = 
@@ -10037,13 +10204,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2221]  // SAL Bb,Eb,1
+    (const void *)&gInstructions[ 2227]  // SAL Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2212]  // SAL Bb,Eb,1
+    (const void *)&gInstructions[ 2218]  // SAL Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -10058,13 +10225,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2203]  // SAL Eb,1
+    (const void *)&gInstructions[ 2209]  // SAL Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2194]  // SAL Eb,1
+    (const void *)&gInstructions[ 2200]  // SAL Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -10099,13 +10266,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2458]  // SHR Bb,Eb,1
+    (const void *)&gInstructions[ 2464]  // SHR Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2449]  // SHR Bb,Eb,1
+    (const void *)&gInstructions[ 2455]  // SHR Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -10120,13 +10287,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2440]  // SHR Eb,1
+    (const void *)&gInstructions[ 2446]  // SHR Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2431]  // SHR Eb,1
+    (const void *)&gInstructions[ 2437]  // SHR Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -10161,13 +10328,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2396]  // SHL Bb,Eb,1
+    (const void *)&gInstructions[ 2402]  // SHL Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2387]  // SHL Bb,Eb,1
+    (const void *)&gInstructions[ 2393]  // SHL Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_01_nf = 
@@ -10182,13 +10349,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2378]  // SHL Eb,1
+    (const void *)&gInstructions[ 2384]  // SHL Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2369]  // SHL Eb,1
+    (const void *)&gInstructions[ 2375]  // SHL Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -10223,13 +10390,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2060]  // RCR Bb,Eb,1
+    (const void *)&gInstructions[ 2064]  // RCR Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2051]  // RCR Bb,Eb,1
+    (const void *)&gInstructions[ 2055]  // RCR Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -10244,13 +10411,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2042]  // RCR Eb,1
+    (const void *)&gInstructions[ 2046]  // RCR Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2033]  // RCR Eb,1
+    (const void *)&gInstructions[ 2037]  // RCR Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -10285,13 +10452,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2016]  // RCL Bb,Eb,1
+    (const void *)&gInstructions[ 2020]  // RCL Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2007]  // RCL Bb,Eb,1
+    (const void *)&gInstructions[ 2011]  // RCL Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -10306,13 +10473,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1998]  // RCL Eb,1
+    (const void *)&gInstructions[ 2002]  // RCL Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1989]  // RCL Eb,1
+    (const void *)&gInstructions[ 1993]  // RCL Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -10347,13 +10514,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2168]  // ROR Bb,Eb,1
+    (const void *)&gInstructions[ 2174]  // ROR Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2159]  // ROR Bb,Eb,1
+    (const void *)&gInstructions[ 2165]  // ROR Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -10368,13 +10535,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2150]  // ROR Eb,1
+    (const void *)&gInstructions[ 2156]  // ROR Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2141]  // ROR Eb,1
+    (const void *)&gInstructions[ 2147]  // ROR Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -10409,13 +10576,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2126]  // ROL Bb,Eb,1
+    (const void *)&gInstructions[ 2132]  // ROL Bb,Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2117]  // ROL Bb,Eb,1
+    (const void *)&gInstructions[ 2123]  // ROL Bb,Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_01_nf = 
@@ -10430,13 +10597,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2108]  // ROL Eb,1
+    (const void *)&gInstructions[ 2114]  // ROL Eb,1
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2099]  // ROL Eb,1
+    (const void *)&gInstructions[ 2105]  // ROL Eb,1
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_d0_pp_00_modrmreg_00_l_00_nd_00_nf = 
@@ -10497,13 +10664,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_d0_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2263]  // SAR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2269]  // SAR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2254]  // SAR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2260]  // SAR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_01_nf = 
@@ -10518,13 +10685,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2245]  // SAR Ev,Ib
+    (const void *)&gInstructions[ 2251]  // SAR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2236]  // SAR Ev,Ib
+    (const void *)&gInstructions[ 2242]  // SAR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l_00_nd_00_nf = 
@@ -10559,13 +10726,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2220]  // SAL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2226]  // SAL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2211]  // SAL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2217]  // SAL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_01_nf = 
@@ -10580,13 +10747,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2202]  // SAL Ev,Ib
+    (const void *)&gInstructions[ 2208]  // SAL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2193]  // SAL Ev,Ib
+    (const void *)&gInstructions[ 2199]  // SAL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l_00_nd_00_nf = 
@@ -10621,13 +10788,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2457]  // SHR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2463]  // SHR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2448]  // SHR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2454]  // SHR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_01_nf = 
@@ -10642,13 +10809,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2439]  // SHR Ev,Ib
+    (const void *)&gInstructions[ 2445]  // SHR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2430]  // SHR Ev,Ib
+    (const void *)&gInstructions[ 2436]  // SHR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l_00_nd_00_nf = 
@@ -10683,13 +10850,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2395]  // SHL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2401]  // SHL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2386]  // SHL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2392]  // SHL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_01_nf = 
@@ -10704,13 +10871,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2377]  // SHL Ev,Ib
+    (const void *)&gInstructions[ 2383]  // SHL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2368]  // SHL Ev,Ib
+    (const void *)&gInstructions[ 2374]  // SHL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l_00_nd_00_nf = 
@@ -10745,13 +10912,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2059]  // RCR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2063]  // RCR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2050]  // RCR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2054]  // RCR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_01_nf = 
@@ -10766,13 +10933,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2041]  // RCR Ev,Ib
+    (const void *)&gInstructions[ 2045]  // RCR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2032]  // RCR Ev,Ib
+    (const void *)&gInstructions[ 2036]  // RCR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l_00_nd_00_nf = 
@@ -10807,13 +10974,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2015]  // RCL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2019]  // RCL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2006]  // RCL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2010]  // RCL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_01_nf = 
@@ -10828,13 +10995,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1997]  // RCL Ev,Ib
+    (const void *)&gInstructions[ 2001]  // RCL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1988]  // RCL Ev,Ib
+    (const void *)&gInstructions[ 1992]  // RCL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l_00_nd_00_nf = 
@@ -10869,13 +11036,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2167]  // ROR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2173]  // ROR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2158]  // ROR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2164]  // ROR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_01_nf = 
@@ -10890,13 +11057,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2149]  // ROR Ev,Ib
+    (const void *)&gInstructions[ 2155]  // ROR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2140]  // ROR Ev,Ib
+    (const void *)&gInstructions[ 2146]  // ROR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l_00_nd_00_nf = 
@@ -10931,13 +11098,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2125]  // ROL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2131]  // ROL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2116]  // ROL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2122]  // ROL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_01_nf = 
@@ -10952,13 +11119,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2107]  // ROL Ev,Ib
+    (const void *)&gInstructions[ 2113]  // ROL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2098]  // ROL Ev,Ib
+    (const void *)&gInstructions[ 2104]  // ROL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg_00_l_00_nd_00_nf = 
@@ -11008,13 +11175,13 @@ const ND_TABLE_MODRM_REG gEvexMap_mmmmm_04_opcode_c1_pp_01_modrmreg =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2262]  // SAR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2268]  // SAR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2253]  // SAR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2259]  // SAR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_01_nf = 
@@ -11029,13 +11196,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2244]  // SAR Ev,Ib
+    (const void *)&gInstructions[ 2250]  // SAR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2235]  // SAR Ev,Ib
+    (const void *)&gInstructions[ 2241]  // SAR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l_00_nd_00_nf = 
@@ -11070,13 +11237,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2219]  // SAL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2225]  // SAL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2210]  // SAL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2216]  // SAL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -11091,13 +11258,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2201]  // SAL Ev,Ib
+    (const void *)&gInstructions[ 2207]  // SAL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2192]  // SAL Ev,Ib
+    (const void *)&gInstructions[ 2198]  // SAL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -11132,13 +11299,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2456]  // SHR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2462]  // SHR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2447]  // SHR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2453]  // SHR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -11153,13 +11320,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2438]  // SHR Ev,Ib
+    (const void *)&gInstructions[ 2444]  // SHR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2429]  // SHR Ev,Ib
+    (const void *)&gInstructions[ 2435]  // SHR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -11194,13 +11361,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2394]  // SHL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2400]  // SHL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2385]  // SHL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2391]  // SHL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_01_nf = 
@@ -11215,13 +11382,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2376]  // SHL Ev,Ib
+    (const void *)&gInstructions[ 2382]  // SHL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2367]  // SHL Ev,Ib
+    (const void *)&gInstructions[ 2373]  // SHL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -11256,13 +11423,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2058]  // RCR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2062]  // RCR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2049]  // RCR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2053]  // RCR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -11277,13 +11444,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2040]  // RCR Ev,Ib
+    (const void *)&gInstructions[ 2044]  // RCR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2031]  // RCR Ev,Ib
+    (const void *)&gInstructions[ 2035]  // RCR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -11318,13 +11485,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2014]  // RCL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2018]  // RCL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2005]  // RCL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2009]  // RCL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -11339,13 +11506,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1996]  // RCL Ev,Ib
+    (const void *)&gInstructions[ 2000]  // RCL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1987]  // RCL Ev,Ib
+    (const void *)&gInstructions[ 1991]  // RCL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -11380,13 +11547,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2166]  // ROR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2172]  // ROR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2157]  // ROR Bv,Ev,Ib
+    (const void *)&gInstructions[ 2163]  // ROR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -11401,13 +11568,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2148]  // ROR Ev,Ib
+    (const void *)&gInstructions[ 2154]  // ROR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2139]  // ROR Ev,Ib
+    (const void *)&gInstructions[ 2145]  // ROR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -11442,13 +11609,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2124]  // ROL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2130]  // ROL Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2115]  // ROL Bv,Ev,Ib
+    (const void *)&gInstructions[ 2121]  // ROL Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_01_nf = 
@@ -11463,13 +11630,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2106]  // ROL Ev,Ib
+    (const void *)&gInstructions[ 2112]  // ROL Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2097]  // ROL Ev,Ib
+    (const void *)&gInstructions[ 2103]  // ROL Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c1_pp_00_modrmreg_00_l_00_nd_00_nf = 
@@ -11530,13 +11697,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_c1_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2261]  // SAR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2267]  // SAR Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2252]  // SAR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2258]  // SAR Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_01_nf = 
@@ -11551,13 +11718,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2243]  // SAR Eb,Ib
+    (const void *)&gInstructions[ 2249]  // SAR Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2234]  // SAR Eb,Ib
+    (const void *)&gInstructions[ 2240]  // SAR Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l_00_nd_00_nf = 
@@ -11592,13 +11759,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2218]  // SAL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2224]  // SAL Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2209]  // SAL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2215]  // SAL Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -11613,13 +11780,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2200]  // SAL Eb,Ib
+    (const void *)&gInstructions[ 2206]  // SAL Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2191]  // SAL Eb,Ib
+    (const void *)&gInstructions[ 2197]  // SAL Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -11654,13 +11821,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2455]  // SHR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2461]  // SHR Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2446]  // SHR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2452]  // SHR Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -11675,13 +11842,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2437]  // SHR Eb,Ib
+    (const void *)&gInstructions[ 2443]  // SHR Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2428]  // SHR Eb,Ib
+    (const void *)&gInstructions[ 2434]  // SHR Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -11716,13 +11883,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_05_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2393]  // SHL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2399]  // SHL Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2384]  // SHL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2390]  // SHL Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_01_nf = 
@@ -11737,13 +11904,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2375]  // SHL Eb,Ib
+    (const void *)&gInstructions[ 2381]  // SHL Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2366]  // SHL Eb,Ib
+    (const void *)&gInstructions[ 2372]  // SHL Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l_00_nd_00_nf = 
@@ -11778,13 +11945,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2057]  // RCR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2061]  // RCR Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2048]  // RCR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2052]  // RCR Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -11799,13 +11966,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2039]  // RCR Eb,Ib
+    (const void *)&gInstructions[ 2043]  // RCR Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2030]  // RCR Eb,Ib
+    (const void *)&gInstructions[ 2034]  // RCR Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -11840,13 +12007,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2013]  // RCL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2017]  // RCL Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2004]  // RCL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2008]  // RCL Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_01_nf = 
@@ -11861,13 +12028,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1995]  // RCL Eb,Ib
+    (const void *)&gInstructions[ 1999]  // RCL Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1986]  // RCL Eb,Ib
+    (const void *)&gInstructions[ 1990]  // RCL Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l_00_nd_00_nf = 
@@ -11902,13 +12069,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2165]  // ROR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2171]  // ROR Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2156]  // ROR Bb,Eb,Ib
+    (const void *)&gInstructions[ 2162]  // ROR Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -11923,13 +12090,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2147]  // ROR Eb,Ib
+    (const void *)&gInstructions[ 2153]  // ROR Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2138]  // ROR Eb,Ib
+    (const void *)&gInstructions[ 2144]  // ROR Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -11964,13 +12131,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2123]  // ROL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2129]  // ROL Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2114]  // ROL Bb,Eb,Ib
+    (const void *)&gInstructions[ 2120]  // ROL Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_01_nf = 
@@ -11985,13 +12152,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2105]  // ROL Eb,Ib
+    (const void *)&gInstructions[ 2111]  // ROL Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2096]  // ROL Eb,Ib
+    (const void *)&gInstructions[ 2102]  // ROL Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_c0_pp_00_modrmreg_00_l_00_nd_00_nf = 
@@ -12187,13 +12354,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_af_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2485]  // SHRD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2491]  // SHRD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2481]  // SHRD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2487]  // SHRD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_01_nf = 
@@ -12208,13 +12375,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2477]  // SHRD Ev,Gv,CL
+    (const void *)&gInstructions[ 2483]  // SHRD Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2473]  // SHRD Ev,Gv,CL
+    (const void *)&gInstructions[ 2479]  // SHRD Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ad_pp_01_l_00_nd_00_nf = 
@@ -12249,13 +12416,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_ad_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2483]  // SHRD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2489]  // SHRD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2479]  // SHRD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2485]  // SHRD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_01_nf = 
@@ -12270,13 +12437,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2475]  // SHRD Ev,Gv,CL
+    (const void *)&gInstructions[ 2481]  // SHRD Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2471]  // SHRD Ev,Gv,CL
+    (const void *)&gInstructions[ 2477]  // SHRD Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_ad_pp_00_l_00_nd_00_nf = 
@@ -12322,13 +12489,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_ad_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2423]  // SHLD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2429]  // SHLD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2419]  // SHLD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2425]  // SHLD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_01_nf = 
@@ -12343,13 +12510,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2415]  // SHLD Ev,Gv,CL
+    (const void *)&gInstructions[ 2421]  // SHLD Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2411]  // SHLD Ev,Gv,CL
+    (const void *)&gInstructions[ 2417]  // SHLD Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_a5_pp_01_l_00_nd_00_nf = 
@@ -12384,13 +12551,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_a5_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2421]  // SHLD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2427]  // SHLD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2417]  // SHLD Bv,Ev,Gv,CL
+    (const void *)&gInstructions[ 2423]  // SHLD Bv,Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_01_nf = 
@@ -12405,13 +12572,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2413]  // SHLD Ev,Gv,CL
+    (const void *)&gInstructions[ 2419]  // SHLD Ev,Gv,CL
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2409]  // SHLD Ev,Gv,CL
+    (const void *)&gInstructions[ 2415]  // SHLD Ev,Gv,CL
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_a5_pp_00_l_00_nd_00_nf = 
@@ -12457,7 +12624,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_a5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_8f_pp_00_modrmreg_00_modrmmod_01_l_00_w_01_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1830]  // POP2P Bv,Rv
+    (const void *)&gInstructions[ 1832]  // POP2P Bv,Rv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_8f_pp_00_modrmreg_00_modrmmod_01_l_00_w_01_nd_01_nf = 
@@ -12481,7 +12648,7 @@ const ND_TABLE_EX_ND gEvexMap_mmmmm_04_opcode_8f_pp_00_modrmreg_00_modrmmod_01_l
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_8f_pp_00_modrmreg_00_modrmmod_01_l_00_w_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1829]  // POP2 Bv,Rv
+    (const void *)&gInstructions[ 1831]  // POP2 Bv,Rv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_8f_pp_00_modrmreg_00_modrmmod_01_l_00_w_00_nd_01_nf = 
@@ -12560,13 +12727,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_8f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_88_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1836]  // POPCNT Gv,Ev
+    (const void *)&gInstructions[ 1838]  // POPCNT Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_88_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1834]  // POPCNT Gv,Ev
+    (const void *)&gInstructions[ 1836]  // POPCNT Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_88_pp_01_l_00_nd_00_nf = 
@@ -12601,13 +12768,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_88_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_88_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1835]  // POPCNT Gv,Ev
+    (const void *)&gInstructions[ 1837]  // POPCNT Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_88_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1833]  // POPCNT Gv,Ev
+    (const void *)&gInstructions[ 1835]  // POPCNT Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_88_pp_00_l_00_nd_00_nf = 
@@ -13231,13 +13398,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4128]  // XOR Bv,Ev,Ib
+    (const void *)&gInstructions[ 4177]  // XOR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4117]  // XOR Bv,Ev,Ib
+    (const void *)&gInstructions[ 4166]  // XOR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_01_nf = 
@@ -13252,13 +13419,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4106]  // XOR Ev,Ib
+    (const void *)&gInstructions[ 4155]  // XOR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4095]  // XOR Ev,Ib
+    (const void *)&gInstructions[ 4144]  // XOR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l_00_nd_00_nf = 
@@ -13293,13 +13460,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2566]  // SUB Bv,Ev,Ib
+    (const void *)&gInstructions[ 2572]  // SUB Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2555]  // SUB Bv,Ev,Ib
+    (const void *)&gInstructions[ 2561]  // SUB Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_01_nf = 
@@ -13314,13 +13481,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2544]  // SUB Ev,Ib
+    (const void *)&gInstructions[ 2550]  // SUB Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2533]  // SUB Ev,Ib
+    (const void *)&gInstructions[ 2539]  // SUB Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_05_l_00_nd_00_nf = 
@@ -13417,7 +13584,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2300]  // SBB Bv,Ev,Ib
+    (const void *)&gInstructions[ 2306]  // SBB Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_03_l_00_nd_01_nf = 
@@ -13432,7 +13599,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2289]  // SBB Ev,Ib
+    (const void *)&gInstructions[ 2295]  // SBB Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_03_l_00_nd_00_nf = 
@@ -13517,13 +13684,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1623]  // OR Bv,Ev,Ib
+    (const void *)&gInstructions[ 1625]  // OR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1612]  // OR Bv,Ev,Ib
+    (const void *)&gInstructions[ 1614]  // OR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_01_nf = 
@@ -13538,13 +13705,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1601]  // OR Ev,Ib
+    (const void *)&gInstructions[ 1603]  // OR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1590]  // OR Ev,Ib
+    (const void *)&gInstructions[ 1592]  // OR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_01_modrmreg_01_l_00_nd_00_nf = 
@@ -13795,13 +13962,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4127]  // XOR Bv,Ev,Ib
+    (const void *)&gInstructions[ 4176]  // XOR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4116]  // XOR Bv,Ev,Ib
+    (const void *)&gInstructions[ 4165]  // XOR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -13816,13 +13983,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4105]  // XOR Ev,Ib
+    (const void *)&gInstructions[ 4154]  // XOR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4094]  // XOR Ev,Ib
+    (const void *)&gInstructions[ 4143]  // XOR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -13857,13 +14024,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2565]  // SUB Bv,Ev,Ib
+    (const void *)&gInstructions[ 2571]  // SUB Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2554]  // SUB Bv,Ev,Ib
+    (const void *)&gInstructions[ 2560]  // SUB Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -13878,13 +14045,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2543]  // SUB Ev,Ib
+    (const void *)&gInstructions[ 2549]  // SUB Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2532]  // SUB Ev,Ib
+    (const void *)&gInstructions[ 2538]  // SUB Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -13981,7 +14148,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2299]  // SBB Bv,Ev,Ib
+    (const void *)&gInstructions[ 2305]  // SBB Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -13996,7 +14163,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2288]  // SBB Ev,Ib
+    (const void *)&gInstructions[ 2294]  // SBB Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -14081,13 +14248,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1622]  // OR Bv,Ev,Ib
+    (const void *)&gInstructions[ 1624]  // OR Bv,Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1611]  // OR Bv,Ev,Ib
+    (const void *)&gInstructions[ 1613]  // OR Bv,Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -14102,13 +14269,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1600]  // OR Ev,Ib
+    (const void *)&gInstructions[ 1602]  // OR Ev,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1589]  // OR Ev,Ib
+    (const void *)&gInstructions[ 1591]  // OR Ev,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_83_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -14370,13 +14537,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4126]  // XOR Bv,Ev,Iz
+    (const void *)&gInstructions[ 4175]  // XOR Bv,Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4115]  // XOR Bv,Ev,Iz
+    (const void *)&gInstructions[ 4164]  // XOR Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_01_nf = 
@@ -14391,13 +14558,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4104]  // XOR Ev,Iz
+    (const void *)&gInstructions[ 4153]  // XOR Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4093]  // XOR Ev,Iz
+    (const void *)&gInstructions[ 4142]  // XOR Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l_00_nd_00_nf = 
@@ -14432,13 +14599,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2564]  // SUB Bv,Ev,Iz
+    (const void *)&gInstructions[ 2570]  // SUB Bv,Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2553]  // SUB Bv,Ev,Iz
+    (const void *)&gInstructions[ 2559]  // SUB Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_01_nf = 
@@ -14453,13 +14620,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2542]  // SUB Ev,Iz
+    (const void *)&gInstructions[ 2548]  // SUB Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2531]  // SUB Ev,Iz
+    (const void *)&gInstructions[ 2537]  // SUB Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_05_l_00_nd_00_nf = 
@@ -14556,7 +14723,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2298]  // SBB Bv,Ev,Iz
+    (const void *)&gInstructions[ 2304]  // SBB Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_03_l_00_nd_01_nf = 
@@ -14571,7 +14738,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2287]  // SBB Ev,Iz
+    (const void *)&gInstructions[ 2293]  // SBB Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_03_l_00_nd_00_nf = 
@@ -14656,13 +14823,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1621]  // OR Bv,Ev,Iz
+    (const void *)&gInstructions[ 1623]  // OR Bv,Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1610]  // OR Bv,Ev,Iz
+    (const void *)&gInstructions[ 1612]  // OR Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_01_nf = 
@@ -14677,13 +14844,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1599]  // OR Ev,Iz
+    (const void *)&gInstructions[ 1601]  // OR Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1588]  // OR Ev,Iz
+    (const void *)&gInstructions[ 1590]  // OR Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_01_modrmreg_01_l_00_nd_00_nf = 
@@ -14934,13 +15101,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4125]  // XOR Bv,Ev,Iz
+    (const void *)&gInstructions[ 4174]  // XOR Bv,Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4114]  // XOR Bv,Ev,Iz
+    (const void *)&gInstructions[ 4163]  // XOR Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -14955,13 +15122,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4103]  // XOR Ev,Iz
+    (const void *)&gInstructions[ 4152]  // XOR Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4092]  // XOR Ev,Iz
+    (const void *)&gInstructions[ 4141]  // XOR Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -14996,13 +15163,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2563]  // SUB Bv,Ev,Iz
+    (const void *)&gInstructions[ 2569]  // SUB Bv,Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2552]  // SUB Bv,Ev,Iz
+    (const void *)&gInstructions[ 2558]  // SUB Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -15017,13 +15184,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2541]  // SUB Ev,Iz
+    (const void *)&gInstructions[ 2547]  // SUB Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2530]  // SUB Ev,Iz
+    (const void *)&gInstructions[ 2536]  // SUB Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -15120,7 +15287,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2297]  // SBB Bv,Ev,Iz
+    (const void *)&gInstructions[ 2303]  // SBB Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -15135,7 +15302,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2286]  // SBB Ev,Iz
+    (const void *)&gInstructions[ 2292]  // SBB Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -15220,13 +15387,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1620]  // OR Bv,Ev,Iz
+    (const void *)&gInstructions[ 1622]  // OR Bv,Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1609]  // OR Bv,Ev,Iz
+    (const void *)&gInstructions[ 1611]  // OR Bv,Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -15241,13 +15408,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1598]  // OR Ev,Iz
+    (const void *)&gInstructions[ 1600]  // OR Ev,Iz
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1587]  // OR Ev,Iz
+    (const void *)&gInstructions[ 1589]  // OR Ev,Iz
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_81_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -15509,13 +15676,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_07_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4124]  // XOR Bb,Eb,Ib
+    (const void *)&gInstructions[ 4173]  // XOR Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4113]  // XOR Bb,Eb,Ib
+    (const void *)&gInstructions[ 4162]  // XOR Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_01_nf = 
@@ -15530,13 +15697,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4102]  // XOR Eb,Ib
+    (const void *)&gInstructions[ 4151]  // XOR Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4091]  // XOR Eb,Ib
+    (const void *)&gInstructions[ 4140]  // XOR Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l_00_nd_00_nf = 
@@ -15571,13 +15738,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_06_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2562]  // SUB Bb,Eb,Ib
+    (const void *)&gInstructions[ 2568]  // SUB Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2551]  // SUB Bb,Eb,Ib
+    (const void *)&gInstructions[ 2557]  // SUB Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_01_nf = 
@@ -15592,13 +15759,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2540]  // SUB Eb,Ib
+    (const void *)&gInstructions[ 2546]  // SUB Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2529]  // SUB Eb,Ib
+    (const void *)&gInstructions[ 2535]  // SUB Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_05_l_00_nd_00_nf = 
@@ -15695,7 +15862,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_04_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_03_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2296]  // SBB Bb,Eb,Ib
+    (const void *)&gInstructions[ 2302]  // SBB Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_03_l_00_nd_01_nf = 
@@ -15710,7 +15877,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_03_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2285]  // SBB Eb,Ib
+    (const void *)&gInstructions[ 2291]  // SBB Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_03_l_00_nd_00_nf = 
@@ -15795,13 +15962,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1619]  // OR Bb,Eb,Ib
+    (const void *)&gInstructions[ 1621]  // OR Bb,Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1608]  // OR Bb,Eb,Ib
+    (const void *)&gInstructions[ 1610]  // OR Bb,Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_01_nf = 
@@ -15816,13 +15983,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_01_nf
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1597]  // OR Eb,Ib
+    (const void *)&gInstructions[ 1599]  // OR Eb,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1586]  // OR Eb,Ib
+    (const void *)&gInstructions[ 1588]  // OR Eb,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_80_pp_00_modrmreg_01_l_00_nd_00_nf = 
@@ -16315,7 +16482,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_66_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_66_pp_00_modrmmod_00_l_00_w_01_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4062]  // WRSSQ My,Gy
+    (const void *)&gInstructions[ 4111]  // WRSSQ My,Gy
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_66_pp_00_modrmmod_00_l_00_w_01_nd_00_nf = 
@@ -16339,7 +16506,7 @@ const ND_TABLE_EX_ND gEvexMap_mmmmm_04_opcode_66_pp_00_modrmmod_00_l_00_w_01_nd 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_66_pp_00_modrmmod_00_l_00_w_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4060]  // WRSSD My,Gy
+    (const void *)&gInstructions[ 4109]  // WRSSD My,Gy
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_66_pp_00_modrmmod_00_l_00_w_00_nd_00_nf = 
@@ -16403,7 +16570,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_66_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_65_pp_01_modrmmod_00_l_00_w_01_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4066]  // WRUSSQ My,Gy
+    (const void *)&gInstructions[ 4115]  // WRUSSQ My,Gy
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_65_pp_01_modrmmod_00_l_00_w_01_nd_00_nf = 
@@ -16427,7 +16594,7 @@ const ND_TABLE_EX_ND gEvexMap_mmmmm_04_opcode_65_pp_01_modrmmod_00_l_00_w_01_nd 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_65_pp_01_modrmmod_00_l_00_w_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4064]  // WRUSSD My,Gy
+    (const void *)&gInstructions[ 4113]  // WRUSSD My,Gy
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_65_pp_01_modrmmod_00_l_00_w_00_nd_00_nf = 
@@ -16653,7 +16820,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_60_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_4f_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2338]  // SETNLE Eb
+    (const void *)&gInstructions[ 2344]  // SETNLE Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_4f_pp_03_l_00_nf = 
@@ -16844,7 +17011,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_4f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_4e_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2330]  // SETLE Eb
+    (const void *)&gInstructions[ 2336]  // SETLE Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_4e_pp_03_l_00_nf = 
@@ -17035,7 +17202,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_4e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_4d_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2336]  // SETNL Eb
+    (const void *)&gInstructions[ 2342]  // SETNL Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_4d_pp_03_l_00_nf = 
@@ -17226,7 +17393,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_4d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_4c_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2328]  // SETL Eb
+    (const void *)&gInstructions[ 2334]  // SETL Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_4c_pp_03_l_00_nf = 
@@ -17417,7 +17584,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_4c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_4b_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2342]  // SETNP Eb
+    (const void *)&gInstructions[ 2348]  // SETNP Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_4b_pp_03_l_00_nf = 
@@ -17608,7 +17775,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_4b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_4a_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2350]  // SETP Eb
+    (const void *)&gInstructions[ 2356]  // SETP Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_4a_pp_03_l_00_nf = 
@@ -17799,7 +17966,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_4a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_49_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2344]  // SETNS Eb
+    (const void *)&gInstructions[ 2350]  // SETNS Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_49_pp_03_l_00_nf = 
@@ -17990,7 +18157,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_49_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_48_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2352]  // SETS Eb
+    (const void *)&gInstructions[ 2358]  // SETS Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_48_pp_03_l_00_nf = 
@@ -18181,7 +18348,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_48_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_47_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2332]  // SETNBE Eb
+    (const void *)&gInstructions[ 2338]  // SETNBE Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_47_pp_03_l_00_nf = 
@@ -18372,7 +18539,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_47_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_46_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2324]  // SETBE Eb
+    (const void *)&gInstructions[ 2330]  // SETBE Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_46_pp_03_l_00_nf = 
@@ -18563,7 +18730,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_46_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_45_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2346]  // SETNZ Eb
+    (const void *)&gInstructions[ 2352]  // SETNZ Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_45_pp_03_l_00_nf = 
@@ -18754,7 +18921,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_45_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_44_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2355]  // SETZ Eb
+    (const void *)&gInstructions[ 2361]  // SETZ Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_44_pp_03_l_00_nf = 
@@ -18945,7 +19112,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_44_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_43_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2334]  // SETNC Eb
+    (const void *)&gInstructions[ 2340]  // SETNC Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_43_pp_03_l_00_nf = 
@@ -19136,7 +19303,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_43_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_42_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2326]  // SETC Eb
+    (const void *)&gInstructions[ 2332]  // SETC Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_42_pp_03_l_00_nf = 
@@ -19327,7 +19494,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_42_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_41_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2340]  // SETNO Eb
+    (const void *)&gInstructions[ 2346]  // SETNO Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_41_pp_03_l_00_nf = 
@@ -19518,7 +19685,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_41_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_40_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2348]  // SETO Eb
+    (const void *)&gInstructions[ 2354]  // SETO Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_40_pp_03_l_00_nf = 
@@ -20587,13 +20754,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_38_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4123]  // XOR Bv,Gv,Ev
+    (const void *)&gInstructions[ 4172]  // XOR Bv,Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4112]  // XOR Bv,Gv,Ev
+    (const void *)&gInstructions[ 4161]  // XOR Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_01_nf = 
@@ -20608,13 +20775,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4101]  // XOR Gv,Ev
+    (const void *)&gInstructions[ 4150]  // XOR Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4090]  // XOR Gv,Ev
+    (const void *)&gInstructions[ 4139]  // XOR Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_33_pp_01_l_00_nd_00_nf = 
@@ -20649,13 +20816,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_33_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4122]  // XOR Bv,Gv,Ev
+    (const void *)&gInstructions[ 4171]  // XOR Bv,Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4111]  // XOR Bv,Gv,Ev
+    (const void *)&gInstructions[ 4160]  // XOR Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_01_nf = 
@@ -20670,13 +20837,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4100]  // XOR Gv,Ev
+    (const void *)&gInstructions[ 4149]  // XOR Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4089]  // XOR Gv,Ev
+    (const void *)&gInstructions[ 4138]  // XOR Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_33_pp_00_l_00_nd_00_nf = 
@@ -20722,13 +20889,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_33_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4121]  // XOR Bb,Gb,Eb
+    (const void *)&gInstructions[ 4170]  // XOR Bb,Gb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4110]  // XOR Bb,Gb,Eb
+    (const void *)&gInstructions[ 4159]  // XOR Bb,Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_01_nf = 
@@ -20743,13 +20910,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4099]  // XOR Gb,Eb
+    (const void *)&gInstructions[ 4148]  // XOR Gb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4088]  // XOR Gb,Eb
+    (const void *)&gInstructions[ 4137]  // XOR Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_32_pp_00_l_00_nd_00_nf = 
@@ -20795,13 +20962,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_32_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4120]  // XOR Bv,Ev,Gv
+    (const void *)&gInstructions[ 4169]  // XOR Bv,Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4109]  // XOR Bv,Ev,Gv
+    (const void *)&gInstructions[ 4158]  // XOR Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_01_nf = 
@@ -20816,13 +20983,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4098]  // XOR Ev,Gv
+    (const void *)&gInstructions[ 4147]  // XOR Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4087]  // XOR Ev,Gv
+    (const void *)&gInstructions[ 4136]  // XOR Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_31_pp_01_l_00_nd_00_nf = 
@@ -20857,13 +21024,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_31_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4119]  // XOR Bv,Ev,Gv
+    (const void *)&gInstructions[ 4168]  // XOR Bv,Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4108]  // XOR Bv,Ev,Gv
+    (const void *)&gInstructions[ 4157]  // XOR Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_01_nf = 
@@ -20878,13 +21045,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4097]  // XOR Ev,Gv
+    (const void *)&gInstructions[ 4146]  // XOR Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4086]  // XOR Ev,Gv
+    (const void *)&gInstructions[ 4135]  // XOR Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_31_pp_00_l_00_nd_00_nf = 
@@ -20930,13 +21097,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_31_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4118]  // XOR Bb,Eb,Gb
+    (const void *)&gInstructions[ 4167]  // XOR Bb,Eb,Gb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4107]  // XOR Bb,Eb,Gb
+    (const void *)&gInstructions[ 4156]  // XOR Bb,Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_01_nf = 
@@ -20951,13 +21118,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4096]  // XOR Eb,Gb
+    (const void *)&gInstructions[ 4145]  // XOR Eb,Gb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4085]  // XOR Eb,Gb
+    (const void *)&gInstructions[ 4134]  // XOR Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_30_pp_00_l_00_nd_00_nf = 
@@ -21003,13 +21170,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_30_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2484]  // SHRD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2490]  // SHRD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2480]  // SHRD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2486]  // SHRD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_01_nf = 
@@ -21024,13 +21191,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2476]  // SHRD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2482]  // SHRD Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2472]  // SHRD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2478]  // SHRD Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2c_pp_01_l_00_nd_00_nf = 
@@ -21065,13 +21232,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_2c_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2482]  // SHRD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2488]  // SHRD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2478]  // SHRD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2484]  // SHRD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_01_nf = 
@@ -21086,13 +21253,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2474]  // SHRD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2480]  // SHRD Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2470]  // SHRD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2476]  // SHRD Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2c_pp_00_l_00_nd_00_nf = 
@@ -21138,13 +21305,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2561]  // SUB Bv,Gv,Ev
+    (const void *)&gInstructions[ 2567]  // SUB Bv,Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2550]  // SUB Bv,Gv,Ev
+    (const void *)&gInstructions[ 2556]  // SUB Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_01_nf = 
@@ -21159,13 +21326,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2539]  // SUB Gv,Ev
+    (const void *)&gInstructions[ 2545]  // SUB Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2528]  // SUB Gv,Ev
+    (const void *)&gInstructions[ 2534]  // SUB Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2b_pp_01_l_00_nd_00_nf = 
@@ -21200,13 +21367,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_2b_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2560]  // SUB Bv,Gv,Ev
+    (const void *)&gInstructions[ 2566]  // SUB Bv,Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2549]  // SUB Bv,Gv,Ev
+    (const void *)&gInstructions[ 2555]  // SUB Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_01_nf = 
@@ -21221,13 +21388,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2538]  // SUB Gv,Ev
+    (const void *)&gInstructions[ 2544]  // SUB Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2527]  // SUB Gv,Ev
+    (const void *)&gInstructions[ 2533]  // SUB Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2b_pp_00_l_00_nd_00_nf = 
@@ -21273,13 +21440,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_2b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2559]  // SUB Bb,Gb,Eb
+    (const void *)&gInstructions[ 2565]  // SUB Bb,Gb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2548]  // SUB Bb,Gb,Eb
+    (const void *)&gInstructions[ 2554]  // SUB Bb,Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_01_nf = 
@@ -21294,13 +21461,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2537]  // SUB Gb,Eb
+    (const void *)&gInstructions[ 2543]  // SUB Gb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2526]  // SUB Gb,Eb
+    (const void *)&gInstructions[ 2532]  // SUB Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_2a_pp_00_l_00_nd_00_nf = 
@@ -21346,13 +21513,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_2a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2558]  // SUB Bv,Ev,Gv
+    (const void *)&gInstructions[ 2564]  // SUB Bv,Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2547]  // SUB Bv,Ev,Gv
+    (const void *)&gInstructions[ 2553]  // SUB Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_01_nf = 
@@ -21367,13 +21534,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2536]  // SUB Ev,Gv
+    (const void *)&gInstructions[ 2542]  // SUB Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2525]  // SUB Ev,Gv
+    (const void *)&gInstructions[ 2531]  // SUB Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_29_pp_01_l_00_nd_00_nf = 
@@ -21408,13 +21575,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_29_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2557]  // SUB Bv,Ev,Gv
+    (const void *)&gInstructions[ 2563]  // SUB Bv,Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2546]  // SUB Bv,Ev,Gv
+    (const void *)&gInstructions[ 2552]  // SUB Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_01_nf = 
@@ -21429,13 +21596,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2535]  // SUB Ev,Gv
+    (const void *)&gInstructions[ 2541]  // SUB Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2524]  // SUB Ev,Gv
+    (const void *)&gInstructions[ 2530]  // SUB Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_29_pp_00_l_00_nd_00_nf = 
@@ -21481,13 +21648,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_29_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2556]  // SUB Bb,Eb,Gb
+    (const void *)&gInstructions[ 2562]  // SUB Bb,Eb,Gb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2545]  // SUB Bb,Eb,Gb
+    (const void *)&gInstructions[ 2551]  // SUB Bb,Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_01_nf = 
@@ -21502,13 +21669,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2534]  // SUB Eb,Gb
+    (const void *)&gInstructions[ 2540]  // SUB Eb,Gb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2523]  // SUB Eb,Gb
+    (const void *)&gInstructions[ 2529]  // SUB Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_28_pp_00_l_00_nd_00_nf = 
@@ -21554,13 +21721,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_28_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2422]  // SHLD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2428]  // SHLD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2418]  // SHLD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2424]  // SHLD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_01_nf = 
@@ -21575,13 +21742,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2414]  // SHLD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2420]  // SHLD Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2410]  // SHLD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2416]  // SHLD Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_24_pp_01_l_00_nd_00_nf = 
@@ -21616,13 +21783,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_24_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2420]  // SHLD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2426]  // SHLD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2416]  // SHLD Bv,Ev,Gv,Ib
+    (const void *)&gInstructions[ 2422]  // SHLD Bv,Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_01_nf = 
@@ -21637,13 +21804,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2412]  // SHLD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2418]  // SHLD Ev,Gv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2408]  // SHLD Ev,Gv,Ib
+    (const void *)&gInstructions[ 2414]  // SHLD Ev,Gv,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_24_pp_00_l_00_nd_00_nf = 
@@ -22105,7 +22272,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_20_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_1b_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2295]  // SBB Bv,Gv,Ev
+    (const void *)&gInstructions[ 2301]  // SBB Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1b_pp_01_l_00_nd_01_nf = 
@@ -22120,7 +22287,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1b_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_1b_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2284]  // SBB Gv,Ev
+    (const void *)&gInstructions[ 2290]  // SBB Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1b_pp_01_l_00_nd_00_nf = 
@@ -22155,7 +22322,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_1b_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_1b_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2294]  // SBB Bv,Gv,Ev
+    (const void *)&gInstructions[ 2300]  // SBB Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1b_pp_00_l_00_nd_01_nf = 
@@ -22170,7 +22337,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1b_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_1b_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2283]  // SBB Gv,Ev
+    (const void *)&gInstructions[ 2289]  // SBB Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1b_pp_00_l_00_nd_00_nf = 
@@ -22216,7 +22383,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_1b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_1a_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2293]  // SBB Bb,Gb,Eb
+    (const void *)&gInstructions[ 2299]  // SBB Bb,Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1a_pp_00_l_00_nd_01_nf = 
@@ -22231,7 +22398,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1a_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_1a_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2282]  // SBB Gb,Eb
+    (const void *)&gInstructions[ 2288]  // SBB Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_1a_pp_00_l_00_nd_00_nf = 
@@ -22277,7 +22444,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_1a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_19_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2292]  // SBB Bv,Ev,Gv
+    (const void *)&gInstructions[ 2298]  // SBB Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_19_pp_01_l_00_nd_01_nf = 
@@ -22292,7 +22459,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_19_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_19_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2281]  // SBB Ev,Gv
+    (const void *)&gInstructions[ 2287]  // SBB Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_19_pp_01_l_00_nd_00_nf = 
@@ -22327,7 +22494,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_19_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_19_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2291]  // SBB Bv,Ev,Gv
+    (const void *)&gInstructions[ 2297]  // SBB Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_19_pp_00_l_00_nd_01_nf = 
@@ -22342,7 +22509,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_19_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_19_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2280]  // SBB Ev,Gv
+    (const void *)&gInstructions[ 2286]  // SBB Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_19_pp_00_l_00_nd_00_nf = 
@@ -22388,7 +22555,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_19_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_18_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2290]  // SBB Bb,Eb,Gb
+    (const void *)&gInstructions[ 2296]  // SBB Bb,Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_18_pp_00_l_00_nd_01_nf = 
@@ -22403,7 +22570,7 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_18_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_18_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2279]  // SBB Eb,Gb
+    (const void *)&gInstructions[ 2285]  // SBB Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_18_pp_00_l_00_nd_00_nf = 
@@ -22793,13 +22960,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_10_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1618]  // OR Bv,Gv,Ev
+    (const void *)&gInstructions[ 1620]  // OR Bv,Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1607]  // OR Bv,Gv,Ev
+    (const void *)&gInstructions[ 1609]  // OR Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_01_nf = 
@@ -22814,13 +22981,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1596]  // OR Gv,Ev
+    (const void *)&gInstructions[ 1598]  // OR Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1585]  // OR Gv,Ev
+    (const void *)&gInstructions[ 1587]  // OR Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0b_pp_01_l_00_nd_00_nf = 
@@ -22855,13 +23022,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_0b_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1617]  // OR Bv,Gv,Ev
+    (const void *)&gInstructions[ 1619]  // OR Bv,Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1606]  // OR Bv,Gv,Ev
+    (const void *)&gInstructions[ 1608]  // OR Bv,Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_01_nf = 
@@ -22876,13 +23043,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1595]  // OR Gv,Ev
+    (const void *)&gInstructions[ 1597]  // OR Gv,Ev
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1584]  // OR Gv,Ev
+    (const void *)&gInstructions[ 1586]  // OR Gv,Ev
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0b_pp_00_l_00_nd_00_nf = 
@@ -22928,13 +23095,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_0b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1616]  // OR Bb,Gb,Eb
+    (const void *)&gInstructions[ 1618]  // OR Bb,Gb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1605]  // OR Bb,Gb,Eb
+    (const void *)&gInstructions[ 1607]  // OR Bb,Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_01_nf = 
@@ -22949,13 +23116,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1594]  // OR Gb,Eb
+    (const void *)&gInstructions[ 1596]  // OR Gb,Eb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1583]  // OR Gb,Eb
+    (const void *)&gInstructions[ 1585]  // OR Gb,Eb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_0a_pp_00_l_00_nd_00_nf = 
@@ -23001,13 +23168,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_0a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1615]  // OR Bv,Ev,Gv
+    (const void *)&gInstructions[ 1617]  // OR Bv,Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1604]  // OR Bv,Ev,Gv
+    (const void *)&gInstructions[ 1606]  // OR Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_01_nf = 
@@ -23022,13 +23189,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1593]  // OR Ev,Gv
+    (const void *)&gInstructions[ 1595]  // OR Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1582]  // OR Ev,Gv
+    (const void *)&gInstructions[ 1584]  // OR Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_09_pp_01_l_00_nd_00_nf = 
@@ -23063,13 +23230,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_04_opcode_09_pp_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1614]  // OR Bv,Ev,Gv
+    (const void *)&gInstructions[ 1616]  // OR Bv,Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1603]  // OR Bv,Ev,Gv
+    (const void *)&gInstructions[ 1605]  // OR Bv,Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_01_nf = 
@@ -23084,13 +23251,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1592]  // OR Ev,Gv
+    (const void *)&gInstructions[ 1594]  // OR Ev,Gv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1581]  // OR Ev,Gv
+    (const void *)&gInstructions[ 1583]  // OR Ev,Gv
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_09_pp_00_l_00_nd_00_nf = 
@@ -23136,13 +23303,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_04_opcode_09_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_01_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1613]  // OR Bb,Eb,Gb
+    (const void *)&gInstructions[ 1615]  // OR Bb,Eb,Gb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_01_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1602]  // OR Bb,Eb,Gb
+    (const void *)&gInstructions[ 1604]  // OR Bb,Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_01_nf = 
@@ -23157,13 +23324,13 @@ const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_01_nf =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_00_nf_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1591]  // OR Eb,Gb
+    (const void *)&gInstructions[ 1593]  // OR Eb,Gb
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1580]  // OR Eb,Gb
+    (const void *)&gInstructions[ 1582]  // OR Eb,Gb
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_04_opcode_08_pp_00_l_00_nd_00_nf = 
@@ -23888,7 +24055,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_04_opcode =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_f0_pp_03_l_00_nd_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2180]  // RORX Gy,Ey,Ib
+    (const void *)&gInstructions[ 2186]  // RORX Gy,Ey,Ib
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_03_opcode_f0_pp_03_l_00_nd_00_nf = 
@@ -23934,7 +24101,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_f0_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_cf_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3159]  // VGF2P8AFFINEINVQB Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3200]  // VGF2P8AFFINEINVQB Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_cf_pp_01_w = 
@@ -23960,7 +24127,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_cf_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_ce_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3161]  // VGF2P8AFFINEQB Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3202]  // VGF2P8AFFINEQB Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_ce_pp_01_w = 
@@ -23986,7 +24153,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_ce_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_c2_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2702]  // VCMPPBF16 rK{K},aKq,Hfv,Wfv|B16,Ib
+    (const void *)&gInstructions[ 2743]  // VCMPPBF16 rK{K},aKq,Hfv,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_c2_pp_03_w = 
@@ -24001,7 +24168,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_c2_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_c2_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2710]  // VCMPSH rK{K},aKq,Hfv,Wsh{sae},Ib
+    (const void *)&gInstructions[ 2751]  // VCMPSH rK{K},aKq,Hfv,Wsh{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_c2_pp_02_w = 
@@ -24016,7 +24183,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_c2_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_c2_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2705]  // VCMPPH rK{K},aKq,Hfv,Wfv|B16{sae},Ib
+    (const void *)&gInstructions[ 2746]  // VCMPPH rK{K},aKq,Hfv,Wfv|B16{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_c2_pp_00_w = 
@@ -24039,16 +24206,97 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_c2_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2614]  // TCVTROWPS2PHL Voq,mTt,Ib
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2610]  // TCVTROWPS2PBF16L Voq,mTt,Ib
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_77_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_02_modrmmod,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp_03_modrmmod,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_73_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3806]  // VPSHRDQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3851]  // VPSHRDQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_73_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3805]  // VPSHRDD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3850]  // VPSHRDD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_73_pp_01_w = 
@@ -24074,7 +24322,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_73_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_72_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3810]  // VPSHRDW Vfv{K}{z},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3855]  // VPSHRDW Vfv{K}{z},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_72_pp_01_w = 
@@ -24100,13 +24348,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_72_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_71_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3797]  // VPSHLDQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3842]  // VPSHLDQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_71_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3796]  // VPSHLDD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3841]  // VPSHLDD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_71_pp_01_w = 
@@ -24132,7 +24380,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_71_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_70_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3801]  // VPSHLDW Vfv{K}{z},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3846]  // VPSHLDW Vfv{K}{z},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_70_pp_01_w = 
@@ -24158,13 +24406,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_70_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_67_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3122]  // VFPCLASSSD rKq{K},aKq,Wsd,Ib
+    (const void *)&gInstructions[ 3163]  // VFPCLASSSD rKq{K},aKq,Wsd,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_67_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3124]  // VFPCLASSSS rKq{K},aKq,Wss,Ib
+    (const void *)&gInstructions[ 3165]  // VFPCLASSSS rKq{K},aKq,Wss,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_67_pp_01_w = 
@@ -24179,7 +24427,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_67_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_67_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3123]  // VFPCLASSSH rKq{K},aKq,Wsh,Ib
+    (const void *)&gInstructions[ 3164]  // VFPCLASSSH rKq{K},aKq,Wsh,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_67_pp_00_w = 
@@ -24205,7 +24453,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_67_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_66_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3118]  // VFPCLASSPBF16 rKq{K},aKq,Wfv|B16,Ib
+    (const void *)&gInstructions[ 3159]  // VFPCLASSPBF16 rKq{K},aKq,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_66_pp_03_w = 
@@ -24220,13 +24468,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_66_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_66_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3119]  // VFPCLASSPD rKq{K},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3160]  // VFPCLASSPD rKq{K},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_66_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3121]  // VFPCLASSPS rKq{K},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3162]  // VFPCLASSPS rKq{K},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_66_pp_01_w = 
@@ -24241,7 +24489,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_66_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_66_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3120]  // VFPCLASSPH rKq{K},aKq,Wfv|B16,Ib
+    (const void *)&gInstructions[ 3161]  // VFPCLASSPH rKq{K},aKq,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_66_pp_00_w = 
@@ -24267,13 +24515,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_66_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_57_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3942]  // VREDUCESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 3987]  // VREDUCESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_57_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3944]  // VREDUCESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 3989]  // VREDUCESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_57_pp_01_w = 
@@ -24288,7 +24536,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_57_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_57_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3943]  // VREDUCESH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
+    (const void *)&gInstructions[ 3988]  // VREDUCESH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_57_pp_00_w = 
@@ -24314,7 +24562,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_57_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_56_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3938]  // VREDUCENEPBF16 Vfv{K}{z},aKq,Wfv|B16,Ib
+    (const void *)&gInstructions[ 3983]  // VREDUCENEPBF16 Vfv{K}{z},aKq,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_56_pp_03_w = 
@@ -24329,13 +24577,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_56_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_56_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3939]  // VREDUCEPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 3984]  // VREDUCEPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_56_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3941]  // VREDUCEPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 3986]  // VREDUCEPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_56_pp_01_w = 
@@ -24350,7 +24598,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_56_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_56_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3940]  // VREDUCEPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib
+    (const void *)&gInstructions[ 3985]  // VREDUCEPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_56_pp_00_w = 
@@ -24376,13 +24624,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_56_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_55_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2910]  // VFIXUPIMMSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 2951]  // VFIXUPIMMSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_55_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2911]  // VFIXUPIMMSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 2952]  // VFIXUPIMMSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_55_pp_01_w = 
@@ -24408,13 +24656,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_55_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_54_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2908]  // VFIXUPIMMPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 2949]  // VFIXUPIMMPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_54_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2909]  // VFIXUPIMMPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 2950]  // VFIXUPIMMPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_54_pp_01_w = 
@@ -24440,13 +24688,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_54_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_53_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3210]  // VMINMAXSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 3251]  // VMINMAXSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_53_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3212]  // VMINMAXSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 3253]  // VMINMAXSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_53_pp_01_w = 
@@ -24461,7 +24709,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_53_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_53_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3211]  // VMINMAXSH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
+    (const void *)&gInstructions[ 3252]  // VMINMAXSH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_53_pp_00_w = 
@@ -24487,7 +24735,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_53_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_52_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3206]  // VMINMAXNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16,Ib
+    (const void *)&gInstructions[ 3247]  // VMINMAXNEPBF16 Vfv{K}{z},aKq,Hfv,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_52_pp_03_w = 
@@ -24502,13 +24750,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_52_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_52_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3207]  // VMINMAXPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 3248]  // VMINMAXPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_52_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3209]  // VMINMAXPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 3250]  // VMINMAXPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_52_pp_01_w = 
@@ -24523,7 +24771,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_52_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_52_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3208]  // VMINMAXPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae},Ib
+    (const void *)&gInstructions[ 3249]  // VMINMAXPH Vfv{K}{z},aKq,Hfv,Wfv|B16{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_52_pp_00_w = 
@@ -24549,13 +24797,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_52_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_51_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3923]  // VRANGESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 3968]  // VRANGESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_51_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3924]  // VRANGESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 3969]  // VRANGESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_51_pp_01_w = 
@@ -24581,13 +24829,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_51_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_50_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3921]  // VRANGEPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 3966]  // VRANGEPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_50_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3922]  // VRANGEPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 3967]  // VRANGEPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_50_pp_01_w = 
@@ -24613,7 +24861,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_50_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_44_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3433]  // VPCLMULQDQ Vfv,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3478]  // VPCLMULQDQ Vfv,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_44_pp = 
@@ -24630,13 +24878,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_44_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_43_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3994]  // VSHUFI64X2 Vuv{K}{z},aKq,Huv,Wuv|B64,Ib
+    (const void *)&gInstructions[ 4039]  // VSHUFI64X2 Vuv{K}{z},aKq,Huv,Wuv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_43_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3993]  // VSHUFI32X4 Vuv{K}{z},aKq,Huv,Wuv|B32,Ib
+    (const void *)&gInstructions[ 4038]  // VSHUFI32X4 Vuv{K}{z},aKq,Huv,Wuv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_43_pp_01_w = 
@@ -24662,7 +24910,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_43_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_42_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3339]  // VMPSADBW Vfv{K}{z},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3384]  // VMPSADBW Vfv{K}{z},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_42_pp_02_w = 
@@ -24677,7 +24925,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_42_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_42_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2868]  // VDBPSADBW Vfv{K}{z},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 2909]  // VDBPSADBW Vfv{K}{z},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_42_pp_01_w = 
@@ -24703,13 +24951,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_42_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3464]  // VPCMPW rKq{K},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3509]  // VPCMPW rKq{K},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3437]  // VPCMPB rKq{K},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3482]  // VPCMPB rKq{K},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_3f_pp_01_w = 
@@ -24735,13 +24983,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_3f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3463]  // VPCMPUW rKq{K},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3508]  // VPCMPUW rKq{K},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3460]  // VPCMPUB rKq{K},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3505]  // VPCMPUB rKq{K},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_3e_pp_01_w = 
@@ -24767,13 +25015,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_3e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3b_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2899]  // VEXTRACTI64X4 Wqq{K}{z},aKq,Voq,Ib
+    (const void *)&gInstructions[ 2940]  // VEXTRACTI64X4 Wqq{K}{z},aKq,Voq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3b_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2897]  // VEXTRACTI32X8 Wqq{K}{z},aKq,Voq,Ib
+    (const void *)&gInstructions[ 2938]  // VEXTRACTI32X8 Wqq{K}{z},aKq,Voq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_3b_pp_01_l_02_w = 
@@ -24810,13 +25058,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_3b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3a_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3178]  // VINSERTI64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib
+    (const void *)&gInstructions[ 3219]  // VINSERTI64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_3a_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3176]  // VINSERTI32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib
+    (const void *)&gInstructions[ 3217]  // VINSERTI32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_3a_pp_01_l_02_w = 
@@ -24853,13 +25101,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_3a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_39_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2898]  // VEXTRACTI64X2 Wdq{K}{z},aKq,Vuv,Ib
+    (const void *)&gInstructions[ 2939]  // VEXTRACTI64X2 Wdq{K}{z},aKq,Vuv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_39_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2896]  // VEXTRACTI32X4 Wdq{K}{z},aKq,Vuv,Ib
+    (const void *)&gInstructions[ 2937]  // VEXTRACTI32X4 Wdq{K}{z},aKq,Vuv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_39_pp_01_w = 
@@ -24885,13 +25133,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_39_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_38_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3177]  // VINSERTI64X2 Vuv{K}{z},aKq,Huv,Wdq,Ib
+    (const void *)&gInstructions[ 3218]  // VINSERTI64X2 Vuv{K}{z},aKq,Huv,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_38_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3175]  // VINSERTI32X4 Vuv{K}{z},aKq,Huv,Wdq,Ib
+    (const void *)&gInstructions[ 3216]  // VINSERTI32X4 Vuv{K}{z},aKq,Huv,Wdq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_38_pp_01_w = 
@@ -24917,13 +25165,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_38_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_27_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3156]  // VGETMANTSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 3197]  // VGETMANTSD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_27_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3158]  // VGETMANTSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 3199]  // VGETMANTSS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_27_pp_01_w = 
@@ -24938,7 +25186,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_27_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_27_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3157]  // VGETMANTSH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
+    (const void *)&gInstructions[ 3198]  // VGETMANTSH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_27_pp_00_w = 
@@ -24964,7 +25212,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_27_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_26_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3152]  // VGETMANTPBF16 Vfv{K}{z},aKq,Wfv|B16,Ib
+    (const void *)&gInstructions[ 3193]  // VGETMANTPBF16 Vfv{K}{z},aKq,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_26_pp_03_w = 
@@ -24979,13 +25227,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_26_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_26_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3153]  // VGETMANTPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 3194]  // VGETMANTPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_26_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3155]  // VGETMANTPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 3196]  // VGETMANTPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_26_pp_01_w = 
@@ -25000,7 +25248,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_26_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_26_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3154]  // VGETMANTPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib
+    (const void *)&gInstructions[ 3195]  // VGETMANTPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_26_pp_00_w = 
@@ -25026,13 +25274,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_26_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_25_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3892]  // VPTERNLOGQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3937]  // VPTERNLOGQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_25_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3891]  // VPTERNLOGD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3936]  // VPTERNLOGD Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_25_pp_01_w = 
@@ -25058,13 +25306,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_25_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_23_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3992]  // VSHUFF64X2 Vuv{K}{z},aKq,Huv,Wuv|B64,Ib
+    (const void *)&gInstructions[ 4037]  // VSHUFF64X2 Vuv{K}{z},aKq,Huv,Wuv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_23_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3991]  // VSHUFF32X4 Vuv{K}{z},aKq,Huv,Wuv|B32,Ib
+    (const void *)&gInstructions[ 4036]  // VSHUFF32X4 Vuv{K}{z},aKq,Huv,Wuv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_23_pp_01_w = 
@@ -25090,13 +25338,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_23_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_22_pp_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3609]  // VPINSRQ Vdq,Hdq,Eq,Ib
+    (const void *)&gInstructions[ 3654]  // VPINSRQ Vdq,Hdq,Eq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_22_pp_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3607]  // VPINSRD Vdq,Hdq,Ed,Ib
+    (const void *)&gInstructions[ 3652]  // VPINSRD Vdq,Hdq,Ed,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_22_pp_01_l_00_wi = 
@@ -25133,7 +25381,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_22_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_21_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3180]  // VINSERTPS Vdq,Hdq,Udq,Ib
+    (const void *)&gInstructions[ 3221]  // VINSERTPS Vdq,Hdq,Udq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_21_pp_01_modrmmod_01_l = 
@@ -25150,7 +25398,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_21_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_21_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3179]  // VINSERTPS Vdq,Hdq,Md,Ib
+    (const void *)&gInstructions[ 3220]  // VINSERTPS Vdq,Hdq,Md,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_21_pp_01_modrmmod_00_l = 
@@ -25187,7 +25435,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_21_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_20_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3604]  // VPINSRB Vdq,Hdq,Rd,Ib
+    (const void *)&gInstructions[ 3649]  // VPINSRB Vdq,Hdq,Rd,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_20_pp_01_modrmmod_01_l = 
@@ -25204,7 +25452,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_20_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_20_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3603]  // VPINSRB Vdq,Hdq,Mb,Ib
+    (const void *)&gInstructions[ 3648]  // VPINSRB Vdq,Hdq,Mb,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_20_pp_01_modrmmod_00_l = 
@@ -25241,13 +25489,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_20_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3459]  // VPCMPQ rKq{K},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3504]  // VPCMPQ rKq{K},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3438]  // VPCMPD rKq{K},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3483]  // VPCMPD rKq{K},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_1f_pp_01_w = 
@@ -25273,13 +25521,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_1f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3462]  // VPCMPUQ rKq{K},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3507]  // VPCMPUQ rKq{K},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3461]  // VPCMPUD rKq{K},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3506]  // VPCMPUD rKq{K},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_1e_pp_01_w = 
@@ -25305,7 +25553,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_1e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2782]  // VCVTPS2PH Whv{K}{z},aKq,Vfv{sae},Ib
+    (const void *)&gInstructions[ 2823]  // VCVTPS2PH Whv{K}{z},aKq,Vfv{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_1d_pp_01_w = 
@@ -25331,13 +25579,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_1d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1b_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2894]  // VEXTRACTF64X4 Wqq{K}{z},aKq,Voq,Ib
+    (const void *)&gInstructions[ 2935]  // VEXTRACTF64X4 Wqq{K}{z},aKq,Voq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1b_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2892]  // VEXTRACTF32X8 Wqq{K}{z},aKq,Voq,Ib
+    (const void *)&gInstructions[ 2933]  // VEXTRACTF32X8 Wqq{K}{z},aKq,Voq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_1b_pp_01_l_02_w = 
@@ -25374,13 +25622,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_1b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1a_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3173]  // VINSERTF64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib
+    (const void *)&gInstructions[ 3214]  // VINSERTF64X4 Voq{K}{z},aKq,Hoq,Wqq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_1a_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3171]  // VINSERTF32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib
+    (const void *)&gInstructions[ 3212]  // VINSERTF32X8 Voq{K}{z},aKq,Hoq,Wqq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_1a_pp_01_l_02_w = 
@@ -25417,13 +25665,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_1a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_19_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2893]  // VEXTRACTF64X2 Wdq{K}{z},aKq,Vuv,Ib
+    (const void *)&gInstructions[ 2934]  // VEXTRACTF64X2 Wdq{K}{z},aKq,Vuv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_19_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2891]  // VEXTRACTF32X4 Wdq{K}{z},aKq,Vuv,Ib
+    (const void *)&gInstructions[ 2932]  // VEXTRACTF32X4 Wdq{K}{z},aKq,Vuv,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_19_pp_01_w = 
@@ -25449,13 +25697,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_19_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_18_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3172]  // VINSERTF64X2 Vuv{K}{z},aKq,Huv,Wdq,Ib
+    (const void *)&gInstructions[ 3213]  // VINSERTF64X2 Vuv{K}{z},aKq,Huv,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_18_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3170]  // VINSERTF32X4 Vuv{K}{z},aKq,Huv,Wdq,Ib
+    (const void *)&gInstructions[ 3211]  // VINSERTF32X4 Vuv{K}{z},aKq,Huv,Wdq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_18_pp_01_w = 
@@ -25481,7 +25729,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_18_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_17_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2901]  // VEXTRACTPS Ry,Vdq,Ib
+    (const void *)&gInstructions[ 2942]  // VEXTRACTPS Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_17_pp_01_modrmmod_01_l = 
@@ -25498,7 +25746,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_17_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_17_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2900]  // VEXTRACTPS Md,Vdq,Ib
+    (const void *)&gInstructions[ 2941]  // VEXTRACTPS Md,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_17_pp_01_modrmmod_00_l = 
@@ -25535,13 +25783,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_17_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3564]  // VPEXTRQ Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3609]  // VPEXTRQ Ry,Vdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3560]  // VPEXTRD Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3605]  // VPEXTRD Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l_00_wi = 
@@ -25567,13 +25815,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_00_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3563]  // VPEXTRQ Mq,Vdq,Ib
+    (const void *)&gInstructions[ 3608]  // VPEXTRQ Mq,Vdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_00_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3559]  // VPEXTRD Md,Vdq,Ib
+    (const void *)&gInstructions[ 3604]  // VPEXTRD Md,Vdq,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_16_pp_01_modrmmod_00_l_00_wi = 
@@ -25619,7 +25867,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_16_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_15_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3569]  // VPEXTRW Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3614]  // VPEXTRW Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_15_pp_01_modrmmod_01_l = 
@@ -25636,7 +25884,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_15_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_15_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3568]  // VPEXTRW Mw,Vdq,Ib
+    (const void *)&gInstructions[ 3613]  // VPEXTRW Mw,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_15_pp_01_modrmmod_00_l = 
@@ -25673,7 +25921,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_15_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_14_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3556]  // VPEXTRB Ry,Vdq,Ib
+    (const void *)&gInstructions[ 3601]  // VPEXTRB Ry,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_14_pp_01_modrmmod_01_l = 
@@ -25690,7 +25938,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_14_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_14_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3555]  // VPEXTRB Mb,Vdq,Ib
+    (const void *)&gInstructions[ 3600]  // VPEXTRB Mb,Vdq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_14_pp_01_modrmmod_00_l = 
@@ -25727,7 +25975,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_14_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_0f_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3400]  // VPALIGNR Vfv{K}{z},aKq,Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3445]  // VPALIGNR Vfv{K}{z},aKq,Hfv,Wfv,Ib
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_0f_pp = 
@@ -25744,7 +25992,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_0f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_0b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3949]  // VRNDSCALESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 3994]  // VRNDSCALESD Vdq{K}{z},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_0b_pp_01_w = 
@@ -25770,7 +26018,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_0b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_0a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3951]  // VRNDSCALESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 3996]  // VRNDSCALESS Vdq{K}{z},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_0a_pp_01_w = 
@@ -25785,7 +26033,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_0a_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_0a_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3950]  // VRNDSCALESH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
+    (const void *)&gInstructions[ 3995]  // VRNDSCALESH Vdq{K}{z},aKq,Hdq,Wsh{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_0a_pp_00_w = 
@@ -25811,7 +26059,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_0a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_09_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3946]  // VRNDSCALEPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 3991]  // VRNDSCALEPD Vfv{K}{z},aKq,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_09_pp_01_w = 
@@ -25837,7 +26085,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_09_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_08_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3945]  // VRNDSCALENEPBF16 Vfv{K}{z},aKq,Wfv|B16,Ib
+    (const void *)&gInstructions[ 3990]  // VRNDSCALENEPBF16 Vfv{K}{z},aKq,Wfv|B16,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_08_pp_03_w = 
@@ -25852,7 +26100,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_08_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_08_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3948]  // VRNDSCALEPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 3993]  // VRNDSCALEPS Vfv{K}{z},aKq,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_08_pp_01_w = 
@@ -25867,7 +26115,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_08_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_08_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3947]  // VRNDSCALEPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib
+    (const void *)&gInstructions[ 3992]  // VRNDSCALEPH Vfv{K}{z},aKq,Wfv|B16{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_08_pp_00_w = 
@@ -25890,10 +26138,161 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_08_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2608]  // TCVTROWPS2PBF16H Voq,mTt,Ib
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2606]  // TCVTROWD2PS Voq,mTt,Ib
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2642]  // TILEMOVROW Voq,mTt,Ib
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2612]  // TCVTROWPS2PHH Voq,mTt,Ib
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_07_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_00_modrmmod,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_01_modrmmod,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_02_modrmmod,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp_03_modrmmod,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_05_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3527]  // VPERMILPD Vfv{K}{z},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3572]  // VPERMILPD Vfv{K}{z},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_05_pp_01_w = 
@@ -25919,7 +26318,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_05_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_04_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3531]  // VPERMILPS Vfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3576]  // VPERMILPS Vfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_04_pp_01_w = 
@@ -25945,13 +26344,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_04_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_03_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2669]  // VALIGNQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 2710]  // VALIGNQ Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_03_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2668]  // VALIGND Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 2709]  // VALIGND Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_03_pp_01_w = 
@@ -25977,7 +26376,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_03_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_01_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3536]  // VPERMPD Vuv{K}{z},aKq,Wuv|B64,Ib
+    (const void *)&gInstructions[ 3581]  // VPERMPD Vuv{K}{z},aKq,Wuv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_01_pp_01_w = 
@@ -26003,7 +26402,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_03_opcode_01_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_03_opcode_00_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3542]  // VPERMQ Vuv{K}{z},aKq,Wuv|B64,Ib
+    (const void *)&gInstructions[ 3587]  // VPERMQ Vuv{K}{z},aKq,Wuv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_03_opcode_00_pp_01_w = 
@@ -26037,7 +26436,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_03_opcode =
         /* 04 */ (const void *)&gEvexMap_mmmmm_03_opcode_04_pp,
         /* 05 */ (const void *)&gEvexMap_mmmmm_03_opcode_05_pp,
         /* 06 */ (const void *)ND_NULL,
-        /* 07 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)&gEvexMap_mmmmm_03_opcode_07_pp,
         /* 08 */ (const void *)&gEvexMap_mmmmm_03_opcode_08_pp,
         /* 09 */ (const void *)&gEvexMap_mmmmm_03_opcode_09_pp,
         /* 0a */ (const void *)&gEvexMap_mmmmm_03_opcode_0a_pp,
@@ -26149,7 +26548,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_03_opcode =
         /* 74 */ (const void *)ND_NULL,
         /* 75 */ (const void *)ND_NULL,
         /* 76 */ (const void *)ND_NULL,
-        /* 77 */ (const void *)ND_NULL,
+        /* 77 */ (const void *)&gEvexMap_mmmmm_03_opcode_77_pp,
         /* 78 */ (const void *)ND_NULL,
         /* 79 */ (const void *)ND_NULL,
         /* 7a */ (const void *)ND_NULL,
@@ -26292,7 +26691,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_03_opcode =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_f7_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2488]  // SHRX Gy,Ey,By
+    (const void *)&gInstructions[ 2494]  // SHRX Gy,Ey,By
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_f7_pp_03_l_00_nf = 
@@ -26318,7 +26717,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_f7_pp_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_f7_pp_02_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2276]  // SARX Gy,Ey,By
+    (const void *)&gInstructions[ 2282]  // SARX Gy,Ey,By
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_f7_pp_02_l_00_nf = 
@@ -26344,7 +26743,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_f7_pp_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_f7_pp_01_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2426]  // SHLX Gy,Ey,By
+    (const void *)&gInstructions[ 2432]  // SHLX Gy,Ey,By
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_f7_pp_01_l_00_nf = 
@@ -26413,7 +26812,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_f7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_f6_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1483]  // MULX Gy,By,Ey
+    (const void *)&gInstructions[ 1485]  // MULX Gy,By,Ey
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_f6_pp_03_l_00_nf = 
@@ -26450,7 +26849,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_f6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_f5_pp_03_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1710]  // PDEP Gy,By,Ey
+    (const void *)&gInstructions[ 1712]  // PDEP Gy,By,Ey
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_f5_pp_03_l_00_nf = 
@@ -26476,7 +26875,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_f5_pp_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_f5_pp_02_l_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1712]  // PEXT Gy,By,Ey
+    (const void *)&gInstructions[ 1714]  // PEXT Gy,By,Ey
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_f5_pp_02_l_00_nf = 
@@ -27446,7 +27845,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_e0_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_df_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2660]  // VAESDECLAST Vfv,Hfv,Wfv
+    (const void *)&gInstructions[ 2701]  // VAESDECLAST Vfv,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_df_pp = 
@@ -27463,7 +27862,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_df_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_de_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2658]  // VAESDEC Vfv,Hfv,Wfv
+    (const void *)&gInstructions[ 2699]  // VAESDEC Vfv,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_de_pp = 
@@ -27480,7 +27879,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_de_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_dd_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2664]  // VAESENCLAST Vfv,Hfv,Wfv
+    (const void *)&gInstructions[ 2705]  // VAESENCLAST Vfv,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_dd_pp = 
@@ -27497,7 +27896,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_dd_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_dc_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2662]  // VAESENC Vfv,Hfv,Wfv
+    (const void *)&gInstructions[ 2703]  // VAESENC Vfv,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_dc_pp = 
@@ -27511,10 +27910,51 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_dc_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_da_pp_03_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 4049]  // VSM4RNDS4 Vfv,Hfv,Wfv
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_da_pp_03_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_da_pp_03_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_da_pp_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 4047]  // VSM4KEY4 Vfv,Hfv,Wfv
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_da_pp_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_da_pp_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_da_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_da_pp_02_w,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_02_opcode_da_pp_03_w,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_d3_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3501]  // VPDPWSUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3546]  // VPDPWSUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d3_pp_02_w = 
@@ -27529,7 +27969,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d3_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_d3_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3505]  // VPDPWUSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3550]  // VPDPWUSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d3_pp_01_w = 
@@ -27544,7 +27984,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d3_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_d3_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3509]  // VPDPWUUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3554]  // VPDPWUUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d3_pp_00_w = 
@@ -27570,7 +28010,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_d3_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_d2_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3499]  // VPDPWSUD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3544]  // VPDPWSUD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d2_pp_02_w = 
@@ -27585,7 +28025,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d2_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_d2_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3503]  // VPDPWUSD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3548]  // VPDPWUSD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d2_pp_01_w = 
@@ -27600,7 +28040,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d2_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_d2_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3507]  // VPDPWUUD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3552]  // VPDPWUUD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_d2_pp_00_w = 
@@ -27626,7 +28066,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_d2_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cf_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3163]  // VGF2P8MULB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3204]  // VGF2P8MULB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_cf_pp_01_w = 
@@ -27652,13 +28092,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_cf_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cd_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3962]  // VRSQRT28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}
+    (const void *)&gInstructions[ 4007]  // VRSQRT28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cd_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3963]  // VRSQRT28SS Vdq{K}{z},aKq,Hdq,Wss{sae}
+    (const void *)&gInstructions[ 4008]  // VRSQRT28SS Vdq{K}{z},aKq,Hdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_cd_pp_01_w = 
@@ -27684,13 +28124,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_cd_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cc_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3960]  // VRSQRT28PD Voq{K}{z},aKq,Woq|B64{sae}
+    (const void *)&gInstructions[ 4005]  // VRSQRT28PD Voq{K}{z},aKq,Woq|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cc_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3961]  // VRSQRT28PS Voq{K}{z},aKq,Woq|B32{sae}
+    (const void *)&gInstructions[ 4006]  // VRSQRT28PS Voq{K}{z},aKq,Woq|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_cc_pp_01_l_02_w = 
@@ -27727,13 +28167,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_cc_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cb_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3931]  // VRCP28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}
+    (const void *)&gInstructions[ 3976]  // VRCP28SD Vdq{K}{z},aKq,Hdq,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_cb_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3932]  // VRCP28SS Vdq{K}{z},aKq,Hdq,Wss{sae}
+    (const void *)&gInstructions[ 3977]  // VRCP28SS Vdq{K}{z},aKq,Hdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_cb_pp_01_w = 
@@ -27759,13 +28199,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_cb_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ca_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3929]  // VRCP28PD Voq{K}{z},aKq,Woq|B64{sae}
+    (const void *)&gInstructions[ 3974]  // VRCP28PD Voq{K}{z},aKq,Woq|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ca_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3930]  // VRCP28PS Voq{K}{z},aKq,Woq|B32{sae}
+    (const void *)&gInstructions[ 3975]  // VRCP28PS Voq{K}{z},aKq,Woq|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ca_pp_01_l_02_w = 
@@ -27802,13 +28242,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_ca_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c8_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2886]  // VEXP2PD Voq{K}{z},aKq,Woq|B64{sae}
+    (const void *)&gInstructions[ 2927]  // VEXP2PD Voq{K}{z},aKq,Woq|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c8_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2887]  // VEXP2PS Voq{K}{z},aKq,Woq|B32{sae}
+    (const void *)&gInstructions[ 2928]  // VEXP2PS Voq{K}{z},aKq,Woq|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c8_pp_01_l_02_w = 
@@ -27845,13 +28285,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_c8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_06_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3984]  // VSCATTERPF1QPD Mvm64n{K},aKq
+    (const void *)&gInstructions[ 4029]  // VSCATTERPF1QPD Mvm64n{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_06_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3985]  // VSCATTERPF1QPS Mvm64n{K},aKq
+    (const void *)&gInstructions[ 4030]  // VSCATTERPF1QPS Mvm64n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_06_modrmmod_00_l_02_w = 
@@ -27886,13 +28326,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_06_modrmmod 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_05_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3980]  // VSCATTERPF0QPD Mvm64n{K},aKq
+    (const void *)&gInstructions[ 4025]  // VSCATTERPF0QPD Mvm64n{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_05_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3981]  // VSCATTERPF0QPS Mvm64n{K},aKq
+    (const void *)&gInstructions[ 4026]  // VSCATTERPF0QPS Mvm64n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_05_modrmmod_00_l_02_w = 
@@ -27927,13 +28367,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_05_modrmmod 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_02_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3139]  // VGATHERPF1QPD Mvm64n{K},aKq
+    (const void *)&gInstructions[ 3180]  // VGATHERPF1QPD Mvm64n{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_02_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3140]  // VGATHERPF1QPS Mvm64n{K},aKq
+    (const void *)&gInstructions[ 3181]  // VGATHERPF1QPS Mvm64n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_02_modrmmod_00_l_02_w = 
@@ -27968,13 +28408,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_02_modrmmod 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_01_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3135]  // VGATHERPF0QPD Mvm64n{K},aKq
+    (const void *)&gInstructions[ 3176]  // VGATHERPF0QPD Mvm64n{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_01_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3136]  // VGATHERPF0QPS Mvm64n{K},aKq
+    (const void *)&gInstructions[ 3177]  // VGATHERPF0QPS Mvm64n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c7_pp_01_modrmreg_01_modrmmod_00_l_02_w = 
@@ -28035,13 +28475,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_c7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_06_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3982]  // VSCATTERPF1DPD Mvm32h{K},aKq
+    (const void *)&gInstructions[ 4027]  // VSCATTERPF1DPD Mvm32h{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_06_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3983]  // VSCATTERPF1DPS Mvm32n{K},aKq
+    (const void *)&gInstructions[ 4028]  // VSCATTERPF1DPS Mvm32n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_06_modrmmod_00_l_02_w = 
@@ -28076,13 +28516,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_06_modrmmod 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_05_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3978]  // VSCATTERPF0DPD Mvm32h{K},aKq
+    (const void *)&gInstructions[ 4023]  // VSCATTERPF0DPD Mvm32h{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_05_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3979]  // VSCATTERPF0DPS Mvm32n{K},aKq
+    (const void *)&gInstructions[ 4024]  // VSCATTERPF0DPS Mvm32n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_05_modrmmod_00_l_02_w = 
@@ -28117,13 +28557,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_05_modrmmod 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_02_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3137]  // VGATHERPF1DPD Mvm32h{K},aKq
+    (const void *)&gInstructions[ 3178]  // VGATHERPF1DPD Mvm32h{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_02_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3138]  // VGATHERPF1DPS Mvm32n{K},aKq
+    (const void *)&gInstructions[ 3179]  // VGATHERPF1DPS Mvm32n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_02_modrmmod_00_l_02_w = 
@@ -28158,13 +28598,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_02_modrmmod 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_01_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3133]  // VGATHERPF0DPD Mvm32h{K},aKq
+    (const void *)&gInstructions[ 3174]  // VGATHERPF0DPD Mvm32h{K},aKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_01_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3134]  // VGATHERPF0DPS Mvm32n{K},aKq
+    (const void *)&gInstructions[ 3175]  // VGATHERPF0DPS Mvm32n{K},aKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c6_pp_01_modrmreg_01_modrmmod_00_l_02_w = 
@@ -28225,13 +28665,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_c6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c4_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3478]  // VPCONFLICTQ Vfv{K}{z},aKq,Wfv|B64
+    (const void *)&gInstructions[ 3523]  // VPCONFLICTQ Vfv{K}{z},aKq,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_c4_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3477]  // VPCONFLICTD Vfv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 3522]  // VPCONFLICTD Vfv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_c4_pp_01_w = 
@@ -28257,13 +28697,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_c4_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bf_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3105]  // VFNMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3146]  // VFNMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bf_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3108]  // VFNMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3149]  // VFNMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_bf_pp_01_w = 
@@ -28289,13 +28729,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_bf_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_be_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3100]  // VFNMSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3141]  // VFNMSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_be_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3103]  // VFNMSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3144]  // VFNMSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_be_pp_01_w = 
@@ -28321,13 +28761,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_be_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bd_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3064]  // VFNMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3105]  // VFNMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bd_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3067]  // VFNMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3108]  // VFNMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_bd_pp_01_w = 
@@ -28353,13 +28793,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_bd_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bc_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3059]  // VFNMADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3100]  // VFNMADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bc_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3062]  // VFNMADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3103]  // VFNMADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_bc_pp_01_w = 
@@ -28385,13 +28825,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_bc_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bb_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3002]  // VFMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3043]  // VFMSUB231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_bb_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3005]  // VFMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3046]  // VFMSUB231SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_bb_pp_01_w = 
@@ -28417,13 +28857,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_bb_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ba_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2997]  // VFMSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3038]  // VFMSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ba_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3000]  // VFMSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3041]  // VFMSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ba_pp_01_w = 
@@ -28449,13 +28889,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_ba_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b9_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2940]  // VFMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2981]  // VFMADD231SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b9_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2943]  // VFMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 2984]  // VFMADD231SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_b9_pp_01_w = 
@@ -28481,13 +28921,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_b9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b8_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2935]  // VFMADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 2976]  // VFMADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b8_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2938]  // VFMADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2979]  // VFMADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_b8_pp_01_w = 
@@ -28513,13 +28953,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_b8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b7_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3017]  // VFMSUBADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3058]  // VFMSUBADD231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b7_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3020]  // VFMSUBADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3061]  // VFMSUBADD231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_b7_pp_01_w = 
@@ -28545,13 +28985,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_b7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b6_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2965]  // VFMADDSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3006]  // VFMADDSUB231PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b6_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2968]  // VFMADDSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3009]  // VFMADDSUB231PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_b6_pp_01_w = 
@@ -28577,7 +29017,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_b6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b5_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3629]  // VPMADD52HUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3674]  // VPMADD52HUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_b5_pp_01_w = 
@@ -28603,7 +29043,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_b5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_b4_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3631]  // VPMADD52LUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3676]  // VPMADD52LUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_b4_pp_01_w = 
@@ -28629,13 +29069,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_b4_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_af_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3094]  // VFNMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3135]  // VFNMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_af_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3097]  // VFNMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3138]  // VFNMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_af_pp_01_w = 
@@ -28661,13 +29101,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_af_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ae_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3089]  // VFNMSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3130]  // VFNMSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ae_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3092]  // VFNMSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3133]  // VFNMSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ae_pp_01_w = 
@@ -28693,13 +29133,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_ae_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ad_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3053]  // VFNMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3094]  // VFNMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ad_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3056]  // VFNMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3097]  // VFNMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ad_pp_01_w = 
@@ -28725,13 +29165,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_ad_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ac_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3048]  // VFNMADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3089]  // VFNMADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ac_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3051]  // VFNMADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3092]  // VFNMADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ac_pp_01_w = 
@@ -28757,7 +29197,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_ac_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ab_pp_03_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2644]  // V4FNMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq
+    (const void *)&gInstructions[ 2685]  // V4FNMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ab_pp_03_modrmmod_00_w = 
@@ -28781,13 +29221,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_ab_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ab_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2991]  // VFMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3032]  // VFMSUB213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_ab_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2994]  // VFMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3035]  // VFMSUB213SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_ab_pp_01_w = 
@@ -28813,7 +29253,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_ab_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_aa_pp_03_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2643]  // V4FNMADDPS Voq{K}{z},aKq,Hoq+3,Mdq
+    (const void *)&gInstructions[ 2684]  // V4FNMADDPS Voq{K}{z},aKq,Hoq+3,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_aa_pp_03_modrmmod_00_l_02_w = 
@@ -28848,13 +29288,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_aa_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_aa_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2986]  // VFMSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3027]  // VFMSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_aa_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2989]  // VFMSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3030]  // VFMSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_aa_pp_01_w = 
@@ -28880,13 +29320,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_aa_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a9_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2929]  // VFMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2970]  // VFMADD213SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a9_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2932]  // VFMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 2973]  // VFMADD213SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a9_pp_01_w = 
@@ -28912,13 +29352,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a8_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2924]  // VFMADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 2965]  // VFMADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a8_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2927]  // VFMADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2968]  // VFMADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a8_pp_01_w = 
@@ -28944,13 +29384,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a7_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3012]  // VFMSUBADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3053]  // VFMSUBADD213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a7_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3015]  // VFMSUBADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3056]  // VFMSUBADD213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a7_pp_01_w = 
@@ -28976,13 +29416,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a6_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2960]  // VFMADDSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3001]  // VFMADDSUB213PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a6_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2963]  // VFMADDSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3004]  // VFMADDSUB213PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a6_pp_01_w = 
@@ -29008,13 +29448,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a3_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3986]  // VSCATTERQPD Mvm64n{K},aKq,Vfv
+    (const void *)&gInstructions[ 4031]  // VSCATTERQPD Mvm64n{K},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a3_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3987]  // VSCATTERQPS Mvm64n{K},aKq,Vhv
+    (const void *)&gInstructions[ 4032]  // VSCATTERQPS Mvm64n{K},aKq,Vhv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a3_pp_01_modrmmod_00_w = 
@@ -29049,13 +29489,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a3_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a2_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3976]  // VSCATTERDPD Mvm32h{K},aKq,Vfv
+    (const void *)&gInstructions[ 4021]  // VSCATTERDPD Mvm32h{K},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a2_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3977]  // VSCATTERDPS Mvm32n{K},aKq,Vfv
+    (const void *)&gInstructions[ 4022]  // VSCATTERDPS Mvm32n{K},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a2_pp_01_modrmmod_00_w = 
@@ -29090,13 +29530,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a2_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a1_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3782]  // VPSCATTERQQ Mvm64n{K},aKq,Vfv
+    (const void *)&gInstructions[ 3827]  // VPSCATTERQQ Mvm64n{K},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a1_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3781]  // VPSCATTERQD Mvm64n{K},aKq,Vhv
+    (const void *)&gInstructions[ 3826]  // VPSCATTERQD Mvm64n{K},aKq,Vhv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a1_pp_01_modrmmod_00_w = 
@@ -29131,13 +29571,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a1_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a0_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3780]  // VPSCATTERDQ Mvm32h{K},aKq,Vfv
+    (const void *)&gInstructions[ 3825]  // VPSCATTERDQ Mvm32h{K},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_a0_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3779]  // VPSCATTERDD Mvm32n{K},aKq,Vfv
+    (const void *)&gInstructions[ 3824]  // VPSCATTERDD Mvm32n{K},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_a0_pp_01_modrmmod_00_w = 
@@ -29172,13 +29612,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_a0_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3083]  // VFNMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3124]  // VFNMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3086]  // VFNMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3127]  // VFNMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9f_pp_01_w = 
@@ -29204,13 +29644,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_9f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3078]  // VFNMSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3119]  // VFNMSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3081]  // VFNMSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3122]  // VFNMSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9e_pp_01_w = 
@@ -29236,13 +29676,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_9e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3042]  // VFNMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3083]  // VFNMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3045]  // VFNMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3086]  // VFNMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9d_pp_01_w = 
@@ -29268,13 +29708,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_9d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3037]  // VFNMADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3078]  // VFNMADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3040]  // VFNMADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3081]  // VFNMADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9c_pp_01_w = 
@@ -29300,7 +29740,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_9c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9b_pp_03_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2642]  // V4FMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq
+    (const void *)&gInstructions[ 2683]  // V4FMADDSS Vdq{K}{z},aKq,Hdq+3,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9b_pp_03_modrmmod_00_w = 
@@ -29324,13 +29764,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_9b_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2980]  // VFMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3021]  // VFMSUB132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2983]  // VFMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3024]  // VFMSUB132SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9b_pp_01_w = 
@@ -29356,7 +29796,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_9b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9a_pp_03_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2641]  // V4FMADDPS Voq{K}{z},aKq,Hoq+3,Mdq
+    (const void *)&gInstructions[ 2682]  // V4FMADDPS Voq{K}{z},aKq,Hoq+3,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9a_pp_03_modrmmod_00_l_02_w = 
@@ -29391,13 +29831,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_9a_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2975]  // VFMSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3016]  // VFMSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_9a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2978]  // VFMSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3019]  // VFMSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_9a_pp_01_w = 
@@ -29423,13 +29863,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_9a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_99_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2918]  // VFMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2959]  // VFMADD132SD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_99_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2921]  // VFMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 2962]  // VFMADD132SS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_99_pp_01_w = 
@@ -29455,13 +29895,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_99_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_98_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2913]  // VFMADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 2954]  // VFMADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_98_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2916]  // VFMADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2957]  // VFMADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_98_pp_01_w = 
@@ -29487,13 +29927,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_98_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_97_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3007]  // VFMSUBADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3048]  // VFMSUBADD132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_97_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3010]  // VFMSUBADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3051]  // VFMSUBADD132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_97_pp_01_w = 
@@ -29519,13 +29959,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_97_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_96_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2955]  // VFMADDSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 2996]  // VFMADDSUB132PD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_96_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2958]  // VFMADDSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2999]  // VFMADDSUB132PS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_96_pp_01_w = 
@@ -29551,13 +29991,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_96_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_93_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3141]  // VGATHERQPD Vfv{K},aKq,Mvm64n
+    (const void *)&gInstructions[ 3182]  // VGATHERQPD Vfv{K},aKq,Mvm64n
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_93_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3143]  // VGATHERQPS Vhv{K},aKq,Mvm64n
+    (const void *)&gInstructions[ 3184]  // VGATHERQPS Vhv{K},aKq,Mvm64n
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_93_pp_01_modrmmod_00_w = 
@@ -29592,13 +30032,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_93_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_92_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3129]  // VGATHERDPD Vfv{K},aKq,Mvm32h
+    (const void *)&gInstructions[ 3170]  // VGATHERDPD Vfv{K},aKq,Mvm32h
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_92_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3131]  // VGATHERDPS Vfv{K},aKq,Mvm32n
+    (const void *)&gInstructions[ 3172]  // VGATHERDPS Vfv{K},aKq,Mvm32n
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_92_pp_01_modrmmod_00_w = 
@@ -29633,13 +30073,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_92_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_91_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3579]  // VPGATHERQQ Vfv{K},aKq,Mvm64n
+    (const void *)&gInstructions[ 3624]  // VPGATHERQQ Vfv{K},aKq,Mvm64n
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_91_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3577]  // VPGATHERQD Vhv{K},aKq,Mvm64n
+    (const void *)&gInstructions[ 3622]  // VPGATHERQD Vhv{K},aKq,Mvm64n
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_91_pp_01_modrmmod_00_w = 
@@ -29674,13 +30114,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_91_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_90_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3575]  // VPGATHERDQ Vfv{K},aKq,Mvm32h
+    (const void *)&gInstructions[ 3620]  // VPGATHERDQ Vfv{K},aKq,Mvm32h
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_90_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3573]  // VPGATHERDD Vfv{K},aKq,Mvm32n
+    (const void *)&gInstructions[ 3618]  // VPGATHERDD Vfv{K},aKq,Mvm32n
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_90_pp_01_modrmmod_00_w = 
@@ -29715,7 +30155,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_90_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3813]  // VPSHUFBITQMB rK{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3858]  // VPSHUFBITQMB rK{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_8f_pp_01_w = 
@@ -29741,13 +30181,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_8f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3550]  // VPERMW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3595]  // VPERMW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3513]  // VPERMB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3558]  // VPERMB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_8d_pp_01_w = 
@@ -29773,13 +30213,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_8d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3469]  // VPCOMPRESSQ Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3514]  // VPCOMPRESSQ Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3468]  // VPCOMPRESSD Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3513]  // VPCOMPRESSD Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_8b_pp_01_w = 
@@ -29805,13 +30245,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_8b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2718]  // VCOMPRESSPD Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 2759]  // VCOMPRESSPD Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_8a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2719]  // VCOMPRESSPS Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 2760]  // VCOMPRESSPS Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_8a_pp_01_w = 
@@ -29837,13 +30277,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_8a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_89_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3553]  // VPEXPANDQ Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3598]  // VPEXPANDQ Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_89_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3552]  // VPEXPANDD Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3597]  // VPEXPANDD Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_89_pp_01_w = 
@@ -29869,13 +30309,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_89_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_88_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2888]  // VEXPANDPD Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 2929]  // VEXPANDPD Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_88_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2889]  // VEXPANDPS Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 2930]  // VEXPANDPS Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_88_pp_01_w = 
@@ -29901,7 +30341,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_88_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_83_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3745]  // VPMULTISHIFTQB Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3790]  // VPMULTISHIFTQB Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_83_pp_01_w = 
@@ -29927,13 +30367,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_83_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3546]  // VPERMT2PD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3591]  // VPERMT2PD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3547]  // VPERMT2PS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3592]  // VPERMT2PS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_7f_pp_01_w = 
@@ -29959,13 +30399,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_7f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3548]  // VPERMT2Q Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3593]  // VPERMT2Q Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3545]  // VPERMT2D Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3590]  // VPERMT2D Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_7e_pp_01_w = 
@@ -29991,13 +30431,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_7e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3549]  // VPERMT2W Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3594]  // VPERMT2W Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3544]  // VPERMT2B Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3589]  // VPERMT2B Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_7d_pp_01_w = 
@@ -30023,13 +30463,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_7d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7c_pp_01_modrmmod_01_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3428]  // VPBROADCASTQ Vfv{K}{z},aKq,Rq
+    (const void *)&gInstructions[ 3473]  // VPBROADCASTQ Vfv{K}{z},aKq,Rq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7c_pp_01_modrmmod_01_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3423]  // VPBROADCASTD Vfv{K}{z},aKq,Rd
+    (const void *)&gInstructions[ 3468]  // VPBROADCASTD Vfv{K}{z},aKq,Rd
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_7c_pp_01_modrmmod_01_wi = 
@@ -30064,7 +30504,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_7c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7b_pp_01_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3431]  // VPBROADCASTW Vfv{K}{z},aKq,Rw
+    (const void *)&gInstructions[ 3476]  // VPBROADCASTW Vfv{K}{z},aKq,Rw
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_7b_pp_01_modrmmod_01_w = 
@@ -30099,7 +30539,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_7b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_7a_pp_01_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3420]  // VPBROADCASTB Vfv{K}{z},aKq,Rb
+    (const void *)&gInstructions[ 3465]  // VPBROADCASTB Vfv{K}{z},aKq,Rb
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_7a_pp_01_modrmmod_01_w = 
@@ -30134,7 +30574,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_7a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_79_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3430]  // VPBROADCASTW Vfv{K}{z},aKq,Ww
+    (const void *)&gInstructions[ 3475]  // VPBROADCASTW Vfv{K}{z},aKq,Ww
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_79_pp_01_w = 
@@ -30160,7 +30600,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_79_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_78_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3419]  // VPBROADCASTB Vfv{K}{z},aKq,Wb
+    (const void *)&gInstructions[ 3464]  // VPBROADCASTB Vfv{K}{z},aKq,Wb
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_78_pp_01_w = 
@@ -30186,13 +30626,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_78_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_77_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3518]  // VPERMI2PD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3563]  // VPERMI2PD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_77_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3519]  // VPERMI2PS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3564]  // VPERMI2PS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_77_pp_01_w = 
@@ -30218,13 +30658,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_77_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_76_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3520]  // VPERMI2Q Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3565]  // VPERMI2Q Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_76_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3517]  // VPERMI2D Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3562]  // VPERMI2D Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_76_pp_01_w = 
@@ -30250,13 +30690,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_76_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_75_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3521]  // VPERMI2W Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3566]  // VPERMI2W Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_75_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3516]  // VPERMI2B Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3561]  // VPERMI2B Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_75_pp_01_w = 
@@ -30279,10 +30719,40 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_75_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_74_pp_03_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2777]  // VCVTNE2PH2BF8 Vfv{K}{z},aKq,Hfv,Wfv|B16
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_74_pp_03_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_74_pp_03_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_74_pp_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2788]  // VCVTNEPH2BF8 Vhv{K}{z},aKq,Wfv|B16
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_74_pp_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_74_pp_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_74_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2725]  // VCVTBIASPH2BF8 Vhv{K}{z},aKq,Hfv,Wfv|B16
+    (const void *)&gInstructions[ 2766]  // VCVTBIASPH2BF8 Vhv{K}{z},aKq,Hfv,Wfv|B16
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_74_pp_00_w = 
@@ -30300,21 +30770,21 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_74_pp =
     {
         /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_74_pp_00_w,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_74_pp_02_w,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_02_opcode_74_pp_03_w,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_73_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3808]  // VPSHRDVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3853]  // VPSHRDVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_73_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3807]  // VPSHRDVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3852]  // VPSHRDVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_73_pp_01_w = 
@@ -30340,7 +30810,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_73_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_72_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2740]  // VCVTNE2PS2BF16 Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 2781]  // VCVTNE2PS2BF16 Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_72_pp_03_w = 
@@ -30355,7 +30825,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_72_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_72_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2751]  // VCVTNEPS2BF16 Vhv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 2792]  // VCVTNEPS2BF16 Vhv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_72_pp_02_w = 
@@ -30370,7 +30840,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_72_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_72_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3809]  // VPSHRDVW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3854]  // VPSHRDVW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_72_pp_01_w = 
@@ -30396,13 +30866,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_72_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_71_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3799]  // VPSHLDVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3844]  // VPSHLDVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_71_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3798]  // VPSHLDVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3843]  // VPSHLDVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_71_pp_01_w = 
@@ -30428,7 +30898,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_71_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_70_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3800]  // VPSHLDVW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3845]  // VPSHLDVW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_70_pp_01_w = 
@@ -30451,16 +30921,167 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_70_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2607]  // TCVTROWPS2PBF16H Voq,mTt,Bd
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2609]  // TCVTROWPS2PBF16L Voq,mTt,Bd
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2613]  // TCVTROWPS2PHL Voq,mTt,Bd
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2611]  // TCVTROWPS2PHH Voq,mTt,Bd
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_6d_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_00_modrmmod,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_01_modrmmod,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_02_modrmmod,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp_03_modrmmod,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_68_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3366]  // VP2INTERSECTQ rKq+1,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3411]  // VP2INTERSECTQ rKq+1,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_68_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3365]  // VP2INTERSECTD rKq+1,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3410]  // VP2INTERSECTD rKq+1,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_68_pp_03_w = 
@@ -30486,7 +31107,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_68_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_67_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2724]  // VCVT2PS2PHX Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2765]  // VCVT2PS2PHX Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_67_pp_01_w = 
@@ -30512,13 +31133,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_67_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_66_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3416]  // VPBLENDMW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3461]  // VPBLENDMW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_66_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3413]  // VPBLENDMB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3458]  // VPBLENDMB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_66_pp_01_w = 
@@ -30544,13 +31165,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_66_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_65_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2680]  // VBLENDMPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 2721]  // VBLENDMPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_65_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2681]  // VBLENDMPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 2722]  // VBLENDMPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_65_pp_01_w = 
@@ -30576,13 +31197,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_65_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_64_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3415]  // VPBLENDMQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3460]  // VPBLENDMQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_64_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3414]  // VPBLENDMD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3459]  // VPBLENDMD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_64_pp_01_w = 
@@ -30608,13 +31229,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_64_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_63_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3470]  // VPCOMPRESSW Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3515]  // VPCOMPRESSW Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_63_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3467]  // VPCOMPRESSB Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3512]  // VPCOMPRESSB Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_63_pp_01_w = 
@@ -30640,13 +31261,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_63_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_62_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3554]  // VPEXPANDW Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3599]  // VPEXPANDW Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_62_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3551]  // VPEXPANDB Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3596]  // VPEXPANDB Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_62_pp_01_w = 
@@ -30672,13 +31293,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_62_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_5b_pp_01_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2697]  // VBROADCASTI64X4 Voq{K}{z},aKq,Mqq
+    (const void *)&gInstructions[ 2738]  // VBROADCASTI64X4 Voq{K}{z},aKq,Mqq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_5b_pp_01_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2695]  // VBROADCASTI32X8 Voq{K}{z},aKq,Mqq
+    (const void *)&gInstructions[ 2736]  // VBROADCASTI32X8 Voq{K}{z},aKq,Mqq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_5b_pp_01_modrmmod_00_l_02_w = 
@@ -30724,13 +31345,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_5b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_5a_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2696]  // VBROADCASTI64X2 Vuv{K}{z},aKq,Mdq
+    (const void *)&gInstructions[ 2737]  // VBROADCASTI64X2 Vuv{K}{z},aKq,Mdq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_5a_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2694]  // VBROADCASTI32X4 Vuv{K}{z},aKq,Mdq
+    (const void *)&gInstructions[ 2735]  // VBROADCASTI32X4 Vuv{K}{z},aKq,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_5a_pp_01_modrmmod_00_w = 
@@ -30765,13 +31386,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_5a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_59_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3427]  // VPBROADCASTQ Vfv{K}{z},aKq,Wq
+    (const void *)&gInstructions[ 3472]  // VPBROADCASTQ Vfv{K}{z},aKq,Wq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_59_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2693]  // VBROADCASTI32X2 Vfv{K}{z},aKq,Wq
+    (const void *)&gInstructions[ 2734]  // VBROADCASTI32X2 Vfv{K}{z},aKq,Wq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_59_pp_01_w = 
@@ -30797,7 +31418,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_59_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_58_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3422]  // VPBROADCASTD Vfv{K}{z},aKq,Wd
+    (const void *)&gInstructions[ 3467]  // VPBROADCASTD Vfv{K}{z},aKq,Wd
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_58_pp_01_w = 
@@ -30823,13 +31444,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_58_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_55_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3750]  // VPOPCNTQ Vfv{K}{z},aKq,Wfv|B64
+    (const void *)&gInstructions[ 3795]  // VPOPCNTQ Vfv{K}{z},aKq,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_55_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3749]  // VPOPCNTD Vfv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 3794]  // VPOPCNTD Vfv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_55_pp_01_w = 
@@ -30855,13 +31476,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_55_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_54_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3751]  // VPOPCNTW Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3796]  // VPOPCNTW Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_54_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3748]  // VPOPCNTB Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3793]  // VPOPCNTB Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_54_pp_01_w = 
@@ -30887,7 +31508,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_54_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_53_pp_03_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3368]  // VP4DPWSSDS Voq{K}{z},aKq,Hoq+3,Mdq
+    (const void *)&gInstructions[ 3413]  // VP4DPWSSDS Voq{K}{z},aKq,Hoq+3,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_53_pp_03_modrmmod_00_l_02_w = 
@@ -30922,7 +31543,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_53_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_53_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3497]  // VPDPWSSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3542]  // VPDPWSSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_53_pp_01_w = 
@@ -30948,7 +31569,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_53_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_52_pp_03_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3367]  // VP4DPWSSD Voq{K}{z},aKq,Hoq+3,Mdq
+    (const void *)&gInstructions[ 3412]  // VP4DPWSSD Voq{K}{z},aKq,Hoq+3,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_52_pp_03_modrmmod_00_l_02_w = 
@@ -30983,7 +31604,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_52_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_52_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2880]  // VDPBF16PS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 2921]  // VDPBF16PS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_52_pp_02_w = 
@@ -30998,7 +31619,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_52_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_52_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3495]  // VPDPWSSD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3540]  // VPDPWSSD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_52_pp_01_w = 
@@ -31013,7 +31634,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_52_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_52_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2882]  // VDPPHPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 2923]  // VDPPHPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_52_pp_00_w = 
@@ -31039,7 +31660,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_52_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_51_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3481]  // VPDPBSSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3526]  // VPDPBSSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_03_w = 
@@ -31054,7 +31675,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_51_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3485]  // VPDPBSUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3530]  // VPDPBSUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_02_w = 
@@ -31069,7 +31690,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_51_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3489]  // VPDPBUSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3534]  // VPDPBUSDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_01_w = 
@@ -31084,7 +31705,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_51_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3493]  // VPDPBUUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3538]  // VPDPBUUDS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_51_pp_00_w = 
@@ -31110,7 +31731,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_51_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_50_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3479]  // VPDPBSSD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3524]  // VPDPBSSD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_03_w = 
@@ -31125,7 +31746,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_50_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3483]  // VPDPBSUD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3528]  // VPDPBSUD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_02_w = 
@@ -31140,7 +31761,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_50_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3487]  // VPDPBUSD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3532]  // VPDPBUSD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_01_w = 
@@ -31155,7 +31776,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_50_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3491]  // VPDPBUUD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3536]  // VPDPBUUD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_50_pp_00_w = 
@@ -31181,13 +31802,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_50_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3958]  // VRSQRT14SD Vdq{K}{z},aKq,Hdq,Wsd
+    (const void *)&gInstructions[ 4003]  // VRSQRT14SD Vdq{K}{z},aKq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3959]  // VRSQRT14SS Vdq{K}{z},aKq,Hdq,Wss
+    (const void *)&gInstructions[ 4004]  // VRSQRT14SS Vdq{K}{z},aKq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_4f_pp_01_w = 
@@ -31213,13 +31834,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_4f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3956]  // VRSQRT14PD Vfv{K}{z},aKq,Wfv|B64
+    (const void *)&gInstructions[ 4001]  // VRSQRT14PD Vfv{K}{z},aKq,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3957]  // VRSQRT14PS Vfv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 4002]  // VRSQRT14PS Vfv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_4e_pp_01_w = 
@@ -31245,13 +31866,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_4e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3927]  // VRCP14SD Vdq{K}{z},aKq,Hdq,Wsd
+    (const void *)&gInstructions[ 3972]  // VRCP14SD Vdq{K}{z},aKq,Hdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3928]  // VRCP14SS Vdq{K}{z},aKq,Hdq,Wss
+    (const void *)&gInstructions[ 3973]  // VRCP14SS Vdq{K}{z},aKq,Hdq,Wss
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_4d_pp_01_w = 
@@ -31277,13 +31898,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_4d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3925]  // VRCP14PD Vfv{K}{z},aKq,Wfv|B64
+    (const void *)&gInstructions[ 3970]  // VRCP14PD Vfv{K}{z},aKq,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3926]  // VRCP14PS Vfv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 3971]  // VRCP14PS Vfv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_4c_pp_01_w = 
@@ -31309,7 +31930,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_4c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4b_pp_03_modrmmod_00_modrmrm_04_l_00_w_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2605]  // TILELOADD rTt,Mt
+    (const void *)&gInstructions[ 2635]  // TILELOADD rTt,Mt
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_4b_pp_03_modrmmod_00_modrmrm_04_l_00_w_00_nf = 
@@ -31368,7 +31989,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_4b_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4b_pp_02_modrmmod_00_modrmrm_04_l_00_w_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2610]  // TILESTORED Mt,rTt
+    (const void *)&gInstructions[ 2644]  // TILESTORED Mt,rTt
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_4b_pp_02_modrmmod_00_modrmrm_04_l_00_w_00_nf = 
@@ -31427,7 +32048,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_4b_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4b_pp_01_modrmmod_00_modrmrm_04_l_00_w_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2607]  // TILELOADDT1 rTt,Mt
+    (const void *)&gInstructions[ 2639]  // TILELOADDT1 rTt,Mt
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_4b_pp_01_modrmmod_00_modrmrm_04_l_00_w_00_nf = 
@@ -31494,10 +32115,91 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_4b_pp =
     }
 };
 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2605]  // TCVTROWD2PS Voq,mTt,Bd
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod_01_l_02_w_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2641]  // TILEMOVROW Voq,mTt,Bd
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod_01_l_02_w = 
+{
+    ND_ILUT_EX_W,
+    {
+        /* 00 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod_01_l_02_w_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_EX_L gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod_01_l = 
+{
+    ND_ILUT_EX_L,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod_01_l_02_w,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod_01_l,
+    }
+};
+
+const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_4a_pp = 
+{
+    ND_ILUT_EX_PP,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_01_modrmmod,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp_02_modrmmod,
+        /* 03 */ (const void *)ND_NULL,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_49_pp_01_modrmreg_00_modrmmod_00_l_00_w_00_nf_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2520]  // STTILECFG Moq
+    (const void *)&gInstructions[ 2526]  // STTILECFG Moq
 };
 
 const ND_TABLE_EX_NF gEvexMap_mmmmm_02_opcode_49_pp_01_modrmreg_00_modrmmod_00_l_00_w_00_nf = 
@@ -31626,13 +32328,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_49_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_47_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3835]  // VPSLLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3880]  // VPSLLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_47_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3833]  // VPSLLVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3878]  // VPSLLVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_47_pp_01_w = 
@@ -31658,13 +32360,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_47_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_46_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3850]  // VPSRAVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3895]  // VPSRAVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_46_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3848]  // VPSRAVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3893]  // VPSRAVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_46_pp_01_w = 
@@ -31690,13 +32392,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_46_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_45_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3868]  // VPSRLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3913]  // VPSRLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_45_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3866]  // VPSRLVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3911]  // VPSRLVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_45_pp_01_w = 
@@ -31722,13 +32424,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_45_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_44_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3616]  // VPLZCNTQ Vfv{K}{z},aKq,Wfv|B64
+    (const void *)&gInstructions[ 3661]  // VPLZCNTQ Vfv{K}{z},aKq,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_44_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3615]  // VPLZCNTD Vfv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 3660]  // VPLZCNTD Vfv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_44_pp_01_w = 
@@ -31754,13 +32456,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_44_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_43_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3149]  // VGETEXPSD Vdq{K}{z},aKq,Hdq,Wsd{sae}
+    (const void *)&gInstructions[ 3190]  // VGETEXPSD Vdq{K}{z},aKq,Hdq,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_43_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3151]  // VGETEXPSS Vdq{K}{z},aKq,Hdq,Wss{sae}
+    (const void *)&gInstructions[ 3192]  // VGETEXPSS Vdq{K}{z},aKq,Hdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_43_pp_01_w = 
@@ -31786,13 +32488,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_43_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_42_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3146]  // VGETEXPPD Vfv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 3187]  // VGETEXPPD Vfv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_42_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3148]  // VGETEXPPS Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 3189]  // VGETEXPPS Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_42_pp_01_w = 
@@ -31818,13 +32520,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_42_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_40_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3742]  // VPMULLQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3787]  // VPMULLQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_40_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3740]  // VPMULLD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3785]  // VPMULLD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_40_pp_01_w = 
@@ -31850,13 +32552,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_40_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3652]  // VPMAXUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3697]  // VPMAXUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3650]  // VPMAXUD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3695]  // VPMAXUD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_3f_pp_01_w = 
@@ -31882,7 +32584,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3e_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3653]  // VPMAXUW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3698]  // VPMAXUW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3e_pp = 
@@ -31899,13 +32601,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3645]  // VPMAXSQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3690]  // VPMAXSQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3643]  // VPMAXSD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3688]  // VPMAXSD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_3d_pp_01_w = 
@@ -31931,7 +32633,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3641]  // VPMAXSB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3686]  // VPMAXSB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3c_pp = 
@@ -31948,13 +32650,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3666]  // VPMINUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3711]  // VPMINUQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3664]  // VPMINUD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3709]  // VPMINUD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_3b_pp_01_w = 
@@ -31980,7 +32682,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3a_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3426]  // VPBROADCASTMW2D Vfv,mKq
+    (const void *)&gInstructions[ 3471]  // VPBROADCASTMW2D Vfv,mKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_3a_pp_02_modrmmod_01_w = 
@@ -32004,7 +32706,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_3a_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_3a_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3667]  // VPMINUW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3712]  // VPMINUW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3a_pp = 
@@ -32021,13 +32723,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_3a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_39_pp_02_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3678]  // VPMOVQ2M rKq,Ufv
+    (const void *)&gInstructions[ 3723]  // VPMOVQ2M rKq,Ufv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_39_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3670]  // VPMOVD2M rKq,Ufv
+    (const void *)&gInstructions[ 3715]  // VPMOVD2M rKq,Ufv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_39_pp_02_modrmmod_01_w = 
@@ -32051,13 +32753,13 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_39_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_39_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3659]  // VPMINSQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3704]  // VPMINSQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_39_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3657]  // VPMINSD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3702]  // VPMINSD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_39_pp_01_w = 
@@ -32083,13 +32785,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_39_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_38_pp_02_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3675]  // VPMOVM2Q Vfv,mKq
+    (const void *)&gInstructions[ 3720]  // VPMOVM2Q Vfv,mKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_38_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3674]  // VPMOVM2D Vfv,mKq
+    (const void *)&gInstructions[ 3719]  // VPMOVM2D Vfv,mKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_38_pp_02_modrmmod_01_w = 
@@ -32113,7 +32815,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_38_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_38_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3655]  // VPMINSB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3700]  // VPMINSB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_38_pp = 
@@ -32130,7 +32832,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_38_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_37_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3453]  // VPCMPGTQ rKq{K},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3498]  // VPCMPGTQ rKq{K},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_37_pp_01_w = 
@@ -32156,13 +32858,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_37_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_36_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3541]  // VPERMQ Vuv{K}{z},aKq,Huv,Wuv|B64
+    (const void *)&gInstructions[ 3586]  // VPERMQ Vuv{K}{z},aKq,Huv,Wuv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_36_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3514]  // VPERMD Vuv{K}{z},aKq,Huv,Wuv|B32
+    (const void *)&gInstructions[ 3559]  // VPERMD Vuv{K}{z},aKq,Huv,Wuv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_36_pp_01_w = 
@@ -32188,7 +32890,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_36_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_35_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3680]  // VPMOVQD Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3725]  // VPMOVQD Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_35_pp_02_w = 
@@ -32203,7 +32905,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_35_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_35_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3723]  // VPMOVZXDQ Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 3768]  // VPMOVZXDQ Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_35_pp_01_w = 
@@ -32229,7 +32931,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_35_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_34_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3681]  // VPMOVQW Wqv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3726]  // VPMOVQW Wqv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_34_pp_02_w = 
@@ -32244,7 +32946,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_34_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_34_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3729]  // VPMOVZXWQ Vfv{K}{z},aKq,Wqv
+    (const void *)&gInstructions[ 3774]  // VPMOVZXWQ Vfv{K}{z},aKq,Wqv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_34_pp = 
@@ -32261,7 +32963,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_34_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_33_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3672]  // VPMOVDW Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3717]  // VPMOVDW Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_33_pp_02_w = 
@@ -32276,7 +32978,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_33_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_33_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3726]  // VPMOVZXWD Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 3771]  // VPMOVZXWD Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_33_pp = 
@@ -32293,7 +32995,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_33_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_32_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3679]  // VPMOVQB Wev{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3724]  // VPMOVQB Wev{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_32_pp_02_w = 
@@ -32308,7 +33010,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_32_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_32_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3717]  // VPMOVZXBQ Vfv{K}{z},aKq,Wev
+    (const void *)&gInstructions[ 3762]  // VPMOVZXBQ Vfv{K}{z},aKq,Wev
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_32_pp = 
@@ -32325,7 +33027,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_32_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_31_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3671]  // VPMOVDB Wqv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3716]  // VPMOVDB Wqv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_31_pp_02_w = 
@@ -32340,7 +33042,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_31_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_31_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3714]  // VPMOVZXBD Vfv{K}{z},aKq,Wqv
+    (const void *)&gInstructions[ 3759]  // VPMOVZXBD Vfv{K}{z},aKq,Wqv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_31_pp = 
@@ -32357,7 +33059,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_31_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_30_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3713]  // VPMOVWB Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3758]  // VPMOVWB Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_30_pp_02_w = 
@@ -32372,7 +33074,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_30_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_30_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3720]  // VPMOVZXBW Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 3765]  // VPMOVZXBW Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_30_pp = 
@@ -32389,13 +33091,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_30_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3973]  // VSCALEFSD Vsd{K}{z},aKq,Hsd,Wsd{er}
+    (const void *)&gInstructions[ 4018]  // VSCALEFSD Vsd{K}{z},aKq,Hsd,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2d_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3975]  // VSCALEFSS Vss{K}{z},aKq,Hss,Wss{er}
+    (const void *)&gInstructions[ 4020]  // VSCALEFSS Vss{K}{z},aKq,Hss,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_2d_pp_01_w = 
@@ -32421,13 +33123,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_2d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3970]  // VSCALEFPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 4015]  // VSCALEFPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3972]  // VSCALEFPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 4017]  // VSCALEFPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_2c_pp_01_w = 
@@ -32453,7 +33155,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3380]  // VPACKUSDW Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3425]  // VPACKUSDW Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_2b_pp_01_w = 
@@ -32479,7 +33181,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_2b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2a_pp_02_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3425]  // VPBROADCASTMB2Q Vfv,mKq
+    (const void *)&gInstructions[ 3470]  // VPBROADCASTMB2Q Vfv,mKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_2a_pp_02_modrmmod_01_w = 
@@ -32503,7 +33205,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_2a_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_2a_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3287]  // VMOVNTDQA Vfv,Mfv
+    (const void *)&gInstructions[ 3328]  // VMOVNTDQA Vfv,Mfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_2a_pp_01_modrmmod_00_w = 
@@ -32538,13 +33240,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_2a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_29_pp_02_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3712]  // VPMOVW2M rKq,Ufv
+    (const void *)&gInstructions[ 3757]  // VPMOVW2M rKq,Ufv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_29_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3669]  // VPMOVB2M rKq,Ufv
+    (const void *)&gInstructions[ 3714]  // VPMOVB2M rKq,Ufv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_29_pp_02_modrmmod_01_w = 
@@ -32568,7 +33270,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_29_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_29_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3443]  // VPCMPEQQ rKq{K},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3488]  // VPCMPEQQ rKq{K},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_29_pp_01_w = 
@@ -32594,13 +33296,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_29_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_28_pp_02_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3676]  // VPMOVM2W Vfv,mKq
+    (const void *)&gInstructions[ 3721]  // VPMOVM2W Vfv,mKq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_28_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3673]  // VPMOVM2B Vfv,mKq
+    (const void *)&gInstructions[ 3718]  // VPMOVM2B Vfv,mKq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_28_pp_02_modrmmod_01_w = 
@@ -32624,7 +33326,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_02_opcode_28_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_28_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3732]  // VPMULDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3777]  // VPMULDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_28_pp_01_w = 
@@ -32650,13 +33352,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_28_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_27_pp_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3900]  // VPTESTNMQ rKq{K},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3945]  // VPTESTNMQ rKq{K},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_27_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3899]  // VPTESTNMD rKq{K},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3944]  // VPTESTNMD rKq{K},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_27_pp_02_w = 
@@ -32671,13 +33373,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_27_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_27_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3896]  // VPTESTMQ rKq{K},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3941]  // VPTESTMQ rKq{K},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_27_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3895]  // VPTESTMD rKq{K},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3940]  // VPTESTMD rKq{K},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_27_pp_01_w = 
@@ -32703,13 +33405,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_27_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_26_pp_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3901]  // VPTESTNMW rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3946]  // VPTESTNMW rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_26_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3898]  // VPTESTNMB rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3943]  // VPTESTNMB rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_26_pp_02_w = 
@@ -32724,13 +33426,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_26_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_26_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3897]  // VPTESTMW rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3942]  // VPTESTMW rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_26_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3894]  // VPTESTMB rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3939]  // VPTESTMB rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_26_pp_01_w = 
@@ -32756,7 +33458,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_26_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_25_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3685]  // VPMOVSQD Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3730]  // VPMOVSQD Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_25_pp_02_w = 
@@ -32771,7 +33473,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_25_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_25_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3697]  // VPMOVSXDQ Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 3742]  // VPMOVSXDQ Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_25_pp_01_w = 
@@ -32797,7 +33499,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_25_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_24_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3686]  // VPMOVSQW Wqv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3731]  // VPMOVSQW Wqv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_24_pp_02_w = 
@@ -32812,7 +33514,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_24_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_24_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3703]  // VPMOVSXWQ Vfv{K}{z},aKq,Wqv
+    (const void *)&gInstructions[ 3748]  // VPMOVSXWQ Vfv{K}{z},aKq,Wqv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_24_pp = 
@@ -32829,7 +33531,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_24_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_23_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3683]  // VPMOVSDW Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3728]  // VPMOVSDW Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_23_pp_02_w = 
@@ -32844,7 +33546,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_23_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_23_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3700]  // VPMOVSXWD Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 3745]  // VPMOVSXWD Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_23_pp = 
@@ -32861,7 +33563,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_23_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_22_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3684]  // VPMOVSQB Wev{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3729]  // VPMOVSQB Wev{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_22_pp_02_w = 
@@ -32876,7 +33578,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_22_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_22_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3691]  // VPMOVSXBQ Vfv{K}{z},aKq,Wev
+    (const void *)&gInstructions[ 3736]  // VPMOVSXBQ Vfv{K}{z},aKq,Wev
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_22_pp = 
@@ -32893,7 +33595,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_22_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_21_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3682]  // VPMOVSDB Wqv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3727]  // VPMOVSDB Wqv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_21_pp_02_w = 
@@ -32908,7 +33610,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_21_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_21_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3688]  // VPMOVSXBD Vfv{K}{z},aKq,Wqv
+    (const void *)&gInstructions[ 3733]  // VPMOVSXBD Vfv{K}{z},aKq,Wqv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_21_pp = 
@@ -32925,7 +33627,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_21_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_20_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3687]  // VPMOVSWB Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3732]  // VPMOVSWB Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_20_pp_02_w = 
@@ -32940,7 +33642,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_20_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_20_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3694]  // VPMOVSXBW Vfv{K}{z},aKq,Whv
+    (const void *)&gInstructions[ 3739]  // VPMOVSXBW Vfv{K}{z},aKq,Whv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_20_pp = 
@@ -32957,7 +33659,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_20_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3373]  // VPABSQ Vfv{K}{z},aKq,Wfv|B64
+    (const void *)&gInstructions[ 3418]  // VPABSQ Vfv{K}{z},aKq,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_1f_pp_01_w = 
@@ -32983,7 +33685,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1e_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3371]  // VPABSD Vfv{K}{z},aKq,Wfv|B32
+    (const void *)&gInstructions[ 3416]  // VPABSD Vfv{K}{z},aKq,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_1e_pp_01_w = 
@@ -33009,7 +33711,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1d_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3374]  // VPABSW Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3419]  // VPABSW Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1d_pp = 
@@ -33026,7 +33728,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1c_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3369]  // VPABSB Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3414]  // VPABSB Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1c_pp = 
@@ -33043,13 +33745,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1b_pp_01_modrmmod_00_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2691]  // VBROADCASTF64X4 Voq{K}{z},aKq,Mqq
+    (const void *)&gInstructions[ 2732]  // VBROADCASTF64X4 Voq{K}{z},aKq,Mqq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1b_pp_01_modrmmod_00_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2689]  // VBROADCASTF32X8 Voq{K}{z},aKq,Mqq
+    (const void *)&gInstructions[ 2730]  // VBROADCASTF32X8 Voq{K}{z},aKq,Mqq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_1b_pp_01_modrmmod_00_l_02_w = 
@@ -33095,13 +33797,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1a_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2690]  // VBROADCASTF64X2 Vuv{K}{z},aKq,Mdq
+    (const void *)&gInstructions[ 2731]  // VBROADCASTF64X2 Vuv{K}{z},aKq,Mdq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_1a_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2688]  // VBROADCASTF32X4 Vuv{K}{z},aKq,Mdq
+    (const void *)&gInstructions[ 2729]  // VBROADCASTF32X4 Vuv{K}{z},aKq,Mdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_1a_pp_01_modrmmod_00_w = 
@@ -33136,13 +33838,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_1a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_19_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2698]  // VBROADCASTSD Vuv{K}{z},aKq,Wsd
+    (const void *)&gInstructions[ 2739]  // VBROADCASTSD Vuv{K}{z},aKq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_19_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2687]  // VBROADCASTF32X2 Vuv{K}{z},aKq,Wq
+    (const void *)&gInstructions[ 2728]  // VBROADCASTF32X2 Vuv{K}{z},aKq,Wq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_19_pp_01_w = 
@@ -33168,7 +33870,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_19_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_18_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2700]  // VBROADCASTSS Vfv{K}{z},aKq,Wss
+    (const void *)&gInstructions[ 2741]  // VBROADCASTSS Vfv{K}{z},aKq,Wss
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_18_pp_01_w = 
@@ -33194,13 +33896,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_18_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_16_pp_01_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3535]  // VPERMPD Vuv{K}{z},aKq,Huv,Wuv|B64
+    (const void *)&gInstructions[ 3580]  // VPERMPD Vuv{K}{z},aKq,Huv,Wuv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_16_pp_01_l_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3539]  // VPERMPS Vuv{K}{z},aKq,Huv,Wuv|B32
+    (const void *)&gInstructions[ 3584]  // VPERMPS Vuv{K}{z},aKq,Huv,Wuv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_16_pp_01_l_02_w = 
@@ -33215,13 +33917,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_16_pp_01_l_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_16_pp_01_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3534]  // VPERMPD Vuv{K}{z},aKq,Huv,Wuv|B64
+    (const void *)&gInstructions[ 3579]  // VPERMPD Vuv{K}{z},aKq,Huv,Wuv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_16_pp_01_l_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3538]  // VPERMPS Vuv{K}{z},aKq,Huv,Wuv|B32
+    (const void *)&gInstructions[ 3583]  // VPERMPS Vuv{K}{z},aKq,Huv,Wuv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_16_pp_01_l_01_w = 
@@ -33258,7 +33960,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_16_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_15_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3709]  // VPMOVUSQD Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3754]  // VPMOVUSQD Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_15_pp_02_w = 
@@ -33273,13 +33975,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_15_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_15_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3760]  // VPROLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3805]  // VPROLVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_15_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3759]  // VPROLVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3804]  // VPROLVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_15_pp_01_w = 
@@ -33305,7 +34007,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_15_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_14_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3710]  // VPMOVUSQW Wqv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3755]  // VPMOVUSQW Wqv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_14_pp_02_w = 
@@ -33320,13 +34022,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_14_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_14_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3764]  // VPRORVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3809]  // VPRORVQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_14_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3763]  // VPRORVD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3808]  // VPRORVD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_14_pp_01_w = 
@@ -33352,7 +34054,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_14_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_13_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3707]  // VPMOVUSDW Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3752]  // VPMOVUSDW Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_13_pp_02_w = 
@@ -33367,7 +34069,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_13_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_13_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2766]  // VCVTPH2PS Vfv{K}{z},aKq,Whv{sae}
+    (const void *)&gInstructions[ 2807]  // VCVTPH2PS Vfv{K}{z},aKq,Whv{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_13_pp_01_w = 
@@ -33393,7 +34095,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_13_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_12_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3708]  // VPMOVUSQB Wev{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3753]  // VPMOVUSQB Wev{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_12_pp_02_w = 
@@ -33408,7 +34110,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_12_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_12_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3837]  // VPSLLVW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3882]  // VPSLLVW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_12_pp_01_w = 
@@ -33434,7 +34136,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_12_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_11_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3706]  // VPMOVUSDB Wqv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3751]  // VPMOVUSDB Wqv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_11_pp_02_w = 
@@ -33449,7 +34151,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_11_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_11_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3851]  // VPSRAVW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3896]  // VPSRAVW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_11_pp_01_w = 
@@ -33475,7 +34177,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_11_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_10_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3711]  // VPMOVUSWB Whv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3756]  // VPMOVUSWB Whv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_10_pp_02_w = 
@@ -33490,7 +34192,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_10_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_10_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3870]  // VPSRLVW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3915]  // VPSRLVW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_10_pp_01_w = 
@@ -33516,7 +34218,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_10_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_0d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3526]  // VPERMILPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3571]  // VPERMILPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_0d_pp_01_w = 
@@ -33542,7 +34244,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_0d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_0c_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3530]  // VPERMILPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3575]  // VPERMILPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_02_opcode_0c_pp_01_w = 
@@ -33568,7 +34270,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_0c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_0b_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3734]  // VPMULHRSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3779]  // VPMULHRSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_0b_pp = 
@@ -33585,7 +34287,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_0b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_04_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3633]  // VPMADDUBSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3678]  // VPMADDUBSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_04_pp = 
@@ -33602,7 +34304,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_04_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_02_opcode_00_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3811]  // VPSHUFB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3856]  // VPSHUFB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_02_opcode_00_pp = 
@@ -33694,7 +34396,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_02_opcode =
         /* 47 */ (const void *)&gEvexMap_mmmmm_02_opcode_47_pp,
         /* 48 */ (const void *)ND_NULL,
         /* 49 */ (const void *)&gEvexMap_mmmmm_02_opcode_49_pp,
-        /* 4a */ (const void *)ND_NULL,
+        /* 4a */ (const void *)&gEvexMap_mmmmm_02_opcode_4a_pp,
         /* 4b */ (const void *)&gEvexMap_mmmmm_02_opcode_4b_pp,
         /* 4c */ (const void *)&gEvexMap_mmmmm_02_opcode_4c_pp,
         /* 4d */ (const void *)&gEvexMap_mmmmm_02_opcode_4d_pp,
@@ -33729,7 +34431,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_02_opcode =
         /* 6a */ (const void *)ND_NULL,
         /* 6b */ (const void *)ND_NULL,
         /* 6c */ (const void *)ND_NULL,
-        /* 6d */ (const void *)ND_NULL,
+        /* 6d */ (const void *)&gEvexMap_mmmmm_02_opcode_6d_pp,
         /* 6e */ (const void *)ND_NULL,
         /* 6f */ (const void *)ND_NULL,
         /* 70 */ (const void *)&gEvexMap_mmmmm_02_opcode_70_pp,
@@ -33838,7 +34540,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_02_opcode =
         /* d7 */ (const void *)ND_NULL,
         /* d8 */ (const void *)ND_NULL,
         /* d9 */ (const void *)ND_NULL,
-        /* da */ (const void *)ND_NULL,
+        /* da */ (const void *)&gEvexMap_mmmmm_02_opcode_da_pp,
         /* db */ (const void *)ND_NULL,
         /* dc */ (const void *)&gEvexMap_mmmmm_02_opcode_dc_pp,
         /* dd */ (const void *)&gEvexMap_mmmmm_02_opcode_dd_pp,
@@ -33882,7 +34584,7 @@ const ND_TABLE_OPCODE gEvexMap_mmmmm_02_opcode =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_fe_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3386]  // VPADDD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3431]  // VPADDD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_fe_pp_01_w = 
@@ -33908,7 +34610,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fe_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_fd_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3398]  // VPADDW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3443]  // VPADDW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fd_pp = 
@@ -33925,7 +34627,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fd_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_fc_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3384]  // VPADDB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3429]  // VPADDB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fc_pp = 
@@ -33942,7 +34644,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fc_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_fb_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3879]  // VPSUBQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3924]  // VPSUBQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_fb_pp_01_w = 
@@ -33968,7 +34670,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fb_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_fa_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3877]  // VPSUBD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3922]  // VPSUBD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_fa_pp_01_w = 
@@ -33994,7 +34696,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_fa_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f9_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3889]  // VPSUBW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3934]  // VPSUBW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f9_pp = 
@@ -34011,7 +34713,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f8_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3875]  // VPSUBB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3920]  // VPSUBB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f8_pp = 
@@ -34028,7 +34730,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f6_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3777]  // VPSADBW Vfv,Hfv,Wfv
+    (const void *)&gInstructions[ 3822]  // VPSADBW Vfv,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f6_pp = 
@@ -34045,7 +34747,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f5_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3635]  // VPMADDWD Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3680]  // VPMADDWD Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f5_pp = 
@@ -34062,7 +34764,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f4_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3746]  // VPMULUDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3791]  // VPMULUDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_f4_pp_01_w = 
@@ -34088,7 +34790,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f4_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f3_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3830]  // VPSLLQ Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3875]  // VPSLLQ Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_f3_pp_01_w = 
@@ -34114,7 +34816,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f3_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f2_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3824]  // VPSLLD Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3869]  // VPSLLD Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_f2_pp_01_w = 
@@ -34140,7 +34842,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f2_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_f1_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3839]  // VPSLLW Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3884]  // VPSLLW Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f1_pp = 
@@ -34157,13 +34859,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_f1_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_ef_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3920]  // VPXORQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3965]  // VPXORQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_ef_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3919]  // VPXORD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3964]  // VPXORD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_ef_pp_01_w = 
@@ -34189,7 +34891,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ef_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_ee_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3646]  // VPMAXSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3691]  // VPMAXSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ee_pp = 
@@ -34206,7 +34908,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ee_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_ed_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3392]  // VPADDSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3437]  // VPADDSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ed_pp = 
@@ -34223,7 +34925,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ed_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_ec_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3390]  // VPADDSB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3435]  // VPADDSB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ec_pp = 
@@ -34240,13 +34942,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ec_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_eb_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3754]  // VPORQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3799]  // VPORQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_eb_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3753]  // VPORD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3798]  // VPORD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_eb_pp_01_w = 
@@ -34272,7 +34974,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_eb_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_ea_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3660]  // VPMINSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3705]  // VPMINSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ea_pp = 
@@ -34289,7 +34991,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_ea_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e9_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3883]  // VPSUBSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3928]  // VPSUBSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e9_pp = 
@@ -34306,7 +35008,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e8_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3881]  // VPSUBSB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3926]  // VPSUBSB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e8_pp = 
@@ -34323,7 +35025,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e7_pp_01_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3285]  // VMOVNTDQ Mfv,Vfv
+    (const void *)&gInstructions[ 3326]  // VMOVNTDQ Mfv,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e7_pp_01_modrmmod_00_w = 
@@ -34358,7 +35060,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e7_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e6_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2753]  // VCVTPD2DQ Vhv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2794]  // VCVTPD2DQ Vhv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e6_pp_03_w = 
@@ -34373,13 +35075,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e6_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e6_pp_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2789]  // VCVTQQ2PD Vfv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2830]  // VCVTQQ2PD Vfv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e6_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2729]  // VCVTDQ2PD Vfv{K}{z},aKq,Whv|B32
+    (const void *)&gInstructions[ 2770]  // VCVTDQ2PD Vfv{K}{z},aKq,Whv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e6_pp_02_w = 
@@ -34394,7 +35096,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e6_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e6_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2816]  // VCVTTPD2DQ Vhv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2857]  // VCVTTPD2DQ Vhv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e6_pp_01_w = 
@@ -34420,7 +35122,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e5_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3738]  // VPMULHW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3783]  // VPMULHW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e5_pp = 
@@ -34437,7 +35139,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e4_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3736]  // VPMULHUW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3781]  // VPMULHUW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e4_pp = 
@@ -34454,7 +35156,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e4_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e3_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3410]  // VPAVGW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3455]  // VPAVGW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e3_pp = 
@@ -34471,13 +35173,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e3_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e2_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3847]  // VPSRAQ Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3892]  // VPSRAQ Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e2_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3843]  // VPSRAD Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3888]  // VPSRAD Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_e2_pp_01_w = 
@@ -34503,7 +35205,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e2_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e1_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3853]  // VPSRAW Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3898]  // VPSRAW Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e1_pp = 
@@ -34520,7 +35222,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e1_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_e0_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3408]  // VPAVGB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3453]  // VPAVGB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e0_pp = 
@@ -34537,13 +35239,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_e0_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_df_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3406]  // VPANDNQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3451]  // VPANDNQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_df_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3405]  // VPANDND Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3450]  // VPANDND Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_df_pp_01_w = 
@@ -34569,7 +35271,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_df_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_de_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3648]  // VPMAXUB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3693]  // VPMAXUB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_de_pp = 
@@ -34586,7 +35288,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_de_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_dd_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3396]  // VPADDUSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3441]  // VPADDUSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_dd_pp = 
@@ -34603,7 +35305,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_dd_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_dc_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3394]  // VPADDUSB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3439]  // VPADDUSB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_dc_pp = 
@@ -34620,13 +35322,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_dc_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_db_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3407]  // VPANDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3452]  // VPANDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_db_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3403]  // VPANDD Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3448]  // VPANDD Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_db_pp_01_w = 
@@ -34652,7 +35354,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_db_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_da_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3662]  // VPMINUB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3707]  // VPMINUB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_da_pp = 
@@ -34669,7 +35371,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_da_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d9_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3887]  // VPSUBUSW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3932]  // VPSUBUSW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d9_pp = 
@@ -34686,7 +35388,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d9_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d8_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3885]  // VPSUBUSB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3930]  // VPSUBUSB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d8_pp = 
@@ -34703,13 +35405,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d8_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d6_pp_01_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3296]  // VMOVQ Wq,Vdq
+    (const void *)&gInstructions[ 3337]  // VMOVQ Wq,Vdq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d6_pp_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3239]  // VMOVD Wd,Vdq
+    (const void *)&gInstructions[ 3280]  // VMOVD Wd,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_d6_pp_01_l_00_w = 
@@ -34746,7 +35448,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d5_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3743]  // VPMULLW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3788]  // VPMULLW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d5_pp = 
@@ -34763,7 +35465,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d4_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3388]  // VPADDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3433]  // VPADDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_d4_pp_01_w = 
@@ -34789,7 +35491,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d4_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d3_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3863]  // VPSRLQ Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3908]  // VPSRLQ Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_d3_pp_01_w = 
@@ -34815,7 +35517,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d3_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d2_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3857]  // VPSRLD Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3902]  // VPSRLD Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_d2_pp_01_w = 
@@ -34841,7 +35543,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d2_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_d1_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3872]  // VPSRLW Vfv{K}{z},aKq,Hfv,Wdq
+    (const void *)&gInstructions[ 3917]  // VPSRLW Vfv{K}{z},aKq,Hfv,Wdq
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d1_pp = 
@@ -34858,7 +35560,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_d1_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c6_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3995]  // VSHUFPD Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
+    (const void *)&gInstructions[ 4040]  // VSHUFPD Vfv{K}{z},aKq,Hfv,Wfv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c6_pp_01_w = 
@@ -34873,7 +35575,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c6_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c6_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3997]  // VSHUFPS Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
+    (const void *)&gInstructions[ 4042]  // VSHUFPS Vfv{K}{z},aKq,Hfv,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c6_pp_00_w = 
@@ -34899,7 +35601,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_c6_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c5_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3567]  // VPEXTRW Gy,Udq,Ib
+    (const void *)&gInstructions[ 3612]  // VPEXTRW Gy,Udq,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_c5_pp_01_modrmmod_01_l = 
@@ -34936,7 +35638,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_c5_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_01_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3612]  // VPINSRW Vdq,Hdq,Rv,Ib
+    (const void *)&gInstructions[ 3657]  // VPINSRW Vdq,Hdq,Rv,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_01_l = 
@@ -34953,7 +35655,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_00_l_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3611]  // VPINSRW Vdq,Hdq,Mw,Ib
+    (const void *)&gInstructions[ 3656]  // VPINSRW Vdq,Hdq,Mw,Ib
 };
 
 const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_c4_pp_01_modrmmod_00_l = 
@@ -34990,7 +35692,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_c4_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c2_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2708]  // VCMPSD rKq{K},aKq,Hdq,Wsd{sae},Ib
+    (const void *)&gInstructions[ 2749]  // VCMPSD rKq{K},aKq,Hdq,Wsd{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_03_w = 
@@ -35005,7 +35707,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c2_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2711]  // VCMPSS rKq{K},aKq,Hdq,Wss{sae},Ib
+    (const void *)&gInstructions[ 2752]  // VCMPSS rKq{K},aKq,Hdq,Wss{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_02_w = 
@@ -35020,7 +35722,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c2_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2703]  // VCMPPD rKq{K},aKq,Hfv,Wfv|B64{sae},Ib
+    (const void *)&gInstructions[ 2744]  // VCMPPD rKq{K},aKq,Hfv,Wfv|B64{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_01_w = 
@@ -35035,7 +35737,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_c2_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2706]  // VCMPPS rKq{K},aKq,Hfv,Wfv|B32{sae},Ib
+    (const void *)&gInstructions[ 2747]  // VCMPPS rKq{K},aKq,Hfv,Wfv|B32{sae},Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_c2_pp_00_w = 
@@ -35735,13 +36437,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_90_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7f_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3256]  // VMOVDQU16 Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3297]  // VMOVDQU16 Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7f_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3262]  // VMOVDQU8 Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3303]  // VMOVDQU8 Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7f_pp_03_w = 
@@ -35756,13 +36458,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7f_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7f_pp_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3260]  // VMOVDQU64 Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3301]  // VMOVDQU64 Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7f_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3258]  // VMOVDQU32 Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3299]  // VMOVDQU32 Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7f_pp_02_w = 
@@ -35777,13 +36479,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7f_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3252]  // VMOVDQA64 Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3293]  // VMOVDQA64 Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3250]  // VMOVDQA32 Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3291]  // VMOVDQA32 Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7f_pp_01_w = 
@@ -35809,13 +36511,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_7f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7e_pp_02_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3295]  // VMOVQ Vdq,Wq
+    (const void *)&gInstructions[ 3336]  // VMOVQ Vdq,Wq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7e_pp_02_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3238]  // VMOVD Vdq,Wd
+    (const void *)&gInstructions[ 3279]  // VMOVD Vdq,Wd
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7e_pp_02_l_00_w = 
@@ -35841,13 +36543,13 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_7e_pp_02_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7e_pp_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3294]  // VMOVQ Ey,Vdq
+    (const void *)&gInstructions[ 3335]  // VMOVQ Ey,Vdq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7e_pp_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3237]  // VMOVD Ey,Vdq
+    (const void *)&gInstructions[ 3278]  // VMOVD Ey,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7e_pp_01_l_00_wi = 
@@ -35884,13 +36586,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_7e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7b_pp_03_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2863]  // VCVTUSI2SD Vdq,Hdq{er},Ey
+    (const void *)&gInstructions[ 2904]  // VCVTUSI2SD Vdq,Hdq{er},Ey
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7b_pp_03_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2862]  // VCVTUSI2SD Vdq,Hdq,Ey
+    (const void *)&gInstructions[ 2903]  // VCVTUSI2SD Vdq,Hdq,Ey
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7b_pp_03_wi = 
@@ -35905,19 +36607,19 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7b_pp_03_wi =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7b_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2865]  // VCVTUSI2SS Vss,Hss{er},Ey
+    (const void *)&gInstructions[ 2906]  // VCVTUSI2SS Vss,Hss{er},Ey
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7b_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2759]  // VCVTPD2QQ Vfv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2800]  // VCVTPD2QQ Vfv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2786]  // VCVTPS2QQ Vfv{K}{z},aKq,Whv|B32{er}
+    (const void *)&gInstructions[ 2827]  // VCVTPS2QQ Vfv{K}{z},aKq,Whv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7b_pp_01_w = 
@@ -35943,13 +36645,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_7b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7a_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2861]  // VCVTUQQ2PS Vhv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2902]  // VCVTUQQ2PS Vhv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7a_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2858]  // VCVTUDQ2PS Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2899]  // VCVTUDQ2PS Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7a_pp_03_w = 
@@ -35964,13 +36666,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7a_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7a_pp_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2859]  // VCVTUQQ2PD Vfv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2900]  // VCVTUQQ2PD Vfv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7a_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2856]  // VCVTUDQ2PD Vfv{K}{z},aKq,Whv|B32
+    (const void *)&gInstructions[ 2897]  // VCVTUDQ2PD Vfv{K}{z},aKq,Whv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7a_pp_02_w = 
@@ -35985,13 +36687,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7a_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2819]  // VCVTTPD2QQ Vfv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2860]  // VCVTTPD2QQ Vfv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_7a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2838]  // VCVTTPS2QQ Vfv{K}{z},aKq,Whv|B32{sae}
+    (const void *)&gInstructions[ 2879]  // VCVTTPS2QQ Vfv{K}{z},aKq,Whv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_7a_pp_01_w = 
@@ -36017,25 +36719,25 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_7a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_79_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2797]  // VCVTSD2USI Gy,Wsd{er}
+    (const void *)&gInstructions[ 2838]  // VCVTSD2USI Gy,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_79_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2813]  // VCVTSS2USI Gy,Wss{er}
+    (const void *)&gInstructions[ 2854]  // VCVTSS2USI Gy,Wss{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_79_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2761]  // VCVTPD2UQQ Vfv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2802]  // VCVTPD2UQQ Vfv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_79_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2788]  // VCVTPS2UQQ Vfv{K}{z},aKq,Whv|B32{er}
+    (const void *)&gInstructions[ 2829]  // VCVTPS2UQQ Vfv{K}{z},aKq,Whv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_79_pp_01_w = 
@@ -36050,13 +36752,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_79_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_79_pp_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2760]  // VCVTPD2UDQ Vhv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2801]  // VCVTPD2UDQ Vhv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_79_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2787]  // VCVTPS2UDQ Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2828]  // VCVTPS2UDQ Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_79_pp_00_w = 
@@ -36082,25 +36784,25 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_79_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_78_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2847]  // VCVTTSD2USI Gy,Wsd{sae}
+    (const void *)&gInstructions[ 2888]  // VCVTTSD2USI Gy,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_78_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2854]  // VCVTTSS2USI Gy,Wss{sae}
+    (const void *)&gInstructions[ 2895]  // VCVTTSS2USI Gy,Wss{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_78_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2823]  // VCVTTPD2UQQ Vfv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2864]  // VCVTTPD2UQQ Vfv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_78_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2842]  // VCVTTPS2UQQ Vfv{K}{z},aKq,Whv|B32{sae}
+    (const void *)&gInstructions[ 2883]  // VCVTTPS2UQQ Vfv{K}{z},aKq,Whv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_78_pp_01_w = 
@@ -36115,13 +36817,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_78_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_78_pp_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2821]  // VCVTTPD2UDQ Vhv{K}{z},aKq,Wfv|B64{sae}
+    (const void *)&gInstructions[ 2862]  // VCVTTPD2UDQ Vhv{K}{z},aKq,Wfv|B64{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_78_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2840]  // VCVTTPS2UDQ Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 2881]  // VCVTTPS2UDQ Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_78_pp_00_w = 
@@ -36147,7 +36849,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_78_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_76_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3441]  // VPCMPEQD rKq{K},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3486]  // VPCMPEQD rKq{K},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_76_pp = 
@@ -36164,7 +36866,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_76_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_75_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3445]  // VPCMPEQW rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3490]  // VPCMPEQW rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_75_pp = 
@@ -36178,40 +36880,10 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_75_pp =
     }
 };
 
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_74_pp_03_w_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2736]  // VCVTNE2PH2BF8 Vfv{K}{z},aKq,Hfv,Wfv|B16
-};
-
-const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_74_pp_03_w = 
-{
-    ND_ILUT_EX_W,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_74_pp_03_w_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_74_pp_02_w_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2747]  // VCVTNEPH2BF8 Vhv{K}{z},aKq,Wfv|B16
-};
-
-const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_74_pp_02_w = 
-{
-    ND_ILUT_EX_W,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_74_pp_02_w_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-    }
-};
-
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_74_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3439]  // VPCMPEQB rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3484]  // VPCMPEQB rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_74_pp = 
@@ -36220,21 +36892,21 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_74_pp =
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_74_pp_01_leaf,
-        /* 02 */ (const void *)&gEvexMap_mmmmm_01_opcode_74_pp_02_w,
-        /* 03 */ (const void *)&gEvexMap_mmmmm_01_opcode_74_pp_03_w,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3827]  // VPSLLDQ Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3872]  // VPSLLDQ Hfv,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_06_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3829]  // VPSLLQ Hfv{K}{z},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3874]  // VPSLLQ Hfv{K}{z},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_06_w = 
@@ -36249,13 +36921,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_06_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3860]  // VPSRLDQ Hfv,Wfv,Ib
+    (const void *)&gInstructions[ 3905]  // VPSRLDQ Hfv,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3862]  // VPSRLQ Hfv{K}{z},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3907]  // VPSRLQ Hfv{K}{z},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_73_pp_01_modrmreg_02_w = 
@@ -36296,7 +36968,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_73_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_06_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3823]  // VPSLLD Hfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3868]  // VPSLLD Hfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_06_w = 
@@ -36311,13 +36983,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_06_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3846]  // VPSRAQ Hfv{K}{z},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3891]  // VPSRAQ Hfv{K}{z},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3842]  // VPSRAD Hfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3887]  // VPSRAD Hfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_w = 
@@ -36332,7 +37004,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_04_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3856]  // VPSRLD Hfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3901]  // VPSRLD Hfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_02_w = 
@@ -36347,13 +37019,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3758]  // VPROLQ Hfv{K}{z},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3803]  // VPROLQ Hfv{K}{z},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3757]  // VPROLD Hfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3802]  // VPROLD Hfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_01_w = 
@@ -36368,13 +37040,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3762]  // VPRORQ Hfv{K}{z},aKq,Wfv|B64,Ib
+    (const void *)&gInstructions[ 3807]  // VPRORQ Hfv{K}{z},aKq,Wfv|B64,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3761]  // VPRORD Hfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3806]  // VPRORD Hfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_72_pp_01_modrmreg_00_w = 
@@ -36415,19 +37087,19 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_72_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_71_pp_01_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3838]  // VPSLLW Hfv{K}{z},aKq,Wfv,Ib
+    (const void *)&gInstructions[ 3883]  // VPSLLW Hfv{K}{z},aKq,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_71_pp_01_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3852]  // VPSRAW Hfv{K}{z},aKq,Wfv,Ib
+    (const void *)&gInstructions[ 3897]  // VPSRAW Hfv{K}{z},aKq,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_71_pp_01_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3871]  // VPSRLW Hfv{K}{z},aKq,Wfv,Ib
+    (const void *)&gInstructions[ 3916]  // VPSRLW Hfv{K}{z},aKq,Wfv,Ib
 };
 
 const ND_TABLE_MODRM_REG gEvexMap_mmmmm_01_opcode_71_pp_01_modrmreg = 
@@ -36459,19 +37131,19 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_71_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_70_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3818]  // VPSHUFLW Vfv{K}{z},aKq,Wfv,Ib
+    (const void *)&gInstructions[ 3863]  // VPSHUFLW Vfv{K}{z},aKq,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_70_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3816]  // VPSHUFHW Vfv{K}{z},aKq,Wfv,Ib
+    (const void *)&gInstructions[ 3861]  // VPSHUFHW Vfv{K}{z},aKq,Wfv,Ib
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_70_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3814]  // VPSHUFD Vfv{K}{z},aKq,Wfv|B32,Ib
+    (const void *)&gInstructions[ 3859]  // VPSHUFD Vfv{K}{z},aKq,Wfv|B32,Ib
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_70_pp_01_w = 
@@ -36497,13 +37169,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_70_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6f_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3255]  // VMOVDQU16 Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3296]  // VMOVDQU16 Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6f_pp_03_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3261]  // VMOVDQU8 Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3302]  // VMOVDQU8 Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6f_pp_03_w = 
@@ -36518,13 +37190,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6f_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6f_pp_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3259]  // VMOVDQU64 Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3300]  // VMOVDQU64 Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6f_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3257]  // VMOVDQU32 Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3298]  // VMOVDQU32 Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6f_pp_02_w = 
@@ -36539,13 +37211,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6f_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3251]  // VMOVDQA64 Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3292]  // VMOVDQA64 Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6f_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3249]  // VMOVDQA32 Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3290]  // VMOVDQA32 Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6f_pp_01_w = 
@@ -36571,13 +37243,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_6f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6e_pp_01_l_00_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3293]  // VMOVQ Vdq,Eq
+    (const void *)&gInstructions[ 3334]  // VMOVQ Vdq,Eq
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6e_pp_01_l_00_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3236]  // VMOVD Vdq,Ed
+    (const void *)&gInstructions[ 3277]  // VMOVD Vdq,Ed
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6e_pp_01_l_00_wi = 
@@ -36614,7 +37286,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_6e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3906]  // VPUNPCKHQDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3951]  // VPUNPCKHQDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6d_pp_01_w = 
@@ -36640,7 +37312,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_6d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3914]  // VPUNPCKLQDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3959]  // VPUNPCKLQDQ Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6c_pp_01_w = 
@@ -36666,7 +37338,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_6c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3376]  // VPACKSSDW Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3421]  // VPACKSSDW Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6b_pp_01_w = 
@@ -36692,7 +37364,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_6b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_6a_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3904]  // VPUNPCKHDQ Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3949]  // VPUNPCKHDQ Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_6a_pp_01_w = 
@@ -36718,7 +37390,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_6a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_69_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3908]  // VPUNPCKHWD Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3953]  // VPUNPCKHWD Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_69_pp = 
@@ -36735,7 +37407,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_69_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_68_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3902]  // VPUNPCKHBW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3947]  // VPUNPCKHBW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_68_pp = 
@@ -36752,7 +37424,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_68_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_67_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3382]  // VPACKUSWB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3427]  // VPACKUSWB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_67_pp = 
@@ -36769,7 +37441,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_67_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_66_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3451]  // VPCMPGTD rKq{K},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3496]  // VPCMPGTD rKq{K},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_66_pp_01_w = 
@@ -36795,7 +37467,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_66_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_65_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3455]  // VPCMPGTW rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3500]  // VPCMPGTW rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_65_pp = 
@@ -36812,7 +37484,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_65_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_64_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3449]  // VPCMPGTB rKq{K},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3494]  // VPCMPGTB rKq{K},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_64_pp = 
@@ -36829,7 +37501,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_64_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_63_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3378]  // VPACKSSWB Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3423]  // VPACKSSWB Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_63_pp = 
@@ -36846,7 +37518,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_63_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_62_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3912]  // VPUNPCKLDQ Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3957]  // VPUNPCKLDQ Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_62_pp_01_w = 
@@ -36872,7 +37544,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_62_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_61_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3916]  // VPUNPCKLWD Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3961]  // VPUNPCKLWD Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_61_pp = 
@@ -36889,7 +37561,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_61_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_60_pp_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3910]  // VPUNPCKLBW Vfv{K}{z},aKq,Hfv,Wfv
+    (const void *)&gInstructions[ 3955]  // VPUNPCKLBW Vfv{K}{z},aKq,Hfv,Wfv
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_60_pp = 
@@ -36906,7 +37578,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_60_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5f_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3196]  // VMAXSD Vdq{K}{z},aKq,Hdq,Wsd{sae}
+    (const void *)&gInstructions[ 3237]  // VMAXSD Vdq{K}{z},aKq,Hdq,Wsd{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_03_w = 
@@ -36921,7 +37593,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5f_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3199]  // VMAXSS Vdq{K}{z},aKq,Hdq,Wss{sae}
+    (const void *)&gInstructions[ 3240]  // VMAXSS Vdq{K}{z},aKq,Hdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_02_w = 
@@ -36936,7 +37608,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3191]  // VMAXPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae}
+    (const void *)&gInstructions[ 3232]  // VMAXPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_01_w = 
@@ -36951,7 +37623,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5f_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3194]  // VMAXPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae}
+    (const void *)&gInstructions[ 3235]  // VMAXPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5f_pp_00_w = 
@@ -36977,7 +37649,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_5f_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5e_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2875]  // VDIVSD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2916]  // VDIVSD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_03_w = 
@@ -36992,7 +37664,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5e_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2878]  // VDIVSS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 2919]  // VDIVSS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_02_w = 
@@ -37007,7 +37679,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2870]  // VDIVPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 2911]  // VDIVPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_01_w = 
@@ -37022,7 +37694,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5e_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2873]  // VDIVPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2914]  // VDIVPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5e_pp_00_w = 
@@ -37048,7 +37720,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_5e_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5d_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3219]  // VMINSD Vdq{K}{z},aKq,Hdq,Wsd{sae}
+    (const void *)&gInstructions[ 3260]  // VMINSD Vdq{K}{z},aKq,Hdq,Wsd{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_03_w = 
@@ -37063,7 +37735,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5d_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3222]  // VMINSS Vdq{K}{z},aKq,Hdq,Wss{sae}
+    (const void *)&gInstructions[ 3263]  // VMINSS Vdq{K}{z},aKq,Hdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_02_w = 
@@ -37078,7 +37750,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5d_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3214]  // VMINPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae}
+    (const void *)&gInstructions[ 3255]  // VMINPD Vfv{K}{z},aKq,Hfv,Wfv|B64{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_01_w = 
@@ -37093,7 +37765,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5d_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3217]  // VMINPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae}
+    (const void *)&gInstructions[ 3258]  // VMINPS Vfv{K}{z},aKq,Hfv,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5d_pp_00_w = 
@@ -37119,7 +37791,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_5d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5c_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4022]  // VSUBSD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 4069]  // VSUBSD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_03_w = 
@@ -37134,7 +37806,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5c_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4025]  // VSUBSS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 4072]  // VSUBSS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_02_w = 
@@ -37149,7 +37821,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5c_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4017]  // VSUBPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 4064]  // VSUBPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_01_w = 
@@ -37164,7 +37836,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5c_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4020]  // VSUBPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 4067]  // VSUBPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5c_pp_00_w = 
@@ -37190,7 +37862,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_5c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5b_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2833]  // VCVTTPS2DQ Vfv{K}{z},aKq,Wfv|B32{sae}
+    (const void *)&gInstructions[ 2874]  // VCVTTPS2DQ Vfv{K}{z},aKq,Wfv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5b_pp_02_w = 
@@ -37205,7 +37877,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5b_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5b_pp_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2775]  // VCVTPS2DQ Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2816]  // VCVTPS2DQ Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5b_pp_01_w = 
@@ -37220,13 +37892,13 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5b_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5b_pp_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2791]  // VCVTQQ2PS Vhv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2832]  // VCVTQQ2PS Vhv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5b_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2733]  // VCVTDQ2PS Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 2774]  // VCVTDQ2PS Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5b_pp_00_w = 
@@ -37252,7 +37924,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_5b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5a_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2795]  // VCVTSD2SS Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2836]  // VCVTSD2SS Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_03_w = 
@@ -37267,7 +37939,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5a_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2808]  // VCVTSS2SD Vdq{K}{z},aKq,Hdq,Wss{sae}
+    (const void *)&gInstructions[ 2849]  // VCVTSS2SD Vdq{K}{z},aKq,Hdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_02_w = 
@@ -37282,7 +37954,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5a_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2756]  // VCVTPD2PS Vhv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 2797]  // VCVTPD2PS Vhv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_01_w = 
@@ -37297,7 +37969,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_5a_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2779]  // VCVTPS2PD Vfv{K}{z},aKq,Whv|B32{sae}
+    (const void *)&gInstructions[ 2820]  // VCVTPS2PD Vfv{K}{z},aKq,Whv|B32{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_5a_pp_00_w = 
@@ -37323,7 +37995,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_5a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_59_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3353]  // VMULSD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 3398]  // VMULSD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_03_w = 
@@ -37338,7 +38010,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_59_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3356]  // VMULSS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 3401]  // VMULSS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_02_w = 
@@ -37353,7 +38025,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_59_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3348]  // VMULPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 3393]  // VMULPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_01_w = 
@@ -37368,7 +38040,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_59_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3351]  // VMULPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 3396]  // VMULPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_59_pp_00_w = 
@@ -37394,7 +38066,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_59_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_58_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2651]  // VADDSD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 2692]  // VADDSD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_03_w = 
@@ -37409,7 +38081,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_58_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2654]  // VADDSS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 2695]  // VADDSS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_02_w = 
@@ -37424,7 +38096,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_58_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2646]  // VADDPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
+    (const void *)&gInstructions[ 2687]  // VADDPD Vfv{K}{z},aKq,Hfv,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_01_w = 
@@ -37439,7 +38111,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_58_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2649]  // VADDPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
+    (const void *)&gInstructions[ 2690]  // VADDPS Vfv{K}{z},aKq,Hfv,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_58_pp_00_w = 
@@ -37465,7 +38137,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_58_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_57_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4045]  // VXORPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 4092]  // VXORPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_57_pp_01_w = 
@@ -37480,7 +38152,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_57_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_57_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4047]  // VXORPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 4094]  // VXORPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_57_pp_00_w = 
@@ -37506,7 +38178,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_57_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_56_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3361]  // VORPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 3406]  // VORPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_56_pp_01_w = 
@@ -37521,7 +38193,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_56_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_56_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3363]  // VORPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 3408]  // VORPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_56_pp_00_w = 
@@ -37547,7 +38219,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_56_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_55_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2670]  // VANDNPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 2711]  // VANDNPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_55_pp_01_w = 
@@ -37562,7 +38234,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_55_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_55_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2672]  // VANDNPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 2713]  // VANDNPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_55_pp_00_w = 
@@ -37588,7 +38260,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_55_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_54_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2674]  // VANDPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 2715]  // VANDPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_54_pp_01_w = 
@@ -37603,7 +38275,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_54_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_54_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2676]  // VANDPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 2717]  // VANDPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_54_pp_00_w = 
@@ -37629,7 +38301,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_54_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_51_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4010]  // VSQRTSD Vdq{K}{z},aKq,Hdq,Wsd{er}
+    (const void *)&gInstructions[ 4057]  // VSQRTSD Vdq{K}{z},aKq,Hdq,Wsd{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_03_w = 
@@ -37644,7 +38316,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_03_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_51_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4013]  // VSQRTSS Vdq{K}{z},aKq,Hdq,Wss{er}
+    (const void *)&gInstructions[ 4060]  // VSQRTSS Vdq{K}{z},aKq,Hdq,Wss{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_02_w = 
@@ -37659,7 +38331,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_51_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4005]  // VSQRTPD Vfv{K}{z},aKq,Wfv|B64{er}
+    (const void *)&gInstructions[ 4052]  // VSQRTPD Vfv{K}{z},aKq,Wfv|B64{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_01_w = 
@@ -37674,7 +38346,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_51_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4008]  // VSQRTPS Vfv{K}{z},aKq,Wfv|B32{er}
+    (const void *)&gInstructions[ 4055]  // VSQRTPS Vfv{K}{z},aKq,Wfv|B32{er}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_51_pp_00_w = 
@@ -37697,62 +38369,40 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_51_pp =
     }
 };
 
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2f_pp_03_l_00_w_00_leaf = 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2f_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2723]  // VCOMXSS Vdq,Wss{sae}
+    (const void *)&gInstructions[ 2762]  // VCOMXSD Vdq,Wsd{sae}
 };
 
-const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_03_l_00_w = 
-{
-    ND_ILUT_EX_W,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_03_l_00_w_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_2f_pp_03_l = 
-{
-    ND_ILUT_EX_L,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_03_l_00_w,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2f_pp_02_l_00_w_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2721]  // VCOMXSD Vdq,Wsd{sae}
-};
-
-const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_02_l_00_w = 
+const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_03_w = 
 {
     ND_ILUT_EX_W,
     {
         /* 00 */ (const void *)ND_NULL,
-        /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_02_l_00_w_01_leaf,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_03_w_01_leaf,
     }
 };
 
-const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_2f_pp_02_l = 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2f_pp_02_w_00_leaf = 
 {
-    ND_ILUT_EX_L,
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 2764]  // VCOMXSS Vdq,Wss{sae}
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_02_w = 
+{
+    ND_ILUT_EX_W,
     {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_02_l_00_w,
+        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_02_w_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2f_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2713]  // VCOMISD Vdq,Wsd{sae}
+    (const void *)&gInstructions[ 2754]  // VCOMISD Vdq,Wsd{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_01_w = 
@@ -37767,7 +38417,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2f_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2716]  // VCOMISS Vdq,Wss{sae}
+    (const void *)&gInstructions[ 2757]  // VCOMISS Vdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2f_pp_00_w = 
@@ -37785,67 +38435,45 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2f_pp =
     {
         /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_00_w,
         /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_01_w,
-        /* 02 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_02_l,
-        /* 03 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_03_l,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_02_w,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_01_opcode_2f_pp_03_w,
     }
 };
 
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2e_pp_03_l_00_w_00_leaf = 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2e_pp_03_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4036]  // VUCOMXSS Vdq,Wss{sae}
+    (const void *)&gInstructions[ 4081]  // VUCOMXSD Vdq,Wsd{sae}
 };
 
-const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_03_l_00_w = 
-{
-    ND_ILUT_EX_W,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_03_l_00_w_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_2e_pp_03_l = 
-{
-    ND_ILUT_EX_L,
-    {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_03_l_00_w,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2e_pp_02_l_00_w_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4034]  // VUCOMXSD Vdq,Wsd{sae}
-};
-
-const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_02_l_00_w = 
+const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_03_w = 
 {
     ND_ILUT_EX_W,
     {
         /* 00 */ (const void *)ND_NULL,
-        /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_02_l_00_w_01_leaf,
+        /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_03_w_01_leaf,
     }
 };
 
-const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_2e_pp_02_l = 
+const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2e_pp_02_w_00_leaf = 
 {
-    ND_ILUT_EX_L,
+    ND_ILUT_INSTRUCTION,
+    (const void *)&gInstructions[ 4083]  // VUCOMXSS Vdq,Wss{sae}
+};
+
+const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_02_w = 
+{
+    ND_ILUT_EX_W,
     {
-        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_02_l_00_w,
+        /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_02_w_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2e_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4029]  // VUCOMISD Vdq,Wsd{sae}
+    (const void *)&gInstructions[ 4076]  // VUCOMISD Vdq,Wsd{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_01_w = 
@@ -37860,7 +38488,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2e_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4032]  // VUCOMISS Vdq,Wss{sae}
+    (const void *)&gInstructions[ 4079]  // VUCOMISS Vdq,Wss{sae}
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2e_pp_00_w = 
@@ -37878,21 +38506,21 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2e_pp =
     {
         /* 00 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_00_w,
         /* 01 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_01_w,
-        /* 02 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_02_l,
-        /* 03 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_03_l,
+        /* 02 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_02_w,
+        /* 03 */ (const void *)&gEvexMap_mmmmm_01_opcode_2e_pp_03_w,
     }
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2d_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2793]  // VCVTSD2SI Gy,Wsd{er}
+    (const void *)&gInstructions[ 2834]  // VCVTSD2SI Gy,Wsd{er}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2d_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2811]  // VCVTSS2SI Gy,Wss{er}
+    (const void *)&gInstructions[ 2852]  // VCVTSS2SI Gy,Wss{er}
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2d_pp = 
@@ -37909,13 +38537,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2d_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2c_pp_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2844]  // VCVTTSD2SI Gy,Wsd{sae}
+    (const void *)&gInstructions[ 2885]  // VCVTTSD2SI Gy,Wsd{sae}
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2c_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2851]  // VCVTTSS2SI Gy,Wss{sae}
+    (const void *)&gInstructions[ 2892]  // VCVTTSS2SI Gy,Wss{sae}
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2c_pp = 
@@ -37932,7 +38560,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2c_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2b_pp_01_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3289]  // VMOVNTPD Mfv,Vfv
+    (const void *)&gInstructions[ 3330]  // VMOVNTPD Mfv,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2b_pp_01_modrmmod_00_w = 
@@ -37956,7 +38584,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_2b_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2b_pp_00_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3291]  // VMOVNTPS Mfv,Vfv
+    (const void *)&gInstructions[ 3332]  // VMOVNTPS Mfv,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2b_pp_00_modrmmod_00_w = 
@@ -37991,13 +38619,13 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2b_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2a_pp_03_wi_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2803]  // VCVTSI2SD Vdq,Hdq{er},Ey
+    (const void *)&gInstructions[ 2844]  // VCVTSI2SD Vdq,Hdq{er},Ey
 };
 
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2a_pp_03_wi_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2802]  // VCVTSI2SD Vdq,Hdq,Ey
+    (const void *)&gInstructions[ 2843]  // VCVTSI2SD Vdq,Hdq,Ey
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2a_pp_03_wi = 
@@ -38012,7 +38640,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_2a_pp_03_wi =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_2a_pp_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2806]  // VCVTSI2SS Vdq,Hdq{er},Ey
+    (const void *)&gInstructions[ 2847]  // VCVTSI2SS Vdq,Hdq{er},Ey
 };
 
 const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2a_pp = 
@@ -38029,7 +38657,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_2a_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_29_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3229]  // VMOVAPD Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3270]  // VMOVAPD Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_29_pp_01_w = 
@@ -38044,7 +38672,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_29_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_29_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3233]  // VMOVAPS Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3274]  // VMOVAPS Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_29_pp_00_w = 
@@ -38070,7 +38698,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_29_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_28_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3228]  // VMOVAPD Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3269]  // VMOVAPD Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_28_pp_01_w = 
@@ -38085,7 +38713,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_28_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_28_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3232]  // VMOVAPS Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3273]  // VMOVAPS Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_28_pp_00_w = 
@@ -38111,7 +38739,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_28_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_17_pp_01_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3266]  // VMOVHPD Mq,Vdq
+    (const void *)&gInstructions[ 3307]  // VMOVHPD Mq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_17_pp_01_modrmmod_00_l_00_w = 
@@ -38146,7 +38774,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_17_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_17_pp_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3270]  // VMOVHPS Mq,Vdq
+    (const void *)&gInstructions[ 3311]  // VMOVHPS Mq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_17_pp_00_modrmmod_00_l_00_w = 
@@ -38192,7 +38820,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_17_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_16_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3313]  // VMOVSHDUP Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3358]  // VMOVSHDUP Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_16_pp_02_w = 
@@ -38207,7 +38835,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_16_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_16_pp_01_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3265]  // VMOVHPD Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3306]  // VMOVHPD Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_16_pp_01_modrmmod_00_l_00_w = 
@@ -38242,7 +38870,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_16_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_16_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3273]  // VMOVLHPS Vdq,Hdq,Udq
+    (const void *)&gInstructions[ 3314]  // VMOVLHPS Vdq,Hdq,Udq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_16_pp_00_modrmmod_01_l_00_w = 
@@ -38268,7 +38896,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_16_pp_00_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_16_pp_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3269]  // VMOVHPS Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3310]  // VMOVHPS Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_16_pp_00_modrmmod_00_l_00_w = 
@@ -38314,7 +38942,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_16_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_15_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4037]  // VUNPCKHPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 4084]  // VUNPCKHPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_15_pp_01_w = 
@@ -38329,7 +38957,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_15_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_15_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4039]  // VUNPCKHPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 4086]  // VUNPCKHPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_15_pp_00_w = 
@@ -38355,7 +38983,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_15_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_14_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4041]  // VUNPCKLPD Vfv{K}{z},aKq,Hfv,Wfv|B64
+    (const void *)&gInstructions[ 4088]  // VUNPCKLPD Vfv{K}{z},aKq,Hfv,Wfv|B64
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_14_pp_01_w = 
@@ -38370,7 +38998,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_14_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_14_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4043]  // VUNPCKLPS Vfv{K}{z},aKq,Hfv,Wfv|B32
+    (const void *)&gInstructions[ 4090]  // VUNPCKLPS Vfv{K}{z},aKq,Hfv,Wfv|B32
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_14_pp_00_w = 
@@ -38396,7 +39024,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_14_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_13_pp_01_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3276]  // VMOVLPD Mq,Vdq
+    (const void *)&gInstructions[ 3317]  // VMOVLPD Mq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_13_pp_01_modrmmod_00_l_00_w = 
@@ -38431,7 +39059,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_13_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_13_pp_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3280]  // VMOVLPS Mq,Vdq
+    (const void *)&gInstructions[ 3321]  // VMOVLPS Mq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_13_pp_00_modrmmod_00_l_00_w = 
@@ -38477,7 +39105,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_13_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_03_l_02_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3244]  // VMOVDDUP Voq{K}{z},aKq,Woq
+    (const void *)&gInstructions[ 3285]  // VMOVDDUP Voq{K}{z},aKq,Woq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_03_l_02_w = 
@@ -38492,7 +39120,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_03_l_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_03_l_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3243]  // VMOVDDUP Vqq{K}{z},aKq,Wqq
+    (const void *)&gInstructions[ 3284]  // VMOVDDUP Vqq{K}{z},aKq,Wqq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_03_l_01_w = 
@@ -38507,7 +39135,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_03_l_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_03_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3242]  // VMOVDDUP Vdq{K}{z},aKq,Wq
+    (const void *)&gInstructions[ 3283]  // VMOVDDUP Vdq{K}{z},aKq,Wq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_03_l_00_w = 
@@ -38533,7 +39161,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_12_pp_03_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_02_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3315]  // VMOVSLDUP Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3360]  // VMOVSLDUP Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_02_w = 
@@ -38548,7 +39176,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_02_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_01_modrmmod_00_l_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3275]  // VMOVLPD Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3316]  // VMOVLPD Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_01_modrmmod_00_l_00_w = 
@@ -38583,7 +39211,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_12_pp_01_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_00_modrmmod_01_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3263]  // VMOVHLPS Vdq,Hdq,Udq
+    (const void *)&gInstructions[ 3304]  // VMOVHLPS Vdq,Hdq,Udq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_00_modrmmod_01_l_00_w = 
@@ -38609,7 +39237,7 @@ const ND_TABLE_EX_L gEvexMap_mmmmm_01_opcode_12_pp_00_modrmmod_01_l =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_12_pp_00_modrmmod_00_l_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3279]  // VMOVLPS Vdq,Hdq,Mq
+    (const void *)&gInstructions[ 3320]  // VMOVLPS Vdq,Hdq,Mq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_12_pp_00_modrmmod_00_l_00_w = 
@@ -38655,7 +39283,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_12_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_11_pp_03_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3304]  // VMOVSD Udq{K}{z},aKq,Hdq,Vdq
+    (const void *)&gInstructions[ 3349]  // VMOVSD Udq{K}{z},aKq,Hdq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_03_modrmmod_01_w = 
@@ -38670,7 +39298,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_03_modrmmod_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_11_pp_03_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3303]  // VMOVSD Msd{K},aKq,Vdq
+    (const void *)&gInstructions[ 3348]  // VMOVSD Msd{K},aKq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_03_modrmmod_00_w = 
@@ -38694,7 +39322,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_11_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_11_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3320]  // VMOVSS Udq{K}{z},aKq,Hdq,Vdq
+    (const void *)&gInstructions[ 3365]  // VMOVSS Udq{K}{z},aKq,Hdq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_02_modrmmod_01_w = 
@@ -38709,7 +39337,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_02_modrmmod_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_11_pp_02_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3319]  // VMOVSS Mss{K},aKq,Vdq
+    (const void *)&gInstructions[ 3364]  // VMOVSS Mss{K},aKq,Vdq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_02_modrmmod_00_w = 
@@ -38733,7 +39361,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_11_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_11_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3326]  // VMOVUPD Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3371]  // VMOVUPD Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_01_w = 
@@ -38748,7 +39376,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_11_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3330]  // VMOVUPS Wfv{K}{z},aKq,Vfv
+    (const void *)&gInstructions[ 3375]  // VMOVUPS Wfv{K}{z},aKq,Vfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_11_pp_00_w = 
@@ -38774,7 +39402,7 @@ const ND_TABLE_EX_PP gEvexMap_mmmmm_01_opcode_11_pp =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_10_pp_03_modrmmod_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3302]  // VMOVSD Vdq{K}{z},aKq,Hdq,Udq
+    (const void *)&gInstructions[ 3347]  // VMOVSD Vdq{K}{z},aKq,Hdq,Udq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_03_modrmmod_01_w = 
@@ -38789,7 +39417,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_03_modrmmod_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_10_pp_03_modrmmod_00_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3301]  // VMOVSD Vdq{K}{z},aKq,Msd
+    (const void *)&gInstructions[ 3346]  // VMOVSD Vdq{K}{z},aKq,Msd
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_03_modrmmod_00_w = 
@@ -38813,7 +39441,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_10_pp_03_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_10_pp_02_modrmmod_01_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3318]  // VMOVSS Vdq{K}{z},aKq,Hdq,Udq
+    (const void *)&gInstructions[ 3363]  // VMOVSS Vdq{K}{z},aKq,Hdq,Udq
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_02_modrmmod_01_w = 
@@ -38828,7 +39456,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_02_modrmmod_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_10_pp_02_modrmmod_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3317]  // VMOVSS Vdq{K}{z},aKq,Mss
+    (const void *)&gInstructions[ 3362]  // VMOVSS Vdq{K}{z},aKq,Mss
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_02_modrmmod_00_w = 
@@ -38852,7 +39480,7 @@ const ND_TABLE_MODRM_MOD gEvexMap_mmmmm_01_opcode_10_pp_02_modrmmod =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_10_pp_01_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3325]  // VMOVUPD Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3370]  // VMOVUPD Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_01_w = 
@@ -38867,7 +39495,7 @@ const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_01_w =
 const ND_TABLE_INSTRUCTION gEvexMap_mmmmm_01_opcode_10_pp_00_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3329]  // VMOVUPS Vfv{K}{z},aKq,Wfv
+    (const void *)&gInstructions[ 3374]  // VMOVUPS Vfv{K}{z},aKq,Wfv
 };
 
 const ND_TABLE_EX_W gEvexMap_mmmmm_01_opcode_10_pp_00_w = 

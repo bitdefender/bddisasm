@@ -627,11 +627,21 @@ typedef enum _ND_EX_TYPE
     ND_EXT_AMX_E4,
     ND_EXT_AMX_E5,
     ND_EXT_AMX_E6,
+    ND_EXT_AMX_E7,
+    ND_EXT_AMX_E8,
+    ND_EXT_AMX_E9,
+    ND_EXT_AMX_E10,
+    ND_EXT_AMX_E11,
 
     // AMX-EVEX exceptions.
     ND_EXT_AMX_EVEX_E1,
     ND_EXT_AMX_EVEX_E2,
     ND_EXT_AMX_EVEX_E3,
+    ND_EXT_AMX_EVEX_E4,
+    ND_EXT_AMX_EVEX_E5,
+    ND_EXT_AMX_EVEX_E6,
+    ND_EXT_AMX_EVEX_E7,
+    ND_EXT_AMX_EVEX_E8,
         
     // APX-EVEX exceptions.
     ND_EXT_APX_EVEX_BMI,
@@ -1195,13 +1205,43 @@ typedef union _ND_RFLAGS
 //
 // FPU status flags. Each status flag can be one of ND_FPU_FLAG*.
 //
-typedef struct _ND_FPU_FLAGS
+typedef union _ND_FPU_FLAGS
 {
-    ND_UINT8        C0 : 2;     // C0 flag access mode. See ND_FPU_FLAG_*.
-    ND_UINT8        C1 : 2;     // C1 flag access mode. See ND_FPU_FLAG_*.
-    ND_UINT8        C2 : 2;     // C2 flag access mode. See ND_FPU_FLAG_*.
-    ND_UINT8        C3 : 2;     // C3 flag access mode. See ND_FPU_FLAG_*.
+    ND_UINT8        Raw;
+    struct
+    {
+        ND_UINT8    C0 : 2;         // C0 flag access mode. See ND_FPU_FLAG_*.
+        ND_UINT8    C1 : 2;         // C1 flag access mode. See ND_FPU_FLAG_*.
+        ND_UINT8    C2 : 2;         // C2 flag access mode. See ND_FPU_FLAG_*.
+        ND_UINT8    C3 : 2;         // C3 flag access mode. See ND_FPU_FLAG_*.
+    };
 } ND_FPU_FLAGS, *PND_FPU_FLAGS;
+
+
+#define ND_SIMD_EXC_IE              0x01 // Invalid Operation Exception.
+#define ND_SIMD_EXC_DE              0x02 // Denormal Exception.
+#define ND_SIMD_EXC_ZE              0x04 // Divide-by-Zero Exception.
+#define ND_SIMD_EXC_OE              0x08 // Overflow Exception.
+#define ND_SIMD_EXC_UE              0x10 // Underflow Exception.
+#define ND_SIMD_EXC_PE              0x20 // Precision Exception.
+
+//
+// SIMD Floating-Point Exceptions. These values are the same as lower 6 bits in MXCSR. The Raw field
+// is a combination of ND_SIMD_EXC_* values, and is the same as the invidiual bitfields.
+//
+typedef union _ND_SIMD_EXCEPTIONS
+{
+    ND_UINT8        Raw;
+    struct
+    {
+        ND_UINT8    IE : 1;         // Invalid Operation Exception.
+        ND_UINT8    DE : 1;         // Denormal Exception.
+        ND_UINT8    ZE : 1;         // Divide-by-Zero Exception.
+        ND_UINT8    OE : 1;         // Overflow Exception.
+        ND_UINT8    UE : 1;         // Underflow Exception.
+        ND_UINT8    PE : 1;         // Precision Exception.
+    };
+} ND_SIMD_EXCEPTIONS;
 
 
 //
@@ -1392,7 +1432,8 @@ typedef struct _INSTRUX
                                                     // implicit operands such as stack, flags, etc.
     ND_OPERAND          Operands[ND_MAX_OPERAND];   // Instruction operands.
 
-    // EVEX information.
+    // SIMD/EVEX information.
+    ND_SIMD_EXCEPTIONS  SimdExceptions;             // SIMD Floating-Point Exceptions. Valid only for SIMD instructions!
     ND_UINT8            ExceptionType;              // Exception type. One of ND_EX_TYPE.
     ND_UINT8            TupleType;                  // EVEX tuple type, if EVEX. One of ND_TUPLE.
 
@@ -1465,6 +1506,13 @@ typedef struct _ND_CONTEXT
 /// will not be decoded. As a consequence, the following fields inside INSTRUX will be undefined:
 /// CsAccess, RipAccess, RflAccess, StackAcces, MemoryAccess, BranchInfo.
 #define ND_OPTION_ONLY_EXPLICIT_OPERANDS        0x00000001
+
+// Do NOT zero the output INSTRUX structure before decoding this instruction. Use this option only if the 
+// output INSTRUX structure is already zeroed (for example, as is the case when allocating it with calloc).
+// Make sure to NOT use this option when making succesive decode calls on the same buffer - this option
+// should only be used when decoding an instruction in an output buffer that has just been allocated and
+// has been 0-initialized, or if the caller explictly zeroed it before each decode call.
+#define ND_OPTION_SKIP_ZERO_INSTRUX             0x00000002
 
 
 //

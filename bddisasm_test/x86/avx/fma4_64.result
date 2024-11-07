@@ -2,6 +2,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -20,6 +21,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -38,6 +40,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -56,6 +59,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -74,6 +78,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -92,6 +97,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -110,6 +116,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -128,6 +135,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -146,6 +154,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -164,6 +173,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -182,6 +192,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -200,6 +211,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -218,6 +230,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -236,6 +249,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -254,6 +268,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -272,6 +287,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -290,6 +306,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -308,6 +325,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -326,6 +344,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -344,6 +363,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -362,6 +382,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -380,6 +401,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -398,6 +420,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -416,6 +439,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -434,6 +458,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -452,6 +477,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -470,6 +496,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -488,6 +515,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -506,6 +534,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -524,6 +553,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -542,6 +572,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -560,6 +591,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -578,6 +610,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -596,6 +629,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -614,6 +648,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -632,6 +667,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -650,6 +686,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -668,6 +705,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -686,6 +724,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -704,6 +743,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -722,6 +762,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -741,6 +782,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -760,6 +802,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -779,6 +822,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -798,6 +842,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -817,6 +862,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -836,6 +882,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -855,6 +902,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -874,6 +922,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -893,6 +942,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -912,6 +962,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -931,6 +982,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -950,6 +1002,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -969,6 +1022,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -988,6 +1042,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1007,6 +1062,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1026,6 +1082,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1045,6 +1102,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1064,6 +1122,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1083,6 +1142,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1102,6 +1162,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1121,6 +1182,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1140,6 +1202,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1159,6 +1222,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1178,6 +1242,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1197,6 +1262,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1216,6 +1282,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1235,6 +1302,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1254,6 +1322,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1273,6 +1342,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1292,6 +1362,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1311,6 +1382,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1330,6 +1402,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1349,6 +1422,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1368,6 +1442,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1387,6 +1462,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1406,6 +1482,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1425,6 +1502,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1444,6 +1522,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1463,6 +1542,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1482,6 +1562,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1500,6 +1581,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1518,6 +1600,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1536,6 +1619,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1554,6 +1638,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1572,6 +1657,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1590,6 +1676,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1608,6 +1695,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1626,6 +1714,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1644,6 +1733,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1662,6 +1752,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1680,6 +1771,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1698,6 +1790,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1716,6 +1809,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1734,6 +1828,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1752,6 +1847,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1770,6 +1866,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1788,6 +1885,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1806,6 +1904,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1824,6 +1923,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1842,6 +1942,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1860,6 +1961,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1878,6 +1980,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1896,6 +1999,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1914,6 +2018,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1933,6 +2038,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1952,6 +2058,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1971,6 +2078,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -1990,6 +2098,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2009,6 +2118,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2028,6 +2138,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2047,6 +2158,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2066,6 +2178,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2085,6 +2198,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2104,6 +2218,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2123,6 +2238,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2142,6 +2258,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2161,6 +2278,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2180,6 +2298,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2199,6 +2318,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2218,6 +2338,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2237,6 +2358,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2256,6 +2378,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2275,6 +2398,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2294,6 +2418,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2313,6 +2438,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2332,6 +2458,7 @@
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -2351,6 +2478,7 @@
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: FMA4, Ins cat: FMA4, CET tracked: no
         CPUID leaf: 0x80000001, reg: ecx, bit: 16
+        SIMD Exceptions: IDOUP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes

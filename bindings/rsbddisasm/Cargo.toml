@@ -3,7 +3,9 @@
 members = [
     "bddisasm-sys",
     "bddisasm",
+    "bdshemu-sys",
+    "bdshemu",
 ]
 
 [workspace.package]
-version = "0.5.0"
+version = "0.5.1"

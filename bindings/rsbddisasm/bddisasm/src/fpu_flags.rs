@@ -52,10 +52,10 @@ pub struct FpuFlags {
 impl FpuFlags {
     pub(crate) fn from_raw(flags: ffi::ND_FPU_FLAGS) -> Result<Self, DecodeError> {
         Ok(Self {
-            c0: FpuFlagsAccess::from_raw(flags.C0())?,
-            c1: FpuFlagsAccess::from_raw(flags.C1())?,
-            c2: FpuFlagsAccess::from_raw(flags.C2())?,
-            c3: FpuFlagsAccess::from_raw(flags.C3())?,
+            c0: FpuFlagsAccess::from_raw(unsafe { flags.__bindgen_anon_1.C0() })?,
+            c1: FpuFlagsAccess::from_raw(unsafe { flags.__bindgen_anon_1.C1() })?,
+            c2: FpuFlagsAccess::from_raw(unsafe { flags.__bindgen_anon_1.C2() })?,
+            c3: FpuFlagsAccess::from_raw(unsafe { flags.__bindgen_anon_1.C3() })?,
         })
     }
 }

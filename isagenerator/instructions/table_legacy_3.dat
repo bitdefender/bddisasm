@@ -4,10 +4,10 @@
 #
 
 # 0x00 - 0x0F
-ROUNDPS           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x08 /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:2, a:NOREX2
-ROUNDPD           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x09 /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:2, a:NOREX2
-ROUNDSS           ; Vss,Wss,Ib          ;                 ;         0x66 0x0F 0x3A 0x0A /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:3, a:NOREX2
-ROUNDSD           ; Vsd,Wsd,Ib          ;                 ;         0x66 0x0F 0x3A 0x0B /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:3, a:NOREX2
+ROUNDPS           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x08 /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:2, a:NOREX2, x:IE|PE
+ROUNDPD           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x09 /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:2, a:NOREX2, x:IE|PE
+ROUNDSS           ; Vss,Wss,Ib          ;                 ;         0x66 0x0F 0x3A 0x0A /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:3, a:NOREX2, x:IE|PE
+ROUNDSD           ; Vsd,Wsd,Ib          ;                 ;         0x66 0x0F 0x3A 0x0B /r ib     ; s:SSE4, t:SSE, w:W|R|R, e:3, a:NOREX2, x:IE|PE
 BLENDPS           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x0C /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:4, a:NOREX2
 BLENDPD           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x0D /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:4, a:NOREX2
 PBLENDW           ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x0E /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:4, a:NOREX2
@@ -37,8 +37,8 @@ PINSRQ            ; Vdq,Eq,Ib           ;                 ;    rexw 0x66 0x0F 0x
 # 0x30 - 0x3F
 
 # 0x40 - 0x4F
-DPPS              ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x40 /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:2, a:NOREX2
-DPPD              ; Vdq,Wdq,Ib          ;                 ;         0x66 0x0F 0x3A 0x41 /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:2, a:NOREX2
+DPPS              ; Vx,Wx,Ib            ;                 ;         0x66 0x0F 0x3A 0x40 /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:2, a:NOREX2, x:IE|OE|UE|PE|DE
+DPPD              ; Vdq,Wdq,Ib          ;                 ;         0x66 0x0F 0x3A 0x41 /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:2, a:NOREX2, x:IE|OE|UE|PE|DE
 MPSADBW           ; Vdq,Wdq,Ib          ;                 ;         0x66 0x0F 0x3A 0x42 /r ib     ; s:SSE4, t:SSE, w:RW|R|R, e:4, a:NOREX2
 PCLMULQDQ         ; Vdq,Wdq,Ib          ;                 ;         0x66 0x0F 0x3A 0x44 /r ib     ; s:PCLMULQDQ, t:PCLMULQDQ, w:RW|R|R, e:4, a:NOREX2
 

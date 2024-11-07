@@ -23,7 +23,7 @@ impl<'a> Decoder<'a> {
     /// * `code` - An [`u8`] slice that holds the code to be decoded.
     /// * `mode` - The mode in which to decode the instruction.
     /// * `ip` - The instruction pointer value to use when formatting the decoded instruction. Does not affect the
-    /// decoding process in any way.
+    ///     decoding process in any way.
     #[must_use]
     pub fn new(code: &'a [u8], mode: DecodeMode, ip: u64) -> Self {
         Self {
@@ -39,7 +39,7 @@ impl<'a> Decoder<'a> {
     /// # Returns
     ///
     /// * `Some(DecodeResult)` - if there are still undecoded bytes in the given code chunk. The decoding may have
-    /// still failed. See `Remarks`.
+    ///     still failed. See `Remarks`.
     /// * `None` - if all the bytes in the given code chunk were decoded.
     ///
     /// # Remarks

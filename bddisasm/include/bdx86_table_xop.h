@@ -309,103 +309,103 @@ const ND_TABLE_OPCODE gXopMap_mmmmm_0a_opcode =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_e3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3599]  // VPHSUBDQ Vdq,Wdq
+    (const void *)&gInstructions[ 3644]  // VPHSUBDQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_e2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3602]  // VPHSUBWD Vdq,Wdq
+    (const void *)&gInstructions[ 3647]  // VPHSUBWD Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_e1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3597]  // VPHSUBBW Vdq,Wdq
+    (const void *)&gInstructions[ 3642]  // VPHSUBBW Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_db_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3590]  // VPHADDUDQ Vdq,Wdq
+    (const void *)&gInstructions[ 3635]  // VPHADDUDQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_d7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3592]  // VPHADDUWQ Vdq,Wdq
+    (const void *)&gInstructions[ 3637]  // VPHADDUWQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_d6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3591]  // VPHADDUWD Vdq,Wdq
+    (const void *)&gInstructions[ 3636]  // VPHADDUWD Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_d3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3588]  // VPHADDUBQ Vdq,Wdq
+    (const void *)&gInstructions[ 3633]  // VPHADDUBQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_d2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3587]  // VPHADDUBD Vdq,Wdq
+    (const void *)&gInstructions[ 3632]  // VPHADDUBD Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_d1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3589]  // VPHADDUBW Vdq,Wdq
+    (const void *)&gInstructions[ 3634]  // VPHADDUBW Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_cb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3585]  // VPHADDDQ Vdq,Wdq
+    (const void *)&gInstructions[ 3630]  // VPHADDDQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_c7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3595]  // VPHADDWQ Vdq,Wdq
+    (const void *)&gInstructions[ 3640]  // VPHADDWQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_c6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3594]  // VPHADDWD Vdq,Wdq
+    (const void *)&gInstructions[ 3639]  // VPHADDWD Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_c3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3582]  // VPHADDBQ Vdq,Wdq
+    (const void *)&gInstructions[ 3627]  // VPHADDBQ Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_c2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3581]  // VPHADDBD Vdq,Wdq
+    (const void *)&gInstructions[ 3626]  // VPHADDBD Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_c1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3583]  // VPHADDBW Vdq,Wdq
+    (const void *)&gInstructions[ 3628]  // VPHADDBW Vdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_9b_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3788]  // VPSHAQ Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3833]  // VPSHAQ Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_9b_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3787]  // VPSHAQ Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3832]  // VPSHAQ Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_9b_w = 
@@ -420,13 +420,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_9b_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_9a_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3786]  // VPSHAD Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3831]  // VPSHAD Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_9a_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3785]  // VPSHAD Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3830]  // VPSHAD Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_9a_w = 
@@ -441,13 +441,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_9a_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_99_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3790]  // VPSHAW Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3835]  // VPSHAW Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_99_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3789]  // VPSHAW Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3834]  // VPSHAW Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_99_w = 
@@ -462,13 +462,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_99_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_98_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3784]  // VPSHAB Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3829]  // VPSHAB Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_98_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3783]  // VPSHAB Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3828]  // VPSHAB Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_98_w = 
@@ -483,13 +483,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_98_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_97_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3803]  // VPSHLQ Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3848]  // VPSHLQ Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_97_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3802]  // VPSHLQ Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3847]  // VPSHLQ Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_97_w = 
@@ -504,13 +504,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_97_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_96_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3794]  // VPSHLB Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3839]  // VPSHLB Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_96_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3795]  // VPSHLD Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3840]  // VPSHLD Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_96_w = 
@@ -525,13 +525,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_96_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_95_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3793]  // VPSHLB Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3838]  // VPSHLB Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_95_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3804]  // VPSHLW Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3849]  // VPSHLW Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_95_w = 
@@ -546,13 +546,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_95_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_94_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3792]  // VPSHLB Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3837]  // VPSHLB Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_94_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3791]  // VPSHLB Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3836]  // VPSHLB Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_94_w = 
@@ -567,13 +567,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_94_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_93_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3773]  // VPROTQ Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3818]  // VPROTQ Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_93_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3772]  // VPROTQ Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3817]  // VPROTQ Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_93_w = 
@@ -588,13 +588,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_93_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_92_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3770]  // VPROTD Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3815]  // VPROTD Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_92_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3769]  // VPROTD Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3814]  // VPROTD Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_92_w = 
@@ -609,13 +609,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_92_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_91_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3776]  // VPROTW Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3821]  // VPROTW Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_91_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3775]  // VPROTW Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3820]  // VPROTW Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_91_w = 
@@ -630,13 +630,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_91_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_90_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3767]  // VPROTB Vdq,Hdq,Wdq
+    (const void *)&gInstructions[ 3812]  // VPROTB Vdq,Hdq,Wdq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_90_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3766]  // VPROTB Vdq,Wdq,Hdq
+    (const void *)&gInstructions[ 3811]  // VPROTB Vdq,Wdq,Hdq
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_90_w = 
@@ -651,31 +651,31 @@ const ND_TABLE_EX_W gXopMap_mmmmm_09_opcode_90_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_83_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3127]  // VFRCZSD Vdq,Wsd
+    (const void *)&gInstructions[ 3168]  // VFRCZSD Vdq,Wsd
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_82_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3128]  // VFRCZSS Vdq,Wss
+    (const void *)&gInstructions[ 3169]  // VFRCZSS Vdq,Wss
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_81_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3125]  // VFRCZPD Vx,Wx
+    (const void *)&gInstructions[ 3166]  // VFRCZPD Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_80_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3126]  // VFRCZPS Vx,Wx
+    (const void *)&gInstructions[ 3167]  // VFRCZPS Vx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_12_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2496]  // SLWPCB Ry
+    (const void *)&gInstructions[ 2502]  // SLWPCB Ry
 };
 
 const ND_TABLE_MODRM_MOD gXopMap_mmmmm_09_opcode_12_modrmreg_01_modrmmod = 
@@ -747,7 +747,7 @@ const ND_TABLE_MODRM_REG gXopMap_mmmmm_09_opcode_02_modrmreg =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_01_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2586]  // T1MSKC By,Ey
+    (const void *)&gInstructions[ 2592]  // T1MSKC By,Ey
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_01_modrmreg_06_leaf = 
@@ -765,7 +765,7 @@ const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_01_modrmreg_05_leaf =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_01_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2620]  // TZMSK By,Ey
+    (const void *)&gInstructions[ 2661]  // TZMSK By,Ey
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_09_opcode_01_modrmreg_03_leaf = 
@@ -1067,97 +1067,97 @@ const ND_TABLE_OPCODE gXopMap_mmmmm_09_opcode =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_ef_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3474]  // VPCOMUQ Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3519]  // VPCOMUQ Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_ee_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3473]  // VPCOMUD Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3518]  // VPCOMUD Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_ed_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3475]  // VPCOMUW Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3520]  // VPCOMUW Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_ec_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3472]  // VPCOMUB Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3517]  // VPCOMUB Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_cf_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3471]  // VPCOMQ Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3516]  // VPCOMQ Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_ce_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3466]  // VPCOMD Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3511]  // VPCOMD Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_cd_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3476]  // VPCOMW Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3521]  // VPCOMW Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_cc_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3465]  // VPCOMB Vdq,Hdq,Wdq,Ib
+    (const void *)&gInstructions[ 3510]  // VPCOMB Vdq,Hdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_c3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3771]  // VPROTQ Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3816]  // VPROTQ Vdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_c2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3768]  // VPROTD Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3813]  // VPROTD Vdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_c1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3774]  // VPROTW Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3819]  // VPROTW Vdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_c0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3765]  // VPROTB Vdq,Wdq,Ib
+    (const void *)&gInstructions[ 3810]  // VPROTB Vdq,Wdq,Ib
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_b6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3628]  // VPMADCSWD Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3673]  // VPMADCSWD Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_a6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3627]  // VPMADCSSWD Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3672]  // VPMADCSSWD Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_a3_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3756]  // VPPERM Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3801]  // VPPERM Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_a3_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3755]  // VPPERM Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3800]  // VPPERM Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_08_opcode_a3_w = 
@@ -1172,13 +1172,13 @@ const ND_TABLE_EX_W gXopMap_mmmmm_08_opcode_a3_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_a2_w_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3436]  // VPCMOV Vx,Hx,Lx,Wx
+    (const void *)&gInstructions[ 3481]  // VPCMOV Vx,Hx,Lx,Wx
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_a2_w_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3435]  // VPCMOV Vx,Hx,Wx,Lx
+    (const void *)&gInstructions[ 3480]  // VPCMOV Vx,Hx,Wx,Lx
 };
 
 const ND_TABLE_EX_W gXopMap_mmmmm_08_opcode_a2_w = 
@@ -1193,61 +1193,61 @@ const ND_TABLE_EX_W gXopMap_mmmmm_08_opcode_a2_w =
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_9f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3618]  // VPMACSDQH Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3663]  // VPMACSDQH Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_9e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3617]  // VPMACSDD Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3662]  // VPMACSDD Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_97_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3619]  // VPMACSDQL Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3664]  // VPMACSDQL Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_96_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3625]  // VPMACSWD Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3670]  // VPMACSWD Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_95_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3626]  // VPMACSWW Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3671]  // VPMACSWW Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_8f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3621]  // VPMACSSDQH Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3666]  // VPMACSSDQH Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_8e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3620]  // VPMACSSDD Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3665]  // VPMACSSDD Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_87_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3622]  // VPMACSSDQL Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3667]  // VPMACSSDQL Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_86_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3623]  // VPMACSSWD Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3668]  // VPMACSSWD Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_INSTRUCTION gXopMap_mmmmm_08_opcode_85_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3624]  // VPMACSSWW Vdq,Hdq,Wdq,Ldq
+    (const void *)&gInstructions[ 3669]  // VPMACSSWW Vdq,Hdq,Wdq,Ldq
 };
 
 const ND_TABLE_OPCODE gXopMap_mmmmm_08_opcode = 

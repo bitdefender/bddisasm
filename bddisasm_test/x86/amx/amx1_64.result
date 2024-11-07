@@ -331,3 +331,433 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 4, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
 
+0000000000000071 c4e27848cf                      TTMMULTF32PS tmm1, tmm7, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+0000000000000076 c4e27948cf                      TMMULTF32PS tmm1, tmm7, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TF32, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 6
+        Exception class: AMX, exception type: AMX-E4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 7, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+000000000000007B c4e2794a0411                    TILELOADDRST1 tmm0, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-MOVRS, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 8
+        Exception class: AMX, exception type: AMX-E3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+0000000000000081 c4e27b4a0411                    TILELOADDRS tmm0, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-MOVRS, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 8
+        Exception class: AMX, exception type: AMX-E3
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+0000000000000087 c4e27a5fcd                      TTRANSPOSED tmm1, tmm5
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E9
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+
+000000000000008C c4e2786bcd                      TCONJTCMMIMFP16PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+0000000000000091 c4e2786bcd                      TCONJTCMMIMFP16PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+0000000000000096 c4e2796bcd                      TCONJTFP16 tmm1, tmm5
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E9
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+
+000000000000009B c4e27a6bcd                      TTCMMRLFP16PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000A0 c4e27b6bcd                      TTCMMIMFP16PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000A5 c4e27a6ccd                      TTDPBF16PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000AA c4e27b6ccd                      TTDPFP16PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E10
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000AF c4e2786e0411                    T2RPNTLVWZ0 tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000B5 c4e2796e0411                    T2RPNTLVWZ1 tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000BB c4e2786f0411                    T2RPNTLVWZ0T1 tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000C1 c4e2796f0411                    T2RPNTLVWZ1T1 tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000C7 c4e578f80411                    T2RPNTLVWZ0RS tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000CD c4e579f80411                    T2RPNTLVWZ1RS tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000D3 c4e578f90411                    T2RPNTLVWZ0RST1 tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000D9 c4e579f90411                    T2RPNTLVWZ1RST1 tmm0+1, [rcx+rdx]
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-TRANSPOSE, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 5
+        Exception class: AMX, exception type: AMX-E11
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 2
+        Operand: 1, Acc:  R-,  Type:     Memory, Size: 1024, RawSize: 1024, Encoding: M, Sibmem Addressing: yes, 
+                Segment: 3, Base: 1, Index: 2 * 1, 
+
+00000000000000DF c4e578fdcd                      TDPBF8PS  tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-FP8, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 4
+        Exception class: AMX, exception type: AMX-E4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000E4 c4e579fdcd                      TDPHF8PS  tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-FP8, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 4
+        Exception class: AMX, exception type: AMX-E4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000E9 c4e57afdcd                      TDPHBF8PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-FP8, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 4
+        Exception class: AMX, exception type: AMX-E4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+
+00000000000000EE c4e57bfdcd                      TDPBHF8PS tmm1, tmm5, tmm0
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: AMX-FP8, Ins cat: AMX, CET tracked: no
+        CPUID leaf: 0x0000001e, sub-leaf: 0x00000001, reg: eax, bit: 4
+        Exception class: AMX, exception type: AMX-E4
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: no, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  RW,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: R, RegType:             Tile, RegSize: 1024, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: M, RegType:             Tile, RegSize: 1024, RegId: 5, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size: 1024, RawSize: 1024, Encoding: V, RegType:             Tile, RegSize: 1024, RegId: 0, RegCount: 1
+

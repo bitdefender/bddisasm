@@ -543,6 +543,16 @@ valid_evex_mode = [
     'cond',         # EVEX extension for conditional instructons
 ]
 
+# Valid SIMD Floating-Point Exceptions.
+valid_simd_exceptions = [
+     'IE',          # Invalid Operation Exception.
+     'DE',          # Denormal Exception.
+     'ZE',          # Divide-by-Zero Exception.
+     'OE',          # Overflow Exception.
+     'UE',          # Underflow Exception.
+     'PE',          # Precision Exception.
+]
+
 
 # Use one of these value to indicate absent operands.
 absent_op = ['n/a', '']
@@ -752,6 +762,9 @@ class Instruction():
     FpuFlags: list[str]
         FPU flags access mode (example: ['u', 'u', 'u', 'u']). A list of 4 str elements, each one 
         indicating the access mode for flag Cx, where x is the position in the list.
+    SimdExc: list[str]
+        SIMD Floating-Point Exceptions (MXCSR flags affected) by the instruction (example: ['IE', 'OE', 'UE']).
+        A list of strings, each string indicating if that particular SIMD exception is raised (or MXCSR flag).
     Modes: list[str]
         Valid operating modes for the indicated instruction.
     Encoding: dict
@@ -847,6 +860,7 @@ class Instruction():
         self.EvexMode   = None
         self.Rflags     = {'m': [], 't': [], '0': [], '1': [], 'u': []}
         self.FpuFlags   = ['u', 'u', 'u', 'u']
+        self.SimdExc    = []
         self.Modes      = valid_cpu_modes.copy()
 
         for y in self.RawMeta:
@@ -988,6 +1002,12 @@ class Instruction():
                                                     (m, ','.join(valid_cpu_modes)))
 
                 self.Modes = modes
+            elif token == "x":
+                for e in value.split('|'):
+                    if e not in valid_simd_exceptions:
+                        raise InvalidSpecificationException("Unknown SIMDexception '%s', expecting one of [%s]" % 
+                                                    (e, ','.join(valid_simd_exceptions)))
+                    self.SimdExc.append(e)
             else:
                 raise InvalidSpecificationException("Unknown token specified: %s" % token)
 
@@ -1203,6 +1223,7 @@ def parse_entry(
         10. 'f': flags access ('m': modified, 't': tested, 'u': undefined, '0': cleared, '1': set to 1)
         11. 'u': FPU flags access
         12. 'm': valid operating modes
+        13. 'x': SIMD exceptions/MXCSR flags
 
     Raises
     ------

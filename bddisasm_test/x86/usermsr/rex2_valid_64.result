@@ -1,4 +1,4 @@
-0000000000000000 c4e77af8c011223344              UWRMSR    0x44332211, rax
+0000000000000000 f20f38f8c1                      URDMSR    rcx, rax
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: USER_MSR, Ins cat: USER_MSR, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 15
@@ -11,11 +11,11 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
 
-0000000000000009 c4e77bf8c011223344              URDMSR    rax, 0x44332211
+0000000000000005 c4e77bf8c011223344              URDMSR    rax, 0x44332211
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: USER_MSR, Ins cat: USER_MSR, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 15
@@ -32,7 +32,25 @@
         Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
         Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
 
-0000000000000012 f30f38f8c1                      UWRMSR    rax, rcx
+000000000000000E 62f77f08f8c0bdbdbdbd            URDMSR    rax, 0xbdbdbdbd
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: USER_MSR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 1, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
+        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
+
+0000000000000018 f30f38f8c1                      UWRMSR    rax, rcx
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: USER_MSR, Ins cat: USER_MSR, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 15
@@ -49,7 +67,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
 
-0000000000000017 f20f38f8c1                      URDMSR    rcx, rax
+000000000000001D c4e77af8c011223344              UWRMSR    0x44332211, rax
         DSIZE: 32, ASIZE: 64, VLEN: -
         ISA Set: USER_MSR, Ins cat: USER_MSR, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 15
@@ -62,7 +80,25 @@
                 REP: no, REPcc: no, LOCK: no
                 HLE: no, XACQUIRE only: no, XRELEASE only: no
                 BND: no, BHINT: no, DNT: no
-        Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 1, RegCount: 1
-        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
-        Operand: 2, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
+        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
+
+0000000000000026 62f77e08f8c0bdbdbdbd            UWRMSR    0xbdbdbdbd, rax
+        DSIZE: 32, ASIZE: 64, VLEN: -
+        ISA Set: APX_F, Ins cat: USER_MSR, CET tracked: no
+        CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
+        EVEX Tuple Type: None
+        Valid modes
+                R0: yes, R1: yes, R2: yes, R3: yes
+                Real: no, V8086: no, Prot: no, Compat: no, Long: yes
+                SMM on: yes, SMM off: yes, SGX on: yes, SGX off: yes, TSX on: yes, TSX off: yes
+                VMXRoot: yes, VMXNonRoot: yes, VMXRoot SEAM: yes, VMXNonRoot SEAM: yes, VMX off: yes
+        Valid prefixes
+                REP: no, REPcc: no, LOCK: no
+                HLE: no, XACQUIRE only: no, XRELEASE only: no
+                BND: no, BHINT: no, DNT: no
+        Operand: 0, Acc:  R-,  Type:  Immediate, Size:  4, RawSize:  4, Encoding: I
+        Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:  General Purpose, RegSize:  8, RegId: 0, RegCount: 1
+        Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: E, RegType:   Model Specific, RegSize:  8, RegId: 0xffffffff, RegCount: 1
 

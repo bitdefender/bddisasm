@@ -200,7 +200,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="disasmlib.py" />
-    <None Include="generate_encodings.py" />
     <None Include="generate_tables.py" />
     <None Include="instructions\cpuid.dat" />
     <None Include="instructions\flags.dat" />
@@ -221,6 +220,7 @@
     <None Include="instructions\table_vex_1.dat" />
     <None Include="instructions\table_vex_2.dat" />
     <None Include="instructions\table_vex_3.dat" />
+    <None Include="instructions\table_vex_5.dat" />
     <None Include="instructions\table_vex_7.dat" />
     <None Include="instructions\table_xop.dat" />
   </ItemGroup>

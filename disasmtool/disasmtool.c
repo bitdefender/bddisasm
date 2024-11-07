@@ -188,9 +188,14 @@ set_to_string(
     case ND_SET_AMD:                   return "AMD";
     case ND_SET_AMXBF16:               return "AMX-BF16";
     case ND_SET_AMXFP16:               return "AMX-FP16";
+    case ND_SET_AMXFP8:                return "AMX-FP8";
     case ND_SET_AMXINT8:               return "AMX-INT8";
     case ND_SET_AMXTILE:               return "AMX-TILE";
     case ND_SET_AMXCOMPLEX:            return "AMX-COMPLEX";
+    case ND_SET_AMXTF32:               return "AMX-TF32";
+    case ND_SET_AMXAVX512:             return "AMX-AVX512";
+    case ND_SET_AMXMOVRS:              return "AMX-MOVRS";
+    case ND_SET_AMXTRANSPOSE:          return "AMX-TRANSPOSE";
     case ND_SET_AVX:                   return "AVX";
     case ND_SET_AVX102:                return "AVX10_2";
     case ND_SET_AVX2:                  return "AVX2";
@@ -256,8 +261,10 @@ set_to_string(
     case ND_SET_MOVBE:                 return "MOVBE";
     case ND_SET_MOVDIR64B:             return "MOVDIR64B";
     case ND_SET_MOVDIRI:               return "MOVDIRI";
+    case ND_SET_MOVRS:                 return "MOVRS";
     case ND_SET_MPX:                   return "MPX";
     case ND_SET_MSRLIST:               return "MSRLIST";
+    case ND_SET_MSR_IMM:               return "MSR_IMM";
     case ND_SET_MWAITT:                return "MWAITT";
     case ND_SET_PAUSE:                 return "PAUSE";
     case ND_SET_PCLMULQDQ:             return "PCLMULQDQ";
@@ -609,10 +616,20 @@ exception_type_to_string(
     case ND_EXT_AMX_E4: return "AMX-E4";
     case ND_EXT_AMX_E5: return "AMX-E5";
     case ND_EXT_AMX_E6: return "AMX-E6";
+    case ND_EXT_AMX_E7: return "AMX-E7";
+    case ND_EXT_AMX_E8: return "AMX-E8";
+    case ND_EXT_AMX_E9: return "AMX-E9";
+    case ND_EXT_AMX_E10: return "AMX-E10";
+    case ND_EXT_AMX_E11: return "AMX-E11";
 
     case ND_EXT_AMX_EVEX_E1: return "AMX-EVEX-E1";
     case ND_EXT_AMX_EVEX_E2: return "AMX-EVEX-E2";
     case ND_EXT_AMX_EVEX_E3: return "AMX-EVEX-E3";
+    case ND_EXT_AMX_EVEX_E4: return "AMX-EVEX-E4";
+    case ND_EXT_AMX_EVEX_E5: return "AMX-EVEX-E5";
+    case ND_EXT_AMX_EVEX_E6: return "AMX-EVEX-E6";
+    case ND_EXT_AMX_EVEX_E7: return "AMX-EVEX-E7";
+    case ND_EXT_AMX_EVEX_E8: return "AMX-EVEX-E8";
 
     case ND_EXT_APX_EVEX_BMI: return "APX-EVEX-BMI";
     case ND_EXT_APX_EVEX_CCMP: return "APX-EVEX-CCMP";
@@ -865,10 +882,21 @@ print_instruction(
                 Instrux->ExceptionType >= ND_EXT_1 && Instrux->ExceptionType <= ND_EXT_14 ? "SSE/VEX" :
                 Instrux->ExceptionType >= ND_EXT_E1 && Instrux->ExceptionType <= ND_EXT_E12NP ? "EVEX" :
                 Instrux->ExceptionType >= ND_EXT_K20 && Instrux->ExceptionType <= ND_EXT_K21 ? "Opmask" : 
-                Instrux->ExceptionType >= ND_EXT_AMX_E1 && Instrux->ExceptionType <= ND_EXT_AMX_E6 ? "AMX" : 
+                Instrux->ExceptionType >= ND_EXT_AMX_E1 && Instrux->ExceptionType <= ND_EXT_AMX_E11 ? "AMX" : 
                 Instrux->ExceptionType >= ND_EXT_AMX_EVEX_E1 && Instrux->ExceptionType <= ND_EXT_APX_EVEX_USER_MSR ? "APX" : "???");
 
             printf("exception type: %s\n", exception_type_to_string(Instrux->ExceptionType));
+        }
+
+        if (Instrux->SimdExceptions.Raw != 0)
+        {
+            printf("        SIMD Exceptions: %s%s%s%s%s%s\n",
+                Instrux->SimdExceptions.IE ? "I" : "",
+                Instrux->SimdExceptions.DE ? "D" : "",
+                Instrux->SimdExceptions.ZE ? "Z" : "",
+                Instrux->SimdExceptions.OE ? "O" : "",
+                Instrux->SimdExceptions.UE ? "U" : "",
+                Instrux->SimdExceptions.PE ? "P" : "");
         }
 
         if (Instrux->RflAccess != 0)

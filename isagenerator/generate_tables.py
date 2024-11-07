@@ -266,6 +266,12 @@ def instrux_to_idbe(
     else:
         d['EvexMode'] = '0'
 
+    # SIMD Floating-Point Exceptions.
+    if ins.SimdExc:
+        d['SimdExc'] = '|'.join(['ND_SIMD_EXC_' + x for x in ins.SimdExc])
+    else:
+        d['SimdExc'] = '0'
+
     # Flags (tested, modified, set, cleared)
     for m in ['t', 'm', '1', '0']:
         flg = '0'
@@ -362,6 +368,7 @@ def cdef_instruction(
         .ExcType = 0,
         .FpuFlags = 0,
         .EvexMode = 0,
+        .SimdExc = 0,
         .TestedFlags = 0,
         .ModifiedFlags = 0,
         .SetFlags = 0,
@@ -390,6 +397,7 @@ def cdef_instruction(
         /*          ExcType */ 0,
         /*         FpuFlags */ 0,
         /*         EvexMode */ 0,
+        /*          SimdExc */ 0,
         /*      TestedFlags */ 0,
         /*    ModifiedFlags */ 0,
         /*         SetFlags */ 0,

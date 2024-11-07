@@ -4297,7 +4297,8 @@ NdVexExceptionChecks(
     }
 
     // Handle AMX exception class.
-    if (Instrux->ExceptionType == ND_EXT_AMX_E4)
+    if (Instrux->ExceptionType == ND_EXT_AMX_E4 ||
+        Instrux->ExceptionType == ND_EXT_AMX_E10)
     {
         // #UD if srcdest == src1, srcdest == src2 or src1 == src2. All three operands are tile regs.
         if (Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[1].Info.Register.Reg ||
@@ -4374,7 +4375,8 @@ NdCopyInstructionInfo(
     Instrux->ValidModes.Raw = Idbe->ValidModes;
     Instrux->ValidPrefixes.Raw = Idbe->ValidPrefixes;
     Instrux->ValidDecorators.Raw = Idbe->ValidDecorators;
-    *((ND_UINT8*)&Instrux->FpuFlagsAccess) = Idbe->FpuFlags;
+    Instrux->FpuFlagsAccess.Raw = Idbe->FpuFlags;
+    Instrux->SimdExceptions.Raw = Idbe->SimdExc;
     // Valid for EVEX, VEX and SSE instructions only. A value of 0 means it's not used.
     Instrux->ExceptionType = Idbe->ExcType;
     Instrux->TupleType = Idbe->TupleType;
@@ -4465,8 +4467,11 @@ NdDecodeWithContext(
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    // Initialize with zero.
-    nd_memzero(Instrux, sizeof(INSTRUX));
+    if (0 == (Context->Options & ND_OPTION_SKIP_ZERO_INSTRUX))
+    {
+        // Initialize with zero.
+        nd_memzero(Instrux, sizeof(INSTRUX));
+    }
 
     Instrux->DefCode = (ND_UINT8)Context->DefCode;
     Instrux->DefData = (ND_UINT8)Context->DefData;

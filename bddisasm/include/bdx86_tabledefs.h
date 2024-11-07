@@ -227,6 +227,7 @@ typedef struct _ND_IDBE
     ND_UINT8        ExcType;        // SSE/VEX/EVEX/OPMASK/AMX/APX exception type.
     ND_UINT8        FpuFlags;       // FPU status word C0, C1, C2 & C3 access type.
     ND_UINT8        EvexMode;       // EVEX prefix extension type.
+    ND_UINT8        SimdExc;        // SIMD Floating-Point Exceptions.
 
     // Per-flag access. Undefined flags will have their bit set in both the "Set" and "Cleared" mask, since a flag
     // cannot be both cleared and set.

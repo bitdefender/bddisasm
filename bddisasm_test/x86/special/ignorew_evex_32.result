@@ -40,6 +40,7 @@
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 16
         EVEX Tuple Type: Tuple 1 Scalar
         Exception class: EVEX, exception type: E10NF
+        SIMD Exceptions: P
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -59,6 +60,7 @@
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 16
         EVEX Tuple Type: Tuple 1 Scalar
         Exception class: EVEX, exception type: E10NF
+        SIMD Exceptions: P
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -78,6 +80,7 @@
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 16
         EVEX Tuple Type: Tuple 1 Fixes
         Exception class: EVEX, exception type: E3
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
@@ -96,6 +99,7 @@
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 16
         EVEX Tuple Type: Tuple 1 Fixes
         Exception class: EVEX, exception type: E3
+        SIMD Exceptions: IP
         Valid modes
                 R0: yes, R1: yes, R2: yes, R3: yes
                 Real: no, V8086: no, Prot: yes, Compat: yes, Long: yes
