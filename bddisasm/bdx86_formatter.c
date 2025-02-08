@@ -748,7 +748,7 @@ NdToText(
                 break;
             }
 
-            // Perpend the segment, only if it is overridden via a prefix.
+            // Prepend the segment, only if it is overridden via a prefix.
             if (pOp->Info.Memory.HasSeg && Instrux->HasSeg)
             {
                 if ((ND_CODE_64 != Instrux->DefCode) || (NDR_FS == pOp->Info.Memory.Seg) ||
@@ -793,7 +793,7 @@ NdToText(
                 }
             }
 
-            // Index, if any. Special treatment for VSIB addressing. Also, perpend a "+" if base is present.
+            // Index, if any. Special treatment for VSIB addressing. Also, prepend a "+" if base is present.
             if (pOp->Info.Memory.HasIndex)
             {
                 if (pOp->Info.Memory.Index >= (pOp->Info.Memory.IsVsib ? ND_MAX_SSE_REGS : ND_MAX_GPR_REGS))
