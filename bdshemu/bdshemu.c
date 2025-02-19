@@ -12,11 +12,11 @@
 
 
 //
-// shemu_printf - simple version
+// shemu_internal_printf - simple version
 //
-#ifndef BDDISASM_NO_FORMAT
+
 void
-shemu_printf(
+shemu_internal_printf(
     SHEMU_CONTEXT *Context,
     char *formatstring,
     ...
@@ -39,18 +39,6 @@ shemu_printf(
 
     Context->Log(buff, Context->AuxData);
 }
-#else
-void
-shemu_printf(
-    SHEMU_CONTEXT *Context,
-    char *formatstring,
-    ...
-    )
-{
-    UNREFERENCED_PARAMETER(Context);
-    UNREFERENCED_PARAMETER(formatstring);
-}
-#endif // !BDDISASM_NO_FORMAT
 
 
 //
