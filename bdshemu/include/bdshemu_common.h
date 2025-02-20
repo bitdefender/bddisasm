@@ -15,7 +15,7 @@
 #ifndef BDDISASM_NO_FORMAT
 #define shemu_printf(Context, formatstring, ...) shemu_internal_printf(Context, formatstring, __VA_ARGS__)
 #else
-#define shemu_printf(Context, formatstring, ...) do { (void)formatstring; shemu_internal_printf(Context, NULL, __VA_ARGS__); } while (0)
+#define shemu_printf(Context, formatstring, ...) do { (void)formatstring; shemu_internal_printf(Context, ND_NULL, __VA_ARGS__); } while (0)
 #endif
 
 // The SHELLBMP and STACKBMP are two bitmaps which hold the state of each shellcode byte and each stack byte.
