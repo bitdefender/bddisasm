@@ -12,11 +12,11 @@
 
 
 //
-// shemu_printf - simple version
+// shemu_internal_printf - simple version
 //
 #ifndef BDDISASM_NO_FORMAT
 void
-shemu_printf(
+shemu_internal_printf(
     SHEMU_CONTEXT *Context,
     char *formatstring,
     ...
@@ -41,7 +41,7 @@ shemu_printf(
 }
 #else
 void
-shemu_printf(
+shemu_internal_printf(
     SHEMU_CONTEXT *Context,
     char *formatstring,
     ...
