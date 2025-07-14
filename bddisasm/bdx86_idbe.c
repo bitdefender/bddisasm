@@ -27,6 +27,7 @@ NdIdbeGetEntry(
 }
 
 
+#ifndef BDDISASM_NO_MNEMONIC
 //
 // NdIdbeGetMnemonic
 //
@@ -42,3 +43,4 @@ NdIdbeGetMnemonic(
 
     return gMnemonics[Index];
 }
+#endif

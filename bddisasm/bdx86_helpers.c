@@ -1017,6 +1017,7 @@ NdGetOperandMini(
 }
 
 
+#ifndef BDDISASM_NO_MNEMONIC
 //
 // NdGetMnemonicMini
 //
@@ -1040,3 +1041,4 @@ NdGetMnemonicMini(
 
     return NdIdbeGetMnemonic(pIdbe->Mnemonic);
 }
+#endif

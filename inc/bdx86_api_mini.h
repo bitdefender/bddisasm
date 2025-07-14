@@ -133,10 +133,12 @@ NdGetOperandMini(
     ND_OPERAND *Operand
 );
 
+#ifndef BDDISASM_NO_MNEMONIC
 const char *
 NdGetMnemonicMini(
     const INSTRUX_MINI *Instrux
 );
+#endif
 
 
 #endif // BDX86_API_MINI_H
