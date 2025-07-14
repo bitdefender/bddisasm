@@ -1,4 +1,4 @@
-0000000000000000 626c8902813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=OF,SF,ZF}
+0000000000000000 626c8902813ebdbdbdbd            CCMPC {dfv=CF} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
@@ -21,7 +21,7 @@
         Operand: 2, Acc:  R-,  Type: Default flags, Size:  0, RawSize:  0, Encoding: V
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000000A 626c9902813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=OF,SF}
+000000000000000A 626c9902813ebdbdbdbd            CCMPC {dfv=ZF,CF} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
@@ -44,7 +44,7 @@
         Operand: 2, Acc:  R-,  Type: Default flags, Size:  0, RawSize:  0, Encoding: V
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000014 626cc902813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=SF,ZF}
+0000000000000014 626cc902813ebdbdbdbd            CCMPC {dfv=OF,CF} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
@@ -67,7 +67,7 @@
         Operand: 2, Acc:  R-,  Type: Default flags, Size:  0, RawSize:  0, Encoding: V
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000001E 626cd902813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=SF}
+000000000000001E 626cd902813ebdbdbdbd            CCMPC {dfv=OF,ZF,CF} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
@@ -90,7 +90,7 @@
         Operand: 2, Acc:  R-,  Type: Default flags, Size:  0, RawSize:  0, Encoding: V
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000028 626ce902813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=ZF}
+0000000000000028 626ce902813ebdbdbdbd            CCMPC {dfv=OF,SF,CF} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
@@ -113,7 +113,7 @@
         Operand: 2, Acc:  R-,  Type: Default flags, Size:  0, RawSize:  0, Encoding: V
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000032 626cf102813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=CF}
+0000000000000032 626cf102813ebdbdbdbd            CCMPC {dfv=OF,SF,ZF} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21
@@ -136,7 +136,7 @@
         Operand: 2, Acc:  R-,  Type: Default flags, Size:  0, RawSize:  0, Encoding: V
         Operand: 3, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000003C 626c8102813ebdbdbdbd            CCMPC     qword ptr [r22], 0xbdbdbdbd, {dfv=OF,SF,ZF,CF}
+000000000000003C 626c8102813ebdbdbdbd            CCMPC {dfv=} qword ptr [r22], 0xbdbdbdbd
         DSIZE: 64, ASIZE: 64, VLEN: -
         ISA Set: APX_F, Ins cat: APX, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000001, reg: edx, bit: 21

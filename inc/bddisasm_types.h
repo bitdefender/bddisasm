@@ -104,5 +104,4 @@ typedef ND_UINT8 ND_BOOL;
 #define ND_TRUE     (1)
 #define ND_FALSE    (0)
 
-
 #endif // BDDISASM_TYPES_H

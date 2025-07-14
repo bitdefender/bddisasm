@@ -4,8 +4,8 @@
 #
 
 # 0x00 - 0x0F
-VPERMQ            ; Vuv{K}{z},Wuv|B64,Ib        ;         ; evex m:3 p:1 l:x w:1 0x00 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R
-VPERMPD           ; Vuv{K}{z},Wuv|B64,Ib        ;         ; evex m:3 p:1 l:x w:1 0x01 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R
+VPERMQ            ; Vuv{K}{z},Wuv|B64,Ib        ;         ; evex m:3 p:1 l:n w:1 0x00 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R
+VPERMPD           ; Vuv{K}{z},Wuv|B64,Ib        ;         ; evex m:3 p:1 l:n w:1 0x01 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R
 VALIGND           ; Vfv{K}{z},Hfv,Wfv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x03 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R|R
 VALIGNQ           ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x03 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R|R
 VPERMILPS         ; Vfv{K}{z},Wfv|B32,Ib        ;         ; evex m:3 p:1 l:x w:0 0x04 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E4NF, w:W|R|R|R
@@ -14,7 +14,7 @@ VPERMILPD         ; Vfv{K}{z},Wfv|B64,Ib        ;         ; evex m:3 p:1 l:x w:1
 TCVTROWPS2PHH     ; Voq,mTt,Ib                  ;         ; evex m:3 p:0 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
 TILEMOVROW        ; Voq,mTt,Ib                  ;         ; evex m:3 p:1 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
 TCVTROWD2PS       ; Voq,mTt,Ib                  ;         ; evex m:3 p:2 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
-TCVTROWPS2PBF16H  ; Voq,mTt,Ib                  ;         ; evex m:3 p:3 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+TCVTROWPS2BF16H   ; Voq,mTt,Ib                  ;         ; evex m:3 p:3 l:2 w:0 0x07 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
 
 VRNDSCALEPH       ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x08 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R, x:IE|PE|UE
 VRNDSCALEPS       ; Vfv{K}{z},Wfv|B32{sae},Ib   ;         ; evex m:3 p:1 l:x w:0 0x08 /r ib         ; s:AVX512F, t:AVX512, l:fv, e:E2, w:W|R|R|R, x:IE|PE
@@ -36,10 +36,10 @@ VPEXTRQ           ; Mq,Vdq,Ib                   ;         ; evex m:3 p:1 l:0 w:1
 VPEXTRQ           ; Ry,Vdq,Ib                   ;         ; evex m:3 p:1 l:0 w:1 0x16 /r:reg ib     ; s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R, a:IWO64
 VEXTRACTPS        ; Md,Vdq,Ib                   ;         ; evex m:3 p:1 l:0 w:i 0x17 /r:mem ib     ; s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R
 VEXTRACTPS        ; Ry,Vdq,Ib                   ;         ; evex m:3 p:1 l:0 w:i 0x17 /r:reg ib     ; s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R
-VINSERTF32X4      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:x w:0 0x18 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
-VINSERTF64X2      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:x w:1 0x18 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R|R
-VEXTRACTF32X4     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:x w:0 0x19 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R
-VEXTRACTF64X2     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:x w:1 0x19 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R
+VINSERTF32X4      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:n w:0 0x18 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
+VINSERTF64X2      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:n w:1 0x18 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R|R
+VEXTRACTF32X4     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:n w:0 0x19 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R
+VEXTRACTF64X2     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:n w:1 0x19 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R
 VINSERTF32X8      ; Voq{K}{z},Hoq,Wqq,Ib        ;         ; evex m:3 p:1 l:2 w:0 0x1A /r ib         ; s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R|R
 VINSERTF64X4      ; Voq{K}{z},Hoq,Wqq,Ib        ;         ; evex m:3 p:1 l:2 w:1 0x1A /r ib         ; s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R|R
 VEXTRACTF32X8     ; Wqq{K}{z},Voq,Ib            ;         ; evex m:3 p:1 l:2 w:0 0x1B /r ib         ; s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R
@@ -57,8 +57,8 @@ VINSERTPS         ; Vdq,Hdq,Md,Ib               ;         ; evex m:3 p:1 l:0 w:i
 VINSERTPS         ; Vdq,Hdq,Udq,Ib              ;         ; evex m:3 p:1 l:0 w:i 0x21 /r:reg ib     ; s:AVX512F, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R
 VPINSRD           ; Vdq,Hdq,Ed,Ib               ;         ; evex m:3 p:1 l:0 w:0 0x22 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R, a:IWO64
 VPINSRQ           ; Vdq,Hdq,Eq,Ib               ;         ; evex m:3 p:1 l:0 w:1 0x22 /r ib         ; s:AVX512DQ, t:AVX512, l:t1s, e:E9NF, w:W|R|R|R, a:IWO64
-VSHUFF32X4        ; Vuv{K}{z},Huv,Wuv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x23 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
-VSHUFF64X2        ; Vuv{K}{z},Huv,Wuv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x23 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VSHUFF32X4        ; Vuv{K}{z},Huv,Wuv|B32,Ib    ;         ; evex m:3 p:1 l:n w:0 0x23 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VSHUFF64X2        ; Vuv{K}{z},Huv,Wuv|B64,Ib    ;         ; evex m:3 p:1 l:n w:1 0x23 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
 VPTERNLOGD        ; Vfv{K}{z},Hfv,Wfv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x25 /r ib         ; s:AVX512F, t:LOGICAL, l:fv, e:E4, w:RW|R|R|R|R
 VPTERNLOGQ        ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x25 /r ib         ; s:AVX512F, t:LOGICAL, l:fv, e:E4, w:RW|R|R|R|R
 VGETMANTPH        ; Vfv{K}{z},Wfv|B16{sae},Ib   ;         ; evex m:3 p:0 l:x w:0 0x26 /r ib         ; s:AVX512FP16, t:AVX512FP16, l:fv, e:E2, w:W|R|R|R, x:IE|DE
@@ -70,10 +70,10 @@ VGETMANTSS        ; Vdq{K}{z},Hdq,Wss{sae},Ib   ;         ; evex m:3 p:1 l:i w:0
 VGETMANTSD        ; Vdq{K}{z},Hdq,Wsd{sae},Ib   ;         ; evex m:3 p:1 l:i w:1 0x27 /r ib         ; s:AVX512F, t:AVX512, l:t1s, e:E2, w:W|R|R|R|R, x:IE|DE
 
 # 0x30 - 0x3F
-VINSERTI32X4      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:x w:0 0x38 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
-VINSERTI64X2      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:x w:1 0x38 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R|R
-VEXTRACTI32X4     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:x w:0 0x39 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R
-VEXTRACTI64X2     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:x w:1 0x39 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R
+VINSERTI32X4      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:n w:0 0x38 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R|R
+VINSERTI64X2      ; Vuv{K}{z},Huv,Wdq,Ib        ;         ; evex m:3 p:1 l:n w:1 0x38 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R|R
+VEXTRACTI32X4     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:n w:0 0x39 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:t4, e:E6NF, w:W|R|R|R
+VEXTRACTI64X2     ; Wdq{K}{z},Vuv,Ib            ;         ; evex m:3 p:1 l:n w:1 0x39 /r ib         ; s:AVX512DQ, t:AVX512, a:NOL0, l:t2, e:E6NF, w:W|R|R|R
 VINSERTI32X8      ; Voq{K}{z},Hoq,Wqq,Ib        ;         ; evex m:3 p:1 l:2 w:0 0x3A /r ib         ; s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R|R
 VINSERTI64X4      ; Voq{K}{z},Hoq,Wqq,Ib        ;         ; evex m:3 p:1 l:2 w:1 0x3A /r ib         ; s:AVX512F, t:AVX512, l:t4, e:E6NF, w:W|R|R|R|R
 VEXTRACTI32X8     ; Wqq{K}{z},Voq,Ib            ;         ; evex m:3 p:1 l:2 w:0 0x3B /r ib         ; s:AVX512DQ, t:AVX512, l:t8, e:E6NF, w:W|R|R|R
@@ -86,8 +86,8 @@ VPCMPW            ; rKq{K},Hfv,Wfv,Ib           ;         ; evex m:3 p:1 l:x w:1
 # 0x40 - 0x4F
 VDBPSADBW         ; Vfv{K}{z},Hfv,Wfv,Ib        ;         ; evex m:3 p:1 l:x w:0 0x42 /r ib         ; s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R|R|R
 VMPSADBW          ; Vfv{K}{z},Hfv,Wfv,Ib        ;         ; evex m:3 p:2 l:x w:0 0x42 /r ib         ; s:AVX102, t:AVX10INT, l:fvm, e:E4NF,   w:W|R|R|R|R
-VSHUFI32X4        ; Vuv{K}{z},Huv,Wuv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x43 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
-VSHUFI64X2        ; Vuv{K}{z},Huv,Wuv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x43 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VSHUFI32X4        ; Vuv{K}{z},Huv,Wuv|B32,Ib    ;         ; evex m:3 p:1 l:n w:0 0x43 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
+VSHUFI64X2        ; Vuv{K}{z},Huv,Wuv|B64,Ib    ;         ; evex m:3 p:1 l:n w:1 0x43 /r ib         ; s:AVX512F, t:AVX512, a:NOL0, l:fv, e:E4NF, w:W|R|R|R|R
 VPCLMULQDQ        ; Vfv,Hfv,Wfv,Ib              ;         ; evex m:3 p:1 l:x w:i 0x44 /r ib         ; s:VPCLMULQDQ, t:VPCLMULQDQ, l:fvm, e:E4NF, w:W|R|R|R
 
 # 0x50 - 0x5F
@@ -131,7 +131,7 @@ VPSHRDW           ; Vfv{K}{z},Hfv,Wfv,Ib        ;         ; evex m:3 p:1 l:x w:1
 VPSHRDD           ; Vfv{K}{z},Hfv,Wfv|B32,Ib    ;         ; evex m:3 p:1 l:x w:0 0x73 /r ib         ; s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
 VPSHRDQ           ; Vfv{K}{z},Hfv,Wfv|B64,Ib    ;         ; evex m:3 p:1 l:x w:1 0x73 /r ib         ; s:AVX512VBMI2, t:AVX512VBMI, l:fv, e:E4, w:RW|R|R|R|R
 
-TCVTROWPS2PBF16L  ; Voq,mTt,Ib                  ;         ; evex m:3 p:2 l:2 w:0 0x77 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
+TCVTROWPS2BF16L   ; Voq,mTt,Ib                  ;         ; evex m:3 p:2 l:2 w:0 0x77 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
 TCVTROWPS2PHL     ; Voq,mTt,Ib                  ;         ; evex m:3 p:3 l:2 w:0 0x77 /r:reg ib     ; s:AMXAVX512, t:AMX, e:AMX_EVEX_E7, w:W|R|R, m:NOTSX
 
 # 0x80 - 0x8F

@@ -191,6 +191,19 @@ Note that by default, the default vendor `ND_VEND_ANY` is used for decoding (whi
 
 Converting decoded instructions to textual disassembly must be done using the `NdToText` API. bddisasm only supports Intel, masm-style syntax.
 
+### Minimal Decoding API
+
+The default (legacy) decoding API provides a large `INSTRUX` structure (around 480-bytes long) which contains all the possible information about the instruction, including all of the operands. When faster decoder performance and/or smaller `INSTRUX` is needed, the minimal decode API can be used:
+
+- `NDSTATUS NdDecodeMini(INSTRUX_MINI *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode)`
+- `NDSTATUS NdDecodeWithContextMini(INSTRUX_MINI *Instrux, const uint8_t *Code, size_t Size, ND_CONTEXT *Context);`
+
+The `INSTRUX_MINI` is only 64-bytes long, and provides all the core instruction information, except for the operands and metadata. If needed, operands can be accessed via the following new API:
+
+- `NDSTATUS NdGetOperandMini(const INSTRUX_MINI *Instrux, ND_UINT8 Index, ND_OPERAND *Operand);` - decodes instruction operand at index `Index`
+
+Each type of metadata can also be retrieved from an `INSTRUX_MINI` using API. For example, in order to retrieve the stack access type, `NdGetStackAccessMini` API can be used; to retrieve the valid modes, `NdGetValidModesMini` can be used, etc. Consult `bdx86_api_mini.h` for a list of all available APIs.
+
 ### Example
 
 Working with bddisasm is very easy. Decoding and printing the disassembly of an instruction is quick & simple:
@@ -307,6 +320,34 @@ Working with the extended API is also trivial:
     ...
 ```
 
+Working with the minimal decoder is equally simple:
+
+```c
+    INSTRUX_MINI ix;
+    ND_CONTEXT ctx;
+    ND_OPERAND op;
+    char text[ND_MIN_BUF_SIZE];
+    uint8_t code[] = { 0x48, 0x8B, 0x48, 0x28 };
+
+    // This has to be done only once. The same context can be used by both the legacy and mini API!
+    NdInitContext(&ctx);
+
+    ctx.DefCode = ND_CODE_64;
+    ctx.DefData = ND_DATA_64;
+    ctx.DefStack = ND_STACK_64;
+    ctx.VendMode = ND_VEND_ANY;
+    ctx.FeatMode = ND_FEAT_ALL; // Use ND_FEAT_NONE, if you wish to see NOPs instead of MPX/CET/CLDEMOTE instructions.
+
+    // From here one, the ctx can be reused for any number of NdDecodeWithContextMini calls.
+    NDSTATUS status = NdDecodeWithContextMini(&ix, code, sizeof(code), &ctx);
+    ...
+    // Getting the first operand.
+    status = NdGetOperandMini(&ix, 0, &op);
+    ...
+    // Formatting the instruction.
+    status = NdToTextMini(&ix, 0, sizeof(text), text);
+    ...
+```
 ## Credits
 
 The entire Bitdefender HVI team.

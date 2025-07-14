@@ -219,23 +219,18 @@ mod tests {
     fn decode_next() {
         let code = vec![0xb8, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8b, 0xf9, 0xff, 0xff];
         let mut decoder = Decoder::new(&code, DecodeMode::Bits64, 0x1000);
-        let expected: Vec<Result<(Mnemonic, &str, &[u8]), DecodeError>> = vec![
-            Ok((
-                Mnemonic::MOV,
-                "MOV       eax, 0x00000000",
-                &[0xb8, 0x00, 0x00, 0x00, 0x00],
-            )),
-            Ok((Mnemonic::MOV, "MOV       rdi, rcx", &[0x48, 0x8b, 0xf9])),
+        let expected: Vec<Result<(Mnemonic, &str), DecodeError>> = vec![
+            Ok((Mnemonic::MOV, "MOV       eax, 0x00000000")),
+            Ok((Mnemonic::MOV, "MOV       rdi, rcx")),
             Err(DecodeError::InvalidEncoding),
             Err(DecodeError::BufferTooSmall),
         ];
         let mut exected_index = 0usize;
         while let Some(ins) = decoder.decode_next() {
             match expected[exected_index] {
-                Ok((i, s, b)) => {
+                Ok((i, s)) => {
                     let ins = ins.expect("Unable to decode");
                     assert_eq!(i, ins.mnemonic());
-                    assert_eq!(b, ins.bytes());
                     assert_eq!(s, format!("{}", ins));
                 }
                 Err(e) => {
@@ -251,23 +246,18 @@ mod tests {
     fn decoder_iter() {
         let code = vec![0xb8, 0x00, 0x00, 0x00, 0x00, 0x48, 0x8b, 0xf9, 0xff, 0xff];
         let decoder = Decoder::new(&code, DecodeMode::Bits64, 0x1000);
-        let expected: Vec<Result<(Mnemonic, &str, &[u8]), DecodeError>> = vec![
-            Ok((
-                Mnemonic::MOV,
-                "MOV       eax, 0x00000000",
-                &[0xb8, 0x00, 0x00, 0x00, 0x00],
-            )),
-            Ok((Mnemonic::MOV, "MOV       rdi, rcx", &[0x48, 0x8b, 0xf9])),
+        let expected: Vec<Result<(Mnemonic, &str), DecodeError>> = vec![
+            Ok((Mnemonic::MOV, "MOV       eax, 0x00000000")),
+            Ok((Mnemonic::MOV, "MOV       rdi, rcx")),
             Err(DecodeError::InvalidEncoding),
             Err(DecodeError::BufferTooSmall),
         ];
 
         for (index, ins) in decoder.enumerate() {
             match expected[index] {
-                Ok((i, s, b)) => {
+                Ok((i, s)) => {
                     let ins = ins.expect("Unable to decode");
                     assert_eq!(i, ins.mnemonic());
-                    assert_eq!(b, ins.bytes());
                     assert_eq!(s, format!("{}", ins));
                 }
                 Err(e) => {

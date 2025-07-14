@@ -136,7 +136,7 @@ NdSprintf(
     ND_SIZET DestinationSize,
     const char *Formatstring,
     ...
-    )
+)
 //
 // Wrapper on vsnprintf.
 //
@@ -174,19 +174,21 @@ NdSprintf(
 
 
 //
-// NdToText
+// NdToTextInternal
 //
-NDSTATUS
-NdToText(
-    const INSTRUX *Instrux,
+static NDSTATUS
+NdToTextInternal(
+    const INSTRUX_MINI *Instrux,
+    const ND_OPERAND *Operands,
     ND_UINT64 Rip,
     ND_UINT32 BufferSize,
     char *Buffer
-    )
+)
 {
     NDSTATUS status;
     char *res, temp[64];
-    ND_UINT32 opIndex, opsStored;
+    ND_UINT32 opsStored;
+    ND_OPERAND localOp;
     const ND_OPERAND *pOp;
     ND_BOOL alignmentStored;
 
@@ -199,7 +201,6 @@ NdToText(
     // pre-init
     status = ND_STATUS_SUCCESS;
     res = (char *)ND_NULL;
-    opIndex = 0;
     opsStored = 0;
     pOp = (const ND_OPERAND *)ND_NULL;
     alignmentStored = ND_FALSE;
@@ -298,19 +299,7 @@ NdToText(
     }
 
     // Store the mnemonic.
-    NDTOTEXT_APPEND(Instrux->Mnemonic);
-
-    // Store NF specifier, if NoFlags presetn.
-    if (Instrux->HasNf)
-    {
-        NDTOTEXT_APPEND("NF");
-    }
-
-    // Store ZU specifier, if ZeroUpper present.
-    if (Instrux->HasZu)
-    {
-        NDTOTEXT_APPEND("ZU");
-    }
+    NDTOTEXT_APPEND(NdGetMnemonicMini(Instrux));
 
     // If there are no explicit operands, we can leave.
     if (0 == Instrux->ExpOperandsCount)
@@ -318,12 +307,58 @@ NdToText(
         return ND_STATUS_SUCCESS;
     }
 
+    // Check for default flags value.
+    if (Instrux->HasDfv)
+    {
+        ND_BOOL comma = ND_FALSE;
+
+        NDTOTEXT_APPEND(" {dfv=");
+
+        if (Instrux->EvexCond.OF)
+        {
+            NDTOTEXT_APPEND("OF");
+            comma = ND_TRUE;
+        }
+
+        if (Instrux->EvexCond.SF)
+        {
+            NDTOTEXT_APPEND(comma ? ",SF" : "SF");
+            comma = ND_TRUE;
+        }
+
+        if (Instrux->EvexCond.ZF)
+        {
+            NDTOTEXT_APPEND(comma ? ",ZF" : "ZF");
+            comma = ND_TRUE;
+        }
+
+        if (Instrux->EvexCond.CF)
+        {
+            NDTOTEXT_APPEND(comma ? ",CF" : "CF");
+        }
+
+        NDTOTEXT_APPEND("}");
+    }
+
     // Now the operands.
-    for (opIndex = 0; opIndex < Instrux->OperandsCount; opIndex++)
+    for (ND_UINT8 opIndex = 0; opIndex < Instrux->ExpOperandsCount; opIndex++)
     {
         status = ND_STATUS_SUCCESS;
 
-        pOp = &Instrux->Operands[opIndex];
+        if (Operands != ND_NULL)
+        {
+            pOp = &Operands[opIndex];
+        }
+        else
+        {
+            status = NdGetOperandMini(Instrux, opIndex, &localOp);
+            if (!ND_SUCCESS(status))
+            {
+                return status;
+            }
+
+            pOp = &localOp;
+        }
 
         if (pOp->Type == ND_OP_NOT_PRESENT)
         {
@@ -331,6 +366,11 @@ NdToText(
         }
 
         if (pOp->Flags.IsDefault)
+        {
+            continue;
+        }
+
+        if (pOp->Type == ND_OP_DFV)
         {
             continue;
         }
@@ -427,6 +467,11 @@ NdToText(
 
             case ND_REG_SEG:
             {
+                if (pOp->Info.Register.Reg >= ND_MAX_SEG_REGS)
+                {
+                    return ND_STATUS_INVALID_INSTRUX;
+                }
+
                 NDTOTEXT_APPEND(gRegSeg[pOp->Info.Register.Reg]);
             }
             break;
@@ -674,39 +719,6 @@ NdToText(
         }
         break;
 
-        case ND_OP_DFV:
-        {
-            ND_BOOL comma = ND_FALSE;
-
-            NDTOTEXT_APPEND("{dfv=");
-
-            if (pOp->Info.DefaultFlags.OF)
-            {
-                NDTOTEXT_APPEND("OF");
-                comma = ND_TRUE;
-            }
-
-            if (pOp->Info.DefaultFlags.SF)
-            {
-                NDTOTEXT_APPEND(comma ? ",SF" : "SF");
-                comma = ND_TRUE;
-            }
-
-            if (pOp->Info.DefaultFlags.ZF)
-            {
-                NDTOTEXT_APPEND(comma ? ",ZF" : "ZF");
-                comma = ND_TRUE;
-            }
-
-            if (pOp->Info.DefaultFlags.CF)
-            {
-                NDTOTEXT_APPEND(comma ? ",CF" : "CF");
-            }
-
-            NDTOTEXT_APPEND("}");
-        }
-        break;
-
         case ND_OP_MEM:
         {
             // Prepend the size. For VSIB addressing, store the VSIB element size, not the total accessed size.
@@ -751,6 +763,12 @@ NdToText(
             // Prepend the segment, only if it is overridden via a prefix.
             if (pOp->Info.Memory.HasSeg && Instrux->HasSeg)
             {
+                // No need for Seg range checks, as it is limited by the data type representation - 3 bits.
+                //if (pOp->Info.Memory.Seg >= ND_MAX_SEG_REGS)
+                //{
+                //    return ND_STATUS_INVALID_INSTRUX;
+                //}
+
                 if ((ND_CODE_64 != Instrux->DefCode) || (NDR_FS == pOp->Info.Memory.Seg) ||
                     (NDR_GS == pOp->Info.Memory.Seg))
                 {
@@ -766,13 +784,18 @@ NdToText(
             // Base, if any.
             if (pOp->Info.Memory.HasBase)
             {
+                // No need for Base range checks, as it is limited by the data type representation - 5 bits.
+                //if (pOp->Info.Memory.Base >= ND_MAX_GPR_REGS)
+                //{
+                //    return ND_STATUS_INVALID_INSTRUX;
+                //}
+
                 switch (pOp->Info.Memory.BaseSize)
                 {
                 case ND_SIZE_8BIT:
                     if ((Instrux->EncMode != ND_ENCM_LEGACY) || Instrux->HasRex || Instrux->HasRex2)
                     {
                         NDTOTEXT_APPEND(gReg8Bit64[pOp->Info.Memory.Base]);
-
                     }
                     else
                     {
@@ -966,6 +989,12 @@ NdToText(
         // Handle masking.
         if (pOp->Decorator.HasMask)
         {
+            // No need for Msk range checks, as it is limited by the data type representation - 3 bits.
+            //if (pOp->Decorator.Msk >= ND_MAX_MSK_REGS)
+            //{
+            //    return ND_STATUS_INVALID_INSTRUX;
+            //}
+
             status = NdSprintf(temp, sizeof(temp), "{%s}", gRegMask[pOp->Decorator.Msk]);
             if (!ND_SUCCESS(status))
             {
@@ -983,19 +1012,19 @@ NdToText(
 
         // If this is the last reg/mem operand, display {sae} and {er} decorators.
         if ((pOp->Type == ND_OP_MEM || pOp->Type == ND_OP_REG) && 
-            (opIndex + 1 >= Instrux->ExpOperandsCount || Instrux->Operands[opIndex + 1].Type == ND_OP_IMM))
+            (opIndex + 1 == Instrux->ExpOperandsCount || (opIndex + 2 == Instrux->ExpOperandsCount && Instrux->HasImm1)))
         {
             // Append Suppress All Exceptions decorator.
             if (Instrux->HasSae && !Instrux->HasEr)
             {
                 // ER implies SAE, so if we have ER, we will list that.
-                NDTOTEXT_APPEND(", {sae}");
+                NDTOTEXT_APPEND("{sae}");
             }
 
             // Append Embedded Rounding decorator.
             if (Instrux->HasEr)
             {
-                status = NdSprintf(temp, sizeof(temp), ", {%s-sae}", gEmbeddedRounding[Instrux->RoundingMode]);
+                status = NdSprintf(temp, sizeof(temp), "{%s-sae}", gEmbeddedRounding[Instrux->RoundingMode]);
                 if (!ND_SUCCESS(status))
                 {
                     return status;
@@ -1010,6 +1039,29 @@ NdToText(
 
     return ND_STATUS_SUCCESS;
 }
+
+NDSTATUS
+NdToText(
+    const INSTRUX *Instrux,
+    ND_UINT64 Rip,
+    ND_UINT32 BufferSize,
+    char *Buffer
+)
+{
+    return NdToTextInternal((INSTRUX_MINI *)Instrux, Instrux->Operands, Rip, BufferSize, Buffer);
+}
+
+
+NDSTATUS
+NdToTextMini(
+    const INSTRUX_MINI *Instrux,
+    ND_UINT64 Rip,
+    ND_UINT32 BufferSize,
+    char *Buffer
+)
+{
+    return NdToTextInternal(Instrux, ND_NULL, Rip, BufferSize, Buffer);
+}
 #else
 NDSTATUS
 NdToText(
@@ -1017,7 +1069,29 @@ NdToText(
     ND_UINT64 Rip,
     ND_UINT32 BufferSize,
     char *Buffer
-    )
+)
+{
+    UNREFERENCED_PARAMETER(Instrux);
+    UNREFERENCED_PARAMETER(Rip);
+
+    // At least make sure the buffer is ND_NULL-terminated so integrators can use NdToText without checking if the
+    // BDDISASM_NO_FORMAT macro is defined. This makes switching between versions with formatting and versions without
+    // formatting easier.
+    if (Buffer != ND_NULL && BufferSize >= 1)
+    {
+        *Buffer = '\0';
+    }
+
+    return ND_STATUS_SUCCESS;
+}
+
+NDSTATUS
+NdToTextMini(
+    const INSTRUX_MINI *Instrux,
+    ND_UINT64 Rip,
+    ND_UINT32 BufferSize,
+    char *Buffer
+)
 {
     UNREFERENCED_PARAMETER(Instrux);
     UNREFERENCED_PARAMETER(Rip);

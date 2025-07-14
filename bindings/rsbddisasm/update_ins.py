@@ -1,6 +1,4 @@
-import os
 import subprocess
-import sys
 from pathlib import Path
 
 from git import Repo
@@ -25,17 +23,17 @@ with open(x86_constants, "r") as data:
             continue
 
         if line.startswith("    ND_CAT_"):
-            token = line.replace(',', '').strip()
+            token = line.replace(",", "").strip()
             nd_ins_type.append(token)
             continue
 
         if line.startswith("    ND_SET_"):
-            token = line.replace(',', '').strip()
+            token = line.replace(",", "").strip()
             nd_ins_set.append(token)
             continue
 
         if line.startswith("    ND_INS_"):
-            token = line.replace(',', '').strip()
+            token = line.replace(",", "").strip()
             nd_ins.append(token)
             continue
 
@@ -61,7 +59,7 @@ with open(mnemonic, "w") as fmnemonic:
     fmnemonic.write("\n")
     fmnemonic.write("use super::decode_error::DecodeError;\n")
     fmnemonic.write("use core::convert::TryFrom;\n")
-    
+
     mnemonic_enum_def = """
 /// Uniquely identifies an instruction.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -103,9 +101,7 @@ with open(ins_cat, "w") as finscat:
     finscat.write(license_header)
     finscat.write("//! Instruction categories.\n")
     finscat.write("\n")
-    finscat.write("use super::decode_error::DecodeError;\n")
-    finscat.write("use core::convert::TryFrom;\n")
-    
+
     ins_cat_enum_def = """
 /// Instruction category.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -121,22 +117,20 @@ pub enum Category {
 
     finscat.write("}\n")
 
-    try_from = """
+    cat_from_raw = """
 #[doc(hidden)]
-impl TryFrom<ffi::ND_INS_CATEGORY> for Category {
-    type Error = DecodeError;
-
+impl Category {
     #[allow(clippy::too_many_lines)]
-    fn try_from(value: ffi::ND_INS_CATEGORY) -> Result<Self, Self::Error> {
+    pub(crate) fn from_raw(value: ffi::ND_INS_CATEGORY) -> Option<Self> {
         match value {
-            ffi::_ND_INS_TYPE::ND_CAT_INVALID => Err(DecodeError::InternalError(value as u64)),
+            ffi::_ND_INS_TYPE::ND_CAT_INVALID => None,
     """
-    finscat.write(try_from)
+    finscat.write(cat_from_raw)
     for ins in nd_ins_type:
-        ok = ins.replace('ND_CAT_', '')
+        ok = ins.replace("ND_CAT_", "")
         if ok[0].isdigit():
             ok = f"I{ok}"
-        line = f"ffi::_ND_INS_TYPE::{ins} => Ok(Category::{ok}),\n"
+        line = f"ffi::_ND_INS_TYPE::{ins} => Some(Category::{ok}),\n"
         finscat.write(line)
 
     end = """
@@ -152,9 +146,7 @@ with open(isa_set, "w") as fset:
     fset.write(license_header)
     fset.write("//! Instruction sets.\n")
     fset.write("\n")
-    fset.write("use super::decode_error::DecodeError;\n")
-    fset.write("use core::convert::TryFrom;\n")
-    
+
     ins_set_enum_def = """
 /// ISA set.
 #[derive(Copy, Clone, Eq, PartialEq, Hash, Debug)]
@@ -170,22 +162,20 @@ pub enum IsaSet {
 
     fset.write("}\n")
 
-    try_from = """
+    isa_set_from_raw = """
 #[doc(hidden)]
-impl TryFrom<ffi::ND_INS_SET> for IsaSet {
-    type Error = DecodeError;
-
+impl IsaSet {
     #[allow(clippy::too_many_lines)]
-    fn try_from(value: ffi::ND_INS_SET) -> Result<Self, Self::Error> {
+    pub(crate) fn from_raw(value: ffi::ND_INS_SET) -> Option<Self> {
         match value {
-            ffi::_ND_INS_SET::ND_SET_INVALID => Err(DecodeError::InternalError(value as u64)),
+            ffi::_ND_INS_SET::ND_SET_INVALID => None,
     """
-    fset.write(try_from)
+    fset.write(isa_set_from_raw)
     for ins in nd_ins_set:
-        ok = ins.replace('ND_SET_', '')
+        ok = ins.replace("ND_SET_", "")
         if ok[0].isdigit():
             ok = f"I{ok}"
-        line = f"ffi::_ND_INS_SET::{ins} => Ok(IsaSet::{ok}),\n"
+        line = f"ffi::_ND_INS_SET::{ins} => Some(IsaSet::{ok}),\n"
         fset.write(line)
 
     end = """

@@ -12,31 +12,171 @@
 //
 typedef enum _ND_ILUT_TYPE
 {
-    ND_ILUT_INSTRUCTION = 0,// Table contains one entry that directly points to an instruction.
-    ND_ILUT_OPCODE,         // Table contains 256 entries. Next entry is selected using an opcode.
-    ND_ILUT_OPCODE_LAST,    // Table contains 256 entries. Next entry is selected using an opcode, but the 
-                            // opcode follows the instruction as the last byte.
-    ND_ILUT_MODRM_REG,      // Table contains 8 entries. Next entry is selected using modrm.reg.
-    ND_ILUT_MODRM_MOD,      // Table contains 2 entries. Next entry is selected using modrm.mod (0 - mem, 1 - reg)
-    ND_ILUT_MODRM_RM,       // Table contains 8 entries. Next entry is selected using modrm.rm.
-    ND_ILUT_MAN_PREFIX,     // Table contains 4 entries. Next entry is 0 (no prefix), 1 (0x66), 2 (0xF3), 3 (0xF2).
-    ND_ILUT_MODE,           // Table contains 4 entries. Next entry is 0 (16 bit mode), 1 (32 bit mode), 2 (64 bit mode).
-    ND_ILUT_DSIZE,          // Table contains 4 entries. Next entry is 0 (16 bit size), 1 (32 bit size), 2 (64 bit size).
-                            // This DOES NOT take into consideration forced/default sizes.
-    ND_ILUT_ASIZE,          // Default addressing mode is used to transition
-    ND_ILUT_AUXILIARY,      // Table contains 10 entries. Next entry is 0 (no prefix), 1 (rex), 2 (rex.w), etc.
-    ND_ILUT_VENDOR,         // Preferred vendor is used to transition. Default is entry 0. Otherwise, preferred
-                            // vendor selects an alternate entry.
-    ND_ILUT_FEATURE,        // Some instructions are mapped onto wide NOP space. They will be decoded only if the
-                            // associated feature is set during decoding.
-    ND_ILUT_EX_M,           // Table contains 32 entries. Next entry is vex/xop/evex.mmmmm
-    ND_ILUT_EX_PP,          // Table contains 4 entries. Next entry is vex/xop/evex.pp
-    ND_ILUT_EX_L,           // Table contains 4 entries. Next entry is vex/xop.l or evex.l'l
-    ND_ILUT_EX_W,           // Table contains 2 entries. Next entry is vex/xop/evex.w
-    ND_ILUT_EX_WI,          // Table contains 2 entries. Next entry is vex/xop/evex.w. If not in 64 bit, next entry is 0.
-    ND_ILUT_EX_ND,          // Table contains 2 entries. Next entry is evex.ND. 
-    ND_ILUT_EX_NF,          // Table contains 2 entries. Next entry is evex.NF. 
-    ND_ILUT_EX_SC,          // Table contains 16 entries. Next entry is evex.SC.
+    /// Table contains one entry that contains an index inside the IDB.
+    ND_ILUT_INSTRUCTION = 0,
+
+    /// Table contains 256 entries. Next entry is selected using an opcode.
+    ND_ILUT_OPCODE,
+
+    /// Table contains 256 entries. Next entry is selected using an opcode, but the opcode follows the instruction as 
+    /// the last byte.
+    ND_ILUT_OPCODE_LAST,
+
+    /// Table contains 8 entries. Next entry is selected using modrm.reg.
+    ND_ILUT_MODRM_REG,
+
+    /// Table contains 2 entries. Next entry is selected using modrm.mod (0 - mem, 1 - reg).
+    ND_ILUT_MODRM_MOD,
+
+    /// Table contains 8 entries. Next entry is selected using modrm.rm.
+    ND_ILUT_MODRM_RM,
+
+    /// Table contains 4 entries. Next entry is 0 (no prefix), 1 (0x66), 2 (0xF3), 3 (0xF2).
+    ND_ILUT_MAN_PREFIX,
+
+    /// Table contains 4 entries. Next entry is 1 (16 bit mode), 2 (32 bit mode), 3 (64 bit mode) or 0 (default).
+    ND_ILUT_MODE,
+
+    /// Default addressing mode is used to transition.
+    ND_ILUT_ASIZE,
+
+    /// Table contains 4 entries. Next entry is 1 (16 bit size), 2 (32 bit size), 3 (64 bit size) or 0 (default).
+    ND_ILUT_DSIZE,
+
+    /// Table contains 10 entries. Next entry is 0 (no prefix), 1 (rex), 2 (rex.w), etc.
+    ND_ILUT_AUXILIARY,
+
+    /// Preferred vendor is used to transition. Default is entry 0. Otherwise, preferred vendor selects an alternate 
+    /// entry.
+    ND_ILUT_VENDOR,
+
+    /// Some instructions are mapped onto wide NOP space. They will be decoded only if the associated feature is set 
+    /// during decoding.
+    ND_ILUT_FEATURE,
+
+    /// Table contains 32 entries. Next entry is vex/xop/evex.mmmmm.
+    ND_ILUT_EX_M,
+
+    /// Table contains 4 entries. Next entry is vex/xop/evex.pp.
+    ND_ILUT_EX_PP,
+
+    /// Table contains 4 entries. Next entry is vex/xop.l or evex.l'l.
+    ND_ILUT_EX_L,
+
+    /// Table contains 2 entries. Next entry is vex/xop/evex.w.
+    ND_ILUT_EX_W,
+
+    /// Table contains 2 entries. Next entry is vex/xop/evex.w. If not in 64 bit, next entry is 0.
+    ND_ILUT_EX_WI,
+
+    /// Table contains 2 entries. Next entry is evex.ND.
+    ND_ILUT_EX_ND,
+
+    /// Table contains 2 entries. Next entry is evex.NF. 
+    ND_ILUT_EX_NF,
+
+    /// Table contains 16 entries. Next entry is evex.SC.
+    ND_ILUT_EX_SC,
+
+    /// Table contains 64 entries. Next entry is evex.l << 4 | evex.p << 2 | evex.nd << 1 | evex.nf.
+    ND_ILUT_EX_LPDF,
+
+    /// Not valid if 64-bit mode.
+    ND_ILUT_FLT_NO64,
+
+    /// Not valid outside 64-bit mode.
+    ND_ILUT_FLT_NO1632,
+
+    /// Not valid with RIP-relative addressing.
+    ND_ILUT_FLT_NORIPREL,
+
+    /// Not valid with 16-bit addressing.
+    ND_ILUT_FLT_NOA16,
+
+    /// Not valid with 0x66 prefix.
+    ND_ILUT_FLT_NO66,
+
+    /// Not valid with 0x67 prefix.
+    ND_ILUT_FLT_NO67,
+
+    /// Not valid with REP prefix.
+    ND_ILUT_FLT_NOREP,
+
+    /// Not valid with REX2 prefix.
+    ND_ILUT_FLT_NOREX2,
+
+    /// Not valid with L'L == 0.
+    ND_ILUT_FLT_NOL0,
+
+    /// Not valid with VVVV != 0.
+    ND_ILUT_FLT_NOV,
+
+    /// Not valid with V' != 0.
+    ND_ILUT_FLT_NOVP,
+
+    /// Not valid with VVVV != 0 or VP != 0.
+    ND_ILUT_FLT_NOVVP,
+
+    /// GPR encoded in R must be less than 16 outside APX.
+    ND_ILUT_FLT_RRLT16,
+
+    /// GPR encoded in V must be less than 16 outside APX.
+    ND_ILUT_FLT_RVLT16,
+
+    /// Segment register encoded in R must be less than 6.
+    ND_ILUT_FLT_SRIN012345,
+
+    /// Segment register encoded in R must be less than 6 and not 1 (CS).
+    ND_ILUT_FLT_SRIN02345,
+
+    /// Bound register encoded in R must be less than 4.
+    ND_ILUT_FLT_BRLT4,
+
+    /// Bound register encoded in M must be less than 4.
+    ND_ILUT_FLT_BMLT4,
+
+    /// Control register encoded in R must be 0, 2, 3, 4 or 8.
+    ND_ILUT_FLT_CRIN02348,
+
+    /// Debug register encoded in R must be less than 8.
+    ND_ILUT_FLT_DRLT8,
+
+    /// Test register encoded in R must be less than 8.
+    ND_ILUT_FLT_QRLT8,
+
+    /// Mask register encoded in R must be less than 8.
+    ND_ILUT_FLT_KRLT8,
+
+    /// Mask register encoded in V must be less than 8.
+    ND_ILUT_FLT_KVLT8,
+
+    /// Tile register encoded in R must be less than 8.
+    ND_ILUT_FLT_TRLT8,
+
+    /// Tile register encoded in M must be less than 8.
+    ND_ILUT_FLT_TMLT8,
+
+    /// Tile register encoded in V must be less than 8.
+    ND_ILUT_FLT_TVLT8,
+
+    /// VSIB index register, source & destination must be distinct.
+    ND_ILUT_FLT_VXNEVR_VXNEVV_VRNEVV,
+
+    /// VSIB index register & destination must be distinct.
+    ND_ILUT_FLT_VXNEVR,
+
+    /// Destination, source 1 & source 2 tile registers must be distinct.
+    ND_ILUT_FLT_TRNETM_TRNETV_TVNETM,
+
+    /// Destnation & source vector registers must be distinct.
+    ND_ILUT_FLT_VRNEVV_VRNEVM,
+
+    /// GPRs encoded in V & M must not be equal to RSP.
+    ND_ILUT_FLT_RVNE4_RMNE4,
+
+    /// GPRs encoded in V & M must be distinct.
+    ND_ILUT_FLT_RVNERM,
+
 } ND_ILUT_TYPE;
 
 
@@ -61,7 +201,7 @@ typedef enum _ND_ILUT_TYPE
 #define ND_ILUT_INDEX_DSIZE_16          1
 #define ND_ILUT_INDEX_DSIZE_32          2
 #define ND_ILUT_INDEX_DSIZE_64          3
-#define ND_ILUT_INDEX_DSIZE_DEF64       4
+#define ND_ILUT_INDEX_DSIZE_D64         4
 #define ND_ILUT_INDEX_DSIZE_F64         5
 
 // Address size.
@@ -72,11 +212,11 @@ typedef enum _ND_ILUT_TYPE
 
 // Misc conditions.
 #define ND_ILUT_INDEX_AUX_NONE          0
-#define ND_ILUT_INDEX_AUX_REXB          1
-#define ND_ILUT_INDEX_AUX_REXW          2
-#define ND_ILUT_INDEX_AUX_MO64          3
-#define ND_ILUT_INDEX_AUX_REPZ          4
-#define ND_ILUT_INDEX_AUX_REP           5
+#define ND_ILUT_INDEX_AUX_REPZ          1
+#define ND_ILUT_INDEX_AUX_REP           2
+#define ND_ILUT_INDEX_AUX_REXB          3
+#define ND_ILUT_INDEX_AUX_REXW          4
+#define ND_ILUT_INDEX_AUX_MO64          5
 #define ND_ILUT_INDEX_AUX_RIPREL        6
 #define ND_ILUT_INDEX_AUX_REX2          7
 #define ND_ILUT_INDEX_AUX_REX2W         8
@@ -87,131 +227,195 @@ typedef enum _ND_ILUT_TYPE
 #define ND_ILUT_FEATURE_CET             2
 #define ND_ILUT_FEATURE_CLDEMOTE        3
 #define ND_ILUT_FEATURE_PITI            4
+#define ND_ILUT_FEATURE_MOVRS           5
+#define ND_ILUT_FEATURE_BHI             6
 
+// Table sizes.
+#define ND_ILUT_SIZE_OPCODE             256
+#define ND_ILUT_SIZE_MODRM_MOD          2
+#define ND_ILUT_SIZE_MODRM_REG          8
+#define ND_ILUT_SIZE_MODRM_RM           8
+#define ND_ILUT_SIZE_MPREFIX            4
+#define ND_ILUT_SIZE_AUXILIARY          10
+#define ND_ILUT_SIZE_VENDOR             16
+#define ND_ILUT_SIZE_FEATURE            8
+#define ND_ILUT_SIZE_MODE               4
+#define ND_ILUT_SIZE_ASIZE              4
+#define ND_ILUT_SIZE_DSIZE              6
+#define ND_ILUT_SIZE_EX_M               32
+#define ND_ILUT_SIZE_EX_PP              4
+#define ND_ILUT_SIZE_EX_L               4
+#define ND_ILUT_SIZE_EX_W               2
+#define ND_ILUT_SIZE_EX_ND              2
+#define ND_ILUT_SIZE_EX_NF              2
+#define ND_ILUT_SIZE_EX_SC              16
+#define ND_ILUT_SIZE_EX_LPDF            64
+#define ND_ILUT_SIZE_FILTER             1
 
-typedef struct _ND_TABLE
-{
-    ND_UINT32       Type;
-    const void      *Table[1];
-} ND_TABLE, *PND_TABLE;
 
 typedef struct _ND_TABLE_INSTRUCTION
 {
-    ND_UINT32       Type;
-    const void      *Instruction;
+    ND_UINT32       Type;       // ND_ILUT_INSTRUCTION
+    ND_UINT16       Index;      // Index inside gInstructions
+    ND_UINT16       Reserved;   // Reserved for future use.
 } ND_TABLE_INSTRUCTION, *PND_TABLE_INSTRUCTION;
+
+// Generic table type.
+typedef struct _ND_TABLE
+{
+    ND_UINT32       Type;       // One of ND_ILUT*, indicating the type of the table.
+    ND_UINT32       Reserved;
+#ifdef _MSC_VER
+#pragma warning(suppress: 4200) // nonstandard extension used: zero-sized array in struct/union
+    const void      *Table[];   // Size depends on underlying table type.
+#else
+    const void      *Table[];
+#endif
+} ND_TABLE, *PND_TABLE;
 
 typedef struct _ND_TABLE_OPCODE
 {
-    ND_UINT32       Type;
-    const void      *Table[256];
+    ND_UINT32       Type;       // ND_ILUT_OPCODE
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_OPCODE];
 } ND_TABLE_OPCODE, *PND_TABLE_OPCODE;
 
 typedef struct _ND_TABLE_MODRM_MOD
 {
-    ND_UINT32       Type;
-    const void      *Table[2];
+    ND_UINT32       Type;       // ND_ILUT_MODRM_MOD
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_MODRM_MOD];
 } ND_TABLE_MODRM_MOD, *PND_TABLE_MODRM_MOD;
 
 typedef struct _ND_TABLE_MODRM_REG
 {
-    ND_UINT32       Type;
-    const void      *Table[8];
+    ND_UINT32       Type;       // ND_ILUT_MODRM_REG
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_MODRM_REG];
 } ND_TABLE_MODRM_REG, *PND_TABLE_MODRM_REG;
 
 typedef struct _ND_TABLE_MODRM_RM
 {
-    ND_UINT32       Type;
-    const void      *Table[8];
+    ND_UINT32       Type;       // ND_ILUT_MODRM_RM
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_MODRM_RM];
 } ND_TABLE_MODRM_RM, *PND_TABLE_MODRM_RM;
 
 typedef struct _ND_TABLE_MPREFIX
 {
-    ND_UINT32       Type;
-    const void      *Table[4];
+    ND_UINT32       Type;       // ND_ILUT_MAN_PREFIX
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_MPREFIX];
 } ND_TABLE_MPREFIX, *PND_TABLE_MPREFIX;
 
 typedef struct _ND_TABLE_AUXILIARY
 {
-    ND_UINT32       Type;
-    const void      *Table[10];
+    ND_UINT32       Type;       // ND_ILUT_AUXILIARY
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_AUXILIARY];
 } ND_TABLE_AUXILIARY, *PND_TABLE_AUXILIARY;
 
 typedef struct _ND_TABLE_VENDOR
 {
-    ND_UINT32       Type;
-    const void      *Table[6];
+    ND_UINT32       Type;       // ND_ILUT_VENDOR
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_VENDOR];
 } ND_TABLE_VENDOR;
 
 typedef struct _ND_TABLE_FEATURE
 {
-    ND_UINT32       Type;
-    const void      *Table[8];
+    ND_UINT32       Type;       // ND_ILUT_FEATURE
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_FEATURE];
 } ND_TABLE_FEATURE;
-
-typedef struct _ND_TABLE_DSIZE
-{
-    ND_UINT32       Type;
-    const void      *Table[6];
-} ND_TABLE_DSIZE, *PND_TABLE_DSIZE;
-
-typedef struct _ND_TABLE_ASIZE
-{
-    ND_UINT32       Type;
-    const void      *Table[4];
-} ND_TABLE_ASIZE, *PND_TABLE_ASIZE;
 
 typedef struct _ND_TABLE_MODE
 {
-    ND_UINT32       Type;
-    const void      *Table[4];
+    ND_UINT32       Type;       // ND_ILUT_MODE
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_MODE];
 } ND_TABLE_MODE, *PND_TABLE_MODE;
+
+typedef struct _ND_TABLE_ASIZE
+{
+    ND_UINT32       Type;       // ND_ILUT_ASIZE
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_ASIZE];
+} ND_TABLE_ASIZE, *PND_TABLE_ASIZE;
+
+typedef struct _ND_TABLE_DSIZE
+{
+    ND_UINT32       Type;       // ND_ILUT_DSIZE
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_DSIZE];
+} ND_TABLE_DSIZE, *PND_TABLE_DSIZE;
 
 typedef struct _ND_TABLE_EX_M
 {
-    ND_UINT32       Type;
-    const void      *Table[32];
+    ND_UINT32       Type;       // ND_ILUT_EX_M
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_M];
 } ND_TABLE_EX_M, *PND_TABLE_EX_M;
 
 typedef struct _ND_TABLE_EX_PP
 {
-    ND_UINT32       Type;
-    const void      *Table[4];
+    ND_UINT32       Type;       // ND_ILUT_EX_PP
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_PP];
 } ND_TABLE_EX_PP, *PND_TABLE_EX_PP;
 
 typedef struct _ND_TABLE_EX_L
 {
-    ND_UINT32       Type;
-    const void      *Table[4];
+    ND_UINT32       Type;       // ND_ILUT_EX_L
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_L];
 } ND_TABLE_EX_L, *PND_TABLE_EX_L;
 
 typedef struct _ND_TABLE_EX_W
 {
-    ND_UINT32       Type;
-    const void      *Table[2];
+    ND_UINT32       Type;       // ND_ILUT_EX_W
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_W];
 } ND_TABLE_EX_W, *PND_TABLE_EX_W;
 
 typedef struct _ND_TABLE_EX_ND
 {
-    ND_UINT32       Type;
-    const void      *Table[2];
+    ND_UINT32       Type;       // ND_ILUT_EX_ND
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_ND];
 } ND_TABLE_EX_ND, *PND_TABLE_EX_ND;
 
 typedef struct _ND_TABLE_EX_NF
 {
-    ND_UINT32       Type;
-    const void      *Table[2];
+    ND_UINT32       Type;       // ND_ILUT_EX_NF
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_NF];
 } ND_TABLE_EX_NF, *PND_TABLE_EX_NF;
 
 typedef struct _ND_TABLE_EX_SC
 {
-    ND_UINT32       Type;
-    const void      *Table[16];
+    ND_UINT32       Type;       // ND_ILUT_EX_SC
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_SC];
 } ND_TABLE_EX_SC, *PND_TABLE_EX_SC;
+
+typedef struct _ND_TABLE_EX_LPDF
+{
+    ND_UINT32       Type;       // ND_ILUT_EX_LPDF
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_EX_LPDF];
+} ND_TABLE_EX_LPDF, *PND_TABLE_EX_LPDF;
+
+typedef struct _ND_TABLE_FILTER
+{
+    ND_UINT32       Type;       // ND_ILUT_FLT*
+    ND_UINT32       Reserved;
+    const void      *Table[ND_ILUT_SIZE_FILTER];
+} ND_TABLE_FILTER;
 
 
 //
-// One instruction database entry.
+// Instruction database entry.
 //
 typedef struct _ND_IDBE
 {
@@ -228,6 +432,16 @@ typedef struct _ND_IDBE
     ND_UINT8        FpuFlags;       // FPU status word C0, C1, C2 & C3 access type.
     ND_UINT8        EvexMode;       // EVEX prefix extension type.
     ND_UINT8        SimdExc;        // SIMD Floating-Point Exceptions.
+    ND_UINT8        Ipb;            // Instruction payload bytes (such as immediate values).
+
+    // Various component access, pre-decoded.
+    ND_UINT8        CsAccess;       // CS access. Indicative of far branches.
+    ND_UINT8        RipAccess;      // RIP access. Modified by branches.
+    ND_UINT8        RflAccess;      // RFLAGS access.
+    ND_UINT8        Mem1Access;     // Memory access for explicit modrm operand. Valid only if mod is mem.
+    ND_UINT8        Mem2Access;     // Memory access for encoding independnt accesses.
+    ND_UINT8        StkAccess;      // Stack access.
+    ND_UINT8        StkWords;       // Stack words accessed.
 
     // Per-flag access. Undefined flags will have their bit set in both the "Set" and "Cleared" mask, since a flag
     // cannot be both cleared and set.
@@ -379,6 +593,8 @@ typedef enum _ND_OPERAND_TYPE_SPEC
     ND_OPT_G,
     ND_OPT_H,
     ND_OPT_I,
+    ND_OPT_I1,
+    ND_OPT_I2,
     ND_OPT_J,
     ND_OPT_K,
     ND_OPT_L,
@@ -536,15 +752,32 @@ typedef enum _ND_OPERAND_TYPE_SPEC
 
 
 //
-// Include auto-generated stuff.
+// Instruction immediate payload bytes.
 //
-#include "../../inc/bdx86_constants.h"
-#include "bdx86_mnemonics.h"
-#include "bdx86_instructions.h"
-#include "bdx86_prefixes.h"
-#include "bdx86_table_root.h"
-#include "bdx86_table_xop.h"
-#include "bdx86_table_vex.h"
-#include "bdx86_table_evex.h"
+#define ND_IPB_NONE                 0x00    // No immediate/payload bytes encoded.
+#define ND_IPB_I_b                  0x01    // Immediate byte.
+#define ND_IPB_I_w                  0x02    // Immediate word.
+#define ND_IPB_I_d                  0x03    // Immediate dword.
+#define ND_IPB_I_z                  0x04    // Immediate word/dword.
+#define ND_IPB_I_v                  0x05    // Immediate word/dword/qword.
+#define ND_IPB_I_wb                 0x06    // Immediate word + byte.
+#define ND_IPB_I_bb                 0x07    // Immediate word + byte.
+#define ND_IPB_J_b                  0x08    // Relative offset byte.
+#define ND_IPB_J_z                  0x09    // Relative offset word/dword.
+#define ND_IPB_A_p                  0x0A    // Address far pointer.
+#define ND_IPB_A_q                  0x0B    // Address near pointer.
+#define ND_IPB_O_a                  0x0C    // Moffset.
+#define ND_IPB_L_b                  0x0D    // Immediate encoding SSE register.
+
+
+const ND_IDBE *
+NdIdbeGetEntry(
+    ND_UINT32 Index
+);
+
+const char *
+NdIdbeGetMnemonic(
+    ND_UINT32 Index
+);
 
 #endif // BDX86_TABLEDEFS_H

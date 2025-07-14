@@ -22,7 +22,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! bddisasm = "0.5.1"
+//! bddisasm = "0.1.0"
 //! ```
 //!
 //! # Examples
@@ -130,11 +130,10 @@
 //!
 //! // ` MOV       rax, qword ptr [rcx+r15*2]`
 //! let code = b"\x4a\x8b\x04\x79";
-//! let ins = DecodedInstruction::decode(code, DecodeMode::Bits64).unwrap();
-//! // Get the operands
-//! let operands = ins.operands();
+//! let ins = DecodedInstruction::decode(code, DecodeMode::Bits64)?;
+//!
 //! // Get the second operand which is the source (`[rcx+r15*2]`)
-//! let src = operands[1];
+//! let src = ins.operand(1)?;
 //!
 //! println!("Source operand type: {}", src.info);
 //! match src.info {
@@ -214,6 +213,4 @@ pub use crate::decoder::Decoder;
 pub use crate::instruction_category::Category;
 pub use crate::isa_set::IsaSet;
 pub use crate::mnemonic::Mnemonic;
-pub use crate::operand::{
-    OpAddr, OpInfo, OpMem, OpReg, OpRegType, OpSize, Operand, OperandsLookup,
-};
+pub use crate::operand::{OpAddr, OpInfo, OpMem, OpReg, OpRegType, OpSize, Operand};

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Bitdefender
+ * Copyright (c) 2025 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
 #ifndef BDX86_CORE_H
@@ -36,13 +36,15 @@
 // is enabled. Ergo, we allow the user to select whether said feature is on or off, so that he controls whether he
 // sees the NOPs or the MPX/CET/CLDEMOTE/etc. instructions instead.
 //
-#define ND_FEAT_NONE                0x00    // No feature/mode enabled.
-#define ND_FEAT_MPX                 0x01    // MPX support enabled.
-#define ND_FEAT_CET                 0x02    // CET support enabled.
-#define ND_FEAT_CLDEMOTE            0x04    // CLDEMOTE support enabled.
-#define ND_FEAT_PITI                0x08    // PREFETCHITI support enabled.
-#define ND_FEAT_APX                 0x10    // APX support enabled.
-#define ND_FEAT_ALL                 0xFF    // Decode as if all features are enabled. This is default.
+#define ND_FEAT_NONE                0x00000000  // No feature/mode enabled.
+#define ND_FEAT_MPX                 0x00000001  // MPX support enabled.
+#define ND_FEAT_CET                 0x00000002  // CET support enabled.
+#define ND_FEAT_CLDEMOTE            0x00000004  // CLDEMOTE support enabled.
+#define ND_FEAT_PITI                0x00000008  // PREFETCHITI support enabled.
+#define ND_FEAT_MOVRS               0x00000010  // MOVRS supports enabled.
+#define ND_FEAT_BHI                 0x00000020  // BHI_DIS_S supports enabled.
+#define ND_FEAT_APX                 0x80000000  // APX support enabled.
+#define ND_FEAT_ALL                 0xFFFFFFFF  // Decode as if all features are enabled. This is default.
 
 //
 // Code type
@@ -383,7 +385,6 @@ typedef ND_UINT32 ND_REG_SIZE;
 #define ND_FETCH_8(b)               (*((const ND_UINT8 *)(b)))
 
 
-
 //
 // Helper macros which simply test the presence of various ND_FLAG_* in the instruction attributes.
 //
@@ -642,6 +643,9 @@ typedef enum _ND_EX_TYPE
     ND_EXT_AMX_EVEX_E6,
     ND_EXT_AMX_EVEX_E7,
     ND_EXT_AMX_EVEX_E8,
+    ND_EXT_AMX_EVEX_E9,
+    ND_EXT_AMX_EVEX_E10,
+    ND_EXT_AMX_EVEX_E11,
         
     // APX-EVEX exceptions.
     ND_EXT_APX_EVEX_BMI,
@@ -661,6 +665,9 @@ typedef enum _ND_EX_TYPE
     ND_EXT_APX_EVEX_RAOINT,
     ND_EXT_APX_EVEX_SHA,
     ND_EXT_APX_EVEX_USER_MSR,
+    ND_EXT_APX_EVEX_MOVRS,
+
+    ND_EXT_MAX
 } ND_EX_TYPE;
 
 
@@ -1057,6 +1064,98 @@ typedef union _ND_EVEX
     };
 } ND_EVEX;
 
+//
+// EVEX prefix for legacy promoted instructions.
+//
+typedef union _ND_EVEX_LEGACY
+{
+    ND_UINT8        Evex[4];
+    struct
+    {
+        ND_UINT8    op;         // 0x62
+
+        ND_UINT8    m : 3;      // m0, m1, m2. Indicates opcode map.
+        ND_UINT8    b4 : 1;     // B4 (repurposed from a hard-coded 0 bit).
+        ND_UINT8    rp : 1;     // ~R' or ~R4
+        ND_UINT8    b : 1;      // ~B or ~B3
+        ND_UINT8    x : 1;      // ~X or ~X3
+        ND_UINT8    r : 1;      // ~R or ~R3
+
+        ND_UINT8    p : 2;      // p0, p1
+        ND_UINT8    x4 : 1;     // ~X4.
+        ND_UINT8    v : 4;      // ~v0, ~v1, ~v2, ~v3
+        ND_UINT8    w : 1;      // W
+
+        ND_UINT8    zero01 : 2; // 0
+        ND_UINT8    nf : 1;     // NF
+        ND_UINT8    v4 : 1;     // ~V4
+        ND_UINT8    nd : 1;     // ND
+        ND_UINT8    zero53 : 3; // 0
+    };
+} ND_EVEX_LEGACY;
+
+//
+// EVEX prefix for VEX promoted instructions.
+//
+typedef union _ND_EVEX_VEX
+{
+    ND_UINT8        Evex[4];
+    struct
+    {
+        ND_UINT8    op;         // 0x62
+
+        ND_UINT8    m : 3;      // m0, m1, m2. Indicates opcode map.
+        ND_UINT8    b4 : 1;     // B4 (repurposed from a hard-coded 0 bit).
+        ND_UINT8    rp : 1;     // ~R' or ~R4
+        ND_UINT8    b : 1;      // ~B or ~B3
+        ND_UINT8    x : 1;      // ~X or ~X3
+        ND_UINT8    r : 1;      // ~R or ~R3
+
+        ND_UINT8    p : 2;      // p0, p1
+        ND_UINT8    x4 : 1;     // ~X4.
+        ND_UINT8    v : 4;      // ~v0, ~v1, ~v2, ~v3
+        ND_UINT8    w : 1;      // W
+
+        ND_UINT8    zero01 : 2; // 0
+        ND_UINT8    nf : 1;     // NF
+        ND_UINT8    v4 : 1;     // ~V4
+        ND_UINT8    zero41 : 1; // 0
+        ND_UINT8    l : 1;      // L
+        ND_UINT8    zero62 : 2; // 0
+    };
+} ND_EVEX_VEX;
+
+//
+// EVEX prefix for conditional instructions.
+//
+typedef union _ND_EVEX_COND
+{
+    ND_UINT8        Evex[4];
+    struct
+    {
+        ND_UINT8    op;         // 0x62
+
+        ND_UINT8    m : 3;      // m0, m1, m2. Indicates opcode map.
+        ND_UINT8    b4 : 1;     // B4 (repurposed from a hard-coded 0 bit).
+        ND_UINT8    rp : 1;     // ~R' or ~R4
+        ND_UINT8    b : 1;      // ~B or ~B3
+        ND_UINT8    x : 1;      // ~X or ~X3
+        ND_UINT8    r : 1;      // ~R or ~R3
+
+        ND_UINT8    p : 2;      // p0, p1
+        ND_UINT8    x4 : 1;     // ~X4.
+        ND_UINT8    CF : 1;     // CF
+        ND_UINT8    ZF : 1;     // ZF
+        ND_UINT8    SF : 1;     // SF
+        ND_UINT8    OF : 1;     // OF
+        ND_UINT8    w : 1;      // W
+
+        ND_UINT8    sc : 4;     // SC
+        ND_UINT8    nd : 1;     // ND = 0
+        ND_UINT8    zero53 : 3; // 0
+    };
+} ND_EVEX_COND;
+
 
 //
 // Describes the CPUID leaf, sub-leaf, register & bit that indicate whether an instruction is supported or not.
@@ -1256,234 +1355,432 @@ typedef struct _ND_BRANCH_INFO
 } ND_BRANCH_INFO;
 
 
+// R4 + R3 + ModRM.reg. #UD if R4 != 0 outside APX mode.
+#define ND_DECODE_GPR_R(I)  ((ND_UINT8)(((I)->Exs.rp << 4) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// B4 + B3 + ModRM.rm. B4 not available (0) outside APX mode.
+#define ND_DECODE_GPR_M(I)  ((ND_UINT8)(((I)->Exs.b4 << 4) | ((I)->Exs.b << 3) | (I)->ModRm.rm))
+// B4 + B3 + Low 3 bits from opcode. B4 not available (0) outside APX mode.
+#define ND_DECODE_GPR_O(I)  ((ND_UINT8)(((I)->Exs.b4 << 4) | ((I)->Exs.b << 3) | ((I)->PrimaryOpCode & 0x7)))
+// V4 + XOP/VEX/EVEX.VVVV. #UD if V4 != 0 outside APX mode.
+#define ND_DECODE_GPR_V(I)  ((ND_UINT8)(((I)->Exs.vp << 4) | (I)->Exs.v))
+// B4 + B3 + Sib.base. B4 not available (0) outside APX mode.
+#define ND_DECODE_GPR_B(I)  ((ND_UINT8)(((I)->Exs.b4 << 4) | ((I)->Exs.b << 3) | (I)->Sib.base))
+// X4 + X3 + Sib.index. X4 not available (0) outside APX mode.
+#define ND_DECODE_GPR_X(I)  ((ND_UINT8)(((I)->Exs.x4 << 4) | ((I)->Exs.x << 3) | (I)->Sib.index))
 
-//
-// Describes a decoded instruction. All the possible information about the instruction is contained in this structure.
-// You don't have to call any other APIs to gather any more info about it.
-//
+// R4 + R3 + ModRM.reg. #UD if a CR other than CR0, CR2, CR3, CR4, CR8 encoded.
+#define ND_DECODE_CR_R(I)   ((ND_UINT8)(((I)->Exs.rp << 4) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// R4 + R3 + ModRM.reg. #UD if a DR >= 8.
+#define ND_DECODE_DR_R(I)   ((ND_UINT8)(((I)->Exs.rp << 4) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// R4 + R3 + ModRM.reg. #UD if a TR >= 8 (undocumented).
+#define ND_DECODE_TR_R(I)   ((ND_UINT8)(((I)->Exs.rp << 4) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// ModRM.reg. R4 & R3 ignored.
+#define ND_DECODE_SEG_R(I)  ((ND_UINT8)(I)->ModRm.reg)
+
+// ModRM.rm. B4 & B3 ignored.
+#define ND_DECODE_FPU_M(I)  ((ND_UINT8)(I)->ModRm.rm)
+// ModRM.reg. R4 & R3 ignored.
+#define ND_DECODE_MMX_R(I)  ((ND_UINT8)(I)->ModRm.reg)
+// ModRM.rm. B4 & B3 ignored.
+#define ND_DECODE_MMX_M(I)  ((ND_UINT8)(I)->ModRm.rm)
+
+// R4 + R3 + ModRM.reg. R4 useable only with EVEX (ignored with REX2).
+#define ND_DECODE_VEC_R(I)  ((ND_UINT8)(((I)->HasEvex ? ((I)->Exs.rp << 4) : 0) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// X3 + B3 + ModRM.rm. X3 useable only with EVEX (ignored with REX or REX2).
+#define ND_DECODE_VEC_M(I)  ((ND_UINT8)(((I)->HasEvex ? ((I)->Exs.x << 4) : 0) | ((I)->Exs.b << 3) | (I)->ModRm.rm))
+// V4 + XOP/VEX/EVEX.VVVV.
+#define ND_DECODE_VEC_V(I)  ((ND_UINT8)(((I)->Exs.vp << 4) | (I)->Exs.v))
+// V4 + X3 + Sib.inex. Used by VSIB.
+#define ND_DECODE_VEC_X(I)  ((ND_UINT8)(((I)->Exs.vp << 4) | ((I)->Exs.x << 3) | (I)->Sib.index))
+// Register in upper 4 bits of immediate.
+#define ND_DECODE_VEC_L(I)  ((ND_UINT8)(((I)->SseImmediate >> 4)))
+
+// R4 + R3 + ModRM.reg. #UD if R4 or R3 not 0.
+#define ND_DECODE_MSK_R(I)  ((ND_UINT8)(((I)->Exs.rp << 4) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// ModRM.rm. B4 & B3 ignored.
+#define ND_DECODE_MSK_M(I)  ((ND_UINT8)(I)->ModRm.rm)
+// XOP/VEX/EVEX.VVVV. EVEX.V4 will be 0 due to the encoding restrictions.
+#define ND_DECODE_MSK_V(I)  ((ND_UINT8)(I)->Exs.v)
+// EVEX.k.
+#define ND_DECODE_MSK_A(I)  ((ND_UINT8)(I)->Exs.k)
+
+// R3 + ModRM.reg. #UD if >= 4. Ignore R4.
+#define ND_DECODE_BND_R(I)  ((ND_UINT8)(((I)->Exs.r << 3) | (I)->ModRm.reg))
+// B3 + ModRM.rm. #UD if >= 4. Ignore B4.
+#define ND_DECODE_BND_M(I)  ((ND_UINT8)(((I)->Exs.b << 3) | (I)->ModRm.rm))
+
+// R4 + R3 + ModRM.reg. #UD if >= 8.
+#define ND_DECODE_TMM_R(I)  ((ND_UINT8)(((I)->Exs.rp << 4) | ((I)->Exs.r << 3) | (I)->ModRm.reg))
+// B4 + B3 + ModRM.reg. #UD if >= 8.
+#define ND_DECODE_TMM_M(I)  ((ND_UINT8)(((I)->Exs.b4 << 4) | ((I)->Exs.b << 3) | (I)->ModRm.rm))
+// V4 + VVVV. #UD if >= 8.
+#define ND_DECODE_TMM_V(I)  ((ND_UINT8)(((I)->Exs.vp << 4) | (I)->Exs.v))
+
+// B4 + B3 + Sib.base or ModRm.rm (if no SIB present). B4 not available (0) outside APX mode.
+#define ND_DECODE_MEM_B(I)  ((I)->HasSib ? ND_DECODE_GPR_B(I) : ND_DECODE_GPR_M(I))
+// X4 + X3 + Sib.index. X4 not available (0) outside APX mode.
+#define ND_DECODE_MEM_X(I)  ND_DECODE_GPR_X(I)
+// V4 + X3 + Sib.inex. Used by VSIB.
+#define ND_DECODE_MEM_V(I)  ND_DECODE_VEC_X(I)
+
+
+typedef struct _ND_COMPRESSED_FIELDS
+{
+    ND_UINT32       w : 1;              // REX/REX2/XOP/VEX/EVEX.W
+    ND_UINT32       r : 1;              // REX/REX2/XOP/VEX/EVEX.R3 (reg extension)
+    ND_UINT32       x : 1;              // REX/REX2/XOP/VEX/EVEX.X3 (index extension)
+    ND_UINT32       b : 1;              // REX/REX2/XOP/VEX/EVEX.B3 (base extension)
+    ND_UINT32       rp : 1;             // REX2/EVEX.R4 (reg extension, previously known as R')
+    ND_UINT32       x4 : 1;             // REX2/EVEX.X4 (index extension); also EVEX.U bit
+    ND_UINT32       b4 : 1;             // REX2/EVEX.B4 (base extension)
+    ND_UINT32       p : 2;              // XOP/VEX/EVEX.pp (embedded prefix)
+    ND_UINT32       m : 5;              // XOP/VEX/EVEX.mmmmm (decoding table)
+    ND_UINT32       l : 2;              // XOP/VEX.L or EVEX.L'L (vector length)
+    ND_UINT32       v : 4;              // XOP/VEX/EVEX.VVVV (additional operand)
+    ND_UINT32       vp : 1;             // EVEX.V4 (vvvv extension, previously known as V')
+    ND_UINT32       bm : 1;             // EVEX.b (embedded broadcast)
+    ND_UINT32       z : 1;              // EVEX.z (zero)
+    ND_UINT32       k : 3;              // EVEX.aaa (mask registers)
+    ND_UINT32       nd : 1;             // EVEX.ND (new data destination)
+    ND_UINT32       nf : 1;             // EVEX.NF (no-flags)
+    ND_UINT32       sc : 4;             // EVEX.SC0,SC1,SC2,SC3 (standard condition).
+} ND_COMMON_FIELDS;
+
+
+#define ND_INSTRUX_FIELDS_COMMON                                                                                    \
+    /* ND_CODE_*. Indicates disassembly mode. */                                                                    \
+    ND_UINT8            DefCode : 2;                                                                                \
+    /* ND_DATA_*. Indicates default data size.*/                                                                    \
+    ND_UINT8            DefData : 2;                                                                                \
+    /* ND_STACK_*. Indicates default stack pointer width. */                                                        \
+    ND_UINT8            DefStack : 2;                                                                               \
+    /* ND_ADDR_*. Indicates addressing mode. */                                                                     \
+    ND_UINT8            AddrMode : 2;                                                                               \
+    /* ND_OPSZ_*. Indicates operand mode/size. */                                                                   \
+    ND_UINT8            OpMode : 2;                                                                                 \
+    /* ND_OPSZ_*. Indicates effective operand mode/size. */                                                         \
+    ND_UINT8            EfOpMode : 2;                                                                               \
+    /* ND_VECM_*. Indicates vector length. Valid only for vector instructions. */                                   \
+    ND_UINT8            VecMode : 2;                                                                                \
+    /* ND_VECM_*. Indicates effective vector length. Valid only for vector instructions. */                         \
+    ND_UINT8            EfVecMode : 2;                                                                              \
+    /*  ND_ENCM_*. Indicates encoding mode. */                                                                      \
+    ND_UINT8            EncMode : 2;                                                                                \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved01 : 1;                                                                             \
+    /* ND_VEX_*.  Indicates the VEX mode, if any. Valid only if HasVex set. */                                      \
+    ND_UINT8            VexMode : 1;                                                                                \
+    /* ND_EVEX_*. Indicates EVEX extension, if any. Valid only if HasEvex set. */                                   \
+    ND_UINT8            EvexMode : 2;                                                                               \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved02 : 2;                                                                             \
+    /* The length of the instruction word. 2, 4 or 8. */                                                            \
+    ND_UINT8            WordLength : 4;                                                                             \
+    /* EVEX rounding mode, if present. One of ND_ROUNDING. */                                                       \
+    ND_UINT8            RoundingMode : 2;                                                                           \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved03 : 2;                                                                             \
+                                                                                                                    \
+    /* TRUE - REX is present. */                                                                                    \
+    ND_UINT8            HasRex : 1;                                                                                 \
+    /* TRUE - REX2 is present. */                                                                                   \
+    ND_UINT8            HasRex2 : 1;                                                                                \
+    /* TRUE - VEX is present. */                                                                                    \
+    ND_UINT8            HasVex : 1;                                                                                 \
+    /* TRUE - XOP is present. */                                                                                    \
+    ND_UINT8            HasXop : 1;                                                                                 \
+    /* TRUE - EVEX is present. */                                                                                   \
+    ND_UINT8            HasEvex : 1;                                                                                \
+    /* TRUE - 0x66 present. */                                                                                      \
+    ND_UINT8            HasOpSize : 1;                                                                              \
+    /* TRUE - 0x67 present. */                                                                                      \
+    ND_UINT8            HasAddrSize : 1;                                                                            \
+    /* TRUE - 0xF0 present. */                                                                                      \
+    ND_UINT8            HasLock : 1;                                                                                \
+    /* TRUE - 0xF2 present. */                                                                                      \
+    ND_UINT8            HasRepnzXacquireBnd : 1;                                                                    \
+    /* TRUE - 0xF3 present. */                                                                                      \
+    ND_UINT8            HasRepRepzXrelease : 1;                                                                     \
+    /* TRUE - segment override present. */                                                                          \
+    ND_UINT8            HasSeg : 1;                                                                                 \
+    /* TRUE - we have valid MODRM. */                                                                               \
+    ND_UINT8            HasModRm : 1;                                                                               \
+    /* TRUE - we have valid SIB. */                                                                                 \
+    ND_UINT8            HasSib : 1;                                                                                 \
+    /* TRUE - the instruction has displacement. */                                                                  \
+    ND_UINT8            HasDisp : 1;                                                                                \
+    /* TRUE - the instruction contains a direct far address (ie, CALL far 0x9A) */                                  \
+    ND_UINT8            HasAddr : 1;                                                                                \
+    /* TRUE - the instruction contains a direct near address (ie, CALL far 0x9A) */                                 \
+    ND_UINT8            HasAddrNear : 1;                                                                            \
+    /* TRUE - the instruction contains a moffset (ie, MOV al, [mem], 0xA0) */                                       \
+    ND_UINT8            HasMoffset : 1;                                                                             \
+    /* TRUE - the instruction contains a relative offset (ie, Jcc 0x7x). */                                         \
+    ND_UINT8            HasRelOffs : 1;                                                                             \
+    /* TRUE - immediate present. */                                                                                 \
+    ND_UINT8            HasImm1 : 1;                                                                                \
+    /* TRUE - second immediate present. */                                                                          \
+    ND_UINT8            HasImm2 : 1;                                                                                \
+    /* TRUE - SSE immediate that encodes additional registers is present. */                                        \
+    ND_UINT8            HasSseImm : 1;                                                                              \
+    /* TRUE - the instruction uses compressed displacement. */                                                      \
+    ND_UINT8            HasCompDisp : 1;                                                                            \
+    /* TRUE - the instruction uses broadcast addressing. */                                                         \
+    ND_UINT8            HasBroadcast : 1;                                                                           \
+    /* TRUE - the instruction has mask. */                                                                          \
+    ND_UINT8            HasMask : 1;                                                                                \
+    /* TRUE - the instruction uses zeroing. */                                                                      \
+    ND_UINT8            HasZero : 1;                                                                                \
+    /* TRUE - the instruction has embedded rounding. */                                                             \
+    ND_UINT8            HasEr : 1;                                                                                  \
+    /* TRUE - the instruction has SAE. */                                                                           \
+    ND_UINT8            HasSae : 1;                                                                                 \
+    /* TRUE - the instruction uses New-Data Destination. */                                                         \
+    ND_UINT8            HasNd : 1;                                                                                  \
+    /* TRUE - the instruction uses NoFlags update. */                                                               \
+    ND_UINT8            HasNf : 1;                                                                                  \
+    /* TRUE - the instruction has ZeroUpper. */                                                                     \
+    ND_UINT8            HasZu : 1;                                                                                  \
+    /* TRUE - the instruction has Default Flags Value. */                                                           \
+    ND_UINT8            HasDfv : 1;                                                                                 \
+    /* TRUE - the instruction ignores embedded rounding. */                                                         \
+    ND_UINT8            HasIgnEr : 1;                                                                               \
+                                                                                                                    \
+    /* 0x66 is mandatory prefix. Does not behave as size-changing prefix. */                                        \
+    ND_UINT8            HasMandatory66 : 1;                                                                         \
+    /* 0x66 is mandatory prefix. Does not behave as REP prefix. */                                                  \
+    ND_UINT8            HasMandatoryF2 : 1;                                                                         \
+    /* 0x66 is mandatory prefix. Does not behave as REP prefix. */                                                  \
+    ND_UINT8            HasMandatoryF3 : 1;                                                                         \
+    /* TRUE - LOCK is present & used. */                                                                            \
+    ND_UINT8            IsLockEnabled : 1;                                                                          \
+    /* TRUE - REP is present & used. */                                                                             \
+    ND_UINT8            IsRepEnabled : 1;                                                                           \
+    /* TRUE - REPZ/REPNZ is present & used. */                                                                      \
+    ND_UINT8            IsRepcEnabled : 1;                                                                          \
+    /* TRUE - the instruction is XACQUIRE enabled. */                                                               \
+    ND_UINT8            IsXacquireEnabled : 1;                                                                      \
+    /* TRUE - the instruction is XRELEASE enabled.*/                                                                \
+    ND_UINT8            IsXreleaseEnabled : 1;                                                                      \
+    /* TRUE - branch hints valid & used. */                                                                         \
+    ND_UINT8            IsBhintEnabled : 1;                                                                         \
+    /* // TRUE - BND prefix valid & used. */                                                                        \
+    ND_UINT8            IsBndEnabled : 1;                                                                           \
+    /* TRUE - DNT prefix valid & used. */                                                                           \
+    ND_UINT8            IsDntEnabled : 1;                                                                           \
+    /* TRUE - the instruction is REPed up to RCX times. */                                                          \
+    ND_UINT8            IsRepeated : 1;                                                                             \
+    /* TRUE - this is an indirect CALL/JMP that is CET tracked. */                                                  \
+    ND_UINT8            IsCetTracked : 1;                                                                           \
+    /* TRUE - the instruction uses RIP relative addressing. */                                                      \
+    ND_UINT8            IsRipRelative : 1;                                                                          \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved11 : 2;                                                                             \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved12 : 8;                                                                             \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved13 : 8;                                                                             \
+                                                                                                                    \
+    /* The total number of bytes consumed by prefixes. */                                                           \
+    ND_UINT8            PrefLength : 4;                                                                             \
+    /* Number of opcode bytes. Max 3. */                                                                            \
+    ND_UINT8            OpLength : 2;                                                                               \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved20 : 2;                                                                             \
+    /* Displacement length, in bytes. Maximum 4.*/                                                                  \
+    ND_UINT8            DispLength : 4;                                                                             \
+    /* Absolute address length, in bytes. Maximum 8 bytes. */                                                       \
+    ND_UINT8            AddrLength : 4;                                                                             \
+    /* Memory offset length, in bytes. Maximum 8 bytes. */                                                          \
+    ND_UINT8            MoffsetLength : 4;                                                                          \
+    /* First immediate length, in bytes. Maximum 8 bytes. */                                                        \
+    ND_UINT8            Imm1Length : 4;                                                                             \
+    /* Second immediate length, in bytes. Maximum 1 byte. */                                                        \
+    ND_UINT8            Imm2Length : 1;                                                                             \
+    /* Relative offset length, in bytes. Maximum 4 bytes. */                                                        \
+    ND_UINT8            RelOffsLength : 3;                                                                          \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved21 : 4;                                                                             \
+                                                                                                                    \
+    /* The offset of the first opcode, inside the instruction. */                                                   \
+    ND_UINT8            OpOffset : 4;                                                                               \
+    /* The offset of the nominal opcode, inside the instruction. */                                                 \
+    ND_UINT8            MainOpOffset : 4;                                                                           \
+    /* The offset of the displacement, inside the instruction */                                                    \
+    ND_UINT8            DispOffset : 4;                                                                             \
+    /* The offset of the hard-coded address. */                                                                     \
+    ND_UINT8            AddrOffset : 4;                                                                             \
+    /* The offset of the absolute address, inside the instruction */                                                \
+    ND_UINT8            MoffsetOffset : 4;                                                                          \
+    /* The offset of the immediate, inside the instruction */                                                       \
+    ND_UINT8            Imm1Offset : 4;                                                                             \
+    /* The offset of the second immediate, if any, inside the instruction */                                        \
+    ND_UINT8            Imm2Offset : 4;                                                                             \
+    /* The offset of the relative offset used in instruction. */                                                    \
+    ND_UINT8            RelOffsOffset : 4;                                                                          \
+                                                                                                                    \
+    /* The offset of the SSE immediate, if any, inside the instruction. */                                          \
+    ND_UINT8            SseImmOffset : 4;                                                                           \
+    /* The offset of the mod rm byte inside the instruction, if any. SIB, if any, is the next byte. */              \
+    ND_UINT8            ModRmOffset : 4;                                                                            \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved31 : 8;                                                                             \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved32 : 8;                                                                             \
+    /* Reserved for padding/future use. */                                                                          \
+    ND_UINT8            Reserved33 : 8;                                                                             \
+                                                                                                                    \
+    /* The last rep/repz/repnz prefix. 0 if none. */                                                                \
+    ND_UINT8            Rep;                                                                                        \
+    /* The last segment override prefix. 0 if none. FS/GS if 64 bit. */                                             \
+    ND_UINT8            Seg;                                                                                        \
+    /* ModRM byte. */                                                                                               \
+    ND_MODRM            ModRm;                                                                                      \
+    /* SIB byte. */                                                                                                 \
+    ND_SIB              Sib;                                                                                        \
+    union {                                                                                                         \
+        /* REX prefix. */                                                                                           \
+        ND_REX          Rex;                                                                                        \
+        /* REX2 prefix. */                                                                                          \
+        ND_REX2         Rex2;                                                                                       \
+        /* VEX 2 prefix. */                                                                                         \
+        ND_VEX2         Vex2;                                                                                       \
+        /* VEX 3 prefix. */                                                                                         \
+        ND_VEX3         Vex3;                                                                                       \
+        /* XOP prefix. */                                                                                           \
+        ND_XOP          Xop;                                                                                        \
+        /* EVEX prefix. */                                                                                          \
+        ND_EVEX         Evex;                                                                                       \
+        /* EVEX prefix for promoted legacy instructions. */                                                         \
+        ND_EVEX_LEGACY  EvexLegacy;                                                                                 \
+        /* EVEX prefix for promoted VEX instructions. */                                                            \
+        ND_EVEX_VEX     EvexVex;                                                                                    \
+        /* EVEX prefix for conditional instructions. */                                                             \
+        ND_EVEX_COND    EvexCond;                                                                                   \
+    };                                                                                                              \
+    /* An Address, Moffset, Displacement or RelativeOffset cannot be present at the same time. */                   \
+    union {                                                                                                         \
+        /* Displacement. Max 4 bytes. Used in ModRM instructions. */                                                \
+        ND_UINT32       Displacement;                                                                               \
+        /* Relative offset, used for branches. Max 4 bytes. */                                                      \
+        ND_UINT32       RelativeOffset;                                                                             \
+        /* Offset. Used by 'O' operands. It's an absolute address. */                                               \
+        ND_UINT64       Moffset;                                                                                    \
+        /* Target64 near address. */                                                                                \
+        ND_UINT64       AddressNear;                                                                                \
+        /* seg:offset far address. */                                                                               \
+        struct {                                                                                                    \
+            ND_UINT32   Ip;                                                                                         \
+            ND_UINT16   Cs;                                                                                         \
+        } Address;                                                                                                  \
+    };                                                                                                              \
+    /* Can be 8 bytes on x64. */                                                                                    \
+    ND_UINT64           Immediate1;                                                                                 \
+    union {                                                                                                         \
+        /* For enter, mainly. Can only be 1 byte. */                                                                \
+        ND_UINT8        Immediate2;                                                                                 \
+        /* This immediate actually selects a register. */                                                           \
+        ND_UINT8        SseImmediate;                                                                               \
+    };                                                                                                              \
+    union {                                                                                                         \
+        /* Main opcode. */                                                                                          \
+        ND_UINT8        PrimaryOpCode;                                                                              \
+        /* Condition code. Valid only if ND_FLAG_COND is set in Attributes. */                                      \
+        ND_UINT8        Condition : 4;                                                                              \
+    };                                                                                                              \
+    /* Number of operands (total). */                                                                               \
+    ND_UINT8            OperandsCount : 4;                                                                          \
+    /* Number of explicit operands. Use this if you want to ignore implicit operands (stack, flags, etc.) */        \
+    ND_UINT8            ExpOperandsCount : 4;                                                                       \
+    /* 1-15 valid. Instructions longer than 15 bytes will cause #GP. */                                             \
+    ND_UINT8            Length;                                                                                     \
+    /* This structures contains the fields extracted from either REX, REX2, XOP, VEX, or EVEX fields. */            \
+    /* They're globally placed here, in order to avoid testing for each kind of prefix each time. */                \
+    /* Instead, one can use the different fields directly from here, regardless the actual encoding mode. */        \
+    ND_COMMON_FIELDS    Exs;                                                                                        \
+    /* Instruction DB specification (internal index). */                                                            \
+    ND_UINT16           Idbe;                                                                                       \
+    /* One of the ND_INS_* */                                                                                       \
+    ND_INS_CLASS        Instruction;
+
+
+#define ND_INSTRUX_FIELDS_EXTENDED                                                                                  \
+    /* Instruction operands. */                                                                                     \
+    ND_OPERAND          Operands[ND_MAX_OPERAND];                                                                   \
+    /* A combination of ND_FLAG_*. */                                                                               \
+    ND_UINT64           Attributes;                                                                                 \
+    /* One of the ND_CAT_* */                                                                                       \
+    ND_INS_CATEGORY     Category;                                                                                   \
+    /* One of the ND_SET_* */                                                                                       \
+    ND_INS_SET          IsaSet;                                                                                     \
+    /* CPUID support flag. */                                                                                       \
+    ND_CPUID_FLAG       CpuidFlag;                                                                                  \
+    /* Valid CPU modes for the instruction. */                                                                      \
+    ND_VALID_MODES      ValidModes;                                                                                 \
+    /* Indicates which prefixes are valid for this instruction. */                                                  \
+    ND_VALID_PREFIXES   ValidPrefixes;                                                                              \
+    /* What decorators are accepted by the instruction.*/                                                           \
+    ND_VALID_DECORATORS ValidDecorators;                                                                            \
+    /* CS access mode (read/write). Includes only implicit CS accesses. */                                          \
+    ND_UINT8            CsAccess;                                                                                   \
+    /* RIP access mode (read/write). */                                                                             \
+    ND_UINT8            RipAccess;                                                                                  \
+    /* RFLAGS access mode (read/write), as per the entire register. */                                              \
+    ND_UINT8            RflAccess;                                                                                  \
+    /* Memory access mode (read/write, including stack or shadow stack). */                                         \
+    ND_UINT8            MemoryAccess;                                                                               \
+    /* Stack access mode (push/pop). */                                                                             \
+    ND_UINT8            StackAccess;                                                                                \
+    /* Number of words accessed on/from the stack. 0-15. */                                                         \
+    ND_UINT8            StackWords;                                                                                 \
+    /* Branch information. */                                                                                       \
+    ND_BRANCH_INFO      BranchInfo;                                                                                 \
+    /* FPU status word C0-C3 bits access. Valid only for FPU instructions! */                                       \
+    ND_FPU_FLAGS        FpuFlagsAccess;                                                                             \
+    /* SIMD Floating-Point Exceptions. Valid only for SIMD instructions! */                                         \
+    ND_SIMD_EXCEPTIONS  SimdExceptions;                                                                             \
+    /* Exception type. One of ND_EX_TYPE. */                                                                        \
+    ND_UINT8            ExceptionType;                                                                              \
+    /* EVEX tuple type, if EVEX. One of ND_TUPLE.*/                                                                 \
+    ND_UINT8            TupleType;                                                                                  \
+    struct {                                                                                                        \
+        /* Tested flags. */                                                                                         \
+        ND_RFLAGS       Tested;                                                                                     \
+        /* Modified (according to the result) flags. */                                                             \
+        ND_RFLAGS       Modified;                                                                                   \
+        /* Flags that are always set to 1. */                                                                       \
+        ND_RFLAGS       Set;                                                                                        \
+        /* Flags that are always cleared to 0. */                                                                   \
+        ND_RFLAGS       Cleared;                                                                                    \
+        /* Undefined flags. */                                                                                      \
+        ND_RFLAGS       Undefined;                                                                                  \
+    } FlagsAccess;                                                                                                  \
+    /* The entire instruction. */                                                                                   \
+    ND_UINT8            InstructionBytes[ND_MAX_INSTRUCTION_LENGTH];                                                \
+    /* Opcode bytes - escape codes and main opcode. */                                                              \
+    ND_UINT8            OpCodeBytes[3];                                                                             \
+    /* ND_VEND_*. Indicates vendor mode. */                                                                         \
+    ND_UINT8            VendMode : 4;                                                                               \
+    /* ND_FEAT_*. Indicates which features are enabled. */                                                          \
+    ND_UINT32           FeatMode;                                                                                   
+
+
 typedef struct _INSTRUX
 {
-    ND_UINT8            DefCode:2;                  // ND_CODE_*. Indicates disassembly mode.
-    ND_UINT8            DefData:2;                  // ND_DATA_*. Indicates default data size.
-    ND_UINT8            DefStack:2;                 // ND_STACK_*. Indicates default stack pointer width.
-    ND_UINT8            AddrMode:2;                 // ND_ADDR_*. Indicates addressing mode.
-    ND_UINT8            OpMode:2;                   // ND_OPSZ_*. Indicates operand mode/size.
-    ND_UINT8            EfOpMode:2;                 // ND_OPSZ_*. Indicates effective operand mode/size.
-    ND_UINT8            VecMode:2;                  // ND_VECM_*. Indicates vector length. Valid only for vector instructions.
-    ND_UINT8            EfVecMode:2;                // ND_VECM_*. Indicates effective vector length. Valid only for vector instructions.
-    ND_UINT8            EncMode:4;                  // ND_ENCM_*. Indicates encoding mode.
-    ND_UINT8            VexMode:2;                  // ND_VEX_*.  Indicates the VEX mode, if any. Valid only if HasVex set.
-    ND_UINT8            EvexMode:4;                 // ND_EVEX_*. Indicates EVEX extension, if any. Valid only if HasEvex set.
-    ND_UINT8            VendMode:4;                 // ND_VEND_*. Indicates vendor mode.
-    ND_UINT8            FeatMode;                   // ND_FEAT_*. Indicates which features are enabled.
-    
-    // Present prefixes. Note that even if a prefix is marked as being present in the encoding, it does not necessary mean
-    // that the prefix is actually used. Check Is*Enabled fields to check if the prefix is enabled & used. In some cases,
-    // prefixes are ignored, even if present.
-    ND_BOOL             HasRex:1;                   // TRUE - REX is present.
-    ND_BOOL             HasRex2:1;                  // TRUE - REX2 is present.
-    ND_BOOL             HasVex:1;                   // TRUE - VEX is present.
-    ND_BOOL             HasXop:1;                   // TRUE - XOP is present.
-    ND_BOOL             HasEvex:1;                  // TRUE - EVEX is present.
-    ND_BOOL             HasOpSize:1;                // TRUE - 0x66 present.
-    ND_BOOL             HasAddrSize:1;              // TRUE - 0x67 present.
-    ND_BOOL             HasLock:1;                  // TRUE - 0xF0 present.
-    ND_BOOL             HasRepnzXacquireBnd:1;      // TRUE - 0xF2 present.
-    ND_BOOL             HasRepRepzXrelease:1;       // TRUE - 0xF3 present.
-    ND_BOOL             HasSeg:1;                   // TRUE - segment override present.
-
-    // Present encoding components.
-    ND_BOOL             HasModRm:1;                 // TRUE - we have valid MODRM.
-    ND_BOOL             HasSib:1;                   // TRUE - we have valid SIB.
-    ND_BOOL             HasDisp:1;                  // TRUE - the instruction has displacement.
-    ND_BOOL             HasAddr:1;                  // TRUE - the instruction contains a direct far address (ie, CALL far 0x9A)
-    ND_BOOL             HasAddrNear:1;              // TRUE - the instruction contains a direct near address (ie, CALL far 0x9A)
-    ND_BOOL             HasMoffset:1;               // TRUE - the instruction contains a moffset (ie, MOV al, [mem], 0xA0)
-    ND_BOOL             HasRelOffs:1;               // TRUE - the instruction contains a relative offset (ie, Jcc 0x7x).
-    ND_BOOL             HasImm1:1;                  // TRUE - immediate present.
-    ND_BOOL             HasImm2:1;                  // TRUE - second immediate present.
-    ND_BOOL             HasSseImm:1;                // TRUE - SSE immediate that encodes additional registers is present.
-
-    // Present decorators & EVEX info.
-    ND_BOOL             HasCompDisp:1;              // TRUE - the instruction uses compressed displacement.
-    ND_BOOL             HasBroadcast:1;             // TRUE - the instruction uses broadcast addressing.
-    ND_BOOL             HasMask:1;                  // TRUE - the instruction has mask.
-    ND_BOOL             HasZero:1;                  // TRUE - the instruction uses zeroing.
-    ND_BOOL             HasEr:1;                    // TRUE - the instruction has embedded rounding.
-    ND_BOOL             HasSae:1;                   // TRUE - the instruction has SAE.
-    ND_BOOL             HasNd:1;                    // TRUE - the instruction uses New-Data Destination.
-    ND_BOOL             HasNf:1;                    // TRUE - the instruction uses NoFlags update.
-    ND_BOOL             HasZu:1;                    // TRUE - the instruction has ZeroUpper.
-    ND_BOOL             HasIgnEr:1;                 // TRUE - the instruction ignores embedded rounding.
-
-    // Mandatory prefixes.
-    ND_BOOL             HasMandatory66:1;           // 0x66 is mandatory prefix. Does not behave as size-changing prefix.
-    ND_BOOL             HasMandatoryF2:1;           // 0x66 is mandatory prefix. Does not behave as REP prefix.
-    ND_BOOL             HasMandatoryF3:1;           // 0x66 is mandatory prefix. Does not behave as REP prefix.
-
-    // Prefix activation. Use these fields to check whether a prefix is present & active for the instruction.
-    ND_BOOL             IsLockEnabled:1;            // TRUE - LOCK is present & used.
-    ND_BOOL             IsRepEnabled:1;             // TRUE - REP is present & used.
-    ND_BOOL             IsRepcEnabled:1;            // TRUE - REPZ/REPNZ is present & used.
-    ND_BOOL             IsXacquireEnabled:1;        // TRUE - the instruction is XACQUIRE enabled.
-    ND_BOOL             IsXreleaseEnabled:1;        // TRUE - the instruction is XRELEASE enabled.
-    ND_BOOL             IsBhintEnabled:1;           // TRUE - branch hints valid & used.
-    ND_BOOL             IsBndEnabled:1;             // TRUE - BND prefix valid & used.
-    ND_BOOL             IsDntEnabled:1;             // TRUE - DNT prefix valid & used.
-    ND_BOOL             IsRepeated:1;               // TRUE - the instruction is REPed up to RCX times.
-    ND_BOOL             IsCetTracked:1;             // TRUE - this is an indirect CALL/JMP that is CET tracked.
-
-    // Misc.
-    ND_UINT8            IsRipRelative:1;            // TRUE - the instruction uses RIP relative addressing.
-    ND_UINT8            RoundingMode:2;             // EVEX rounding mode, if present. One of ND_ROUNDING.
-
-    // Instruction components lengths. Will be 0 if the given field is not present.
-    ND_UINT8            Length;                     // 1-15 valid. Instructions longer than 15 bytes will cause #GP.
-    ND_UINT8            WordLength:4;               // The length of the instruction word. 2, 4 or 8.
-    ND_UINT8            StackWords:4;               // Number of words accessed on/from the stack. 0-15.
-
-    ND_UINT8            PrefLength:4;               // The total number of bytes consumed by prefixes. This will also be 
-                                                    // the offset to the first opcode. The primary opcode will always be 
-                                                    // the last one, so at offset PrefixesLength + OpcodeLength - 1
-    ND_UINT8            OpLength:4;                 // Number of opcode bytes. Max 3.
-    ND_UINT8            DispLength:4;               // Displacement length, in bytes. Maximum 4.
-    ND_UINT8            AddrLength:4;               // Absolute address length, in bytes. Maximum 8 bytes.
-    ND_UINT8            MoffsetLength:4;            // Memory offset length, in bytes. Maximum 8 bytes.
-    ND_UINT8            Imm1Length:4;               // First immediate length, in bytes. Maximum 8 bytes.
-    ND_UINT8            Imm2Length:4;               // Second immediate length, in bytes. Maximum 1 byte.
-    ND_UINT8            RelOffsLength:4;            // Relative offset length, in bytes. Maximum 4 bytes.
-
-    // Instruction components offsets. Will be 0 if the given field is not present. Prefixes ALWAYS start at offset 0.
-    ND_UINT8            OpOffset:4;                 // The offset of the first opcode, inside the instruction.
-    ND_UINT8            MainOpOffset:4;             // The offset of the nominal opcode, inside the instruction.
-    ND_UINT8            DispOffset:4;               // The offset of the displacement, inside the instruction
-    ND_UINT8            AddrOffset:4;               // The offset of the hard-coded address.
-    ND_UINT8            MoffsetOffset:4;            // The offset of the absolute address, inside the instruction
-    ND_UINT8            Imm1Offset:4;               // The offset of the immediate, inside the instruction
-    ND_UINT8            Imm2Offset:4;               // The offset of the second immediate, if any, inside the instruction
-    ND_UINT8            RelOffsOffset:4;            // The offset of the relative offset used in instruction.
-    ND_UINT8            SseImmOffset:4;             // The offset of the SSE immediate, if any, inside the instruction.
-    ND_UINT8            ModRmOffset:4;              // The offset of the mod rm byte inside the instruction, if any.
-                                                    // If SIB is also present, it will always be at ModRmOffset + 1.
-
-    // This structures contains the fields extracted from either REX, REX2, XOP, VEX, or EVEX fields. 
-    // They're globally placed here, in order to avoid testing for each kind of prefix each time. 
-    // Instead, one can use the different fields directly from here, regardless the actual encoding mode.
-    struct
-    {
-        ND_UINT32       w:1;                        // REX/REX2/XOP/VEX/EVEX.W
-        ND_UINT32       r:1;                        // REX/REX2/XOP/VEX/EVEX.R3 (reg extension)
-        ND_UINT32       x:1;                        // REX/REX2/XOP/VEX/EVEX.X3 (index extension)
-        ND_UINT32       b:1;                        // REX/REX2/XOP/VEX/EVEX.B3 (base extension)
-        ND_UINT32       rp:1;                       // REX2/EVEX.R4 (reg extension, previously known as R')
-        ND_UINT32       x4:1;                       // REX2/EVEX.X4 (index extension)
-        ND_UINT32       b4:1;                       // REX2/EVEX.B4 (base extension)
-        ND_UINT32       p:2;                        // XOP/VEX/EVEX.pp (embedded prefix)
-        ND_UINT32       m:5;                        // XOP/VEX/EVEX.mmmmm (decoding table)
-        ND_UINT32       l:2;                        // XOP/VEX.L or EVEX.L'L (vector length)
-        ND_UINT32       v:4;                        // XOP/VEX/EVEX.VVVV (additional operand)
-        ND_UINT32       vp:1;                       // EVEX.V4 (vvvv extension, previously known as V')
-        ND_UINT32       bm:1;                       // EVEX.b (embedded broadcast)
-        ND_UINT32       z:1;                        // EVEX.z (zero)
-        ND_UINT32       k:3;                        // EVEX.aaa (mask registers)
-        ND_UINT32       nd:1;                       // EVEX.ND (new data destination)
-        ND_UINT32       nf:1;                       // EVEX.NF (no-flags)
-        ND_UINT32       sc:4;                       // EVEX.SC0,SC1,SC2,SC3 (standard condition).
-    } Exs;
-
-    // Raw instruction components.
-    ND_UINT8            Rep;                        // The last rep/repz/repnz prefix. 0 if none.
-    ND_UINT8            Seg;                        // The last segment override prefix. 0 if none. FS/GS if 64 bit.
-    ND_MODRM            ModRm;                      // ModRM byte.
-    ND_SIB              Sib;                        // SIB byte.
-
-    union
-    {
-        ND_REX          Rex;                        // REX prefix.
-        ND_REX2         Rex2;                       // REX2 prefix.
-        ND_VEX2         Vex2;                       // VEX 2 prefix.
-        ND_VEX3         Vex3;                       // VEX 3 prefix.
-        ND_XOP          Xop;                        // XOP prefix.
-        ND_EVEX         Evex;                       // EVEX prefix.
-    };
-
-    // An Address, Moffset, Displacement or RelativeOffset cannot be present at the same time.
-    union
-    {
-        ND_UINT32       Displacement;               // Displacement. Max 4 bytes. Used in ModRM instructions.
-        ND_UINT32       RelativeOffset;             // Relative offset, used for branches. Max 4 bytes.
-        ND_UINT64       Moffset;                    // Offset. Used by 'O' operands. It's an absolute address.
-        ND_UINT64       AddressNear;                // target64 near address.
-        struct
-        {
-            ND_UINT32   Ip;
-            ND_UINT16   Cs;
-        } Address;                                  // seg:offset far address.
-    };
-    ND_UINT64           Immediate1;                 // Can be 8 bytes on x64.
-    union
-    {
-        ND_UINT8        Immediate2;                 // For enter, mainly. Can only be 1 byte.
-        ND_UINT8        SseImmediate;               // This immediate actually selects a register.
-    };
-
-    ND_UINT8            OperandsCount:4;            // Number of operands (total).
-    ND_UINT8            ExpOperandsCount:4;         // Number of explicit operands. Use this if you want to ignore
-                                                    // implicit operands such as stack, flags, etc.
-    ND_OPERAND          Operands[ND_MAX_OPERAND];   // Instruction operands.
-
-    // SIMD/EVEX information.
-    ND_SIMD_EXCEPTIONS  SimdExceptions;             // SIMD Floating-Point Exceptions. Valid only for SIMD instructions!
-    ND_UINT8            ExceptionType;              // Exception type. One of ND_EX_TYPE.
-    ND_UINT8            TupleType;                  // EVEX tuple type, if EVEX. One of ND_TUPLE.
-
-    // As extracted from the operands themselves.
-    ND_UINT8            CsAccess;                   // CS access mode (read/write). Includes only implicit CS accesses.
-    ND_UINT8            RipAccess;                  // RIP access mode (read/write).
-    ND_UINT8            RflAccess;                  // RFLAGS access mode (read/write), as per the entire register.
-    ND_UINT8            StackAccess;                // Stack access mode (push/pop).
-    ND_UINT8            MemoryAccess;               // Memory access mode (read/write, including stack or shadow stack).
-    ND_FPU_FLAGS        FpuFlagsAccess;             // FPU status word C0-C3 bits access. Valid only for FPU instructions!
-    ND_BRANCH_INFO      BranchInfo;                 // Branch information.
-
-    struct
-    {
-        ND_RFLAGS       Tested;                     // Tested flags.
-        ND_RFLAGS       Modified;                   // Modified (according to the result) flags.
-        ND_RFLAGS       Set;                        // Flags that are always set to 1.
-        ND_RFLAGS       Cleared;                    // Flags that are always cleared to 0.
-        ND_RFLAGS       Undefined;                  // Undefined flags.
-    } FlagsAccess;
-
-    // Stored inside the instruction entry as well. These are specific for an instruction and do not depend on
-    // encoding. Use the flags definitions (ND_FLAG_*, ND_PREF_*, ND_DECO_*, ND_EXOP_*) to access specific bits.
-    ND_UINT64           Attributes;                 // Instruction attributes/flags. A collection of ND_FLAG_*.
-
-    // Instruction metadata.
-    ND_INS_CLASS        Instruction;                // One of the ND_INS_*
-    ND_INS_CATEGORY     Category;                   // One of the ND_CAT_*
-    ND_INS_SET          IsaSet;                     // One of the ND_SET_*
-
-    ND_CPUID_FLAG       CpuidFlag;                  // CPUID support flag.
-    ND_VALID_MODES      ValidModes;                 // Valid CPU modes for the instruction.
-    ND_VALID_PREFIXES   ValidPrefixes;              // Indicates which prefixes are valid for this instruction.
-    ND_VALID_DECORATORS ValidDecorators;            // What decorators are accepted by the instruction.
-
-    // Instruction bytes & mnemonic.
-    union
-    {
-        ND_UINT8        PrimaryOpCode;              // Main opcode.
-        ND_UINT8        Condition:4;                // Condition code. Valid only if ND_FLAG_COND is set in Attributes.
-                                                    // Aliased over low 4 bits inside the main opcode.
-    };
+    ND_INSTRUX_FIELDS_COMMON
+    ND_INSTRUX_FIELDS_EXTENDED
 
 #ifndef BDDISASM_NO_MNEMONIC
-    const char          *Mnemonic;                  // Instruction mnemonic.
+    const char          *Mnemonic;
 #endif // !BDDISASM_NO_MNEMONIC
-    ND_UINT8            InstructionBytes[16];       // The entire instruction.
-    ND_UINT8            OpCodeBytes[3];             // Opcode bytes - escape codes and main opcode.
 
 } INSTRUX, *PINSTRUX;
+
+
+typedef struct INSTRUX_MINI
+{
+    ND_INSTRUX_FIELDS_COMMON
+} INSTRUX_MINI, *PINSTRUX_MINI;
 
 
 
@@ -1493,14 +1790,15 @@ typedef struct _INSTRUX
 //
 typedef struct _ND_CONTEXT
 {
-    ND_UINT64   DefCode : 4;        // Decode mode - one of the ND_CODE_* values.
-    ND_UINT64   DefData : 4;        // Data mode - one of the ND_DATA_* values.
-    ND_UINT64   DefStack : 4;       // Stack mode - one of the ND_STACK_* values.
+    ND_UINT64   DefCode : 2;        // Decode mode - one of the ND_CODE_* values.
+    ND_UINT64   DefData : 2;        // Data mode - one of the ND_DATA_* values.
+    ND_UINT64   DefStack : 2;       // Stack mode - one of the ND_STACK_* values.
     ND_UINT64   VendMode : 4;       // Prefered vendor - one of the ND_VEND_* values.
-    ND_UINT64   FeatMode : 8;       // Supported features mask. A combination of ND_FEAT_* values.
-    ND_UINT64   Reserved : 40;      // Reserved for future use.
+    ND_UINT64   Reserved : 54;      // Reserved for future use.
     ND_UINT32   Options;            // Decoding options. A combination of ND_OPTION_* values.
+    ND_UINT32   FeatMode;           // Enabled instruction extensions that would otherwise be NOP.
 } ND_CONTEXT;
+
 
 /// Decode only explicit instruction operands. If this options is set, implicit operands, such as RIP or RFLAGS
 /// will not be decoded. As a consequence, the following fields inside INSTRUX will be undefined:
@@ -1514,74 +1812,10 @@ typedef struct _ND_CONTEXT
 // has been 0-initialized, or if the caller explictly zeroed it before each decode call.
 #define ND_OPTION_SKIP_ZERO_INSTRUX             0x00000002
 
-
-//
-// Operands access map. Contains every register except for MSR & XCR, includes memory, flags, RIP, stack.
-// Use NdGetFullAccessMap to populate this structure.
-//
-typedef struct _ND_ACCESS_MAP
-{
-    ND_UINT8    RipAccess;
-    ND_UINT8    FlagsAccess;
-    ND_UINT8    StackAccess;
-    ND_UINT8    MemAccess;
-    ND_UINT8    MxcsrAccess;
-    ND_UINT8    PkruAccess;
-    ND_UINT8    SspAccess;
-    ND_UINT8    GprAccess[ND_MAX_GPR_REGS];
-    ND_UINT8    SegAccess[ND_MAX_SEG_REGS];
-    ND_UINT8    FpuAccess[ND_MAX_FPU_REGS];
-    ND_UINT8    MmxAccess[ND_MAX_MMX_REGS];
-    ND_UINT8    SseAccess[ND_MAX_SSE_REGS];
-    ND_UINT8    CrAccess [ND_MAX_CR_REGS ];
-    ND_UINT8    DrAccess [ND_MAX_DR_REGS ];
-    ND_UINT8    TrAccess [ND_MAX_TR_REGS ];
-    ND_UINT8    BndAccess[ND_MAX_BND_REGS];
-    ND_UINT8    MskAccess[ND_MAX_MSK_REGS];
-    ND_UINT8    TmmAccess[ND_MAX_TILE_REGS];
-    ND_UINT8    SysAccess[ND_MAX_SYS_REGS];
-    ND_UINT8    X87Access[ND_MAX_X87_REGS];
-} ND_ACCESS_MAP, *PND_ACCESS_MAP;
-
-
-//
-// Operand reverse-lookup table. Each entry inside this structure contains the pointer to the relevant operand.
-// Some rules govern this special structure:
-//  - It is not generated by default. The user must call NdGetOperandRlut manually to fill in this structure.
-//  - This structure holds pointers inside the INSTRUX provided to the NdGetOperandRlut function; please make sure
-//    you call NdGetOperandRlut again if the INSTRUX is relocated, as all the pointers will dangle.
-//  - Not all the operand types have a corresponding entry in ND_OPERAND_RLUT, only the usual ones.
-//  - Some operands may have multiple entries in ND_OPERAND_RLUT - for example, RMW (read-modify-write) instructions
-//    will have Dst1 and Src1 pointing to the same operand.
-//  - The implicit registers entries in ND_OPERAND_RLUT will point to the operand which is of that type, and implicit;
-//    for example, ND_OPERAND_RLUT.Rax will be NULL for `add rax, rcx`, since in this case, `rax` is not an implicit
-//    operand. For `cpuid`, however, ND_OPERAND_RLUT.Rax will point to the implicit `eax` register.
-// Use NdGetOperandRlut to populate this structure.
-//
-typedef struct _ND_OPERAND_RLUT
-{
-    PND_OPERAND     Dst1;   // First destination operand.
-    PND_OPERAND     Dst2;   // Second destination operand.
-    PND_OPERAND     Src1;   // First source operand.
-    PND_OPERAND     Src2;   // Second source operand.
-    PND_OPERAND     Src3;   // Third source operand.
-    PND_OPERAND     Src4;   // Fourth source operand.
-    PND_OPERAND     Mem1;   // First memory operand.
-    PND_OPERAND     Mem2;   // Second memory operand.
-    PND_OPERAND     Stack;  // Stack operand.
-    PND_OPERAND     Flags;  // Flags register operand.
-    PND_OPERAND     Rip;    // Instruction Pointer register operand.
-    PND_OPERAND     Cs;     // Implicit CS operand.
-    PND_OPERAND     Ss;     // Implicit SS operand.
-    PND_OPERAND     Rax;    // Implicit accumulator register operand.
-    PND_OPERAND     Rcx;    // Implicit counter register operand.
-    PND_OPERAND     Rdx;    // Implicit data register operand
-    PND_OPERAND     Rbx;    // Implicit base address register operand.
-    PND_OPERAND     Rsp;    // Implicit stack pointer operand.
-    PND_OPERAND     Rbp;    // Implicit base pointer operand.
-    PND_OPERAND     Rsi;    // Implicit source index operand.
-    PND_OPERAND     Rdi;    // Implicit destination index operand.
-} ND_OPERAND_RLUT;
+// Do NOT cache the instruction bytes internally. Use this when decoding is performed from a buffer that cannot
+// be modified while it is decoded. When decoding instructions directly from process memory, or in a situation
+// where they may be modified, NEVER use this option, as the decoding result will become undefined.
+#define ND_OPTION_SKIP_CACHE_IBYTES             0x00000004
 
 
 #ifdef __cplusplus 
@@ -1598,7 +1832,7 @@ NdGetVersion(
     ND_UINT32 *Revision,
     const char **BuildDate,
     const char **BuildTime
-    );
+);
 
 //
 // Decode one instruction. Note that this is equivalent to: 
@@ -1608,11 +1842,20 @@ NdGetVersion(
 // 
 NDSTATUS
 NdDecode(
-    INSTRUX *Instrux,       // Output decoded instruction.
-    const ND_UINT8 *Code,    // Buffer containing the instruction bytes.
-    ND_UINT8 DefCode,        // Decode mode - one of the ND_CODE_* values.
-    ND_UINT8 DefData         // Data mode - one of the ND_DATA_* value.
-    );
+    INSTRUX *Instrux,           // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_UINT8 DefCode,           // Decode mode - one of the ND_CODE_* values.
+    ND_UINT8 DefData            // Data mode - one of the ND_DATA_* value.
+);
+
+NDSTATUS
+NdDecodeMini(
+    INSTRUX_MINI *Instrux,      // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_SIZET Size,              // Maximum size of the Code buffer.
+    ND_UINT8 DefCode            // Decode mode - one of the ND_CODE_* values.
+);
+
 
 //
 // Decode one instruction. Note that this is equivalent to: 
@@ -1623,26 +1866,26 @@ NdDecode(
 // 
 NDSTATUS
 NdDecodeEx(
-    INSTRUX *Instrux,       // Output decoded instruction.
-    const ND_UINT8 *Code,      // Buffer containing the instruction bytes.
-    ND_SIZET Size,          // Maximum size of the Code buffer.
-    ND_UINT8 DefCode,          // Decode mode - one of the ND_CODE_* values.
-    ND_UINT8 DefData           // Data mode - one of the ND_DATA_* value.
-    );
+    INSTRUX *Instrux,           // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_SIZET Size,              // Maximum size of the Code buffer.
+    ND_UINT8 DefCode,           // Decode mode - one of the ND_CODE_* values.
+    ND_UINT8 DefData            // Data mode - one of the ND_DATA_* value.
+);
 
 //
 // Fills a ND_CONTEXT structure, and calls NdDecodeWithContext. The feature mode will be ND_FEAT_ALL by default.
 //
 NDSTATUS
 NdDecodeEx2(
-    INSTRUX *Instrux,       // Output decoded instruction.
-    const ND_UINT8 *Code,      // Buffer containing the instruction bytes.
-    ND_SIZET Size,          // Maximum size of the Code buffer.
-    ND_UINT8 DefCode,          // Decode mode - one of the ND_CODE_* values.
-    ND_UINT8 DefData,          // Data mode - one of the ND_DATA_* value.
-    ND_UINT8 DefStack,         // Stack mode - one of the ND_STACK_* values.
-    ND_UINT8 PreferedVendor    // Preferred vendor - one of the ND_VEND_* values.
-    );
+    INSTRUX *Instrux,           // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_SIZET Size,              // Maximum size of the Code buffer.
+    ND_UINT8 DefCode,           // Decode mode - one of the ND_CODE_* values.
+    ND_UINT8 DefData,           // Data mode - one of the ND_DATA_* value.
+    ND_UINT8 DefStack,          // Stack mode - one of the ND_STACK_* values.
+    ND_UINT8 PreferedVendor     // Preferred vendor - one of the ND_VEND_* values.
+);
 
 //
 // This API received a decode context, where it expects DefCode, DefData, DefStack, VendMode and FeatMode to be 
@@ -1655,11 +1898,20 @@ NdDecodeEx2(
 //
 NDSTATUS
 NdDecodeWithContext(
-    INSTRUX *Instrux,       // Output decoded instruction.
-    const ND_UINT8 *Code,      // Buffer containing the instruction bytes.
-    ND_SIZET Size,          // Maximum size of the Code buffer.
-    ND_CONTEXT *Context     // Context describing decode mode, vendor mode and supported features.
-    );
+    INSTRUX *Instrux,           // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_SIZET Size,              // Maximum size of the Code buffer.
+    ND_CONTEXT *Context         // Context describing decode mode, vendor mode and supported features.
+);
+
+NDSTATUS
+NdDecodeWithContextMini(
+    INSTRUX_MINI *Instrux,      // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_SIZET Size,              // Maximum size of the Code buffer.
+    ND_CONTEXT *Context         // Context describing decode mode, vendor mode and supported features.
+);
+
 
 //
 // Convert the given instruction into textual representation (Intel syntax).
@@ -1670,34 +1922,16 @@ NdToText(
     ND_UINT64 Rip,
     ND_UINT32 BufferSize,
     char *Buffer
-    );
+);
 
-//
-// Returns true if the instruction is RIP relative. Note that this function is kept for backwards compatibility, since
-// there already is a IsRipRelative field inside INSTRUX.
-//
-ND_BOOL
-NdIsInstruxRipRelative(
-    const INSTRUX *Instrux
-    );
-
-//
-// Returns an access map that contains the access for each register.
-//
 NDSTATUS
-NdGetFullAccessMap(
-    const INSTRUX *Instrux,
-    ND_ACCESS_MAP *AccessMap
-    );
+NdToTextMini(
+    const INSTRUX_MINI *Instrux,
+    ND_UINT64 Rip,
+    ND_UINT32 BufferSize,
+    char *Buffer
+);
 
-//
-// Returns an operand reverse-lookup. One can use the Rlut to quickly reference different kinds of operands in INSTRUX.
-//
-NDSTATUS
-NdGetOperandRlut(
-    const INSTRUX *Instrux,
-    ND_OPERAND_RLUT *Rlut
-    );
 
 //
 // Initialize the decoder context.
@@ -1705,7 +1939,11 @@ NdGetOperandRlut(
 void
 NdInitContext(
     ND_CONTEXT *Context
-    );
+);
+
+
+#include "bdx86_api_legacy.h"
+#include "bdx86_api_mini.h"
 
 #ifdef __cplusplus 
 }

@@ -23,20 +23,20 @@ struct Context {
 impl Context {
     /// Emulates a 64-bit instruction.
     pub fn emulate(&mut self, ins: &DecodedInstruction) -> Result<()> {
-        let operands = ins.operands();
-
         match ins.mnemonic() {
             Mnemonic::MOV => {
-                self.set_operand_value(&operands[0], self.get_operand_value(&operands[1])?)?
+                let dst = ins.operand(0).unwrap();
+                let src = ins.operand(1).unwrap();
+                self.set_operand_value(&dst, self.get_operand_value(&src)?)?
             }
-            Mnemonic::INC => self.set_operand_value(
-                &operands[0],
-                self.get_operand_value(&operands[0])?.wrapping_add(1),
-            )?,
-            Mnemonic::DEC => self.set_operand_value(
-                &operands[0],
-                self.get_operand_value(&operands[0])?.wrapping_sub(1),
-            )?,
+            Mnemonic::INC => {
+                let dst = ins.operand(0).unwrap();
+                self.set_operand_value(&dst, self.get_operand_value(&dst)?.wrapping_add(1))?;
+            }
+            Mnemonic::DEC => {
+                let dst = ins.operand(0).unwrap();
+                self.set_operand_value(&dst, self.get_operand_value(&dst)?.wrapping_sub(1))?;
+            }
             _ => anyhow::bail!("Unsupported instruction: {}", ins),
         }
 

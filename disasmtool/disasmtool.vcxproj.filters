@@ -13,10 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Source Files\handlers">
+      <UniqueIdentifier>{dfa6d226-10a4-4196-b62e-a0f63685ea8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="disasmtool.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="handle_disasm.c">
+      <Filter>Source Files\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="handle_shemu.c">
+      <Filter>Source Files\handlers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

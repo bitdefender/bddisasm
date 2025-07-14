@@ -298,6 +298,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="disasmtool.c" />
+    <ClCompile Include="handle_disasm.c" />
+    <ClCompile Include="handle_shemu.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\bddisasm\bddisasm.vcxproj">

@@ -4,6 +4,8 @@
  */
 //! Decodes instructions.
 
+use ffi::NdGetOperandMini;
+
 use crate::cpu_modes::CpuModes;
 use crate::cpuid::Cpuid;
 use crate::decode_error::{status_to_error, DecodeError};
@@ -11,15 +13,14 @@ use crate::fpu_flags::FpuFlags;
 use crate::instruction_category::Category;
 use crate::isa_set::IsaSet;
 use crate::mnemonic::Mnemonic;
-use crate::operand;
-use crate::operand::{OpAccess, Operands, OperandsLookup};
+use crate::operand::{OpAccess, Operand};
 use crate::rflags::flags_raw;
 use crate::simd_exceptions::SimdExceptions;
 use crate::tuple::Tuple;
 
 use core::convert::TryFrom;
 use core::fmt;
-use core::mem;
+use core::mem::{self, MaybeUninit};
 
 /// Represents a succesfull instruction decoding, or failure.
 pub type DecodeResult = Result<DecodedInstruction, DecodeError>;
@@ -36,12 +37,12 @@ pub enum DecodeMode {
 }
 
 #[doc(hidden)]
-impl From<DecodeMode> for (u8, u8) {
+impl From<DecodeMode> for u8 {
     fn from(mode: DecodeMode) -> Self {
         match mode {
-            DecodeMode::Bits16 => (ffi::ND_CODE_16 as u8, ffi::ND_DATA_16 as u8),
-            DecodeMode::Bits32 => (ffi::ND_CODE_32 as u8, ffi::ND_DATA_32 as u8),
-            DecodeMode::Bits64 => (ffi::ND_CODE_64 as u8, ffi::ND_DATA_64 as u8),
+            DecodeMode::Bits16 => ffi::ND_CODE_16 as u8,
+            DecodeMode::Bits32 => ffi::ND_CODE_32 as u8,
+            DecodeMode::Bits64 => ffi::ND_CODE_64 as u8,
         }
     }
 }
@@ -301,7 +302,7 @@ impl ValidDecorators {
 /// A decoded instruction.
 #[derive(Copy, Clone, Debug)]
 pub struct DecodedInstruction {
-    inner: ffi::INSTRUX,
+    inner: ffi::INSTRUX_MINI,
     ip: u64,
     instruction: Mnemonic,
     length: usize,
@@ -340,26 +341,12 @@ impl DecodedInstruction {
     /// # Ok(())
     /// # }
     /// ```
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
-    /// circumstances.
     pub fn decode_with_ip(code: &[u8], mode: DecodeMode, ip: u64) -> DecodeResult {
-        let mut instrux: mem::MaybeUninit<ffi::INSTRUX> = mem::MaybeUninit::uninit();
+        let mut instrux: mem::MaybeUninit<ffi::INSTRUX_MINI> = mem::MaybeUninit::uninit();
         let instrux = instrux.as_mut_ptr();
 
-        let (code_def, data_def) = mode.into();
-
-        let status = unsafe {
-            ffi::NdDecodeEx(
-                instrux,
-                code.as_ptr(),
-                code.len() as u64,
-                code_def,
-                data_def,
-            )
-        };
+        let status =
+            unsafe { ffi::NdDecodeMini(instrux, code.as_ptr(), code.len() as u64, mode.into()) };
 
         status_to_error(status)?;
 
@@ -380,11 +367,6 @@ impl DecodedInstruction {
     /// # Errors
     ///
     /// Wil return `Err` if the given bytes do not encode a valid instruction in the given mode.
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
-    /// circumstances.
     pub fn decode(code: &[u8], mode: DecodeMode) -> DecodeResult {
         Self::decode_with_ip(code, mode, 0)
     }
@@ -405,17 +387,11 @@ impl DecodedInstruction {
         self.length
     }
 
-    /// Get the instruction operands.
-    ///
-    /// For working with specific operands (like the source or destination),
-    /// [`operand_lookup()`](DecodedInstruction::operand_lookup) might be a better choice.
-    ///
-    /// The number of elements in the returned vector will always be equal to
-    /// [`operands_count`](DecodedInstruction::operands_count).
+    /// Get the operand with the given index.
     ///
     /// # Examples
     ///
-    /// See [`operand`] for more in-depth examples on how to work with instruction operands.
+    /// See [`Operand`] for more in-depth examples on how to work with instruction operands.
     ///
     /// ```
     /// # use bddisasm::DecodeError;
@@ -424,36 +400,27 @@ impl DecodedInstruction {
     /// use bddisasm::{DecodedInstruction, DecodeMode, Mnemonic};
     ///
     /// // `MOV       ebx, dword ptr [ecx+edi]`
-    /// let instruction = DecodedInstruction::decode(b"\x8b\x1c\x39", DecodeMode::Bits32)?;    ///
-    /// let operands = instruction.operands();
+    /// let instruction = DecodedInstruction::decode(b"\x8b\x1c\x39", DecodeMode::Bits32)?;
     /// // The first operand is the destination
-    /// let dst = operands[0];
+    /// let dst = instruction.operand(0)?;
     /// // The second operand is the source
-    /// let src = operands[1];
+    /// let src = instruction.operand(1)?;
     ///
     /// // Print information about the operands
     /// println!("{:#?} {:#?}", dst.info, src.info);
     /// # Ok(())
     /// # }
     /// ```
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the operand returned by the C library is invalid. This can not happen under normal
-    /// circumstances.
-    #[must_use]
-    pub fn operands(&self) -> Operands {
-        let mut operands = Operands::default();
+    #[inline]
+    pub fn operand(&self, index: u8) -> Result<Operand, DecodeError> {
+        let mut op: MaybeUninit<ffi::_ND_OPERAND> = MaybeUninit::uninit();
+        let op = op.as_mut_ptr();
 
-        let op_count = self.inner.OperandsCount();
-        for op_index in 0..op_count {
-            operands.operands[op_index as usize] =
-                operand::Operand::from_raw(self.inner.Operands[op_index as usize]).unwrap();
-        }
+        let status =
+            unsafe { NdGetOperandMini(&self.inner as *const ffi::INSTRUX_MINI, index, op) };
+        status_to_error(status)?;
 
-        operands.actual_count = op_count as usize;
-
-        operands
+        Operand::from_raw(unsafe { *op })
     }
 
     /// Returns the CPUID support flag.
@@ -486,7 +453,18 @@ impl DecodedInstruction {
     /// ```
     #[must_use]
     pub fn cpuid(&self) -> Option<Cpuid> {
-        let cpuid = unsafe { self.inner.CpuidFlag.__bindgen_anon_1 };
+        let mut cpuid_flags: MaybeUninit<ffi::_ND_CPUID_FLAG> = MaybeUninit::uninit();
+        let cpuid_flags = cpuid_flags.as_mut_ptr();
+
+        let status = unsafe {
+            ffi::NdGetCpuidFlagMini(&self.inner as *const ffi::INSTRUX_MINI, cpuid_flags)
+        };
+        // Note: the only errors that can be returned from `NdGetCpuidFlagMini` are for invalid `INSTRUX_MINI`
+        // instances, which can not happen in our context.
+        status_to_error(status).ok()?;
+
+        let cpuid = unsafe { *cpuid_flags };
+        let cpuid = unsafe { cpuid.__bindgen_anon_1 };
         let leaf = cpuid.Leaf;
         if leaf == ffi::ND_CFF_NO_LEAF {
             None
@@ -1057,9 +1035,14 @@ impl DecodedInstruction {
 
     /// Number of words accessed on/from the stack.
     #[inline]
-    #[must_use]
-    pub fn stack_words(&self) -> usize {
-        self.inner.StackWords() as usize
+    pub fn stack_words(&self) -> Result<usize, DecodeError> {
+        let mut stack_words: u8 = 0;
+        let status = unsafe {
+            ffi::NdGetStackWordsMini(&self.inner as *const ffi::INSTRUX_MINI, &mut stack_words)
+        };
+        status_to_error(status)?;
+
+        Ok(stack_words as usize)
     }
 
     /// The last rep/repz/repnz prefix. if any.
@@ -1230,11 +1213,23 @@ impl DecodedInstruction {
         }
     }
 
+    /// Get the raw instruction attributes.
+    #[inline]
+    #[must_use]
+    pub fn get_attributes(&self) -> u64 {
+        let mut attrs: u64 = 0;
+        unsafe { ffi::NdGetAttributesMini(&self.inner as *const ffi::INSTRUX_MINI, &mut attrs) };
+
+        attrs
+    }
+
     /// Get the condition byte.
     #[inline]
     #[must_use]
     pub fn cond(&self) -> Option<u8> {
-        if (self.inner.Attributes & ffi::ND_FLAG_COND as u64) != 0 {
+        let attrs = self.get_attributes();
+
+        if (attrs & ffi::ND_FLAG_COND as u64) != 0 {
             Some(self.inner.__bindgen_anon_4.Condition())
         } else {
             None
@@ -1247,7 +1242,8 @@ impl DecodedInstruction {
     #[inline]
     #[must_use]
     pub fn is_3d_now(&self) -> bool {
-        (self.inner.Attributes & ffi::ND_FLAG_3DNOW as u64) != 0
+        let attrs = self.get_attributes();
+        (attrs & ffi::ND_FLAG_3DNOW as u64) != 0
     }
 
     /// Get the number of operands.
@@ -1270,27 +1266,48 @@ impl DecodedInstruction {
     #[inline]
     #[must_use]
     pub fn cs_access(&self) -> OpAccess {
-        OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
-            Access: self.inner.CsAccess,
-        })
+        let mut acc: MaybeUninit<ffi::_ND_OPERAND_ACCESS> = MaybeUninit::uninit();
+        let acc = acc.as_mut_ptr();
+
+        unsafe { ffi::NdGetCsAccessMini(&self.inner as *const ffi::INSTRUX_MINI, acc) };
+
+        OpAccess::from_raw(unsafe { *acc })
     }
 
     /// Get the `RIP` access mode.
     #[inline]
     #[must_use]
     pub fn rip_access(&self) -> OpAccess {
-        OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
-            Access: self.inner.RipAccess,
-        })
+        let mut acc: MaybeUninit<ffi::_ND_OPERAND_ACCESS> = MaybeUninit::uninit();
+        let acc = acc.as_mut_ptr();
+
+        unsafe { ffi::NdGetRipAccessMini(&self.inner as *const ffi::INSTRUX_MINI, acc) };
+
+        OpAccess::from_raw(unsafe { *acc })
     }
 
     /// Get the stack access mode.
     #[inline]
     #[must_use]
     pub fn stack_access(&self) -> OpAccess {
-        OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
-            Access: self.inner.StackAccess,
-        })
+        let mut acc: MaybeUninit<ffi::_ND_OPERAND_ACCESS> = MaybeUninit::uninit();
+        let acc = acc.as_mut_ptr();
+
+        unsafe { ffi::NdGetStackAccessMini(&self.inner as *const ffi::INSTRUX_MINI, acc) };
+
+        OpAccess::from_raw(unsafe { *acc })
+    }
+
+    /// Get the RFLAGS access mode.
+    #[inline]
+    #[must_use]
+    pub fn rflags_access(&self) -> OpAccess {
+        let mut acc: MaybeUninit<ffi::_ND_OPERAND_ACCESS> = MaybeUninit::uninit();
+        let acc = acc.as_mut_ptr();
+
+        unsafe { ffi::NdGetRflagsAccessMini(&self.inner as *const ffi::INSTRUX_MINI, acc) };
+
+        OpAccess::from_raw(unsafe { *acc })
     }
 
     /// Get the memory access mode.
@@ -1299,55 +1316,83 @@ impl DecodedInstruction {
     #[inline]
     #[must_use]
     pub fn memory_access(&self) -> OpAccess {
-        OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
-            Access: self.inner.MemoryAccess,
-        })
+        let mut acc: MaybeUninit<ffi::_ND_OPERAND_ACCESS> = MaybeUninit::uninit();
+        let acc = acc.as_mut_ptr();
+
+        unsafe { ffi::NdGetMemoryAccessMini(&self.inner as *const ffi::INSTRUX_MINI, acc) };
+
+        OpAccess::from_raw(unsafe { *acc })
     }
 
     /// `true` if the instruction is a branch.
     #[inline]
     #[must_use]
     pub fn is_branch(&self) -> bool {
-        self.inner.BranchInfo.IsBranch() != 0
+        let rip_acc = self.rip_access();
+        rip_acc.write || rip_acc.cond_write
     }
 
     /// `true` if the instruction is a conditional branch.
     #[inline]
     #[must_use]
     pub fn is_conditional_branch(&self) -> bool {
-        self.inner.BranchInfo.IsConditional() != 0
+        let rip_acc = self.rip_access();
+        rip_acc.cond_write
     }
 
     /// `true` if the instruction is a indirect branch.
     #[inline]
     #[must_use]
     pub fn is_indirect_branch(&self) -> bool {
-        self.inner.BranchInfo.IsIndirect() != 0
+        self.is_branch() && self.inner.HasModRm() != 0
     }
 
     /// `true` if the instruction is a far branch.
     #[inline]
     #[must_use]
     pub fn is_far_branch(&self) -> bool {
-        self.inner.BranchInfo.IsFar() != 0
+        if self.is_branch() {
+            let mut acc: MaybeUninit<ffi::_ND_OPERAND_ACCESS> = MaybeUninit::uninit();
+            let acc = acc.as_mut_ptr();
+
+            unsafe { ffi::NdGetCsAccessMini(&self.inner as *const ffi::INSTRUX_MINI, acc) };
+
+            let acc = unsafe { *acc };
+            unsafe { acc.Access != 0 }
+        } else {
+            false
+        }
     }
 
     /// Get the rflags access.
     #[must_use]
     pub fn flags_access(&self) -> FlagsAccess {
-        let facc = self.inner.FlagsAccess;
+        let mut tested: MaybeUninit<ffi::_ND_RFLAGS> = MaybeUninit::uninit();
+        let mut modified: MaybeUninit<ffi::_ND_RFLAGS> = MaybeUninit::uninit();
+        let mut set: MaybeUninit<ffi::_ND_RFLAGS> = MaybeUninit::uninit();
+        let mut cleared: MaybeUninit<ffi::_ND_RFLAGS> = MaybeUninit::uninit();
+        let mut undefined: MaybeUninit<ffi::_ND_RFLAGS> = MaybeUninit::uninit();
 
-        let mode = OpAccess::from_raw(ffi::ND_OPERAND_ACCESS {
-            Access: self.inner.RflAccess,
-        });
+        unsafe {
+            ffi::NdGetFlagsAccessMini(
+                &self.inner as *const ffi::INSTRUX_MINI,
+                tested.as_mut_ptr(),
+                modified.as_mut_ptr(),
+                set.as_mut_ptr(),
+                cleared.as_mut_ptr(),
+                undefined.as_mut_ptr(),
+            )
+        };
+
+        let mode = self.rflags_access();
 
         FlagsAccess {
             mode,
-            tested: flags_raw(facc.Tested),
-            modified: flags_raw(facc.Modified),
-            set: flags_raw(facc.Set),
-            cleared: flags_raw(facc.Cleared),
-            undefined: flags_raw(facc.Undefined),
+            tested: flags_raw(unsafe { *tested.as_ptr() }),
+            modified: flags_raw(unsafe { *modified.as_ptr() }),
+            set: flags_raw(unsafe { *set.as_ptr() }),
+            cleared: flags_raw(unsafe { *cleared.as_ptr() }),
+            undefined: flags_raw(unsafe { *undefined.as_ptr() }),
         }
     }
 
@@ -1359,26 +1404,41 @@ impl DecodedInstruction {
     #[inline]
     #[must_use]
     pub fn fpu_flags_access(&self) -> FpuFlags {
-        FpuFlags::from_raw(self.inner.FpuFlagsAccess).unwrap()
+        let mut fpu_flags: MaybeUninit<ffi::_ND_FPU_FLAGS> = MaybeUninit::uninit();
+        let fpu_flags = fpu_flags.as_mut_ptr();
+
+        unsafe { ffi::NdGetFpuFlagsAccessMini(&self.inner as *const ffi::INSTRUX_MINI, fpu_flags) };
+
+        FpuFlags::from_raw(unsafe { *fpu_flags }).unwrap()
     }
 
     /// SIMD Floating-Point Exceptions.
     #[inline]
     #[must_use]
     pub fn simd_exceptions(&self) -> SimdExceptions {
-        SimdExceptions::from_raw(unsafe { self.inner.SimdExceptions.Raw })
+        let mut simd_exceptions: MaybeUninit<ffi::_ND_SIMD_EXCEPTIONS> = MaybeUninit::uninit();
+        let simd_exceptions = simd_exceptions.as_mut_ptr();
+
+        unsafe {
+            ffi::NdGetSimdExceptionsMini(&self.inner as *const ffi::INSTRUX_MINI, simd_exceptions)
+        };
+        let simd_exceptions = unsafe { *simd_exceptions };
+
+        SimdExceptions::from_raw(unsafe { simd_exceptions.Raw })
     }
 
     /// `EVEX` tuple type.
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the EVEX tuple type is unrecognized. This can not happen under normal circumstances.
     #[inline]
     #[must_use]
     pub fn evex_tuple(&self) -> Option<Tuple> {
+        let mut tuple: MaybeUninit<ffi::_ND_TUPLE> = MaybeUninit::uninit();
+        let tuple = tuple.as_mut_ptr();
+
+        unsafe { ffi::NdGetTupleTypeMini(&self.inner as *const ffi::INSTRUX_MINI, tuple) };
+        let tuple = unsafe { *tuple };
+
         if self.has_evex() {
-            Some(Tuple::from_raw(u32::from(self.inner.TupleType)).unwrap())
+            Some(Tuple::from_raw(tuple))
         } else {
             None
         }
@@ -1401,25 +1461,25 @@ impl DecodedInstruction {
     }
 
     /// Get the instruction category.
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the cateogory not recognized. This can not happen under normal circumstances.
     #[inline]
     #[must_use]
-    pub fn category(&self) -> Category {
-        Category::try_from(self.inner.Category).unwrap()
+    pub fn category(&self) -> Option<Category> {
+        let mut cat = ffi::ND_INS_CATEGORY::ND_CAT_INVALID;
+        unsafe {
+            ffi::NdGetInstructionCategoryMini(&self.inner as *const ffi::INSTRUX_MINI, &mut cat)
+        };
+
+        Category::from_raw(cat)
     }
 
     /// Get the ISA set.
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the ISA set not recognized. This can not happen under normal circumstances.
     #[inline]
     #[must_use]
-    pub fn isa_set(&self) -> IsaSet {
-        IsaSet::try_from(self.inner.IsaSet).unwrap()
+    pub fn isa_set(&self) -> Option<IsaSet> {
+        let mut set = ffi::ND_INS_SET::ND_SET_INVALID;
+        unsafe { ffi::NdGetInstructionSetMini(&self.inner as *const ffi::INSTRUX_MINI, &mut set) };
+
+        IsaSet::from_raw(set)
     }
 
     /// Get the CPU modes in which the instruction is valid.
@@ -1430,21 +1490,38 @@ impl DecodedInstruction {
     #[inline]
     #[must_use]
     pub fn valid_cpu_modes(&self) -> CpuModes {
-        CpuModes::from_raw(self.inner.ValidModes)
+        let mut modes: MaybeUninit<ffi::_ND_VALID_MODES> = MaybeUninit::uninit();
+        let modes = modes.as_mut_ptr();
+
+        unsafe { ffi::NdGetValidModesMini(&self.inner as *const ffi::INSTRUX_MINI, modes) };
+
+        CpuModes::from_raw(unsafe { *modes })
     }
 
     /// Get the valid prefixes for this instruction.
     #[inline]
     #[must_use]
     pub fn valid_prefixes(&self) -> ValidPrefixes {
-        ValidPrefixes::from_raw(self.inner.ValidPrefixes)
+        let mut prefixes: MaybeUninit<ffi::_ND_VALID_PREFIXES> = MaybeUninit::uninit();
+        let prefixes = prefixes.as_mut_ptr();
+
+        unsafe { ffi::NdGetValidPrefixesMini(&self.inner as *const ffi::INSTRUX_MINI, prefixes) };
+
+        ValidPrefixes::from_raw(unsafe { *prefixes })
     }
 
     /// Get the decorators accepted by the instruction.
     #[inline]
     #[must_use]
     pub fn valid_decorators(&self) -> ValidDecorators {
-        ValidDecorators::from_raw(self.inner.ValidDecorators)
+        let mut decorators: MaybeUninit<ffi::_ND_VALID_DECORATORS> = MaybeUninit::uninit();
+        let decorators = decorators.as_mut_ptr();
+
+        unsafe {
+            ffi::NdGetValidDecoratorsMini(&self.inner as *const ffi::INSTRUX_MINI, decorators)
+        };
+
+        ValidDecorators::from_raw(unsafe { *decorators })
     }
 
     /// Get the main/nominal opcode.
@@ -1458,43 +1535,8 @@ impl DecodedInstruction {
     #[inline]
     #[must_use]
     pub fn has_vector(&self) -> bool {
-        self.inner.Attributes & ffi::ND_FLAG_VECTOR as u64 != 0
-    }
-}
-
-impl<'a> DecodedInstruction {
-    /// Get the instruction bytes.
-    #[inline]
-    #[must_use]
-    pub fn bytes(&'a self) -> &'a [u8] {
-        &self.inner.InstructionBytes[..self.inner.Length as usize]
-    }
-
-    /// Get the opcode bytes (escape codes and main op code).
-    #[inline]
-    #[must_use]
-    pub fn op_code_bytes(&'a self) -> &'a [u8] {
-        &self.inner.OpCodeBytes[..self.op_length()]
-    }
-
-    /// Get an operand lookup table.
-    ///
-    /// This can be useful when needing to work with a specific operand without needing to iterate over the operands
-    /// returned by [operands()](DecodedInstruction::operands), and without needing to rely on the order of the
-    /// operands.
-    ///
-    /// # Examples
-    ///
-    /// See [`OperandsLookup`] for examples.
-    ///
-    /// # Panics
-    ///
-    /// This function will panic if the result of the C library is unrecognized. This can not happen under normal
-    /// circumstances.
-    #[inline]
-    #[must_use]
-    pub fn operand_lookup(&'a self) -> OperandsLookup {
-        OperandsLookup::from_raw(&self.inner)
+        let attrs = self.get_attributes();
+        attrs & ffi::ND_FLAG_VECTOR as u64 != 0
     }
 }
 
@@ -1502,8 +1544,8 @@ impl fmt::Display for DecodedInstruction {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let mut buffer: [u8; ffi::ND_MIN_BUF_SIZE as usize] = [0; ffi::ND_MIN_BUF_SIZE as usize];
         let status = unsafe {
-            ffi::NdToText(
-                &self.inner,
+            ffi::NdToTextMini(
+                &self.inner as *const ffi::INSTRUX_MINI,
                 self.ip,
                 buffer.len() as u32,
                 buffer.as_mut_ptr().cast::<i8>(),
@@ -1522,13 +1564,13 @@ impl fmt::Display for DecodedInstruction {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::operand;
 
     #[test]
     fn decode() {
         let code = vec![0xb8, 0x00, 0x00, 0x00, 0x00];
         let ins = DecodedInstruction::decode(&code, DecodeMode::Bits32).expect("Unable to decode");
         assert_eq!(ins.instruction, Mnemonic::MOV);
-        assert_eq!(ins.bytes(), code);
         assert_eq!(format!("{}", ins), "MOV       eax, 0x00000000");
     }
 
@@ -1538,7 +1580,6 @@ mod tests {
         let ins = DecodedInstruction::decode_with_ip(code, DecodeMode::Bits64, 0x100)
             .expect("Unable to decode");
         assert_eq!(ins.instruction, Mnemonic::MOV);
-        assert_eq!(ins.bytes(), code);
         assert_eq!(format!("{}", ins), "MOV       rax, qword ptr [rel 0x100]");
     }
 
@@ -1564,7 +1605,6 @@ mod tests {
         // a new constant is added.
         let bindings = include_str!("../../bddisasm-sys/csrc/inc/bddisasm.h");
         let mut shadow_stack_count: u8 = 0;
-        let mut tuple_count: u32 = 0;
         let mut evex_rounding: u8 = 0;
         for line in bindings.lines() {
             if line.starts_with("#define ND_ENCM_") {
@@ -1594,11 +1634,6 @@ mod tests {
                 assert!(
                     crate::fpu_flags::FpuFlagsAccess::from_raw(get_tokens(line, 2) as u8).is_ok()
                 );
-            } else if line.starts_with("    ND_TUPLE_") {
-                // TODO: this test should be in `operand.rs`, but since we are already parsing `bddisasm.h` here it
-                // felt wastefull to also parse it there.
-                assert!(Tuple::from_raw(tuple_count).is_ok());
-                tuple_count += 1;
             } else if line.starts_with("    ND_RND_") {
                 // TODO: this test should be in `operand.rs`, but since we are already parsing `bddisasm.h` here it
                 // felt wastefull to also parse it there.
@@ -1614,6 +1649,7 @@ mod tests {
         for line in status.lines() {
             if line.starts_with("#define ND_STATUS_SUCCESS")
                 || line.starts_with("#define ND_STATUS_HINT_OPERAND_NOT_USED")
+                || line.starts_with("#define ND_STATUS_HINT_OPERAND_NOT_PRESENT")
             {
                 assert!(status_to_error(get_tokens(line, 2)).is_ok());
             } else if line.starts_with("#define ND_STATUS_") {

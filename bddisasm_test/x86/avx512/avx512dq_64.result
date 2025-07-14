@@ -7395,7 +7395,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000093E 6201fd387bc7                    VCVTPD2QQ zmm24, zmm31, {rd-sae}
+000000000000093E 6201fd387bc7                    VCVTPD2QQ zmm24, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -7521,7 +7521,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000966 6201fd3d7bc7                    VCVTPD2QQ zmm24{k5}, zmm31, {rd-sae}
+0000000000000966 6201fd3d7bc7                    VCVTPD2QQ zmm24{k5}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -7653,7 +7653,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000098E 6201fdbd7bc7                    VCVTPD2QQ zmm24{k5}{z}, zmm31, {rd-sae}
+000000000000098E 6201fdbd7bc7                    VCVTPD2QQ zmm24{k5}{z}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -8448,7 +8448,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000A82 6201fd3879c7                    VCVTPD2UQQ zmm24, zmm31, {rd-sae}
+0000000000000A82 6201fd3879c7                    VCVTPD2UQQ zmm24, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -8574,7 +8574,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000AAA 6201fd3d79c7                    VCVTPD2UQQ zmm24{k5}, zmm31, {rd-sae}
+0000000000000AAA 6201fd3d79c7                    VCVTPD2UQQ zmm24{k5}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -8706,7 +8706,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000AD2 6201fdbd79c7                    VCVTPD2UQQ zmm24{k5}{z}, zmm31, {rd-sae}
+0000000000000AD2 6201fdbd79c7                    VCVTPD2UQQ zmm24{k5}{z}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -9501,7 +9501,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000000BC6 62417d387bc7                    VCVTPS2QQ zmm24, ymm15, {rd-sae}
+0000000000000BC6 62417d387bc7                    VCVTPS2QQ zmm24, ymm15{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -9627,7 +9627,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000000BEE 62417d3d7bc7                    VCVTPS2QQ zmm24{k5}, ymm15, {rd-sae}
+0000000000000BEE 62417d3d7bc7                    VCVTPS2QQ zmm24{k5}, ymm15{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -9759,7 +9759,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000000C16 62417dbd7bc7                    VCVTPS2QQ zmm24{k5}{z}, ymm15, {rd-sae}
+0000000000000C16 62417dbd7bc7                    VCVTPS2QQ zmm24{k5}{z}, ymm15{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -10554,7 +10554,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000000D0A 62417d3879c7                    VCVTPS2UQQ zmm24, ymm15, {rd-sae}
+0000000000000D0A 62417d3879c7                    VCVTPS2UQQ zmm24, ymm15{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -10680,7 +10680,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000000D32 62417d3d79c7                    VCVTPS2UQQ zmm24{k5}, ymm15, {rd-sae}
+0000000000000D32 62417d3d79c7                    VCVTPS2UQQ zmm24{k5}, ymm15{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -10812,7 +10812,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000000D5A 62417dbd79c7                    VCVTPS2UQQ zmm24{k5}{z}, ymm15, {rd-sae}
+0000000000000D5A 62417dbd79c7                    VCVTPS2UQQ zmm24{k5}{z}, ymm15{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -11607,7 +11607,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000E4E 6201fe38e6c7                    VCVTQQ2PD zmm24, zmm31, {rd-sae}
+0000000000000E4E 6201fe38e6c7                    VCVTQQ2PD zmm24, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -11733,7 +11733,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000E76 6201fe3de6c7                    VCVTQQ2PD zmm24{k5}, zmm31, {rd-sae}
+0000000000000E76 6201fe3de6c7                    VCVTQQ2PD zmm24{k5}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -11865,7 +11865,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000E9E 6201febde6c7                    VCVTQQ2PD zmm24{k5}{z}, zmm31, {rd-sae}
+0000000000000E9E 6201febde6c7                    VCVTQQ2PD zmm24{k5}{z}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -12264,7 +12264,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000F0E 6281fc385bc7                    VCVTQQ2PS ymm16, zmm31, {rd-sae}
+0000000000000F0E 6281fc385bc7                    VCVTQQ2PS ymm16, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -12390,7 +12390,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000F36 6281fc3d5bc7                    VCVTQQ2PS ymm16{k5}, zmm31, {rd-sae}
+0000000000000F36 6281fc3d5bc7                    VCVTQQ2PS ymm16{k5}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -12522,7 +12522,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000000F5E 6281fcbd5bc7                    VCVTQQ2PS ymm16{k5}{z}, zmm31, {rd-sae}
+0000000000000F5E 6281fcbd5bc7                    VCVTQQ2PS ymm16{k5}{z}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -13317,7 +13317,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000001052 6201fd187ac7                    VCVTTPD2QQ zmm24, zmm31, {sae}
+0000000000001052 6201fd187ac7                    VCVTTPD2QQ zmm24, zmm31{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -13443,7 +13443,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000107A 6201fd1d7ac7                    VCVTTPD2QQ zmm24{k5}, zmm31, {sae}
+000000000000107A 6201fd1d7ac7                    VCVTTPD2QQ zmm24{k5}, zmm31{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -13575,7 +13575,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000010A2 6201fd9d7ac7                    VCVTTPD2QQ zmm24{k5}{z}, zmm31, {sae}
+00000000000010A2 6201fd9d7ac7                    VCVTTPD2QQ zmm24{k5}{z}, zmm31{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -14370,7 +14370,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000001196 6201fd1878c7                    VCVTTPD2UQQ zmm24, zmm31, {sae}
+0000000000001196 6201fd1878c7                    VCVTTPD2UQQ zmm24, zmm31{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -14496,7 +14496,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000011BE 6201fd1d78c7                    VCVTTPD2UQQ zmm24{k5}, zmm31, {sae}
+00000000000011BE 6201fd1d78c7                    VCVTTPD2UQQ zmm24{k5}, zmm31{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -14628,7 +14628,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000011E6 6201fd9d78c7                    VCVTTPD2UQQ zmm24{k5}{z}, zmm31, {sae}
+00000000000011E6 6201fd9d78c7                    VCVTTPD2UQQ zmm24{k5}{z}, zmm31{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -15423,7 +15423,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-00000000000012DA 62417d187ac7                    VCVTTPS2QQ zmm24, ymm15, {sae}
+00000000000012DA 62417d187ac7                    VCVTTPS2QQ zmm24, ymm15{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -15549,7 +15549,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000001302 62417d1d7ac7                    VCVTTPS2QQ zmm24{k5}, ymm15, {sae}
+0000000000001302 62417d1d7ac7                    VCVTTPS2QQ zmm24{k5}, ymm15{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -15681,7 +15681,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-000000000000132A 62417d9d7ac7                    VCVTTPS2QQ zmm24{k5}{z}, ymm15, {sae}
+000000000000132A 62417d9d7ac7                    VCVTTPS2QQ zmm24{k5}{z}, ymm15{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -16476,7 +16476,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-000000000000141E 62417d1878c7                    VCVTTPS2UQQ zmm24, ymm15, {sae}
+000000000000141E 62417d1878c7                    VCVTTPS2UQQ zmm24, ymm15{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -16602,7 +16602,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-0000000000001446 62417d1d78c7                    VCVTTPS2UQQ zmm24{k5}, ymm15, {sae}
+0000000000001446 62417d1d78c7                    VCVTTPS2UQQ zmm24{k5}, ymm15{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -16734,7 +16734,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 15, RegCount: 1
 
-000000000000146E 62417d9d78c7                    VCVTTPS2UQQ zmm24{k5}{z}, ymm15, {sae}
+000000000000146E 62417d9d78c7                    VCVTTPS2UQQ zmm24{k5}{z}, ymm15{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -17529,7 +17529,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000001562 6201fe387ac7                    VCVTUQQ2PD zmm24, zmm31, {rd-sae}
+0000000000001562 6201fe387ac7                    VCVTUQQ2PD zmm24, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -17655,7 +17655,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000158A 6201fe3d7ac7                    VCVTUQQ2PD zmm24{k5}, zmm31, {rd-sae}
+000000000000158A 6201fe3d7ac7                    VCVTUQQ2PD zmm24{k5}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -17787,7 +17787,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-00000000000015B2 6201febd7ac7                    VCVTUQQ2PD zmm24{k5}{z}, zmm31, {rd-sae}
+00000000000015B2 6201febd7ac7                    VCVTUQQ2PD zmm24{k5}{z}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -18186,7 +18186,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000001622 6281ff387ac7                    VCVTUQQ2PS ymm16, zmm31, {rd-sae}
+0000000000001622 6281ff387ac7                    VCVTUQQ2PS ymm16, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -18312,7 +18312,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-000000000000164A 6281ff3d7ac7                    VCVTUQQ2PS ymm16{k5}, zmm31, {rd-sae}
+000000000000164A 6281ff3d7ac7                    VCVTUQQ2PS ymm16{k5}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17
@@ -18444,7 +18444,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 5, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 31, RegCount: 1
 
-0000000000001672 6281ffbd7ac7                    VCVTUQQ2PS ymm16{k5}{z}, zmm31, {rd-sae}
+0000000000001672 6281ffbd7ac7                    VCVTUQQ2PS ymm16{k5}{z}, zmm31{rd-sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX512DQ, Ins cat: CONVERT, CET tracked: no
         CPUID leaf: 0x00000007, sub-leaf: 0x00000000, reg: ebx, bit: 17

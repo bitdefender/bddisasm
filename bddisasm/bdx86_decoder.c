@@ -5,8 +5,20 @@
 #include "include/bddisasm_crt.h"
 #include "../inc/bddisasm.h"
 
-// The table definitions.
+// The table definitions & internal headers.
 #include "include/bdx86_tabledefs.h"
+#include "include/bdx86_operand.h"
+
+// Include auto-generated stuff.
+#include "bdx86_table_root.h"
+#include "bdx86_table_xop.h"
+#include "bdx86_table_vex.h"
+#include "bdx86_table_evex.h"
+
+#include "bdx86_prefixes.h"
+#include "bdx86_modrm.h"
+#include "bdx86_rex2.h"
+
 
 #ifndef UNREFERENCED_PARAMETER
 #define UNREFERENCED_PARAMETER(P) ((void)(P))
@@ -29,6 +41,26 @@ static const ND_UINT8 gDispsizemap[4][8] =
     { 0, 0, 0, 0, 0, 0, 0, 0 },
 };
 
+static const ND_TABLE_EX_M gLegacyMap_mmmmm = 
+{
+    .Type = ND_ILUT_EX_M,
+    .Table = 
+    {
+        (const ND_TABLE *)&gLegacyMap_opcode,
+        (const ND_TABLE *)&gLegacyMap_opcode_0f_opcode,
+        (const ND_TABLE *)&gLegacyMap_opcode_0f_opcode_38_opcode,
+        (const ND_TABLE *)&gLegacyMap_opcode_0f_opcode_3a_opcode
+    }
+};
+
+
+typedef struct ND_INTERNAL_CONTEXT
+{
+    const ND_CONTEXT  *Context;
+    const ND_IDBE     *Idbe;
+    INSTRUX_MINI      *Instrux;
+} ND_INTERNAL_CONTEXT;
+
 
 //
 // NdGetVersion
@@ -40,7 +72,7 @@ NdGetVersion(
     ND_UINT32 *Revision,
     const char **BuildDate,
     const char **BuildTime
-    )
+)
 {
     if (ND_NULL != Major)
     {
@@ -88,28 +120,25 @@ NdGetVersion(
 
 }
 
+
 //
-// NdFetchData
+// NdIncrementLength
 //
-static ND_UINT64
-NdFetchData(
-    const ND_UINT8 *Buffer,
-    ND_UINT8 Size
-    )
+static inline
+NDSTATUS
+NdIncrementLength(
+    INSTRUX_MINI *Instrux,
+    ND_UINT8 Length
+)
 {
-    switch (Size) 
+    Instrux->Length += Length;
+
+    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
     {
-    case 1:
-        return ND_FETCH_8(Buffer);
-    case 2:
-        return ND_FETCH_16(Buffer);
-    case 4:
-        return ND_FETCH_32(Buffer);
-    case 8:
-        return ND_FETCH_64(Buffer);
-    default:
-        return 0;
+        return ND_STATUS_INSTRUCTION_TOO_LONG;
     }
+
+    return ND_STATUS_SUCCESS;
 }
 
 
@@ -118,75 +147,86 @@ NdFetchData(
 //
 static NDSTATUS
 NdFetchXop(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
     // Offset points to the 0x8F XOP prefix.
     // One more byte has to follow, the modrm or the second XOP byte.
     RET_GT((ND_SIZET)Offset + 2, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    if (((Code[Offset + 1] & 0x1F) >= 8))
+    if (((Code[Offset + 1] & 0x1F) < 8))
     {
-        // XOP found, make sure the third byte is here.
-        RET_GT((ND_SIZET)Offset + 3, Size, ND_STATUS_BUFFER_TOO_SMALL);
+        return ND_STATUS_SUCCESS;
+    }
 
-        // Make sure we don't have any other prefix.
-        if (Instrux->HasOpSize || 
-            Instrux->HasRepnzXacquireBnd || 
-            Instrux->HasRepRepzXrelease || 
-            Instrux->HasRex || 
-            Instrux->HasRex2)
+    // XOP found, make sure the third byte is here.
+    RET_GT((ND_SIZET)Offset + 3, Size, ND_STATUS_BUFFER_TOO_SMALL);
+
+    // Make sure we don't have any other prefix.
+    if (Instrux->HasOpSize || 
+        Instrux->HasRepnzXacquireBnd || 
+        Instrux->HasRepRepzXrelease || 
+        Instrux->HasRex || 
+        Instrux->HasRex2 ||
+        Instrux->HasLock)
+    {
+        return ND_STATUS_XOP_WITH_PREFIX;
+    }
+
+    // Fill in XOP info.
+    Instrux->HasXop = ND_TRUE;
+    Instrux->EncMode = ND_ENCM_XOP;
+    Instrux->Xop.Xop[0] = Code[Offset];
+    Instrux->Xop.Xop[1] = Code[Offset + 1];
+    Instrux->Xop.Xop[2] = Code[Offset + 2];
+
+    Instrux->Exs.w = Instrux->Xop.w;
+    Instrux->Exs.r = (ND_UINT32)~Instrux->Xop.r;
+    Instrux->Exs.x = (ND_UINT32)~Instrux->Xop.x;
+    Instrux->Exs.b = (ND_UINT32)~Instrux->Xop.b;
+    Instrux->Exs.l = Instrux->Xop.l;
+    Instrux->Exs.v = (ND_UINT32)~Instrux->Xop.v;
+    Instrux->Exs.m = Instrux->Xop.m;
+    Instrux->Exs.p = Instrux->Xop.p;
+
+    // if we are in non 64 bit mode, we must make sure that none of the extended registers are being addressed.
+    if (ND_CODE_64 != Instrux->DefCode)
+    {
+        // Xop.R and Xop.X must be 1 (inverted).
+        if ((Instrux->Exs.r | Instrux->Exs.x) == 1)
         {
-            return ND_STATUS_XOP_WITH_PREFIX;
+            return ND_STATUS_INVALID_ENCODING_IN_MODE;
         }
 
-        // Fill in XOP info.
-        Instrux->HasXop = ND_TRUE;
-        Instrux->EncMode = ND_ENCM_XOP;
-        Instrux->Xop.Xop[0] = Code[Offset];
-        Instrux->Xop.Xop[1] = Code[Offset + 1];
-        Instrux->Xop.Xop[2] = Code[Offset + 2];
-
-        Instrux->Exs.w = Instrux->Xop.w;
-        Instrux->Exs.r = (ND_UINT32)~Instrux->Xop.r;
-        Instrux->Exs.x = (ND_UINT32)~Instrux->Xop.x;
-        Instrux->Exs.b = (ND_UINT32)~Instrux->Xop.b;
-        Instrux->Exs.l = Instrux->Xop.l;
-        Instrux->Exs.v = (ND_UINT32)~Instrux->Xop.v;
-        Instrux->Exs.m = Instrux->Xop.m;
-        Instrux->Exs.p = Instrux->Xop.p;
-
-        // if we are in non 64 bit mode, we must make sure that none of the extended registers are being addressed.
-        if (Instrux->DefCode != ND_CODE_64)
+        // Xop.V must be less than 8.
+        if ((Instrux->Exs.v & 0x8) == 0x8)
         {
-            // Xop.R and Xop.X must be 1 (inverted).
-            if ((Instrux->Exs.r | Instrux->Exs.x) == 1)
-            {
-                return ND_STATUS_INVALID_ENCODING_IN_MODE;
-            }
-
-            // Xop.V must be less than 8.
-            if ((Instrux->Exs.v & 0x8) == 0x8)
-            {
-                return ND_STATUS_INVALID_ENCODING_IN_MODE;
-            }
-
-            // Xop.B is ignored, so we force it to 0.
-            Instrux->Exs.b = 0;
+            return ND_STATUS_INVALID_ENCODING_IN_MODE;
         }
 
-        // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
-        Instrux->Length += 3;
-        if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+        // Xop.B is ignored, so we force it to 0.
+        Instrux->Exs.b = 0;
+    }
+    else
+    {
+        // 64-bit mode, promote operand size to 64-bit if W is set.
+        if (Instrux->Exs.w == 1)
         {
-            return ND_STATUS_INSTRUCTION_TOO_LONG;
+            Instrux->OpMode = ND_OPSZ_64;
         }
     }
 
-    return ND_STATUS_SUCCESS;
+    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
+    return NdIncrementLength(Instrux, 3);
+
+#undef Context
+#undef Instrux
 }
 
 
@@ -195,51 +235,58 @@ NdFetchXop(
 //
 static NDSTATUS
 NdFetchVex2(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
     // One more byte has to follow, the modrm or the second VEX byte.
     RET_GT((ND_SIZET)Offset + 2, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    // VEX is available only in 32 & 64 bit mode.
-    if ((ND_CODE_64 == Instrux->DefCode) || ((Code[Offset + 1] & 0xC0) == 0xC0))
+    if ((ND_CODE_64 != Instrux->DefCode) && ((Code[Offset + 1] & 0xC0) != 0xC0))
     {
-        // Make sure we don't have any other prefix.
-        if (Instrux->HasOpSize || 
-            Instrux->HasRepnzXacquireBnd ||
-            Instrux->HasRepRepzXrelease || 
-            Instrux->HasRex || 
-            Instrux->HasRex2 || 
-            Instrux->HasLock)
-        {
-            return ND_STATUS_VEX_WITH_PREFIX;
-        }
-
-        // Fill in VEX2 info.
-        Instrux->VexMode = ND_VEXM_2B;
-        Instrux->HasVex = ND_TRUE;
-        Instrux->EncMode = ND_ENCM_VEX;
-        Instrux->Vex2.Vex[0] = Code[Offset];
-        Instrux->Vex2.Vex[1] = Code[Offset + 1];
-
-        Instrux->Exs.m = 1; // For VEX2 instructions, always use the second table.
-        Instrux->Exs.r = (ND_UINT32)~Instrux->Vex2.r;
-        Instrux->Exs.v = (ND_UINT32)~Instrux->Vex2.v;
-        Instrux->Exs.l = Instrux->Vex2.l;
-        Instrux->Exs.p = Instrux->Vex2.p;
-
-        // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
-        Instrux->Length += 2;
-        if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-        {
-            return ND_STATUS_INSTRUCTION_TOO_LONG;
-        }
+        return ND_STATUS_SUCCESS;
     }
 
-    return ND_STATUS_SUCCESS;
+    // Make sure we don't have any other prefix.
+    if (Instrux->HasOpSize || 
+        Instrux->HasRepnzXacquireBnd ||
+        Instrux->HasRepRepzXrelease || 
+        Instrux->HasRex || 
+        Instrux->HasRex2 || 
+        Instrux->HasLock)
+    {
+        return ND_STATUS_VEX_WITH_PREFIX;
+    }
+
+    // Fill in VEX2 info.
+    Instrux->VexMode = ND_VEXM_2B;
+    Instrux->HasVex = ND_TRUE;
+    Instrux->EncMode = ND_ENCM_VEX;
+    Instrux->Vex2.Vex[0] = Code[Offset];
+    Instrux->Vex2.Vex[1] = Code[Offset + 1];
+
+    Instrux->Exs.m = 1; // For VEX2 instructions, always use the second table.
+    Instrux->Exs.r = (ND_UINT32)~Instrux->Vex2.r;
+    Instrux->Exs.v = (ND_UINT32)~Instrux->Vex2.v;
+    Instrux->Exs.l = Instrux->Vex2.l;
+    Instrux->Exs.p = Instrux->Vex2.p;
+
+    // Apply 64-bit operand size.
+    if (Instrux->Exs.w == 1 && Instrux->DefCode == ND_CODE_64)
+    {
+        Instrux->OpMode = ND_OPSZ_64;
+    }
+
+    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
+    return NdIncrementLength(Instrux, 2);
+
+#undef Instrux
+#undef Context
 }
 
 
@@ -248,70 +295,79 @@ NdFetchVex2(
 //
 static NDSTATUS
 NdFetchVex3(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
     // One more byte has to follow, the modrm or the second VEX byte.
     RET_GT((ND_SIZET)Offset + 2, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    // VEX is available only in 32 & 64 bit mode.
-    if ((ND_CODE_64 == Instrux->DefCode) || ((Code[Offset + 1] & 0xC0) == 0xC0))
+    if ((ND_CODE_64 != Instrux->DefCode) && ((Code[Offset + 1] & 0xC0) != 0xC0))
     {
-        // VEX found, make sure the third byte is here.
-        RET_GT((ND_SIZET)Offset + 3, Size, ND_STATUS_BUFFER_TOO_SMALL);
+        return ND_STATUS_SUCCESS;
+    }
 
-        // Make sure we don't have any other prefix.
-        if (Instrux->HasOpSize || 
-            Instrux->HasRepnzXacquireBnd ||
-            Instrux->HasRepRepzXrelease || 
-            Instrux->HasRex || 
-            Instrux->HasRex2 || 
-            Instrux->HasLock)
+    // VEX found, make sure the third byte is here.
+    RET_GT((ND_SIZET)Offset + 3, Size, ND_STATUS_BUFFER_TOO_SMALL);
+
+    // Make sure we don't have any other prefix.
+    if (Instrux->HasOpSize || 
+        Instrux->HasRepnzXacquireBnd ||
+        Instrux->HasRepRepzXrelease || 
+        Instrux->HasRex || 
+        Instrux->HasRex2 || 
+        Instrux->HasLock)
+    {
+        return ND_STATUS_VEX_WITH_PREFIX;
+    }
+
+    // Fill in XOP info.
+    Instrux->VexMode = ND_VEXM_3B;
+    Instrux->HasVex = ND_TRUE;
+    Instrux->EncMode = ND_ENCM_VEX;
+    Instrux->Vex3.Vex[0] = Code[Offset];
+    Instrux->Vex3.Vex[1] = Code[Offset + 1];
+    Instrux->Vex3.Vex[2] = Code[Offset + 2];
+
+    Instrux->Exs.r = (ND_UINT32)~Instrux->Vex3.r;
+    Instrux->Exs.x = (ND_UINT32)~Instrux->Vex3.x;
+    Instrux->Exs.b = (ND_UINT32)~Instrux->Vex3.b;
+    Instrux->Exs.m = Instrux->Vex3.m;
+    Instrux->Exs.w = Instrux->Vex3.w;
+    Instrux->Exs.v = (ND_UINT32)~Instrux->Vex3.v;
+    Instrux->Exs.l = Instrux->Vex3.l;
+    Instrux->Exs.p = Instrux->Vex3.p;
+
+    // Do validations in case of VEX outside 64 bits.
+    if (ND_CODE_64 != Instrux->DefCode)
+    {
+        // Vex.R and Vex.X have been tested by the initial if.
+
+        // Vex.vvvv must be less than 8.
+        Instrux->Exs.v &= 7;
+
+        // Vex.B is ignored, so we force it to 0.
+        Instrux->Exs.b = 0;
+    }
+    else
+    {
+        // Apply 64-bit operand size.
+        if (Instrux->Exs.w == 1)
         {
-            return ND_STATUS_VEX_WITH_PREFIX;
-        }
-
-        // Fill in XOP info.
-        Instrux->VexMode = ND_VEXM_3B;
-        Instrux->HasVex = ND_TRUE;
-        Instrux->EncMode = ND_ENCM_VEX;
-        Instrux->Vex3.Vex[0] = Code[Offset];
-        Instrux->Vex3.Vex[1] = Code[Offset + 1];
-        Instrux->Vex3.Vex[2] = Code[Offset + 2];
-
-        Instrux->Exs.r = (ND_UINT32)~Instrux->Vex3.r;
-        Instrux->Exs.x = (ND_UINT32)~Instrux->Vex3.x;
-        Instrux->Exs.b = (ND_UINT32)~Instrux->Vex3.b;
-        Instrux->Exs.m = Instrux->Vex3.m;
-        Instrux->Exs.w = Instrux->Vex3.w;
-        Instrux->Exs.v = (ND_UINT32)~Instrux->Vex3.v;
-        Instrux->Exs.l = Instrux->Vex3.l;
-        Instrux->Exs.p = Instrux->Vex3.p;
-
-        // Do validations in case of VEX outside 64 bits.
-        if (Instrux->DefCode != ND_CODE_64)
-        {
-            // Vex.R and Vex.X have been tested by the initial if.
-
-            // Vex.vvvv must be less than 8.
-            Instrux->Exs.v &= 7;
-
-            // Vex.B is ignored, so we force it to 0.
-            Instrux->Exs.b = 0;
-        }
-
-        // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
-        Instrux->Length += 3;
-        if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-        {
-            return ND_STATUS_INSTRUCTION_TOO_LONG;
+            Instrux->OpMode = ND_OPSZ_64;
         }
     }
 
-    return ND_STATUS_SUCCESS;
+    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
+    return NdIncrementLength(Instrux, 3);
+
+#undef Instrux
+#undef Context
 }
 
 
@@ -320,13 +376,16 @@ NdFetchVex3(
 //
 static NDSTATUS
 NdFetchEvex(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
-    // One more byte has to follow, the modrm or the second VEX byte.
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
+    // One more byte has to follow, the modrm or the second EVEX byte.
     RET_GT((ND_SIZET)Offset + 2, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     if ((ND_CODE_64 != Instrux->DefCode) && ((Code[Offset + 1] & 0xC0) != 0xC0))
@@ -363,15 +422,20 @@ NdFetchEvex(
         return ND_STATUS_INVALID_ENCODING;
     }
 
-    // Check map. Maps 4 & 7 are allowed only if APX is enabled.
-    if (Instrux->Evex.m == 4 || Instrux->Evex.m == 7)
+    if (!(Context->FeatMode & ND_FEAT_APX))
     {
-        if (!(Instrux->FeatMode & ND_FEAT_APX))
+        // Check map. Maps 4 & 7 are allowed only if APX is enabled.
+        if (Instrux->Evex.m == 4 || Instrux->Evex.m == 7)
+        {
+            return ND_STATUS_INVALID_ENCODING;
+        }
+
+        // For regular EVEX, B4 must be 0, and U must be 1.
+        if (Instrux->Evex.b4 != 0 || Instrux->Evex.u != 1)
         {
             return ND_STATUS_INVALID_ENCODING;
         }
     }
-
 
     // Fill in the generic extension bits. We initially optimistically fill in all possible values.
     // Once we determine the opcode and, subsequently, the EVEX extension mode, we will do further 
@@ -424,15 +488,20 @@ NdFetchEvex(
             return ND_STATUS_BAD_EVEX_V_PRIME;
         }
     }
-
-    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
-    Instrux->Length += 4;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    else
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+        // Apply 64-bit operand size.
+        if (Instrux->Exs.w == 1)
+        {
+            Instrux->OpMode = ND_OPSZ_64;
+        }
     }
 
-    return ND_STATUS_SUCCESS;
+    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
+    return NdIncrementLength(Instrux, 4);
+
+#undef Instrux
+#undef Context
 }
 
 
@@ -441,38 +510,41 @@ NdFetchEvex(
 //
 static NDSTATUS
 NdFetchRex2(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
     if (ND_CODE_64 != Instrux->DefCode)
     {
         // AAD instruction outside 64-bit mode.
         return ND_STATUS_SUCCESS;
     }
 
-    if (!(Instrux->FeatMode & ND_FEAT_APX))
+    if (!(Context->FeatMode & ND_FEAT_APX))
     {
         // APX not enabled, #UD.
         return ND_STATUS_SUCCESS;
     }
 
-    // One more byte has to follow.
-    RET_GT((ND_SIZET)Offset + 2, Size, ND_STATUS_BUFFER_TOO_SMALL);
+    if (Instrux->HasRex)
+    {
+        // REX illegal with REX2.
+        return ND_STATUS_INVALID_PREFIX_SEQUENCE;
+    }
+
+    // One more byte has to follow + one opcode byte.
+    RET_GT((ND_SIZET)Offset + 3, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     // This is REX2.
     Instrux->HasRex2 = ND_TRUE;
     Instrux->EncMode = ND_ENCM_LEGACY;
     Instrux->Rex2.Rex2[0] = Code[Offset + 0];
     Instrux->Rex2.Rex2[1] = Code[Offset + 1];
-
-    // REX illegal with REX2.
-    if (Instrux->HasRex)
-    {
-        return ND_STATUS_INVALID_PREFIX_SEQUENCE;
-    }
 
     // Fill in the generic extension bits
     Instrux->Exs.r = Instrux->Rex2.r3;
@@ -482,15 +554,26 @@ NdFetchRex2(
     Instrux->Exs.b = Instrux->Rex2.b3;
     Instrux->Exs.b4 = Instrux->Rex2.b4;
     Instrux->Exs.w = Instrux->Rex2.w;
+    Instrux->Exs.m = Instrux->Rex2.m0;
 
-    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
-    Instrux->Length += 2;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    // Make sure the opcode has support for REX2. In some cases, particular instructions selected by ModRm.reg
+    // might not support REX2, but these are filtered during the decoding phase in NdDecodeInstruction.
+    if (gRex2Table[Instrux->Rex2.m0][Code[Offset + 2]] == 0)
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+        return ND_STATUS_INVALID_ENCODING;
     }
 
-    return ND_STATUS_SUCCESS;
+    // Toggle operand size to 64-bit mode.
+    if (Instrux->Exs.w == 1)
+    {
+        Instrux->OpMode = ND_OPSZ_64;
+    }
+
+    // Update Instrux length & offset, and make sure we don't exceed 15 bytes.
+    return NdIncrementLength(Instrux, 2);
+
+#undef Instrux
+#undef Context
 }
 
 
@@ -499,50 +582,36 @@ NdFetchRex2(
 //
 static NDSTATUS
 NdFetchPrefixes(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
-    NDSTATUS status;
-    ND_BOOL morePrefixes;
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
+    const ND_UINT8 *prefMap = Instrux->DefCode == ND_CODE_64 ? gPrefixesMap64 : gPrefixesMap;
+    NDSTATUS status = ND_STATUS_SUCCESS;;
     ND_UINT8 prefix;
 
-    morePrefixes = ND_TRUE;
-
-    while (morePrefixes)
+    // We already validated that we have at least one available byte.
+    while (prefMap[prefix = Code[Offset]] != ND_PREF_CODE_NONE)
     {
-        morePrefixes = ND_FALSE;
-
-        RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
-
-        prefix = Code[Offset];
-
-        // Speedup: if the current byte is not a prefix of any kind, leave now. This will be the case most of the times.
-        if (ND_PREF_CODE_NONE == gPrefixesMap[prefix])
-        {
-            status = ND_STATUS_SUCCESS;
-            goto done_prefixes;
-        }
-
-        if (ND_PREF_CODE_STANDARD == gPrefixesMap[prefix])
+        if (ND_PREF_CODE_LEGACY == prefMap[prefix])
         {
             switch (prefix)
             {
             case ND_PREFIX_G0_LOCK:
                 Instrux->HasLock = ND_TRUE;
-                morePrefixes = ND_TRUE;
                 break;
             case ND_PREFIX_G1_REPE_REPZ:
                 Instrux->Rep = ND_PREFIX_G1_REPE_REPZ;
                 Instrux->HasRepRepzXrelease = ND_TRUE;
-                morePrefixes = ND_TRUE;
                 break;
             case ND_PREFIX_G1_REPNE_REPNZ:
                 Instrux->Rep = ND_PREFIX_G1_REPNE_REPNZ;
                 Instrux->HasRepnzXacquireBnd = ND_TRUE;
-                morePrefixes = ND_TRUE;
                 break;
             case ND_PREFIX_G2_SEG_CS:
             case ND_PREFIX_G2_SEG_SS:
@@ -581,115 +650,154 @@ NdFetchPrefixes(
                     Instrux->Seg = prefix;
                     Instrux->HasSeg = ND_TRUE;
                 }
-                morePrefixes = ND_TRUE;
                 break;
             case ND_PREFIX_G3_OPERAND_SIZE:
                 Instrux->HasOpSize = ND_TRUE;
-                morePrefixes = ND_TRUE;
+                // Toggle operand size mode:
+                // 16-bit mode: 32-bit operand size
+                // 32-bit mode: 16-bit operand size
+                // 64-bit mode: 16-bit operand size
+                Instrux->OpMode = (Instrux->DefCode == ND_CODE_16) ? ND_OPSZ_32 : ND_OPSZ_16;
                 break;
             case ND_PREFIX_G4_ADDR_SIZE:
                 Instrux->HasAddrSize = ND_TRUE;
-                morePrefixes = ND_TRUE;
+                // Toggle address size mode:
+                // 16-bit mode: 32-bit address size
+                // 32-bit mode: 16-bit address size
+                // 64-bit mode: 32-bit address size
+                Instrux->AddrMode = (Instrux->DefCode == ND_CODE_32) ? ND_ADDR_16 : ND_ADDR_32;
                 break;
             default:
                 break;
             }
         }
-
-        // REX must precede the opcode byte. However, if one or more other prefixes are present, the instruction
-        // will still decode & execute properly, but REX will be ignored.
-        if (morePrefixes && Instrux->HasRex)
+        else if (ND_PREF_CODE_REX == prefMap[prefix])
         {
-            Instrux->HasRex = ND_FALSE;
-            Instrux->Rex.Rex = 0;
-            Instrux->Exs.w = 0;
-            Instrux->Exs.r = 0;
-            Instrux->Exs.x = 0;
-            Instrux->Exs.b = 0;
+            ND_SIZET next = (ND_SIZET)Offset + 1;
+
+            // At least one opcode byte must follow a REX prefix.
+            if (next >= Size)
+            {
+                return ND_STATUS_BUFFER_TOO_SMALL;
+            }
+
+            if (prefMap[Code[next]] != ND_PREF_CODE_LEGACY && prefMap[Code[next]] != ND_PREF_CODE_REX)
+            {
+                // REX is special, and the following rules apply:
+                // 1. REX must be the last prefix before the opcode
+                // 2. If any legacy (or another REX) prefix follows, this REX prefix will be ignored
+                // 3. If a XOP/VEX/EVEX/REX2 prefix followed, #UD will be generated
+                // Therefore, we digest the current REX prefix as long as another legacy/REX prefix does not follow.
+                // If a XOP/VEX/EVEX/REX2 prefix followed, we will digest the current REX prefix, but we will return 
+                // an error when we parse that XOP/VEX/EVEX/REX2 prefix.
+                Instrux->HasRex = ND_TRUE;
+                Instrux->Rex.Rex = prefix;
+                Instrux->Exs.w = Instrux->Rex.w;
+                Instrux->Exs.r = Instrux->Rex.r;
+                Instrux->Exs.x = Instrux->Rex.x;
+                Instrux->Exs.b = Instrux->Rex.b;
+
+                // Toggle operand size to 64-bit mode.
+                if (Instrux->Exs.w == 1)
+                {
+                    Instrux->OpMode = ND_OPSZ_64;
+                }
+            }
         }
-
-        // Check for REX.
-        if ((ND_CODE_64 == Instrux->DefCode) && (ND_PREF_CODE_REX == gPrefixesMap[prefix]))
+        else if (ND_PREF_CODE_EX == prefMap[prefix])
         {
-            Instrux->HasRex = ND_TRUE;
-            Instrux->Rex.Rex = prefix;
-            Instrux->Exs.w = Instrux->Rex.w;
-            Instrux->Exs.r = Instrux->Rex.r;
-            Instrux->Exs.x = Instrux->Rex.x;
-            Instrux->Exs.b = Instrux->Rex.b;
-            morePrefixes = ND_TRUE;
+            switch (prefix)
+            {
+            case ND_PREFIX_XOP:
+                status = NdFetchXop(Ictx, Code, Offset, Size);
+                break;
+            case ND_PREFIX_VEX_2B:
+                status = NdFetchVex2(Ictx, Code, Offset, Size);
+                break;
+            case ND_PREFIX_VEX_3B:
+                status = NdFetchVex3(Ictx, Code, Offset, Size);
+                break;
+            case ND_PREFIX_EVEX:
+                status = NdFetchEvex(Ictx, Code, Offset, Size);
+                break;
+            case ND_PREFIX_REX2:
+                status = NdFetchRex2(Ictx, Code, Offset, Size);
+                break;
+            default:
+                status = ND_STATUS_INVALID_INSTRUX;
+            }
+
+            // Must be the last prefix before the opcode, so we break here; the next byte must be the opcode.
+            break;
         }
 
         // We have found prefixes, update the instruction length and the current offset.
-        if (morePrefixes)
+        Instrux->Length++, Offset++;
+        if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
         {
-            Instrux->Length++, Offset++;
-            if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-            {
-                return ND_STATUS_INSTRUCTION_TOO_LONG;
-            }
+            return ND_STATUS_INSTRUCTION_TOO_LONG;
         }
+
+        // At least one more byte must be available.
+        RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
     }
 
-    // We must have at least one more free byte after the prefixes, which will be either the opcode, either
-    // XOP/VEX/EVEX/MVEX prefix.
-    RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
-
-    // Try to match a XOP/VEX/EVEX/MVEX prefix.
-    if (ND_PREF_CODE_EX == gPrefixesMap[Code[Offset]])
-    {
-        // Check for XOP
-        if (Code[Offset] == ND_PREFIX_XOP)
-        {
-            status = NdFetchXop(Instrux, Code, Offset, Size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-        else if (Code[Offset] == ND_PREFIX_VEX_2B)
-        {
-            status = NdFetchVex2(Instrux, Code, Offset, Size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-        else if (Code[Offset] == ND_PREFIX_VEX_3B)
-        {
-            status = NdFetchVex3(Instrux, Code, Offset, Size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-        else if (Code[Offset] == ND_PREFIX_EVEX)
-        {
-            status = NdFetchEvex(Instrux, Code, Offset, Size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-        else if (Code[Offset] == ND_PREFIX_REX2)
-        {
-            status = NdFetchRex2(Instrux, Code, Offset, Size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-        else
-        {
-            return ND_STATUS_INVALID_INSTRUX;
-        }
-    }
-
-done_prefixes:
     // The total length of the instruction is the total length of the prefixes right now.
-    Instrux->PrefLength = Instrux->OpOffset = Instrux->Length;
+    Instrux->PrefLength = Instrux->OpOffset = Instrux->MainOpOffset = Instrux->Length;
 
-    return ND_STATUS_SUCCESS;
+    return status;
+
+#undef Instrux
+#undef Context
+}
+
+
+//
+// NdFetchOpcodes
+//
+static NDSTATUS
+NdFetchOpcodes(
+    const ND_INTERNAL_CONTEXT *Ictx,
+    const ND_UINT8 *Code,
+    ND_UINT8 Offset,
+    ND_SIZET Size
+)
+{
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+
+    // Fetch first opcode.
+    RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
+    Instrux->PrimaryOpCode = Code[Offset++], Instrux->OpLength++;
+
+    // Fetch subsequent opcodes, if the curent one is an escape opcode.
+    if (Instrux->PrimaryOpCode == 0x0F && Instrux->EncMode == ND_ENCM_LEGACY && !Instrux->HasRex2)
+    {
+        Instrux->Exs.m = 1;
+
+        RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
+        Instrux->PrimaryOpCode = Code[Offset++], Instrux->OpLength++, Instrux->MainOpOffset++;
+
+        if (Instrux->PrimaryOpCode == 0x38)
+        {
+            Instrux->Exs.m = 2;
+
+            RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
+            Instrux->PrimaryOpCode = Code[Offset++], Instrux->OpLength++, Instrux->MainOpOffset++;
+        }
+        else if (Instrux->PrimaryOpCode == 0x3A)
+        {
+            Instrux->Exs.m = 3;
+
+            RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
+            Instrux->PrimaryOpCode = Code[Offset++], Instrux->OpLength++, Instrux->MainOpOffset++;
+        }
+    }
+
+    return NdIncrementLength(Instrux, Instrux->OpLength);
+
+#undef Instrux
+#undef Context
 }
 
 
@@ -698,31 +806,24 @@ done_prefixes:
 //
 static NDSTATUS
 NdFetchOpcode(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     // At least one byte must be available, for the fetched opcode.
     RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    // With REX2, only legacy map & 0x0F map are valid. A single opcode byte can be present, and no
-    // opcode extensions are accepted (for example, 0x0F 0x38 is invalid).
-    if (Instrux->HasRex2 && Instrux->OpLength != 0)
-    {
-        return ND_STATUS_INVALID_ENCODING;
-    }
+    Instrux->OpLength++;
 
-    Instrux->OpCodeBytes[Instrux->OpLength++] = Code[Offset];
+    Instrux->PrimaryOpCode = Code[Offset];
 
-    Instrux->Length++;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-    {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
-    }
+    return NdIncrementLength(Instrux, 1);
 
-    return ND_STATUS_SUCCESS;
+#undef Instrux
 }
 
 
@@ -731,83 +832,54 @@ NdFetchOpcode(
 //
 static NDSTATUS
 NdFetchModrm(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     // At least one byte must be available, for the modrm byte.
     RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     // If we get called, we assume we have ModRM.
     Instrux->HasModRm = ND_TRUE;
+    Instrux->ModRmOffset = Offset;
 
     // Fetch the ModRM byte & update the offset and the instruction length.
     Instrux->ModRm.ModRm = Code[Offset];
-    Instrux->ModRmOffset = Offset;
 
-    Instrux->Length++, Offset++;
+    return NdIncrementLength(Instrux, 1);
 
-    // Make sure we don't exceed the maximum instruction length.
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-    {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
-    }
-
-    return ND_STATUS_SUCCESS;
+#undef Instrux
 }
 
 
 //
-// NdFetchModrmAndSib
+// NdFetchSib
 //
 static NDSTATUS
-NdFetchModrmAndSib(
-    INSTRUX *Instrux,
+NdFetchSib(
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
-    // At least one byte must be available, for the modrm byte.
+#define Instrux     Ictx->Instrux
+
+    // At least one more byte must be available, for the sib.
     RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    // If we get called, we assume we have ModRM.
-    Instrux->HasModRm = ND_TRUE;
+    // SIB present.
+    Instrux->HasSib = ND_TRUE;
 
-    // Fetch the ModRM byte & update the offset and the instruction length.
-    Instrux->ModRm.ModRm = Code[Offset];
-    Instrux->ModRmOffset = Offset;
+    Instrux->Sib.Sib = Code[Offset];
+    
+    return NdIncrementLength(Instrux, 1);
 
-    Instrux->Length++, Offset++;
-
-    // Make sure we don't exceed the maximum instruction length.
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-    {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
-    }
-
-    // If needed, fetch the SIB.
-    if ((Instrux->ModRm.rm == NDR_RSP) && (Instrux->ModRm.mod != 3) && (Instrux->AddrMode != ND_ADDR_16))
-    {
-        // At least one more byte must be available, for the sib.
-        RET_GT((ND_SIZET)Offset + 1, Size, ND_STATUS_BUFFER_TOO_SMALL);
-
-        // SIB present.
-        Instrux->HasSib = ND_TRUE;
-
-        Instrux->Sib.Sib = Code[Offset];
-        Instrux->Length++;
-
-        // Make sure we don't exceed the maximum instruction length.
-        if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-        {
-            return ND_STATUS_INSTRUCTION_TOO_LONG;
-        }
-    }
-
-    return ND_STATUS_SUCCESS;
+#undef Instrux
 }
 
 
@@ -816,50 +888,45 @@ NdFetchModrmAndSib(
 //
 static NDSTATUS
 NdFetchDisplacement(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
-    ND_SIZET Size
-    )
-//
-// Will decode the displacement from the instruction. Will fill in extracted information in Instrux,
-// and will update the instruction length.
-//
+    ND_SIZET Size,
+    ND_UINT8 DispSize
+)
 {
-    ND_UINT8 displSize;
+#define Instrux     Ictx->Instrux
 
-    displSize = 0;
+    // Make sure enough buffer space is available.
+    RET_GT((ND_SIZET)Offset + DispSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    if (ND_ADDR_16 == Instrux->AddrMode)
+    // If we get here, we have displacement.
+    Instrux->HasDisp = ND_TRUE;
+    Instrux->DispLength = DispSize;
+    Instrux->DispOffset = Offset;
+
+    switch (DispSize)
     {
-        displSize = gDispsizemap16[Instrux->ModRm.mod][Instrux->ModRm.rm];
-    }
-    else
-    {
-        displSize = gDispsizemap[Instrux->ModRm.mod][Instrux->HasSib ? Instrux->Sib.base : Instrux->ModRm.rm];
-    }
-
-    if (0 != displSize)
-    {
-        // Make sure enough buffer space is available.
-        RET_GT((ND_SIZET)Offset + displSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
-
-        // If we get here, we have displacement.
-        Instrux->HasDisp = ND_TRUE;
-
-        Instrux->Displacement = (ND_UINT32)NdFetchData(Code + Offset, displSize);
-
-        // Fill in displacement info.
-        Instrux->DispLength = displSize;
-        Instrux->DispOffset = Offset;
-        Instrux->Length += displSize;
-        if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-        {
-            return ND_STATUS_INSTRUCTION_TOO_LONG;
-        }
+    case 1:
+        Instrux->Displacement = ND_FETCH_8(Code + Offset);
+        break;
+    case 2:
+        Instrux->Displacement = ND_FETCH_16(Code + Offset);
+        break;
+    case 4:
+        Instrux->Displacement = ND_FETCH_32(Code + Offset);
+        break;
+    default:
+        return ND_STATUS_INVALID_PARAMETER;
     }
 
-    return ND_STATUS_SUCCESS;
+    Instrux->IsRipRelative = (ND_CODE_64 == Instrux->DefCode) && 
+                             (Instrux->ModRm.mod == 0) && 
+                             (Instrux->ModRm.rm == NDR_RBP);
+
+    return NdIncrementLength(Instrux, DispSize);
+
+#undef Instrux
 }
 
 
@@ -868,21 +935,82 @@ NdFetchDisplacement(
 //
 static NDSTATUS
 NdFetchModrmSibDisplacement(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size
-    )
+)
 {
     NDSTATUS status;
+    ND_UINT8 base, modrm;
 
-    status = NdFetchModrmAndSib(Instrux, Code, Offset, Size);
+    // Make sure a ModRm table entry exists for the encoding. A table may be missing if we end up with an 
+    // unknown/unssuported map id.
+    if (ND_NULL == gModrmTable[Ictx->Instrux->EncMode][Ictx->Instrux->Exs.m])
+    {
+        return ND_STATUS_INVALID_ENCODING;
+    }
+
+    modrm = gModrmTable[Ictx->Instrux->EncMode][Ictx->Instrux->Exs.m][Ictx->Instrux->PrimaryOpCode];
+    if (modrm == 0)
+    {
+        return ND_STATUS_SUCCESS;
+    }
+
+    // Fetch ModRm.
+    status = NdFetchModrm(Ictx, Code, Offset++, Size);
     if (!ND_SUCCESS(status))
     {
         return status;
     }
 
-    return NdFetchDisplacement(Instrux, Code, Instrux->Length, Size);
+    // Special case for instructions that always force the mode to register. In that case (such as DR and CR access
+    // instructions), there is no memory mode, and hence no SIB and no displacement.
+    if (modrm == 2)
+    {
+        return ND_STATUS_SUCCESS;
+    }
+
+    base = Ictx->Instrux->ModRm.rm;
+
+    // If needed, fetch the SIB.
+    if ((Ictx->Instrux->ModRm.rm == NDR_RSP) && 
+        (Ictx->Instrux->ModRm.mod != 3) && 
+        (Ictx->Instrux->AddrMode != ND_ADDR_16))
+    {
+        status = NdFetchSib(Ictx, Code, Offset++, Size);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+
+        base = Ictx->Instrux->Sib.base;
+    }
+
+    // If needed, fetch displacement.
+    if ((Ictx->Instrux->ModRm.mod == 0 && base == NDR_RBP) ||
+        (Ictx->Instrux->ModRm.mod == 1) ||
+        (Ictx->Instrux->ModRm.mod == 2))
+    {
+        ND_UINT8 dispSize;
+
+        if (Ictx->Instrux->AddrMode == ND_ADDR_16)
+        {
+            dispSize = gDispsizemap16[Ictx->Instrux->ModRm.mod][base];
+        }
+        else
+        {
+            dispSize = gDispsizemap[Ictx->Instrux->ModRm.mod][base];
+        }
+
+        status = NdFetchDisplacement(Ictx, Code, Offset, Size, dispSize);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+    }
+
+    return ND_STATUS_SUCCESS;
 }
 
 
@@ -891,29 +1019,38 @@ NdFetchModrmSibDisplacement(
 //
 static NDSTATUS
 NdFetchAddressFar(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size,
     ND_UINT8 AddressSize
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     RET_GT((ND_SIZET)Offset + AddressSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     Instrux->HasAddr = ND_TRUE;
     Instrux->AddrLength = AddressSize;
     Instrux->AddrOffset = Offset;
 
-    Instrux->Address.Ip = (ND_UINT32)NdFetchData(Code + Offset, Instrux->AddrLength - 2);
-    Instrux->Address.Cs = (ND_UINT16)NdFetchData(Code + Offset + Instrux->AddrLength - 2, 2);
-
-    Instrux->Length += Instrux->AddrLength;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    switch (AddressSize)
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+    case 4:
+        Instrux->Address.Ip = ND_FETCH_16(Code + Offset);
+        Instrux->Address.Cs = ND_FETCH_16(Code + Offset + 2);
+        break;
+    case 6:
+        Instrux->Address.Ip = ND_FETCH_32(Code + Offset);
+        Instrux->Address.Cs = ND_FETCH_16(Code + Offset + 4);
+        break;
+    default:
+        return ND_STATUS_INVALID_PARAMETER;
     }
 
-    return ND_STATUS_SUCCESS;
+    return NdIncrementLength(Instrux, AddressSize);
+
+#undef Instrux
 }
 
 
@@ -922,28 +1059,33 @@ NdFetchAddressFar(
 //
 static NDSTATUS
 NdFetchAddressNear(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size,
     ND_UINT8 AddressSize
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     RET_GT((ND_SIZET)Offset + AddressSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     Instrux->HasAddrNear = ND_TRUE;
     Instrux->AddrLength = AddressSize;
     Instrux->AddrOffset = Offset;
 
-    Instrux->AddressNear = (ND_UINT64)NdFetchData(Code + Offset, Instrux->AddrLength);
-
-    Instrux->Length += Instrux->AddrLength;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    if (AddressSize == 8)
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+        Instrux->AddressNear = ND_FETCH_64(Code + Offset);
+    }
+    else
+    {
+        return ND_STATUS_INVALID_PARAMETER;
     }
 
-    return ND_STATUS_SUCCESS;
+    return NdIncrementLength(Instrux, AddressSize);
+
+#undef Instrux
 }
 
 
@@ -952,60 +1094,122 @@ NdFetchAddressNear(
 //
 static NDSTATUS
 NdFetchImmediate(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size,
     ND_UINT8 ImmediateSize
-    )
+)
 {
-    ND_UINT64 imm;
+#define Instrux     Ictx->Instrux
 
     RET_GT((ND_SIZET)Offset + ImmediateSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
-    imm = NdFetchData(Code + Offset, ImmediateSize);
+    Instrux->HasImm1 = ND_TRUE;
+    Instrux->Imm1Length = ImmediateSize;
+    Instrux->Imm1Offset = Offset;
 
-    if (Instrux->HasImm2)
+    switch (ImmediateSize)
     {
-        return ND_STATUS_INVALID_INSTRUX;
+    case 1:
+        Instrux->Immediate1 = ND_FETCH_8(Code + Offset);
+        break;
+    case 2:
+        Instrux->Immediate1 = ND_FETCH_16(Code + Offset);
+        break;
+    case 4:
+        Instrux->Immediate1 = ND_FETCH_32(Code + Offset);
+        break;
+    case 8:
+        Instrux->Immediate1 = ND_FETCH_64(Code + Offset);
+        break;
+    default:
+        return ND_STATUS_INVALID_PARAMETER;
     }
-    else if (Instrux->HasImm1)
+
+    return NdIncrementLength(Instrux, ImmediateSize);
+
+#undef Instrux
+}
+
+//
+// NdFetchImmediate2
+//
+static NDSTATUS
+NdFetchImmediate2(
+    const ND_INTERNAL_CONTEXT *Ictx,
+    const ND_UINT8 *Code,
+    ND_UINT8 Offset,
+    ND_SIZET Size,
+    ND_UINT8 ImmediateSize
+)
+{
+#define Instrux     Ictx->Instrux
+
+    RET_GT((ND_SIZET)Offset + ImmediateSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
+
+    Instrux->HasImm2 = ND_TRUE;
+    Instrux->Imm2Length = ImmediateSize;
+    Instrux->Imm2Offset = Offset;
+
+    if (ImmediateSize == 1)
     {
-        Instrux->HasImm2 = ND_TRUE;
-        Instrux->Imm2Length = ImmediateSize;
-        Instrux->Imm2Offset = Offset;
-        Instrux->Immediate2 = (ND_UINT8)imm;
+        Instrux->Immediate2 = ND_FETCH_8(Code + Offset);
     }
     else
     {
-        Instrux->HasImm1 = ND_TRUE;
-        Instrux->Imm1Length = ImmediateSize;
-        Instrux->Imm1Offset = Offset;
-        Instrux->Immediate1 = imm;
+        return ND_STATUS_INVALID_PARAMETER;
     }
 
-    Instrux->Length += ImmediateSize;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    return NdIncrementLength(Instrux, ImmediateSize);
+
+#undef Instrux
+}
+
+//
+// NdFetchImmediates
+//
+static NDSTATUS
+NdFetchImmediates(
+    const ND_INTERNAL_CONTEXT *Ictx,
+    const ND_UINT8 *Code,
+    ND_UINT8 Offset,
+    ND_SIZET Size,
+    ND_UINT8 Immediate1Size,
+    ND_UINT8 Immediate2Size
+)
+{
+    NDSTATUS status;
+
+    status = NdFetchImmediate(Ictx, Code, Offset, Size, Immediate1Size);
+    if (!ND_SUCCESS(status))
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+        return status;
+    }
+
+    status = NdFetchImmediate2(Ictx, Code, Offset + Immediate1Size, Size, Immediate2Size);
+    if (!ND_SUCCESS(status))
+    {
+        return status;
     }
 
     return ND_STATUS_SUCCESS;
 }
-
 
 //
 // NdFetchRelativeOffset
 //
 static NDSTATUS
 NdFetchRelativeOffset(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size,
     ND_UINT8 RelOffsetSize
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     // Make sure we don't outrun the buffer.
     RET_GT((ND_SIZET)Offset + RelOffsetSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
@@ -1013,15 +1217,26 @@ NdFetchRelativeOffset(
     Instrux->RelOffsLength = RelOffsetSize;
     Instrux->RelOffsOffset = Offset;
 
-    Instrux->RelativeOffset = (ND_UINT32)NdFetchData(Code + Offset, RelOffsetSize);
-
-    Instrux->Length += RelOffsetSize;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    switch (RelOffsetSize)
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+    case 1:
+        Instrux->RelativeOffset = ND_FETCH_8(Code + Offset);
+        break;
+    case 2:
+        Instrux->RelativeOffset = ND_FETCH_16(Code + Offset);
+        break;
+    case 4:
+        Instrux->RelativeOffset = ND_FETCH_32(Code + Offset);
+        break;
+    default:
+        return ND_STATUS_INVALID_PARAMETER;
     }
 
-    return ND_STATUS_SUCCESS;
+    Instrux->IsRipRelative = ND_TRUE;
+
+    return NdIncrementLength(Instrux, RelOffsetSize);
+
+#undef Instrux
 }
 
 
@@ -1030,28 +1245,39 @@ NdFetchRelativeOffset(
 //
 static NDSTATUS
 NdFetchMoffset(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size,
     ND_UINT8 MoffsetSize
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     RET_GT((ND_SIZET)Offset + MoffsetSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     Instrux->HasMoffset = ND_TRUE;
     Instrux->MoffsetLength = MoffsetSize;
     Instrux->MoffsetOffset = Offset;
 
-    Instrux->Moffset = NdFetchData(Code + Offset, MoffsetSize);
-
-    Instrux->Length += MoffsetSize;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
+    switch (MoffsetSize)
     {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
+    case 2:
+        Instrux->Moffset = ND_FETCH_16(Code + Offset);
+        break;
+    case 4:
+        Instrux->Moffset = ND_FETCH_32(Code + Offset);
+        break;
+    case 8:
+        Instrux->Moffset = ND_FETCH_64(Code + Offset);
+        break;
+    default:
+        return ND_STATUS_INVALID_PARAMETER;
     }
 
-    return ND_STATUS_SUCCESS;
+    return NdIncrementLength(Instrux, MoffsetSize);
+
+#undef Instrux
 }
 
 
@@ -1060,2339 +1286,99 @@ NdFetchMoffset(
 //
 static NDSTATUS
 NdFetchSseImmediate(
-    INSTRUX *Instrux,
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
     ND_SIZET Size,
     ND_UINT8 SseImmSize
-    )
+)
 {
+#define Instrux     Ictx->Instrux
+
     RET_GT((ND_SIZET)Offset + SseImmSize, Size, ND_STATUS_BUFFER_TOO_SMALL);
 
     Instrux->HasSseImm = ND_TRUE;
     Instrux->SseImmOffset = Offset;
-    Instrux->SseImmediate = *(Code + Offset);
 
-    Instrux->Length += SseImmSize;
-    if (Instrux->Length > ND_MAX_INSTRUCTION_LENGTH)
-    {
-        return ND_STATUS_INSTRUCTION_TOO_LONG;
-    }
+    Instrux->SseImmediate = ND_FETCH_8(Code + Offset);
 
-    return ND_STATUS_SUCCESS;
+    return NdIncrementLength(Instrux, SseImmSize);
+
+#undef Instrux
 }
 
 
 //
-// NdGetSegOverride
-//
-static ND_UINT8
-NdGetSegOverride(
-    INSTRUX *Instrux,
-    ND_UINT8 DefaultSeg
-    )
-{
-    // Return default seg, if no override present.
-    if (Instrux->Seg == 0)
-    {
-        return DefaultSeg;
-    }
-
-    // In 64 bit mode, the segment override is ignored, except for FS and GS.
-    if ((Instrux->DefCode == ND_CODE_64) &&
-        (Instrux->Seg != ND_PREFIX_G2_SEG_FS) &&
-        (Instrux->Seg != ND_PREFIX_G2_SEG_GS))
-    {
-        return DefaultSeg;
-    }
-
-    switch (Instrux->Seg)
-    {
-    case ND_PREFIX_G2_SEG_CS:
-        return NDR_CS;
-    case ND_PREFIX_G2_SEG_DS:
-        return NDR_DS;
-    case ND_PREFIX_G2_SEG_ES:
-        return NDR_ES;
-    case ND_PREFIX_G2_SEG_SS:
-        return NDR_SS;
-    case ND_PREFIX_G2_SEG_FS:
-        return NDR_FS;
-    case ND_PREFIX_G2_SEG_GS:
-        return NDR_GS;
-    default:
-        return DefaultSeg;
-    }
-}
-
-
-//
-// NdGetCompDispSize
-//
-static ND_UINT8
-NdGetCompDispSize(
-    const INSTRUX *Instrux,
-    ND_UINT32 MemSize
-    )
-{
-    static const ND_UINT8 fvszLut[4] = { 16, 32, 64, 0 };
-    static const ND_UINT8 hvszLut[4] = { 8, 16, 32, 0 };
-    static const ND_UINT8 qvszLut[4] = { 4, 8, 16, 0 };
-    static const ND_UINT8 dupszLut[4] = { 8, 32, 64, 0 };
-    static const ND_UINT8 fvmszLut[4] = { 16, 32, 64, 0 };
-    static const ND_UINT8 hvmszLut[4] = { 8, 16, 32, 0 };
-    static const ND_UINT8 qvmszLut[4] = { 4, 8, 16, 0 };
-    static const ND_UINT8 ovmszLut[4] = { 2, 4, 8, 0 };
-
-    if (Instrux->HasBroadcast)
-    {
-        // If the instruction uses broadcast, then compressed displacement will use the size of the element as scale:
-        // - 2 when broadcasting 16 bit
-        // - 4 when broadcasting 32 bit
-        // - 8 when broadcasting 64 bit
-        return (ND_UINT8)MemSize;
-    }
-
-    switch (Instrux->TupleType)
-    {
-    case ND_TUPLE_FV:
-        return fvszLut[Instrux->Exs.l];
-    case ND_TUPLE_HV:
-        return hvszLut[Instrux->Exs.l];
-    case ND_TUPLE_QV:
-        return qvszLut[Instrux->Exs.l];
-    case ND_TUPLE_DUP:
-        return dupszLut[Instrux->Exs.l];
-    case ND_TUPLE_FVM:
-        return fvmszLut[Instrux->Exs.l];
-    case ND_TUPLE_HVM:
-        return hvmszLut[Instrux->Exs.l];
-    case ND_TUPLE_QVM:
-        return qvmszLut[Instrux->Exs.l];
-    case ND_TUPLE_OVM:
-        return ovmszLut[Instrux->Exs.l];
-    case ND_TUPLE_M128:
-        return 16;
-    case ND_TUPLE_T1S8:
-        return 1;
-    case ND_TUPLE_T1S16:
-        return 2;
-    case ND_TUPLE_T1S:
-        return !!(Instrux->Attributes & ND_FLAG_WIG) ? 4 : Instrux->Exs.w ? 8 : 4;
-    case ND_TUPLE_T1F:
-        return (ND_UINT8)MemSize;
-    case ND_TUPLE_T2:
-        return Instrux->Exs.w ? 16 : 8;
-    case ND_TUPLE_T4:
-        return Instrux->Exs.w ? 32 : 16;
-    case ND_TUPLE_T8:
-        return 32;
-    case ND_TUPLE_T1_4X:
-        return 16;
-    default:
-        // Default - we assume byte granularity for memory accesses, therefore, no scaling will be done.
-        return 1;
-    }
-}
-
-
-//
-// NdParseMemoryOperand16
+// NdFetchPayloadBytes
 //
 static NDSTATUS
-NdParseMemoryOperand16(
-    INSTRUX *Instrux,
-    ND_OPERAND *Operand
-    )
-{
-    if (Instrux->Attributes & ND_FLAG_NOA16)
-    {
-        return ND_STATUS_16_BIT_ADDRESSING_NOT_SUPPORTED;
-    }
-
-    switch (Instrux->ModRm.rm)
-    {
-    case 0:
-        // [bx + si]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.HasIndex = ND_TRUE;
-        Operand->Info.Memory.Scale = 1;
-        Operand->Info.Memory.Base = NDR_BX;
-        Operand->Info.Memory.Index = NDR_SI;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_DS;
-        break;
-    case 1:
-        // [bx + di]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.HasIndex = ND_TRUE;
-        Operand->Info.Memory.Scale = 1;
-        Operand->Info.Memory.Base = NDR_BX;
-        Operand->Info.Memory.Index = NDR_DI;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_DS;
-        break;
-    case 2:
-        // [bp + si]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.HasIndex = ND_TRUE;
-        Operand->Info.Memory.Scale = 1;
-        Operand->Info.Memory.Base = NDR_BP;
-        Operand->Info.Memory.Index = NDR_SI;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_SS;
-        break;
-    case 3:
-        // [bp + di]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.HasIndex = ND_TRUE;
-        Operand->Info.Memory.Scale = 1;
-        Operand->Info.Memory.Base = NDR_BP;
-        Operand->Info.Memory.Index = NDR_DI;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.IndexSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_SS;
-        break;
-    case 4:
-        // [si]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.Base = NDR_SI;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_DS;
-        break;
-    case 5:
-        // [di]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.Base = NDR_DI;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_DS;
-        break;
-    case 6:
-        // [bp]
-        if (Instrux->ModRm.mod != 0)
-        {
-            // If mod is not zero, than we have "[bp + displacement]".
-            Operand->Info.Memory.HasBase = ND_TRUE;
-            Operand->Info.Memory.Base = NDR_BP;
-            Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-            Operand->Info.Memory.Seg = NDR_SS;
-        }
-        else
-        {
-            // If mod is zero, than we only have a displacement that is used to directly address mem.
-            Operand->Info.Memory.Seg = NDR_DS;
-        }
-        break;
-    case 7:
-        // [bx]
-        Operand->Info.Memory.HasBase = ND_TRUE;
-        Operand->Info.Memory.Base = NDR_BX;
-        Operand->Info.Memory.BaseSize = ND_SIZE_16BIT;
-        Operand->Info.Memory.Seg = NDR_DS;
-        break;
-    }
-
-    // Store the displacement.
-    Operand->Info.Memory.HasDisp = !!Instrux->HasDisp;
-    Operand->Info.Memory.DispSize = Instrux->DispLength;
-    Operand->Info.Memory.Disp = Instrux->HasDisp ? ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement) : 0;
-
-    return ND_STATUS_SUCCESS;
-}
-
-
-//
-// NdParseMemoryOperand3264
-//
-static NDSTATUS
-NdParseMemoryOperand3264(
-    INSTRUX *Instrux,
-    ND_OPERAND *Operand,
-    ND_REG_SIZE VsibRegSize
-    )
-{
-    ND_UINT8 defsize = (Instrux->AddrMode == ND_ADDR_32 ? ND_SIZE_32BIT : ND_SIZE_64BIT);
-
-    // Implicit segment is DS.
-    Operand->Info.Memory.Seg = NDR_DS;
-
-    if (Instrux->HasSib)
-    {
-        // Check for base.
-        if ((Instrux->ModRm.mod == 0) && (Instrux->Sib.base == NDR_RBP))
-        {
-            // Mod is mem without displacement and base reg is RBP -> no base reg used.
-            // Note that this addressing mode is not RIP relative.
-        }
-        else
-        {
-            Operand->Info.Memory.HasBase = ND_TRUE;
-            Operand->Info.Memory.BaseSize = defsize;
-            Operand->Info.Memory.Base = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->Sib.base;
-
-            if (Instrux->Exs.b4 != 0)
-            {
-                // If APX is present, extend the base.
-                if (Instrux->FeatMode & ND_FEAT_APX)
-                {
-                    Operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
-                }
-                else
-                {
-                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-                }
-            }
-
-            if ((Operand->Info.Memory.Base == NDR_RSP) || (Operand->Info.Memory.Base == NDR_RBP))
-            {
-                Operand->Info.Memory.Seg = NDR_SS;
-            }
-        }
-
-        // Check for index.
-        if (ND_HAS_VSIB(Instrux))
-        {
-            // With VSIB, the index reg can be 4 (RSP equivalent). Bit 4 of the 32-bit index register is given by the
-            // EVEX.V' field.
-            Operand->Info.Memory.HasIndex = ND_TRUE;
-            Operand->Info.Memory.IndexSize = defsize;
-            Operand->Info.Memory.Index = (ND_UINT8)((Instrux->Exs.vp << 4) | (Instrux->Exs.x << 3) | Instrux->Sib.index);
-            Operand->Info.Memory.IndexSize = (ND_UINT8)VsibRegSize;
-            Operand->Info.Memory.Scale = 1 << Instrux->Sib.scale;
-        }
-        else
-        {
-            // Regular SIB, index RSP is ignored. Bit 4 of the 32-bit index register is given by the X4 field.
-            Operand->Info.Memory.Index = (ND_UINT8)(Instrux->Exs.x << 3) | Instrux->Sib.index;
-
-            if (Instrux->Exs.x4 != 0)
-            {
-                // If APX is present, extend the index.
-                if (Instrux->FeatMode & ND_FEAT_APX)
-                {
-                    Operand->Info.Memory.Index |= Instrux->Exs.x4 << 4;
-                }
-                else
-                {
-                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-                }
-            }
-
-            if (Operand->Info.Memory.Index != NDR_RSP)
-            {
-                // Index * Scale is present.
-                Operand->Info.Memory.HasIndex = ND_TRUE;
-                Operand->Info.Memory.IndexSize = defsize;
-                Operand->Info.Memory.Scale = 1 << Instrux->Sib.scale;
-            }
-        }
-    }
-    else
-    {
-        if ((Instrux->ModRm.mod == 0) && (Instrux->ModRm.rm == NDR_RBP))
-        {
-            //
-            // RIP relative addressing addresses a memory region relative to the current RIP; However,
-            // the current RIP, when executing the current instruction, is already updated and points
-            // to the next instruction, therefore, we must add the instruction length also to the final
-            // address. Note that RIP relative addressing is used even if the instruction uses 32 bit
-            // addressing, as long as we're in long mode.
-            //
-            Operand->Info.Memory.IsRipRel = Instrux->IsRipRelative = (Instrux->DefCode == ND_CODE_64);
-
-            // Some instructions (example: MPX) don't support RIP relative addressing.
-            if (Operand->Info.Memory.IsRipRel && !!(Instrux->Attributes & ND_FLAG_NO_RIP_REL))
-            {
-                return ND_STATUS_RIP_REL_ADDRESSING_NOT_SUPPORTED;
-            }
-        }
-        else
-        {
-            Operand->Info.Memory.HasBase = ND_TRUE;
-            Operand->Info.Memory.BaseSize = defsize;
-            Operand->Info.Memory.Base = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->ModRm.rm;
-
-            if (Instrux->Exs.b4 != 0)
-            {
-                // If APX is present, extend the base register.
-                if (Instrux->FeatMode & ND_FEAT_APX)
-                {
-                    Operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
-                }
-                else
-                {
-                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-                }
-            }
-
-            if ((Operand->Info.Memory.Base == NDR_RSP) || (Operand->Info.Memory.Base == NDR_RBP))
-            {
-                Operand->Info.Memory.Seg = NDR_SS;
-            }
-        }
-    }
-
-    Operand->Info.Memory.HasDisp = Instrux->HasDisp;
-    Operand->Info.Memory.DispSize = Instrux->DispLength;
-    Operand->Info.Memory.Disp = Instrux->HasDisp ? ND_SIGN_EX(Instrux->DispLength, Instrux->Displacement) : 0;
-
-    return ND_STATUS_SUCCESS;
-}
-
-
-
-//
-// NdParseOperand
-//
-static NDSTATUS
-NdParseOperand(
-    INSTRUX *Instrux,
+NdFetchPayloadBytes(
+    const ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_UINT8 Offset,
-    ND_SIZET Size,
-    ND_UINT32 Index,
-    ND_UINT64 Specifier
-    )
+    ND_SIZET Size
+)
 {
-    NDSTATUS status;
-    PND_OPERAND operand;
-    ND_UINT8 opt, ops, opf, opa, opd, opb;
-    ND_REG_SIZE vsibRegSize;
-    ND_UINT8 vsibIndexSize, vsibIndexCount;
-    ND_OPERAND_SIZE size;
-    ND_BOOL width;
+    static const ND_UINT8 zszLut[4] = { 2, 4, 4,  0 };
+    static const ND_UINT8 vszLut[4] = { 2, 4, 8,  0 };
+    static const ND_UINT8 pszLut[4] = { 4, 6, 10, 0 };
 
-    // pre-init
-    status = ND_STATUS_SUCCESS;
-    vsibRegSize = 0;
-    vsibIndexSize = vsibIndexCount = 0;
-    size = 0;
-
-    // Get actual width.
-    width = Instrux->Exs.w && !(Instrux->Attributes & ND_FLAG_WIG);
-
-    // Get operand components.
-    opt = ND_OP_TYPE(Specifier);
-    ops = ND_OP_SIZE(Specifier);
-    opf = ND_OP_FLAGS(Specifier);
-    opa = ND_OP_ACCESS(Specifier);
-    opd = ND_OP_DECORATORS(Specifier);
-    opb = ND_OP_BLOCK(Specifier);
-
-    // Get a pointer to our op.
-    operand = &Instrux->Operands[Index];
-
-    // Fill in the flags.
-    operand->Flags.Flags = opf;
-
-    // Store operand access modes.
-    operand->Access.Access = opa;
-
-    // Implicit operand access, by default.
-    operand->Encoding = ND_OPE_S;
-
-
-    //
-    // Fill in operand size.
-    //
-    switch (ops)
+    switch (Ictx->Idbe->Ipb)
     {
-    case ND_OPS_asz:
-        // Size given by the address mode.
-        size = 2 << Instrux->AddrMode;
-        break;
-
-    case ND_OPS_ssz:
-        // Size given by the stack mode.
-        size = 2 << Instrux->DefStack;
-        break;
-
-    case ND_OPS_0:
-        // No memory access. 0 operand size.
-        size = 0;
-        break;
-
-    case ND_OPS_b:
-        // 8 bits.
-        size = ND_SIZE_8BIT;
-        break;
-
-    case ND_OPS_w:
-        // 16 bits.
-        size = ND_SIZE_16BIT;
-        break;
-
-    case ND_OPS_d:
-        // 32 bits.
-        size = ND_SIZE_32BIT;
-        break;
-
-    case ND_OPS_q:
-        // 64 bits.
-        size = ND_SIZE_64BIT;
-        break;
-
-    case ND_OPS_dq:
-        // 128 bits. 
-        size = ND_SIZE_128BIT;
-        break;
-
-    case ND_OPS_qq:
-        // 256 bits.
-        size = ND_SIZE_256BIT;
-        break;
-
-    case ND_OPS_oq:
-        // 512 bits.
-        size = ND_SIZE_512BIT;
-        break;
-
-    case ND_OPS_fa:
-        // 80 bits packed BCD.
-        size = ND_SIZE_80BIT;
-        break;
-
-    case ND_OPS_fw:
-        // 16 bits real number.
-        size = ND_SIZE_16BIT;
-        break;
-
-    case ND_OPS_fd:
-        // 32 bits real number.
-        size = ND_SIZE_32BIT;
-        break;
-
-    case ND_OPS_fq:
-        // 64 bits real number.
-        size = ND_SIZE_64BIT;
-        break;
-
-    case ND_OPS_ft:
-        // 80 bits real number.
-        size = ND_SIZE_80BIT;
-        break;
-
-    case ND_OPS_fe:
-        // 14 bytes or 28 bytes FPU environment.
-        size = (Instrux->EfOpMode == ND_OPSZ_16) ? ND_SIZE_112BIT : ND_SIZE_224BIT;
-        break;
-
-    case ND_OPS_fs:
-        // 94 bytes or 108 bytes FPU state.
-        size = (Instrux->EfOpMode == ND_OPSZ_16) ? ND_SIZE_752BIT : ND_SIZE_864BIT;
-        break;
-
-    case ND_OPS_rx:
-        // 512 bytes extended state.
-        size = ND_SIZE_4096BIT;
-        break;
-
-    case ND_OPS_cl:
-        // The size of one cache line.
-        size = ND_SIZE_CACHE_LINE;
-        break;
-
-    case ND_OPS_v:
-        // 16, 32 or 64 bits.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-
-            size = szLut[Instrux->EfOpMode];
-        }
-        break;
-
-    case ND_OPS_y:
-        // 64 bits (64-bit opsize), 32 bits othwerwise.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-
-            size = szLut[Instrux->EfOpMode];
-        }
-        break;
-
-    case ND_OPS_yf:
-        // 64 bits (64-bit mode), 32 bits (16, 32-bit opsize).
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-
-            size = szLut[Instrux->DefCode];
-        }
-        break;
-
-    case ND_OPS_z:
-        // 16 bits (16-bit opsize) or 32 bits (32 or 64-bit opsize).
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_32BIT };
-
-            size = szLut[Instrux->EfOpMode];
-        }
-        break;
-
-    case ND_OPS_a:
-        // 2 x 16 bits (16-bit opsize) or 2 x 32 bits (32-bit opsize).
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT * 2, ND_SIZE_32BIT * 2, 0 };
-
-            if (Instrux->DefCode > ND_CODE_32)
-            {
-                return ND_STATUS_INVALID_INSTRUX;
-            }
-
-            size = szLut[Instrux->EfOpMode];
-        }
-        break;
-
-    case ND_OPS_c:
-        // 8 bits (16-bit opsize) or 16 bits (32-bit opsize).
-        switch (Instrux->DefCode)
-        {
-        case ND_CODE_16:
-            size = Instrux->HasOpSize ? ND_SIZE_16BIT : ND_SIZE_8BIT;
-            break;
-        case ND_CODE_32:
-            size = Instrux->HasOpSize ? ND_SIZE_16BIT : ND_SIZE_32BIT;
-            break;
-        case ND_CODE_64:
-            size = ND_SIZE_64BIT;
-            break;
-        default:
-            return ND_STATUS_INVALID_INSTRUX;
-        }
-        break;
-
-    case ND_OPS_p:
-        // 32, 48 or 80 bits pointer.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_48BIT, ND_SIZE_80BIT };
-
-            size = szLut[Instrux->EfOpMode];
-        }
-        break;
-
-    case ND_OPS_s:
-        // 48 or 80 bits descriptor.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_48BIT, ND_SIZE_48BIT, ND_SIZE_80BIT };
-
-            size = szLut[Instrux->DefCode];
-        }
-        break;
-
-    case ND_OPS_l:
-        // 64 (16 or 32-bit opsize) or 128 bits (64-bit opsize).
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_64BIT, ND_SIZE_64BIT, ND_SIZE_128BIT };
-
-            size = szLut[Instrux->DefCode];
-        }
-        break;
-
-    case ND_OPS_x:
-        // lower vector = 128 (128-bit vlen) or 256 bits (256-bit vlen).
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_fv:
-        // full vector = 128, 256 or 512 bits.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_uv:
-        // upper vector = 256 bits (256-bit vlen) or 512 bits (512-bit vlen)
-        {
-            static const ND_UINT8 szLut[3] = { 0, ND_SIZE_256BIT, ND_SIZE_512BIT };
-
-            if (ND_VECM_128 == Instrux->EfVecMode)
-            {
-                return ND_STATUS_INVALID_INSTRUX;
-            }
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_ev:
-        // eighth vector = 16, 32 or 64 bits.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_qv:
-        // quarter vector = 32, 64 or 128 bits.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_32BIT, ND_SIZE_64BIT, ND_SIZE_128BIT };
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_hv:
-        // half vector = 64, 128 or 256 bits.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_64BIT, ND_SIZE_128BIT, ND_SIZE_256BIT };
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_pd:
-    case ND_OPS_ps:
-    case ND_OPS_ph:
-        // 128 or 256 bits.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_128BIT, ND_SIZE_256BIT, ND_SIZE_512BIT };
-
-            size = szLut[Instrux->EfVecMode];
-        }
-        break;
-
-    case ND_OPS_sd:
-        // 128 bits scalar element (double precision).
-        size = ND_SIZE_64BIT;
-        break;
-
-    case ND_OPS_ss:
-        // 128 bits scalar element (single precision).
-        size = ND_SIZE_32BIT;
-        break;
-
-    case ND_OPS_sh:
-        // FP16 Scalar element.
-        size = ND_SIZE_16BIT;
-        break;
-
-    case ND_OPS_mib:
-        // MIB addressing, the base & the index are used to form a pointer.
-        size = 0;
-        break;
-
-    case ND_OPS_vm32x:
-    case ND_OPS_vm32y:
-    case ND_OPS_vm32z:
-        // 32 bit indexes from XMM, YMM or ZMM register.
-        vsibIndexSize  = ND_SIZE_32BIT;
-        vsibIndexCount = (Instrux->Exs.l == 0) ? 4 : ((Instrux->Exs.l == 1) ? 8 : 16);
-        vsibRegSize = (ops == ND_OPS_vm32x) ? ND_SIZE_128BIT :
-                      (ops == ND_OPS_vm32y) ? ND_SIZE_256BIT :
-                                              ND_SIZE_512BIT;
-        size = vsibIndexCount * (width ? ND_SIZE_64BIT : ND_SIZE_32BIT);
-        break;
-
-    case ND_OPS_vm32h:
-        // 32 bit indexes from XMM or YMM.
-        vsibIndexSize = ND_SIZE_32BIT;
-        vsibIndexCount = (Instrux->Exs.l == 0) ? 2 : ((Instrux->Exs.l == 1) ? 4 : 8);
-        vsibRegSize = (Instrux->Exs.l == 0) ? ND_SIZE_128BIT :
-                      (Instrux->Exs.l == 1) ? ND_SIZE_128BIT :
-                                              ND_SIZE_256BIT;
-        size = vsibIndexCount * (width ? ND_SIZE_64BIT : ND_SIZE_32BIT);
-        break;
-
-    case ND_OPS_vm32n:
-        // 32 bit indexes from XMM, YMM or ZMM register.
-        vsibIndexSize = ND_SIZE_32BIT;
-        vsibIndexCount = (Instrux->Exs.l == 0) ? 4 : ((Instrux->Exs.l == 1) ? 8 : 16);
-        vsibRegSize = (Instrux->Exs.l == 0) ? ND_SIZE_128BIT :
-                      (Instrux->Exs.l == 1) ? ND_SIZE_256BIT :
-                                              ND_SIZE_512BIT;
-        size = vsibIndexCount * (width ? ND_SIZE_64BIT : ND_SIZE_32BIT);
-        break;
-
-    case ND_OPS_vm64x:
-    case ND_OPS_vm64y:
-    case ND_OPS_vm64z:
-        // 64 bit indexes from XMM, YMM or ZMM register.
-        vsibIndexSize = ND_SIZE_64BIT;
-        vsibIndexCount = (Instrux->Exs.l == 0) ? 2 : ((Instrux->Exs.l == 1) ? 4 : 8);
-        vsibRegSize = (ops == ND_OPS_vm64x) ? ND_SIZE_128BIT :
-                      (ops == ND_OPS_vm64y) ? ND_SIZE_256BIT :
-                                              ND_SIZE_512BIT;
-        size = vsibIndexCount * (width ? ND_SIZE_64BIT : ND_SIZE_32BIT);
-        break;
-
-    case ND_OPS_vm64h:
-        // 64 bit indexes from XMM or YMM.
-        vsibIndexSize = ND_SIZE_64BIT;
-        vsibIndexCount = (Instrux->Exs.l == 0) ? 1 : ((Instrux->Exs.l == 1) ? 2 : 4);
-        vsibRegSize = (Instrux->Exs.l == 0) ? ND_SIZE_128BIT :
-                      (Instrux->Exs.l == 1) ? ND_SIZE_128BIT :
-                                              ND_SIZE_256BIT;
-        size = vsibIndexCount * (width ? ND_SIZE_64BIT : ND_SIZE_32BIT);
-        break;
-
-    case ND_OPS_vm64n:
-        // 64 bit indexes from XMM, YMM or ZMM register.
-        vsibIndexSize = ND_SIZE_64BIT;
-        vsibIndexCount = (Instrux->Exs.l == 0) ? 2 : ((Instrux->Exs.l == 1) ? 4 : 8);
-        vsibRegSize = (Instrux->Exs.l == 0) ? ND_SIZE_128BIT :
-                      (Instrux->Exs.l == 1) ? ND_SIZE_256BIT :
-                                              ND_SIZE_512BIT;
-        size = vsibIndexCount * (width ? ND_SIZE_64BIT : ND_SIZE_32BIT);
-        break;
-
-    case ND_OPS_v2:
-    case ND_OPS_v3:
-    case ND_OPS_v4:
-    case ND_OPS_v5:
-    case ND_OPS_v8:
-        // Multiple words accessed.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-            ND_UINT8 scale = 1;
-
-            scale = (ops == ND_OPS_v2) ? 2 : 
-                    (ops == ND_OPS_v3) ? 3 : 
-                    (ops == ND_OPS_v4) ? 4 : 
-                    (ops == ND_OPS_v5) ? 5 : 8;
-
-            size =  scale * szLut[Instrux->EfOpMode];
-        }
-        break;
-
-    case ND_OPS_12:
-        // SAVPREVSSP instruction reads/writes 4 + 8 bytes from the shadow stack.
-        size = 12;
-        break;
-
-    case ND_OPS_t:
-        // Tile register. The actual size depends on how the TILECFG register has been programmed, but it can be 
-        // up to 1K in size.
-        size = ND_SIZE_1KB;
-        break;
-
-    case ND_OPS_384:
-        // 384 bit Key Locker handle.
-        size = ND_SIZE_384BIT;
-        break;
-
-    case ND_OPS_512:
-        // 512 bit Key Locker handle.
-        size = ND_SIZE_512BIT;
-        break;
-
-    case ND_OPS_4096:
-        // 64 entries x 64 bit per entry = 4096 bit MSR address/value list.
-        size = ND_SIZE_4096BIT;
-        break;
-
-    case ND_OPS_unknown:
-        size = ND_SIZE_UNKNOWN;
-        break;
-
+    case ND_IPB_I_b:
+        return NdFetchImmediate(Ictx, Code, Offset, Size, 1);
+    case ND_IPB_I_w:
+        return NdFetchImmediate(Ictx, Code, Offset, Size, 2);
+    case ND_IPB_I_d:
+        return NdFetchImmediate(Ictx, Code, Offset, Size, 4);
+    case ND_IPB_I_v:
+        return NdFetchImmediate(Ictx, Code, Offset, Size, vszLut[Ictx->Instrux->EfOpMode]);
+    case ND_IPB_I_z:
+        return NdFetchImmediate(Ictx, Code, Offset, Size, zszLut[Ictx->Instrux->EfOpMode]);
+    case ND_IPB_I_wb:
+        return NdFetchImmediates(Ictx, Code, Offset, Size, 2, 1);
+    case ND_IPB_I_bb:
+        return NdFetchImmediates(Ictx, Code, Offset, Size, 1, 1);
+    case ND_IPB_J_b:
+        return NdFetchRelativeOffset(Ictx, Code, Offset, Size, 1);
+    case ND_IPB_J_z:
+        return NdFetchRelativeOffset(Ictx, Code, Offset, Size, zszLut[Ictx->Instrux->EfOpMode]);
+    case ND_IPB_A_p:
+        return NdFetchAddressFar(Ictx, Code, Offset, Size, pszLut[Ictx->Instrux->EfOpMode]);
+    case ND_IPB_A_q:
+        return NdFetchAddressNear(Ictx, Code, Offset, Size, 8);
+    case ND_IPB_O_a:
+        return NdFetchMoffset(Ictx, Code, Offset, Size, vszLut[Ictx->Instrux->AddrMode]);
+    case ND_IPB_L_b:
+        return NdFetchSseImmediate(Ictx, Code, Offset, Size, 1);
     default:
-        return ND_STATUS_INVALID_INSTRUX;
+        return ND_STATUS_SUCCESS;
     }
-
-    // Store operand info.
-    operand->Size = size;
-
-    //
-    // Fill in the operand type.
-    //
-    switch (opt)
-    {
-    case ND_OPT_1:
-        // operand is an implicit constant (used by shift/rotate instruction).
-        operand->Type = ND_OP_CONST;
-        operand->Encoding = ND_OPE_1;
-        operand->Info.Constant.Const = 1;
-        break;
-
-    case ND_OPT_rIP:
-        // The operand is the instruction pointer.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_RIP;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = 0;
-        Instrux->RipAccess |= operand->Access.Access;
-        // Fill in branch information.
-        Instrux->BranchInfo.IsBranch = 1;
-        Instrux->BranchInfo.IsConditional = Instrux->Category == ND_CAT_COND_BR;
-        // Indirect branches are those which get their target address from a register or memory, including RET family.
-        Instrux->BranchInfo.IsIndirect = ((!Instrux->Operands[0].Flags.IsDefault) && 
-            ((Instrux->Operands[0].Type == ND_OP_REG) || (Instrux->Operands[0].Type == ND_OP_MEM))) || 
-            (Instrux->Category == ND_CAT_RET);
-        // CS operand is ALWAYS before rIP.
-        Instrux->BranchInfo.IsFar = !!(Instrux->CsAccess & ND_ACCESS_ANY_WRITE);
-        break;
-
-    case ND_OPT_rAX:
-        // Operand is the accumulator.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RAX;
-        break;
-
-    case ND_OPT_AH:
-        // Operand is the accumulator.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = ND_SIZE_8BIT;
-        operand->Info.Register.Reg = NDR_AH;
-        operand->Info.Register.IsHigh8 = ND_TRUE;
-        break;
-
-    case ND_OPT_rCX:
-        // Operand is the counter register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RCX;
-        break;
-
-    case ND_OPT_rDX:
-        // Operand is rDX.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RDX;
-        break;
-
-    case ND_OPT_rBX:
-        // Operand is BX.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RBX;
-        break;
-
-    case ND_OPT_rBP:
-        // Operand is rBP.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RBP;
-        break;
-
-    case ND_OPT_rSP:
-        // Operand is rSP.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RSP;
-        break;
-
-    case ND_OPT_rSI:
-        // Operand is rSI.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RSI;
-        break;
-
-    case ND_OPT_rDI:
-        // Operand is rDI.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_RDI;
-        break;
-
-    case ND_OPT_rR8:
-        // Operand is R8.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_R8;
-        break;
-
-    case ND_OPT_rR9:
-        // Operand is R9.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_R9;
-        break;
-
-    case ND_OPT_rR11:
-        // Operand is R11.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_R11;
-        break;
-
-    case ND_OPT_CS:
-        // Operand is the CS register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_CS;
-        Instrux->CsAccess |= operand->Access.Access;
-        break;
-
-    case ND_OPT_SS:
-        // Operand is the SS register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_SS;
-        break;
-
-    case ND_OPT_DS:
-        // Operand is the DS register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_DS;
-        break;
-
-    case ND_OPT_ES:
-        // Operand is the ES register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_ES;
-        break;
-
-    case ND_OPT_FS:
-        // Operand is the FS register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_FS;
-        break;
-
-    case ND_OPT_GS:
-        // Operand is the GS register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_GS;
-        break;
-
-    case ND_OPT_ST0:
-        // Operand is the ST(0) register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_FPU;
-        operand->Info.Register.Size = ND_SIZE_80BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_STi:
-        // Operand is the ST(i) register.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_FPU;
-        operand->Info.Register.Size = ND_SIZE_80BIT;
-        operand->Info.Register.Reg = Instrux->ModRm.rm;
-        break;
-
-    case ND_OPT_XMM0:
-    case ND_OPT_XMM1:
-    case ND_OPT_XMM2:
-    case ND_OPT_XMM3:
-    case ND_OPT_XMM4:
-    case ND_OPT_XMM5:
-    case ND_OPT_XMM6:
-    case ND_OPT_XMM7:
-        // Operand is a hard-coded XMM register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = ND_SIZE_128BIT;
-        operand->Info.Register.Reg = opt - ND_OPT_XMM0;
-        break;
-
-    // Special operands. These are always implicit, and can't be encoded inside the instruction.
-    case ND_OPT_CR0:
-        // The operand is implicit and is control register 0.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_CR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_CR0;
-        break;
-
-    case ND_OPT_GDTR:
-        // The operand is implicit and is the global descriptor table register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_GDTR;
-        break;
-
-    case ND_OPT_IDTR:
-        // The operand is implicit and is the interrupt descriptor table register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_IDTR;
-        break;
-
-    case ND_OPT_LDTR:
-        // The operand is implicit and is the local descriptor table register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_LDTR;
-        break;
-
-    case ND_OPT_TR:
-        // The operand is implicit and is the task register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = NDR_TR;
-        break;
-
-    case ND_OPT_X87CONTROL:
-        // The operand is implicit and is the x87 control word.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = NDR_X87_CONTROL;
-        break;
-
-    case ND_OPT_X87TAG:
-        // The operand is implicit and is the x87 tag word.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = NDR_X87_TAG;
-        break;
-
-    case ND_OPT_X87STATUS:
-        // The operand is implicit and is the x87 status word.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SYS;
-        operand->Info.Register.Size = ND_SIZE_16BIT;
-        operand->Info.Register.Reg = NDR_X87_STATUS;
-        break;
-
-    case ND_OPT_MXCSR:
-        // The operand is implicit and is the MXCSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MXCSR;
-        operand->Info.Register.Size = ND_SIZE_32BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_PKRU:
-        // The operand is the PKRU register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_PKRU;
-        operand->Info.Register.Size = ND_SIZE_32BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_SSP:
-        // The operand is the SSP register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_SSP;
-        operand->Info.Register.Size = operand->Size;
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_UIF:
-        // The operand is the User Interrupt Flag.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_UIF;
-        operand->Info.Register.Size = ND_SIZE_8BIT; // 1 bit, in fact, but there is no size defined for one bit.
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_MSR:
-        // The operand is implicit and is a MSR (usually selected by the ECX register).
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_E;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = 0xFFFFFFFF;
-        break;
-
-    case ND_OPT_TSC:
-        // The operand is implicit and is the IA32_TSC.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_TSC;
-        break;
-
-    case ND_OPT_TSCAUX:
-        // The operand is implicit and is the IA32_TSCAUX.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_TSC_AUX;
-        break;
-
-    case ND_OPT_SCS:
-        // The operand is implicit and is the IA32_SYSENTER_CS.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_SYSENTER_CS;
-        break;
-
-    case ND_OPT_SESP:
-        // The operand is implicit and is the IA32_SYSENTER_ESP.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_SYSENTER_ESP;
-        break;
-
-    case ND_OPT_SEIP:
-        // The operand is implicit and is the IA32_SYSENTER_EIP.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_SYSENTER_EIP;
-        break;
-
-    case ND_OPT_STAR:
-        // The operand is implicit and is the IA32_STAR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_STAR;
-        break;
-
-    case ND_OPT_LSTAR:
-        // The operand is implicit and is the IA32_LSTAR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_LSTAR;
-        break;
-
-    case ND_OPT_FMASK:
-        // The operand is implicit and is the IA32_FMASK.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_FMASK;
-        break;
-
-    case ND_OPT_FSBASE:
-        // The operand is implicit and is the IA32_FS_BASE MSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_FS_BASE;
-        break;
-
-    case ND_OPT_GSBASE:
-        // The operand is implicit and is the IA32_GS_BASE MSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_GS_BASE;
-        break;
-
-    case ND_OPT_KGSBASE:
-        // The operand is implicit and is the IA32_KERNEL_GS_BASE MSR.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_MSR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = NDR_IA32_KERNEL_GS_BASE;
-        break;
-
-    case ND_OPT_XCR:
-        // The operand is implicit and is an extended control register (usually selected by ECX register).
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_E;
-        operand->Info.Register.Type = ND_REG_XCR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = 0xFF;
-        break;
-
-    case ND_OPT_XCR0:
-        // The operand is implicit and is XCR0.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_XCR;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = 0;
-        break;
-
-    case ND_OPT_BANK:
-        // Multiple registers are accessed.
-        if ((Instrux->Instruction == ND_INS_PUSHA) || (Instrux->Instruction == ND_INS_POPA))
-        {
-            operand->Type = ND_OP_REG;
-            operand->Size = Instrux->WordLength;
-            operand->Info.Register.Type = ND_REG_GPR;
-            operand->Info.Register.Size = Instrux->WordLength;
-            operand->Info.Register.Reg = NDR_EAX;
-            operand->Info.Register.Count = 8;
-            operand->Info.Register.IsBlock = ND_TRUE;
-        }
-        else
-        {
-            operand->Type = ND_OP_BANK;
-        }
-        break;
-
-    case ND_OPT_A:
-        // Fetch the address. NOTE: The size can't be larger than 8 bytes.
-        if (ops == ND_OPS_p)
-        {
-            status = NdFetchAddressFar(Instrux, Code, Offset, Size, (ND_UINT8)size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-
-            // Fill in operand info.
-            operand->Type = ND_OP_ADDR_FAR;
-            operand->Encoding = ND_OPE_D;
-            operand->Info.Address.BaseSeg = Instrux->Address.Cs;
-            operand->Info.Address.Offset = Instrux->Address.Ip;
-        }
-        else
-        {
-            status = NdFetchAddressNear(Instrux, Code, Offset, Size, (ND_UINT8)size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-
-            // Fill in operand info.
-            operand->Type = ND_OP_ADDR_NEAR;
-            operand->Encoding = ND_OPE_D;
-            operand->Info.AddressNear.Target = Instrux->AddressNear;
-        }
-        break;
-
-    case ND_OPT_B:
-        // General purpose register encoded in VEX.vvvv field.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_V;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)Instrux->Exs.v;
-
-        // EVEX.V' must be 0, if a GPR is encoded using EVEX encoding.
-        if (Instrux->Exs.vp != 0)
-        {
-            // If APX is present, V' can be used to extend the GPR to R16-R31.
-            // Otherwise, #UD is triggered.
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Register.Reg |= Instrux->Exs.vp << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        break;
-
-    case ND_OPT_C:
-        // Control register, encoded in modrm.reg.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_CR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (Instrux->Exs.rp << 4) | (Instrux->Exs.r << 3) | Instrux->ModRm.reg;
-
-        // On some AMD processors, the presence of the LOCK prefix before MOV to/from control registers allows accessing
-        // higher 8 control registers.
-        if ((ND_CODE_64 != Instrux->DefCode) && (Instrux->HasLock))
-        {
-            operand->Info.Register.Reg |= 0x8;
-        }
-
-        // Only CR0, CR2, CR3, CR4 & CR8 valid.
-        if (operand->Info.Register.Reg != 0 &&
-            operand->Info.Register.Reg != 2 &&
-            operand->Info.Register.Reg != 3 &&
-            operand->Info.Register.Reg != 4 &&
-            operand->Info.Register.Reg != 8)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_D:
-        // Debug register, encoded in modrm.reg.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_DR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (Instrux->Exs.rp << 4) | (Instrux->Exs.r << 3) | Instrux->ModRm.reg;
-
-        // Only DR0-DR7 valid.
-        if (operand->Info.Register.Reg >= 8)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_T:
-        // Test register, encoded in modrm.reg.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_TR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.r << 3) | Instrux->ModRm.reg);
-
-        // Only TR0-TR7 valid, only on 486.
-        if (operand->Info.Register.Reg >= 8)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_S:
-        // Segment register, encoded in modrm.reg.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_SEG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-
-        // When addressing segment registers, any extension field (REX.R, REX2.R3, REX2.R4) is ignored.
-        operand->Info.Register.Reg = Instrux->ModRm.reg;
-
-        // Only ES, CS, SS, DS, FS, GS valid.
-        if (operand->Info.Register.Reg >= 6)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        // If CS is loaded - #UD.
-        if ((operand->Info.Register.Reg == NDR_CS) && operand->Access.Write)
-        {
-            return ND_STATUS_CS_LOAD;
-        }
-
-        break;
-
-    case ND_OPT_E:
-        // General purpose register or memory, encoded in modrm.rm.
-        if (Instrux->ModRm.mod != 3)
-        {
-            goto memory;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->ModRm.rm;
-
-        // If APX is present, use B4 as well.
-        if (Instrux->Exs.b4 != 0)
-        {
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
-                                         (operand->Info.Register.Reg  >= 4) &&
-                                         (ND_ENCM_LEGACY == Instrux->EncMode) &&
-                                         !Instrux->HasRex && !Instrux->HasRex2;
-        break;
-
-    case ND_OPT_F:
-        // The flags register.
-        operand->Type = ND_OP_REG;
-        operand->Info.Register.Type = ND_REG_FLG;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = 0;
-        Instrux->RflAccess |= operand->Access.Access;
-        break;
-
-    case ND_OPT_K:
-        // The operand is the stack.
-        {
-            static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-
-            Instrux->MemoryAccess |= operand->Access.Access;
-            operand->Type = ND_OP_MEM;
-            operand->Info.Memory.IsStack = ND_TRUE;
-            operand->Info.Memory.HasBase = ND_TRUE;
-            operand->Info.Memory.Base = NDR_RSP;
-            operand->Info.Memory.BaseSize = szLut[Instrux->DefStack];
-            operand->Info.Memory.HasSeg = ND_TRUE;
-            operand->Info.Memory.Seg = NDR_SS;
-            Instrux->StackWords = (ND_UINT8)(operand->Size / Instrux->WordLength);
-            Instrux->StackAccess |= operand->Access.Access;
-        }
-        break;
-
-    case ND_OPT_G:
-        // General purpose register encoded in modrm.reg.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.r << 3) | Instrux->ModRm.reg;
-
-        if (Instrux->Exs.rp != 0)
-        {
-            // If APX is present, use R' (R4) to extent the register to 5 bits.
-            // Otherwise, generate #UD.
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Register.Reg |= Instrux->Exs.rp << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
-                                         (operand->Info.Register.Reg  >= 4) &&
-                                         (ND_ENCM_LEGACY == Instrux->EncMode) &&
-                                         !Instrux->HasRex && !Instrux->HasRex2;
-        break;
-
-    case ND_OPT_R:
-        // General purpose register encoded in modrm.rm.
-        if ((Instrux->ModRm.mod != 3) && (0 == (Instrux->Attributes & ND_FLAG_MFR)))
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.b << 3) | Instrux->ModRm.rm;
-
-        if (Instrux->Exs.b4 != 0)
-        {
-            // If APX is present, use B4 as well.
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
-                                         (operand->Info.Register.Reg  >= 4) &&
-                                         (ND_ENCM_LEGACY == Instrux->EncMode) &&
-                                         !Instrux->HasRex && !Instrux->HasRex2;
-        break;
-
-    case ND_OPT_I:
-        // Immediate, encoded in instructon bytes.
-        {
-            ND_UINT64 imm;
-
-            // Fetch the immediate. NOTE: The size won't exceed 8 bytes.
-            status = NdFetchImmediate(Instrux, Code, Offset, Size, (ND_UINT8)size);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-
-            // Get the last immediate.
-            if (Instrux->HasImm2)
-            {
-                imm = Instrux->Immediate2;
-            }
-            else
-            {
-                imm = Instrux->Immediate1;
-            }
-
-            operand->Type = ND_OP_IMM;
-            operand->Encoding = ND_OPE_I;
-            operand->Info.Immediate.RawSize = (ND_UINT8)size;
-
-            if (operand->Flags.SignExtendedDws)
-            {
-                static const ND_UINT8 wszLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
-
-                // Get the default word size: the immediate is sign extended to the default word size.
-                operand->Size = wszLut[Instrux->EfOpMode];
-
-                operand->Info.Immediate.Imm = ND_SIGN_EX(size, imm);
-            }
-            else if (operand->Flags.SignExtendedOp1)
-            {
-                // The immediate is sign extended to the size of the first operand.
-                operand->Size = Instrux->Operands[0].Size;
-
-                operand->Info.Immediate.Imm = ND_SIGN_EX(size, imm);
-            }
-            else
-            {
-                operand->Info.Immediate.Imm = imm;
-            }
-        }
-        break;
-
-    case ND_OPT_m2zI:
-        operand->Type = ND_OP_IMM;
-        operand->Encoding = ND_OPE_L;
-        operand->Info.Immediate.Imm = Instrux->SseImmediate & 3;
-        operand->Info.Immediate.RawSize = (ND_UINT8)size;
-        break;
-
-    case ND_OPT_J:
-        // Fetch the relative offset. NOTE: The size of the relative can't exceed 4 bytes.
-        status = NdFetchRelativeOffset(Instrux, Code, Offset, Size, (ND_UINT8)size);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-
-        // The instruction is RIP relative.
-        Instrux->IsRipRelative = ND_TRUE;
-
-        operand->Type = ND_OP_OFFS;
-        operand->Encoding = ND_OPE_D;
-        // The relative offset is forced to the default word length. Care must be taken with the 32 bit
-        // branches that have 0x66 prefix (in 32 bit mode)!
-        operand->Size = Instrux->WordLength;
-        operand->Info.RelativeOffset.Rel = ND_SIGN_EX(size, Instrux->RelativeOffset);
-        operand->Info.RelativeOffset.RawSize = (ND_UINT8)size;
-
-        break;
-
-    case ND_OPT_N:
-        // The R/M field of the ModR/M byte selects a packed-quadword, MMX technology register.
-        if (Instrux->ModRm.mod != 3)
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_MMX;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = Instrux->ModRm.rm;
-        break;
-
-    case ND_OPT_P:
-        // The reg field of the ModR/M byte selects a packed quadword MMX technology register.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_MMX;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = Instrux->ModRm.reg;
-        break;
-
-    case ND_OPT_Q:
-        // The rm field inside Mod R/M encodes a MMX register or memory.
-        if (Instrux->ModRm.mod != 3)
-        {
-            goto memory;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_MMX;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = Instrux->ModRm.rm;
-        break;
-
-    case ND_OPT_O:
-        // Absolute address, encoded in instruction bytes.
-        // NOTE: The moffset len can't exceed 8 bytes.
-        status = NdFetchMoffset(Instrux, Code, Offset, Size, 2 << Instrux->AddrMode);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-
-        // operand info.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Encoding = ND_OPE_D;
-        operand->Info.Memory.HasDisp = ND_TRUE;
-        operand->Info.Memory.IsDirect = ND_TRUE;
-        operand->Info.Memory.DispSize = Instrux->MoffsetLength;
-        operand->Info.Memory.Disp = Instrux->Moffset;
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-        break;
-
-    case ND_OPT_M:
-        // Modrm based memory addressing.
-        if (Instrux->ModRm.mod == 3)
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
-
-memory:
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Memory.HasSeg = ND_TRUE;
-
-        // Parse mode specific memory information.
-        if (ND_ADDR_16 != Instrux->AddrMode)
-        {
-            status = NdParseMemoryOperand3264(Instrux, operand, vsibRegSize);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-        else
-        {
-            status = NdParseMemoryOperand16(Instrux, operand);
-            if (!ND_SUCCESS(status))
-            {
-                return status;
-            }
-        }
-
-        // Get the segment. Note that in long mode, segment prefixes are ignored, except for FS and GS.
-        if (Instrux->HasSeg)
-        {
-            operand->Info.Memory.Seg = NdGetSegOverride(Instrux, operand->Info.Memory.Seg);
-        }
-
-        // Handle VSIB addressing.
-        if (ND_HAS_VSIB(Instrux))
-        {
-            // VSIB requires SIB.
-            if (!Instrux->HasSib)
-            {
-                return ND_STATUS_VSIB_WITHOUT_SIB;
-            }
-
-            operand->Info.Memory.IsVsib = ND_TRUE;
-
-            operand->Info.Memory.Vsib.IndexSize = vsibIndexSize;
-            operand->Info.Memory.Vsib.ElemCount = vsibIndexCount;
-            operand->Info.Memory.Vsib.ElemSize = (ND_UINT8)(size / vsibIndexCount);
-        }
-
-        // Handle sibmem addressing, as used by Intel AMX instructions.
-        if (ND_HAS_SIBMEM(Instrux))
-        {
-            // sibmem requires SIB to be present.
-            if (!Instrux->HasSib)
-            {
-                return ND_STATUS_SIBMEM_WITHOUT_SIB;
-            }
-
-            operand->Info.Memory.IsSibMem = ND_TRUE;
-        }
-
-        // If we have broadcast, the operand size is fixed to either 16, 32 or 64 bit, depending on bcast size.
-        // Therefore, we will override the rawSize with either 16, 32 or 64 bits. Note that bcstSize will save the 
-        // total size of the access, and it will be used to compute the number of broadcasted elements: 
-        // bcstSize / rawSize.
-        if (Instrux->HasBroadcast)
-        {
-            ND_OPERAND_SIZE bcstSize = size;
-            operand->Info.Memory.HasBroadcast = ND_TRUE;
-
-            if (opd & ND_OPD_B32)
-            {
-                size = ND_SIZE_32BIT;
-            }
-            else if (opd & ND_OPD_B64)
-            {
-                size = ND_SIZE_64BIT;
-            }
-            else if (opd & ND_OPD_B16)
-            {
-                size = ND_SIZE_16BIT;
-            }
-            else
-            {
-                size = width ? ND_SIZE_64BIT : ND_SIZE_32BIT;
-            }
-
-            // Override operand size.
-            operand->Size = size;
-
-            operand->Info.Memory.Broadcast.Size = (ND_UINT8)operand->Size;
-            operand->Info.Memory.Broadcast.Count = (ND_UINT8)(bcstSize / operand->Size);
-        }
-
-        // Handle compressed displacement, if any. Note that most EVEX instructions with 8 bit displacement
-        // use compressed displacement addressing.
-        if (Instrux->HasCompDisp)
-        {
-            operand->Info.Memory.HasCompDisp = ND_TRUE;
-            operand->Info.Memory.CompDispSize = NdGetCompDispSize(Instrux, operand->Size);
-        }
-
-        // MIB, if any. Used by some MPX instructions.
-        operand->Info.Memory.IsMib = ND_HAS_MIB(Instrux);
-
-        // Bitbase, if any. Used by BT* instructions when the first op is mem and the second one reg.
-        operand->Info.Memory.IsBitbase = ND_HAS_BITBASE(Instrux);
-
-        // AG, if this is the case.
-        if (ND_HAS_AG(Instrux))
-        {
-            operand->Info.Memory.IsAG = ND_TRUE;
-
-            // Address generation instructions ignore the segment prefixes. Examples are LEA and MPX instructions.
-            operand->Info.Memory.HasSeg = ND_FALSE;
-            operand->Info.Memory.Seg = 0;
-        }
-
-        // Shadow Stack Access, if this is the case.
-        if (ND_HAS_SHS(Instrux))
-        {
-            operand->Info.Memory.IsShadowStack = ND_TRUE;
-            operand->Info.Memory.ShStkType = ND_SHSTK_EXPLICIT;
-        }
-
-        break;
-
-
-    case ND_OPT_H:
-        // Vector register, encoded in VEX/EVEX.vvvv.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_V;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = (ND_REG_SIZE)(size < ND_SIZE_128BIT ? ND_SIZE_128BIT : size);
-        // V' will be 0 for any non-EVEX encoded instruction.
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.vp << 4) | Instrux->Exs.v);
-        break;
-
-    case ND_OPT_L:
-        // Vector register, encoded in immediate.
-        status = NdFetchSseImmediate(Instrux, Code, Offset, Size, 1);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_L;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = (ND_REG_SIZE)(size < ND_SIZE_128BIT ? ND_SIZE_128BIT : size);
-        operand->Info.Register.Reg = (Instrux->SseImmediate >> 4) & 0xF;
-
-        if (Instrux->DefCode != ND_CODE_64)
-        {
-            operand->Info.Register.Reg &= 0x7;
-        }
-
-        break;
-
-    case ND_OPT_U:
-        // Vector register encoded in modrm.rm.
-        if (Instrux->ModRm.mod != 3)
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = (ND_REG_SIZE)(size < ND_SIZE_128BIT ? ND_SIZE_128BIT : size);
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.b << 3) | Instrux->ModRm.rm);
-
-        if (Instrux->HasEvex)
-        {
-            operand->Info.Register.Reg |= Instrux->Exs.x << 4;
-        }
-
-        break;
-
-    case ND_OPT_V:
-        // Vector register encoded in modrm.reg.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = (ND_REG_SIZE)(size < ND_SIZE_128BIT ? ND_SIZE_128BIT : size);
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.r << 3) | Instrux->ModRm.reg);
-
-        if (Instrux->HasEvex)
-        {
-            operand->Info.Register.Reg |= Instrux->Exs.rp << 4;
-        }
-
-        break;
-
-    case ND_OPT_W:
-        // Vector register or memory encoded in modrm.rm.
-        if (Instrux->ModRm.mod != 3)
-        {
-            goto memory;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_SSE;
-        operand->Info.Register.Size = (ND_REG_SIZE)(size < ND_SIZE_128BIT ? ND_SIZE_128BIT : size);
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.b << 3) | Instrux->ModRm.rm);
-
-        // For vector registers, the X extension bit is used to extend the register to 5 bits.
-        if (Instrux->HasEvex)
-        {
-            operand->Info.Register.Reg |= Instrux->Exs.x << 4;
-        }
-
-        break;
-
-    case ND_OPT_X:
-    case ND_OPT_Y:
-    case ND_OPT_pDI:
-        // RSI/RDI based addressing, as used by string instructions.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Base = (ND_UINT8)(((opt == ND_OPT_X) ? NDR_RSI : NDR_RDI));
-        operand->Info.Memory.IsString = (ND_OPT_X == opt || ND_OPT_Y == opt);
-        // DS:rSI supports segment overriding. ES:rDI does not.
-        if (opt == ND_OPT_Y)
-        {
-            operand->Info.Memory.Seg = NDR_ES;
-        }
-        else
-        {
-            operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-        }
-        break;
-
-    case ND_OPT_pBXAL:
-        // [rBX + AL], used by XLAT.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.HasIndex = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.IndexSize = ND_SIZE_8BIT;  // Always 1 Byte.
-        operand->Info.Memory.Base = NDR_RBX;            // Always rBX.
-        operand->Info.Memory.Index = NDR_AL;            // Always AL.
-        operand->Info.Memory.Scale = 1;                 // Always 1.
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-        break;
-
-    case ND_OPT_pAX:
-        // [rAX], used implicitly by MONITOR, MONITORX and RMPADJUST instructions.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.Base = NDR_RAX;            // Always rAX.
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-        break;
-
-    case ND_OPT_pCX:
-        // [rCX], used implicitly by RMPUPDATE.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.Base = NDR_RCX;            // Always rCX.
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-        break;
-
-    case ND_OPT_pBP:
-        // [sBP], used implicitly by ENTER, when nesting level is > 1.
-        // Operand size bytes accessed from memory. Base reg size determined by stack address size attribute.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->DefStack;
-        operand->Info.Memory.Base = NDR_RBP;            // Always rBP.
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NDR_SS;
-        break;
-
-    case ND_OPT_SHS:
-        // Shadow stack access using the current SSP.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.IsShadowStack = ND_TRUE;
-        operand->Info.Memory.ShStkType = ND_SHSTK_SSP_LD_ST;
-        break;
-
-    case ND_OPT_SHS0:
-        // Shadow stack access using the IA32_PL0_SSP.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.IsShadowStack = ND_TRUE;
-        operand->Info.Memory.ShStkType = ND_SHSTK_PL0_SSP;
-        break;
-
-    case ND_OPT_SMT:
-        // Table of MSR addresses, encoded in [RSI].
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.Base = NDR_RSI;            // Always rSI.
-        operand->Info.Memory.HasSeg = ND_FALSE;         // Linear Address directly, only useable in 64 bit mode.
-        break;
-
-    case ND_OPT_DMT:
-        // Table of MSR addresses, encoded in [RDI].
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.Base = NDR_RDI;            // Always rDI.
-        operand->Info.Memory.HasSeg = ND_FALSE;         // Linear Address directly, only useable in 64 bit mode.
-        break;
-
-    case ND_OPT_SHSP:
-        // Shadow stack push/pop access.
-        Instrux->MemoryAccess |= operand->Access.Access;
-        operand->Type = ND_OP_MEM;
-        operand->Info.Memory.IsShadowStack = ND_TRUE;
-        operand->Info.Memory.ShStkType = ND_SHSTK_SSP_PUSH_POP;
-        break;
-
-    case ND_OPT_Z:
-        // A GPR Register is selected by the low 3 bits inside the opcode. REX.B can be used to extend it.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_O;
-        operand->Info.Register.Type = ND_REG_GPR;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->Exs.b << 3) | (Instrux->PrimaryOpCode & 0x7);
-
-        if (Instrux->Exs.b4 != 0)
-        {
-            // If APX is present, extend the register.
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Register.Reg |= Instrux->Exs.b4 << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        operand->Info.Register.IsHigh8 = (operand->Info.Register.Size == 1) &&
-                                         (operand->Info.Register.Reg  >= 4) &&
-                                         (ND_ENCM_LEGACY == Instrux->EncMode) &&
-                                         !Instrux->HasRex && !Instrux->HasRex2;
-        break;
-
-    case ND_OPT_rB:
-        // reg inside modrm selects a BND register.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_BND;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.r << 3) | Instrux->ModRm.reg);
-
-        if (operand->Info.Register.Reg >= 4)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_mB:
-        // rm inside modrm selects either a BND register, either memory.
-        if (Instrux->ModRm.mod != 3)
-        {
-            goto memory;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_BND;
-        operand->Info.Register.Size = (ND_REG_SIZE)size;
-        operand->Info.Register.Reg = (ND_UINT8)((Instrux->Exs.b << 3) | Instrux->ModRm.rm);
-
-        if (operand->Info.Register.Reg >= 4)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_rK:
-        // reg inside modrm selects a mask register.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_MSK;
-
-        // Opcode dependent #UD, R and R' must be zero (1 actually, but they're inverted).
-        if ((Instrux->Exs.r != 0) || (Instrux->Exs.rp != 0))
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = (ND_UINT8)(Instrux->ModRm.reg);
-        break;
-
-    case ND_OPT_vK:
-        // vex.vvvv selects a mask register.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_V;
-        operand->Info.Register.Type = ND_REG_MSK;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = (ND_UINT8)Instrux->Exs.v;
-
-        if (operand->Info.Register.Reg >= 8)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_mK:
-        // rm inside modrm selects either a mask register, either memory.
-        if (Instrux->ModRm.mod != 3)
-        {
-            goto memory;
-        }
-
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_MSK;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        // X and B are ignored when Msk registers are being addressed.
-        operand->Info.Register.Reg = Instrux->ModRm.rm;
-        break;
-
-    case ND_OPT_aK:
-        // aaa inside evex selects either a mask register, which is used for masking a destination operand.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_A;
-        operand->Info.Register.Type = ND_REG_MSK;
-        operand->Info.Register.Size = ND_SIZE_64BIT;
-        operand->Info.Register.Reg = Instrux->Exs.k;
-        break;
-
-    case ND_OPT_rM:
-        // Sigh. reg field inside mod r/m encodes memory. This encoding is used by MOVDIR64b and ENQCMD instructions.
-        // When the ModR/M.reg field is used to select a memory operand, the following apply:
-        // - The ES segment register is used as a base
-        // - The ES segment register cannot be overridden
-        // - The size of the base register is selected by the address size, not the operand size.
-        operand->Type = ND_OP_MEM;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.Base = (ND_UINT8)((Instrux->Exs.r << 3) | Instrux->ModRm.reg);
-
-        if (Instrux->Exs.rp != 0)
-        {
-            // If APX is present, extend the base register.
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Memory.Base |= Instrux->Exs.rp << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NDR_ES;
-        break;
-
-    case ND_OPT_mM:
-        // Sigh. rm field inside mod r/m encodes memory, even if mod is 3.
-        operand->Type = ND_OP_MEM;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Memory.HasBase = ND_TRUE;
-        operand->Info.Memory.Base = (ND_UINT8)((Instrux->Exs.b << 3) | Instrux->ModRm.rm);
-
-        if (Instrux->Exs.b4 != 0)
-        {
-            // If APX is present, extend the base register.
-            if (Instrux->FeatMode & ND_FEAT_APX)
-            {
-                operand->Info.Memory.Base |= Instrux->Exs.b4 << 4;
-            }
-            else
-            {
-                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-            }
-        }
-
-        operand->Info.Memory.BaseSize = 2 << Instrux->AddrMode;
-        operand->Info.Memory.HasSeg = ND_TRUE;
-        operand->Info.Memory.Seg = NdGetSegOverride(Instrux, NDR_DS);
-        break;
-
-    case ND_OPT_rT:
-        // Tile register encoded in ModR/M.reg field.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_R;
-        operand->Info.Register.Type = ND_REG_TILE;
-        operand->Info.Register.Size = size;
-        operand->Info.Register.Reg = Instrux->ModRm.reg;
-
-        // #UD if a tile register > 7 is encoded.
-        if (Instrux->Exs.r != 0 || Instrux->Exs.rp != 0)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_mT:
-        // Tile register encoded in ModR/M.rm field.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_M;
-        operand->Info.Register.Type = ND_REG_TILE;
-        operand->Info.Register.Size = size;
-        operand->Info.Register.Reg = Instrux->ModRm.rm;
-
-        // #UD if a tile register > 7 is encoded.
-        if (Instrux->Exs.b != 0 || Instrux->Exs.b4 != 0)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_vT:
-        // Tile register encoded in vex.vvvv field.
-        operand->Type = ND_OP_REG;
-        operand->Encoding = ND_OPE_V;
-        operand->Info.Register.Type = ND_REG_TILE;
-        operand->Info.Register.Size = size;
-        operand->Info.Register.Reg = Instrux->Exs.v;
-
-        // #UD if a tile register > 7 is encoded.
-        if (operand->Info.Register.Reg > 7 || Instrux->Exs.vp != 0)
-        {
-            return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
-        }
-
-        break;
-
-    case ND_OPT_dfv:
-        // Default flags value encoded in vex.vvvv field.
-        operand->Type = ND_OP_DFV;
-        operand->Encoding = ND_OPE_V;
-        operand->Info.DefaultFlags.CF = (Instrux->Exs.v >> 0) & 1;
-        operand->Info.DefaultFlags.ZF = (Instrux->Exs.v >> 1) & 1;
-        operand->Info.DefaultFlags.SF = (Instrux->Exs.v >> 2) & 1;
-        operand->Info.DefaultFlags.OF = (Instrux->Exs.v >> 3) & 1;
-        operand->Size = 0;
-        break;
-
-    default:
-        return ND_STATUS_INVALID_INSTRUX;
-    }
-
-    if (operand->Type == ND_OP_REG)
-    {
-        // Handle block addressing - used by AVX512_4FMAPS and AVX512_4VNNIW instructions. Also used by VP2INTERSECTD/Q
-        // instructions. Also note that in block addressing, the base of the block is masked using the size of the block;
-        // for example, for a block size of 1, the first register must be even; For a block size of 4, the first register
-        // must be divisible by 4.
-        if (opb != 0)
-        {
-            operand->Info.Register.Count = opb;
-            operand->Info.Register.Reg &= (ND_UINT32)~(opb - 1);
-            operand->Info.Register.IsBlock = ND_TRUE;
-        }
-        else
-        {
-            operand->Info.Register.Count = 1;
-        }
-
-        // Handle zero-upper semantic for destination operands. Applies to destination registers only.
-        if ((Instrux->HasNd || Instrux->HasZu) && operand->Access.Write && !operand->Flags.IsDefault)
-        {
-            operand->Info.Register.IsZeroUpper = 1;
-        }
-    }
-
-    // Handle decorators. Note that only Mask, Zero and Broadcast are stored per-operand.
-    if (0 != opd)
-    {
-        // Check for mask register. Mask if present only if the operand supports masking and if the
-        // mask register is not k0 (which implies "no masking").
-        if ((opd & ND_OPD_MASK) && (Instrux->HasMask))
-        {
-            operand->Decorator.HasMask = ND_TRUE;
-            operand->Decorator.Msk = (ND_UINT8)Instrux->Exs.k;
-        }
-
-        // Check for zeroing. The operand must support zeroing and the z bit inside evex3 must be set. Note that
-        // zeroing is allowed only for register destinations, and NOT for memory.
-        if ((opd & ND_OPD_ZERO) && (Instrux->HasZero))
-        {
-            if (operand->Type == ND_OP_MEM)
-            {
-                return ND_STATUS_ZEROING_ON_MEMORY;
-            }
-
-            operand->Decorator.HasZero = ND_TRUE;
-        }
-
-        // Check for broadcast again. We've already filled the broadcast size before parsing the op size.
-        if ((opd & ND_OPD_BCAST) && (Instrux->HasBroadcast))
-        {
-            operand->Decorator.HasBroadcast = ND_TRUE;
-        }
-    }
-
-    return status;
 }
 
 
 //
-// NdFindInstruction
+// NdDecodeInstruction
 //
 static NDSTATUS
-NdFindInstruction(
-    INSTRUX *Instrux,
+NdDecodeInstruction(
+    ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
     ND_SIZET Size,
-    ND_IDBE **InsDef
-    )
+    const ND_IDBE **InsDef
+)
 {
-    NDSTATUS status;
-    const ND_TABLE *pTable;
-    ND_IDBE *pIns;
-    ND_BOOL stop, redf2, redf3;
-    ND_UINT32 nextOpcode;
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
 
-    // pre-init
-    status = ND_STATUS_SUCCESS;
-    pIns = (ND_IDBE *)ND_NULL;
-    stop = ND_FALSE;
-    nextOpcode = 0;
-    redf2 = redf3 = ND_FALSE;
+    NDSTATUS status = ND_STATUS_INVALID_ENCODING;
+    const ND_TABLE *pTable = ND_NULL;
 
+    // Locate the main opcode table, depending on encoding mode and map ID.
     switch (Instrux->EncMode)
     {
     case ND_ENCM_LEGACY:
-        if (Instrux->Rex2.m0 == 1)
-        {
-            // Legacy map ID 1.
-            pTable = (const ND_TABLE*)gLegacyMap_opcode.Table[0x0F];
-        }
-        else
-        {
-            // Legacy map ID 0.
-            pTable = (const ND_TABLE*)&gLegacyMap_opcode;
-        }
+        pTable = (const ND_TABLE *)gLegacyMap_mmmmm.Table[Instrux->Exs.m];
         break;
     case ND_ENCM_XOP:
         pTable = (const ND_TABLE *)gXopMap_mmmmm.Table[Instrux->Exs.m];
@@ -3408,116 +1394,71 @@ NdFindInstruction(
         break;
     }
 
-    while ((!stop) && (ND_NULL != pTable))
+    // Make sure the table exists & lookup the opcode entry.
+    if (pTable == ND_NULL || pTable->Type != ND_ILUT_OPCODE)
+    {
+        return ND_STATUS_INVALID_ENCODING;
+    }
+
+    pTable = pTable->Table[Instrux->PrimaryOpCode];
+
+    while (pTable != ND_NULL && pTable->Type != ND_ILUT_INSTRUCTION)
     {
         switch (pTable->Type)
         {
-        case ND_ILUT_INSTRUCTION:
-            // We've found the leaf entry, which is an instruction - we can leave.
-            pIns = (ND_IDBE *)(((ND_TABLE_INSTRUCTION *)pTable)->Instruction);
-            stop = ND_TRUE;
-            break;
-
-        case ND_ILUT_OPCODE:
-            // We need an opcode to keep going.
-            status = NdFetchOpcode(Instrux, Code, Instrux->Length, Size);
-            if (!ND_SUCCESS(status))
-            {
-                stop = ND_TRUE;
-                break;
-            }
-
-            pTable = (const ND_TABLE *)pTable->Table[Instrux->OpCodeBytes[nextOpcode++]];
-            break;
+        // We don't need to check for the opcode tables any longer, since we fetch all the opcodes in one step, 
+        // during NdFetchOpcodes, and then we lookup directly the appropiate opcode table. However, the mechanism
+        // remain in place, and all the tables are still chained together as before. Uncomment the case below if
+        // at any moment the legacy behavior is desired.
+        //case ND_ILUT_OPCODE:
+        //    // We need an opcode to keep going.
+        //    status = NdFetchOpcode(Ictx, Code, Instrux->Length, Size);
+        //    if (!ND_SUCCESS(status))
+        //    {
+        //        return status;
+        //    }
+        //
+        //    pTable = (const ND_TABLE *)pTable->Table[Instrux->PrimaryOpCode];
+        //    break;
 
         case ND_ILUT_OPCODE_LAST:
-            // We need an opcode to select the next table, but the opcode is AFTER the modrm/sib/displacement.
-            if (!Instrux->HasModRm)
-            {
-                // Fetch modrm, SIB & displacement
-                status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
-                if (!ND_SUCCESS(status))
-                {
-                    stop = ND_TRUE;
-                    break;
-                }
-            }
-
             // Fetch the opcode, which is after the modrm and displacement.
-            status = NdFetchOpcode(Instrux, Code, Instrux->Length, Size);
+            status = NdFetchOpcode(Ictx, Code, Instrux->Length, Size);
             if (!ND_SUCCESS(status))
             {
-                stop = ND_TRUE;
-                break;
+                return status;
             }
 
-            pTable = (const ND_TABLE *)pTable->Table[Instrux->OpCodeBytes[nextOpcode++]];
+            // Special case for instructions that encode the main opcode as the last byte (3dNow!).
+            Instrux->MainOpOffset = Instrux->Length - 1;
+
+            pTable = (const ND_TABLE *)pTable->Table[Instrux->PrimaryOpCode];
             break;
 
         case ND_ILUT_MODRM_MOD:
-            // We need modrm.mod to select the next table.
-            if (!Instrux->HasModRm)
-            {
-                // Fetch modrm, SIB & displacement
-                status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
-                if (!ND_SUCCESS(status))
-                {
-                    stop = ND_TRUE;
-                    break;
-                }
-            }
-
             // Next index is either 0 (mem) or 1 (reg)
             pTable = (const ND_TABLE *)pTable->Table[Instrux->ModRm.mod == 3 ? 1 : 0];
             break;
 
         case ND_ILUT_MODRM_REG:
-            // We need modrm.reg to select the next table.
-            if (!Instrux->HasModRm)
-            {
-                // Fetch modrm, SIB & displacement
-                status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
-                if (!ND_SUCCESS(status))
-                {
-                    stop = ND_TRUE;
-                    break;
-                }
-            }
-
             // Next index is the reg.
             pTable = (const ND_TABLE *)pTable->Table[Instrux->ModRm.reg];
             break;
 
         case ND_ILUT_MODRM_RM:
-            // We need modrm.rm to select the next table.
-            if (!Instrux->HasModRm)
-            {
-                // Fetch modrm, SIB & displacement
-                status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
-                if (!ND_SUCCESS(status))
-                {
-                    stop = ND_TRUE;
-                    break;
-                }
-            }
-
             // Next index is the rm.
             pTable = (const ND_TABLE *)pTable->Table[Instrux->ModRm.rm];
             break;
 
         case ND_ILUT_MAN_PREFIX:
             // We have mandatory prefixes.
-            if ((Instrux->Rep == 0xF2) && !redf2)
+            if (Instrux->Rep == 0xF2)
             {
-                // We can only redirect once through one mandatory prefix, otherwise we may
-                // enter an infinite loop (see CRC32 Gw Eb -> 0x66 0xF2 0x0F ...)
-                redf2 = ND_TRUE;
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_MAN_PREF_F2];
                 Instrux->HasMandatoryF2 = ND_TRUE;
             }
-            else if ((Instrux->Rep == 0xF3) && !redf3)
+            else if (Instrux->Rep == 0xF3)
             {
-                redf3 = ND_TRUE;
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_MAN_PREF_F3];
                 Instrux->HasMandatoryF3 = ND_TRUE;
             }
@@ -3533,6 +1474,11 @@ NdFindInstruction(
             break;
 
         case ND_ILUT_MODE:
+            if (Instrux->DefCode > ND_CODE_64)
+            {
+                return ND_STATUS_INVALID_INSTRUX;
+            }
+
             if (ND_NULL != pTable->Table[Instrux->DefCode + 1])
             {
                 pTable = (const ND_TABLE *)pTable->Table[Instrux->DefCode + 1];
@@ -3544,17 +1490,22 @@ NdFindInstruction(
             break;
 
         case ND_ILUT_DSIZE:
+            if (Instrux->OpMode > ND_OPSZ_64)
+            {
+                return ND_STATUS_INVALID_INSTRUX;
+            }
+
             // Handle default/forced redirections in 64 bit mode.
             if (ND_CODE_64 == Instrux->DefCode)
             {
                 // 64-bit mode, we may have forced/default operand sizes.
-                if ((ND_NULL != pTable->Table[4]) && (!Instrux->HasOpSize || Instrux->Exs.w))
+                if ((ND_NULL != pTable->Table[ND_ILUT_INDEX_DSIZE_D64]) && (!Instrux->HasOpSize || Instrux->Exs.w))
                 {
-                    pTable = (const ND_TABLE *)pTable->Table[4];
+                    pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_DSIZE_D64];
                 }
-                else if (ND_NULL != pTable->Table[5])
+                else if (ND_NULL != pTable->Table[ND_ILUT_INDEX_DSIZE_F64])
                 {
-                    pTable = (const ND_TABLE *)pTable->Table[5];
+                    pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_DSIZE_F64];
                 }
                 else if (ND_NULL != pTable->Table[Instrux->OpMode + 1])
                 {
@@ -3576,6 +1527,11 @@ NdFindInstruction(
             break;
 
         case ND_ILUT_ASIZE:
+            if (Instrux->AddrMode > ND_ADDR_64)
+            {
+                return ND_STATUS_INVALID_INSTRUX;
+            }
+
             if (ND_NULL != pTable->Table[Instrux->AddrMode + 1])
             {
                 pTable = (const ND_TABLE *)pTable->Table[Instrux->AddrMode + 1];
@@ -3588,38 +1544,44 @@ NdFindInstruction(
 
         case ND_ILUT_AUXILIARY:
             // Auxiliary redirection. Default to table[0] if nothing matches.
-            if ((Instrux->Exs.b || Instrux->Exs.b4) && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REXB]))
+            if (Instrux->Rep == ND_PREFIX_G1_REPE_REPZ && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REPZ]))
             {
-                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REXB];
-            }
-            else if (Instrux->Exs.w && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REXW]))
-            {
-                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REXW];
-            }
-            else if ((Instrux->DefCode == ND_CODE_64) && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_MO64]))
-            {
-                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_MO64];
-            }
-            else if (Instrux->Rep == ND_PREFIX_G1_REPE_REPZ && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REPZ]))
-            {
+                // Instruction contains 0xF3.
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REPZ];
             }
             else if ((Instrux->Rep != 0) && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REP]))
             {
+                // Instruction contains either 0xF2 or 0xF3.
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REP];
             }
-            else if (Instrux->DefCode == ND_CODE_64 && Instrux->HasModRm && 
-                Instrux->ModRm.mod == 0 && Instrux->ModRm.rm == NDR_RBP && 
-                ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_RIPREL])
+            else if ((Instrux->Exs.b || Instrux->Exs.b4) && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REXB]))
             {
+                // Instruction contains REX or REX2 B3/B4.
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REXB];
+            }
+            else if (Instrux->Exs.w && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REXW]))
+            {
+                // Instructions contains RWX or REX2 W.
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REXW];
+            }
+            else if ((Instrux->DefCode == ND_CODE_64) && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_MO64]))
+            {
+                // Instruction valid only in 64-bit mode.
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_MO64];
+            }
+            else if (Instrux->IsRipRelative && ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_RIPREL])
+            {
+                // Instruction contains RIP relative addressing.
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_RIPREL];
             }
             else if (Instrux->HasRex2 && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REX2]))
             {
+                // Instruction contains REX2.
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REX2];
             }
             else if (Instrux->HasRex2 && Instrux->Rex2.w && (ND_NULL != pTable->Table[ND_ILUT_INDEX_AUX_REX2W]))
             {
+                // Instruction contains REX2.W.
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_INDEX_AUX_REX2W];
             }
             else
@@ -3629,10 +1591,16 @@ NdFindInstruction(
             break;
 
         case ND_ILUT_VENDOR:
+            // No need for VendMode range checks, as it is limited by the data type representation - 4 bits.
+            //if (Context->VendMode > ND_ILUT_SIZE_VENDOR)
+            //{
+            //    return ND_STATUS_INVALID_INSTRUX;
+            //}
+
             // Vendor redirection. Go to the vendor specific entry.
-            if (ND_NULL != pTable->Table[Instrux->VendMode])
+            if (ND_NULL != pTable->Table[Context->VendMode])
             {
-                pTable = (const ND_TABLE *)pTable->Table[Instrux->VendMode];
+                pTable = (const ND_TABLE *)pTable->Table[Context->VendMode];
             }
             else
             {
@@ -3642,21 +1610,29 @@ NdFindInstruction(
 
         case ND_ILUT_FEATURE:
             // Feature redirection. Normally NOP if feature is not set, but may be something else if feature is set.
-            if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_MPX]) && !!(Instrux->FeatMode & ND_FEAT_MPX))
+            if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_MPX]) && !!(Context->FeatMode & ND_FEAT_MPX))
             {
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_MPX];
             }
-            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_CET]) && !!(Instrux->FeatMode & ND_FEAT_CET))
+            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_CET]) && !!(Context->FeatMode & ND_FEAT_CET))
             {
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_CET];
             }
-            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_CLDEMOTE]) && !!(Instrux->FeatMode & ND_FEAT_CLDEMOTE))
+            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_CLDEMOTE]) && !!(Context->FeatMode & ND_FEAT_CLDEMOTE))
             {
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_CLDEMOTE];
             }
-            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_PITI]) && !!(Instrux->FeatMode & ND_FEAT_PITI))
+            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_PITI]) && !!(Context->FeatMode & ND_FEAT_PITI))
             {
                 pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_PITI];
+            }
+            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_MOVRS]) && !!(Context->FeatMode & ND_FEAT_MOVRS))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_MOVRS];
+            }
+            else if ((ND_NULL != pTable->Table[ND_ILUT_FEATURE_BHI]) && !!(Context->FeatMode & ND_FEAT_BHI))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[ND_ILUT_FEATURE_BHI];
             }
             else
             {
@@ -3673,46 +1649,27 @@ NdFindInstruction(
             break;
 
         case ND_ILUT_EX_L:
-            if (Instrux->HasEvex && Instrux->Exs.m != 4 && Instrux->Exs.bm)
+            if (Instrux->HasEvex && Instrux->Exs.m != 4 && Instrux->Exs.bm && 3 == Instrux->ModRm.mod)
             {
-                // We have evex; we need to fetch the modrm now, because we have to make sure we don't have SAE or ER;
+                // We have evex; we need to test the modrm now, because we have to make sure we don't have SAE or ER;
                 // if we do have SAE or ER, we have to check the modrm byte and see if it is a reg-reg form (mod = 3),
                 // in which case L'L is forced to the maximum vector length of the instruction. We know for sure that
                 // all EVEX instructions have modrm.
                 // Skip these checks for EVEX map 4, which are legacy instructions promoted to EVEX, and which do not
                 // support SAE, ER or broadcast.
-                if (!Instrux->HasModRm)
+                // Otherwise, we use the maximum vector length of the instruction. If the instruction does not support
+                // SAE or ER, a #UD would be generated. We check for this later.
+                if (ND_NULL != pTable->Table[2])
                 {
-                    // Fetch modrm, SIB & displacement
-                    status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
-                    if (!ND_SUCCESS(status))
-                    {
-                        stop = ND_TRUE;
-                        break;
-                    }
+                    pTable = (const ND_TABLE *)pTable->Table[2];
                 }
-
-                if (3 == Instrux->ModRm.mod)
+                else if (ND_NULL != pTable->Table[1])
                 {
-                    // We use the maximum vector length of the instruction. If the instruction does not support
-                    // SAE or ER, a #UD would be generated. We check for this later.
-                    if (ND_NULL != pTable->Table[2])
-                    {
-                        pTable = (const ND_TABLE *)pTable->Table[2];
-                    }
-                    else if (ND_NULL != pTable->Table[1])
-                    {
-                        pTable = (const ND_TABLE *)pTable->Table[1];
-                    }
-                    else
-                    {
-                        pTable = (const ND_TABLE *)pTable->Table[0];
-                    }
+                    pTable = (const ND_TABLE *)pTable->Table[1];
                 }
                 else
                 {
-                    // Mod is mem, we simply use L'L for indexing, as no SAE or ER can be present.
-                    pTable = (const ND_TABLE *)pTable->Table[Instrux->Exs.l];
+                    pTable = (const ND_TABLE *)pTable->Table[0];
                 }
             }
             else
@@ -3744,59 +1701,450 @@ NdFindInstruction(
             pTable = (const ND_TABLE *)pTable->Table[Instrux->Exs.sc];
             break;
 
-        default:
-            status = ND_STATUS_INTERNAL_ERROR;
-            stop = ND_TRUE;
+        case ND_ILUT_EX_LPDF:
+            // Compressed index, comprising of L'L + pp + nd + nf. Speeds up lookup for EVEX promoted legacy 
+            // instructions, since we only have to do a single lookup instead of 4.
+            pTable = (const ND_TABLE *)pTable->Table[Instrux->Exs.l  << 4 | 
+                                                     Instrux->Exs.p  << 2 | 
+                                                     Instrux->Exs.nd << 1 | 
+                                                     Instrux->Exs.nf];
             break;
-        }
-    }
 
-    // Error - leave now.
-    if (!ND_SUCCESS(status))
-    {
-        goto cleanup_and_exit;
-    }
-
-    // No encoding found - leave now.
-    if (ND_NULL == pIns)
-    {
-        status = ND_STATUS_INVALID_ENCODING;
-        goto cleanup_and_exit;
-    }
-
-    // Bingo! Valid instruction found for the encoding. If Modrm is needed and we didn't fetch it - do it now.
-    if ((pIns->Attributes & ND_FLAG_MODRM) && (!Instrux->HasModRm))
-    {
-        if (0 == (pIns->Attributes & ND_FLAG_MFR))
-        {
-            // Fetch Mod R/M, SIB & displacement.
-            status = NdFetchModrmSibDisplacement(Instrux, Code, Instrux->Length, Size);
-            if (!ND_SUCCESS(status))
+        case ND_ILUT_FLT_NO64:
+            // Instruction invalid in 64-bit mode.
+            if (Instrux->DefCode != ND_CODE_64)
             {
-                goto cleanup_and_exit;
+                pTable = (const ND_TABLE *)pTable->Table[0];
             }
-        }
-        else
-        {
-            // Handle special MOV with control and debug registers - the mod is always forced to register. SIB
-            // and displacement is ignored.
-            status = NdFetchModrm(Instrux, Code, Instrux->Length, Size);
-            if (!ND_SUCCESS(status))
+            else
             {
-                goto cleanup_and_exit;
+                return ND_STATUS_INVALID_ENCODING_IN_MODE;
             }
+            break;
+
+        case ND_ILUT_FLT_NO1632:
+            // Instruction invalid outside 64-bit mode.
+            if (Instrux->DefCode == ND_CODE_64)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_ENCODING_IN_MODE;
+            }
+            break;
+
+        case ND_ILUT_FLT_NORIPREL:
+            // Instruction must not be RIP-relative.
+            if (!Instrux->IsRipRelative)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_RIP_REL_ADDRESSING_NOT_SUPPORTED;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOA16:
+            // Instruction must not use 16-bit addressing.
+            if (Instrux->AddrMode != ND_ADDR_16)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_16_BIT_ADDRESSING_NOT_SUPPORTED;
+            }
+            break;
+
+        case ND_ILUT_FLT_NO66:
+            // Instruction must not use the 0x66 prefix.
+            if (!Instrux->HasOpSize)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_ENCODING;
+            }
+            break;
+
+        case ND_ILUT_FLT_NO67:
+            // Instruction must not use the 0x67 prefix.
+            if (!Instrux->HasAddrSize)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_ENCODING;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOREP:
+            // Instruction must not use any REP prefix.
+            if (Instrux->Rep == 0)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_ENCODING;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOREX2:
+            // Instruction must not use REX2 prefix.
+            if (!Instrux->HasRex2)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_ENCODING;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOL0:
+            // Instruction not valid with L'L or L equal to 0.
+            if (Instrux->Exs.l != 0)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_ENCODING;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOV:
+            // Instruction not valid if VVVV is not 0.
+            if (Instrux->Exs.v == 0)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_VEX_VVVV_MUST_BE_ZERO;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOVP:
+            // Instruction not valid if V' is not 0.
+            if (Instrux->Exs.vp == 0)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_BAD_EVEX_V_PRIME;
+            }
+            break;
+
+        case ND_ILUT_FLT_NOVVP:
+            // Instruction not valid if VVVV is not 0 or V' is not 0.
+            if (Instrux->Exs.vp == 0 && Instrux->Exs.v == 0)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else 
+            {
+                if (Instrux->Exs.v != 0)
+                {
+                    return ND_STATUS_VEX_VVVV_MUST_BE_ZERO;
+                }
+                else
+                {
+                    return ND_STATUS_BAD_EVEX_V_PRIME;
+                }
+            }
+            break;
+
+        case ND_ILUT_FLT_RRLT16:
+            // GPR encoded in R, when APX is disabled, must be less than 16.
+            if (!!(Context->FeatMode & ND_FEAT_APX) || ND_DECODE_GPR_R(Instrux) < 16)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_RVLT16:
+            // GPR encoded in V, when APX is disabled, must be less than 16.
+            if (!!(Context->FeatMode & ND_FEAT_APX) || ND_DECODE_GPR_V(Instrux) < 16)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_SRIN012345:
+            // Segment register encoded in R must be one of 0, 1, 2, 3, 4, 5.
+            if (ND_DECODE_SEG_R(Instrux) < 6)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_SRIN02345:
+            // Segment register encoded in R must be one of 0, 2, 3, 4, 5.
+            if (ND_DECODE_SEG_R(Instrux) < 6 && ND_DECODE_SEG_R(Instrux) != 1)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                if (ND_DECODE_SEG_R(Instrux) == 1)
+                {
+                    return ND_STATUS_CS_LOAD;
+                }
+                else
+                {
+                    return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+                }
+            }
+            break;
+
+        case ND_ILUT_FLT_BRLT4:
+            // Bound register encoded in R must be less than 4.
+            if (ND_DECODE_BND_R(Instrux) < ND_MAX_BND_REGS)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_BMLT4:
+            // Bound register encoded in M must be less than 4.
+            if (ND_DECODE_BND_M(Instrux) < ND_MAX_BND_REGS || Instrux->ModRm.mod != 3)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+
+        case ND_ILUT_FLT_CRIN02348:
+            // Control register encoded in R must be one of 0, 2, 3, 4, 8.
+            if (ND_DECODE_CR_R(Instrux) == 0 ||
+                ND_DECODE_CR_R(Instrux) == 2 ||
+                ND_DECODE_CR_R(Instrux) == 3 ||
+                ND_DECODE_CR_R(Instrux) == 4 ||
+                ND_DECODE_CR_R(Instrux) == 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+        
+        case ND_ILUT_FLT_DRLT8:
+            // Debug register encoded in R must be less than 8.
+            if (ND_DECODE_DR_R(Instrux) < 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_QRLT8:
+            // Test register encoded in R must be less than 8.
+            if (ND_DECODE_TR_R(Instrux) < 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_KRLT8:
+            // Mask register encoded in R must be less than 8.
+            if (ND_DECODE_MSK_R(Instrux) < 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_KVLT8:
+            // Mask register encoded in V must be less than 8.
+            if (ND_DECODE_MSK_V(Instrux) < 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_TRLT8:
+            // Tile register encoded in R must be less than 8.
+            if (ND_DECODE_TMM_R(Instrux) < 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_TMLT8:
+            // Tile register encoded in M must be less than 8.
+            if (ND_DECODE_TMM_M(Instrux) < 8 || Instrux->ModRm.mod != 3)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_TVLT8:
+            // Tile register encoded in V must be less than 8.
+            if (ND_DECODE_TMM_V(Instrux) < 8)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_REGISTER_IN_INSTRUCTION;
+            }
+            break;
+
+        case ND_ILUT_FLT_VXNEVR_VXNEVV_VRNEVV:
+            // Vector registers encoded in index, source & destination must be distinct.
+            if (ND_DECODE_VEC_X(Instrux) != ND_DECODE_VEC_R(Instrux) &&
+                ND_DECODE_VEC_X(Instrux) != ND_DECODE_VEC_V(Instrux) &&
+                ND_DECODE_VEC_R(Instrux) != ND_DECODE_VEC_V(Instrux))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_VSIB_REGS;
+            }
+            break;
+
+        case ND_ILUT_FLT_VXNEVR:
+            // Vector registers encoded in index & destination must be distinct.
+            if (ND_DECODE_VEC_X(Instrux) != ND_DECODE_VEC_R(Instrux))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_VSIB_REGS;
+            }
+            break;
+
+        case ND_ILUT_FLT_TRNETM_TRNETV_TVNETM:
+            // Tile registers encoded as destination, source 1 and source 2 must be distinct.
+            if (ND_DECODE_TMM_R(Instrux) != ND_DECODE_TMM_M(Instrux) &&
+                ND_DECODE_TMM_R(Instrux) != ND_DECODE_TMM_V(Instrux) &&
+                ND_DECODE_TMM_V(Instrux) != ND_DECODE_TMM_M(Instrux))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_TILE_REGS;
+            }
+            break;
+
+        case ND_ILUT_FLT_VRNEVV_VRNEVM:
+            // Vector registers encoded as destination & source must be distinct.
+            if (ND_DECODE_VEC_R(Instrux) != ND_DECODE_VEC_V(Instrux) &&
+                (ND_DECODE_VEC_R(Instrux) != ND_DECODE_VEC_M(Instrux) || Instrux->ModRm.mod != 3))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_DEST_REGS;
+            }
+            break;
+
+        case ND_ILUT_FLT_RVNE4_RMNE4:
+            // GPR encoded in V, and GPR encoded in M must not be RSP.
+            if (ND_DECODE_GPR_V(Instrux) != 4 && ND_DECODE_GPR_M(Instrux) != 4)
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_DEST_REGS;
+            }
+            break;
+
+        case ND_ILUT_FLT_RVNERM:
+            // GPR encoded in V must not be equal to GPR encoded in M.
+            if (ND_DECODE_GPR_V(Instrux) != ND_DECODE_GPR_M(Instrux))
+            {
+                pTable = (const ND_TABLE *)pTable->Table[0];
+            }
+            else
+            {
+                return ND_STATUS_INVALID_DEST_REGS;
+            }
+            break;
+
+        default:
+            return ND_STATUS_INVALID_ENCODING;
         }
     }
 
-    // Store primary opcode.
-    Instrux->PrimaryOpCode = Instrux->OpCodeBytes[Instrux->OpLength - 1];
+    // No encoding found, or reached a non-instruction leaf - leave now.
+    if (ND_NULL == pTable || pTable->Type != ND_ILUT_INSTRUCTION)
+    {
+        return ND_STATUS_INVALID_ENCODING;
+    }
 
-    Instrux->MainOpOffset = ND_IS_3DNOW(Instrux) ? Instrux->Length - 1 : Instrux->OpOffset + Instrux->OpLength - 1;
+    Instrux->Idbe = ((ND_TABLE_INSTRUCTION *)pTable)->Index;
 
-cleanup_and_exit:
-    *InsDef = pIns;
+    Ictx->Idbe = NdIdbeGetEntry(Instrux->Idbe);
+    if (ND_NULL == Ictx->Idbe)
+    {
+        return ND_STATUS_INVALID_ENCODING;
+    }
 
-    return status;
+    *InsDef = Ictx->Idbe;
+    
+    Instrux->EvexMode = Ictx->Idbe->EvexMode;
+
+    return ND_STATUS_SUCCESS;
+
+#undef Instrux
+#undef Context
 }
 
 
@@ -3805,105 +2153,65 @@ cleanup_and_exit:
 //
 static NDSTATUS
 NdGetAddrAndOpMode(
-    INSTRUX *Instrux
-    )
+    const ND_INTERNAL_CONTEXT *Ictx
+)
 {
-    // Fill in addressing mode & default op size.
-    switch (Instrux->DefCode)
-    {
-    case ND_CODE_16:
-        Instrux->AddrMode = Instrux->HasAddrSize ? ND_ADDR_32 : ND_ADDR_16;
-        Instrux->OpMode = Instrux->HasOpSize ? ND_OPSZ_32 : ND_OPSZ_16;
-        break;
-    case ND_CODE_32:
-        Instrux->AddrMode = Instrux->HasAddrSize ? ND_ADDR_16 : ND_ADDR_32;
-        Instrux->OpMode = Instrux->HasOpSize ? ND_OPSZ_16 : ND_OPSZ_32;
-        break;
-    case ND_CODE_64:
-        Instrux->AddrMode = Instrux->HasAddrSize ? ND_ADDR_32 : ND_ADDR_64;
-        Instrux->OpMode = Instrux->Exs.w ? ND_OPSZ_64 : (Instrux->HasOpSize ? ND_OPSZ_16 : ND_OPSZ_32);
-        break;
-    default:
-        return ND_STATUS_INVALID_INSTRUX;
-    }
+#define Context     Ictx->Context
+#define Instrux     Ictx->Instrux
+#define Idbe        Ictx->Idbe
 
-    return ND_STATUS_SUCCESS;
-}
-
-
-//
-// NdGetEffectiveAddrAndOpMode
-//
-static NDSTATUS
-NdGetEffectiveAddrAndOpMode(
-    INSTRUX *Instrux
-    )
-{
-    static const ND_UINT8 szLut[3] = { ND_SIZE_16BIT, ND_SIZE_32BIT, ND_SIZE_64BIT };
     ND_BOOL w64, f64, d64, has66;
 
-    if ((ND_CODE_64 != Instrux->DefCode) && !!(Instrux->Attributes & ND_FLAG_IWO64))
+    if ((ND_CODE_64 != Instrux->DefCode) && !!(Idbe->Attributes & ND_FLAG_IWO64))
     {
         // Some instructions ignore VEX/EVEX.W field outside 64 bit mode, and treat it as 0.
         Instrux->Exs.w = 0;
     }
 
     // Extract the flags.
-    w64 = (0 != Instrux->Exs.w) && !(Instrux->Attributes & ND_FLAG_WIG);
+    w64 = (0 != Instrux->Exs.w) && !(Idbe->Attributes & ND_FLAG_WIG);
 
     // In 64 bit mode, the operand is forced to 64 bit. Size-changing prefixes are ignored.
-    f64 = 0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD != Instrux->VendMode);
+    f64 = 0 != (Idbe->Attributes & ND_FLAG_F64) && (ND_VEND_AMD != Context->VendMode);
 
     // In 64 bit mode, the operand defaults to 64 bit. No 32 bit form of the instruction exists. Note that on AMD,
     // only default 64 bit operands exist, even for branches - no operand is forced to 64 bit.
-    d64 = (0 != (Instrux->Attributes & ND_FLAG_D64)) ||
-          (0 != (Instrux->Attributes & ND_FLAG_F64) && (ND_VEND_AMD == Instrux->VendMode));
+    d64 = (0 != (Idbe->Attributes & ND_FLAG_D64)) ||
+          (0 != (Idbe->Attributes & ND_FLAG_F64) && (ND_VEND_AMD == Context->VendMode));
 
     // Check if 0x66 is indeed interpreted as a size changing prefix. Note that if 0x66 is a mandatory prefix,
     // then it won't be interpreted as a size changing prefix. However, there is an exception: MOVBE and CRC32
     // have mandatory 0xF2, and 0x66 is in fact a size changing prefix.
     // For legacy instructions promoted to EVEX, in some cases, the compressed prefix pp has the same meaning
     // as the legacy 0x66 prefix.
-    has66 = (Instrux->HasOpSize && (!Instrux->HasMandatory66 || (Instrux->Attributes & ND_FLAG_S66))) || 
-            ((Instrux->Exs.p == 1) && (Instrux->Attributes & ND_FLAG_SCALABLE));
+    has66 = (Instrux->HasOpSize && (!Instrux->HasMandatory66 || (Idbe->Attributes & ND_FLAG_S66))) || 
+            ((Instrux->Exs.p == 1) && (Idbe->Attributes & ND_FLAG_SCALABLE));
 
     // Fill in the effective operand size. Also validate instruction validity in given mode.
     switch (Instrux->DefCode)
     {
     case ND_CODE_16:
-        if (Instrux->Attributes & ND_FLAG_O64)
-        {
-            return ND_STATUS_INVALID_ENCODING_IN_MODE;
-        }
-
         Instrux->EfOpMode = has66 ? ND_OPSZ_32 : ND_OPSZ_16;
         break;
     case ND_CODE_32:
-        if (Instrux->Attributes & ND_FLAG_O64)
-        {
-            return ND_STATUS_INVALID_ENCODING_IN_MODE;
-        }
-
         Instrux->EfOpMode = has66 ? ND_OPSZ_16 : ND_OPSZ_32;
         break;
     case ND_CODE_64:
-        // Make sure instruction valid in mode.
-        if (Instrux->Attributes & ND_FLAG_I64)
-        {
-            return ND_STATUS_INVALID_ENCODING_IN_MODE;
-        }
-
         Instrux->EfOpMode = (w64 || f64 || (d64 && !has66)) ? ND_OPSZ_64 : (has66 ? ND_OPSZ_16 : ND_OPSZ_32);
-        Instrux->AddrMode = !!(Instrux->Attributes & ND_FLAG_I67) ? ND_ADDR_64 : Instrux->AddrMode;
+        Instrux->AddrMode = !!(Idbe->Attributes & ND_FLAG_I67) ? ND_ADDR_64 : Instrux->AddrMode;
         break;
     default:
         return ND_STATUS_INVALID_INSTRUX;
     }
 
     // Fill in the default word length. It can't be more than 8 bytes.
-    Instrux->WordLength = szLut[Instrux->EfOpMode];
+    Instrux->WordLength = 2 << Instrux->EfOpMode;
 
     return ND_STATUS_SUCCESS;
+
+#undef Idbe
+#undef Instrux
+#undef Context
 }
 
 
@@ -3912,16 +2220,18 @@ NdGetEffectiveAddrAndOpMode(
 //
 static NDSTATUS
 NdGetVectorLength(
-    INSTRUX *Instrux
-    )
+    const ND_INTERNAL_CONTEXT *Ictx
+)
 {
+#define Instrux     Ictx->Instrux
+
     if (Instrux->HasEr || Instrux->HasSae || Instrux->HasIgnEr)
     {
         // Embedded rounding or SAE present, force the vector length to 512 or scalar.
-        if ((Instrux->TupleType == ND_TUPLE_T1S) || 
-            (Instrux->TupleType == ND_TUPLE_T1S8) ||
-            (Instrux->TupleType == ND_TUPLE_T1S16) ||
-            (Instrux->TupleType == ND_TUPLE_T1F))
+        if ((Ictx->Idbe->TupleType == ND_TUPLE_T1S) || 
+            (Ictx->Idbe->TupleType == ND_TUPLE_T1S8) ||
+            (Ictx->Idbe->TupleType == ND_TUPLE_T1S16) ||
+            (Ictx->Idbe->TupleType == ND_TUPLE_T1F))
         {
             // Scalar instruction, vector length is 128 bits.
             Instrux->VecMode = Instrux->EfVecMode = ND_VECM_128;
@@ -3950,35 +2260,38 @@ NdGetVectorLength(
         break;
     case 1:
         Instrux->VecMode = ND_VECM_256;
-        Instrux->EfVecMode = (Instrux->Attributes & ND_FLAG_LIG) ? ND_VECM_128 : ND_VECM_256;
+        Instrux->EfVecMode = (Ictx->Idbe->Attributes & ND_FLAG_LIG) ? ND_VECM_128 : ND_VECM_256;
         break;
     case 2:
         Instrux->VecMode = ND_VECM_512;
-        Instrux->EfVecMode = (Instrux->Attributes & ND_FLAG_LIG) ? ND_VECM_128 : ND_VECM_512;
+        Instrux->EfVecMode = (Ictx->Idbe->Attributes & ND_FLAG_LIG) ? ND_VECM_128 : ND_VECM_512;
         break;
     default:
         return ND_STATUS_BAD_EVEX_LL;
     }
 
-    // Some instructions don't support 128 bit vectors.
-    if ((ND_VECM_128 == Instrux->EfVecMode) && (0 != (Instrux->Attributes & ND_FLAG_NOL0)))
-    {
-        return ND_STATUS_INVALID_ENCODING;
-    }
-
     return ND_STATUS_SUCCESS;
+
+#undef Instrux
 }
 
 
 //
-// NdLegacyPrefixChecks
+// NdGetPrefixActivation
 //
 static NDSTATUS
-NdLegacyPrefixChecks(
-    INSTRUX *Instrux
-    )
+NdGetPrefixActivation(
+    const ND_INTERNAL_CONTEXT *Ictx
+)
 {
+#define Context     Ictx->Context
+#define Idbe        Ictx->Idbe
+#define Instrux     Ictx->Instrux
+
     // These checks only apply to legacy encoded instructions.
+    ND_VALID_PREFIXES validPrefixes;
+
+    validPrefixes.Raw = Idbe->ValidPrefixes;
 
     // Check for LOCK. LOCK can be present only in two cases:
     // 1. For certain RMW instructions, as long as the destination operand is memory
@@ -3986,12 +2299,14 @@ NdLegacyPrefixChecks(
     // For XOP/VEX/EVEX instructions, a #UD is generated (which is checked when fetching the XOP/VEX/EVEX prefix).
     if (Instrux->HasLock)
     {
-        if (0 != (Instrux->Attributes & ND_FLAG_LOCK_SPECIAL) && (ND_CODE_32 == Instrux->DefCode))
+        if (0 != (Idbe->Attributes & ND_FLAG_LOCK_SPECIAL) && (ND_CODE_32 == Instrux->DefCode))
         {
             // Special case of LOCK being used by MOV cr to access CR8.
         }
-        else if (Instrux->ValidPrefixes.Lock && (Instrux->Operands[0].Type == ND_OP_MEM))
+        else if (validPrefixes.Lock && (Instrux->ModRm.mod != 3))
         {
+            // Lock is only present for instructions that are encoded using ModRM, and have memory destination,
+            // so it is sufficient to check for memory mod in ModRM.
             Instrux->IsLockEnabled = 1;
         }
         else
@@ -4000,38 +2315,32 @@ NdLegacyPrefixChecks(
         }
     }
 
-    // Chec for REP prefixes. There are multiple uses:
+    // Check for REP prefixes. There are multiple uses:
     // 1. REP/REPNZ/REPZ, for string/IO instructions
     // 2. XACQUIRE/XRELEASE, for HLE-enabled instructions
     // 3. BND prefix, for branches
     // For XOP/VEX/EVEX instructions, a #UD is generated (which is checked when fetching the XOP/VEX/EVEX prefix).
     if (Instrux->Rep != 0)
     {
-        if (Instrux->Attributes & ND_FLAG_NOREP)
-        {
-            return ND_STATUS_INVALID_ENCODING;
-        }
+        Instrux->IsRepEnabled = validPrefixes.Rep != 0;
 
-        Instrux->IsRepEnabled = Instrux->ValidPrefixes.Rep != 0;
-
-        Instrux->IsRepcEnabled = Instrux->ValidPrefixes.RepCond != 0;
+        Instrux->IsRepcEnabled = validPrefixes.RepCond != 0;
 
         // Bound enablement.
-        Instrux->IsBndEnabled = (Instrux->ValidPrefixes.Bnd != 0) && (Instrux->Rep == ND_PREFIX_G1_BND);
+        Instrux->IsBndEnabled = (validPrefixes.Bnd != 0) && (Instrux->Rep == ND_PREFIX_G1_BND);
 
         // Check if the instruction is REPed.
         Instrux->IsRepeated = Instrux->IsRepEnabled || Instrux->IsRepcEnabled;
 
         // Check if the instruction is XACQUIRE or XRELEASE enabled.
-        if ((Instrux->IsLockEnabled || Instrux->ValidPrefixes.HleNoLock) &&
-            (Instrux->Operands[0].Type == ND_OP_MEM))
+        if ((Instrux->IsLockEnabled || validPrefixes.HleNoLock) && (Instrux->ModRm.mod != 3))
         {
-            if ((Instrux->ValidPrefixes.Xacquire || Instrux->ValidPrefixes.Hle) && 
+            if ((validPrefixes.Xacquire || validPrefixes.Hle) && 
                 (Instrux->Rep == ND_PREFIX_G1_XACQUIRE))
             {
                 Instrux->IsXacquireEnabled = ND_TRUE;
             }
-            else if ((Instrux->ValidPrefixes.Xrelease || Instrux->ValidPrefixes.Hle) && 
+            else if ((validPrefixes.Xrelease || validPrefixes.Hle) && 
                 (Instrux->Rep == ND_PREFIX_G1_XRELEASE))
             {
                 Instrux->IsXreleaseEnabled = ND_TRUE;
@@ -4046,54 +2355,59 @@ NdLegacyPrefixChecks(
     if (Instrux->Seg != 0)
     {
         // Branch hint enablement.
-        Instrux->IsBhintEnabled = Instrux->ValidPrefixes.Bhint && (
+        Instrux->IsBhintEnabled = validPrefixes.Bhint && (
             (Instrux->Seg == ND_PREFIX_G2_BR_TAKEN) ||
             (Instrux->Seg == ND_PREFIX_G2_BR_NOT_TAKEN) ||
             (Instrux->Seg == ND_PREFIX_G2_BR_ALT));
 
         // Do-not-track hint enablement.
-        Instrux->IsDntEnabled = Instrux->ValidPrefixes.Dnt && (Instrux->Seg == ND_PREFIX_G2_NO_TRACK);
-    }
-
-    // For XOP/VEX/EVEX instructions, a #UD is generated (which is checked when fetching the XOP/VEX/EVEX prefix).
-    if (Instrux->HasOpSize && (Instrux->Attributes & ND_FLAG_NO66))
-    {
-        return ND_STATUS_INVALID_ENCODING;
-    }
-
-    // Address size override is allowed with all XOP/VEX/EVEX prefixes.
-    if (Instrux->HasAddrSize && (Instrux->Attributes & ND_FLAG_NO67))
-    {
-        return ND_STATUS_INVALID_ENCODING;
-    }
-
-    // For XOP/VEX/EVEX instructions, a #UD is generated (which is checked when fetching the XOP/VEX/EVEX prefix).
-    if (Instrux->HasRex2 && (Instrux->Attributes & ND_FLAG_NOREX2))
-    {
-        return ND_STATUS_INVALID_ENCODING;
+        Instrux->IsDntEnabled = validPrefixes.Dnt && (Instrux->Seg == ND_PREFIX_G2_NO_TRACK);
     }
 
     // Check if the instruction is CET tracked. The do not track prefix (0x3E) works only for indirect near JMP and CALL
     // instructions. It is always enabled for far JMP and CALL instructions.
-    Instrux->IsCetTracked = ND_HAS_CETT(Instrux) && !Instrux->IsDntEnabled;
+    Instrux->IsCetTracked = !!(Idbe->Attributes & ND_FLAG_CETT) && !Instrux->IsDntEnabled;
 
     return ND_STATUS_SUCCESS;
+
+#undef Context
+#undef Instrux
+#undef Idbe
 }
 
 
 //
-// NdGetEvexFields
+// NdGetDecoratorActivation
 //
 static NDSTATUS
-NdGetEvexFields(
-    INSTRUX *Instrux
-    )
+NdGetDecoratorActivation(
+    const ND_INTERNAL_CONTEXT *Ictx
+)
 {
+#define Context     Ictx->Context
+#define Idbe        Ictx->Idbe
+#define Instrux     Ictx->Instrux
+
+    // Mask for the 3rd byte of the EVEX prefix.
+    static const ND_UINT8 b3mask[4] =
+    {         // Bit              7     6     5     4     3     2     1     0
+        0x00, // Regular form: |  z  |  L  |  L  |  b  |  V4 |  a  |  a  |  a  |
+        0xD3, // VEX form:     |  0  |  0  |  L  |  0  |  V4 |  NF |  0  |  0  |
+        0xE3, // Legacy form:  |  0  |  0  |  0  |  ND |  V4 |  NF |  0  |  0  |
+        0xE0, // Cond form:    |  0  |  0  |  0  |  ND | SC3 | SC2 | SC1 | SC0 |
+    };
+
+    ND_VALID_DECORATORS validDecos;
+    
+    validDecos.Raw = Idbe->ValidDecorators;
+
     // Validate the EVEX prefix, depending on the EVEX extension mode.
     if (Instrux->EvexMode == ND_EVEXM_EVEX)
     {
-        // EVEX.U field must be 1 if the Modrm.Mod is not reg-reg OR if EVEX.b is 0.
-        if (Instrux->Evex.u != 1 && (Instrux->ModRm.mod != 3 || Instrux->Exs.bm == 0))
+        // EVEX.U is used as X4 (inverted) for index extension, when accessing memory.
+        // EVEX.U is used as 256-bit SAE/ER semantic, when reg-reg form and b is 1.
+        // Othweriwse, #UD.
+        if (Instrux->Evex.u != 1 && Instrux->ModRm.mod == 3 && Instrux->Exs.bm == 0)
         {
             return ND_STATUS_BAD_EVEX_U;
         }
@@ -4104,17 +2418,17 @@ NdGetEvexFields(
             if (Instrux->ModRm.mod == 3)
             {
                 // reg form for the instruction, check for ER or SAE support.
-                if (Instrux->ValidDecorators.Er)
+                if (validDecos.Er)
                 {
                     Instrux->HasEr = 1;
                     Instrux->HasSae = 1;
                     Instrux->RoundingMode = (ND_UINT8)Instrux->Exs.l;
                 }
-                else if (Instrux->ValidDecorators.Sae)
+                else if (validDecos.Sae)
                 {
                     Instrux->HasSae = 1;
                 }
-                else if (!!(Instrux->Attributes & ND_FLAG_IER))
+                else if (!!(Idbe->Attributes & ND_FLAG_IER))
                 {
                     // The encoding behaves as if embedded rounding is enabled, but it is in fact ignored.
                     Instrux->HasIgnEr = 1;
@@ -4127,7 +2441,7 @@ NdGetEvexFields(
             else
             {
                 // mem form for the instruction, check for broadcast.
-                if (Instrux->ValidDecorators.Broadcast)
+                if (validDecos.Broadcast)
                 {
                     Instrux->HasBroadcast = 1;
                 }
@@ -4141,7 +2455,7 @@ NdGetEvexFields(
         // Handle masking.
         if (Instrux->Exs.k != 0)
         {
-            if (Instrux->ValidDecorators.Mask)
+            if (validDecos.Mask)
             {
                 Instrux->HasMask = 1;
             }
@@ -4152,7 +2466,7 @@ NdGetEvexFields(
         }
         else
         {
-            if (!!(Instrux->Attributes & ND_FLAG_MMASK))
+            if (!!(Idbe->Attributes & ND_FLAG_MMASK))
             {
                 return ND_STATUS_MASK_REQUIRED;
             }
@@ -4161,14 +2475,21 @@ NdGetEvexFields(
         // Handle zeroing.
         if (Instrux->Exs.z != 0)
         {
-            if (Instrux->ValidDecorators.Zero)
+            if (validDecos.Zero)
             {
                 // Zeroing restrictions:
                 // - valid with register only;
                 // - valid only if masking is also used;
                 if (Instrux->HasMask)
                 {
-                    Instrux->HasZero = 1;
+                    if (Instrux->ModRm.mod == 3 || (0 == (Idbe->Mem1Access & ND_ACCESS_ANY_WRITE)))
+                    {
+                        Instrux->HasZero = 1;
+                    }
+                    else
+                    {
+                        return ND_STATUS_ZEROING_ON_MEMORY;
+                    }
                 }
                 else
                 {
@@ -4183,29 +2504,17 @@ NdGetEvexFields(
 
         // EVEX instructions with 8 bit displacement use compressed displacement addressing, where the displacement
         // is scaled according to the data type accessed by the instruction.
-        if (Instrux->HasDisp && Instrux->DispLength == 1)
-        {
-            Instrux->HasCompDisp = ND_TRUE;
-        }
+        Instrux->HasCompDisp = (ND_BOOL)(Instrux->HasDisp && Instrux->DispLength == 1);
 
-        // Legacy EVEX.
+        // ND, NF & ZU not valid for regular EVEX.
         Instrux->Exs.nd = 0;
         Instrux->Exs.nf = 0;
         Instrux->Exs.sc = 0;
     }
     else
     {
-        // EVEX extension for VEX/Legacy/Conditional instructions.
-        const ND_UINT8 b3mask[4] =
-        {         // Bit              7     6     5     4     3     2     1     0
-            0x00, // Regular form: |  z  |  L  |  L  |  b  |  V4 |  a  |  a  |  a  |
-            0xD3, // VEX form:     |  0  |  0  |  L  |  0  |  V4 |  NF |  0  |  0  |
-            0xE3, // Legacy form:  |  0  |  0  |  0  |  ND |  V4 |  NF |  0  |  0  |
-            0xE0, // Cond form:    |  0  |  0  |  0  |  ND | SC3 | SC2 | SC1 | SC0 |
-        };
-
-        // EVEX flavors are only valid in APX mode. Outside APX, only legacy EVEX is valid.
-        if (0 == (Instrux->FeatMode & ND_FEAT_APX))
+        // EVEX flavors are only valid in APX mode. Outside APX, only regular EVEX is valid.
+        if (0 == (Context->FeatMode & ND_FEAT_APX))
         {
             return ND_STATUS_INVALID_ENCODING;
         }
@@ -4217,26 +2526,20 @@ NdGetEvexFields(
         }
 
         // EVEX.U field must be 1 if mod is reg-reg.
-        if (Instrux->Evex.u != 1 && Instrux->ModRm.mod == 3)
+        if (Instrux->Evex.u == 0 && Instrux->ModRm.mod == 3)
         {
             return ND_STATUS_BAD_EVEX_U;
         }
 
-        if (Instrux->ValidDecorators.Nd)
-        {
-            Instrux->HasNd = (ND_BOOL)Instrux->Exs.nd;
-        }
+        // ND, NF & ZU activation.
+        Instrux->HasNd = (ND_BOOL)(Instrux->Exs.nd && validDecos.Nd);
+        Instrux->HasNf = (ND_BOOL)(Instrux->Exs.nf && validDecos.Nf);
+        Instrux->HasZu = (ND_BOOL)(Instrux->Exs.nd && validDecos.Zu);
 
-        if (Instrux->ValidDecorators.Nf)
-        {
-            Instrux->HasNf = (ND_BOOL)Instrux->Exs.nf;
-        }
+        // Conditional instructions use Default Flags Value.
+        Instrux->HasDfv = Instrux->EvexMode == ND_EVEXM_COND;
 
-        if (Instrux->ValidDecorators.Zu)
-        {
-            Instrux->HasZu = (ND_BOOL)Instrux->Exs.nd;
-        }
-
+        // z, L'L, b & k valid only for regular EVEX.
         Instrux->Exs.z = 0;
         Instrux->Exs.l = 0;
         Instrux->Exs.bm = 0;
@@ -4244,109 +2547,10 @@ NdGetEvexFields(
     }
 
     return ND_STATUS_SUCCESS;
-}
 
-
-//
-// NdVexExceptionChecks
-//
-static NDSTATUS
-NdVexExceptionChecks(
-    INSTRUX *Instrux
-    )
-{
-    // These checks only apply to XOP/VEX/EVEX encoded instructions.
-
-    // Instructions that don't use VEX/XOP/EVEX vvvv field must set it to 1111b/0 logic, otherwise a #UD will 
-    // be generated.
-    if ((Instrux->Attributes & ND_FLAG_NOV) && (0 != Instrux->Exs.v))
-    {
-        return ND_STATUS_VEX_VVVV_MUST_BE_ZERO;
-    }
-
-    // Instruction that don't use EVEX.V' field must set to to 1b/0 logic, otherwise a #UD will be generated.
-    if ((Instrux->Attributes & ND_FLAG_NOVP) && (0 != Instrux->Exs.vp))
-    {
-        return ND_STATUS_BAD_EVEX_V_PRIME;
-    }
-
-    // VSIB instructions have a restriction: the same vector register can't be used by more than one operand.
-    // The exception is SCATTER*, which can use the VSIB reg as two sources.
-    if (ND_HAS_VSIB(Instrux) && Instrux->Category != ND_CAT_SCATTER)
-    {
-        ND_UINT8 usedVects[32] = { 0 };
-        ND_UINT32 i;
-
-        for (i = 0; i < Instrux->OperandsCount; i++)
-        {
-            if (Instrux->Operands[i].Type == ND_OP_REG && Instrux->Operands[i].Info.Register.Type == ND_REG_SSE)
-            {
-                if (++usedVects[Instrux->Operands[i].Info.Register.Reg] > 1)
-                {
-                    return ND_STATUS_INVALID_VSIB_REGS;
-                }
-            }
-            else if (Instrux->Operands[i].Type == ND_OP_MEM)
-            {
-                if (++usedVects[Instrux->Operands[i].Info.Memory.Index] > 1)
-                {
-                    return ND_STATUS_INVALID_VSIB_REGS;
-                }
-            }
-        }
-    }
-
-    // Handle AMX exception class.
-    if (Instrux->ExceptionType == ND_EXT_AMX_E4 ||
-        Instrux->ExceptionType == ND_EXT_AMX_E10)
-    {
-        // #UD if srcdest == src1, srcdest == src2 or src1 == src2. All three operands are tile regs.
-        if (Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[1].Info.Register.Reg ||
-            Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[2].Info.Register.Reg ||
-            Instrux->Operands[1].Info.Register.Reg == Instrux->Operands[2].Info.Register.Reg)
-        {
-            return ND_STATUS_INVALID_TILE_REGS;
-        }
-    }
-
-    // If E4* or E10* exception class is used (check out AVX512-FP16 instructions), an additional #UD case
-    // exists: if the destination register is equal to either of the source registers.
-    else if (Instrux->ExceptionType == ND_EXT_E4S || Instrux->ExceptionType == ND_EXT_E10S)
-    {
-        // Note that operand 0 is the destination, operand 1 is the mask, operand 2 is first source, operand
-        // 3 is the second source.
-        if (Instrux->Operands[0].Type == ND_OP_REG && Instrux->Operands[2].Type == ND_OP_REG &&
-            Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[2].Info.Register.Reg)
-        {
-            return ND_STATUS_INVALID_DEST_REGS;
-        }
-
-        if (Instrux->Operands[0].Type == ND_OP_REG && Instrux->Operands[3].Type == ND_OP_REG &&
-            Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[3].Info.Register.Reg)
-        {
-            return ND_STATUS_INVALID_DEST_REGS;
-        }
-    }
-
-    // Handle PUSH2/POP2 exceptions, which have restrictions on the destination registers.
-    else if (Instrux->ExceptionType == ND_EXT_APX_EVEX_PP2)
-    {
-        // The registers cannot be RSP for either PUSH2 or POP2.
-        if (Instrux->Operands[0].Info.Register.Reg == NDR_RSP ||
-            Instrux->Operands[1].Info.Register.Reg == NDR_RSP)
-        {
-            return ND_STATUS_INVALID_DEST_REGS;
-        }
-
-        // The destination registers cannot be the same for POP2.
-        if (Instrux->Operands[0].Access.Write &&
-            Instrux->Operands[0].Info.Register.Reg == Instrux->Operands[1].Info.Register.Reg)
-        {
-            return ND_STATUS_INVALID_DEST_REGS;
-        }
-    }
-
-    return ND_STATUS_SUCCESS;
+#undef Instrux
+#undef Idbe
+#undef Context
 }
 
 
@@ -4356,14 +2560,11 @@ NdVexExceptionChecks(
 static NDSTATUS
 NdCopyInstructionInfo(
     INSTRUX *Instrux,
-    ND_IDBE *Idbe
-    )
+    const ND_IDBE *Idbe
+)
 {
-#ifndef BDDISASM_NO_MNEMONIC
-    Instrux->Mnemonic = gMnemonics[Idbe->Mnemonic];
-#endif // !BDDISASM_NO_MNEMONIC
+    // Copy instruction database entry information.
     Instrux->Attributes = Idbe->Attributes;
-    Instrux->Instruction = (ND_INS_CLASS)Idbe->Instruction;
     Instrux->Category = (ND_INS_CATEGORY)Idbe->Category;
     Instrux->IsaSet = (ND_INS_SET)Idbe->IsaSet;
     Instrux->FlagsAccess.Undefined.Raw = Idbe->SetFlags & Idbe->ClearedFlags;
@@ -4377,40 +2578,152 @@ NdCopyInstructionInfo(
     Instrux->ValidDecorators.Raw = Idbe->ValidDecorators;
     Instrux->FpuFlagsAccess.Raw = Idbe->FpuFlags;
     Instrux->SimdExceptions.Raw = Idbe->SimdExc;
+
     // Valid for EVEX, VEX and SSE instructions only. A value of 0 means it's not used.
     Instrux->ExceptionType = Idbe->ExcType;
     Instrux->TupleType = Idbe->TupleType;
-    Instrux->EvexMode = Idbe->EvexMode;
+
+    // Components access.
+    Instrux->CsAccess = Idbe->CsAccess;
+    Instrux->RipAccess = Idbe->RipAccess;
+    Instrux->RflAccess = Idbe->RflAccess;
+    Instrux->MemoryAccess = Idbe->Mem2Access | (Instrux->ModRm.mod != 3 ? Idbe->Mem1Access : 0);
+    Instrux->StackAccess = Idbe->StkAccess;
+    Instrux->StackWords = Idbe->StkWords;
+
+    // Decoded branch information.
+    if (!!(Instrux->RipAccess & ND_ACCESS_ANY_WRITE))
+    {
+        Instrux->BranchInfo.IsBranch = 1;
+        Instrux->BranchInfo.IsConditional = !!(Instrux->RipAccess & ND_ACCESS_COND_WRITE);
+        Instrux->BranchInfo.IsFar = Instrux->CsAccess != 0;
+        Instrux->BranchInfo.IsIndirect = Instrux->HasModRm ? 1 : 0;
+    }
+
+#ifndef BDDISASM_NO_MNEMONIC
+    Instrux->Mnemonic = NdIdbeGetMnemonic(Idbe->Mnemonic);
+#endif // !BDDISASM_NO_MNEMONIC
 
     return ND_STATUS_SUCCESS;
 }
 
 
 //
-// NdDecodeEx2
+// NdDecodeInternal
 //
-NDSTATUS
-NdDecodeEx2(
-    INSTRUX *Instrux,
+static NDSTATUS
+NdDecodeInternal(
+    ND_INTERNAL_CONTEXT *Ictx,
     const ND_UINT8 *Code,
-    ND_SIZET Size,
-    ND_UINT8 DefCode,
-    ND_UINT8 DefData,
-    ND_UINT8 DefStack,
-    ND_UINT8 Vendor
-    )
+    ND_SIZET Size
+)
 {
-    ND_CONTEXT opt;
+    NDSTATUS status = ND_STATUS_SUCCESS;
+    PND_IDBE pIns = ND_NULL;
 
-    NdInitContext(&opt);
+    Ictx->Instrux->DefCode = (ND_UINT8)Ictx->Context->DefCode;
+    Ictx->Instrux->DefData = (ND_UINT8)Ictx->Context->DefData;
+    Ictx->Instrux->DefStack = (ND_UINT8)Ictx->Context->DefStack;
 
-    opt.DefCode = DefCode;
-    opt.DefData = DefData;
-    opt.DefStack = DefStack;
-    opt.VendMode = Vendor;
-    opt.FeatMode = ND_FEAT_ALL; // Optimistically decode everything, as if all features are enabled.
+    // Initialize default address & operand size.
+    Ictx->Instrux->AddrMode = (ND_UINT8)Ictx->Context->DefCode;
+    Ictx->Instrux->OpMode = Ictx->Context->DefCode == ND_CODE_16 ? ND_OPSZ_16 : ND_OPSZ_32;
 
-    return NdDecodeWithContext(Instrux, Code, Size, &opt);
+    // Fetch prefixes.
+    status = NdFetchPrefixes(Ictx, Code, 0, Size);
+    if (!ND_SUCCESS(status))
+    {
+        return status;
+    }
+
+    // Fetch opcodes.
+    status = NdFetchOpcodes(Ictx, Code, Ictx->Instrux->Length, Size);
+    if (!ND_SUCCESS(status))
+    {
+        return status;
+    }
+
+    // Fetch ModRm, SIB & Displacement.
+    status = NdFetchModrmSibDisplacement(Ictx, Code, Ictx->Instrux->Length, Size);
+    if (!ND_SUCCESS(status))
+    {
+        return status;
+    }
+
+    // Start iterating the tables, in order to extract the instruction entry. Most of the
+    // encoding validity checks are performed during this step (i.e., an invalid encoding would
+    // lead through a path in the decoding tables that results in a NULL entry).
+    status = NdDecodeInstruction(Ictx, Code, Size, &pIns);
+    if (!ND_SUCCESS(status))
+    {
+        return status;
+    }
+
+    // Get effective operand mode.
+    status = NdGetAddrAndOpMode(Ictx);
+    if (!ND_SUCCESS(status))
+    {
+        return status;
+    }
+
+    if (0 != pIns->Ipb)
+    {
+        // Fetch instruction payload bytes (immediates, relative offsets, etc.).
+        status = NdFetchPayloadBytes(Ictx, Code, Ictx->Instrux->Length, Size);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+    }
+
+    if (ND_ENCM_LEGACY == Ictx->Instrux->EncMode)
+    {
+        // Check prefix activation. Only available for legacy instructions. For XOP/VEX/EVEX instructions:
+        // 1. LOCK, REP, 0x66, REX, REX2 cause #UD (checkd during XOP/VEX/EVEX fetch)
+        // 2. Segment prefixes do not have BHINT or DNT semantic
+        // 3. 0x67 can be used to override address mode
+        status = NdGetPrefixActivation(Ictx);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+    }
+    else if (ND_ENCM_EVEX == Ictx->Instrux->EncMode)
+    {
+        // Post-process EVEX encoded instructions. This does two thing:
+        // - check and fill in decorator info;
+        // - generate error for invalid broadcast/rounding, mask or zeroing bits;
+        // - generate error if any reserved bits are set.
+        status = NdGetDecoratorActivation(Ictx);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+    }
+
+    if (pIns->Attributes & ND_FLAG_VECTOR)
+    {
+        // Get vector length.
+        status = NdGetVectorLength(Ictx);
+        if (!ND_SUCCESS(status))
+        {
+            return status;
+        }
+    }
+    
+    // Fill in operands count.
+    Ictx->Instrux->ExpOperandsCount = ND_EXP_OPS_CNT(pIns->OpsCount);
+    Ictx->Instrux->OperandsCount = Ictx->Instrux->ExpOperandsCount;
+    
+    if (!(Ictx->Context->Options & ND_OPTION_ONLY_EXPLICIT_OPERANDS))
+    {
+        Ictx->Instrux->OperandsCount += ND_IMP_OPS_CNT(pIns->OpsCount);
+    }
+
+    Ictx->Instrux->Instruction = (ND_INS_CLASS)pIns->Instruction;
+
+    // All done! Instruction successfully decoded!
+    return ND_STATUS_SUCCESS;
 }
 
 
@@ -4420,16 +2733,11 @@ NdDecodeWithContext(
     const ND_UINT8 *Code,
     ND_SIZET Size,
     ND_CONTEXT *Context
-    )
+)
 {
-    NDSTATUS status;
-    PND_IDBE pIns;
+    ND_INTERNAL_CONTEXT iCtx;
+    NDSTATUS status = ND_STATUS_SUCCESS;
     ND_UINT32 opIndex;
-
-    // pre-init
-    status = ND_STATUS_SUCCESS;
-    pIns = (PND_IDBE)ND_NULL;
-    opIndex = 0;
 
     // validate
     if (ND_NULL == Instrux)
@@ -4457,7 +2765,7 @@ NdDecodeWithContext(
         return ND_STATUS_INVALID_PARAMETER;
     }
 
-    if (ND_DATA_64 < Context->DefData)
+    if (ND_STACK_64 < Context->DefStack)
     {
         return ND_STATUS_INVALID_PARAMETER;
     }
@@ -4473,14 +2781,7 @@ NdDecodeWithContext(
         nd_memzero(Instrux, sizeof(INSTRUX));
     }
 
-    Instrux->DefCode = (ND_UINT8)Context->DefCode;
-    Instrux->DefData = (ND_UINT8)Context->DefData;
-    Instrux->DefStack = (ND_UINT8)Context->DefStack;
-    Instrux->VendMode = (ND_UINT8)Context->VendMode;
-    Instrux->FeatMode = (ND_UINT8)Context->FeatMode;
-    Instrux->EncMode = ND_ENCM_LEGACY;  // Assume legacy encoding by default.
-
-    // Fetch the instruction bytes.
+    // Fetch the instruction bytes. Note than in regular decode mode, ND_OPT_SKIP_CACHE_IBYTES is ignored.
     for (opIndex = 0; 
          opIndex < ((Size < ND_MAX_INSTRUCTION_LENGTH) ? Size : ND_MAX_INSTRUCTION_LENGTH); 
          opIndex++)
@@ -4488,104 +2789,46 @@ NdDecodeWithContext(
         Instrux->InstructionBytes[opIndex] = Code[opIndex];
     }
 
-    if (gPrefixesMap[Instrux->InstructionBytes[0]] != ND_PREF_CODE_NONE)
-    {
-        // Fetch prefixes. We peek at the first byte, to see if it's worth calling the prefix decoder.
-        status = NdFetchPrefixes(Instrux, Instrux->InstructionBytes, 0, Size);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-    }
+    // Initialize the internal context.
+    iCtx.Context = Context;
+    iCtx.Instrux = (INSTRUX_MINI*)Instrux;
+    iCtx.Idbe = ND_NULL;
 
-    // Get addressing mode & operand size.
-    status = NdGetAddrAndOpMode(Instrux);
+    // Decode the instruction.
+    status = NdDecodeInternal(&iCtx, Instrux->InstructionBytes, Size);
     if (!ND_SUCCESS(status))
     {
         return status;
     }
 
-    // Start iterating the tables, in order to extract the instruction entry.
-    status = NdFindInstruction(Instrux, Instrux->InstructionBytes, Size, &pIns);
-    if (!ND_SUCCESS(status))
+    if (iCtx.Idbe == ND_NULL)
     {
-        return status;
+        return ND_STATUS_INVALID_INSTRUX;
     }
 
     // Copy information inside the Instrux.
-    status = NdCopyInstructionInfo(Instrux, pIns);
+    status = NdCopyInstructionInfo(Instrux, iCtx.Idbe);
     if (!ND_SUCCESS(status))
     {
         return status;
     }
 
-    // Get effective operand mode.
-    status = NdGetEffectiveAddrAndOpMode(Instrux);
-    if (!ND_SUCCESS(status))
+    // Copy opcode bytes.
+    for (opIndex = 0; opIndex < Instrux->OpLength; opIndex++)
     {
-        return status;
+        Instrux->OpCodeBytes[opIndex] = Instrux->InstructionBytes[Instrux->OpOffset + opIndex];
     }
 
-    if (Instrux->HasEvex)
-    {
-        // Post-process EVEX encoded instructions. This does two thing:
-        // - check and fill in decorator info;
-        // - generate error for invalid broadcast/rounding, mask or zeroing bits;
-        // - generate error if any reserved bits are set.
-        status = NdGetEvexFields(Instrux);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-    }
-
-    if (ND_HAS_VECTOR(Instrux))
-    {
-        // Get vector length.
-        status = NdGetVectorLength(Instrux);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-    }
-
-    Instrux->ExpOperandsCount = ND_EXP_OPS_CNT(pIns->OpsCount);
-    Instrux->OperandsCount = Instrux->ExpOperandsCount;
-
-    if (!(Context->Options & ND_OPTION_ONLY_EXPLICIT_OPERANDS))
-    {
-        Instrux->OperandsCount += ND_IMP_OPS_CNT(pIns->OpsCount);
-    }
+    // Copy legacy information.
+    Instrux->FeatMode = (ND_UINT8)Context->FeatMode;
+    Instrux->VendMode = (ND_UINT8)Context->VendMode;
 
     // And now decode each operand.
     for (opIndex = 0; opIndex < Instrux->OperandsCount; ++opIndex)
     {
-        status = NdParseOperand(Instrux, Instrux->InstructionBytes, Instrux->Length, Size, 
-                                opIndex, pIns->Operands[opIndex]);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-    }
-
-    if (ND_ENCM_LEGACY == Instrux->EncMode)
-    {
-        // Do legacy prefix checks. Only available for legacy instructions. For XOP/VEX/EVEX instructions:
-        // 1. LOCK, REP, 0x66, REX, REX2 cause #UD (checkd during XOP/VEX/EVEX fetch)
-        // 2. Segment prefixes do not have BHINT or DNT semantic
-        // 3. 0x67 can be used to override address mode
-        // This has to be done after operand parsing, since some #UD conditions depend on them.
-        status = NdLegacyPrefixChecks(Instrux);
-        if (!ND_SUCCESS(status))
-        {
-            return status;
-        }
-    }
-    else
-    {
-        // Do XOP/VEX/EVEX encoding checks. Additional #UD conditions, some dependent on encoded registers.
-        // This has to be done after operand parsing, since some #UD conditions depend on them.
-        status = NdVexExceptionChecks(Instrux);
+        status = NdParseOperand((INSTRUX_MINI *)Instrux, iCtx.Idbe,
+                                &Instrux->Operands[opIndex],
+                                iCtx.Idbe->Operands[opIndex]);
         if (!ND_SUCCESS(status))
         {
             return status;
@@ -4594,6 +2837,117 @@ NdDecodeWithContext(
 
     // All done! Instruction successfully decoded!
     return ND_STATUS_SUCCESS;
+}
+
+
+NDSTATUS
+NdDecodeWithContextMini(
+    INSTRUX_MINI *Instrux,
+    const ND_UINT8 *Code,
+    ND_SIZET Size,
+    ND_CONTEXT *Context
+)
+{
+    ND_INTERNAL_CONTEXT iCtx;
+    ND_SIZET toFetch;
+    ND_UINT8 iBytes[ND_MAX_INSTRUCTION_LENGTH];
+    const ND_UINT8 *iCode = ND_NULL;
+
+    // validate
+    if (ND_NULL == Instrux)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (ND_NULL == Code)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (Size == 0)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (ND_NULL == Context)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (ND_CODE_64 < Context->DefCode)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (ND_STACK_64 < Context->DefStack)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (ND_VEND_MAX < Context->VendMode)
+    {
+        return ND_STATUS_INVALID_PARAMETER;
+    }
+
+    if (0 == (Context->Options & ND_OPTION_SKIP_ZERO_INSTRUX))
+    {
+        // Initialize with zero.
+        nd_memzero(Instrux, sizeof(INSTRUX_MINI));
+    }
+
+    if (0 == (Context->Options & ND_OPTION_SKIP_CACHE_IBYTES))
+    {
+        toFetch = (Size < ND_MAX_INSTRUCTION_LENGTH) ? Size : ND_MAX_INSTRUCTION_LENGTH;
+
+        // Fetch the instruction bytes. Note than in regular decode mode, ND_OPT_SKIP_CACHE_IBYTES is ignored.
+        for (ND_SIZET i = 0; i < toFetch; i++)
+        {
+            iBytes[i] = Code[i];
+        }
+
+        iCode = iBytes;
+    }
+    else
+    {
+        toFetch = Size;
+        iCode = Code;
+    }
+
+    // Initialize the internal context.
+    iCtx.Context = Context;
+    iCtx.Instrux = (INSTRUX_MINI*)Instrux;
+    iCtx.Idbe = ND_NULL;
+
+    // Decode the instruction.
+    return NdDecodeInternal(&iCtx, iCode, toFetch);
+}
+
+
+//
+// NdDecodeEx2
+//
+NDSTATUS
+NdDecodeEx2(
+    INSTRUX *Instrux,
+    const ND_UINT8 *Code,
+    ND_SIZET Size,
+    ND_UINT8 DefCode,
+    ND_UINT8 DefData,
+    ND_UINT8 DefStack,
+    ND_UINT8 Vendor
+)
+{
+    ND_CONTEXT opt;
+
+    NdInitContext(&opt);
+
+    opt.DefCode = DefCode;
+    opt.DefData = DefData;
+    opt.DefStack = DefStack;
+    opt.VendMode = Vendor;
+    opt.FeatMode = ND_FEAT_ALL; // Optimistically decode everything, as if all features are enabled.
+
+    return NdDecodeWithContext(Instrux, Code, Size, &opt);
 }
 
 
@@ -4607,7 +2961,7 @@ NdDecodeEx(
     ND_SIZET Size,
     ND_UINT8 DefCode,
     ND_UINT8 DefData
-    )
+)
 {
     return NdDecodeEx2(Instrux, Code, Size, DefCode, DefData, DefCode, ND_VEND_ANY);
 }
@@ -4622,9 +2976,30 @@ NdDecode(
     const ND_UINT8 *Code,
     ND_UINT8 DefCode,
     ND_UINT8 DefData
-    )
+)
 {
     return NdDecodeEx2(Instrux, Code, ND_MAX_INSTRUCTION_LENGTH, DefCode, DefData, DefCode, ND_VEND_ANY);
+}
+
+NDSTATUS
+NdDecodeMini(
+    INSTRUX_MINI *Instrux,      // Output decoded instruction.
+    const ND_UINT8 *Code,       // Buffer containing the instruction bytes.
+    ND_SIZET Size,              // Maximum size of the Code buffer.
+    ND_UINT8 DefCode            // Decode mode - one of the ND_CODE_* values.
+)
+{
+    ND_CONTEXT opt;
+
+    NdInitContext(&opt);
+
+    opt.DefCode = DefCode;
+    opt.DefData = DefCode;
+    opt.DefStack = DefCode;
+    opt.VendMode = ND_VEND_ANY;
+    opt.FeatMode = ND_FEAT_ALL; // Optimistically decode everything, as if all features are enabled.
+
+    return NdDecodeWithContextMini(Instrux, Code, Size, &opt);
 }
 
 
@@ -4634,7 +3009,7 @@ NdDecode(
 void
 NdInitContext(
     ND_CONTEXT *Context
-    )
+)
 {
     nd_memzero(Context, sizeof(*Context));
 }

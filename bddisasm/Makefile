@@ -1,6 +1,6 @@
 .PHONY: clean
 
-SRC_FILES := bddisasm_crt.c bdx86_decoder.c bdx86_formatter.c bdx86_helpers.c
+SRC_FILES := bddisasm_crt.c bdx86_decoder.c bdx86_formatter.c bdx86_helpers.c bdx86_operand.c bdx86_idbe.c
 
 OBJECTS := $(SRC_FILES:.c=.o)
 

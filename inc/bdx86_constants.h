@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Bitdefender
+ * Copyright (c) 2025 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -297,6 +297,7 @@ typedef enum _ND_INS_CLASS
     ND_INS_HRESET,
     ND_INS_HSUBPD,
     ND_INS_HSUBPS,
+    ND_INS_IBHF,
     ND_INS_IDIV,
     ND_INS_IMUL,
     ND_INS_IN,
@@ -318,7 +319,6 @@ typedef enum _ND_INS_CLASS
     ND_INS_INVVPID,
     ND_INS_IRET,
     ND_INS_JMPABS,
-    ND_INS_JMPE,
     ND_INS_JMPFD,
     ND_INS_JMPFI,
     ND_INS_JMPNI,
@@ -738,8 +738,8 @@ typedef enum _ND_INS_CLASS
     ND_INS_TCONJTCMMIMFP16PS,
     ND_INS_TCONJTFP16,
     ND_INS_TCVTROWD2PS,
-    ND_INS_TCVTROWPS2PBF16H,
-    ND_INS_TCVTROWPS2PBF16L,
+    ND_INS_TCVTROWPS2BF16H,
+    ND_INS_TCVTROWPS2BF16L,
     ND_INS_TCVTROWPS2PHH,
     ND_INS_TCVTROWPS2PHL,
     ND_INS_TDCALL,
@@ -1810,6 +1810,7 @@ typedef enum _ND_INS_SET
     ND_SET_AVXVNNI,
     ND_SET_AVXVNNIINT16,
     ND_SET_AVXVNNIINT8,
+    ND_SET_BHI_DIS_S,
     ND_SET_BMI1,
     ND_SET_BMI2,
     ND_SET_CET_IBT,
@@ -1835,7 +1836,6 @@ typedef enum _ND_INS_SET
     ND_SET_I386,
     ND_SET_I486,
     ND_SET_I486REAL,
-    ND_SET_I64,
     ND_SET_I86,
     ND_SET_INVLPGB,
     ND_SET_INVPCID,

@@ -31,19 +31,13 @@
     <Filter Include="data\table evex">
       <UniqueIdentifier>{b2f84880-170b-4fb3-b8c0-408dc88f9598}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\isg_x86">
+      <UniqueIdentifier>{cd07669b-b56c-410f-961f-7473a286881a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="instructions\cpuid.dat">
       <Filter>data</Filter>
-    </None>
-    <None Include="instructions\flags.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="instructions\modes.dat">
-      <Filter>data</Filter>
-    </None>
-    <None Include="disasmlib.py">
-      <Filter>Source Files</Filter>
     </None>
     <None Include="generate_tables.py">
       <Filter>Source Files</Filter>
@@ -104,6 +98,60 @@
     </None>
     <None Include="instructions\table_vex_5.dat">
       <Filter>data\table vex</Filter>
+    </None>
+    <None Include="isg_x86\__init__.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\attributes.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\common.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\cpu_modes.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\cpuid.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\decorators.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\disasmlib.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\evex_mode.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\evex_tuple.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\exception_type.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\flags_access.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\fpu_access.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\instrux.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\instrux_grouper.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\operand.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\operand_access.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\prefix_map.py">
+      <Filter>Source Files\isg_x86</Filter>
+    </None>
+    <None Include="isg_x86\simd_exceptions.py">
+      <Filter>Source Files\isg_x86</Filter>
     </None>
   </ItemGroup>
 </Project>

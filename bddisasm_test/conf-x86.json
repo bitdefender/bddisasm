@@ -7,6 +7,41 @@
         "command": "decode"
     },
     {
+        "f_source": "x86/amx/amx_evex_64.asm",
+        "f_result": "x86/amx/amx_evex_64.result",
+        "f_test": "x86/amx/amx_evex_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx_amx_64.asm",
+        "f_result": "x86/apx/apx_amx_64.result",
+        "f_test": "x86/apx/apx_amx_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx_movrs_64.asm",
+        "f_result": "x86/apx/apx_movrs_64.result",
+        "f_test": "x86/apx/apx_movrs_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx1_64.asm",
+        "f_result": "x86/apx/apx1_64.result",
+        "f_test": "x86/apx/apx1_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/apx/apx2_64.asm",
+        "f_result": "x86/apx/apx2_64.result",
+        "f_test": "x86/apx/apx2_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
         "f_source": "x86/apx/apx3_64.asm",
         "f_result": "x86/apx/apx3_64.result",
         "f_test": "x86/apx/apx3_64.test",
@@ -28,16 +63,9 @@
         "command": "decode"
     },
     {
-        "f_source": "x86/apx/apx1_64.asm",
-        "f_result": "x86/apx/apx1_64.result",
-        "f_test": "x86/apx/apx1_64.test",
-        "options": "-b64",
-        "command": "decode"
-    },
-    {
-        "f_source": "x86/apx/apx2_64.asm",
-        "f_result": "x86/apx/apx2_64.result",
-        "f_test": "x86/apx/apx2_64.test",
+        "f_source": "x86/apx/rex2_ignore_64.asm",
+        "f_result": "x86/apx/rex2_ignore_64.result",
+        "f_test": "x86/apx/rex2_ignore_64.test",
         "options": "-b64",
         "command": "decode"
     },
@@ -427,6 +455,20 @@
         "command": "decode"
     },
     {
+        "f_source": "x86/bhi/bhi_32.asm",
+        "f_result": "x86/bhi/bhi_32.result",
+        "f_test": "x86/bhi/bhi_32.test",
+        "options": "-b32",
+        "command": "decode"
+    },
+    {
+        "f_source": "x86/bhi/bhi_64.asm",
+        "f_result": "x86/bhi/bhi_64.result",
+        "f_test": "x86/bhi/bhi_64.test",
+        "options": "-b64",
+        "command": "decode"
+    },
+    {
         "f_source": "x86/cet/cet_32.asm",
         "f_result": "x86/cet/cet_32.result",
         "f_test": "x86/cet/cet_32.test",
@@ -724,13 +766,6 @@
         "f_source": "x86/sm/sm4_evex_64.asm",
         "f_result": "x86/sm/sm4_evex_64.result",
         "f_test": "x86/sm/sm4_evex_64.test",
-        "options": "-b64",
-        "command": "decode"
-    },
-    {
-        "f_source": "x86/amx/amx_evex_64.asm",
-        "f_result": "x86/amx/amx_evex_64.result",
-        "f_test": "x86/amx/amx_evex_64.test",
         "options": "-b64",
         "command": "decode"
     }

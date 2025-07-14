@@ -12,7 +12,7 @@ nd_strcat_s(
     char *dst,
     ND_SIZET dst_size,
     const char *src
-    )
+)
 {
     char *p;
     ND_SIZET available;

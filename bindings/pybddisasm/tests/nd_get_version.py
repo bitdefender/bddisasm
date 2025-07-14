@@ -5,6 +5,8 @@
 import sys
 import unittest
 
+sys.path.append('../')
+
 import pybddisasm
 
 class TestNdGetVersion(unittest.TestCase):

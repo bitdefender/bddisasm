@@ -14,7 +14,7 @@ categories = ["api-bindings", "hardware-support"]
 keywords = ["disassembler", "decoder", "x86", "amd64", "x86_64"]
 
 [dependencies]
-bddisasm-sys = { version = "0.5.1", path = "../bddisasm-sys" }
+bddisasm-sys = { version = "0.8.0", path = "../bddisasm-sys" }
 bitflags = "2.6.0"
 
 [features]

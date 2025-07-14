@@ -184,14 +184,14 @@ SUB          ; Ev,Iz       ; Fv                ;            0x81 /5 iz     ; s:I
 XOR          ; Ev,Iz       ; Fv                ;            0x81 /6 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SIGNEXO1, p:HLE|LOCK
 CMP          ; Ev,Iz       ; Fv                ;            0x81 /7 iz     ; s:I86, t:ARITH, w:R|R|W,   f:ARITH,  a:OP2SIGNEXO1
 
-ADD          ; Eb,Ib       ; Fv                ;            0x82 /0 iz     ; s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-OR           ; Eb,Ib       ; Fv                ;            0x82 /1 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-ADC          ; Eb,Ib       ; Fv                ;            0x82 /2 iz     ; s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-SBB          ; Eb,Ib       ; Fv                ;            0x82 /3 iz     ; s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-AND          ; Eb,Ib       ; Fv                ;            0x82 /4 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-SUB          ; Eb,Ib       ; Fv                ;            0x82 /5 iz     ; s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-XOR          ; Eb,Ib       ; Fv                ;            0x82 /6 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SIGNEXO1, m:NO64, p:HLE|LOCK
-CMP          ; Eb,Ib       ; Fv                ;            0x82 /7 iz     ; s:I86, t:ARITH, w:R|R|W,   f:ARITH,  a:OP2SIGNEXO1, m:NO64
+ADD          ; Eb,Ib       ; Fv                ;            0x82 /0 iz     ; s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  m:NO64, p:HLE|LOCK
+OR           ; Eb,Ib       ; Fv                ;            0x82 /1 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  m:NO64, p:HLE|LOCK
+ADC          ; Eb,Ib       ; Fv                ;            0x82 /2 iz     ; s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, m:NO64, p:HLE|LOCK
+SBB          ; Eb,Ib       ; Fv                ;            0x82 /3 iz     ; s:I86, t:ARITH, w:RW|R|RW, f:ARITHC, m:NO64, p:HLE|LOCK
+AND          ; Eb,Ib       ; Fv                ;            0x82 /4 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  m:NO64, p:HLE|LOCK
+SUB          ; Eb,Ib       ; Fv                ;            0x82 /5 iz     ; s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  m:NO64, p:HLE|LOCK
+XOR          ; Eb,Ib       ; Fv                ;            0x82 /6 iz     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  m:NO64, p:HLE|LOCK
+CMP          ; Eb,Ib       ; Fv                ;            0x82 /7 iz     ; s:I86, t:ARITH, w:R|R|W,   f:ARITH,  m:NO64
 
 ADD          ; Ev,Ib       ; Fv                ;            0x83 /0 ib     ; s:I86, t:ARITH, w:RW|R|W,  f:ARITH,  a:OP2SIGNEXO1, p:HLE|LOCK
 OR           ; Ev,Ib       ; Fv                ;            0x83 /1 ib     ; s:I86, t:LOGIC, w:RW|R|W,  f:LOGIC,  a:OP2SIGNEXO1, p:HLE|LOCK
@@ -238,10 +238,10 @@ CALLF        ; Ap          ; CS,rIP,Kv2,SHS2   ;            0x9A cp        ; s:I
 WAIT         ;             ;                   ;            0x9B           ; s:X87, t:X87_ALU
 PUSHFW       ; Fv          ; Kv                ;       ds16 0x9C           ; s:I86, t:PUSH, c:PUSHF, w:R|W, a:D64
 PUSHFD       ; Fv          ; Kv                ;       ds32 0x9C           ; s:I86, t:PUSH, c:PUSHF, w:R|W, a:D64
-PUSHFQ       ; Fv          ; Kv                ;      dds64 0x9C           ; s:I86, t:PUSH, c:PUSHF, w:R|W, a:D64
+PUSHFQ       ; Fv          ; Kv                ;       dd64 0x9C           ; s:I86, t:PUSH, c:PUSHF, w:R|W, a:D64
 POPFW        ; Fv          ; Kv                ;       ds16 0x9D           ; s:I86, t:POP, c:POPF, w:W|R  , a:D64
 POPFD        ; Fv          ; Kv                ;       ds32 0x9D           ; s:I86, t:POP, c:POPF, w:W|R  , a:D64
-POPFQ        ; Fv          ; Kv                ;      dds64 0x9D           ; s:I86, t:POP, c:POPF, w:W|R  , a:D64
+POPFQ        ; Fv          ; Kv                ;       dd64 0x9D           ; s:I86, t:POP, c:POPF, w:W|R  , a:D64
 SAHF         ;             ; AH,Fv             ;            0x9E           ; s:I86, t:FLAGOP, w:R|W, f:CF=m|PF=m|AF=m|ZF=m|SF=m
 LAHF         ;             ; AH,Fv             ;            0x9F           ; s:I86, t:FLAGOP, w:W|R, f:CF=t|PF=t|AF=t|ZF=t|SF=t
 
@@ -343,7 +343,7 @@ MOV          ; Eb,Ib       ;                   ;            0xC6 /0 ib     ; s:I
 XABORT       ; Ib          ; yIP,EAX           ;            0xC6 /0xF8 ib  ; s:TSX, t:UNCOND_BR, w:R|W|RCW, i:RTM
 MOV          ; Ev,Iz       ;                   ;            0xC7 /0 iz     ; s:I86, t:DATAXFER, w:W|R, a:OP2SIGNEXO1, p:XRELEASE|HLEWOL
 XBEGIN       ; Jz          ; yIP,EAX           ;            0xC7 /0xF8 cz  ; s:TSX, t:COND_BR, w:R|RCW|CW, i:RTM
-ENTER        ; Iw,Ib       ; rBP,rSP,Kv,sBP,pBP;            0xC8 iw ib     ; s:I186, t:MISC, w:R|R|RW|RW|W|RW|R, a:D64
+ENTER        ; I1w,I2b     ; rBP,rSP,Kv,sBP,pBP;            0xC8 iw ib     ; s:I186, t:MISC, w:R|R|RW|RW|W|RW|R, a:D64
 LEAVE        ;             ; sBP,rBP,sSP,Kv    ;            0xC9           ; s:I186, t:MISC, w:R|RW|RW|R, a:D64
 RETF         ; Iw          ; CS,rIP,Kv2,SHS2   ;            0xCA iw        ; s:I86, t:RET, w:R|W|W|R|R
 RETF         ;             ; CS,rIP,Kv2,SHS2   ;            0xCB           ; s:I86, t:RET, w:W|W|R|R
@@ -405,7 +405,7 @@ OUT          ; Ib,AL       ; Fv                ;            0xE6 ib        ; s:I
 OUT          ; Ib,eAX      ; Fv                ;            0xE7 ib        ; s:I86, t:IO, w:R|R|R, f:IO, a:SERIAL|NOREX2, m:NOSGX
 CALL         ; Jz          ; rIP,Kv,SHS1       ;            0xE8 cz        ; s:I86, t:CALL, c:CALLNR, w:R|RW|W|W, a:F64|NOREX2, p:BND
 JMP          ; Jz          ; rIP               ;            0xE9 cz        ; s:I86, t:UNCOND_BR, c:JMPNR, w:R|RW, a:F64|NOREX2, p:BND
-JMPF         ; Ap          ; CS,rIP            ;            0xEA cp        ; s:I86, t:UNCOND_BR, c:JMPFD, w:R|W|W, m:NO64|NOSGX
+JMPF         ; Ap          ; CS,rIP            ;            0xEA cp        ; s:I86, t:UNCOND_BR, c:JMPFD, w:R|W|W, m:NO64|NOSGX, a:NOREX2
 JMP          ; Jb          ; rIP               ;            0xEB cb        ; s:I86, t:UNCOND_BR, c:JMPNR, w:R|RW, a:F64|NOREX2, p:BND
 IN           ; AL,DX       ; Fv                ;            0xEC           ; s:I86, t:IO, w:W|R|R, f:IO, a:NOREX2, m:NOSGX
 IN           ; eAX,DX      ; Fv                ;            0xED           ; s:I86, t:IO, w:W|R|R, f:IO, a:NOREX2, m:NOSGX

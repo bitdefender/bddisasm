@@ -199,11 +199,8 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="disasmlib.py" />
     <None Include="generate_tables.py" />
     <None Include="instructions\cpuid.dat" />
-    <None Include="instructions\flags.dat" />
-    <None Include="instructions\modes.dat" />
     <None Include="instructions\table_evex_4.dat" />
     <None Include="instructions\table_evex_7.dat" />
     <None Include="instructions\table_legacy_1.dat" />
@@ -223,6 +220,24 @@
     <None Include="instructions\table_vex_5.dat" />
     <None Include="instructions\table_vex_7.dat" />
     <None Include="instructions\table_xop.dat" />
+    <None Include="isg_x86\attributes.py" />
+    <None Include="isg_x86\common.py" />
+    <None Include="isg_x86\cpuid.py" />
+    <None Include="isg_x86\cpu_modes.py" />
+    <None Include="isg_x86\decorators.py" />
+    <None Include="isg_x86\disasmlib.py" />
+    <None Include="isg_x86\evex_mode.py" />
+    <None Include="isg_x86\evex_tuple.py" />
+    <None Include="isg_x86\exception_type.py" />
+    <None Include="isg_x86\flags_access.py" />
+    <None Include="isg_x86\fpu_access.py" />
+    <None Include="isg_x86\instrux.py" />
+    <None Include="isg_x86\instrux_grouper.py" />
+    <None Include="isg_x86\operand.py" />
+    <None Include="isg_x86\operand_access.py" />
+    <None Include="isg_x86\prefix_map.py" />
+    <None Include="isg_x86\simd_exceptions.py" />
+    <None Include="isg_x86\__init__.py" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -6,9 +6,15 @@
 %{
     #define SWIG_FILE_WITH_INIT
 
-    #include "pybddisasm.h"
-
     #include "bddisasm.h"
+    #include "bdx86_constants.h"
+    #include "bdx86_cpuidflags.h"
+    #include "bddisasm_status.h"
+    #include "bddisasm_types.h"
+    #include "bdx86_registers.h"
+    #include "bdx86_core.h"
+
+    #include "pybddisasm.h"
 %}
 
 %include "typemaps.i"
@@ -158,6 +164,9 @@
 %define __x86_64__
 %enddef
 
+// Ignore INSTRUX_MINI since we do not use it.
+%ignore INSTRUX_MINI;
+
 %include "bddisasm.h"
 %include "bdx86_constants.h"
 %include "bdx86_cpuidflags.h"
@@ -165,3 +174,5 @@
 %include "bddisasm_types.h"
 %include "bdx86_registers.h"
 %include "bdx86_core.h"
+
+%include "pybddisasm.h"

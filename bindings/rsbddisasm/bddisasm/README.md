@@ -18,7 +18,7 @@ Add `bddisasm` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-bddisasm = "0.5.1"
+bddisasm = "0.1.0"
 ```
 
 ## Examples
@@ -127,11 +127,8 @@ use bddisasm::{DecodedInstruction, DecodeMode, OpInfo};
 let code = b"\x4a\x8b\x04\x79";
 let ins = DecodedInstruction::decode(code, DecodeMode::Bits64).unwrap();
 
-// Get the operands
-let operands = ins.operands();
-
 // Get the second operand which is the source (`[rcx+r15*2]`)
-let src = operands[1];
+let src = ins.operand(1)?;
 
 println!("Source operand type: {}", src.info);
 match src.info {

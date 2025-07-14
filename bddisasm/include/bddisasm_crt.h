@@ -24,14 +24,14 @@ extern int nd_vsnprintf_s(
     ND_SIZET count,
     const char *format,
     va_list argptr
-    );
+);
 
 char *
 nd_strcat_s(
     char *dst,
     ND_SIZET dst_size,
     const char *src
-    );
+);
 #endif // !BDDISASM_NO_FORMAT
 
 // Declared here only. Expecting it to be defined in the integrator.

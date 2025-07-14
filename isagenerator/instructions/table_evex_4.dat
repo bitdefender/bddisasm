@@ -1324,19 +1324,41 @@ CFCMOVNLE{ND}       ; Bv,Gv,Ev    ; Fv          ; evex m:4 l:0 p:1 nd:1 nf:1 0x4
 
 
 # SETcc{ZU}
-SETO{ZU}            ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x40 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CO,   a:COND, v:legacy, e:APX_EVEX_INT
-SETNO{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x41 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNO,  a:COND, v:legacy, e:APX_EVEX_INT
-SETC{ZU}            ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x42 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CC,   a:COND, v:legacy, e:APX_EVEX_INT
-SETNC{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x43 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNC,  a:COND, v:legacy, e:APX_EVEX_INT
-SETZ{ZU}            ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x44 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CZ,   a:COND, v:legacy, e:APX_EVEX_INT
-SETNZ{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x45 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNZ,  a:COND, v:legacy, e:APX_EVEX_INT
-SETBE{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x46 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CBE,  a:COND, v:legacy, e:APX_EVEX_INT
-SETNBE{ZU}          ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x47 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNBE, a:COND, v:legacy, e:APX_EVEX_INT
-SETS{ZU}            ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x48 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CS,   a:COND, v:legacy, e:APX_EVEX_INT
-SETNS{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x49 /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNS,  a:COND, v:legacy, e:APX_EVEX_INT
-SETP{ZU}            ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x4A /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CP,   a:COND, v:legacy, e:APX_EVEX_INT
-SETNP{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x4B /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNP,  a:COND, v:legacy, e:APX_EVEX_INT
-SETL{ZU}            ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x4C /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CL,   a:COND, v:legacy, e:APX_EVEX_INT
-SETNL{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x4D /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNL,  a:COND, v:legacy, e:APX_EVEX_INT
-SETLE{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x4E /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CLE,  a:COND, v:legacy, e:APX_EVEX_INT
-SETNLE{ZU}          ; Eb          ; Fv          ; evex m:4 l:0 nf:0 p:3 0x4F /r                 ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNLE, a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x40 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CO,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x41 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNO,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x42 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CC,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x43 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNC,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x44 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CZ,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x45 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNZ,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x46 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CBE,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x47 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNBE, a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x48 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CS,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x49 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNS,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x4A /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CP,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x4B /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNP,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x4C /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CL,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x4D /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNL,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x4E /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CLE,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc               ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:0 p:3 0x4F /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNLE, a:COND, v:legacy, e:APX_EVEX_INT
+
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x40 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CO,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x41 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNO,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x42 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CC,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x43 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNC,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x44 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CZ,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x45 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNZ,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x46 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CBE,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x47 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNBE, a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x48 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CS,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x49 /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNS,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x4A /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CP,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x4B /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNP,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x4C /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CL,   a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x4D /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNL,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x4E /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CLE,  a:COND, v:legacy, e:APX_EVEX_INT
+SETcc{ZU}           ; Eb          ; Fv          ; evex m:4 l:0 nf:0 nd:1 p:3 0x4F /r            ; s:APX_F, t:BITBYTE, c:SETcc, w:W|R, f:CNLE, a:COND, v:legacy, e:APX_EVEX_INT
+
+# MOVRS
+MOVRS               ; Eb,Gb       ;             ; evex m:4 l:0 nd:0 nf:0 p:0 w:0 0x8A /r:mem    ; s:APX_F, t:DATAXFER, w:W|R, v:legacy, e:APX_EVEX_MOVRS
+MOVRS               ; Ev,Gv       ;             ; evex m:4 l:0 nd:0 nf:0 p:0 0x8B /r:mem        ; s:APX_F, t:DATAXFER, w:W|R, v:legacy, e:APX_EVEX_MOVRS, a:SCALABLE
+MOVRS               ; Ev,Gv       ;             ; evex m:4 l:0 nd:0 nf:0 p:1 0x8B /r:mem        ; s:APX_F, t:DATAXFER, w:W|R, v:legacy, e:APX_EVEX_MOVRS, a:SCALABLE

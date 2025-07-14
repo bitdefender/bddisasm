@@ -14,7 +14,8 @@ typedef ND_UINT32 NDSTATUS;
 #define ND_STATUS_SUCCESS                               0x00000000 // All good.
 
 // Hint/success codes.
-#define ND_STATUS_HINT_OPERAND_NOT_USED                 0x00000001
+#define ND_STATUS_HINT_OPERAND_NOT_USED                 0x00000001 // Deprecated.
+#define ND_STATUS_HINT_OPERAND_NOT_PRESENT              0x00000002 // Operand index does not exist.
 
 // Error codes are all > 0x80000000.
 #define ND_STATUS_BUFFER_TOO_SMALL                      0x80000001 // The provided input buffer is too small.
@@ -56,6 +57,7 @@ typedef ND_UINT32 NDSTATUS;
 #define ND_STATUS_INVALID_PARAMETER                     0x80000100 // An invalid parameter was provided.
 #define ND_STATUS_INVALID_INSTRUX                       0x80000101 // The INSTRUX contains unexpected values.
 #define ND_STATUS_BUFFER_OVERFLOW                       0x80000103 // Not enough space is available to format textual disasm.
+#define ND_STATUS_NOT_SUPPORTED                         0x80000104 // Function not supported in given mode.
 
 #define ND_STATUS_INTERNAL_ERROR                        0x80000200 // Internal error occurred.
 

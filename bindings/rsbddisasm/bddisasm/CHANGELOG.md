@@ -1,5 +1,11 @@
 # bddisasm changelog
 
+## 0.8.0
+
+### Changed
+
+- use `INSTRUX_MINI` internally.
+
 ## 0.3.1
 
 ### Removed

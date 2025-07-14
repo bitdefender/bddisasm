@@ -814,7 +814,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000000F6 62f9ff182fde                    VCOMXSD   xmm3, xmm6, {sae}
+00000000000000F6 62f9ff182fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -835,7 +835,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000000FC 62f9ff382fde                    VCOMXSD   xmm3, xmm6, {sae}
+00000000000000FC 62f9ff382fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -856,7 +856,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000102 62f9ff582fde                    VCOMXSD   xmm3, xmm6, {sae}
+0000000000000102 62f9ff582fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -877,7 +877,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000108 62f9ff782fde                    VCOMXSD   xmm3, xmm6, {sae}
+0000000000000108 62f9ff782fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -898,7 +898,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000010E 62f9fb182fde                    VCOMXSD   xmm3, xmm6, {sae}
+000000000000010E 62f9fb182fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -919,7 +919,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000114 62f9fb382fde                    VCOMXSD   xmm3, xmm6, {sae}
+0000000000000114 62f9fb382fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -940,7 +940,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000011A 62f9fb582fde                    VCOMXSD   xmm3, xmm6, {sae}
+000000000000011A 62f9fb582fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -961,7 +961,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000000120 62f9fb782fde                    VCOMXSD   xmm3, xmm6, {sae}
+0000000000000120 62f9fb782fde                    VCOMXSD   xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1111,7 +1111,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000014A 62fd7e182fde                    VCOMXSH   xmm3, xmm6, {sae}
+000000000000014A 62fd7e182fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1132,7 +1132,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000150 62fd7e382fde                    VCOMXSH   xmm3, xmm6, {sae}
+0000000000000150 62fd7e382fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1153,7 +1153,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000156 62fd7e582fde                    VCOMXSH   xmm3, xmm6, {sae}
+0000000000000156 62fd7e582fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1174,7 +1174,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000015C 62fd7e782fde                    VCOMXSH   xmm3, xmm6, {sae}
+000000000000015C 62fd7e782fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1195,7 +1195,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000162 62fd7a182fde                    VCOMXSH   xmm3, xmm6, {sae}
+0000000000000162 62fd7a182fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1216,7 +1216,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000168 62fd7a382fde                    VCOMXSH   xmm3, xmm6, {sae}
+0000000000000168 62fd7a382fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1237,7 +1237,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000016E 62fd7a582fde                    VCOMXSH   xmm3, xmm6, {sae}
+000000000000016E 62fd7a582fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1258,7 +1258,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000000174 62fd7a782fde                    VCOMXSH   xmm3, xmm6, {sae}
+0000000000000174 62fd7a782fde                    VCOMXSH   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -1408,7 +1408,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000019E 62f97e182fde                    VCOMXSS   xmm3, xmm6, {sae}
+000000000000019E 62f97e182fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1429,7 +1429,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001A4 62f97e382fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001A4 62f97e382fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1450,7 +1450,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001AA 62f97e582fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001AA 62f97e582fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1471,7 +1471,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001B0 62f97e782fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001B0 62f97e782fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1492,7 +1492,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001B6 62f97a182fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001B6 62f97a182fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1513,7 +1513,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001BC 62f97a382fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001BC 62f97a382fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1534,7 +1534,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001C2 62f97a582fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001C2 62f97a582fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1555,7 +1555,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000001C8 62f97a782fde                    VCOMXSS   xmm3, xmm6, {sae}
+00000000000001C8 62f97a782fde                    VCOMXSS   xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -1900,7 +1900,7 @@
         Operand: 3, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000228 62fa7d1867de                    VCVT2PS2PHX zmm3, zmm0, zmm6, {rn-sae}
+0000000000000228 62fa7d1867de                    VCVT2PS2PHX zmm3, zmm0, zmm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -1920,7 +1920,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: V, RegType:           Vector, RegSize: 64, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000022E 62fa7d3867de                    VCVT2PS2PHX zmm3, zmm0, zmm6, {rd-sae}
+000000000000022E 62fa7d3867de                    VCVT2PS2PHX zmm3, zmm0, zmm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -1940,7 +1940,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: V, RegType:           Vector, RegSize: 64, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000234 62fa7d5867de                    VCVT2PS2PHX zmm3, zmm0, zmm6, {ru-sae}
+0000000000000234 62fa7d5867de                    VCVT2PS2PHX zmm3, zmm0, zmm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -1960,7 +1960,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: V, RegType:           Vector, RegSize: 64, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000023A 62fa7d7867de                    VCVT2PS2PHX zmm3, zmm0, zmm6, {rz-sae}
+000000000000023A 62fa7d7867de                    VCVT2PS2PHX zmm3, zmm0, zmm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -1980,7 +1980,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: V, RegType:           Vector, RegSize: 64, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000240 62fa791867de                    VCVT2PS2PHX ymm3, ymm0, ymm6, {rn-sae}
+0000000000000240 62fa791867de                    VCVT2PS2PHX ymm3, ymm0, ymm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -2000,7 +2000,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: V, RegType:           Vector, RegSize: 32, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000246 62fa793867de                    VCVT2PS2PHX ymm3, ymm0, ymm6, {rd-sae}
+0000000000000246 62fa793867de                    VCVT2PS2PHX ymm3, ymm0, ymm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -2020,7 +2020,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: V, RegType:           Vector, RegSize: 32, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-000000000000024C 62fa795867de                    VCVT2PS2PHX ymm3, ymm0, ymm6, {ru-sae}
+000000000000024C 62fa795867de                    VCVT2PS2PHX ymm3, ymm0, ymm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -2040,7 +2040,7 @@
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: V, RegType:           Vector, RegSize: 32, RegId: 0, RegCount: 1
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000252 62fa797867de                    VCVT2PS2PHX ymm3, ymm0, ymm6, {rz-sae}
+0000000000000252 62fa797867de                    VCVT2PS2PHX ymm3, ymm0, ymm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10CONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7016,7 +7016,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-00000000000007E6 62fd7c1869de                    VCVTPH2IBS zmm3, zmm6, {rn-sae}
+00000000000007E6 62fd7c1869de                    VCVTPH2IBS zmm3, zmm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7035,7 +7035,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-00000000000007EC 62fd7c3869de                    VCVTPH2IBS zmm3, zmm6, {rd-sae}
+00000000000007EC 62fd7c3869de                    VCVTPH2IBS zmm3, zmm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7054,7 +7054,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-00000000000007F2 62fd7c5869de                    VCVTPH2IBS zmm3, zmm6, {ru-sae}
+00000000000007F2 62fd7c5869de                    VCVTPH2IBS zmm3, zmm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7073,7 +7073,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-00000000000007F8 62fd7c7869de                    VCVTPH2IBS zmm3, zmm6, {rz-sae}
+00000000000007F8 62fd7c7869de                    VCVTPH2IBS zmm3, zmm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7092,7 +7092,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-00000000000007FE 62fd781869de                    VCVTPH2IBS ymm3, ymm6, {rn-sae}
+00000000000007FE 62fd781869de                    VCVTPH2IBS ymm3, ymm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7111,7 +7111,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000804 62fd783869de                    VCVTPH2IBS ymm3, ymm6, {rd-sae}
+0000000000000804 62fd783869de                    VCVTPH2IBS ymm3, ymm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7130,7 +7130,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-000000000000080A 62fd785869de                    VCVTPH2IBS ymm3, ymm6, {ru-sae}
+000000000000080A 62fd785869de                    VCVTPH2IBS ymm3, ymm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7149,7 +7149,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000810 62fd787869de                    VCVTPH2IBS ymm3, ymm6, {rz-sae}
+0000000000000810 62fd787869de                    VCVTPH2IBS ymm3, ymm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7477,7 +7477,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000870 62fd7c186bde                    VCVTPH2IUBS zmm3, zmm6, {rn-sae}
+0000000000000870 62fd7c186bde                    VCVTPH2IUBS zmm3, zmm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7496,7 +7496,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000876 62fd7c386bde                    VCVTPH2IUBS zmm3, zmm6, {rd-sae}
+0000000000000876 62fd7c386bde                    VCVTPH2IUBS zmm3, zmm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7515,7 +7515,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000087C 62fd7c586bde                    VCVTPH2IUBS zmm3, zmm6, {ru-sae}
+000000000000087C 62fd7c586bde                    VCVTPH2IUBS zmm3, zmm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7534,7 +7534,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000882 62fd7c786bde                    VCVTPH2IUBS zmm3, zmm6, {rz-sae}
+0000000000000882 62fd7c786bde                    VCVTPH2IUBS zmm3, zmm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7553,7 +7553,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000888 62fd78186bde                    VCVTPH2IUBS ymm3, ymm6, {rn-sae}
+0000000000000888 62fd78186bde                    VCVTPH2IUBS ymm3, ymm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7572,7 +7572,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-000000000000088E 62fd78386bde                    VCVTPH2IUBS ymm3, ymm6, {rd-sae}
+000000000000088E 62fd78386bde                    VCVTPH2IUBS ymm3, ymm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7591,7 +7591,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000894 62fd78586bde                    VCVTPH2IUBS ymm3, ymm6, {ru-sae}
+0000000000000894 62fd78586bde                    VCVTPH2IUBS ymm3, ymm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7610,7 +7610,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-000000000000089A 62fd78786bde                    VCVTPH2IUBS ymm3, ymm6, {rz-sae}
+000000000000089A 62fd78786bde                    VCVTPH2IUBS ymm3, ymm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7938,7 +7938,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-00000000000008FA 62fd7d1869de                    VCVTPS2IBS zmm3, zmm6, {rn-sae}
+00000000000008FA 62fd7d1869de                    VCVTPS2IBS zmm3, zmm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7957,7 +7957,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000900 62fd7d3869de                    VCVTPS2IBS zmm3, zmm6, {rd-sae}
+0000000000000900 62fd7d3869de                    VCVTPS2IBS zmm3, zmm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7976,7 +7976,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000906 62fd7d5869de                    VCVTPS2IBS zmm3, zmm6, {ru-sae}
+0000000000000906 62fd7d5869de                    VCVTPS2IBS zmm3, zmm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -7995,7 +7995,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000090C 62fd7d7869de                    VCVTPS2IBS zmm3, zmm6, {rz-sae}
+000000000000090C 62fd7d7869de                    VCVTPS2IBS zmm3, zmm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8014,7 +8014,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000912 62fd791869de                    VCVTPS2IBS ymm3, ymm6, {rn-sae}
+0000000000000912 62fd791869de                    VCVTPS2IBS ymm3, ymm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8033,7 +8033,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000918 62fd793869de                    VCVTPS2IBS ymm3, ymm6, {rd-sae}
+0000000000000918 62fd793869de                    VCVTPS2IBS ymm3, ymm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8052,7 +8052,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-000000000000091E 62fd795869de                    VCVTPS2IBS ymm3, ymm6, {ru-sae}
+000000000000091E 62fd795869de                    VCVTPS2IBS ymm3, ymm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8071,7 +8071,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000924 62fd797869de                    VCVTPS2IBS ymm3, ymm6, {rz-sae}
+0000000000000924 62fd797869de                    VCVTPS2IBS ymm3, ymm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8399,7 +8399,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000984 62fd7d186bde                    VCVTPS2IUBS zmm3, zmm6, {rn-sae}
+0000000000000984 62fd7d186bde                    VCVTPS2IUBS zmm3, zmm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8418,7 +8418,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000098A 62fd7d386bde                    VCVTPS2IUBS zmm3, zmm6, {rd-sae}
+000000000000098A 62fd7d386bde                    VCVTPS2IUBS zmm3, zmm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8437,7 +8437,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000990 62fd7d586bde                    VCVTPS2IUBS zmm3, zmm6, {ru-sae}
+0000000000000990 62fd7d586bde                    VCVTPS2IUBS zmm3, zmm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8456,7 +8456,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000996 62fd7d786bde                    VCVTPS2IUBS zmm3, zmm6, {rz-sae}
+0000000000000996 62fd7d786bde                    VCVTPS2IUBS zmm3, zmm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8475,7 +8475,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000099C 62fd79186bde                    VCVTPS2IUBS ymm3, ymm6, {rn-sae}
+000000000000099C 62fd79186bde                    VCVTPS2IUBS ymm3, ymm6{rn-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8494,7 +8494,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000009A2 62fd79386bde                    VCVTPS2IUBS ymm3, ymm6, {rd-sae}
+00000000000009A2 62fd79386bde                    VCVTPS2IUBS ymm3, ymm6{rd-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8513,7 +8513,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000009A8 62fd79586bde                    VCVTPS2IUBS ymm3, ymm6, {ru-sae}
+00000000000009A8 62fd79586bde                    VCVTPS2IUBS ymm3, ymm6{ru-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -8532,7 +8532,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000009AE 62fd79786bde                    VCVTPS2IUBS ymm3, ymm6, {rz-sae}
+00000000000009AE 62fd79786bde                    VCVTPS2IUBS ymm3, ymm6{rz-sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9448,7 +9448,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000AC2 62fdfc186dde                    VCVTTPD2DQS ymm3, zmm6, {sae}
+0000000000000AC2 62fdfc186dde                    VCVTTPD2DQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9467,7 +9467,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000AC8 62fdfc386dde                    VCVTTPD2DQS ymm3, zmm6, {sae}
+0000000000000AC8 62fdfc386dde                    VCVTTPD2DQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9486,7 +9486,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000ACE 62fdfc586dde                    VCVTTPD2DQS ymm3, zmm6, {sae}
+0000000000000ACE 62fdfc586dde                    VCVTTPD2DQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9505,7 +9505,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000AD4 62fdfc786dde                    VCVTTPD2DQS ymm3, zmm6, {sae}
+0000000000000AD4 62fdfc786dde                    VCVTTPD2DQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9524,7 +9524,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000ADA 62fdf8186dde                    VCVTTPD2DQS xmm3, ymm6, {sae}
+0000000000000ADA 62fdf8186dde                    VCVTTPD2DQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9543,7 +9543,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000AE0 62fdf8386dde                    VCVTTPD2DQS xmm3, ymm6, {sae}
+0000000000000AE0 62fdf8386dde                    VCVTTPD2DQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9562,7 +9562,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000AE6 62fdf8586dde                    VCVTTPD2DQS xmm3, ymm6, {sae}
+0000000000000AE6 62fdf8586dde                    VCVTTPD2DQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9581,7 +9581,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000AEC 62fdf8786dde                    VCVTTPD2DQS xmm3, ymm6, {sae}
+0000000000000AEC 62fdf8786dde                    VCVTTPD2DQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9909,7 +9909,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000B4C 62fdfd186dde                    VCVTTPD2QQS zmm3, zmm6, {sae}
+0000000000000B4C 62fdfd186dde                    VCVTTPD2QQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9928,7 +9928,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000B52 62fdfd386dde                    VCVTTPD2QQS zmm3, zmm6, {sae}
+0000000000000B52 62fdfd386dde                    VCVTTPD2QQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9947,7 +9947,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000B58 62fdfd586dde                    VCVTTPD2QQS zmm3, zmm6, {sae}
+0000000000000B58 62fdfd586dde                    VCVTTPD2QQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9966,7 +9966,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000B5E 62fdfd786dde                    VCVTTPD2QQS zmm3, zmm6, {sae}
+0000000000000B5E 62fdfd786dde                    VCVTTPD2QQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -9985,7 +9985,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000B64 62fdf9186dde                    VCVTTPD2QQS ymm3, ymm6, {sae}
+0000000000000B64 62fdf9186dde                    VCVTTPD2QQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10004,7 +10004,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000B6A 62fdf9386dde                    VCVTTPD2QQS ymm3, ymm6, {sae}
+0000000000000B6A 62fdf9386dde                    VCVTTPD2QQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10023,7 +10023,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000B70 62fdf9586dde                    VCVTTPD2QQS ymm3, ymm6, {sae}
+0000000000000B70 62fdf9586dde                    VCVTTPD2QQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10042,7 +10042,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000B76 62fdf9786dde                    VCVTTPD2QQS ymm3, ymm6, {sae}
+0000000000000B76 62fdf9786dde                    VCVTTPD2QQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10370,7 +10370,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000BD6 62fdfc186cde                    VCVTTPD2UDQS ymm3, zmm6, {sae}
+0000000000000BD6 62fdfc186cde                    VCVTTPD2UDQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10389,7 +10389,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000BDC 62fdfc386cde                    VCVTTPD2UDQS ymm3, zmm6, {sae}
+0000000000000BDC 62fdfc386cde                    VCVTTPD2UDQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10408,7 +10408,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000BE2 62fdfc586cde                    VCVTTPD2UDQS ymm3, zmm6, {sae}
+0000000000000BE2 62fdfc586cde                    VCVTTPD2UDQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10427,7 +10427,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000BE8 62fdfc786cde                    VCVTTPD2UDQS ymm3, zmm6, {sae}
+0000000000000BE8 62fdfc786cde                    VCVTTPD2UDQS ymm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10446,7 +10446,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000BEE 62fdf8186cde                    VCVTTPD2UDQS xmm3, ymm6, {sae}
+0000000000000BEE 62fdf8186cde                    VCVTTPD2UDQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10465,7 +10465,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000BF4 62fdf8386cde                    VCVTTPD2UDQS xmm3, ymm6, {sae}
+0000000000000BF4 62fdf8386cde                    VCVTTPD2UDQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10484,7 +10484,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000BFA 62fdf8586cde                    VCVTTPD2UDQS xmm3, ymm6, {sae}
+0000000000000BFA 62fdf8586cde                    VCVTTPD2UDQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10503,7 +10503,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000C00 62fdf8786cde                    VCVTTPD2UDQS xmm3, ymm6, {sae}
+0000000000000C00 62fdf8786cde                    VCVTTPD2UDQS xmm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10831,7 +10831,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000C60 62fdfd186cde                    VCVTTPD2UQQS zmm3, zmm6, {sae}
+0000000000000C60 62fdfd186cde                    VCVTTPD2UQQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10850,7 +10850,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000C66 62fdfd386cde                    VCVTTPD2UQQS zmm3, zmm6, {sae}
+0000000000000C66 62fdfd386cde                    VCVTTPD2UQQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10869,7 +10869,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000C6C 62fdfd586cde                    VCVTTPD2UQQS zmm3, zmm6, {sae}
+0000000000000C6C 62fdfd586cde                    VCVTTPD2UQQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10888,7 +10888,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000C72 62fdfd786cde                    VCVTTPD2UQQS zmm3, zmm6, {sae}
+0000000000000C72 62fdfd786cde                    VCVTTPD2UQQS zmm3, zmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10907,7 +10907,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000C78 62fdf9186cde                    VCVTTPD2UQQS ymm3, ymm6, {sae}
+0000000000000C78 62fdf9186cde                    VCVTTPD2UQQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10926,7 +10926,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000C7E 62fdf9386cde                    VCVTTPD2UQQS ymm3, ymm6, {sae}
+0000000000000C7E 62fdf9386cde                    VCVTTPD2UQQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10945,7 +10945,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000C84 62fdf9586cde                    VCVTTPD2UQQS ymm3, ymm6, {sae}
+0000000000000C84 62fdf9586cde                    VCVTTPD2UQQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -10964,7 +10964,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000C8A 62fdf9786cde                    VCVTTPD2UQQS ymm3, ymm6, {sae}
+0000000000000C8A 62fdf9786cde                    VCVTTPD2UQQS ymm3, ymm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11292,7 +11292,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000CEA 62fd7c1868de                    VCVTTPH2IBS zmm3, zmm6, {sae}
+0000000000000CEA 62fd7c1868de                    VCVTTPH2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11311,7 +11311,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000CF0 62fd7c3868de                    VCVTTPH2IBS zmm3, zmm6, {sae}
+0000000000000CF0 62fd7c3868de                    VCVTTPH2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11330,7 +11330,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000CF6 62fd7c5868de                    VCVTTPH2IBS zmm3, zmm6, {sae}
+0000000000000CF6 62fd7c5868de                    VCVTTPH2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11349,7 +11349,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000CFC 62fd7c7868de                    VCVTTPH2IBS zmm3, zmm6, {sae}
+0000000000000CFC 62fd7c7868de                    VCVTTPH2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11368,7 +11368,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000D02 62fd781868de                    VCVTTPH2IBS ymm3, ymm6, {sae}
+0000000000000D02 62fd781868de                    VCVTTPH2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11387,7 +11387,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000D08 62fd783868de                    VCVTTPH2IBS ymm3, ymm6, {sae}
+0000000000000D08 62fd783868de                    VCVTTPH2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11406,7 +11406,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000D0E 62fd785868de                    VCVTTPH2IBS ymm3, ymm6, {sae}
+0000000000000D0E 62fd785868de                    VCVTTPH2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11425,7 +11425,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000D14 62fd787868de                    VCVTTPH2IBS ymm3, ymm6, {sae}
+0000000000000D14 62fd787868de                    VCVTTPH2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11753,7 +11753,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000D74 62fd7c186ade                    VCVTTPH2IUBS zmm3, zmm6, {sae}
+0000000000000D74 62fd7c186ade                    VCVTTPH2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11772,7 +11772,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000D7A 62fd7c386ade                    VCVTTPH2IUBS zmm3, zmm6, {sae}
+0000000000000D7A 62fd7c386ade                    VCVTTPH2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11791,7 +11791,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000D80 62fd7c586ade                    VCVTTPH2IUBS zmm3, zmm6, {sae}
+0000000000000D80 62fd7c586ade                    VCVTTPH2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11810,7 +11810,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000D86 62fd7c786ade                    VCVTTPH2IUBS zmm3, zmm6, {sae}
+0000000000000D86 62fd7c786ade                    VCVTTPH2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11829,7 +11829,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000D8C 62fd78186ade                    VCVTTPH2IUBS ymm3, ymm6, {sae}
+0000000000000D8C 62fd78186ade                    VCVTTPH2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11848,7 +11848,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000D92 62fd78386ade                    VCVTTPH2IUBS ymm3, ymm6, {sae}
+0000000000000D92 62fd78386ade                    VCVTTPH2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11867,7 +11867,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000D98 62fd78586ade                    VCVTTPH2IUBS ymm3, ymm6, {sae}
+0000000000000D98 62fd78586ade                    VCVTTPH2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -11886,7 +11886,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000D9E 62fd78786ade                    VCVTTPH2IUBS ymm3, ymm6, {sae}
+0000000000000D9E 62fd78786ade                    VCVTTPH2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12214,7 +12214,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000DFE 62fd7c186dde                    VCVTTPS2DQS zmm3, zmm6, {sae}
+0000000000000DFE 62fd7c186dde                    VCVTTPS2DQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12233,7 +12233,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E04 62fd7c386dde                    VCVTTPS2DQS zmm3, zmm6, {sae}
+0000000000000E04 62fd7c386dde                    VCVTTPS2DQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12252,7 +12252,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E0A 62fd7c586dde                    VCVTTPS2DQS zmm3, zmm6, {sae}
+0000000000000E0A 62fd7c586dde                    VCVTTPS2DQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12271,7 +12271,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E10 62fd7c786dde                    VCVTTPS2DQS zmm3, zmm6, {sae}
+0000000000000E10 62fd7c786dde                    VCVTTPS2DQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12290,7 +12290,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E16 62fd78186dde                    VCVTTPS2DQS ymm3, ymm6, {sae}
+0000000000000E16 62fd78186dde                    VCVTTPS2DQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12309,7 +12309,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000E1C 62fd78386dde                    VCVTTPS2DQS ymm3, ymm6, {sae}
+0000000000000E1C 62fd78386dde                    VCVTTPS2DQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12328,7 +12328,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000E22 62fd78586dde                    VCVTTPS2DQS ymm3, ymm6, {sae}
+0000000000000E22 62fd78586dde                    VCVTTPS2DQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12347,7 +12347,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000E28 62fd78786dde                    VCVTTPS2DQS ymm3, ymm6, {sae}
+0000000000000E28 62fd78786dde                    VCVTTPS2DQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12675,7 +12675,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000E88 62fd7d1868de                    VCVTTPS2IBS zmm3, zmm6, {sae}
+0000000000000E88 62fd7d1868de                    VCVTTPS2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12694,7 +12694,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E8E 62fd7d3868de                    VCVTTPS2IBS zmm3, zmm6, {sae}
+0000000000000E8E 62fd7d3868de                    VCVTTPS2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12713,7 +12713,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E94 62fd7d5868de                    VCVTTPS2IBS zmm3, zmm6, {sae}
+0000000000000E94 62fd7d5868de                    VCVTTPS2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12732,7 +12732,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000E9A 62fd7d7868de                    VCVTTPS2IBS zmm3, zmm6, {sae}
+0000000000000E9A 62fd7d7868de                    VCVTTPS2IBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12751,7 +12751,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000EA0 62fd791868de                    VCVTTPS2IBS ymm3, ymm6, {sae}
+0000000000000EA0 62fd791868de                    VCVTTPS2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12770,7 +12770,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000EA6 62fd793868de                    VCVTTPS2IBS ymm3, ymm6, {sae}
+0000000000000EA6 62fd793868de                    VCVTTPS2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12789,7 +12789,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000EAC 62fd795868de                    VCVTTPS2IBS ymm3, ymm6, {sae}
+0000000000000EAC 62fd795868de                    VCVTTPS2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -12808,7 +12808,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000EB2 62fd797868de                    VCVTTPS2IBS ymm3, ymm6, {sae}
+0000000000000EB2 62fd797868de                    VCVTTPS2IBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13136,7 +13136,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000F12 62fd7d186ade                    VCVTTPS2IUBS zmm3, zmm6, {sae}
+0000000000000F12 62fd7d186ade                    VCVTTPS2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13155,7 +13155,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000F18 62fd7d386ade                    VCVTTPS2IUBS zmm3, zmm6, {sae}
+0000000000000F18 62fd7d386ade                    VCVTTPS2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13174,7 +13174,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000F1E 62fd7d586ade                    VCVTTPS2IUBS zmm3, zmm6, {sae}
+0000000000000F1E 62fd7d586ade                    VCVTTPS2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13193,7 +13193,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000F24 62fd7d786ade                    VCVTTPS2IUBS zmm3, zmm6, {sae}
+0000000000000F24 62fd7d786ade                    VCVTTPS2IUBS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13212,7 +13212,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000000F2A 62fd79186ade                    VCVTTPS2IUBS ymm3, ymm6, {sae}
+0000000000000F2A 62fd79186ade                    VCVTTPS2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13231,7 +13231,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000F30 62fd79386ade                    VCVTTPS2IUBS ymm3, ymm6, {sae}
+0000000000000F30 62fd79386ade                    VCVTTPS2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13250,7 +13250,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000F36 62fd79586ade                    VCVTTPS2IUBS ymm3, ymm6, {sae}
+0000000000000F36 62fd79586ade                    VCVTTPS2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13269,7 +13269,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000F3C 62fd79786ade                    VCVTTPS2IUBS ymm3, ymm6, {sae}
+0000000000000F3C 62fd79786ade                    VCVTTPS2IUBS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -13597,7 +13597,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000000F9C 62fd7d186dde                    VCVTTPS2QQS zmm3, ymm6, {sae}
+0000000000000F9C 62fd7d186dde                    VCVTTPS2QQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13616,7 +13616,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000FA2 62fd7d386dde                    VCVTTPS2QQS zmm3, ymm6, {sae}
+0000000000000FA2 62fd7d386dde                    VCVTTPS2QQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13635,7 +13635,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000FA8 62fd7d586dde                    VCVTTPS2QQS zmm3, ymm6, {sae}
+0000000000000FA8 62fd7d586dde                    VCVTTPS2QQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13654,7 +13654,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000FAE 62fd7d786dde                    VCVTTPS2QQS zmm3, ymm6, {sae}
+0000000000000FAE 62fd7d786dde                    VCVTTPS2QQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13673,7 +13673,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000000FB4 62fd79186dde                    VCVTTPS2QQS ymm3, xmm6, {sae}
+0000000000000FB4 62fd79186dde                    VCVTTPS2QQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13692,7 +13692,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000000FBA 62fd79386dde                    VCVTTPS2QQS ymm3, xmm6, {sae}
+0000000000000FBA 62fd79386dde                    VCVTTPS2QQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13711,7 +13711,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000000FC0 62fd79586dde                    VCVTTPS2QQS ymm3, xmm6, {sae}
+0000000000000FC0 62fd79586dde                    VCVTTPS2QQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -13730,7 +13730,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000000FC6 62fd79786dde                    VCVTTPS2QQS ymm3, xmm6, {sae}
+0000000000000FC6 62fd79786dde                    VCVTTPS2QQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14058,7 +14058,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 64, RawSize: 64, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-0000000000001026 62fd7c186cde                    VCVTTPS2UDQS zmm3, zmm6, {sae}
+0000000000001026 62fd7c186cde                    VCVTTPS2UDQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14077,7 +14077,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000102C 62fd7c386cde                    VCVTTPS2UDQS zmm3, zmm6, {sae}
+000000000000102C 62fd7c386cde                    VCVTTPS2UDQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14096,7 +14096,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000001032 62fd7c586cde                    VCVTTPS2UDQS zmm3, zmm6, {sae}
+0000000000001032 62fd7c586cde                    VCVTTPS2UDQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14115,7 +14115,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-0000000000001038 62fd7c786cde                    VCVTTPS2UDQS zmm3, zmm6, {sae}
+0000000000001038 62fd7c786cde                    VCVTTPS2UDQS zmm3, zmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14134,7 +14134,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
 
-000000000000103E 62fd78186cde                    VCVTTPS2UDQS ymm3, ymm6, {sae}
+000000000000103E 62fd78186cde                    VCVTTPS2UDQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14153,7 +14153,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000001044 62fd78386cde                    VCVTTPS2UDQS ymm3, ymm6, {sae}
+0000000000001044 62fd78386cde                    VCVTTPS2UDQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14172,7 +14172,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-000000000000104A 62fd78586cde                    VCVTTPS2UDQS ymm3, ymm6, {sae}
+000000000000104A 62fd78586cde                    VCVTTPS2UDQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14191,7 +14191,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-0000000000001050 62fd78786cde                    VCVTTPS2UDQS ymm3, ymm6, {sae}
+0000000000001050 62fd78786cde                    VCVTTPS2UDQS ymm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Full
@@ -14519,7 +14519,7 @@
         Operand: 2, Acc:  R-,  Type:     Memory, Size: 32, RawSize: 32, Encoding: M, 
                 Segment: 3, Base: 22, 
 
-00000000000010B0 62fd7d186cde                    VCVTTPS2UQQS zmm3, ymm6, {sae}
+00000000000010B0 62fd7d186cde                    VCVTTPS2UQQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14538,7 +14538,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000010B6 62fd7d386cde                    VCVTTPS2UQQS zmm3, ymm6, {sae}
+00000000000010B6 62fd7d386cde                    VCVTTPS2UQQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14557,7 +14557,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000010BC 62fd7d586cde                    VCVTTPS2UQQS zmm3, ymm6, {sae}
+00000000000010BC 62fd7d586cde                    VCVTTPS2UQQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14576,7 +14576,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000010C2 62fd7d786cde                    VCVTTPS2UQQS zmm3, ymm6, {sae}
+00000000000010C2 62fd7d786cde                    VCVTTPS2UQQS zmm3, ymm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14595,7 +14595,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
 
-00000000000010C8 62fd79186cde                    VCVTTPS2UQQS ymm3, xmm6, {sae}
+00000000000010C8 62fd79186cde                    VCVTTPS2UQQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14614,7 +14614,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000010CE 62fd79386cde                    VCVTTPS2UQQS ymm3, xmm6, {sae}
+00000000000010CE 62fd79386cde                    VCVTTPS2UQQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14633,7 +14633,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000010D4 62fd79586cde                    VCVTTPS2UQQS ymm3, xmm6, {sae}
+00000000000010D4 62fd79586cde                    VCVTTPS2UQQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14652,7 +14652,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: A, RegType:             Mask, RegSize:  8, RegId: 0, RegCount: 1
         Operand: 2, Acc:  R-,  Type:   Register, Size: 16, RawSize: 16, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000010DA 62fd79786cde                    VCVTTPS2UQQS ymm3, xmm6, {sae}
+00000000000010DA 62fd79786cde                    VCVTTPS2UQQS ymm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Half
@@ -14893,7 +14893,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001128 62fd7f186dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+0000000000001128 62fd7f186dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -14911,7 +14911,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000112E 62fd7f386dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+000000000000112E 62fd7f386dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -14929,7 +14929,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001134 62fd7f586dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+0000000000001134 62fd7f586dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -14947,7 +14947,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000113A 62fd7f786dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+000000000000113A 62fd7f786dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -14965,7 +14965,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001140 62fdff186dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+0000000000001140 62fdff186dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -14983,7 +14983,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001146 62fdff386dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+0000000000001146 62fdff386dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15001,7 +15001,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000114C 62fdff586dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+000000000000114C 62fdff586dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15019,7 +15019,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001152 62fdff786dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+0000000000001152 62fdff786dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15037,7 +15037,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001158 62fd7b186dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+0000000000001158 62fd7b186dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15055,7 +15055,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000115E 62fd7b386dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+000000000000115E 62fd7b386dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15073,7 +15073,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001164 62fd7b586dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+0000000000001164 62fd7b586dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15091,7 +15091,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000116A 62fd7b786dde                    VCVTTSD2SIS ebx, xmm6, {sae}
+000000000000116A 62fd7b786dde                    VCVTTSD2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15109,7 +15109,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001170 62fdfb186dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+0000000000001170 62fdfb186dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15127,7 +15127,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001176 62fdfb386dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+0000000000001176 62fdfb386dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15145,7 +15145,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000117C 62fdfb586dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+000000000000117C 62fdfb586dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15163,7 +15163,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001182 62fdfb786dde                    VCVTTSD2SIS rbx, xmm6, {sae}
+0000000000001182 62fdfb786dde                    VCVTTSD2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15403,7 +15403,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011D0 62fd7f186cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+00000000000011D0 62fd7f186cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15421,7 +15421,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011D6 62fd7f386cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+00000000000011D6 62fd7f386cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15439,7 +15439,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011DC 62fd7f586cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+00000000000011DC 62fd7f586cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15457,7 +15457,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011E2 62fd7f786cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+00000000000011E2 62fd7f786cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15475,7 +15475,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011E8 62fdff186cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+00000000000011E8 62fdff186cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15493,7 +15493,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011EE 62fdff386cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+00000000000011EE 62fdff386cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15511,7 +15511,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011F4 62fdff586cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+00000000000011F4 62fdff586cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15529,7 +15529,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000011FA 62fdff786cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+00000000000011FA 62fdff786cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15547,7 +15547,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001200 62fd7b186cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+0000000000001200 62fd7b186cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15565,7 +15565,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001206 62fd7b386cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+0000000000001206 62fd7b386cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15583,7 +15583,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000120C 62fd7b586cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+000000000000120C 62fd7b586cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15601,7 +15601,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001212 62fd7b786cde                    VCVTTSD2USIS ebx, xmm6, {sae}
+0000000000001212 62fd7b786cde                    VCVTTSD2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15619,7 +15619,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001218 62fdfb186cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+0000000000001218 62fdfb186cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15637,7 +15637,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000121E 62fdfb386cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+000000000000121E 62fdfb386cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15655,7 +15655,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001224 62fdfb586cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+0000000000001224 62fdfb586cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15673,7 +15673,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000122A 62fdfb786cde                    VCVTTSD2USIS rbx, xmm6, {sae}
+000000000000122A 62fdfb786cde                    VCVTTSD2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15913,7 +15913,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001278 62fd7e186dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+0000000000001278 62fd7e186dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15931,7 +15931,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000127E 62fd7e386dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+000000000000127E 62fd7e386dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15949,7 +15949,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001284 62fd7e586dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+0000000000001284 62fd7e586dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15967,7 +15967,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000128A 62fd7e786dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+000000000000128A 62fd7e786dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -15985,7 +15985,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001290 62fdfe186dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+0000000000001290 62fdfe186dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16003,7 +16003,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001296 62fdfe386dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+0000000000001296 62fdfe386dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16021,7 +16021,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000129C 62fdfe586dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+000000000000129C 62fdfe586dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16039,7 +16039,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012A2 62fdfe786dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+00000000000012A2 62fdfe786dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16057,7 +16057,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012A8 62fd7a186dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+00000000000012A8 62fd7a186dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16075,7 +16075,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012AE 62fd7a386dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+00000000000012AE 62fd7a386dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16093,7 +16093,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012B4 62fd7a586dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+00000000000012B4 62fd7a586dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16111,7 +16111,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012BA 62fd7a786dde                    VCVTTSS2SIS ebx, xmm6, {sae}
+00000000000012BA 62fd7a786dde                    VCVTTSS2SIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16129,7 +16129,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012C0 62fdfa186dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+00000000000012C0 62fdfa186dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16147,7 +16147,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012C6 62fdfa386dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+00000000000012C6 62fdfa386dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16165,7 +16165,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012CC 62fdfa586dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+00000000000012CC 62fdfa586dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16183,7 +16183,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-00000000000012D2 62fdfa786dde                    VCVTTSS2SIS rbx, xmm6, {sae}
+00000000000012D2 62fdfa786dde                    VCVTTSS2SIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16423,7 +16423,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001320 62fd7e186cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+0000000000001320 62fd7e186cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16441,7 +16441,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001326 62fd7e386cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+0000000000001326 62fd7e386cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16459,7 +16459,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000132C 62fd7e586cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+000000000000132C 62fd7e586cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16477,7 +16477,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001332 62fd7e786cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+0000000000001332 62fd7e786cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16495,7 +16495,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001338 62fdfe186cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+0000000000001338 62fdfe186cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16513,7 +16513,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000133E 62fdfe386cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+000000000000133E 62fdfe386cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16531,7 +16531,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001344 62fdfe586cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+0000000000001344 62fdfe586cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16549,7 +16549,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000134A 62fdfe786cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+000000000000134A 62fdfe786cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16567,7 +16567,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001350 62fd7a186cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+0000000000001350 62fd7a186cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16585,7 +16585,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001356 62fd7a386cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+0000000000001356 62fd7a386cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16603,7 +16603,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000135C 62fd7a586cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+000000000000135C 62fd7a586cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16621,7 +16621,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001362 62fd7a786cde                    VCVTTSS2USIS ebx, xmm6, {sae}
+0000000000001362 62fd7a786cde                    VCVTTSS2USIS ebx, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16639,7 +16639,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: R, RegType:  General Purpose, RegSize:  4, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001368 62fdfa186cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+0000000000001368 62fdfa186cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16657,7 +16657,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000136E 62fdfa386cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+000000000000136E 62fdfa386cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16675,7 +16675,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-0000000000001374 62fdfa586cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+0000000000001374 62fdfa586cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -16693,7 +16693,7 @@
         Operand: 0, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: R, RegType:  General Purpose, RegSize:  8, RegId: 3, RegCount: 1
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
 
-000000000000137A 62fdfa786cde                    VCVTTSS2USIS rbx, xmm6, {sae}
+000000000000137A 62fdfa786cde                    VCVTTSS2USIS rbx, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10SCONVERT, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -22855,7 +22855,7 @@
                 Segment: 3, Base: 22, 
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001AAF 62fbfd1852debd                  VMINMAXPD zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001AAF 62fbfd1852debd                  VMINMAXPD zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -22876,7 +22876,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001AB6 62fbfd3852debd                  VMINMAXPD zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001AB6 62fbfd3852debd                  VMINMAXPD zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -22897,7 +22897,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001ABD 62fbfd5852debd                  VMINMAXPD zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001ABD 62fbfd5852debd                  VMINMAXPD zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -22918,7 +22918,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001AC4 62fbfd7852debd                  VMINMAXPD zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001AC4 62fbfd7852debd                  VMINMAXPD zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -22939,7 +22939,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001ACB 62fbf91852debd                  VMINMAXPD ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001ACB 62fbf91852debd                  VMINMAXPD ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -22960,7 +22960,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001AD2 62fbf93852debd                  VMINMAXPD ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001AD2 62fbf93852debd                  VMINMAXPD ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -22981,7 +22981,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001AD9 62fbf95852debd                  VMINMAXPD ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001AD9 62fbf95852debd                  VMINMAXPD ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23002,7 +23002,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001AE0 62fbf97852debd                  VMINMAXPD ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001AE0 62fbf97852debd                  VMINMAXPD ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23362,7 +23362,7 @@
                 Segment: 3, Base: 22, 
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B50 62fb7c1852debd                  VMINMAXPH zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001B50 62fb7c1852debd                  VMINMAXPH zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23383,7 +23383,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B57 62fb7c3852debd                  VMINMAXPH zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001B57 62fb7c3852debd                  VMINMAXPH zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23404,7 +23404,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B5E 62fb7c5852debd                  VMINMAXPH zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001B5E 62fb7c5852debd                  VMINMAXPH zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23425,7 +23425,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B65 62fb7c7852debd                  VMINMAXPH zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001B65 62fb7c7852debd                  VMINMAXPH zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23446,7 +23446,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B6C 62fb781852debd                  VMINMAXPH ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001B6C 62fb781852debd                  VMINMAXPH ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23467,7 +23467,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B73 62fb783852debd                  VMINMAXPH ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001B73 62fb783852debd                  VMINMAXPH ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23488,7 +23488,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B7A 62fb785852debd                  VMINMAXPH ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001B7A 62fb785852debd                  VMINMAXPH ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23509,7 +23509,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001B81 62fb787852debd                  VMINMAXPH ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001B81 62fb787852debd                  VMINMAXPH ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23869,7 +23869,7 @@
                 Segment: 3, Base: 22, 
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001BF1 62fb7d1852debd                  VMINMAXPS zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001BF1 62fb7d1852debd                  VMINMAXPS zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23890,7 +23890,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001BF8 62fb7d3852debd                  VMINMAXPS zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001BF8 62fb7d3852debd                  VMINMAXPS zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23911,7 +23911,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001BFF 62fb7d5852debd                  VMINMAXPS zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001BFF 62fb7d5852debd                  VMINMAXPS zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23932,7 +23932,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C06 62fb7d7852debd                  VMINMAXPS zmm3, zmm0, zmm6, {sae}, 0xbd
+0000000000001C06 62fb7d7852debd                  VMINMAXPS zmm3, zmm0, zmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 512
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23953,7 +23953,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 64, RawSize: 64, Encoding: M, RegType:           Vector, RegSize: 64, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C0D 62fb791852debd                  VMINMAXPS ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001C0D 62fb791852debd                  VMINMAXPS ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23974,7 +23974,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C14 62fb793852debd                  VMINMAXPS ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001C14 62fb793852debd                  VMINMAXPS ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -23995,7 +23995,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C1B 62fb795852debd                  VMINMAXPS ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001C1B 62fb795852debd                  VMINMAXPS ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -24016,7 +24016,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size: 32, RawSize: 32, Encoding: M, RegType:           Vector, RegSize: 32, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C22 62fb797852debd                  VMINMAXPS ymm3, ymm0, ymm6, {sae}, 0xbd
+0000000000001C22 62fb797852debd                  VMINMAXPS ymm3, ymm0, ymm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 256
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Full
@@ -24307,7 +24307,7 @@
                 Segment: 3, Base: 22, 
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C7D 62fbfd1853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001C7D 62fbfd1853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24328,7 +24328,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C84 62fbfd3853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001C84 62fbfd3853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24349,7 +24349,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C8B 62fbfd5853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001C8B 62fbfd5853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24370,7 +24370,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C92 62fbfd7853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001C92 62fbfd7853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24391,7 +24391,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001C99 62fbf91853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001C99 62fbf91853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24412,7 +24412,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001CA0 62fbf93853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001CA0 62fbf93853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24433,7 +24433,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001CA7 62fbf95853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001CA7 62fbf95853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24454,7 +24454,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001CAE 62fbf97853debd                  VMINMAXSD xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001CAE 62fbf97853debd                  VMINMAXSD xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24745,7 +24745,7 @@
                 Segment: 3, Base: 22, 
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D09 62fb7c1853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D09 62fb7c1853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24766,7 +24766,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D10 62fb7c3853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D10 62fb7c3853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24787,7 +24787,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D17 62fb7c5853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D17 62fb7c5853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24808,7 +24808,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D1E 62fb7c7853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D1E 62fb7c7853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24829,7 +24829,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D25 62fb781853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D25 62fb781853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24850,7 +24850,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D2C 62fb783853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D2C 62fb783853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24871,7 +24871,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D33 62fb785853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D33 62fb785853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -24892,7 +24892,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D3A 62fb787853debd                  VMINMAXSH xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D3A 62fb787853debd                  VMINMAXSH xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25183,7 +25183,7 @@
                 Segment: 3, Base: 22, 
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D95 62fb7d1853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D95 62fb7d1853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25204,7 +25204,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001D9C 62fb7d3853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001D9C 62fb7d3853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25225,7 +25225,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001DA3 62fb7d5853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001DA3 62fb7d5853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25246,7 +25246,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001DAA 62fb7d7853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001DAA 62fb7d7853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25267,7 +25267,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001DB1 62fb791853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001DB1 62fb791853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25288,7 +25288,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001DB8 62fb793853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001DB8 62fb793853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25309,7 +25309,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001DBF 62fb795853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001DBF 62fb795853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -25330,7 +25330,7 @@
         Operand: 3, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 4, Acc:  R-,  Type:  Immediate, Size:  1, RawSize:  1, Encoding: I
 
-0000000000001DC6 62fb797853debd                  VMINMAXSS xmm3, xmm0, xmm6, {sae}, 0xbd
+0000000000001DC6 62fb797853debd                  VMINMAXSS xmm3, xmm0, xmm6{sae}, 0xbd
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10MINMAX, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32322,7 +32322,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000025F5 62f9ff182ede                    VUCOMXSD  xmm3, xmm6, {sae}
+00000000000025F5 62f9ff182ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32343,7 +32343,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-00000000000025FB 62f9ff382ede                    VUCOMXSD  xmm3, xmm6, {sae}
+00000000000025FB 62f9ff382ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32364,7 +32364,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000002601 62f9ff582ede                    VUCOMXSD  xmm3, xmm6, {sae}
+0000000000002601 62f9ff582ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32385,7 +32385,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000002607 62f9ff782ede                    VUCOMXSD  xmm3, xmm6, {sae}
+0000000000002607 62f9ff782ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32406,7 +32406,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000260D 62f9fb182ede                    VUCOMXSD  xmm3, xmm6, {sae}
+000000000000260D 62f9fb182ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32427,7 +32427,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000002613 62f9fb382ede                    VUCOMXSD  xmm3, xmm6, {sae}
+0000000000002613 62f9fb382ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32448,7 +32448,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-0000000000002619 62f9fb582ede                    VUCOMXSD  xmm3, xmm6, {sae}
+0000000000002619 62f9fb582ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32469,7 +32469,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  8, RawSize:  8, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  8, RawSize:  8, Encoding: S, RegType:            Flags, RegSize:  8, RegId: 0, RegCount: 1
 
-000000000000261F 62f9fb782ede                    VUCOMXSD  xmm3, xmm6, {sae}
+000000000000261F 62f9fb782ede                    VUCOMXSD  xmm3, xmm6{sae}
         DSIZE: 64, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32619,7 +32619,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000002649 62fd7e182ede                    VUCOMXSH  xmm3, xmm6, {sae}
+0000000000002649 62fd7e182ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32640,7 +32640,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000264F 62fd7e382ede                    VUCOMXSH  xmm3, xmm6, {sae}
+000000000000264F 62fd7e382ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32661,7 +32661,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000002655 62fd7e582ede                    VUCOMXSH  xmm3, xmm6, {sae}
+0000000000002655 62fd7e582ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32682,7 +32682,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000265B 62fd7e782ede                    VUCOMXSH  xmm3, xmm6, {sae}
+000000000000265B 62fd7e782ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32703,7 +32703,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000002661 62fd7a182ede                    VUCOMXSH  xmm3, xmm6, {sae}
+0000000000002661 62fd7a182ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32724,7 +32724,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000002667 62fd7a382ede                    VUCOMXSH  xmm3, xmm6, {sae}
+0000000000002667 62fd7a382ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32745,7 +32745,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000266D 62fd7a582ede                    VUCOMXSH  xmm3, xmm6, {sae}
+000000000000266D 62fd7a582ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32766,7 +32766,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  2, RawSize:  2, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-0000000000002673 62fd7a782ede                    VUCOMXSH  xmm3, xmm6, {sae}
+0000000000002673 62fd7a782ede                    VUCOMXSH  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 scalar, 16 bit
@@ -32916,7 +32916,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-000000000000269D 62f97e182ede                    VUCOMXSS  xmm3, xmm6, {sae}
+000000000000269D 62f97e182ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32937,7 +32937,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026A3 62f97e382ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026A3 62f97e382ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32958,7 +32958,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026A9 62f97e582ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026A9 62f97e582ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -32979,7 +32979,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026AF 62f97e782ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026AF 62f97e782ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -33000,7 +33000,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026B5 62f97a182ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026B5 62f97a182ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -33021,7 +33021,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026BB 62f97a382ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026BB 62f97a382ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -33042,7 +33042,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026C1 62f97a582ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026C1 62f97a582ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar
@@ -33063,7 +33063,7 @@
         Operand: 1, Acc:  R-,  Type:   Register, Size:  4, RawSize:  4, Encoding: M, RegType:           Vector, RegSize: 16, RegId: 6, RegCount: 1
         Operand: 2, Acc:  -W,  Type:   Register, Size:  4, RawSize:  4, Encoding: S, RegType:            Flags, RegSize:  4, RegId: 0, RegCount: 1
 
-00000000000026C7 62f97a782ede                    VUCOMXSS  xmm3, xmm6, {sae}
+00000000000026C7 62f97a782ede                    VUCOMXSS  xmm3, xmm6{sae}
         DSIZE: 32, ASIZE: 64, VLEN: 128
         ISA Set: AVX10_2, Ins cat: AVX10CMPSFP, CET tracked: no
         EVEX Tuple Type: Tuple 1 Scalar

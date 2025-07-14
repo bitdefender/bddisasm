@@ -12,7 +12,7 @@ LLDT         ; Ew          ; LDTR                    ;            0x0F 0x00 /2  
 LTR          ; Ew          ; TR                      ;            0x0F 0x00 /3            ; s:I286PROT, t:SYSTEM, w:R|W, a:SERIAL, m:KERNEL|NOREAL
 VERR         ; Ew          ; Fv                      ;            0x0F 0x00 /4            ; s:I286PROT, t:SYSTEM, w:R|W, f:ZF=m, m:NOREAL
 VERW         ; Ew          ; Fv                      ;            0x0F 0x00 /5            ; s:I286PROT, t:SYSTEM, w:R|W, f:ZF=m, m:NOREAL
-JMPE         ; Ev          ; rIP                     ;         NP 0x0F 0x00 /6            ; s:I64, t:SYSTEM, w:R|W, m:NO64 
+#JMPE        ; Ev          ; rIP                     ;         NP 0x0F 0x00 /6            ; s:I64, t:SYSTEM, w:R|W, m:NO64 
 LKGS         ; Mw          ; KGSBASE                 ;       0xF2 0x0F 0x00 /6:mem        ; s:LKGS, t:LKGS, w:R|W, m:KERNEL|O64|NOSGX
 LKGS         ; Rv          ; KGSBASE                 ;       0xF2 0x0F 0x00 /6:reg        ; s:LKGS, t:LKGS, w:R|W, m:KERNEL|O64|NOSGX
 SGDT         ; Ms          ; GDTR                    ;            0x0F 0x01 /0:mem        ; s:I286REAL, t:SYSTEM, w:W|R, m:NOSGX
@@ -103,6 +103,7 @@ WBNOINVD     ;             ;                         ;       repz 0x0F 0x09     
 # Not supported by regular x86 CPUs.
 #CL1INVMB    ;             ;                         ;            0x0F 0x0A               ; s:SCC, t:SYSTEM, m:NO64
 UD2          ;             ;                         ;            0x0F 0x0B               ; s:PPRO, t:MISC
+
 PREFETCHE    ; Mb          ;                         ;            0x0F 0x0D /0:mem        ; s:PREFETCH_NOP, t:PREFETCH, w:P
 NOP          ; Ev,Gv       ;                         ;            0x0F 0x0D /0:reg        ; s:PPRO, t:NOP, w:N|N
 PREFETCHW    ; Mb          ;                         ;            0x0F 0x0D /1:mem        ; s:PREFETCH_NOP, t:PREFETCH, w:P
@@ -122,7 +123,7 @@ NOP          ; Ev,Gv       ;                         ;            0x0F 0x0D /7:r
 
 FEMMS        ;             ;                         ;            0x0F 0x0E               ; s:3DNOW, t:MMX, c:FEMMS
 
-# 0x10 - 0x1F
+# 0x10 - 0x17
 MOVUPS       ; Vps,Wps     ;                         ;         NP 0x0F 0x10 /r            ; s:SSE, t:DATAXFER, w:W|R, e:4
 MOVUPD       ; Vpd,Wpd     ;                         ;       0x66 0x0F 0x10 /r            ; s:SSE2, t:DATAXFER, w:W|R, e:4
 MOVSS        ; Vss,Wss     ;                         ;       0xF3 0x0F 0x10 /r            ; s:SSE, t:DATAXFER, w:W|R, e:5
@@ -148,7 +149,7 @@ MOVSHDUP     ; Vx,Wx       ;                         ;       0xF3 0x0F 0x16 /r  
 MOVHPS       ; Mq,Vq       ;                         ;         NP 0x0F 0x17 /r:mem        ; s:SSE, t:DATAXFER, w:W|R, e:5
 MOVHPD       ; Mq,Vq       ;                         ;       0x66 0x0F 0x17 /r:mem        ; s:SSE2, t:DATAXFER, w:W|R, e:5
 
-# Default wide-nops/PREFETCH instructions.
+# 0x18 - NOP space, with aliased PREFETCH instructions.
 PREFETCHNTA  ; Mb          ;                         ;            0x0F 0x18 /0:mem        ; s:SSE, t:PREFETCH, w:P
 NOP          ; Ev          ;                         ;            0x0F 0x18 /0:reg        ; s:PPRO, t:WIDENOP, w:N
 PREFETCHT0   ; Mb          ;                         ;            0x0F 0x18 /1:mem        ; s:SSE, t:PREFETCH, w:P
@@ -157,103 +158,101 @@ PREFETCHT1   ; Mb          ;                         ;            0x0F 0x18 /2:m
 NOP          ; Ev          ;                         ;            0x0F 0x18 /2:reg        ; s:PPRO, t:WIDENOP, w:N
 PREFETCHT2   ; Mb          ;                         ;            0x0F 0x18 /3:mem        ; s:SSE, t:PREFETCH, w:P
 NOP          ; Ev          ;                         ;            0x0F 0x18 /3:reg        ; s:PPRO, t:WIDENOP, w:N
-PREFETCHRST2 ; Mb          ;                         ;            0x0F 0x18 /4:mem        ; s:MOVRS, t:PREFETCH, w:P
+NOP          ; Ev          ;                         ;            0x0F 0x18 /4:mem        ; s:PPRO, t:WIDENOP, w:N
+PREFETCHRST2 ; Mb          ;                         ;movrs       0x0F 0x18 /4:mem        ; s:MOVRS, t:PREFETCH, w:P
 NOP          ; Ev          ;                         ;            0x0F 0x18 /4:reg        ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;            0x0F 0x18 /5            ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;            0x0F 0x18 /6            ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;            0x0F 0x18 /7            ; s:PPRO, t:WIDENOP, w:N
+NOP          ; Ev          ;                         ;            0x0F 0x18 /5:mem        ; s:PPRO, t:WIDENOP, w:N
+NOP          ; Ev          ;                         ;            0x0F 0x18 /5:reg        ; s:PPRO, t:WIDENOP, w:N
+NOP          ; Ev          ;                         ;            0x0F 0x18 /6:mem        ; s:PPRO, t:WIDENOP, w:N
+NOP          ; Ev          ;                         ;piti        0x0F 0x18 /6:mem        ; s:PPRO, t:WIDENOP, w:N
+PREFETCHIT1  ; Mb          ;                         ;piti riprel 0x0F 0x18 /6:mem        ; s:PREFETCHITI, t:PREFETCH, w:N, m:O64
+NOP          ; Ev          ;                         ;            0x0F 0x18 /6:reg        ; s:PPRO, t:WIDENOP, w:N
+NOP          ; Ev          ;                         ;            0x0F 0x18 /7:mem        ; s:PPRO, t:WIDENOP, w:N
+NOP          ; Ev          ;                         ;piti        0x0F 0x18 /7:mem        ; s:PPRO, t:WIDENOP, w:N
+PREFETCHIT0  ; Mb          ;                         ;piti riprel 0x0F 0x18 /7:mem        ; s:PREFETCHITI, t:PREFETCH, w:N, m:O64
+NOP          ; Ev          ;                         ;            0x0F 0x18 /7:reg        ; s:PPRO, t:WIDENOP, w:N
+
+# 0x19 - NOP space.
 NOP          ; Ev          ;                         ;            0x0F 0x19 /r            ; s:PPRO, t:WIDENOP, w:N
 
-# PREFETCHITI instructions. Most of them duplicates of the above, since they are also present when the PREFETCHIT feature
-# is enabled (which applies to the entire opcode).
-PREFETCHNTA  ; Mb          ;                         ;       piti 0x0F 0x18 /0:mem        ; s:SSE, t:PREFETCH, w:P
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /0:reg        ; s:PPRO, t:WIDENOP, w:N
-PREFETCHT0   ; Mb          ;                         ;       piti 0x0F 0x18 /1:mem        ; s:SSE, t:PREFETCH, w:P
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /1:reg        ; s:PPRO, t:WIDENOP, w:N
-PREFETCHT1   ; Mb          ;                         ;       piti 0x0F 0x18 /2:mem        ; s:SSE, t:PREFETCH, w:P
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /2:reg        ; s:PPRO, t:WIDENOP, w:N
-PREFETCHT2   ; Mb          ;                         ;       piti 0x0F 0x18 /3:mem        ; s:SSE, t:PREFETCH, w:P
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /3:reg        ; s:PPRO, t:WIDENOP, w:N
-PREFETCHRST2 ; Mb          ;                         ;       piti 0x0F 0x18 /4:mem        ; s:MOVRS, t:PREFETCH, w:P
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /4:reg        ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /5            ; s:PPRO, t:WIDENOP, w:N
-PREFETCHIT1  ; Mb          ;                         ;piti riprel 0x0F 0x18 /6:mem        ; s:PREFETCHITI, t:PREFETCH, w:N, m:O64
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /6:mem        ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /6:reg        ; s:PPRO, t:WIDENOP, w:N
-PREFETCHIT0  ; Mb          ;                         ;piti riprel 0x0F 0x18 /7:mem        ; s:PREFETCHITI, t:PREFETCH, w:N, m:O64
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /7:mem        ; s:PPRO, t:WIDENOP, w:N
-NOP          ; Ev          ;                         ;       piti 0x0F 0x18 /7:reg        ; s:PPRO, t:WIDENOP, w:N
+# 0x1A - NOP space, with aliased MPX instructions.
+NOP          ; Gv,Ev       ;                         ;         NP 0x0F 0x1A /r:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Gv,Ev       ;                         ;         NP 0x0F 0x1A /r:mem        ; s:PPRO, t:WIDENOP, w:N|N
+BNDLDX       ; rBl,Mmib    ;                         ; mpx     NP 0x0F 0x1A /r:mem mib    ; s:MPX, t:MPX, w:W|R, a:I67|NOA16|AG|NORIPREL
+NOP          ; Ev,Gv       ;                         ;       0x66 0x0F 0x1A /r            ; s:PPRO, t:WIDENOP, w:N|N
+BNDMOV       ; rBl,mBl     ;                         ; mpx   0x66 0x0F 0x1A /r            ; s:MPX, t:MPX, w:W|R, a:I67|NOA16
+NOP          ; Ev,Gv       ;                         ;       0xF3 0x0F 0x1A /r            ; s:PPRO, t:WIDENOP, w:N|N
+BNDCL        ; rBl,Ey      ;                         ; mpx   0xF3 0x0F 0x1A /r            ; s:MPX, t:MPX, w:R|R, a:I67|NOA16|AG|F64
+NOP          ; Ev,Gv       ;                         ;       0xF2 0x0F 0x1A /r            ; s:PPRO, t:WIDENOP, w:N|N
+BNDCU        ; rBl,Ey      ;                         ; mpx   0xF2 0x0F 0x1A /r            ; s:MPX, t:MPX, w:R|R, a:I67|NOA16|AG|F64
 
+# 0x1B - NOP space, with aliased MPX instructions.
+NOP          ; Gv,Ev       ;                         ;         NP 0x0F 0x1B /r:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Gv,Ev       ;                         ;         NP 0x0F 0x1B /r:mem        ; s:PPRO, t:WIDENOP, w:N|N
+BNDSTX       ; Mmib,rBl    ;                         ; mpx     NP 0x0F 0x1B /r:mem mib    ; s:MPX, t:MPX, w:W|R, a:I67|NOA16|AG|NORIPREL
+NOP          ; Gv,Ev       ;                         ;       0x66 0x0F 0x1B /r            ; s:PPRO, t:WIDENOP, w:N|N
+BNDMOV       ; mBl,rBl     ;                         ; mpx   0x66 0x0F 0x1B /r            ; s:MPX, t:MPX, w:W|R, a:I67|NOA16
+NOP          ; Gv,Ev       ;                         ;       0xF3 0x0F 0x1B /r:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Gv,Ev       ;                         ;       0xF3 0x0F 0x1B /r:mem        ; s:PPRO, t:WIDENOP, w:N|N
+BNDMK        ; rBl,My      ;                         ; mpx   0xF3 0x0F 0x1B /r:mem        ; s:MPX, t:MPX, w:W|R, a:I67|NOA16|F64|NORIPREL
+NOP          ; Gv,Ev       ;                         ;       0xF2 0x0F 0x1B /r            ; s:PPRO, t:WIDENOP, w:N|N
+BNDCN        ; rBl,Ey      ;                         ; mpx   0xF2 0x0F 0x1B /r            ; s:MPX, t:MPX, w:R|R, a:I67|NOA16|AG|F64
 
-# MPX instructions. According to the SDM, MPX instructions have 64 bit op & address size in 64 bit mode, no matter 
-# if 0x66 or 0x67 prefixes are used. 16 bit addressing cause #UD. However, these checks are not handled here.
-
-# NOP instructions. Decode by default if MPX, CLDEMODE or CET is not enabled.
-NOP          ; Ev,Gv       ;                         ;            0x0F 0x1A /r            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Gv,Ev       ;                         ;            0x0F 0x1B /r            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /r            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ;            0x0F 0x1D /r            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ;            0x0F 0x1E /r            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ;            0x0F 0x1F /r            ; s:PPRO, t:WIDENOP, w:N|N
-
-# Features that are mapped onto wide NOPs.
-
-# MPX instructions.
-BNDLDX       ; rBl,Mmib    ;                         ; mpx     NP 0x0F 0x1A /r:mem mib    ; s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67|NOREX2
-NOP          ; Gv,Ev       ;                         ; mpx     NP 0x0F 0x1A /r:reg        ; s:PPRO, t:WIDENOP, w:N|N
-BNDMOV       ; rBl,mBl     ;                         ; mpx   0x66 0x0F 0x1A /r            ; s:MPX, t:MPX, w:W|R, a:NOA16|I67|NOREX2
-BNDCL        ; rBl,Ey      ;                         ; mpx   0xF3 0x0F 0x1A /r            ; s:MPX, t:MPX, w:R|R, a:AG|F64|I67|NOREX2
-BNDCU        ; rBl,Ey      ;                         ; mpx   0xF2 0x0F 0x1A /r            ; s:MPX, t:MPX, w:R|R, a:AG|F64|I67|NOREX2
-BNDSTX       ; Mmib,rBl    ;                         ; mpx     NP 0x0F 0x1B /r:mem mib    ; s:MPX, t:MPX, w:W|R, a:AG|NOA16|NORIPREL|I67|NOREX2
-NOP          ; Gv,Ev       ;                         ; mpx     NP 0x0F 0x1B /r:reg        ; s:PPRO, t:WIDENOP, w:N|N
-BNDMOV       ; mBl,rBl     ;                         ; mpx   0x66 0x0F 0x1B /r            ; s:MPX, t:MPX, w:W|R, a:NOA16|I67|NOREX2
-BNDMK        ; rBl,My      ;                         ; mpx   0xF3 0x0F 0x1B /r:mem        ; s:MPX, t:MPX, w:W|R, a:F64|NOA16|NORIPREL|I67|NOREX2
-NOP          ; Gv,Ev       ;                         ; mpx   0xF3 0x0F 0x1B /r:reg        ; s:PPRO, t:WIDENOP, w:N|N
-BNDCN        ; rBl,Ey      ;                         ; mpx   0xF2 0x0F 0x1B /r            ; s:MPX, t:MPX, w:R|R, a:AG|F64|I67|NOREX2
-
-# CLDEMOTE instruction.
+# 0x1C - NOP space, with aliased CLDEMODE instruction.
+NOP          ; Ev,Gv       ;                         ;         NP 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
 CLDEMOTE     ; Mb          ;                         ; cldm    NP 0x0F 0x1C /0:mem        ; s:CLDEMOTE, t:CLDEMOTE, w:P
-NOP          ; Ev,Gv       ;                         ; cldm  0x66 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm  0xF3 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm  0xF2 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /0:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /1            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /2            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /3            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /4            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /5            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /6            ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Ev,Gv       ;                         ; cldm       0x0F 0x1C /7            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;       0x66 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;       0xF3 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;       0xF2 0x0F 0x1C /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /0:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /1            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /2            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /3            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /4            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /5            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /6            ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1C /7            ; s:PPRO, t:WIDENOP, w:N|N
 
-# CET instructions.
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /1:mem        ; s:PPRO, t:WIDENOP, w:N|N
+# 0x1D - NOP space.
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1D /r            ; s:PPRO, t:WIDENOP, w:N|N
+
+# 0x1E - NOP space, with aliased CET and BHI_DIS_S instructions.
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /0:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /1:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /1:reg        ; s:PPRO, t:WIDENOP, w:N|N
 NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /1:reg        ; s:PPRO, t:WIDENOP, w:N|N
 RDSSPD       ; Rd          ; SSP                     ; cet   repz 0x0F 0x1E /1:reg        ; s:CET_SS, t:CET, c:RSSSP, w:W|R
 RDSSPQ       ; Rq          ; SSP                     ; cet repz rexw 0x0F 0x1E /1:reg     ; s:CET_SS, t:CET, c:RSSSP, w:W|R
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /2:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /2:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /3:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /3:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /4:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /4:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /5:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /5:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /6:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /6:reg        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Mv,Gv       ;                         ; cet        0x0F 0x1E /7:mem        ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xF8         ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xF9         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /2:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /2:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /3:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /3:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /4:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /4:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /5:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /5:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /6:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /6:reg        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Mv,Gv       ;                         ;            0x0F 0x1E /7:mem        ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xF8         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ; bhi        0x0F 0x1E /0xF8         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ; bhi   repz 0x0F 0x1E /0xF8         ; s:PPRO, t:WIDENOP, w:N|N
+IBHF         ;             ;                         ; bhi repz rexw 0x0F 0x1E /0xF8      ; s:BHI_DIS_S, t:MISC
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xF9         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xFA         ; s:PPRO, t:WIDENOP, w:N|N
 NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFA         ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFB         ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFC         ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFD         ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFE         ; s:PPRO, t:WIDENOP, w:N|N
-NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFF         ; s:PPRO, t:WIDENOP, w:N|N
 ENDBR64      ;             ;                         ; cet   repz 0x0F 0x1E /0xFA         ; s:CET_IBT, t:CET, c:ENDBR
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xFB         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ; cet        0x0F 0x1E /0xFB         ; s:PPRO, t:WIDENOP, w:N|N
 ENDBR32      ;             ;                         ; cet   repz 0x0F 0x1E /0xFB         ; s:CET_IBT, t:CET, c:ENDBR
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xFC         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xFD         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xFE         ; s:PPRO, t:WIDENOP, w:N|N
+NOP          ; Rv,Gv       ;                         ;            0x0F 0x1E /0xFF         ; s:PPRO, t:WIDENOP, w:N|N
 
+# 0x1F - NOP space.
+NOP          ; Ev,Gv       ;                         ;            0x0F 0x1F /r            ; s:PPRO, t:WIDENOP, w:N|N
 
 # 0x20 - 0x2F
 MOV          ; Ry,Cy       ;                         ;            0x0F 0x20 /r            ; s:I86, t:DATAXFER, c:MOV_CR, w:W|R, a:LOCKSP|MFR|F64, m:KERNEL|NOV86
@@ -432,8 +431,8 @@ PCMPEQD      ; Pq,Qq       ;                         ;         NP 0x0F 0x76 /r  
 PCMPEQD      ; Vx,Wx       ;                         ;       0x66 0x0F 0x76 /r            ; s:SSE2, t:SSE, w:RW|R, e:4
 EMMS         ;             ;                         ;         NP 0x0F 0x77               ; s:MMX, t:MMX
 VMREAD       ; Ey,Gy       ; Fv                      ;         NP 0x0F 0x78 /r            ; s:VTX, t:VTX, w:RW|R|W, f:VMX, a:F64, m:VMXROOT
-INSERTQ      ; Vdq,Udq,Ib,Ib ;                       ;       0xF2 0x0F 0x78 /r ib ib      ; s:SSE4A, t:BITBYTE, w:W|R|R|R
-EXTRQ        ; Uq,Ib,Ib    ;                         ;       0x66 0x0F 0x78 /0 ib ib      ; s:SSE4A, t:BITBYTE, w:W|R|R
+INSERTQ      ; Vdq,Udq,I1b,I2b ;                     ;       0xF2 0x0F 0x78 /r:reg ib ib  ; s:SSE4A, t:BITBYTE, w:W|R|R|R
+EXTRQ        ; Uq,I1b,I2b  ;                         ;       0x66 0x0F 0x78 /0:reg ib ib  ; s:SSE4A, t:BITBYTE, w:W|R|R
 VMWRITE      ; Gy,Ey       ; Fv                      ;         NP 0x0F 0x79 /r            ; s:VTX, t:VTX, w:R|R|W, f:VMX, a:F64, m:VMXROOT
 EXTRQ        ; Vdq,Uq      ;                         ;       0x66 0x0F 0x79 /r:reg        ; s:SSE4A, t:BITBYTE, w:W|R
 INSERTQ      ; Vdq,Udq     ;                         ;       0xF2 0x0F 0x79 /r:reg        ; s:SSE4A, t:BITBYTE, w:W|R
@@ -546,7 +545,7 @@ LFS          ; Gv,Mp       ; FS                      ;            0x0F 0xB4 /r:m
 LGS          ; Gv,Mp       ; GS                      ;            0x0F 0xB5 /r:mem        ; s:I386, t:SEGOP, w:W|R|W, m:NOSGX
 MOVZX        ; Gv,Eb       ;                         ;            0x0F 0xB6 /r            ; s:I386, t:DATAXFER, w:W|R
 MOVZX        ; Gv,Ew       ;                         ;            0x0F 0xB7 /r            ; s:I386, t:DATAXFER, w:W|R
-JMPE         ; Jz          ; rIP                     ;            0x0F 0xB8 cz            ; s:I64, t:UNCOND_BR, w:R|W, m:NO64
+#JMPE        ; Jz          ; rIP                     ;            0x0F 0xB8 cz            ; s:I64, t:UNCOND_BR, w:R|W, m:NO64
 POPCNT       ; Gv,Ev       ; Fv                      ;       repz 0x0F 0xB8 /r            ; s:POPCNT, t:SSE, w:W|R|W, f:CF=0|PF=0|AF=0|ZF=m|SF=0|OF=0
 UD1          ; Gd,Ed       ;                         ;            0x0F 0xB9 /r            ; s:UD, t:UD, w:R|R
 BT           ; Ev,Ib       ; Fv                      ;            0x0F 0xBA /4 ib         ; s:I386, t:BITBYTE, w:R|R|W, f:BT
@@ -579,12 +578,12 @@ SHUFPS       ; Vps,Wps,Ib  ;                         ;         NP 0x0F 0xC6 /r i
 SHUFPD       ; Vpd,Wpd,Ib  ;                         ;       0x66 0x0F 0xC6 /r ib         ; s:SSE2, t:SSE, w:RW|R|R, e:4
 CMPXCHG8B    ; Mq          ; EDX,EAX,ECX,EBX,Fv      ;            0x0F 0xC7 /1:mem        ; s:PENTIUMREAL, t:SEMAPHORE, w:RCW|RCW|RCW|R|R|W, i:CX8, f:ZF=m, p:LOCK|HLE
 CMPXCHG16B   ; Mdq         ; RDX,RAX,RCX,RBX,Fv      ;       rexw 0x0F 0xC7 /1:mem        ; s:CMPXCHG16B, t:SEMAPHORE, w:RCW|RCW|RCW|R|R|W, i:CX8, f:ZF=m, p:LOCK|HLE
-XRSTORS      ; M?          ; EDX,EAX,XCR0,BANK       ;         NP 0x0F 0xC7 /3:mem        ; s:XSAVES, t:XSAVE, c:XRSTORS, w:R|R|R|R|W
-XRSTORS64    ; M?          ; EDX,EAX,XCR0,BANK       ;    rexw NP 0x0F 0xC7 /3:mem        ; s:XSAVES, t:XSAVE, c:XRSTORS, w:R|R|R|R|W
-XSAVEC       ; M?          ; EDX,EAX,XCR0,BANK       ;         NP 0x0F 0xC7 /4:mem        ; s:XSAVEC, t:XSAVE, c:XSAVEC, w:W|R|R|R|R
-XSAVEC64     ; M?          ; EDX,EAX,XCR0,BANK       ;    rexw NP 0x0F 0xC7 /4:mem        ; s:XSAVEC, t:XSAVE, c:XSAVEC, w:W|R|R|R|R
-XSAVES       ; M?          ; EDX,EAX,XCR0,BANK       ;         NP 0x0F 0xC7 /5:mem        ; s:XSAVES, t:XSAVE, c:XSAVES, w:W|R|R|R|R
-XSAVES64     ; M?          ; EDX,EAX,XCR0,BANK       ;    rexw NP 0x0F 0xC7 /5:mem        ; s:XSAVES, t:XSAVE, c:XSAVES, w:W|R|R|R|R
+XRSTORS      ; M?          ; EDX,EAX,XCR0,BANK       ;         NP 0x0F 0xC7 /3:mem        ; s:XSAVES, t:XSAVE, c:XRSTORS, w:R|R|R|R|W, a:NOREX2
+XRSTORS64    ; M?          ; EDX,EAX,XCR0,BANK       ;    rexw NP 0x0F 0xC7 /3:mem        ; s:XSAVES, t:XSAVE, c:XRSTORS, w:R|R|R|R|W, a:NOREX2
+XSAVEC       ; M?          ; EDX,EAX,XCR0,BANK       ;         NP 0x0F 0xC7 /4:mem        ; s:XSAVEC, t:XSAVE, c:XSAVEC, w:W|R|R|R|R, a:NOREX2
+XSAVEC64     ; M?          ; EDX,EAX,XCR0,BANK       ;    rexw NP 0x0F 0xC7 /4:mem        ; s:XSAVEC, t:XSAVE, c:XSAVEC, w:W|R|R|R|R, a:NOREX2
+XSAVES       ; M?          ; EDX,EAX,XCR0,BANK       ;         NP 0x0F 0xC7 /5:mem        ; s:XSAVES, t:XSAVE, c:XSAVES, w:W|R|R|R|R, a:NOREX2
+XSAVES64     ; M?          ; EDX,EAX,XCR0,BANK       ;    rexw NP 0x0F 0xC7 /5:mem        ; s:XSAVES, t:XSAVE, c:XSAVES, w:W|R|R|R|R, a:NOREX2
 VMPTRLD      ; Mq          ; Fv                      ;         NP 0x0F 0xC7 /6:mem        ; s:VTX, t:VTX, w:R|W, f:VMX, m:VMXROOT
 VMCLEAR      ; Mq          ; Fv                      ;       0x66 0x0F 0xC7 /6:mem        ; s:VTX, t:VTX, w:R|W, f:VMX, m:VMXROOT
 VMXON        ; Mq          ; Fv                      ;       0xF3 0x0F 0xC7 /6:mem        ; s:VTX, t:VTX, w:R|W, f:VMX, m:VMXROOT

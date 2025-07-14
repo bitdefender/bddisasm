@@ -100,7 +100,7 @@ VCVTNEPH2BF8S     ; Vhv{K}{z},Wfv|B16           ;         ; evex m:5 p:2 l:x w:0
 VCVTNE2PH2BF8S    ; Vfv{K}{z},Hfv,Wfv|B16       ;         ; evex m:5 p:3 l:x w:0 0x74 /r            ; s:AVX102,     t:AVX10CONVERT, l:fv, e:E4NF, w:W|R|R|R, x:IE|OE|UE|PE|DE
 VCVTTPH2UDQ       ; Vfv{K}{z},Whv|B16{sae}      ;         ; evex m:5 p:0 l:x w:0 0x78 /r            ; s:AVX512FP16, t:AVX512FP16, l:hv, e:E2, w:W|R|R, x:IE|PE
 VCVTTPH2UQQ       ; Vfv{K}{z},Wqv|B16{sae}      ;         ; evex m:5 p:1 l:x w:0 0x78 /r            ; s:AVX512FP16, t:AVX512FP16, l:qv, e:E2, w:W|R|R, x:IE|PE
-VCVTTSH2USI       ; Gy,Wsh{sae}                 ;         ; evex m:5 p:2 l:i w:0 0x78 /r            ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3NF, w:W|R, a:IWO64, x:IE|PE
+VCVTTSH2USI       ; Gy,Wsh{sae}                 ;         ; evex m:5 p:2 l:i w:x 0x78 /r            ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3NF, w:W|R, a:IWO64, x:IE|PE
 VCVTPH2UDQ        ; Vfv{K}{z},Whv|B16{er}       ;         ; evex m:5 p:0 l:x w:0 0x79 /r            ; s:AVX512FP16, t:AVX512FP16, l:hv, e:E2, w:W|R|R, x:IE|PE
 VCVTPH2UQQ        ; Vfv{K}{z},Wqv|B16{er}       ;         ; evex m:5 p:1 l:x w:0 0x79 /r            ; s:AVX512FP16, t:AVX512FP16, l:qv, e:E2, w:W|R|R, x:IE|PE
 VCVTSH2USI        ; Gy,Wsh{er}                  ;         ; evex m:5 p:2 l:i w:x 0x79 /r            ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E3NF, w:W|R, a:IWO64, x:IE|PE
@@ -118,3 +118,8 @@ VCVTUW2PH         ; Vfv{K}{z},Wfv|B16{er}       ;         ; evex m:5 p:3 l:x w:0
 VMOVW             ; Mw,Vdq                      ;         ; evex m:5 p:1 l:0 w:i 0x7E /r:mem        ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E9NF, w:W|R
 VMOVW             ; Rd,Vdq                      ;         ; evex m:5 p:1 l:0 w:i 0x7E /r:reg        ; s:AVX512FP16, t:AVX512FP16, l:t1s16, e:E9NF, w:W|R
 VMOVW             ; Ww,Vdq                      ;         ; evex m:5 p:2 l:0 w:0 0x7E /r            ; s:AVX102,     t:AVX10PARTCOPY, l:t1s16, e:E9NF, w:W|R
+
+T2RPNTLVWZ0RS     ; rTt+1,Mt                    ;         ; evex m:5 p:0 l:0 w:0 0xF8 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_EVEX_E11
+T2RPNTLVWZ1RS     ; rTt+1,Mt                    ;         ; evex m:5 p:1 l:0 w:0 0xF8 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_EVEX_E11
+T2RPNTLVWZ0RST1   ; rTt+1,Mt                    ;         ; evex m:5 p:0 l:0 w:0 0xF9 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_EVEX_E11
+T2RPNTLVWZ1RST1   ; rTt+1,Mt                    ;         ; evex m:5 p:1 l:0 w:0 0xF9 /r:mem sibmem ; s:AMXTRANSPOSE, t:AMX, w:W|R, m:NOTSX|O64, e:AMX_EVEX_E11

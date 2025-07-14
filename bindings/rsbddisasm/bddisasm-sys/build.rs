@@ -13,6 +13,8 @@ fn main() {
         .file("csrc/bddisasm/bdx86_decoder.c")
         .file("csrc/bddisasm/bdx86_formatter.c")
         .file("csrc/bddisasm/bdx86_helpers.c")
+        .file("csrc/bddisasm/bdx86_operand.c")
+        .file("csrc/bddisasm/bdx86_idbe.c")
         .include("csrc/bddisasm/include")
         .include("csrc/inc")
         .define("BDDISASM_HAS_VSNPRINTF", Some("1"))

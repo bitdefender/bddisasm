@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.16)
 
 project(disasmtool LANGUAGES C)
 
+include(FindPython3)
+
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+
 # Use Release as the build type if no build type was specified and we're not using a multi-config generator    .
 if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
     message(STATUS "No build type given. Will use 'Release'")
@@ -16,8 +20,19 @@ if (NOT TARGET bddisasm)
     find_package(bddisasm REQUIRED)
 endif ()
 
-add_executable(disasmtool disasmtool.c)
+# Add main executable target.
+add_executable(disasmtool disasmtool.c handle_disasm.c handle_shemu.c)
 target_link_libraries(disasmtool PRIVATE bddisasm::bddisasm bddisasm::bdshemu)
+
+# Add tests target.
+if (BDD_INCLUDE_TESTS)
+    add_custom_target(test ALL
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tests/main.py --conf ${CMAKE_SOURCE_DIR}/bddisasm_test/conf-x86.json --disasm $<TARGET_FILE:disasmtool>
+        COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tests/main.py --conf ${CMAKE_SOURCE_DIR}/bdshemu_test/conf-x86.json --disasm $<TARGET_FILE:disasmtool>
+        DEPENDS disasmtool
+        COMMENT "Runs decoder and emulator tests"
+    )
+endif ()
 
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     include(CheckIPOSupported)
@@ -28,7 +43,9 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
 endif ()
 
 if (MSVC OR "${CMAKE_C_COMPILER_FRONTEND_VARIANT}" STREQUAL "MSVC")
-    target_compile_options(disasmtool PRIVATE /W4 /WX)
+    target_compile_options(
+        disasmtool 
+        PRIVATE /W4 /WX)
 
     if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
         target_compile_options(disasmtool PRIVATE -Wno-format)
@@ -72,14 +89,14 @@ endif ()
 
 if (BDD_ASAN)
     target_compile_options(disasmtool PUBLIC "-fsanitize=address")
-    target_link_libraries(disasmtool PUBLIC "-fsanitize=address")
+    target_link_options(disasmtool PUBLIC "-fsanitize=address")
 endif ()
 
 if (BDD_UBSAN)
     target_compile_options(disasmtool PUBLIC
         "-fsanitize=undefined"
         "-fno-sanitize=alignment")
-    target_link_libraries(disasmtool PUBLIC
+    target_link_options(disasmtool PUBLIC
         "-fsanitize=undefined"
         "-fno-sanitize=alignment")
 endif ()

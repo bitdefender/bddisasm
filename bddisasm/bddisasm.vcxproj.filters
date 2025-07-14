@@ -34,6 +34,18 @@
     <Filter Include="Header Files\private\x86\tables">
       <UniqueIdentifier>{b9961460-d06f-4288-9708-44ca965c4a0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\private\x86\idb">
+      <UniqueIdentifier>{1afeef2f-6b37-4b08-b321-4789ced61bb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\public\x86\api">
+      <UniqueIdentifier>{a32fb32a-5ab0-45b4-8262-1791007e2445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\public\x86\defs">
+      <UniqueIdentifier>{cffff9de-0123-42c2-b693-7aee2456a39a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\private\x86\opclut">
+      <UniqueIdentifier>{71d053b5-37c1-4ca8-bc98-3b4a89e7cef4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bddisasm_crt.c">
@@ -48,22 +60,19 @@
     <ClCompile Include="bdx86_helpers.c">
       <Filter>Source Files\x86</Filter>
     </ClCompile>
+    <ClCompile Include="bdx86_idbe.c">
+      <Filter>Source Files\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="bdx86_operand.c">
+      <Filter>Source Files\x86</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\inc\bddisasm_version.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\bdx86_constants.h">
-      <Filter>Header Files\public\x86</Filter>
-    </ClInclude>
-    <ClInclude Include="..\inc\bdx86_cpuidflags.h">
-      <Filter>Header Files\public\x86</Filter>
-    </ClInclude>
     <ClInclude Include="..\inc\bddisasm_types.h">
       <Filter>Header Files\public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\inc\bdx86_registers.h">
-      <Filter>Header Files\public\x86</Filter>
     </ClInclude>
     <ClInclude Include="..\inc\bddisasm_status.h">
       <Filter>Header Files\public</Filter>
@@ -73,15 +82,6 @@
     </ClInclude>
     <ClInclude Include="..\inc\bdx86_core.h">
       <Filter>Header Files\public\x86</Filter>
-    </ClInclude>
-    <ClInclude Include="include\bdx86_instructions.h">
-      <Filter>Header Files\private\x86</Filter>
-    </ClInclude>
-    <ClInclude Include="include\bdx86_mnemonics.h">
-      <Filter>Header Files\private\x86</Filter>
-    </ClInclude>
-    <ClInclude Include="include\bdx86_prefixes.h">
-      <Filter>Header Files\private\x86</Filter>
     </ClInclude>
     <ClInclude Include="include\bdx86_tabledefs.h">
       <Filter>Header Files\private\x86</Filter>
@@ -100,6 +100,39 @@
     </ClInclude>
     <ClInclude Include="include\bdx86_table_xop.h">
       <Filter>Header Files\private\x86\tables</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_operand.h">
+      <Filter>Header Files\private\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_instructions.h">
+      <Filter>Header Files\private\x86\idb</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_mnemonics.h">
+      <Filter>Header Files\private\x86\idb</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_modrm.h">
+      <Filter>Header Files\private\x86\opclut</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_prefixes.h">
+      <Filter>Header Files\private\x86\opclut</Filter>
+    </ClInclude>
+    <ClInclude Include="include\bdx86_rex2.h">
+      <Filter>Header Files\private\x86\opclut</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\bdx86_api_legacy.h">
+      <Filter>Header Files\public\x86\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\bdx86_api_mini.h">
+      <Filter>Header Files\public\x86\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\bdx86_constants.h">
+      <Filter>Header Files\public\x86\defs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\bdx86_cpuidflags.h">
+      <Filter>Header Files\public\x86\defs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\inc\bdx86_registers.h">
+      <Filter>Header Files\public\x86\defs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

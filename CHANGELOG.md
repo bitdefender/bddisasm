@@ -5,6 +5,24 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [3.0.0] - 2025-07-14
+
+### Added
+- Support for minimal decoding - the new minimal decode APIs `NdDecodeMini`, `NdDecodeWithContextMini` decode an instruction and provide only the core information in a new `INSTRUX_MINI` structure, which is only 64-bytes in size.
+- Operands are not provided by default in an `INSTRUX_MINI` - in order to decode an operand, the integrator must use `NdGetOperandMini`, which will output a `ND_OPERAND`, which is identical to the legacy format.
+- Metadata is not provided by default in an `INSTRUX_MINI` - in order to access metadata such as instruction set, valid prefixes, CPUID info, etc., new API is provided in `bdx86_api_mini.h`.
+- All the fields from the legacy `INSTRUX` are either already present inside `INSTRUX_MINI`, or accessible via the API.
+- The legacy API continues to function without any change needed.
+
+### Fixed
+- Allow `REX2` prefix with `MPX` instruction, and ignore `R4` and `B4` fields.
+- Fixed `EVEX.U` handling.
+
+### Changed
+- The following instructions are no longer supported: `JMPE Ev`, `JMPE Jz`.
+- Improved decoding performance by moving validty checks during the decode tree walk - this way, checks are only performed for those instructions that need them.
+
+
 ## [2.3.0] - 2024-11-07
 
 ### Added

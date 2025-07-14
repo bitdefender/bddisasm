@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2024 Bitdefender
+# Copyright (c) 2025 Bitdefender
 # SPDX-License-Identifier: Apache-2.0
 #
 import os
 import sys
-import re
-import copy
 import glob
-import disasmlib
+
+from isg_x86.common import *
+from isg_x86 import disasmlib
+from isg_x86 import instrux
+from isg_x86 import operand
+from isg_x86 import decorators
+from isg_x86 import cpuid
+from isg_x86 import cpu_modes
+from isg_x86 import instrux_grouper
+
 
 header = '''/*
- * Copyright (c) 2024 Bitdefender
+ * Copyright (c) 2025 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -29,158 +36,14 @@ header = '''/*
 # Aggregate initializers must be used when building as C++ code (NOT recommended).
 idbe_format_designated = True
 
-
-#
-# These are the encoding components used to group instructions. Important things to note:
-# - The order here is important! The higher up (the lower the index) for a given component, the more priority it 
-#   receives when grouping instructions 
-# - The first entry of each tuple is the component type/name
-# - The second is a boolean indicating whether the component is mandatory for all or optional
-#
-# For example, "opcode" is mandatory for all instructions in a group, as we can't group them otherwise. However,
-# the auxiliary entry is not mandatory - in a given group, some instructions may have such an entry, while other do
-# not. Those that lack an optional component will be treated as "default" encoding.
-#
-# Example of optional component:
-#        0x90 : NOP
-#   repz 0x90 : PAUSE
-# In this case, the `repz` is an optional encoding component, meaning that its presence will cause PAUSE
-# to be decoded, but its absence will cause NOP to be decoded.
-#
-# Example of mandatory component:
-#   0x0F 0x00 /0:mem: SLDT Mw
-#   0x0F 0x00 /0:reg: SLDT Rv
-# In this case, all instructions must specify both the reg component (/0) and the mod (mem or reg). 
-# If any of them is present for one instruction but absent for another, will lead to an error. For example, the 
-# following spec will cause an error, since there's no grouping possible, because one of the instructions specifies 
-# mem mode, while the other does not specify anything:
-#   0x0F 0x00 /0:mem : SLDT Mw
-#   0x0F 0x00 /0     : SLDT Rv
-#
-components_legacy = [
-    { 'type': 'opcode'      , 'all': True  },
-    { 'type': 'opcode_last' , 'all': True  },
-    { 'type': 'vendor'      , 'all': False },
-    { 'type': 'feature'     , 'all': False },
-    { 'type': 'prefix'      , 'all': True  },
-    { 'type': 'modrmreg'    , 'all': True  },
-    { 'type': 'modrmmod'    , 'all': True  },
-    { 'type': 'modrmrm'     , 'all': True  },
-    { 'type': 'mode'        , 'all': False },
-    { 'type': 'dsize'       , 'all': False },
-    { 'type': 'asize'       , 'all': False },
-    { 'type': 'auxiliary'   , 'all': False },
-    { 'type': 'w'           , 'all': True  },
-]
-
-components_ex = [
-    { 'type': 'mmmmm'       , 'all': True  },
-    { 'type': 'opcode'      , 'all': True  },
-    { 'type': 'pp'          , 'all': True  },
-    { 'type': 'modrmreg'    , 'all': True  },
-    { 'type': 'modrmmod'    , 'all': True  },
-    { 'type': 'modrmrm'     , 'all': True  },
-    { 'type': 'l'           , 'all': True  },
-    { 'type': 'w'           , 'all': True  },
-    { 'type': 'wi'          , 'all': True  },
-    { 'type': 'nd'          , 'all': True  },
-    { 'type': 'nf'          , 'all': True  },
-    { 'type': 'sc'          , 'all': True  },
-]
-
-
-component_value_index = {
-    None    : 0,
-    'None'  : 0,
-
-    # modrm.mod
-    'mem'   : 0,
-    'reg'   : 1,
-
-    # mandatory prefixes; using 'P' prefix so they're not confused with an opcode
-    'PNP'   : 0,
-    'P0x66' : 1,
-    'P0xF3' : 2,
-    'P0xF2' : 3,
-
-    # other prefixes/redirection conditions
-    'rexb'  : 1,
-    'rexw'  : 2,
-    'mo64'  : 3,
-    'repz'  : 4,
-    'rep'   : 5,
-    'riprel': 6,
-    'rex2'  : 7,
-    'rex2w' : 8,
-    
-    # Mode
-    'm16'   : 1,
-    'm32'   : 2,
-    'm64'   : 3,
-    
-    # Default data size
-    'ds16'  : 1,
-    'ds32'  : 2,
-    'ds64'  : 3,
-    'dds64' : 4,
-    'fds64' : 5,
-
-    # Default address size
-    'as16'  : 1,
-    'as32'  : 2,
-    'as64'  : 3,
-
-    # Vendor redirection.
-    'any'   : 0,
-    'intel' : 1,
-    'amd'   : 2,
-
-    # Feature redirection.
-    'mpx'   : 1,
-    'cet'   : 2,
-    'cldm'  : 3,
-    'piti'  : 4,
-}
-
-
-#
-# This dictionary describes how the decoding tables look. Each decoding component has associated a C decoding table.
-#
-components_ilut = {
-    'opcode' :      { 'ilut': 'ND_ILUT_OPCODE',      'size': 256, 'type': 'ND_TABLE_OPCODE'     },
-    'opcode_last' : { 'ilut': 'ND_ILUT_OPCODE_LAST', 'size': 256, 'type': 'ND_TABLE_OPCODE'     },
-    'modrmmod' :    { 'ilut': 'ND_ILUT_MODRM_MOD',   'size': 2,   'type': 'ND_TABLE_MODRM_MOD'  },
-    'modrmreg' :    { 'ilut': 'ND_ILUT_MODRM_REG',   'size': 8,   'type': 'ND_TABLE_MODRM_REG'  },
-    'modrmrm' :     { 'ilut': 'ND_ILUT_MODRM_RM',    'size': 8,   'type': 'ND_TABLE_MODRM_RM'   },
-    'prefix' :      { 'ilut': 'ND_ILUT_MAN_PREFIX',  'size': 4,   'type': 'ND_TABLE_MPREFIX'    },
-    'mode' :        { 'ilut': 'ND_ILUT_MODE',        'size': 4,   'type': 'ND_TABLE_MODE'       },
-    'dsize' :       { 'ilut': 'ND_ILUT_DSIZE',       'size': 6,   'type': 'ND_TABLE_DSIZE'      },
-    'asize' :       { 'ilut': 'ND_ILUT_ASIZE',       'size': 4,   'type': 'ND_TABLE_ASIZE'      },
-    'auxiliary' :   { 'ilut': 'ND_ILUT_AUXILIARY',   'size': 10,  'type': 'ND_TABLE_AUXILIARY'  },
-    'vendor' :      { 'ilut': 'ND_ILUT_VENDOR',      'size': 6,   'type': 'ND_TABLE_VENDOR'     },
-    'feature' :     { 'ilut': 'ND_ILUT_FEATURE',     'size': 8,   'type': 'ND_TABLE_FEATURE'    },
-    'mmmmm' :       { 'ilut': 'ND_ILUT_EX_M',        'size': 32,  'type': 'ND_TABLE_EX_M'       },
-    'pp' :          { 'ilut': 'ND_ILUT_EX_PP',       'size': 4,   'type': 'ND_TABLE_EX_PP'      },
-    'l' :           { 'ilut': 'ND_ILUT_EX_L',        'size': 4,   'type': 'ND_TABLE_EX_L'       },
-    'w' :           { 'ilut': 'ND_ILUT_EX_W',        'size': 2,   'type': 'ND_TABLE_EX_W'       },
-    'wi' :          { 'ilut': 'ND_ILUT_EX_WI',       'size': 2,   'type': 'ND_TABLE_EX_W'       },
-    'nd' :          { 'ilut': 'ND_ILUT_EX_ND',       'size': 2,   'type': 'ND_TABLE_EX_ND'      },
-    'nf' :          { 'ilut': 'ND_ILUT_EX_NF',       'size': 2,   'type': 'ND_TABLE_EX_NF'      },
-    'sc' :          { 'ilut': 'ND_ILUT_EX_SC',       'size': 16,  'type': 'ND_TABLE_EX_SC'      },
-}
-
-
-mnemonics = []
-mnemonics_prefix = []
-
-instructions = []
-prefixes = []
-features = []
+mnemonics       = []
+instructions    = []
+features        = []
 
 
 def instrux_to_idbe(
-    ins: disasmlib.Instruction
-    ) -> dict:
+    ins: instrux.Instruction
+) -> dict:
     """ 
     Generates a dictionary equivalent to the ND_IDBE structure. Each dictionary key is equivalent 
     to a ND_IDBE structure field. Restrictions:
@@ -190,7 +53,7 @@ def instrux_to_idbe(
 
     Parameters
     ----------
-    ins: disasmlib.Instruction
+    ins: instrux.Instruction
         The instruction to be converted to a dictionary.
 
     Returns
@@ -199,105 +62,105 @@ def instrux_to_idbe(
     """
     d = {}
 
-    # Instruction class
-    d['Instruction'] = 'ND_INS_' + ins.Class
-
-    # Instruction Category
-    d['Category'] = 'ND_CAT_' + ins.Category
-
-    # ISA Set
-    d['IsaSet'] = 'ND_SET_' + ins.Set
-
-    # Mnemonic (index)
-    d['Mnemonic'] = '%d' % (mnemonics.index(ins.Mnemonic))
+    # Basic information.
+    d['Instruction'] = f'ND_INS_{ins.Class}'                # Instruction class
+    d['Category'] = f'ND_CAT_{ins.Category}'                # Instruction Category
+    d['IsaSet'] = f'ND_SET_{ins.Set}'                       # ISA Set
+    d['Mnemonic'] = f'{(mnemonics.index(ins.Mnemonic))}'    # Mnemonic (index)
 
     # Accepted prefixes map
-    if ins.Prefmap:
-        d['ValidPrefixes'] = '|'.join(['ND_PREF_' + x.upper() for x in ins.Prefmap])
+    if ins.Prefmap.Names:
+        d['ValidPrefixes'] = '|'.join([f'ND_PREF_{x.upper()}' for x in ins.Prefmap.Names])
     else:
         d['ValidPrefixes'] = '0'
 
     # Valid modes
-    all = True
-    smodes = ''
-    for m in disasmlib.valid_cpu_modes:
-        if m not in ins.Modes:
-            all = False
-    if all:
-        smodes = 'ND_MOD_ANY'
+    if not ins.Modes.contains_all_modes():
+        d['ValidModes']  = '|'.join([f'ND_MOD_{m.upper()}' for m in ins.Modes.Names])
     else:
-        smodes = '|'.join(['ND_MOD_' + m.upper() for m in ins.Modes])
-    d['ValidModes'] = smodes
+        d['ValidModes'] = 'ND_MOD_ANY'
 
     # Valid decorators
-    if ins.DecoFlags:
-        d['ValidDecorators'] = '|'.join(['ND_DECO_' + x.upper() for x in ins.DecoFlags])
+    if ins.Decorators.Names:
+        d['ValidDecorators'] = '|'.join([f'ND_DECO_{x.upper()}' for x in ins.Decorators.Names])
     else:
-        d['ValidDecorators'] = '0'
+        d['ValidDecorators'] = 0
 
     # Operand count
-    d['OpsCount'] = 'ND_OPS_CNT(%d, %d)' % (len(ins.ExpOps), len(ins.ImpOps))
+    d['OpsCount'] = f'ND_OPS_CNT({len(ins.ExpOps)}, {len(ins.ImpOps)})'
 
     # EVEX tuple type
-    if ins.Evex and ins.Tuple:
-        d['TupleType'] = 'ND_TUPLE_' + ins.Tuple.upper()
+    if ins.Tuple.Name:
+        d['TupleType'] = f'ND_TUPLE_{ins.Tuple.Name.upper()}'
     else:
         d['TupleType'] = '0'
 
     # Exception type
-    if ins.ExType:
-        d['ExcType'] = 'ND_EXT_' + ins.ExType
+    if ins.ExType.Name:
+        d['ExcType'] = f'ND_EXT_{ins.ExType.Name}'
     else:
         d['ExcType'] = '0'
 
     # FpuFlags (x87 instructions only)
-    if ins.Set == 'X87':
+    if ins.Set == 'X87' and ins.FpuFlags.Names:
         value = 0
         acc = { '0': 0, '1': 1, 'm': 2, 'u': 3 }
         for i in range(0, 4):
-            value |= acc[ins.FpuFlags[i]] << (i * 2)
-        d['FpuFlags'] = '0x%02x' % value
+            value |= acc[ins.FpuFlags.Names[i]] << (i * 2)
+        d['FpuFlags'] = f'0x{value:02x}'
+    elif ins.Set == 'X87':
+        d['FpuFlags'] = '0xff' # All undefined.
     else:
         d['FpuFlags'] = '0'
 
     # EVEX mode
-    if ins.EvexMode:
-        d['EvexMode'] = 'ND_EVEXM_' + ins.EvexMode.upper()
+    if ins.EvexMode.Name:
+        d['EvexMode'] = f'ND_EVEXM_{ins.EvexMode.Name.upper()}'
     else:
         d['EvexMode'] = '0'
 
     # SIMD Floating-Point Exceptions.
-    if ins.SimdExc:
-        d['SimdExc'] = '|'.join(['ND_SIMD_EXC_' + x for x in ins.SimdExc])
+    if ins.SimdExc.Names:
+        d['SimdExc'] = '|'.join([f'ND_SIMD_EXC_{x}' for x in ins.SimdExc.Names])
     else:
         d['SimdExc'] = '0'
+
+    # Instruction payload bytes.
+    d['Ipb'] = f'ND_IPB_{ins.Ipb}' if ins.Ipb else '0'
+
+    # Pre-decoded access info.
+    d['CsAccess']   = '|'.join([f'ND_OPA_{x}' for x in ins.CsAccess  ]) or '0'
+    d['RipAccess']  = '|'.join([f'ND_OPA_{x}' for x in ins.RipAccess ]) or '0'
+    d['RflAccess']  = '|'.join([f'ND_OPA_{x}' for x in ins.RflAccess ]) or '0'
+    d['Mem1Access'] = '|'.join([f'ND_OPA_{x}' for x in ins.Mem1Access]) or '0'
+    d['Mem2Access'] = '|'.join([f'ND_OPA_{x}' for x in ins.Mem2Access]) or '0'
+    d['StkAccess']  = '|'.join([f'ND_OPA_{x}' for x in ins.StkAccess ]) or '0'
+    d['StkWords']   = ins.StkWords
 
     # Flags (tested, modified, set, cleared)
     for m in ['t', 'm', '1', '0']:
         flg = '0'
-        dst = ins.Rflags[m]
+        dst = ins.Rflags.Names[m]
         if m == '1' or m == '0':
-            dst = dst + ins.Rflags['u']
+            dst = dst + ins.Rflags.Names['u']
         for f in dst:
-            flg += '|NDR_RFLAG_%s' % f.upper()
+            flg += f'|NDR_RFLAG_{f.upper()}'
         if m == 't': d['TestedFlags'] = flg
         if m == 'm': d['ModifiedFlags'] = flg
         if m == '1': d['SetFlags'] = flg
         if m == '0': d['ClearedFlags'] = flg
 
     # Instruction attributes
-    fs = '|'.join(['ND_FLAG_' + x.upper() for x in ins.Attributes 
-                   if x != 'nil' and not x.startswith('OP1') and not x.startswith('OP2')
-                                                             and not x.startswith('OP3') and not x.startswith('OP4')
-                                                             and not x.startswith('OP5') and not x.startswith('OP6')
-                                                             ]) or '0'
-    d['Attributes'] = fs
+    if a := ins.Attributes.instruction_attributes():
+        d['Attributes'] = '|'.join([f'ND_FLAG_{x.upper()}' for x in a])
+    else:
+        d['Attributes'] = '0'
 
     # CPUID flag
     flg = '0'
     for feat in features:
         if feat.Name == ins.Id:
-            flg = 'ND_CFF_%s' % feat.Name
+            flg = f'ND_CFF_{feat.Name}'
     d['CpuidFlag'] = flg
 
     # List of instruction operands
@@ -308,8 +171,8 @@ def instrux_to_idbe(
     return d
 
 def cdef_operand(
-    op: disasmlib.Operand
-    ) -> str:
+    op: operand.Operand
+) -> str:
     """ 
     Generates a bddisasm C definition for the current operand.
 
@@ -331,12 +194,12 @@ def cdef_operand(
             'ND_OPS_' + (op.Size if op.Size != '?' else 'unknown'),
             '|'.join(['ND_OPF_' + x for x in op.Flags]) or '0',
             'ND_OPA_' + op.Access,
-            '|'.join(['ND_OPD_' + disasmlib.deco_op_flags[x] for x in op.Decorators]) or 0,
+            '|'.join(['ND_OPD_' + decorators.deco_op_flags[x] for x in op.Decorators]) or 0,
             op.Block)
 
 def cdef_instruction(
-    ins: disasmlib.Instruction
-    ) -> str:
+    ins: instrux.Instruction
+) -> str:
     """
     Generates a bddisasm C or CPP definition for the current instruction.
     If C style definition is used, designated initializers are used.
@@ -447,221 +310,9 @@ def cdef_instruction(
     return c
 
 
-def compute_index(
-    value: str
-    ) -> int:
-    """ 
-    Given a component value, convert it to an index inside te C decoding table. Values which are present inside the 
-    component_value_index dict will be translated using that. All other values will be considered to be hex values, 
-    so they will be int(value, 16). The returned index is used when decoding an instruction, in order to lookup the 
-    next viable entry in the multi-way decode tree.
-
-    Parameters
-    ----------
-    value: str
-        The index to be converted to an integer index.
-
-    Returns
-    -------
-    An integer representing the index of the given decode component.
-
-    Example
-    -------
-    Input: 
-        value: repz
-    Returns:
-        4
-
-    Input:
-        value: 0xCC
-    Returns:
-        204
-    """
-    if value in component_value_index:
-        return component_value_index[value]
-    return int(value, 16)
-
-
-def group_find_component(
-    instructions: list[disasmlib.Instruction],
-    components: list[dict]
-    ) -> dict:
-    """ 
-    Given a list of instructions and a list of decoding components, return the decoding component that covers all the
-    instructions in the list. For example, in an initial call to this function for the list of all legacy instructions
-    the "opcode" component would be returned.
-
-    Parameters
-    ----------
-    instructions: list[disasmlib.Instruction]
-        The list of instructions to be grouped.
-    components:
-        The list of components used for grouping.
-
-    Returns
-    -------
-    A dict representing the decode component that can be used to cover all instructions in the list.
-    None if no such component could be found.
-    """
-    for c in components:
-        if c['all']:
-            # Some components must be present for all instructions in the list - for example, opcode.
-            bad = False
-            for i in instructions:
-                if not i.Encoding[c['type']]:
-                    bad = True
-                    break
-        else:
-            # Optional components need only be present for a single instruction in the list.
-            bad = True
-            for i in instructions:
-                if i.Encoding[c['type']]:
-                    bad = False
-                    break
-        if bad:
-            continue
-        return c
-    return None
-
-
-def group_instructions(
-    instructions: list[disasmlib.Instruction],
-    components: list[dict]
-    ) -> dict:
-    """ 
-    Given a list of instructions and a list of decoding components, find the best grouping component, distribute all 
-    instructions inside an array of children entries based on the identified grouping component, and recurse for all 
-    children entries, until we are left with leaf entries only. A leaf entry is composed of a single Instruction 
-    object.
-
-    Parameters
-    ----------
-    instructions: list[disasmlib.Instruction]
-        The list of instructions to be grouped.
-    components:
-        The list of components used for grouping.
-
-    Returns
-    -------
-    A dictionary containing two keys: 
-        - "component": indicates the component type used for the current grouping. It is one of "components_legacy"
-          or "components_ex", depending on which was used for the grouping.
-        - "children": an array of N entries, where each entry of the array contains an array of instructions that can 
-          be further grouped. The size N of the "children" array is given by the number of possible entries for the 
-          given "component". For example, an "opcode" component can have up to 256 values, so "children" will have 
-          256 entries. A "modrmreg" component can have up to 8 values, so "children" will have 8 entries.
-
-    Example
-    -------
-    Consider the following list of (simplified) initial instructions (only opcode and reduced encoding shown):
-    [{"I1", "0xBD"}, {"I2", "0xCC"}, {"I4", "FF /1"}, {"I5", "FF /5"}]
-
-    During the first call, "opcode" would be chosen to group the instructions, so we would end up with the following
-    result:
-    { 
-        "component": "opcode",
-        "children": [
-            ... 
-            Pos 0xBD: [{"I1", "0xBD"}],
-            ...
-            Pos 0xCC: [{"I2", "0xCC"}],
-            ...
-            Pos 0xFF: [{"I4", "FF /1"}, {"I5", "FF /5"}]
-        ]
-    }
-
-    We would then recurse for each child in the children array. Note that for opcodes 0xBD and 0xCC, we already have
-    leaf entries, so further grouping will not be required.
-
-    For opcode 0xFF, further grouping is needed. At the next step, the "modrmreg" will be chosen for grouping, with
-    the following result:
-    { 
-        "component": "modrmreg",
-        "children": [
-            Pos 0: []
-            Pos 1: [{"I4", "FF /1"}]
-            Pos 2: []
-            Pos 3: []
-            Pos 4: []
-            Pos 5: [{"I5", "FF /5"}]
-            Pos 6: []
-            Pos 7: []
-        ]
-    }
-
-    As in the previous example, we would recurse for each child, but we are already at leaf entries, so no more grouping
-    is required.
-    """
-    group = {
-        'component' : None, # Component type, used to decode children instructions
-        'children'  : None, # Array of sub-groups. Each entry is an array of instructions that will be further groupes.
-    }
-
-    # Find a good grouping component for the current instruction list.
-    comp = group_find_component(instructions, components)
-
-    # If no good component was found, we probably reached a leaf entry.
-    if not comp and len(instructions) == 1:
-        # Reached leaf entry, no more grouping needed.
-        group['component'] = 'leaf'
-        group['children'] = instructions[0]
-        return group
-    elif not comp:
-        # No grouping component found for multiple instructions - error.
-        print("ERROR: Cannot properly group the following instructions. Please review specs!")
-        for i in instructions: print("    -> ", i, " with encoding: ", i.RawEnc)
-        raise Exception("Grouping error: invalid/incomplete specification!")
-
-    # Allocate the sub-group array, based on the number of entries in the current group.
-    group['component'] = comp['type']
-    group['children'] = []
-    glen = components_ilut[comp['type']]['size']
-
-    for i in range(0, glen):
-        group['children'].append([])
-
-    # Now go through every instruction in the current group, and distribute it on its position.
-    # Note that at each grouping step, we pop the used component from the instruction
-    # encoding array, so that it's not used again.
-    for i in instructions:
-        if len(i.Encoding[comp['type']]) > 0:
-            index = compute_index(i.Encoding[comp['type']].pop(0))
-        else:
-            index = 0
-        group['children'][index].append(i)
-
-    # Now recurse, and group every sub-group of instructions.
-    for i in range(0, glen):
-        # Skip empty groups.
-        if not group['children'][i]:
-            continue
-
-        # Recursively group instructions.
-        group['children'][i] = group_instructions(group['children'][i], components)
-
-    return group
-
-
-def group_dump(
-    group: map,
-    level: int = 0
-    ):
-    """
-    Dump the entire translation tree identified by the root "group".
-    """
-    if group['component'] == 'leaf':
-        print("    " * level, group['children'])
-        return
-    for i in range(0, len(group['children'])):
-        if not group['children'][i]:
-            continue
-        print("    " * level, group['component'], '%02x' % i)
-        group_dump(group['children'][i], level + 1)
-
-
 def dump_translation_tables(
-    instructions: list[disasmlib.Instruction]
-    ):
+    instructions: list[instrux.Instruction]
+):
     """
     Generate the instruction translation trees.
     """
@@ -685,8 +336,8 @@ def dump_translation_tables(
     #
     # Legacy map.
     #
-    group_legacy = group_instructions(table_legacy, components_legacy)
-    group_cdef = group_generate_c_table(group_legacy, 'gLegacyMap_%s' % group_legacy['component'])
+    group_legacy = instrux_grouper.group_instructions(table_legacy, instrux_grouper.components_legacy)
+    group_cdef = group_generate_c_table(group_legacy, 'gLegacyMap_%s' % group_legacy.Component.Type)
 
     print('Writing the bdx86_table_root.h file...')
     with open(r'../bddisasm/include/bdx86_table_root.h', 'wt') as f:
@@ -700,8 +351,8 @@ def dump_translation_tables(
     #
     # VEX map.
     #
-    group_vex = group_instructions(table_vex, components_ex)
-    group_cdef = group_generate_c_table(group_vex, 'gVexMap_%s' % group_vex['component'])
+    group_vex = instrux_grouper.group_instructions(table_vex, instrux_grouper.components_ex)
+    group_cdef = group_generate_c_table(group_vex, 'gVexMap_%s' % group_vex.Component.Type)
 
     print('Writing the bdx86_table_vex.h file...')
     with open(r'../bddisasm/include/bdx86_table_vex.h', 'wt') as f:
@@ -715,8 +366,8 @@ def dump_translation_tables(
     #
     # XOP map.
     #
-    group_xop = group_instructions(table_xop, components_ex)
-    group_cdef = group_generate_c_table(group_xop, 'gXopMap_%s' % group_xop['component'])
+    group_xop = instrux_grouper.group_instructions(table_xop, instrux_grouper.components_ex)
+    group_cdef = group_generate_c_table(group_xop, 'gXopMap_%s' % group_xop.Component.Type)
 
     print('Writing the bdx86_table_xop.h file...')
     with open(r'../bddisasm/include/bdx86_table_xop.h', 'wt') as f:
@@ -730,8 +381,8 @@ def dump_translation_tables(
     #
     # EVEX map.
     #
-    group_evex = group_instructions(table_evex, components_ex)
-    group_cdef = group_generate_c_table(group_evex, 'gEvexMap_%s' % group_evex['component'])
+    group_evex = instrux_grouper.group_instructions(table_evex, instrux_grouper.components_ex)
+    group_cdef = group_generate_c_table(group_evex, 'gEvexMap_%s' % group_evex.Component.Type)
 
     print('Writing the bdx86_table_evex.h file...')
     with open(r'../bddisasm/include/bdx86_table_evex.h', 'wt') as f:
@@ -742,26 +393,65 @@ def dump_translation_tables(
         f.write('\n#endif\n\n')
 
 
+#
+# This dictionary describes how the decoding tables look. Each decoding component has associated a C decoding table.
+#
+components_ilut = {
+    'opcode' :      { 'ilut': 'ND_ILUT_OPCODE',         'type': 'ND_TABLE_OPCODE'     },
+    'opcode_last' : { 'ilut': 'ND_ILUT_OPCODE_LAST',    'type': 'ND_TABLE_OPCODE'     },
+    'modrmmod' :    { 'ilut': 'ND_ILUT_MODRM_MOD',      'type': 'ND_TABLE_MODRM_MOD'  },
+    'modrmreg' :    { 'ilut': 'ND_ILUT_MODRM_REG',      'type': 'ND_TABLE_MODRM_REG'  },
+    'modrmrm' :     { 'ilut': 'ND_ILUT_MODRM_RM',       'type': 'ND_TABLE_MODRM_RM'   },
+    'prefix' :      { 'ilut': 'ND_ILUT_MAN_PREFIX',     'type': 'ND_TABLE_MPREFIX'    },
+    'mode' :        { 'ilut': 'ND_ILUT_MODE',           'type': 'ND_TABLE_MODE'       },
+    'dsize' :       { 'ilut': 'ND_ILUT_DSIZE',          'type': 'ND_TABLE_DSIZE'      },
+    'asize' :       { 'ilut': 'ND_ILUT_ASIZE',          'type': 'ND_TABLE_ASIZE'      },
+    'auxiliary' :   { 'ilut': 'ND_ILUT_AUXILIARY',      'type': 'ND_TABLE_AUXILIARY'  },
+    'vendor' :      { 'ilut': 'ND_ILUT_VENDOR',         'type': 'ND_TABLE_VENDOR'     },
+    'feature' :     { 'ilut': 'ND_ILUT_FEATURE',        'type': 'ND_TABLE_FEATURE'    },
+    'mmmmm' :       { 'ilut': 'ND_ILUT_EX_M',           'type': 'ND_TABLE_EX_M'       },
+    'pp' :          { 'ilut': 'ND_ILUT_EX_PP',          'type': 'ND_TABLE_EX_PP'      },
+    'l' :           { 'ilut': 'ND_ILUT_EX_L',           'type': 'ND_TABLE_EX_L'       },
+    'w' :           { 'ilut': 'ND_ILUT_EX_W',           'type': 'ND_TABLE_EX_W'       },
+    'wi' :          { 'ilut': 'ND_ILUT_EX_WI',          'type': 'ND_TABLE_EX_W'       },
+    'nd' :          { 'ilut': 'ND_ILUT_EX_ND',          'type': 'ND_TABLE_EX_ND'      },
+    'nf' :          { 'ilut': 'ND_ILUT_EX_NF',          'type': 'ND_TABLE_EX_NF'      },
+    'sc' :          { 'ilut': 'ND_ILUT_EX_SC',          'type': 'ND_TABLE_EX_SC'      },
+    'lpdf' :        { 'ilut': 'ND_ILUT_EX_LPDF',        'type': 'ND_TABLE_EX_LPDF'    },
+}
+
+
 def group_generate_c_table(
-    group: map, 
+    group: instrux_grouper.InstructionGroup, 
     name: str
-    ) -> str:
+) -> str:
     """
     Generate the translation tree, in C format, for the decoding tree identified by group.
     """
-    if group['component'] != 'leaf':
+    if group.Component is not None:
+        if group.Component.Type in components_ilut:
+            comp_type = components_ilut[group.Component.Type]['type']
+            comp_ilut = components_ilut[group.Component.Type]['ilut']
+        elif group.Component.Filter:
+            comp_type = 'ND_TABLE_FILTER'
+            comp_ilut = 'ND_ILUT_FLT_' + group.Component.Type.upper()
+        else:
+            raise Exception("Unknwon group component: %s" % group.Component.Type)
+
         current_table = ''
-        current_table += 'const %s %s = \n' % (components_ilut[group['component']]['type'], name)
+        current_table += 'const %s %s = \n' % (comp_type, name)
         current_table += '{\n'
-        current_table += '    %s,\n' % components_ilut[group['component']]['ilut']
+        current_table += '    %s,\n' % comp_ilut
+        current_table += '    0,\n'
         current_table += '    {\n'
-        for i in range(0, len(group['children'])):
-            if not group['children'][i]:
+        for i in range(0, len(group.Children)):
+            if not group.Children[i]:
                 current_table += '        /* %02x */ (const void *)ND_NULL,\n' % (i)
             else:
-                current_name = name + ('_%02x_%s' % (i, group['children'][i]['component']))
+                next_name = group.Children[i].Component.Type if group.Children[i].Component else 'leaf'
+                current_name = name + ('_%02x_%s' % (i, next_name))
                 current_table += '        /* %02x */ (const void *)&%s,\n' % (i, current_name)
-                current_table = group_generate_c_table(group['children'][i], current_name) + current_table
+                current_table = group_generate_c_table(group.Children[i], current_name) + current_table
         current_table += '    }\n'
         current_table += '};\n\n'
         return current_table
@@ -770,7 +460,8 @@ def group_generate_c_table(
         res  = 'const ND_TABLE_INSTRUCTION %s = \n' % name
         res += '{\n'
         res += '    ND_ILUT_INSTRUCTION,\n'
-        res += '    (const void *)&gInstructions[% 4d]  // %s\n' % (group['children'].Icount, str(group['children']))
+        res += '    %d, // %s\n' % (group.Children.Icount, str(group.Children))
+        res += '    0,\n'
         res += '};\n\n'
         return res
 
@@ -803,7 +494,83 @@ def generate_constants2(instructions):
 
     return sorted(set(constants_sets)), sorted(set(constants_types))
 
-def dump_mnemonics(mnemonics, prefixes, fname):
+def generate_modrm(instructions):
+    # 3-dimensional structure, where we index using:
+    # - encoding mode (legacy, xop, vex, evex)
+    # - map (0-31)
+    # - opcode (0-255)
+    modrm = {}
+
+    for i in range(0, 4):
+        # Encoding mode.
+        modrm[i] = {}
+        for j in range(0, 32):
+            # Map ID.
+            modrm[i][j] = []
+
+    for i in instructions:
+        if i.Xop:
+            mod_idx, map_idx = 1, int(i.Encoding['mmmmm'][0], 16)
+        elif i.Vex:
+            mod_idx, map_idx = 2, int(i.Encoding['mmmmm'][0], 16) 
+        elif i.Evex:
+            mod_idx, map_idx = 3, int(i.Encoding['mmmmm'][0], 16)
+        else:
+            mod_idx = 0
+            if len(i.Encoding['opcode']) == 1:
+                map_idx = 0
+            elif len(i.Encoding['opcode']) == 2:
+                map_idx = 1
+            elif i.Encoding['opcode'][1] == '0x38':
+                map_idx = 2
+            else:
+                map_idx = 3
+        
+        if not modrm[mod_idx][map_idx]:
+            modrm[mod_idx][map_idx] = [0] * 256
+
+        if i.Attributes.contains('MODRM'):
+            opc_idx = int(i.Encoding['opcode'][-1], 16)
+            modrm[mod_idx][map_idx][opc_idx] = 1
+            if i.Attributes.contains('MFR'):
+                # Special case for CR and DR instructions, where mod is ignored.
+                modrm[mod_idx][map_idx][opc_idx] = 2
+
+    return modrm
+
+def generate_rex2(instructions):
+    # 2-dimensional structure, where we index using:
+    # - map (0-1)
+    # - opcode (0-255)
+    # REX2 is only available for Legacy maps 0 & 1.
+    rex2 = {}
+
+    for i in range(0, 2):
+        rex2[i] = [0] * 256
+
+    for i in instructions:
+        if i.Xop or i.Vex or i.Evex:
+            continue
+
+        if len(i.Encoding['opcode']) == 1:
+            map_idx = 0
+        elif len(i.Encoding['opcode']) == 2:
+            map_idx = 1
+        else:
+            continue
+
+        opc_idx = int(i.Encoding['opcode'][-1], 16)
+
+        # If there is a group where some instructions support REX2 and some don't, we will mark the
+        # entire group as supporting REX2. In that case, the decoding tree generator will automatically
+        # add a filter for each of the instructions in the group that don't support REX2, filter that
+        # will be checked during decoding.
+        if not i.Attributes.contains('NOREX2'):
+            rex2[map_idx][opc_idx] = 1
+
+    return rex2
+
+def dump_mnemonics(mnemonics, fname):
     with open(fname, 'wt') as f:
         f.write(header)
         f.write('#ifndef BDX86_MNEMONICS_H\n')
@@ -811,20 +578,15 @@ def dump_mnemonics(mnemonics, prefixes, fname):
         f.write('\n')
         f.write('#ifndef BDDISASM_NO_MNEMONIC\n')
         f.write('\n')
-        f.write('const char *gMnemonics[%d] = \n' % len(mnemonics))
+        f.write('#define ND_MNEMONICS_COUNT %d\n' % len(mnemonics))
+        f.write('\n')
+        f.write('const char *gMnemonics[ND_MNEMONICS_COUNT] = \n')
         f.write('{\n')
-        f.write('    ')
 
         i = 0
         ln = 0
         for m in mnemonics:
-            f.write('"%s", ' % m)
-            ln += len(m) + 4
-            i += 1
-            if ln > 60:
-                ln = 0
-                f.write('\n    ')
-
+            f.write('    "%s",\n' % m)
 
         f.write('\n};\n')
 
@@ -835,7 +597,7 @@ def dump_mnemonics(mnemonics, prefixes, fname):
 
         f.write('#endif\n\n')
 
-def dump_constants(constants, prefixes, constants_sets, constants_types, fname):
+def dump_constants(constants, constants_sets, constants_types, fname):
     with open(fname, 'wt') as f:
         f.write(header)
         f.write('#ifndef BDX86_CONSTANTS_H\n')
@@ -875,8 +637,10 @@ def dump_master_table(instructions, fname):
         f.write('#ifndef BDX86_INSTRUCTIONS_H\n')
         f.write('#define BDX86_INSTRUCTIONS_H\n')
         f.write('\n')
+        f.write('#define ND_INSTRUCTIONS_COUNT %d\n' % len(instructions))
+        f.write('\n')
         flags = []
-        f.write('const ND_IDBE gInstructions[%s] = \n' % len(instructions))
+        f.write('const ND_IDBE gInstructions[ND_INSTRUCTIONS_COUNT] = \n')
         f.write('{\n')
         for i in instructions:
             f.write('%s, \n\n' % cdef_instruction(i))
@@ -901,7 +665,84 @@ def dump_features(features, fname):
 
         f.write('\n')
 
-        f.write('#endif // CPUID_FLAGS_H\n')
+        f.write('#endif // BDX86_CPUID_FLAGS_H\n')
+
+def dump_modrm(modrm, fname):
+    with open(fname, 'wt') as f:
+        f.write(header)
+        f.write('#ifndef BDX86_MODRM_H\n')
+        f.write('#define BDX86_MODRM_H\n')
+        f.write('\n')
+
+        mode_name = {
+            0: 'Legacy',
+            1: 'Xop',
+            2: 'Vex',
+            3: 'Evex',
+        }
+
+        # Dump opcode tables.
+        for mode in modrm:
+            for map in modrm[mode]:
+                if not modrm[mode][map]:
+                    continue
+                f.write(f'static const ND_UINT8 gModrmTable{mode_name[mode]}Map{map}[256] = \n')
+                f.write('{\n')
+                f.write('//  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n')
+                cnt = 0
+                for opc in modrm[mode][map]:
+                    if cnt % 16 == 0:
+                        f.write('    ')
+                    f.write('%d, ' % opc)
+                    cnt = cnt + 1
+                    if cnt % 16 == 0:
+                        f.write('// %X\n' % (cnt // 16 - 1))
+                f.write('};\n\n')
+
+        # Dump map table.
+        f.write(f'static const ND_UINT8 *gModrmTable[{len(modrm)}][{len(modrm[0])}] = \n')
+        f.write('{\n')
+        for mode in modrm:
+            f.write('    {\n')
+            for map in modrm[mode]:
+                if not modrm[mode][map]:
+                    f.write(f'        ND_NULL,\n')
+                else:
+                    f.write(f'        gModrmTable{mode_name[mode]}Map{map},\n')
+            f.write('    },\n')
+        f.write('};\n')
+
+        f.write('\n')
+
+        f.write('#endif // BDX86_MODRM_H\n')
+
+def dump_rex2(rex2, fname):
+    with open(fname, 'wt') as f:
+        f.write(header)
+        f.write('#ifndef BDX86_REX2_H\n')
+        f.write('#define BDX86_REX2_H\n')
+        f.write('\n')
+
+        # Dump map table.
+        f.write(f'static const ND_UINT8 gRex2Table[2][256] = \n')
+        f.write('{\n')
+        for map in rex2:
+            f.write('    {\n')
+            f.write('    //  0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F\n')
+            cnt = 0
+            for opc in rex2[map]:
+                if cnt % 16 == 0:
+                    f.write('        ')
+                f.write('%d, ' % opc)
+                cnt = cnt + 1
+                if cnt % 16 == 0:
+                    f.write('// %X\n' % (cnt // 16 - 1))
+            f.write('    },\n\n')
+        f.write('};\n')
+
+        f.write('\n')
+
+        f.write('#endif // BDX86_REX2_H\n')
 
 #
 # =============================================================================
@@ -913,21 +754,13 @@ if __name__ == "__main__":
         print('Usage: %s defs-file-dir' % os.path.basename(sys.argv[0]))
         sys.exit(-1)
 
-    # Extract the flags.
-    print('Loading flags access templates...')
-    disasmlib.parse_flags_file('%s/flags.dat' % sys.argv[1])
-
-    # Extact the CPUID features.
-    print('Loading CPUID feature flags templates...')
-    features = disasmlib.parse_cff_file('%s/cpuid.dat' % sys.argv[1])
-
-    # Extract the valid modes.
-    print('Loading CPU operating modes templates...')
-    insmodes = disasmlib.parse_modess_file('%s/modes.dat' % sys.argv[1])
+    # Extract the CPUID features.
+    print('Loading CPUID feature flags...')
+    features = disasmlib.parse_cff_file(f'{sys.argv[1]}/cpuid.dat')
 
     # Extract the instructions.
-    for fn in glob.glob('%s/table*.dat' % sys.argv[1]):
-        print('Loading instructions from %s...' % fn)
+    for fn in glob.glob(f'{sys.argv[1]}/table*.dat'):
+        print('Loading instructions from %s...' % os.path.basename(fn))
         instructions = instructions + disasmlib.parse_ins_file(fn)
 
     # Sort the instructions.
@@ -937,12 +770,16 @@ if __name__ == "__main__":
 
     # Generate the mnemonics
     mnemonics = generate_mnemonics(instructions)
-    mnemonics_prefixes = generate_mnemonics(prefixes)
 
     # Generate the constants
     constants = generate_constants(instructions)
-    constants_prefixes = generate_constants(prefixes, True)
     constants_sets, constants_types = generate_constants2(instructions)
+
+    # Generate the ModRM table.
+    modrm = generate_modrm(instructions)
+
+    # Generate the REX2 table.
+    rex2 = generate_rex2(instructions)
 
 
     #
@@ -951,15 +788,23 @@ if __name__ == "__main__":
 
     # Dump the mnemonics
     print('Writing the bdx86_mnemonics.h (instruction mnemonics) file...')
-    dump_mnemonics(mnemonics, mnemonics_prefixes, r'../bddisasm/include/bdx86_mnemonics.h')
+    dump_mnemonics(mnemonics, r'../bddisasm/include/bdx86_mnemonics.h')
 
     # Dump the instruction constants
     print('Writing the bdx86_constants.h (instruction definitions) file...')
-    dump_constants(constants, constants_prefixes, constants_sets, constants_types, r'../inc/bdx86_constants.h')
+    dump_constants(constants, constants_sets, constants_types, r'../inc/bdx86_constants.h')
 
     # Dump the CPUID feature flags.
     print('Writing the bdx86_cpuidflags.h (CPUID feature flags) file...')
     dump_features(features, r'../inc/bdx86_cpuidflags.h')
+
+    # Dump the ModRm table.
+    print('Writing the bdx86_modrm.h file...')
+    dump_modrm(modrm, r'../bddisasm/include/bdx86_modrm.h')
+
+    # Dump the REX2 table.
+    print('Writing the bdx86_rex2.h file...')
+    dump_rex2(rex2, r'../bddisasm/include/bdx86_rex2.h')
 
     # Dump the instruction database.
     print('Writing the bdx86_instructions.h (main instruction database) file...')

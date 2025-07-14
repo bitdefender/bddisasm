@@ -57,7 +57,7 @@ typedef struct _DISASM_OPTIONS
     uint8_t         Mode;               // Mode - 16, 32 or 64-bit mode.
     uint8_t         Ring;               // Ring - 0, 1, 2 or 3.
     uint8_t         Vendor;             // Preffered vendor.
-    uint8_t         Feature;            // Used features.
+    uint32_t        Feature;            // Used features.
     char            *FileName;          // Input file, if any.
     size_t          ShemuRegs[ND_MAX_GPR_REGS];
     bool            UseShemuRegs;       // If truue, the registers in ShemuRegs will be used for shemu input.
@@ -72,5 +72,34 @@ typedef struct _DISASM_OPTIONS
 #define PAGE_SIZE   0x1000
 #define PAGE_MASK   0xFFFFFFFFFFFFF000
 
+#define FG_Black        "\033[1;30m"
+#define FG_Red          "\033[1;31m"
+#define FG_Green        "\033[1;32m"
+#define FG_Yellow       "\033[1;33m"
+#define FG_Blue         "\033[1;34m"
+#define FG_Magenta      "\033[1;35m"
+#define FG_Cyan         "\033[1;36m"
+#define FG_White        "\033[1;37m"
+
+void set_bold_fg_color(const char *Color);
+void reset_fg_color(void);
+
+#if !defined(WIN32) && (defined(ND_ARCH_X64) || defined(ND_ARCH_X86))
+#include <cpuid.h>
+#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
+
+#if defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
+#ifdef WIN32
+#define cpuid       __cpuid
+#else
+#define __rdtsc     __builtin_ia32_rdtsc
+
+static void cpuid(int cpuInfo[4], int function_id)
+{
+    unsigned int *cpuinfo = (unsigned int *)cpuInfo;
+    __get_cpuid(function_id, &cpuinfo[0], &cpuinfo[1], &cpuinfo[2], &cpuinfo[3]);
+}
+#endif // WIN32
+#endif // defined(ND_ARCH_X64) || defined(ND_ARCH_X86)
 
 #endif // DISASMTOOL_H

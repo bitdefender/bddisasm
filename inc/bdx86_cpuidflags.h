@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Bitdefender
+ * Copyright (c) 2025 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -145,4 +145,4 @@
 #define ND_CFF_RMPQUERY                 ND_CFF(0x8000001F, 0xFFFFFFFF, NDR_EAX, 6)
 #define ND_CFF_RMPREAD                  ND_CFF(0x8000001F, 0xFFFFFFFF, NDR_EAX, 21)
 
-#endif // CPUID_FLAGS_H
+#endif // BDX86_CPUID_FLAGS_H

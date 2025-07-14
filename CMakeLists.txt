@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 option(BDD_INCLUDE_TOOL "Include the disasmtool executable" ON)
 option(BDD_INCLUDE_ISAGENERATOR_X86 "Include the x86 isagenerator target (if a python interpreter is found)" ON)
+option(BDD_INCLUDE_TESTS "Include decoder & emulator tests" OFF)
 option(BDD_INCLUDE_FUZZERS "Include the bdshemu fuzzer" OFF)
 option(BDD_USE_EXTERNAL_VSNPRINTF "Expect nd_vsnprintf_s implementation from the integrator" OFF)
 option(BDD_USE_EXTERNAL_MEMSET "Expect nd_memset implementation from the integrator" OFF)
@@ -113,12 +114,17 @@ add_library(
     bddisasm/bdx86_decoder.c
     bddisasm/bdx86_formatter.c
     bddisasm/bdx86_helpers.c
+    bddisasm/bdx86_idbe.c
+    bddisasm/bdx86_operand.c
     # Add the headers so they will show up in IDEs.
     bddisasm/include/bddisasm_crt.h
     bddisasm/include/bdx86_instructions.h
     bddisasm/include/bdx86_mnemonics.h
+    bddisasm/include/bdx86_modrm.h
     bddisasm/include/bdx86_prefixes.h
+    bddisasm/include/bdx86_rex2.h
     bddisasm/include/bdx86_tabledefs.h
+    bddisasm/include/bdx86_operand.h
     bddisasm/include/bdx86_table_evex.h
     bddisasm/include/bdx86_table_root.h
     bddisasm/include/bdx86_table_vex.h

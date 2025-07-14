@@ -150,7 +150,7 @@ VPSLLQ            ; Hfv{K}{z},Wfv|B64,Ib        ;         ; evex m:1 p:1 l:x w:1
 VPSLLDQ           ; Hfv,Wfv,Ib                  ;         ; evex m:1 p:1 l:x w:i 0x73 /7 ib         ; s:AVX512BW, t:AVX512, l:fvm, e:E4NFnb, w:W|R|R
 VPCMPEQB          ; rKq{K},Hfv,Wfv              ;         ; evex m:1 p:1 l:x w:i 0x74 /r            ; s:AVX512BW, t:AVX512, l:fvm, e:E4nb, w:W|R|R|R
 VPCMPEQW          ; rKq{K},Hfv,Wfv              ;         ; evex m:1 p:1 l:x w:i 0x75 /r            ; s:AVX512BW, t:AVX512, l:fvm, e:E4nb, w:W|R|R|R
-VPCMPEQD          ; rKq{K},Hfv,Wfv|B32          ;         ; evex m:1 p:1 l:x w:i 0x76 /r            ; s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R
+VPCMPEQD          ; rKq{K},Hfv,Wfv|B32          ;         ; evex m:1 p:1 l:x w:0 0x76 /r            ; s:AVX512F, t:AVX512, l:fv, e:E4, w:W|R|R|R
 VCVTTPS2UDQ       ; Vfv{K}{z},Wfv|B32{sae}      ;         ; evex m:1 p:0 l:x w:0 0x78 /r            ; s:AVX512F, t:CONVERT, l:fv, e:E2, w:W|R|R, x:IE|PE
 VCVTTPD2UDQ       ; Vhv{K}{z},Wfv|B64{sae}      ;         ; evex m:1 p:0 l:x w:1 0x78 /r            ; s:AVX512F, t:CONVERT, l:fv, e:E2, w:W|R|R, x:IE|PE
 VCVTTPS2UQQ       ; Vfv{K}{z},Whv|B32{sae}      ;         ; evex m:1 p:1 l:x w:0 0x78 /r            ; s:AVX512DQ, t:CONVERT, l:hv, e:E3, w:W|R|R, x:IE|PE

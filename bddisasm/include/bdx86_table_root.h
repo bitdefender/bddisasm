@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Bitdefender
+ * Copyright (c) 2025 Bitdefender
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -13,18 +13,21 @@
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1969]  // PUSH Ev
+    1972, // PUSH Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1184]  // JMPF Mp
+    1183, // JMPF Mp
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_ff_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ff_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -34,18 +37,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_ff_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1179]  // JMP Ev
+    1180, // JMP Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 243]  // CALLF Mp
+    243, // CALLF Mp
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_ff_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ff_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -55,24 +61,28 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_ff_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 241]  // CALL Ev
+    241, // CALL Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 873]  // DEC Ev
+    867, // DEC Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ff_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1137]  // INC Ev
+    1132, // INC Ev
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_ff_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ff_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_ff_modrmreg_01_leaf,
@@ -88,18 +98,21 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_ff_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_fe_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 872]  // DEC Eb
+    866, // DEC Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_fe_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1136]  // INC Eb
+    1131, // INC Eb
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_fe_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_fe_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_fe_modrmreg_01_leaf,
@@ -115,90 +128,105 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_fe_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_fd_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2512]  // STD
+    2531, // STD
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_fc_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 553]  // CLD
+    553, // CLD
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_fb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2514]  // STI
+    2533, // STI
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_fa_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 560]  // CLI
+    560, // CLI
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2511]  // STC
+    2530, // STC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 552]  // CLC
+    552, // CLC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1076]  // IDIV Ev
+    1074, // IDIV Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 882]  // DIV Ev
+    879, // DIV Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1110]  // IMUL Ev
+    1092, // IMUL Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1480]  // MUL Ev
+    1479, // MUL Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1502]  // NEG Ev
+    1498, // NEG Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1581]  // NOT Ev
+    1589, // NOT Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2633]  // TEST Ev,Iz
+    2660, // TEST Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f7_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2632]  // TEST Ev,Iz
+    2659, // TEST Ev,Iz
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_f7_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_f7_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_f7_modrmreg_01_leaf,
@@ -214,54 +242,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_f7_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1075]  // IDIV Eb
+    1073, // IDIV Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 881]  // DIV Eb
+    878, // DIV Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1109]  // IMUL Eb
+    1091, // IMUL Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1479]  // MUL Eb
+    1478, // MUL Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1501]  // NEG Eb
+    1497, // NEG Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1580]  // NOT Eb
+    1588, // NOT Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2631]  // TEST Eb,Ib
+    2658, // TEST Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f6_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2630]  // TEST Eb,Ib
+    2657, // TEST Eb,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_f6_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_f6_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_f6_modrmreg_01_leaf,
@@ -277,114 +314,142 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_f6_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f5_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 566]  // CMC
+    566, // CMC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f4_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1065]  // HLT
+    1065, // HLT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_f1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1151]  // INT1
+    1152, // INT1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ef_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1641]  // OUT DX,eAX
+    1649, // OUT DX,eAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ee_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1640]  // OUT DX,AL
+    1648, // OUT DX,AL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ed_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1115]  // IN eAX,DX
+    1116, // IN eAX,DX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ec_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1114]  // IN AL,DX
+    1115, // IN AL,DX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_eb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1178]  // JMP Jb
+    1179, // JMP Jb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ea_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ea_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1183]  // JMPF Ap
+    1182, // JMPF Ap
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_ea_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_ea_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1177]  // JMP Jz
+    1178, // JMP Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 240]  // CALL Jz
+    240, // CALL Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1639]  // OUT Ib,eAX
+    1647, // OUT Ib,eAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1638]  // OUT Ib,AL
+    1646, // OUT Ib,AL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e5_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1113]  // IN eAX,Ib
+    1114, // IN eAX,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e4_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1112]  // IN AL,Ib
+    1113, // IN AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e3_asize_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1205]  // JRCXZ Jb
+    1204, // JRCXZ Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e3_asize_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1172]  // JECXZ Jb
+    1173, // JECXZ Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e3_asize_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1171]  // JCXZ Jb
+    1172, // JCXZ Jb
+    0,
 };
 
 const ND_TABLE_ASIZE gLegacyMap_opcode_e3_asize = 
 {
     ND_ILUT_ASIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_e3_asize_01_leaf,
@@ -396,30 +461,35 @@ const ND_TABLE_ASIZE gLegacyMap_opcode_e3_asize =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1329]  // LOOP Jb
+    1328, // LOOP Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1331]  // LOOPZ Jb
+    1330, // LOOPZ Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_e0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1330]  // LOOPNZ Jb
+    1329, // LOOPNZ Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_07_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1013]  // FRINEAR
+    1013, // FRINEAR
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_df_modrmreg_07_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -435,12 +505,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_df_modrmreg_07_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 972]  // FISTP Mq,ST(0)
+    972, // FISTP Mq,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_07_modrmmod_01_modrmrm,
@@ -450,18 +522,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 930]  // FCOMIP ST(0),ST(i)
+    930, // FCOMIP ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 915]  // FBSTP Mfa,ST(0)
+    915, // FBSTP Mfa,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_06_modrmmod_01_leaf,
@@ -471,18 +546,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1045]  // FUCOMIP ST(0),ST(i)
+    1045, // FUCOMIP ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 964]  // FILD ST(0),Mq
+    964, // FILD ST(0),Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_05_modrmmod_01_leaf,
@@ -492,27 +570,40 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1031]  // FSTSG AX
+    1031, // FSTSG AX
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_01_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1023]  // FSTDW AX
+    1023, // FSTDW AX
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_01_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_01_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1008]  // FNSTSW AX
+    1008, // FNSTSW AX
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_01_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_01_no64,
         /* 02 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
@@ -525,12 +616,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 914]  // FBLD ST(0),Mfa
+    914, // FBLD ST(0),Mfa
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_04_modrmmod_01_modrmrm,
@@ -540,18 +633,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1029]  // FSTP ST(i),ST(0)
+    1029, // FSTP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 971]  // FISTP Mw,ST(0)
+    971, // FISTP Mw,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_03_modrmmod_01_leaf,
@@ -561,18 +657,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1028]  // FSTP ST(i),ST(0)
+    1028, // FSTP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 969]  // FIST Mw,ST(0)
+    969, // FIST Mw,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_02_modrmmod_01_leaf,
@@ -582,18 +681,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1051]  // FXCH ST(0),ST(i)
+    1051, // FXCH ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 975]  // FISTTP Mw,ST(0)
+    975, // FISTTP Mw,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_01_modrmmod_01_leaf,
@@ -603,18 +705,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 951]  // FFREEP ST(i)
+    951, // FFREEP ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_df_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 963]  // FILD ST(0),Mw
+    963, // FILD ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_00_modrmmod_01_leaf,
@@ -624,6 +729,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_df_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_df_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_df_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_df_modrmreg_01_modrmmod,
@@ -639,18 +745,21 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_df_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 943]  // FDIVP ST(i),ST(0)
+    943, // FDIVP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 961]  // FIDIVR ST(0),Mw
+    961, // FIDIVR ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_07_modrmmod_01_leaf,
@@ -660,18 +769,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 948]  // FDIVRP ST(i),ST(0)
+    948, // FDIVRP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 959]  // FIDIV ST(0),Mw
+    959, // FIDIV ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_06_modrmmod_01_leaf,
@@ -681,18 +793,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1036]  // FSUBP ST(i),ST(0)
+    1036, // FSUBP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 979]  // FISUBR ST(0),Mw
+    979, // FISUBR ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_05_modrmmod_01_leaf,
@@ -702,18 +817,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1041]  // FSUBRP ST(i),ST(0)
+    1041, // FSUBRP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 977]  // FISUB ST(0),Mw
+    977, // FISUB ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_04_modrmmod_01_leaf,
@@ -723,12 +841,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_03_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 936]  // FCOMPP
+    936, // FCOMPP
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_de_modrmreg_03_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_03_modrmmod_01_modrmrm_01_leaf,
@@ -744,12 +864,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_de_modrmreg_03_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 957]  // FICOMP ST(0),Mw
+    957, // FICOMP ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_03_modrmmod_01_modrmrm,
@@ -759,18 +881,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 935]  // FCOMP ST(0),ST(i)
+    935, // FCOMP ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 955]  // FICOM ST(0),Mw
+    955, // FICOM ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_02_modrmmod_01_leaf,
@@ -780,18 +905,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 997]  // FMULP ST(i),ST(0)
+    997, // FMULP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 966]  // FIMUL ST(0),Mw
+    966, // FIMUL ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_01_modrmmod_01_leaf,
@@ -801,18 +929,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 913]  // FADDP ST(i),ST(0)
+    913, // FADDP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_de_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 953]  // FIADD ST(0),Mw
+    953, // FIADD ST(0),Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_00_modrmmod_01_leaf,
@@ -822,6 +953,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_de_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_de_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_de_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_de_modrmreg_01_modrmmod,
@@ -837,12 +969,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_de_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1007]  // FNSTSW Mw
+    1007, // FNSTSW Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -852,12 +986,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1004]  // FNSAVE Mfs
+    1004, // FNSAVE Mfs
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -867,12 +1003,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1046]  // FUCOMP ST(0),ST(i)
+    1046, // FUCOMP ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_05_modrmmod_01_leaf,
@@ -882,18 +1020,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1043]  // FUCOM ST(0),ST(i)
+    1043, // FUCOM ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1015]  // FRSTOR Mfs
+    1015, // FRSTOR Mfs
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_04_modrmmod_01_leaf,
@@ -903,18 +1044,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1027]  // FSTP ST(i),ST(0)
+    1027, // FSTP ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1026]  // FSTP Mfq,ST(0)
+    1026, // FSTP Mfq,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_03_modrmmod_01_leaf,
@@ -924,18 +1068,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1022]  // FST ST(i),ST(0)
+    1022, // FST ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1021]  // FST Mfq,ST(0)
+    1021, // FST Mfq,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_02_modrmmod_01_leaf,
@@ -945,18 +1092,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1050]  // FXCH ST(0),ST(i)
+    1050, // FXCH ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 974]  // FISTTP Mq,ST(0)
+    974, // FISTTP Mq,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_01_modrmmod_01_leaf,
@@ -966,18 +1116,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 950]  // FFREE ST(i)
+    950, // FFREE ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dd_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 983]  // FLD ST(0),Mfq
+    983, // FLD ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_00_modrmmod_01_leaf,
@@ -987,6 +1140,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dd_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_dd_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_dd_modrmreg_01_modrmmod,
@@ -1002,18 +1156,21 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_dd_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 942]  // FDIV ST(i),ST(0)
+    942, // FDIV ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 946]  // FDIVR ST(0),Mfq
+    946, // FDIVR ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_07_modrmmod_01_leaf,
@@ -1023,18 +1180,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 947]  // FDIVR ST(i),ST(0)
+    947, // FDIVR ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 941]  // FDIV ST(0),Mfq
+    941, // FDIV ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_06_modrmmod_01_leaf,
@@ -1044,18 +1204,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1035]  // FSUB ST(i),ST(0)
+    1035, // FSUB ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1039]  // FSUBR ST(0),Mfq
+    1039, // FSUBR ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_05_modrmmod_01_leaf,
@@ -1065,18 +1228,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1040]  // FSUBR ST(i),ST(0)
+    1040, // FSUBR ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1034]  // FSUB ST(0),Mfq
+    1034, // FSUB ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_04_modrmmod_01_leaf,
@@ -1086,18 +1252,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 934]  // FCOMP ST(0),ST(i)
+    934, // FCOMP ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 933]  // FCOMP ST(0),Mfq
+    933, // FCOMP ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_03_modrmmod_01_leaf,
@@ -1107,18 +1276,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 928]  // FCOM ST(0),ST(i)
+    928, // FCOM ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 927]  // FCOM ST(0),Mfq
+    927, // FCOM ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_02_modrmmod_01_leaf,
@@ -1128,18 +1300,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 996]  // FMUL ST(i),ST(0)
+    996, // FMUL ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 995]  // FMUL ST(0),Mfq
+    995, // FMUL ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_01_modrmmod_01_leaf,
@@ -1149,18 +1324,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 912]  // FADD ST(i),ST(0)
+    912, // FADD ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_dc_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 911]  // FADD ST(0),Mfq
+    911, // FADD ST(0),Mfq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_00_modrmmod_01_leaf,
@@ -1170,6 +1348,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_dc_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_dc_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_dc_modrmreg_01_modrmmod,
@@ -1185,12 +1364,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_dc_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1025]  // FSTP Mft,ST(0)
+    1025, // FSTP Mft,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -1200,12 +1381,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 929]  // FCOMI ST(0),ST(i)
+    929, // FCOMI ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_06_modrmmod_01_leaf,
@@ -1215,18 +1398,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1044]  // FUCOMI ST(0),ST(i)
+    1044, // FUCOMI ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 982]  // FLD ST(0),Mft
+    982, // FLD ST(0),Mft
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_05_modrmmod_01_leaf,
@@ -1236,36 +1422,42 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1003]  // FNOP
+    1003, // FNOP
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1000]  // FNINIT
+    1000, // FNINIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 998]  // FNCLEX
+    998, // FNCLEX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 999]  // FNDISI
+    999, // FNDISI
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1002]  // FNOP
+    1002, // FNOP
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm_01_leaf,
@@ -1281,6 +1473,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm =
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_04_modrmmod_01_modrmrm,
@@ -1290,18 +1483,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 923]  // FCMOVNU ST(0),ST(i)
+    923, // FCMOVNU ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 970]  // FISTP Md,ST(0)
+    970, // FISTP Md,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_03_modrmmod_01_leaf,
@@ -1311,18 +1507,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 921]  // FCMOVNBE ST(0),ST(i)
+    921, // FCMOVNBE ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 968]  // FIST Md,ST(0)
+    968, // FIST Md,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_02_modrmmod_01_leaf,
@@ -1332,18 +1531,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 922]  // FCMOVNE ST(0),ST(i)
+    922, // FCMOVNE ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 973]  // FISTTP Md,ST(0)
+    973, // FISTTP Md,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_01_modrmmod_01_leaf,
@@ -1353,18 +1555,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 920]  // FCMOVNB ST(0),ST(i)
+    920, // FCMOVNB ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_db_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 962]  // FILD ST(0),Md
+    962, // FILD ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_00_modrmmod_01_leaf,
@@ -1374,6 +1579,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_db_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_db_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_db_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_db_modrmreg_01_modrmmod,
@@ -1389,12 +1595,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_db_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 960]  // FIDIVR ST(0),Md
+    960, // FIDIVR ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -1404,12 +1612,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 958]  // FIDIV ST(0),Md
+    958, // FIDIV ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -1419,12 +1629,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_05_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1047]  // FUCOMPP
+    1047, // FUCOMPP
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_da_modrmreg_05_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_05_modrmmod_01_modrmrm_01_leaf,
@@ -1440,12 +1652,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_da_modrmreg_05_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 978]  // FISUBR ST(0),Md
+    978, // FISUBR ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_05_modrmmod_01_modrmrm,
@@ -1455,12 +1669,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 976]  // FISUB ST(0),Md
+    976, // FISUB ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -1470,18 +1686,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 924]  // FCMOVU ST(0),ST(i)
+    924, // FCMOVU ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 956]  // FICOMP ST(0),Md
+    956, // FICOMP ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_03_modrmmod_01_leaf,
@@ -1491,18 +1710,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 918]  // FCMOVBE ST(0),ST(i)
+    918, // FCMOVBE ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 954]  // FICOM ST(0),Md
+    954, // FICOM ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_02_modrmmod_01_leaf,
@@ -1512,18 +1734,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 919]  // FCMOVE ST(0),ST(i)
+    919, // FCMOVE ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 965]  // FIMUL ST(0),Md
+    965, // FIMUL ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_01_modrmmod_01_leaf,
@@ -1533,18 +1758,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 917]  // FCMOVB ST(0),ST(i)
+    917, // FCMOVB ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_da_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 952]  // FIADD ST(0),Md
+    952, // FIADD ST(0),Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_00_modrmmod_01_leaf,
@@ -1554,6 +1782,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_da_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_da_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_da_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_da_modrmreg_01_modrmmod,
@@ -1569,54 +1798,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_da_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 937]  // FCOS
+    937, // FCOS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1017]  // FSIN
+    1017, // FSIN
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1016]  // FSCALE
+    1016, // FSCALE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1014]  // FRNDINT
+    1014, // FRNDINT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1018]  // FSINCOS
+    1018, // FSINCOS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1019]  // FSQRT
+    1019, // FSQRT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1058]  // FYL2XP1
+    1058, // FYL2XP1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1010]  // FPREM
+    1010, // FPREM
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm_01_leaf,
@@ -1632,12 +1870,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1005]  // FNSTCW Mw
+    1005, // FNSTCW Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_07_modrmmod_01_modrmrm,
@@ -1647,54 +1887,63 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 967]  // FINCSTP
+    967, // FINCSTP
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 938]  // FDECSTP
+    938, // FDECSTP
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1011]  // FPREM1
+    1011, // FPREM1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1056]  // FXTRACT
+    1056, // FXTRACT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1009]  // FPATAN
+    1009, // FPATAN
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1012]  // FPTAN
+    1012, // FPTAN
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1057]  // FYL2X
+    1057, // FYL2X
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 907]  // F2XM1
+    907, // F2XM1
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm_01_leaf,
@@ -1710,12 +1959,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1006]  // FNSTENV Mfe
+    1006, // FNSTENV Mfe
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_06_modrmmod_01_modrmrm,
@@ -1725,48 +1976,56 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 992]  // FLDZ
+    992, // FLDZ
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 990]  // FLDLN2
+    990, // FLDLN2
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 989]  // FLDLG2
+    989, // FLDLG2
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 991]  // FLDPI
+    991, // FLDPI
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 987]  // FLDL2E
+    987, // FLDL2E
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 988]  // FLDL2T
+    988, // FLDL2T
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 984]  // FLD1
+    984, // FLD1
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm_01_leaf,
@@ -1782,12 +2041,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 985]  // FLDCW Mw
+    985, // FLDCW Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_05_modrmmod_01_modrmrm,
@@ -1797,30 +2058,35 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1048]  // FXAM
+    1048, // FXAM
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1042]  // FTST
+    1042, // FTST
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 908]  // FABS
+    908, // FABS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 916]  // FCHS
+    916, // FCHS
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm_01_leaf,
@@ -1836,12 +2102,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 986]  // FLDENV Mfe
+    986, // FLDENV Mfe
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_04_modrmmod_01_modrmrm,
@@ -1851,18 +2119,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1030]  // FSTPNCE ST(i),ST(0)
+    1030, // FSTPNCE ST(i),ST(0)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1024]  // FSTP Mfd,ST(0)
+    1024, // FSTP Mfd,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_03_modrmmod_01_leaf,
@@ -1872,12 +2143,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_02_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1001]  // FNOP
+    1001, // FNOP
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_02_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_02_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -1893,12 +2166,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_d9_modrmreg_02_modrmmod_01_modrmrm =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1020]  // FST Mfd,ST(0)
+    1020, // FST Mfd,ST(0)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_02_modrmmod_01_modrmrm,
@@ -1908,12 +2183,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1049]  // FXCH ST(0),ST(i)
+    1049, // FXCH ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_01_modrmmod_01_leaf,
@@ -1923,18 +2200,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 981]  // FLD ST(0),ST(i)
+    981, // FLD ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d9_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 980]  // FLD ST(0),Mfd
+    980, // FLD ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_00_modrmmod_01_leaf,
@@ -1944,6 +2224,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d9_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_d9_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_d9_modrmreg_01_modrmmod,
@@ -1959,18 +2240,21 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_d9_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 945]  // FDIVR ST(0),ST(i)
+    945, // FDIVR ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 944]  // FDIVR ST(0),Mfd
+    944, // FDIVR ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_07_modrmmod_01_leaf,
@@ -1980,18 +2264,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 940]  // FDIV ST(0),ST(i)
+    940, // FDIV ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 939]  // FDIV ST(0),Mfd
+    939, // FDIV ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_06_modrmmod_01_leaf,
@@ -2001,18 +2288,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1038]  // FSUBR ST(0),ST(i)
+    1038, // FSUBR ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1037]  // FSUBR ST(0),Mfd
+    1037, // FSUBR ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_05_modrmmod_01_leaf,
@@ -2022,18 +2312,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1033]  // FSUB ST(0),ST(i)
+    1033, // FSUB ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1032]  // FSUB ST(0),Mfd
+    1032, // FSUB ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_04_modrmmod_01_leaf,
@@ -2043,18 +2336,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 932]  // FCOMP ST(0),ST(i)
+    932, // FCOMP ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 931]  // FCOMP ST(0),Mfd
+    931, // FCOMP ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_03_modrmmod_01_leaf,
@@ -2064,18 +2360,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 926]  // FCOM ST(0),ST(i)
+    926, // FCOM ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 925]  // FCOM ST(0),Mfd
+    925, // FCOM ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_02_modrmmod_01_leaf,
@@ -2085,18 +2384,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 994]  // FMUL ST(0),ST(i)
+    994, // FMUL ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 993]  // FMUL ST(0),Mfd
+    993, // FMUL ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_01_modrmmod_01_leaf,
@@ -2106,18 +2408,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 910]  // FADD ST(0),ST(i)
+    910, // FADD ST(0),ST(i)
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d8_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 909]  // FADD ST(0),Mfd
+    909, // FADD ST(0),Mfd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_00_modrmmod_01_leaf,
@@ -2127,6 +2432,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_d8_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_d8_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_d8_modrmreg_01_modrmmod,
@@ -2142,78 +2448,109 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_d8_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4133]  // XLATB
+    4162, // XLATB
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2239]  // SALC
+    2224, // SALC
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d5_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d5_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[   1]  // AAD Ib
+    1, // AAD Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d4_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_d5_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_d5_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d4_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[   4]  // AAM Ib
+    4, // AAM Ib
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_d4_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_d4_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2281]  // SAR Ev,CL
+    2266, // SAR Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2238]  // SAL Ev,CL
+    2223, // SAL Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2475]  // SHR Ev,CL
+    2476, // SHR Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2413]  // SHL Ev,CL
+    2414, // SHL Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2075]  // RCR Ev,CL
+    2060, // RCR Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2031]  // RCL Ev,CL
+    2016, // RCL Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2185]  // ROR Ev,CL
+    2170, // ROR Ev,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d3_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2143]  // ROL Ev,CL
+    2128, // ROL Ev,CL
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_d3_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d3_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d3_modrmreg_01_leaf,
@@ -2229,54 +2566,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_d3_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2280]  // SAR Eb,CL
+    2265, // SAR Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2237]  // SAL Eb,CL
+    2222, // SAL Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2474]  // SHR Eb,CL
+    2475, // SHR Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2412]  // SHL Eb,CL
+    2413, // SHL Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2074]  // RCR Eb,CL
+    2059, // RCR Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2030]  // RCL Eb,CL
+    2015, // RCL Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2184]  // ROR Eb,CL
+    2169, // ROR Eb,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d2_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2142]  // ROL Eb,CL
+    2127, // ROL Eb,CL
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_d2_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d2_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d2_modrmreg_01_leaf,
@@ -2292,54 +2638,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_d2_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2279]  // SAR Ev,1
+    2264, // SAR Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2236]  // SAL Ev,1
+    2221, // SAL Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2473]  // SHR Ev,1
+    2474, // SHR Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2411]  // SHL Ev,1
+    2412, // SHL Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2073]  // RCR Ev,1
+    2058, // RCR Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2029]  // RCL Ev,1
+    2014, // RCL Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2183]  // ROR Ev,1
+    2168, // ROR Ev,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d1_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2141]  // ROL Ev,1
+    2126, // ROL Ev,1
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_d1_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d1_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d1_modrmreg_01_leaf,
@@ -2355,54 +2710,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_d1_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2278]  // SAR Eb,1
+    2263, // SAR Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2235]  // SAL Eb,1
+    2220, // SAL Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2472]  // SHR Eb,1
+    2473, // SHR Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2410]  // SHL Eb,1
+    2411, // SHL Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2072]  // RCR Eb,1
+    2057, // RCR Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2028]  // RCL Eb,1
+    2013, // RCL Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2182]  // ROR Eb,1
+    2167, // ROR Eb,1
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_d0_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2140]  // ROL Eb,1
+    2125, // ROL Eb,1
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_d0_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_d0_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_d0_modrmreg_01_leaf,
@@ -2418,24 +2782,28 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_d0_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_cf_dsize_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1165]  // IRETQ
+    1166, // IRETQ
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_cf_dsize_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1164]  // IRETD
+    1165, // IRETD
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_cf_dsize_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1166]  // IRETW
+    1167, // IRETW
+    0,
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_cf_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_cf_dsize_01_leaf,
@@ -2446,57 +2814,75 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_cf_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ce_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ce_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1153]  // INTO
+    1154, // INTO
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_ce_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_ce_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_cd_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1150]  // INT Ib
+    1151, // INT Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_cc_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1152]  // INT3
+    1153, // INT3
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_cb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2095]  // RETF
+    2098, // RETF
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ca_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2094]  // RETF Iw
+    2097, // RETF Iw
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1308]  // LEAVE
+    1307, // LEAVE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 901]  // ENTER Iw,Ib
+    901, // ENTER I1w,I2b
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c7_modrmreg_07_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4120]  // XBEGIN Jz
+    4149, // XBEGIN Jz
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_c7_modrmreg_07_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_c7_modrmreg_07_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -2512,6 +2898,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_c7_modrmreg_07_modrmmod_01_modrmrm =
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c7_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_c7_modrmreg_07_modrmmod_01_modrmrm,
@@ -2521,12 +2908,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c7_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c7_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1386]  // MOV Ev,Iz
+    1385, // MOV Ev,Iz
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_c7_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_c7_modrmreg_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -2542,12 +2931,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_c7_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c6_modrmreg_07_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4117]  // XABORT Ib
+    4146, // XABORT Ib
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_c6_modrmreg_07_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_c6_modrmreg_07_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -2563,6 +2954,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_c6_modrmreg_07_modrmmod_01_modrmrm =
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c6_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_c6_modrmreg_07_modrmmod_01_modrmrm,
@@ -2572,12 +2964,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c6_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c6_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1385]  // MOV Eb,Ib
+    1384, // MOV Eb,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_c6_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_c6_modrmreg_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -2590,32 +2984,54 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_c6_modrmreg =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c5_modrmmod_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c5_modrmmod_00_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1304]  // LDS Gz,Mp
+    1303, // LDS Gz,Mp
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_c5_modrmmod_00_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_c5_modrmmod_00_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c5_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_c5_modrmmod_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_c5_modrmmod_00_no64,
         /* 01 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c4_modrmmod_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c4_modrmmod_00_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1309]  // LES Gz,Mp
+    1308, // LES Gz,Mp
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_c4_modrmmod_00_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_c4_modrmmod_00_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c4_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_c4_modrmmod_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_c4_modrmmod_00_no64,
         /* 01 */ (const void *)ND_NULL,
     }
 };
@@ -2623,66 +3039,77 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_c4_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2097]  // RETN
+    2100, // RETN
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2096]  // RETN Iw
+    2099, // RETN Iw
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2277]  // SAR Ev,Ib
+    2262, // SAR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2234]  // SAL Ev,Ib
+    2219, // SAL Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2471]  // SHR Ev,Ib
+    2472, // SHR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2409]  // SHL Ev,Ib
+    2410, // SHL Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2071]  // RCR Ev,Ib
+    2056, // RCR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2027]  // RCL Ev,Ib
+    2012, // RCL Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2181]  // ROR Ev,Ib
+    2166, // ROR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c1_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2139]  // ROL Ev,Ib
+    2124, // ROL Ev,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_c1_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_c1_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_c1_modrmreg_01_leaf,
@@ -2698,54 +3125,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_c1_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2276]  // SAR Eb,Ib
+    2261, // SAR Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2233]  // SAL Eb,Ib
+    2218, // SAL Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2470]  // SHR Eb,Ib
+    2471, // SHR Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2408]  // SHL Eb,Ib
+    2409, // SHL Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2070]  // RCR Eb,Ib
+    2055, // RCR Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2026]  // RCL Eb,Ib
+    2011, // RCL Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2180]  // ROR Eb,Ib
+    2165, // ROR Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_c0_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2138]  // ROL Eb,Ib
+    2123, // ROL Eb,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_c0_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_c0_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_c0_modrmreg_01_leaf,
@@ -2761,121 +3197,140 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_c0_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_bf_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1384]  // MOV Zv,Iv
+    1383, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_be_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1383]  // MOV Zv,Iv
+    1382, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_bd_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1382]  // MOV Zv,Iv
+    1381, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_bc_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1381]  // MOV Zv,Iv
+    1380, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_bb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1380]  // MOV Zv,Iv
+    1379, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ba_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1379]  // MOV Zv,Iv
+    1378, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1378]  // MOV Zv,Iv
+    1377, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1377]  // MOV Zv,Iv
+    1376, // MOV Zv,Iv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1376]  // MOV Zb,Ib
+    1375, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1375]  // MOV Zb,Ib
+    1374, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b5_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1374]  // MOV Zb,Ib
+    1373, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b4_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1373]  // MOV Zb,Ib
+    1372, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1372]  // MOV Zb,Ib
+    1371, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1371]  // MOV Zb,Ib
+    1370, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1370]  // MOV Zb,Ib
+    1369, // MOV Zb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_b0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1369]  // MOV Zb,Ib
+    1368, // MOV Zb,Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_03_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_03_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2322]  // SCASQ RAX,Yv
+    2325, // SCASQ RAX,Yv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_03_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2321]  // SCASQ RAX,Yv
+    2324, // SCASQ RAX,Yv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_af_dsize_03_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_af_dsize_03_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_af_dsize_03_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_af_dsize_03_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -2883,28 +3338,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_af_dsize_03_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_02_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_02_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2320]  // SCASD EAX,Yv
+    2323, // SCASD EAX,Yv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_02_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2319]  // SCASD EAX,Yv
+    2322, // SCASD EAX,Yv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_af_dsize_02_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_af_dsize_02_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_af_dsize_02_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_af_dsize_02_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -2912,28 +3370,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_af_dsize_02_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2324]  // SCASW AX,Yv
+    2327, // SCASW AX,Yv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_af_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2323]  // SCASW AX,Yv
+    2326, // SCASW AX,Yv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_af_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_af_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_af_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_af_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -2944,6 +3405,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_af_dsize_01_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_af_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_af_dsize_01_auxiliary,
@@ -2954,28 +3416,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_af_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ae_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ae_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2318]  // SCASB AL,Yb
+    2321, // SCASB AL,Yb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ae_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2317]  // SCASB AL,Yb
+    2320, // SCASB AL,Yb
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ae_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ae_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ae_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ae_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -2983,28 +3448,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ae_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_03_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_03_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1326]  // LODSQ RAX,Xv
+    1325, // LODSQ RAX,Xv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_03_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1325]  // LODSQ RAX,Xv
+    1324, // LODSQ RAX,Xv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ad_dsize_03_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ad_dsize_03_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ad_dsize_03_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ad_dsize_03_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3012,28 +3480,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ad_dsize_03_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_02_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_02_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1324]  // LODSD EAX,Xv
+    1323, // LODSD EAX,Xv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_02_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1323]  // LODSD EAX,Xv
+    1322, // LODSD EAX,Xv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ad_dsize_02_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ad_dsize_02_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ad_dsize_02_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ad_dsize_02_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3041,28 +3512,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ad_dsize_02_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1328]  // LODSW AX,Xv
+    1327, // LODSW AX,Xv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ad_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1327]  // LODSW AX,Xv
+    1326, // LODSW AX,Xv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ad_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ad_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ad_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ad_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3073,6 +3547,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ad_dsize_01_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_ad_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_ad_dsize_01_auxiliary,
@@ -3083,28 +3558,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_ad_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ac_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ac_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1322]  // LODSB AL,Xb
+    1321, // LODSB AL,Xb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ac_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1321]  // LODSB AL,Xb
+    1320, // LODSB AL,Xb
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ac_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ac_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ac_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ac_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3112,28 +3590,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ac_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_03_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_03_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2521]  // STOSQ Yv,RAX
+    2540, // STOSQ Yv,RAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_03_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2520]  // STOSQ Yv,RAX
+    2539, // STOSQ Yv,RAX
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ab_dsize_03_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ab_dsize_03_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ab_dsize_03_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ab_dsize_03_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3141,28 +3622,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ab_dsize_03_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_02_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_02_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2519]  // STOSD Yv,EAX
+    2538, // STOSD Yv,EAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_02_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2518]  // STOSD Yv,EAX
+    2537, // STOSD Yv,EAX
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ab_dsize_02_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ab_dsize_02_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ab_dsize_02_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ab_dsize_02_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3170,28 +3654,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ab_dsize_02_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2523]  // STOSW Yv,AX
+    2542, // STOSW Yv,AX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_ab_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2522]  // STOSW Yv,AX
+    2541, // STOSW Yv,AX
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_ab_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_ab_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_ab_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_ab_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3202,6 +3689,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_ab_dsize_01_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_ab_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_ab_dsize_01_auxiliary,
@@ -3212,28 +3700,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_ab_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_aa_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_aa_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2517]  // STOSB Yb,AL
+    2536, // STOSB Yb,AL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_aa_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2516]  // STOSB Yb,AL
+    2535, // STOSB Yb,AL
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_aa_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_aa_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_aa_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_aa_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3244,37 +3735,42 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_aa_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2629]  // TEST rAX,Iz
+    2656, // TEST rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2628]  // TEST AL,Ib
+    2655, // TEST AL,Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_03_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_03_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 661]  // CMPSQ Xv,Yv
+    661, // CMPSQ Xv,Yv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_03_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 660]  // CMPSQ Xv,Yv
+    660, // CMPSQ Xv,Yv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a7_dsize_03_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a7_dsize_03_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a7_dsize_03_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a7_dsize_03_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3282,28 +3778,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a7_dsize_03_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_02_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_02_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 658]  // CMPSD Xv,Yv
+    658, // CMPSD Xv,Yv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_02_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 657]  // CMPSD Xv,Yv
+    657, // CMPSD Xv,Yv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a7_dsize_02_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a7_dsize_02_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a7_dsize_02_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a7_dsize_02_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3311,28 +3810,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a7_dsize_02_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 664]  // CMPSW Xv,Yv
+    664, // CMPSW Xv,Yv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a7_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 663]  // CMPSW Xv,Yv
+    663, // CMPSW Xv,Yv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a7_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a7_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a7_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a7_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3343,6 +3845,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a7_dsize_01_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_a7_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_a7_dsize_01_auxiliary,
@@ -3353,28 +3856,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_a7_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a6_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a6_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 656]  // CMPSB Xb,Yb
+    656, // CMPSB Xb,Yb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a6_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 655]  // CMPSB Xb,Yb
+    655, // CMPSB Xb,Yb
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a6_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a6_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a6_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a6_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3382,28 +3888,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a6_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_03_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_03_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1458]  // MOVSQ Yv,Xv
+    1460, // MOVSQ Yv,Xv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_03_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1457]  // MOVSQ Yv,Xv
+    1459, // MOVSQ Yv,Xv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a5_dsize_03_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a5_dsize_03_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a5_dsize_03_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a5_dsize_03_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3411,28 +3920,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a5_dsize_03_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_02_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_02_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1452]  // MOVSD Yv,Xv
+    1454, // MOVSD Yv,Xv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_02_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1451]  // MOVSD Yv,Xv
+    1453, // MOVSD Yv,Xv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a5_dsize_02_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a5_dsize_02_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a5_dsize_02_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a5_dsize_02_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3440,28 +3952,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a5_dsize_02_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1462]  // MOVSW Yv,Xv
+    1464, // MOVSW Yv,Xv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a5_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1461]  // MOVSW Yv,Xv
+    1463, // MOVSW Yv,Xv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a5_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a5_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a5_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a5_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3472,6 +3987,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a5_dsize_01_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_a5_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_a5_dsize_01_auxiliary,
@@ -3482,28 +3998,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_a5_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a4_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a4_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1450]  // MOVSB Yb,Xb
+    1452, // MOVSB Yb,Xb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a4_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1449]  // MOVSB Yb,Xb
+    1451, // MOVSB Yb,Xb
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a4_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a4_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_a4_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_a4_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -3514,26 +4033,57 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a4_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1368]  // MOV Ov,rAX
+    1367, // MOV Ov,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1367]  // MOV Ob,AL
+    1366, // MOV Ob,AL
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a1_auxiliary_07_w_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a1_auxiliary_07_w_00_no66_00_no67_00_norep_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1180]  // JMPABS Aq
+    1181, // JMPABS Aq
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_a1_auxiliary_07_w_00_no66_00_no67_00_norep = 
+{
+    ND_ILUT_FLT_NOREP,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_a1_auxiliary_07_w_00_no66_00_no67_00_norep_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_a1_auxiliary_07_w_00_no66_00_no67 = 
+{
+    ND_ILUT_FLT_NO67,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_a1_auxiliary_07_w_00_no66_00_no67_00_norep,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_a1_auxiliary_07_w_00_no66 = 
+{
+    ND_ILUT_FLT_NO66,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_a1_auxiliary_07_w_00_no66_00_no67,
+    }
 };
 
 const ND_TABLE_EX_W gLegacyMap_opcode_a1_auxiliary_07_w = 
 {
     ND_ILUT_EX_W,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_a1_auxiliary_07_w_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_a1_auxiliary_07_w_00_no66,
         /* 01 */ (const void *)ND_NULL,
     }
 };
@@ -3541,12 +4091,14 @@ const ND_TABLE_EX_W gLegacyMap_opcode_a1_auxiliary_07_w =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a1_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1366]  // MOV rAX,Ov
+    1365, // MOV rAX,Ov
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_a1_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_a1_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -3564,42 +4116,49 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_a1_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_a0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1365]  // MOV AL,Ob
+    1364, // MOV AL,Ob
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1299]  // LAHF
+    1298, // LAHF
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2196]  // SAHF
+    2199, // SAHF
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9d_dsize_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1841]  // POPFQ Fv
+    1849, // POPFQ Fv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9d_dsize_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1840]  // POPFD Fv
+    1848, // POPFD Fv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9d_dsize_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1842]  // POPFW Fv
+    1850, // POPFW Fv
+    0,
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_9d_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_9d_dsize_01_leaf,
@@ -3613,24 +4172,28 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_9d_dsize =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9c_dsize_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1977]  // PUSHFQ Fv
+    1980, // PUSHFQ Fv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9c_dsize_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1976]  // PUSHFD Fv
+    1979, // PUSHFD Fv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9c_dsize_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1978]  // PUSHFW Fv
+    1981, // PUSHFW Fv
+    0,
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_9c_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_9c_dsize_01_leaf,
@@ -3644,36 +4207,51 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_9c_dsize =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4098]  // WAIT
+    4127, // WAIT
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9a_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_9a_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 242]  // CALLF Ap
+    242, // CALLF Ap
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_9a_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_9a_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_99_dsize_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 676]  // CQO
+    676, // CQO
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_99_dsize_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 421]  // CDQ
+    421, // CDQ
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_99_dsize_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 848]  // CWD
+    848, // CWD
+    0,
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_99_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_99_dsize_01_leaf,
@@ -3687,24 +4265,28 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_99_dsize =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_98_dsize_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 422]  // CDQE
+    422, // CDQE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_98_dsize_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 849]  // CWDE
+    849, // CWDE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_98_dsize_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 244]  // CBW
+    244, // CBW
+    0,
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_98_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_98_dsize_01_leaf,
@@ -3718,72 +4300,83 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_98_dsize =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_97_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4130]  // XCHG Zv,rAX
+    4159, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_96_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4129]  // XCHG Zv,rAX
+    4158, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_95_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4128]  // XCHG Zv,rAX
+    4157, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_94_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4127]  // XCHG Zv,rAX
+    4156, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_93_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4126]  // XCHG Zv,rAX
+    4155, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_92_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4125]  // XCHG Zv,rAX
+    4154, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_91_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4124]  // XCHG Zv,rAX
+    4153, // XCHG Zv,rAX
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_90_auxiliary_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_90_auxiliary_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1683]  // PAUSE
+    4152, // XCHG Zv,rAX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_90_auxiliary_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4123]  // XCHG Zv,rAX
+    1691, // PAUSE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_90_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1503]  // NOP
+    1505, // NOP
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_90_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_90_auxiliary_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_90_auxiliary_01_leaf,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_90_auxiliary_04_leaf,
+        /* 03 */ (const void *)&gLegacyMap_opcode_90_auxiliary_03_leaf,
+        /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -3795,12 +4388,14 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_90_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8f_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1828]  // POP Ev
+    1836, // POP Ev
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_8f_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_8f_modrmreg_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -3813,162 +4408,223 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_8f_modrmreg =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8e_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8e_modrmmod_01_srin02345_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1364]  // MOV Sw,Rv
+    1363, // MOV Sw,Rv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8e_modrmmod_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_8e_modrmmod_01_srin02345 = 
+{
+    ND_ILUT_FLT_SRIN02345,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_8e_modrmmod_01_srin02345_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8e_modrmmod_00_srin02345_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1363]  // MOV Sw,Mw
+    1362, // MOV Sw,Mw
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_8e_modrmmod_00_srin02345 = 
+{
+    ND_ILUT_FLT_SRIN02345,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_8e_modrmmod_00_srin02345_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_8e_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_8e_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_8e_modrmmod_01_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_8e_modrmmod_00_srin02345,
+        /* 01 */ (const void *)&gLegacyMap_opcode_8e_modrmmod_01_srin02345,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8d_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1307]  // LEA Gv,M0
+    1306, // LEA Gv,M0
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_8d_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_8d_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8c_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8c_modrmmod_01_srin012345_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1362]  // MOV Rv,Sw
+    1361, // MOV Rv,Sw
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8c_modrmmod_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_8c_modrmmod_01_srin012345 = 
+{
+    ND_ILUT_FLT_SRIN012345,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_8c_modrmmod_01_srin012345_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8c_modrmmod_00_srin012345_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1361]  // MOV Mw,Sw
+    1360, // MOV Mw,Sw
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_8c_modrmmod_00_srin012345 = 
+{
+    ND_ILUT_FLT_SRIN012345,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_8c_modrmmod_00_srin012345_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_8c_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_8c_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_8c_modrmmod_01_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_8c_modrmmod_00_srin012345,
+        /* 01 */ (const void *)&gLegacyMap_opcode_8c_modrmmod_01_srin012345,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1360]  // MOV Gv,Ev
+    1359, // MOV Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_8a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1359]  // MOV Gb,Eb
+    1358, // MOV Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_89_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1358]  // MOV Ev,Gv
+    1357, // MOV Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_88_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1357]  // MOV Eb,Gb
+    1356, // MOV Eb,Gb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_87_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4122]  // XCHG Ev,Gv
+    4151, // XCHG Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_86_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4121]  // XCHG Eb,Gb
+    4150, // XCHG Eb,Gb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_85_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2627]  // TEST Ev,Gv
+    2654, // TEST Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_84_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2626]  // TEST Eb,Gb
+    2653, // TEST Eb,Gb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 624]  // CMP Ev,Ib
+    624, // CMP Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4187]  // XOR Ev,Ib
+    4194, // XOR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2582]  // SUB Ev,Ib
+    2579, // SUB Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 173]  // AND Ev,Ib
+    151, // AND Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2316]  // SBB Ev,Ib
+    2319, // SBB Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  39]  // ADC Ev,Ib
+    39, // ADC Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1635]  // OR Ev,Ib
+    1621, // OR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_83_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  96]  // ADD Ev,Ib
+    74, // ADD Ev,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_83_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_83_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_83_modrmreg_01_leaf,
@@ -3981,120 +4637,210 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_83_modrmreg =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_07_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 623]  // CMP Eb,Ib
+    623, // CMP Eb,Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_06_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_07_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4186]  // XOR Eb,Ib
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_07_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_06_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2581]  // SUB Eb,Ib
+    4193, // XOR Eb,Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_04_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_06_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 172]  // AND Eb,Ib
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_06_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_05_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2315]  // SBB Eb,Ib
+    2578, // SUB Eb,Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_02_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_05_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  38]  // ADC Eb,Ib
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_05_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_04_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1634]  // OR Eb,Ib
+    150, // AND Eb,Ib
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_04_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_04_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_03_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  95]  // ADD Eb,Ib
+    2318, // SBB Eb,Ib
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_03_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_03_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_02_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    38, // ADC Eb,Ib
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_02_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_02_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_01_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1620, // OR Eb,Ib
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_01_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_01_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_82_modrmreg_00_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    73, // ADD Eb,Ib
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_82_modrmreg_00_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_00_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_82_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_82_modrmreg_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_82_modrmreg_02_leaf,
-        /* 03 */ (const void *)&gLegacyMap_opcode_82_modrmreg_03_leaf,
-        /* 04 */ (const void *)&gLegacyMap_opcode_82_modrmreg_04_leaf,
-        /* 05 */ (const void *)&gLegacyMap_opcode_82_modrmreg_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_82_modrmreg_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_82_modrmreg_07_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_82_modrmreg_00_no64,
+        /* 01 */ (const void *)&gLegacyMap_opcode_82_modrmreg_01_no64,
+        /* 02 */ (const void *)&gLegacyMap_opcode_82_modrmreg_02_no64,
+        /* 03 */ (const void *)&gLegacyMap_opcode_82_modrmreg_03_no64,
+        /* 04 */ (const void *)&gLegacyMap_opcode_82_modrmreg_04_no64,
+        /* 05 */ (const void *)&gLegacyMap_opcode_82_modrmreg_05_no64,
+        /* 06 */ (const void *)&gLegacyMap_opcode_82_modrmreg_06_no64,
+        /* 07 */ (const void *)&gLegacyMap_opcode_82_modrmreg_07_no64,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 622]  // CMP Ev,Iz
+    622, // CMP Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4185]  // XOR Ev,Iz
+    4192, // XOR Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2580]  // SUB Ev,Iz
+    2577, // SUB Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 171]  // AND Ev,Iz
+    149, // AND Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2314]  // SBB Ev,Iz
+    2317, // SBB Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  37]  // ADC Ev,Iz
+    37, // ADC Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1633]  // OR Ev,Iz
+    1619, // OR Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_81_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  94]  // ADD Ev,Iz
+    72, // ADD Ev,Iz
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_81_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_81_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_81_modrmreg_01_leaf,
@@ -4110,54 +4856,63 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_81_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 621]  // CMP Eb,Ib
+    621, // CMP Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4184]  // XOR Eb,Ib
+    4191, // XOR Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2579]  // SUB Eb,Ib
+    2576, // SUB Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 170]  // AND Eb,Ib
+    148, // AND Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2313]  // SBB Eb,Ib
+    2316, // SBB Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  36]  // ADC Eb,Ib
+    36, // ADC Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1632]  // OR Eb,Ib
+    1618, // OR Eb,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_80_modrmreg_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  93]  // ADD Eb,Ib
+    71, // ADD Eb,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_80_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_80_modrmreg_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_80_modrmreg_01_leaf,
@@ -4173,121 +4928,140 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_80_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_7f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1191]  // JNLE Jb
+    1190, // JNLE Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_7e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1175]  // JLE Jb
+    1176, // JLE Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_7d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1189]  // JNL Jb
+    1188, // JNL Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_7c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1173]  // JL Jb
+    1174, // JL Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_7b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1195]  // JNP Jb
+    1194, // JNP Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_7a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1203]  // JP Jb
+    1202, // JP Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_79_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1197]  // JNS Jb
+    1196, // JNS Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_78_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1206]  // JS Jb
+    1205, // JS Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_77_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1185]  // JNBE Jb
+    1184, // JNBE Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_76_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1167]  // JBE Jb
+    1168, // JBE Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_75_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1199]  // JNZ Jb
+    1198, // JNZ Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_74_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1208]  // JZ Jb
+    1207, // JZ Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_73_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1187]  // JNC Jb
+    1186, // JNC Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_72_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1169]  // JC Jb
+    1170, // JC Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_71_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1193]  // JNO Jb
+    1192, // JNO Jb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_70_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1201]  // JO Jb
+    1200, // JO Jb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6f_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6f_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1647]  // OUTSW DX,Xz
+    1655, // OUTSW DX,Xz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6f_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1646]  // OUTSW DX,Xz
+    1654, // OUTSW DX,Xz
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_6f_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6f_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_6f_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_6f_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4295,28 +5069,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_6f_dsize_01_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6f_dsize_00_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6f_dsize_00_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1645]  // OUTSD DX,Xz
+    1653, // OUTSD DX,Xz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6f_dsize_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1644]  // OUTSD DX,Xz
+    1652, // OUTSD DX,Xz
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_6f_dsize_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6f_dsize_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_6f_dsize_00_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_6f_dsize_00_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4327,6 +5104,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_6f_dsize_00_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_6f_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6f_dsize_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_6f_dsize_01_auxiliary,
@@ -4337,28 +5115,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_6f_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6e_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6e_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1643]  // OUTSB DX,Xb
+    1651, // OUTSB DX,Xb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6e_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1642]  // OUTSB DX,Xb
+    1650, // OUTSB DX,Xb
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_6e_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6e_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_6e_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_6e_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4366,28 +5147,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_6e_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6d_dsize_01_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6d_dsize_01_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1149]  // INSW Yz,DX
+    1150, // INSW Yz,DX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6d_dsize_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1148]  // INSW Yz,DX
+    1149, // INSW Yz,DX
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_6d_dsize_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6d_dsize_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_6d_dsize_01_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_6d_dsize_01_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4395,28 +5179,31 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_6d_dsize_01_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6d_dsize_00_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6d_dsize_00_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1143]  // INSD Yz,DX
+    1144, // INSD Yz,DX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6d_dsize_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1142]  // INSD Yz,DX
+    1143, // INSD Yz,DX
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_6d_dsize_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6d_dsize_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_6d_dsize_00_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_6d_dsize_00_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4427,6 +5214,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_6d_dsize_00_auxiliary =
 const ND_TABLE_DSIZE gLegacyMap_opcode_6d_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6d_dsize_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_6d_dsize_01_auxiliary,
@@ -4437,28 +5225,31 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_6d_dsize =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6c_auxiliary_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6c_auxiliary_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1141]  // INSB Yb,DX
+    1142, // INSB Yb,DX
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6c_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1140]  // INSB Yb,DX
+    1141, // INSB Yb,DX
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_6c_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_6c_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_6c_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)&gLegacyMap_opcode_6c_auxiliary_05_leaf,
+        /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4469,49 +5260,74 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_6c_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1108]  // IMUL Gv,Ev,Ib
+    1090, // IMUL Gv,Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_6a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1968]  // PUSH Ib
+    1971, // PUSH Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_69_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1107]  // IMUL Gv,Ev,Iz
+    1089, // IMUL Gv,Ev,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_68_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1967]  // PUSH Iz
+    1970, // PUSH Iz
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_63_auxiliary_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_63_auxiliary_05_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1465]  // MOVSXD Gv,Ez
+    1467, // MOVSXD Gv,Ez
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_63_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_63_auxiliary_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_63_auxiliary_05_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_63_auxiliary_00_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 183]  // ARPL Ew,Gw
+    183, // ARPL Ew,Gw
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_63_auxiliary_00_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_63_auxiliary_00_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_63_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_63_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_63_auxiliary_00_no64,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_63_auxiliary_03_leaf,
+        /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)&gLegacyMap_opcode_63_auxiliary_05_no1632,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -4519,65 +5335,118 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_63_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_62_modrmmod_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_62_modrmmod_00_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 218]  // BOUND Gv,Ma
+    218, // BOUND Gv,Ma
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_62_modrmmod_00_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_62_modrmmod_00_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_62_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_62_modrmmod_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_62_modrmmod_00_no64,
         /* 01 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_61_dsize_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_61_dsize_02_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1834]  // POPAD
+    1842, // POPAD
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_61_dsize_01_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_61_dsize_02_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_61_dsize_02_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_61_dsize_01_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1833]  // POPA
+    1841, // POPA
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_61_dsize_01_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_61_dsize_01_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_61_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
-        /* 01 */ (const void *)&gLegacyMap_opcode_61_dsize_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_61_dsize_02_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_61_dsize_01_no64,
+        /* 02 */ (const void *)&gLegacyMap_opcode_61_dsize_02_no64,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_60_dsize_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_60_dsize_02_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1975]  // PUSHAD
+    1978, // PUSHAD
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_60_dsize_01_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_60_dsize_02_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_60_dsize_02_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_60_dsize_01_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1974]  // PUSHA
+    1977, // PUSHA
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_60_dsize_01_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_60_dsize_01_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_DSIZE gLegacyMap_opcode_60_dsize = 
 {
     ND_ILUT_DSIZE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
-        /* 01 */ (const void *)&gLegacyMap_opcode_60_dsize_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_60_dsize_02_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_60_dsize_01_no64,
+        /* 02 */ (const void *)&gLegacyMap_opcode_60_dsize_02_no64,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
@@ -4587,18 +5456,21 @@ const ND_TABLE_DSIZE gLegacyMap_opcode_60_dsize =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5f_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1850]  // POPP Zv
+    1858, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5f_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1827]  // POP Zv
+    1835, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_5f_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_5f_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4616,18 +5488,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_5f_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5e_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1849]  // POPP Zv
+    1857, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5e_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1826]  // POP Zv
+    1834, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_5e_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_5e_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4645,18 +5520,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_5e_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5d_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1848]  // POPP Zv
+    1856, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5d_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1825]  // POP Zv
+    1833, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_5d_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_5d_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4674,18 +5552,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_5d_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5c_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1847]  // POPP Zv
+    1855, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5c_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1824]  // POP Zv
+    1832, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_5c_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_5c_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4703,18 +5584,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_5c_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5b_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1846]  // POPP Zv
+    1854, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5b_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1823]  // POP Zv
+    1831, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_5b_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_5b_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4732,18 +5616,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_5b_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5a_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1845]  // POPP Zv
+    1853, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_5a_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1822]  // POP Zv
+    1830, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_5a_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_5a_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4761,18 +5648,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_5a_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_59_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1844]  // POPP Zv
+    1852, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_59_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1821]  // POP Zv
+    1829, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_59_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_59_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4790,18 +5680,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_59_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_58_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1843]  // POPP Zv
+    1851, // POPP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_58_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1820]  // POP Zv
+    1828, // POP Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_58_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_58_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4819,18 +5712,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_58_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_57_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1986]  // PUSHP Zv
+    1989, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_57_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1966]  // PUSH Zv
+    1969, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_57_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_57_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4848,18 +5744,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_57_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_56_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1985]  // PUSHP Zv
+    1988, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_56_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1965]  // PUSH Zv
+    1968, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_56_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_56_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4877,18 +5776,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_56_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_55_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1984]  // PUSHP Zv
+    1987, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_55_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1964]  // PUSH Zv
+    1967, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_55_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_55_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4906,18 +5808,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_55_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_54_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1983]  // PUSHP Zv
+    1986, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_54_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1963]  // PUSH Zv
+    1966, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_54_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_54_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4935,18 +5840,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_54_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_53_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1982]  // PUSHP Zv
+    1985, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_53_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1962]  // PUSH Zv
+    1965, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_53_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_53_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4964,18 +5872,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_53_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_52_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1981]  // PUSHP Zv
+    1984, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_52_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1961]  // PUSH Zv
+    1964, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_52_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_52_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -4993,18 +5904,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_52_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_51_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1980]  // PUSHP Zv
+    1983, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_51_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1960]  // PUSH Zv
+    1963, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_51_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_51_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -5022,18 +5936,21 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_51_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_50_auxiliary_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1979]  // PUSHP Zv
+    1982, // PUSHP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_50_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1959]  // PUSH Zv
+    1962, // PUSH Zv
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_50_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_50_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -5048,387 +5965,667 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_50_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4f_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4f_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 871]  // DEC Zv
+    865, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4e_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_4f_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 870]  // DEC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_4f_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4d_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4e_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 869]  // DEC Zv
+    864, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4c_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_4e_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 868]  // DEC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_4e_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4b_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4d_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 867]  // DEC Zv
+    863, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4a_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_4d_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 866]  // DEC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_4d_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_49_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4c_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 865]  // DEC Zv
+    862, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_48_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_4c_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 864]  // DEC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_4c_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_47_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4b_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1135]  // INC Zv
+    861, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_46_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_4b_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1134]  // INC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_4b_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_45_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_4a_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1133]  // INC Zv
+    860, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_44_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_4a_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1132]  // INC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_4a_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_43_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_49_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1131]  // INC Zv
+    859, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_42_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_49_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1130]  // INC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_49_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_41_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_48_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1129]  // INC Zv
+    858, // DEC Zv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_40_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_48_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1128]  // INC Zv
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_48_no64_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_3f_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_47_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[   7]  // AAS
+    1130, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_47_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_47_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_46_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1129, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_46_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_46_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_45_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1128, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_45_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_45_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_44_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1127, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_44_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_44_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_43_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1126, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_43_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_43_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_42_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1125, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_42_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_42_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_41_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1124, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_41_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_41_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_40_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1123, // INC Zv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_40_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_40_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_3f_no64_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    7, // AAS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_3f_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_3f_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_3d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 620]  // CMP rAX,Iz
+    620, // CMP rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_3c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 619]  // CMP AL,Ib
+    619, // CMP AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_3b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 618]  // CMP Gv,Ev
+    618, // CMP Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_3a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 617]  // CMP Gb,Eb
+    617, // CMP Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_39_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 616]  // CMP Ev,Gv
+    616, // CMP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_38_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 615]  // CMP Eb,Gb
+    615, // CMP Eb,Gb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_37_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_37_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[   0]  // AAA
+    0, // AAA
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_37_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_37_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_35_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4183]  // XOR rAX,Iz
+    4190, // XOR rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_34_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4182]  // XOR AL,Ib
+    4189, // XOR AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_33_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4181]  // XOR Gv,Ev
+    4188, // XOR Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_32_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4180]  // XOR Gb,Eb
+    4187, // XOR Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_31_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4179]  // XOR Ev,Gv
+    4186, // XOR Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_30_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4178]  // XOR Eb,Gb
+    4185, // XOR Eb,Gb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_2f_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_2f_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 851]  // DAS
+    851, // DAS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_2f_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_2f_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_2d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2578]  // SUB rAX,Iz
+    2575, // SUB rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_2c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2577]  // SUB AL,Ib
+    2574, // SUB AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_2b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2576]  // SUB Gv,Ev
+    2573, // SUB Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_2a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2575]  // SUB Gb,Eb
+    2572, // SUB Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_29_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2574]  // SUB Ev,Gv
+    2571, // SUB Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_28_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2573]  // SUB Eb,Gb
+    2570, // SUB Eb,Gb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_27_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_27_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 850]  // DAA
+    850, // DAA
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_27_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_27_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_25_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 169]  // AND rAX,Iz
+    147, // AND rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_24_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 168]  // AND AL,Ib
+    146, // AND AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_23_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 167]  // AND Gv,Ev
+    145, // AND Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_22_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 166]  // AND Gb,Eb
+    144, // AND Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_21_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 165]  // AND Ev,Gv
+    143, // AND Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_20_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 164]  // AND Eb,Gb
+    142, // AND Eb,Gb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1f_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1f_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1819]  // POP DS
+    1827, // POP DS
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1e_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_1f_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_1f_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1e_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1958]  // PUSH DS
+    1961, // PUSH DS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_1e_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_1e_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2312]  // SBB rAX,Iz
+    2315, // SBB rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2311]  // SBB AL,Ib
+    2314, // SBB AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2310]  // SBB Gv,Ev
+    2313, // SBB Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_1a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2309]  // SBB Gb,Eb
+    2312, // SBB Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_19_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2308]  // SBB Ev,Gv
+    2311, // SBB Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_18_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2307]  // SBB Eb,Gb
+    2310, // SBB Eb,Gb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_17_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_17_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1818]  // POP SS
+    1826, // POP SS
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_16_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_17_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_17_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_16_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1957]  // PUSH SS
+    1960, // PUSH SS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_16_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_16_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_15_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  35]  // ADC rAX,Iz
+    35, // ADC rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_14_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  34]  // ADC AL,Ib
+    34, // ADC AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_13_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  33]  // ADC Gv,Ev
+    33, // ADC Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_12_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  32]  // ADC Gb,Eb
+    32, // ADC Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_11_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  31]  // ADC Ev,Gv
+    31, // ADC Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_10_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  30]  // ADC Eb,Gb
+    30, // ADC Eb,Gb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ff_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2664]  // UD0 Gd,Ed
+    2693, // UD0 Gd,Ed
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fe_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1664]  // PADDD Vx,Wx
+    1672, // PADDD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fe_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1663]  // PADDD Pq,Qq
+    1671, // PADDD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fe_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_fe_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_fe_prefix_01_leaf,
@@ -5440,18 +6637,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fe_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fd_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1676]  // PADDW Vx,Wx
+    1684, // PADDW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fd_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1675]  // PADDW Pq,Qq
+    1683, // PADDW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fd_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_fd_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_fd_prefix_01_leaf,
@@ -5463,18 +6663,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fd_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fc_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1662]  // PADDB Vx,Wx
+    1670, // PADDB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fc_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1661]  // PADDB Pq,Qq
+    1669, // PADDB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fc_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_fc_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_fc_prefix_01_leaf,
@@ -5486,18 +6689,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fc_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fb_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1927]  // PSUBQ Vx,Wx
+    1930, // PSUBQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fb_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1926]  // PSUBQ Pq,Qq
+    1929, // PSUBQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fb_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_fb_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_fb_prefix_01_leaf,
@@ -5509,18 +6715,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fb_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fa_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1925]  // PSUBD Vx,Wx
+    1928, // PSUBD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_fa_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1924]  // PSUBD Pq,Qq
+    1927, // PSUBD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fa_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_fa_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_fa_prefix_01_leaf,
@@ -5532,18 +6741,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_fa_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f9_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1937]  // PSUBW Vx,Wx
+    1940, // PSUBW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f9_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1936]  // PSUBW Pq,Qq
+    1939, // PSUBW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f9_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f9_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f9_prefix_01_leaf,
@@ -5555,18 +6767,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f9_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f8_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1923]  // PSUBB Vx,Wx
+    1926, // PSUBB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f8_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1922]  // PSUBB Pq,Qq
+    1925, // PSUBB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f8_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f8_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f8_prefix_01_leaf,
@@ -5578,12 +6793,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f8_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f7_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1343]  // MASKMOVDQU Vdq,Udq
+    1342, // MASKMOVDQU Vdq,Udq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_f7_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f7_prefix_01_modrmmod_01_leaf,
@@ -5593,12 +6810,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_f7_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f7_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1344]  // MASKMOVQ Pq,Nq
+    1343, // MASKMOVQ Pq,Nq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_f7_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f7_prefix_00_modrmmod_01_leaf,
@@ -5608,6 +6827,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_f7_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f7_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f7_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f7_prefix_01_modrmmod,
@@ -5619,18 +6839,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f7_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f6_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1874]  // PSADBW Vx,Wx
+    1877, // PSADBW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f6_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1873]  // PSADBW Pq,Qq
+    1876, // PSADBW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f6_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f6_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f6_prefix_01_leaf,
@@ -5642,18 +6865,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f6_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f5_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1773]  // PMADDWD Vx,Wx
+    1781, // PMADDWD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f5_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1772]  // PMADDWD Pq,Qq
+    1780, // PMADDWD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f5_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f5_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f5_prefix_01_leaf,
@@ -5665,18 +6891,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f5_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f4_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1816]  // PMULUDQ Vx,Wx
+    1824, // PMULUDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f4_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1815]  // PMULUDQ Pq,Qq
+    1823, // PMULUDQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f4_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f4_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f4_prefix_01_leaf,
@@ -5688,18 +6917,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f4_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f3_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1895]  // PSLLQ Vx,Wx
+    1898, // PSLLQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f3_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1894]  // PSLLQ Pq,Qq
+    1897, // PSLLQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f3_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f3_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f3_prefix_01_leaf,
@@ -5711,18 +6943,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f3_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f2_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1890]  // PSLLD Vx,Wx
+    1893, // PSLLD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f2_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1889]  // PSLLD Pq,Qq
+    1892, // PSLLD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f2_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f2_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f2_prefix_01_leaf,
@@ -5734,18 +6969,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f2_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f1_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1899]  // PSLLW Vx,Wx
+    1902, // PSLLW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f1_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1898]  // PSLLW Pq,Qq
+    1901, // PSLLW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f1_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f1_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_f1_prefix_01_leaf,
@@ -5757,12 +6995,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f1_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_f0_prefix_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1302]  // LDDQU Vx,Mx
+    1301, // LDDQU Vx,Mx
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_f0_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_f0_prefix_03_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -5772,6 +7012,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_f0_prefix_03_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f0_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -5783,18 +7024,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_f0_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ef_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1989]  // PXOR Vx,Wx
+    1992, // PXOR Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ef_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1988]  // PXOR Pq,Qq
+    1991, // PXOR Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ef_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ef_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ef_prefix_01_leaf,
@@ -5806,18 +7050,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ef_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ee_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1777]  // PMAXSW Vx,Wx
+    1785, // PMAXSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ee_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1776]  // PMAXSW Pq,Qq
+    1784, // PMAXSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ee_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ee_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ee_prefix_01_leaf,
@@ -5829,18 +7076,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ee_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ed_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1670]  // PADDSW Vx,Wx
+    1678, // PADDSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ed_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1669]  // PADDSW Pq,Qq
+    1677, // PADDSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ed_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ed_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ed_prefix_01_leaf,
@@ -5852,18 +7102,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ed_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ec_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1668]  // PADDSB Vx,Wx
+    1676, // PADDSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ec_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1667]  // PADDSB Pq,Qq
+    1675, // PADDSB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ec_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ec_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ec_prefix_01_leaf,
@@ -5875,18 +7128,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ec_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_eb_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1852]  // POR Vx,Wx
+    1860, // POR Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_eb_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1851]  // POR Pq,Qq
+    1859, // POR Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_eb_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_eb_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_eb_prefix_01_leaf,
@@ -5898,18 +7154,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_eb_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ea_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1785]  // PMINSW Vx,Wx
+    1793, // PMINSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ea_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1784]  // PMINSW Pq,Qq
+    1792, // PMINSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ea_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ea_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ea_prefix_01_leaf,
@@ -5921,18 +7180,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ea_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e9_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1931]  // PSUBSW Vx,Wx
+    1934, // PSUBSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e9_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1930]  // PSUBSW Pq,Qq
+    1933, // PSUBSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e9_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e9_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e9_prefix_01_leaf,
@@ -5944,18 +7206,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e9_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e8_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1929]  // PSUBSB Vx,Wx
+    1932, // PSUBSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e8_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1928]  // PSUBSB Pq,Qq
+    1931, // PSUBSB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e8_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e8_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e8_prefix_01_leaf,
@@ -5967,12 +7232,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e8_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e7_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1430]  // MOVNTDQ Mx,Vx
+    1429, // MOVNTDQ Mx,Vx
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_e7_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e7_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -5982,12 +7249,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_e7_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e7_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1435]  // MOVNTQ Mq,Pq
+    1434, // MOVNTQ Mq,Pq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_e7_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e7_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -5997,6 +7266,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_e7_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e7_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e7_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e7_prefix_01_modrmmod,
@@ -6008,24 +7278,28 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e7_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e6_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 828]  // CVTPD2DQ Vx,Wpd
+    828, // CVTPD2DQ Vx,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e6_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 826]  // CVTDQ2PD Vx,Wq
+    826, // CVTDQ2PD Vx,Wq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e6_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 842]  // CVTTPD2DQ Vx,Wpd
+    842, // CVTTPD2DQ Vx,Wpd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e6_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e6_prefix_01_leaf,
@@ -6037,18 +7311,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e6_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e5_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1811]  // PMULHW Vx,Wx
+    1819, // PMULHW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e5_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1810]  // PMULHW Pq,Qq
+    1818, // PMULHW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e5_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e5_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e5_prefix_01_leaf,
@@ -6060,18 +7337,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e5_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e4_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1809]  // PMULHUW Vx,Wx
+    1817, // PMULHUW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e4_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1808]  // PMULHUW Pq,Qq
+    1816, // PMULHUW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e4_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e4_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e4_prefix_01_leaf,
@@ -6083,18 +7363,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e4_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e3_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1688]  // PAVGW Vx,Wx
+    1696, // PAVGW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e3_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1687]  // PAVGW Pq,Qq
+    1695, // PAVGW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e3_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e3_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e3_prefix_01_leaf,
@@ -6106,18 +7389,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e3_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e2_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1904]  // PSRAD Vx,Wx
+    1907, // PSRAD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e2_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1903]  // PSRAD Pq,Qq
+    1906, // PSRAD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e2_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e2_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e2_prefix_01_leaf,
@@ -6129,18 +7415,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e2_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e1_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1908]  // PSRAW Vx,Wx
+    1911, // PSRAW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e1_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1907]  // PSRAW Pq,Qq
+    1910, // PSRAW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e1_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e1_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e1_prefix_01_leaf,
@@ -6152,18 +7441,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e1_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e0_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1685]  // PAVGB Vx,Wx
+    1693, // PAVGB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_e0_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1684]  // PAVGB Pq,Qq
+    1692, // PAVGB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e0_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_e0_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_e0_prefix_01_leaf,
@@ -6175,18 +7467,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_e0_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_df_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1682]  // PANDN Vx,Wx
+    1690, // PANDN Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_df_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1681]  // PANDN Pq,Qq
+    1689, // PANDN Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_df_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_df_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_df_prefix_01_leaf,
@@ -6198,18 +7493,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_df_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_de_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1779]  // PMAXUB Vx,Wx
+    1787, // PMAXUB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_de_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1778]  // PMAXUB Pq,Qq
+    1786, // PMAXUB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_de_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_de_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_de_prefix_01_leaf,
@@ -6221,18 +7519,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_de_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_dd_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1674]  // PADDUSW Vx,Wx
+    1682, // PADDUSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_dd_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1673]  // PADDUSW Pq,Qq
+    1681, // PADDUSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_dd_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_dd_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_dd_prefix_01_leaf,
@@ -6244,18 +7545,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_dd_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_dc_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1672]  // PADDUSB Vx,Wx
+    1680, // PADDUSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_dc_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1671]  // PADDUSB Pq,Qq
+    1679, // PADDUSB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_dc_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_dc_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_dc_prefix_01_leaf,
@@ -6267,18 +7571,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_dc_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_db_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1680]  // PAND Vx,Wx
+    1688, // PAND Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_db_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1679]  // PAND Pq,Qq
+    1687, // PAND Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_db_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_db_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_db_prefix_01_leaf,
@@ -6290,18 +7597,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_db_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_da_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1787]  // PMINUB Vx,Wx
+    1795, // PMINUB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_da_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1786]  // PMINUB Pq,Qq
+    1794, // PMINUB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_da_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_da_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_da_prefix_01_leaf,
@@ -6313,18 +7623,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_da_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d9_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1935]  // PSUBUSW Vx,Wx
+    1938, // PSUBUSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d9_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1934]  // PSUBUSW Pq,Qq
+    1937, // PSUBUSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d9_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d9_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d9_prefix_01_leaf,
@@ -6336,18 +7649,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d9_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d8_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1933]  // PSUBUSB Vx,Wx
+    1936, // PSUBUSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d8_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1932]  // PSUBUSB Pq,Qq
+    1935, // PSUBUSB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d8_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d8_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d8_prefix_01_leaf,
@@ -6359,12 +7675,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d8_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d7_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1791]  // PMOVMSKB Gy,Ux
+    1799, // PMOVMSKB Gy,Ux
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d7_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d7_prefix_01_modrmmod_01_leaf,
@@ -6374,12 +7692,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d7_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d7_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1790]  // PMOVMSKB Gy,Nq
+    1798, // PMOVMSKB Gy,Nq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d7_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d7_prefix_00_modrmmod_01_leaf,
@@ -6389,6 +7709,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d7_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d7_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d7_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d7_prefix_01_modrmmod,
@@ -6400,12 +7721,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d7_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d6_prefix_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1414]  // MOVDQ2Q Pq,Uq
+    1413, // MOVDQ2Q Pq,Uq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d6_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d6_prefix_03_modrmmod_01_leaf,
@@ -6415,12 +7738,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d6_prefix_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d6_prefix_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1446]  // MOVQ2DQ Vdq,Nq
+    1445, // MOVQ2DQ Vdq,Nq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d6_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d6_prefix_02_modrmmod_01_leaf,
@@ -6430,12 +7755,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_d6_prefix_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d6_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1445]  // MOVQ Wq,Vq
+    1444, // MOVQ Wq,Vq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d6_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d6_prefix_01_leaf,
@@ -6447,18 +7774,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d6_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d5_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1814]  // PMULLW Vx,Wx
+    1822, // PMULLW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d5_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1813]  // PMULLW Pq,Qq
+    1821, // PMULLW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d5_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d5_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d5_prefix_01_leaf,
@@ -6470,18 +7800,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d5_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d4_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1666]  // PADDQ Vx,Wx
+    1674, // PADDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d4_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1665]  // PADDQ Pq,Qq
+    1673, // PADDQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d4_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d4_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d4_prefix_01_leaf,
@@ -6493,18 +7826,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d4_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d3_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1917]  // PSRLQ Vx,Wx
+    1920, // PSRLQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d3_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1916]  // PSRLQ Pq,Qq
+    1919, // PSRLQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d3_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d3_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d3_prefix_01_leaf,
@@ -6516,18 +7852,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d3_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d2_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1912]  // PSRLD Vx,Wx
+    1915, // PSRLD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d2_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1911]  // PSRLD Pq,Qq
+    1914, // PSRLD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d2_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d2_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d2_prefix_01_leaf,
@@ -6539,18 +7878,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d2_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d1_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1921]  // PSRLW Vx,Wx
+    1924, // PSRLW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d1_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1920]  // PSRLW Pq,Qq
+    1923, // PSRLW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d1_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_d1_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d1_prefix_01_leaf,
@@ -6562,18 +7904,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d1_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d0_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 102]  // ADDSUBPS Vps,Wps
+    102, // ADDSUBPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_d0_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 101]  // ADDSUBPD Vpd,Wpd
+    101, // ADDSUBPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d0_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_d0_prefix_01_leaf,
@@ -6585,60 +7930,70 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_d0_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_cf_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 228]  // BSWAP Zv
+    228, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ce_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 227]  // BSWAP Zv
+    227, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_cd_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 226]  // BSWAP Zv
+    226, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_cc_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 225]  // BSWAP Zv
+    225, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_cb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 224]  // BSWAP Zv
+    224, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ca_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 223]  // BSWAP Zv
+    223, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 222]  // BSWAP Zv
+    222, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 221]  // BSWAP Zv
+    221, // BSWAP Zv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2082]  // RDPID Ryf
+    2085, // RDPID Ryf
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_02_modrmmod_01_leaf,
@@ -6648,12 +8003,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_02_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2089]  // RDSEED Rv
+    2092, // RDSEED Rv
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_01_modrmmod_01_leaf,
@@ -6663,18 +8020,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_01_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2088]  // RDSEED Rv
+    2091, // RDSEED Rv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3387]  // VMPTRST Mq
+    3416, // VMPTRST Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_modrmmod_01_leaf,
@@ -6684,6 +8044,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_mo
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix_01_modrmmod,
@@ -6692,42 +8053,57 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_07_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_01_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2328]  // SENDUIPI Rq
+    2331, // SENDUIPI Rq
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_01_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_01_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3405]  // VMXON Mq
+    3434, // VMXON Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_01_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_02_modrmmod_01_no1632,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2087]  // RDRAND Rv
+    2090, // RDRAND Rv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3243]  // VMCLEAR Mq
+    3272, // VMCLEAR Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_modrmmod_01_leaf,
@@ -6737,18 +8113,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2086]  // RDRAND Rv
+    2089, // RDRAND Rv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3386]  // VMPTRLD Mq
+    3415, // VMPTRLD Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_modrmmod_01_leaf,
@@ -6758,6 +8137,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_mo
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix_01_modrmmod,
@@ -6766,27 +8146,48 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_06_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_04_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4202]  // XSAVES64 M?
+    4231, // XSAVES64 M?
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_04_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_04_norex2_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_00_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4201]  // XSAVES M?
+    4230, // XSAVES M?
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_00_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_00_norex2_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_00_norex2,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary_04_norex2,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -6798,6 +8199,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -6807,6 +8209,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_mo
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -6815,27 +8218,48 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_05_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_04_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4198]  // XSAVEC64 M?
+    4227, // XSAVEC64 M?
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_04_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_04_norex2_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_00_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4197]  // XSAVEC M?
+    4226, // XSAVEC M?
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_00_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_00_norex2_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_00_norex2,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary_04_norex2,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -6847,6 +8271,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -6856,6 +8281,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_mo
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -6864,27 +8290,48 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_04_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_04_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4194]  // XRSTORS64 M?
+    4223, // XRSTORS64 M?
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_04_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_04_norex2_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_00_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4193]  // XRSTORS M?
+    4222, // XRSTORS M?
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_00_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_00_norex2_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_00_norex2,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary_04_norex2,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -6896,6 +8343,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -6905,6 +8353,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_mo
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -6913,27 +8362,30 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c7_modrmreg_03_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 669]  // CMPXCHG16B Mdq
+    669, // CMPXCHG16B Mdq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 670]  // CMPXCHG8B Mq
+    670, // CMPXCHG8B Mq
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -6945,6 +8397,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -6954,6 +8407,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_c7_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c7_modrmreg_01_modrmmod,
@@ -6969,18 +8423,21 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_c7_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c6_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2496]  // SHUFPD Vpd,Wpd,Ib
+    2515, // SHUFPD Vpd,Wpd,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c6_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2497]  // SHUFPS Vps,Wps,Ib
+    2516, // SHUFPS Vps,Wps,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c6_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c6_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c6_prefix_01_leaf,
@@ -6992,12 +8449,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c6_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c5_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1723]  // PEXTRW Gy,Udq,Ib
+    1731, // PEXTRW Gy,Udq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c5_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c5_prefix_01_modrmmod_01_leaf,
@@ -7007,12 +8466,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c5_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c5_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1722]  // PEXTRW Gy,Nq,Ib
+    1730, // PEXTRW Gy,Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c5_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c5_prefix_00_modrmmod_01_leaf,
@@ -7022,6 +8483,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c5_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c5_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c5_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c5_prefix_01_modrmmod,
@@ -7033,18 +8495,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c5_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1768]  // PINSRW Vdq,Rd,Ib
+    1776, // PINSRW Vdq,Rd,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1769]  // PINSRW Vdq,Mw,Ib
+    1777, // PINSRW Vdq,Mw,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod_01_leaf,
@@ -7054,18 +8519,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1766]  // PINSRW Pq,Rd,Ib
+    1774, // PINSRW Pq,Rd,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1767]  // PINSRW Pq,Mw,Ib
+    1775, // PINSRW Pq,Mw,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod_01_leaf,
@@ -7075,6 +8543,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c4_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c4_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c4_prefix_01_modrmmod,
@@ -7086,12 +8555,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c4_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c3_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1432]  // MOVNTI My,Gy
+    1431, // MOVNTI My,Gy
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c3_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c3_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -7101,6 +8572,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_c3_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c3_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c3_prefix_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -7112,30 +8584,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c3_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c2_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 659]  // CMPSD Vsd,Wsd,Ib
+    659, // CMPSD Vsd,Wsd,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c2_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 662]  // CMPSS Vss,Wss,Ib
+    662, // CMPSS Vss,Wss,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c2_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 651]  // CMPPD Vpd,Wpd,Ib
+    651, // CMPPD Vpd,Wpd,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c2_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 652]  // CMPPS Vps,Wps,Ib
+    652, // CMPPS Vps,Wps,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c2_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_c2_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_c2_prefix_01_leaf,
@@ -7147,48 +8624,55 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_c2_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4119]  // XADD Ev,Gv
+    4148, // XADD Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_c0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4118]  // XADD Eb,Gb
+    4147, // XADD Eb,Gb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bf_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1464]  // MOVSX Gv,Ew
+    1466, // MOVSX Gv,Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_be_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1463]  // MOVSX Gv,Eb
+    1465, // MOVSX Gv,Eb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bd_auxiliary_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bd_auxiliary_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1342]  // LZCNT Gv,Ev
+    1339, // LZCNT Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bd_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 220]  // BSR Gv,Ev
+    220, // BSR Gv,Ev
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_bd_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_bd_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_bd_auxiliary_01_leaf,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_bd_auxiliary_04_leaf,
+        /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7197,27 +8681,30 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_bd_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bc_auxiliary_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bc_auxiliary_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2660]  // TZCNT Gv,Ev
+    2687, // TZCNT Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bc_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 219]  // BSF Gv,Ev
+    219, // BSF Gv,Ev
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_bc_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_bc_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_bc_auxiliary_01_leaf,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_bc_auxiliary_04_leaf,
+        /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7229,36 +8716,42 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_bc_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_bb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 232]  // BTC Ev,Gv
+    232, // BTC Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ba_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 231]  // BTC Ev,Ib
+    231, // BTC Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ba_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 234]  // BTR Ev,Ib
+    234, // BTR Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ba_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 236]  // BTS Ev,Ib
+    236, // BTS Ev,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ba_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 230]  // BT Ev,Ib
+    230, // BT Ev,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ba_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -7274,30 +8767,27 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ba_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2665]  // UD1 Gd,Ed
+    2694, // UD1 Gd,Ed
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b8_auxiliary_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b8_auxiliary_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1839]  // POPCNT Gv,Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b8_auxiliary_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1182]  // JMPE Jz
+    1845, // POPCNT Gv,Ev
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_b8_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_b8_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_b8_auxiliary_01_leaf,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_b8_auxiliary_04_leaf,
+        /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7309,24 +8799,28 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_b8_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1471]  // MOVZX Gv,Ew
+    1473, // MOVZX Gv,Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1470]  // MOVZX Gv,Eb
+    1472, // MOVZX Gv,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b5_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1313]  // LGS Gv,Mp
+    1312, // LGS Gv,Mp
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_b5_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_b5_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -7336,12 +8830,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_b5_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b4_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1311]  // LFS Gv,Mp
+    1310, // LFS Gv,Mp
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_b4_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_b4_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -7351,18 +8847,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_b4_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 233]  // BTR Ev,Gv
+    233, // BTR Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b2_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1334]  // LSS Gv,Mp
+    1333, // LSS Gv,Mp
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_b2_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_b2_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -7372,30 +8871,35 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_b2_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 668]  // CMPXCHG Ev,Gv
+    668, // CMPXCHG Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_b0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 667]  // CMPXCHG Eb,Gb
+    667, // CMPXCHG Eb,Gb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_af_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1111]  // IMUL Gv,Ev
+    1093, // IMUL Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_03_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2669]  // UMWAIT Ry
+    2698, // UMWAIT Ry
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_03_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_03_modrmreg_06_modrmmod_01_leaf,
@@ -7405,6 +8909,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_03_modrmreg_06_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_03_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -7420,45 +8925,51 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_03_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2668]  // UMONITOR mMb
+    2697, // UMONITOR mMb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 561]  // CLRSSBSY Mq
+    561, // CLRSSBSY Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_06_modrmmod_01_leaf,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1139]  // INCSSPQ Rq
+    1140, // INCSSPQ Rq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1138]  // INCSSPD Rd
+    1139, // INCSSPD Rd
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7470,34 +8981,56 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod_01_auxiliary,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_04_no66_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1940]  // PTWRITE Ey
+    1943, // PTWRITE Ey
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary_03_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_04_no66 = 
+{
+    ND_ILUT_FLT_NO66,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_04_no66_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary_05_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4102]  // WRGSBASE Ry
+    4131, // WRGSBASE Ry
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary_05_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary_03_leaf,
+        /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary_05_no1632,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -7508,28 +9041,40 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod_01_auxiliary,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary_05_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4101]  // WRFSBASE Ry
+    4130, // WRFSBASE Ry
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary_05_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary_03_leaf,
+        /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary_05_no1632,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -7540,28 +9085,40 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod_01_auxiliary,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary_05_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2077]  // RDGSBASE Ry
+    2080, // RDGSBASE Ry
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary_05_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary_03_leaf,
+        /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary_05_no1632,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -7572,28 +9129,40 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod_01_auxiliary,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary_05_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2076]  // RDFSBASE Ry
+    2079, // RDFSBASE Ry
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary_05_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary_03_leaf,
+        /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary_05_no1632,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
@@ -7604,6 +9173,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod_01_auxiliary,
@@ -7613,12 +9183,13 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_01_modrmmod,
         /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_02_modrmmod,
         /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_03_modrmmod,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_04_leaf,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_04_no66,
         /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_05_modrmmod,
         /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg_06_modrmmod,
         /* 07 */ (const void *)ND_NULL,
@@ -7628,12 +9199,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_02_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 558]  // CLFLUSHOPT Mb
+    558, // CLFLUSHOPT Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -7643,18 +9216,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_07_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2649]  // TPAUSE Ry
+    2678, // TPAUSE Ry
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 564]  // CLWB Mb
+    564, // CLWB Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_06_modrmmod_01_leaf,
@@ -7664,6 +9240,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg_06_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -7679,18 +9256,21 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2363]  // SFENCE
+    2382, // SFENCE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 557]  // CLFLUSH Mb
+    557, // CLFLUSH Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_07_modrmmod_01_leaf,
@@ -7700,30 +9280,52 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_07_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1350]  // MFENCE
+    1349, // MFENCE
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_04_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4200]  // XSAVEOPT64 M?
+    4229, // XSAVEOPT64 M?
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_04_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_04_norex2_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_00_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4199]  // XSAVEOPT M?
+    4228, // XSAVEOPT M?
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_00_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_00_norex2_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_00_norex2,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary_04_norex2,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7735,6 +9337,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_modrmmod_01_leaf,
@@ -7744,30 +9347,52 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1310]  // LFENCE
+    1309, // LFENCE
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_04_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4192]  // XRSTOR64 M?
+    4221, // XRSTOR64 M?
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_04_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_04_norex2_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_00_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4191]  // XRSTOR M?
+    4220, // XRSTOR M?
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_00_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_00_norex2_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_00_norex2,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary_04_norex2,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7779,33 +9404,55 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_05_modrmmod_01_leaf,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_04_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4196]  // XSAVE64 M?
+    4225, // XSAVE64 M?
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_04_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_04_norex2_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_00_norex2_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4195]  // XSAVE M?
+    4224, // XSAVE M?
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_00_norex2 = 
+{
+    ND_ILUT_FLT_NOREX2,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_00_norex2_00_leaf,
+    }
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_00_norex2,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary_04_norex2,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7817,6 +9464,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -7826,12 +9474,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_04_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2515]  // STMXCSR Md
+    2534, // STMXCSR Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -7841,39 +9491,44 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_03_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1303]  // LDMXCSR Md
+    1302, // LDMXCSR Md
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1053]  // FXRSTOR64 Mrx
+    1053, // FXRSTOR64 Mrx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1052]  // FXRSTOR Mrx
+    1052, // FXRSTOR Mrx
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7885,33 +9540,37 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1055]  // FXSAVE64 Mrx
+    1055, // FXSAVE64 Mrx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1054]  // FXSAVE Mrx
+    1054, // FXSAVE Mrx
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -7923,6 +9582,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_mo
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -7932,6 +9592,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg_01_modrmmod,
@@ -7947,6 +9608,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ae_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_00_modrmreg,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_ae_prefix_01_modrmreg,
@@ -7958,288 +9620,336 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_ae_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ad_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2493]  // SHRD Ev,Gv,CL
+    2486, // SHRD Ev,Gv,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ac_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2492]  // SHRD Ev,Gv,Ib
+    2485, // SHRD Ev,Gv,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_ab_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 235]  // BTS Ev,Gv
+    235, // BTS Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_aa_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2192]  // RSM
+    2195, // RSM
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a9_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1830]  // POP GS
+    1838, // POP GS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a8_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1971]  // PUSH GS
+    1974, // PUSH GS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a5_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2431]  // SHLD Ev,Gv,CL
+    2424, // SHLD Ev,Gv,CL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a4_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2430]  // SHLD Ev,Gv,Ib
+    2423, // SHLD Ev,Gv,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a3_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 229]  // BT Ev,Gv
+    229, // BT Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a2_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 675]  // CPUID
+    675, // CPUID
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a1_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1829]  // POP FS
+    1837, // POP FS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_a0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1970]  // PUSH FS
+    1973, // PUSH FS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_9f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2345]  // SETNLE Eb
+    2348, // SETNLE Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_9e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2337]  // SETLE Eb
+    2340, // SETLE Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_9d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2343]  // SETNL Eb
+    2346, // SETNL Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_9c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2335]  // SETL Eb
+    2338, // SETL Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_9b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2349]  // SETNP Eb
+    2352, // SETNP Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_9a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2357]  // SETP Eb
+    2360, // SETP Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_99_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2351]  // SETNS Eb
+    2354, // SETNS Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_98_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2359]  // SETS Eb
+    2362, // SETS Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_97_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2339]  // SETNBE Eb
+    2342, // SETNBE Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_96_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2331]  // SETBE Eb
+    2334, // SETBE Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_95_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2353]  // SETNZ Eb
+    2356, // SETNZ Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_94_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2362]  // SETZ Eb
+    2365, // SETZ Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_93_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2341]  // SETNC Eb
+    2344, // SETNC Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_92_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2333]  // SETC Eb
+    2336, // SETC Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_91_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2347]  // SETNO Eb
+    2350, // SETNO Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_90_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2355]  // SETO Eb
+    2358, // SETO Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_8f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1192]  // JNLE Jz
+    1191, // JNLE Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_8e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1176]  // JLE Jz
+    1177, // JLE Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_8d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1190]  // JNL Jz
+    1189, // JNL Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_8c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1174]  // JL Jz
+    1175, // JL Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_8b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1196]  // JNP Jz
+    1195, // JNP Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_8a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1204]  // JP Jz
+    1203, // JP Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_89_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1198]  // JNS Jz
+    1197, // JNS Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_88_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1207]  // JS Jz
+    1206, // JS Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_87_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1186]  // JNBE Jz
+    1185, // JNBE Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_86_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1168]  // JBE Jz
+    1169, // JBE Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_85_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1200]  // JNZ Jz
+    1199, // JNZ Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_84_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1209]  // JZ Jz
+    1208, // JZ Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_83_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1188]  // JNC Jz
+    1187, // JNC Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_82_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1170]  // JC Jz
+    1171, // JC Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_81_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1194]  // JNO Jz
+    1193, // JNO Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_80_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1202]  // JO Jz
+    1201, // JO Jz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7f_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1418]  // MOVDQU Wx,Vx
+    1417, // MOVDQU Wx,Vx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7f_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1416]  // MOVDQA Wx,Vx
+    1415, // MOVDQA Wx,Vx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7f_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1444]  // MOVQ Qq,Pq
+    1443, // MOVQ Qq,Pq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7f_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_7f_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_7f_prefix_01_leaf,
@@ -8251,30 +9961,34 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7f_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1443]  // MOVQ Vdq,Wq
+    1442, // MOVQ Vdq,Wq
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1442]  // MOVQ Ey,Vdq
+    1441, // MOVQ Ey,Vdq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1408]  // MOVD Ey,Vdq
+    1407, // MOVD Ey,Vdq
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -8283,27 +9997,30 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1441]  // MOVQ Ey,Pq
+    1440, // MOVQ Ey,Pq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1407]  // MOVD Ey,Pd
+    1406, // MOVD Ey,Pd
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -8315,6 +10032,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_7e_prefix_01_auxiliary,
@@ -8326,18 +10044,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7d_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1068]  // HSUBPS Vps,Wps
+    1068, // HSUBPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1067]  // HSUBPD Vpd,Wpd
+    1067, // HSUBPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_7d_prefix_01_leaf,
@@ -8349,18 +10070,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7c_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1064]  // HADDPS Vps,Wps
+    1064, // HADDPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_7c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1063]  // HADDPD Vpd,Wpd
+    1063, // HADDPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_7c_prefix_01_leaf,
@@ -8372,12 +10096,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_7c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_79_prefix_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1147]  // INSERTQ Vdq,Udq
+    1148, // INSERTQ Vdq,Udq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_79_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_79_prefix_03_modrmmod_01_leaf,
@@ -8387,12 +10113,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_79_prefix_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_79_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 906]  // EXTRQ Vdq,Uq
+    906, // EXTRQ Vdq,Uq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_79_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_79_prefix_01_modrmmod_01_leaf,
@@ -8402,12 +10130,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_79_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_79_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3403]  // VMWRITE Gy,Ey
+    3432, // VMWRITE Gy,Ey
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_79_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_79_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_79_prefix_01_modrmmod,
@@ -8416,23 +10146,46 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_79_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_78_prefix_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_78_prefix_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1146]  // INSERTQ Vdq,Udq,Ib,Ib
+    1147, // INSERTQ Vdq,Udq,I1b,I2b
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg_00_leaf = 
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_78_prefix_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_03_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 905]  // EXTRQ Uq,Ib,Ib
+    905, // EXTRQ Uq,I1b,I2b
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg_00_modrmmod_01_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
@@ -8446,29 +10199,33 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_78_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3388]  // VMREAD Ey,Gy
+    3417, // VMREAD Ey,Gy
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_78_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_01_modrmreg,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_03_leaf,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_78_prefix_03_modrmmod,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_77_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 889]  // EMMS
+    889, // EMMS
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_77_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_77_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -8480,18 +10237,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_77_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_76_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1696]  // PCMPEQD Vx,Wx
+    1704, // PCMPEQD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_76_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1695]  // PCMPEQD Pq,Qq
+    1703, // PCMPEQD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_76_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_76_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_76_prefix_01_leaf,
@@ -8503,18 +10263,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_76_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_75_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1699]  // PCMPEQW Vx,Wx
+    1707, // PCMPEQW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_75_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1698]  // PCMPEQW Pq,Qq
+    1706, // PCMPEQW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_75_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_75_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_75_prefix_01_leaf,
@@ -8526,18 +10289,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_75_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_74_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1694]  // PCMPEQB Vx,Wx
+    1702, // PCMPEQB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_74_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1693]  // PCMPEQB Pq,Qq
+    1701, // PCMPEQB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_74_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_74_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_74_prefix_01_leaf,
@@ -8549,12 +10315,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_74_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1891]  // PSLLDQ Ux,Ib
+    1894, // PSLLDQ Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_07_modrmmod_01_leaf,
@@ -8564,12 +10332,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_07_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1893]  // PSLLQ Ux,Ib
+    1896, // PSLLQ Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_06_modrmmod_01_leaf,
@@ -8579,12 +10349,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1913]  // PSRLDQ Ux,Ib
+    1916, // PSRLDQ Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_03_modrmmod_01_leaf,
@@ -8594,12 +10366,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_03_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1915]  // PSRLQ Ux,Ib
+    1918, // PSRLQ Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_02_modrmmod_01_leaf,
@@ -8609,6 +10383,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg_02_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -8624,12 +10399,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1892]  // PSLLQ Nq,Ib
+    1895, // PSLLQ Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_06_modrmmod_01_leaf,
@@ -8639,12 +10416,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1914]  // PSRLQ Nq,Ib
+    1917, // PSRLQ Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_02_modrmmod_01_leaf,
@@ -8654,6 +10433,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg_02_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -8669,6 +10449,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_73_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_00_modrmreg,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_73_prefix_01_modrmreg,
@@ -8680,12 +10461,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_73_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1888]  // PSLLD Ux,Ib
+    1891, // PSLLD Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_06_modrmmod_01_leaf,
@@ -8695,12 +10478,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1902]  // PSRAD Ux,Ib
+    1905, // PSRAD Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_04_modrmmod_01_leaf,
@@ -8710,12 +10495,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_04_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1910]  // PSRLD Ux,Ib
+    1913, // PSRLD Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_02_modrmmod_01_leaf,
@@ -8725,6 +10512,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg_02_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -8740,12 +10528,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1887]  // PSLLD Nq,Ib
+    1890, // PSLLD Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_06_modrmmod_01_leaf,
@@ -8755,12 +10545,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1901]  // PSRAD Nq,Ib
+    1904, // PSRAD Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_04_modrmmod_01_leaf,
@@ -8770,12 +10562,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_04_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1909]  // PSRLD Nq,Ib
+    1912, // PSRLD Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_02_modrmmod_01_leaf,
@@ -8785,6 +10579,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg_02_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -8800,6 +10595,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_72_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_00_modrmreg,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_72_prefix_01_modrmreg,
@@ -8811,12 +10607,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_72_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1897]  // PSLLW Ux,Ib
+    1900, // PSLLW Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_06_modrmmod_01_leaf,
@@ -8826,12 +10624,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1906]  // PSRAW Ux,Ib
+    1909, // PSRAW Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_04_modrmmod_01_leaf,
@@ -8841,12 +10641,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_04_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1919]  // PSRLW Ux,Ib
+    1922, // PSRLW Ux,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_02_modrmmod_01_leaf,
@@ -8856,6 +10658,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg_02_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -8871,12 +10674,14 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1896]  // PSLLW Nq,Ib
+    1899, // PSLLW Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_06_modrmmod_01_leaf,
@@ -8886,12 +10691,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_06_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1905]  // PSRAW Nq,Ib
+    1908, // PSRAW Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_04_modrmmod_01_leaf,
@@ -8901,12 +10708,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_04_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1918]  // PSRLW Nq,Ib
+    1921, // PSRLW Nq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_02_modrmmod_01_leaf,
@@ -8916,6 +10725,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg_02_mo
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -8931,6 +10741,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_71_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_00_modrmreg,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_71_prefix_01_modrmreg,
@@ -8942,30 +10753,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_71_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_70_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1879]  // PSHUFLW Vx,Wx,Ib
+    1882, // PSHUFLW Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_70_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1878]  // PSHUFHW Vx,Wx,Ib
+    1881, // PSHUFHW Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_70_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1877]  // PSHUFD Vx,Wx,Ib
+    1880, // PSHUFD Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_70_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1880]  // PSHUFW Pq,Qq,Ib
+    1883, // PSHUFW Pq,Qq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_70_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_70_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_70_prefix_01_leaf,
@@ -8977,24 +10793,28 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_70_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6f_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1417]  // MOVDQU Vx,Wx
+    1416, // MOVDQU Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6f_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1415]  // MOVDQA Vx,Wx
+    1414, // MOVDQA Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6f_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1440]  // MOVQ Pq,Qq
+    1439, // MOVQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6f_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_6f_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_6f_prefix_01_leaf,
@@ -9003,27 +10823,30 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6f_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1439]  // MOVQ Vdq,Ey
+    1438, // MOVQ Vdq,Ey
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1406]  // MOVD Vdq,Ey
+    1405, // MOVD Vdq,Ey
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -9032,27 +10855,30 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1438]  // MOVQ Pq,Ey
+    1437, // MOVQ Pq,Ey
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1405]  // MOVD Pq,Ey
+    1404, // MOVD Pq,Ey
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -9064,6 +10890,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_6e_prefix_01_auxiliary,
@@ -9075,12 +10902,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1945]  // PUNPCKHQDQ Vx,Wx
+    1948, // PUNPCKHQDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_6d_prefix_01_leaf,
@@ -9092,12 +10921,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1952]  // PUNPCKLQDQ Vx,Wx
+    1955, // PUNPCKLQDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_6c_prefix_01_leaf,
@@ -9109,18 +10940,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6b_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1655]  // PACKSSDW Vx,Wx
+    1663, // PACKSSDW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6b_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1654]  // PACKSSDW Pq,Qq
+    1662, // PACKSSDW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_6b_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_6b_prefix_01_leaf,
@@ -9132,18 +10966,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6a_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1944]  // PUNPCKHDQ Vx,Wx
+    1947, // PUNPCKHDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_6a_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1943]  // PUNPCKHDQ Pq,Qq
+    1946, // PUNPCKHDQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_6a_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_6a_prefix_01_leaf,
@@ -9155,18 +10992,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_6a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_69_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1947]  // PUNPCKHWD Vx,Wx
+    1950, // PUNPCKHWD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_69_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1946]  // PUNPCKHWD Pq,Qq
+    1949, // PUNPCKHWD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_69_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_69_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_69_prefix_01_leaf,
@@ -9178,18 +11018,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_69_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_68_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1942]  // PUNPCKHBW Vx,Wx
+    1945, // PUNPCKHBW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_68_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1941]  // PUNPCKHBW Pq,Qq
+    1944, // PUNPCKHBW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_68_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_68_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_68_prefix_01_leaf,
@@ -9201,18 +11044,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_68_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_67_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1660]  // PACKUSWB Vx,Wx
+    1668, // PACKUSWB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_67_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1659]  // PACKUSWB Pq,Qq
+    1667, // PACKUSWB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_67_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_67_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_67_prefix_01_leaf,
@@ -9224,18 +11070,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_67_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_66_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1705]  // PCMPGTD Vx,Wx
+    1713, // PCMPGTD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_66_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1704]  // PCMPGTD Pq,Qq
+    1712, // PCMPGTD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_66_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_66_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_66_prefix_01_leaf,
@@ -9247,18 +11096,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_66_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_65_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1708]  // PCMPGTW Vx,Wx
+    1716, // PCMPGTW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_65_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1707]  // PCMPGTW Pq,Qq
+    1715, // PCMPGTW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_65_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_65_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_65_prefix_01_leaf,
@@ -9270,18 +11122,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_65_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_64_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1703]  // PCMPGTB Vx,Wx
+    1711, // PCMPGTB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_64_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1702]  // PCMPGTB Pq,Qq
+    1710, // PCMPGTB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_64_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_64_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_64_prefix_01_leaf,
@@ -9293,18 +11148,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_64_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_63_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1657]  // PACKSSWB Vx,Wx
+    1665, // PACKSSWB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_63_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1656]  // PACKSSWB Pq,Qq
+    1664, // PACKSSWB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_63_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_63_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_63_prefix_01_leaf,
@@ -9316,18 +11174,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_63_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_62_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1951]  // PUNPCKLDQ Vx,Wx
+    1954, // PUNPCKLDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_62_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1950]  // PUNPCKLDQ Pq,Qd
+    1953, // PUNPCKLDQ Pq,Qd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_62_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_62_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_62_prefix_01_leaf,
@@ -9339,18 +11200,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_62_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_61_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1954]  // PUNPCKLWD Vx,Wx
+    1957, // PUNPCKLWD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_61_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1953]  // PUNPCKLWD Pq,Qd
+    1956, // PUNPCKLWD Pq,Qd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_61_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_61_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_61_prefix_01_leaf,
@@ -9362,18 +11226,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_61_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_60_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1949]  // PUNPCKLBW Vx,Wx
+    1952, // PUNPCKLBW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_60_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1948]  // PUNPCKLBW Pq,Qd
+    1951, // PUNPCKLBW Pq,Qd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_60_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_60_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_60_prefix_01_leaf,
@@ -9385,30 +11252,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_60_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5f_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1347]  // MAXSD Vsd,Wsd
+    1346, // MAXSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5f_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1348]  // MAXSS Vss,Wss
+    1347, // MAXSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5f_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1345]  // MAXPD Vpd,Wpd
+    1344, // MAXPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5f_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1346]  // MAXPS Vps,Wps
+    1345, // MAXPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5f_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_5f_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_5f_prefix_01_leaf,
@@ -9420,30 +11292,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5f_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5e_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 885]  // DIVSD Vsd,Wsd
+    885, // DIVSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5e_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 886]  // DIVSS Vss,Wss
+    886, // DIVSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5e_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 883]  // DIVPD Vpd,Wpd
+    883, // DIVPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5e_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 884]  // DIVPS Vps,Wps
+    884, // DIVPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_5e_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_5e_prefix_01_leaf,
@@ -9455,30 +11332,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5d_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1353]  // MINSD Vsd,Wsd
+    1352, // MINSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5d_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1354]  // MINSS Vss,Wss
+    1353, // MINSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1351]  // MINPD Vpd,Wpd
+    1350, // MINPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5d_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1352]  // MINPS Vps,Wps
+    1351, // MINPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_5d_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_5d_prefix_01_leaf,
@@ -9490,30 +11372,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5c_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2585]  // SUBSD Vsd,Wsd
+    2604, // SUBSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5c_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2586]  // SUBSS Vss,Wss
+    2605, // SUBSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2583]  // SUBPD Vpd,Wpd
+    2602, // SUBPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5c_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2584]  // SUBPS Vps,Wps
+    2603, // SUBPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_5c_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_5c_prefix_01_leaf,
@@ -9525,24 +11412,28 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5b_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 844]  // CVTTPS2DQ Vdq,Wps
+    844, // CVTTPS2DQ Vdq,Wps
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5b_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 833]  // CVTPS2DQ Vdq,Wps
+    833, // CVTPS2DQ Vdq,Wps
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5b_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 827]  // CVTDQ2PS Vps,Wdq
+    827, // CVTDQ2PS Vps,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_5b_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_5b_prefix_01_leaf,
@@ -9554,30 +11445,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5a_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 837]  // CVTSD2SS Vss,Wsd
+    837, // CVTSD2SS Vss,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5a_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 840]  // CVTSS2SD Vsd,Wss
+    840, // CVTSS2SD Vsd,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5a_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 830]  // CVTPD2PS Vps,Wpd
+    830, // CVTPD2PS Vps,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_5a_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 834]  // CVTPS2PD Vpd,Wq
+    834, // CVTPS2PD Vpd,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_5a_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_5a_prefix_01_leaf,
@@ -9589,30 +11485,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_5a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_59_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1483]  // MULSD Vsd,Wsd
+    1485, // MULSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_59_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1484]  // MULSS Vss,Wss
+    1486, // MULSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_59_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1481]  // MULPD Vpd,Wpd
+    1483, // MULPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_59_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1482]  // MULPS Vps,Wps
+    1484, // MULPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_59_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_59_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_59_prefix_01_leaf,
@@ -9624,30 +11525,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_59_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_58_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  99]  // ADDSD Vsd,Wsd
+    99, // ADDSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_58_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 100]  // ADDSS Vss,Wss
+    100, // ADDSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_58_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  97]  // ADDPD Vpd,Wpd
+    97, // ADDPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_58_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  98]  // ADDPS Vps,Wps
+    98, // ADDPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_58_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_58_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_58_prefix_01_leaf,
@@ -9659,18 +11565,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_58_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_57_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4188]  // XORPD Vpd,Wpd
+    4217, // XORPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_57_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4189]  // XORPS Vps,Wps
+    4218, // XORPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_57_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_57_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_57_prefix_01_leaf,
@@ -9682,18 +11591,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_57_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_56_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1636]  // ORPD Vpd,Wpd
+    1644, // ORPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_56_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1637]  // ORPS Vps,Wps
+    1645, // ORPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_56_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_56_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_56_prefix_01_leaf,
@@ -9705,18 +11617,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_56_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_55_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 177]  // ANDNPD Vpd,Wpd
+    177, // ANDNPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_55_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 178]  // ANDNPS Vps,Wps
+    178, // ANDNPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_55_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_55_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_55_prefix_01_leaf,
@@ -9728,18 +11643,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_55_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_54_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 179]  // ANDPD Vpd,Wpd
+    179, // ANDPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_54_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 180]  // ANDPS Vps,Wps
+    180, // ANDPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_54_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_54_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_54_prefix_01_leaf,
@@ -9751,18 +11669,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_54_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_53_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2033]  // RCPSS Vss,Wss
+    2036, // RCPSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_53_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2032]  // RCPPS Vps,Wps
+    2035, // RCPPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_53_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_53_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -9774,18 +11695,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_53_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_52_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2194]  // RSQRTSS Vss,Wss
+    2197, // RSQRTSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_52_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2193]  // RSQRTPS Vps,Wps
+    2196, // RSQRTPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_52_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_52_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -9797,30 +11721,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_52_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_51_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2508]  // SQRTSD Vsd,Wsd
+    2527, // SQRTSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_51_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2509]  // SQRTSS Vss,Wss
+    2528, // SQRTSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_51_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2506]  // SQRTPD Vpd,Wpd
+    2525, // SQRTPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_51_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2507]  // SQRTPS Vps,Wps
+    2526, // SQRTPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_51_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_51_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_51_prefix_01_leaf,
@@ -9832,12 +11761,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_51_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_50_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1428]  // MOVMSKPD Gy,Upd
+    1427, // MOVMSKPD Gy,Upd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_50_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_50_prefix_01_modrmmod_01_leaf,
@@ -9847,12 +11778,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_50_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_50_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1429]  // MOVMSKPS Gy,Ups
+    1428, // MOVMSKPS Gy,Ups
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_50_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_50_prefix_00_modrmmod_01_leaf,
@@ -9862,6 +11795,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_50_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_50_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_50_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_50_prefix_01_modrmmod,
@@ -9873,108 +11807,126 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_50_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_4f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 590]  // CMOVNLE Gv,Ev
+    590, // CMOVNLE Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_4e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 578]  // CMOVLE Gv,Ev
+    578, // CMOVLE Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_4d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 587]  // CMOVNL Gv,Ev
+    587, // CMOVNL Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_4c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 575]  // CMOVL Gv,Ev
+    575, // CMOVL Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_4b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 596]  // CMOVNP Gv,Ev
+    596, // CMOVNP Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_4a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 608]  // CMOVP Gv,Ev
+    608, // CMOVP Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_49_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 599]  // CMOVNS Gv,Ev
+    599, // CMOVNS Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_48_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 611]  // CMOVS Gv,Ev
+    611, // CMOVS Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_47_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 581]  // CMOVNBE Gv,Ev
+    581, // CMOVNBE Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_46_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 569]  // CMOVBE Gv,Ev
+    569, // CMOVBE Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_45_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 602]  // CMOVNZ Gv,Ev
+    602, // CMOVNZ Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_44_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 614]  // CMOVZ Gv,Ev
+    614, // CMOVZ Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_43_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 584]  // CMOVNC Gv,Ev
+    584, // CMOVNC Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_42_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 572]  // CMOVC Gv,Ev
+    572, // CMOVC Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_41_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 593]  // CMOVNO Gv,Ev
+    593, // CMOVNO Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_40_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 605]  // CMOVO Gv,Ev
+    605, // CMOVO Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg_00_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1066]  // HRESET Ib
+    1066, // HRESET Ib
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg_00_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg_00_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -9990,6 +11942,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrm
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg_00_modrmmod_01_modrmrm,
@@ -9999,6 +11952,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modr
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modrmreg_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -10014,6 +11968,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix_02_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -10025,12 +11980,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_f0_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_df_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 119]  // AESKEYGENASSIST Vdq,Wdq,Ib
+    119, // AESKEYGENASSIST Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_df_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_df_prefix_01_leaf,
@@ -10042,12 +11999,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_df_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_cf_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1060]  // GF2P8AFFINEINVQB Vdq,Wdq,Ib
+    1060, // GF2P8AFFINEINVQB Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_cf_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_cf_prefix_01_leaf,
@@ -10059,12 +12018,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_cf_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_ce_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1061]  // GF2P8AFFINEQB Vdq,Wdq,Ib
+    1061, // GF2P8AFFINEQB Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_ce_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_ce_prefix_01_leaf,
@@ -10076,12 +12037,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_ce_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_cc_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2368]  // SHA1RNDS4 Vdq,Wdq,Ib
+    2387, // SHA1RNDS4 Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_cc_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_cc_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -10093,12 +12056,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_cc_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_63_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1709]  // PCMPISTRI Vdq,Wdq,Ib
+    1717, // PCMPISTRI Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_63_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_63_prefix_01_leaf,
@@ -10110,12 +12075,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_63_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_62_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1710]  // PCMPISTRM Vdq,Wdq,Ib
+    1718, // PCMPISTRM Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_62_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_62_prefix_01_leaf,
@@ -10127,12 +12094,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_62_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_61_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1700]  // PCMPESTRI Vdq,Wdq,Ib
+    1708, // PCMPESTRI Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_61_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_61_prefix_01_leaf,
@@ -10144,12 +12113,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_61_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_60_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1701]  // PCMPESTRM Vdq,Wdq,Ib
+    1709, // PCMPESTRM Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_60_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_60_prefix_01_leaf,
@@ -10161,12 +12132,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_60_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_44_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1692]  // PCLMULQDQ Vdq,Wdq,Ib
+    1700, // PCLMULQDQ Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_44_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_44_prefix_01_leaf,
@@ -10178,12 +12151,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_44_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_42_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1472]  // MPSADBW Vdq,Wdq,Ib
+    1474, // MPSADBW Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_42_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_42_prefix_01_leaf,
@@ -10195,12 +12170,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_42_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_41_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 887]  // DPPD Vdq,Wdq,Ib
+    887, // DPPD Vdq,Wdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_41_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_41_prefix_01_leaf,
@@ -10212,12 +12189,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_41_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_40_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 888]  // DPPS Vx,Wx,Ib
+    888, // DPPS Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_40_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_40_prefix_01_leaf,
@@ -10226,27 +12205,30 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_40_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1765]  // PINSRQ Vdq,Eq,Ib
+    1773, // PINSRQ Vdq,Eq,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1764]  // PINSRD Vdq,Ed,Ib
+    1772, // PINSRD Vdq,Ed,Ib
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -10258,6 +12240,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxi
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix_01_auxiliary,
@@ -10269,18 +12252,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_22_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1145]  // INSERTPS Vdq,Udq,Ib
+    1146, // INSERTPS Vdq,Udq,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1144]  // INSERTPS Vdq,Md,Ib
+    1145, // INSERTPS Vdq,Md,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modrmmod_01_leaf,
@@ -10290,6 +12276,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix_01_modrmmod,
@@ -10301,18 +12288,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_21_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1763]  // PINSRB Vdq,Ry,Ib
+    1771, // PINSRB Vdq,Ry,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1762]  // PINSRB Vdq,Mb,Ib
+    1770, // PINSRB Vdq,Mb,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modrmmod_01_leaf,
@@ -10322,6 +12312,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix_01_modrmmod,
@@ -10333,12 +12324,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_20_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_17_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 904]  // EXTRACTPS Ed,Vdq,Ib
+    904, // EXTRACTPS Ed,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_17_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_17_prefix_01_leaf,
@@ -10347,27 +12340,30 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_17_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1721]  // PEXTRQ Ry,Vdq,Ib
+    1729, // PEXTRQ Ry,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1719]  // PEXTRD Ry,Vdq,Ib
+    1727, // PEXTRD Ry,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -10376,27 +12372,30 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modr
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1720]  // PEXTRQ Mq,Vdq,Ib
+    1728, // PEXTRQ Mq,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1718]  // PEXTRD Md,Vdq,Ib
+    1726, // PEXTRD Md,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -10408,6 +12407,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modr
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_00_auxiliary,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod_01_auxiliary,
@@ -10417,6 +12417,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix_01_modrmmod,
@@ -10428,18 +12429,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_16_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1725]  // PEXTRW Ry,Vdq,Ib
+    1733, // PEXTRW Ry,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1724]  // PEXTRW Mw,Vdq,Ib
+    1732, // PEXTRW Mw,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modrmmod_01_leaf,
@@ -10449,6 +12453,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix_01_modrmmod,
@@ -10460,18 +12465,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_15_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1717]  // PEXTRB Ry,Vdq,Ib
+    1725, // PEXTRB Ry,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1716]  // PEXTRB Mb,Vdq,Ib
+    1724, // PEXTRB Mb,Vdq,Ib
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modrmmod_01_leaf,
@@ -10481,6 +12489,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix_01_modrmmod,
@@ -10492,18 +12501,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_14_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0f_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1678]  // PALIGNR Vx,Wx,Ib
+    1686, // PALIGNR Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0f_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1677]  // PALIGNR Pq,Qq,Ib
+    1685, // PALIGNR Pq,Qq,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0f_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0f_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0f_prefix_01_leaf,
@@ -10515,12 +12527,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0f_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0e_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1690]  // PBLENDW Vx,Wx,Ib
+    1698, // PBLENDW Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0e_prefix_01_leaf,
@@ -10532,12 +12546,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 195]  // BLENDPD Vx,Wx,Ib
+    195, // BLENDPD Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0d_prefix_01_leaf,
@@ -10549,12 +12565,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 196]  // BLENDPS Vx,Wx,Ib
+    196, // BLENDPS Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0c_prefix_01_leaf,
@@ -10566,12 +12584,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0b_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2190]  // ROUNDSD Vsd,Wsd,Ib
+    2193, // ROUNDSD Vsd,Wsd,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0b_prefix_01_leaf,
@@ -10583,12 +12603,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_0a_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2191]  // ROUNDSS Vss,Wss,Ib
+    2194, // ROUNDSS Vss,Wss,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_0a_prefix_01_leaf,
@@ -10600,12 +12622,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_0a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_09_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2188]  // ROUNDPD Vx,Wx,Ib
+    2191, // ROUNDPD Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_09_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_09_prefix_01_leaf,
@@ -10617,12 +12641,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_09_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_3a_opcode_08_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2189]  // ROUNDPS Vx,Wx,Ib
+    2192, // ROUNDPS Vx,Wx,Ib
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_08_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_3a_opcode_08_prefix_01_leaf,
@@ -10634,6 +12660,7 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_3a_opcode_08_prefix =
 const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_3a_opcode = 
 {
     ND_ILUT_OPCODE,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -10897,12 +12924,14 @@ const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_3a_opcode =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 182]  // AOR My,Gy
+    182, // AOR My,Gy
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_03_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -10912,12 +12941,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_03_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 185]  // AXOR My,Gy
+    185, // AXOR My,Gy
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -10927,12 +12958,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[   6]  // AAND My,Gy
+    6, // AAND My,Gy
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -10942,12 +12975,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_01_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[   3]  // AADD My,Gy
+    3, // AADD My,Gy
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -10957,6 +12992,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_00_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix_01_modrmmod,
@@ -10968,12 +13004,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_fc_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_fb_prefix_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 894]  // ENCODEKEY256 Gd,Rd
+    894, // ENCODEKEY256 Gd,Rd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fb_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fb_prefix_02_modrmmod_01_leaf,
@@ -10983,6 +13021,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fb_prefix_02_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_fb_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -10994,12 +13033,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_fb_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_fa_prefix_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 893]  // ENCODEKEY128 Gd,Rd
+    893, // ENCODEKEY128 Gd,Rd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fa_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_fa_prefix_02_modrmmod_01_leaf,
@@ -11009,6 +13050,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_fa_prefix_02_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_fa_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -11020,12 +13062,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_fa_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1413]  // MOVDIRI My,Gy
+    1412, // MOVDIRI My,Gy
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11035,6 +13079,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix_00_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -11043,57 +13088,83 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f9_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_01_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2676]  // URDMSR Rq,Gq
+    2705, // URDMSR Rq,Gq
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_01_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_01_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 898]  // ENQCMD rM?,Moq
+    898, // ENQCMD rM?,Moq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_01_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_03_modrmmod_01_no1632,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_01_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2680]  // UWRMSR Gq,Rq
+    2709, // UWRMSR Gq,Rq
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_01_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_01_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 900]  // ENQCMDS rM?,Moq
+    900, // ENQCMDS rM?,Moq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_01_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_02_modrmmod_01_no1632,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1411]  // MOVDIR64B rMoq,Moq
+    1410, // MOVDIR64B rMoq,Moq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11103,6 +13174,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix_01_modrmmod,
@@ -11114,36 +13186,41 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f8_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 105]  // ADOX Gy,Ey
+    105, // ADOX Gy,Ey
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  42]  // ADCX Gy,Ey
+    42, // ADCX Gy,Ey
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4112]  // WRSSQ My,Gy
+    4141, // WRSSQ My,Gy
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4110]  // WRSSD My,Gy
+    4139, // WRSSD My,Gy
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -11155,6 +13232,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modr
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -11164,6 +13242,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix_01_leaf,
@@ -11172,27 +13251,30 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f6_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4116]  // WRUSSQ My,Gy
+    4145, // WRUSSQ My,Gy
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4114]  // WRUSSD My,Gy
+    4143, // WRUSSD My,Gy
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary_02_leaf,
+        /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary_04_leaf,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -11204,6 +13286,7 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modr
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod_00_auxiliary,
         /* 01 */ (const void *)ND_NULL,
@@ -11213,6 +13296,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix_01_modrmmod,
@@ -11224,18 +13308,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f5_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 681]  // CRC32 Gy,Ev
+    681, // CRC32 Gy,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1404]  // MOVBE Mv,Gv
+    1403, // MOVBE Mv,Gv
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11245,12 +13332,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_01_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1403]  // MOVBE Mv,Gv
+    1402, // MOVBE Mv,Gv
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11260,6 +13349,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_00_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix_01_modrmmod,
@@ -11271,18 +13361,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f1_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 680]  // CRC32 Gy,Eb
+    680, // CRC32 Gy,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1402]  // MOVBE Gv,Mv
+    1401, // MOVBE Gv,Mv
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11292,12 +13385,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_01_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1401]  // MOVBE Gv,Mv
+    1400, // MOVBE Gv,Mv
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11307,6 +13402,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_00_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix_01_modrmmod,
@@ -11318,12 +13414,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_f0_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 108]  // AESDEC256KL Vdq,M512
+    108, // AESDEC256KL Vdq,M512
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11333,12 +13431,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 109]  // AESDECLAST Vdq,Wdq
+    109, // AESDECLAST Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix_01_leaf,
@@ -11350,12 +13450,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_df_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 114]  // AESENC256KL Vdq,M512
+    114, // AESENC256KL Vdq,M512
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11365,12 +13467,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 106]  // AESDEC Vdq,Wdq
+    106, // AESDEC Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix_01_leaf,
@@ -11382,12 +13486,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_de_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 107]  // AESDEC128KL Vdq,M384
+    107, // AESDEC128KL Vdq,M384
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11397,12 +13503,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 115]  // AESENCLAST Vdq,Wdq
+    115, // AESENCLAST Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix_01_leaf,
@@ -11414,18 +13522,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_dd_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1320]  // LOADIWKEY Vdq,Udq
+    1319, // LOADIWKEY Vdq,Udq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 113]  // AESENC128KL Vdq,M384
+    113, // AESENC128KL Vdq,M384
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_02_modrmmod_01_leaf,
@@ -11435,12 +13546,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 112]  // AESENC Vdq,Wdq
+    112, // AESENC Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix_01_leaf,
@@ -11452,12 +13565,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_dc_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_db_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 118]  // AESIMC Vdq,Wdq
+    118, // AESIMC Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_db_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_db_prefix_01_leaf,
@@ -11469,12 +13584,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_db_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 111]  // AESDECWIDE256KL M512
+    111, // AESDECWIDE256KL M512
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11484,12 +13601,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 117]  // AESENCWIDE256KL M512
+    117, // AESENCWIDE256KL M512
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11499,12 +13618,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 110]  // AESDECWIDE128KL M384
+    110, // AESDECWIDE128KL M384
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11514,12 +13635,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 116]  // AESENCWIDE128KL M384
+    116, // AESENCWIDE128KL M384
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11529,6 +13652,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modr
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modrmreg_01_modrmmod,
@@ -11544,6 +13668,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix_02_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -11555,12 +13680,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_d8_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_cf_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1062]  // GF2P8MULB Vdq,Wdq
+    1062, // GF2P8MULB Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cf_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_cf_prefix_01_leaf,
@@ -11572,12 +13699,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cf_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_cd_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2370]  // SHA256MSG2 Vdq,Wdq
+    2389, // SHA256MSG2 Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cd_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_cd_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11589,12 +13718,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cd_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_cc_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2369]  // SHA256MSG1 Vdq,Wdq
+    2388, // SHA256MSG1 Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cc_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_cc_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11606,12 +13737,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cc_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_cb_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2371]  // SHA256RNDS2 Vdq,Wdq
+    2390, // SHA256RNDS2 Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cb_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_cb_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11623,12 +13756,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_cb_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_ca_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2366]  // SHA1MSG2 Vdq,Wdq
+    2385, // SHA1MSG2 Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_ca_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_ca_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11640,12 +13775,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_ca_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_c9_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2365]  // SHA1MSG1 Vdq,Wdq
+    2384, // SHA1MSG1 Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_c9_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_c9_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11657,12 +13794,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_c9_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_c8_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2367]  // SHA1NEXTE Vdq,Wdq
+    2386, // SHA1NEXTE Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_c8_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_c8_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11671,32 +13810,72 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_c8_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_norep_00_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1448]  // MOVRS Gv,Mv
+    1450, // MOVRS Gv,Mv
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_norep_00_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_norep_00_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_norep = 
+{
+    ND_ILUT_FLT_NOREP,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_norep_00_no1632,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8b_modrmmod_00_norep,
         /* 01 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_norep_00_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1447]  // MOVRS Gb,Mb
+    1449, // MOVRS Gb,Mb
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_norep_00_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_norep_00_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_norep = 
+{
+    ND_ILUT_FLT_NOREP,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_norep_00_no1632,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod_00_norep,
         /* 01 */ (const void *)ND_NULL,
     }
 };
@@ -11704,12 +13883,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_8a_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1161]  // INVPCID Gy,Mdq
+    1162, // INVPCID Gy,Mdq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11719,6 +13900,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix_01_modrmmod,
@@ -11730,12 +13912,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_82_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1163]  // INVVPID Gy,Mdq
+    1164, // INVVPID Gy,Mdq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11745,6 +13929,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix_01_modrmmod,
@@ -11756,12 +13941,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_81_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1156]  // INVEPT Gy,Mdq
+    1157, // INVEPT Gy,Mdq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -11771,6 +13958,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix_01_modrmmod,
@@ -11782,12 +13970,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_80_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_41_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1753]  // PHMINPOSUW Vdq,Wdq
+    1761, // PHMINPOSUW Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_41_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_41_prefix_01_leaf,
@@ -11799,12 +13989,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_41_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_40_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1812]  // PMULLD Vx,Wx
+    1820, // PMULLD Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_40_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_40_prefix_01_leaf,
@@ -11816,12 +14008,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_40_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_3f_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1780]  // PMAXUD Vx,Wx
+    1788, // PMAXUD Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3f_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_3f_prefix_01_leaf,
@@ -11833,12 +14027,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3f_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_3e_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1781]  // PMAXUW Vx,Wx
+    1789, // PMAXUW Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_3e_prefix_01_leaf,
@@ -11850,12 +14046,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_3d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1775]  // PMAXSD Vx,Wx
+    1783, // PMAXSD Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_3d_prefix_01_leaf,
@@ -11867,12 +14065,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_3c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1774]  // PMAXSB Vx,Wx
+    1782, // PMAXSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_3c_prefix_01_leaf,
@@ -11884,12 +14084,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_3b_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1788]  // PMINUD Vx,Wx
+    1796, // PMINUD Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_3b_prefix_01_leaf,
@@ -11901,12 +14103,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_3a_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1789]  // PMINUW Vx,Wx
+    1797, // PMINUW Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_3a_prefix_01_leaf,
@@ -11918,12 +14122,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_3a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_39_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1783]  // PMINSD Vx,Wx
+    1791, // PMINSD Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_39_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_39_prefix_01_leaf,
@@ -11935,12 +14141,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_39_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_38_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1782]  // PMINSB Vx,Wx
+    1790, // PMINSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_38_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_38_prefix_01_leaf,
@@ -11952,12 +14160,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_38_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_37_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1706]  // PCMPGTQ Vx,Wx
+    1714, // PCMPGTQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_37_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_37_prefix_01_leaf,
@@ -11969,12 +14179,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_37_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_35_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1801]  // PMOVZXDQ Vdq,Wq
+    1809, // PMOVZXDQ Vdq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_35_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_35_prefix_01_leaf,
@@ -11986,12 +14198,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_35_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_34_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1803]  // PMOVZXWQ Vdq,Wd
+    1811, // PMOVZXWQ Vdq,Wd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_34_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_34_prefix_01_leaf,
@@ -12003,12 +14217,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_34_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_33_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1802]  // PMOVZXWD Vdq,Wq
+    1810, // PMOVZXWD Vdq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_33_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_33_prefix_01_leaf,
@@ -12020,12 +14236,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_33_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_32_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1799]  // PMOVZXBQ Vdq,Ww
+    1807, // PMOVZXBQ Vdq,Ww
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_32_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_32_prefix_01_leaf,
@@ -12037,12 +14255,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_32_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_31_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1798]  // PMOVZXBD Vdq,Wd
+    1806, // PMOVZXBD Vdq,Wd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_31_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_31_prefix_01_leaf,
@@ -12054,12 +14274,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_31_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_30_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1800]  // PMOVZXBW Vdq,Wq
+    1808, // PMOVZXBW Vdq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_30_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_30_prefix_01_leaf,
@@ -12071,12 +14293,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_30_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_2b_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1658]  // PACKUSDW Vx,Wx
+    1666, // PACKUSDW Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_2b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_2b_prefix_01_leaf,
@@ -12088,12 +14312,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_2b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1431]  // MOVNTDQA Vx,Mx
+    1430, // MOVNTDQA Vx,Mx
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -12103,6 +14329,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix_01_modr
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix_01_modrmmod,
@@ -12114,12 +14341,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_2a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_29_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1697]  // PCMPEQQ Vx,Wx
+    1705, // PCMPEQQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_29_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_29_prefix_01_leaf,
@@ -12131,12 +14360,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_29_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_28_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1804]  // PMULDQ Vx,Wx
+    1812, // PMULDQ Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_28_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_28_prefix_01_leaf,
@@ -12148,12 +14379,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_28_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_25_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1795]  // PMOVSXDQ Vdq,Wq
+    1803, // PMOVSXDQ Vdq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_25_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_25_prefix_01_leaf,
@@ -12165,12 +14398,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_25_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_24_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1797]  // PMOVSXWQ Vdq,Wd
+    1805, // PMOVSXWQ Vdq,Wd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_24_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_24_prefix_01_leaf,
@@ -12182,12 +14417,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_24_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_23_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1796]  // PMOVSXWD Vdq,Wq
+    1804, // PMOVSXWD Vdq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_23_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_23_prefix_01_leaf,
@@ -12199,12 +14436,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_23_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_22_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1793]  // PMOVSXBQ Vdq,Ww
+    1801, // PMOVSXBQ Vdq,Ww
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_22_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_22_prefix_01_leaf,
@@ -12216,12 +14455,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_22_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_21_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1792]  // PMOVSXBD Vdq,Wd
+    1800, // PMOVSXBD Vdq,Wd
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_21_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_21_prefix_01_leaf,
@@ -12233,12 +14474,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_21_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_20_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1794]  // PMOVSXBW Vdq,Wq
+    1802, // PMOVSXBW Vdq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_20_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_20_prefix_01_leaf,
@@ -12250,18 +14493,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_20_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_1e_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1651]  // PABSD Vx,Wx
+    1659, // PABSD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_1e_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1650]  // PABSD Pq,Qq
+    1658, // PABSD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_1e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_1e_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_1e_prefix_01_leaf,
@@ -12273,18 +14519,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_1e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_1d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1653]  // PABSW Vx,Wx
+    1661, // PABSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_1d_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1652]  // PABSW Pq,Qq
+    1660, // PABSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_1d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_1d_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_1d_prefix_01_leaf,
@@ -12296,18 +14545,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_1d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_1c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1649]  // PABSB Vx,Wx
+    1657, // PABSB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_1c_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1648]  // PABSB Pq,Qq
+    1656, // PABSB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_1c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_1c_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_1c_prefix_01_leaf,
@@ -12319,12 +14571,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_1c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_17_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1939]  // PTEST Vdq,Wdq
+    1942, // PTEST Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_17_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_17_prefix_01_leaf,
@@ -12336,12 +14590,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_17_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_15_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 197]  // BLENDVPD Vdq,Wdq
+    197, // BLENDVPD Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_15_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_15_prefix_01_leaf,
@@ -12353,12 +14609,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_15_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_14_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 198]  // BLENDVPS Vdq,Wdq
+    198, // BLENDVPS Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_14_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_14_prefix_01_leaf,
@@ -12370,12 +14628,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_14_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_10_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1689]  // PBLENDVB Vdq,Wdq
+    1697, // PBLENDVB Vdq,Wdq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_10_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_10_prefix_01_leaf,
@@ -12387,18 +14647,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_10_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_0b_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1806]  // PMULHRSW Vx,Wx
+    1814, // PMULHRSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_0b_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1805]  // PMULHRSW Pq,Qq
+    1813, // PMULHRSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_0b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_0b_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_0b_prefix_01_leaf,
@@ -12410,18 +14673,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_0b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_0a_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1884]  // PSIGND Vx,Wx
+    1887, // PSIGND Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_0a_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1883]  // PSIGND Pq,Qq
+    1886, // PSIGND Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_0a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_0a_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_0a_prefix_01_leaf,
@@ -12433,18 +14699,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_0a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_09_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1886]  // PSIGNW Vx,Wx
+    1889, // PSIGNW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_09_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1885]  // PSIGNW Pq,Qq
+    1888, // PSIGNW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_09_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_09_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_09_prefix_01_leaf,
@@ -12456,18 +14725,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_09_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_08_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1882]  // PSIGNB Vx,Wx
+    1885, // PSIGNB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_08_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1881]  // PSIGNB Pq,Qq
+    1884, // PSIGNB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_08_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_08_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_08_prefix_01_leaf,
@@ -12479,18 +14751,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_08_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_07_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1757]  // PHSUBSW Vx,Wx
+    1765, // PHSUBSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_07_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1756]  // PHSUBSW Pq,Qq
+    1764, // PHSUBSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_07_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_07_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_07_prefix_01_leaf,
@@ -12502,18 +14777,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_07_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_06_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1755]  // PHSUBD Vx,Wx
+    1763, // PHSUBD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_06_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1754]  // PHSUBD Pq,Qq
+    1762, // PHSUBD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_06_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_06_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_06_prefix_01_leaf,
@@ -12525,18 +14803,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_06_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_05_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1759]  // PHSUBW Vx,Wx
+    1767, // PHSUBW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_05_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1758]  // PHSUBW Pq,Qq
+    1766, // PHSUBW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_05_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_05_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_05_prefix_01_leaf,
@@ -12548,18 +14829,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_05_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_04_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1771]  // PMADDUBSW Vx,Wx
+    1779, // PMADDUBSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_04_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1770]  // PMADDUBSW Pq,Qq
+    1778, // PMADDUBSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_04_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_04_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_04_prefix_01_leaf,
@@ -12571,18 +14855,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_04_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_03_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1750]  // PHADDSW Vx,Wx
+    1758, // PHADDSW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_03_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1749]  // PHADDSW Pq,Qq
+    1757, // PHADDSW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_03_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_03_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_03_prefix_01_leaf,
@@ -12594,18 +14881,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_03_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_02_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1748]  // PHADDD Vx,Wx
+    1756, // PHADDD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_02_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1747]  // PHADDD Pq,Qq
+    1755, // PHADDD Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_02_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_02_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_02_prefix_01_leaf,
@@ -12617,18 +14907,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_02_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1752]  // PHADDW Vx,Wx
+    1760, // PHADDW Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1751]  // PHADDW Pq,Qq
+    1759, // PHADDW Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix_01_leaf,
@@ -12640,18 +14933,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1876]  // PSHUFB Vx,Wx
+    1879, // PSHUFB Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1875]  // PSHUFB Pq,Qq
+    1878, // PSHUFB Pq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix_01_leaf,
@@ -12663,6 +14959,7 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix =
 const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_38_opcode = 
 {
     ND_ILUT_OPCODE,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_00_prefix,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_38_opcode_01_prefix,
@@ -12926,12 +15223,14 @@ const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_38_opcode =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_37_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1059]  // GETSEC
+    1059, // GETSEC
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_37_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_37_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -12943,54 +15242,63 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_37_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_35_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2590]  // SYSEXIT
+    2609, // SYSEXIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_34_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2589]  // SYSENTER
+    2608, // SYSENTER
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_33_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2084]  // RDPMC
+    2087, // RDPMC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_32_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2079]  // RDMSR
+    2082, // RDMSR
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_31_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2092]  // RDTSC
+    2095, // RDTSC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_30_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4103]  // WRMSR
+    4132, // WRMSR
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2f_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 673]  // COMISD Vsd,Wsd
+    673, // COMISD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2f_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 674]  // COMISS Vss,Wss
+    674, // COMISS Vss,Wss
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2f_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2f_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_2f_prefix_01_leaf,
@@ -13002,18 +15310,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2f_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2e_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2662]  // UCOMISD Vsd,Wsd
+    2691, // UCOMISD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2e_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2663]  // UCOMISS Vss,Wss
+    2692, // UCOMISS Vss,Wss
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2e_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2e_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_2e_prefix_01_leaf,
@@ -13025,30 +15336,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2e_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2d_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 836]  // CVTSD2SI Gy,Wsd
+    836, // CVTSD2SI Gy,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2d_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 841]  // CVTSS2SI Gy,Wss
+    841, // CVTSS2SI Gy,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2d_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 829]  // CVTPD2PI Pq,Wpd
+    829, // CVTPD2PI Pq,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2d_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 835]  // CVTPS2PI Pq,Wq
+    835, // CVTPS2PI Pq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2d_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2d_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_2d_prefix_01_leaf,
@@ -13060,30 +15376,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2d_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2c_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 846]  // CVTTSD2SI Gy,Wsd
+    846, // CVTTSD2SI Gy,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2c_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 847]  // CVTTSS2SI Gy,Wss
+    847, // CVTTSS2SI Gy,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2c_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 843]  // CVTTPD2PI Pq,Wpd
+    843, // CVTTPD2PI Pq,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2c_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 845]  // CVTTPS2PI Pq,Wq
+    845, // CVTTPS2PI Pq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2c_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2c_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_2c_prefix_01_leaf,
@@ -13095,12 +15416,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2c_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2b_prefix_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1436]  // MOVNTSD Msd,Vsd
+    1435, // MOVNTSD Msd,Vsd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2b_prefix_03_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -13110,12 +15433,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2b_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1437]  // MOVNTSS Mss,Vss
+    1436, // MOVNTSS Mss,Vss
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2b_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -13125,12 +15450,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2b_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1433]  // MOVNTPD Mpd,Vpd
+    1432, // MOVNTPD Mpd,Vpd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2b_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -13140,12 +15467,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2b_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1434]  // MOVNTPS Mps,Vps
+    1433, // MOVNTPS Mps,Vps
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2b_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -13155,6 +15484,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_2b_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2b_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2b_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_2b_prefix_01_modrmmod,
@@ -13166,30 +15496,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2b_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2a_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 838]  // CVTSI2SD Vsd,Ey
+    838, // CVTSI2SD Vsd,Ey
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2a_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 839]  // CVTSI2SS Vss,Ey
+    839, // CVTSI2SS Vss,Ey
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2a_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 831]  // CVTPI2PD Vpd,Qq
+    831, // CVTPI2PD Vpd,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_2a_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 832]  // CVTPI2PS Vq,Qq
+    832, // CVTPI2PS Vq,Qq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2a_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_2a_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_2a_prefix_01_leaf,
@@ -13201,18 +15536,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_2a_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_29_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1394]  // MOVAPD Wpd,Vpd
+    1393, // MOVAPD Wpd,Vpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_29_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1396]  // MOVAPS Wps,Vps
+    1395, // MOVAPS Wps,Vps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_29_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_29_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_29_prefix_01_leaf,
@@ -13224,18 +15562,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_29_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_28_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1393]  // MOVAPD Vpd,Wpd
+    1392, // MOVAPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_28_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1395]  // MOVAPS Vps,Wps
+    1394, // MOVAPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_28_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_28_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_28_prefix_01_leaf,
@@ -13244,296 +15585,177 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_28_prefix =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_26_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_26_no64_00_qrlt8_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1392]  // MOV Ty,Ry
+    1391, // MOV Ty,Ry
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_24_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_26_no64_00_qrlt8 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1391]  // MOV Ry,Ty
+    ND_ILUT_FLT_QRLT8,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_26_no64_00_qrlt8_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_23_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_26_no64 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1390]  // MOV Dy,Ry
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_26_no64_00_qrlt8,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_22_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_24_no64_00_qrlt8_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1389]  // MOV Cy,Ry
+    1390, // MOV Ry,Ty
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_21_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_24_no64_00_qrlt8 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1388]  // MOV Ry,Dy
+    ND_ILUT_FLT_QRLT8,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_24_no64_00_qrlt8_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_20_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_24_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_24_no64_00_qrlt8,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_23_drlt8_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1387]  // MOV Ry,Cy
+    1389, // MOV Dy,Ry
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_23_drlt8 = 
+{
+    ND_ILUT_FLT_DRLT8,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_23_drlt8_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_22_crin02348_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1388, // MOV Cy,Ry
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_22_crin02348 = 
+{
+    ND_ILUT_FLT_CRIN02348,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_22_crin02348_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_21_drlt8_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1387, // MOV Ry,Dy
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_21_drlt8 = 
+{
+    ND_ILUT_FLT_DRLT8,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_21_drlt8_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_20_crin02348_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1386, // MOV Ry,Cy
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_20_crin02348 = 
+{
+    ND_ILUT_FLT_CRIN02348,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_20_crin02348_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1f_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1536]  // NOP Ev,Gv
+    1581, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1573]  // NOP Rv,Gv
+    1580, // NOP Rv,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_06_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1572]  // NOP Rv,Gv
+    1579, // NOP Rv,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1571]  // NOP Rv,Gv
+    1578, // NOP Rv,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1570]  // NOP Rv,Gv
+    1577, // NOP Rv,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_03_auxiliary_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_02_auxiliary_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 895]  // ENDBR32
+    895, // ENDBR32
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_03_auxiliary_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_02_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1569]  // NOP Rv,Gv
+    1576, // NOP Rv,Gv
+    0,
 };
 
-const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_03_auxiliary = 
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_02_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_03_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_02_auxiliary_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_02_auxiliary_01_leaf,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_03_auxiliary_04_leaf,
-        /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)ND_NULL,
-        /* 07 */ (const void *)ND_NULL,
-        /* 08 */ (const void *)ND_NULL,
-        /* 09 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_02_auxiliary_04_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 896]  // ENDBR64
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_02_auxiliary_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1568]  // NOP Rv,Gv
-};
-
-const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_02_auxiliary = 
-{
-    ND_ILUT_AUXILIARY,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_02_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_02_auxiliary_04_leaf,
-        /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)ND_NULL,
-        /* 07 */ (const void *)ND_NULL,
-        /* 08 */ (const void *)ND_NULL,
-        /* 09 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1567]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1566]  // NOP Rv,Gv
-};
-
-const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm = 
-{
-    ND_ILUT_MODRM_RM,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_02_auxiliary,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_03_auxiliary,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_04_leaf,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm_07_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1565]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod_01_modrmrm,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_06_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1564]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_06_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1563]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_06_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_06_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_06_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_05_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1562]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_05_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1561]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_05_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_05_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_05_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_04_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1560]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_04_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1559]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_04_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_04_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_04_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_03_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1558]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_03_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1557]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_03_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_03_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_03_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_02_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1556]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_02_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1555]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_02_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_02_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_02_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_04_auxiliary_02_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2091]  // RDSSPQ Rq
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_04_auxiliary_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2090]  // RDSSPD Rd
-};
-
-const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_04_auxiliary = 
-{
-    ND_ILUT_AUXILIARY,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_04_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_04_auxiliary_02_leaf,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
@@ -13544,228 +15766,568 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_m
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1554]  // NOP Rv,Gv
+    1575, // NOP Rv,Gv
+    0,
 };
 
-const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary = 
-{
-    ND_ILUT_AUXILIARY,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary_04_auxiliary,
-        /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)ND_NULL,
-        /* 07 */ (const void *)ND_NULL,
-        /* 08 */ (const void *)ND_NULL,
-        /* 09 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1553]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod_01_auxiliary,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_00_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1552]  // NOP Rv,Gv
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_00_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1551]  // NOP Mv,Gv
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_00_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_00_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_00_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg = 
-{
-    ND_ILUT_MODRM_REG,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_00_modrmmod,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_01_modrmmod,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_02_modrmmod,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_03_modrmmod,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_04_modrmmod,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_05_modrmmod,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_06_modrmmod,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg_07_modrmmod,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_feature_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1535]  // NOP Ev,Gv
-};
-
-const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1e_feature = 
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature = 
 {
     ND_ILUT_FEATURE,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature_02_modrmreg,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature_02_auxiliary,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_02_auxiliary_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    896, // ENDBR64
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_02_auxiliary_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1574, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_02_auxiliary = 
+{
+    ND_ILUT_AUXILIARY,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_02_auxiliary_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_02_auxiliary_01_leaf,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+        /* 08 */ (const void *)ND_NULL,
+        /* 09 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1573, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature_02_auxiliary,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1572, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_01_auxiliary_04_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1069, // IBHF
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_01_auxiliary_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1571, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_01_auxiliary = 
+{
+    ND_ILUT_AUXILIARY,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_01_auxiliary_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_01_auxiliary_04_leaf,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+        /* 08 */ (const void *)ND_NULL,
+        /* 09 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1570, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary = 
+{
+    ND_ILUT_AUXILIARY,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary_01_auxiliary,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+        /* 08 */ (const void *)ND_NULL,
+        /* 09 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1569, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature_06_auxiliary,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm = 
+{
+    ND_ILUT_MODRM_RM,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_01_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_02_feature,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_03_feature,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_04_leaf,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_05_leaf,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_06_leaf,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm_07_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1568, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod_01_modrmrm,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_06_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1567, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_06_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1566, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_06_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_06_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_06_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_05_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1565, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_05_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1564, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_05_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_05_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_05_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_04_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1563, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_04_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1562, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_04_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_04_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_04_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_03_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1561, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_03_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1560, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_03_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_03_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_02_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1559, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_02_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1558, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_02_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_02_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_01_auxiliary_04_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    2094, // RDSSPQ Rq
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_01_auxiliary_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    2093, // RDSSPD Rd
+    0,
+};
+
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_01_auxiliary = 
+{
+    ND_ILUT_AUXILIARY,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_01_auxiliary_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_01_auxiliary_04_leaf,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+        /* 08 */ (const void *)ND_NULL,
+        /* 09 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1557, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary = 
+{
+    ND_ILUT_AUXILIARY,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary_01_auxiliary,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+        /* 08 */ (const void *)ND_NULL,
+        /* 09 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1556, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature_02_auxiliary,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1555, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod_01_feature,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_00_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1554, // NOP Rv,Gv
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1e_modrmreg_00_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1553, // NOP Mv,Gv
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1e_modrmreg_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_00_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_00_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_1e_modrmreg = 
+{
+    ND_ILUT_MODRM_REG,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_00_modrmmod,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_01_modrmmod,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_02_modrmmod,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_03_modrmmod,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_04_modrmmod,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_05_modrmmod,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_06_modrmmod,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg_07_modrmmod,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1534]  // NOP Ev,Gv
+    1552, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1550]  // NOP Ev,Gv
+    1551, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_06_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1549]  // NOP Ev,Gv
+    1550, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1548]  // NOP Ev,Gv
+    1549, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1547]  // NOP Ev,Gv
+    1548, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1546]  // NOP Ev,Gv
+    1547, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1545]  // NOP Ev,Gv
+    1546, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1544]  // NOP Ev,Gv
+    1545, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1543]  // NOP Ev,Gv
+    1544, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1542]  // NOP Ev,Gv
+    1543, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1541]  // NOP Ev,Gv
+    1542, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1540]  // NOP Ev,Gv
+    1541, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_00_feature_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 554]  // CLDEMOTE Mb
+    554, // CLDEMOTE Mb
+    0,
 };
 
-const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix = 
-{
-    ND_ILUT_MAN_PREFIX,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_02_leaf,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix_03_leaf,
-    }
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_00_prefix,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg = 
-{
-    ND_ILUT_MODRM_REG,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_00_modrmmod,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_02_leaf,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_03_leaf,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_04_leaf,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg_07_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_feature_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_00_feature_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1533]  // NOP Ev,Gv
+    1540, // NOP Ev,Gv
+    0,
 };
 
-const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1c_feature = 
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_00_feature = 
 {
     ND_ILUT_FEATURE,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_00_feature_00_leaf,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature_03_modrmreg,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_00_feature_03_leaf,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
@@ -13773,83 +16335,83 @@ const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1c_feature =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_03_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 211]  // BNDCN rBl,Ey
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_02_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1539]  // NOP Gv,Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_02_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 214]  // BNDMK rBl,My
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_02_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_02_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_02_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 216]  // BNDMOV mBl,rBl
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_00_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1538]  // NOP Gv,Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_00_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 217]  // BNDSTX Mmib,rBl
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_00_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_00_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_00_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix = 
+const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_00_modrmmod,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_02_modrmmod,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix_03_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_01_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_02_leaf,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix_03_leaf,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_feature_00_leaf = 
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1532]  // NOP Gv,Ev
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_00_prefix,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod_01_leaf,
+    }
 };
 
-const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1b_feature = 
+const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_1c_modrmreg = 
+{
+    ND_ILUT_MODRM_REG,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_00_modrmmod,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_01_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_02_leaf,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_03_leaf,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_04_leaf,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_05_leaf,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_06_leaf,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg_07_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_01_noa16_00_brlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    211, // BNDCN rBl,Ey
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_01_noa16_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_01_noa16_00_brlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_01_noa16_00_brlt4,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1539, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature = 
 {
     ND_ILUT_FEATURE,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature_01_prefix,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature_01_noa16,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
@@ -13859,459 +16421,825 @@ const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1b_feature =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 212]  // BNDCU rBl,Ey
+    1537, // NOP Gv,Ev
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 210]  // BNDCL rBl,Ey
+    214, // BNDMK rBl,My
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_01_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 215]  // BNDMOV rBl,mBl
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_00_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1537]  // NOP Gv,Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_00_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 213]  // BNDLDX rBl,Mmib
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_00_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
+    ND_ILUT_FLT_BRLT4,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_00_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_00_modrmmod_01_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4_00_leaf,
     }
 };
 
-const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16_00_noriprel = 
 {
-    ND_ILUT_MAN_PREFIX,
+    ND_ILUT_FLT_NORIPREL,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_00_modrmmod,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_01_leaf,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_02_leaf,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix_03_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_feature_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1531]  // NOP Ev,Gv
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16_00_noriprel,
+    }
 };
 
-const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1a_feature = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1538, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature = 
 {
     ND_ILUT_FEATURE,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature_01_prefix,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature_01_noa16,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16_00_bmlt4_00_brlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    216, // BNDMOV mBl,rBl
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16_00_bmlt4_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16_00_bmlt4_00_brlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16_00_bmlt4 = 
+{
+    ND_ILUT_FLT_BMLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16_00_bmlt4_00_brlt4,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16_00_bmlt4,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1536, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature_01_noa16,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1534, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    217, // BNDSTX Mmib,rBl
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel = 
+{
+    ND_ILUT_FLT_NORIPREL,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1535, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature_01_noa16,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_1b_prefix = 
+{
+    ND_ILUT_MAN_PREFIX,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_00_modrmmod,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_01_feature,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_02_modrmmod,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix_03_feature,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_01_noa16_00_brlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    212, // BNDCU rBl,Ey
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_01_noa16_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_01_noa16_00_brlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_01_noa16_00_brlt4,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1533, // NOP Ev,Gv
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature_01_noa16,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_01_noa16_00_brlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    210, // BNDCL rBl,Ey
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_01_noa16_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_01_noa16_00_brlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_01_noa16_00_brlt4,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1532, // NOP Ev,Gv
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature_01_noa16,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16_00_brlt4_00_bmlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    215, // BNDMOV rBl,mBl
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16_00_brlt4_00_bmlt4 = 
+{
+    ND_ILUT_FLT_BMLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16_00_brlt4_00_bmlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16_00_brlt4_00_bmlt4,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16_00_brlt4,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1531, // NOP Ev,Gv
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature_01_noa16,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1529, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    213, // BNDLDX rBl,Mmib
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4 = 
+{
+    ND_ILUT_FLT_BRLT4,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4_00_leaf,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel = 
+{
+    ND_ILUT_FLT_NORIPREL,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel_00_brlt4,
+    }
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16 = 
+{
+    ND_ILUT_FLT_NOA16,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16_00_noriprel,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1530, // NOP Gv,Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature_01_noa16,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_1a_prefix = 
+{
+    ND_ILUT_MAN_PREFIX,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_00_modrmmod,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_01_feature,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_02_feature,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix_03_feature,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_19_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1520]  // NOP Ev
+    1528, // NOP Ev
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1530]  // NOP Ev
+    1527, // NOP Ev
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_00_auxiliary_06_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary_06_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1858]  // PREFETCHIT0 Mb
+    1866, // PREFETCHIT0 Mb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_00_auxiliary_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary_06_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary_06_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1529]  // NOP Ev
+    1526, // NOP Ev
+    0,
 };
 
-const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_00_auxiliary = 
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_00_auxiliary_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary_00_leaf,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_00_auxiliary_06_leaf,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary_06_no1632,
         /* 07 */ (const void *)ND_NULL,
         /* 08 */ (const void *)ND_NULL,
         /* 09 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_00_auxiliary,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1528]  // NOP Ev
+    1525, // NOP Ev
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_00_auxiliary_06_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1859]  // PREFETCHIT1 Mb
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_00_auxiliary_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1527]  // NOP Ev
-};
-
-const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_00_auxiliary = 
-{
-    ND_ILUT_AUXILIARY,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_00_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)ND_NULL,
-        /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)ND_NULL,
-        /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_00_auxiliary_06_leaf,
-        /* 07 */ (const void *)ND_NULL,
-        /* 08 */ (const void *)ND_NULL,
-        /* 09 */ (const void *)ND_NULL,
-    }
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_00_auxiliary,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_05_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1526]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_04_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1525]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_04_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1864]  // PREFETCHRST2 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_04_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_04_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_04_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_03_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1524]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_03_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1870]  // PREFETCHT2 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_03_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_03_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_03_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_02_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1523]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_02_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1868]  // PREFETCHT1 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_02_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_02_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_02_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_01_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1522]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_01_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1866]  // PREFETCHT0 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_01_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_01_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_01_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_00_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1521]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_00_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1862]  // PREFETCHNTA Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_00_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_00_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_00_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg = 
-{
-    ND_ILUT_MODRM_REG,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_00_modrmmod,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_01_modrmmod,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_02_modrmmod,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_03_modrmmod,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_04_modrmmod,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_06_modrmmod,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg_07_modrmmod,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_07_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1519]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_06_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1518]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_05_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1517]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_04_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1516]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_04_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1863]  // PREFETCHRST2 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_04_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_04_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_04_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_03_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1515]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_03_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1869]  // PREFETCHT2 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_03_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_03_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_03_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_02_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1514]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_02_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1867]  // PREFETCHT1 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_02_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_02_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_02_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_01_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1513]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_01_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1865]  // PREFETCHT0 Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_01_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_01_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_01_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_00_modrmmod_01_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1512]  // NOP Ev
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_00_modrmmod_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1861]  // PREFETCHNTA Mb
-};
-
-const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_00_modrmmod = 
-{
-    ND_ILUT_MODRM_MOD,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_00_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_00_modrmmod_01_leaf,
-    }
-};
-
-const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg = 
-{
-    ND_ILUT_MODRM_REG,
-    {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_00_modrmmod,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_01_modrmmod,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_02_modrmmod,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_03_modrmmod,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_04_modrmmod,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg_07_leaf,
-    }
-};
-
-const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_18_feature = 
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature = 
 {
     ND_ILUT_FEATURE,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_00_modrmreg,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_00_leaf,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature_04_modrmreg,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature_04_auxiliary,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
     }
 };
 
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1524, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary_06_no1632_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1867, // PREFETCHIT1 Mb
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary_06_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary_06_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1523, // NOP Ev
+    0,
+};
+
+const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary = 
+{
+    ND_ILUT_AUXILIARY,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary_06_no1632,
+        /* 07 */ (const void *)ND_NULL,
+        /* 08 */ (const void *)ND_NULL,
+        /* 09 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1522, // NOP Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature_04_auxiliary,
+        /* 05 */ (const void *)ND_NULL,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_05_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1521, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_05_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1520, // NOP Ev
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_05_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_05_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_05_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1519, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_00_feature_05_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1870, // PREFETCHRST2 Mb
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_00_feature_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1518, // NOP Ev
+    0,
+};
+
+const ND_TABLE_FEATURE gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_00_feature = 
+{
+    ND_ILUT_FEATURE,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_00_feature_00_leaf,
+        /* 01 */ (const void *)ND_NULL,
+        /* 02 */ (const void *)ND_NULL,
+        /* 03 */ (const void *)ND_NULL,
+        /* 04 */ (const void *)ND_NULL,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_00_feature_05_leaf,
+        /* 06 */ (const void *)ND_NULL,
+        /* 07 */ (const void *)ND_NULL,
+    }
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_00_feature,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_03_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1517, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_03_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1873, // PREFETCHT2 Mb
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_03_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_03_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_03_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_02_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1516, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_02_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1872, // PREFETCHT1 Mb
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_02_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_02_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_02_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_01_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1515, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_01_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1871, // PREFETCHT0 Mb
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_01_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_01_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_01_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_00_modrmmod_01_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1514, // NOP Ev
+    0,
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_18_modrmreg_00_modrmmod_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    1869, // PREFETCHNTA Mb
+    0,
+};
+
+const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_18_modrmreg_00_modrmmod = 
+{
+    ND_ILUT_MODRM_MOD,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_00_modrmmod_00_leaf,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_00_modrmmod_01_leaf,
+    }
+};
+
+const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_18_modrmreg = 
+{
+    ND_ILUT_MODRM_REG,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_00_modrmmod,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_01_modrmmod,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_02_modrmmod,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_03_modrmmod,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_04_modrmmod,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_05_modrmmod,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_06_modrmmod,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg_07_modrmmod,
+    }
+};
+
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_17_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1421]  // MOVHPD Mq,Vq
+    1420, // MOVHPD Mq,Vq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_17_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_17_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -14321,12 +17249,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_17_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_17_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1423]  // MOVHPS Mq,Vq
+    1422, // MOVHPS Mq,Vq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_17_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_17_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -14336,6 +17266,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_17_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_17_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_17_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_17_prefix_01_modrmmod,
@@ -14347,18 +17278,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_17_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_16_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1455]  // MOVSHDUP Vx,Wx
+    1457, // MOVSHDUP Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_16_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1420]  // MOVHPD Vq,Mq
+    1419, // MOVHPD Vq,Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_16_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_16_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -14368,18 +17302,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_16_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1424]  // MOVLHPS Vq,Uq
+    1423, // MOVLHPS Vq,Uq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1422]  // MOVHPS Vq,Mq
+    1421, // MOVHPS Vq,Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod_01_leaf,
@@ -14389,6 +17326,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_16_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_16_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_16_prefix_01_modrmmod,
@@ -14400,18 +17338,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_16_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_15_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2670]  // UNPCKHPD Vx,Wx
+    2699, // UNPCKHPD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_15_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2671]  // UNPCKHPS Vx,Wx
+    2700, // UNPCKHPS Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_15_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_15_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_15_prefix_01_leaf,
@@ -14423,18 +17364,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_15_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_14_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2672]  // UNPCKLPD Vx,Wx
+    2701, // UNPCKLPD Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_14_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2673]  // UNPCKLPS Vx,Wx
+    2702, // UNPCKLPS Vx,Wx
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_14_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_14_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_14_prefix_01_leaf,
@@ -14446,12 +17390,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_14_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_13_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1426]  // MOVLPD Mq,Vpd
+    1425, // MOVLPD Mq,Vpd
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_13_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_13_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -14461,12 +17407,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_13_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_13_prefix_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1427]  // MOVLPS Mq,Vps
+    1426, // MOVLPS Mq,Vps
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_13_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_13_prefix_00_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -14476,6 +17424,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_13_prefix_00_modrmmod =
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_13_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_13_prefix_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_13_prefix_01_modrmmod,
@@ -14487,24 +17436,28 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_13_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_12_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1409]  // MOVDDUP Vdq,Wq
+    1408, // MOVDDUP Vdq,Wq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_12_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1456]  // MOVSLDUP Vx,Wx
+    1458, // MOVSLDUP Vx,Wx
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_12_prefix_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1425]  // MOVLPD Vsd,Mq
+    1424, // MOVLPD Vsd,Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_12_prefix_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_12_prefix_01_modrmmod_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -14514,12 +17467,14 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_12_prefix_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_12_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1419]  // MOVHLPS Vq,Wq
+    1418, // MOVHLPS Vq,Wq
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_12_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_12_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_12_prefix_01_modrmmod,
@@ -14531,30 +17486,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_12_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_11_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1454]  // MOVSD Wsd,Vsd
+    1456, // MOVSD Wsd,Vsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_11_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1460]  // MOVSS Wss,Vss
+    1462, // MOVSS Wss,Vss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_11_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1467]  // MOVUPD Wpd,Vpd
+    1469, // MOVUPD Wpd,Vpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_11_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1469]  // MOVUPS Wps,Vps
+    1471, // MOVUPS Wps,Vps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_11_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_11_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_11_prefix_01_leaf,
@@ -14566,30 +17526,35 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_11_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_10_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1453]  // MOVSD Vsd,Wsd
+    1455, // MOVSD Vsd,Wsd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_10_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1459]  // MOVSS Vss,Wss
+    1461, // MOVSS Vss,Wss
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_10_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1466]  // MOVUPD Vpd,Wpd
+    1468, // MOVUPD Vpd,Wpd
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_10_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1468]  // MOVUPS Vps,Wps
+    1470, // MOVUPS Vps,Wps
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_10_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_10_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_10_prefix_01_leaf,
@@ -14601,162 +17566,207 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_10_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_bf_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1686]  // PAVGUSB Pq,Qq
+    1694, // PAVGUSB Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_bb_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1938]  // PSWAPD Pq,Qq
+    1941, // PSWAPD Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_b7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1807]  // PMULHRW Pq,Qq
+    1815, // PMULHRW Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_b6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1740]  // PFRCPIT2 Pq,Qq
+    1748, // PFRCPIT2 Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_b4_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1735]  // PFMUL Pq,Qq
+    1743, // PFMUL Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_b0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1730]  // PFCMPEQ Pq,Qq
+    1738, // PFCMPEQ Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_ae_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1728]  // PFACC Pq,Qq
+    1736, // PFACC Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_aa_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1746]  // PFSUBR Pq,Qq
+    1754, // PFSUBR Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_a7_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1742]  // PFRSQIT1 Pq,Qq
+    1750, // PFRSQIT1 Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_a6_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1739]  // PFRCPIT1 Pq,Qq
+    1747, // PFRCPIT1 Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_a4_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1733]  // PFMAX Pq,Qq
+    1741, // PFMAX Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_a0_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1732]  // PFCMPGT Pq,Qq
+    1740, // PFCMPGT Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_9e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1729]  // PFADD Pq,Qq
+    1737, // PFADD Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_9a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1745]  // PFSUB Pq,Qq
+    1753, // PFSUB Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_97_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1743]  // PFRSQRT Pq,Qq
+    1751, // PFRSQRT Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_96_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1738]  // PFRCP Pq,Qq
+    1746, // PFRCP Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_94_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1734]  // PFMIN Pq,Qq
+    1742, // PFMIN Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_90_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1731]  // PFCMPGE Pq,Qq
+    1739, // PFCMPGE Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_8e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1737]  // PFPNACC Pq,Qq
+    1745, // PFPNACC Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_8a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1736]  // PFNACC Pq,Qq
+    1744, // PFNACC Pq,Qq
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_87_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_87_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1744]  // PFRSQRTV Pq,Qq
+    1752, // PFRSQRTV Pq,Qq
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_86_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_0f_opcode_last_87_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_87_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_86_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1741]  // PFRCPV Pq,Qq
+    1749, // PFRCPV Pq,Qq
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_0f_opcode_last_86_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_86_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_1d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1726]  // PF2ID Pq,Qq
+    1734, // PF2ID Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_1c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1727]  // PF2IW Pq,Qq
+    1735, // PF2IW Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_0d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1760]  // PI2FD Pq,Qq
+    1768, // PI2FD Pq,Qq
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0f_opcode_last_0c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1761]  // PI2FW Pq,Qq
+    1769, // PI2FW Pq,Qq
+    0,
 };
 
 const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_0f_opcode_last = 
 {
     ND_ILUT_OPCODE_LAST,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -14892,8 +17902,8 @@ const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_0f_opcode_last =
         /* 83 */ (const void *)ND_NULL,
         /* 84 */ (const void *)ND_NULL,
         /* 85 */ (const void *)ND_NULL,
-        /* 86 */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_86_leaf,
-        /* 87 */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_87_leaf,
+        /* 86 */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_86_no64,
+        /* 87 */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_87_no64,
         /* 88 */ (const void *)ND_NULL,
         /* 89 */ (const void *)ND_NULL,
         /* 8a */ (const void *)&gLegacyMap_opcode_0f_opcode_0f_opcode_last_8a_leaf,
@@ -15020,24 +18030,28 @@ const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode_0f_opcode_last =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0e_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 949]  // FEMMS
+    949, // FEMMS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_07_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1511]  // NOP Ev,Gv
+    1513, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1856]  // PREFETCH Mb
+    1864, // PREFETCH Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_07_modrmmod_01_leaf,
@@ -15047,18 +18061,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_06_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1510]  // NOP Ev,Gv
+    1512, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_06_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1855]  // PREFETCH Mb
+    1863, // PREFETCH Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_06_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_06_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_06_modrmmod_01_leaf,
@@ -15068,18 +18085,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_06_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_05_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1509]  // NOP Ev,Gv
+    1511, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_05_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1854]  // PREFETCH Mb
+    1862, // PREFETCH Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_05_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_05_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_05_modrmmod_01_leaf,
@@ -15089,18 +18109,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_05_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1508]  // NOP Ev,Gv
+    1510, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1853]  // PREFETCH Mb
+    1861, // PREFETCH Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_04_modrmmod_01_leaf,
@@ -15110,18 +18133,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1507]  // NOP Ev,Gv
+    1509, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1860]  // PREFETCHM Mb
+    1868, // PREFETCHM Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_03_modrmmod_01_leaf,
@@ -15131,18 +18157,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1506]  // NOP Ev,Gv
+    1508, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1872]  // PREFETCHWT1 Mb
+    1875, // PREFETCHWT1 Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_02_modrmmod_01_leaf,
@@ -15152,18 +18181,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1505]  // NOP Ev,Gv
+    1507, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1871]  // PREFETCHW Mb
+    1874, // PREFETCHW Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod_01_leaf,
@@ -15173,18 +18205,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1504]  // NOP Ev,Gv
+    1506, // NOP Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1857]  // PREFETCHE Mb
+    1865, // PREFETCHE Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod_01_leaf,
@@ -15194,6 +18229,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_0d_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_0d_modrmreg_01_modrmmod,
@@ -15209,30 +18245,34 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_0d_modrmreg =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_0b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2666]  // UD2
+    2695, // UD2
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_09_auxiliary_04_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_09_auxiliary_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4100]  // WBNOINVD
+    4129, // WBNOINVD
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_09_auxiliary_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4099]  // WBINVD
+    4128, // WBINVD
+    0,
 };
 
 const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_09_auxiliary = 
 {
     ND_ILUT_AUXILIARY,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_09_auxiliary_00_leaf,
-        /* 01 */ (const void *)ND_NULL,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_09_auxiliary_01_leaf,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_09_auxiliary_04_leaf,
+        /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
         /* 06 */ (const void *)ND_NULL,
         /* 07 */ (const void *)ND_NULL,
@@ -15244,42 +18284,49 @@ const ND_TABLE_AUXILIARY gLegacyMap_opcode_0f_opcode_09_auxiliary =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1154]  // INVD
+    1155, // INVD
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2591]  // SYSRET
+    2610, // SYSRET
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 562]  // CLTS
+    562, // CLTS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2588]  // SYSCALL
+    2607, // SYSCALL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_03_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1333]  // LSL Gv,Rz
+    1332, // LSL Gv,Rz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1332]  // LSL Gv,Mw
+    1331, // LSL Gv,Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_03_modrmmod_01_leaf,
@@ -15289,18 +18336,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_02_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1301]  // LAR Gv,Rz
+    1300, // LAR Gv,Rz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1300]  // LAR Gv,Mw
+    1299, // LAR Gv,Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_02_modrmmod_01_leaf,
@@ -15310,105 +18360,165 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_02_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1987]  // PVALIDATE
+    1990, // PVALIDATE
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_02_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1900]  // PSMASH
+    1903, // PSMASH
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_02_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_02_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2647]  // TLBSYNC
+    2676, // TLBSYNC
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_02_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_02_no1632,
         /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_07_prefix_03_leaf,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_03_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2101]  // RMPUPDATE
+    2104, // RMPUPDATE
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_02_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_03_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_03_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_02_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2098]  // RMPADJUST
+    2101, // RMPADJUST
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_02_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_02_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1159]  // INVLPGB
+    1160, // INVLPGB
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_02_leaf,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_03_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_02_no1632,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_06_prefix_03_no1632,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_03_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_03_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2100]  // RMPREAD
+    2103, // RMPREAD
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_02_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_03_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_03_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_02_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2099]  // RMPQUERY
+    2102, // RMPQUERY
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_02_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_02_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2085]  // RDPRU
+    2088, // RDPRU
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_02_leaf,
-        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_03_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_02_no1632,
+        /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_05_prefix_03_no1632,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 565]  // CLZERO
+    565, // CLZERO
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_03_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1488]  // MWAITX
+    1490, // MWAITX
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_03_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_03_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -15420,18 +18530,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_02_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1349]  // MCOMMIT
+    1348, // MCOMMIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_02_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1356]  // MONITORX
+    1355, // MONITORX
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_02_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_02_prefix_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -15443,20 +18556,32 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2093]  // RDTSCP
+    2096, // RDTSCP
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_00_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_00_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2587]  // SWAPGS
+    2606, // SWAPGS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_00_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_00_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_00_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_00_no1632,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_01_leaf,
         /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_02_prefix,
         /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm_03_prefix,
@@ -15470,12 +18595,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_m
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1157]  // INVLPG Mb
+    1158, // INVLPG Mb
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod_01_modrmrm,
@@ -15485,24 +18612,28 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_07_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1319]  // LMSW Ew
+    1318, // LMSW Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod_01_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4190]  // XRESLDTRK
+    4219, // XRESLDTRK
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4204]  // XSUSLDTRK
+    4233, // XSUSLDTRK
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod_01_modrmrm_01_leaf,
@@ -15518,72 +18649,118 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_mod
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_03_modrmmod_01_modrmrm,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_07_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2528]  // STUI
+    2547, // STUI
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_06_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_07_no1632 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 563]  // CLUI
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_07_no1632_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_06_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2634]  // TESTUI
+    563, // CLUI
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_04_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_06_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_06_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_05_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2667]  // UIRET
+    2661, // TESTUI
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_05_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_04_no1632_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    2696, // UIRET
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_04_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_04_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2284]  // SAVEPREVSSP
+    2287, // SAVEPREVSSP
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2360]  // SETSSBSY
+    2363, // SETSSBSY
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_02_leaf,
         /* 03 */ (const void *)ND_NULL,
-        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_04_leaf,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_07_leaf,
+        /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_04_no1632,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_05_no1632,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_06_no1632,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm_07_no1632,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2195]  // RSTORSSP Mq
+    2198, // RSTORSSP Mq
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_modrmmod_01_modrmrm,
@@ -15593,24 +18770,28 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_02_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod_01_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4108]  // WRPKRU
+    4137, // WRPKRU
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod_01_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2083]  // RDPKRU
+    2086, // RDPKRU
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2329]  // SERIALIZE
+    2332, // SERIALIZE
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)ND_NULL,
@@ -15626,6 +18807,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_mod
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod_01_modrmrm,
@@ -15635,6 +18817,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_mo
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix_00_modrmmod,
         /* 01 */ (const void *)ND_NULL,
@@ -15646,18 +18829,21 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_05_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_04_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2504]  // SMSW Rv
+    2523, // SMSW Rv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_04_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2503]  // SMSW Mw
+    2522, // SMSW Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_04_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_04_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_04_modrmmod_01_leaf,
@@ -15667,66 +18853,77 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_04_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1158]  // INVLPGA
+    1159, // INVLPGA
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2499]  // SKINIT
+    2518, // SKINIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 559]  // CLGI
+    559, // CLGI
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2513]  // STGI
+    2532, // STGI
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3391]  // VMSAVE
+    3420, // VMSAVE
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3266]  // VMLOAD
+    3295, // VMLOAD
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3246]  // VMGEXIT
+    3275, // VMGEXIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3245]  // VMGEXIT
+    3274, // VMGEXIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3268]  // VMMCALL
+    3297, // VMMCALL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3267]  // VMMCALL
+    3296, // VMMCALL
+    0,
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix_01_leaf,
@@ -15738,12 +18935,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_mo
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3390]  // VMRUN
+    3419, // VMRUN
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm_01_prefix,
@@ -15759,12 +18958,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_m
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1314]  // LIDT Ms
+    1313, // LIDT Ms
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod_01_modrmrm,
@@ -15774,42 +18975,49 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_03_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 891]  // ENCLU
+    891, // ENCLU
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4205]  // XTEST
+    4234, // XTEST
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4131]  // XEND
+    4160, // XEND
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3244]  // VMFUNC
+    3273, // VMFUNC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4203]  // XSETBV
+    4232, // XSETBV
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4132]  // XGETBV
+    4161, // XGETBV
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm_01_leaf,
@@ -15825,6 +19033,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_p
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix_00_modrmrm,
         /* 01 */ (const void *)ND_NULL,
@@ -15836,31 +19045,44 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_pr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1312]  // LGDT Ms
+    1311, // LGDT Ms
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_02_modrmmod_01_prefix,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm_02_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 902]  // ERETS
+    902, // ERETS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm_02_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm_02_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm_02_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_03_modrmrm_02_no1632,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
@@ -15869,19 +19091,30 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_p
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm_02_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm_02_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 903]  // ERETU
+    903, // ERETU
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm_02_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm_02_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
-        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm_02_leaf,
+        /* 02 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_02_modrmrm_02_no1632,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
@@ -15890,78 +19123,116 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_p
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_07_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2325]  // SEAMCALL
+    2328, // SEAMCALL
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_06_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_07_no1632 = 
 {
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2326]  // SEAMOPS
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_07_no1632_00_leaf,
+    }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_05_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_06_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2327]  // SEAMRET
+    2329, // SEAMOPS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_06_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_06_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_05_no1632_00_leaf = 
+{
+    ND_ILUT_INSTRUCTION,
+    2330, // SEAMRET
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_05_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_05_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2615]  // TDCALL
+    2642, // TDCALL
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_04_leaf,
-        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_07_leaf,
+        /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_05_no1632,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_06_no1632,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm_07_no1632,
     }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_07_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 890]  // ENCLS
+    890, // ENCLS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2510]  // STAC
+    2529, // STAC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 551]  // CLAC
+    551, // CLAC
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1487]  // MWAIT
+    1489, // MWAIT
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1355]  // MONITOR
+    1354, // MONITOR
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm_01_leaf,
@@ -15977,6 +19248,7 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_p
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_00_modrmrm,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix_01_modrmrm,
@@ -15988,27 +19260,40 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_pr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2498]  // SIDT Ms
+    2517, // SIDT Ms
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod_01_prefix,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm_06_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm_06_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2081]  // RDMSRLIST
+    2084, // RDMSRLIST
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm_06_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm_06_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -16016,20 +19301,31 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_p
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm_06_leaf,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_03_modrmrm_06_no1632,
         /* 07 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm_06_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm_06_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4104]  // WRMSRLIST
+    4133, // WRMSRLIST
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm_06_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm_06_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
@@ -16037,62 +19333,80 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_p
         /* 03 */ (const void *)ND_NULL,
         /* 04 */ (const void *)ND_NULL,
         /* 05 */ (const void *)ND_NULL,
-        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm_06_leaf,
+        /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_02_modrmrm_06_no1632,
         /* 07 */ (const void *)ND_NULL,
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_07_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1691]  // PBNDKB
+    1699, // PBNDKB
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_07_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_07_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_06_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 4106]  // WRMSRNS
+    4135, // WRMSRNS
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1711]  // PCONFIG
+    1719, // PCONFIG
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3404]  // VMXOFF
+    3433, // VMXOFF
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3389]  // VMRESUME
+    3418, // VMRESUME
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3265]  // VMLAUNCH
+    3294, // VMLAUNCH
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 3242]  // VMCALL
+    3271, // VMCALL
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 892]  // ENCLV
+    892, // ENCLV
+    0,
 };
 
 const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm = 
 {
     ND_ILUT_MODRM_RM,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_01_leaf,
@@ -16101,13 +19415,14 @@ const ND_TABLE_MODRM_RM gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_p
         /* 04 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_04_leaf,
         /* 05 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_05_leaf,
         /* 06 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_07_leaf,
+        /* 07 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm_07_no1632,
     }
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix_00_modrmrm,
         /* 01 */ (const void *)ND_NULL,
@@ -16119,12 +19434,14 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_pr
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2364]  // SGDT Ms
+    2383, // SGDT Ms
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod_01_prefix,
@@ -16134,6 +19451,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_01_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg_01_modrmmod,
@@ -16146,38 +19464,54 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_01_modrmreg =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_01_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_01_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1316]  // LKGS Rv
+    1315, // LKGS Rv
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_00_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_01_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_01_no1632_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_00_no1632_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1315]  // LKGS Mw
+    1314, // LKGS Mw
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_00_no1632 = 
+{
+    ND_ILUT_FLT_NO1632,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_00_no1632_00_leaf,
+    }
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_00_leaf,
-        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_01_leaf,
+        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_00_no1632,
+        /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod_01_no1632,
     }
-};
-
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_00_leaf = 
-{
-    ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1181]  // JMPE Ev
 };
 
 const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix = 
 {
     ND_ILUT_MAN_PREFIX,
+    0,
     {
-        /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_00_leaf,
+        /* 00 */ (const void *)ND_NULL,
         /* 01 */ (const void *)ND_NULL,
         /* 02 */ (const void *)ND_NULL,
         /* 03 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix_03_modrmmod,
@@ -16187,42 +19521,49 @@ const ND_TABLE_MPREFIX gLegacyMap_opcode_0f_opcode_00_modrmreg_06_prefix =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2926]  // VERW Ew
+    2955, // VERW Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2925]  // VERR Ew
+    2954, // VERR Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1335]  // LTR Ew
+    1334, // LTR Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1317]  // LLDT Ew
+    1316, // LLDT Ew
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2525]  // STR Rv
+    2544, // STR Rv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2524]  // STR Mw
+    2543, // STR Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod_01_leaf,
@@ -16232,18 +19573,21 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod =
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2501]  // SLDT Rv
+    2520, // SLDT Rv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 2500]  // SLDT Mw
+    2519, // SLDT Mw
+    0,
 };
 
 const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod = 
 {
     ND_ILUT_MODRM_MOD,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod_01_leaf,
@@ -16253,6 +19597,7 @@ const ND_TABLE_MODRM_MOD gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod =
 const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_00_modrmreg = 
 {
     ND_ILUT_MODRM_REG,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_00_modrmmod,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg_01_modrmmod,
@@ -16268,6 +19613,7 @@ const ND_TABLE_MODRM_REG gLegacyMap_opcode_0f_opcode_00_modrmreg =
 const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode = 
 {
     ND_ILUT_OPCODE,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_0f_opcode_00_modrmreg,
         /* 01 */ (const void *)&gLegacyMap_opcode_0f_opcode_01_modrmreg,
@@ -16293,21 +19639,21 @@ const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode =
         /* 15 */ (const void *)&gLegacyMap_opcode_0f_opcode_15_prefix,
         /* 16 */ (const void *)&gLegacyMap_opcode_0f_opcode_16_prefix,
         /* 17 */ (const void *)&gLegacyMap_opcode_0f_opcode_17_prefix,
-        /* 18 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_feature,
+        /* 18 */ (const void *)&gLegacyMap_opcode_0f_opcode_18_modrmreg,
         /* 19 */ (const void *)&gLegacyMap_opcode_0f_opcode_19_leaf,
-        /* 1a */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_feature,
-        /* 1b */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_feature,
-        /* 1c */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_feature,
+        /* 1a */ (const void *)&gLegacyMap_opcode_0f_opcode_1a_prefix,
+        /* 1b */ (const void *)&gLegacyMap_opcode_0f_opcode_1b_prefix,
+        /* 1c */ (const void *)&gLegacyMap_opcode_0f_opcode_1c_modrmreg,
         /* 1d */ (const void *)&gLegacyMap_opcode_0f_opcode_1d_leaf,
-        /* 1e */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_feature,
+        /* 1e */ (const void *)&gLegacyMap_opcode_0f_opcode_1e_modrmreg,
         /* 1f */ (const void *)&gLegacyMap_opcode_0f_opcode_1f_leaf,
-        /* 20 */ (const void *)&gLegacyMap_opcode_0f_opcode_20_leaf,
-        /* 21 */ (const void *)&gLegacyMap_opcode_0f_opcode_21_leaf,
-        /* 22 */ (const void *)&gLegacyMap_opcode_0f_opcode_22_leaf,
-        /* 23 */ (const void *)&gLegacyMap_opcode_0f_opcode_23_leaf,
-        /* 24 */ (const void *)&gLegacyMap_opcode_0f_opcode_24_leaf,
+        /* 20 */ (const void *)&gLegacyMap_opcode_0f_opcode_20_crin02348,
+        /* 21 */ (const void *)&gLegacyMap_opcode_0f_opcode_21_drlt8,
+        /* 22 */ (const void *)&gLegacyMap_opcode_0f_opcode_22_crin02348,
+        /* 23 */ (const void *)&gLegacyMap_opcode_0f_opcode_23_drlt8,
+        /* 24 */ (const void *)&gLegacyMap_opcode_0f_opcode_24_no64,
         /* 25 */ (const void *)ND_NULL,
-        /* 26 */ (const void *)&gLegacyMap_opcode_0f_opcode_26_leaf,
+        /* 26 */ (const void *)&gLegacyMap_opcode_0f_opcode_26_no64,
         /* 27 */ (const void *)ND_NULL,
         /* 28 */ (const void *)&gLegacyMap_opcode_0f_opcode_28_prefix,
         /* 29 */ (const void *)&gLegacyMap_opcode_0f_opcode_29_prefix,
@@ -16528,99 +19874,142 @@ const ND_TABLE_OPCODE gLegacyMap_opcode_0f_opcode =
     }
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0e_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0e_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1956]  // PUSH CS
+    1959, // PUSH CS
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_0e_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_0e_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0d_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1631]  // OR rAX,Iz
+    1617, // OR rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0c_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1630]  // OR AL,Ib
+    1616, // OR AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0b_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1629]  // OR Gv,Ev
+    1615, // OR Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_0a_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1628]  // OR Gb,Eb
+    1614, // OR Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_09_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1627]  // OR Ev,Gv
+    1613, // OR Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_08_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1626]  // OR Eb,Gb
+    1612, // OR Eb,Gb
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_07_leaf = 
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_07_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1817]  // POP ES
+    1825, // POP ES
+    0,
 };
 
-const ND_TABLE_INSTRUCTION gLegacyMap_opcode_06_leaf = 
+const ND_TABLE_FILTER gLegacyMap_opcode_07_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_07_no64_00_leaf,
+    }
+};
+
+const ND_TABLE_INSTRUCTION gLegacyMap_opcode_06_no64_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[ 1955]  // PUSH ES
+    1958, // PUSH ES
+    0,
+};
+
+const ND_TABLE_FILTER gLegacyMap_opcode_06_no64 = 
+{
+    ND_ILUT_FLT_NO64,
+    0,
+    {
+        /* 00 */ (const void *)&gLegacyMap_opcode_06_no64_00_leaf,
+    }
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_05_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  92]  // ADD rAX,Iz
+    70, // ADD rAX,Iz
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_04_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  91]  // ADD AL,Ib
+    69, // ADD AL,Ib
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_03_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  90]  // ADD Gv,Ev
+    68, // ADD Gv,Ev
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_02_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  89]  // ADD Gb,Eb
+    67, // ADD Gb,Eb
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_01_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  88]  // ADD Ev,Gv
+    66, // ADD Ev,Gv
+    0,
 };
 
 const ND_TABLE_INSTRUCTION gLegacyMap_opcode_00_leaf = 
 {
     ND_ILUT_INSTRUCTION,
-    (const void *)&gInstructions[  87]  // ADD Eb,Gb
+    65, // ADD Eb,Gb
+    0,
 };
 
 const ND_TABLE_OPCODE gLegacyMap_opcode = 
 {
     ND_ILUT_OPCODE,
+    0,
     {
         /* 00 */ (const void *)&gLegacyMap_opcode_00_leaf,
         /* 01 */ (const void *)&gLegacyMap_opcode_01_leaf,
@@ -16628,15 +20017,15 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 03 */ (const void *)&gLegacyMap_opcode_03_leaf,
         /* 04 */ (const void *)&gLegacyMap_opcode_04_leaf,
         /* 05 */ (const void *)&gLegacyMap_opcode_05_leaf,
-        /* 06 */ (const void *)&gLegacyMap_opcode_06_leaf,
-        /* 07 */ (const void *)&gLegacyMap_opcode_07_leaf,
+        /* 06 */ (const void *)&gLegacyMap_opcode_06_no64,
+        /* 07 */ (const void *)&gLegacyMap_opcode_07_no64,
         /* 08 */ (const void *)&gLegacyMap_opcode_08_leaf,
         /* 09 */ (const void *)&gLegacyMap_opcode_09_leaf,
         /* 0a */ (const void *)&gLegacyMap_opcode_0a_leaf,
         /* 0b */ (const void *)&gLegacyMap_opcode_0b_leaf,
         /* 0c */ (const void *)&gLegacyMap_opcode_0c_leaf,
         /* 0d */ (const void *)&gLegacyMap_opcode_0d_leaf,
-        /* 0e */ (const void *)&gLegacyMap_opcode_0e_leaf,
+        /* 0e */ (const void *)&gLegacyMap_opcode_0e_no64,
         /* 0f */ (const void *)&gLegacyMap_opcode_0f_opcode,
         /* 10 */ (const void *)&gLegacyMap_opcode_10_leaf,
         /* 11 */ (const void *)&gLegacyMap_opcode_11_leaf,
@@ -16644,16 +20033,16 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 13 */ (const void *)&gLegacyMap_opcode_13_leaf,
         /* 14 */ (const void *)&gLegacyMap_opcode_14_leaf,
         /* 15 */ (const void *)&gLegacyMap_opcode_15_leaf,
-        /* 16 */ (const void *)&gLegacyMap_opcode_16_leaf,
-        /* 17 */ (const void *)&gLegacyMap_opcode_17_leaf,
+        /* 16 */ (const void *)&gLegacyMap_opcode_16_no64,
+        /* 17 */ (const void *)&gLegacyMap_opcode_17_no64,
         /* 18 */ (const void *)&gLegacyMap_opcode_18_leaf,
         /* 19 */ (const void *)&gLegacyMap_opcode_19_leaf,
         /* 1a */ (const void *)&gLegacyMap_opcode_1a_leaf,
         /* 1b */ (const void *)&gLegacyMap_opcode_1b_leaf,
         /* 1c */ (const void *)&gLegacyMap_opcode_1c_leaf,
         /* 1d */ (const void *)&gLegacyMap_opcode_1d_leaf,
-        /* 1e */ (const void *)&gLegacyMap_opcode_1e_leaf,
-        /* 1f */ (const void *)&gLegacyMap_opcode_1f_leaf,
+        /* 1e */ (const void *)&gLegacyMap_opcode_1e_no64,
+        /* 1f */ (const void *)&gLegacyMap_opcode_1f_no64,
         /* 20 */ (const void *)&gLegacyMap_opcode_20_leaf,
         /* 21 */ (const void *)&gLegacyMap_opcode_21_leaf,
         /* 22 */ (const void *)&gLegacyMap_opcode_22_leaf,
@@ -16661,7 +20050,7 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 24 */ (const void *)&gLegacyMap_opcode_24_leaf,
         /* 25 */ (const void *)&gLegacyMap_opcode_25_leaf,
         /* 26 */ (const void *)ND_NULL,
-        /* 27 */ (const void *)&gLegacyMap_opcode_27_leaf,
+        /* 27 */ (const void *)&gLegacyMap_opcode_27_no64,
         /* 28 */ (const void *)&gLegacyMap_opcode_28_leaf,
         /* 29 */ (const void *)&gLegacyMap_opcode_29_leaf,
         /* 2a */ (const void *)&gLegacyMap_opcode_2a_leaf,
@@ -16669,7 +20058,7 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 2c */ (const void *)&gLegacyMap_opcode_2c_leaf,
         /* 2d */ (const void *)&gLegacyMap_opcode_2d_leaf,
         /* 2e */ (const void *)ND_NULL,
-        /* 2f */ (const void *)&gLegacyMap_opcode_2f_leaf,
+        /* 2f */ (const void *)&gLegacyMap_opcode_2f_no64,
         /* 30 */ (const void *)&gLegacyMap_opcode_30_leaf,
         /* 31 */ (const void *)&gLegacyMap_opcode_31_leaf,
         /* 32 */ (const void *)&gLegacyMap_opcode_32_leaf,
@@ -16677,7 +20066,7 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 34 */ (const void *)&gLegacyMap_opcode_34_leaf,
         /* 35 */ (const void *)&gLegacyMap_opcode_35_leaf,
         /* 36 */ (const void *)ND_NULL,
-        /* 37 */ (const void *)&gLegacyMap_opcode_37_leaf,
+        /* 37 */ (const void *)&gLegacyMap_opcode_37_no64,
         /* 38 */ (const void *)&gLegacyMap_opcode_38_leaf,
         /* 39 */ (const void *)&gLegacyMap_opcode_39_leaf,
         /* 3a */ (const void *)&gLegacyMap_opcode_3a_leaf,
@@ -16685,23 +20074,23 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 3c */ (const void *)&gLegacyMap_opcode_3c_leaf,
         /* 3d */ (const void *)&gLegacyMap_opcode_3d_leaf,
         /* 3e */ (const void *)ND_NULL,
-        /* 3f */ (const void *)&gLegacyMap_opcode_3f_leaf,
-        /* 40 */ (const void *)&gLegacyMap_opcode_40_leaf,
-        /* 41 */ (const void *)&gLegacyMap_opcode_41_leaf,
-        /* 42 */ (const void *)&gLegacyMap_opcode_42_leaf,
-        /* 43 */ (const void *)&gLegacyMap_opcode_43_leaf,
-        /* 44 */ (const void *)&gLegacyMap_opcode_44_leaf,
-        /* 45 */ (const void *)&gLegacyMap_opcode_45_leaf,
-        /* 46 */ (const void *)&gLegacyMap_opcode_46_leaf,
-        /* 47 */ (const void *)&gLegacyMap_opcode_47_leaf,
-        /* 48 */ (const void *)&gLegacyMap_opcode_48_leaf,
-        /* 49 */ (const void *)&gLegacyMap_opcode_49_leaf,
-        /* 4a */ (const void *)&gLegacyMap_opcode_4a_leaf,
-        /* 4b */ (const void *)&gLegacyMap_opcode_4b_leaf,
-        /* 4c */ (const void *)&gLegacyMap_opcode_4c_leaf,
-        /* 4d */ (const void *)&gLegacyMap_opcode_4d_leaf,
-        /* 4e */ (const void *)&gLegacyMap_opcode_4e_leaf,
-        /* 4f */ (const void *)&gLegacyMap_opcode_4f_leaf,
+        /* 3f */ (const void *)&gLegacyMap_opcode_3f_no64,
+        /* 40 */ (const void *)&gLegacyMap_opcode_40_no64,
+        /* 41 */ (const void *)&gLegacyMap_opcode_41_no64,
+        /* 42 */ (const void *)&gLegacyMap_opcode_42_no64,
+        /* 43 */ (const void *)&gLegacyMap_opcode_43_no64,
+        /* 44 */ (const void *)&gLegacyMap_opcode_44_no64,
+        /* 45 */ (const void *)&gLegacyMap_opcode_45_no64,
+        /* 46 */ (const void *)&gLegacyMap_opcode_46_no64,
+        /* 47 */ (const void *)&gLegacyMap_opcode_47_no64,
+        /* 48 */ (const void *)&gLegacyMap_opcode_48_no64,
+        /* 49 */ (const void *)&gLegacyMap_opcode_49_no64,
+        /* 4a */ (const void *)&gLegacyMap_opcode_4a_no64,
+        /* 4b */ (const void *)&gLegacyMap_opcode_4b_no64,
+        /* 4c */ (const void *)&gLegacyMap_opcode_4c_no64,
+        /* 4d */ (const void *)&gLegacyMap_opcode_4d_no64,
+        /* 4e */ (const void *)&gLegacyMap_opcode_4e_no64,
+        /* 4f */ (const void *)&gLegacyMap_opcode_4f_no64,
         /* 50 */ (const void *)&gLegacyMap_opcode_50_auxiliary,
         /* 51 */ (const void *)&gLegacyMap_opcode_51_auxiliary,
         /* 52 */ (const void *)&gLegacyMap_opcode_52_auxiliary,
@@ -16776,7 +20165,7 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* 97 */ (const void *)&gLegacyMap_opcode_97_leaf,
         /* 98 */ (const void *)&gLegacyMap_opcode_98_dsize,
         /* 99 */ (const void *)&gLegacyMap_opcode_99_dsize,
-        /* 9a */ (const void *)&gLegacyMap_opcode_9a_leaf,
+        /* 9a */ (const void *)&gLegacyMap_opcode_9a_no64,
         /* 9b */ (const void *)&gLegacyMap_opcode_9b_leaf,
         /* 9c */ (const void *)&gLegacyMap_opcode_9c_dsize,
         /* 9d */ (const void *)&gLegacyMap_opcode_9d_dsize,
@@ -16828,14 +20217,14 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* cb */ (const void *)&gLegacyMap_opcode_cb_leaf,
         /* cc */ (const void *)&gLegacyMap_opcode_cc_leaf,
         /* cd */ (const void *)&gLegacyMap_opcode_cd_leaf,
-        /* ce */ (const void *)&gLegacyMap_opcode_ce_leaf,
+        /* ce */ (const void *)&gLegacyMap_opcode_ce_no64,
         /* cf */ (const void *)&gLegacyMap_opcode_cf_dsize,
         /* d0 */ (const void *)&gLegacyMap_opcode_d0_modrmreg,
         /* d1 */ (const void *)&gLegacyMap_opcode_d1_modrmreg,
         /* d2 */ (const void *)&gLegacyMap_opcode_d2_modrmreg,
         /* d3 */ (const void *)&gLegacyMap_opcode_d3_modrmreg,
-        /* d4 */ (const void *)&gLegacyMap_opcode_d4_leaf,
-        /* d5 */ (const void *)&gLegacyMap_opcode_d5_leaf,
+        /* d4 */ (const void *)&gLegacyMap_opcode_d4_no64,
+        /* d5 */ (const void *)&gLegacyMap_opcode_d5_no64,
         /* d6 */ (const void *)&gLegacyMap_opcode_d6_leaf,
         /* d7 */ (const void *)&gLegacyMap_opcode_d7_leaf,
         /* d8 */ (const void *)&gLegacyMap_opcode_d8_modrmreg,
@@ -16856,7 +20245,7 @@ const ND_TABLE_OPCODE gLegacyMap_opcode =
         /* e7 */ (const void *)&gLegacyMap_opcode_e7_leaf,
         /* e8 */ (const void *)&gLegacyMap_opcode_e8_leaf,
         /* e9 */ (const void *)&gLegacyMap_opcode_e9_leaf,
-        /* ea */ (const void *)&gLegacyMap_opcode_ea_leaf,
+        /* ea */ (const void *)&gLegacyMap_opcode_ea_no64,
         /* eb */ (const void *)&gLegacyMap_opcode_eb_leaf,
         /* ec */ (const void *)&gLegacyMap_opcode_ec_leaf,
         /* ed */ (const void *)&gLegacyMap_opcode_ed_leaf,

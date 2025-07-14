@@ -513,6 +513,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ProgramDataBaseFileName>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
       <CompileAs>Default</CompileAs>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -665,8 +666,12 @@
       <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='ReleaseKernel|ARM64'">
       </ForcedIncludeFiles>
     </ClCompile>
+    <ClCompile Include="bdx86_idbe.c" />
+    <ClCompile Include="bdx86_operand.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\inc\bdx86_api_legacy.h" />
+    <ClInclude Include="..\inc\bdx86_api_mini.h" />
     <ClInclude Include="..\inc\bdx86_core.h" />
     <ClInclude Include="..\inc\bdx86_constants.h" />
     <ClInclude Include="..\inc\bdx86_cpuidflags.h" />
@@ -678,7 +683,10 @@
     <ClInclude Include="include\bdx86_instructions.h" />
     <ClInclude Include="include\bdx86_mnemonics.h" />
     <ClInclude Include="include\bddisasm_crt.h" />
+    <ClInclude Include="include\bdx86_modrm.h" />
+    <ClInclude Include="include\bdx86_operand.h" />
     <ClInclude Include="include\bdx86_prefixes.h" />
+    <ClInclude Include="include\bdx86_rex2.h" />
     <ClInclude Include="include\bdx86_tabledefs.h" />
     <ClInclude Include="include\bdx86_table_evex.h" />
     <ClInclude Include="include\bdx86_table_root.h" />
