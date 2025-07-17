@@ -87,6 +87,8 @@ set(BDDISASM_PUBLIC_HEADERS
     "inc/bddisasm_status.h"
     "inc/bddisasm_types.h"
     "inc/bddisasm_version.h"
+    "inc/bdx86_api_legacy.h"
+    "inc/bdx86_api_mini.h"
     "inc/bdx86_constants.h"
     "inc/bdx86_core.h"
     "inc/bdx86_cpuidflags.h"
