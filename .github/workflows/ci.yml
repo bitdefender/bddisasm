@@ -160,7 +160,7 @@ jobs:
 
   Windows-clang-build:
 
-    runs-on: winodws-latest
+    runs-on: windows-latest
 
     permissions: read-all
     steps:
