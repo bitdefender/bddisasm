@@ -5,6 +5,10 @@
 #ifndef BDDISASM_TYPES_H
 #define BDDISASM_TYPES_H
 
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wlanguage-extension-token"
+#endif
 
 #if defined(_MSC_VER) || defined(__ICC) || defined(__INTEL_COMPILER)
 
@@ -103,5 +107,9 @@ typedef ND_UINT8 ND_BOOL;
 #endif
 #define ND_TRUE     (1)
 #define ND_FALSE    (0)
+
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 
 #endif // BDDISASM_TYPES_H
