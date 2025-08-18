@@ -158,6 +158,25 @@ jobs:
         ninja
         cd -
 
+  Windows-clang-build:
+
+    runs-on: winodws-latest
+
+    permissions: read-all
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Clang
+      uses: egor-tensin/setup-clang@ef434b41eb33a70396fb336b1bae39c76d740c3d # v1.4
+    - uses: seanmiddleditch/gha-setup-ninja@3b1f8f94a2f8254bd26914c4ab9474d4f0015f67 # master
+    - name: Build libs
+      run: |
+        mkdir build
+        cd build
+        cmake .. -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+        # disasmtool can not be built with clang on Windows at the moment.
+        ninja bddisasm bdshemu
+        cd -
+
   Macos-build:
 
     runs-on: macos-latest
