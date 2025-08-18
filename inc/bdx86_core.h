@@ -13,6 +13,11 @@
 #include "bdx86_constants.h"
 #include "bdx86_cpuidflags.h"
 
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
+#pragma clang diagnostic ignored "-Wnested-anon-types"
+#endif
 
 #ifdef _MSC_VER
 #pragma warning(push)
@@ -1953,6 +1958,10 @@ NdInitContext(
 // #pragma warning(default: 4201) // Nonstandard extension used: nameless struct/union.
 #ifdef _MSC_VER
 #pragma warning(pop)
+#endif
+
+#if defined(__clang__)
+#pragma clang diagnostic pop
 #endif
 
 #endif // BDX86_CORE_H
