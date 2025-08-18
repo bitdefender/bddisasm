@@ -42,43 +42,54 @@ endif ()
 
 # These are shared by bddisasm and bdshemu.
 if (MSVC OR "${CMAKE_C_COMPILER_FRONTEND_VARIANT}" STREQUAL "MSVC")
-    set(BDDISASM_COMMON_COMPILE_OPTIONS /W4 /WX)
+    if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+        set(BDDISASM_COMMON_COMPILE_OPTIONS /W4 /WX)
+    endif ()
 else ()
     set(BDDISASM_COMMON_COMPILE_OPTIONS
         "$<$<CONFIG:Release>:-U_FORTIFY_SOURCE>"
         "$<$<CONFIG:Release>:-D_FORTIFY_SOURCE=2>"
-        -Wall
         -Wno-unknown-pragmas
-        -Wextra
-        -Wshadow
-        -Wformat-security
-        -Wstrict-overflow=2
-        -Wstrict-prototypes
-        -Wwrite-strings
-        -Wshadow
-        -Winit-self
         -Wno-unused-function
         -Wno-multichar
         -Wno-incompatible-pointer-types
         -Wnull-dereference
-        -Werror=format-security
-        -Werror=implicit-function-declaration
         -pipe
         -fwrapv
         -fno-strict-aliasing
         -fstack-protector-strong
-        -fno-omit-frame-pointer
-        -ffunction-sections
-        -fdata-sections
-        -g3
-        -gdwarf-4
-        -grecord-gcc-switches
-        -march=native)
+    )
+
+    if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+        list(APPEND BDDISASM_COMMON_COMPILE_OPTIONS
+            -Wall
+            -Wextra
+            -Wshadow
+            -Wformat-security
+            -Wstrict-overflow=2
+            -Wstrict-prototypes
+            -Wwrite-strings
+            -Winit-self
+            -Werror=format-security
+            -Werror=implicit-function-declaration
+            -fno-omit-frame-pointer
+            -g3
+            -gdwarf-4
+            -grecord-gcc-switches
+            -march=native
+        )
+    endif ()
 
     if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
         list(APPEND BDDISASM_COMMON_COMPILE_OPTIONS
-            -Wduplicated-cond
-            -Wno-discarded-qualifiers)
+            -Wno-discarded-qualifiers
+        )
+
+        if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+            list(APPEND BDDISASM_COMMON_COMPILE_OPTIONS
+                -Wduplicated-cond
+            )
+        endif ()
     endif ()
 endif ()
 
