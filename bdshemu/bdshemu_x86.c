@@ -2640,8 +2640,9 @@ check_far_branch:
         case ND_INS_LODS:
         case ND_INS_STOS:
         case ND_INS_MOVS:
-            // Fetch the rCX register, which is the third operand in case of repeated instructions.
-            while (Context->InstructionsCount < Context->MaxInstructionsCount)
+            // do/while: outer loop already gated this dispatch on a budget slot,
+            // so iteration #1 must run even at MaxInstructionsCount == 1.
+            do
             {
                 // Get the RCX value.
                 GET_OP(Context, 2, &dst);
@@ -2667,12 +2668,13 @@ check_far_branch:
                 }
 
                 Context->InstructionsCount++;
-            }
+            } while (Context->InstructionsCount < Context->MaxInstructionsCount);
             break;
 
         case ND_INS_SCAS:
         case ND_INS_CMPS:
-            while (Context->InstructionsCount < Context->MaxInstructionsCount)
+            // Same budget contract as MOVS above.
+            do
             {
                 // Get the RCX value.
                 GET_OP(Context, 2, &dst);
@@ -2717,7 +2719,7 @@ check_far_branch:
                 }
 
                 Context->InstructionsCount++;
-            }
+            } while (Context->InstructionsCount < Context->MaxInstructionsCount);
             break;
 
         case ND_INS_MUL:
