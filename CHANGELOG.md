@@ -4,6 +4,17 @@ All notable (user-facing) changes to this project will be documented in this fil
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.2] - 2026-10-06
+
+### Fixed
+- Displacement decoding for instructions using 16-bit and displacement only addressing.
+
+
+## [3.0.1] - 2026-02-19
+
+### Added
+- Added missing header files to BDDISASM_PUBLIC_HEADERS.
+
 
 ## [3.0.0] - 2025-07-14
 
