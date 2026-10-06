@@ -10,6 +10,35 @@
     mov     ax, word [bp + di]
     mov     ax, word [bp + si]
     
+    lea     si, word [bx + si]
+    lea     si, word [bx + di]
+    lea     si, word [bp + si]
+    lea     si, word [bp + di]
+    lea     si, word [si]
+    lea     si, word [di]
+    lea     si, word [0x7FFF]
+    lea     si, word [bx]
+    
+    lea     si, word [0x7F + bx + si]
+    lea     si, word [0x7F + bx + di]
+    lea     si, word [0x7F + bp + si]
+    lea     si, word [0x7F + bp + di]
+    lea     si, word [0x7F + si]
+    lea     si, word [0x7F + di]
+    lea     si, word [0x7F + bp]
+    lea     si, word [0x7F + bx]
+    
+    lea     si, word [0x7FFF + bx + si]
+    lea     si, word [0x7FFF + bx + di]
+    lea     si, word [0x7FFF + bp + si]
+    lea     si, word [0x7FFF + bp + di]
+    lea     si, word [0x7FFF + si]
+    lea     si, word [0x7FFF + di]
+    lea     si, word [0x7FFF + bp]
+    lea     si, word [0x7FFF + bx]
+    
+    
+    
     ;
     ; 32 bit addressing
     ;

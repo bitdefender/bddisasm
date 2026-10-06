@@ -988,7 +988,8 @@ NdFetchModrmSibDisplacement(
     }
 
     // If needed, fetch displacement.
-    if ((Ictx->Instrux->ModRm.mod == 0 && base == NDR_RBP) ||
+    if ((Ictx->Instrux->ModRm.mod == 0 && base == 5 && Ictx->Instrux->AddrMode != ND_ADDR_16) ||
+        (Ictx->Instrux->ModRm.mod == 0 && base == 6 && Ictx->Instrux->AddrMode == ND_ADDR_16) ||
         (Ictx->Instrux->ModRm.mod == 1) ||
         (Ictx->Instrux->ModRm.mod == 2))
     {
