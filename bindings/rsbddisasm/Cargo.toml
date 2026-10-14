@@ -1,9 +1,0 @@
-[workspace]
-
-members = [
-    "bddisasm-sys",
-    "bddisasm",
-]
-
-[workspace.package]
-version = "0.8.0"

@@ -5,6 +5,15 @@ and complexity can lead to potential bugs. In this regard, we advise
 researchers to follow responsible disclosure and notify us before publicly 
 disclosing any security issue, to give us the opportunity to fix it.
 
+bdshemu does not target architectural completeness or fingerprinting resistence, 
+and it intentionally omits numerous instructions and aspects of machine state.
+Any resulting state divergence or ability to identify the emulated environment 
+is therefore an expected limitation of the threat model, and will not be 
+treated as a security vulnerability.
+
+The Python and Rust bindings are no longer maintained. Issues and bug reports 
+related to them will not be addressed.
+
 ## How to Report a Security Issue
 
 Identified security issues must be properly described, and steps of reproduction

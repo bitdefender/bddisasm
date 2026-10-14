@@ -55,14 +55,6 @@ jobs:
         cd ./build/${{ matrix.preset }}
         sudo make install
         cd -
-    - name: Build pybddisasm
-      if: ${{ matrix.preset == 'release' }}
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install setuptools
-        cd bindings/pybddisasm
-        python3 setup.py build
-        cd -
     - name: Create package
       if: ${{ github.event_name == 'release' && matrix.preset == 'release' }}
       run: |

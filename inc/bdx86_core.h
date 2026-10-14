@@ -1842,7 +1842,7 @@ NdGetVersion(
 //
 // Decode one instruction. Note that this is equivalent to: 
 // NdDecodeEx(Instrux, Code, ND_MAX_INSTRUCTION_LEN, DefCode, DefData).
-// This version should be used if the caller doesn't care about the length of the buffer. Otherwise, use the other
+// Therefore, the input buffer must contain at least ND_MAX_INSTRUCTION_LEN bytes. Otherwise, use the other
 // decode API.
 // 
 NDSTATUS

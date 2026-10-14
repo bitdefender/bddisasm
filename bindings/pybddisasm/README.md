@@ -1,48 +1,22 @@
 # The Bitdefender disassembler Python wrapper
 
-## Build
+> [!WARNING]
+> THE PYTHON BINDINGS ARE NO LONGER SUPPORTED OR MAINTAINED!
 
-Building and installing is easy:
+## Security Policy
 
-```bash
-python3 setup.py build
-python3 setup.py install
-```
+The Python bindings are no longer supported or maintained.
 
-## Usage
+No further development, security support, maintenance, bug fixes, or releases are planned.
+Patches and pull requests are no longer accepted.
 
-Use it by importing the pybddisasm module:
+The Python bindings may contain security vulnerabilities and **must not** be used in production or security-sensitive environments.
 
-```python
-import pybddisasm
+## Reporting Vulnerabilities
 
-ret, instr = pybddisasm.nd_decode_ex(code, def_code, def_data, def_stack)
-```
+Security vulnerability reports, bug reports, and patch submissions are no longer accepted or reviewed.
+Do not expect responses, triage, validation, fixes, or coordinated disclosure activities.
 
-## Example
+Known vulnerabilities may remain permanently unpatched.
 
-```python
-import pybddisasm
-
-code = b"\x55\x48\x8b\x05\xb8\x13\x00\x00"
-offset = 0
-
-while offset < len(code):
-    _, instr = pybddisasm.nd_decode_ex(code[offset:], len(code[offset:]), pybddisasm.ND_CODE_64, pybddisasm.ND_DATA_64)
-
-    if instr is None:
-        break
-
-    _, text = pybddisasm.nd_to_text(instr, 0x0)
-    print(text)
-
-    offset += instr.Length
-```
-
-## Pip
-
-Use pip to install the package:
-
-```bash
-pip install pybddisasm
-```
+If you choose to use, study, fork, or redistribute the Python bindings, you do so at your own risk and are solely responsible for any security maintenance or remediation.

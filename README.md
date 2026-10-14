@@ -8,7 +8,6 @@ The Bitdefender disassembler (bddisasm) is a lightweight, x86/x64 only instructi
 2. [bdshemu](https://github.com/bitdefender/bddisasm/tree/master/bdshemu) - this project makes use of the main bddisasm lib in order to build a simple, lightweight, fast, instructions emulator, designated to target shellcodes. This project is also integrated inside the disasmtool, so you can emulate raw binary files, and see their output. Note that this simple emulator supports basic x86/x64 instructions, and does not support emulating any kind of API call. In addition, the only supported memory accesses are inside the shellcode itself, and on the emulated stack.
 3. [isagenerator_x86](https://github.com/bitdefender/bddisasm/tree/master/isagenerator) - this project contains the instruction definitions and the scripts required to generate the disassembly tables. If you wish to add support for a new instruction, this is the place. This project will automatically generate several header files (instructions.h, mnemonics.h, constants.h, table_\*.h), so please make sure you don't manually edit any of these files. You will need Python 3 to run the generation scripts.
 4. [disasmtool](https://github.com/bitdefender/bddisasm/tree/master/disasmtool) - this project is a command line disassembler tool, used mainly as an example of how to integrate the bddisasm and bdshemu libraries.
-5. [bindings](https://github.com/bitdefender/bddisasm/tree/master/bindings) - bindings for [python](https://github.com/bitdefender/bddisasm/tree/master/bindings/pybddisasm), and [Rust](https://github.com/bitdefender/bddisasm/tree/master/bindings/rsbddisasm).
 
 ## Core Features
 
@@ -17,7 +16,7 @@ The Bitdefender disassembler (bddisasm) is a lightweight, x86/x64 only instructi
    - legacy decoder: around 240 CPU clocks per decoded instruction (~12M decoded instructions per second);
    - mini decoder: around 150 CPU clocks per decoded instruction (~17M decoded instructions per second)
 3. Resilient - tested against internal fuzzers and the famous [mishegos](https://github.com/trailofbits/mishegos) tool.
-4. Easy to work with - just include the main header file, bddisasm.h, link with the bddisasm library, and call the NdDecode API!
+4. Easy to work with - just include the main header file, bddisasm.h, link with the bddisasm library, and call the decode API!
 5. Complete – comprehensive support for Intel and AMD x86 instructions implemented in modern CPUs, including rich per-instruction metadata.
 
 ## Build and install
@@ -182,7 +181,7 @@ Note that this is currently a beta feature (see [Introducing Artifact Attestatio
 
 There are 4 decoding functions, but internally, they all do the same, albeit some of them with implicit arguments:
 
-- `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer;
+- `NDSTATUS NdDecode(INSTRUX *Instrux, const uint8_t *Code, uint8_t DefCode, uint8_t DefData)` - this API should be used only if you don't care about the length of the input buffer (which must be at least 15 bytes long);
 - `NDSTATUS NdDecodeEx(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData);` - decode instruction from a buffer with maximum length `Size`;
 - `NDSTATUS NdDecodeEx2(INSTRUX *Instrux, const uint8_t *Code, size_t Size, uint8_t DefCode, uint8_t DefData, uint8_t DefStack, uint8_t PreferedVendor);` - decode instructions with a preferred vendor;
 - `NDSTATUS NdDecodeWithContext(INSTRUX *Instrux, const uint8_t *Code, size_t Size, ND_CONTEXT *Context);` - base decode API; the input parameters - `DefCode`, `DefData`, `DefStack`, `VendMode` and `FeatMode` must all be filled in the `Context` structure before calling this function. The Context structure should also be initialized using `NdInitContext` before the first decode call.
@@ -348,6 +347,7 @@ Working with the minimal decoder is equally simple:
     status = NdToTextMini(&ix, 0, sizeof(text), text);
     ...
 ```
+
 ## Credits
 
 The entire Bitdefender HVI team.

@@ -5,6 +5,12 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [3.1.0] - 2026-10-14
+
+### Changed
+- Python and Rust bindings have been removed, as they are no longer supported or maintained.
+
+
 ## [3.0.3] - 2026-10-07
 
 ### Changed
