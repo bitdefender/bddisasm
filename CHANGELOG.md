@@ -4,6 +4,13 @@ All notable (user-facing) changes to this project will be documented in this fil
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.1.2] - 2026-11-03
+
+### Changed
+- disasmtool: several minor improvements & tweaks around error and output file handling.
+- disasmtool: the emulator decoded output file requires the explicit `-out file` argument in the command line. The `-skipdecoded` option is now deprecated.
+- disasmtool: limited the input file size to 512M, to ensure enough memory can be allocated for the shellcode & internal buffer even on 32-bit builds.
+
 
 ## [3.1.1] - 2026-11-03
 

@@ -224,7 +224,8 @@ void print_help(void)
     printf("    -reg val    - Set register `reg` to value `val` for emulation. `reg` must be the plain 64-bit register name (ie: rax).\n");
     printf("    -k          - Specify kernel mode for shemu emulation (default is user-mode).\n");
     printf("    -bw         - Bypass self-modifications in shemu.\n");
-    printf("    -skipdecoded - The decoded file will not be written to disk.\n");
+    printf("    -skipdecoded- deprecated.\n");
+    printf("    -out file   - The decoded file will be written to `file`.\n");
     printf("\n");
     printf("\n");
     printf("EXAMPLES:\n");
@@ -267,23 +268,43 @@ void *read_file(const char *Path, size_t *Size)
     FILE *fd = fopen(Path, "rb");
     if (fd == NULL)
     {
-        printf("fopen failed for \"%s\"\n", Path);
+        fprintf(stderr, "ERROR: Could not open file \"%s\"\n", Path);
         return NULL;
     }
 
     fseek(fd, 0ull, SEEK_END);
-    *Size = ftell(fd);
+    long fsize = ftell(fd);
     rewind(fd);
 
-    buffer = malloc(*Size);
-    if (buffer != NULL)
+    if (fsize < 0)
     {
-        size_t readCount = fread(buffer, 1, *Size, fd);
-        if (readCount != *Size)
-        {
-            printf("Only %zx bytes were read! Expected %zx\n", readCount, *Size);
-            *Size = readCount;
-        }
+        fprintf(stderr, "ERROR: ftell failed!\n");
+        fclose(fd);
+        return NULL;
+    }
+
+    *Size = (size_t)fsize;
+
+    if (*Size > MAX_FILE_SIZE)
+    {
+        fprintf(stderr, "ERROR: Input file too large! Max accepted size: %u bytes!\n", MAX_FILE_SIZE);
+        fclose(fd);
+        return NULL;
+    }
+
+    buffer = malloc(*Size);
+    if (NULL == buffer)
+    {
+        fprintf(stderr, "ERROR: Could not allocated 0x%zx bytes!\n", *Size);
+        fclose(fd);
+        return NULL;
+    }
+
+    size_t readCount = fread(buffer, 1, *Size, fd);
+    if (readCount != *Size)
+    {
+        fprintf(stderr, "WARNING: Only 0x%zx bytes were read! Expected 0x%zx\n", readCount, *Size);
+        *Size = readCount;
     }
 
     fclose(fd);
@@ -297,11 +318,11 @@ parse_input(
     _Inout_ DISASM_OPTIONS* Options
 )
 {
-    static BYTE hexbuf[4096];
+    static BYTE hexbuf[MAX_HEX_SIZE];
 
     if (inputNone == Options->InputMode)
     {
-        printf("Expecting an input mode: either -f or -h!\n");
+        fprintf(stderr, "ERROR: Expecting an input mode: either -f or -h!\n");
         return false;
     }
 
@@ -310,32 +331,32 @@ parse_input(
         Options->Buffer = read_file(Options->FileName, &Options->Size);
         if (Options->Buffer == NULL)
         {
-            printf("Couldn't read '%s'\n", Options->FileName);
+            fprintf(stderr, "ERROR: Could not read '%s'\n", Options->FileName);
             cleanup_context(Options);
             return false;
         }
 
         if (Options->Size == 0)
         {
-            printf("The input file '%s' is empty\n", Options->FileName);
+            fprintf(stderr, "ERROR: The input file '%s' is empty\n", Options->FileName);
             cleanup_context(Options);
             return false;
         }
     }
     else
     {
-        DWORD idx = 0;
+        size_t idx = 0, bidx = 0;
 
         Options->Size = strlen(Options->FileName);
 
         if (Options->Size < 2)
         {
-            printf("Min 1-byte buffer needed!\n");
+            fprintf(stderr, "ERROR: Min 1-byte buffer needed!\n");
             return false;
         }
 
         // Extract each byte from the provided hex input.
-        for (size_t bidx = 0; bidx < Options->Size - 1 && idx < sizeof(hexbuf); )
+        for (bidx = 0; bidx < Options->Size - 1 && idx < sizeof(hexbuf); )
         {
             // '\x'
             if (Options->FileName[bidx] == '\\' && Options->FileName[bidx + 1] == 'x')
@@ -375,7 +396,13 @@ parse_input(
                 continue;
             }
 
-            printf("Unexpected hex-character encountered: %c!\n", Options->FileName[bidx]);
+            fprintf(stderr, "ERROR: Unexpected hex-character encountered: %c!\n", Options->FileName[bidx]);
+            return false;
+        }
+
+        if (idx == sizeof(hexbuf) && bidx < Options->Size - 1)
+        {
+            fprintf(stderr, "ERROR: Input hex buffer is too large. Expecting max %u bytes!\n", MAX_HEX_SIZE);
             return false;
         }
 
@@ -387,7 +414,7 @@ parse_input(
     // Make sure the offset is valid & points within the buffer.
     if (Options->Offset >= Options->Size)
     {
-        printf("The offset exceeds the buffer size!\n");
+        fprintf(stderr, "ERROR: The offset exceeds the buffer size!\n");
         cleanup_context(Options);
         return false;
     }
@@ -425,7 +452,7 @@ parse_arguments(
 
     i = 1;
     while (i < argc)
-    {       
+    {
         DWORD gprIdx;
 
         if (match_gpr(argv[i], &gprIdx))
@@ -433,7 +460,7 @@ parse_arguments(
             // Register value (used by shemu).
             if (i + 1 >= argc)
             {
-                printf("No value given for %s!\n", argv[i]);
+                fprintf(stderr, "ERROR: No value given for %s!\n", argv[i]);
             }
             else
             {
@@ -637,11 +664,21 @@ parse_arguments(
         }
         else if (0 == strcmp(argv[i], "-skipdecoded"))
         {
+            // Legacy option, no longer used.
             Options->SkipWriteDecoded = true;
+        }
+        else if (0 == strcmp(argv[i], "-out"))
+        {
+            // Decoded file output.
+            if (i + 1 < argc)
+            {
+                Options->OutputName = argv[i + 1];
+                i++;
+            }
         }
         else
         {
-            printf("Unknown option: '%s'\n", argv[i]);
+            fprintf(stderr, "ERROR: Unknown option: '%s'\n", argv[i]);
         }
 
         i++;
@@ -650,7 +687,7 @@ parse_arguments(
     // Parse the input.
     if (!parse_input(Options))
     {
-        printf("Could not find a valid input!\n");
+        fprintf(stderr, "ERROR: Could not find a valid input!\n");
         return false;
     }
 

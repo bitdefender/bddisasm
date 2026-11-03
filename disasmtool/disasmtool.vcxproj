@@ -217,6 +217,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ProgramDataBaseFileName>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
     </ClCompile>
     <Link>
       <AdditionalDependencies>bddisasm.lib;bdshemu.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -247,6 +248,7 @@
       <TreatWarningAsError>true</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ProgramDataBaseFileName>$(SolutionDir)bin\$(Platform)\$(Configuration)\$(ProjectName).pdb</ProgramDataBaseFileName>
+      <ControlFlowGuard>Guard</ControlFlowGuard>
     </ClCompile>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>

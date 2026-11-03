@@ -629,9 +629,9 @@ print_instruction(
 
     if (Options->ExtendedInfo)
     {
-        const BYTE opsize[3] = { 2, 4, 8 };
-        const BYTE adsize[3] = { 2, 4, 8 };
-        const BYTE veclen[3] = { 16, 32, 64 };
+        const BYTE opsize[4] = {  2,  4,  8,  0 };
+        const BYTE adsize[4] = {  2,  4,  8,  0 };
+        const BYTE veclen[4] = { 16, 32, 64,  0 };
 
         printf("        DSIZE: %2d, ASIZE: %2d, VLEN: ", opsize[Instrux->EfOpMode] * 8, adsize[Instrux->AddrMode] * 8);
 

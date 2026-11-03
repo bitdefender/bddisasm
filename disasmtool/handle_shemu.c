@@ -21,6 +21,9 @@
 #include "disasmtool.h"
 
 
+#define STACK_SIZE  ((size_t)0x2000)
+
+
 void 
 ShemuLog(
     _In_ PCHAR Data, 
@@ -57,6 +60,7 @@ ShemuAccessMem(
     return ND_TRUE;
 }
 
+
 ND_BOOL
 ShemuAccessShellcode(
     _In_ PSHEMU_CONTEXT Ctx, 
@@ -66,9 +70,10 @@ ShemuAccessShellcode(
     _In_ ND_BOOL Store
 )
 {
-    ND_UINT32 offset;
+    ND_UINT64 offset;
 
-    offset = (ND_UINT32)(Gla - Ctx->ShellcodeBase);
+    // shemu guarantees that the provided Gla range is inside the shellcode!
+    offset = Gla - Ctx->ShellcodeBase;
 
     if (Store)
     {
@@ -90,46 +95,43 @@ handle_shemu(
 {
     SHEMU_CONTEXT ctx;
     SHEMU_STATUS shstatus;
-    char *fileName;
-    size_t rip = 0, fsize = Options->Size, offset = 0, decFileNameLength = 0, shellSize;
-    char *fNameDecoded;
+    size_t rip = 0, fsize = Options->Size, offset = 0, shellSize;
     PBYTE buffer = Options->Buffer;
 
     memset(&ctx, 0, sizeof(ctx));
     rip = Options->Rip;
-    fileName = Options->FileName;
-
-    if (!Options->SkipWriteDecoded)
-    {
-        if (fileName == NULL)
-        {
-            fNameDecoded = "hex_string_decoded.bin";
-        }
-        else
-        {
-            decFileNameLength = strlen(fileName) + sizeof("_decoded.bin");
-            fNameDecoded = malloc(sizeof(char) * decFileNameLength);
-        
-            // This is safe, we allocated enough space.
-            sprintf(fNameDecoded, "%s_decoded.bin", fileName);
-        }
-    }
-    else
-    {
-        fNameDecoded = NULL;
-    }
 
     offset = Options->Offset;
+    shellSize = fsize + 0x100;
 
     // A little extra space, since shellcodes tend to do accesses after their code...
-    shellSize = fsize + 0x100;
+    if (shellSize < fsize || shellSize + STACK_SIZE < shellSize)
+    {
+        fprintf(stderr, "ERROR: Code too large: 0x%zx bytes!\n", fsize);
+        goto cleanup_and_exit;
+    }
 
     // Allocate the shellcode, stack, shell bitmap and stack bitmaps.
     ctx.Shellcode = malloc(shellSize);
+    if (ctx.Shellcode == NULL)
+    {
+        fprintf(stderr, "ERROR: Could not allocate 0x%zx bytes!\n", shellSize);
+        goto cleanup_and_exit;
+    }
 
-#define STACK_SIZE  0x2000ull
     ctx.Stack = malloc(STACK_SIZE);
+    if (ctx.Stack == NULL)
+    {
+        fprintf(stderr, "ERROR: Could not allocate 0x%zx bytes!\n", STACK_SIZE);
+        goto cleanup_and_exit;
+    }
+
     ctx.Intbuf = malloc(shellSize + STACK_SIZE);
+    if (ctx.Intbuf == NULL)
+    {
+        fprintf(stderr, "ERROR: Could not allocate 0x%zx bytes!\n", shellSize + STACK_SIZE);
+        goto cleanup_and_exit;
+    }
 
     memset(ctx.Shellcode, 0, shellSize);
     memset(ctx.Stack, 0, STACK_SIZE);
@@ -142,7 +144,7 @@ handle_shemu(
     ctx.StackBase = (ctx.ShellcodeBase & PAGE_MASK) - STACK_SIZE - 0x1000;
     ctx.StackSize = STACK_SIZE;
     
-    ctx.IntbufSize = shellSize + STACK_SIZE;
+    ctx.IntbufSize = (ND_UINT64)shellSize + STACK_SIZE;
 
     ctx.ArchType = SHEMU_ARCH_TYPE_X86;
 
@@ -267,13 +269,14 @@ handle_shemu(
         }
     }
 
-    if (fNameDecoded != NULL)
+    if (Options->OutputName != NULL)
     {
         size_t outSize;
-        FILE *file = fopen(fNameDecoded, "wb");
+
+        FILE *file = fopen(Options->OutputName, "wb");
         if (file == NULL)
         {
-            printf("Could not create the file %s\n", fNameDecoded);
+            fprintf(stderr, "ERROR: Could not create the file %s\n", Options->OutputName);
             goto cleanup_and_exit;
         }
 
@@ -281,18 +284,13 @@ handle_shemu(
 
         if (outSize == 0)
         {
-            printf("No bytes written to %s!\n", fNameDecoded);
+            fprintf(stderr, "ERROR: No bytes written to %s!\n", Options->OutputName);
         }
 
         fclose(file);
     }
 
 cleanup_and_exit:
-    if (NULL != fileName && NULL != fNameDecoded)
-    {
-        free(fNameDecoded);
-    }
-
     if (NULL != ctx.Shellcode)
     {
         free(ctx.Shellcode);

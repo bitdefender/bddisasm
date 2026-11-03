@@ -59,6 +59,7 @@ typedef struct _DISASM_OPTIONS
     uint8_t         Vendor;             // Preffered vendor.
     uint32_t        Feature;            // Used features.
     char            *FileName;          // Input file, if any.
+    char            *OutputName;        // Decoded code output file, if any.
     size_t          ShemuRegs[ND_MAX_GPR_REGS];
     bool            UseShemuRegs;       // If truue, the registers in ShemuRegs will be used for shemu input.
     bool            BypassSelfWrites;   // If true, shemu emulation will ignore self-modifications made by the shellcode.
@@ -69,8 +70,11 @@ typedef struct _DISASM_OPTIONS
 } DISASM_OPTIONS, *PDISASM_OPTIONS;
 
 
-#define PAGE_SIZE   0x1000
-#define PAGE_MASK   0xFFFFFFFFFFFFF000
+#define PAGE_SIZE       0x1000
+#define PAGE_MASK       0xFFFFFFFFFFFFF000ull
+
+#define MAX_FILE_SIZE   (512 * 1024 * 1024)             // 512M max input file size.
+#define MAX_HEX_SIZE    (4096)                          // 4K max input hex size.
 
 #define FG_Black        "\033[1;30m"
 #define FG_Red          "\033[1;31m"
