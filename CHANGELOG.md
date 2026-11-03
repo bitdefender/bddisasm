@@ -5,6 +5,12 @@ All notable (user-facing) changes to this project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [3.1.1] - 2026-11-03
+
+### Fixed
+- disasmtool: truncate hex buffer input size to 4096 bytes. This avoids a potential crash when the command line is too long.
+
+
 ## [3.1.0] - 2026-10-14
 
 ### Changed

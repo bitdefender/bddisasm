@@ -177,7 +177,7 @@ void print_help(void)
 
     printf("INPUT is mandatory and can be one of:\n");
     printf("    -f file     - Specify input `file` name.\n");
-    printf("    -h hex      - Specify input `hex` string. Accepted formats are:\n");
+    printf("    -h hex      - Specify input `hex` string (max len: 4K). Accepted formats are:\n");
     printf("        Plain   hex string; example: 33C090CCC3\n");
     printf("        Escaped hex string; example: \\x33\\xC0\\x90\\xCC\\xC3\n");
 
@@ -335,7 +335,7 @@ parse_input(
         }
 
         // Extract each byte from the provided hex input.
-        for (size_t bidx = 0; bidx < Options->Size - 1; )
+        for (size_t bidx = 0; bidx < Options->Size - 1 && idx < sizeof(hexbuf); )
         {
             // '\x'
             if (Options->FileName[bidx] == '\\' && Options->FileName[bidx + 1] == 'x')
