@@ -3304,6 +3304,10 @@ check_far_branch:
         case ND_INS_MOVQ:
         case ND_INS_MOVDQU:
         case ND_INS_MOVDQA:
+        case ND_INS_MOVUPS:
+        case ND_INS_MOVUPD:
+        case ND_INS_MOVAPS:
+        case ND_INS_MOVAPD:
             // If the source size is less than the destination size, the upper bits will be zero.
             // Note that we don't really care about #GP on unaligned MOVDQA accesses...
             GET_OP(Context, 1, &src);
@@ -3347,6 +3351,8 @@ check_far_branch:
             break;
 
         case ND_INS_PXOR:
+        case ND_INS_XORPS:
+        case ND_INS_XORPD:
             GET_OP(Context, 0, &dst);
             GET_OP(Context, 1, &src);
             for (i = 0; i < dst.Size; i++)
@@ -3361,6 +3367,10 @@ check_far_branch:
         case ND_INS_VMOVQ:
         case ND_INS_VMOVDQU:
         case ND_INS_VMOVDQA:
+        case ND_INS_VMOVUPS:
+        case ND_INS_VMOVUPD:
+        case ND_INS_VMOVAPS:
+        case ND_INS_VMOVAPD:
             GET_OP(Context, 1, &src);
             SET_OP(Context, 0, &src);
             break;
@@ -3393,6 +3403,8 @@ check_far_branch:
             break;
 
         case ND_INS_VPXOR:
+        case ND_INS_VXORPS:
+        case ND_INS_VXORPD:
             GET_OP(Context, 1, &dst);
             GET_OP(Context, 2, &src);
             for (i = 0; i < dst.Size; i++)
