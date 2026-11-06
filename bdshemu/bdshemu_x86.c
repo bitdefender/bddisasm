@@ -1968,6 +1968,7 @@ ShemuX86Emulate(
             // Fall through.
 
         case ND_INS_MOV:
+        case ND_INS_MOVNTI:
         case ND_INS_MOVZX:
             GET_OP(Context, 1, &src);
             SET_OP(Context, 0, &src);
@@ -3065,6 +3066,7 @@ check_far_branch:
             break;
 
         case ND_INS_WAIT:
+        case ND_INS_PAUSE:
             break;
 
         case ND_INS_CBW:
@@ -3284,6 +3286,7 @@ check_far_branch:
         case ND_INS_LFENCE:
         case ND_INS_SFENCE:
         case ND_INS_MFENCE:
+        case ND_INS_SERIALIZE:
             // Nothing can be done for them, really.
             break;
 
@@ -3304,6 +3307,18 @@ check_far_branch:
         case ND_INS_MOVQ:
         case ND_INS_MOVDQU:
         case ND_INS_MOVDQA:
+        case ND_INS_MOVUPS:
+        case ND_INS_MOVUPD:
+        case ND_INS_MOVAPS:
+        case ND_INS_MOVAPD:
+        case ND_INS_MOVNTDQ:
+        case ND_INS_MOVNTPS:
+        case ND_INS_MOVNTPD:
+        case ND_INS_MOVNTQ:
+        case ND_INS_MOVNTDQA:
+        case ND_INS_LDDQU:
+        case ND_INS_MOVQ2DQ:
+        case ND_INS_MOVDQ2Q:
             // If the source size is less than the destination size, the upper bits will be zero.
             // Note that we don't really care about #GP on unaligned MOVDQA accesses...
             GET_OP(Context, 1, &src);
@@ -3347,6 +3362,8 @@ check_far_branch:
             break;
 
         case ND_INS_PXOR:
+        case ND_INS_XORPS:
+        case ND_INS_XORPD:
             GET_OP(Context, 0, &dst);
             GET_OP(Context, 1, &src);
             for (i = 0; i < dst.Size; i++)
@@ -3361,6 +3378,15 @@ check_far_branch:
         case ND_INS_VMOVQ:
         case ND_INS_VMOVDQU:
         case ND_INS_VMOVDQA:
+        case ND_INS_VMOVUPS:
+        case ND_INS_VMOVUPD:
+        case ND_INS_VMOVAPS:
+        case ND_INS_VMOVAPD:
+        case ND_INS_VMOVNTDQ:
+        case ND_INS_VMOVNTPS:
+        case ND_INS_VMOVNTPD:
+        case ND_INS_VMOVNTDQA:
+        case ND_INS_VLDDQU:
             GET_OP(Context, 1, &src);
             SET_OP(Context, 0, &src);
             break;
@@ -3369,6 +3395,8 @@ check_far_branch:
         case ND_INS_VPBROADCASTW:
         case ND_INS_VPBROADCASTD:
         case ND_INS_VPBROADCASTQ:
+        case ND_INS_VBROADCASTSS:
+        case ND_INS_VBROADCASTSD:
             GET_OP(Context, 1, &src);
             dst.Size = Context->Arch.X86.Instruction.Operands[0].Size;
             for (i = 0; i < dst.Size / src.Size; i++)
@@ -3393,6 +3421,8 @@ check_far_branch:
             break;
 
         case ND_INS_VPXOR:
+        case ND_INS_VXORPS:
+        case ND_INS_VXORPD:
             GET_OP(Context, 1, &dst);
             GET_OP(Context, 2, &src);
             for (i = 0; i < dst.Size; i++)
