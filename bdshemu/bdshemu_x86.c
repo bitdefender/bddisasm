@@ -964,7 +964,14 @@ ShemuX86GetOperandValue(
     )
 {
     SHEMU_STATUS status;
-    PND_OPERAND op = &Context->Arch.X86.Instruction.Operands[Operand];
+    PND_OPERAND op;
+
+    if (Operand >= Context->Arch.X86.Instruction.OperandsCount)
+    {
+        return SHEMU_ABORT_INVALID_PARAMETER;
+    }
+
+    op = &Context->Arch.X86.Instruction.Operands[Operand];
 
     Value->Size = op->Size;
     if (Value->Size > sizeof(Value->Value))
@@ -1191,7 +1198,14 @@ ShemuX86SetOperandValue(
     )
 {
     SHEMU_STATUS status;
-    PND_OPERAND op = &Context->Arch.X86.Instruction.Operands[Operand];
+    PND_OPERAND op;
+
+    if (Operand >= Context->Arch.X86.Instruction.OperandsCount)
+    {
+        return SHEMU_ABORT_INVALID_PARAMETER;
+    }
+        
+    op = &Context->Arch.X86.Instruction.Operands[Operand];
 
     // If a stack address is being loaded, check if it points to a string built on the stack.
     if (ShemuIsStackPtr(Context, Value->Value.Qwords[0], Context->StrThreshold))

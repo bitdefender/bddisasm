@@ -702,7 +702,7 @@ print_instruction(
                   Instrux->FlagsAccess.Cleared.Raw | Instrux->FlagsAccess.Undefined.Raw;
             printf("        FLAGS access\n                ");
 
-            for (fidx = 0; fidx < 21; fidx++)
+            for (fidx = 0; fidx < ARRAYSIZE(flags); fidx++)
             {
                 if (flags[fidx] != NULL)
                 {

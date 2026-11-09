@@ -141,6 +141,13 @@ handle_shemu(
     // Use the provided RIP, if any. Otherwise, use a hard-coded value.
     ctx.ShellcodeBase = (rip != 0 ? rip & PAGE_MASK : 0x200000);
     ctx.ShellcodeSize = shellSize;
+
+    if (ctx.ShellcodeBase < (STACK_SIZE + 0x1000))
+    {
+        fprintf(stderr, "ERROR: RIP value 0x%llx is too low\n", (unsigned long long)ctx.ShellcodeBase);
+        goto cleanup_and_exit;
+    }
+
     ctx.StackBase = (ctx.ShellcodeBase & PAGE_MASK) - STACK_SIZE - 0x1000;
     ctx.StackSize = STACK_SIZE;
     
@@ -192,6 +199,12 @@ handle_shemu(
         // Update the stack to point to the new RSP, if one exists
         if (ctx.Arch.X86.Registers.RegRsp != 0)
         {
+            if (ctx.Arch.X86.Registers.RegRsp < 0x1000)
+            {
+                fprintf(stderr, "ERROR: RSP value 0x%llx is too low!\n", ctx.Arch.X86.Registers.RegRsp);
+                goto cleanup_and_exit;
+            }
+
             // Consider the stack base at least with a page before the current RSP. In case of pushes or operations
             // which decrease the RSP, we will always give SHEMU_ABORT_RIP_OUTSIDE otherwise.
             ctx.StackBase = ctx.Arch.X86.Registers.RegRsp - 0x1000;

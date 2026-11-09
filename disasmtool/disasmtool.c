@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <errno.h>
 
 // Main disasm header file.
 #include "bdshemu.h"
@@ -465,6 +466,12 @@ parse_arguments(
             else
             {
                 Options->ShemuRegs[gprIdx] = (size_t)strtoull(argv[i + 1], NULL, 0);
+                if (errno != 0)
+                {
+                    fprintf(stderr, "ERROR: Could not convert value %s!\n", argv[i + 1]);
+                    return false;
+                }
+
                 Options->UseShemuRegs = true;
                 i++;
             }
@@ -505,6 +512,12 @@ parse_arguments(
             if (i + 1 < argc)
             {
                 Options->Offset = (size_t)strtoull(argv[i + 1], NULL, 0);
+                if (errno != 0)
+                {
+                    fprintf(stderr, "ERROR: Could not convert value %s!\n", argv[i + 1]);
+                    return false;
+                }
+
                 i++;
             }
         }
@@ -514,6 +527,12 @@ parse_arguments(
             if (i + 1 < argc)
             {
                 Options->Rip = (size_t)strtoull(argv[i + 1], NULL, 0);
+                if (errno != 0)
+                {
+                    fprintf(stderr, "ERROR: Could not convert value %s!\n", argv[i + 1]);
+                    return false;
+                }
+                
                 i++;
             }
         }
