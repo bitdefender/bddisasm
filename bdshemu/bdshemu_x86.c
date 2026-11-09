@@ -1750,7 +1750,8 @@ ShemuX86InstruxChecks(
                 }
                 break;
             default:
-                // Other registers are not supported, so we ignore them.
+                // Other registers are handled explictly (in a switch-case - for example, segment or control registers)
+                // or are not supported at all (for example, debug registers, mask registers, etc.) so we ignore them.
                 break;
             }
             break;
