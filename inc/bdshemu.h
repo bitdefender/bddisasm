@@ -50,6 +50,15 @@ typedef enum _SHEMU_ARCH_TYPE
 } SHEMU_ARCH_TYPE;
 
 
+// These match the maximums from bddisasm.
+#define SHEMU_X86_GPR_REG_COUNT         ND_MAX_GPR_REGS
+#define SHEMU_X86_GPR_REG_SIZE          sizeof(ND_UINT64)
+#define SHEMU_X86_MMX_REG_COUNT         ND_MAX_MMX_REGS
+#define SHEMU_X86_MMX_REG_SIZE          sizeof(ND_UINT64)
+#define SHEMU_X86_SSE_REG_COUNT         ND_MAX_SSE_REGS
+#define SHEMU_X86_SSE_REG_SIZE          ND_MAX_REGISTER_SIZE
+
+
 typedef struct _SHEMU_X86_CTX
 {
     // Current instruction. Doesn't have to be provided; it always contains the currently emulated instruction.
@@ -64,14 +73,14 @@ typedef struct _SHEMU_X86_CTX
     SHEMU_X86_SEG_REGS  Segments;
 
     // MMX register state. 8 x 8 bytes = 64 bytes for the MMX registers. Can be provided on input, if needed.
-    ND_UINT64           MmxRegisters[ND_MAX_MMX_REGS];
+    ND_UINT64           MmxRegisters[SHEMU_X86_MMX_REG_COUNT];
 
     // SSE registers state. 32 x 64 bytes = 2048 bytes for the SSE registers. Can be provided on input, if needed.
-    ND_UINT8            SseRegisters[ND_MAX_SSE_REGS][ND_MAX_REGISTER_SIZE];
+    ND_UINT8            SseRegisters[SHEMU_X86_SSE_REG_COUNT][SHEMU_X86_SSE_REG_SIZE];
 
     // General purpose registers write bitmap. After the first write, a register will be marked dirty in here. 
     // Should be 0 on input.
-    ND_UINT8            GprTracker[ND_MAX_GPR_REGS];
+    ND_UINT8            GprTracker[SHEMU_X86_GPR_REG_COUNT];
 
     // Operating mode (ND_CODE_16, ND_CODE_32 or ND_CODE_64). Must be provided as input.
     ND_UINT8            Mode;

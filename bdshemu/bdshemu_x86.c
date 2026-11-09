@@ -471,7 +471,7 @@ ShemuX86GetGprValue(
 
 
 //
-// ShemuX86GetGprValue
+// ShemuX86SetGprValue
 //
 static void
 ShemuX86SetGprValue(
@@ -526,6 +526,111 @@ ShemuX86SetGprValue(
     if (!(Context->Arch.X86.GprTracker[Reg] & GPR_TRACK_READ))
     {
         Context->Arch.X86.GprTracker[Reg] |= GPR_TRACK_DIRTY;
+    }
+}
+
+
+//
+// ShemuX86GetMmxValue
+//
+static ND_UINT64
+ShemuX86GetMmxValue(
+    SHEMU_CONTEXT *Context,
+    ND_UINT32 Reg
+)
+{
+    return Context->Arch.X86.MmxRegisters[Reg];
+}
+
+
+//
+// ShemuX86SetMmxValue
+//
+static void
+ShemuX86SetMmxValue(
+    SHEMU_CONTEXT *Context,
+    ND_UINT32 Reg,
+    ND_UINT64 Value
+)
+{
+    Context->Arch.X86.MmxRegisters[Reg] = Value;
+
+    // Only log these when they're written.
+    if (Context->Options & SHEMU_OPT_TRACE_EMULATION)
+    {
+        shemu_printf(Context, "        MM%d = 0x%016llx\n", Reg, Context->Arch.X86.MmxRegisters[Reg]);
+    }
+}
+
+
+
+//
+// ShemuX86GetSseValue
+//
+static void
+ShemuX86GetSseValue(
+    SHEMU_CONTEXT *Context,
+    ND_UINT32 Reg,
+    ND_UINT32 Size,
+    SHEMU_VALUE *Value
+)
+{
+    shemu_memcpy(Value->Value.Bytes, &Context->Arch.X86.SseRegisters[Reg], Size);
+}
+
+
+//
+// ShemuX86SetSseValue
+//
+static void
+ShemuX86SetSseValue(
+    SHEMU_CONTEXT *Context,
+    ND_UINT32 Reg,
+    ND_UINT32 Size,
+    SHEMU_VALUE *Value
+)
+{
+    if (Context->Arch.X86.Instruction.EncMode != ND_ENCM_LEGACY)
+    {
+        // Zero the entire register first, if we have a VEX/EVEX encoded instruction.
+        nd_memzero(&Context->Arch.X86.SseRegisters[Reg], ND_MAX_REGISTER_SIZE);
+    }
+    else
+    {
+        // Zero upper bits in the 128 bits register, if operand size is less than 16 bytes.
+        // Upper bits in the YMM/ZMM register are preserved.
+        nd_memzero(&Context->Arch.X86.SseRegisters[Reg], 16);
+    }
+
+    // Copy the value.
+    shemu_memcpy(&Context->Arch.X86.SseRegisters[Reg], Value->Value.Bytes, Size);
+
+    // Only log these when they're written.
+    if (Context->Options & SHEMU_OPT_TRACE_EMULATION)
+    {
+        // Print higher 32 bytes.
+        shemu_printf(Context,
+                     "        %cMM%d %s(HI_32) = 0x",
+                     Size == 64 ? 'Z' : Size == 32 ? 'Y' : 'X', Reg, Reg < 10 ? " " : "");
+
+        for (ND_UINT32 i = 0; i < ND_MAX_REGISTER_SIZE / 2; i++)
+        {
+            shemu_printf(Context, "%02x", Context->Arch.X86.SseRegisters[Reg][ND_MAX_REGISTER_SIZE - i - 1]);
+        }
+                
+        shemu_printf(Context, "\n");
+
+        //  Print lower 32 bytes.
+        shemu_printf(Context,
+                     "        %cMM%d %s(LO_32) = 0x",
+                     Size == 64 ? 'Z' : Size == 32 ? 'Y' : 'X', Reg, Reg < 10 ? " " : "");
+
+        for (ND_UINT32 i = 0; i < ND_MAX_REGISTER_SIZE / 2; i++)
+        {
+            shemu_printf(Context, "%02x", Context->Arch.X86.SseRegisters[Reg][ND_MAX_REGISTER_SIZE / 2 - i - 1]);
+        }
+
+        shemu_printf(Context, "\n");
     }
 }
 
@@ -993,13 +1098,11 @@ ShemuX86GetOperandValue(
             break;
 
         case ND_REG_MMX:
-            Value->Value.Qwords[0] = Context->Arch.X86.MmxRegisters[op->Info.Register.Reg];
+            Value->Value.Qwords[0] = ShemuX86GetMmxValue(Context, op->Info.Register.Reg);
             break;
 
         case ND_REG_SSE:
-            shemu_memcpy(Value->Value.Bytes,
-                         &Context->Arch.X86.SseRegisters[op->Info.Register.Reg], 
-                         op->Size);
+            ShemuX86GetSseValue(Context, op->Info.Register.Reg, op->Size, Value);
             break;
 
         case ND_REG_RIP:
@@ -1281,44 +1384,11 @@ ShemuX86SetOperandValue(
             break;
 
         case ND_REG_MMX:
-            Context->Arch.X86.MmxRegisters[op->Info.Register.Reg] = Value->Value.Qwords[0];
-            // Only log these when they're written.
-            if (Context->Options & SHEMU_OPT_TRACE_EMULATION)
-            {
-                shemu_printf(Context, "        MM%d = 0x%016llx\n", op->Info.Register.Reg, Value->Value.Qwords[0]);
-            }
+            ShemuX86SetMmxValue(Context, op->Info.Register.Reg, Value->Value.Qwords[0]);
             break;
 
         case ND_REG_SSE:
-            if (Context->Arch.X86.Instruction.EncMode != ND_ENCM_LEGACY)
-            {
-                // Zero the entire register first, if we have a VEX/EVEX encoded instruction.
-                nd_memzero(&Context->Arch.X86.SseRegisters[op->Info.Register.Reg], ND_MAX_REGISTER_SIZE);
-            }
-            else
-            {
-                // Zero upper bits in the 128 bits register, if operand size is less than 16 bytes.
-                // Upper bits in the YMM/ZMM register are preserved.
-                nd_memzero(&Context->Arch.X86.SseRegisters[op->Info.Register.Reg], 16);
-            }
-            // Copy the value.
-            shemu_memcpy(&Context->Arch.X86.SseRegisters[op->Info.Register.Reg],
-                         Value->Value.Bytes, 
-                         op->Size);
-            // Only log these when they're written.
-            if (Context->Options & SHEMU_OPT_TRACE_EMULATION)
-            {
-                shemu_printf(Context,
-                             "        %cMM%d (HI_32) = 0x%016llx%016llx%016llx%016llx\n",
-                             op->Size == 16 ? 'X' : op->Size == 32 ? 'Y' : 'Z', op->Info.Register.Reg,
-                             Value->Value.Qwords[7], Value->Value.Qwords[6], 
-                             Value->Value.Qwords[5], Value->Value.Qwords[4]);
-                shemu_printf(Context,
-                             "        %cMM%d (LO_32) = 0x%016llx%016llx%016llx%016llx\n",
-                             op->Size == 16 ? 'X' : op->Size == 32 ? 'Y' : 'Z', op->Info.Register.Reg,
-                             Value->Value.Qwords[3], Value->Value.Qwords[2], 
-                             Value->Value.Qwords[1], Value->Value.Qwords[0]);
-            }
+            ShemuX86SetSseValue(Context, op->Info.Register.Reg, op->Size, Value);
             break;
 
         case ND_REG_RIP:
@@ -1638,6 +1708,95 @@ ShemuX86CountZeroBits(
 
 
 //
+// ShemuX86InstruxChecks
+//
+static SHEMU_STATUS
+ShemuX86InstruxChecks(
+    SHEMU_CONTEXT *Context
+)
+{
+    // Note that the instruction decoder guarantees that each and every returned register or size is valid according
+    // to the x86 architecture. This check is redundant, but it may help in the future if the code is extended to 
+    // support additional features, as it will guard against potential coding errors.
+    for (ND_UINT32 i = 0; i < Context->Arch.X86.Instruction.OperandsCount; i++)
+    {
+        PND_OPERAND op = &Context->Arch.X86.Instruction.Operands[i];
+
+        switch (op->Type)
+        {
+        case ND_OP_REG:
+            switch (op->Info.Register.Type)
+            {
+            case ND_REG_GPR:
+                // We support up to 32 GPRs (APX, R31), each 64-bits wide.
+                if (op->Info.Register.Reg >= SHEMU_X86_GPR_REG_COUNT || 
+                    op->Info.Register.Size > SHEMU_X86_GPR_REG_SIZE)
+                {
+                    return SHEMU_ABORT_REGISTER_NOT_SUPPORTED;
+                }
+                break;
+            case ND_REG_MMX:
+                if (op->Info.Register.Reg >= SHEMU_X86_MMX_REG_COUNT || 
+                    op->Info.Register.Size > SHEMU_X86_MMX_REG_SIZE)
+                {
+                    return SHEMU_ABORT_REGISTER_NOT_SUPPORTED;
+                }
+                break;
+            case ND_REG_SSE:
+                if (op->Info.Register.Reg >= SHEMU_X86_SSE_REG_COUNT || 
+                    op->Info.Register.Size > SHEMU_X86_SSE_REG_SIZE)
+                {
+                    return SHEMU_ABORT_REGISTER_NOT_SUPPORTED;
+                }
+                break;
+            default:
+                // Other registers are not supported, so we ignore them.
+                break;
+            }
+            break;
+
+        case ND_OP_MEM:
+            if (op->Info.Memory.HasBase)
+            {
+                if (op->Info.Memory.Base >= SHEMU_X86_GPR_REG_COUNT || 
+                    op->Info.Memory.BaseSize > SHEMU_X86_GPR_REG_SIZE)
+                {
+                    return SHEMU_ABORT_REGISTER_NOT_SUPPORTED;
+                }
+            }
+
+            if (op->Info.Memory.HasIndex)
+            {
+                if (op->Info.Memory.IsVsib)
+                {
+                    if (op->Info.Memory.Index >= SHEMU_X86_SSE_REG_COUNT || 
+                        op->Info.Memory.IndexSize > SHEMU_X86_SSE_REG_SIZE)
+                    {
+                        return SHEMU_ABORT_REGISTER_NOT_SUPPORTED;
+                    }
+                }
+                else
+                {
+                    if (op->Info.Memory.Index >= SHEMU_X86_GPR_REG_COUNT || 
+                        op->Info.Memory.IndexSize > SHEMU_X86_GPR_REG_SIZE)
+                    {
+                        return SHEMU_ABORT_REGISTER_NOT_SUPPORTED;
+                    }
+                }
+            }
+
+            break;
+
+        default:
+            break;
+        }
+    }
+
+    return SHEMU_SUCCESS;
+}
+
+
+//
 // ShemuX86PrintContext
 //
 #ifndef BDDISASM_NO_FORMAT
@@ -1845,6 +2004,12 @@ ShemuX86Emulate(
             {
                 return SHEMU_ABORT_DECODE_ERROR;
             }
+        }
+
+        shstatus = ShemuX86InstruxChecks(Context);
+        if (SHEMU_SUCCESS != shstatus)
+        {
+            return shstatus;
         }
 
         // Paranoid check...
