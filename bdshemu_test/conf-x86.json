@@ -175,6 +175,20 @@
         "command": "shemu"
     },
     {
+        "f_source": "x86/basic/test_64_avx01.asm",
+        "f_result": "x86/basic/test_64_avx01.result",
+        "f_test": "x86/basic/test_64_avx01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_avx02.asm",
+        "f_result": "x86/basic/test_64_avx02.result",
+        "f_test": "x86/basic/test_64_avx02.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
         "f_source": "x86/basic/test_64_basic01.asm",
         "f_result": "x86/basic/test_64_basic01.result",
         "f_test": "x86/basic/test_64_basic01.test",
@@ -612,6 +626,20 @@
         "f_source": "x86/basic/test_64_sidt.asm",
         "f_result": "x86/basic/test_64_sidt.result",
         "f_test": "x86/basic/test_64_sidt.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sse01.asm",
+        "f_result": "x86/basic/test_64_sse01.result",
+        "f_test": "x86/basic/test_64_sse01.test",
+        "options": "-b64 -skipdecoded",
+        "command": "shemu"
+    },
+    {
+        "f_source": "x86/basic/test_64_sse02.asm",
+        "f_result": "x86/basic/test_64_sse02.result",
+        "f_test": "x86/basic/test_64_sse02.test",
         "options": "-b64 -skipdecoded",
         "command": "shemu"
     },
